@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CEE Transformation Index — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0f2340;
+      --fuchsia: #8b1a6a;
+      --accent:  #8b1a6a;
+      --al:      #f7e8f3;
+      --border:  #e5e7eb;
+      --bg:      #f8fafc;
+      --text:    #111827;
+      --sub:     #6b7280;
+      --adv:     #0d9488;
+      --dev:     #f59e0b;
+      --bas:     #ef4444;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    /* HEADER */
+    header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
+    header h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 660px; }
+    .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: auto; padding: 40px 24px 80px; }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: white; border-radius: 12px; padding: 20px 22px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .num { font-size: 38px; font-weight: 800; line-height: 1; }
+    .stat-card .sm { font-size: 12px; color: var(--sub); margin-top: 5px; }
+    .stat-card.total .num    { color: var(--navy); }
+    .stat-card.advanced .num { color: var(--adv); }
+    .stat-card.devlp .num    { color: var(--dev); }
+    .stat-card.basic .num    { color: var(--bas); }
+
+    /* FILTERS */
+    .filter-bar { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 22px; margin-bottom: 28px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .filter-bar label { font-size: 12px; font-weight: 600; color: var(--sub); text-transform: uppercase; letter-spacing: .5px; }
+    .filter-bar select, .filter-bar input { border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 13px; color: var(--text); background: var(--bg); outline: none; }
+    .filter-bar select:focus, .filter-bar input:focus { border-color: var(--accent); }
+    .filter-bar input { min-width: 200px; }
+    .filter-reset { margin-left: auto; font-size: 12px; color: var(--accent); cursor: pointer; font-weight: 600; background: none; border: none; }
+    .filter-reset:hover { text-decoration: underline; }
+
+    /* CRITERIA LEGEND */
+    .criteria-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 28px; margin-bottom: 28px; }
+    .criteria-card h3 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+    .criterion { display: flex; align-items: flex-start; gap: 10px; }
+    .cr-badge { background: var(--accent); color: white; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .cr-text { font-size: 12.5px; color: var(--sub); }
+    .cr-text strong { color: var(--text); display: block; font-size: 12px; }
+
+    /* SECTOR BREAKDOWN */
+    .section-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 28px; }
+    .section-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 18px; }
+    .sector-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .sec-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+    .sec-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .sec-count { font-size: 11px; color: var(--sub); margin-bottom: 10px; }
+    .mini-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 2px; }
+    .mb-adv { background: var(--adv); border-radius: 2px; }
+    .mb-dev { background: var(--dev); border-radius: 2px; }
+    .mb-bas { background: var(--bas); border-radius: 2px; }
+    .sec-legend { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    .sl { font-size: 10px; color: var(--sub); display: flex; align-items: center; gap: 4px; }
+    .sl-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* TABLE */
+    .table-wrap { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+    .table-header { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    .table-header h3 { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .result-count { font-size: 12px; color: var(--sub); }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { background: #f1f5f9; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--sub); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); cursor: pointer; white-space: nowrap; }
+    thead th:hover { color: var(--navy); }
+    tbody tr { border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #fafafa; }
+    td { padding: 13px 16px; font-size: 13px; vertical-align: middle; }
+    .td-name { font-weight: 700; color: var(--navy); }
+    .td-sector { font-size: 11px; color: var(--sub); margin-top: 2px; }
+    .dot { display: inline-block; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; color: white; text-align: center; line-height: 20px; }
+    .dot-yes { background: var(--adv); }
+    .dot-no  { background: #e5e7eb; color: #9ca3af; }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 4px; letter-spacing: .5px; white-space: nowrap; }
+    .badge-adv { background: #d1fae5; color: #065f46; }
+    .badge-dev { background: #fef3c7; color: #92400e; }
+    .badge-bas { background: #fee2e2; color: #991b1b; }
+    .score-bar { display: flex; gap: 3px; align-items: center; }
+    .sb-pip { width: 10px; height: 10px; border-radius: 2px; }
+    .sb-on  { background: var(--accent); }
+    .sb-off { background: #e5e7eb; }
+
+    /* CTA */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    .no-results { padding: 48px; text-align: center; color: var(--sub); font-size: 14px; }
+
+    /* METHODOLOGY */
+    .method-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px 32px; margin-top: 28px; }
+    .method-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .method-card p { font-size: 13.5px; color: var(--sub); line-height: 1.7; }
+    .method-card p strong { color: var(--text); }
+
+    /* FEEDBACK FORM */
+    .feedback-card { background: var(--al); border-radius: 12px; border: 1.5px solid var(--accent); padding: 28px 32px; margin-top: 24px; }
+    .fb-header { margin-bottom: 20px; }
+    .fb-header h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .fb-header p { font-size: 13.5px; color: var(--sub); line-height: 1.6; }
+    .fb-form { display: flex; flex-direction: column; gap: 14px; }
+    .fb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:600px){ .fb-row { grid-template-columns: 1fr; } }
+    .fb-field { display: flex; flex-direction: column; gap: 5px; }
+    .fb-field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--sub); }
+    .fb-field input, .fb-field select, .fb-field textarea { border: 1px solid var(--border); border-radius: 8px; padding: 10px 13px; font-size: 13px; font-family: inherit; color: var(--text); background: white; outline: none; resize: vertical; }
+    .fb-field input:focus, .fb-field select:focus, .fb-field textarea:focus { border-color: var(--accent); }
+    .fb-btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 12px 24px; font-size: 13px; font-weight: 700; cursor: pointer; align-self: flex-start; transition: opacity .15s; }
+    .fb-btn:hover { opacity: .88; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" width="198" height="47">
+      <defs><linearGradient id="flameG" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#ea580c"/><stop offset="55%" stop-color="#f97316"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.35"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.65"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <path d="M42,18 C36,14 34,7 38.5,2 C39.5,0.8 41,0 42,0 C43,0 44.5,0.8 45.5,2 C50,7 48,14 42,18 Z" fill="url(#flameG)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="66" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#f97316">Fire</tspan>
+      </text>
+      <text x="66" y="68" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" fill="white" opacity="0.5" letter-spacing="2" font-weight="400">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../../people/index.html" class="active">People &amp; Transformation</a>
+    <a href="../../technology/index.html">Technology</a>
+    <a href="../../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<header>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../../index.html">TrendsOnFire</a> / <a href="../../people/index.html">People &amp; Transformation</a> / <a href="index.html">Business Transformation</a> / CEE Index</div>
+    <div class="eyebrow">Interactive Tracker · 2026</div>
+    <h1>Eastern European Market<br>Transformation Index</h1>
+    <p>Assessing how 34 major multinationals approach business transformation across Central &amp; Eastern Europe — leadership localisation, cultural adaptation, and programme governance.</p>
+    <div class="meta">
+      <span>34 organisations assessed</span>
+      <span>5 sectors</span>
+      <span>6 criteria</span>
+      <span>Markets: PL · CZ · HU · RO · SK · HR · RS · Baltics</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card total">
+      <div class="lbl">Assessed</div>
+      <div class="num" id="s-total">34</div>
+      <div class="sm">Organisations</div>
+    </div>
+    <div class="stat-card advanced">
+      <div class="lbl">Advanced</div>
+      <div class="num" id="s-adv">—</div>
+      <div class="sm">5–6 criteria met</div>
+    </div>
+    <div class="stat-card devlp">
+      <div class="lbl">Developing</div>
+      <div class="num" id="s-dev">—</div>
+      <div class="sm">3–4 criteria met</div>
+    </div>
+    <div class="stat-card basic">
+      <div class="lbl">Basic</div>
+      <div class="num" id="s-bas">—</div>
+      <div class="sm">0–2 criteria met</div>
+    </div>
+  </div>
+
+  <!-- CRITERIA -->
+  <div class="criteria-card">
+    <h3>Assessment Criteria</h3>
+    <div class="criteria-grid">
+      <div class="criterion">
+        <span class="cr-badge">C1</span>
+        <div class="cr-text"><strong>Local Programme Leadership</strong>Transformation led by local executives, not HQ-imposed</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C2</span>
+        <div class="cr-text"><strong>Cultural Adaptation</strong>Change methodology adapted for local context, not copy-pasted from HQ</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C3</span>
+        <div class="cr-text"><strong>Local Language Communications</strong>Change communications delivered in mother tongue, not English-only</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C4</span>
+        <div class="cr-text"><strong>Local Talent Development</strong>Investing in building local change capability vs. flying in consultants</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C5</span>
+        <div class="cr-text"><strong>Governance Localisation</strong>PMO and steering committees include meaningful local representation</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C6</span>
+        <div class="cr-text"><strong>Outcome Transparency</strong>Published results, case studies, or measurable outcomes for CEE programmes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-bar">
+    <label>Country</label>
+    <select id="f-country">
+      <option value="">All markets</option>
+      <option value="PL">🇵🇱 Poland</option>
+      <option value="CZ">🇨🇿 Czech Republic</option>
+      <option value="HU">🇭🇺 Hungary</option>
+      <option value="RO">🇷🇴 Romania</option>
+      <option value="SK">🇸🇰 Slovakia</option>
+      <option value="HR">🇭🇷 Croatia</option>
+      <option value="RS">🇷🇸 Serbia</option>
+      <option value="Baltics">🌐 Baltics</option>
+    </select>
+    <label>Sector</label>
+    <select id="f-sector">
+      <option value="">All sectors</option>
+    </select>
+    <label>Status</label>
+    <select id="f-status">
+      <option value="">All</option>
+      <option value="Advanced">Advanced</option>
+      <option value="Developing">Developing</option>
+      <option value="Basic">Basic</option>
+    </select>
+    <input id="f-search" type="text" placeholder="Search organisation…"/>
+    <button class="filter-reset" onclick="resetFilters()">Reset filters</button>
+  </div>
+
+  <!-- SECTOR BREAKDOWN -->
+  <div class="section-card">
+    <h3>Results by Sector</h3>
+    <div class="sector-cards" id="sector-cards"></div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <div class="table-header">
+      <h3>All Organisations</h3>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Organisation ↕</th>
+          <th onclick="sortBy('sector')">Sector ↕</th>
+          <th>Markets</th>
+          <th title="Local Programme Leadership">C1</th>
+          <th title="Cultural Adaptation">C2</th>
+          <th title="Local Language Communications">C3</th>
+          <th title="Local Talent Development">C4</th>
+          <th title="Governance Localisation">C5</th>
+          <th title="Outcome Transparency">C6</th>
+          <th onclick="sortBy('score')">Score ↕</th>
+          <th onclick="sortBy('status')">Status ↕</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="no-results" id="no-results" style="display:none">No organisations match your filters.</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="li-cta">
+    <div>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700">Available for</p>
+      <p>Interim management &amp; consulting services in retail, e-commerce, and business transformation across Europe.</p>
+    </div>
+    <a href="../../contact/">Connect →</a>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="method-card">
+    <h3>Methodology &amp; Data Sources</h3>
+    <p>Assessments in this index are based on <strong>publicly available information</strong> — including company annual reports, LinkedIn organisational data, published case studies, press releases, and professional industry knowledge. Each criterion reflects observable, documented behaviour rather than self-reported claims.</p>
+    <p style="margin-top:10px">This is a <strong>living index</strong>, updated as new information becomes available. Scores reflect the state of publicly available evidence at time of publication and may not capture internal programmes not visible externally. Organisations are assessed at the CEE regional level, not individual country subsidiaries.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--sub)">Rating scale: <strong>Advanced</strong> = 5–6 criteria met · <strong>Developing</strong> = 3–4 criteria met · <strong>Basic</strong> = 0–2 criteria met. Assessments are made independently and organisations have not been contacted for verification. See below to submit a correction.</p>
+  </div>
+
+  <!-- FEEDBACK FORM -->
+  <div class="feedback-card">
+    <div class="fb-header">
+      <div>
+        <h3>Is your organisation listed here?</h3>
+        <p>We welcome corrections, additional evidence, and context from organisations assessed in this index. Submit your feedback and we'll review and update the score with a source note.</p>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xrbgpavj" method="POST" class="fb-form">
+      <div class="fb-row">
+        <div class="fb-field">
+          <label>Organisation name</label>
+          <input type="text" name="organisation" placeholder="e.g. ING Bank" required/>
+        </div>
+        <div class="fb-field">
+          <label>Your name &amp; role</label>
+          <input type="text" name="contact" placeholder="e.g. Jana Novak, Head of Transformation"/>
+        </div>
+      </div>
+      <div class="fb-field">
+        <label>Which criterion do you want to correct or add evidence for?</label>
+        <select name="criterion">
+          <option value="">Select criterion</option>
+          <option>C1 — Local Programme Leadership</option>
+          <option>C2 — Cultural Adaptation</option>
+          <option>C3 — Local Language Communications</option>
+          <option>C4 — Local Talent Development</option>
+          <option>C5 — Governance Localisation</option>
+          <option>C6 — Outcome Transparency</option>
+          <option>General feedback / overall score</option>
+        </select>
+      </div>
+      <div class="fb-field">
+        <label>Your evidence or correction</label>
+        <textarea name="feedback" rows="4" placeholder="Please describe what we got wrong and provide any supporting evidence, links, or context…" required></textarea>
+      </div>
+      <div class="fb-field">
+        <label>Your email (optional — only if you'd like a response)</label>
+        <input type="email" name="email" placeholder="you@company.com"/>
+      </div>
+      <button type="submit" class="fb-btn">Submit correction →</button>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:12px">
+    <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" aria-label="LinkedIn" style="display:inline-block;vertical-align:middle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#94a3b8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+  <p>© 2026 TrendsOnFire · CEE Transformation Index curated by <a href="/olgabressers/">Olga Bressers</a> · <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+</footer>
+
+<script>
+const companies = [
+  // Retail & FMCG
+  { name:"Allegro",         sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Biedronka",       sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"IKEA",            sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Pepco Group",     sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"CCC Group",       sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Decathlon",       sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
+  { name:"Unilever CEE",    sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Nestlé CEE",      sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"H&M",             sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR"], c1:false, c2:true, c3:true, c4:false, c5:false, c6:false },
+  { name:"Inditex",         sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Lidl CEE",        sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO","HR","RS"], c1:false, c2:false, c3:true, c4:false, c5:false, c6:false },
+  { name:"Kaufland",        sector:"Retail & FMCG",    markets:["CZ","SK","RO","HR","RS"], c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Auchan",          sector:"Retail & FMCG",    markets:["PL","HU","RO"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Tesco CEE",       sector:"Retail & FMCG",    markets:["CZ","SK","HU"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
+  // Banking & Finance
+  { name:"ING Bank",        sector:"Banking & Finance", markets:["PL","RO","CZ"],         c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Erste Bank",      sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"PKO Bank Polski",  sector:"Banking & Finance",markets:["PL"],                   c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"OTP Bank",        sector:"Banking & Finance", markets:["HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:false },
+  { name:"Raiffeisen Bank", sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  { name:"UniCredit CEE",   sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:false, c5:true, c6:false },
+  // Technology
+  { name:"Microsoft CEE",   sector:"Technology",        markets:["PL","CZ","HU","RO","SK"], c1:false, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"SAP CEE",         sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
+  { name:"Google CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"Amazon CEE",      sector:"Technology",        markets:["PL","CZ"],              c1:false, c2:false, c3:false, c4:false, c5:false, c6:false },
+  { name:"Oracle CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  // Consulting
+  { name:"PwC CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Deloitte CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"McKinsey CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
+  { name:"BCG CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
+  { name:"KPMG CEE",        sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  // Manufacturing & Industry
+  { name:"Philip Morris Int'l", sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Volkswagen Group",    sector:"Manufacturing", markets:["CZ","SK","HU","PL"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"Mondelez CEE",        sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  { name:"Richemont CEE",       sector:"Manufacturing", markets:["CZ","PL","HU"],         c1:false, c2:true,  c3:false, c4:true,  c5:false, c6:false },
+];
+
+const SECTORS = ["Retail & FMCG","Banking & Finance","Technology","Consulting","Manufacturing"];
+
+function score(r){ return [r.c1,r.c2,r.c3,r.c4,r.c5,r.c6].filter(Boolean).length; }
+function status(r){
+  const s = score(r);
+  return s >= 5 ? "Advanced" : s >= 3 ? "Developing" : "Basic";
+}
+
+let sortKey = "name", sortDir = 1;
+
+function sortBy(key){
+  if(sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = 1; }
+  render();
+}
+
+function resetFilters(){
+  document.getElementById("f-country").value = "";
+  document.getElementById("f-sector").value = "";
+  document.getElementById("f-status").value = "";
+  document.getElementById("f-search").value = "";
+  render();
+}
+
+function filtered(){
+  const country = document.getElementById("f-country").value;
+  const sec = document.getElementById("f-sector").value;
+  const st  = document.getElementById("f-status").value;
+  const q   = document.getElementById("f-search").value.toLowerCase();
+  return companies.filter(r =>
+    (!country || r.markets.includes(country)) &&
+    (!sec || r.sector === sec) &&
+    (!st  || status(r) === st) &&
+    (!q   || r.name.toLowerCase().includes(q) || r.sector.toLowerCase().includes(q))
+  );
+}
+
+function dot(val){ return `<span class="dot ${val?'dot-yes':'dot-no'}">${val?'✓':'✗'}</span>`; }
+
+function statusBadge(s){
+  const cls = s==="Advanced"?"badge-adv":s==="Developing"?"badge-dev":"badge-bas";
+  return `<span class="badge ${cls}">${s}</span>`;
+}
+
+function scorePips(r){
+  const s = score(r);
+  return `<div class="score-bar">${[1,2,3,4,5,6].map(i=>`<div class="sb-pip ${i<=s?'sb-on':'sb-off'}"></div>`).join("")} <span style="font-size:11px;color:var(--sub);margin-left:4px">${s}/6</span></div>`;
+}
+
+function render(){
+  const data = filtered().sort((a,b)=>{
+    let av, bv;
+    if(sortKey==="name")   { av=a.name;       bv=b.name; }
+    if(sortKey==="sector") { av=a.sector;      bv=b.sector; }
+    if(sortKey==="score")  { av=score(a);      bv=score(b); }
+    if(sortKey==="status") { av=status(a);     bv=status(b); }
+    return av > bv ? sortDir : av < bv ? -sortDir : 0;
+  });
+
+  // Stats
+  const adv = data.filter(r=>status(r)==="Advanced").length;
+  const dev = data.filter(r=>status(r)==="Developing").length;
+  const bas = data.filter(r=>status(r)==="Basic").length;
+  document.getElementById("s-total").textContent = data.length;
+  document.getElementById("s-adv").textContent = adv;
+  document.getElementById("s-dev").textContent = dev;
+  document.getElementById("s-bas").textContent = bas;
+  document.getElementById("result-count").textContent = `${data.length} organisation${data.length!==1?"s":""}`;
+
+  // Sector cards
+  const sc = document.getElementById("sector-cards");
+  const secData = SECTORS.map(s=>{
+    const rows = data.filter(r=>r.sector===s);
+    const a = rows.filter(r=>status(r)==="Advanced").length;
+    const d = rows.filter(r=>status(r)==="Developing").length;
+    const b = rows.filter(r=>status(r)==="Basic").length;
+    return {s, rows, a, d, b};
+  }).filter(x=>x.rows.length>0);
+
+  sc.innerHTML = secData.map(({s,rows,a,d,b})=>{
+    const t = rows.length;
+    const ap = Math.round(a/t*100), dp = Math.round(d/t*100), bp = 100-ap-dp;
+    return `<div class="sec-card">
+      <div class="sec-name">${s}</div>
+      <div class="sec-count">${t} organisation${t!==1?"s":""}</div>
+      <div class="mini-bar">
+        <div class="mb-adv" style="width:${ap}%"></div>
+        <div class="mb-dev" style="width:${dp}%"></div>
+        <div class="mb-bas" style="width:${bp}%"></div>
+      </div>
+      <div class="sec-legend">
+        <div class="sl"><div class="sl-dot" style="background:var(--adv)"></div>${a} Adv</div>
+        <div class="sl"><div class="sl-dot" style="background:var(--dev)"></div>${d} Dev</div>
+        <div class="sl"><div class="sl-dot" style="background:var(--bas)"></div>${b} Bas</div>
+      </div>
+    </div>`;
+  }).join("");
+
+  // Table
+  const tbody = document.getElementById("tbody");
+  const noRes = document.getElementById("no-results");
+  if(data.length===0){
+    tbody.innerHTML=""; noRes.style.display="block";
+  } else {
+    noRes.style.display="none";
+    tbody.innerHTML = data.map(r=>`<tr>
+      <td><div class="td-name">${r.name}</div><div class="td-sector">${r.sector}</div></td>
+      <td style="font-size:12px;color:var(--sub)">${r.sector}</td>
+      <td style="font-size:11px;color:var(--sub);line-height:1.8">${r.markets.join(" · ")}</td>
+      <td>${dot(r.c1)}</td>
+      <td>${dot(r.c2)}</td>
+      <td>${dot(r.c3)}</td>
+      <td>${dot(r.c4)}</td>
+      <td>${dot(r.c5)}</td>
+      <td>${dot(r.c6)}</td>
+      <td>${scorePips(r)}</td>
+      <td>${statusBadge(status(r))}</td>
+    </tr>`).join("");
+  }
+}
+
+// Populate sector dropdown
+const sel = document.getElementById("f-sector");
+SECTORS.forEach(s=>{ const o=document.createElement("option"); o.value=s; o.textContent=s; sel.appendChild(o); });
+
+["f-country","f-sector","f-status","f-search"].forEach(id=>document.getElementById(id).addEventListener("input",render));
+render();
+</script>
+</body>
+</html>
