@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NL Inventory Visibility Monitor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0f2340;
+      --teal:        #0d9488;
+      --teal-light:  #ccfbf1;
+      --amber:       #f59e0b;
+      --amber-light: #fef3c7;
+      --red:         #ef4444;
+      --red-light:   #fee2e2;
+      --border:      #e5e7eb;
+      --gray-bg:     #f3f4f6;
+      --subtext:     #6b7280;
+      --text:        #111827;
+    }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: var(--text); line-height: 1.6; }
+
+    /* ── HEADER ── */
+    header { background: var(--navy); color: white; padding: 48px 32px 40px; }
+    header .inner { max-width: 1100px; margin: auto; }
+    .eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; font-weight: 600; }
+    header h1 { font-size: clamp(22px, 4vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header p { font-size: 15px; color: #94a3b8; max-width: 660px; }
+    .meta { margin-top: 20px; font-size: 13px; color: #64748b; display: flex; gap: 24px; flex-wrap: wrap; }
+    .version-badge { display: inline-block; background: var(--teal); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-left: 12px; vertical-align: middle; }
+
+    /* ── MAIN ── */
+    main { max-width: 1100px; margin: auto; padding: 40px 24px 80px; }
+
+    /* ── STAT CARDS ── */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat-card { background: white; border-radius: 12px; padding: 22px 24px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stat-card .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--subtext); margin-bottom: 10px; }
+    .stat-card .number { font-size: 38px; font-weight: 800; line-height: 1; }
+    .stat-card .sub { font-size: 12px; color: var(--subtext); margin-top: 6px; }
+    .stat-card.total      .number { color: var(--navy); }
+    .stat-card.advanced   .number { color: var(--teal); }
+    .stat-card.developing .number { color: var(--amber); }
+    .stat-card.basic      .number { color: var(--red); }
+
+    /* ── SECTION CARD ── */
+    .section-card { background: white; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); padding: 28px 32px; margin-bottom: 28px; }
+    .section-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+
+    /* ── DISTRIBUTION BAR ── */
+    .dist-track { display: flex; height: 44px; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+    .dist-seg { display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: white; transition: opacity .2s; cursor: default; }
+    .dist-seg:hover { opacity: .85; }
+    .dist-seg.adv { background: var(--teal); }
+    .dist-seg.dev { background: var(--amber); }
+    .dist-seg.bas { background: var(--red); }
+    .dist-legend { display: flex; gap: 20px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .legend-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── CATEGORY CARDS ── */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+    .cat-card { border: 1.5px solid var(--border); border-radius: 10px; padding: 16px; background: #fafafa; transition: box-shadow .15s; }
+    .cat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+    .cat-card-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+    .cat-card-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .cat-card-total { font-size: 11px; color: var(--subtext); background: var(--gray-bg); padding: 2px 7px; border-radius: 20px; font-weight: 600; }
+    .cat-mini-bar { display: flex; height: 7px; border-radius: 4px; overflow: hidden; gap: 1px; margin-bottom: 12px; }
+    .mini-seg { height: 100%; }
+    .mini-seg.adv { background: var(--teal); }
+    .mini-seg.dev { background: var(--amber); }
+    .mini-seg.bas { background: var(--red); }
+    .cat-status-rows { display: flex; flex-direction: column; gap: 5px; }
+    .cat-status-row { display: flex; align-items: center; justify-content: space-between; }
+    .cat-status-label { font-size: 12px; color: var(--subtext); display: flex; align-items: center; gap: 6px; }
+    .cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .cat-dot.adv { background: var(--teal); }
+    .cat-dot.dev { background: var(--amber); }
+    .cat-dot.bas { background: var(--red); }
+    .cat-count { font-size: 13px; font-weight: 700; }
+    .cat-count.adv { color: var(--teal); }
+    .cat-count.dev { color: var(--amber); }
+    .cat-count.bas { color: var(--red); }
+
+    /* ── CRITERIA BARS ── */
+    .crit-row { display: flex; align-items: center; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .crit-row:last-child { border-bottom: none; }
+    .crit-name { font-size: 13.5px; width: 210px; flex-shrink: 0; }
+    .crit-bar-wrap { flex: 1; background: var(--gray-bg); border-radius: 4px; height: 10px; overflow: hidden; }
+    .crit-bar-fill { height: 100%; background: var(--teal); border-radius: 4px; }
+    .crit-pct { font-size: 13px; font-weight: 700; color: var(--teal); width: 40px; text-align: right; flex-shrink: 0; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px 12px 0 0;
+      border-bottom: none;
+      padding: 18px 24px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    .fg { display: flex; flex-direction: column; gap: 4px; }
+    .fg label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--subtext); }
+    .filter-select, .search-input {
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      font-size: 13px;
+      outline: none;
+      background: white;
+      transition: border-color .15s;
+      appearance: none;
+    }
+    .filter-select {
+      padding-right: 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 9px center;
+      min-width: 175px;
+      cursor: pointer;
+    }
+    .search-input { min-width: 200px; }
+    .filter-select:focus, .search-input:focus { border-color: var(--teal); }
+    .reset-btn {
+      padding: 7px 14px; border-radius: 8px; border: 1.5px solid var(--border);
+      background: white; font-size: 12px; font-weight: 600; color: var(--subtext);
+      cursor: pointer; transition: all .15s; white-space: nowrap;
+    }
+    .reset-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .result-info { margin-left: auto; font-size: 13px; color: var(--subtext); align-self: center; }
+
+    /* ── TABLE ── */
+    .table-card { background: white; border-radius: 0 0 12px 12px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    thead th {
+      background: var(--gray-bg); padding: 11px 16px; text-align: left;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px;
+      color: var(--subtext); cursor: pointer; white-space: nowrap; user-select: none;
+      border-bottom: 1px solid var(--border);
+    }
+    thead th:hover { background: #e2e8f0; }
+    thead th.sorted .sa { color: var(--teal); opacity: 1 !important; }
+    .sa { margin-left: 4px; opacity: .3; }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8fafc; }
+    tbody td { padding: 12px 16px; vertical-align: middle; }
+
+    .r-name { font-weight: 600; color: var(--navy); }
+    .tag { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+    .tag.Fashion          { background: #fce7f3; color: #9d174d; }
+    .tag.Electronics      { background: #dbeafe; color: #1e40af; }
+    .tag.Marketplace      { background: #f3e8ff; color: #6b21a8; }
+    .tag.Sport            { background: #dcfce7; color: #166534; }
+    .tag.Luxury           { background: #fef9c3; color: #854d0e; }
+    .tag.Department\ Store { background: #ffe4e6; color: #9f1239; }
+
+    .score-pill { font-weight: 800; font-size: 15px; }
+    .score-pill .denom { font-size: 11px; color: var(--subtext); font-weight: 400; }
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+    .badge.advanced   { background: var(--teal-light);  color: #0f766e; }
+    .badge.developing { background: var(--amber-light); color: #92400e; }
+    .badge.basic      { background: var(--red-light);   color: #991b1b; }
+
+    .check { color: var(--teal); font-size: 16px; }
+    .cross { color: #d1d5db; font-size: 16px; }
+    .na    { color: #d1d5db; font-size: 11px; font-style: italic; }
+    .no-results { text-align: center; padding: 48px; color: var(--subtext); font-size: 15px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: #64748b; padding: 40px 32px; font-size: 13px; }
+    footer .inner { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    footer h4 { color: #94a3b8; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+    footer p { line-height: 1.7; }
+    footer ul { list-style: none; }
+    footer ul li { padding: 3px 0; }
+    footer ul li::before { content: "·  "; color: var(--teal); }
+    @media (max-width: 600px) { footer .inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">Ecommerce Intelligence — Netherlands Edition</div>
+    <h1>Real-Time Inventory Visibility Monitor <span class="version-badge">v2</span></h1>
+    <p>How transparently do Netherlands-based retailers across fashion, electronics, marketplace, sport, luxury, and department stores surface real-time inventory data to online shoppers?</p>
+    <div class="meta">
+      <span>📅 Last updated: March 2026</span>
+      <span>🇳🇱 43 NL retailers assessed</span>
+      <span>🔍 6 criteria evaluated</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- STAT CARDS -->
+  <div class="stats">
+    <div class="stat-card total">
+      <div class="label">Total Assessed</div>
+      <div class="number" id="cnt-total">—</div>
+      <div class="sub">NL retailers</div>
+    </div>
+    <div class="stat-card advanced">
+      <div class="label">Advanced</div>
+      <div class="number" id="cnt-advanced">—</div>
+      <div class="sub">5–6 criteria met</div>
+    </div>
+    <div class="stat-card developing">
+      <div class="label">Developing</div>
+      <div class="number" id="cnt-developing">—</div>
+      <div class="sub">3–4 criteria met</div>
+    </div>
+    <div class="stat-card basic">
+      <div class="label">Basic</div>
+      <div class="number" id="cnt-basic">—</div>
+      <div class="sub">0–2 criteria met</div>
+    </div>
+  </div>
+
+  <!-- DISTRIBUTION -->
+  <div class="section-card">
+    <div class="section-title">Status Distribution — All Categories</div>
+    <div class="dist-track" id="dist-track"></div>
+    <div class="dist-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div><strong>Advanced</strong> — 5–6 inventory signals visible</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div><strong>Developing</strong> — 3–4 signals visible</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div><strong>Basic</strong> — 0–2 signals visible</div>
+    </div>
+  </div>
+
+  <!-- RESULTS PER CATEGORY -->
+  <div class="section-card">
+    <div class="section-title">Results per Category</div>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+
+  <!-- CRITERIA COVERAGE -->
+  <div class="section-card">
+    <div class="section-title">Criteria Coverage</div>
+    <div id="crit-bars"></div>
+  </div>
+
+  <!-- RETAILER LIST (below the graph, always visible) -->
+  <div class="filter-bar">
+    <div class="fg">
+      <label>Category</label>
+      <select class="filter-select" id="f-cat"></select>
+    </div>
+    <div class="fg">
+      <label>Status</label>
+      <select class="filter-select" id="f-status">
+        <option value="all">All statuses</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Developing">Developing</option>
+        <option value="Basic">Basic</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Search retailer</label>
+      <input class="search-input" type="text" id="f-search" placeholder="Search by name…" />
+    </div>
+    <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    <span class="result-info" id="result-info"></span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="name">Retailer <span class="sa">↕</span></th>
+            <th data-col="sector">Category <span class="sa">↕</span></th>
+            <th data-col="score">Score <span class="sa">↕</span></th>
+            <th data-col="status">Status <span class="sa">↕</span></th>
+            <th data-col="c1">Online Stock<br>Status</th>
+            <th data-col="c2">Store-Level<br>Inventory</th>
+            <th data-col="c3">Low Stock<br>Alerts</th>
+            <th data-col="c4">Back-in-Stock<br>Notify</th>
+            <th data-col="c5">Variant<br>Availability</th>
+            <th data-col="c6">Delivery Date<br>Accuracy</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="no-results" id="no-results" style="display:none">No retailers match your filters.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <div>
+      <h4>About this Monitor</h4>
+      <p>This tracker assesses how well Netherlands-based retailers surface real-time inventory signals to shoppers across digital storefronts. Each retailer is audited against six criteria. N/A is applied where a criterion is structurally inapplicable (e.g. store inventory for online-only retailers). Data collected via manual audit of websites and apps, March 2026.</p>
+    </div>
+    <div>
+      <h4>Assessment Criteria</h4>
+      <ul>
+        <li><strong>Online Stock Status</strong> — Live in/out-of-stock on product page</li>
+        <li><strong>Store-Level Inventory</strong> — Check availability by store location</li>
+        <li><strong>Low Stock Alerts</strong> — "Nog maar X op voorraad" messaging</li>
+        <li><strong>Back-in-Stock Notify</strong> — Sign up for restock alerts</li>
+        <li><strong>Variant Availability</strong> — Per-size / per-colour stock shown</li>
+        <li><strong>Delivery Date Accuracy</strong> — Estimated delivery tied to real inventory</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════
+const retailers = [
+  // ── FASHION ──────────────────────────────────
+  { name:"Wehkamp",          sector:"Fashion",           c1:true,  c2:null,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"G-Star Raw",       sector:"Fashion",           c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"WE Fashion",       sector:"Fashion",           c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Hunkemöller",      sector:"Fashion",           c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Scotch & Soda",    sector:"Fashion",           c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Shoeby",           sector:"Fashion",           c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"America Today",    sector:"Fashion",           c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"MS Mode",          sector:"Fashion",           c1:true,  c2:false, c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Coolcat",          sector:"Fashion",           c1:true,  c2:false, c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Vingino",          sector:"Fashion",           c1:true,  c2:false, c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Juttu",            sector:"Fashion",           c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Tenue de Nîmes",   sector:"Fashion",           c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Rosier Fashion",   sector:"Fashion",           c1:true,  c2:true,  c3:false, c4:false, c5:true,  c6:false },
+  // ── ELECTRONICS ──────────────────────────────
+  { name:"Coolblue",         sector:"Electronics",       c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"BCC",              sector:"Electronics",       c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Alternate.nl",     sector:"Electronics",       c1:true,  c2:false, c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Centralpoint",     sector:"Electronics",       c1:true,  c2:false, c3:false, c4:false, c5:true,  c6:true  },
+  { name:"Azerty",           sector:"Electronics",       c1:true,  c2:false, c3:false, c4:false, c5:true,  c6:true  },
+  // ── MARKETPLACE ──────────────────────────────
+  { name:"Bol.com",          sector:"Marketplace",       c1:true,  c2:null,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Fonq",             sector:"Marketplace",       c1:true,  c2:null,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Beslist.nl",       sector:"Marketplace",       c1:true,  c2:null,  c3:false, c4:false, c5:true,  c6:true  },
+  { name:"Marktplaats",      sector:"Marketplace",       c1:true,  c2:null,  c3:false, c4:false, c5:true,  c6:false },
+  // ── SPORT ────────────────────────────────────
+  { name:"Nike",             sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Adidas",           sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Puma",             sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Under Armour",     sector:"Sport",             c1:true,  c2:false, c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"New Balance",      sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Bever",            sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Decathlon",        sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Aktiesport",       sector:"Sport",             c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Hardloopwinkel",   sector:"Sport",             c1:true,  c2:false, c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Perry Sport",      sector:"Sport",             c1:true,  c2:false, c3:false, c4:true,  c5:true,  c6:false },
+  // ── LUXURY ───────────────────────────────────
+  { name:"Suitsupply",       sector:"Luxury",            c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Tiffany & Co",     sector:"Luxury",            c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:true  },
+  { name:"Cartier",          sector:"Luxury",            c1:true,  c2:true,  c3:false, c4:false, c5:true,  c6:true  },
+  { name:"IWC",              sector:"Luxury",            c1:true,  c2:true,  c3:false, c4:false, c5:true,  c6:false },
+  { name:"Van Cleef & Arpels",sector:"Luxury",           c1:true,  c2:true,  c3:false, c4:false, c5:true,  c6:false },
+  // ── DEPARTMENT STORE ─────────────────────────
+  { name:"De Bijenkorf",     sector:"Department Store",  c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Hema",             sector:"Department Store",  c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Blokker",          sector:"Department Store",  c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Prenatal",         sector:"Department Store",  c1:true,  c2:true,  c3:false, c4:true,  c5:true,  c6:false },
+  { name:"Action",           sector:"Department Store",  c1:true,  c2:true,  c3:false, c4:false, c5:true,  c6:false },
+  { name:"Xenos",            sector:"Department Store",  c1:true,  c2:false, c3:false, c4:false, c5:true,  c6:false },
+];
+
+const CRITERIA = [
+  { key:"c1", label:"Online Stock Status" },
+  { key:"c2", label:"Store-Level Inventory" },
+  { key:"c3", label:"Low Stock Alerts" },
+  { key:"c4", label:"Back-in-Stock Notify" },
+  { key:"c5", label:"Variant Availability" },
+  { key:"c6", label:"Delivery Date Accuracy" },
+];
+
+const SECTORS = ["Fashion","Electronics","Marketplace","Sport","Luxury","Department Store"];
+
+// ── Score each retailer
+function scoreOf(r) {
+  let met = 0, possible = 0;
+  CRITERIA.forEach(({key}) => { if (r[key] === null) return; possible++; if (r[key]) met++; });
+  return { met, possible };
+}
+function statusOf(met, possible) {
+  const p = possible === 0 ? 0 : met / possible;
+  if (p >= 0.833) return "Advanced";
+  if (p >= 0.5)   return "Developing";
+  return "Basic";
+}
+
+retailers.forEach(r => {
+  const {met, possible} = scoreOf(r);
+  r.score = met; r.possible = possible;
+  r.status = statusOf(met, possible);
+});
+
+const total = retailers.length;
+const counts = { Advanced:0, Developing:0, Basic:0 };
+retailers.forEach(r => counts[r.status]++);
+
+// ── Stat cards
+document.getElementById("cnt-total").textContent     = total;
+document.getElementById("cnt-advanced").textContent   = counts.Advanced;
+document.getElementById("cnt-developing").textContent = counts.Developing;
+document.getElementById("cnt-basic").textContent      = counts.Basic;
+
+// ── Distribution bar
+const track = document.getElementById("dist-track");
+[["adv","Advanced"],["dev","Developing"],["bas","Basic"]].forEach(([cls,status]) => {
+  const pct = ((counts[status]/total)*100).toFixed(1);
+  const seg = document.createElement("div");
+  seg.className = `dist-seg ${cls}`;
+  seg.style.width = pct + "%";
+  seg.title = `${status}: ${counts[status]} (${pct}%)`;
+  if (counts[status] > 0) seg.textContent = counts[status];
+  track.appendChild(seg);
+});
+
+// ── Results per category cards
+const catGrid = document.getElementById("cat-grid");
+SECTORS.forEach(sector => {
+  const d   = retailers.filter(r => r.sector === sector);
+  const adv = d.filter(r => r.status === "Advanced").length;
+  const dev = d.filter(r => r.status === "Developing").length;
+  const bas = d.filter(r => r.status === "Basic").length;
+  const n   = d.length;
+  const pAdv = n ? Math.round(adv/n*100) : 0;
+  const pDev = n ? Math.round(dev/n*100) : 0;
+  const pBas = n ? Math.round(bas/n*100) : 0;
+  catGrid.innerHTML += `
+    <div class="cat-card">
+      <div class="cat-card-header">
+        <span class="cat-card-name">${sector}</span>
+        <span class="cat-card-total">${n}</span>
+      </div>
+      <div class="cat-mini-bar">
+        <div class="mini-seg adv" style="width:${pAdv}%"></div>
+        <div class="mini-seg dev" style="width:${pDev}%"></div>
+        <div class="mini-seg bas" style="width:${pBas}%"></div>
+      </div>
+      <div class="cat-status-rows">
+        <div class="cat-status-row"><span class="cat-status-label"><span class="cat-dot adv"></span>Advanced</span><span class="cat-count adv">${adv}</span></div>
+        <div class="cat-status-row"><span class="cat-status-label"><span class="cat-dot dev"></span>Developing</span><span class="cat-count dev">${dev}</span></div>
+        <div class="cat-status-row"><span class="cat-status-label"><span class="cat-dot bas"></span>Basic</span><span class="cat-count bas">${bas}</span></div>
+      </div>
+    </div>`;
+});
+
+// ── Criteria coverage bars
+const critEl = document.getElementById("crit-bars");
+CRITERIA.forEach(({key,label}) => {
+  const app = retailers.filter(r => r[key] !== null);
+  const met = app.filter(r => r[key] === true).length;
+  const pct = app.length ? Math.round(met/app.length*100) : 0;
+  critEl.innerHTML += `<div class="crit-row">
+    <div class="crit-name">${label}</div>
+    <div class="crit-bar-wrap"><div class="crit-bar-fill" style="width:${pct}%"></div></div>
+    <div class="crit-pct">${pct}%</div>
+  </div>`;
+});
+
+// ── Category filter dropdown with counts
+const catSel = document.getElementById("f-cat");
+catSel.innerHTML = `<option value="all">All categories (${total})</option>`;
+SECTORS.forEach(s => {
+  const n = retailers.filter(r => r.sector === s).length;
+  catSel.innerHTML += `<option value="${s}">${s} (${n})</option>`;
+});
+
+// ════════════════════════════════════════════════
+// TABLE
+// ════════════════════════════════════════════════
+let sortCol = "score", sortDir = -1;
+
+function cell(v) {
+  if (v === null)  return `<span class="na">N/A</span>`;
+  if (v === true)  return `<span class="check">✓</span>`;
+  return `<span class="cross">✗</span>`;
+}
+
+function filtered() {
+  const cat    = document.getElementById("f-cat").value;
+  const status = document.getElementById("f-status").value;
+  const q      = document.getElementById("f-search").value.toLowerCase();
+  return retailers.filter(r =>
+    (cat    === "all" || r.sector === cat) &&
+    (status === "all" || r.status === status) &&
+    r.name.toLowerCase().includes(q)
+  );
+}
+
+function renderTable() {
+  const data = filtered().sort((a,b) => {
+    let va = a[sortCol], vb = b[sortCol];
+    if (typeof va === "string") { va = va.toLowerCase(); vb = vb.toLowerCase(); }
+    return va < vb ? sortDir : va > vb ? -sortDir : 0;
+  });
+
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  document.getElementById("no-results").style.display = data.length ? "none" : "block";
+  document.getElementById("result-info").textContent = `Showing ${data.length} of ${total} retailers`;
+
+  data.forEach(r => {
+    const tagClass = r.sector.replace(/ /g, "\\ ");
+    tbody.innerHTML += `<tr>
+      <td class="r-name">${r.name}</td>
+      <td><span class="tag ${r.sector}">${r.sector}</span></td>
+      <td><span class="score-pill">${r.score}<span class="denom">/${r.possible}</span></span></td>
+      <td><span class="badge ${r.status.toLowerCase()}">${r.status}</span></td>
+      <td>${cell(r.c1)}</td><td>${cell(r.c2)}</td><td>${cell(r.c3)}</td>
+      <td>${cell(r.c4)}</td><td>${cell(r.c5)}</td><td>${cell(r.c6)}</td>
+    </tr>`;
+  });
+
+  document.querySelectorAll("thead th[data-col]").forEach(th => {
+    th.classList.remove("sorted");
+    const arrow = th.querySelector(".sa");
+    if (arrow) arrow.textContent = "↕";
+    if (th.dataset.col === sortCol) {
+      th.classList.add("sorted");
+      if (arrow) arrow.textContent = sortDir === -1 ? "↓" : "↑";
+    }
+  });
+}
+
+document.querySelectorAll("thead th[data-col]").forEach(th => {
+  th.addEventListener("click", () => {
+    sortDir = sortCol === th.dataset.col ? sortDir * -1 : -1;
+    sortCol = th.dataset.col;
+    renderTable();
+  });
+});
+
+["f-cat","f-status","f-search"].forEach(id => {
+  document.getElementById(id).addEventListener("input", renderTable);
+  document.getElementById(id).addEventListener("change", renderTable);
+});
+
+function resetFilters() {
+  document.getElementById("f-cat").value    = "all";
+  document.getElementById("f-status").value = "all";
+  document.getElementById("f-search").value = "";
+  renderTable();
+}
+
+renderTable();
+</script>
+</body>
+</html>
