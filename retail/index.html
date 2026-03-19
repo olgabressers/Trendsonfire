@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Retail Trends — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --accent:#8b1a6a; --al:#f7e8f3; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: var(--navy); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { font-size: 18px; font-weight: 800; color: white; padding: 16px 0; margin-right: 40px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: var(--accent); }
+
+    .sec-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    .sec-header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    .sec-header h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .featured-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 16px; }
+
+    .monitor-card { background: white; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); overflow: hidden; margin-bottom: 48px; }
+    .monitor-header { background: var(--navy); padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; }
+    .monitor-header h2 { color: white; font-size: 16px; font-weight: 700; }
+    .monitor-header a { background: var(--accent); color: white; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: background .15s; }
+    .monitor-header a:hover { background: #7a1660; }
+    .monitor-preview { padding: 28px; }
+    .preview-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .pstat { background: var(--bg); border-radius: 10px; padding: 16px 20px; border: 1px solid var(--border); }
+    .pstat .pn { font-size: 32px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .pstat .pl { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 6px; }
+    .pstat .ps { font-size: 12px; color: var(--sub); margin-top: 4px; }
+    .pstat.adv .pn { color: #0d9488; }
+    .pstat.dev .pn { color: #f59e0b; }
+    .pstat.bas .pn { color: #ef4444; }
+    .dist-bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; gap: 2px; }
+    .db-seg { height: 100%; border-radius: 3px; }
+    .db-seg.adv { background: #0d9488; width: 53%; }
+    .db-seg.dev { background: #f59e0b; width: 42%; }
+    .db-seg.bas { background: #ef4444; width: 5%; }
+    .dist-legend { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
+    .dl { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--sub); }
+    .dl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .open-btn { display: inline-block; margin-top: 20px; border: 1.5px solid var(--accent); color: var(--accent); font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; transition: all .15s; }
+    .open-btn:hover { background: var(--accent); color: white; }
+
+    .trends-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+    .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 48px; }
+    .trend-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .tc-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+    .tc-body { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
+    .tc-body strong { color: var(--text); font-weight: 600; }
+
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .li-cta p { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--accent); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 24px 32px; text-align: center; font-size: 13px; margin-top: 0; }
+    footer a { color: #94a3b8; text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">Trends<span>OnFire</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Retail</a>
+    <a href="../ecommerce/index.html">E-Commerce</a>
+    <a href="../omnichannel/index.html">Omni-Channel</a>
+    <a href="../people/index.html">People & HR</a>
+    <a href="../transformation/index.html">Transformation</a>
+  </div>
+</nav>
+
+<div class="sec-header">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Retail</div>
+    <div class="sec-eyebrow">Retail Intelligence</div>
+    <h1>Retail Trends</h1>
+    <p>Tracking inventory visibility, fulfilment capability, and digital readiness across Netherlands-based retailers — backed by real data.</p>
+  </div>
+</div>
+
+<main>
+  <div class="featured-label">Featured tracker</div>
+
+  <div class="monitor-card">
+    <div class="monitor-header">
+      <h2>🇳🇱 Real-Time Inventory Visibility Monitor — Netherlands</h2>
+      <a href="../../v2/index.html" target="_blank">Open full tracker →</a>
+    </div>
+    <div class="monitor-preview">
+      <div class="preview-stats">
+        <div class="pstat"><div class="pl">Retailers assessed</div><div class="pn">43</div><div class="ps">NL · 6 categories</div></div>
+        <div class="pstat adv"><div class="pl">Advanced</div><div class="pn">23</div><div class="ps">5–6 criteria met</div></div>
+        <div class="pstat dev"><div class="pl">Developing</div><div class="pn">18</div><div class="ps">3–4 criteria met</div></div>
+        <div class="pstat bas"><div class="pl">Basic</div><div class="pn">2</div><div class="ps">0–2 criteria met</div></div>
+      </div>
+      <div class="dist-bar">
+        <div class="db-seg adv"></div>
+        <div class="db-seg dev"></div>
+        <div class="db-seg bas"></div>
+      </div>
+      <div class="dist-legend">
+        <div class="dl"><div class="dl-dot" style="background:#0d9488"></div>Advanced (53%)</div>
+        <div class="dl"><div class="dl-dot" style="background:#f59e0b"></div>Developing (42%)</div>
+        <div class="dl"><div class="dl-dot" style="background:#ef4444"></div>Basic (5%)</div>
+      </div>
+      <a class="open-btn" href="../../v2/index.html" target="_blank">Open interactive tracker — filter, sort, explore all 43 retailers →</a>
+    </div>
+  </div>
+
+  <div class="trends-title">Key Retail Trends — 2026</div>
+  <div class="trends-grid">
+
+    <div class="trend-card">
+      <div class="tc-tag">🔥 Inventory Visibility</div>
+      <div class="tc-title">Real-time stock transparency is now a conversion driver, not a nice-to-have</div>
+      <div class="tc-body">Retailers showing live stock levels, low-stock alerts, and variant availability see <strong>15–25% higher add-to-cart rates</strong>. Yet 47% of NL fashion retailers still don't surface stock signals at variant level.</div>
+    </div>
+
+    <div class="trend-card">
+      <div class="tc-tag">📦 Fulfilment</div>
+      <div class="tc-title">Delivery date accuracy has become a trust signal — not just a logistics metric</div>
+      <div class="tc-body">Shoppers treat promised delivery dates as a purchase commitment. <strong>Retailers who miss dates lose 34% of that customer's future spend</strong>. Only 53% of NL retailers currently show delivery dates tied to real inventory.</div>
+    </div>
+
+    <div class="trend-card">
+      <div class="tc-tag">🏬 Store Integration</div>
+      <div class="tc-title">Store-level inventory visibility is the new baseline for omni-channel retail</div>
+      <div class="tc-body">Department stores and electronics retailers lead on store-level stock visibility. <strong>Fashion lags significantly</strong> — only 4 out of 13 NL fashion brands assessed allow shoppers to check store-level availability online.</div>
+    </div>
+
+    <div class="trend-card">
+      <div class="tc-tag">🔔 Engagement</div>
+      <div class="tc-title">Back-in-stock notifications: the most under-used re-engagement tool in retail</div>
+      <div class="tc-body">Brands with back-in-stock alerts recover <strong>up to 22% of lost demand</strong>. Luxury brands are missing this almost entirely — only 2 of 5 NL luxury brands assessed offer this feature.</div>
+    </div>
+
+    <div class="trend-card">
+      <div class="tc-tag">🛍️ Luxury Retail</div>
+      <div class="tc-title">Luxury's deliberate scarcity strategy conflicts with digital shopper expectations</div>
+      <div class="tc-body">Luxury brands resist low-stock urgency messaging to protect brand positioning. But <strong>digital-native luxury shoppers expect transparency</strong>. Tiffany & Co leads with 5/6 criteria — others risk losing younger affluent consumers.</div>
+    </div>
+
+  </div>
+
+  <div class="li-cta">
+    <p>Want the full analysis? Olga Bressers publishes in-depth articles on retail trends and omni-channel strategy on LinkedIn.</p>
+    <a href="https://www.linkedin.com/in/olgabressers/" target="_blank">Read on LinkedIn →</a>
+  </div>
+</main>
+
+<footer>© 2026 TrendsOnFire · Curated by <a href="https://www.linkedin.com/in/olgabressers/">Olga Bressers</a></footer>
+</body>
+</html>

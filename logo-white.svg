@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- White version — for use on dark/navy backgrounds -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" width="330" height="76">
+  <defs>
+    <linearGradient id="flameGradW" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="55%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ascending bar chart icon (white) -->
+  <rect x="4"  y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.35"/>
+  <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.65"/>
+  <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+
+  <!-- Flame -->
+  <path d="M42,18 C36,14 34,7 38.5,2 C39.5,0.8 41,0 42,0 C43,0 44.5,0.8 45.5,2 C50,7 48,14 42,18 Z" fill="url(#flameGradW)"/>
+  <path d="M42,14 C39,11 38.5,7 41,4 C41.5,3.2 42,3 42,3 C43,5 43.5,8 42,12 C42.5,10 43.5,7.5 43,5.5 C45,8 44.5,12 42,14 Z" fill="rgba(255,255,255,0.28)"/>
+
+  <!-- Wordmark (white) -->
+  <text y="54" font-family="'Helvetica Neue', 'Arial Black', Arial, sans-serif" font-size="34" letter-spacing="-0.8">
+    <tspan x="66" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#f97316">Fire</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="66" y="68" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="white" opacity="0.5" letter-spacing="1.8" font-weight="400">WHERE BUSINESS TRENDS MEET REAL DATA</text>
+</svg>

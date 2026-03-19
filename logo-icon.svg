@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 72" width="56" height="72">
+  <defs>
+    <linearGradient id="flameGradIcon" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="55%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ascending bar chart -->
+  <rect x="2"  y="42" width="14" height="26" rx="3" fill="#0f2340" opacity="0.32"/>
+  <rect x="20" y="26" width="14" height="42" rx="3" fill="#0f2340" opacity="0.6"/>
+  <rect x="38" y="10" width="14" height="58" rx="3" fill="#0f2340"/>
+
+  <!-- Flame above tallest bar (centered at x=45) -->
+  <path d="M45,10 C38,6 36,0 41,0 C42,-0 43,0 45,0 C47,0 48,0 49,0 C54,0 52,6 45,10 Z" fill="url(#flameGradIcon)"/>
+  <path d="M45,7 C42,5 41.5,2 44,1 C44.5,0.5 45,0.5 45,0.5 C46,2 46.5,4.5 45,7 C45.5,5.5 46.5,3.5 46,2 C47.5,4 47,6.5 45,7 Z" fill="rgba(255,255,255,0.28)"/>
+</svg>
