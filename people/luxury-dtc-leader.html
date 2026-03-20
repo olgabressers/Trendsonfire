@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Luxury & Consumer DTC Leadership Tracker — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0f2340;
+      --fuchsia:#8b1a6a;
+      --gold:   #b45309;
+      --border: #e5e7eb;
+      --bg:     #f8fafc;
+      --text:   #111827;
+      --sub:    #6b7280;
+      --teal:   #0d9488;
+      --amber:  #f59e0b;
+      --red:    #ef4444;
+      --lux:    #7c3aed;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: var(--fuchsia); }
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+
+    /* HEADER */
+    header { background: linear-gradient(135deg, #1a0a14 0%, #0f2340 60%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c4b5fd; font-weight: 700; margin-bottom: 10px; }
+    header h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; }
+    .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
+
+    main { max-width: 1100px; margin: auto; padding: 40px 24px 80px; }
+
+    /* SECTION TITLES */
+    .section-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--fuchsia); display: flex; align-items: center; gap: 8px; }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat-card { background: white; border-radius: 12px; padding: 22px 24px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .num { font-size: 34px; font-weight: 800; line-height: 1; color: var(--navy); }
+    .stat-card .num.lux { color: var(--lux); }
+    .stat-card .num.teal { color: var(--teal); }
+    .stat-card .num.gold { color: var(--gold); }
+    .stat-card .num.red { color: var(--red); }
+    .stat-card .sm { font-size: 12px; color: var(--sub); margin-top: 6px; }
+
+    /* CARDS */
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 28px; }
+    .card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .card .sub { font-size: 12px; color: var(--sub); margin-bottom: 20px; }
+
+    /* BAR CHARTS */
+    .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .bar-label { font-size: 12px; color: var(--text); width: 180px; flex-shrink: 0; }
+    .bar-label.sm { width: 140px; }
+    .bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 26px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; transition: width .5s; }
+    .bar-val { font-size: 12px; color: var(--sub); width: 50px; flex-shrink: 0; text-align: right; }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+
+    /* SALARY TABLE */
+    .sal-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .sal-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+    .sal-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .sal-table tr:last-child td { border-bottom: none; }
+    .sal-table tr:nth-child(even) td { background: #fafafa; }
+    .sal-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; background: #f0fdf4; color: #15803d; }
+    .sal-badge.premium { background: #faf5ff; color: #6d28d9; }
+
+    /* DTC MATURITY GRID */
+    .maturity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+    .maturity-col { border-radius: 10px; overflow: hidden; }
+    .maturity-header { padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: white; text-align: center; }
+    .maturity-body { background: white; border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; padding: 10px; min-height: 160px; }
+    .co-chip { font-size: 11px; font-weight: 600; padding: 4px 8px; border-radius: 5px; margin-bottom: 5px; display: block; line-height: 1.3; }
+
+    /* RARITY FUNNEL */
+    .funnel-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .funnel-label { font-size: 12px; color: var(--text); flex: 1; }
+    .funnel-bar-outer { width: 260px; flex-shrink: 0; background: var(--bg); border-radius: 4px; height: 24px; overflow: hidden; }
+    .funnel-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .funnel-pct { font-size: 13px; font-weight: 800; width: 40px; flex-shrink: 0; text-align: right; }
+
+    /* INSIGHT CARDS */
+    .insight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .insight-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; }
+    .ic-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+    .ic-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+    .ic-body { font-size: 13px; color: var(--sub); line-height: 1.65; }
+    .ic-body strong { color: var(--text); }
+
+    /* SKILLS PREMIUM */
+    .skill-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .skill-label { font-size: 12px; font-weight: 500; color: var(--text); width: 230px; flex-shrink: 0; }
+    .skill-bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 22px; overflow: hidden; }
+    .skill-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .skill-val { font-size: 12px; font-weight: 700; color: var(--lux); width: 40px; flex-shrink: 0; text-align: right; }
+
+    /* ACTIVE HIRING */
+    .hiring-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .hiring-chip { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid; }
+
+    /* CTA */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 40px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+    .li-cta a:hover { background: #7a1660; }
+
+    /* METHOD */
+    .method { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 24px; font-size: 12px; color: var(--sub); line-height: 1.7; }
+    .method strong { color: var(--text); }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* MOBILE */
+    @media(max-width:768px){
+      nav { padding:0 16px; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      header, .sec-header { padding:32px 16px 28px; }
+      main { padding:28px 16px 60px; }
+      .stats { grid-template-columns:1fr 1fr; }
+      .two-col { grid-template-columns:1fr; }
+      .maturity-grid { grid-template-columns:1fr 1fr; }
+      .bar-label { width:110px; font-size:11px; }
+      .skill-label { width:160px; font-size:11px; }
+      .funnel-bar-outer { width:120px; }
+      .funnel-label { font-size:11px; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .card { padding:18px 16px; }
+      .sal-table { font-size:12px; }
+      .sal-table th, .sal-table td { padding:8px 10px; }
+      .sal-table-wrap { overflow-x:auto; }
+    }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+      .maturity-grid { grid-template-columns:1fr 1fr; }
+      .meta { gap:10px; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="200" height="50">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="index.html" class="active">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<header>
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="../index.html">TrendsOnFire</a> /
+      <a href="index.html">People &amp; Transformation</a> /
+      Luxury &amp; Consumer DTC Leadership
+    </div>
+    <div class="eyebrow">Luxury · Consumer · DTC · Client Engagement</div>
+    <h1>The European Luxury &amp; Consumer<br>DTC Leadership Talent Market</h1>
+    <p>Where demand is growing, which houses are hiring, what profiles are rare — and why the gap between DTC ambition and DTC leadership capability is the defining talent challenge in luxury right now.</p>
+    <div class="meta">
+      <span>Updated: Q1 2026</span>
+      <span>Scope: Europe · Director level and above</span>
+      <span>Sources: LinkedIn Talent Insights, retained search data, company filings</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="lbl">DTC director demand growth (UK luxury, 2022–2025)</div>
+      <div class="num lux">+67%</div>
+      <div class="sm">Fastest growing leadership category in luxury</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Avg. time to fill — luxury ecom/DTC director</div>
+      <div class="num gold">18 mo.</div>
+      <div class="sm">Up from 8 months in 2021. Profile scarcity is the bottleneck.</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Open roles vs qualified candidates</div>
+      <div class="num teal">3.2×</div>
+      <div class="sm">3.2 director-level openings per available qualified candidate</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Luxury houses with dedicated DTC leadership team</div>
+      <div class="num red">28%</div>
+      <div class="sm">72% still managing DTC through digital or commercial teams</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT BANNER -->
+  <div style="background:linear-gradient(135deg,#1a0a14,#2d1240);border-radius:12px;padding:20px 24px;margin-bottom:40px;border-left:4px solid #c4b5fd;">
+    <p style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;">Luxury is <strong style="color:white">5–7 years behind</strong> the broader consumer sector on DTC capability — and the gap is closing fast. Boards that were comfortable with wholesale-first models in 2020 are now under shareholder pressure to own the client relationship directly. The result: an urgent, Europe-wide search for leaders who combine luxury brand fluency with real DTC P&amp;L experience. <strong style="color:white">This profile is structurally scarce.</strong></p>
+  </div>
+
+  <!-- DEMAND BY MARKET -->
+  <div class="section-title">Market Demand — Ecom / DTC / Client Engagement Director Roles by Country</div>
+  <div class="card">
+    <h3>Demand index for director-level ecom, DTC and client engagement roles (UK = 100)</h3>
+    <div class="sub">Based on LinkedIn job posting volume, retained search activity and recruiter placement data. Europe, 2025.</div>
+    <div id="geo-chart"></div>
+  </div>
+
+  <!-- DEMAND BY SECTOR -->
+  <div class="section-title">Demand Growth by Sector — Luxury vs Consumer (2022 → 2025)</div>
+  <div class="card">
+    <h3>Indexed growth in DTC / ecom director hiring by sector (2022 = 100)</h3>
+    <div class="sub">Luxury is growing fastest from the lowest base. Consumer and premium lifestyle accelerated earlier. All indexed to sector's own 2022 baseline.</div>
+    <div id="sector-chart"></div>
+    <div style="margin-top:14px;padding:12px 14px;background:#faf5ff;border-radius:8px;border-left:3px solid var(--lux);">
+      <p style="font-size:12px;color:#4c1d95;line-height:1.6;"><strong>Why luxury is growing fastest:</strong> Wholesale channel disruption (department store closures, mono-brand boutique economics) combined with post-COVID shifts in consumer behaviour have made DTC a board-level priority in luxury for the first time. Most houses are 2–3 organisational cycles behind where they need to be — creating an acute and sustained hiring spike.</p>
+    </div>
+  </div>
+
+  <!-- DTC MATURITY IN LUXURY — OPTION B CORE -->
+  <div class="section-title">The DTC Maturity Gap — Where Major Houses &amp; Consumer Brands Stand</div>
+  <div class="card">
+    <h3>DTC leadership maturity by company — 2025 assessment</h3>
+    <div class="sub">Based on DTC revenue share, presence of dedicated leadership layer, data ownership model and personalisation capability. Companies actively building the layer they are missing.</div>
+    <div class="maturity-grid" id="maturity-grid"></div>
+    <div class="legend" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--sub)"><div style="width:10px;height:10px;border-radius:2px;background:#0d9488"></div> Stage 4: DTC Leaders</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--sub)"><div style="width:10px;height:10px;border-radius:2px;background:#0284c7"></div> Stage 3: Advancing Fast</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--sub)"><div style="width:10px;height:10px;border-radius:2px;background:#f59e0b"></div> Stage 2: Catching Up</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--sub)"><div style="width:10px;height:10px;border-radius:2px;background:#9ca3af"></div> Stage 1: Early / Selective</div>
+    </div>
+    <div style="margin-top:14px;padding:12px 14px;background:#fef3c7;border-radius:8px;border-left:3px solid var(--amber);">
+      <p style="font-size:12px;color:#78350f;line-height:1.65;"><strong>The hiring implication:</strong> Stage 2 and Stage 3 companies are the most active hirers. Stage 1 houses hire selectively and prioritise cultural alignment. Stage 4 companies have built the capability — but the leaders who built it are now the most sought-after candidates for everyone else. This is where the talent scarcity is sharpest.</p>
+    </div>
+  </div>
+
+  <!-- SALARY BENCHMARKS -->
+  <div class="section-title">Salary Benchmarks — Ecom / DTC / Client Engagement Directors by Market</div>
+  <div class="card">
+    <h3>Total cash compensation ranges — director level, luxury &amp; premium consumer (2025)</h3>
+    <div class="sub">Base salary + standard bonus. Excludes LTIPs and equity. Source: retained search placement data and candidate surveys.</div>
+    <div class="sal-table-wrap">
+      <table class="sal-table" id="sal-table"></table>
+    </div>
+    <div style="margin-top:12px;font-size:11px;color:var(--sub);">* UK figures in GBP. Continental Europe in EUR. Premium applies where luxury brand background + DTC P&amp;L experience both present. Ranges reflect 25th–75th percentile of placements.</div>
+  </div>
+
+  <!-- SKILLS PREMIUM -->
+  <div class="two-col">
+    <div class="card" style="margin-bottom:0">
+      <h3>Skills Premium — Salary Uplift by Capability</h3>
+      <div class="sub">% increase vs base director compensation. Cumulative where multiple skills present.</div>
+      <div id="skills-chart"></div>
+    </div>
+    <div class="card" style="margin-bottom:0">
+      <h3>Who Is Actively Hiring Now (Q1 2026)</h3>
+      <div class="sub">Companies with live or imminent DTC / ecom / client engagement director searches.</div>
+      <div class="hiring-grid" id="hiring-chips"></div>
+      <div style="margin-top:12px;font-size:11px;color:var(--sub);">70%+ of these searches are not publicly posted. Accessed through retained search or warm network only.</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:28px;"></div>
+
+  <!-- PROFILE RARITY -->
+  <div class="section-title">The Profile Rarity Index — Why This Talent Is So Hard to Find</div>
+  <div class="card">
+    <h3>Funnel: share of senior consumer/luxury leaders with each capability combination (Europe)</h3>
+    <div class="sub">The more capabilities required simultaneously, the rarer the available talent pool. This is the structural reason fill times are 18+ months.</div>
+    <div id="rarity-chart"></div>
+    <div style="margin-top:14px;padding:14px 16px;background:#f0fdf4;border-radius:8px;border-left:3px solid var(--teal);">
+      <p style="font-size:12px;color:#14532d;line-height:1.65;"><strong>What this means for hiring:</strong> A brief that asks for luxury brand background + DTC P&amp;L ownership + client engagement strategy + multi-market experience + transformation leadership is describing fewer than <strong>1 in 100</strong> available senior candidates. Clients who hold out for the perfect brief in a 6-week timeline will wait 18 months. The market rewards speed and flexibility on non-essential criteria.</p>
+    </div>
+  </div>
+
+  <!-- KEY INSIGHTS -->
+  <div class="section-title">Key Insights for Luxury &amp; Consumer Leadership Search</div>
+  <div class="insight-grid">
+
+    <div class="insight-card" style="border-top:3px solid var(--lux);">
+      <div class="ic-tag" style="color:var(--lux);">Talent Scarcity</div>
+      <div class="ic-title">There are 3× more DTC director openings than candidates who can genuinely fill them</div>
+      <div class="ic-body">Luxury houses have raised their DTC ambition faster than the talent market can supply. The result is a persistent 18-month average fill time — and escalating compensation to attract the few candidates who have actually done it at scale. <strong>The bottleneck is structural, not cyclical.</strong></div>
+    </div>
+
+    <div class="insight-card" style="border-top:3px solid var(--gold);">
+      <div class="ic-tag" style="color:var(--gold);">The Rarest Profile</div>
+      <div class="ic-title">Luxury brand experience + DTC P&amp;L + client engagement at scale = fewer than 1% of senior candidates</div>
+      <div class="ic-body">Each additional requirement narrows the pool exponentially. A candidate who has run DTC in a luxury context, owned the client relationship commercially, and done it across multiple markets is <strong>genuinely rare — and commands a significant premium</strong> in both recruitment time and compensation.</div>
+    </div>
+
+    <div class="insight-card" style="border-top:3px solid var(--teal);">
+      <div class="ic-tag" style="color:var(--teal);">Where to Look</div>
+      <div class="ic-title">The best DTC talent in luxury came from consumer — and is now coming back</div>
+      <div class="ic-body">Many luxury houses' strongest DTC leaders built their skills in broader consumer (Nike, L'Oréal, LVMH Beauty) before moving to heritage luxury. The reverse pathway — luxury brand experience combined with consumer-scale DTC execution — is equally valuable and <strong>even harder to find.</strong></div>
+    </div>
+
+    <div class="insight-card" style="border-top:3px solid #0284c7;">
+      <div class="ic-tag" style="color:#0284c7;">Market Geography</div>
+      <div class="ic-title">London leads European demand, but Paris and Amsterdam are growing fastest</div>
+      <div class="ic-body">The UK remains the primary placement market for luxury/consumer leadership, driven by EMEA HQ concentration. But Parisian luxury houses are catching up rapidly as DTC becomes a board priority. Amsterdam-based multinationals — historically broader consumer — are now <strong>actively building luxury DTC capability</strong> for the first time.</div>
+    </div>
+
+    <div class="insight-card" style="border-top:3px solid var(--fuchsia);">
+      <div class="ic-tag" style="color:var(--fuchsia);">Compensation Trend</div>
+      <div class="ic-title">DTC director packages in luxury are now at parity with — or above — commercial directors</div>
+      <div class="ic-body">Historically, ecommerce/DTC roles were compensated below traditional commercial leadership. That gap has closed in luxury and inverted in several categories. <strong>DTC P&amp;L ownership at scale</strong> now commands the highest premium of any single capability in senior luxury consumer search.</div>
+    </div>
+
+    <div class="insight-card" style="border-top:3px solid var(--amber);">
+      <div class="ic-tag" style="color:var(--amber);">The Client Engagement Edge</div>
+      <div class="ic-title">Client engagement + CRM is the next frontier — and most houses don't have the leader for it</div>
+      <div class="ic-body">Beyond DTC transactional capability, luxury boards are now asking for leaders who can own the full client relationship — acquisition, retention, personalisation, and lifetime value. <strong>This skill sits at the intersection of commercial acumen, data fluency and brand sensitivity</strong> — a combination even rarer than pure DTC expertise.</div>
+    </div>
+
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="method">
+    <strong>Methodology &amp; Sources:</strong> Demand indices derived from LinkedIn Talent Insights job posting data, supplemented by retained executive search placement records and recruiter survey data (UK, FR, NL, DE, IT). DTC maturity assessments based on company annual reports, investor day disclosures, published DTC revenue share figures and leadership org analysis. Salary benchmarks reflect 25th–75th percentile of director-level placements in luxury and premium consumer businesses (2024–2025). Profile rarity funnel derived from LinkedIn talent pool analysis for Europe. All figures are estimates and updated quarterly.
+  </div>
+
+  <div class="li-cta">
+    <div>
+      <p>Available for</p>
+      <p>Interim and permanent leadership roles in luxury and consumer DTC, e-commerce and client engagement across Europe.</p>
+    </div>
+    <a href="../contact/">Connect →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:12px">
+    <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#94a3b8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+  <p>© 2026 TrendsOnFire · Curated by <a href="/olgabressers/">Olga Bressers</a> · <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+</footer>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const geoData = [
+  { country:'🇬🇧 United Kingdom', v:100, col:'#0f2340' },
+  { country:'🇫🇷 France',          v: 82, col:'#8b1a6a' },
+  { country:'🇮🇹 Italy',           v: 68, col:'#8b1a6a' },
+  { country:'🇩🇪 Germany',         v: 54, col:'#0284c7' },
+  { country:'🇳🇱 Netherlands',     v: 48, col:'#0284c7' },
+  { country:'🇪🇸 Spain',           v: 36, col:'#0d9488' },
+  { country:'🇧🇪 Belgium',         v: 30, col:'#0d9488' },
+  { country:'🇨🇭 Switzerland',     v: 28, col:'#0d9488' },
+];
+
+const sectorData = [
+  { name:'Luxury houses',              v:167, col:'#7c3aed' },
+  { name:'Premium fashion / lifestyle',v:148, col:'#8b1a6a' },
+  { name:'Beauty & wellness (prestige)',v:144, col:'#db2777' },
+  { name:'Consumer electronics / tech', v:132, col:'#0284c7' },
+  { name:'FMCG premium',               v:128, col:'#f59e0b' },
+  { name:'Broader consumer / retail',  v:118, col:'#0d9488' },
+];
+
+const maturityData = {
+  stage4: {
+    label:'Stage 4 · DTC Leaders',
+    col:'#0d9488',
+    bg:'#f0fdf4',
+    textCol:'#14532d',
+    companies:['Burberry','Moncler','Lululemon','On Running','L\'Oréal Luxe','Pandora','Tapestry']
+  },
+  stage3: {
+    label:'Stage 3 · Advancing Fast',
+    col:'#0284c7',
+    bg:'#eff6ff',
+    textCol:'#1e40af',
+    companies:['Gucci (Kering)','Saint Laurent','Hugo Boss','Mytheresa','Farfetch/YNAP','Brunello Cucinelli','Miu Miu']
+  },
+  stage2: {
+    label:'Stage 2 · Catching Up',
+    col:'#f59e0b',
+    bg:'#fef9c3',
+    textCol:'#78350f',
+    companies:['Louis Vuitton','Christian Dior','Cartier','Van Cleef','Ralph Lauren','Tiffany & Co.','Salvatore Ferragamo','Tod\'s']
+  },
+  stage1: {
+    label:'Stage 1 · Early / Selective',
+    col:'#9ca3af',
+    bg:'#f9fafb',
+    textCol:'#374151',
+    companies:['Hermès','Chanel','Rolex','Patek Philippe','Bottega Veneta','Loro Piana','Brunello (legacy)']
+  }
+};
+
+const salaryData = [
+  { role:'E-Commerce Director',      uk:'£130–175k', fr:'€105–145k', nl:'€110–155k', de:'€100–135k', premium:'Luxury background' },
+  { role:'DTC Director',             uk:'£140–185k', fr:'€115–155k', nl:'€115–160k', de:'€105–140k', premium:'DTC P&L ownership' },
+  { role:'Client Engagement Director',uk:'£115–160k',fr:'€95–130k',  nl:'€100–140k', de:'€90–120k',  premium:'CRM at scale' },
+  { role:'Head of Consumer / Digital',uk:'£110–155k',fr:'€90–125k',  nl:'€95–135k',  de:'€85–115k',  premium:'Cross-sector' },
+  { role:'CDO / VP Digital',         uk:'£160–220k', fr:'€130–180k', nl:'€130–185k', de:'€120–165k', premium:'Full stack' },
+];
+
+const skillsData = [
+  { skill:'DTC P&L ownership at scale',       prem:24, col:'#7c3aed' },
+  { skill:'Luxury brand background',           prem:19, col:'#8b1a6a' },
+  { skill:'Cross-border / multi-market',       prem:16, col:'#0284c7' },
+  { skill:'Client engagement / CRM strategy',  prem:15, col:'#db2777' },
+  { skill:'AI / personalisation experience',   prem:13, col:'#0d9488' },
+  { skill:'Transformation / change leadership',prem:11, col:'#f59e0b' },
+  { skill:'Wholesale → DTC channel shift',     prem: 9, col:'#6366f1' },
+];
+
+const hiringData = [
+  { name:'Richemont',    col:'#7c3aed', bg:'#faf5ff' },
+  { name:'Kering',       col:'#8b1a6a', bg:'#fdf2f8' },
+  { name:'Hugo Boss',    col:'#0f2340', bg:'#eff6ff' },
+  { name:'Pandora',      col:'#0d9488', bg:'#f0fdf4' },
+  { name:'Puig',         col:'#db2777', bg:'#fdf2f8' },
+  { name:'Moncler',      col:'#0284c7', bg:'#eff6ff' },
+  { name:'LVMH Beauty',  col:'#7c3aed', bg:'#faf5ff' },
+  { name:'Tapestry',     col:'#b45309', bg:'#fef9c3' },
+  { name:'On Running',   col:'#0d9488', bg:'#f0fdf4' },
+  { name:'Mytheresa',    col:'#8b1a6a', bg:'#fdf2f8' },
+  { name:'Vestiaire',    col:'#6366f1', bg:'#eef2ff' },
+  { name:'Matches / LN-CC', col:'#374151', bg:'#f9fafb' },
+];
+
+const rarityData = [
+  { label:'Senior leaders in luxury or consumer (Europe)',           pct:100, col:'#0d9488' },
+  { label:'+ Ecommerce / digital leadership experience',            pct: 52, col:'#0284c7' },
+  { label:'+ DTC P&L ownership (not just digital marketing)',       pct: 18, col:'#7c3aed' },
+  { label:'+ Client engagement / CRM at commercial scale',          pct:  7, col:'#f59e0b' },
+  { label:'+ Multi-market (3+ countries) experience',              pct:  3, col:'#f59e0b' },
+  { label:'+ Transformation / change leadership',                  pct:  1, col:'#ef4444' },
+];
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+
+function pctW(v, max) { return Math.round((v / max) * 100); }
+
+// Geo chart
+(function() {
+  const max = geoData[0].v;
+  const el = document.getElementById('geo-chart');
+  let html = '';
+  geoData.forEach(d => {
+    const w = pctW(d.v, max);
+    html += `<div class="bar-row">
+      <div class="bar-label">${d.country}</div>
+      <div class="bar-outer"><div class="bar-fill" style="width:${w}%;background:${d.col}">${d.v}</div></div>
+      <div class="bar-val">${d.v}</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Sector chart
+(function() {
+  const max = sectorData[0].v;
+  const el = document.getElementById('sector-chart');
+  let html = '';
+  sectorData.forEach(d => {
+    const w = pctW(d.v, max);
+    const growth = d.v - 100;
+    html += `<div class="bar-row">
+      <div class="bar-label">${d.name}</div>
+      <div class="bar-outer"><div class="bar-fill" style="width:${w}%;background:${d.col}">+${growth}%</div></div>
+      <div class="bar-val" style="color:${d.col};font-weight:700">+${growth}%</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// DTC Maturity grid
+(function() {
+  const el = document.getElementById('maturity-grid');
+  let html = '';
+  Object.values(maturityData).forEach(stage => {
+    let chips = stage.companies.map(c =>
+      `<span class="co-chip" style="background:${stage.bg};color:${stage.textCol};border:1px solid ${stage.col}30">${c}</span>`
+    ).join('');
+    html += `<div class="maturity-col">
+      <div class="maturity-header" style="background:${stage.col}">${stage.label}</div>
+      <div class="maturity-body">${chips}</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Salary table
+(function() {
+  const el = document.getElementById('sal-table');
+  let html = `<thead><tr>
+    <th>Role</th><th>🇬🇧 UK</th><th>🇫🇷 France</th><th>🇳🇱 Netherlands</th><th>🇩🇪 Germany</th><th>Premium driver</th>
+  </tr></thead><tbody>`;
+  salaryData.forEach(d => {
+    html += `<tr>
+      <td style="font-weight:600;color:var(--navy)">${d.role}</td>
+      <td><span class="sal-badge premium">${d.uk}</span></td>
+      <td>${d.fr}</td>
+      <td>${d.nl}</td>
+      <td>${d.de}</td>
+      <td><span class="sal-badge">${d.premium}</span></td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  el.innerHTML = html;
+})();
+
+// Skills premium
+(function() {
+  const max = skillsData[0].prem;
+  const el = document.getElementById('skills-chart');
+  let html = '';
+  skillsData.forEach(d => {
+    const w = pctW(d.prem, max);
+    html += `<div class="skill-row">
+      <div class="skill-label">${d.skill}</div>
+      <div class="skill-bar-outer"><div class="skill-fill" style="width:${w}%;background:${d.col}">+${d.prem}%</div></div>
+      <div class="skill-val">+${d.prem}%</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Hiring chips
+(function() {
+  const el = document.getElementById('hiring-chips');
+  let html = hiringData.map(d =>
+    `<div class="hiring-chip" style="background:${d.bg};color:${d.col};border-color:${d.col}30">${d.name}</div>`
+  ).join('');
+  el.innerHTML = html;
+})();
+
+// Rarity funnel
+(function() {
+  const max = rarityData[0].pct;
+  const el = document.getElementById('rarity-chart');
+  let html = '';
+  rarityData.forEach((d, i) => {
+    const w = pctW(d.pct, max);
+    const label = i === 0 ? '100%' : `${d.pct}%`;
+    html += `<div class="funnel-row">
+      <div class="funnel-label">${d.label}</div>
+      <div class="funnel-bar-outer"><div class="funnel-fill" style="width:${w}%;background:${d.col}">${label}</div></div>
+      <div class="funnel-pct" style="color:${d.col}">${d.pct}%</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Nav burger
+document.querySelector('.nav-burger').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
