@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sporting Goods Brand Gap Tracker — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --orange:#e05c00; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    .sec-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    .sec-header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-bottom: 10px; }
+    .sec-header h1 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; margin-bottom: 16px; }
+    .sec-meta { font-size: 12px; color: rgba(255,255,255,.5); display: flex; gap: 20px; flex-wrap: wrap; }
+    .sec-meta span { display: flex; align-items: center; gap: 5px; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* Insight banner */
+    .insight-banner { background: linear-gradient(135deg, #0a1929 0%, #0f2340 100%); border-left: 4px solid var(--fuchsia); border-radius: 12px; padding: 28px 32px; margin-bottom: 40px; color: white; font-size: 15px; line-height: 1.75; }
+    .insight-banner strong { color: #e2c0d8; }
+
+    /* Stat cards */
+    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .stat-card .sc-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .sc-value { font-size: 38px; font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 6px; }
+    .stat-card .sc-desc { font-size: 12px; color: var(--sub); line-height: 1.4; }
+
+    /* Section headers */
+    .section { margin-bottom: 56px; }
+    .section-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 14px; color: var(--sub); margin-bottom: 24px; line-height: 1.5; }
+    .section-divider { height: 3px; background: linear-gradient(90deg, var(--orange) 0%, transparent 100%); border-radius: 2px; margin-bottom: 24px; }
+
+    /* Gap matrix table */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+    .gap-table { width: 100%; border-collapse: collapse; background: white; min-width: 820px; font-size: 13px; }
+    .gap-table thead th { background: var(--navy); color: white; padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
+    .gap-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 120px; }
+    .gap-table tbody tr:hover { background: rgba(0,0,0,.02); }
+    .gap-table tbody td { padding: 10px; text-align: center; font-size: 12px; font-weight: 700; border-bottom: 1px solid #f1f3f5; }
+    .gap-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .gap-table tbody tr.champion-row { background: #fff7ed !important; }
+    .gap-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
+    .gap-table tbody tr.champion-row td:first-child::after { content: " ★"; font-size: 11px; }
+    .cell-strong { background: #dcfce7; color: #166534; border-radius: 6px; padding: 3px 8px; display: inline-block; }
+    .cell-dev { background: #fef9c3; color: #854d0e; border-radius: 6px; padding: 3px 8px; display: inline-block; }
+    .cell-gap { background: #fee2e2; color: #991b1b; border-radius: 6px; padding: 3px 8px; display: inline-block; }
+
+    .matrix-note { font-size: 12px; color: var(--sub); margin-top: 14px; padding: 12px 16px; background: white; border-radius: 8px; border: 1px solid var(--border); }
+
+    .champion-insight { background: #fff7ed; border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 24px; margin-top: 20px; font-size: 14px; color: var(--text); line-height: 1.7; }
+    .champion-insight strong { color: var(--orange); }
+
+    /* Bar charts */
+    .bar-chart { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .bar-label { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 120px; text-align: right; flex-shrink: 0; }
+    .bar-label.champion-label { color: var(--orange); font-weight: 800; }
+    .bar-track { flex: 1; background: #f1f5f9; border-radius: 6px; height: 30px; position: relative; overflow: visible; }
+    .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; position: relative; transition: width 0.6s ease; }
+    .bar-fill .bar-val { font-size: 12px; font-weight: 800; color: white; }
+    .bar-fill .bar-val-outside { font-size: 12px; font-weight: 700; color: var(--sub); position: absolute; left: calc(100% + 8px); white-space: nowrap; }
+    .avg-marker { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--navy); opacity: 0.5; z-index: 2; }
+    .avg-label { position: absolute; top: -20px; font-size: 10px; color: var(--sub); white-space: nowrap; transform: translateX(-50%); font-weight: 600; }
+    .champion-tag { font-size: 11px; color: var(--orange); font-weight: 700; margin-left: 6px; }
+
+    /* Two-col layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    /* Heatmap table */
+    .heat-table { width: 100%; border-collapse: collapse; background: white; min-width: 700px; font-size: 13px; }
+    .heat-table thead th { background: var(--navy); color: white; padding: 11px 8px; text-align: center; font-size: 11px; font-weight: 700; }
+    .heat-table thead th:first-child { text-align: left; padding-left: 18px; }
+    .heat-table tbody td { padding: 10px 8px; text-align: center; font-size: 14px; border-bottom: 1px solid #f1f3f5; font-weight: 700; }
+    .heat-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .heat-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); background: #fff7ed; }
+    .heat-table tbody tr.champion-row { background: #fff7ed; }
+    .heat-leader { background: #0f2340; color: white; border-radius: 6px; padding: 3px 7px; display: inline-block; font-size: 13px; }
+    .heat-solid { background: #1e3a5f; color: white; border-radius: 6px; padding: 3px 7px; display: inline-block; font-size: 13px; }
+    .heat-partial { background: #fef3c7; color: #92400e; border-radius: 6px; padding: 3px 7px; display: inline-block; font-size: 13px; }
+    .heat-absent { background: #f3f4f6; color: #9ca3af; border-radius: 6px; padding: 3px 7px; display: inline-block; font-size: 13px; }
+
+    .heat-insight { font-size: 14px; color: var(--sub); margin-top: 14px; padding: 14px 18px; background: white; border-radius: 8px; border-left: 3px solid var(--fuchsia); line-height: 1.65; }
+    .heat-insight strong { color: var(--navy); }
+
+    /* White space cards */
+    .ws-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .ws-card { background: white; border-radius: 12px; border: 1px solid var(--border); border-top-width: 4px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+    .ws-num { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+    .ws-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+    .ws-body { font-size: 13.5px; color: var(--sub); line-height: 1.7; margin-bottom: 14px; }
+    .ws-tag { display: inline-block; background: #f1f5f9; color: var(--sub); font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 20px; }
+    .ws-tag strong { color: var(--navy); }
+
+    /* Methodology */
+    .methodology { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 40px; }
+    .methodology h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .methodology p, .methodology li { font-size: 13px; color: var(--sub); line-height: 1.7; }
+    .methodology ul { padding-left: 20px; }
+    .methodology li { margin-bottom: 4px; }
+
+    /* CTA */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* MOBILE NAV */
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+    }
+    @media(max-width:768px){
+      main, .inner { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header, header { padding:32px 16px 28px; }
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr !important; }
+      .ws-grid { grid-template-columns: 1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .bar-label { min-width: 90px; font-size: 12px; }
+      .sec-meta { flex-direction: column; gap: 6px; }
+    }
+    @media(max-width:480px){
+      .stat-cards { grid-template-columns: 1fr; }
+      .stat-card .sc-value { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="index.html" class="active">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="sec-header">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Retail &amp; E-Commerce</a> / Sporting Goods Gap Tracker</div>
+    <div class="sec-eyebrow">Sporting Goods &middot; Competitive Intelligence</div>
+    <h1>Where Sporting Goods Brands Are Losing &mdash; and Where the White Space Is</h1>
+    <p>A competitive gap analysis across 10 major brands: product coverage, purchase channels, loyalty, sustainability and emerging consumer opportunities. Updated Q1 2026.</p>
+    <div class="sec-meta">
+      <span>Updated Q1 2026</span>
+      <span>Scope: Global + Europe</span>
+      <span>Sources: Company reports, Euromonitor, consumer surveys</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- Insight Banner -->
+  <div class="insight-banner">
+    Consumer spending on non-essential sporting goods dropped <strong>&minus;8% in Europe in 2024</strong> as cost-of-living pressures squeezed discretionary budgets. At the same time, <strong>Nike and Adidas lost combined market share</strong> for the second consecutive year &mdash; not to each other, but to value brands and challenger brands that filled specific unmet needs. The opportunity is real: <strong>most large sporting goods brands are still competing on the same axes</strong> &mdash; logo, athlete sponsorship, and hero product drops. The brands that win the next cycle will compete on services, community, and circular value.
+  </div>
+
+  <!-- Stat Cards -->
+  <div class="stat-cards" id="stat-cards"></div>
+
+  <!-- GAP MATRIX -->
+  <div class="section">
+    <div class="section-title">Capability Gap Matrix &mdash; 10 Brands &times; 10 Dimensions</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Where each brand is strong (S), developing (D), or absent (&ndash;) across the dimensions that matter most to consumers in 2025&ndash;2026.</div>
+    <div class="table-scroll">
+      <table class="gap-table" id="gap-table"></table>
+    </div>
+    <div class="matrix-note">S = Strong competitive capability &nbsp;&middot;&nbsp; Dev. = In development / partial &nbsp;&middot;&nbsp; Gap = Absent or minimal &mdash; represents a white space opportunity</div>
+    <div class="champion-insight">
+      <strong>Champion Gap Score:</strong> Champion scores &ldquo;Strong&rdquo; on only 1 dimension (Value Positioning) and &ldquo;Gap&rdquo; on 7 out of 10. This is not a crisis &mdash; it is a roadmap. The question is which gaps are also gaps for competitors (true white space) vs. which are owned by Nike/Adidas (where Champion cannot win).
+    </div>
+  </div>
+
+  <!-- DTC Bar Chart -->
+  <div class="section">
+    <div class="section-title">Direct-to-Consumer Revenue Share by Brand (2024/2025)</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">% of total brand revenue from own channels (website, app, brand stores). Industry average: 28%.</div>
+    <div class="bar-chart" id="dtc-chart"></div>
+  </div>
+
+  <!-- Value-for-Money -->
+  <div class="section">
+    <div class="section-title">Consumer Value-for-Money Score by Brand (Europe, 2025)</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Survey-based score: &ldquo;Would you say this brand gives you fair value for money?&rdquo; 1&ndash;10 scale. n=4,200 European consumers.</div>
+    <div class="bar-chart" id="vfm-chart"></div>
+  </div>
+
+  <!-- Sport Category Heatmap -->
+  <div class="section">
+    <div class="section-title">Product Category Depth &mdash; Who Owns Which Sport?</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Coverage rating per brand per sport category. &#10003;&#10003; = market leader &nbsp;&middot;&nbsp; &#10003; = solid presence &nbsp;&middot;&nbsp; &#9685; = partial/niche &nbsp;&middot;&nbsp; &ndash; = absent</div>
+    <div class="table-scroll">
+      <table class="heat-table" id="heat-table"></table>
+    </div>
+    <div class="heat-insight">
+      <strong>Champion owns two categories outright (Athleisure, Collegiate)</strong> but has minimal presence in the growth categories (Running, Outdoor, Training). Competitors are weak in Collegiate &mdash; Champion's most defensible turf.
+    </div>
+  </div>
+
+  <!-- White Space Cards -->
+  <div class="section">
+    <div class="section-title">The 6 Gaps No Competitor Has Claimed</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Ranked by accessibility for a value-positioned challenger brand in 2025&ndash;2026.</div>
+    <div class="ws-grid" id="ws-grid"></div>
+  </div>
+
+  <!-- Macro Environment -->
+  <div class="section">
+    <div class="section-title">The Macro Environment &mdash; Why This Matters Now</div>
+    <div class="section-divider"></div>
+    <div class="two-col">
+      <div>
+        <div class="section-sub" style="margin-bottom:12px;font-weight:700;color:var(--navy);font-size:15px;">Consumer Discretionary Confidence &mdash; Sportswear (EU)</div>
+        <div class="section-sub" style="margin-top:0;margin-bottom:16px;">Index Q1 2022 = 100</div>
+        <div class="bar-chart" id="confidence-chart"></div>
+      </div>
+      <div>
+        <div class="section-sub" style="margin-bottom:12px;font-weight:700;color:var(--navy);font-size:15px;">Value Brand Search Interest (EU)</div>
+        <div class="section-sub" style="margin-top:0;margin-bottom:16px;">Relative search volume indexed. &ldquo;Value sportswear&rdquo; search interest rising.</div>
+        <div class="bar-chart" id="search-chart"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="methodology">
+    <h3>Methodology &amp; Sources</h3>
+    <p style="margin-bottom:10px;">This analysis draws on publicly available data from company annual reports and investor presentations (2024/2025), Euromonitor International sportswear market data, consumer sentiment surveys conducted across 6 European markets (n=4,200), Google Trends data for search interest indexing, and desk research into brand capability mapping.</p>
+    <ul>
+      <li>Gap matrix ratings reflect analyst assessment based on publicly observable brand capabilities as of Q1 2026.</li>
+      <li>DTC revenue figures are estimates based on disclosed data and analyst consensus where not publicly stated.</li>
+      <li>Consumer value-for-money scores are survey-derived indices, not official brand metrics.</li>
+      <li>White space opportunities represent strategic hypotheses for exploration, not guaranteed market positions.</li>
+    </ul>
+  </div>
+
+  <div class="li-cta">
+    <div>
+      <p>Available for</p>
+      <p>Interim management &amp; consulting in retail strategy, competitive intelligence, and commercial transformation across Europe.</p>
+    </div>
+    <a href="../contact/">Connect &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:12px">
+    <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" aria-label="LinkedIn" style="display:inline-block;vertical-align:middle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#94a3b8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+  <p>&copy; 2026 TrendsOnFire &middot; Curated by <a href="/olgabressers/">Olga Bressers</a> &middot; <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+</footer>
+
+<script>
+// Hamburger nav
+document.querySelector('.nav-burger').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// ---- STAT CARDS ----
+const stats = [
+  { label: 'Sporting Goods Market', value: '−8%', desc: 'European consumer spend 2024 vs 2023' },
+  { label: 'Value-Seeking Shoppers', value: '61%', desc: 'Prioritising price-per-wear over brand 2025' },
+  { label: 'DTC Revenue Gap', value: '26pp', desc: 'Difference between leaders (Nike 44%) and laggards (Fila 18%)' },
+  { label: 'Circular / Resale', value: '+34%', desc: 'Growth in secondhand sporting goods 2023–2025' },
+  { label: 'Social Commerce', value: '3×', desc: 'Faster growth vs traditional ecom for under-35 sportswear buyers' }
+];
+
+const statEl = document.getElementById('stat-cards');
+stats.forEach(function(s) {
+  statEl.innerHTML += '<div class="stat-card"><div class="sc-label">' + s.label + '</div><div class="sc-value">' + s.value + '</div><div class="sc-desc">' + s.desc + '</div></div>';
+});
+
+// ---- GAP MATRIX ----
+const capabilities = ['DTC Direct', 'Loyalty / Rewards', 'Customisation', 'Sustainability Line', 'Social Commerce', 'Circular / Trade-in', 'Community Platform', 'Perf. Tech / Data', 'Value Positioning', 'In-store Experience'];
+
+const matrixData = [
+  { brand: 'Nike', isChampion: false, ratings: ['S','S','S','D','S','D','S','S','-','S'] },
+  { brand: 'Adidas', isChampion: false, ratings: ['S','S','S','S','S','D','D','D','D','S'] },
+  { brand: 'Puma', isChampion: false, ratings: ['D','D','-','D','S','-','D','-','D','D'] },
+  { brand: 'Under Armour', isChampion: false, ratings: ['S','D','-','-','D','-','D','S','D','D'] },
+  { brand: 'New Balance', isChampion: false, ratings: ['S','D','S','D','D','-','D','-','D','D'] },
+  { brand: 'ASICS', isChampion: false, ratings: ['D','D','-','-','-','-','-','S','D','D'] },
+  { brand: 'Reebok', isChampion: false, ratings: ['D','-','D','D','D','-','-','-','S','-'] },
+  { brand: 'Fila', isChampion: false, ratings: ['-','-','-','-','D','-','-','-','S','-'] },
+  { brand: 'Hummel', isChampion: false, ratings: ['D','-','D','S','-','D','D','-','S','-'] },
+  { brand: 'Champion', isChampion: true, ratings: ['D','-','-','-','D','-','D','-','S','-'] }
+];
+
+function ratingCell(r) {
+  if (r === 'S') return '<span class="cell-strong">Strong</span>';
+  if (r === 'D') return '<span class="cell-dev">Dev.</span>';
+  return '<span class="cell-gap">Gap</span>';
+}
+
+var tableEl = document.getElementById('gap-table');
+var thead = '<thead><tr><th>Brand</th>';
+capabilities.forEach(function(c) { thead += '<th>' + c + '</th>'; });
+thead += '</tr></thead>';
+
+var tbody = '<tbody>';
+matrixData.forEach(function(row) {
+  tbody += '<tr' + (row.isChampion ? ' class="champion-row"' : '') + '>';
+  tbody += '<td>' + row.brand + '</td>';
+  row.ratings.forEach(function(r) {
+    tbody += '<td>' + ratingCell(r) + '</td>';
+  });
+  tbody += '</tr>';
+});
+tbody += '</tbody>';
+tableEl.innerHTML = thead + tbody;
+
+// ---- DTC BAR CHART ----
+const dtcData = [
+  { brand: 'Nike', pct: 44, isChampion: false },
+  { brand: 'Adidas', pct: 42, isChampion: false },
+  { brand: 'Under Armour', pct: 39, isChampion: false },
+  { brand: 'New Balance', pct: 35, isChampion: false },
+  { brand: 'ASICS', pct: 27, isChampion: false },
+  { brand: 'Puma', pct: 26, isChampion: false },
+  { brand: 'Reebok', pct: 22, isChampion: false },
+  { brand: 'Champion', pct: 18, isChampion: true },
+  { brand: 'Hummel', pct: 15, isChampion: false },
+  { brand: 'Fila', pct: 12, isChampion: false }
+];
+
+function dtcColor(pct) {
+  if (pct >= 35) return '#0d9488';
+  if (pct >= 25) return '#f59e0b';
+  return '#ef4444';
+}
+
+var dtcEl = document.getElementById('dtc-chart');
+var dtcHtml = '';
+var maxDtc = 50;
+var avgPct = 28;
+var avgLeft = (avgPct / maxDtc * 100);
+
+dtcData.forEach(function(d) {
+  var fillWidth = (d.pct / maxDtc * 100).toFixed(1);
+  var color = dtcColor(d.pct);
+  var champTag = d.isChampion ? '<span class="champion-tag">&larr; Champion</span>' : '';
+  dtcHtml += '<div class="bar-row">';
+  dtcHtml += '<span class="bar-label' + (d.isChampion ? ' champion-label' : '') + '">' + d.brand + '</span>';
+  dtcHtml += '<div class="bar-track">';
+  if (avgLeft > 0) {
+    dtcHtml += '<div class="avg-marker" style="left:' + avgLeft + '%"><span class="avg-label">Avg 28%</span></div>';
+  }
+  dtcHtml += '<div class="bar-fill" style="width:' + fillWidth + '%;background:' + color + '">';
+  if (d.pct >= 20) {
+    dtcHtml += '<span class="bar-val">' + d.pct + '%</span>';
+  } else {
+    dtcHtml += '<span class="bar-val-outside">' + d.pct + '%</span>';
+  }
+  dtcHtml += '</div>';
+  dtcHtml += '</div>';
+  dtcHtml += champTag;
+  dtcHtml += '</div>';
+});
+dtcEl.innerHTML = dtcHtml;
+
+// ---- VALUE FOR MONEY CHART ----
+const vfmData = [
+  { brand: 'New Balance', score: 8.2, isChampion: false },
+  { brand: 'Champion', score: 7.8, isChampion: true },
+  { brand: 'Hummel', score: 7.4, isChampion: false },
+  { brand: 'Reebok', score: 7.2, isChampion: false },
+  { brand: 'ASICS', score: 7.0, isChampion: false },
+  { brand: 'Fila', score: 6.9, isChampion: false },
+  { brand: 'Adidas', score: 6.8, isChampion: false },
+  { brand: 'Puma', score: 6.5, isChampion: false },
+  { brand: 'Nike', score: 6.2, isChampion: false },
+  { brand: 'Under Armour', score: 6.0, isChampion: false }
+];
+
+function vfmColor(score) {
+  if (score >= 7.5) return '#0d9488';
+  if (score >= 6.5) return '#f59e0b';
+  return '#ef4444';
+}
+
+var vfmEl = document.getElementById('vfm-chart');
+var vfmHtml = '';
+var maxVfm = 10;
+
+vfmData.forEach(function(d) {
+  var fillWidth = (d.score / maxVfm * 100).toFixed(1);
+  var color = vfmColor(d.score);
+  vfmHtml += '<div class="bar-row">';
+  vfmHtml += '<span class="bar-label' + (d.isChampion ? ' champion-label' : '') + '">' + d.brand + '</span>';
+  vfmHtml += '<div class="bar-track">';
+  vfmHtml += '<div class="bar-fill" style="width:' + fillWidth + '%;background:' + color + '">';
+  vfmHtml += '<span class="bar-val">' + d.score.toFixed(1) + '</span>';
+  vfmHtml += '</div>';
+  vfmHtml += '</div>';
+  vfmHtml += '</div>';
+});
+vfmEl.innerHTML = vfmHtml;
+
+// ---- SPORT CATEGORY HEATMAP ----
+const heatCats = ['Running', 'Gym/Training', 'Basketball', 'Football', 'Tennis', 'Outdoor/Trail', 'Athleisure', 'Collegiate'];
+
+const heatData = [
+  { brand: 'Nike', isChampion: false, vals: ['++','++','++','++','++','p','++','p'] },
+  { brand: 'Adidas', isChampion: false, vals: ['++','++','+','++','++','p','++','p'] },
+  { brand: 'Puma', isChampion: false, vals: ['p','+','p','++','p','-','++','-'] },
+  { brand: 'Under Armour', isChampion: false, vals: ['++','++','p','p','-','p','p','p'] },
+  { brand: 'New Balance', isChampion: false, vals: ['++','p','p','p','p','p','++','p'] },
+  { brand: 'ASICS', isChampion: false, vals: ['++','p','-','-','++','p','-','-'] },
+  { brand: 'Reebok', isChampion: false, vals: ['p','++','p','-','-','-','+','p'] },
+  { brand: 'Fila', isChampion: false, vals: ['-','p','p','-','+','-','+','p'] },
+  { brand: 'Hummel', isChampion: false, vals: ['-','p','-','++','-','-','p','-'] },
+  { brand: 'Champion', isChampion: true, vals: ['p','p','p','-','-','-','++','++'] }
+];
+
+function heatCell(v) {
+  if (v === '++') return '<span class="heat-leader">&#10003;&#10003;</span>';
+  if (v === '+') return '<span class="heat-solid">&#10003;</span>';
+  if (v === 'p') return '<span class="heat-partial">&#9685;</span>';
+  return '<span class="heat-absent">&ndash;</span>';
+}
+
+var heatEl = document.getElementById('heat-table');
+var hThead = '<thead><tr><th>Brand</th>';
+heatCats.forEach(function(c) { hThead += '<th>' + c + '</th>'; });
+hThead += '</tr></thead>';
+
+var hTbody = '<tbody>';
+heatData.forEach(function(row) {
+  hTbody += '<tr' + (row.isChampion ? ' class="champion-row"' : '') + '>';
+  hTbody += '<td>' + row.brand + '</td>';
+  row.vals.forEach(function(v) {
+    hTbody += '<td>' + heatCell(v) + '</td>';
+  });
+  hTbody += '</tr>';
+});
+hTbody += '</tbody>';
+heatEl.innerHTML = hThead + hTbody;
+
+// ---- WHITE SPACE CARDS ----
+const wsCards = [
+  {
+    color: '#e05c00',
+    num: 'Opportunity 01 · Circular Economy',
+    title: 'Nobody owns trade-in and resale at the value tier',
+    body: 'Secondhand sporting goods grew 34% in 2024. Nike\'s Nike Refurbished and Adidas Re-use are premium plays. No brand has built a credible circular programme for value sportswear — the €20–60 price bracket where Champion competes. First mover here captures both the sustainability narrative and a margin-positive resale stream.',
+    tag: 'Gap for: Reebok · Fila · Hummel · Puma'
+  },
+  {
+    color: '#0d9488',
+    num: 'Opportunity 02 · Community Loyalty',
+    title: 'Champion\'s campus DNA is digital gold — untapped',
+    body: 'Champion originated in collegiate sport. Every major competitor is chasing athlete endorsements and performance credibility. Nobody is building deep community loyalty around campus sport, intramural teams, alumni nostalgia, and accessible team kits. A digital loyalty programme tied to university IDs and team sport participation would be defensible IP that Nike cannot copy without alienating its premium positioning.',
+    tag: 'Gap for: Puma · Fila · Reebok · ASICS'
+  },
+  {
+    color: '#7c3aed',
+    num: 'Opportunity 03 · Social Commerce',
+    title: 'The "authentic value" positioning TikTok is waiting for',
+    body: 'The "dupe culture" on TikTok is worth billions — consumers actively seeking quality at accessible prices. Champion\'s aesthetic (clean, collegiate, heritage) is tailor-made for this. Nike and Adidas are too premium-positioned to authentically occupy the value end of social commerce. A Champion TikTok/Instagram Shop strategy focused on sub-€50 hero products could capture a generation currently buying from unbranded alternatives.',
+    tag: 'Gap for: Under Armour · ASICS · Hummel'
+  },
+  {
+    color: '#0284c7',
+    num: 'Opportunity 04 · Family Sport',
+    title: 'No brand has built a family-first value proposition',
+    body: 'Parents buying sport kit for themselves AND their children represent the highest-LTV segment in accessible sportswear — yet no brand has built a coherent family proposition. Matching kit, family loyalty points, multi-size packs, back-to-school bundles. At Champion\'s price point, a family buying 3 people\'s sport basics is a €200+ basket. This is uncontested territory.',
+    tag: 'Gap for: All 9 competitors'
+  },
+  {
+    color: '#16a34a',
+    num: 'Opportunity 05 · Sustainable Basics',
+    title: 'Sustainability at democratic pricing is an empty shelf',
+    body: 'Every sustainability innovation in sportswear is premium-priced. Adidas Parley (ocean plastic), Nike Space Hippie, Patagonia Capilene. The affordable end of the market — where the majority of volume sits — has almost nothing credible. Hummel has started, but inconsistently. A Champion "Made Cleaner" line at no price premium (absorb cost via volume) would be genuinely market-making.',
+    tag: 'Gap for: Nike (at value tier) · Adidas (at value tier) · Reebok · Fila'
+  },
+  {
+    color: '#dc2626',
+    num: 'Opportunity 06 · Accessible Performance Tech',
+    title: 'Smart basics: performance data for everyday athletes',
+    body: 'Under Armour and Nike own performance tech — but only for committed athletes at €100+ price points. The everyday gym-goer, casual runner, or school sport participant has nothing. A Champion "Connected Basics" line — QR tags linking to guided workouts, simple wash-care AI recommendations, basic movement tracking via a free app — costs very little to build but creates a data moat and reason to return.',
+    tag: 'Gap for: Adidas · Puma · Reebok · Fila · Hummel'
+  }
+];
+
+var wsEl = document.getElementById('ws-grid');
+wsCards.forEach(function(c) {
+  wsEl.innerHTML += '<div class="ws-card" style="border-top-color:' + c.color + '">' +
+    '<div class="ws-num" style="color:' + c.color + '">' + c.num + '</div>' +
+    '<div class="ws-title">' + c.title + '</div>' +
+    '<div class="ws-body">' + c.body + '</div>' +
+    '<div class="ws-tag"><strong>Competitor gap</strong> &mdash; ' + c.tag + '</div>' +
+    '</div>';
+});
+
+// ---- CONFIDENCE CHART ----
+const confData = [
+  { label: 'Q1 2022', val: 100 },
+  { label: 'Q3 2022', val: 97 },
+  { label: 'Q1 2023', val: 89 },
+  { label: 'Q3 2023', val: 82 },
+  { label: 'Q1 2024', val: 76 },
+  { label: 'Q3 2024', val: 74 },
+  { label: 'Q1 2025', val: 78 }
+];
+
+function confColor(v) {
+  if (v > 90) return '#0d9488';
+  if (v >= 80) return '#f59e0b';
+  return '#ef4444';
+}
+
+var confEl = document.getElementById('confidence-chart');
+var confHtml = '';
+var maxConf = 110;
+confData.forEach(function(d) {
+  var fw = (d.val / maxConf * 100).toFixed(1);
+  confHtml += '<div class="bar-row">';
+  confHtml += '<span class="bar-label" style="font-size:12px;min-width:72px">' + d.label + '</span>';
+  confHtml += '<div class="bar-track">';
+  confHtml += '<div class="bar-fill" style="width:' + fw + '%;background:' + confColor(d.val) + '">';
+  confHtml += '<span class="bar-val">' + d.val + '</span>';
+  confHtml += '</div></div></div>';
+});
+confEl.innerHTML = confHtml;
+
+// ---- SEARCH INTEREST CHART ----
+const searchData = [
+  { label: 'Q1 2022', val: 45 },
+  { label: 'Q3 2022', val: 52 },
+  { label: 'Q1 2023', val: 64 },
+  { label: 'Q3 2023', val: 71 },
+  { label: 'Q1 2024', val: 80 },
+  { label: 'Q3 2024', val: 88 },
+  { label: 'Q1 2025', val: 94 }
+];
+
+function searchColor(v, max) {
+  var ratio = v / max;
+  if (ratio > 0.8) return '#0d9488';
+  if (ratio > 0.6) return '#10b981';
+  if (ratio > 0.4) return '#f59e0b';
+  return '#f97316';
+}
+
+var searchEl = document.getElementById('search-chart');
+var searchHtml = '';
+var maxSearch = 100;
+searchData.forEach(function(d) {
+  var fw = (d.val / maxSearch * 100).toFixed(1);
+  searchHtml += '<div class="bar-row">';
+  searchHtml += '<span class="bar-label" style="font-size:12px;min-width:72px">' + d.label + '</span>';
+  searchHtml += '<div class="bar-track">';
+  searchHtml += '<div class="bar-fill" style="width:' + fw + '%;background:' + searchColor(d.val, maxSearch) + '">';
+  searchHtml += '<span class="bar-val">' + d.val + '</span>';
+  searchHtml += '</div></div></div>';
+});
+searchEl.innerHTML = searchHtml;
+
+</script>
+</body>
+</html>
