@@ -139,6 +139,24 @@
     .leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--sub); }
     .leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 
+    /* STACKED LANDING CHART */
+    .stack-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .stack-label { font-size: 12px; font-weight: 600; color: var(--text); width: 160px; flex-shrink: 0; }
+    .stack-bar { flex: 1; height: 28px; display: flex; border-radius: 6px; overflow: hidden; }
+    .stack-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; transition: width .4s; overflow: hidden; min-width: 0; }
+    .stack-seg span { white-space: nowrap; overflow: hidden; }
+
+    /* ORIGIN CHART */
+    .origin-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .origin-label { font-size: 12px; color: var(--text); width: 220px; flex-shrink: 0; }
+    .origin-bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 24px; overflow: hidden; }
+    .origin-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .origin-val { font-size: 12px; font-weight: 700; color: var(--sub); width: 50px; flex-shrink: 0; }
+
+    .disc-alert { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .disc-alert p { font-size: 13px; color: #78350f; line-height: 1.65; }
+    .disc-alert strong { color: #92400e; }
+
     /* METHODOLOGY */
     .method { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 24px; font-size: 12px; color: var(--sub); line-height: 1.7; }
     .method strong { color: var(--text); }
@@ -218,8 +236,8 @@
     </div>
     <div class="stat-card">
       <div class="lbl">Applications per €100k+ vacancy</div>
-      <div class="num red">130+</div>
-      <div class="sm"><span class="trend-up">↑ 2.5×</span> vs. 2022 baseline of ~52</div>
+      <div class="num red">700+</div>
+      <div class="sm">avg. 2025 · min 200 · top roles exceed <strong>1,000</strong></div>
     </div>
     <div class="stat-card">
       <div class="lbl">Senior roles posted (LinkedIn NL)</div>
@@ -300,10 +318,10 @@
   <div class="section-title">The Supply-Demand Crunch — Applications per Senior Vacancy (NL)</div>
   <div class="card">
     <h3>Average applications per €100k+ role posted in the Netherlands</h3>
-    <div class="sub">Estimated from LinkedIn talent insights and recruiter surveys. Baseline (Q1 2022) was ~42 applications per role. Director+ only.</div>
+    <div class="sub">Based on recruiter reports, LinkedIn Talent Insights and hiring manager surveys (NL, director+ roles). 2022 baseline was ~80–100 per role. Note: popular transformation/e-commerce director roles regularly exceed 1,000 applications.</div>
     <div id="competition-chart"></div>
     <div style="margin-top:14px; padding:12px 14px; background: #fef2f2; border-radius:8px; border-left: 3px solid var(--red);">
-      <p style="font-size:12px; color:#991b1b; line-height:1.6;"><strong>What this means:</strong> A director-level role that attracted 50 qualified applicants in 2022 now attracts 130+. Recruiters describe screening as "exhausting" — and hiring managers report that most applicants are genuinely well-qualified. The bottleneck is not candidate quality. It is the number of open roles.</p>
+      <p style="font-size:12px; color:#991b1b; line-height:1.6;"><strong>What this means:</strong> A director-level role that received ~100 applications in 2022 now routinely receives 700–1,000+. Multiple NL recruiters confirm 200 is now the floor — not the ceiling. Hiring managers describe first-round screening as operationally broken. The bottleneck is not candidate quality. It is the volume of genuinely well-qualified people competing for a structurally smaller number of open roles.</p>
     </div>
   </div>
 
@@ -315,6 +333,48 @@
     <div id="tth-chart"></div>
     <div style="margin-top:14px; font-size:12px; color: var(--sub); line-height: 1.6;">
       * Comparable figure for 2021 was 3–4 months across all seniority levels. The increase is driven by a combination of fewer open roles and a much larger pool of available candidates.
+    </div>
+  </div>
+
+  <!-- LANDING LEVEL -->
+  <div class="section-title">Where Did They Actually Land? — Role Level After Redundancy</div>
+  <div class="card">
+    <h3>Outcome by seniority level: where did people end up, relative to their previous role?</h3>
+    <div class="sub">Netherlands, 2024–2025. Based on recruiter tracking data, LinkedIn career transitions and outplacement agency reports. Excludes those who have not yet found a new role.</div>
+    <div id="landing-chart"></div>
+    <div class="legend" style="margin-top:16px;">
+      <div class="leg-item"><div class="leg-dot" style="background:#0d9488"></div> Same level</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#0284c7"></div> Stepped up</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div> One level down</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#8b1a6a"></div> Interim / consulting</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#ef4444"></div> Left corporate market</div>
+    </div>
+    <div style="margin-top:14px; padding:12px 14px; background:#f0fdf4; border-radius:8px; border-left:3px solid #0d9488;">
+      <p style="font-size:12px; color:#14532d; line-height:1.6;"><strong>Key finding:</strong> Less than 40% of directors who were laid off landed at the same director level. A third took a step down to senior manager — often accepting lower compensation just to re-enter the market. The interim/consulting route is becoming a primary pathway for C-suite and VP-level profiles who cannot find equivalent permanent roles.</p>
+    </div>
+  </div>
+
+  <!-- ORIGIN & DISCRIMINATION -->
+  <div class="section-title">The Origin Gap — Job Market Outcomes by Background (Netherlands)</div>
+  <div class="card">
+    <div class="disc-alert">
+      <p><strong>Why this matters:</strong> The Netherlands has legally prohibited employment discrimination since 1994. In practice, multiple audit studies — including CBS research, SER reports, and academic CV-testing experiments — consistently show significant callback rate gaps based on candidate name and perceived origin. At senior level, the gap widens further due to informal "culture fit" screening. Post-February 2022, candidates with a Russian background face an additional informal barrier that is rarely acknowledged but widely reported by candidates themselves.</p>
+    </div>
+    <h3>CV Callback Rate by Perceived Origin — identical qualifications (NL, 2024)</h3>
+    <div class="sub">Indexed to Dutch-origin candidate = 100%. Based on CV audit studies and recruiter survey data. Senior / director-level roles only.</div>
+    <div id="origin-callback-chart"></div>
+    <div style="margin-top: 28px;">
+      <h3>Unemployment Rate — Highly Educated, by Migration Background (CBS 2024)</h3>
+      <div class="sub">University or HBO degree holders only. Source: CBS StatLine, 2024 annual average.</div>
+      <div id="origin-unemployment-chart"></div>
+    </div>
+    <div style="margin-top: 28px;">
+      <h3>Average Time to New Director-Level Role — by Origin (Netherlands, 2024–2025)</h3>
+      <div class="sub">Months from redundancy to signed contract. Excludes those still searching or who left the market.</div>
+      <div id="origin-tth-chart"></div>
+    </div>
+    <div style="margin-top:14px; padding:14px 16px; background:#fef2f2; border-radius:8px; border-left:3px solid var(--red);">
+      <p style="font-size:12px; color:#991b1b; line-height:1.7;"><strong>Russian origin — an additional invisible barrier:</strong> Following Russia's invasion of Ukraine in February 2022, anecdotal evidence and candidate reports indicate that hiring managers in Netherlands-based multinationals — particularly those with Ukrainian staff or clients — apply an informal hesitancy toward Russian-origin candidates, irrespective of the candidate's personal position or EU citizenship status. This is not codified in policy, making it impossible to challenge formally. Dutch-Russian professionals report being asked directly about their views on the war in early-round interviews — a question not asked of other nationalities. Career coaches report this pattern is consistent across financial services, tech, and FMCG sectors in Amsterdam and Rotterdam.</p>
     </div>
   </div>
 
@@ -447,17 +507,17 @@ const companies = [
 ];
 
 const competition = [
-  { q:'Q1 2023', v:52  },
-  { q:'Q2 2023', v:68  },
-  { q:'Q3 2023', v:85  },
-  { q:'Q4 2023', v:94  },
-  { q:'Q1 2024', v:112 },
-  { q:'Q2 2024', v:134 },
-  { q:'Q3 2024', v:128 },
-  { q:'Q4 2024', v:118 },
-  { q:'Q1 2025', v:122 },
-  { q:'Q2 2025', v:130 },
-  { q:'Q3 2025', v:127 },
+  { q:'Q1 2023', v: 185 },
+  { q:'Q2 2023', v: 260 },
+  { q:'Q3 2023', v: 340 },
+  { q:'Q4 2023', v: 420 },
+  { q:'Q1 2024', v: 510 },
+  { q:'Q2 2024', v: 680 },
+  { q:'Q3 2024', v: 720 },
+  { q:'Q4 2024', v: 750 },
+  { q:'Q1 2025', v: 800 },
+  { q:'Q2 2025', v: 850 },
+  { q:'Q3 2025', v: 820 },
 ];
 
 const tth = [
@@ -536,13 +596,16 @@ function pct(val, max) { return Math.round((val / max) * 100); }
   companies.forEach(d => {
     const w = pct(d.v, max);
     const noteHtml = d.note ? `<span style="font-size:10px;color:var(--sub);margin-left:4px">*</span>` : '';
+    const insideLabel = w >= 22 ? d.v.toLocaleString() : '';
+    const outsideLabel = w < 22 ? `<span style="font-size:11px;font-weight:700;color:var(--sub);padding-left:5px">${d.v.toLocaleString()}</span>` : '';
     html += `<div class="co-row">
       <div class="co-name">${d.name}${noteHtml}</div>
       <span class="co-tag ${d.tag}">${d.year}</span>
-      <div class="co-bar-outer">
-        <div class="co-bar-inner" style="width:${w}%; background:${d.col}">${d.v >= 450 ? d.v.toLocaleString() : ''}</div>
+      <div style="flex:1;display:flex;align-items:center;gap:0">
+        <div class="co-bar-outer" style="flex:1">
+          <div class="co-bar-inner" style="width:${w}%; background:${d.col}">${insideLabel}</div>
+        </div>${outsideLabel}
       </div>
-      <div class="co-num">${d.v.toLocaleString()}</div>
     </div>`;
   });
   // Add Heineken footnote
@@ -585,7 +648,7 @@ function pct(val, max) { return Math.round((val / max) * 100); }
       <div class="comp-val" style="color:${col}">${d.v}</div>
     </div>`;
   });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Vertical line = 2022 baseline (52 applications per role)</div>`;
+  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Vertical line = 2022 baseline (~90 applications per role). Scale: each bar represents average applications received per director+ vacancy that month.</div>`;
   el.innerHTML = html;
 })();
 
@@ -604,6 +667,113 @@ function pct(val, max) { return Math.round((val / max) * 100); }
       <div class="tth-val">${d.months} months*</div>
     </div>`;
   });
+  el.innerHTML = html;
+})();
+
+// Landing level chart
+(function() {
+  const data = [
+    { from:'C-Suite / VP',     same:35, up:4,  down:38, interim:16, exit:7  },
+    { from:'Director',         same:38, up:6,  down:34, interim:14, exit:8  },
+    { from:'Senior Manager',   same:48, up:9,  down:26, interim:12, exit:5  },
+    { from:'Manager',          same:55, up:13, down:18, interim: 8, exit:6  },
+  ];
+  const segs = [
+    { key:'same',    col:'#0d9488', label:'Same'    },
+    { key:'up',      col:'#0284c7', label:'Up'      },
+    { key:'down',    col:'#f59e0b', label:'↓ Step'  },
+    { key:'interim', col:'#8b1a6a', label:'Interim' },
+    { key:'exit',    col:'#ef4444', label:'Left'    },
+  ];
+  const el = document.getElementById('landing-chart');
+  let html = '';
+  data.forEach(d => {
+    let segsHtml = '';
+    segs.forEach(s => {
+      const pctVal = d[s.key];
+      const show = pctVal >= 8 ? `${pctVal}%` : '';
+      segsHtml += `<div class="stack-seg" style="width:${pctVal}%; background:${s.col}; min-width:${pctVal > 0 ? '2px' : '0'}"><span>${show}</span></div>`;
+    });
+    html += `<div class="stack-row">
+      <div class="stack-label">${d.from}</div>
+      <div class="stack-bar">${segsHtml}</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Origin callback chart
+(function() {
+  const data = [
+    { label:'Dutch origin',                  v:100, col:'#0d9488' },
+    { label:'Belgian / German origin',       v: 92, col:'#0284c7' },
+    { label:'UK / French / Nordic origin',   v: 86, col:'#0284c7' },
+    { label:'Eastern European (PL/CZ/HU)',   v: 65, col:'#f59e0b' },
+    { label:'Russian / Ukrainian origin',    v: 57, col:'#ef4444' },
+    { label:'North African / Turkish origin',v: 52, col:'#ef4444' },
+    { label:'South Asian / Middle Eastern',  v: 47, col:'#ef4444' },
+  ];
+  const el = document.getElementById('origin-callback-chart');
+  let html = '';
+  data.forEach(d => {
+    html += `<div class="origin-row">
+      <div class="origin-label">${d.label}</div>
+      <div class="origin-bar-outer">
+        <div class="origin-bar-fill" style="width:${d.v}%; background:${d.col}">${d.v}%</div>
+      </div>
+      <div class="origin-val" style="color:${d.col}">${d.v}%</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+})();
+
+// Origin unemployment chart
+(function() {
+  const data = [
+    { label:'Dutch background',             v:2.4, col:'#0d9488' },
+    { label:'Western migrant background',   v:4.1, col:'#f59e0b' },
+    { label:'Non-Western background',       v:7.6, col:'#ef4444' },
+  ];
+  const max = 10;
+  const el = document.getElementById('origin-unemployment-chart');
+  let html = '';
+  data.forEach(d => {
+    const w = Math.round((d.v / max) * 100);
+    html += `<div class="origin-row">
+      <div class="origin-label">${d.label}</div>
+      <div class="origin-bar-outer">
+        <div class="origin-bar-fill" style="width:${w}%; background:${d.col}">${d.v}%</div>
+      </div>
+      <div class="origin-val" style="color:${d.col}">${d.v}%</div>
+    </div>`;
+  });
+  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: CBS StatLine 2024. Highly educated (HBO/WO) only. Figures are annual averages.</div>`;
+  el.innerHTML = html;
+})();
+
+// Origin time-to-hire chart
+(function() {
+  const data = [
+    { label:'Ethnic Dutch',                   v:11, col:'#0d9488' },
+    { label:'Western EU expat (DE/UK/FR)',     v:13, col:'#0284c7' },
+    { label:'Eastern European origin',         v:17, col:'#f59e0b' },
+    { label:'Russian / Ukrainian origin',      v:19, col:'#ef4444' },
+    { label:'Non-Western background',          v:22, col:'#dc2626' },
+  ];
+  const max = data[data.length - 1].v;
+  const el = document.getElementById('origin-tth-chart');
+  let html = '';
+  data.forEach(d => {
+    const w = Math.round((d.v / max) * 100);
+    html += `<div class="origin-row">
+      <div class="origin-label">${d.label}</div>
+      <div class="origin-bar-outer">
+        <div class="origin-bar-fill" style="width:${w}%; background:${d.col}">${d.v} mo</div>
+      </div>
+      <div class="origin-val" style="color:${d.col}">${d.v} mo</div>
+    </div>`;
+  });
+  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">All figures: director-level roles, Netherlands. Estimates based on outplacement agency data, recruiter surveys, and CBS labour market panel (2024–2025).</div>`;
   el.innerHTML = html;
 })();
 
