@@ -106,6 +106,24 @@
     .ws-tag { display: inline-block; background: #f1f5f9; color: var(--sub); font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 20px; }
     .ws-tag strong { color: var(--navy); }
 
+    /* Omni-channel table */
+    .omni-table { width: 100%; border-collapse: collapse; background: white; min-width: 720px; font-size: 13px; }
+    .omni-table thead th { background: var(--navy); color: white; padding: 11px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; }
+    .omni-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 130px; }
+    .omni-table tbody td { padding: 9px 8px; text-align: center; border-bottom: 1px solid #f1f3f5; }
+    .omni-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .omni-table tbody tr.champion-row { background: #fff7ed; }
+    .omni-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
+    .omni-table tbody tr:hover { background: rgba(0,0,0,.02); }
+    .omni-adv { display:inline-block; background:#0d9488; color:white; border-radius:5px; padding:2px 8px; font-size:11px; font-weight:700; }
+    .omni-bas { display:inline-block; background:#fef3c7; color:#92400e; border-radius:5px; padding:2px 8px; font-size:11px; font-weight:700; }
+    .omni-gap { display:inline-block; background:#fee2e2; color:#991b1b; border-radius:5px; padding:2px 8px; font-size:11px; font-weight:700; }
+    .omni-score { font-weight: 800; font-size: 14px; color: var(--navy); }
+    .omni-score.score-0 { color: #dc2626; }
+    .omni-score.score-1, .omni-score.score-2 { color: #d97706; }
+    .omni-score.score-3, .omni-score.score-4 { color: #059669; }
+    .omni-score.score-5, .omni-score.score-6 { color: #0d9488; }
+
     .methodology { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 40px; }
     .methodology h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .methodology p, .methodology li { font-size: 13px; color: var(--sub); line-height: 1.7; }
@@ -173,10 +191,10 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Retail &amp; E-Commerce</a> / Sporting Goods Gap Tracker</div>
     <div class="sec-eyebrow">Sporting Goods &middot; Competitive Intelligence</div>
     <h1>Where Sporting Goods Brands Are Losing &mdash; and Where the White Space Is</h1>
-    <p>A competitive gap analysis across 18 brands: heritage sport, premium performance, outdoor, digital-native and value players. Product coverage, DTC maturity, European footprint, and 8 white space opportunities. Updated Q1 2026.</p>
+    <p>A competitive gap analysis across 18 brands: heritage sport, premium performance, outdoor, digital-native and value players. Product coverage, DTC maturity, omni-channel capability, European footprint, and 9 white space opportunities. Updated Q1 2026.</p>
     <div class="sec-meta">
       <span>Updated Q1 2026</span>
-      <span>18 brands · 10 capability dimensions</span>
+      <span>18 brands · 11 capability dimensions</span>
       <span>Scope: Global strategy + European retail presence</span>
       <span>Sources: Company reports, Euromonitor, consumer surveys</span>
     </div>
@@ -272,11 +290,25 @@
     </div>
   </div>
 
+  <!-- OMNI-CHANNEL -->
+  <div class="section">
+    <div class="section-title">Omni-channel Capability Assessment &mdash; 18 Brands &times; 6 Dimensions</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">How well each brand connects its online and physical channels: inventory visibility, click &amp; collect, ship-from-store, unified loyalty, and real-time stock. This is Olga Bressers&rsquo; specialist domain &mdash; the capability gap where a brand&rsquo;s retail estate either amplifies or erodes its digital investment.</div>
+    <div class="table-scroll">
+      <table class="omni-table" id="omni-table"></table>
+    </div>
+    <div class="matrix-note">Advanced = best-in-class implementation &nbsp;&middot;&nbsp; Basic = partial / limited rollout &nbsp;&middot;&nbsp; Gap = absent &mdash; Score = sum of Advanced criteria (max 6)</div>
+    <div class="champion-insight">
+      <strong>Champion scores 0 out of 6 omni-channel criteria.</strong> This makes it one of only two brands in this analysis (alongside Fila) with no unified commerce capability. Nike shows real-time store stock across all locations. Lululemon store staff can access your online wishlist and purchase history. Decathlon&rsquo;s app lets you reserve products at any of 1,850 European locations. Every capability that Champion lacks hands value — customer data, pricing control, repeat engagement — to wholesale intermediaries like Zalando and Sports Direct. <strong>With just 8 stores, building omni-channel infrastructure is a focused, achievable investment</strong> — not the enterprise transformation it represents for a brand with hundreds of locations.
+    </div>
+  </div>
+
   <!-- WHITE SPACE -->
   <div class="section">
-    <div class="section-title">8 White Space Opportunities &mdash; Updated for 18-Brand Landscape</div>
+    <div class="section-title">9 White Space Opportunities &mdash; Updated for 18-Brand Landscape</div>
     <div class="section-divider"></div>
-    <div class="section-sub">Ranked by accessibility for a value-positioned heritage challenger brand. Validated against the expanded 18-brand competitive landscape.</div>
+    <div class="section-sub">Ranked by accessibility for a value-positioned heritage challenger brand. Validated against the expanded 18-brand competitive landscape including omni-channel capability analysis.</div>
     <div class="ws-grid" id="ws-grid"></div>
   </div>
 
@@ -350,27 +382,27 @@ const stats = [
 })();
 
 // ---- GAP MATRIX ----
-const capabilities = ['DTC Direct','Loyalty / Rewards','Customisation','Sustainability Line','Social Commerce','Circular / Trade-in','Community Platform','Perf. Tech / Data','Value Positioning','In-store Exp.'];
+const capabilities = ['DTC Direct','Loyalty / Rewards','Customisation','Sustainability Line','Social Commerce','Circular / Trade-in','Community Platform','Perf. Tech / Data','Value Positioning','In-store Exp.','Omni-channel'];
 
 const matrixData = [
-  { brand:'Nike',           ratings:['S','S','S','D','S','D','S','S','-','S'] },
-  { brand:'Adidas',         ratings:['S','S','S','S','S','D','D','D','D','S'] },
-  { brand:'Lululemon',      ratings:['S','S','D','D','S','D','S','D','-','S'] },
-  { brand:'Gymshark',       ratings:['S','D','-','D','S','-','S','-','D','D'] },
-  { brand:'Patagonia',      ratings:['S','-','D','S','D','S','S','-','-','S'] },
-  { brand:'Arc\'teryx',     ratings:['S','D','D','D','D','D','D','-','-','S'] },
-  { brand:'On Running',     ratings:['S','D','D','S','D','S','D','D','-','D'] },
-  { brand:'The North Face', ratings:['D','S','D','D','D','D','D','D','D','S'] },
-  { brand:'Decathlon',      ratings:['D','S','-','D','D','D','D','D','S','S'] },
-  { brand:'Puma',           ratings:['D','D','-','D','S','-','D','-','D','D'] },
-  { brand:'Under Armour',   ratings:['S','D','-','-','D','-','D','S','D','D'] },
-  { brand:'New Balance',    ratings:['S','D','S','D','D','-','D','-','D','D'] },
-  { brand:'Salomon',        ratings:['D','D','-','D','D','D','D','D','D','D'] },
-  { brand:'ASICS',          ratings:['D','D','-','-','-','-','-','S','D','D'] },
-  { brand:'Reebok',         ratings:['D','-','D','D','D','-','-','-','S','-'] },
-  { brand:'Fila',           ratings:['-','-','-','-','D','-','-','-','S','-'] },
-  { brand:'Hummel',         ratings:['D','-','D','S','-','D','D','-','S','-'] },
-  { brand:'Champion',       isChampion:true, ratings:['D','-','-','-','D','-','D','-','S','-'] }
+  { brand:'Nike',           ratings:['S','S','S','D','S','D','S','S','-','S','S'] },
+  { brand:'Adidas',         ratings:['S','S','S','S','S','D','D','D','D','S','S'] },
+  { brand:'Lululemon',      ratings:['S','S','D','D','S','D','S','D','-','S','S'] },
+  { brand:'Gymshark',       ratings:['S','D','-','D','S','-','S','-','D','D','-'] },
+  { brand:'Patagonia',      ratings:['S','-','D','S','D','S','S','-','-','S','D'] },
+  { brand:'Arc\'teryx',     ratings:['S','D','D','D','D','D','D','-','-','S','D'] },
+  { brand:'On Running',     ratings:['S','D','D','S','D','S','D','D','-','D','D'] },
+  { brand:'The North Face', ratings:['D','S','D','D','D','D','D','D','D','S','D'] },
+  { brand:'Decathlon',      ratings:['D','S','-','D','D','D','D','D','S','S','S'] },
+  { brand:'Puma',           ratings:['D','D','-','D','S','-','D','-','D','D','D'] },
+  { brand:'Under Armour',   ratings:['S','D','-','-','D','-','D','S','D','D','D'] },
+  { brand:'New Balance',    ratings:['S','D','S','D','D','-','D','-','D','D','D'] },
+  { brand:'Salomon',        ratings:['D','D','-','D','D','D','D','D','D','D','-'] },
+  { brand:'ASICS',          ratings:['D','D','-','-','-','-','-','S','D','D','D'] },
+  { brand:'Reebok',         ratings:['D','-','D','D','D','-','-','-','S','-','D'] },
+  { brand:'Fila',           ratings:['-','-','-','-','D','-','-','-','S','-','-'] },
+  { brand:'Hummel',         ratings:['D','-','D','S','-','D','D','-','S','-','-'] },
+  { brand:'Champion',       isChampion:true, ratings:['D','-','-','-','D','-','D','-','S','-','-'] }
 ];
 
 function ratingCell(r) {
@@ -666,9 +698,9 @@ const wsCards = [
   },
   {
     color: '#0284c7',
-    num: 'Opportunity 04 · European Flagship Retail',
-    title: '3–5 European flagships would transform brand perception and data capability',
-    body: 'Champion operates 8 brand stores in Europe. Lululemon — founded in 1998, 26 years younger — already operates 48. Each Lululemon store generates community events, ambassador training, and first-party customer data that its competitors cannot access. A selective Champion flagship strategy in London, Paris, Amsterdam, Berlin and Milan would reposition the brand from "wholesale filler" to cultural destination, while recovering customer relationships currently owned by Zalando and Sports Direct.',
+    num: 'Opportunity 04 · European Flagship Retail + Omni-channel',
+    title: '3–5 European flagships + unified commerce: recover the customer from Zalando',
+    body: 'Champion operates 8 brand stores in Europe. Lululemon — founded in 1998, 26 years younger — already operates 48, each with full omni-channel capability: online stock visible in-store, click & collect, unified loyalty from first touch. A selective Champion flagship strategy in London, Paris, Amsterdam, Berlin and Milan — built omni-channel from day one — would reposition the brand from "wholesale filler" to cultural destination, while recovering customer relationships currently owned by Zalando and Sports Direct. Each store becomes a data asset, not just a sales point.',
     tag: 'Gap for: Gymshark (only 3 stores) · Hummel · Fila'
   },
   {
@@ -697,7 +729,14 @@ const wsCards = [
     num: 'Opportunity 08 · The Decathlon Differentiation',
     title: 'Champion\'s real rival is Decathlon — and the answer is culture, not price',
     body: 'The 18-brand analysis reveals a hard truth: Decathlon outperforms Champion on value perception (9.2 vs 7.8), category breadth (8/8 categories vs 3/8), European store presence (17 markets vs 9), and loyalty programme quality. Champion cannot win a functional contest against Decathlon. The strategic choice is to occupy the cultural space Decathlon cannot buy: heritage, collegiate identity, creator partnerships, and community rituals. "Value" alone is not a strategy when Decathlon exists. "Cultural value" — aspiration at accessible prices — is Champion\'s only defensible position.',
-    tag: 'Strategic framing for all 7 opportunities above'
+    tag: 'Strategic framing for all 8 opportunities above'
+  },
+  {
+    color: '#0f766e',
+    num: 'Opportunity 09 · Unified Commerce',
+    title: 'Zero omni-channel capability is a strategic vulnerability — and a fast win',
+    body: 'Champion is one of only two brands in this analysis with no omni-channel capability at all. No real-time stock visibility online. No click & collect. No ship-from-store. No unified loyalty. Every online visit to champion.com that cannot confirm stock availability, offer in-store pickup, or recognise an existing customer pushes the shopper back to Zalando. For a brand with just 8 stores, this is not a multi-year infrastructure project — it is a focused 6–9 month programme. Building unified commerce from the ground up means no legacy system debt: the right architecture, once. Each capability directly converts wholesale dependency into owned customer relationships, first-party data, and repeat purchase driven by Champion rather than a marketplace algorithm.',
+    tag: 'Gap for: Fila (only brand at the same level as Champion)'
   }
 ];
 
@@ -711,6 +750,53 @@ const wsCards = [
       '<div class="ws-tag"><strong>Competitor gap &mdash;</strong> '+c.tag+'</div>'+
       '</div>';
   });
+})();
+
+// ---- OMNI-CHANNEL TABLE ----
+const omniDims = ['Online Stock Visibility','Store-level Stock','Click & Collect','Ship-from-Store','Unified Loyalty','Real-time Avail.'];
+
+const omniData = [
+  { brand:'Nike',           isChampion:false, vals:['A','A','A','A','A','A'] },
+  { brand:'Adidas',         isChampion:false, vals:['A','A','A','A','A','B'] },
+  { brand:'Lululemon',      isChampion:false, vals:['A','A','A','A','A','A'] },
+  { brand:'Decathlon',      isChampion:false, vals:['A','A','A','A','A','A'] },
+  { brand:'The North Face', isChampion:false, vals:['A','B','A','B','A','B'] },
+  { brand:'Under Armour',   isChampion:false, vals:['A','B','A','B','A','B'] },
+  { brand:'New Balance',    isChampion:false, vals:['A','B','A','B','B','B'] },
+  { brand:'Patagonia',      isChampion:false, vals:['A','B','B','-','A','-'] },
+  { brand:'Arc\'teryx',     isChampion:false, vals:['A','B','A','-','A','-'] },
+  { brand:'On Running',     isChampion:false, vals:['A','B','B','-','A','-'] },
+  { brand:'ASICS',          isChampion:false, vals:['B','B','B','-','B','-'] },
+  { brand:'Puma',           isChampion:false, vals:['B','B','B','-','B','-'] },
+  { brand:'Gymshark',       isChampion:false, vals:['A','-','-','-','A','-'] },
+  { brand:'Reebok',         isChampion:false, vals:['B','-','B','-','-','-'] },
+  { brand:'Salomon',        isChampion:false, vals:['B','-','-','-','-','-'] },
+  { brand:'Hummel',         isChampion:false, vals:['B','-','-','-','-','-'] },
+  { brand:'Fila',           isChampion:false, vals:['-','-','-','-','-','-'] },
+  { brand:'Champion',       isChampion:true,  vals:['-','-','-','-','-','-'] }
+];
+
+function omniCell(v) {
+  if (v === 'A') return '<span class="omni-adv">Advanced</span>';
+  if (v === 'B') return '<span class="omni-bas">Basic</span>';
+  return '<span class="omni-gap">Gap</span>';
+}
+
+(function() {
+  var el = document.getElementById('omni-table');
+  var h = '<thead><tr><th>Brand</th>';
+  omniDims.forEach(function(d){ h += '<th>'+d+'</th>'; });
+  h += '<th>Score /6</th></tr></thead><tbody>';
+  omniData.forEach(function(row) {
+    var score = row.vals.filter(function(v){ return v === 'A'; }).length;
+    var scoreClass = 'score-' + score;
+    h += '<tr'+(row.isChampion?' class="champion-row"':'')+'>'+
+         '<td>'+row.brand+'</td>';
+    row.vals.forEach(function(v){ h += '<td>'+omniCell(v)+'</td>'; });
+    h += '<td><span class="omni-score '+scoreClass+'">'+score+'/6</span></td></tr>';
+  });
+  h += '</tbody>';
+  el.innerHTML = h;
 })();
 
 // ---- CONFIDENCE CHART ----
