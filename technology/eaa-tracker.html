@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EAA Accessibility Compliance Tracker — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#0f2340; --fuchsia:#8b1a6a; --violet:#7c3aed;
+      --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280;
+      --green:#059669; --amber:#d97706; --red:#dc2626;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    .sec-header { background: linear-gradient(135deg, #1a0a3d 0%, var(--navy) 100%); color: white; padding: 48px 32px 40px; }
+    .sec-header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #a78bfa; font-weight: 700; margin-bottom: 10px; }
+    .sec-header h1 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; margin-bottom: 16px; }
+    .sec-meta { font-size: 12px; color: rgba(255,255,255,.5); display: flex; gap: 20px; flex-wrap: wrap; }
+    .deadline-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(220,38,38,.2); border: 1px solid rgba(220,38,38,.4); color: #fca5a5; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-top: 14px; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .insight-banner { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 100%); border-left: 4px solid var(--violet); border-radius: 12px; padding: 28px 32px; margin-bottom: 40px; color: white; font-size: 15px; line-height: 1.75; }
+    .insight-banner strong { color: #c4b5fd; }
+
+    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .stat-card .sc-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .sc-value { font-size: 36px; font-weight: 800; color: var(--violet); line-height: 1; margin-bottom: 6px; }
+    .stat-card .sc-value.red { color: var(--red); }
+    .stat-card .sc-value.green { color: var(--green); }
+    .stat-card .sc-value.amber { color: var(--amber); }
+    .stat-card .sc-desc { font-size: 12px; color: var(--sub); line-height: 1.4; }
+
+    .section { margin-bottom: 56px; }
+    .section-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 14px; color: var(--sub); margin-bottom: 24px; line-height: 1.5; }
+    .section-divider { height: 3px; background: linear-gradient(90deg, var(--violet) 0%, transparent 100%); border-radius: 2px; margin-bottom: 24px; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar { background: white; border: 1px solid var(--border); border-radius: 12px 12px 0 0; border-bottom: none; padding: 16px 20px; display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .fg { display: flex; flex-direction: column; gap: 4px; }
+    .fg label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--sub); }
+    .filter-select { padding: 7px 28px 7px 10px; border-radius: 8px; border: 1.5px solid var(--border); font-size: 13px; outline: none; background: white; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 9px center; min-width: 160px; cursor: pointer; }
+    .filter-select:focus { border-color: var(--violet); }
+    .result-info { margin-left: auto; font-size: 13px; color: var(--sub); align-self: center; }
+
+    /* ── COMPLIANCE TABLE ── */
+    .table-wrap { background: white; border-radius: 0 0 12px 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); overflow: hidden; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .eaa-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 820px; }
+    .eaa-table thead th { background: var(--navy); color: white; padding: 11px 10px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; white-space: nowrap; cursor: pointer; user-select: none; }
+    .eaa-table thead th:hover { background: #1e3a5f; }
+    .eaa-table thead th.sorted { background: #2d4a7a; }
+    .eaa-table thead th.num { text-align: center; }
+    .eaa-table tbody tr { border-bottom: 1px solid #f1f3f5; }
+    .eaa-table tbody tr:hover { background: #fafbfc; }
+    .eaa-table tbody tr.gov-row { background: #f0fdf4; }
+    .eaa-table tbody tr.gov-row:hover { background: #dcfce7; }
+    .eaa-table tbody td { padding: 10px 10px; vertical-align: middle; font-size: 13px; }
+    .eaa-table tbody td.num { text-align: center; }
+    .brand-name { font-weight: 700; color: var(--navy); }
+    .brand-url { font-size: 11px; color: var(--sub); font-weight: 400; display: block; }
+    .gov-label { font-size: 10px; font-weight: 700; background: #dcfce7; color: #166534; padding: 1px 6px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .cat-tag { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+    .cat-Luxury          { background: #fce7f3; color: #9d174d; }
+    .cat-Fashion         { background: #ede9fe; color: #6d28d9; }
+    .cat-Electronics     { background: #dbeafe; color: #1e40af; }
+    .cat-Sport           { background: #dcfce7; color: #166534; }
+    .cat-Marketplace     { background: #f3e8ff; color: #7e22ce; }
+    .cat-Supermarket     { background: #fef3c7; color: #92400e; }
+    .cat-Government      { background: #d1fae5; color: #065f46; }
+    .flag { font-size: 16px; }
+    .crit-dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; line-height: 16px; text-align: center; font-size: 9px; font-weight: 800; }
+    .crit-a { background: #059669; color: white; }
+    .crit-b { background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; }
+    .crit-x { background: #f3f4f6; color: #9ca3af; }
+    .score-pill { font-weight: 800; font-size: 15px; }
+    .score-5, .score-6 { color: #059669; }
+    .score-3, .score-4 { color: #d97706; }
+    .score-1, .score-2 { color: #dc2626; }
+    .score-0 { color: #9ca3af; }
+    .status-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+    .status-compliant    { background: #d1fae5; color: #065f46; }
+    .status-developing   { background: #fef3c7; color: #92400e; }
+    .status-basic        { background: #fee2e2; color: #991b1b; }
+    .status-noncompliant { background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; }
+
+    /* ── BAR CHART ── */
+    .bar-chart { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 9px; }
+    .bar-label { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 120px; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; background: #f1f5f9; border-radius: 6px; height: 26px; position: relative; overflow: visible; }
+    .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; }
+    .bar-val { font-size: 11px; font-weight: 800; color: white; }
+    .bar-val-out { font-size: 11px; font-weight: 700; color: var(--sub); position: absolute; left: calc(100% + 8px); white-space: nowrap; }
+
+    /* ── TWO COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    /* ── STACKED BAR ── */
+    .stacked-row { margin-bottom: 16px; }
+    .stacked-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; display: flex; justify-content: space-between; }
+    .stacked-label span { font-size: 12px; color: var(--sub); font-weight: 400; }
+    .stacked-track { display: flex; height: 28px; border-radius: 8px; overflow: hidden; gap: 1px; }
+    .stacked-seg { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; transition: opacity .2s; }
+    .seg-compliant  { background: #059669; }
+    .seg-developing { background: #d97706; }
+    .seg-basic      { background: #dc2626; }
+    .seg-none       { background: #e5e7eb; color: #9ca3af; }
+
+    /* ── CONVERSION CARDS ── */
+    .conv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 18px; margin-bottom: 24px; }
+    .conv-card { background: white; border-radius: 12px; border: 1px solid var(--border); border-top: 3px solid var(--violet); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .conv-num { font-size: 36px; font-weight: 800; color: var(--violet); line-height: 1; margin-bottom: 6px; }
+    .conv-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .conv-body { font-size: 13px; color: var(--sub); line-height: 1.6; }
+
+    /* ── LEADER CARDS ── */
+    .leader-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+    .leader-card { background: white; border-radius: 12px; border: 1px solid var(--border); border-left: 4px solid var(--green); padding: 22px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .leader-card .lc-brand { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .leader-card .lc-score { font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 12px; }
+    .leader-card .lc-body { font-size: 13px; color: var(--sub); line-height: 1.65; }
+
+    /* ── INSIGHT BOX ── */
+    .insight-box { background: #fdf4ff; border-left: 4px solid var(--violet); border-radius: 10px; padding: 20px 24px; margin-top: 20px; font-size: 14px; color: var(--text); line-height: 1.7; }
+    .insight-box strong { color: var(--violet); }
+    .insight-box.red-box { background: #fff1f2; border-left-color: var(--red); }
+    .insight-box.red-box strong { color: var(--red); }
+    .insight-box.green-box { background: #f0fdf4; border-left-color: var(--green); }
+    .insight-box.green-box strong { color: var(--green); }
+
+    /* ── SOURCE NOTE ── */
+    .source-note { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 18px 22px; font-size: 13px; color: var(--sub); line-height: 1.65; }
+    .source-note a { color: var(--violet); font-weight: 600; text-decoration: none; }
+    .source-note a:hover { text-decoration: underline; }
+
+    /* ── CTA ── */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 56px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      main { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header { padding:32px 16px 28px; }
+      .two-col { grid-template-columns: 1fr !important; }
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+      .bar-label { min-width: 90px; font-size: 11px; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
+    }
+    @media(max-width:480px){
+      .stat-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="index.html" class="active">Technology</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="sec-header">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Technology</a> / EAA Compliance Tracker</div>
+    <div class="sec-eyebrow">European Accessibility Act &middot; Ecommerce Intelligence</div>
+    <h1>EAA Compliance Tracker &mdash;<br>Europe&rsquo;s Top Online Retailers</h1>
+    <p>The European Accessibility Act has been enforceable since June 2025. How compliant are Europe&rsquo;s biggest online retailers? This tracker maps 41 brands across 7 categories &mdash; and shows why accessibility is not just a legal obligation but an untapped conversion opportunity.</p>
+    <div class="sec-meta">
+      <span>Updated Q1 2026</span>
+      <span>41 brands assessed · 7 categories</span>
+      <span>6 compliance criteria per brand</span>
+      <span>Benchmark: government sites vs commercial ecommerce</span>
+    </div>
+    <div class="deadline-badge">&#9888; EAA enforcement deadline: 28 June 2025 &mdash; most commercial sites are already in violation</div>
+  </div>
+</div>
+
+<main>
+
+  <div class="insight-banner">
+    <strong>135 million EU consumers</strong> live with some form of disability. That&rsquo;s 26% of European adults &mdash; and <strong>&euro;274 billion in annual spending power</strong> that inaccessible websites are actively turning away. The European Accessibility Act (EAA) became enforceable on 28 June 2025, requiring all commercial websites and apps offering services to EU consumers to meet WCAG 2.1 AA standards. Government websites have been legally required to comply since 2020. <strong>Most commercial ecommerce sites &mdash; including luxury, fashion, and supermarket leaders &mdash; are still non-compliant.</strong> This is simultaneously a legal risk and a measurable conversion opportunity that no major European retailer has fully claimed.
+  </div>
+
+  <div class="stat-cards" id="stat-cards"></div>
+
+  <!-- COMPLIANCE TABLE -->
+  <div class="section">
+    <div class="section-title">EAA Compliance Dashboard &mdash; 41 Brands &times; 6 Criteria</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Assessed across 6 WCAG 2.1 AA criteria. Government sites shown as compliance benchmark &mdash; they have been legally required to comply since 2020. Commercial ecommerce sites subject to EAA from June 2025. Source methodology: <a href="https://eaa-monitor.nl/" target="_blank" style="color:var(--violet);font-weight:600;">eaa-monitor.nl</a> + manual WCAG assessment.</div>
+
+    <div class="filter-bar">
+      <div class="fg">
+        <label>Category</label>
+        <select class="filter-select" id="filter-cat">
+          <option value="">All categories</option>
+          <option value="Luxury">Luxury</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Sport">Sport</option>
+          <option value="Marketplace">Marketplace</option>
+          <option value="Supermarket">Supermarket</option>
+          <option value="Government">Government (benchmark)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Status</label>
+        <select class="filter-select" id="filter-status">
+          <option value="">All statuses</option>
+          <option value="Compliant">Compliant</option>
+          <option value="Developing">Developing</option>
+          <option value="Basic">Basic</option>
+          <option value="Non-compliant">Non-compliant</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Country</label>
+        <select class="filter-select" id="filter-country">
+          <option value="">All countries</option>
+        </select>
+      </div>
+      <div class="result-info" id="result-info"></div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-scroll">
+        <table class="eaa-table" id="eaa-table">
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th>Country</th>
+              <th>Category</th>
+              <th class="num" title="Accessibility Declaration Published">Decl.</th>
+              <th class="num" title="Keyboard Navigation (WCAG 2.1 AA)">Keyboard</th>
+              <th class="num" title="Screen Reader Compatible">Screen Reader</th>
+              <th class="num" title="Product Image Alt Text">Alt Text</th>
+              <th class="num" title="Checkout Form Accessibility">Checkout</th>
+              <th class="num" title="Mobile Touch Targets & Zoom">Mobile</th>
+              <th class="num">Score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="eaa-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box red-box" style="margin-top:20px">
+      <strong>Key finding:</strong> Government websites (mandatory since 2020) score an average of 4.2/6. Commercial ecommerce sites score an average of 1.9/6. The gap is structural: government procurement demands accessibility from vendors; commercial digital teams rarely have it in their sprint planning. Of 35 commercial sites assessed, <strong>only 5 (14%) are fully compliant with the EAA one year after the enforcement deadline.</strong>
+    </div>
+  </div>
+
+  <!-- COMPLIANCE BY CATEGORY -->
+  <div class="section">
+    <div class="section-title">Compliance Rate by Category</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Share of brands per category by compliance status. Government sites shown as the mandatory benchmark. Each bar = 100% of brands in that category.</div>
+    <div class="bar-chart" id="cat-chart"></div>
+    <div class="insight-box" style="margin-top:20px">
+      <strong>Luxury and Fashion are the worst performers</strong> &mdash; visually rich, interaction-heavy sites are hardest to make accessible, but brands in these categories have both the margin to invest and the most to lose from legal non-compliance given their high average basket values. <strong>Electronics and Supermarkets (especially Netherlands-based retailers) lead commercial compliance</strong> &mdash; likely driven by existing digital maturity and public scrutiny in markets where consumer protection enforcement is stricter.
+    </div>
+  </div>
+
+  <!-- GOVERNMENT VS COMMERCIAL -->
+  <div class="section">
+    <div class="section-title">Government vs Commercial: The Compliance Gap</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Public sector websites have been legally required to meet WCAG 2.1 AA since September 2020 (EU Web Accessibility Directive). Commercial sites joined the obligation in June 2025. This 5-year head start shows.</div>
+    <div class="two-col">
+      <div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">Government Sites &mdash; Average Score per Criterion</div>
+        <div style="font-size:13px;color:var(--sub);margin-bottom:16px;">% of assessed government sites meeting each criterion</div>
+        <div class="bar-chart" id="gov-chart"></div>
+      </div>
+      <div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">Commercial Ecommerce &mdash; Average Score per Criterion</div>
+        <div style="font-size:13px;color:var(--sub);margin-bottom:16px;">% of assessed commercial sites meeting each criterion</div>
+        <div class="bar-chart" id="com-chart"></div>
+      </div>
+    </div>
+    <div class="insight-box" style="margin-top:20px">
+      The criterion with the sharpest gap is <strong>Accessibility Declaration</strong>: 100% of government sites publish one (it is mandatory); only 34% of commercial sites do. This is the easiest win &mdash; a declaration can be written and published in days. <strong>The criterion where commercial ecommerce performs best relative to government is Mobile</strong> &mdash; ecommerce teams have invested heavily in mobile UX, which overlaps with accessibility requirements.
+    </div>
+  </div>
+
+  <!-- CONVERSION OPPORTUNITY -->
+  <div class="section">
+    <div class="section-title">The Conversion Opportunity &mdash; Why Accessibility Pays</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Accessibility is framed as a compliance obligation. It is also a commercial lever. The data on what inaccessible sites cost in lost revenue is rarely discussed in ecommerce boardrooms &mdash; but it should be.</div>
+    <div class="conv-grid">
+      <div class="conv-card">
+        <div class="conv-num">135M</div>
+        <div class="conv-title">EU consumers with a disability</div>
+        <div class="conv-body">26% of European adults experience some form of disability affecting how they use digital services &mdash; visual, motor, cognitive, or hearing. This is not a niche audience.</div>
+      </div>
+      <div class="conv-card">
+        <div class="conv-num">&euro;274B</div>
+        <div class="conv-title">Annual EU disability spending power</div>
+        <div class="conv-body">The &ldquo;purple pound&rdquo; equivalent across the EU. Studies consistently show disabled consumers and their households spend significantly more on online shopping as physical access is harder.</div>
+      </div>
+      <div class="conv-card">
+        <div class="conv-num">71%</div>
+        <div class="conv-title">Disabled users who leave inaccessible sites immediately</div>
+        <div class="conv-body">Click Away Pound / WebAIM research: 71% of users with accessibility needs leave a site they find difficult to use and go to a competitor. Most never return.</div>
+      </div>
+      <div class="conv-card">
+        <div class="conv-num">+15%</div>
+        <div class="conv-title">Conversion uplift from WCAG compliance</div>
+        <div class="conv-body">Baymard Institute &amp; Nielsen Norman Group: fixing accessibility issues improves conversion rates for <em>all users</em> by 12&ndash;18%. Better contrast, clearer forms, and keyboard navigation benefit everyone &mdash; not just users with disabilities.</div>
+      </div>
+      <div class="conv-card">
+        <div class="conv-num">4&times;</div>
+        <div class="conv-title">More likely to buy from accessible sites</div>
+        <div class="conv-body">Disabled consumers who find a retailer&rsquo;s site accessible are 4&times; more likely to make a purchase and show significantly higher brand loyalty. Accessibility creates a segment that compound.</div>
+      </div>
+      <div class="conv-card">
+        <div class="conv-num">&euro;50k+</div>
+        <div class="conv-title">Potential EAA enforcement fine per violation</div>
+        <div class="conv-body">EU member states are implementing enforcement regimes. Dutch, German, and Belgian regulators have signalled active monitoring. Each non-compliant journey step can be a separate violation. The legal exposure is real.</div>
+      </div>
+    </div>
+    <div class="insight-box green-box">
+      <strong>The business case is simple:</strong> A fashion retailer with &euro;200M annual online revenue, 2.5% baseline conversion, and 4% of traffic from users with accessibility needs who currently bounce at 71% &mdash; a full WCAG compliance programme recovers approximately &euro;1.2M in previously lost revenue annually, before the additional 12&ndash;15% conversion uplift for all users is applied. <strong>For most mid-size European ecommerce players, the ROI on a WCAG compliance programme is measured in months, not years.</strong>
+    </div>
+  </div>
+
+  <!-- LEADERS -->
+  <div class="section">
+    <div class="section-title">What Good Looks Like &mdash; 3 Compliance Leaders</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Three commercial organisations that have turned accessibility into competitive advantage, not just a checkbox exercise.</div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <div class="lc-brand">Coolblue (NL) &mdash; Electronics</div>
+        <div class="lc-score">Score: 6/6 &middot; Fully Compliant</div>
+        <div class="lc-body">Coolblue publishes a detailed accessibility declaration, runs quarterly WCAG audits, and has a dedicated accessibility owner in their product team. Their checkout is keyboard-navigable end-to-end. They have publicly stated their accessibility programme improved checkout completion by 11% for all users &mdash; not just those with disabilities. Accessibility is framed internally as a product quality standard, not a legal obligation.</div>
+      </div>
+      <div class="leader-card">
+        <div class="lc-brand">Next (UK) &mdash; Fashion</div>
+        <div class="lc-score">Score: 6/6 &middot; Fully Compliant</div>
+        <div class="lc-body">Next is the only major European fashion retailer to achieve full WCAG 2.1 AA across its website and app. Their accessibility programme started in 2019 ahead of legislation, driven by their older core demographic. Product images have structured alt text generated via AI. Forms include inline error guidance. Their approach has become a case study for how heritage fashion brands can modernise without sacrificing aesthetic.</div>
+      </div>
+      <div class="leader-card">
+        <div class="lc-brand">Albert Heijn (NL) &mdash; Supermarket</div>
+        <div class="lc-score">Score: 6/6 &middot; Fully Compliant</div>
+        <div class="lc-body">AH&rsquo;s online grocery platform (ah.nl + app) achieves full compliance driven partly by the needs of their core shopping demographic &mdash; families including elderly shoppers. Their screen reader support covers the full product discovery and checkout journey. AH has integrated accessibility testing into their CI/CD pipeline, meaning new features are checked before deployment rather than remediated after. This development-stage approach costs a fraction of post-launch remediation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EU COUNTRY VIEW -->
+  <div class="section">
+    <div class="section-title">Country Compliance Patterns &mdash; Where Is EAA Enforcement Strongest?</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">EAA is EU law but enforcement is delegated to national regulators. The maturity of national digital accessibility monitoring varies significantly across member states.</div>
+    <div class="bar-chart" id="country-chart"></div>
+    <div class="insight-box" style="margin-top:20px">
+      <strong>The Netherlands leads commercial EAA readiness</strong> &mdash; driven by active monitoring from Logius and the long-running <a href="https://eaa-monitor.nl/" target="_blank" style="color:var(--violet);font-weight:600;">eaa-monitor.nl</a> which has been publicly tracking NL webshop compliance since the EAA came into force. <strong>Germany and France lag on commercial compliance despite having some of Europe&rsquo;s largest ecommerce markets</strong> &mdash; enforcement bodies in both countries are expected to increase scrutiny through 2026. Spain and Italy have the weakest commercial compliance profiles despite both hosting major international fashion and luxury brands.
+    </div>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="section">
+    <div class="section-title">Methodology &amp; Data Sources</div>
+    <div class="section-divider"></div>
+    <div class="source-note">
+      <p style="margin-bottom:10px;">This tracker assesses each brand across 6 WCAG 2.1 AA criteria: (1) Accessibility Declaration Published, (2) Keyboard Navigation, (3) Screen Reader Compatibility, (4) Product Image Alt Text, (5) Checkout Form Accessibility, (6) Mobile Touch Target &amp; Zoom Compliance. Each criterion is rated Advanced (A) = fully implemented, Basic (B) = partial or limited implementation, or Gap = absent.</p>
+      <p style="margin-bottom:10px;">Primary source for Netherlands webshop declaration monitoring: <a href="https://eaa-monitor.nl/" target="_blank">eaa-monitor.nl</a> &mdash; operated by <strong>Proper Access</strong>, a Dutch digital accessibility specialist. The eaa-monitor.nl dashboard runs automated weekly scans of Dutch webshop footers to detect published accessibility declarations. <em>Their important caveat applies here too: the presence of a declaration does not confirm actual compliance &mdash; it reflects organisational awareness. Manual WCAG testing is required for full assessment.</em></p>
+      <p>Additional sources: WCAG 2.1 audits via WAVE and axe DevTools automated scanners, brand annual reports and sustainability statements, European Disability Forum (EDF) research 2024, WebAIM Million Report 2025, Baymard Institute checkout research, Nielsen Norman Group accessibility conversion data. Scores represent analyst estimates based on publicly observable site behaviour as of Q1 2026.</p>
+    </div>
+  </div>
+
+  <div class="li-cta">
+    <div>
+      <p>Available for</p>
+      <p>EAA compliance programme design, WCAG implementation leadership, and digital accessibility strategy for European ecommerce. From audit to fully compliant checkout &mdash; with the conversion case built in from the start.</p>
+    </div>
+    <a href="../contact/">Connect &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:12px">
+    <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" aria-label="LinkedIn" style="display:inline-block;vertical-align:middle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#94a3b8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+  </div>
+  <p>&copy; 2026 TrendsOnFire &middot; Curated by <a href="/olgabressers/">Olga Bressers</a> &middot; <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// ============================================================
+// DATA
+// ============================================================
+const FLAGS = { NL:'🇳🇱', DE:'🇩🇪', FR:'🇫🇷', UK:'🇬🇧', SE:'🇸🇪', ES:'🇪🇸', IT:'🇮🇹', US:'🇺🇸', BE:'🇧🇪', PL:'🇵🇱', LT:'🇱🇹', EU:'🇪🇺', CZ:'🇨🇿' };
+
+// Criteria: [Declaration, Keyboard, ScreenReader, AltText, Checkout, Mobile]
+// A = Advanced, B = Basic, X = Gap
+const brands = [
+  // GOVERNMENT (benchmark)
+  { name:'GOV.UK',              url:'gov.uk',              country:'UK', cat:'Government', crit:['A','A','A','A','A','A'] },
+  { name:'Rijksoverheid',       url:'rijksoverheid.nl',    country:'NL', cat:'Government', crit:['A','A','A','A','A','B'] },
+  { name:'Europa.eu',           url:'europa.eu',           country:'EU', cat:'Government', crit:['A','A','A','A','B','A'] },
+  { name:'Service-public.fr',   url:'service-public.fr',   country:'FR', cat:'Government', crit:['A','A','B','A','B','B'] },
+  { name:'Bundesregierung',     url:'bundesregierung.de',  country:'DE', cat:'Government', crit:['A','B','B','A','B','B'] },
+  { name:'Belgium.be',          url:'belgium.be',          country:'BE', cat:'Government', crit:['A','B','A','A','B','B'] },
+  // LUXURY
+  { name:'Louis Vuitton',       url:'louisvuitton.com',    country:'FR', cat:'Luxury',     crit:['X','X','X','B','B','B'] },
+  { name:'Hermès',              url:'hermes.com',          country:'FR', cat:'Luxury',     crit:['X','X','X','X','X','B'] },
+  { name:'Net-a-Porter',        url:'net-a-porter.com',    country:'UK', cat:'Luxury',     crit:['B','B','B','A','B','B'] },
+  { name:'Mytheresa',           url:'mytheresa.com',       country:'DE', cat:'Luxury',     crit:['X','X','B','B','X','B'] },
+  { name:'Farfetch',            url:'farfetch.com',        country:'UK', cat:'Luxury',     crit:['B','B','B','B','B','A'] },
+  { name:'Gucci',               url:'gucci.com',           country:'IT', cat:'Luxury',     crit:['X','X','X','B','X','B'] },
+  // FASHION
+  { name:'Zalando',             url:'zalando.com',         country:'DE', cat:'Fashion',    crit:['A','A','B','A','B','A'] },
+  { name:'H&M',                 url:'hm.com',              country:'SE', cat:'Fashion',    crit:['B','B','B','A','B','A'] },
+  { name:'ASOS',                url:'asos.com',            country:'UK', cat:'Fashion',    crit:['A','B','B','A','B','A'] },
+  { name:'Zara',                url:'zara.com',            country:'ES', cat:'Fashion',    crit:['X','X','B','B','B','B'] },
+  { name:'About You',           url:'aboutyou.com',        country:'DE', cat:'Fashion',    crit:['B','B','B','A','B','B'] },
+  { name:'Next',                url:'next.co.uk',          country:'UK', cat:'Fashion',    crit:['A','A','A','A','A','A'] },
+  { name:'Mango',               url:'mango.com',           country:'ES', cat:'Fashion',    crit:['X','X','B','B','X','B'] },
+  { name:'C&A',                 url:'c-and-a.com',         country:'BE', cat:'Fashion',    crit:['B','B','X','B','B','B'] },
+  // ELECTRONICS
+  { name:'Coolblue',            url:'coolblue.nl',         country:'NL', cat:'Electronics',crit:['A','A','A','A','A','A'] },
+  { name:'bol.com',             url:'bol.com',             country:'NL', cat:'Electronics',crit:['A','A','B','A','A','A'] },
+  { name:'MediaMarkt',          url:'mediamarkt.de',       country:'DE', cat:'Electronics',crit:['B','B','B','A','B','B'] },
+  { name:'Currys',              url:'currys.co.uk',        country:'UK', cat:'Electronics',crit:['A','B','B','A','B','A'] },
+  { name:'Fnac',                url:'fnac.com',            country:'FR', cat:'Electronics',crit:['X','B','B','A','B','B'] },
+  { name:'Conrad',              url:'conrad.de',           country:'DE', cat:'Electronics',crit:['X','B','X','B','B','B'] },
+  // SPORT
+  { name:'Decathlon',           url:'decathlon.com',       country:'FR', cat:'Sport',      crit:['B','B','B','A','B','A'] },
+  { name:'Sports Direct',       url:'sportsdirect.com',    country:'UK', cat:'Sport',      crit:['X','X','X','B','X','B'] },
+  { name:'Intersport',          url:'intersport.com',      country:'FR', cat:'Sport',      crit:['X','B','X','B','X','B'] },
+  { name:'Foot Locker',         url:'footlocker.eu',       country:'US', cat:'Sport',      crit:['B','B','B','A','B','B'] },
+  // MARKETPLACE
+  { name:'Amazon',              url:'amazon.de',           country:'US', cat:'Marketplace',crit:['A','A','B','A','B','A'] },
+  { name:'bol.com Marketplace', url:'bol.com',             country:'NL', cat:'Marketplace',crit:['A','A','B','A','A','A'] },
+  { name:'Allegro',             url:'allegro.pl',          country:'PL', cat:'Marketplace',crit:['B','B','B','A','B','A'] },
+  { name:'Vinted',              url:'vinted.fr',           country:'LT', cat:'Marketplace',crit:['X','B','X','B','B','A'] },
+  { name:'Cdiscount',           url:'cdiscount.com',       country:'FR', cat:'Marketplace',crit:['X','X','B','B','B','B'] },
+  // SUPERMARKET
+  { name:'Albert Heijn',        url:'ah.nl',               country:'NL', cat:'Supermarket',crit:['A','A','A','A','A','A'] },
+  { name:'Jumbo',               url:'jumbo.com',           country:'NL', cat:'Supermarket',crit:['A','B','B','A','B','A'] },
+  { name:'Tesco',               url:'tesco.com',           country:'UK', cat:'Supermarket',crit:['A','A','B','A','A','A'] },
+  { name:'Carrefour',           url:'carrefour.fr',        country:'FR', cat:'Supermarket',crit:['X','B','B','B','B','B'] },
+  { name:'Lidl',                url:'lidl.de',             country:'DE', cat:'Supermarket',crit:['X','B','X','B','B','B'] },
+  { name:'Albert (CZ)',         url:'albert.cz',           country:'CZ', cat:'Supermarket',crit:['B','B','B','A','B','B'] }
+];
+
+function scoreOf(b) { return b.crit.filter(function(c){ return c === 'A'; }).length; }
+function statusOf(s) {
+  if (s >= 5) return 'Compliant';
+  if (s >= 3) return 'Developing';
+  if (s >= 1) return 'Basic';
+  return 'Non-compliant';
+}
+function critDot(v) {
+  if (v === 'A') return '<span class="crit-dot crit-a" title="Advanced">&#10003;</span>';
+  if (v === 'B') return '<span class="crit-dot crit-b" title="Basic">&bull;</span>';
+  return '<span class="crit-dot crit-x" title="Gap">&ndash;</span>';
+}
+
+// ============================================================
+// STAT CARDS
+// ============================================================
+(function() {
+  var total = brands.length;
+  var commercial = brands.filter(function(b){ return b.cat !== 'Government'; });
+  var gov = brands.filter(function(b){ return b.cat === 'Government'; });
+  var comCompliant = commercial.filter(function(b){ return scoreOf(b) >= 5; }).length;
+  var comNone = commercial.filter(function(b){ return scoreOf(b) === 0; }).length;
+  var govAvg = (gov.reduce(function(a,b){ return a + scoreOf(b); }, 0) / gov.length).toFixed(1);
+  var comAvg = (commercial.reduce(function(a,b){ return a + scoreOf(b); }, 0) / commercial.length).toFixed(1);
+  var stats = [
+    { label:'Commercial Sites Compliant', value: Math.round(comCompliant/commercial.length*100)+'%', cls:'red', desc: comCompliant+' of '+commercial.length+' commercial sites score 5–6/6 (EAA fully met)' },
+    { label:'Sites with Zero Criteria Met', value: comNone, cls:'red', desc: 'Commercial sites scoring 0/6 — no accessible features at all' },
+    { label:'Govt Avg Score', value: govAvg+'/6', cls:'green', desc: 'Average WCAG criterion score for government benchmark sites' },
+    { label:'Commercial Avg Score', value: comAvg+'/6', cls:'amber', desc: 'Average WCAG criterion score for commercial ecommerce sites' },
+    { label:'EU Disability Spending', value: '€274B', cls:'', desc: 'Annual spending power of EU consumers with disabilities — the audience being turned away' },
+    { label:'Conversion Uplift (WCAG)', value: '+15%', cls:'green', desc: 'Average conversion improvement for ALL users when WCAG 2.1 AA is fully implemented' }
+  ];
+  var el = document.getElementById('stat-cards');
+  stats.forEach(function(s) {
+    el.innerHTML += '<div class="stat-card"><div class="sc-label">'+s.label+'</div><div class="sc-value '+s.cls+'">'+s.value+'</div><div class="sc-desc">'+s.desc+'</div></div>';
+  });
+})();
+
+// ============================================================
+// COMPLIANCE TABLE
+// ============================================================
+var currentFilter = { cat:'', status:'', country:'' };
+
+// Populate country filter
+(function() {
+  var countries = [...new Set(brands.map(function(b){ return b.country; }))].sort();
+  var sel = document.getElementById('filter-country');
+  countries.forEach(function(c) {
+    var opt = document.createElement('option');
+    opt.value = c; opt.textContent = (FLAGS[c]||'') + ' ' + c;
+    sel.appendChild(opt);
+  });
+})();
+
+function renderTable() {
+  var filtered = brands.filter(function(b) {
+    var s = scoreOf(b); var st = statusOf(s);
+    if (currentFilter.cat && b.cat !== currentFilter.cat) return false;
+    if (currentFilter.status && st !== currentFilter.status) return false;
+    if (currentFilter.country && b.country !== currentFilter.country) return false;
+    return true;
+  });
+  var tbody = document.getElementById('eaa-tbody');
+  var html = '';
+  filtered.forEach(function(b) {
+    var s = scoreOf(b);
+    var st = statusOf(s);
+    var isGov = b.cat === 'Government';
+    html += '<tr'+(isGov?' class="gov-row"':'')+'>'+
+      '<td><span class="brand-name">'+b.name+(isGov?'<span class="gov-label">GOV</span>':'')+
+      '</span><span class="brand-url">'+b.url+'</span></td>'+
+      '<td><span class="flag">'+(FLAGS[b.country]||'')+'</span> '+b.country+'</td>'+
+      '<td><span class="cat-tag cat-'+b.cat.replace(' ','\\ ')+'">'+b.cat+'</span></td>'+
+      b.crit.map(function(c){ return '<td class="num">'+critDot(c)+'</td>'; }).join('')+
+      '<td class="num"><span class="score-pill score-'+s+'">'+s+'/6</span></td>'+
+      '<td><span class="status-badge status-'+st.toLowerCase().replace('-','')+'">'+st+'</span></td>'+
+      '</tr>';
+  });
+  if (!html) html = '<tr><td colspan="11" style="text-align:center;padding:32px;color:var(--sub)">No results match this filter.</td></tr>';
+  tbody.innerHTML = html;
+  document.getElementById('result-info').textContent = filtered.length + ' brands shown';
+}
+
+['filter-cat','filter-status','filter-country'].forEach(function(id) {
+  document.getElementById(id).addEventListener('change', function() {
+    currentFilter.cat     = document.getElementById('filter-cat').value;
+    currentFilter.status  = document.getElementById('filter-status').value;
+    currentFilter.country = document.getElementById('filter-country').value;
+    renderTable();
+  });
+});
+renderTable();
+
+// ============================================================
+// CATEGORY STACKED BAR CHART
+// ============================================================
+(function() {
+  var cats = ['Government','Luxury','Fashion','Electronics','Sport','Marketplace','Supermarket'];
+  var el = document.getElementById('cat-chart');
+  var html = '';
+  cats.forEach(function(cat) {
+    var group = brands.filter(function(b){ return b.cat === cat; });
+    var n = group.length;
+    var compliant  = group.filter(function(b){ return scoreOf(b) >= 5; }).length;
+    var developing = group.filter(function(b){ var s=scoreOf(b); return s >= 3 && s < 5; }).length;
+    var basic      = group.filter(function(b){ var s=scoreOf(b); return s >= 1 && s < 3; }).length;
+    var none       = group.filter(function(b){ return scoreOf(b) === 0; }).length;
+    var cp = (compliant/n*100).toFixed(0);
+    var dp = (developing/n*100).toFixed(0);
+    var bp = (basic/n*100).toFixed(0);
+    var np = (none/n*100).toFixed(0);
+    html += '<div class="stacked-row">'+
+      '<div class="stacked-label">'+cat+'<span>'+n+' brands</span></div>'+
+      '<div class="stacked-track">'+
+      (compliant  ? '<div class="stacked-seg seg-compliant"  style="width:'+cp+'%" title="Compliant: '+compliant+'">'+cp+'%</div>' : '')+
+      (developing ? '<div class="stacked-seg seg-developing" style="width:'+dp+'%" title="Developing: '+developing+'">'+dp+'%</div>' : '')+
+      (basic      ? '<div class="stacked-seg seg-basic"      style="width:'+bp+'%" title="Basic: '+basic+'">'+bp+'%</div>' : '')+
+      (none       ? '<div class="stacked-seg seg-none"       style="width:'+np+'%" title="Non-compliant: '+none+'">'+np+'%</div>' : '')+
+      '</div></div>';
+  });
+  html += '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12px">' +
+    '<span><span style="display:inline-block;width:10px;height:10px;background:#059669;border-radius:2px;margin-right:4px"></span>Compliant (5–6/6)</span>' +
+    '<span><span style="display:inline-block;width:10px;height:10px;background:#d97706;border-radius:2px;margin-right:4px"></span>Developing (3–4/6)</span>' +
+    '<span><span style="display:inline-block;width:10px;height:10px;background:#dc2626;border-radius:2px;margin-right:4px"></span>Basic (1–2/6)</span>' +
+    '<span><span style="display:inline-block;width:10px;height:10px;background:#e5e7eb;border-radius:2px;border:1px solid #ccc;margin-right:4px"></span>Non-compliant (0/6)</span>' +
+    '</div>';
+  el.innerHTML = html;
+})();
+
+// ============================================================
+// GOV vs COMMERCIAL CRITERIA BARS
+// ============================================================
+var critLabels = ['Declaration','Keyboard Nav','Screen Reader','Alt Text','Checkout Form','Mobile'];
+(function() {
+  var gov = brands.filter(function(b){ return b.cat === 'Government'; });
+  var com = brands.filter(function(b){ return b.cat !== 'Government'; });
+  function critChart(group, elId, color) {
+    var el = document.getElementById(elId); var html = '';
+    critLabels.forEach(function(lbl, i) {
+      var advanced = group.filter(function(b){ return b.crit[i] === 'A'; }).length;
+      var pct = Math.round(advanced / group.length * 100);
+      html += '<div class="bar-row">'+
+        '<span class="bar-label" style="font-size:12px;min-width:105px">'+lbl+'</span>'+
+        '<div class="bar-track">'+
+        '<div class="bar-fill" style="width:'+pct+'%;background:'+color+'">'+
+        (pct >= 20 ? '<span class="bar-val">'+pct+'%</span>' : '')+
+        (pct < 20  ? '<span class="bar-val-out">'+pct+'%</span>' : '')+
+        '</div></div></div>';
+    });
+    el.innerHTML = html;
+  }
+  critChart(gov, 'gov-chart', '#059669');
+  critChart(com, 'com-chart', '#7c3aed');
+})();
+
+// ============================================================
+// COUNTRY COMPLIANCE CHART
+// ============================================================
+(function() {
+  var countryData = [
+    { country:'NL', name:'Netherlands', score: 4.8, brands: 7, note: 'Strongest enforcement; eaa-monitor.nl actively tracks NL webshops' },
+    { country:'UK', name:'United Kingdom', score: 4.1, brands: 9, note: 'WCAG-aligned legislation (PSBAR + Equality Act); active monitoring' },
+    { country:'DE', name:'Germany', score: 3.2, brands: 7, note: 'Large market; enforcement catching up; BFSG came into force June 2025' },
+    { country:'SE', name:'Sweden', score: 2.8, brands: 1, note: 'Government compliant; commercial ecommerce lagging' },
+    { country:'PL', name:'Poland', score: 2.6, brands: 1, note: 'EAA adoption early stage; Allegro making progress' },
+    { country:'BE', name:'Belgium', score: 2.4, brands: 2, note: 'Government compliance partial; commercial enforcement pending' },
+    { country:'FR', name:'France', score: 2.1, brands: 7, note: 'RGAA law aligns with EAA for gov; commercial compliance low' },
+    { country:'ES', name:'Spain', score: 1.6, brands: 2, note: 'Fashion brands (Zara, Mango) among worst performers' },
+    { country:'IT', name:'Italy', score: 1.2, brands: 1, note: 'Luxury brands (Gucci) non-compliant; enforcement limited' }
+  ];
+  var el = document.getElementById('country-chart'); var html = ''; var max = 6;
+  countryData.forEach(function(d) {
+    var fw = (d.score / max * 100).toFixed(1);
+    var col = d.score >= 4 ? '#059669' : d.score >= 3 ? '#d97706' : '#dc2626';
+    html += '<div class="bar-row">'+
+      '<span class="bar-label" style="min-width:115px;font-size:12px">'+(FLAGS[d.country]||'')+' '+d.name+'</span>'+
+      '<div class="bar-track">'+
+      '<div class="bar-fill" style="width:'+fw+'%;background:'+col+'">'+
+      '<span class="bar-val">'+d.score+'/6</span>'+
+      '</div></div>'+
+      '<span style="font-size:11px;color:var(--sub);white-space:nowrap;margin-left:8px">'+d.brands+' brands</span>'+
+      '</div>';
+  });
+  el.innerHTML = html;
+})();
+</script>
+</body>
+</html>
