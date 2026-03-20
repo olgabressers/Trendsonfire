@@ -185,6 +185,24 @@
     footer ul li { padding: 3px 0; }
     footer ul li::before { content: "·  "; color: var(--teal); }
     @media (max-width: 600px) { footer .inner { grid-template-columns: 1fr; } }
+
+    /* GENERAL RESPONSIVE */
+    @media(max-width:768px){
+      main, .inner { padding-left:16px !important; padding-right:16px !important; }
+      header { padding:32px 16px 28px; }
+      .stats { grid-template-columns:1fr 1fr; }
+      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
+      .filter-bar select, .filter-bar input { width:100%; }
+    }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+    }
+    /* TABLE RESPONSIVE */
+    @media(max-width:768px){
+      .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      table { min-width:600px; }
+      th, td { padding:10px 12px; font-size:12px; }
+    }
   </style>
 </head>
 <body>
