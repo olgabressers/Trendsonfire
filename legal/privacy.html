@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Privacy Policy — TrendsOnFire</title>
+  <meta name="description" content="Privacy Policy for TrendsOnFire.com — how we handle personal data, cookies, and your rights under the GDPR."/>
+  <meta name="robots" content="noindex, follow"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --light:#f3e8f0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover { color: white; border-bottom-color: #8b1a6a; }
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){ nav { padding:0 16px; flex-wrap:wrap; } .nav-burger { display:block; } .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; } .nav-links.open { display:flex; } .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; } }
+
+    .page-hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    .page-hero .inner { max-width: 800px; margin: 0 auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c97fb8; font-weight: 700; margin-bottom: 10px; }
+    .page-hero h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .toc { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; column-count: 2; column-gap: 24px; }
+    .toc li { margin-bottom: 6px; break-inside: avoid; }
+    .toc a { color: var(--fuchsia); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+    @media (max-width: 560px) { .toc ol { column-count: 1; } }
+
+    .section { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; }
+    .section h2 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--light); display: flex; align-items: center; gap: 10px; }
+    .section h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 20px 0 8px; }
+    .section p { font-size: 14px; color: #374151; line-height: 1.8; margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol { padding-left: 22px; margin-bottom: 14px; }
+    .section li { font-size: 14px; color: #374151; line-height: 1.75; margin-bottom: 6px; }
+    .section strong { color: var(--text); font-weight: 700; }
+    .section a { color: var(--fuchsia); }
+
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    @media (max-width: 560px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-item { background: var(--light); border-radius: 8px; padding: 14px 16px; border-left: 3px solid var(--fuchsia); }
+    .right-item strong { display: block; font-size: 13px; color: var(--navy); margin-bottom: 4px; }
+    .right-item p { font-size: 12.5px; color: var(--sub); margin: 0; line-height: 1.5; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .data-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .5px; }
+    .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: #faf5fa; }
+
+    .info-box { background: #fefce8; border: 1.5px solid #ca8a04; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+    .info-box p { color: #713f12; margin: 0; font-size: 13.5px; }
+
+    .ap-box { background: var(--light); border: 1px solid #ddb5d4; border-radius: 10px; padding: 18px 22px; margin: 16px 0; }
+    .ap-box p { color: var(--text); margin-bottom: 6px; font-size: 14px; }
+    .ap-box a { color: var(--fuchsia); font-weight: 600; }
+
+    .contact-box { background: var(--navy); border-radius: 14px; padding: 28px; color: white; text-align: center; margin-top: 32px; }
+    .contact-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .contact-box p { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 4px; }
+    .contact-box a { color: #c97fb8; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="180" height="45">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="/people/index.html">People &amp; Transformation</a>
+    <a href="/technology/index.html">Technology</a>
+    <a href="/olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="/index.html">TrendsOnFire</a> / Privacy Policy</div>
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>How TrendsOnFire.com handles personal data, what data is collected, and your rights under the GDPR.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#who">Who are we?</a></li>
+      <li><a href="#what-data">What data do we collect?</a></li>
+      <li><a href="#purpose">Purpose and legal basis</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#third-parties">Sharing with third parties</a></li>
+      <li><a href="#retention">Retention periods</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#rights">Your rights under GDPR</a></li>
+      <li><a href="#complaint">Filing a complaint</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact-privacy">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. WHO -->
+  <div class="section" id="who">
+    <h2>1. Who are we?</h2>
+    <p>TrendsOnFire is an independent editorial business intelligence platform covering trends in retail, e-commerce, people &amp; transformation, and technology. The website is accessible at <strong>https://trendsonfire.com</strong>.</p>
+    <p><strong>Data Controller:</strong><br/>
+    Olga Bressers / TrendsOnFire<br/>
+    The Netherlands<br/>
+    E-mail: <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a><br/>
+    LinkedIn: <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" rel="noopener">linkedin.com/in/olgabressers</a></p>
+    <p>For questions about this privacy policy or the processing of your personal data, please contact us via the e-mail address above.</p>
+  </div>
+
+  <!-- 2. WHAT DATA -->
+  <div class="section" id="what-data">
+    <h2>2. What personal data do we collect?</h2>
+
+    <h3>2.1 Data you actively provide</h3>
+    <p>We only collect data that you voluntarily provide to us:</p>
+    <ul>
+      <li><strong>E-mail contact:</strong> your name and e-mail address, when you contact us directly via e-mail. This data is used solely to respond to your message.</li>
+    </ul>
+    <p>TrendsOnFire does not require account registration or login. We do not ask visitors to enter personal data to use the site.</p>
+
+    <h3>2.2 Data collected automatically</h3>
+    <p>When you visit our website, our hosting provider (GitHub Pages / GitHub, Inc.) automatically records technical server log data. This is standard logging that all web servers maintain:</p>
+    <ul>
+      <li>IP address</li>
+      <li>Date and time of visit</li>
+      <li>Pages visited</li>
+      <li>Referring website (referrer)</li>
+      <li>Browser type and operating system</li>
+    </ul>
+    <p>This data is necessary for the technical operation of the website, error detection, and security. It is not linked to individual user profiles and is controlled by GitHub, Inc. under their own privacy policy.</p>
+
+    <h3>2.3 Analytics data</h3>
+    <p>We do <strong>not use Google Analytics or any other third-party analytics services</strong> that process personal data. If we implement analytics in the future, we will update this privacy policy and obtain your consent where required.</p>
+  </div>
+
+  <!-- 3. PURPOSE -->
+  <div class="section" id="purpose">
+    <h2>3. Purpose and legal basis for processing</h2>
+    <p>We process personal data only for the following purposes and on the following legal bases (Article 6 GDPR):</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Purpose</th><th>Legal basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Responding to contact requests</td><td>Legitimate interest / performance of contract (Art. 6(1)(b)/(f) GDPR)</td></tr>
+        <tr><td>Technical operation and security of the website</td><td>Legitimate interest (Art. 6(1)(f) GDPR)</td></tr>
+        <tr><td>Compliance with legal obligations</td><td>Legal obligation (Art. 6(1)(c) GDPR)</td></tr>
+      </tbody>
+    </table>
+    <p>We never process more data than is necessary for the stated purpose (data minimisation principle).</p>
+  </div>
+
+  <!-- 4. COOKIES -->
+  <div class="section" id="cookies">
+    <h2>4. Cookies</h2>
+    <p>Cookies are small text files stored on your device when you visit a website. TrendsOnFire itself does <strong>not set any tracking or marketing cookies</strong>.</p>
+
+    <h3>4.1 Functional cookies (strictly necessary)</h3>
+    <p>Our hosting provider (GitHub Pages) may set strictly necessary cookies for the technical delivery of the website (CDN routing, security). These do not track your behaviour and do not require consent.</p>
+
+    <h3>4.2 Analytics cookies</h3>
+    <p>We do not use any analytics cookies. If this changes in the future, we will ask for your consent first.</p>
+
+    <h3>4.3 Marketing and tracking cookies</h3>
+    <p>TrendsOnFire does not use affiliate links, advertising networks, or marketing cookies of any kind.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Cookie</th><th>Type</th><th>Purpose</th><th>Retention</th><th>Party</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>tof_cookie_notice</code></td><td>Functional</td><td>Stores visitor's cookie notice acknowledgement</td><td>1 year</td><td>TrendsOnFire (own)</td></tr>
+        <tr><td>GitHub Pages CDN cookies</td><td>Functional</td><td>Technical delivery and security of the website</td><td>Session</td><td>GitHub, Inc. (third party)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4.4 Disabling or deleting cookies</h3>
+    <p>You can disable or delete cookies at any time via your browser settings. Please note that disabling cookies may affect the functionality of some websites. Instructions for common browsers:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+  </div>
+
+  <!-- 5. THIRD PARTIES -->
+  <div class="section" id="third-parties">
+    <h2>5. Sharing with third parties</h2>
+    <p>We never sell, rent, or trade your personal data with third parties for commercial purposes. We may share data in the following limited cases:</p>
+
+    <h3>5.1 Hosting provider</h3>
+    <p><strong>GitHub, Inc.</strong> — our hosting provider — processes technical log data as part of the hosting service. GitHub Pages is operated by GitHub, Inc., headquartered in the United States. GitHub participates in the EU–US Data Privacy Framework. GitHub's privacy policy is available at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+
+    <h3>5.2 Legal obligation</h3>
+    <p>We may disclose data to competent authorities if we are legally required to do so (e.g., by court order or law enforcement request).</p>
+
+    <p>In all other cases, we do not share your data with third parties without your explicit consent.</p>
+  </div>
+
+  <!-- 6. RETENTION -->
+  <div class="section" id="retention">
+    <h2>6. Retention periods</h2>
+    <p>We retain personal data no longer than necessary for the purpose for which it was collected:</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Type of data</th><th>Retention period</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>E-mail correspondence (contact requests)</td><td>Maximum 2 years</td><td>Handling and potential follow-up</td></tr>
+        <tr><td>Server log files (technical)</td><td>Determined by GitHub (typically up to 90 days)</td><td>Technical operation and security</td></tr>
+        <tr><td>Cookie notice preference</td><td>1 year</td><td>Avoid showing notice banner again</td></tr>
+      </tbody>
+    </table>
+    <p>After the retention period expires, data is securely deleted or anonymised.</p>
+  </div>
+
+  <!-- 7. SECURITY -->
+  <div class="section" id="security">
+    <h2>7. Security</h2>
+    <p>We take appropriate technical and organisational measures to protect personal data against unauthorised access, loss, destruction, or disclosure:</p>
+    <ul>
+      <li><strong>HTTPS/TLS:</strong> all connections to our website are encrypted via SSL/TLS</li>
+      <li><strong>Hosting:</strong> GitHub Pages provides enterprise-level infrastructure security, including DDoS protection</li>
+      <li><strong>Minimal data collection:</strong> we collect as little personal data as possible (privacy by design)</li>
+      <li><strong>Access restriction:</strong> only authorised persons have access to any data we process</li>
+    </ul>
+    <p>Despite our security measures, no method of internet transmission or electronic storage is 100% secure. We cannot guarantee absolute security, but we take all reasonable steps to protect your data.</p>
+  </div>
+
+  <!-- 8. YOUR RIGHTS -->
+  <div class="section" id="rights">
+    <h2>8. Your rights under the GDPR</h2>
+    <p>Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <strong>Right of access (Art. 15 GDPR)</strong>
+        <p>You have the right to know what personal data we process about you and to receive a copy.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to rectification (Art. 16 GDPR)</strong>
+        <p>You have the right to have inaccurate or incomplete personal data corrected.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to erasure (Art. 17 GDPR)</strong>
+        <p>You have the right to have your personal data deleted ("right to be forgotten"), unless we are legally required to retain it.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to restriction (Art. 18 GDPR)</strong>
+        <p>You have the right to restrict the processing of your data in certain circumstances.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to data portability (Art. 20 GDPR)</strong>
+        <p>You have the right to receive your data in a structured, commonly used format to transfer to another party.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to object (Art. 21 GDPR)</strong>
+        <p>You have the right to object to processing based on legitimate interests, including profiling.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right to withdraw consent (Art. 7 GDPR)</strong>
+        <p>Where we process your data based on consent, you may withdraw that consent at any time without consequence.</p>
+      </div>
+      <div class="right-item">
+        <strong>Right not to be subject to automated decisions</strong>
+        <p>We do not use automated decision-making or profiling that has legal effects on you.</p>
+      </div>
+    </div>
+
+    <h3>How to exercise your rights</h3>
+    <p>Send an e-mail to <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a> with a clear description of your request. We will respond within <strong>30 days</strong> (the legally required timeframe). We may ask for verification of your identity.</p>
+  </div>
+
+  <!-- 9. COMPLAINT -->
+  <div class="section" id="complaint">
+    <h2>9. Filing a complaint with the supervisory authority</h2>
+    <p>If you believe we are not processing your personal data in accordance with the GDPR, you have the right to lodge a complaint with the Dutch supervisory authority:</p>
+    <div class="ap-box">
+      <p><strong>Autoriteit Persoonsgegevens (AP)</strong></p>
+      <p>Postbus 93374 · 2509 AJ The Hague, Netherlands</p>
+      <p>Telephone: +31 88 180 52 50</p>
+      <p>Website: <a href="https://www.autoriteitpersoonsgegevens.nl/en" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a></p>
+    </div>
+    <p>We kindly ask you to contact us first so that we can investigate and, if necessary, resolve your concern.</p>
+  </div>
+
+  <!-- 10. CHANGES -->
+  <div class="section" id="changes">
+    <h2>10. Changes to this privacy policy</h2>
+    <p>We reserve the right to update this privacy policy at any time, for example due to changes in our services, technology, or legislation. The most current version is always available at <a href="https://trendsonfire.com/legal/privacy.html">trendsonfire.com/legal/privacy.html</a>.</p>
+    <p>For significant changes that affect your rights, we will announce this on the website. We recommend reviewing this page periodically.</p>
+    <p style="font-size:13px;color:var(--sub);margin-top:16px;"><strong>Version:</strong> 1.0 · <strong>Published:</strong> March 2026 · <strong>Last updated:</strong> March 2026</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box" id="contact-privacy">
+    <h3>Privacy questions?</h3>
+    <p>For questions, requests, or comments about this privacy policy or the processing of your personal data, please reach us at:</p>
+    <p><a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+    <p style="margin-top:12px;font-size:13px;opacity:.7;">We aim to respond within 5 business days, and in any case within the legal deadline of 30 days.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/index.html">Home</a> · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
