@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /v2/
+Disallow: /logo-preview.html
+Disallow: /logo-preview-red.html
+
+Sitemap: https://trendsonfire.com/sitemap.xml
