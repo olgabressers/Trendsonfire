@@ -103,6 +103,29 @@
     .donut-legend li { font-size: 12px; color: var(--sub); display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; line-height: 1.4; }
     .donut-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
     @media(max-width:768px){ .charts-grid { grid-template-columns: 1fr; } }
+    .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .skill-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 13px; padding-bottom: 13px; border-bottom: 1px solid #f1f5f9; }
+    .skill-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .skill-icon { font-size: 16px; flex-shrink: 0; width: 24px; text-align: center; margin-top: 1px; }
+    .skill-info { flex: 1; min-width: 0; }
+    .skill-name { font-size: 12px; color: var(--text); font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
+    .skill-metrics { display: flex; align-items: center; gap: 8px; }
+    .skill-crit-bar { flex: 1; height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; }
+    .skill-crit-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #0f2340, #2563eb); }
+    .skill-crit-pct { font-size: 10px; color: var(--sub); font-weight: 700; min-width: 26px; }
+    .gap-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+    .gap-vh { background: #fee2e2; color: #dc2626; }
+    .gap-h  { background: #ffedd5; color: #c2410c; }
+    .gap-m  { background: #fefce8; color: #ca8a04; }
+    .hire-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; white-space: nowrap; margin-left: 3px; }
+    .hire-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+    .hire-bar-row:last-child { margin-bottom: 0; }
+    .hire-label { font-size: 12px; color: var(--text); min-width: 220px; line-height: 1.3; }
+    .hire-track { flex: 1; height: 10px; background: #f1f5f9; border-radius: 5px; overflow: hidden; }
+    .hire-fill { height: 100%; border-radius: 5px; }
+    .hire-pct { font-size: 11px; color: var(--sub); font-weight: 600; min-width: 28px; }
+    .hire-tags { display: flex; gap: 4px; flex-wrap: wrap; min-width: 140px; justify-content: flex-end; }
+    @media(max-width:768px){ .skill-grid { grid-template-columns: 1fr; } .hire-label { min-width: 120px; } .hire-tags { display: none; } }
 
     .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
@@ -277,6 +300,156 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- LEADERSHIP SKILLS: what leaders need -->
+  <div class="chart-card" style="margin-bottom:20px;">
+    <div class="chart-title">Skills Leaders Need to Drive Transformation Successfully</div>
+    <div class="chart-sub">Criticality score for programme success + prevalence of skill gap in current European senior leadership populations. Gap scale: <span style="background:#fee2e2;color:#dc2626;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">Very High</span> <span style="background:#ffedd5;color:#c2410c;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">High</span> <span style="background:#fefce8;color:#ca8a04;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">Medium</span></div>
+    <div class="skill-grid">
+      <div>
+        <div class="skill-row">
+          <div class="skill-icon">🎯</div>
+          <div class="skill-info">
+            <div class="skill-name">Change leadership &amp; stakeholder mobilisation</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:95%"></div></div><div class="skill-crit-pct">95%</div><span class="gap-badge gap-vh">Very High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">🔭</div>
+          <div class="skill-info">
+            <div class="skill-name">Strategic vision &amp; direction-setting</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:92%"></div></div><div class="skill-crit-pct">92%</div><span class="gap-badge gap-h">High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">📐</div>
+          <div class="skill-info">
+            <div class="skill-name">Programme governance &amp; delivery discipline</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:88%"></div></div><div class="skill-crit-pct">88%</div><span class="gap-badge gap-h">High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">🌍</div>
+          <div class="skill-info">
+            <div class="skill-name">Cultural intelligence &amp; empathy</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:85%"></div></div><div class="skill-crit-pct">85%</div><span class="gap-badge gap-vh">Very High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">🗣️</div>
+          <div class="skill-info">
+            <div class="skill-name">Executive communication &amp; storytelling</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:82%"></div></div><div class="skill-crit-pct">82%</div><span class="gap-badge gap-m">Medium gap</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-row">
+          <div class="skill-icon">🤝</div>
+          <div class="skill-info">
+            <div class="skill-name">Coalition building &amp; conflict resolution</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:80%"></div></div><div class="skill-crit-pct">80%</div><span class="gap-badge gap-h">High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">🛡️</div>
+          <div class="skill-info">
+            <div class="skill-name">Resilience &amp; composure under sustained pressure</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:78%"></div></div><div class="skill-crit-pct">78%</div><span class="gap-badge gap-m">Medium gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">💰</div>
+          <div class="skill-info">
+            <div class="skill-name">Financial acumen &amp; business case management</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:75%"></div></div><div class="skill-crit-pct">75%</div><span class="gap-badge gap-m">Medium gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">💻</div>
+          <div class="skill-info">
+            <div class="skill-name">Digital &amp; data literacy</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:72%"></div></div><div class="skill-crit-pct">72%</div><span class="gap-badge gap-h">High gap</span></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-icon">⚡</div>
+          <div class="skill-info">
+            <div class="skill-name">Agile &amp; lean thinking</div>
+            <div class="skill-metrics"><div class="skill-crit-bar"><div class="skill-crit-fill" style="width:62%"></div></div><div class="skill-crit-pct">62%</div><span class="gap-badge gap-m">Medium gap</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--sub);">Criticality % = assessed importance for programme success. Gap = how frequently this skill is absent or underdeveloped in leaders assigned to run major transformation programmes across Europe.</div>
+  </div>
+
+  <!-- EXTERNAL HIRE CHART -->
+  <div class="chart-card" style="margin-bottom:40px;">
+    <div class="chart-title">Where Organisations Bring in External Coaches &amp; Consultants</div>
+    <div class="chart-sub">Frequency of hiring external support by engagement type across European transformation programmes — <span style="background:#dbeafe;color:#1e40af;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">Consultant</span> <span style="background:#f3e8ff;color:#7c3aed;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">Coach</span> <span style="background:#d1fae5;color:#065f46;font-weight:700;padding:1px 5px;border-radius:3px;font-size:10px;">Interim</span></div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Executive &amp; leadership coaching</div>
+      <div class="hire-track"><div class="hire-fill" style="width:78%;background:#7c3aed"></div></div>
+      <div class="hire-pct">78%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#f3e8ff;color:#7c3aed;">Coach</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Change management facilitation</div>
+      <div class="hire-track"><div class="hire-fill" style="width:74%;background:#8b1a6a"></div></div>
+      <div class="hire-pct">74%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span><span class="hire-tag" style="background:#f3e8ff;color:#7c3aed;">Coach</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Programme management &amp; PMO setup</div>
+      <div class="hire-track"><div class="hire-fill" style="width:70%;background:#0f2340"></div></div>
+      <div class="hire-pct">70%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#d1fae5;color:#065f46;">Interim</span><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Digital strategy &amp; architecture</div>
+      <div class="hire-track"><div class="hire-fill" style="width:68%;background:#7c3aed"></div></div>
+      <div class="hire-pct">68%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Cultural diagnostics &amp; transformation design</div>
+      <div class="hire-track"><div class="hire-fill" style="width:62%;background:#8b1a6a"></div></div>
+      <div class="hire-pct">62%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span><span class="hire-tag" style="background:#f3e8ff;color:#7c3aed;">Coach</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Operating model &amp; org design</div>
+      <div class="hire-track"><div class="hire-fill" style="width:58%;background:#475569"></div></div>
+      <div class="hire-pct">58%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">M&amp;A integration leadership (PMI)</div>
+      <div class="hire-track"><div class="hire-fill" style="width:55%;background:#e11d48"></div></div>
+      <div class="hire-pct">55%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#d1fae5;color:#065f46;">Interim</span><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Agile &amp; lean methodology coaching</div>
+      <div class="hire-track"><div class="hire-fill" style="width:48%;background:#0d9488"></div></div>
+      <div class="hire-pct">48%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span><span class="hire-tag" style="background:#f3e8ff;color:#7c3aed;">Coach</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Regulatory &amp; compliance design</div>
+      <div class="hire-track"><div class="hire-fill" style="width:44%;background:#d97706"></div></div>
+      <div class="hire-pct">44%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div class="hire-bar-row">
+      <div class="hire-label">Data &amp; analytics capability build</div>
+      <div class="hire-track"><div class="hire-fill" style="width:40%;background:#0891b2"></div></div>
+      <div class="hire-pct">40%</div>
+      <div class="hire-tags"><span class="hire-tag" style="background:#dbeafe;color:#1e40af;">Consultant</span></div>
+    </div>
+    <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--sub);">% reflects frequency of external engagement across surveyed European transformation programmes. Most organisations use multiple external providers concurrently on large programmes.</div>
   </div>
 
   <div class="insight-banner">
