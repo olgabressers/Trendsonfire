@@ -127,6 +127,8 @@
       .level-grid { grid-template-columns:1fr 1fr; }
     }
   </style>
+    <link rel="canonical" href="https://trendsonfire.com/olgabressers/"/>
+  <meta name="author" content="Olga Bressers"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="TrendsOnFire"/>
   <meta property="og:title" content="Olga Bressers — Business Intelligence Expert"/>
@@ -142,20 +144,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Olga Bressers — Business Intelligence Expert",
-    "description": "20+ years of executive experience in retail, e-commerce and transformation. Founder of TrendsOnFire.",
-    "url": "https://trendsonfire.com/olgabressers/",
-    "author": {
-      "@type": "Person",
-      "name": "Olga Bressers",
-      "url": "https://trendsonfire.com/olgabressers/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "TrendsOnFire",
-      "url": "https://trendsonfire.com"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://trendsonfire.com/olgabressers/#person",
+        "name": "Olga Bressers",
+        "url": "https://trendsonfire.com/olgabressers/",
+        "image": "https://trendsonfire.com/olgabressers/Olga%20Bressers.jpg",
+        "jobTitle": "Senior Executive & Transformation Consultant",
+        "description": "Senior executive and transformation consultant with 20+ years leading commerce transformation at Richemont, Adidas, Nike and IBM. Specialist in operating model redesign, digital transformation, and CEE market strategy.",
+        "knowsAbout": [
+          "Business Transformation", "Operating Model Design", "Digital Commerce",
+          "E-Commerce Strategy", "Change Management", "Organisational Design",
+          "Retail Strategy", "CEE Market Expansion", "Interim Management", "Programme Governance"
+        ],
+        "alumniOf": [
+          { "@type": "Organization", "name": "Richemont" },
+          { "@type": "Organization", "name": "Adidas" },
+          { "@type": "Organization", "name": "Nike" },
+          { "@type": "Organization", "name": "IBM" }
+        ],
+        "worksFor": { "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com" },
+        "sameAs": [ "https://www.linkedin.com/in/olgabressers/", "https://trendsonfire.com" ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Olga Bressers — Senior Executive & Transformation Consultant",
+        "description": "20+ years of executive experience at Richemont, Adidas, Nike and IBM. Available for interim management and consulting mandates across Europe.",
+        "url": "https://trendsonfire.com/olgabressers/",
+        "about": { "@id": "https://trendsonfire.com/olgabressers/#person" },
+        "publisher": { "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com" }
+      }
+    ]
   }
   </script>
 </head>
