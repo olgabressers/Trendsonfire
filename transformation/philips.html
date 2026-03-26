@@ -132,6 +132,19 @@
     footer a:hover { color: white; }
 
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+
+    /* Visual capability bar chart */
+    .cap-bars { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; }
+    .cap-bar-row { display: grid; grid-template-columns: 200px 1fr 200px; gap: 14px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+    .cap-bar-row:last-child { border-bottom: none; }
+    .cap-bar-label { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.35; }
+    .cap-bar-track { background: #f1f5f9; border-radius: 6px; height: 22px; position: relative; overflow: hidden; }
+    .cap-bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 10px; font-weight: 700; color: white; letter-spacing: .5px; white-space: nowrap; }
+    .cap-bar-why { font-size: 11px; color: var(--sub); line-height: 1.45; }
+    @media(max-width:768px){
+      .cap-bar-row { grid-template-columns: 1fr; gap: 4px; }
+      .cap-bar-why { display: none; }
+    }
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
@@ -230,265 +243,10 @@
   </div>
 
   <div class="insight-banner">
-    <p>The Philips transformation is one of the most complex corporate reinventions in Dutch industrial history — driven simultaneously by a product safety crisis, a strategic pivot to pure-play health technology, and a structural reorganisation affecting 80,000+ employees globally. <strong>The Netherlands remains the centre of gravity:</strong> R&amp;D, global functions, and key commercial operations are all NL-based, making this a critical talent and capability market for transformation, operations, quality, and digital leadership roles. The demand for experienced external support — in programme management, quality transformation, customer service redesign, and NPI excellence — is acute and will remain elevated through 2026–2027.</p>
+    <p>One of the most complex corporate reinventions in Dutch industrial history — driven by a product safety crisis, a strategic pivot to pure-play health technology, and simultaneous restructuring across 80,000+ employees globally. <strong>The Netherlands is the centre of gravity:</strong> R&amp;D, global functions, supply chain, commercial operations, and ecommerce are all NL-based. Demand for experienced leadership in transformation, ecommerce, commercial strategy, programme management, and supply chain will remain elevated through 2026–2027.</p>
   </div>
 
-  <!-- SECTION 1: TIMELINE -->
-  <div class="section-title">The Transformation Backdrop — 2022 to 2025</div>
-  <div class="timeline">
-
-    <div class="tl-item">
-      <div class="tl-dot crisis">2021</div>
-      <div class="tl-body">
-        <div class="tl-date">2021 — The Crisis</div>
-        <div class="tl-title">Respironics CPAP Recall Announced</div>
-        <div class="tl-text">Philips recalls 5.5 million sleep and respiratory care devices manufactured by its Respironics subsidiary due to potential health risks from foam degradation. This becomes the defining event of the entire 2021–2025 period — triggering regulatory action, consumer litigation, reputational damage, and billions in provisions.</div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot pivot">Oct 22</div>
-      <div class="tl-body">
-        <div class="tl-date">October 2022 — Leadership Change</div>
-        <div class="tl-title">Roy Jakobs Appointed CEO</div>
-        <div class="tl-text">Frans van Houten steps down after 11 years. Roy Jakobs, a Philips veteran, takes the helm with a clear mandate: resolve the Respironics recall, stabilise the balance sheet, and sharpen the strategic focus. Within weeks, a major restructuring programme is announced.</div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot pivot">Nov 22</div>
-      <div class="tl-body">
-        <div class="tl-date">November 2022 — Restructuring</div>
-        <div class="tl-title">"Philips Fit" Programme Launched — 10,000 Role Reductions</div>
-        <div class="tl-text">Jakobs announces a two-year programme targeting overhead reduction, portfolio simplification, and operational efficiency. <strong>10,000 roles are cut globally</strong> — affecting commercial, operational, and support functions. Netherlands is not insulated: HQ functions, shared services, and business unit roles are all affected.</div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot crisis">2023</div>
-      <div class="tl-body">
-        <div class="tl-date">2023 — Second Wave</div>
-        <div class="tl-title">Additional 6,000 Reductions + FDA Consent Decree</div>
-        <div class="tl-text">A second wave of restructuring removes a further 6,000 roles. Simultaneously, the US FDA issues a consent decree related to the Respironics recall — requiring a <strong>mandatory quality management system overhaul</strong> across manufacturing, supply chain, and post-market surveillance. Compliance investment exceeds €1B.</div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot pivot">2023–24</div>
-      <div class="tl-body">
-        <div class="tl-date">2023–2024 — Portfolio Simplification</div>
-        <div class="tl-title">Divest, Refocus, Rebuild</div>
-        <div class="tl-text">Philips accelerates its exit from non-core categories. The Domestic Appliances division (sold earlier to PE) is fully separated. Personal Security is exited. The portfolio converges on three pillars: Diagnostic Imaging &amp; Informatics, Image Guided Therapy, and Personal Health (shavers, oral care). The go-to-market model shifts from product-push to <strong>managed services and long-term hospital partnerships</strong>.</div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-dot recovery">2025</div>
-      <div class="tl-body">
-        <div class="tl-date">2025 — Stabilisation</div>
-        <div class="tl-title">Return to Profitability, New Operating Model Embedding</div>
-        <div class="tl-text">Philips returns to operating profit. The new divisional structure is fully embedded. Quality systems have been redesigned under the FDA consent decree framework. Customer services are being repositioned as a strategic differentiator. <strong>Transformation is far from over</strong> — digital health platform deployment, NPI acceleration, and customer capability uplift are all live programmes.</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SECTION 2: DIVISIONS -->
-  <div class="section-title">Business Division Transformation Map</div>
-  <div class="div-grid">
-
-    <div class="div-card">
-      <div class="div-card-top">
-        <span class="div-badge" style="background:#1e40af;">Image Guided Therapy</span>
-        <span class="div-nl nl-high">NL Relevance: High</span>
-      </div>
-      <h3>Interventional &amp; Image Guided Therapy</h3>
-      <div class="div-section-label">Transformation Focus</div>
-      <p>NPI acceleration for interventional cardiology and radiology systems, shift to solutions-as-a-service, clinical evidence programme expansion, and hospital partnership deepening. Global commercial HQ in Best (Netherlands).</p>
-      <div class="div-section-label">Key Pressures</div>
-      <p>Intense competition from Siemens Healthineers and GE HealthCare; hospital procurement consolidation; pressure to prove clinical outcome superiority alongside hardware specs.</p>
-      <div class="div-section-label">Capability Gaps</div>
-      <ul class="div-gaps">
-        <li>Programme management for NPI and launch excellence</li>
-        <li>Clinical applications training and education</li>
-        <li>Solutions architecture and service design</li>
-        <li>Change management for sales model transition</li>
-      </ul>
-    </div>
-
-    <div class="div-card">
-      <div class="div-card-top">
-        <span class="div-badge" style="background:#0d9488;">Diagnostic Imaging</span>
-        <span class="div-nl nl-high">NL Relevance: High</span>
-      </div>
-      <h3>Diagnostic Imaging &amp; Informatics</h3>
-      <div class="div-section-label">Transformation Focus</div>
-      <p>Cloud migration of IntelliSpace and diagnostic informatics platforms, AI integration into radiology and ultrasound workflows, hospital data interoperability, and regulatory AI approval navigation. Core R&amp;D in Eindhoven.</p>
-      <div class="div-section-label">Key Pressures</div>
-      <p>Shift from perpetual license to subscription revenue; hospital IT integration complexity; AI regulatory approval timelines (EU AI Act, FDA 510k); interoperability standards pressure from HIMSS and hospital procurement.</p>
-      <div class="div-section-label">Capability Gaps</div>
-      <ul class="div-gaps">
-        <li>Digital transformation management and cloud migration leadership</li>
-        <li>Operational change for product-to-subscription pivot</li>
-        <li>Clinical training and application specialist programmes</li>
-        <li>Data governance and platform solution architecture</li>
-      </ul>
-    </div>
-
-    <div class="div-card">
-      <div class="div-card-top">
-        <span class="div-badge" style="background:#dc2626;">Connected Care</span>
-        <span class="div-nl nl-med">NL Relevance: Medium</span>
-      </div>
-      <h3>Connected Care &amp; Patient Monitoring</h3>
-      <div class="div-section-label">Transformation Focus</div>
-      <p>Quality and compliance overhaul post-Respironics, supply chain reliability redesign, customer trust restoration programme, and market re-entry in sleep &amp; respiratory care. FDA consent decree compliance is the dominant programme.</p>
-      <div class="div-section-label">Key Pressures</div>
-      <p>FDA consent decree obligations; customer trust deficit after the recall; competitive erosion during the period Philips was unable to supply; ongoing litigation exposure.</p>
-      <div class="div-section-label">Capability Gaps</div>
-      <ul class="div-gaps">
-        <li>Quality management system transformation and QMS programme leadership</li>
-        <li>Compliance programme management (EU MDR, FDA)</li>
-        <li>Supply chain resilience and dual-source redesign</li>
-        <li>Customer success and trust recovery programme management</li>
-      </ul>
-    </div>
-
-    <div class="div-card">
-      <div class="div-card-top">
-        <span class="div-badge" style="background:#7c3aed;">Personal Health</span>
-        <span class="div-nl nl-high">NL Relevance: High</span>
-      </div>
-      <h3>Personal Health — Consumer Division</h3>
-      <div class="div-section-label">Transformation Focus</div>
-      <p>D2C and subscription model acceleration (Sonicare subscription, Philishave premium), supply chain localisation post-COVID, consumer digital experience overhaul, and competitive repositioning against Asian challengers. Amsterdam and Eindhoven operations.</p>
-      <div class="div-section-label">Key Pressures</div>
-      <p>Chinese competition (Xiaomi, Oclean) commoditising electric oral care and grooming categories; retail channel disruption; premium positioning under pressure; subscription model requiring new service infrastructure.</p>
-      <div class="div-section-label">Capability Gaps</div>
-      <ul class="div-gaps">
-        <li>Consumer transformation and D2C operating model leadership</li>
-        <li>Supply chain redesign for resilience and localisation</li>
-        <li>New service development and subscription model operations</li>
-        <li>Digital commerce operations and consumer data programmes</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- SECTION 3: NL OPERATIONS -->
-  <div class="section-title">Netherlands Operations — Function by Function</div>
-  <div class="ops-grid">
-
-    <div class="ops-card">
-      <div class="ops-tag">R&amp;D &amp; Engineering</div>
-      <div class="ops-title">Eindhoven — Global Innovation Centre</div>
-      <div class="ops-body">Philips' largest R&amp;D site globally, with thousands of engineers focused on medical imaging, AI diagnostics, connected devices, and personal health hardware. The strategic focus is shifting from hardware-led to <strong>software and AI-embedded product development</strong>. NPI processes are under a major overhaul to reduce time-to-market and improve regulatory submission quality — a critical area of ongoing investment and capability need.</div>
-    </div>
-
-    <div class="ops-card">
-      <div class="ops-tag">Customer Services &amp; Solutions</div>
-      <div class="ops-title">NL Market — Hospital &amp; Clinical Services</div>
-      <div class="ops-body">Over 1,000 FTE in the Netherlands covering hospital installation, application specialist support, clinical training, service quality, and compliance. Post-recall, <strong>customer service has become a strategic differentiator</strong>, not just a cost centre. Major investment is underway in upskilling, digital service tools, outcome-based SLAs, and new service development. The education department training hospital staff on Philips equipment is a growing priority as AI-embedded devices require structured clinical learning programmes.</div>
-    </div>
-
-    <div class="ops-card">
-      <div class="ops-tag">Supply Chain &amp; Operations</div>
-      <div class="ops-title">Global Supply Chain Management — NL-Based</div>
-      <div class="ops-body">NL-based global supply chain management for medical devices and consumer products. The Respironics recall exposed critical single-source dependencies. The redesign programme focuses on <strong>dual sourcing, nearshoring, inventory buffering for critical components</strong>, and supplier quality. Operational excellence and Lean/Six Sigma programmes are central to the recovery and efficiency agenda. Procurement rationalisation and supplier consolidation are ongoing.</div>
-    </div>
-
-    <div class="ops-card">
-      <div class="ops-tag">Quality, Regulatory &amp; Compliance</div>
-      <div class="ops-title">Quality Transformation — FDA Consent Decree Programme</div>
-      <div class="ops-body">The FDA consent decree created a €1B+ quality transformation obligation. This covers <strong>Quality Management System overhaul, post-market surveillance improvement, supplier quality management</strong>, manufacturing process validation, and clinical data governance. EU MDR (Medical Device Regulation) compliance adds a parallel compliance transformation stream. This is one of the highest-priority and highest-investment transformation programmes across the whole organisation.</div>
-    </div>
-
-    <div class="ops-card">
-      <div class="ops-tag">Commercial &amp; Go-to-Market</div>
-      <div class="ops-title">NL &amp; EMEA — Outcome-Based Sales Transformation</div>
-      <div class="ops-body">The shift from product-push to <strong>Managed Equipment Services and long-term hospital partnerships</strong> is transforming the commercial model. NL and EMEA commercial teams are being restructured, retrained, and equipped for consultative, outcomes-led selling. This requires significant change management — new skills, new incentive structures, new customer relationship models — in a sales force with strong hardware heritage.</div>
-    </div>
-
-    <div class="ops-card">
-      <div class="ops-tag">Education &amp; Clinical Training</div>
-      <div class="ops-title">Philips Academy — Clinical Learning &amp; Application Excellence</div>
-      <div class="ops-body">As hospitals adopt AI-assisted diagnostics and connected care platforms, <strong>structured training for clinical staff and application specialists</strong> has become a commercial necessity and a regulatory requirement. The education function is expanding its learning architecture, developing blended learning programmes, and building clinical competency frameworks that enable hospitals to maximise value from Philips equipment — and that differentiate Philips from competitors in procurement decisions.</div>
-    </div>
-
-  </div>
-
-  <!-- SECTION 4: CAPABILITY DEMAND -->
-  <div class="section-title">Transformation Capability Demand — 2025–2027 Outlook</div>
-  <div class="cap-card">
-    <div class="cap-table-head">
-      <span>Capability Area</span>
-      <span style="text-align:center;">Demand Level</span>
-      <span>Why Now</span>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Programme &amp; Change Management</div>
-      <div style="text-align:center;"><span class="demand-badge d-vh">Very High</span></div>
-      <div class="cap-why">Simultaneous restructuring across all divisions; <strong>external programme leadership shortage</strong> in NL market; internal capacity consumed by BAU recovery</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Quality &amp; Compliance Transformation</div>
-      <div style="text-align:center;"><span class="demand-badge d-vh">Very High</span></div>
-      <div class="cap-why"><strong>FDA consent decree obligations</strong>; EU MDR compliance deadline; QMS rebuild across manufacturing and supply chain — multi-year, high-investment programme</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Supply Chain Transformation</div>
-      <div style="text-align:center;"><span class="demand-badge d-h">High</span></div>
-      <div class="cap-why">Resilience redesign post-recall; nearshoring; <strong>supplier rationalisation and dual-source qualification</strong>; Lean and operational excellence embedding</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">NPI &amp; Launch Excellence</div>
-      <div style="text-align:center;"><span class="demand-badge d-h">High</span></div>
-      <div class="cap-why">Portfolio refocus means <strong>accelerated launch cadence</strong> across imaging and interventional; NPI governance overhaul underway in Eindhoven R&amp;D</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Digital &amp; Data Transformation</div>
-      <div style="text-align:center;"><span class="demand-badge d-h">High</span></div>
-      <div class="cap-why">IntelliSpace cloud migration; <strong>AI-embedded device integration</strong>; hospital data interoperability; subscription platform infrastructure build</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Customer Service Transformation</div>
-      <div style="text-align:center;"><span class="demand-badge d-h">High</span></div>
-      <div class="cap-why">Service model shift from reactive to proactive; <strong>outcome-based SLAs</strong>; customer trust recovery post-recall; new service development in clinical support</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Learning Architecture &amp; Training Design</div>
-      <div style="text-align:center;"><span class="demand-badge d-mh">Medium–High</span></div>
-      <div class="cap-why"><strong>Clinical staff training</strong> for AI-assisted devices; application specialist upskilling; post-restructuring internal capability rebuild</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Operational Excellence &amp; Continuous Improvement</div>
-      <div style="text-align:center;"><span class="demand-badge d-mh">Medium–High</span></div>
-      <div class="cap-why">Lean deployment across manufacturing and service operations; <strong>efficiency recovery</strong> after years of recall-related disruption and cost overrun</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">Operating Model Redesign</div>
-      <div style="text-align:center;"><span class="demand-badge d-mh">Medium–High</span></div>
-      <div class="cap-why">New divisional structure embedding; <strong>shared services optimisation</strong>; commercial model redesign for managed services</div>
-    </div>
-
-    <div class="cap-row">
-      <div class="cap-name">New Service Development</div>
-      <div style="text-align:center;"><span class="demand-badge d-mh">Medium–High</span></div>
-      <div class="cap-why">Subscription and outcome-based models require <strong>new service design capabilities</strong>; hospital partnership models need structured service architecture</div>
-    </div>
-
-  </div>
-
-  <!-- SECTION 5: NL SPOTLIGHT -->
+  <!-- NL SPOTLIGHT — moved to top -->
   <div class="section-title">Netherlands Spotlight</div>
   <div class="nl-spotlight">
     <div class="nl-spotlight-title">Key Facts — Philips in the Netherlands 2025</div>
@@ -499,7 +257,7 @@
       </div>
       <div class="nl-stat">
         <div class="nl-stat-lbl">NL-Based Global Functions</div>
-        <div class="nl-stat-val">Supply Chain, R&amp;D, Regulatory, Procurement, Finance</div>
+        <div class="nl-stat-val">Supply Chain, R&amp;D, Regulatory, Procurement, Finance, Ecommerce</div>
       </div>
       <div class="nl-stat">
         <div class="nl-stat-lbl">Talent Market Pressure</div>
@@ -507,7 +265,7 @@
       </div>
       <div class="nl-stat">
         <div class="nl-stat-lbl">Transformation Scope</div>
-        <div class="nl-stat-val">Multiple simultaneous programmes across quality, commercial, digital, supply chain</div>
+        <div class="nl-stat-val">9+ simultaneous programmes across quality, digital, ecommerce, supply chain, strategy</div>
       </div>
     </div>
 
@@ -515,15 +273,15 @@
     <div class="nl-locations">
       <div class="nl-loc">
         <div class="nl-loc-city">Amsterdam</div>
-        <div class="nl-loc-desc">Group HQ, commercial leadership, EMEA functions</div>
+        <div class="nl-loc-desc">Group HQ, commercial leadership, EMEA &amp; ecommerce functions</div>
       </div>
       <div class="nl-loc">
         <div class="nl-loc-city">Eindhoven</div>
-        <div class="nl-loc-desc">Global R&amp;D centre, imaging &amp; AI development, manufacturing</div>
+        <div class="nl-loc-desc">Global R&amp;D centre, imaging &amp; AI development, NPI</div>
       </div>
       <div class="nl-loc">
         <div class="nl-loc-city">Best</div>
-        <div class="nl-loc-desc">Image guided therapy global commercial HQ, interventional production</div>
+        <div class="nl-loc-desc">Image guided therapy global commercial HQ</div>
       </div>
       <div class="nl-loc">
         <div class="nl-loc-city">Drachten</div>
@@ -531,24 +289,210 @@
       </div>
     </div>
 
-    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--sub);margin:16px 0 10px;">Key Transformation Programmes &amp; Leadership Needs — Netherlands</div>
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--sub);margin:16px 0 10px;">Active Transformation Programmes — Netherlands</div>
     <ul class="nl-programmes">
-      <li><strong>Quality Management System Overhaul</strong> — FDA consent decree-driven, covering manufacturing, post-market surveillance, and supplier quality across NL sites</li>
-      <li><strong>Customer Services Modernisation</strong> — Transition from reactive service to outcome-based model; new service design, digital tools, and capability leadership</li>
-      <li><strong>Digital Health Platform &amp; E-Commerce Enablement</strong> — IntelliSpace cloud migration, AI-assisted diagnostics rollout, and direct digital channel development for consumables and accessories</li>
-      <li><strong>DTC &amp; Omni-channel Development</strong> — Expansion of direct-to-consumer channels for Personal Health and Health Technology; channel strategy, fulfilment, and digital shelf leadership</li>
-      <li><strong>Supply Chain Transformation</strong> — End-to-end supply chain redesign post-recall; supplier base restructuring, inventory repositioning, and resilience-building across NL and European operations</li>
-      <li><strong>Lean Manufacturing &amp; Operational Excellence</strong> — Eindhoven and Drachten sites; efficiency recovery and continuous improvement leadership</li>
-      <li><strong>NPI Excellence Programme</strong> — Governance overhaul to reduce time-to-market for imaging and interventional product introductions; cross-functional programme leadership</li>
-      <li><strong>Commercial Operating Model Transition</strong> — NL and EMEA teams shifting to managed services and partnership models; commercial operations and change leadership</li>
-      <li><strong>Programme &amp; Transformation Management Office</strong> — Coordination of concurrent change programmes; need for senior PMO and transformation directors with cross-functional mandate</li>
+      <li><strong>Quality Management System Overhaul</strong> — FDA consent decree-driven; manufacturing, post-market surveillance, and supplier quality</li>
+      <li><strong>DTC &amp; E-Commerce Development</strong> — Direct-to-consumer channel expansion for Personal Health; digital shelf, fulfilment, and consumer data leadership</li>
+      <li><strong>Commercial Strategy &amp; Portfolio Refocus</strong> — Transition to managed services and hospital partnership models; go-to-market redesign across EMEA</li>
+      <li><strong>Customer Services Modernisation</strong> — Reactive to outcome-based service model; new SLAs, digital tools, capability uplift</li>
+      <li><strong>Digital Health Platform</strong> — AI-assisted diagnostics rollout and direct digital channel development</li>
+      <li><strong>Supply Chain Transformation</strong> — Post-recall resilience redesign; dual sourcing, nearshoring, inventory strategy</li>
+      <li><strong>NPI Excellence Programme</strong> — Governance overhaul to reduce time-to-market for imaging and interventional launches</li>
+      <li><strong>Commercial Operating Model Transition</strong> — NL and EMEA teams shifting to solutions selling and managed services</li>
+      <li><strong>Programme &amp; Transformation Management Office</strong> — Coordination of concurrent change; senior PMO and transformation directors</li>
     </ul>
   </div>
 
-  <!-- CLOSING BANNER -->
+  <!-- CAPABILITY DEMAND — visual bars, moved to top -->
+  <div class="section-title">Transformation Capability Demand — 2025–2027 Outlook</div>
+  <div class="cap-bars">
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Programme &amp; Change Management</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:95%;background:#dc2626;">Very High</div></div>
+      <div class="cap-bar-why">Simultaneous restructuring across all divisions; internal capacity consumed by BAU recovery</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Quality &amp; Compliance Transformation</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:95%;background:#dc2626;">Very High</div></div>
+      <div class="cap-bar-why">FDA consent decree €1B+ obligation; EU MDR compliance; QMS rebuild across supply chain</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">E-Commerce &amp; DTC Strategy</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">Personal Health DTC expansion; digital shelf &amp; fulfilment leadership; consumer channel strategy</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Commercial Strategy &amp; Portfolio</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">Managed services pivot; hospital partnership models; go-to-market redesign across EMEA</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Supply Chain Transformation</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">Post-recall resilience redesign; nearshoring; supplier rationalisation and dual-source qualification</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Digital Transformation</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">AI-embedded device integration; subscription platform build; hospital data interoperability</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Customer Service Transformation</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">Reactive to proactive model shift; outcome-based SLAs; trust recovery post-recall</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">NPI &amp; Launch Excellence</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:80%;background:#c2410c;">High</div></div>
+      <div class="cap-bar-why">Accelerated launch cadence across imaging and interventional; NPI governance overhaul in Eindhoven</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Operating Model Redesign</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:65%;background:#ca8a04;">Medium–High</div></div>
+      <div class="cap-bar-why">New divisional structure embedding; shared services optimisation; commercial model redesign</div>
+    </div>
+    <div class="cap-bar-row">
+      <div class="cap-bar-label">Operational Excellence &amp; CI</div>
+      <div class="cap-bar-track"><div class="cap-bar-fill" style="width:65%;background:#ca8a04;">Medium–High</div></div>
+      <div class="cap-bar-why">Lean deployment across manufacturing and service operations; efficiency recovery post-recall</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE — compact -->
+  <div class="section-title">The Transformation Backdrop — 2021 to 2025</div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot crisis">2021</div>
+      <div class="tl-body">
+        <div class="tl-date">2021 — The Crisis</div>
+        <div class="tl-title">Respironics CPAP Recall Announced</div>
+        <div class="tl-text">Philips recalls 5.5 million sleep and respiratory care devices due to foam degradation risks. The defining event of the 2021–2025 period — triggering regulatory action, litigation, and billions in provisions.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot pivot">Oct 22</div>
+      <div class="tl-body">
+        <div class="tl-date">October 2022 — Leadership Change</div>
+        <div class="tl-title">Roy Jakobs Appointed CEO</div>
+        <div class="tl-text">Frans van Houten steps down. Jakobs takes the helm with a clear mandate: resolve the recall, stabilise the balance sheet, sharpen strategic focus. Major restructuring announced within weeks.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot pivot">Nov 22</div>
+      <div class="tl-body">
+        <div class="tl-date">November 2022 — Restructuring</div>
+        <div class="tl-title">"Philips Fit" — 10,000 Role Reductions</div>
+        <div class="tl-text"><strong>10,000 roles cut globally</strong> across commercial, operational, and support functions. Netherlands HQ functions, shared services, and business unit roles all affected.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot crisis">2023</div>
+      <div class="tl-body">
+        <div class="tl-date">2023 — Second Wave + Regulatory</div>
+        <div class="tl-title">6,000 Further Reductions + FDA Consent Decree</div>
+        <div class="tl-text">A further 6,000 roles removed. US FDA issues a consent decree requiring a <strong>mandatory quality management system overhaul</strong> across manufacturing, supply chain, and post-market surveillance. Compliance investment exceeds €1B.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot pivot">2023–24</div>
+      <div class="tl-body">
+        <div class="tl-date">2023–2024 — Portfolio Simplification</div>
+        <div class="tl-title">Divest, Refocus, Rebuild</div>
+        <div class="tl-text">Portfolio converges on three pillars: Diagnostic Imaging, Image Guided Therapy, and Personal Health. Go-to-market shifts from product-push to <strong>managed services and hospital partnerships</strong>. DTC and ecommerce investment accelerated for Personal Health.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot recovery">2025</div>
+      <div class="tl-body">
+        <div class="tl-date">2025 — Stabilisation</div>
+        <div class="tl-title">Return to Profitability, New Operating Model Embedding</div>
+        <div class="tl-text">Philips returns to operating profit. New divisional structure fully embedded. Quality systems redesigned. <strong>Transformation is far from over</strong> — digital platform deployment, ecommerce expansion, NPI acceleration, and commercial strategy evolution are all live programmes.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIVISIONS — compact -->
+  <div class="section-title">Business Division Transformation Map</div>
+  <div class="div-grid">
+
+    <div class="div-card">
+      <div class="div-card-top">
+        <span class="div-badge" style="background:#1e40af;">Image Guided Therapy</span>
+        <span class="div-nl nl-high">NL: High</span>
+      </div>
+      <h3>Interventional &amp; Image Guided Therapy</h3>
+      <div class="div-section-label">Focus</div>
+      <p>NPI acceleration, shift to solutions-as-a-service, hospital partnership deepening. Global commercial HQ in Best (Netherlands).</p>
+      <div class="div-section-label">Capability Gaps</div>
+      <ul class="div-gaps">
+        <li>NPI programme management and launch excellence</li>
+        <li>Solutions architecture and service design</li>
+        <li>Change management for sales model transition</li>
+      </ul>
+    </div>
+
+    <div class="div-card">
+      <div class="div-card-top">
+        <span class="div-badge" style="background:#0d9488;">Diagnostic Imaging</span>
+        <span class="div-nl nl-high">NL: High</span>
+      </div>
+      <h3>Diagnostic Imaging &amp; Informatics</h3>
+      <div class="div-section-label">Focus</div>
+      <p>Cloud migration, AI integration into radiology workflows, subscription revenue shift. Core R&amp;D in Eindhoven.</p>
+      <div class="div-section-label">Capability Gaps</div>
+      <ul class="div-gaps">
+        <li>Digital transformation and platform migration leadership</li>
+        <li>Product-to-subscription operating model change</li>
+        <li>Clinical training and application specialist programmes</li>
+      </ul>
+    </div>
+
+    <div class="div-card">
+      <div class="div-card-top">
+        <span class="div-badge" style="background:#dc2626;">Connected Care</span>
+        <span class="div-nl nl-med">NL: Medium</span>
+      </div>
+      <h3>Connected Care &amp; Patient Monitoring</h3>
+      <div class="div-section-label">Focus</div>
+      <p>Quality overhaul post-Respironics, supply chain redesign, customer trust recovery. FDA consent decree is the dominant programme.</p>
+      <div class="div-section-label">Capability Gaps</div>
+      <ul class="div-gaps">
+        <li>QMS transformation and compliance programme management</li>
+        <li>Supply chain resilience and dual-source redesign</li>
+        <li>Customer trust recovery programme leadership</li>
+      </ul>
+    </div>
+
+    <div class="div-card">
+      <div class="div-card-top">
+        <span class="div-badge" style="background:#7c3aed;">Personal Health</span>
+        <span class="div-nl nl-high">NL: High</span>
+      </div>
+      <h3>Personal Health — Consumer Division</h3>
+      <div class="div-section-label">Focus</div>
+      <p>DTC and ecommerce acceleration, subscription model (Sonicare, Philishave), competitive repositioning against Asian challengers. Amsterdam and Eindhoven operations.</p>
+      <div class="div-section-label">Capability Gaps</div>
+      <ul class="div-gaps">
+        <li>E-commerce strategy and DTC operating model leadership</li>
+        <li>Consumer channel and digital shelf management</li>
+        <li>Subscription model operations and new service development</li>
+        <li>Supply chain localisation and resilience</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CONSULT BANNER -->
   <div class="consult-banner">
-    <div class="cb-title">Market Signal — Transformation Leadership Demand</div>
-    <p>Philips represents a once-in-a-decade transformation in the Netherlands — a €17B organisation simultaneously rebuilding its operating model, quality systems, supply chain, customer service capability, digital infrastructure, and direct channels. <strong>The demand for experienced leadership across transformation, programme management, supply chain, ecommerce, omni-channel, and operational excellence is significant and will remain elevated through 2026–2027.</strong> The complexity of running multiple concurrent programmes — across healthcare, personal health, and commercial operations — requires senior directors who can lead ambiguity, build capability, and deliver results in a heavily matrixed environment.</p>
+    <div class="cb-title">Market Signal — Transformation &amp; Commercial Leadership Demand</div>
+    <p>Philips represents a once-in-a-decade transformation in the Netherlands — a €17B organisation simultaneously rebuilding its operating model, quality systems, supply chain, ecommerce channels, commercial strategy, and digital infrastructure. <strong>The demand for experienced leadership across transformation, ecommerce, strategy, programme management, and operational excellence is significant and will remain elevated through 2026–2027.</strong></p>
   </div>
 
   <div class="li-cta">
