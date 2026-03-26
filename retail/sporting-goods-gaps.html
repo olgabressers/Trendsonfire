@@ -56,28 +56,21 @@
     .gap-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .gap-table tbody td { padding: 9px 7px; text-align: center; font-size: 12px; font-weight: 700; border-bottom: 1px solid #f1f3f5; }
     .gap-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
-    .gap-table tbody tr.champion-row { background: #fff7ed !important; }
-    .gap-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
-    .gap-table tbody tr.champion-row td:first-child::after { content: " ★"; font-size: 11px; }
     .cell-strong { background: #dcfce7; color: #166534; border-radius: 5px; padding: 2px 7px; display: inline-block; }
     .cell-dev { background: #fef9c3; color: #854d0e; border-radius: 5px; padding: 2px 7px; display: inline-block; }
     .cell-gap { background: #fee2e2; color: #991b1b; border-radius: 5px; padding: 2px 7px; display: inline-block; }
 
     .matrix-note { font-size: 12px; color: var(--sub); margin-top: 14px; padding: 12px 16px; background: white; border-radius: 8px; border: 1px solid var(--border); }
-    .champion-insight { background: #fff7ed; border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 24px; margin-top: 20px; font-size: 14px; color: var(--text); line-height: 1.7; }
-    .champion-insight strong { color: var(--orange); }
 
     .bar-chart { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
     .bar-label { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 130px; text-align: right; flex-shrink: 0; }
-    .bar-label.champion-label { color: var(--orange); font-weight: 800; }
     .bar-track { flex: 1; background: #f1f5f9; border-radius: 6px; height: 28px; position: relative; overflow: visible; }
     .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; position: relative; }
     .bar-fill .bar-val { font-size: 12px; font-weight: 800; color: white; }
     .bar-fill .bar-val-outside { font-size: 12px; font-weight: 700; color: var(--sub); position: absolute; left: calc(100% + 8px); white-space: nowrap; }
     .avg-marker { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--navy); opacity: 0.4; z-index: 2; }
     .avg-label { position: absolute; top: -20px; font-size: 10px; color: var(--sub); white-space: nowrap; transform: translateX(-50%); font-weight: 600; }
-    .champion-tag { font-size: 11px; color: var(--orange); font-weight: 700; margin-left: 6px; white-space: nowrap; }
 
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
@@ -86,8 +79,6 @@
     .heat-table thead th:first-child { text-align: left; padding-left: 18px; }
     .heat-table tbody td { padding: 9px 7px; text-align: center; font-size: 14px; border-bottom: 1px solid #f1f3f5; font-weight: 700; }
     .heat-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
-    .heat-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
-    .heat-table tbody tr.champion-row { background: #fff7ed; }
     .heat-leader { background: #0f2340; color: white; border-radius: 5px; padding: 2px 7px; display: inline-block; font-size: 13px; }
     .heat-solid { background: #1e3a5f; color: white; border-radius: 5px; padding: 2px 7px; display: inline-block; font-size: 13px; }
     .heat-partial { background: #fef3c7; color: #92400e; border-radius: 5px; padding: 2px 7px; display: inline-block; font-size: 13px; }
@@ -101,8 +92,6 @@
     .country-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 130px; }
     .country-table tbody td { padding: 9px 8px; text-align: center; border-bottom: 1px solid #f1f3f5; }
     .country-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
-    .country-table tbody tr.champion-row { background: #fff7ed; }
-    .country-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
     .cp-full { display:inline-block; width:20px; height:20px; background:#0f2340; border-radius:50%; line-height:20px; color:white; font-size:11px; font-weight:800; }
     .cp-partial { display:inline-block; width:20px; height:20px; background:#f59e0b; border-radius:50%; line-height:20px; color:white; font-size:11px; font-weight:800; }
     .cp-absent { display:inline-block; width:20px; height:20px; background:#e5e7eb; border-radius:50%; line-height:20px; color:#9ca3af; font-size:11px; font-weight:800; }
@@ -121,8 +110,6 @@
     .omni-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 130px; }
     .omni-table tbody td { padding: 9px 8px; text-align: center; border-bottom: 1px solid #f1f3f5; }
     .omni-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); white-space: nowrap; }
-    .omni-table tbody tr.champion-row { background: #fff7ed; }
-    .omni-table tbody tr.champion-row td:first-child { font-weight: 800; color: var(--orange); }
     .omni-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .omni-adv { display:inline-block; background:#0d9488; color:white; border-radius:5px; padding:2px 8px; font-size:11px; font-weight:700; }
     .omni-bas { display:inline-block; background:#fef3c7; color:#92400e; border-radius:5px; padding:2px 8px; font-size:11px; font-weight:700; }
@@ -246,7 +233,7 @@
 <main>
 
   <div class="insight-banner">
-    Consumer spending on non-essential sporting goods dropped <strong>&minus;8% in Europe in 2024</strong> as cost-of-living pressures squeezed discretionary budgets. At the same time, <strong>Nike and Adidas lost combined market share</strong> for the second consecutive year &mdash; not to each other, but to challenger brands filling specific unmet needs. <strong>Lululemon built a $9B empire on community and DTC. Gymshark grew to $600M with zero wholesale. On Running tripled revenue with sustainability-first messaging and a €300 shoe.</strong> Meanwhile, the mass of heritage brands &mdash; Champion, Reebok, Fila, Puma &mdash; compete on the same axes: logo, price promotion, and athlete licensing. The window to claim unoccupied territory is open. It will not stay open.
+    Consumer spending on non-essential sporting goods dropped <strong>&minus;8% in Europe in 2024</strong> as cost-of-living pressures squeezed discretionary budgets. At the same time, <strong>Nike and Adidas lost combined market share</strong> for the second consecutive year &mdash; not to each other, but to challenger brands filling specific unmet needs. <strong>Lululemon built a $9B empire on community and DTC. Gymshark grew to $600M with zero wholesale. On Running tripled revenue with sustainability-first messaging and a €300 shoe.</strong> Meanwhile, heritage mass-market brands continue competing on the same axes: logo, price promotion, and athlete licensing &mdash; a strategy that is losing ground to brands building genuine capability in DTC, community, omni-channel, and sustainability. The window to claim unoccupied territory is open. It will not stay open.
   </div>
 
   <div class="stat-cards" id="stat-cards"></div>
@@ -260,9 +247,6 @@
       <table class="gap-table" id="gap-table"></table>
     </div>
     <div class="matrix-note">Strong = clear competitive capability &nbsp;&middot;&nbsp; Dev. = in development or partial &nbsp;&middot;&nbsp; Gap = absent or minimal &mdash; white space opportunity</div>
-    <div class="champion-insight">
-      <strong>Champion Gap Score (18-brand view):</strong> Champion scores &ldquo;Strong&rdquo; on 1 out of 10 dimensions (Value Positioning) &mdash; identical to Fila and below Reebok. <strong>The more revealing finding: Lululemon and Gymshark score Strong on Community Platform and DTC Direct without having existed 20 years ago.</strong> Champion has 90 years of brand heritage, genuine collegiate DNA, and strong consumer affection &mdash; but has not yet translated any of that into digital capability. Decathlon out-executes Champion on every functional dimension. <strong>This is an opportunity to create a winning roadmap</strong> &mdash; built on the one thing Decathlon cannot buy: cultural identity.
-    </div>
   </div>
 
   <!-- DTC REVENUE SHARE -->
@@ -271,9 +255,7 @@
     <div class="section-divider"></div>
     <div class="section-sub">% of total brand revenue from own channels (website, app, brand stores). Industry average: 32%. The gap between DTC leaders and laggards has widened dramatically since 2020.</div>
     <div class="bar-chart" id="dtc-chart"></div>
-    <div class="champion-insight" style="margin-top:16px">
-      <strong>The DTC divide is structural, not cyclical.</strong> Gymshark (98%) and Lululemon (92%) were born DTC &mdash; they have no wholesale dependency to unwind. Nike and Adidas are actively reducing wholesale. On Running built its €2B business almost entirely direct. At 18%, Champion is in the bottom quartile &mdash; heavily reliant on wholesale partners (Zalando, SportsDirect, department stores) who control the customer relationship, pricing, and data.
-    </div>
+    <div class="heat-insight" style="margin-top:14px"><strong>The DTC divide is structural, not cyclical.</strong> Gymshark (98%) and Lululemon (92%) were born DTC — they have no wholesale dependency to unwind. Nike and Adidas are actively reducing wholesale exposure. On Running built its €2B business almost entirely direct. Brands in the bottom quartile remain heavily reliant on Zalando, Sports Direct, and department stores — partners who control the customer relationship, pricing, and data.</div>
   </div>
 
   <!-- VALUE FOR MONEY -->
@@ -283,7 +265,7 @@
     <div class="section-sub">&ldquo;Would you say this brand gives you fair value for money?&rdquo; Survey, 1&ndash;10 scale. n=4,200 European consumers across 6 markets.</div>
     <div class="bar-chart" id="vfm-chart"></div>
     <div style="margin-top:14px; padding:12px 16px; background:white; border-radius:8px; border:1px solid var(--border); font-size:13px; color:var(--sub); line-height:1.6;">
-      <strong style="color:var(--navy)">Key finding:</strong> Decathlon (9.2) is in a category of its own on value perception &mdash; Champion (7.8) cannot win on price alone against a retailer with 1,850 stores and own-brand manufacturing across every sport. Arc&rsquo;teryx (4.8) and Lululemon (5.8) prove the inverse: premiumisation built on community and design creates a different kind of value entirely. Champion sits in the &ldquo;value trap&rdquo; &mdash; too premium to beat Decathlon on price, not premium enough to justify higher prices on brand aspiration alone.
+      <strong style="color:var(--navy)">Key finding:</strong> Decathlon (9.2) is in a category of its own on value perception — no heritage brand can win on price alone against a retailer with 1,850 stores and own-brand manufacturing across every sport. Arc&rsquo;teryx (4.8) and Lululemon (5.8) prove the inverse: premiumisation built on community and design creates a different kind of value entirely. Mid-tier heritage brands face a structural "value trap" — too premium to beat Decathlon on price, not premium enough to justify higher prices on brand aspiration alone.
     </div>
   </div>
 
@@ -296,7 +278,7 @@
       <table class="heat-table" id="heat-table"></table>
     </div>
     <div class="heat-insight">
-      <strong>Champion owns Athleisure and Collegiate outright</strong> &mdash; the only two categories where no competitor scores higher. The fast-growing categories (Outdoor/Trail, Running) are dominated by Salomon, Arc&rsquo;teryx, On Running, and ASICS at prices 3&ndash;5&times; Champion&rsquo;s range. <strong>Decathlon is the only brand with solid presence across all 8 categories</strong> &mdash; breadth is Decathlon&rsquo;s moat. Nobody else competes on breadth; they compete on depth in chosen categories. Champion needs a category depth strategy, not a category expansion strategy.
+      <strong>Category ownership is concentrated, not shared.</strong> The fast-growing categories — Outdoor/Trail (+22% YoY), Running — are dominated by Salomon, Arc&rsquo;teryx, On Running, and ASICS at prices 3&ndash;5× heritage brand ranges. <strong>Decathlon is the only brand with solid presence across all 8 categories</strong> — breadth is Decathlon&rsquo;s moat. No other brand competes on breadth; they win on depth in chosen categories. The strategic imperative for most heritage brands is category depth, not category expansion.
     </div>
   </div>
 
@@ -313,8 +295,8 @@
         <table class="country-table" id="country-matrix"></table>
       </div>
     </div>
-    <div class="champion-insight" style="margin-top:20px">
-      <strong>Champion&rsquo;s European footprint is thin.</strong> Strong in France (Hanesbrands&rsquo; heritage market) and Southern Europe (Italy, Spain), but no brand stores in the Netherlands, absent in Scandinavia, and limited in Germany &mdash; Europe&rsquo;s largest economy. Lululemon, with a fraction of Champion&rsquo;s history, already operates in more European markets. On Running, founded in 2010, has brand presence in 9 key European cities. Champion&rsquo;s European distribution strategy relies heavily on wholesale partners rather than brand-controlled environments, which limits brand experience, pricing power, and customer data.
+    <div class="heat-insight" style="margin-top:20px">
+      <strong>European footprint gaps are significant across heritage brands.</strong> Lululemon, with a far shorter history than most legacy players, already operates across more European markets than several heritage brands. On Running, founded in 2010, has brand presence in 9 key European cities. Brands that rely heavily on wholesale partners rather than brand-controlled environments sacrifice brand experience, pricing power, and customer data — handing all three to platforms like Zalando and Sports Direct.
     </div>
   </div>
 
@@ -327,8 +309,8 @@
     <div style="margin-top:14px;padding:14px 18px;background:#f0fdf4;border-radius:8px;border-left:3px solid #16a34a;font-size:13px;color:#14532d;line-height:1.65;">
       <strong>Decathlon context:</strong> Decathlon operates approximately 1,850 own-brand stores across Europe &mdash; this is its entire business model, not a DTC strategy layered on top of wholesale. Including Decathlon in this chart would distort the comparison. For all other brands, the boutique count reflects a strategic choice about brand environment investment.
     </div>
-    <div class="champion-insight" style="margin-top:16px">
-      <strong>Champion operates approximately 8 brand stores in Europe</strong> &mdash; fewer than Gymshark, a 10-year-old digital brand that opened its first physical store in 2022. Adidas (82 stores) and The North Face (54 stores) use their European retail estate to control brand narrative, train sales staff, and capture first-party data. Each Champion wholesale transaction hands that opportunity to a third party. The case for a selective Champion flagship strategy in 3&ndash;5 European capitals (London, Paris, Amsterdam, Berlin, Milan) is commercially strong and strategically urgent.
+    <div class="heat-insight" style="margin-top:16px">
+      <strong>Gymshark — a 10-year-old digital brand — has already opened physical flagships ahead of several heritage players.</strong> Adidas (82 stores) and The North Face (54 stores) use their European retail estate to control brand narrative, train sales staff, and capture first-party data. Each wholesale transaction hands that opportunity to a third party. The case for selective flagship investment in key European capitals — built omni-channel from day one — is commercially strong and strategically urgent for any brand currently underinvested in brand-controlled retail.
     </div>
   </div>
 
@@ -341,9 +323,7 @@
       <table class="omni-table" id="omni-table"></table>
     </div>
     <div class="matrix-note">Advanced = best-in-class implementation &nbsp;&middot;&nbsp; Basic = partial / limited rollout &nbsp;&middot;&nbsp; Gap = absent &mdash; Score = sum of Advanced criteria (max 6)</div>
-    <div class="champion-insight">
-      <strong>Champion scores 0 out of 6 omni-channel criteria.</strong> This makes it one of only two brands in this analysis (alongside Fila) with no unified commerce capability. Nike shows real-time store stock across all locations. Lululemon store staff can access your online wishlist and purchase history. Decathlon&rsquo;s app lets you reserve products at any of 1,850 European locations. Every capability that Champion lacks hands value — customer data, pricing control, repeat engagement — to wholesale intermediaries like Zalando and Sports Direct. <strong>With just 8 stores, building omni-channel infrastructure is a focused, achievable investment</strong> — not the enterprise transformation it represents for a brand with hundreds of locations.
-    </div>
+    <div class="heat-insight" style="margin-top:14px"><strong>The omni-channel capability gap is where digital investment is either amplified or eroded.</strong> Nike shows real-time store stock across all locations. Lululemon store staff can access a customer's online wishlist and purchase history. Decathlon's app lets customers reserve products at any of 1,850 European locations. Brands without these capabilities hand value — customer data, pricing control, repeat engagement — to wholesale intermediaries like Zalando and Sports Direct. <strong>For brands with a limited store estate, building omni-channel infrastructure is a focused, achievable investment</strong> — not the enterprise transformation it represents for brands with hundreds of legacy locations.</div>
   </div>
 
   <!-- WHITE SPACE -->
@@ -444,7 +424,7 @@ const matrixData = [
   { brand:'Reebok',         ratings:['D','-','D','D','D','-','-','-','S','-','D'] },
   { brand:'Fila',           ratings:['-','-','-','-','D','-','-','-','S','-','-'] },
   { brand:'Hummel',         ratings:['D','-','D','S','-','D','D','-','S','-','-'] },
-  { brand:'Champion',       isChampion:true, ratings:['D','-','-','-','D','-','D','-','S','-','-'] }
+  { brand:'Champion',       ratings:['D','-','-','-','D','-','D','-','S','-','-'] }
 ];
 
 function ratingCell(r) {
@@ -485,7 +465,7 @@ const dtcData = [
   { brand:'Puma',           pct:26 },
   { brand:'Decathlon',      pct:25, note:'* own-brand retailer' },
   { brand:'Reebok',         pct:22 },
-  { brand:'Champion',       pct:18, isChampion:true },
+  { brand:'Champion',       pct:18 },
   { brand:'Hummel',         pct:15 },
   { brand:'Fila',           pct:12 }
 ];
@@ -497,15 +477,14 @@ const dtcData = [
   dtcData.forEach(function(d) {
     var fw = (d.pct / max * 100).toFixed(1);
     var col = d.pct >= 50 ? '#0d9488' : d.pct >= 30 ? '#f59e0b' : '#ef4444';
-    var champTag = d.isChampion ? '<span class="champion-tag">&larr; Champion</span>' : '';
     var noteTag = d.note ? '<span style="font-size:11px;color:var(--sub);margin-left:5px">'+d.note+'</span>' : '';
     html += '<div class="bar-row">'+
-      '<span class="bar-label'+(d.isChampion?' champion-label':'')+'">'+(d.brand)+'</span>'+
+      '<span class="bar-label">'+(d.brand)+'</span>'+
       '<div class="bar-track">'+
       '<div class="avg-marker" style="left:'+(avg/max*100).toFixed(1)+'%"><span class="avg-label">Avg 32%</span></div>'+
       '<div class="bar-fill" style="width:'+fw+'%;background:'+col+'">'+
       (d.pct >= 22 ? '<span class="bar-val">'+d.pct+'%</span>' : '<span class="bar-val-outside">'+d.pct+'%</span>')+
-      '</div></div>'+champTag+noteTag+'</div>';
+      '</div></div>'+noteTag+'</div>';
   });
   el.innerHTML = html;
 })();
@@ -514,7 +493,7 @@ const dtcData = [
 const vfmData = [
   { brand:'Decathlon',      score:9.2 },
   { brand:'New Balance',    score:8.2 },
-  { brand:'Champion',       score:7.8, isChampion:true },
+  { brand:'Champion',       score:7.8 },
   { brand:'Gymshark',       score:7.6 },
   { brand:'Hummel',         score:7.4 },
   { brand:'Reebok',         score:7.2 },
@@ -569,7 +548,7 @@ const heatData = [
   { brand:'Reebok',         vals:['p','++','p','-','-','-','+','p'] },
   { brand:'Fila',           vals:['-','p','p','-','+','-','+','p'] },
   { brand:'Hummel',         vals:['-','p','-','++','-','-','p','-'] },
-  { brand:'Champion',       isChampion:true, vals:['p','p','p','-','-','-','++','++'] }
+  { brand:'Champion',       vals:['p','p','p','-','-','-','++','++'] }
 ];
 
 function heatCell(v) {
@@ -612,7 +591,7 @@ const countryCountData = [
   { brand:'Arc\'teryx',     count:11 },
   { brand:'On Running',     count:10 },
   { brand:'Hummel',         count:10 },
-  { brand:'Champion',       count:9, isChampion:true },
+  { brand:'Champion',       count:9 },
   { brand:'Gymshark',       count:4 }
 ];
 
@@ -622,13 +601,12 @@ const countryCountData = [
   countryCountData.forEach(function(d) {
     var fw = (d.count / max * 100).toFixed(1);
     var col = d.count >= 16 ? '#0d9488' : d.count >= 12 ? '#f59e0b' : '#ef4444';
-    var champTag = d.isChampion ? '<span class="champion-tag">&larr; Champion</span>' : '';
     html += '<div class="bar-row">'+
-      '<span class="bar-label'+(d.isChampion?' champion-label':'')+'">'+(d.brand)+'</span>'+
+      '<span class="bar-label">'+(d.brand)+'</span>'+
       '<div class="bar-track">'+
       '<div class="bar-fill" style="width:'+fw+'%;background:'+col+'">'+
       (d.count >= 8 ? '<span class="bar-val">'+d.count+'</span>' : '<span class="bar-val-outside">'+d.count+'</span>')+
-      '</div></div>'+champTag+'</div>';
+      '</div></div></div>';
   });
   el.innerHTML = html;
 })();
@@ -653,7 +631,7 @@ const countryMatrix = [
   { brand:'Fila',           vals:['f','p','p','p','p','f','p','a'] },
   { brand:'Hummel',         vals:['p','f','p','f','p','p','p','f'] },
   { brand:'Gymshark',       vals:['f','p','p','a','a','a','a','a'] },
-  { brand:'Champion',       isChampion:true, vals:['p','p','f','a','f','f','a','a'] }
+  { brand:'Champion',       vals:['p','p','f','a','f','f','a','a'] }
 ];
 
 function cpCell(v) {
@@ -694,7 +672,7 @@ const boutiquesData = [
   { brand:'Reebok',         count:14 },
   { brand:'Hummel',         count:8  },
   { brand:'Fila',           count:8  },
-  { brand:'Champion',       count:8, isChampion:true },
+  { brand:'Champion',       count:8 },
   { brand:'Gymshark',       count:3 }
 ];
 
@@ -704,13 +682,12 @@ const boutiquesData = [
   boutiquesData.forEach(function(d) {
     var fw = (d.count / max * 100).toFixed(1);
     var col = d.count >= 40 ? '#0d9488' : d.count >= 18 ? '#f59e0b' : '#ef4444';
-    var champTag = d.isChampion ? '<span class="champion-tag">&larr; Champion</span>' : '';
     html += '<div class="bar-row">'+
-      '<span class="bar-label'+(d.isChampion?' champion-label':'')+'">'+(d.brand)+'</span>'+
+      '<span class="bar-label">'+(d.brand)+'</span>'+
       '<div class="bar-track">'+
       '<div class="bar-fill" style="width:'+fw+'%;background:'+col+'">'+
       (fw >= 14 ? '<span class="bar-val">'+d.count+'</span>' : '<span class="bar-val-outside">'+d.count+'</span>')+
-      '</div></div>'+champTag+'</div>';
+      '</div></div></div>';
   });
   el.innerHTML = html;
 })();
@@ -720,65 +697,65 @@ const wsCards = [
   {
     color: '#0d9488',
     num: 'Opportunity 01 · Community & DTC',
-    title: 'Champion\'s campus DNA is digital gold — Lululemon and Gymshark prove the model',
-    body: 'Lululemon built $9B on ambassador-driven community before most retail consultants had heard of it. Gymshark grew to $600M on creator community without a single wholesale account. Champion\'s collegiate heritage is the exact same raw material. A digital loyalty programme tied to university sport, intramural team kits, and campus ambassador networks is defensible IP that Nike cannot replicate without abandoning its premium positioning. No competitor has claimed this territory.',
-    tag: 'Gap for: Puma · Fila · Reebok · ASICS · Decathlon'
+    title: 'Community-driven DTC is the most defensible growth model — most heritage brands haven\'t built it',
+    body: 'Lululemon built $9B on ambassador-driven community before most retail consultants had heard of it. Gymshark grew to $600M on creator community without a single wholesale account. The raw material — brand heritage, sport identity, community rituals — exists in nearly every heritage brand. A digital loyalty programme tied to sport community, ambassador networks, and content commerce creates defensible IP that volume players cannot replicate. No mass-market heritage brand has claimed this territory at scale.',
+    tag: 'Gap visible in: Puma · Fila · Reebok · ASICS · Hummel'
   },
   {
     color: '#e05c00',
     num: 'Opportunity 02 · Circular Economy',
-    title: 'Nobody owns circular at the value tier — On Running proves the model at premium',
-    body: 'On Running\'s Cyclon subscription (send back worn shoes, receive new pair, old ones recycled) commands €29/mo for a €270 shoe. The model works at premium. Nobody has attempted it at €20–60 where Champion competes. Secondhand sporting goods grew 34% in 2024. First mover in value-tier circular captures the sustainability narrative, a margin-positive resale revenue stream, and consumer repeat engagement — all at once.',
-    tag: 'Gap for: Reebok · Fila · Hummel · Puma'
+    title: 'Nobody owns circular at the value tier — On Running proves the model works at premium',
+    body: 'On Running\'s Cyclon subscription (return worn shoes, receive new pair, recycled) commands €29/month for a €270 shoe. The model works at premium. No brand has attempted it at accessible price points where the majority of European sporting goods volume sits. Secondhand sporting goods grew 34% in 2024. First mover in value-tier circular captures the sustainability narrative, a margin-positive resale revenue stream, and consumer repeat engagement — all simultaneously.',
+    tag: 'Gap visible in: Reebok · Fila · Hummel · Puma · Champion'
   },
   {
     color: '#7c3aed',
     num: 'Opportunity 03 · Social Commerce',
-    title: 'Gymshark is the blueprint — authentic value for the TikTok generation',
-    body: 'Gymshark was built entirely through creator partnerships and TikTok/Instagram commerce. Champion\'s clean collegiate aesthetic is actually better suited to "heritage authentic" positioning than Gymshark\'s "gym influencer" style. The dupe culture movement on TikTok is worth billions: consumers seeking quality at accessible prices. Champion can be the authentic original — not a dupe of Nike — at sub-€50 price points. Nike and Adidas are too premium to occupy this lane without brand damage.',
-    tag: 'Gap for: Under Armour · ASICS · Hummel · Salomon'
+    title: 'The "heritage authentic" lane on TikTok is wide open — Gymshark owns "gym", nobody owns "authentic sport"',
+    body: 'Gymshark was built entirely through creator partnerships and platform commerce. The dupe culture and "quiet luxury" movements on TikTok represent billions in consumer spending driven by quality-at-price signals. Heritage sports brands with genuine provenance — real sport history, collegiate roots, manufacturing heritage — are uniquely positioned for authentic origin storytelling. Nike and Adidas are too premium to occupy this lane credibly. Digital-native challengers lack the heritage. The space is structurally open.',
+    tag: 'Gap visible in: Under Armour · ASICS · Hummel · Salomon'
   },
   {
     color: '#0284c7',
     num: 'Opportunity 04 · European Flagship Retail + Omni-channel',
-    title: '3–5 European flagships + unified commerce: recover the customer from Zalando',
-    body: 'Champion operates 8 brand stores in Europe. Lululemon — founded in 1998, 26 years younger — already operates 48, each with full omni-channel capability: online stock visible in-store, click & collect, unified loyalty from first touch. A selective Champion flagship strategy in London, Paris, Amsterdam, Berlin and Milan — built omni-channel from day one — would reposition the brand from "wholesale filler" to cultural destination, while recovering customer relationships currently owned by Zalando and Sports Direct. Each store becomes a data asset, not just a sales point.',
-    tag: 'Gap for: Gymshark (only 3 stores) · Hummel · Fila'
+    title: 'Selective flagship retail + unified commerce: recover the customer relationship from Zalando',
+    body: 'Brands with limited European store estates — often just 4–10 locations — have a structural advantage when building omni-channel capability: no legacy systems, no wholesale conflicts at scale. A selective flagship strategy in 3–5 European capitals (London, Paris, Amsterdam, Berlin, Milan), built omni-channel from day one, repositions a brand from wholesale dependency to cultural destination. Lululemon\'s 48 European stores — each with full unified commerce — generate more customer insight per square metre than any marketplace listing. Each store becomes a data asset.',
+    tag: 'Gap visible in: Gymshark · Hummel · Fila · Champion'
   },
   {
     color: '#16a34a',
     num: 'Opportunity 05 · Sustainable Basics',
     title: 'Patagonia and On own eco at premium — the value tier is completely empty',
-    body: 'Patagonia (Worn Wear), On (Cyclon), Nike (Space Hippie), Adidas (Parley) — every sustainability innovation in sport is premium-priced. The €20–60 segment, where the majority of European volume sits, has nothing credible. Hummel has started with recycled jersey ranges but inconsistently. A Champion "Made Cleaner" line — organic cotton basics, recycled polyester fleece — at no price premium (absorb via volume) would be genuinely market-making. The EU Green Deal and Gen Z purchasing values make this urgent.',
-    tag: 'Gap for: Nike/Adidas at value tier · Reebok · Fila · Puma at value tier'
+    body: 'Patagonia (Worn Wear), On (Cyclon), Nike (Space Hippie), Adidas (Parley) — every credible sustainability innovation in sport is premium-priced. The majority of European sporting goods volume sits in a segment with nothing credible on sustainability. A "Made Cleaner" approach — organic cotton basics, recycled polyester fleece — at no price premium (absorbed via volume) would be genuinely market-making in the accessible tier. The EU Product Sustainability Regulation and Gen Z purchasing values make this commercially urgent.',
+    tag: 'Gap visible in: Reebok · Fila · Puma · Hummel · Champion'
   },
   {
     color: '#dc2626',
-    num: 'Opportunity 06 · Family Sport',
-    title: 'No brand in 18 has built a family-first value proposition',
-    body: 'Parents buying sport kit for themselves AND their children represent the highest-LTV segment in accessible sportswear. Matching kit, family loyalty points, multi-size packs, back-to-school bundles. Decathlon has family breadth but no brand culture. Nike has brand aspiration but no family pricing. At Champion\'s price point, one family buying 3 people\'s sport basics is a €200+ basket. This is completely uncontested across all 18 brands analysed.',
-    tag: 'Gap for: All 17 competitors'
+    num: 'Opportunity 06 · Family Sport Segment',
+    title: 'No brand in 18 has built a family-first value proposition — the highest-LTV segment in accessible sport',
+    body: 'Parents buying sport kit for themselves and their children represent the highest lifetime value segment in accessible sportswear. Matching kit, family loyalty points, multi-size packs, back-to-school bundles. Decathlon has family breadth but no brand culture. Nike has brand aspiration but no family pricing. At accessible price points, one family buying sport basics for 3 people is a €150–200+ basket — and none of the 18 brands analysed has designed a commercial model around this segment.',
+    tag: 'Gap visible in: All 18 brands analysed'
   },
   {
     color: '#b45309',
     num: 'Opportunity 07 · Outdoor Gateway',
-    title: 'Trail/outdoor is the fastest-growing category — and a €150+ minimum elsewhere',
-    body: 'Salomon trail shoes start at €140. Arc\'teryx shells start at €300. The North Face base layer starts at €80. Outdoor/trail is growing 22% annually in Europe — the fastest of any sporting goods category. Yet there is no credible outdoor entry at €30–70. Champion\'s core manufacturing capability (fleece, jersey, basics) translates directly to outdoor basics. A Champion Trail Essentials line (trail socks, fleece mid-layers, waterproof packables) at accessible prices fills a gap that premium outdoor brands structurally cannot enter.',
-    tag: 'Gap for: Nike · Adidas · Puma · Reebok · Fila · Gymshark'
+    title: 'Trail/outdoor is Europe\'s fastest-growing sporting goods category — with no accessible entry point',
+    body: 'Salomon trail shoes start at €140. Arc\'teryx shells start at €300. The North Face base layer starts at €80. Outdoor/trail is growing 22% annually in Europe. Yet there is no credible outdoor entry at €30–70. Brands with core fleece, jersey, and basics manufacturing capability can translate directly into outdoor essentials. Trail socks, fleece mid-layers, waterproof packables at accessible prices fill a gap that premium outdoor brands structurally cannot enter without destroying their positioning.',
+    tag: 'Gap visible in: Nike · Adidas · Puma · Reebok · Fila · Gymshark'
   },
   {
     color: '#4f46e5',
-    num: 'Opportunity 08 · The Decathlon Differentiation',
-    title: 'Champion\'s real rival is Decathlon — and the answer is culture, not price',
-    body: 'The 18-brand analysis reveals a hard truth: Decathlon outperforms Champion on value perception (9.2 vs 7.8), category breadth (8/8 categories vs 3/8), European store presence (17 markets vs 9), and loyalty programme quality. Champion cannot win a functional contest against Decathlon. The strategic choice is to occupy the cultural space Decathlon cannot buy: heritage, collegiate identity, creator partnerships, and community rituals. "Value" alone is not a strategy when Decathlon exists. "Cultural value" — aspiration at accessible prices — is Champion\'s only defensible position.',
-    tag: 'Strategic framing for all 8 opportunities above'
+    num: 'Opportunity 08 · Value vs. Decathlon Positioning',
+    title: 'Decathlon cannot be beaten on price — but it cannot be beaten on culture either',
+    body: 'Decathlon outperforms all heritage brands on value perception (9.2), category breadth (8/8 categories), European store presence (17 markets), and loyalty programme quality. No heritage brand can win a functional contest against Decathlon at volume. The strategic choice is to occupy the cultural space Decathlon cannot buy: heritage identity, community rituals, creator partnerships, and brand aspiration at accessible prices. "Value" alone is not a strategy when Decathlon exists. "Cultural value" — genuine aspiration at accessible prices — is the only defensible position for mid-tier sport brands.',
+    tag: 'Strategic framing for all opportunities in this analysis'
   },
   {
     color: '#0f766e',
-    num: 'Opportunity 09 · Unified Commerce',
-    title: 'Zero omni-channel capability is a strategic vulnerability — and a fast win',
-    body: 'Champion is one of only two brands in this analysis with no omni-channel capability at all. No real-time stock visibility online. No click & collect. No ship-from-store. No unified loyalty. Every online visit to champion.com that cannot confirm stock availability, offer in-store pickup, or recognise an existing customer pushes the shopper back to Zalando. For a brand with just 8 stores, this is not a multi-year infrastructure project — it is a focused 6–9 month programme. Building unified commerce from the ground up means no legacy system debt: the right architecture, once. Each capability directly converts wholesale dependency into owned customer relationships, first-party data, and repeat purchase driven by Champion rather than a marketplace algorithm.',
-    tag: 'Gap for: Fila (only brand at the same level as Champion)'
+    num: 'Opportunity 09 · Unified Commerce from Scratch',
+    title: 'Brands without omni-channel capability have no legacy debt — building it right is a 6–9 month programme',
+    body: 'Two brands in this 18-brand analysis have no omni-channel capability at all. No real-time stock visibility. No click & collect. No ship-from-store. No unified loyalty. Every website visit that cannot confirm stock, offer in-store pickup, or recognise an existing customer pushes the shopper back to Zalando. For brands with small store estates, this is not a multi-year infrastructure project — it is a focused 6–9 month programme. Building unified commerce from scratch means no legacy system debt: the right architecture, once. Each capability directly converts wholesale dependency into owned customer relationships and first-party data.',
+    tag: 'Gap visible in: Fila · Champion · Hummel · Salomon · ASICS (partial)'
   }
 ];
 
@@ -798,24 +775,24 @@ const wsCards = [
 const omniDims = ['Online Stock Visibility','Store-level Stock','Click & Collect','Ship-from-Store','Unified Loyalty','Real-time Avail.'];
 
 const omniData = [
-  { brand:'Nike',           isChampion:false, vals:['A','A','A','A','A','A'] },
-  { brand:'Adidas',         isChampion:false, vals:['A','A','A','A','A','B'] },
-  { brand:'Lululemon',      isChampion:false, vals:['A','A','A','A','A','A'] },
-  { brand:'Decathlon',      isChampion:false, vals:['A','A','A','A','A','A'] },
-  { brand:'The North Face', isChampion:false, vals:['A','B','A','B','A','B'] },
-  { brand:'Under Armour',   isChampion:false, vals:['A','B','A','B','A','B'] },
-  { brand:'New Balance',    isChampion:false, vals:['A','B','A','B','B','B'] },
-  { brand:'Patagonia',      isChampion:false, vals:['A','B','B','-','A','-'] },
-  { brand:'Arc\'teryx',     isChampion:false, vals:['A','B','A','-','A','-'] },
-  { brand:'On Running',     isChampion:false, vals:['A','B','B','-','A','-'] },
-  { brand:'ASICS',          isChampion:false, vals:['B','B','B','-','B','-'] },
-  { brand:'Puma',           isChampion:false, vals:['B','B','B','-','B','-'] },
-  { brand:'Gymshark',       isChampion:false, vals:['A','-','-','-','A','-'] },
-  { brand:'Reebok',         isChampion:false, vals:['B','-','B','-','-','-'] },
-  { brand:'Salomon',        isChampion:false, vals:['B','-','-','-','-','-'] },
-  { brand:'Hummel',         isChampion:false, vals:['B','-','-','-','-','-'] },
-  { brand:'Fila',           isChampion:false, vals:['-','-','-','-','-','-'] },
-  { brand:'Champion',       isChampion:true,  vals:['-','-','-','-','-','-'] }
+  { brand:'Nike',           vals:['A','A','A','A','A','A'] },
+  { brand:'Adidas',         vals:['A','A','A','A','A','B'] },
+  { brand:'Lululemon',      vals:['A','A','A','A','A','A'] },
+  { brand:'Decathlon',      vals:['A','A','A','A','A','A'] },
+  { brand:'The North Face', vals:['A','B','A','B','A','B'] },
+  { brand:'Under Armour',   vals:['A','B','A','B','A','B'] },
+  { brand:'New Balance',    vals:['A','B','A','B','B','B'] },
+  { brand:'Patagonia',      vals:['A','B','B','-','A','-'] },
+  { brand:'Arc\'teryx',     vals:['A','B','A','-','A','-'] },
+  { brand:'On Running',     vals:['A','B','B','-','A','-'] },
+  { brand:'ASICS',          vals:['B','B','B','-','B','-'] },
+  { brand:'Puma',           vals:['B','B','B','-','B','-'] },
+  { brand:'Gymshark',       vals:['A','-','-','-','A','-'] },
+  { brand:'Reebok',         vals:['B','-','B','-','-','-'] },
+  { brand:'Salomon',        vals:['B','-','-','-','-','-'] },
+  { brand:'Hummel',         vals:['B','-','-','-','-','-'] },
+  { brand:'Fila',           vals:['-','-','-','-','-','-'] },
+  { brand:'Champion',       vals:['-','-','-','-','-','-'] }
 ];
 
 function omniCell(v) {
