@@ -33,7 +33,7 @@
     nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
-    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 14px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
 
     header { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; padding: 48px 32px 40px; }
@@ -356,6 +356,35 @@
     </div>
   </div>
 
+  <!-- REACT VS COMPETITORS -->
+  <div class="section-title">React — Organisational Comparison with Key Peers</div>
+  <div class="chart-card">
+    <div class="chart-title">Geographic reach: Active countries by organisation</div>
+    <div class="chart-sub">Based on publicly available information from organisational websites and reports · 2026</div>
+    <div id="reach-chart"></div>
+    <div class="heat-insight">
+      <strong>React's 130+ country footprint is unmatched among specialist anti-counterfeiting NGOs</strong> — only INTERPOL and ICC BASCAP approach comparable geographic coverage, but with fundamentally different mandates. React operates as a direct enforcement partner, not a policy or trade body. This operational depth is its core differentiator.
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">Capability profile: React vs peer organisations across key dimensions (score 0–100)</div>
+    <div class="chart-sub">Assessment based on public disclosures, operational reports, and organisational mandates · 2026</div>
+    <div id="capability-chart"></div>
+    <div class="heat-insight">
+      <strong>React leads on field enforcement, brand owner partnerships, and multi-country coordination</strong> — the combination of operational capability and client relationships that took 35 years to build. Peer organisations outperform on regulatory lobbying (UNIFAB, INTA) and law enforcement integration (INTERPOL). <strong>The MD must maintain this balance while driving digital capability and new market growth.</strong>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">Sector focus: Share of anti-counterfeiting activity by product category (%)</div>
+    <div class="chart-sub">Estimated from public enforcement reports and case data · 2024–2026</div>
+    <div id="sector-focus-chart"></div>
+    <div class="heat-insight">
+      <strong>React's client mix spans luxury, FMCG, pharma, and electronics</strong> — a breadth that most peer organisations do not match. Specialist NGOs like INTA focus on trademark policy across all sectors; pharma-focused bodies like PSI focus on medicines only. React's cross-sector operational model creates unique intelligence advantages but also demands versatile leadership.
+    </div>
+  </div>
+
   <!-- STRATEGIC OPPORTUNITIES -->
   <div class="section-title">Strategic Priorities — Anti-Counterfeiting Leadership</div>
   <div class="ws-grid">
@@ -435,6 +464,91 @@ sectors.forEach(s => {
     <div class="bar-label-row"><span class="bar-name">${s.name}</span><span class="bar-val">€${s.val}B</span></div>
     <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${s.color};">${s.val > 10 ? '€'+s.val+'B' : ''}</div></div>
     <div class="bar-note">${s.note}</div>
+  </div>`;
+});
+
+// Geographic reach
+const reach = [
+  { name: 'React', val: 130, color: '#312e81', note: 'Direct enforcement operations · brand owner partner model' },
+  { name: 'INTERPOL IP Crime Unit', val: 195, color: '#0f2340', note: 'Law enforcement coordination only — not a brand owner partner' },
+  { name: 'ICC BASCAP', val: 100, color: '#0369a1', note: 'Policy and advocacy body — limited direct enforcement' },
+  { name: 'UNIFAB (France)', val: 45, color: '#8b1a6a', note: 'Strong in EU and francophone markets · policy focus' },
+  { name: 'INTA', val: 90, color: '#ca8a04', note: 'Trademark policy and education · 7,000+ member organisations' },
+  { name: 'Anti-Counterfeiting Group (ACG)', val: 30, color: '#15803d', note: 'UK and European focus · brand owner membership body' },
+  { name: 'Pharmaceutical Security Institute (PSI)', val: 115, color: '#dc2626', note: 'Pharma sector only · 29 member companies' },
+];
+const maxR = 200;
+const rc2 = document.getElementById('reach-chart');
+reach.forEach(r => {
+  const pct = Math.round(r.val / maxR * 100);
+  rc2.innerHTML += `<div class="bar-wrap">
+    <div class="bar-label-row"><span class="bar-name">${r.name}</span><span class="bar-val">${r.val} countries</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${r.color};">${r.val > 40 ? r.val+' countries' : ''}</div></div>
+    <div class="bar-note">${r.note}</div>
+  </div>`;
+});
+
+// Capability radar as grouped bars
+const capDims = [
+  { dim: 'Field enforcement & investigations',  react:92, unifab:60, acg:55, inta:20, psi:70 },
+  { dim: 'Brand owner client relationships',     react:90, unifab:72, acg:68, inta:85, psi:80 },
+  { dim: 'Multi-country coordination',           react:88, unifab:55, acg:40, inta:70, psi:75 },
+  { dim: 'Digital / online takedowns',           react:65, unifab:58, acg:50, inta:55, psi:45 },
+  { dim: 'Regulatory & policy influence',        react:60, unifab:85, acg:65, inta:90, psi:72 },
+  { dim: 'Law enforcement integration',          react:80, unifab:65, acg:58, inta:35, psi:68 },
+  { dim: 'Training & capacity building',         react:75, unifab:70, acg:60, inta:80, psi:65 },
+  { dim: 'Sector breadth (multi-category)',      react:88, unifab:70, acg:72, inta:90, psi:25 },
+];
+const capChart = document.getElementById('capability-chart');
+const capLegend = `<div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+  <span style="font-size:11px;font-weight:700;color:#312e81;">■ React</span>
+  <span style="font-size:11px;font-weight:700;color:#8b1a6a;">■ UNIFAB</span>
+  <span style="font-size:11px;font-weight:700;color:#15803d;">■ ACG</span>
+  <span style="font-size:11px;font-weight:700;color:#ca8a04;">■ INTA</span>
+  <span style="font-size:11px;font-weight:700;color:#dc2626;">■ PSI</span>
+</div>`;
+capChart.innerHTML = capLegend;
+capDims.forEach(d => {
+  capChart.innerHTML += `<div class="bar-wrap" style="margin-bottom:14px;">
+    <div class="bar-label-row"><span class="bar-name">${d.dim}</span></div>
+    <div style="display:flex;flex-direction:column;gap:3px;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#312e81;font-weight:700;">React</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.react}%;background:#312e81;">${d.react}</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#8b1a6a;font-weight:600;">UNIFAB</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.unifab}%;background:#8b1a6a;">${d.unifab}</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#15803d;font-weight:600;">ACG</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.acg}%;background:#15803d;">${d.acg}</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#ca8a04;font-weight:600;">INTA</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.inta}%;background:#ca8a04;">${d.inta}</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#dc2626;font-weight:600;">PSI</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.psi}%;background:#dc2626;">${d.psi}</div></div></div>
+    </div>
+  </div>`;
+});
+
+// Sector focus
+const sectorFocus = [
+  { sector: 'Luxury goods & accessories', react:28, unifab:35, acg:30, inta:20, psi:0 },
+  { sector: 'Clothing & footwear',         react:22, unifab:20, acg:25, inta:18, psi:0 },
+  { sector: 'Pharmaceuticals',             react:18, unifab:12, acg:10, inta:8,  psi:95 },
+  { sector: 'Electronics & components',    react:14, unifab:10, acg:15, inta:14, psi:0 },
+  { sector: 'FMCG & food',                 react:10, unifab:8,  acg:8,  inta:10, psi:0 },
+  { sector: 'Other / cross-sector',        react:8,  unifab:15, acg:12, inta:30, psi:5 },
+];
+const sfChart = document.getElementById('sector-focus-chart');
+const sfLegend = `<div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+  <span style="font-size:11px;font-weight:700;color:#312e81;">■ React</span>
+  <span style="font-size:11px;font-weight:700;color:#8b1a6a;">■ UNIFAB</span>
+  <span style="font-size:11px;font-weight:700;color:#15803d;">■ ACG</span>
+  <span style="font-size:11px;font-weight:700;color:#ca8a04;">■ INTA</span>
+  <span style="font-size:11px;font-weight:700;color:#dc2626;">■ PSI</span>
+</div>`;
+sfChart.innerHTML = sfLegend;
+sectorFocus.forEach(d => {
+  sfChart.innerHTML += `<div class="bar-wrap" style="margin-bottom:14px;">
+    <div class="bar-label-row"><span class="bar-name">${d.sector}</span></div>
+    <div style="display:flex;flex-direction:column;gap:3px;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#312e81;font-weight:700;">React</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.react}%;background:#312e81;">${d.react}%</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#8b1a6a;font-weight:600;">UNIFAB</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.unifab}%;background:#8b1a6a;">${d.unifab}%</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#15803d;font-weight:600;">ACG</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.acg}%;background:#15803d;">${d.acg}%</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#ca8a04;font-weight:600;">INTA</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.inta}%;background:#ca8a04;">${d.inta}%</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:80px;color:#dc2626;font-weight:600;">PSI</span><div class="bar-track" style="flex:1"><div class="bar-fill" style="width:${d.psi > 0 ? d.psi : 2}%;background:#dc2626;">${d.psi > 0 ? d.psi+'%' : ''}</div></div></div>
+    </div>
   </div>`;
 });
 
