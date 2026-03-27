@@ -115,15 +115,21 @@
       .nav-burger { display:block; }
       .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
       .nav-links.open { display:flex; }
-      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; white-space:normal; text-align:left; }
       main, .inner { padding-left:16px !important; padding-right:16px !important; }
       header { padding:32px 16px 28px; }
       .stats { grid-template-columns:1fr 1fr; }
       .cap-head, .cap-row { grid-template-columns:1fr; }
       .cap-head { display:none; }
+      .player-grid { grid-template-columns:1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      /* Grouped bar charts — shrink org label on small screens */
+      .bar-wrap [style*="width:80px"] { width:60px !important; font-size:9px !important; }
     }
-    @media(max-width:480px){ .stats { grid-template-columns:1fr; } }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+      .bar-wrap [style*="width:80px"] { width:48px !important; font-size:8px !important; }
+    }
   </style>
 </head>
 <body>
@@ -316,6 +322,35 @@
 
   </div>
 
+  <!-- REACT VS COMPETITORS -->
+  <div class="section-title">React — Organisational Comparison with Key Peers</div>
+  <div class="chart-card">
+    <div class="chart-title">Geographic reach: Active countries by organisation</div>
+    <div class="chart-sub">Based on publicly available information from organisational websites and reports · 2026</div>
+    <div id="reach-chart"></div>
+    <div class="heat-insight">
+      <strong>React's 130+ country footprint is unmatched among specialist anti-counterfeiting NGOs</strong> — only INTERPOL and ICC BASCAP approach comparable geographic coverage, but with fundamentally different mandates. React operates as a direct enforcement partner, not a policy or trade body. This operational depth is its core differentiator.
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">Capability profile: React vs peer organisations across key dimensions (score 0–100)</div>
+    <div class="chart-sub">Assessment based on public disclosures, operational reports, and organisational mandates · 2026</div>
+    <div id="capability-chart"></div>
+    <div class="heat-insight">
+      <strong>React leads on field enforcement, brand owner partnerships, and multi-country coordination</strong> — the combination of operational capability and client relationships that took 35 years to build. Peer organisations outperform on regulatory lobbying (UNIFAB, INTA) and law enforcement integration (INTERPOL). <strong>The MD must maintain this balance while driving digital capability and new market growth.</strong>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">Sector focus: Share of anti-counterfeiting activity by product category (%)</div>
+    <div class="chart-sub">Estimated from public enforcement reports and case data · 2024–2026</div>
+    <div id="sector-focus-chart"></div>
+    <div class="heat-insight">
+      <strong>React's client mix spans luxury, FMCG, pharma, and electronics</strong> — a breadth that most peer organisations do not match. Specialist NGOs like INTA focus on trademark policy across all sectors; pharma-focused bodies like PSI focus on medicines only. React's cross-sector operational model creates unique intelligence advantages but also demands versatile leadership.
+    </div>
+  </div>
+
   <!-- ENFORCEMENT CHALLENGE -->
   <div class="section-title">Enforcement Challenge — Complexity by Channel</div>
   <div class="cap-bars">
@@ -353,35 +388,6 @@
       <div class="cap-name">Container-level customs seizures</div>
       <div class="cap-bar-track"><div class="cap-bar-fill" style="width:50%;background:#ca8a04;">Medium</div></div>
       <div class="cap-why">Large-volume container seizures are impactful but require advance intelligence — <strong>brand owner cooperation with customs is critical</strong> for targeting</div>
-    </div>
-  </div>
-
-  <!-- REACT VS COMPETITORS -->
-  <div class="section-title">React — Organisational Comparison with Key Peers</div>
-  <div class="chart-card">
-    <div class="chart-title">Geographic reach: Active countries by organisation</div>
-    <div class="chart-sub">Based on publicly available information from organisational websites and reports · 2026</div>
-    <div id="reach-chart"></div>
-    <div class="heat-insight">
-      <strong>React's 130+ country footprint is unmatched among specialist anti-counterfeiting NGOs</strong> — only INTERPOL and ICC BASCAP approach comparable geographic coverage, but with fundamentally different mandates. React operates as a direct enforcement partner, not a policy or trade body. This operational depth is its core differentiator.
-    </div>
-  </div>
-
-  <div class="chart-card">
-    <div class="chart-title">Capability profile: React vs peer organisations across key dimensions (score 0–100)</div>
-    <div class="chart-sub">Assessment based on public disclosures, operational reports, and organisational mandates · 2026</div>
-    <div id="capability-chart"></div>
-    <div class="heat-insight">
-      <strong>React leads on field enforcement, brand owner partnerships, and multi-country coordination</strong> — the combination of operational capability and client relationships that took 35 years to build. Peer organisations outperform on regulatory lobbying (UNIFAB, INTA) and law enforcement integration (INTERPOL). <strong>The MD must maintain this balance while driving digital capability and new market growth.</strong>
-    </div>
-  </div>
-
-  <div class="chart-card">
-    <div class="chart-title">Sector focus: Share of anti-counterfeiting activity by product category (%)</div>
-    <div class="chart-sub">Estimated from public enforcement reports and case data · 2024–2026</div>
-    <div id="sector-focus-chart"></div>
-    <div class="heat-insight">
-      <strong>React's client mix spans luxury, FMCG, pharma, and electronics</strong> — a breadth that most peer organisations do not match. Specialist NGOs like INTA focus on trademark policy across all sectors; pharma-focused bodies like PSI focus on medicines only. React's cross-sector operational model creates unique intelligence advantages but also demands versatile leadership.
     </div>
   </div>
 
