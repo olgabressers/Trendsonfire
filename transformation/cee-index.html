@@ -174,19 +174,6 @@
     }
 
     /* FEEDBACK FORM */
-    .feedback-card { background: var(--al); border-radius: 12px; border: 1.5px solid var(--accent); padding: 28px 32px; margin-top: 24px; }
-    .fb-header { margin-bottom: 20px; }
-    .fb-header h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .fb-header p { font-size: 13.5px; color: var(--sub); line-height: 1.6; }
-    .fb-form { display: flex; flex-direction: column; gap: 14px; }
-    .fb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    @media(max-width:600px){ .fb-row { grid-template-columns: 1fr; } }
-    .fb-field { display: flex; flex-direction: column; gap: 5px; }
-    .fb-field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--sub); }
-    .fb-field input, .fb-field select, .fb-field textarea { border: 1px solid var(--border); border-radius: 8px; padding: 10px 13px; font-size: 13px; font-family: inherit; color: var(--text); background: white; outline: none; resize: vertical; }
-    .fb-field input:focus, .fb-field select:focus, .fb-field textarea:focus { border-color: var(--accent); }
-    .fb-btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 12px 24px; font-size: 13px; font-weight: 700; cursor: pointer; align-self: flex-start; transition: opacity .15s; }
-    .fb-btn:hover { opacity: .88; }
   </style>
     <link rel="canonical" href="https://trendsonfire.com/transformation/cee-index.html"/>
   <meta name="author" content="Olga Bressers"/>
@@ -398,50 +385,6 @@
     <p>Assessments in this index are based on <strong>publicly available information</strong> — including company annual reports, LinkedIn organisational data, published case studies, press releases, and professional industry knowledge. Each criterion reflects observable, documented behaviour rather than self-reported claims.</p>
     <p style="margin-top:10px">This is a <strong>living index</strong>, updated as new information becomes available. Scores reflect the state of publicly available evidence at time of publication and may not capture internal programmes not visible externally. Organisations are assessed at the CEE regional level, not individual country subsidiaries.</p>
     <p style="margin-top:10px;font-size:12px;color:var(--sub)">Rating scale: <strong>Advanced</strong> = 5–6 criteria met · <strong>Developing</strong> = 3–4 criteria met · <strong>Basic</strong> = 0–2 criteria met. Assessments are made independently and organisations have not been contacted for verification. See below to submit a correction.</p>
-  </div>
-
-  <!-- FEEDBACK FORM -->
-  <div class="feedback-card">
-    <div class="fb-header">
-      <div>
-        <h3>Is your organisation listed here?</h3>
-        <p>We welcome corrections, additional evidence, and context from organisations assessed in this index. Submit your feedback and we'll review and update the score with a source note.</p>
-      </div>
-    </div>
-    <form action="https://formspree.io/f/xrbgpavj" method="POST" class="fb-form">
-      <div class="fb-row">
-        <div class="fb-field">
-          <label>Organisation name</label>
-          <input type="text" name="organisation" placeholder="e.g. ING Bank" required/>
-        </div>
-        <div class="fb-field">
-          <label>Your name &amp; role</label>
-          <input type="text" name="contact" placeholder="e.g. Jana Novak, Head of Transformation"/>
-        </div>
-      </div>
-      <div class="fb-field">
-        <label>Which criterion do you want to correct or add evidence for?</label>
-        <select name="criterion">
-          <option value="">Select criterion</option>
-          <option>C1 — Local Programme Leadership</option>
-          <option>C2 — Cultural Adaptation</option>
-          <option>C3 — Local Language Communications</option>
-          <option>C4 — Local Talent Development</option>
-          <option>C5 — Governance Localisation</option>
-          <option>C6 — Outcome Transparency</option>
-          <option>General feedback / overall score</option>
-        </select>
-      </div>
-      <div class="fb-field">
-        <label>Your evidence or correction</label>
-        <textarea name="feedback" rows="4" placeholder="Please describe what we got wrong and provide any supporting evidence, links, or context…" required></textarea>
-      </div>
-      <div class="fb-field">
-        <label>Your email (optional — only if you'd like a response)</label>
-        <input type="email" name="email" placeholder="you@company.com"/>
-      </div>
-      <button type="submit" class="fb-btn">Submit correction →</button>
-    </form>
   </div>
 
 </main>
