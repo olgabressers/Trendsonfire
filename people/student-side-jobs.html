@@ -185,6 +185,16 @@
     @media(max-width:480px){
       .wage-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    /* Opportunity matrices */
+    .matrix-wrap { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 20px 16px 16px; box-shadow: 0 1px 6px rgba(0,0,0,.06); overflow-x: auto; }
+    .matrix-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .matrix-sub { font-size: 12px; color: var(--sub); margin-bottom: 14px; }
+    .matrix-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+    .ml-item { display: flex; align-items: flex-start; gap: 7px; font-size: 11.5px; }
+    .ml-dot { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: white; flex-shrink: 0; }
+    .ml-name { font-weight: 600; color: var(--text); }
+    .ml-rate { color: var(--sub); font-size: 10.5px; }
+    @media(max-width:600px) { .matrix-legend { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -325,6 +335,20 @@
       <div style="margin-top:16px;font-size:12.5px;color:var(--sub);line-height:1.6;">
         <strong style="color:var(--text);">Important:</strong> These are legal minimums. Most supermarkets, retail chains, and hospitality employers pay <strong>above</strong> minimum wage to attract reliable student workers. Albert Heijn, Jumbo, and HEMA typically start at €12.50–14/hr for 16–17 year olds and €14–16 for 18+. Always check the CAO (collective labour agreement) for your sector — it often specifies rates above the legal minimum.
       </div>
+    </div>
+  </div>
+
+  <!-- Earnings comparison chart -->
+  <div class="section-block">
+    <div class="section-title"><span>📊</span> Earnings Comparison — Physical vs Online</div>
+    <div class="section-sub">Typical hourly rate range · bar shows entry rate → skilled rate · all figures in € · Dutch market 2025–26</div>
+    <div class="chart-box">
+      <div class="chart-title">Typical Hourly Rate by Job Type</div>
+      <div class="chart-sub">Entry-to-experienced range shown · online jobs scale faster with skill and client base</div>
+      <div class="bar-group-label">Physical Jobs — Netherlands</div>
+      <div id="earnings-physical"></div>
+      <div class="bar-group-label">Online / Remote Jobs</div>
+      <div id="earnings-online"></div>
     </div>
   </div>
 
@@ -821,17 +845,20 @@
     </div>
   </div>
 
-  <!-- Earnings comparison chart -->
-  <div class="section-block">
-    <div class="section-title"><span>📊</span> Earnings Comparison — Physical vs Online</div>
-    <div class="section-sub">Typical hourly rate range · midpoint shown · all figures in € · Dutch market 2025–26</div>
+  <!-- Pre-trending: visual earnings overview -->
+  <div class="section-block" style="margin-bottom:32px;">
+    <div class="section-title"><span>📈</span> Trending Opportunities — Earning Potential at a Glance</div>
+    <div class="section-sub">Hourly-equivalent earning range · entry level → experienced · all online &amp; remote · 2026</div>
     <div class="chart-box">
-      <div class="chart-title">Typical Hourly Rate by Job Type</div>
-      <div class="chart-sub">Entry-to-experienced range shown · online jobs scale faster with skill and client base</div>
-      <div class="bar-group-label">Physical Jobs — Netherlands</div>
-      <div id="earnings-physical"></div>
-      <div class="bar-group-label">Online / Remote Jobs</div>
-      <div id="earnings-online"></div>
+      <div class="chart-title">Earning Potential by Trending Opportunity — 2026</div>
+      <div class="chart-sub">Bar shows starting rate → skilled rate per hour equivalent · content creation income is variable by audience size</div>
+      <div id="trending-chart"></div>
+      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:11px;color:var(--sub);display:flex;align-items:center;gap:5px;"><span style="width:11px;height:11px;background:#dc2626;border-radius:2px;display:inline-block;flex-shrink:0;"></span><strong style="color:var(--text);">Red</strong> — 🔥 Hottest, highest earning</span>
+        <span style="font-size:11px;color:var(--sub);display:flex;align-items:center;gap:5px;"><span style="width:11px;height:11px;background:#7c3aed;border-radius:2px;display:inline-block;flex-shrink:0;"></span><strong style="color:var(--text);">Purple</strong> — Trending up, skill needed</span>
+        <span style="font-size:11px;color:var(--sub);display:flex;align-items:center;gap:5px;"><span style="width:11px;height:11px;background:#1d4ed8;border-radius:2px;display:inline-block;flex-shrink:0;"></span><strong style="color:var(--text);">Blue</strong> — Growing steadily</span>
+        <span style="font-size:11px;color:var(--sub);display:flex;align-items:center;gap:5px;"><span style="width:11px;height:11px;background:#65a30d;border-radius:2px;display:inline-block;flex-shrink:0;"></span><strong style="color:var(--text);">Green</strong> — Passive / growing</span>
+      </div>
     </div>
   </div>
 
@@ -949,6 +976,155 @@
     </div>
   </div>
 
+  <!-- Opportunity Matrices -->
+  <div class="section-block">
+    <div class="section-title"><span>🗺️</span> Opportunity Matrix — Ease of Entry vs. Time Investment</div>
+    <div class="section-sub">Horizontal axis: how easy it is to get started · Vertical axis: how much time you need to invest to earn · bottom-right = ideal starting point</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+
+      <!-- Online matrix -->
+      <div class="matrix-wrap">
+        <div class="matrix-title">💻 Online Opportunities</div>
+        <div class="matrix-sub">Bottom-right = lowest barrier, least time needed · numbers match legend below · colour = earning level</div>
+        <div style="overflow-x:auto;">
+          <svg viewBox="0 0 700 420" style="width:100%;min-width:280px;display:block;" role="img" aria-label="Online opportunities matrix: ease of entry vs time investment">
+            <rect x="377" y="200" width="303" height="180" fill="#f0fdf4" opacity="0.7" rx="3"/>
+            <rect x="75" y="20" width="302" height="180" fill="#fef4e8" opacity="0.6" rx="3"/>
+            <rect x="75" y="20" width="605" height="360" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+            <line x1="75" y1="200" x2="680" y2="200" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="377" y1="20" x2="377" y2="380" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="75" y1="380" x2="680" y2="380" stroke="#d1d5db" stroke-width="1.5"/>
+            <line x1="75" y1="20" x2="75" y2="380" stroke="#d1d5db" stroke-width="1.5"/>
+            <polygon points="680,376 680,384 690,380" fill="#d1d5db"/>
+            <polygon points="71,20 79,20 75,11" fill="#d1d5db"/>
+            <text x="83" y="36" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Hard entry + High time</text>
+            <text x="83" y="374" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Hard entry + Low time</text>
+            <text x="490" y="36" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Easy entry + High time</text>
+            <text x="420" y="396" font-size="9" fill="#059669" font-weight="700" font-family="-apple-system,sans-serif">★ Best starting point</text>
+            <text x="377" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="0.5" font-family="-apple-system,sans-serif">EASE OF ENTRY →</text>
+            <text x="14" y="200" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="0.5" font-family="-apple-system,sans-serif" transform="rotate(-90, 14, 200)">TIME INVESTMENT →</text>
+            <text x="75" y="395" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Hard</text>
+            <text x="680" y="395" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Easy</text>
+            <text x="67" y="382" text-anchor="end" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Low</text>
+            <text x="67" y="23" text-anchor="end" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">High</text>
+            <!-- Dots: (x=ease 0-100, y=time 0-100) → plotX=75+(x/100)*605, plotY=380-(y/100)*360 -->
+            <!-- 1. AI Data Annotation (88,8) → (608,351) -->
+            <circle cx="608" cy="351" r="11" fill="#059669"/><text x="608" y="355" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">1</text>
+            <!-- 2. App/UX Testing (84,15) → (584,326) -->
+            <circle cx="584" cy="326" r="11" fill="#059669"/><text x="584" y="330" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">2</text>
+            <!-- 3. UGC Creation (80,22) → (559,301) -->
+            <circle cx="559" cy="301" r="11" fill="#dc2626"/><text x="559" y="305" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">3</text>
+            <!-- 4. AI Services (66,28) → (474,279) -->
+            <circle cx="474" cy="279" r="11" fill="#dc2626"/><text x="474" y="283" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">4</text>
+            <!-- 5. Online Tutoring (70,35) → (499,254) -->
+            <circle cx="499" cy="254" r="11" fill="#0d9488"/><text x="499" y="258" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">5</text>
+            <!-- 6. Virtual Assistant (75,42) → (529,229) -->
+            <circle cx="529" cy="229" r="11" fill="#0d9488"/><text x="529" y="233" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">6</text>
+            <!-- 7. Selling/Vinted (72,50) → (511,200) -->
+            <circle cx="511" cy="200" r="11" fill="#65a30d"/><text x="511" y="204" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">7</text>
+            <!-- 8. Social Media Mgmt (60,52) → (438,193) -->
+            <circle cx="438" cy="193" r="11" fill="#0d9488"/><text x="438" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">8</text>
+            <!-- 9. Copywriting (50,56) → (378,178) -->
+            <circle cx="378" cy="178" r="11" fill="#0d9488"/><text x="378" y="182" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">9</text>
+            <!-- 10. Video Editing (46,62) → (353,157) -->
+            <circle cx="353" cy="157" r="11" fill="#1d4ed8"/><text x="353" y="161" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">10</text>
+            <!-- 11. Graphic Design (40,68) → (317,135) -->
+            <circle cx="317" cy="135" r="11" fill="#1d4ed8"/><text x="317" y="139" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">11</text>
+            <!-- 12. No-Code Dev (28,75) → (244,110) -->
+            <circle cx="244" cy="110" r="11" fill="#7c3aed"/><text x="244" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">12</text>
+            <!-- 13. Coding/Web Dev (14,88) → (160,63) -->
+            <circle cx="160" cy="63" r="11" fill="#7c3aed"/><text x="160" y="67" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">13</text>
+          </svg>
+        </div>
+        <div class="matrix-legend">
+          <div class="ml-item"><div class="ml-dot" style="background:#059669">1</div><div><span class="ml-name">AI Data Annotation</span><br><span class="ml-rate">€10–22/hr · zero experience needed</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#059669">2</div><div><span class="ml-name">App / UX Testing</span><br><span class="ml-rate">€15–50/session · passive, accept when available</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#dc2626">3</div><div><span class="ml-name">UGC Video Creation</span><br><span class="ml-rate">€100–500/video · 🔥 hottest right now</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#dc2626">4</div><div><span class="ml-name">AI Services for clients</span><br><span class="ml-rate">€25–75/hr · 🔥 hottest right now</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">5</div><div><span class="ml-name">Online Tutoring</span><br><span class="ml-rate">€15–35/hr · subject expertise needed</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">6</div><div><span class="ml-name">Virtual Assistant</span><br><span class="ml-rate">€12–25/hr · great for organised people</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#65a30d">7</div><div><span class="ml-name">Selling on Vinted / Marktplaats</span><br><span class="ml-rate">Variable · scales with sourcing skill</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">8</div><div><span class="ml-name">Social Media Management</span><br><span class="ml-rate">€15–30/hr · retainer model</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">9</div><div><span class="ml-name">Copywriting / Content writing</span><br><span class="ml-rate">€15–40/hr · writing skill needed</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#1d4ed8">10</div><div><span class="ml-name">Video Editing</span><br><span class="ml-rate">€15–45/hr · DaVinci Resolve / CapCut</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#1d4ed8">11</div><div><span class="ml-name">Graphic Design</span><br><span class="ml-rate">€15–40/hr · Canva or Figma</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#7c3aed">12</div><div><span class="ml-name">No-Code Development</span><br><span class="ml-rate">€20–50/hr · Webflow, Make.com</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#7c3aed">13</div><div><span class="ml-name">Coding / Web Development</span><br><span class="ml-rate">€25–65/hr · highest long-term ceiling</span></div></div>
+        </div>
+      </div>
+
+      <!-- Physical matrix -->
+      <div class="matrix-wrap">
+        <div class="matrix-title">🏪 Physical Jobs — Netherlands</div>
+        <div class="matrix-sub">Bottom-right = walk in and start, fully flexible · numbers match legend below · colour = pay level</div>
+        <div style="overflow-x:auto;">
+          <svg viewBox="0 0 700 420" style="width:100%;min-width:280px;display:block;" role="img" aria-label="Physical jobs matrix: ease of entry vs time investment">
+            <rect x="377" y="200" width="303" height="180" fill="#f0fdf4" opacity="0.7" rx="3"/>
+            <rect x="75" y="20" width="302" height="180" fill="#fef4e8" opacity="0.6" rx="3"/>
+            <rect x="75" y="20" width="605" height="360" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+            <line x1="75" y1="200" x2="680" y2="200" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="377" y1="20" x2="377" y2="380" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="75" y1="380" x2="680" y2="380" stroke="#d1d5db" stroke-width="1.5"/>
+            <line x1="75" y1="20" x2="75" y2="380" stroke="#d1d5db" stroke-width="1.5"/>
+            <polygon points="680,376 680,384 690,380" fill="#d1d5db"/>
+            <polygon points="71,20 79,20 75,11" fill="#d1d5db"/>
+            <text x="83" y="36" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Hard entry + High time</text>
+            <text x="83" y="374" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Hard entry + Low time</text>
+            <text x="490" y="36" font-size="8.5" fill="#9ca3af" font-style="italic" font-family="-apple-system,sans-serif">Easy entry + High time</text>
+            <text x="420" y="396" font-size="9" fill="#059669" font-weight="700" font-family="-apple-system,sans-serif">★ Best starting point</text>
+            <text x="377" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="0.5" font-family="-apple-system,sans-serif">EASE OF ENTRY →</text>
+            <text x="14" y="200" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="0.5" font-family="-apple-system,sans-serif" transform="rotate(-90, 14, 200)">TIME INVESTMENT →</text>
+            <text x="75" y="395" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Hard</text>
+            <text x="680" y="395" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Easy</text>
+            <text x="67" y="382" text-anchor="end" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">Low</text>
+            <text x="67" y="23" text-anchor="end" font-size="8" fill="#9ca3af" font-family="-apple-system,sans-serif">High</text>
+            <!-- Physical dots: (x=ease, y=time) → plotX=75+(x/100)*605, plotY=380-(y/100)*360 -->
+            <!-- 1. Dog Walking (88,18) → (608,315) -->
+            <circle cx="608" cy="315" r="11" fill="#059669"/><text x="608" y="319" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">1</text>
+            <!-- 2. Weekend Market Stall (83,23) → (577,297) -->
+            <circle cx="577" cy="297" r="11" fill="#059669"/><text x="577" y="301" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">2</text>
+            <!-- 3. Babysitting (82,28) → (571,279) -->
+            <circle cx="571" cy="279" r="11" fill="#059669"/><text x="571" y="283" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">3</text>
+            <!-- 4. Event / Festival Staff (78,36) → (547,250) -->
+            <circle cx="547" cy="250" r="11" fill="#16a34a"/><text x="547" y="254" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">4</text>
+            <!-- 5. Bijles / Tutoring (64,42) → (462,229) -->
+            <circle cx="462" cy="229" r="11" fill="#0d9488"/><text x="462" y="233" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">5</text>
+            <!-- 6. Supermarket (74,52) → (523,193) -->
+            <circle cx="523" cy="193" r="11" fill="#16a34a"/><text x="523" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">6</text>
+            <!-- 7. Customer Service / Call Centre (66,50) → (474,200) -->
+            <circle cx="474" cy="200" r="11" fill="#16a34a"/><text x="474" y="204" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">7</text>
+            <!-- 8. Retail (70,55) → (499,182) -->
+            <circle cx="499" cy="182" r="11" fill="#16a34a"/><text x="499" y="186" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">8</text>
+            <!-- 9. Hospitality (65,60) → (468,164) -->
+            <circle cx="468" cy="164" r="11" fill="#d97706"/><text x="468" y="168" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">9</text>
+            <!-- 10. Delivery / Thuisbezorgd (56,58) → (414,171) -->
+            <circle cx="414" cy="171" r="11" fill="#d97706"/><text x="414" y="175" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">10</text>
+            <!-- 11. Warehouse / Logistics (52,68) → (390,135) -->
+            <circle cx="390" cy="135" r="11" fill="#6b7280"/><text x="390" y="139" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">11</text>
+            <!-- 12. Lifeguard / Sports Coach (40,58) → (317,171) -->
+            <circle cx="317" cy="171" r="11" fill="#0d9488"/><text x="317" y="175" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="-apple-system,sans-serif">12</text>
+          </svg>
+        </div>
+        <div class="matrix-legend">
+          <div class="ml-item"><div class="ml-dot" style="background:#059669">1</div><div><span class="ml-name">Dog Walking / Pet Sitting</span><br><span class="ml-rate">€10–15/hr · set your own schedule</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#059669">2</div><div><span class="ml-name">Weekend Market Stall</span><br><span class="ml-rate">€12–15/hr · Saturdays only possible</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#059669">3</div><div><span class="ml-name">Babysitting</span><br><span class="ml-rate">€10–15/hr · evenings &amp; weekends</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#16a34a">4</div><div><span class="ml-name">Event / Festival Staff</span><br><span class="ml-rate">€13–18/hr · project-based, flexible</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">5</div><div><span class="ml-name">Bijles / In-person Tutoring</span><br><span class="ml-rate">€15–30/hr · subject expertise needed</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#16a34a">6</div><div><span class="ml-name">Supermarket (AH, Jumbo, Lidl)</span><br><span class="ml-rate">€12–16/hr · most popular student job</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#16a34a">7</div><div><span class="ml-name">Customer Service / Call Centre</span><br><span class="ml-rate">€13–16/hr · shift-based</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#16a34a">8</div><div><span class="ml-name">Retail (Coolblue, HEMA, Zara)</span><br><span class="ml-rate">€12–16/hr · structured shifts</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#d97706">9</div><div><span class="ml-name">Hospitality / Restaurant</span><br><span class="ml-rate">€12–15/hr + tips · busiest evenings</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#d97706">10</div><div><span class="ml-name">Delivery (Thuisbezorgd, PostNL)</span><br><span class="ml-rate">€13–20/hr · own transport needed</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#6b7280">11</div><div><span class="ml-name">Warehouse / Logistics</span><br><span class="ml-rate">€13–17/hr · physically demanding</span></div></div>
+          <div class="ml-item"><div class="ml-dot" style="background:#0d9488">12</div><div><span class="ml-name">Lifeguard / Sports Coach</span><br><span class="ml-rate">€13–18/hr · KNZB certificate needed</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Practical tips -->
   <div class="section-block">
     <div class="section-title"><span>✅</span> Getting Started — Practical Tips</div>
@@ -1011,6 +1187,38 @@
 </footer>
 
 <script>
+// Trending opportunities chart
+(function(){
+  var data = [
+    {l:'AI Services for clients',         lo:25, hi:75, color:'#dc2626', note:'🔥 Hottest'},
+    {l:'UGC video creation',              lo:25, hi:70, color:'#dc2626', note:'🔥 Hottest'},
+    {l:'Coding / Web development',        lo:25, hi:65, color:'#7c3aed', note:'Trending ↑'},
+    {l:'No-code / Low-code development',  lo:20, hi:50, color:'#7c3aed', note:'Trending ↑'},
+    {l:'Content creation (social media)', lo:0,  hi:50, color:'#d97706', note:'Variable'},
+    {l:'Podcast &amp; video editing (AI)',lo:15, hi:40, color:'#1d4ed8', note:'Growing'},
+    {l:'Technical translation',           lo:15, hi:35, color:'#0d9488', note:'Growing — specialised only'},
+    {l:'Print on Demand (passive)',        lo:2,  hi:20, color:'#65a30d', note:'Growing — passive income'},
+  ];
+  var max = 75;
+  var html = '';
+  data.forEach(function(d){
+    var pctHi = Math.round(d.hi / max * 100);
+    var pctLo = d.lo > 0 ? Math.round(d.lo / max * 100) : 0;
+    html += '<div class="bar-row">';
+    html += '<div style="width:220px;font-size:12.5px;color:var(--text);flex-shrink:0;text-align:right;line-height:1.3;padding-right:0;">' + d.l;
+    html += '<br><span style="font-size:10px;color:var(--sub);">' + d.note + '</span></div>';
+    html += '<div class="bar-track" style="position:relative;">';
+    if(pctLo > 0){
+      html += '<div style="position:absolute;left:0;top:0;height:100%;width:'+pctLo+'%;background:#f1f5f9;border-radius:4px 0 0 4px;"></div>';
+    }
+    html += '<div style="position:absolute;left:0;top:0;height:100%;width:'+pctHi+'%;background:'+d.color+';border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;">';
+    var rateText = d.lo > 0 ? '€'+d.lo+'–'+d.hi+'/hr' : 'up to €'+d.hi+'/hr';
+    html += '<span style="font-size:11px;font-weight:700;color:white;">'+rateText+'</span>';
+    html += '</div></div></div>';
+  });
+  document.getElementById('trending-chart').innerHTML = html;
+})();
+
 // Physical earnings chart
 (function(){
   var data = [
@@ -1055,7 +1263,7 @@
     {l:'Graphic design', lo:15, hi:40, color:'#1d4ed8'},
     {l:'Copywriting / Content', lo:15, hi:40, color:'#1d4ed8'},
     {l:'Online tutoring', lo:15, hi:35, color:'#0d9488'},
-    {l:'Translation', lo:15, hi:35, color:'#0d9488'},
+    {l:'Technical/specialised translation', lo:15, hi:35, color:'#0d9488'},
     {l:'Social media management', lo:15, hi:30, color:'#0d9488'},
     {l:'Virtual assistant', lo:12, hi:25, color:'#65a30d'},
     {l:'AI data annotation', lo:10, hi:22, color:'#65a30d'},
