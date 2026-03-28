@@ -2,19 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-115WQYBB0Z');
-  </script><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>E-Commerce Trends — TrendsOnFire</title>
-  <meta name="description" content="E-commerce trend intelligence — tracking what is changing in online retail, digital commerce, and direct-to-consumer models across Europe. TrendsOnFire."/>
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Media Intelligence — TrendsOnFire</title>
+  <meta name="description" content="Podcast trends, media coverage, retail and ecommerce podcasts, and podcast aggregator data for the Netherlands. Curated by Olga Bressers."/>
+  <link rel="canonical" href="https://trendsonfire.com/media/"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Media Intelligence — TrendsOnFire"/>
+  <meta property="og:description" content="Podcast trends, media coverage strategies, and retail &amp; ecommerce podcast landscape — curated by Olga Bressers."/>
+  <meta property="og:url" content="https://trendsonfire.com/media/"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Media Intelligence — TrendsOnFire"/>
+  <meta name="twitter:description" content="Podcast trends, media coverage strategies, and retail &amp; ecommerce podcast landscape."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --orange:#ea580c; --orange-light:#fff7ed; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
     nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
@@ -23,71 +37,53 @@
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
 
-    .return-bar { background: #f7e8f3; border-bottom: 1px solid #e8cfe1; padding: 10px 32px; font-size: 13px; color: var(--fuchsia); }
-    .return-bar a { color: var(--fuchsia); font-weight: 600; text-decoration: none; }
-    .return-bar a:hover { text-decoration: underline; }
-
-    .sec-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    .sec-header { background: linear-gradient(135deg, #431407 0%, #ea580c 100%); color: white; padding: 48px 32px 40px; }
     .sec-header .inner { max-width: 1100px; margin: auto; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #fed7aa; font-weight: 700; margin-bottom: 10px; }
     .sec-header h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
     .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
 
     main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
-    .coming-soon { background: white; border-radius: 14px; border: 2px dashed var(--border); padding: 48px; text-align: center; margin-bottom: 48px; }
-    .coming-soon .cs-icon { font-size: 48px; margin-bottom: 16px; }
-    .coming-soon h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+
+    .coming-soon { background: white; border-radius: 14px; border: 2px solid var(--border); padding: 36px; text-align: center; margin-bottom: 0; }
+    .cs-icon { font-size: 44px; margin-bottom: 14px; }
+    .coming-soon h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .coming-soon p { color: var(--sub); font-size: 14px; max-width: 440px; margin: 0 auto; }
+
     .trends-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
     .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 48px; }
     .trend-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 10px; }
+    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
     .tc-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
     .tc-body { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
     .tc-body strong { color: var(--text); font-weight: 600; }
+
     .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
     .li-cta a:hover { background: #7a1660; }
+
     footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
-  </style>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="TrendsOnFire"/>
-  <meta property="og:title" content="E-Commerce Intelligence — TrendsOnFire"/>
-  <meta property="og:description" content="Tracking what's changing in e-commerce — platforms, consumer behaviour and growth."/>
-  <meta property="og:url" content="https://trendsonfire.com/ecommerce/"/>
-  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="E-Commerce Intelligence — TrendsOnFire"/>
-  <meta name="twitter:description" content="Tracking what's changing in e-commerce — platforms, consumer behaviour and growth."/>
-  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "E-Commerce Intelligence",
-    "description": "Tracking what's changing in e-commerce — platforms, consumer behaviour and growth.",
-    "url": "https://trendsonfire.com/ecommerce/",
-    "author": {
-      "@type": "Person",
-      "name": "Olga Bressers",
-      "url": "https://trendsonfire.com/olgabressers/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "TrendsOnFire",
-      "url": "https://trendsonfire.com"
+
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; text-align:left; }
+      main { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header { padding:32px 16px 28px; }
+      .trends-grid { grid-template-columns:1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
     }
-  }
-  </script>
+  </style>
 </head>
 <body>
 <nav>
@@ -104,71 +100,83 @@
       <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html" class="active">Retail &amp; E-Commerce</a>
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
     <a href="../people/index.html">People &amp; Transformation</a>
     <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
     <a href="../education-government/index.html">Education &amp; Government</a>
     <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../media/index.html">Media</a>
+    <a href="index.html" class="active">Media</a>
     <a href="../olgabressers/index.html">About the Author</a>
   </div>
 </nav>
 
-<div class="return-bar">
-  This section is part of Retail &amp; E-Commerce. <a href="../retail/">Return to full view →</a>
-</div>
-
 <div class="sec-header">
   <div class="inner">
-    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="../retail/">Retail &amp; E-Commerce</a> / E-Commerce</div>
-    <div class="sec-eyebrow">E-Commerce Intelligence</div>
-    <h1>E-Commerce Trends</h1>
-    <p>Analysing checkout friction, DTC brand strategy, conversion levers, and the future of online selling across European markets.</p>
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Media</div>
+    <div class="sec-eyebrow">Media Intelligence</div>
+    <h1>Media &amp; Podcast Trends</h1>
+    <p>Tracking the rise of podcasts as media, influence, and sales channels — with a focus on retail, ecommerce, and the Netherlands market.</p>
   </div>
 </div>
 
 <main>
-  <div class="coming-soon">
-    <div class="cs-icon">🛒</div>
-    <h2>Checkout Experience Scorecard — Coming Soon</h2>
-    <p>An interactive tracker assessing Europe's top e-commerce brands on checkout simplicity, payment options, cart recovery, and post-purchase experience.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:48px;">
+    <div class="coming-soon" style="border-color:#ea580c;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='podcasts.html'">
+      <div class="cs-icon">🎙️</div>
+      <h2>Podcast Trends Dashboard — Live</h2>
+      <p>Global growth, NL aggregator market share, podcasts as a sales channel, retail &amp; ecommerce shows to follow — and voices from the industry.</p>
+      <a href="podcasts.html" style="display:inline-block;margin-top:16px;background:#ea580c;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the dashboard →</a>
+    </div>
   </div>
 
-  <div class="trends-title">Key E-Commerce Trends — 2026</div>
+  <div class="trends-title">Key Media Trends — 2026</div>
   <div class="trends-grid">
+
     <div class="trend-card">
-      <div class="tc-tag">⚡ Checkout</div>
-      <div class="tc-title">One-click checkout is no longer a luxury — it's an expectation</div>
-      <div class="tc-body">Brands that haven't simplified payment flows are losing <strong>20–30% of carts at checkout</strong>. BNPL, digital wallets, and one-click options are now baseline expectations for shoppers under 45.</div>
+      <div class="tc-tag">Trending · Podcasts</div>
+      <div class="tc-title">Podcast listenership in the Netherlands crosses 5 million regular listeners</div>
+      <div class="tc-body">Over 40% of Dutch internet users now listen to podcasts monthly. <strong>Spotify dominates with ~72% of NL podcast consumption</strong>, but YouTube audio is growing fast as a second platform.</div>
     </div>
+
     <div class="trend-card">
-      <div class="tc-tag">🏷️ DTC Strategy</div>
-      <div class="tc-title">DTC brands are doubling down on owned data as third-party signals disappear</div>
-      <div class="tc-body">With cookie deprecation accelerating, leading DTC brands are investing in zero-party data strategies — <strong>quizzes, loyalty programmes, preference centres</strong> — to rebuild the personalisation layer.</div>
+      <div class="tc-tag">Trending · Revenue</div>
+      <div class="tc-title">Podcast advertising revenue surpasses €4 billion globally in 2025</div>
+      <div class="tc-body">Host-read ads deliver the highest trust scores of any digital ad format. <strong>CPM rates for niche B2B shows (€30–80) outperform most display and social formats.</strong></div>
     </div>
+
     <div class="trend-card">
-      <div class="tc-tag">📱 Mobile Commerce</div>
-      <div class="tc-title">Mobile now drives 68% of e-commerce traffic — but conversion still lags desktop</div>
-      <div class="tc-body">The mobile traffic / mobile conversion gap persists. <strong>Brands closing this gap with app-first checkout and biometric authentication</strong> are seeing 18–35% lift in mobile conversion rates.</div>
+      <div class="tc-tag">Trending · Format</div>
+      <div class="tc-title">Video podcasts are redefining the format — YouTube becomes a primary discovery channel</div>
+      <div class="tc-body">Over 60% of new podcast listeners discover shows via YouTube. <strong>Recording video alongside audio has become the default</strong> for professional podcasters targeting broad reach.</div>
     </div>
+
     <div class="trend-card">
-      <div class="tc-tag">🤖 AI Personalisation</div>
-      <div class="tc-title">AI-driven product discovery is separating the top quartile from the rest</div>
-      <div class="tc-body">Retailers using AI for real-time product recommendations and dynamic search are seeing <strong>2–4× higher basket sizes</strong>. The gap between adopters and laggards is widening fast in 2026.</div>
+      <div class="tc-tag">Trending · B2B</div>
+      <div class="tc-title">Niche B2B podcasts are outperforming general business shows on engagement</div>
+      <div class="tc-body">Industry-specific shows (retail tech, supply chain, pharma, fintech) average 3x higher listener engagement than general business formats. <strong>Thought leadership is shifting from LinkedIn posts to podcast conversations.</strong></div>
     </div>
+
     <div class="trend-card">
-      <div class="tc-tag">↩️ Returns</div>
-      <div class="tc-title">Free returns are becoming a brand liability — and retailers are finally acting</div>
-      <div class="tc-body">With return rates hitting 25–40% in fashion e-commerce, brands are introducing <strong>returnless refunds, size guarantee tools, and paid return tiers</strong> to protect margins without losing loyalty.</div>
+      <div class="tc-tag">Trending · Commerce</div>
+      <div class="tc-title">Podcasts are becoming a measurable DTC sales driver, not just an awareness channel</div>
+      <div class="tc-body">Promo codes, landing pages, and QR-code tracking have made podcast ROI measurable. <strong>DTC brands in NL and Belgium are allocating 15–20% of media budgets to podcast sponsorships.</strong></div>
     </div>
+
+    <div class="trend-card">
+      <div class="tc-tag">Trending · AI</div>
+      <div class="tc-title">AI-generated podcast summaries and clips are driving discovery at scale</div>
+      <div class="tc-body">Platforms now auto-generate highlight clips, transcriptions, and SEO-optimised episode summaries. <strong>A single 45-minute episode can produce 20+ social media assets with minimal effort.</strong></div>
+    </div>
+
   </div>
 
   <div class="li-cta">
     <div>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700">Available for</p>
-      <p>Interim management &amp; consulting services in retail, e-commerce, and business transformation across Europe.</p>
+      <p>Available for</p>
+      <p>Podcast guest appearances, media interviews, and thought leadership on retail, ecommerce, omnichannel, and transformation topics across the Netherlands and Europe.</p>
     </div>
     <a href="../contact/">Connect →</a>
   </div>
@@ -182,8 +190,11 @@
   </div>
   <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a></p>
 </footer>
-
-<!-- COOKIE NOTICE BANNER -->
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 <div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
@@ -195,10 +206,7 @@
 <script>
 (function(){
   function getCookie(n){var v=document.cookie.match("(^|;)\s*"+n+"\s*=\s*([^;]+)");return v?v.pop():"";}
-  if(!getCookie("tof_cookie_notice")){
-    var b=document.getElementById("cookie-notice");
-    if(b){b.style.display="flex";}
-  }
+  if(!getCookie("tof_cookie_notice")){var b=document.getElementById("cookie-notice");if(b)b.style.display="flex";}
 })();
 </script>
 </body>
