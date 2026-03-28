@@ -582,14 +582,13 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
     <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
     <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
   </p>
-  <button onclick="(function(){document.cookie='tof_cookie_notice=1;max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
 </div>
 <script>
 (function(){
-  function getCookie(n){var v=document.cookie.match("(^|;)\s*"+n+"\s*=\s*([^;]+)");return v?v.pop():"";}
-  if(!getCookie("tof_cookie_notice")){
+  if(!localStorage.getItem('tof_cookie_notice')){
     var b=document.getElementById("cookie-notice");
-    if(b){b.style.display="flex";}
+    if(b)b.style.display="flex";
   }
 })();
 </script>
