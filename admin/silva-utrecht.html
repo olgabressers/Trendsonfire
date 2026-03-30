@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Silva Method Utrecht — Market Intelligence</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --green:#059669; --amber:#d97706; --red:#dc2626; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    .top-bar { background: var(--navy); color: rgba(255,255,255,.6); font-size: 12px; padding: 8px 32px; display: flex; align-items: center; gap: 12px; }
+    .top-bar a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .top-bar a:hover { color: white; }
+    .badge { background: #dc2626; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: .5px; }
+
+    .hero { background: linear-gradient(135deg, #1e3a5f 0%, #5b21b6 100%); color: white; padding: 52px 32px 44px; }
+    .hero-inner { max-width: 1100px; margin: auto; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c4b5fd; font-weight: 700; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 620px; }
+    .hero-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .hero-meta span { font-size: 12px; color: rgba(255,255,255,.55); display: flex; align-items: center; gap: 6px; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .section-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
+
+    /* KPI row */
+    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .kpi { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .kpi-value { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .kpi-label { font-size: 12px; color: var(--sub); margin-top: 4px; line-height: 1.4; }
+    .kpi-note { font-size: 11px; color: var(--fuchsia); margin-top: 6px; font-weight: 600; }
+
+    /* Population table */
+    .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 40px; }
+    .data-table th { background: var(--navy); color: white; padding: 11px 14px; text-align: left; font-size: 12px; font-weight: 700; }
+    .data-table td { padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid var(--border); }
+    .data-table tr:last-child td { border-bottom: none; font-weight: 700; background: #f0f4ff; }
+    .data-table tr:hover td { background: #fafafa; }
+    .bar-wrap { background: #e5e7eb; border-radius: 4px; height: 8px; width: 120px; display: inline-block; vertical-align: middle; }
+    .bar { height: 8px; border-radius: 4px; background: var(--fuchsia); display: block; }
+
+    /* Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 40px; }
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
+    .card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .card p, .card li { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
+    .card ul { padding-left: 16px; }
+
+    /* Pricing */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 40px; }
+    .price-card { background: white; border-radius: 12px; border: 2px solid var(--border); padding: 24px; text-align: center; }
+    .price-card.highlight { border-color: var(--fuchsia); }
+    .price-tag { font-size: 36px; font-weight: 800; color: var(--navy); }
+    .price-per { font-size: 12px; color: var(--sub); margin-bottom: 12px; }
+    .price-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--navy); }
+    .price-list { list-style: none; text-align: left; font-size: 13px; color: var(--sub); }
+    .price-list li { padding: 5px 0; border-bottom: 1px solid var(--border); }
+    .price-list li:last-child { border-bottom: none; }
+    .price-list li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+    /* Scenario table */
+    .scenario-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 40px; }
+    .scenario-table th { background: #5b21b6; color: white; padding: 11px 14px; font-size: 12px; font-weight: 700; text-align: left; }
+    .scenario-table td { padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid var(--border); }
+    .scenario-table tr:last-child td { border-bottom: none; }
+    .green { color: var(--green); font-weight: 700; }
+    .amber { color: var(--amber); font-weight: 700; }
+    .red { color: var(--red); font-weight: 700; }
+
+    /* Channels */
+    .channel-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .ch-icon { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .ch-body h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .ch-body p { font-size: 13px; color: var(--sub); line-height: 1.55; }
+    .ch-body .examples { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .ch-body .ex-tag { font-size: 11px; background: #f3f4f6; border: 1px solid var(--border); padding: 2px 10px; border-radius: 10px; color: #374151; }
+    .effort { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+    .effort.high { background: #d1fae5; color: #065f46; }
+    .effort.med { background: #fef3c7; color: #92400e; }
+
+    /* Silva info */
+    .info-box { background: linear-gradient(135deg, #f5f3ff, #ede9fe); border: 1px solid #c4b5fd; border-radius: 12px; padding: 24px; margin-bottom: 40px; }
+    .info-box h3 { font-size: 16px; font-weight: 800; color: #4c1d95; margin-bottom: 10px; }
+    .info-box p { font-size: 13.5px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
+    .module-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .module-box { background: white; border-radius: 10px; padding: 16px 18px; border: 1px solid #ddd6fe; }
+    .module-box h4 { font-size: 13px; font-weight: 700; color: #4c1d95; margin-bottom: 6px; }
+    .module-box p { font-size: 12.5px; color: var(--sub); }
+
+    .callout { background: var(--navy); color: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 40px; }
+    .callout h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #c4b5fd; }
+    .callout p { font-size: 13.5px; color: rgba(255,255,255,.8); line-height: 1.65; }
+
+    footer-bar { display: block; margin-top: 40px; font-size: 12px; color: var(--sub); text-align: center; padding-top: 24px; border-top: 1px solid var(--border); }
+    footer-bar a { color: var(--sub); text-decoration: none; }
+    footer-bar a:hover { color: var(--navy); }
+
+    @media(max-width:768px){ .module-row { grid-template-columns: 1fr; } main { padding: 32px 16px 60px; } .hero { padding: 36px 16px 32px; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/admin/delisted.html">← Admin</a>
+  <span>·</span>
+  <span>Private research page</span>
+  <span class="badge">NOINDEX</span>
+  <span style="margin-left:auto">TrendsOnFire · Personal use only</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Market Intelligence · Personal Development</div>
+    <h1>Silva Method in Utrecht — Russian-Speaking Market</h1>
+    <p>Market sizing, community analysis, pricing scenarios, and promotion channels for organising a 2-module Silva Method training in Russian in Utrecht, Netherlands.</p>
+    <div class="hero-meta">
+      <span>📍 Utrecht, Netherlands</span>
+      <span>🗣️ Russian-language training</span>
+      <span>🎓 Trainer: Anastasia Detzel (Estonia)</span>
+      <span>📅 Research: March 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-value">~175K</div>
+      <div class="kpi-label">Russian-speaking residents in the Netherlands</div>
+      <div class="kpi-note">Russians + Ukrainians + post-Soviet</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">~50K</div>
+      <div class="kpi-label">Within 1 hour of Utrecht (Randstad)</div>
+      <div class="kpi-note">Amsterdam · Rotterdam · The Hague</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">3,500–5,000</div>
+      <div class="kpi-label">Estimated personal-dev interested segment</div>
+      <div class="kpi-note">~7–10% of reachable population</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">20–35</div>
+      <div class="kpi-label">Realistic group size per event</div>
+      <div class="kpi-note">Well-promoted, first edition</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">€350–500</div>
+      <div class="kpi-label">Target price per module (2 days)</div>
+      <div class="kpi-note">Competitive for NL market</div>
+    </div>
+  </div>
+
+  <!-- Silva Method -->
+  <div class="section-title">About the Silva Method</div>
+  <div class="info-box">
+    <h3>What is the Silva Method?</h3>
+    <p>Developed by José Silva in the 1960s, the Silva Method is a self-help and personal development program based on training the mind to function at the alpha brainwave level — a relaxed, meditative state in which learning, creativity, and intuition are said to be enhanced. It is one of the longest-running personal development programmes in the world, with millions of graduates in 110+ countries.</p>
+    <p>The programme is structured in two modules, each delivered over a 2-day live session. <strong>Anastasia Detzel</strong> is a certified Silva Method trainer conducting sessions in Russian — based in Estonia and one of very few certified Russian-language trainers in Europe.</p>
+    <div class="module-row">
+      <div class="module-box">
+        <h4>Module 1 — Silva Life System (2 days)</h4>
+        <p>Foundation: entering the alpha state, the glass of water technique, mental screen visualisation, stress and sleep management, goal-setting through mental rehearsal. Suitable for complete beginners.</p>
+      </div>
+      <div class="module-box">
+        <h4>Module 2 — Silva Intuition System (2 days)</h4>
+        <p>Advanced: developing intuition, psychometry, case working, remote sensing. Builds directly on Module 1 skills. Recommended to complete both in sequence.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Population -->
+  <div class="section-title">Russian-Speaking Population in the Netherlands</div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Origin Group</th>
+        <th>Estimated Population (2025)</th>
+        <th>Profile</th>
+        <th>Russian fluency</th>
+        <th>Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ukrainians</strong></td>
+        <td>~120,000</td>
+        <td>War refugees (2022+); 59% in paid employment; age 25–44 dominant</td>
+        <td>Native / bilingual</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:100%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Russians</strong></td>
+        <td>~25,000</td>
+        <td>Economic migrants, expat professionals, IT workers; higher income; long-term residents</td>
+        <td>Native</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:21%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Lithuanians</strong></td>
+        <td>~10,000</td>
+        <td>Labour migrants; many Russian-speaking, especially older generation</td>
+        <td>Partial (older cohort)</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:8%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Latvians</strong></td>
+        <td>~7,000</td>
+        <td>Labour migrants; significant Russian-speaking minority</td>
+        <td>Partial–high</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:6%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Belarusians</strong></td>
+        <td>~3,000</td>
+        <td>Political refugees (post-2020 protests); educated, urban</td>
+        <td>Native</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:2.5%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Armenians, Azerbaijanis, Georgians</strong></td>
+        <td>~6,000</td>
+        <td>Mixed; many Russian-fluent, especially pre-1990 birth cohort</td>
+        <td>High (older); partial (younger)</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:5%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Kazakhstanis, Uzbeks, others</strong></td>
+        <td>~4,000</td>
+        <td>Smaller groups; often highly educated migrants</td>
+        <td>High</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:3%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Total Russian-speaking (est.)</strong></td>
+        <td><strong>~175,000</strong></td>
+        <td colspan="2">Sources: CBS, UNHCR, IND 2022–2025</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card-grid" style="margin-top:-20px;">
+    <div class="card">
+      <div class="card-tag">📍 Geography</div>
+      <h3>Where they live</h3>
+      <ul>
+        <li><strong>Amsterdam</strong> — largest concentration, highly international</li>
+        <li><strong>The Hague</strong> — expat hub, international organisations</li>
+        <li><strong>Rotterdam</strong> — labour migrants, port economy</li>
+        <li><strong>Utrecht</strong> — growing expat community, university city</li>
+        <li><strong>Eindhoven</strong> — tech/ASML expat cluster</li>
+      </ul>
+      <p style="margin-top:10px; font-size:12px;">Utrecht is central — all Randstad cities within 30–45 min. Ideal location.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">👤 Who is your audience</div>
+      <h3>Target participant profile</h3>
+      <ul>
+        <li>Age 28–50, university educated</li>
+        <li>Russian-speaking expat professionals</li>
+        <li>Ukrainian refugees now stabilised (employed, income)</li>
+        <li>Belarusians (politically engaged, open-minded)</li>
+        <li>Prior interest in mindfulness, NLP, coaching, meditation</li>
+        <li>Women slightly over-represented in personal dev events</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-tag">💡 Demand signal</div>
+      <h3>Why demand exists</h3>
+      <ul>
+        <li>Dislocation and stress from migration drives personal development interest</li>
+        <li>Almost no Russian-language personal dev events in NL</li>
+        <li>Germans and Estonians already attend Anastasia's trainings → NL demand untapped</li>
+        <li>Community craves connection in native language</li>
+        <li>Silva is internationally recognised — not "alternative" niche</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section-title">Pricing Scenarios — 2 Modules × 2 Days</div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Entry Price</h3>
+      <div class="price-tag">€299</div>
+      <div class="price-per">per module · per person</div>
+      <ul class="price-list">
+        <li>Maximises group size</li>
+        <li>Good for first edition</li>
+        <li>Builds community trust</li>
+        <li>Both modules: €549 bundle</li>
+      </ul>
+    </div>
+    <div class="price-card highlight">
+      <h3>Market Price ✦ Recommended</h3>
+      <div class="price-tag">€399</div>
+      <div class="price-per">per module · per person</div>
+      <ul class="price-list">
+        <li>Aligned with NL market (NLP, mindfulness)</li>
+        <li>Signals quality without excluding</li>
+        <li>Both modules: €699 bundle</li>
+        <li>Early bird: €349</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Premium Price</h3>
+      <div class="price-tag">€499</div>
+      <div class="price-per">per module · per person</div>
+      <ul class="price-list">
+        <li>For repeat events with reputation</li>
+        <li>Smaller group, higher margin</li>
+        <li>Both modules: €849 bundle</li>
+        <li>Suitable from edition 2+</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Break-even scenarios -->
+  <div class="section-title">Break-Even &amp; Profit Scenarios</div>
+  <p style="font-size:13.5px; color:var(--sub); margin-bottom:16px;">Estimated costs per module (single 2-day event): Trainer fee ~€800–1,200 · Travel from Estonia ~€200–400 · Venue Utrecht (2 days) ~€400–600 · Materials ~€100 · Marketing ~€100–200. <strong>Total cost estimate: €1,600–2,500 per module.</strong></p>
+
+  <table class="scenario-table">
+    <thead>
+      <tr><th>Scenario</th><th>Participants</th><th>Price/person</th><th>Revenue</th><th>Costs (est.)</th><th>Profit</th><th>Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Minimum viable</td>
+        <td>10</td>
+        <td>€399</td>
+        <td>€3,990</td>
+        <td>€2,200</td>
+        <td class="amber">€1,790</td>
+        <td>Break-even ✓</td>
+      </tr>
+      <tr>
+        <td>Realistic first event</td>
+        <td>20</td>
+        <td>€399</td>
+        <td>€7,980</td>
+        <td>€2,200</td>
+        <td class="green">€5,780</td>
+        <td>Strong ✓✓</td>
+      </tr>
+      <tr>
+        <td>Good first event</td>
+        <td>30</td>
+        <td>€399</td>
+        <td>€11,970</td>
+        <td>€2,500</td>
+        <td class="green">€9,470</td>
+        <td>Excellent ✓✓✓</td>
+      </tr>
+      <tr>
+        <td>Entry price / low group</td>
+        <td>15</td>
+        <td>€299</td>
+        <td>€4,485</td>
+        <td>€2,200</td>
+        <td class="amber">€2,285</td>
+        <td>Worth it ✓</td>
+      </tr>
+      <tr>
+        <td>Both modules same group</td>
+        <td>20</td>
+        <td>€699 bundle</td>
+        <td>€13,980</td>
+        <td>€4,400</td>
+        <td class="green">€9,580</td>
+        <td>Best scenario ✓✓✓</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h3>Recommendation</h3>
+    <p>Start with €399 per module and offer a bundle (both modules €699). Target 20 participants for a first event. Minimum viable is 10. The gap in the Russian-speaking NL market is real — comparable events do not exist in this language. Utrecht is an ideal location: central, accessible, growing expat scene. Sell both modules together to the same group — better revenue, stronger community, easier logistics with one visit from Estonia.</p>
+  </div>
+
+  <!-- Channels -->
+  <div class="section-title">Promotion Channels</div>
+
+  <div class="channel-card">
+    <div class="ch-icon">💬</div>
+    <div class="ch-body">
+      <h3>Telegram Groups <span class="effort high">Highest reach</span></h3>
+      <p>The primary communication channel for Russian-speaking communities in the Netherlands. Multiple active groups for Russians, Ukrainians, and post-Soviet expats in NL with thousands of members. Single posts can reach 1,000+ relevant people.</p>
+      <div class="examples">
+        <span class="ex-tag">Русские в Нидерландах</span>
+        <span class="ex-tag">Украинцы в Нидерландах</span>
+        <span class="ex-tag">Русскоязычные в Амстердаме</span>
+        <span class="ex-tag">IT-эмигранты NL</span>
+        <span class="ex-tag">Беларусы ў Нідэрландах</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">👥</div>
+    <div class="ch-body">
+      <h3>Facebook Groups <span class="effort high">High reach</span></h3>
+      <p>Several large Russian/Ukrainian Facebook groups active in the Netherlands. Older demographic (30–50) but very relevant for personal development. Good for longer event descriptions and early bird posts.</p>
+      <div class="examples">
+        <span class="ex-tag">Русские в Голландии</span>
+        <span class="ex-tag">Украинцы в Нидерландах</span>
+        <span class="ex-tag">Russian Expats Netherlands</span>
+        <span class="ex-tag">Mamas в Нидерландах</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">📸</div>
+    <div class="ch-body">
+      <h3>Instagram &amp; Word of Mouth <span class="effort med">Medium reach</span></h3>
+      <p>Personal development audience is highly active on Instagram. Stories, testimonials from Anastasia's Germany events, and your own attendance story are powerful social proof. Ask Anastasia to share to her own audience (who may want NL dates).</p>
+      <div class="examples">
+        <span class="ex-tag">Russian-speaking coaches in NL</span>
+        <span class="ex-tag">Anastasia Detzel's existing followers</span>
+        <span class="ex-tag">Your own network</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🔗</div>
+    <div class="ch-body">
+      <h3>LinkedIn <span class="effort med">Targeted reach</span></h3>
+      <p>Reaches Russian-speaking professionals (IT, finance, consulting). Post in Russian on your own profile — in NL this is unusual and gets attention. Connect with Russian-speaking coaches and HR professionals who may refer participants.</p>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🌐</div>
+    <div class="ch-body">
+      <h3>Russian-Language Media in NL <span class="effort med">Credibility channel</span></h3>
+      <p>Moscow Times (Amsterdam-based) and several Ukrainian-language community platforms operate in the Netherlands. Event listings and editorial mentions are possible. Slower but builds credibility.</p>
+      <div class="examples">
+        <span class="ex-tag">Moscow Times (Amsterdam)</span>
+        <span class="ex-tag">TV Dozhd (Amsterdam)</span>
+        <span class="ex-tag">Ukrainian community newsletters</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🤝</div>
+    <div class="ch-body">
+      <h3>Community Partnerships <span class="effort high">Highest conversion</span></h3>
+      <p>Partner with Russian-speaking coaches, psychologists, yoga instructors and wellness practitioners already active in NL. They have trusted audiences and will refer clients. Offer a commission (10–15%) or free seat in exchange. This is the highest-converting channel for personal development.</p>
+      <div class="examples">
+        <span class="ex-tag">Russian-speaking life coaches in NL</span>
+        <span class="ex-tag">Expat wellbeing practitioners</span>
+        <span class="ex-tag">Ukrainian women's groups</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action plan -->
+  <div class="section-title">Suggested Action Plan</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">Week 1–2</div>
+      <h3>Confirm logistics</h3>
+      <ul>
+        <li>Agree date with Anastasia (both modules, ideally same weekend + 1 month later)</li>
+        <li>Book venue in Utrecht (conference room, 30 pax, €150–300/day)</li>
+        <li>Set up simple registration page (Google Form or Eventbrite)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-tag">Week 2–4</div>
+      <h3>Soft launch</h3>
+      <ul>
+        <li>Post in 5–10 Telegram and Facebook groups</li>
+        <li>Contact Russian-speaking coaches in NL — offer partnership</li>
+        <li>Share your personal story from Germany training</li>
+        <li>Early bird pricing for first 10 registrations</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-tag">Week 4–8</div>
+      <h3>Scale promotion</h3>
+      <ul>
+        <li>Anastasia shares Utrecht dates to her audience</li>
+        <li>Instagram content: testimonials, what to expect</li>
+        <li>LinkedIn post in Russian</li>
+        <li>Close registrations 2 weeks before event</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer-bar>
+    Private research · March 2026 · <a href="/admin/delisted.html">← Admin</a> · <a href="/">TrendsOnFire</a>
+  </footer-bar>
+
+</main>
+</body>
+</html>
