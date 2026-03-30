@@ -183,6 +183,27 @@
     @media(max-width:480px){
       .stats { grid-template-columns:1fr; }
     }
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
     <link rel="canonical" href="https://trendsonfire.com/people/eu-transformation.html"/>
   <meta name="author" content="Olga Bressers"/>
@@ -237,6 +258,10 @@
     <a href="../media/index.html">Media</a>
     <a href="../olgabressers/index.html">About the Author</a>
   </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
 </nav>
 
 <header>
@@ -1378,6 +1403,20 @@
 
 </main>
 
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
 <footer>
   <div style="margin-bottom:12px">
     <a href="https://www.linkedin.com/in/olgabressers/" target="_blank" aria-label="LinkedIn" style="display:inline-block;vertical-align:middle">
@@ -1419,6 +1458,46 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
     if(b){b.style.display="flex";}
   }
 })();
+</script>
+
+<script>
+var ARTICLES=[
+  {title:"The Furniture Trap \u2014 What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing \u2014 return economics, last-mile costs, and who is actually winning.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Market Analysis"]},
+  {title:"Nike Transformation Intelligence \u2014 EMEA Focus",url:"/retail/nike.html",section:"Retail & E-Commerce",desc:"Nike's DTC strategy, EMEA transformation, and retail repositioning in the European market.",tags:["Nike","Sporting Goods","DTC","Digital Transformation","EMEA"]},
+  {title:"Sporting Goods Brands \u2014 European Market Analysis",url:"/retail/sporting-goods-brands.html",section:"Retail & E-Commerce",desc:"Competitive analysis of sporting goods brands across European markets.",tags:["Sporting Goods","European Market","Brand Strategy","Market Analysis"]},
+  {title:"B2B Marketplace Intelligence \u2014 Europe",url:"/retail/b2b-marketplace.html",section:"Retail & E-Commerce",desc:"Mapping Europe's B2B marketplace landscape \u2014 platforms, adoption trends and opportunities.",tags:["B2B","Marketplace","E-Commerce","Platform Strategy","Europe"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Netherlands","Belgium","France","REMIT"]},
+  {title:"Student Side Jobs \u2014 Earning Opportunities in the Netherlands",url:"/people/student-side-jobs.html",section:"People & Transformation",desc:"Complete guide to side income for students in the Netherlands.",tags:["Student Jobs","Netherlands","Freelance","AI & Technology","Side Income"]},
+  {title:"European Executive Salary Index",url:"/people/salary-index.html",section:"People & Transformation",desc:"Benchmarking executive and senior management salaries across European roles.",tags:["Salaries","Netherlands","Executive Compensation","Europe","Retail"]},
+  {title:"Netherlands Corporate Layoff Tracker",url:"/people/nl-layoffs.html",section:"People & Transformation",desc:"Tracking corporate layoffs and restructuring announcements across Dutch companies.",tags:["Layoffs","Netherlands","Retail","Workforce","Corporate Restructuring"]},
+  {title:"European Corporate Transformation Intelligence",url:"/people/eu-transformation.html",section:"People & Transformation",desc:"Tracking digital transformation maturity across European corporations.",tags:["Digital Transformation","Europe","Change Management","Corporate Strategy"]},
+  {title:"Luxury & Consumer DTC Leadership Tracker",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"Leadership intelligence for luxury and consumer DTC brands.",tags:["Luxury Retail","DTC","Leadership","Brand Strategy","E-Commerce"]},
+  {title:"Philips Transformation Intelligence",url:"/transformation/philips.html",section:"People & Transformation",desc:"Deep-dive into Philips' corporate transformation.",tags:["Philips","Digital Transformation","Netherlands","Corporate Strategy"]},
+  {title:"CEE Transformation Index",url:"/transformation/cee-index.html",section:"People & Transformation",desc:"Tracking digital and organisational transformation across Central and Eastern European markets.",tags:["Digital Transformation","CEE","Europe","Market Analysis"]},
+  {title:"Global Counterfeiting Intelligence \u2014 European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"Mapping the $4.5 trillion counterfeiting problem.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce"]},
+  {title:"European InsurTech & SME Insurance Market Intelligence 2026",url:"/finance-compliance/insurtech-sme.html",section:"Finance & Compliance",desc:"Europe's \u20ac180B SME insurance market \u2014 digital disruption, AI underwriting, competitive landscape.",tags:["InsurTech","SME Insurance","European Expansion","AI Insurance","Fintech"]},
+  {title:"Crypto & Digital Assets Intelligence \u2014 European Market",url:"/finance-compliance/crypto-intelligence.html",section:"Finance & Compliance",desc:"Tracking European crypto regulation, institutional adoption and market dynamics.",tags:["Crypto","Digital Assets","Regulation","Europe","Finance"]},
+  {title:"EAA Accessibility Compliance Tracker",url:"/technology/eaa-tracker.html",section:"Technology",desc:"Tracking European Accessibility Act compliance readiness across retailers and digital platforms.",tags:["European Accessibility Act","Compliance","Technology","Digital Regulation"]},
+  {title:"Device Lifecycle Management \u2014 Telco Supply Chain Intelligence",url:"/supply-chain/dlm-trends.html",section:"Supply Chain",desc:"Tracking European DLM market growth, reverse logistics trends and sustainability mandates.",tags:["Supply Chain","Device Lifecycle","Telco","Sustainability"]},
+  {title:"Global Manufacturing Footprint & Supply Chain Transformation Intelligence 2026",url:"/supply-chain/manufacturing-footprint.html",section:"Supply Chain",desc:"Global manufacturing footprint strategy, nearshoring trends, geopolitical trade risk.",tags:["Supply Chain","Manufacturing","Nearshoring","Geopolitical Risk","Transformation","Apparel"]},
+  {title:"University Grants & Scholarships \u2014 European Study",url:"/education-government/grants.html",section:"Education & Government",desc:"A practical guide to grants and scholarships for students at European universities.",tags:["University Grants","Netherlands","Europe","Education","Students"]},
+  {title:"UWV Transformatie Intelligence",url:"/education-government/uwv.html",section:"Education & Government",desc:"Tracking the digital transformation of UWV.",tags:["UWV","Netherlands","Employment","Government","Workforce"]},
+  {title:"European Universities \u2014 English Bachelor Programs & Rankings",url:"/education-government/universities.html",section:"Education & Government",desc:"Comparative intelligence on English-language bachelor programs across top European universities.",tags:["Universities","Netherlands","Europe","Education","English Programs"]},
+  {title:"Podcast Trends Dashboard \u2014 Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Tracking Dutch podcast market growth, platform dynamics, and podcast as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Retail"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 </script>
 </body>
 </html>
