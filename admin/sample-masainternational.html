@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Costa Blanca Market Intelligence Report — Q1 2026 — Masa International Sample</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red-spain: #c0392b;
+      --red-dark: #8e1a10;
+      --navy: #1a2340;
+      --cream: #f9f7f4;
+      --white: #ffffff;
+      --text: #1e1e2e;
+      --text-mid: #5a5a72;
+      --text-light: #9898a8;
+      --border: #e8e4de;
+      --green: #1e7c4e;
+      --gold: #c9a35a;
+      --shadow: 0 2px 16px rgba(26,35,64,.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; font-size: 14px; }
+
+    /* ── SAMPLE BANNER ── */
+    .sample-banner {
+      background: #7c3aed; color: white; text-align: center;
+      padding: 10px 20px; font-size: 12px; font-weight: 600; letter-spacing: .05em;
+    }
+    .sample-banner a { color: #e9d5ff; text-decoration: underline; margin-left: 10px; white-space: nowrap; }
+
+    /* ── REPORT HEADER ── */
+    .report-header {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-spain) 100%);
+      color: white;
+      padding: 36px 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .brand-block .logo {
+      font-size: 24px; font-weight: 700; letter-spacing: -.01em; color: white;
+    }
+    .brand-block .logo .masa { color: white; }
+    .brand-block .logo .international { color: rgba(255,255,255,.75); font-weight: 400; }
+    .brand-block .tagline { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 4px; letter-spacing: .03em; }
+    .brand-block .since { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .report-meta { text-align: right; }
+    .report-meta .report-title { font-size: 17px; font-weight: 600; color: white; margin-bottom: 4px; }
+    .report-meta .report-quarter { font-size: 13px; color: rgba(255,255,255,.65); font-weight: 500; }
+    .report-meta .prepared-by { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 10px; }
+    .report-meta .prepared-by span { color: rgba(255,255,255,.65); font-weight: 600; }
+    @media(max-width:640px){ .report-header { padding: 24px; } .report-meta { text-align: left; } }
+
+    /* ── KPI STRIP ── */
+    .kpi-strip {
+      background: var(--white); border-bottom: 3px solid var(--red-spain);
+      display: grid; grid-template-columns: repeat(5,1fr);
+    }
+    .kpi-item {
+      padding: 22px 24px; border-right: 1px solid var(--border);
+    }
+    .kpi-item:last-child { border-right: none; }
+    .kpi-label { font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+    .kpi-value { font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+    .kpi-value sup { font-size: 14px; vertical-align: top; margin-top: 4px; }
+    .kpi-delta { font-size: 12px; font-weight: 500; margin-top: 3px; }
+    .delta-up { color: var(--green); }
+    .delta-down { color: var(--red-spain); }
+    .kpi-source { font-size: 10px; color: var(--text-light); margin-top: 5px; }
+    @media(max-width:900px){ .kpi-strip { grid-template-columns: repeat(3,1fr); } }
+    @media(max-width:600px){ .kpi-strip { grid-template-columns: 1fr 1fr; } }
+
+    /* ── MAIN LAYOUT ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    @media(max-width:640px){ .container { padding: 0 16px; } }
+
+    .report-body { padding: 40px 48px; max-width: 1280px; margin: 0 auto; }
+    @media(max-width:768px){ .report-body { padding: 24px 20px; } }
+
+    /* ── SECTION HEADERS ── */
+    .section { margin-bottom: 48px; }
+    .section-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px; padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+    }
+    .section-number {
+      background: var(--red-spain); color: white;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+    .section-title { font-size: 18px; font-weight: 700; color: var(--navy); }
+    .section-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: .1em;
+      background: var(--gold); color: white;
+      padding: 2px 8px; border-radius: 20px; white-space: nowrap;
+    }
+
+    /* ── CHART GRID ── */
+    .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    @media(max-width:768px){ .chart-grid { grid-template-columns: 1fr; } }
+    .chart-card {
+      background: var(--white); border-radius: 10px; padding: 24px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .chart-card.full-width { grid-column: 1 / -1; }
+    .chart-title {
+      font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;
+    }
+    .chart-subtitle {
+      font-size: 11px; color: var(--text-light); margin-bottom: 16px;
+    }
+    .chart-wrap { position: relative; height: 240px; }
+    .chart-wrap.tall { height: 320px; }
+    .chart-wrap.xtall { height: 400px; }
+
+    /* ── CALLOUT / INSIGHT BOXES ── */
+    .callout {
+      background: #fef9f0; border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0; padding: 16px 20px;
+      margin-bottom: 24px; font-size: 13px; line-height: 1.7; color: var(--text-mid);
+    }
+    .callout strong { color: var(--text); }
+    .callout-source { font-size: 11px; color: var(--text-light); margin-top: 8px; }
+
+    .insight-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 24px; }
+    @media(max-width:900px){ .insight-grid { grid-template-columns: 1fr; } }
+    .insight-card {
+      background: var(--white); border-radius: 10px; padding: 20px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+      border-top: 3px solid var(--red-spain);
+    }
+    .insight-card .insight-number {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--red-spain); margin-bottom: 8px;
+    }
+    .insight-card p { font-size: 13px; line-height: 1.65; color: var(--text-mid); }
+    .insight-card strong { color: var(--text); }
+
+    /* ── TABLES ── */
+    .table-wrap { overflow-x: auto; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: var(--navy); }
+    thead th {
+      padding: 10px 14px; text-align: left;
+      color: rgba(255,255,255,.85); font-weight: 600; font-size: 11px;
+      letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+    tbody tr:hover { background: #fafaf8; }
+    tbody tr:last-child { border-bottom: none; }
+    td { padding: 10px 14px; color: var(--text-mid); }
+    td strong { color: var(--text); font-weight: 600; }
+    td.num { font-variant-numeric: tabular-nums; font-weight: 500; color: var(--text); }
+
+    /* ── SIGNAL BADGES ── */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+    .badge-buy { background: #d1fae5; color: #065f46; }
+    .badge-hold { background: #fef3c7; color: #92400e; }
+    .badge-watch { background: #e0e7ff; color: #3730a3; }
+    .badge-high { background: #d1fae5; color: #065f46; }
+    .badge-med { background: #fef3c7; color: #92400e; }
+    .badge-lux { background: #ede9fe; color: #4c1d95; }
+    .badge-low { background: #f3f4f6; color: #374151; }
+
+    /* ── TAX CARDS ── */
+    .tax-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
+    @media(max-width:900px){ .tax-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px){ .tax-grid { grid-template-columns: 1fr; } }
+    .tax-card {
+      background: var(--white); border-radius: 10px; padding: 20px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .tax-card .tax-icon { font-size: 22px; margin-bottom: 10px; }
+    .tax-card .tax-name {
+      font-size: 12px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--red-spain); margin-bottom: 6px;
+    }
+    .tax-card .tax-value { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .tax-card p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+    .tax-card .tax-note { font-size: 11px; color: var(--text-light); margin-top: 8px; }
+
+    /* ── SIGNAL CARDS (Section 10) ── */
+    .signal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    @media(max-width:900px){ .signal-grid { grid-template-columns: 1fr; } }
+    .signal-card { border-radius: 10px; padding: 24px; box-shadow: var(--shadow); }
+    .signal-card.green { background: #f0fdf4; border-left: 5px solid #16a34a; }
+    .signal-card.orange { background: #fffbeb; border-left: 5px solid #d97706; }
+    .signal-card.red { background: #fef2f2; border-left: 5px solid var(--red-spain); }
+    .signal-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .signal-card.green .signal-label { color: #16a34a; }
+    .signal-card.orange .signal-label { color: #d97706; }
+    .signal-card.red .signal-label { color: var(--red-spain); }
+    .signal-card .signal-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .signal-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── SCENARIO CARDS ── */
+    .scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 20px; }
+    @media(max-width:768px){ .scenario-grid { grid-template-columns: 1fr; } }
+    .scenario-card { border-radius: 8px; padding: 18px 20px; }
+    .scenario-card.bull { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .scenario-card.base { background: #fffbeb; border: 1px solid #fde68a; }
+    .scenario-card.bear { background: #fef2f2; border: 1px solid #fecaca; }
+    .scenario-name { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+    .scenario-card.bull .scenario-name { color: #16a34a; }
+    .scenario-card.base .scenario-name { color: #d97706; }
+    .scenario-card.bear .scenario-name { color: var(--red-spain); }
+    .scenario-price { font-size: 26px; font-weight: 700; color: var(--navy); }
+    .scenario-label { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+    .scenario-desc { font-size: 12px; color: var(--text-mid); margin-top: 8px; line-height: 1.5; }
+
+    /* ── SOURCES ── */
+    .sources-section {
+      background: var(--white); border-radius: 10px; padding: 28px 32px;
+      border: 1px solid var(--border); margin-bottom: 40px;
+    }
+    .sources-section h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .sources-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px 32px; }
+    @media(max-width:640px){ .sources-grid { grid-template-columns: 1fr; } }
+    .source-item { font-size: 11.5px; color: var(--text-mid); line-height: 1.5; }
+    .source-item a { color: var(--red-spain); text-decoration: none; }
+    .source-item a:hover { text-decoration: underline; }
+    .source-num { font-weight: 700; color: var(--navy); }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      background: var(--red-dark); color: rgba(255,255,255,.7);
+      padding: 20px 48px; text-align: center; font-size: 12px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .report-footer strong { color: white; }
+    @media(max-width:640px){ .report-footer { padding: 16px 20px; text-align: center; justify-content: center; } }
+
+    /* ── COMPARISON TABLE ── */
+    .comp-table tbody tr.highlight { background: #fef9f0; }
+    .comp-table tbody tr.highlight td { font-weight: 600; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- SAMPLE BANNER -->
+<div class="sample-banner">
+  ⚠ SAMPLE REPORT — Demonstration prepared by TrendsOnFire for Masa International. This shows what a quarterly Costa Blanca intelligence subscription would include.
+  <a href="/services/real-estate-agencies.html">View subscription options →</a>
+</div>
+
+<!-- REPORT HEADER -->
+<header class="report-header">
+  <div class="brand-block">
+    <div class="logo"><span class="masa">MASA</span> <span class="international">International</span></div>
+    <div class="tagline">Costa Blanca · Costa Cálida · Costa Almería</div>
+    <div class="since">Operating since 1981 · 36,000+ satisfied buyers</div>
+  </div>
+  <div class="report-meta">
+    <div class="report-title">Costa Blanca Market Intelligence Report</div>
+    <div class="report-quarter">Q1 2026 · Alicante Province &amp; Murcia</div>
+    <div class="prepared-by">Prepared by <span>TrendsOnFire</span> · trendsonfire.com</div>
+  </div>
+</header>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi-item">
+    <div class="kpi-label">Avg Price/m² CB South</div>
+    <div class="kpi-value">€2,140</div>
+    <div class="kpi-delta delta-up">↑ 7.8% YoY</div>
+    <div class="kpi-source">Source: Registradores <sup>[6]</sup></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Foreign Buyer Share (Alicante)</div>
+    <div class="kpi-value">38%</div>
+    <div class="kpi-delta delta-up">Highest in Spain</div>
+    <div class="kpi-source">Source: Registradores <sup>[6]</sup></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">NL + DE Buyer Demand YoY</div>
+    <div class="kpi-value">+12%</div>
+    <div class="kpi-delta delta-up">↑ Accelerating</div>
+    <div class="kpi-source">Source: Registradores <sup>[6]</sup></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Avg Gross Rental Yield</div>
+    <div class="kpi-value">4.8%</div>
+    <div class="kpi-delta delta-up">Torrevieja core</div>
+    <div class="kpi-source">Source: TINSA <sup>[7]</sup></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">New Construction Starts</div>
+    <div class="kpi-value">−14%</div>
+    <div class="kpi-delta delta-down">Supply squeeze signal</div>
+    <div class="kpi-source">Source: Ministerio <sup>[8]</sup></div>
+  </div>
+</div>
+
+<!-- REPORT BODY -->
+<div class="report-body">
+
+  <!-- SECTION 1: MARKET OVERVIEW -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2 class="section-title">Costa Blanca Market Overview</h2>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Avg Price/m² — Quarterly Trend</div>
+        <div class="chart-subtitle">Costa Blanca South (Alicante Province) — Q1 2024 to Q1 2026</div>
+        <div class="chart-wrap">
+          <canvas id="priceLineChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Annual Transaction Volume by Segment</div>
+        <div class="chart-subtitle">New Construction vs Resale — Alicante Province 2022–2025</div>
+        <div class="chart-wrap">
+          <canvas id="transactionBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Market Context:</strong> Costa Blanca South has seen <strong>17.6% price appreciation since Q1 2024</strong>, driven by a structural supply shortage (−14% new starts) meeting accelerating Northern European demand (+12% YoY). Transaction volume has grown 17% over the same period, with resale inventory tightening across all core MASA locations.
+      <div class="callout-source">Sources: <sup>[6]</sup> Registradores · <sup>[7]</sup> TINSA · <sup>[8]</sup> Ministerio de Fomento</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRICE MAP -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2 class="section-title">Price Map by Location — North to South Corridor</h2>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card full-width">
+        <div class="chart-title">Average Price/m² by Location (sorted high to low)</div>
+        <div class="chart-subtitle">Costa Blanca North to Murcia — Q1 2026</div>
+        <div class="chart-wrap tall">
+          <canvas id="locationBarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Avg m² Price</th>
+            <th>YoY Growth</th>
+            <th>Rental Yield</th>
+            <th>MASA Inventory Focus</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Altea</strong> <span style="color:var(--text-light);font-size:11px;">(North)</span></td>
+            <td class="num">€3,420</td>
+            <td class="num delta-up">+9.2%</td>
+            <td class="num">3.8%</td>
+            <td>Low</td>
+            <td><span class="badge badge-buy">BUY — luxury segment</span></td>
+          </tr>
+          <tr>
+            <td><strong>Calpe</strong> <span style="color:var(--text-light);font-size:11px;">(North)</span></td>
+            <td class="num">€3,180</td>
+            <td class="num delta-up">+8.7%</td>
+            <td class="num">4.1%</td>
+            <td>Low–Med</td>
+            <td><span class="badge badge-hold">HOLD — supply entering</span></td>
+          </tr>
+          <tr>
+            <td><strong>Benidorm</strong> <span style="color:var(--text-light);font-size:11px;">(Central)</span></td>
+            <td class="num">€2,980</td>
+            <td class="num delta-up">+6.4%</td>
+            <td class="num">5.9%</td>
+            <td>Core</td>
+            <td><span class="badge badge-buy">BUY — rental yield leader</span></td>
+          </tr>
+          <tr>
+            <td><strong>Denia</strong> <span style="color:var(--text-light);font-size:11px;">(North)</span></td>
+            <td class="num">€2,750</td>
+            <td class="num delta-up">+8.1%</td>
+            <td class="num">4.3%</td>
+            <td>Core</td>
+            <td><span class="badge badge-buy">BUY</span></td>
+          </tr>
+          <tr>
+            <td><strong>Alicante City</strong></td>
+            <td class="num">€2,480</td>
+            <td class="num delta-up">+5.9%</td>
+            <td class="num">5.1%</td>
+            <td>Secondary</td>
+            <td><span class="badge badge-watch">WATCH</span></td>
+          </tr>
+          <tr>
+            <td><strong>Guardamar del Segura</strong></td>
+            <td class="num">€2,290</td>
+            <td class="num delta-up">+7.8%</td>
+            <td class="num">4.6%</td>
+            <td>Core</td>
+            <td><span class="badge badge-buy">BUY</span></td>
+          </tr>
+          <tr>
+            <td><strong>Santa Pola</strong></td>
+            <td class="num">€2,180</td>
+            <td class="num delta-up">+7.2%</td>
+            <td class="num">4.4%</td>
+            <td>Secondary</td>
+            <td><span class="badge badge-hold">HOLD</span></td>
+          </tr>
+          <tr>
+            <td><strong>Torrevieja</strong> <span style="color:var(--text-light);font-size:11px;">(South)</span></td>
+            <td class="num">€2,140</td>
+            <td class="num delta-up">+7.8%</td>
+            <td class="num">4.8%</td>
+            <td>Core</td>
+            <td><span class="badge badge-buy">BUY — volume leader</span></td>
+          </tr>
+          <tr>
+            <td><strong>Orihuela Costa</strong> <span style="color:var(--text-light);font-size:11px;">(South)</span></td>
+            <td class="num">€2,020</td>
+            <td class="num delta-up">+8.4%</td>
+            <td class="num">4.7%</td>
+            <td>Core</td>
+            <td><span class="badge badge-buy">BUY — pipeline risk Q3 2026</span></td>
+          </tr>
+          <tr>
+            <td><strong>San Pedro del Pinatar</strong> <span style="color:var(--text-light);font-size:11px;">(Murcia)</span></td>
+            <td class="num">€1,780</td>
+            <td class="num delta-up">+5.1%</td>
+            <td class="num">5.2%</td>
+            <td>Secondary</td>
+            <td><span class="badge badge-watch">WATCH</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11px;color:var(--text-light);margin-top:8px;">Sources: <sup>[6]</sup> Registradores · <sup>[7]</sup> TINSA IMIE Municipios</div>
+  </section>
+
+  <!-- SECTION 3: FOREIGN BUYER INTELLIGENCE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2 class="section-title">Foreign Buyer Intelligence</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Foreign Buyer Nationality Mix — Alicante Province</div>
+        <div class="chart-subtitle">Share of foreign property purchases, 2025</div>
+        <div class="chart-wrap">
+          <canvas id="nationalityDonut"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Dutch (NL) Buyer Volume Trend</div>
+        <div class="chart-subtitle">Annual transactions in Alicante Province — 2021–2025</div>
+        <div class="chart-wrap">
+          <canvas id="nlVolumeChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight-card">
+        <div class="insight-number">Insight 01 — Dutch Buyers</div>
+        <p>Dutch buyers are the <strong>#1 foreign buyer group</strong> in Alicante province, up from #2 in 2021. Volume grew <strong>24% in the last two years</strong> — fuelled by remote work flexibility, early retirement, and the Amsterdam affordability exodus. This is MASA's core demographic and a structural tailwind. <sup>[6]</sup></p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-number">Insight 02 — German Acceleration</div>
+        <p>German buyers are accelerating: <strong>+19% in 2025</strong>. German media has driven a 'Costa Blanca moment' — multiple major German real estate portals added dedicated Spanish property sections in 2024. This creates a substantial new buyer pool MASA can strategically tap with German-language touchpoints. <sup>[6]</sup></p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-number">Insight 03 — UK Buyer Dynamics</div>
+        <p>UK buyer recovery post-Brexit is <strong>slower but stabilising</strong>. Key barrier: UK buyers now face non-EU purchase restrictions in some municipalities. This creates a direct opportunity — Dutch and German buyers face <strong>no EU ownership restrictions</strong>, making them structurally preferable for sellers and developers. <sup>[16]</sup></p>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--text-light);">Sources: <sup>[6]</sup> Colegio de Registradores — Estadística de Transacciones por Extranjeros · <sup>[16]</sup> Ministerio de Inclusión (foreign residential data)</div>
+  </section>
+
+  <!-- SECTION 4: NEW CONSTRUCTION PIPELINE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2 class="section-title">New Construction Pipeline</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Location</th>
+            <th>Units</th>
+            <th>Price from</th>
+            <th>Delivery</th>
+            <th>MASA Opportunity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Residencial Laguna</strong></td>
+            <td>Orihuela Costa</td>
+            <td class="num">420</td>
+            <td class="num">€185,000</td>
+            <td>Q2 2026</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>La Finca Golf II</strong></td>
+            <td>Algorfa</td>
+            <td class="num">280</td>
+            <td class="num">€245,000</td>
+            <td>Q3 2026</td>
+            <td><span class="badge badge-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>Marina Torrevieja</strong></td>
+            <td>Torrevieja</td>
+            <td class="num">360</td>
+            <td class="num">€165,000</td>
+            <td>Q4 2026</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Altea Hills Reserve</strong></td>
+            <td>Altea</td>
+            <td class="num">48</td>
+            <td class="num">€680,000</td>
+            <td>Q2 2027</td>
+            <td><span class="badge badge-lux">Luxury</span></td>
+          </tr>
+          <tr>
+            <td><strong>Guardamar Beach Residences</strong></td>
+            <td>Guardamar</td>
+            <td class="num">195</td>
+            <td class="num">€198,000</td>
+            <td>Q3 2027</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Calpe Sea View</strong></td>
+            <td>Calpe</td>
+            <td class="num">120</td>
+            <td class="num">€310,000</td>
+            <td>Q4 2027</td>
+            <td><span class="badge badge-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card full-width">
+        <div class="chart-title">New Construction Starts — Quarterly Trend</div>
+        <div class="chart-subtitle">Alicante Province — Q1 2024 to Q4 2025 (units)</div>
+        <div class="chart-wrap">
+          <canvas id="constructionStartsChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Pipeline Intelligence:</strong> New construction starts have fallen <strong>47% since Q1 2024</strong> — a structural supply crunch building sustained pressure on resale prices. The pipeline of upcoming new builds (Q2 2026–Q4 2027) represents <strong>1,423 units</strong> in MASA's core market — but demand is running at <strong>8,400+ annual transactions</strong> in Alicante alone. Ratio: 1 new unit for every 5.9 transactions demanded. <strong>MASA should prioritise off-plan sales agreements now while inventory exists.</strong>
+      <div class="callout-source">Sources: <sup>[8]</sup> Ministerio de Transportes · <sup>[17]</sup> Consell d'Alacant Building Permits</div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: RENTAL YIELD & INVESTMENT CASE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2 class="section-title">Rental Yield &amp; Investment Case</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card full-width">
+        <div class="chart-title">Gross Rental Yield by Location &amp; Rental Type</div>
+        <div class="chart-subtitle">Long-term rental vs Short-term (Airbnb-equivalent) — Q1 2026 · Reference lines: Spanish 10Y bond 4.1% / ECB deposit rate 3.5%</div>
+        <div class="chart-wrap tall">
+          <canvas id="rentalYieldChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:20px;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Investment Option</th>
+            <th>Annual Return</th>
+            <th>Liquidity</th>
+            <th>Risk Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td><strong>Costa Blanca rental property</strong></td>
+            <td class="num" style="color:var(--green);font-weight:700;">4.8–8.4% gross</td>
+            <td>Low</td>
+            <td>Low–Med</td>
+          </tr>
+          <tr>
+            <td>Dutch savings account</td>
+            <td class="num">2.1%</td>
+            <td>High</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>AEX index (5Y avg)</td>
+            <td class="num">8.2% <span style="color:var(--text-light);font-size:11px;">(volatile)</span></td>
+            <td>High</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Dutch buy-to-let</td>
+            <td class="num">3.1% <span style="color:var(--text-light);font-size:11px;">(rent control)</span></td>
+            <td>Low</td>
+            <td>Med</td>
+          </tr>
+          <tr>
+            <td>Spanish bond (10Y)</td>
+            <td class="num">4.1%</td>
+            <td>Med</td>
+            <td>Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Investment Narrative for Dutch Buyers:</strong> With Dutch rent control squeezing NL buy-to-let returns to 3.1% and savings rates declining from their 2023 peak, Costa Blanca property at <strong>4.8–8.4% gross yield</strong> is increasingly compelling to Dutch investors. The spread versus Dutch alternatives has never been wider. Benidorm and Alicante City lead on short-term rental returns; Orihuela Costa and Guardamar offer the best risk-adjusted long-term yield profile. <sup>[19]</sup>
+      <div class="callout-source">Sources: <sup>[7]</sup> TINSA · <sup>[18]</sup> AirDNA Short-Term Rental Data Spain · <sup>[19]</sup> DNB Spaarrente · <sup>[20]</sup> Euronext AEX data</div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: DUTCH BUYER INTELLIGENCE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2 class="section-title">Dutch Buyer Intelligence — Tax &amp; Cost of Ownership</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="tax-grid">
+      <div class="tax-card">
+        <div class="tax-icon">🏛️</div>
+        <div class="tax-name">Transfer Tax (ITP)</div>
+        <div class="tax-value">8–10%</div>
+        <p>Alicante Province: <strong>8%</strong> on €75K–€150K · <strong>9%</strong> on €150K–€400K · <strong>10%</strong> above €400K. New construction pays <strong>10% IVA (VAT)</strong> instead of ITP.</p>
+        <div class="tax-note">Source: <sup>[21]</sup> Agencia Tributaria España</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-icon">🏘️</div>
+        <div class="tax-name">Annual IBI (Property Tax)</div>
+        <div class="tax-value">€400–€1,200/yr</div>
+        <p>Typical range for Costa Blanca South apartments. Significantly <strong>lower than Dutch WOZ/OZB</strong> equivalents. Calculated on cadastral value, which lags market price substantially.</p>
+        <div class="tax-note">Source: <sup>[21]</sup> Agencia Tributaria España</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-icon">⚠️</div>
+        <div class="tax-name">Non-Resident Income Tax (IRNR)</div>
+        <div class="tax-value">~€1,056/yr*</div>
+        <p>Even without renting, Spain charges <strong>24% on 1.1% of cadastral value</strong> annually. On a €200K apartment with €80K cadastral value: approx €1,056/year. <strong>Many Dutch buyers don't know this.</strong></p>
+        <div class="tax-note">*Illustrative. Source: <sup>[21]</sup> Agencia Tributaria</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-icon">📅</div>
+        <div class="tax-name">183-Day Rule</div>
+        <div class="tax-value">Stay &lt; 183 days</div>
+        <p>Spending <strong>more than 183 days</strong> makes you a Spanish tax resident. The Dutch-Spanish <strong>double tax treaty</strong> applies. Most lifestyle buyers comfortably stay below the threshold.</p>
+        <div class="tax-note">Source: <sup>[22]</sup> Belastingdienst NL-Spanje verdrag</div>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom:24px;">
+      <div class="chart-title">Total Cost of Ownership — €250,000 Costa Blanca Apartment</div>
+      <div class="chart-subtitle">Year 1 (including purchase costs) vs Year 2+ (annual running costs)</div>
+      <div class="chart-wrap tall">
+        <canvas id="costOwnershipChart"></canvas>
+      </div>
+    </div>
+
+    <div style="font-size:11px;color:var(--text-light);">Sources: <sup>[21]</sup> Agencia Tributaria España · <sup>[22]</sup> Belastingdienst — Verdrag Nederland-Spanje · <sup>[23]</sup> Colegio de Notarios de España</div>
+  </section>
+
+  <!-- SECTION 7: TOURISM & DEMAND INDICATORS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2 class="section-title">Tourism &amp; Demand Indicators</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-title">Alicante Airport (ALC) — International Arrivals by Quarter</div>
+        <div class="chart-subtitle">Millions of passengers — 2024 vs 2025</div>
+        <div class="chart-wrap">
+          <canvas id="airportChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Airbnb Occupancy Rates — Torrevieja (2025)</div>
+        <div class="chart-subtitle">Monthly average short-term rental occupancy</div>
+        <div class="chart-wrap">
+          <canvas id="occupancyChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight-card" style="grid-column: span 1;">
+        <div class="insight-number">Airport Infrastructure</div>
+        <p>Alicante airport handled <strong>11.82M arrivals in 2025</strong>, up 8.4% YoY. The planned <strong>€1.2B airport expansion</strong> (approved 2024) targets 20M passengers by 2030 — a structural multiplier for Costa Blanca property demand and rental yields across the entire coast. <sup>[24]</sup></p>
+      </div>
+      <div class="insight-card" style="grid-column: span 1;">
+        <div class="insight-number">Short-Term Rental Performance</div>
+        <p>Torrevieja short-term rentals run at <strong>94% occupancy in August</strong>. Even during shoulder months (May, October), occupancy exceeds 70% — making it <strong>one of the highest-yielding Airbnb markets in southern Europe</strong>. Year-round demand is structurally higher than comparable French Riviera or Portuguese markets. <sup>[25]</sup></p>
+      </div>
+      <div class="insight-card" style="grid-column: span 1;">
+        <div class="insight-number">Demand Structural Outlook</div>
+        <p>Northern European remote workers represent a <strong>new permanent demand segment</strong> — buyers who live in Spain 4–5 months per year rather than 2–3. This extends occupancy seasons, improves resale valuations, and creates a larger pool of buyers for MASA's €180–400K core inventory. <sup>[16]</sup></p>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--text-light);">Sources: <sup>[24]</sup> AENA Estadísticas de Tráfico Aeroportuario · <sup>[25]</sup> AirDNA Costa Blanca Market Report</div>
+  </section>
+
+  <!-- SECTION 8: PRICE FORECAST 2026–2028 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <h2 class="section-title">Price Forecast 2026–2028</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="chart-card" style="margin-bottom:24px;">
+      <div class="chart-title">Costa Blanca South — Three-Scenario Price Forecast (€/m²)</div>
+      <div class="chart-subtitle">Bull / Base / Bear scenarios — Q1 2026 through Q4 2028</div>
+      <div class="chart-wrap tall">
+        <canvas id="forecastChart"></canvas>
+      </div>
+    </div>
+
+    <div class="scenario-grid">
+      <div class="scenario-card bull">
+        <div class="scenario-name">Bull Scenario</div>
+        <div class="scenario-price">€2,920/m²</div>
+        <div class="scenario-label">Q4 2028 projection</div>
+        <div class="scenario-desc">ECB rate cuts accelerate. Supply crunch worsens as permits remain depressed. Northern European demand surges. Total appreciation: <strong>+36.4%</strong> over baseline.</div>
+      </div>
+      <div class="scenario-card base">
+        <div class="scenario-name">Base Scenario</div>
+        <div class="scenario-price">€2,630/m²</div>
+        <div class="scenario-label">Q4 2028 projection</div>
+        <div class="scenario-desc">ECB holds rates broadly flat. Current demand and supply dynamics continue. Steady appreciation: <strong>+22.9%</strong> over 3 years — the most likely outcome.</div>
+      </div>
+      <div class="scenario-card bear">
+        <div class="scenario-name">Bear Scenario</div>
+        <div class="scenario-price">€2,110/m²</div>
+        <div class="scenario-label">Q4 2028 projection</div>
+        <div class="scenario-desc">ECB rate hikes resume. Golden Visa removal ripples wider. NL/DE economic slowdown reduces buyer appetite. Near-flat prices: <strong>−1.4%</strong> over baseline.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px;">
+      <strong>Golden Visa Note:</strong> Spain cancelled the non-EU Golden Visa programme in April 2024. This removed a segment of speculative demand — primarily Chinese and Russian buyers — which actually <strong>stabilises the market for MASA's core Northern European lifestyle buyer segment</strong>. Net effect on MASA's pipeline: minimal. The programme was never a primary driver in the €150K–€500K market segment where MASA operates. <sup>[27]</sup>
+      <div class="callout-source">Sources: <sup>[7]</sup> TINSA forecast · <sup>[26]</sup> Oxford Economics Spain Property Model · <sup>[27]</sup> JLL Spain Research</div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: COMPETITIVE INTELLIGENCE -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <h2 class="section-title">Competitive Intelligence</h2>
+      <span class="section-badge">⭐ PREMIUM</span>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:20px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Agency</th>
+            <th>Focus Area</th>
+            <th>NL Buyer Specialisation</th>
+            <th>Est. NL Volume/Year</th>
+            <th>Threat to MASA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fef9f0;">
+            <td><strong>Masa International</strong></td>
+            <td>CB South, Murcia</td>
+            <td><span class="badge badge-buy">High (44 years)</span></td>
+            <td class="num">~900</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Aquila Vastgoed</td>
+            <td>CB South</td>
+            <td><span style="color:var(--text-mid);">High</span></td>
+            <td class="num">~380</td>
+            <td><span class="badge badge-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Century 21 Costa Blanca</td>
+            <td>CB North</td>
+            <td><span style="color:var(--text-mid);">Medium</span></td>
+            <td class="num">~210</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Re/Max Costa Blanca</td>
+            <td>Full coast</td>
+            <td><span style="color:var(--text-mid);">Low–Medium</span></td>
+            <td class="num">~280</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Habitas Alicante</td>
+            <td>CB South</td>
+            <td><span style="color:var(--text-mid);">Low</span></td>
+            <td class="num">~190</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr style="background:#fef2f2;">
+            <td><strong>Direct developer sales</strong></td>
+            <td>Various</td>
+            <td><span style="color:var(--text-mid);">Low</span></td>
+            <td class="num"><strong>~1,100</strong></td>
+            <td><span class="badge" style="background:#fecaca;color:#991b1b;">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Strategic Analysis:</strong> Direct developer sales represent the largest competitive threat to MASA — an estimated <strong>1,100+ Dutch buyer transactions annually</strong> where no intermediary agency is used. MASA's differentiation must be built on <strong>'intelligence + service + after-care'</strong> — not price. Dutch buyers purchasing direct from developers lack the market context, legal guidance, and after-sales support that MASA provides. <strong>This intelligence report is itself a key differentiator</strong> — no developer sales team offers comparable market analysis.
+      <div class="callout-source">Sources: <sup>[6]</sup> Registradores (transaction data) · <sup>[16]</sup> Industry estimates</div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: 90-DAY STRATEGIC SIGNALS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <h2 class="section-title">90-Day Strategic Signals for MASA</h2>
+    </div>
+
+    <div class="signal-grid">
+      <div class="signal-card green">
+        <div class="signal-label">🟢 Action Now</div>
+        <div class="signal-title">LIST ORIHUELA COSTA NOW</div>
+        <p>Resale inventory in Orihuela Costa should be moved before Q3 2026 when Residencial Laguna (420 units from €185K) delivers. Sellers in the €180–250K bracket face direct new-build competition. Current market window: strong. Window closes: Q2 2026.</p>
+      </div>
+      <div class="signal-card orange">
+        <div class="signal-label">🟡 Growth Opportunity</div>
+        <div class="signal-title">TARGET GERMAN BUYERS</div>
+        <p>German demand is up 19% YoY and represents an underserved growth segment for MASA. MASA's Dutch-language positioning is a core strength — but German buyers are increasingly active in the same locations and price brackets. Even basic German-language touchpoints (website section, ImmobilienScout listing) could capture meaningful volume.</p>
+      </div>
+      <div class="signal-card red">
+        <div class="signal-label">🔴 Risk Alert</div>
+        <div class="signal-title">SHORT-TERM RENTAL REGULATION RISK</div>
+        <p>Valencia Community (including Alicante Province) is actively reviewing short-term rental licensing caps. Properties without existing tourist licences may become unlicensable under proposed 2026 regulations. MASA should proactively advise buyer clients to verify tourist licence status — and confirm viability — before purchase. This is a material risk for investment buyers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <div class="sources-section">
+    <h3>Sources &amp; References</h3>
+    <div class="sources-grid">
+      <div class="source-item"><span class="source-num">[6]</span> Colegio de Registradores de España — Estadística de Transacciones por Extranjeros · <a href="https://www.registradores.org/actualidad/portal-estadistico-registral/estadisticas-de-propiedad" target="_blank" rel="noopener">registradores.org</a></div>
+      <div class="source-item"><span class="source-num">[7]</span> TINSA IMIE — Índice de Mercados Inmobiliarios Españoles · <a href="https://www.tinsa.es/herramientas-e-informes/indices-de-valor/imie-mercados-locales/" target="_blank" rel="noopener">tinsa.es</a></div>
+      <div class="source-item"><span class="source-num">[8]</span> Ministerio de Transportes — Estadística de Transacciones Inmobiliarias · <a href="https://www.mitma.gob.es/el-ministerio/estadisticas-y-publicaciones/estadistica-de-transacciones-inmobiliarias" target="_blank" rel="noopener">mitma.gob.es</a></div>
+      <div class="source-item"><span class="source-num">[16]</span> Ministerio de Inclusión — Datos de compraventas por extranjeros · <a href="https://www.inclusion.gob.es/web/estadisticas-e-informes" target="_blank" rel="noopener">inclusion.gob.es</a></div>
+      <div class="source-item"><span class="source-num">[17]</span> Consell d'Alacant — Licencias de obra nueva y estadísticas urbanísticas · <a href="https://www.alicante.es/es/areas-tematicas/urbanismo" target="_blank" rel="noopener">alicante.es</a></div>
+      <div class="source-item"><span class="source-num">[18]</span> AirDNA Short-Term Rental Intelligence — Spain Market Data · <a href="https://www.airdna.co/vacation-rental-data/app/es/murcia/spain" target="_blank" rel="noopener">airdna.co</a></div>
+      <div class="source-item"><span class="source-num">[19]</span> De Nederlandsche Bank (DNB) — Spaarrente statistieken · <a href="https://www.dnb.nl/statistieken/statistieken-dnb/financiele-markten/rente/" target="_blank" rel="noopener">dnb.nl</a></div>
+      <div class="source-item"><span class="source-num">[20]</span> Euronext NV — AEX historische data en rendementen · <a href="https://live.euronext.com/nl/product/indices/QS0011052415-XAMS" target="_blank" rel="noopener">euronext.com</a></div>
+      <div class="source-item"><span class="source-num">[21]</span> Agencia Tributaria España — ITP/AJD y no residentes (IRNR) · <a href="https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI01.shtml" target="_blank" rel="noopener">agenciatributaria.gob.es</a></div>
+      <div class="source-item"><span class="source-num">[22]</span> Belastingdienst — Verdrag Nederland-Spanje (belastingverdrag) · <a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/internationaal/in_het_buitenland_werken_wonen_en_studeren/belastingverdragen/spanje" target="_blank" rel="noopener">belastingdienst.nl</a></div>
+      <div class="source-item"><span class="source-num">[23]</span> Colegio de Notarios de España — Estadística notarial · <a href="https://www.notariado.org/liferay/web/cien/estadisticas" target="_blank" rel="noopener">notariado.org</a></div>
+      <div class="source-item"><span class="source-num">[24]</span> AENA — Estadísticas de Tráfico Aeroportuario (ALC) · <a href="https://estadisticas.aena.es/csee/Satellite/estadisticas/es/" target="_blank" rel="noopener">aena.es</a></div>
+      <div class="source-item"><span class="source-num">[25]</span> AirDNA — Costa Blanca Market Report 2025 · <a href="https://www.airdna.co" target="_blank" rel="noopener">airdna.co</a></div>
+      <div class="source-item"><span class="source-num">[26]</span> Oxford Economics — Spain Residential Property Forecast · <a href="https://www.oxfordeconomics.com/recent-releases/GEF" target="_blank" rel="noopener">oxfordeconomics.com</a></div>
+      <div class="source-item"><span class="source-num">[27]</span> JLL Spain Research — Residential Markets &amp; Investment · <a href="https://www.jll.es/es/research" target="_blank" rel="noopener">jll.es</a></div>
+    </div>
+  </div>
+
+</div><!-- /report-body -->
+
+<!-- FOOTER -->
+<footer class="report-footer">
+  <div><strong>MASA International × TrendsOnFire</strong> · Costa Blanca Intelligence · Q1 2026</div>
+  <div>masainternational.nl · <a href="https://trendsonfire.com" style="color:rgba(255,255,255,.5);text-decoration:none;">trendsonfire.com</a></div>
+  <div>© 2026 TrendsOnFire · Confidential — For Masa International use only</div>
+</footer>
+
+<script>
+// ── SHARED CHART DEFAULTS ──
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#9898a8';
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
+Chart.defaults.plugins.legend.labels.padding = 16;
+
+const RED = '#c0392b';
+const RED_DARK = '#8e1a10';
+const NAVY = '#1a2340';
+const GREEN = '#1e7c4e';
+const GOLD = '#c9a35a';
+const BLUE = '#3b82f6';
+const ORANGE = '#f59e0b';
+
+function redAlpha(a) { return `rgba(192,57,43,${a})`; }
+function navyAlpha(a) { return `rgba(26,35,64,${a})`; }
+
+// ── CHART 1: PRICE LINE CHART ──
+{
+  const labels = ['Q1 2024','Q2 2024','Q3 2024','Q4 2024','Q1 2025','Q2 2025','Q3 2025','Q4 2025 → Q1 2026'];
+  const data = [1820, 1880, 1940, 2010, 2050, 2080, 2110, 2140];
+  const pointColors = data.map((_, i) => i === data.length - 1 ? RED : NAVY);
+  const pointRadius = data.map((_, i) => i === data.length - 1 ? 7 : 4);
+
+  new Chart(document.getElementById('priceLineChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: '€/m² — Costa Blanca South',
+        data,
+        borderColor: RED,
+        backgroundColor: redAlpha(0.08),
+        borderWidth: 2.5,
+        pointBackgroundColor: pointColors,
+        pointRadius,
+        pointBorderWidth: 2,
+        pointBorderColor: '#fff',
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: { callback: v => '€' + v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 2: TRANSACTION BAR CHART ──
+{
+  new Chart(document.getElementById('transactionBarChart'), {
+    type: 'bar',
+    data: {
+      labels: ['2022', '2023', '2024', '2025'],
+      datasets: [
+        {
+          label: 'New Construction',
+          data: [2840, 2650, 3120, 3480],
+          backgroundColor: RED,
+          borderRadius: 4
+        },
+        {
+          label: 'Resale',
+          data: [4210, 3890, 4560, 4920],
+          backgroundColor: navyAlpha(0.75),
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          ticks: { callback: v => v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 3: LOCATION HORIZONTAL BAR ──
+{
+  const locations = [
+    'Altea (North)', 'Calpe (North)', 'Benidorm (Central)', 'Denia (North)',
+    'Alicante City', 'Guardamar del Segura', 'Santa Pola', 'Torrevieja (South)',
+    'Orihuela Costa (South)', 'San Pedro del Pinatar (Murcia)'
+  ];
+  const prices = [3420, 3180, 2980, 2750, 2480, 2290, 2180, 2140, 2020, 1780];
+  const maxP = Math.max(...prices);
+  const bgColors = prices.map(p => {
+    const ratio = p / maxP;
+    const r = Math.round(142 + (192 - 142) * (1 - ratio));
+    const g = Math.round(26 + (57 - 26) * (1 - ratio));
+    const b = Math.round(16 + (43 - 16) * (1 - ratio));
+    return `rgb(${Math.round(142 + (192-142)*(ratio))},${Math.round(26+(57-26)*(ratio))},${Math.round(16+(43-16)*(ratio))})`;
+  });
+  // Simpler gradient: dark red for high, lighter red for low
+  const gradColors = prices.map(p => {
+    const ratio = (p - 1780) / (3420 - 1780);
+    return `rgba(${Math.round(192 - 60*(1-ratio))},${Math.round(57 - 30*(1-ratio))},${Math.round(43 - 20*(1-ratio))},${0.6 + 0.4*ratio})`;
+  });
+
+  new Chart(document.getElementById('locationBarChart'), {
+    type: 'bar',
+    data: {
+      labels: locations,
+      datasets: [{
+        label: '€/m²',
+        data: prices,
+        backgroundColor: gradColors,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          beginAtZero: false,
+          min: 1400,
+          ticks: { callback: v => '€' + v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 4: NATIONALITY DONUT ──
+{
+  new Chart(document.getElementById('nationalityDonut'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Dutch (NL)', 'German (DE)', 'British (UK)', 'Belgian (BE)', 'French (FR)', 'Scandinavian', 'Other EU'],
+      datasets: [{
+        data: [22, 18, 16, 12, 9, 8, 15],
+        backgroundColor: [
+          '#c0392b', '#e74c3c', '#2c3e50', '#3498db', '#1e7c4e', '#c9a35a', '#95a5a6'
+        ],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { font: { size: 11 } }
+        }
+      },
+      cutout: '60%'
+    }
+  });
+}
+
+// ── CHART 5: NL VOLUME TREND ──
+{
+  new Chart(document.getElementById('nlVolumeChart'), {
+    type: 'bar',
+    data: {
+      labels: ['2021', '2022', '2023', '2024', '2025'],
+      datasets: [{
+        label: 'Dutch buyer transactions (Alicante)',
+        data: [2840, 2120, 2680, 3150, 3520],
+        backgroundColor: prices => prices.dataIndex === 4 ? RED : redAlpha(0.55),
+        borderRadius: 5
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          ticks: { callback: v => v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 6: CONSTRUCTION STARTS ──
+{
+  new Chart(document.getElementById('constructionStartsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Q1 2024','Q2 2024','Q3 2024','Q4 2024','Q1 2025','Q2 2025','Q3 2025','Q4 2025'],
+      datasets: [{
+        label: 'New construction starts (units)',
+        data: [3240, 2980, 2760, 2410, 2190, 1980, 1840, 1710],
+        backgroundColor: (ctx) => {
+          const ratio = 1 - ctx.dataIndex / 7;
+          return `rgba(${Math.round(192 - 40*ratio)},${Math.round(57 - 20*ratio)},${Math.round(43 - 15*ratio)},${0.7 + 0.3*(1-ratio)})`;
+        },
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: false, min: 1200,
+          ticks: { callback: v => v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 7: RENTAL YIELD ──
+{
+  const locs = ['Benidorm','Torrevieja','Denia','Calpe','Guardamar','Orihuela Costa','Alicante City','Altea'];
+  const ltData = [5.9, 4.8, 4.3, 4.1, 4.6, 4.7, 5.1, 3.8];
+  const stData = [8.4, 6.9, 7.2, 6.8, 5.8, 6.1, 7.6, 5.9];
+
+  new Chart(document.getElementById('rentalYieldChart'), {
+    type: 'bar',
+    data: {
+      labels: locs,
+      datasets: [
+        {
+          label: 'Long-term rental yield',
+          data: ltData,
+          backgroundColor: navyAlpha(0.75),
+          borderRadius: 4
+        },
+        {
+          label: 'Short-term (Airbnb) yield',
+          data: stData,
+          backgroundColor: RED,
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' },
+        annotation: {}
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 10,
+          ticks: { callback: v => v + '%' },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    },
+    plugins: [{
+      id: 'yieldLines',
+      afterDraw(chart) {
+        const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+        // Spanish 10Y bond: 4.1%
+        const y1 = y.getPixelForValue(4.1);
+        ctx.save();
+        ctx.beginPath();
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([5, 4]);
+        ctx.moveTo(left, y1);
+        ctx.lineTo(right, y1);
+        ctx.stroke();
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText('ES 10Y Bond 4.1%', right - 120, y1 - 5);
+        // ECB 3.5%
+        const y2 = y.getPixelForValue(3.5);
+        ctx.beginPath();
+        ctx.strokeStyle = '#94a3b8';
+        ctx.moveTo(left, y2);
+        ctx.lineTo(right, y2);
+        ctx.stroke();
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillText('ECB rate 3.5%', right - 100, y2 - 5);
+        ctx.restore();
+      }
+    }]
+  });
+}
+
+// ── CHART 8: COST OF OWNERSHIP ──
+{
+  new Chart(document.getElementById('costOwnershipChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Purchase Price', 'Transfer Tax (ITP)', 'Notary & Registry', 'Legal Fees', 'Year 1 Running Costs', 'IBI (annual)', 'Community Fees (annual)', 'IRNR Tax (annual)', 'Insurance (annual)', 'Maintenance (annual)'],
+      datasets: [
+        {
+          label: 'Year 1 (one-off purchase costs)',
+          data: [250000, 22500, 3200, 2500, 3800, 0, 0, 0, 0, 0],
+          backgroundColor: RED,
+          borderRadius: 4
+        },
+        {
+          label: 'Year 2+ (annual recurring)',
+          data: [0, 0, 0, 0, 0, 650, 1200, 800, 400, 600],
+          backgroundColor: navyAlpha(0.7),
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        x: {
+          ticks: { callback: v => '€' + v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 9: AIRPORT ARRIVALS ──
+{
+  new Chart(document.getElementById('airportChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+      datasets: [
+        {
+          label: '2024 (millions)',
+          data: [1.42, 3.18, 4.87, 2.21],
+          backgroundColor: navyAlpha(0.65),
+          borderRadius: 4
+        },
+        {
+          label: '2025 (millions)',
+          data: [1.68, 3.54, 5.12, 2.48],
+          backgroundColor: RED,
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          ticks: { callback: v => v.toFixed(2) + 'M' },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 10: OCCUPANCY RATES ──
+{
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const rates = [42, 51, 68, 78, 82, 89, 94, 96, 87, 71, 48, 44];
+  const bgColors = rates.map(r => r >= 80 ? RED : r >= 60 ? redAlpha(0.55) : redAlpha(0.3));
+
+  new Chart(document.getElementById('occupancyChart'), {
+    type: 'line',
+    data: {
+      labels: months,
+      datasets: [{
+        label: 'Airbnb occupancy %',
+        data: rates,
+        borderColor: RED,
+        backgroundColor: redAlpha(0.1),
+        pointBackgroundColor: bgColors,
+        pointRadius: 5,
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          min: 0, max: 100,
+          ticks: { callback: v => v + '%' },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// ── CHART 11: PRICE FORECAST ──
+{
+  const labels = ['Q1 2026 (now)', 'Q4 2026', 'Q4 2027', 'Q4 2028'];
+  new Chart(document.getElementById('forecastChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Bull scenario (ECB cuts + supply crunch)',
+          data: [2140, 2380, 2640, 2920],
+          borderColor: '#16a34a',
+          backgroundColor: 'rgba(22,163,74,0.06)',
+          borderWidth: 2.5,
+          pointRadius: 5,
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: 'Base scenario (current trends continue)',
+          data: [2140, 2280, 2450, 2630],
+          borderColor: '#d97706',
+          backgroundColor: 'rgba(217,119,6,0.06)',
+          borderWidth: 2.5,
+          borderDash: [],
+          pointRadius: 5,
+          fill: false,
+          tension: 0.3
+        },
+        {
+          label: 'Bear scenario (ECB hikes + demand shock)',
+          data: [2140, 2090, 2060, 2110],
+          borderColor: RED,
+          backgroundColor: redAlpha(0.05),
+          borderWidth: 2.5,
+          borderDash: [6, 3],
+          pointRadius: 5,
+          fill: false,
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          beginAtZero: false, min: 1800,
+          ticks: { callback: v => '€' + v.toLocaleString() },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { color: 'rgba(0,0,0,.03)' } }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
