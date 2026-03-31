@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Real Estate Intelligence — TrendsOnFire</title>
+  <meta name="description" content="European housing market trends, investment signals, price forecasts and rental yield analysis. Curated by Olga Bressers."/>
+  <link rel="canonical" href="https://trendsonfire.com/real-estate/"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Real Estate Intelligence — TrendsOnFire"/>
+  <meta property="og:description" content="European housing market trends, price forecasts and investment signals for 20 markets."/>
+  <meta property="og:url" content="https://trendsonfire.com/real-estate/"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+    .nav-links{display:flex;margin-left:auto}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+
+    .sec-header{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 100%);color:white;padding:48px 32px 40px}
+    .sec-header .inner{max-width:1100px;margin:auto}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+    .sec-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
+    .sec-header h1{font-size:clamp(24px,4vw,38px);font-weight:800;margin-bottom:12px}
+    .sec-header p{font-size:15px;color:rgba(255,255,255,.75);max-width:580px}
+
+    main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+    .trends-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+    .trends-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:48px}
+
+    .trend-card{background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05);cursor:pointer;transition:box-shadow .15s}
+    .trend-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+    .tc-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px}
+    .tc-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
+    .tc-body{font-size:13.5px;color:var(--sub);line-height:1.65}
+
+    .li-cta{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .li-cta a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none}
+
+    .nav-search-btn{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;padding:0 10px 0 14px;height:100%;display:flex;align-items:center;gap:5px;transition:color .15s;font-size:12px;font-weight:500;font-family:inherit;border-left:1px solid rgba(255,255,255,.15);margin-left:6px;flex-shrink:0}
+    .nav-search-btn:hover{color:white}
+    #search-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,41,0.97);z-index:2000;overflow-y:auto}
+    .search-inner{max-width:760px;margin:0 auto;padding:48px 24px}
+    .search-box{display:flex;align-items:center;gap:12px;background:white;border-radius:12px;padding:4px 4px 4px 20px;margin-bottom:8px}
+    #search-input{flex:1;font-size:17px;border:none;outline:none;font-family:inherit;color:#111827;padding:12px 0;background:transparent}
+    #search-input::placeholder{color:#9ca3af}
+    .search-close{background:#f3f4f6;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:18px;color:#6b7280;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .search-hint{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:28px;padding-left:4px}
+    .search-result{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px 20px;margin-bottom:10px;text-decoration:none}
+    .sr-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c97fb8;margin-bottom:4px}
+    .sr-title{font-size:15px;font-weight:700;color:white;margin-bottom:4px}
+    .sr-desc{font-size:12.5px;color:rgba(255,255,255,.55)}
+    .search-empty{color:rgba(255,255,255,.4);font-size:15px;text-align:center;padding:40px 0}
+
+    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer a{color:#94a3b8;text-decoration:none}
+    footer a:hover{color:white}
+    @media(max-width:768px){main,.inner{padding-left:16px!important;padding-right:16px!important}.sec-header{padding:32px 16px 28px}.trends-grid{grid-template-columns:1fr}.li-cta{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="index.html" class="active">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<div class="sec-header">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Real Estate</div>
+    <div class="sec-eyebrow">Real Estate Intelligence</div>
+    <h1>European Housing Market Trends</h1>
+    <p>Where prices are rising, where they're falling, and where the smart money is moving — across 20 European markets, 2026 to 2027.</p>
+  </div>
+</div>
+
+<main>
+  <div class="trends-title">Real Estate Intelligence — 2026</div>
+  <div class="trends-grid">
+
+    <div class="trend-card" onclick="location.href='european-housing-market.html'" style="border-color:#7c3aed;border-style:solid;">
+      <div style="font-size:48px;margin-bottom:16px;">🏠</div>
+      <div class="tc-tag">🌍 Europe · 20 Markets</div>
+      <div class="tc-title">European Housing Market Intelligence 2026–2027</div>
+      <div class="tc-body">Where to buy, where to avoid. Price trends, rental yields, ECB rate impact, and investment attractiveness scores — with 8 interactive charts and full country comparison table.</div>
+      <a href="european-housing-market.html" style="display:inline-block;margin-top:16px;background:#7c3aed;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">View dashboard →</a>
+    </div>
+
+  </div>
+
+  <div class="trends-title">Key Real Estate Signals — 2026</div>
+  <div class="trends-grid">
+    <div class="trend-card">
+      <div class="tc-tag">🟢 Strong Buy</div>
+      <div class="tc-title">Romania, Hungary, Bulgaria: CEE remains the best value in Europe</div>
+      <div class="tc-body">Romania is −22% undervalued at €1,676/m². Hungary growing at +21% YoY. Bulgaria offers 18%+ growth with entry prices still among the lowest in the EU. CEE catch-up still has years to run.</div>
+    </div>
+    <div class="trend-card">
+      <div class="tc-tag">🟡 Watch</div>
+      <div class="tc-title">Portugal and Greece showing affordability stress — growth may be peaking</div>
+      <div class="tc-body">Portugal's P2I ratio hit 153 (OECD average: 114). Greece allocates 36% of income to housing — the highest in the EU. Both markets still growing but demand fatigue is emerging.</div>
+    </div>
+    <div class="trend-card">
+      <div class="tc-tag">🏦 Macro</div>
+      <div class="tc-title">ECB at 2.15% — the rate-cut tailwind is largely priced in for 2026</div>
+      <div class="tc-body">Six rate cuts from mid-2024 drove mortgage approvals up 37% and sparked the 2025 recovery. With rates now stable at 2.15%, further price gains must come from fundamentals — not financing tailwinds.</div>
+    </div>
+    <div class="trend-card">
+      <div class="tc-tag">🏗️ Supply</div>
+      <div class="tc-title">10 million unit EU housing deficit keeps long-term floor under prices</div>
+      <div class="tc-body">Germany completed only 252,000 homes in 2024 against a target of 400,000. EU-wide shortfall is 10 million units. This structural constraint prevents any broad price collapse — supply simply cannot catch up.</div>
+    </div>
+    <div class="trend-card">
+      <div class="tc-tag">💶 Yield Play</div>
+      <div class="tc-title">Italy and Latvia offer best rental yields in Europe — 7.5–8%</div>
+      <div class="tc-body">Italy combines undervaluation with 7.56% gross rental yields. Latvia tops the continent at 8.06%. For income-focused investors, these two markets offer compelling risk-adjusted returns in the current rate environment.</div>
+    </div>
+    <div class="trend-card">
+      <div class="tc-tag">🔴 Avoid</div>
+      <div class="tc-title">Luxembourg: +37% overvalued by ECB metrics — highest correction risk</div>
+      <div class="tc-body">Luxembourg is flagged as the most overvalued housing market in the EU by ECB analysis. Combined with low rental yields and limited population growth, it offers the worst risk-reward profile of any European market in 2026.</div>
+    </div>
+  </div>
+
+  <div class="li-cta">
+    <div>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700">Available for</p>
+      <p style="color:rgba(255,255,255,.85);font-size:15px;max-width:560px;">Strategy, market analysis and commercial leadership for real estate, retail, and technology companies across Europe.</p>
+    </div>
+    <a href="../contact/">Connect →</a>
+  </div>
+</main>
+
+<div id="search-overlay">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off"/>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close</div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> — All analysis is editorial and based on publicly available information. Not investment advice.</p>
+</footer>
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('open');});
+var ARTICLES=[{title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Where to buy, where to avoid — price trends, forecasts and investment scores for 20 European markets.",tags:["Real Estate","Housing","Europe","Investment"]}];
+function openSearch(){document.getElementById('search-overlay').style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing…</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){var q=this.value.toLowerCase().trim();var c=document.getElementById('search-results');if(!q){c.innerHTML='<div class="search-empty">Start typing…</div>';return;}var m=ARTICLES.filter(function(a){return(a.title+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});if(!m.length){c.innerHTML='<div class="search-empty">No results</div>';return;}c.innerHTML=m.map(function(a){return'<a class="search-result" href="'+a.url+'"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div></a>';}).join('');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+</script>
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;">This site does not use tracking or advertising cookies. <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a></p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;">OK, got it</button>
+</div>
+<script>(function(){if(!localStorage.getItem('tof_cookie_notice')){var b=document.getElementById("cookie-notice");if(b)b.style.display="flex";}})()</script>
+</body>
+</html>
