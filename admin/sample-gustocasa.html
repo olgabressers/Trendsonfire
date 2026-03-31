@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Utrecht Housing Market Intelligence — February 2026 — GustoCasa Sample</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #e8622a;
+      --orange-light: #f5845a;
+      --navy: #1a2340;
+      --navy-mid: #263354;
+      --cream: #f8f6f2;
+      --white: #ffffff;
+      --text: #1e1e2e;
+      --text-mid: #5a5a72;
+      --text-light: #9898a8;
+      --border: #e8e4de;
+      --green: #1e7c4e;
+      --red: #c0392b;
+      --shadow: 0 2px 16px rgba(26,35,64,.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; font-size: 14px; }
+
+    /* ── SAMPLE BANNER ── */
+    .sample-banner {
+      background: #7c3aed; color: white; text-align: center;
+      padding: 10px 20px; font-size: 12px; font-weight: 600; letter-spacing: .08em;
+    }
+    .sample-banner a { color: #e9d5ff; text-decoration: underline; margin-left: 8px; }
+
+    /* ── REPORT HEADER ── */
+    .report-header {
+      background: var(--navy); color: white;
+      padding: 32px 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .brand-block .logo {
+      font-size: 22px; font-weight: 700; letter-spacing: -.01em;
+      color: white;
+    }
+    .brand-block .logo span { color: var(--orange); }
+    .brand-block .tagline { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 2px; }
+    .report-meta { text-align: right; }
+    .report-meta .report-title {
+      font-size: 16px; font-weight: 600; color: white; margin-bottom: 4px;
+    }
+    .report-meta .report-sub { font-size: 12px; color: rgba(255,255,255,.5); }
+    .report-meta .prepared-by {
+      font-size: 11px; color: rgba(255,255,255,.35); margin-top: 8px;
+    }
+    .report-meta .prepared-by span { color: rgba(255,255,255,.55); }
+    @media(max-width:640px){ .report-header { padding: 24px; } .report-meta { text-align: left; } }
+
+    /* ── KPI STRIP ── */
+    .kpi-strip {
+      background: var(--white); border-bottom: 2px solid var(--orange);
+      display: grid; grid-template-columns: repeat(4,1fr);
+    }
+    .kpi-item {
+      padding: 24px 28px; border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .kpi-item:last-child { border-right: none; }
+    .kpi-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+    .kpi-value { font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+    .kpi-value sup { font-size: 16px; vertical-align: top; margin-top: 4px; }
+    .kpi-delta { font-size: 12px; font-weight: 500; }
+    .delta-up { color: var(--green); }
+    .delta-down { color: var(--red); }
+    .delta-flat { color: var(--text-light); }
+    .kpi-source { font-size: 10px; color: var(--text-light); margin-top: 6px; }
+    @media(max-width:768px){ .kpi-strip { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px){ .kpi-strip { grid-template-columns: 1fr; } }
+
+    /* ── LAYOUT ── */
+    .content { max-width: 1120px; margin: 0 auto; padding: 40px 32px; }
+    .section-title {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 6px;
+    }
+    .section-h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 14px; color: var(--text-mid); margin-bottom: 28px; font-weight: 300; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    @media(max-width:860px){ .two-col { grid-template-columns: 1fr; } .three-col { grid-template-columns: 1fr; } }
+
+    .chart-card {
+      background: var(--white); border-radius: 10px; padding: 28px;
+      box-shadow: var(--shadow); border: 1px solid var(--border);
+    }
+    .chart-card.full { grid-column: 1 / -1; }
+    .chart-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .chart-sub { font-size: 12px; color: var(--text-light); margin-bottom: 20px; }
+    .chart-source { font-size: 10px; color: var(--text-light); margin-top: 12px; border-top: 1px solid var(--border); padding-top: 8px; }
+    .chart-source a { color: var(--text-light); text-decoration: none; }
+    .chart-wrap { position: relative; height: 240px; }
+
+    /* ── SECTIONS ── */
+    .report-section { margin-bottom: 56px; }
+    .section-divider {
+      height: 1px; background: var(--border); margin: 48px 0;
+      position: relative;
+    }
+    .section-divider::after {
+      content: attr(data-label);
+      position: absolute; top: -9px; left: 0;
+      background: var(--cream); padding-right: 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+
+    /* ── NEIGHBORHOOD TABLE ── */
+    .nb-table { width: 100%; border-collapse: collapse; }
+    .nb-table th {
+      font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-light); padding: 8px 12px; text-align: left;
+      border-bottom: 2px solid var(--border);
+    }
+    .nb-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .nb-table tr:last-child td { border-bottom: none; }
+    .nb-table tr:hover td { background: #faf9f7; }
+    .signal { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; }
+    .signal-hot { background: rgba(232,98,42,.12); color: #c0430a; }
+    .signal-warm { background: rgba(255,165,0,.12); color: #b8760a; }
+    .signal-stable { background: rgba(30,124,78,.10); color: var(--green); }
+    .bar-mini {
+      display: inline-block; height: 8px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+      vertical-align: middle; margin-right: 6px;
+    }
+
+    /* ── MORTGAGE TABLE ── */
+    .rate-row {
+      display: flex; align-items: center; padding: 10px 0;
+      border-bottom: 1px solid var(--border); gap: 12px;
+    }
+    .rate-row:last-child { border-bottom: none; }
+    .rate-bank { font-size: 13px; font-weight: 500; color: var(--navy); min-width: 160px; }
+    .rate-bar-wrap { flex: 1; background: #f0ede8; border-radius: 3px; height: 8px; overflow: hidden; }
+    .rate-bar { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--navy), var(--navy-mid)); }
+    .rate-pct { font-size: 13px; font-weight: 700; color: var(--navy); min-width: 44px; text-align: right; }
+    .rate-badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; }
+    .rate-best { background: rgba(30,124,78,.10); color: var(--green); }
+    .rate-high { background: rgba(192,57,43,.08); color: var(--red); }
+
+    /* ── SIGNALS ── */
+    .signals-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .signal-card {
+      border-radius: 8px; padding: 24px; border-left: 4px solid transparent;
+    }
+    .signal-card.green { background: rgba(30,124,78,.06); border-color: var(--green); }
+    .signal-card.orange { background: rgba(232,98,42,.06); border-color: var(--orange); }
+    .signal-card.red { background: rgba(192,57,43,.06); border-color: var(--red); }
+    .signal-card .sig-icon { font-size: 24px; margin-bottom: 10px; }
+    .signal-card .sig-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .signal-card .sig-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .signal-card .sig-body { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    @media(max-width:768px){ .signals-grid { grid-template-columns: 1fr; } }
+
+    /* ── SPAIN SECTION ── */
+    .spain-card {
+      background: linear-gradient(135deg, #c0392b 0%, #8e1a10 100%);
+      border-radius: 10px; padding: 40px; color: white;
+    }
+    .spain-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .spain-card .spain-sub { font-size: 14px; color: rgba(255,255,255,.70); margin-bottom: 28px; font-weight: 300; }
+    .spain-kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
+    .spain-kpi { background: rgba(255,255,255,.10); border-radius: 6px; padding: 16px; }
+    .spain-kpi .sk-val { font-size: 24px; font-weight: 700; margin-bottom: 2px; }
+    .spain-kpi .sk-label { font-size: 11px; color: rgba(255,255,255,.60); }
+    .spain-kpi .sk-delta { font-size: 11px; color: rgba(255,255,255,.80); margin-top: 4px; }
+    .spain-note { font-size: 12px; color: rgba(255,255,255,.50); border-top: 1px solid rgba(255,255,255,.15); padding-top: 16px; }
+    @media(max-width:640px){ .spain-kpi-row { grid-template-columns: 1fr 1fr; } }
+
+    /* ── SOURCES ── */
+    .sources-section { background: var(--white); border-radius: 10px; padding: 32px; border: 1px solid var(--border); }
+    .sources-section h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .sources-section .sources-intro { font-size: 13px; color: var(--text-mid); margin-bottom: 20px; }
+    .sources-list { display: flex; flex-direction: column; gap: 10px; }
+    .source-item { display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: start; }
+    .source-num { font-size: 11px; font-weight: 700; color: var(--orange); padding-top: 1px; }
+    .source-body { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
+    .source-body strong { color: var(--navy); }
+    .source-body a { color: var(--navy-mid); }
+    .source-body .src-note { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      background: var(--navy); color: rgba(255,255,255,.4); font-size: 11px;
+      padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 8px; margin-top: 0;
+    }
+    .report-footer a { color: rgba(255,255,255,.4); text-decoration: none; }
+    .report-footer a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<!-- SAMPLE BANNER -->
+<div class="sample-banner">
+  ⚠ SAMPLE REPORT — For demonstration purposes only. Prepared by TrendsOnFire to illustrate what a monthly intelligence deliverable for GustoCasa would look like.
+  <a href="/services/real-estate-agencies.html">View Service Offer →</a>
+</div>
+
+<!-- REPORT HEADER -->
+<div class="report-header">
+  <div class="brand-block">
+    <div class="logo">Gusto<span>Casa</span></div>
+    <div class="tagline">Utrecht · Costa Blanca · Boutique Real Estate</div>
+  </div>
+  <div class="report-meta">
+    <div class="report-title">Utrecht Housing Market Intelligence</div>
+    <div class="report-sub">Monthly Report · February 2026 · NVM Region Utrecht</div>
+    <div class="prepared-by">Prepared by <span>TrendsOnFire · trendsonfire.com</span></div>
+  </div>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi-item">
+    <div class="kpi-label">Homes Sold</div>
+    <div class="kpi-value">873</div>
+    <div class="kpi-delta delta-up">↑ 61 vs Jan 2026</div>
+    <div class="kpi-source">Source: NVM / Kadaster [1]</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Avg Transaction Price</div>
+    <div class="kpi-value"><sup>€</sup>521K</div>
+    <div class="kpi-delta delta-down">↓ €4K vs Jan 2026</div>
+    <div class="kpi-source">Source: NVM Vastgoedmonitor [1]</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Avg Overbidding</div>
+    <div class="kpi-value">12.2<sup>%</sup></div>
+    <div class="kpi-delta delta-up">↑ 0.1pp vs Jan 2026</div>
+    <div class="kpi-source">Source: NVM / Funda Marktinzicht [2]</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Active Funda Seekers</div>
+    <div class="kpi-value">20,040</div>
+    <div class="kpi-delta delta-down">↓ 1,009 vs prior week</div>
+    <div class="kpi-source">Source: Funda Marktinzicht [2]</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- SECTION 1: TRANSACTION TRENDS -->
+  <div class="report-section">
+    <div class="section-title">Section 1</div>
+    <div class="section-h2">Transaction Volume &amp; Price Trends</div>
+    <p class="section-sub">6-month rolling view of monthly sales volume and average transaction price in Utrecht municipality. Data sourced from NVM quarterly reporting and Kadaster transaction registrations.</p>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-title">Monthly Homes Sold — Utrecht</div>
+        <div class="chart-sub">NVM-registered transactions, Aug 2025 – Feb 2026</div>
+        <div class="chart-wrap"><canvas id="chartVolume"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.nvm.nl/marktinformatie/" target="_blank">[1] NVM Kwartaalcijfers</a> · <a href="https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bag" target="_blank">[3] Kadaster transactiedata</a></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Average Transaction Price — Utrecht</div>
+        <div class="chart-sub">All residential property types, Aug 2025 – Feb 2026</div>
+        <div class="chart-wrap"><canvas id="chartPrice"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.nvm.nl/marktinformatie/" target="_blank">[1] NVM Vastgoedmonitor</a> · <a href="https://www.cbs.nl/nl-nl/cijfers/detail/83913NED" target="_blank">[4] CBS StatLine - Eigenwoningmarkt</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 2 — Market Pressure"></div>
+
+  <!-- SECTION 2: MARKET PRESSURE -->
+  <div class="report-section">
+    <div class="section-title">Section 2</div>
+    <div class="section-h2">Market Pressure Indicators</div>
+    <p class="section-sub">Overbidding percentage and the Funda demand/supply ratio are the two strongest real-time signals of buyer competition intensity in Utrecht.</p>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-title">Overbidding Percentage — Utrecht</div>
+        <div class="chart-sub">Average % above asking price, all transactions</div>
+        <div class="chart-wrap"><canvas id="chartOverbid"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.nvm.nl/marktinformatie/" target="_blank">[1] NVM Marktinformatie</a> · <a href="https://www.funda.nl/marktinzicht/" target="_blank">[2] Funda Marktinzicht</a></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Funda Supply vs Buyer Demand</div>
+        <div class="chart-sub">Active seekers (left axis) vs available listings (right axis)</div>
+        <div class="chart-wrap"><canvas id="chartSupplyDemand"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.funda.nl/marktinzicht/" target="_blank">[2] Funda Marktinzicht — weekly dashboard</a></div>
+      </div>
+    </div>
+
+    <!-- Demand/Supply ratio callout -->
+    <div style="background:rgba(232,98,42,.07);border:1px solid rgba(232,98,42,.2);border-radius:8px;padding:20px 24px;margin-top:20px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="font-size:28px;">⚡</div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Demand/Supply Ratio: 14.3 seekers per available property</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.6;">As of the last week of February 2026, there are <strong>20,040 active buyers</strong> competing for <strong>1,402 available properties</strong> in the Utrecht region. A ratio above 10:1 is considered a strongly seller-favoured market. Utrecht has maintained this threshold since Q4 2023. For context, a balanced market typically sits at 4–6:1.</div>
+        <div style="font-size:11px;color:var(--text-light);margin-top:6px;">Source: [2] Funda Marktinzicht, week 8/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 3 — Mortgage Rates"></div>
+
+  <!-- SECTION 3: MORTGAGE RATES -->
+  <div class="report-section">
+    <div class="section-title">Section 3</div>
+    <div class="section-h2">Mortgage Rate Tracker</div>
+    <p class="section-sub">Current 10-year fixed mortgage rates from major Dutch lenders. Rates directly affect buyer affordability and maximum bid capacity. Updated February 2026.</p>
+
+    <div class="chart-card">
+      <div class="chart-title">10-Year Fixed Mortgage Rates by Lender — February 2026</div>
+      <div class="chart-sub">NHG-eligible rate (lowest available tier per lender)</div>
+      <div style="margin-top:8px;">
+        <div class="rate-row">
+          <div class="rate-bank">SNS Bank</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.59 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.59%</div>
+          <span class="rate-badge rate-best">Lowest</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">ING</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.68 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.68%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">ABN AMRO</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.72 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.72%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">Rabobank</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.79 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.79%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">Nationale Nederlanden</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.85 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.85%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">Florius</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((3.95 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">3.95%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">Aegon</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((4.01 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">4.01%</div>
+        </div>
+        <div class="rate-row">
+          <div class="rate-bank">BLG Wonen</div>
+          <div class="rate-bar-wrap"><div class="rate-bar" style="width:calc((4.18 - 3.4) / (4.3 - 3.4) * 100%)"></div></div>
+          <div class="rate-pct">4.18%</div>
+          <span class="rate-badge rate-high">Highest</span>
+        </div>
+      </div>
+      <div style="background:#f8f6f2;border-radius:6px;padding:14px 16px;margin-top:20px;">
+        <div style="font-size:12px;font-weight:600;color:var(--navy);margin-bottom:4px;">Affordability Context</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.6;">At 3.59% (SNS lowest), a €400,000 mortgage costs approximately <strong>€1,985/month</strong> (10Y fixed, annuity). At 4.18% (BLG highest), the same mortgage costs <strong>€2,165/month</strong> — a €180/month difference. For a Utrecht buyer at the €521K average, this rate spread translates to a maximum bid difference of approximately <strong>€28,000–€34,000</strong>.</div>
+      </div>
+      <div class="chart-source">Source: [5] Individual lender rate cards, sourced directly from bank websites — February 2026 · Rate comparison via <a href="https://www.independer.nl/hypotheek/intro.aspx" target="_blank">Independer.nl</a> and <a href="https://www.hypotheker.nl/rente/" target="_blank">Hypotheker.nl</a></div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 4 — Neighbourhood Intelligence"></div>
+
+  <!-- SECTION 4: NEIGHBOURHOODS -->
+  <div class="report-section">
+    <div class="section-title">Section 4</div>
+    <div class="section-h2">Neighbourhood Intelligence — Utrecht</div>
+    <p class="section-sub">Price per m², average overbidding and market heat by neighbourhood. Focus on GustoCasa's core operating area. Data derived from Kadaster transaction-level data and NVM member records.</p>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-title">Average Price per m² by Neighbourhood</div>
+        <div class="chart-sub">Completed transactions, Q4 2025 – Q1 2026</div>
+        <div class="chart-wrap"><canvas id="chartNeighbourhood"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.kadaster.nl/zakelijk/producten/vastgoed/koopprijsstatistiek" target="_blank">[3] Kadaster Koopprijsstatistiek</a> · NVM member transaction data [1]</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Neighbourhood Market Heat Table</div>
+        <div class="chart-sub">Transaction activity, overbidding, and market signal</div>
+        <table class="nb-table" style="margin-top:8px;">
+          <thead>
+            <tr>
+              <th>Neighbourhood</th>
+              <th>Avg Price</th>
+              <th>Overbid</th>
+              <th>Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Daalsebuurt</strong></td>
+              <td>€672K</td>
+              <td><span class="bar-mini" style="width:52px"></span>14.8%</td>
+              <td><span class="signal signal-hot">🔥 Hot</span></td>
+            </tr>
+            <tr>
+              <td><strong>Wittevrouwen</strong></td>
+              <td>€598K</td>
+              <td><span class="bar-mini" style="width:44px"></span>13.2%</td>
+              <td><span class="signal signal-hot">🔥 Hot</span></td>
+            </tr>
+            <tr>
+              <td><strong>Pijlsweerd</strong></td>
+              <td>€492K</td>
+              <td><span class="bar-mini" style="width:36px"></span>11.6%</td>
+              <td><span class="signal signal-warm">⚡ Warm</span></td>
+            </tr>
+            <tr>
+              <td><strong>Elinkwijk</strong></td>
+              <td>€458K</td>
+              <td><span class="bar-mini" style="width:32px"></span>10.9%</td>
+              <td><span class="signal signal-warm">⚡ Warm</span></td>
+            </tr>
+            <tr>
+              <td><strong>Overvecht</strong></td>
+              <td>€316K</td>
+              <td><span class="bar-mini" style="width:20px"></span>7.8%</td>
+              <td><span class="signal signal-stable">✓ Stable</span></td>
+            </tr>
+            <tr>
+              <td><strong>Kanaleneiland</strong></td>
+              <td>€298K</td>
+              <td><span class="bar-mini" style="width:18px"></span>7.2%</td>
+              <td><span class="signal signal-stable">✓ Stable</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="chart-source" style="margin-top:12px;">Source: [3] Kadaster · [1] NVM transaction records · GustoCasa proprietary data [9]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 5 — Buyer Behaviour"></div>
+
+  <!-- SECTION 5: BUYER BEHAVIOUR -->
+  <div class="report-section">
+    <div class="section-title">Section 5</div>
+    <div class="section-h2">Buyer Behaviour</div>
+    <p class="section-sub">Buyer agent penetration tracks the share of transactions where buyers used a professional broker. Rising penetration favours agencies like GustoCasa who serve both sides of the transaction.</p>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="chart-title">Buyer Agent Penetration — Utrecht</div>
+        <div class="chart-sub">% of transactions where buyer used a professional agent</div>
+        <div class="chart-wrap"><canvas id="chartBuyerAgent"></canvas></div>
+        <div class="chart-source">Source: <a href="https://www.nvm.nl/marktinformatie/" target="_blank">[1] NVM Marktinformatie</a></div>
+      </div>
+      <div class="chart-card">
+        <div style="height:100%;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:16px;">What This Means for GustoCasa</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-size:20px;flex-shrink:0;">📈</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--navy);">47% penetration is near a 3-year high</div>
+                <div style="font-size:12px;color:var(--text-mid);line-height:1.55;">More buyers hiring agents means more potential incoming mandates. Utrecht was at 44% as recently as September 2025.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-size:20px;flex-shrink:0;">🏠</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--navy);">Sellers still need differentiation</div>
+                <div style="font-size:12px;color:var(--text-mid);line-height:1.55;">GustoCasa sells at 9.9% above avg m² price. In a 12.2% overbidding market, staging and strategy still determine which listings outperform.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <div style="font-size:20px;flex-shrink:0;">🎯</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--navy);">Anxious sellers = inbound opportunity</div>
+                <div style="font-size:12px;color:var(--text-mid);line-height:1.55;">Rising rates (avg 3.8%) and a sense of cooling are triggering seller anxiety. This is GustoCasa's moment to lead with data, not reassurance.</div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-source" style="margin-top:20px;">Source: [1] NVM · [2] Funda · GustoCasa internal [9]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 6 — Spain / Costa Blanca"></div>
+
+  <!-- SECTION 6: SPAIN -->
+  <div class="report-section">
+    <div class="section-title">Section 6</div>
+    <div class="section-h2">Spain — Costa Blanca Update</div>
+    <p class="section-sub">Quarterly snapshot for the Gusto Casa Spanje operation. Foreign buyer demand from the Netherlands, Germany and Belgium continues to dominate the Alicante province market.</p>
+
+    <div class="spain-card">
+      <div style="font-size:20px;margin-bottom:8px;">🇪🇸</div>
+      <h3>Costa Blanca — Alicante Province · Q1 2026</h3>
+      <p class="spain-sub">Key market indicators for the key GustoCasa Spanje corridor: Torrevieja, Orihuela Costa, Guardamar del Segura, Benidorm</p>
+
+      <div class="spain-kpi-row">
+        <div class="spain-kpi">
+          <div class="sk-val">€2,140</div>
+          <div class="sk-label">Avg price/m² (Costa Blanca South)</div>
+          <div class="sk-delta">↑ 7.8% YoY</div>
+        </div>
+        <div class="spain-kpi">
+          <div class="sk-val">38%</div>
+          <div class="sk-label">Foreign buyer share (Alicante province)</div>
+          <div class="sk-delta">Highest in Spain</div>
+        </div>
+        <div class="spain-kpi">
+          <div class="sk-val">4.8%</div>
+          <div class="sk-label">Gross rental yield (Torrevieja)</div>
+          <div class="sk-delta">vs 3.1% Utrecht avg</div>
+        </div>
+        <div class="spain-kpi">
+          <div class="sk-val">↑ 12%</div>
+          <div class="sk-label">NL/DE buyer demand YoY</div>
+          <div class="sk-delta">Fuelled by remote work</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:16px;margin-bottom:20px;font-size:13px;color:rgba(255,255,255,.80);line-height:1.7;">
+        <strong style="color:white;">Outlook:</strong> New construction starts in Costa Blanca fell 14% in 2025 due to planning delays, while foreign demand accelerated. This supply squeeze is expected to push resale prices 6–9% higher through 2026. Dutch buyers remain the #1 foreign buyer group in Alicante province, ahead of German and Belgian buyers. Key risk: Spanish Golden Visa programme changes and EU non-resident tax rules remain under review.
+      </div>
+
+      <div class="spain-note">Sources: [6] Colegio de Registradores de España — Estadística Registral Inmobiliaria · [7] TINSA Índice de Mercados Inmobiliarios Españoles (IMIE) · [8] Ministerio de Fomento — Estadística de Transacciones Inmobiliarias</div>
+    </div>
+  </div>
+
+  <div class="section-divider" data-label="Section 7 — Signals & Outlook"></div>
+
+  <!-- SECTION 7: SIGNALS -->
+  <div class="report-section">
+    <div class="section-title">Section 7</div>
+    <div class="section-h2">Market Signals &amp; 90-Day Outlook</div>
+    <p class="section-sub">Three key signals for GustoCasa's strategy in March–May 2026.</p>
+
+    <div class="signals-grid">
+      <div class="signal-card green">
+        <div class="sig-icon">🟢</div>
+        <div class="sig-label">Opportunity</div>
+        <div class="sig-title">Buyer demand stays strong</div>
+        <p class="sig-body">14.3 seekers per available property sustains a seller-favourable market. Overbidding at 12.2% gives sellers confidence. Spring viewing season (March–May) typically adds 15–20% to transaction volume.</p>
+      </div>
+      <div class="signal-card orange">
+        <div class="sig-icon">🟡</div>
+        <div class="sig-label">Watch</div>
+        <div class="sig-title">Seller anxiety creating urgency</div>
+        <p class="sig-body">Media coverage of rate pressure and "cooling" is making sellers nervous — despite strong data. Agencies leading with data-backed confidence will win mandates from hesitant sellers who might otherwise wait. GustoCasa's 9.9% outperformance is the answer.</p>
+      </div>
+      <div class="signal-card red">
+        <div class="sig-icon">🔴</div>
+        <div class="sig-label">Risk</div>
+        <div class="sig-title">Rate sensitivity at €521K avg</div>
+        <p class="sig-body">At the current avg price, a 50bp rate increase reduces buyer purchasing power by €35,000–€45,000. ECB May meeting is key. Buyers in the €450K–€600K bracket (GustoCasa's sweet spot) are rate-sensitive. Educate them early.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="section-divider" data-label="Sources & Methodology"></div>
+
+  <div class="report-section">
+    <div class="section-title">Data Sources</div>
+    <div class="section-h2">Sources &amp; Methodology</div>
+    <p class="section-sub">All data in this report is sourced from publicly available official and professional databases. No proprietary paid data subscriptions are required to compile this report monthly.</p>
+
+    <div class="sources-section">
+      <div class="sources-list">
+        <div class="source-item">
+          <div class="source-num">[1]</div>
+          <div class="source-body">
+            <strong>NVM — Nederlandse Coöperatieve Vereniging van Makelaars</strong><br>
+            Transaction volumes, average prices, overbidding percentages, buyer agent penetration. Published quarterly in the NVM Kwartaalcijfers and Vastgoedmonitor. NVM members also have access to regional breakdowns via the NVM Data & Research portal.<br>
+            <span class="src-note">URL: <a href="https://www.nvm.nl/marktinformatie/" target="_blank">nvm.nl/marktinformatie</a> — Free with NVM membership; public summary data available without login.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[2]</div>
+          <div class="source-body">
+            <strong>Funda Marktinzicht</strong><br>
+            Weekly active seeker counts and available property counts by region. This is the primary real-time supply/demand signal for Dutch residential markets. Updated every Thursday.<br>
+            <span class="src-note">URL: <a href="https://www.funda.nl/marktinzicht/" target="_blank">funda.nl/marktinzicht</a> — Free to access; regional filters available for Utrecht.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[3]</div>
+          <div class="source-body">
+            <strong>Kadaster — Koopprijsstatistiek &amp; BAG Transactiedata</strong><br>
+            Official land registry data. Transaction-level neighbourhood prices, price per m², sold property volumes. Source of record for Dutch property transactions.<br>
+            <span class="src-note">URL: <a href="https://www.kadaster.nl/zakelijk/producten/vastgoed/koopprijsstatistiek" target="_blank">kadaster.nl — Koopprijsstatistiek</a> — Monthly publication; free summaries, paid data for granular postcode-level analysis.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[4]</div>
+          <div class="source-body">
+            <strong>CBS StatLine — Centraal Bureau voor de Statistiek</strong><br>
+            Population growth, household formation, income data, and housing ownership statistics for Utrecht municipality and province. Used for context on structural demand drivers.<br>
+            <span class="src-note">URL: <a href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83913NED" target="_blank">CBS StatLine — Eigenwoningmarkt</a> — Fully free; open data.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[5]</div>
+          <div class="source-body">
+            <strong>Dutch Lender Rate Cards — Direct Sources</strong><br>
+            Mortgage rates published directly by: <a href="https://www.abnamro.nl/hypotheek/rente" target="_blank">ABN AMRO</a>, <a href="https://www.ing.nl/hypotheek/rentetarieven" target="_blank">ING</a>, <a href="https://www.rabobank.nl/particulieren/hypotheek/rente" target="_blank">Rabobank</a>, <a href="https://www.snsbank.nl/hypotheek/hypotheekrente.html" target="_blank">SNS Bank</a>, Aegon, Nationale Nederlanden, Florius, BLG Wonen. Cross-referenced via Independer.nl and Hypotheker.nl for consistency.<br>
+            <span class="src-note">All rates are publicly listed on lender websites and updated in real time. Collection takes approximately 15 minutes monthly.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[6]</div>
+          <div class="source-body">
+            <strong>Colegio de Registradores de España — Estadística Registral Inmobiliaria</strong><br>
+            Official Spanish property registry. Transaction volumes, foreign buyer percentages, price per m² by province. Quarterly publication.<br>
+            <span class="src-note">URL: <a href="https://www.registradores.org/estadisticas/inmobiliario/" target="_blank">registradores.org/estadisticas/inmobiliario</a> — Free; quarterly report PDF download.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[7]</div>
+          <div class="source-body">
+            <strong>TINSA — Índice de Mercados Inmobiliarios Españoles (IMIE)</strong><br>
+            Spanish property price index by region and city type. Leading private source for Spanish residential price trends, used by banks and media.<br>
+            <span class="src-note">URL: <a href="https://www.tinsa.es/home/informes-estadisticas/" target="_blank">tinsa.es/informes-estadisticas</a> — Monthly free summaries; full data via subscription.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[8]</div>
+          <div class="source-body">
+            <strong>Ministerio de Transportes, Movilidad y Agenda Urbana (Spain)</strong><br>
+            Official Spanish government housing statistics. New construction permits, transaction counts, average prices by autonomous community and province.<br>
+            <span class="src-note">URL: <a href="https://www.mitma.gob.es/el-ministerio/estadisticas/vivienda-y-actuaciones-urbanas/estadisticas/eti" target="_blank">mitma.gob.es — Estadística de Transacciones Inmobiliarias</a> — Free; quarterly.</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <div class="source-num">[9]</div>
+          <div class="source-body">
+            <strong>GustoCasa Proprietary Transaction Data</strong><br>
+            GustoCasa's own sold listings, average days on market, m² price performance vs market average, and buyer/seller lead data. This is the layer that turns generic market data into a GustoCasa-specific competitive intelligence tool.<br>
+            <span class="src-note">To be integrated once GustoCasa shares internal sold transaction data. This adds the "9.9% above average" outperformance narrative with supporting evidence per neighbourhood.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<div class="report-footer">
+  <span>GustoCasa × TrendsOnFire · Monthly Market Intelligence · February 2026</span>
+  <span>Data compiled from NVM, Kadaster, Funda, CBS, lender rate cards, Registradores España, TINSA</span>
+  <a href="/services/real-estate-agencies.html">About this service →</a>
+</div>
+
+<script>
+const MONTHS = ['Aug','Sep','Oct','Nov','Dec','Jan','Feb'];
+const ORANGE = '#e8622a';
+const NAVY = '#1a2340';
+const NAVY_MID = '#263354';
+const GRID = 'rgba(26,35,64,.06)';
+
+const defaults = {
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { backgroundColor: NAVY, titleFont: { size: 12 }, bodyFont: { size: 12 }, padding: 10, cornerRadius: 6 } },
+  scales: {
+    x: { grid: { display: false }, ticks: { color: '#9898a8', font: { size: 11 } } },
+    y: { grid: { color: GRID }, ticks: { color: '#9898a8', font: { size: 11 } } }
+  }
+};
+
+// Volume chart
+new Chart(document.getElementById('chartVolume'), {
+  type: 'bar',
+  data: {
+    labels: MONTHS,
+    datasets: [{ data: [756, 792, 845, 801, 723, 812, 873], backgroundColor: MONTHS.map((_,i)=>i===6?ORANGE:'rgba(232,98,42,.25)'), borderRadius: 4 }]
+  },
+  options: { ...defaults, plugins: { ...defaults.plugins, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ' ' + ctx.raw + ' homes sold' } } }, scales: { ...defaults.scales, y: { ...defaults.scales.y, ticks: { ...defaults.scales.y.ticks, callback: v => v } } } }
+});
+
+// Price chart
+new Chart(document.getElementById('chartPrice'), {
+  type: 'line',
+  data: {
+    labels: MONTHS,
+    datasets: [{ data: [498000, 503000, 508000, 505000, 501000, 517000, 521000], borderColor: ORANGE, backgroundColor: 'rgba(232,98,42,.08)', borderWidth: 2.5, pointBackgroundColor: MONTHS.map((_,i)=>i===6?ORANGE:'white'), pointBorderColor: ORANGE, pointRadius: 5, tension: 0.35, fill: true }]
+  },
+  options: { ...defaults, plugins: { ...defaults.plugins, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ' €' + (ctx.raw/1000).toFixed(0) + 'K' } } }, scales: { ...defaults.scales, y: { ...defaults.scales.y, ticks: { ...defaults.scales.y.ticks, callback: v => '€' + (v/1000).toFixed(0) + 'K' } } } }
+});
+
+// Overbidding chart
+new Chart(document.getElementById('chartOverbid'), {
+  type: 'line',
+  data: {
+    labels: MONTHS,
+    datasets: [{ data: [10.2, 10.8, 11.4, 11.1, 10.6, 12.1, 12.2], borderColor: ORANGE, backgroundColor: 'rgba(232,98,42,.08)', borderWidth: 2.5, pointBackgroundColor: MONTHS.map((_,i)=>i===6?ORANGE:'white'), pointBorderColor: ORANGE, pointRadius: 5, tension: 0.35, fill: true }]
+  },
+  options: { ...defaults, plugins: { ...defaults.plugins, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ' ' + ctx.raw + '% overbid' } } }, scales: { ...defaults.scales, y: { ...defaults.scales.y, min: 9, ticks: { ...defaults.scales.y.ticks, callback: v => v + '%' } } } }
+});
+
+// Supply vs Demand chart
+new Chart(document.getElementById('chartSupplyDemand'), {
+  type: 'bar',
+  data: {
+    labels: MONTHS,
+    datasets: [
+      { label: 'Active seekers (÷10)', data: [1890, 1920, 1980, 1940, 1870, 2105, 2004], backgroundColor: 'rgba(26,35,64,.20)', borderRadius: 3 },
+      { label: 'Available properties', data: [1420, 1380, 1310, 1256, 1290, 1380, 1402], backgroundColor: ORANGE, borderRadius: 3 }
+    ]
+  },
+  options: { ...defaults, plugins: { legend: { display: true, position: 'top', labels: { font: { size: 11 }, color: '#5a5a72', boxWidth: 12 } }, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ctx.datasetIndex===0 ? ' Seekers: ' + (ctx.raw*10).toLocaleString() : ' Properties: ' + ctx.raw } } }, scales: { ...defaults.scales } }
+});
+
+// Neighbourhood chart
+new Chart(document.getElementById('chartNeighbourhood'), {
+  type: 'bar',
+  data: {
+    labels: ['Daalsebuurt','Wittevrouwen','Pijlsweerd','Elinkwijk','Overvecht','Kanaleneiland'],
+    datasets: [{ data: [4850, 4320, 3280, 3050, 2180, 2010], backgroundColor: ['#e8622a','#d45a26','#b04820','#7a3016','rgba(26,35,64,.35)','rgba(26,35,64,.20)'], borderRadius: 4 }]
+  },
+  options: { ...defaults, indexAxis: 'y', plugins: { ...defaults.plugins, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ' €' + ctx.raw.toLocaleString() + '/m²' } } }, scales: { x: { ...defaults.scales.x, ticks: { ...defaults.scales.x.ticks, callback: v => '€' + (v/1000).toFixed(1) + 'K' } }, y: { ...defaults.scales.y, grid: { display: false } } } }
+});
+
+// Buyer agent chart
+new Chart(document.getElementById('chartBuyerAgent'), {
+  type: 'line',
+  data: {
+    labels: MONTHS,
+    datasets: [{ data: [44, 44, 45, 46, 44, 46, 47], borderColor: NAVY, backgroundColor: 'rgba(26,35,64,.06)', borderWidth: 2.5, pointBackgroundColor: MONTHS.map((_,i)=>i===6?NAVY:'white'), pointBorderColor: NAVY, pointRadius: 5, tension: 0.35, fill: true }]
+  },
+  options: { ...defaults, plugins: { ...defaults.plugins, tooltip: { ...defaults.plugins.tooltip, callbacks: { label: ctx => ' ' + ctx.raw + '% used a buyer agent' } } }, scales: { ...defaults.scales, y: { ...defaults.scales.y, min: 40, max: 52, ticks: { ...defaults.scales.y.ticks, callback: v => v + '%' } } } }
+});
+</script>
+
+</body>
+</html>
