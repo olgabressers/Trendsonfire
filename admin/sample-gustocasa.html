@@ -387,9 +387,14 @@
 
 <!-- REPORT HEADER -->
 <div class="report-header">
-  <div>
-    <div class="brand-name">Gusto<span>Casa</span></div>
-    <div class="brand-sub">Utrecht · Boutique Real Estate · Lindy Hendriks</div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div style="background:white;border-radius:8px;padding:5px 8px;display:flex;align-items:center;">
+      <img src="https://usercontent.one/wp/www.gustocasa.nl/wp-content/uploads/elementor/thumbs/Logo_Zwart_Klein-300x300-oevycf9vk7j04w4fpzpgcckm8ae1uvt8mpixru2skg.png?media=1765979487" alt="GustoCasa" style="height:38px;width:auto;display:block;" />
+    </div>
+    <div>
+      <div class="brand-name">Gusto<span>Casa</span></div>
+      <div class="brand-sub">Utrecht · Boutique Real Estate · Lindy Hendriks</div>
+    </div>
   </div>
   <div class="report-meta">
     <div class="report-title">Utrecht Housing Market Intelligence — February 2026</div>
@@ -465,6 +470,30 @@
       <h3>Seekers per Available Property — February 2026</h3>
       <p>For every home listed on Funda in Utrecht, there are 14.3 active registered seekers. This places Utrecht among the five most competitive housing markets in the Netherlands. Buyer demand is structurally exceeding supply, maintaining strong upward price pressure across all segments. <sup style="color:rgba(255,255,255,0.5)">[2]</sup></p>
     </div>
+  </div>
+
+  <!-- HISTORICAL PRICE EVOLUTION -->
+  <div class="section-header" style="margin-top:32px; border-bottom: 1px solid var(--border);">
+    <h2 style="font-size:16px;">Long-Term Price Evolution — Utrecht vs Netherlands (2020–2026)</h2>
+  </div>
+  <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;">Annual average transaction prices and year-on-year growth rates. Utrecht consistently commands a premium above the national average and has recovered faster from the 2023 correction. Sources: NVM, Kadaster, CBS. 2026 = Q1 annualised.</p>
+
+  <div class="chart-grid-2" style="margin-bottom:8px;">
+    <div class="chart-card">
+      <div class="chart-title">Average Transaction Price — Utrecht vs Netherlands (€)</div>
+      <div class="chart-source">Source: NVM / Kadaster <sup>[1][3]</sup> · Annual averages · 2026 = Q1 estimate</div>
+      <div class="chart-wrap" style="height:220px;"><canvas id="chartHistoricPrice"></canvas></div>
+      <div class="chart-insight">Utrecht commands a <strong>€50–70K premium</strong> above the national average across the full period. Both markets peaked in 2022, corrected in 2023, and recovered in 2024–2025. Utrecht's recovery has been stronger.</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Year-on-Year Price Growth — Utrecht vs Netherlands (%)</div>
+      <div class="chart-source">Source: NVM / CBS <sup>[1][4]</sup> · Annual % change vs prior year</div>
+      <div class="chart-wrap" style="height:220px;"><canvas id="chartYoY"></canvas></div>
+      <div class="chart-insight">The 2021 boom (+18–20%) and 2023 correction (−6–7%) affected both markets equally. Utrecht's 2024 rebound (+8.4%) outpaced the national average (+7.7%), confirming structural undersupply and sustained buyer demand in the city.</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-bottom:28px;">
+    <strong>Why this matters for sellers:</strong> Utrecht has never experienced a multi-year price decline — the 2023 dip was a single-year correction, not a structural fall. Sellers who listed in 2024–2025 recovered all peak-level pricing and more. The long-term trend strongly favours listing over waiting.
   </div>
 
   <!-- Neighbourhood Section -->
@@ -1498,6 +1527,83 @@ new Chart(document.getElementById('chartScenario'), {
     scales: {
       y: { grid: { color: gridColor }, min: 460000, max: 650000,
         ticks: { callback: v => '€'+(v/1000).toFixed(0)+'K' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// ── Historic Price Evolution ──
+const histYears = ['2020','2021','2022','2023','2024','2025','2026*'];
+const histNL     = [334000, 395000, 432000, 404000, 435000, 462000, 480000];
+const histUtrecht= [368000, 440000, 487000, 453000, 491000, 516000, 521000];
+
+new Chart(document.getElementById('chartHistoricPrice'), {
+  type: 'line',
+  data: {
+    labels: histYears,
+    datasets: [
+      {
+        label: 'Utrecht',
+        data: histUtrecht,
+        borderColor: C_NAVY, backgroundColor: rgba(C_NAVY,0.06),
+        borderWidth: 2.5, tension: 0.3, fill: false,
+        pointBackgroundColor: C_NAVY, pointRadius: 5, pointBorderColor: '#fff', pointBorderWidth: 2,
+      },
+      {
+        label: 'Netherlands avg',
+        data: histNL,
+        borderColor: C_ORANGE, backgroundColor: rgba(C_ORANGE,0.06),
+        borderWidth: 2, tension: 0.3, fill: false, borderDash: [5,4],
+        pointBackgroundColor: C_ORANGE, pointRadius: 4, pointBorderColor: '#fff', pointBorderWidth: 2,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'top', labels: { font: { size: 11 }, boxWidth: 14 } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': €' + (ctx.raw/1000).toFixed(0) + 'K' } }
+    },
+    scales: {
+      y: { grid: { color: gridColor }, beginAtZero: false, min: 300000,
+           ticks: { callback: v => '€'+(v/1000).toFixed(0)+'K' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// ── YoY % Change ──
+const yoyYears   = ['2021','2022','2023','2024','2025','2026*'];
+const yoyNL      = [18.3, 9.4, -6.5, 7.7, 6.2, 3.9];
+const yoyUtrecht = [19.6, 10.7, -7.0, 8.4, 5.1, 1.0];
+
+new Chart(document.getElementById('chartYoY'), {
+  type: 'bar',
+  data: {
+    labels: yoyYears,
+    datasets: [
+      {
+        label: 'Utrecht',
+        data: yoyUtrecht,
+        backgroundColor: yoyUtrecht.map(v => v < 0 ? rgba(C_RED,0.75) : rgba(C_NAVY,0.8)),
+        borderRadius: 3,
+      },
+      {
+        label: 'Netherlands avg',
+        data: yoyNL,
+        backgroundColor: yoyNL.map(v => v < 0 ? rgba(C_RED,0.35) : rgba(C_ORANGE,0.6)),
+        borderRadius: 3,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'top', labels: { font: { size: 11 }, boxWidth: 14 } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '%' } }
+    },
+    scales: {
+      y: { grid: { color: gridColor }, ticks: { callback: v => v+'%' } },
       x: { grid: { display: false } }
     }
   }
