@@ -45,9 +45,17 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #2a3a5c 60%, #1c3a2b 100%);
-      padding: 72px 40px 64px; text-align: center;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 60%, #0f2318 100%);
+      padding: 72px 40px 0; text-align: center;
     }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+      background: rgba(0,0,0,.25); margin: 40px -40px 0; padding: 20px 40px;
+    }
+    .hero-stat { padding: 12px 28px; border-right: 1px solid rgba(255,255,255,.12); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat .hs-value { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--gold-light); }
+    .hero-stat .hs-label { font-size: 11px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
     .hero-eyebrow {
       display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .16em;
       text-transform: uppercase; color: var(--gold);
@@ -245,14 +253,74 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Market Intelligence Partnership Proposal</div>
+  <div class="hero-eyebrow">GustoCasa × TrendsOnFire · Market Intelligence Partnership Proposal</div>
   <h1>Give Your Clients the Data<br>They're Already <em>Googling.</em></h1>
-  <p class="hero-sub">Every seller and buyer in Utrecht is checking the market. We make sure the data they find has your name on it — and that you walk into every listing meeting better prepared than any competitor.</p>
+  <p class="hero-sub">Every seller and buyer in Utrecht is checking the market before they call an agent. We make sure the data they find has your name on it — and that you walk into every listing meeting better prepared than any competitor.</p>
   <div class="hero-actions">
     <a href="#pricing" class="btn-gold">See the Offer</a>
-    <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="btn-ghost">View Sample Report →</a>
+    <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="btn-ghost">View GustoCasa Sample Report →</a>
+  </div>
+  <!-- Live market data strip -->
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hs-value">€521K</div>
+      <div class="hs-label">Avg transaction price · Utrecht</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-value">12.2%</div>
+      <div class="hs-label">Avg overbid rate · Feb 2026</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-value">8.8 days</div>
+      <div class="hs-label">Avg days on market</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-value">14.3×</div>
+      <div class="hs-label">Buyers per listing on Funda</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-value">+19%</div>
+      <div class="hs-label">Price growth since 2020</div>
+    </div>
   </div>
 </div>
+
+<!-- SAMPLE REPORT — moved to top -->
+<section class="section sample-section" style="background:var(--green);padding-top:56px;padding-bottom:56px;">
+  <div class="inner">
+    <div class="sample-inner">
+      <div class="section-label" style="color:var(--gold-light);">Already Done — No Contract Needed</div>
+      <h2 class="section-title" style="color:white;">Your February Report Is Ready — Right Now</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.7);margin:0 auto 0;">We didn't wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.</p>
+
+      <div class="preview-box">
+        <div class="preview-label">Live Report — GustoCasa · Utrecht Market Intelligence · February 2026</div>
+        <h3>11 Sections · 15+ Charts · Neighbourhood Data · Your Performance vs Market</h3>
+        <p>Includes long-term price evolution (2020–2026), overbid analysis, buyer profile breakdown, mortgage rate impact, seasonal timing optimizer, energy label premium data, and a 90-day action plan with specific recommendations for GustoCasa.</p>
+        <div class="preview-tags">
+          <span class="preview-tag">📈 Long-term 2020–2026 price charts</span>
+          <span class="preview-tag">🏡 Neighbourhood price per m²</span>
+          <span class="preview-tag">🏆 GustoCasa vs market benchmark</span>
+          <span class="preview-tag">📆 Seasonal listing timing</span>
+          <span class="preview-tag">💶 Mortgage rate analysis</span>
+          <span class="preview-tag">🌍 Buyer profile &amp; expat segment</span>
+        </div>
+        <div class="live-url-box" style="margin-top:20px;">
+          <span class="live-url-label">Sample report:</span>
+          <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="live-url-link">trendsonfire.com/admin/sample-gustocasa.html</a>
+          <span class="live-url-note">· Private link · February 2026</span>
+        </div>
+        <div class="live-url-box">
+          <span class="live-url-label">Your live page:</span>
+          <a href="https://trendsonfire.com/gustocasa/market-live.html" target="_blank" class="live-url-link">trendsonfire.com/gustocasa/market-live.html</a>
+          <span class="live-url-note">· Public · Share on LinkedIn</span>
+        </div>
+      </div>
+
+      <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="btn-gold">Open the Full GustoCasa Report →</a>
+    </div>
+  </div>
+</section>
 
 <!-- FINANCIAL REALITY -->
 <section class="section reality">
@@ -329,43 +397,6 @@
   </div>
 </section>
 
-<!-- SAMPLE REPORT -->
-<section class="section sample-section">
-  <div class="inner">
-    <div class="sample-inner">
-      <div class="section-label">Already Done</div>
-      <h2 class="section-title">Your February Report Is Ready — Right Now</h2>
-      <p class="section-sub" style="margin:0 auto 0;">We didn't wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.</p>
-
-      <div class="preview-box">
-        <div class="preview-label">Live Report — GustoCasa · Utrecht Market Intelligence · February 2026</div>
-        <h3>11 Sections · 15+ Charts · Neighbourhood Data · Your Performance vs Market</h3>
-        <p>Includes long-term price evolution (2020–2026), overbid analysis, buyer profile breakdown, mortgage rate impact, seasonal timing optimizer, energy label premium data, and a 90-day action plan with specific recommendations for GustoCasa.</p>
-        <div class="preview-tags">
-          <span class="preview-tag">📈 Long-term 2020–2026 price charts</span>
-          <span class="preview-tag">🏡 Neighbourhood price per m²</span>
-          <span class="preview-tag">🏆 GustoCasa vs market benchmark</span>
-          <span class="preview-tag">📆 Seasonal listing timing</span>
-          <span class="preview-tag">💶 Mortgage rate analysis</span>
-          <span class="preview-tag">🌍 Buyer profile & expat segment</span>
-        </div>
-        <div class="live-url-box" style="margin-top:20px;">
-          <span class="live-url-label">Sample report:</span>
-          <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="live-url-link">trendsonfire.com/admin/sample-gustocasa.html</a>
-          <span class="live-url-note">· Private link · February 2026</span>
-        </div>
-        <div class="live-url-box">
-          <span class="live-url-label">Your live page:</span>
-          <a href="https://trendsonfire.com/gustocasa/market-live.html" target="_blank" class="live-url-link">trendsonfire.com/gustocasa/market-live.html</a>
-          <span class="live-url-note">· Public · Share on LinkedIn</span>
-        </div>
-      </div>
-
-      <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank" class="btn-gold">Open the Full Report →</a>
-    </div>
-  </div>
-</section>
-
 <!-- PRICING -->
 <section class="section pricing" id="pricing">
   <div class="inner">
@@ -381,7 +412,7 @@
       <div class="plan">
         <div class="plan-name">Starter</div>
         <h3 class="plan-title">Market Update</h3>
-        <div class="plan-price"><strong>€195</strong><span> /month</span></div>
+        <div class="plan-price"><strong>€195</strong><span> /month excl. VAT</span></div>
         <ul class="plan-features">
           <li>Monthly Utrecht market report (PDF)</li>
           <li>Public live dashboard updated monthly</li>
@@ -389,15 +420,15 @@
           <li>Key data highlights summary</li>
           <li>Delivered on the 12th of each month</li>
         </ul>
-        <div class="plan-note">€2,340/year · Monthly rolling · Cancel anytime</div>
-        <a href="mailto:olga@trendsonfire.com?subject=GustoCasa%20Starter%20Plan&body=Hi%20Olga%2C%0A%0AI'd%20like%20to%20start%20with%20the%20Market%20Update%20plan%20(€195%2Fmonth).%0A%0ACan%20we%20discuss%20the%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-outline">Start with Starter</a>
+        <div class="plan-note">€2,340/year excl. VAT · Monthly rolling · Cancel anytime</div>
+        <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Starter%20Plan&body=Hi%20Olga%2C%0A%0AI'd%20like%20to%20start%20with%20the%20Market%20Update%20plan%20(€195%2Fmonth).%0A%0ACan%20we%20discuss%20the%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-outline">Start with Starter</a>
       </div>
 
       <!-- Full (featured) -->
       <div class="plan featured">
         <div class="plan-name">Full Intelligence</div>
         <h3 class="plan-title">Complete Partnership</h3>
-        <div class="plan-price"><strong>€295</strong><span> /month</span></div>
+        <div class="plan-price"><strong>€295</strong><span> /month excl. VAT</span></div>
         <ul class="plan-features">
           <li>Everything in Starter</li>
           <li>Full 11-section intelligence report</li>
@@ -407,8 +438,8 @@
           <li>On-call: 2 data questions answered/month</li>
           <li>White-label: your brand, your domain option</li>
         </ul>
-        <div class="plan-note">€3,540/year · Monthly rolling · Cancel anytime</div>
-        <a href="mailto:olga@trendsonfire.com?subject=GustoCasa%20Full%20Intelligence%20Plan&body=Hi%20Olga%2C%0A%0AI'd%20like%20to%20start%20with%20the%20Full%20Intelligence%20plan%20(€295%2Fmonth).%0A%0ACan%20we%20discuss%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-gold">Start Full Intelligence</a>
+        <div class="plan-note">€3,540/year excl. VAT · Monthly rolling · Cancel anytime</div>
+        <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Full%20Intelligence%20Plan&body=Hi%20Olga%2C%0A%0AI'd%20like%20to%20start%20with%20the%20Full%20Intelligence%20plan%20(€295%2Fmonth).%0A%0ACan%20we%20discuss%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-gold">Start Full Intelligence</a>
       </div>
 
     </div>
@@ -448,18 +479,12 @@
 <section class="section about">
   <div class="inner">
     <div class="about-inner">
-      <div class="about-avatar">OB</div>
+      <img src="olga-bressers.jpg" alt="Olga Bressers" style="width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--gold);flex-shrink:0;" />
       <div class="about-text">
         <h2>Olga Bressers</h2>
         <div class="role">Founder, TrendsOnFire · Senior Executive & Market Analyst</div>
-        <p>20+ years leading data-driven business decisions across Europe at Richemont, Adidas, Nike and IBM. P&L leader of a €150M e-commerce business across 26 countries, with teams of 240+ people.</p>
+        <p>20+ years leading data-driven business decisions across Europe, including P&L leadership of a €150M e-commerce business across 26 countries with teams of 240+ people.</p>
         <p>I built TrendsOnFire to make executive-grade market intelligence accessible to people who need it without paying consulting rates. For GustoCasa, that means one thing: the research that wins you listing meetings, without spending your evenings pulling data from NVM.</p>
-        <div class="about-companies">
-          <span class="co-badge">Richemont</span>
-          <span class="co-badge">Adidas</span>
-          <span class="co-badge">Nike</span>
-          <span class="co-badge">IBM</span>
-        </div>
       </div>
     </div>
   </div>
@@ -472,9 +497,9 @@
     <h2 class="section-title">Let's Start With a Conversation</h2>
     <p class="section-sub">No commitment. No pressure. Just a 30-minute call to see if the fit is right — and you've already seen the report, so the call is short.</p>
     <div>
-      <a href="mailto:olga@trendsonfire.com?subject=GustoCasa%20Proposal%20—%20Let's%20Talk&body=Hi%20Olga%2C%0A%0AI've%20reviewed%20the%20proposal%20and%20the%20sample%20report.%20I'd%20like%20to%20schedule%20a%20call%20to%20discuss.%0A%0ABest%2C%0ALindy%20Hendriks%0AGustoCasa" class="cta-email">✉ Reply to <strong>olga@trendsonfire.com</strong></a>
+      <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Proposal%20—%20Let's%20Talk&body=Hi%20Olga%2C%0A%0AI've%20reviewed%20the%20proposal%20and%20the%20sample%20report.%20I'd%20like%20to%20schedule%20a%20call%20to%20discuss.%0A%0ABest%2C%0ALindy%20Hendriks%0AGustoCasa" class="cta-email">✉ Reply to <strong>olga.bressers@gmail.com</strong></a>
     </div>
-    <a href="mailto:olga@trendsonfire.com?subject=GustoCasa%20Proposal%20—%20Let's%20Talk&body=Hi%20Olga%2C%0A%0AI've%20reviewed%20the%20proposal%20and%20sample%20report.%20I'd%20like%20to%20schedule%20a%20call.%0A%0ABest%2C%0ALindy" class="btn-gold">Schedule a Call</a>
+    <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Proposal%20—%20Let's%20Talk&body=Hi%20Olga%2C%0A%0AI've%20reviewed%20the%20proposal%20and%20sample%20report.%20I'd%20like%20to%20schedule%20a%20call.%0A%0ABest%2C%0ALindy" class="btn-gold">Schedule a Call</a>
     <p class="cta-note">Typical response within a few hours · No commitment · First call is free</p>
   </div>
 </section>
