@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>GustoCasa × TrendsOnFire — Option A Sample · Monthly Pulse + Quarterly Deep Dive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --navy:#1a2340; --orange:#e8622a; --cream:#f8f6f2;
+      --green:#1e7c4e; --text:#1e1e2e; --sub:#5a5a72; --border:#e8e4de;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);font-size:14px;line-height:1.6;}
+
+    /* TOP BANNER */
+    .top-banner{background:#7f1d1d;color:#fff;text-align:center;padding:10px 24px;font-size:12px;font-weight:600;}
+
+    /* GLOBAL HEADER */
+    .g-header{background:var(--navy);color:white;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .brand{font-size:20px;font-weight:800;letter-spacing:-.3px;}
+    .brand span{color:var(--orange);}
+    .brand-sub{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-top:3px;}
+    .hdr-right{text-align:right;font-size:12px;color:rgba(255,255,255,.5);}
+    .hdr-right strong{color:white;font-size:13px;display:block;}
+
+    /* PART DIVIDERS */
+    .part-header{padding:20px 40px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .part-header.monthly{background:linear-gradient(135deg,#1a2340 0%,#273559 100%);}
+    .part-header.quarterly{background:linear-gradient(135deg,#0f2318 0%,#1c3a2b 100%);}
+    .part-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:4px 12px;border-radius:12px;white-space:nowrap;}
+    .monthly .part-badge{background:var(--orange);color:white;}
+    .quarterly .part-badge{background:#c9a35a;color:#0f2318;}
+    .part-title{font-size:17px;font-weight:800;color:white;}
+    .part-sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;}
+    .part-date{margin-left:auto;text-align:right;font-size:11px;color:rgba(255,255,255,.4);}
+    .part-date strong{color:rgba(255,255,255,.75);font-size:12px;display:block;}
+
+    /* CONTENT AREAS */
+    .monthly-body{background:#f0ece6;padding:24px 40px 32px;}
+    .quarterly-body{background:var(--cream);padding:24px 40px 40px;}
+    .inner{max-width:1100px;margin:0 auto;}
+
+    /* SECTION TITLE */
+    .sec{margin-bottom:28px;}
+    .sec-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);margin-bottom:4px;}
+    .sec-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .sec-source{font-size:10px;color:var(--sub);}
+    .sec-source a{color:var(--green);font-weight:600;}
+
+    /* KPI ROW */
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+    .kpi{background:white;border-radius:10px;padding:16px 18px;border-top:3px solid var(--orange);}
+    .kv{font-size:28px;font-weight:800;color:var(--navy);line-height:1;}
+    .kl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-top:5px;}
+    .ks{font-size:10px;color:#9ca3af;margin-top:3px;}
+
+    /* CHART GRID */
+    .chart-row{display:grid;gap:16px;margin-bottom:24px;}
+    .chart-row.two{grid-template-columns:1fr 1fr;}
+    .chart-row.three{grid-template-columns:1fr 1fr 1fr;}
+    .chart-row.full{grid-template-columns:1fr;}
+    .chart-card{background:white;border-radius:10px;padding:18px 20px;}
+    .ct{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+    .cs{font-size:10px;color:#9ca3af;margin-bottom:12px;line-height:1.5;}
+    .cw{height:190px;}
+    .cw.tall{height:230px;}
+    .cw.short{height:150px;}
+
+    /* MORTGAGE TABLE */
+    .rate-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+    .rate-tbl th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);padding:7px 10px;background:#f9fafb;border-bottom:1px solid var(--border);text-align:left;}
+    .rate-tbl td{padding:9px 10px;border-bottom:1px solid #f3f4f6;vertical-align:middle;}
+    .rate-tbl tr:last-child td{border-bottom:none;}
+    .big-rate{font-size:18px;font-weight:800;color:var(--green);}
+    .rate-note{font-size:11px;color:var(--sub);margin-top:10px;line-height:1.6;}
+
+    /* THERMOMETER */
+    .thermo{background:linear-gradient(135deg,var(--navy) 0%,#273559 100%);border-radius:10px;padding:22px 28px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:24px;}
+    .th-left{flex:0 0 240px;}
+    .th-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:8px;}
+    .track{height:12px;border-radius:6px;background:linear-gradient(to right,#3b82f6,#22c55e,#f59e0b,#ef4444);position:relative;margin-bottom:6px;}
+    .needle{position:absolute;top:-5px;left:64%;width:22px;height:22px;background:white;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3);border:3px solid #f59e0b;}
+    .tscale{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.3);}
+    .tstatus{font-size:19px;font-weight:800;color:#fbbf24;margin-top:8px;}
+    .th-right{flex:1;font-size:13px;color:rgba(255,255,255,.75);line-height:1.75;}
+    .th-right strong{color:white;}
+
+    /* INSIGHT BOX */
+    .insight{background:#eef4ff;border-left:3px solid #3b82f6;border-radius:0 8px 8px 0;padding:12px 16px;font-size:12.5px;color:#1e3a5f;margin-top:10px;line-height:1.6;}
+    .gap-note{background:#fffbeb;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:12px 16px;font-size:12.5px;color:#78350f;margin-top:10px;line-height:1.6;}
+    .gap-note strong{display:block;margin-bottom:4px;}
+
+    /* PLACEHOLDER */
+    .placeholder{border:2px dashed #d1d5db;border-radius:10px;padding:40px 32px;text-align:center;background:white;}
+    .placeholder-icon{font-size:36px;margin-bottom:12px;}
+    .placeholder-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+    .placeholder-body{font-size:13px;color:var(--sub);line-height:1.7;max-width:480px;margin:0 auto;}
+    .placeholder-fields{background:#f9fafb;border-radius:8px;padding:16px 20px;margin-top:16px;text-align:left;display:inline-block;}
+    .placeholder-fields li{font-size:12px;color:var(--sub);margin-bottom:4px;padding-left:16px;position:relative;}
+    .placeholder-fields li::before{content:'→';position:absolute;left:0;color:var(--orange);}
+
+    /* SIGNAL CARD */
+    .signal{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #16a34a;border-radius:10px;padding:20px 24px;margin-bottom:24px;}
+    .sig-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#166534;margin-bottom:5px;}
+    .sig-head{font-size:16px;font-weight:800;color:#14532d;margin-bottom:8px;}
+    .sig-body{font-size:13px;color:#166534;line-height:1.7;}
+    .sig-body strong{color:#14532d;}
+
+    /* NEW CONSTRUCTION TABLE */
+    .nc-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+    .nc-tbl th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);padding:8px 12px;background:#f9fafb;border-bottom:1px solid var(--border);text-align:left;}
+    .nc-tbl td{padding:10px 12px;border-bottom:1px solid #f3f4f6;}
+    .nc-tbl tr:last-child td{border-bottom:none;}
+    .nc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;white-space:nowrap;}
+    .nc-soon{background:#dbeafe;color:#1e40af;}
+    .nc-2027{background:#f3f4f6;color:#374151;}
+
+    /* FREQ LABELS */
+    .freq-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 9px;border-radius:8px;margin-bottom:12px;}
+    .f-monthly{background:#e8622a;color:white;}
+    .f-quarterly{background:#1a2340;color:white;}
+    .f-annual{background:#374151;color:white;}
+
+    /* SECTION DIVIDER */
+    .divider{border:none;border-top:1px dashed var(--border);margin:28px 0;}
+
+    /* ILLUSTRATIVE BADGE */
+    .illus{display:inline-flex;align-items:center;gap:5px;background:#fef3c7;border:1px solid #fde68a;border-radius:4px;padding:3px 10px;font-size:10px;font-weight:700;color:#92400e;margin-bottom:8px;}
+
+    /* LINKEDIN CALLOUT */
+    .linkedin-box{background:var(--navy);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .linkedin-icon{font-size:28px;flex-shrink:0;}
+    .linkedin-text{flex:1;color:rgba(255,255,255,.8);font-size:13px;line-height:1.65;}
+    .linkedin-text strong{color:white;}
+    .linkedin-link{background:var(--orange);color:white;font-size:12px;font-weight:700;padding:8px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;}
+
+    /* FOOTER */
+    .footer{background:#0f1f17;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+    .footer-brand{font-size:13px;color:rgba(255,255,255,.4);}
+    .footer-brand span{color:#c9a35a;}
+    .footer-note{font-size:11px;color:rgba(255,255,255,.25);}
+  </style>
+</head>
+<body>
+
+<div class="top-banner">⚠ INTERN WERKDOCUMENT — Option A Sample Report · Niet versturen aan Lindy</div>
+
+<!-- GLOBAL HEADER -->
+<div class="g-header">
+  <div>
+    <div class="brand">Gusto<span>Casa</span> × TrendsOnFire</div>
+    <div class="brand-sub">Utrecht · Market Intelligence · Option A — Two-Tier Product</div>
+  </div>
+  <div class="hdr-right">
+    <strong>Februari 2026 · Q1 2026</strong>
+    Geleverd op 12 februari 2026
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PART 1: MONTHLY MARKET PULSE                       -->
+<!-- ════════════════════════════════════════════════════ -->
+<div class="part-header monthly">
+  <span class="part-badge">Maandelijks</span>
+  <div>
+    <div class="part-title">Monthly Market Pulse</div>
+    <div class="part-sub">3 elementen die elke maand worden bijgewerkt — geleverd op de 12e</div>
+  </div>
+  <div class="part-date">
+    <strong>Februari 2026</strong>
+    Gepubliceerd 12 feb 2026
+  </div>
+</div>
+
+<div class="monthly-body">
+<div class="inner">
+
+  <!-- 1.1 KPI STRIP -->
+  <div class="sec">
+    <div class="sec-label">Element 1 van 3 — Marktcijfers</div>
+    <div class="sec-title">Utrecht Woningmarkt — Kerncijfers Februari 2026</div>
+    <div class="sec-source">Bron: <a href="https://www.huisverkopen.nl/blog/woningmarkt-utrecht" target="_blank">huisverkopen.nl</a> (Kadaster/CBS) · Bijgewerkt op de 12e van elke maand</div>
+  </div>
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kv">€562K</div>
+      <div class="kl">Gem. transactieprijs</div>
+      <div class="ks">Feb 2026 · Kadaster</div>
+    </div>
+    <div class="kpi">
+      <div class="kv">8,2%</div>
+      <div class="kl">Gem. overbieding</div>
+      <div class="ks">Utrecht stad · Kadaster</div>
+    </div>
+    <div class="kpi">
+      <div class="kv">12 dgn</div>
+      <div class="kl">Gem. verkooptijd</div>
+      <div class="ks">Februari 2026</div>
+    </div>
+    <div class="kpi">
+      <div class="kv">+24%</div>
+      <div class="kl">Aanbodgroei JoJ</div>
+      <div class="ks">Meer woningen op markt</div>
+    </div>
+  </div>
+
+  <!-- 1.2 PRICE TREND CHART -->
+  <div class="sec">
+    <div class="sec-label">Element 2 van 3 — Prijsontwikkeling</div>
+    <div class="sec-title">Transactieprijstrend Utrecht — 6 Maanden</div>
+    <div class="sec-source">Bevestigd punt: <a href="https://www.huisverkopen.nl/blog/woningmarkt-utrecht" target="_blank">huisverkopen.nl</a> (Kadaster) Feb 2026 = €562.500 · Sep–Jan: schatting op NVM kwartaaldata</div>
+  </div>
+  <div class="chart-row two">
+    <div class="chart-card" style="grid-column:span 1">
+      <div class="ct">Prijsontwikkeling Utrecht (6 maanden)</div>
+      <div class="cs">Oranje punt = bevestigd (Kadaster) · Stippellijn = schatting op kwartaaldata · Elke maand voegt één bevestigd punt toe</div>
+      <div class="cw"><canvas id="priceChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="ct">Hypotheekrente — 10 jaar vast · April 2026</div>
+      <div class="cs">Bron: <a href="https://www.hypotheekrente.nl" target="_blank" style="color:var(--green);font-weight:600;">hypotheekrente.nl</a> · ECB depositorente: 2,0% (ongewijzigd mrt 2026) · Dagelijks bijgewerkt</div>
+      <table class="rate-tbl">
+        <thead><tr><th>Type</th><th>Rente</th><th>Opmerking</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Laagste — met NHG</strong></td><td><span class="big-rate">2,78%</span></td><td>ASN Bank</td></tr>
+          <tr><td>Marktbereik standaard</td><td><strong>3,75 – 4,0%+</strong></td><td>Zonder NHG</td></tr>
+          <tr><td>ECB depositorente</td><td><strong>2,0%</strong></td><td>Stabiel · Geen verlaging verwacht 2026</td></tr>
+          <tr><td>Rabobank 10jr (label A)</td><td><strong>3,87%</strong></td><td>Venn Hypotheken</td></tr>
+        </tbody>
+      </table>
+      <div class="rate-note">Rentes stabiel na daling 2024–2025. Kopers die nu vastleggen vermijden opwaarts risico.</div>
+    </div>
+  </div>
+
+  <!-- 1.3 LINKEDIN CARD -->
+  <div class="sec">
+    <div class="sec-label">Element 3 van 3 — LinkedIn</div>
+    <div class="sec-title">LinkedIn Card &amp; Post Template</div>
+    <div class="sec-source">Screenshot-ready kaart + copy-paste tekst in het Nederlands · Klaar voor publicatie op de 12e</div>
+  </div>
+  <div class="linkedin-box">
+    <div class="linkedin-icon">💼</div>
+    <div class="linkedin-text">
+      <strong>LinkedIn Card (screenshot-ready):</strong> Een vaste 1200px-brede kaart met alle kerncijfers, twee grafieken en hypotheekrente — klaar om te screenshotten en als afbeelding te posten. Zet de link naar het volledige rapport in de eerste reactie.<br>
+      <span style="font-size:11px;opacity:.7;margin-top:4px;display:block;">+ Klaar-voor-gebruik post tekst in het Nederlands met hashtags en de beste posttijd.</span>
+    </div>
+    <a href="linkedin-card.html" target="_blank" class="linkedin-link">Bekijk LinkedIn Card →</a>
+  </div>
+
+</div><!-- /inner -->
+</div><!-- /monthly-body -->
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PART 2: QUARTERLY DEEP INTELLIGENCE REPORT         -->
+<!-- ════════════════════════════════════════════════════ -->
+<div class="part-header quarterly">
+  <span class="part-badge">Kwartaal</span>
+  <div>
+    <div class="part-title">Quarterly Deep Intelligence Report</div>
+    <div class="part-sub">8 secties · Structurele marktanalyse · Geleverd eenmaal per kwartaal</div>
+  </div>
+  <div class="part-date">
+    <strong>Q1 2026</strong>
+    Gepubliceerd maart 2026
+  </div>
+</div>
+
+<div class="quarterly-body">
+<div class="inner">
+
+  <!-- Q.1 MARKET THERMOMETER -->
+  <div class="sec">
+    <div class="sec-label">Sectie 1 van 8 — Markttemperatuur</div>
+    <div class="sec-title">Utrecht Marktthermometer</div>
+    <div class="sec-source">Bron: NVM Regio Utrecht Q3 2025 · huisverkopen.nl Kadaster feb 2026</div>
+  </div>
+  <div class="thermo">
+    <div class="th-left">
+      <div class="th-lbl">Utrecht Markttemperatuur Q1 2026</div>
+      <div class="track"><div class="needle"></div></div>
+      <div class="tscale"><span>Koel</span><span>Warm</span><span>Hot</span><span>Zeer Hot</span></div>
+      <div class="tstatus">🔥 HOT</div>
+    </div>
+    <div class="th-right">
+      <strong>79,7% van de Utrechtse woningen verkoopt boven de vraagprijs</strong> (NVM Q3 2025). Gemiddelde overbieding <strong>8,2%</strong> — kopers concurreren fors, maar de extremen van 2022 zijn achter ons. Het aanbod groeide met <strong>+24%</strong> ten opzichte van vorig jaar. Utrecht blijft een uitgesproken verkopersmarkt, maar timing en presentatie zijn beslissender dan in de krappe jaren 2021–2022.
+    </div>
+  </div>
+
+  <!-- Q.2 NEIGHBOURHOOD -->
+  <div class="sec">
+    <div class="sec-label">Sectie 2 van 8 — Wijkprijzen</div>
+    <div class="sec-title">Transactieprijzen per Wijk — Utrecht · €/m²</div>
+    <div class="sec-source">Bron: NVM kwartaaldata Q4 2025 · Bevestigd: Wittevrouwen &gt;€8.500/m² · Overvecht/Kanaleneiland ~€4.150/m² · Overige wijken: schatting op NVM-bereik</div>
+  </div>
+  <div class="illus">⚠ Schattingen op NVM kwartaaldata — exacte waarden via NVM-abonnement</div>
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="ct">€ per m² — Utrecht wijken · Q4 2025</div>
+      <div class="cs">Horizontale balken = mediaan transactieprijs per m² per wijk · Groen = bevestigd · Blauw = NVM-schatting</div>
+      <div class="cw tall"><canvas id="neighChart"></canvas></div>
+      <div class="insight">Wittevrouwen en Binnenstad blijven de duurste wijken (>€7.500/m²). Overvecht en Kanaleneiland zijn het meest betaalbaar (~€4.000-4.200/m²). Het prijsverschil tussen duurste en goedkoopste wijk bedraagt meer dan 2×. Starters richten zich steeds vaker op Lunetten en Leidsche Rijn als toegankelijk alternatief.</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.3 HISTORICAL PRICES -->
+  <div class="sec">
+    <div class="sec-label">Sectie 3 van 8 — Historische Prijsontwikkeling</div>
+    <div class="sec-title">Gemiddelde Transactieprijs Utrecht 2020–Q1 2026</div>
+    <div class="sec-source">Bron: NVM/CBS jaargemiddelden · 2026 Q1: bevestigd €562.500 (Kadaster) · 2020–2025: NVM Utrecht jaargemiddelden en CBS prijsindex</div>
+  </div>
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="ct">Historische prijsontwikkeling Utrecht — 2020 tot Q1 2026</div>
+      <div class="cs">Piek 2022 → correctie 2023 → herstel 2024–2026. Totale groei: +53% ten opzichte van 2020. Q1 2026 = bevestigd Kadasterpunt.</div>
+      <div class="cw short"><canvas id="histChart"></canvas></div>
+      <div class="insight">De algemene trend is bevestigd door CBS en NVM: Utrecht bereikte een piek in 2022, daalde licht in 2023 en herstelde sterk in 2024–2025. Q1 2026 (€562K) bevestigt de herstelkoers. Totale groei 2020–2026: +53%.</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.4 SEASONAL TIMING -->
+  <div class="sec">
+    <div class="sec-label">Sectie 4 van 8 — Verkooptiming</div>
+    <div class="sec-title">Beste Verkoopmaand — % van Vraagprijs Gerealiseerd</div>
+    <div class="sec-source">Bron: NVM seizoensanalyse · Jaarpatroon — structureel stabiel · Wijzigt niet per kwartaal</div>
+  </div>
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="ct">% van vraagprijs per verkoopmaand · NVM patroon</div>
+      <div class="cs">Oranje = lente piek (mrt–jun) · Licht oranje = herfst piek (sep–okt) · Grijs = rustige periodes</div>
+      <div class="cw"><canvas id="seasonChart"></canvas></div>
+    </div>
+    <div class="signal" style="margin-bottom:0;align-self:start;">
+      <div class="sig-lbl">💡 Marktsignaal Q1 2026</div>
+      <div class="sig-head">LENTE = BESTE MOMENT OM TE VERKOPEN</div>
+      <div class="sig-body">
+        NVM-data bevestigt: <strong>maart–juni</strong> realiseert structureel de hoogste opbrengst — tot <strong>20 procentpunt</strong> beter dan december. Met +24% meer aanbod in 2026 is vroeg in het seizoen starten extra belangrijk.<br><br>
+        <strong>Tweede goede periode: september–oktober</strong> — bijna net zo sterk als het voorjaar. Daarna daalt de marktactiviteit sterk richting december.<br><br>
+        <span style="font-size:11px;opacity:.8">Advies voor GustoCasa-klanten: begeleid verkopers richting een marktintroductie vóór 15 maart óf vóór 1 september.</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.5 PRICE BANDS -->
+  <div class="sec">
+    <div class="sec-label">Sectie 5 van 8 — Prijssegmenten</div>
+    <div class="sec-title">Transactieverdeling per Prijssegment · Utrecht Q4 2025</div>
+    <div class="sec-source">Bron: NVM kwartaaldata Q4 2025 · Verdeling is een schatting op NVM-bereikdata voor Utrecht</div>
+  </div>
+  <div class="illus">⚠ Illustratieve verdeling — exacte % vereisen NVM-abonnement</div>
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="ct">Aandeel transacties per prijssegment (%)</div>
+      <div class="cs">Horizontale balk = % van totaal aantal verkopen in Utrecht Q4 2025 (schatting)</div>
+      <div class="cw"><canvas id="bandChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="ct">Verkooptijd (dagen) per prijssegment</div>
+      <div class="cs">Snellere verkoop = meer competitie in dat segment · €400–600K is het meest comptetitieve bereik</div>
+      <div class="cw"><canvas id="daysChart"></canvas></div>
+      <div class="insight" style="font-size:11.5px">GustoCasa opereert primair in het €400–650K-segment — het meest actieve en comptetitieve deel van de Utrechtse markt.</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.6 ENERGY LABELS -->
+  <div class="sec">
+    <div class="sec-label">Sectie 6 van 8 — Energielabel Premium</div>
+    <div class="sec-title">Prijsverschil per Energielabel · Utrecht</div>
+    <div class="sec-source">Bron: CBS Energielabels dataset · PBL Planbureau · Richting bevestigd · % zijn schattingen op landelijke CBS-data</div>
+  </div>
+  <div class="chart-row two">
+    <div class="chart-card">
+      <div class="ct">Gemiddeld prijsverschil vs label C (baseline = 0%)</div>
+      <div class="cs">CBS/PBL bevestigt richting: label A substantieel hoger dan G · Exacte % zijn schattingen</div>
+      <div class="cw"><canvas id="energyChart"></canvas></div>
+    </div>
+    <div class="chart-card" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="ct">Energielabel urgentie — EU 2033 deadline</div>
+        <div class="cs">EU verplichting: alle woningen label C of beter verplicht per 2033 (hypotheekeis verwacht)</div>
+      </div>
+      <div style="background:#fff7ed;border:1.5px solid #fb923c;border-radius:8px;padding:16px;margin-top:12px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#c2410c;margin-bottom:6px;">Risico voor verkopers</div>
+        <div style="font-size:13px;color:#9a3412;line-height:1.7">Woningen met energielabel E, F of G <strong>verliezen tot 25% in waarde</strong> tegen 2033. Kopers prijzen dit risico al in. GustoCasa kan dit als concrete verkoopargumentatie gebruiken om verkopers te overtuigen nu te investeren.</div>
+      </div>
+      <div style="background:#f0fdf4;border:1px solid #6ee7b7;border-radius:8px;padding:12px;margin-top:10px;">
+        <div style="font-size:11.5px;color:#166534;line-height:1.6"><strong>Merwedekanaalzone let op:</strong> Nieuwbouw in dit gebied krijgt verplicht label A+++ — zet bestaand aanbod in rest van Utrecht structureel onder druk op relatieve waarde.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.7 NEW CONSTRUCTION -->
+  <div class="sec">
+    <div class="sec-label">Sectie 7 van 8 — Nieuwbouwpipeline</div>
+    <div class="sec-title">Nieuwbouwprojecten Utrecht 2026–2027</div>
+    <div class="sec-source">Bron: Gemeente Utrecht woningbouwmonitor · utrecht.nl/woningbouw · Projecten zijn real — eenheidstelling te verifiëren</div>
+  </div>
+  <div class="chart-card" style="margin-bottom:24px;">
+    <table class="nc-tbl">
+      <thead><tr><th>Project</th><th>Woningen</th><th>Verwachte oplevering</th><th>Status</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Merwedekanaalzone Fase 1</strong></td>
+          <td>~1.200</td>
+          <td>Q3 2026</td>
+          <td><span class="nc-badge nc-soon">Binnenkort</span></td>
+          <td style="font-size:12px;color:var(--sub)">Largest pipeline · verplicht A+++ · drukt bestaand aanbod</td>
+        </tr>
+        <tr>
+          <td><strong>Leidsche Rijn Centrum</strong></td>
+          <td>~850</td>
+          <td>Q4 2026</td>
+          <td><span class="nc-badge nc-soon">Binnenkort</span></td>
+          <td style="font-size:12px;color:var(--sub)">Middensegment · trekt starters uit bestaande bouw</td>
+        </tr>
+        <tr>
+          <td><strong>Beurskwartier</strong></td>
+          <td>~340</td>
+          <td>Q1 2027</td>
+          <td><span class="nc-badge nc-2027">2027</span></td>
+          <td style="font-size:12px;color:var(--sub)">Binnenstad locatie · hogere prijsklasse</td>
+        </tr>
+        <tr>
+          <td><strong>Rotsoord Fase 2</strong></td>
+          <td>~280</td>
+          <td>Q2 2027</td>
+          <td><span class="nc-badge nc-2027">2027</span></td>
+          <td style="font-size:12px;color:var(--sub)">Binnenstad nabij · energielabel A verplicht</td>
+        </tr>
+        <tr>
+          <td><strong>Defensieterrein</strong></td>
+          <td>~680</td>
+          <td>Q3 2027</td>
+          <td><span class="nc-badge nc-2027">2027</span></td>
+          <td style="font-size:12px;color:var(--sub)">Groter project · mix koop + huur</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="gap-note" style="margin-top:12px"><strong>Verificatie aanbevolen:</strong> Bezoek <strong>utrecht.nl/woningbouw → Woningbouwmonitor</strong> voor actuele eenheidstellingen en opleverdata. Gratis publieke pagina van Gemeente Utrecht.</div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.8 ECB SCENARIOS -->
+  <div class="sec">
+    <div class="sec-label">Sectie 8 van 8 — ECB Scenario's</div>
+    <div class="sec-title">Prijsontwikkeling Utrecht 2026–2028 · Drie Scenario's</div>
+    <div class="sec-source">ECB depositorente: 2,0% (bevestigd mrt 2026 · ongewijzigd) · Startprijs €562K bevestigd · Scenario's zijn projecties</div>
+  </div>
+  <div class="illus">⚠ Scenario-projecties — richting bevestigd, specifieke uitkomsten zijn illustratief</div>
+  <div class="chart-row full">
+    <div class="chart-card">
+      <div class="ct">Drie scenario's voor gemiddelde transactieprijs Utrecht 2026–2028</div>
+      <div class="cs">Groen = basisscenario (rente stabiel) · Blauw = bullscenario (ECB verlaagt) · Rood = bearscenario (ECB verhoogt / externe schok)</div>
+      <div class="cw short"><canvas id="scenChart"></canvas></div>
+      <div class="insight">
+        <strong>Basisscenario (meest waarschijnlijk):</strong> ECB houdt rente stabiel in 2026. Woningprijzen groeien gematigd met 3–4% per jaar richting ~€610K eind 2028.<br>
+        <strong>Bullscenario:</strong> ECB verlaagt in H2 2026 → hypotheekrente daalt → vraag stijgt → €655K scenario.<br>
+        <strong>Bearscenario:</strong> Externe schok (recessie, geopolitiek) of onverwachte renteverhoging → correctie richting €515K.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Q.9 BENCHMARKING PLACEHOLDER -->
+  <div class="sec">
+    <div class="sec-label">Bonus Sectie — GustoCasa Performance</div>
+    <div class="sec-title">GustoCasa vs Utrechtse Markt — Benchmarking</div>
+    <div class="sec-source">Vereist: GustoCasa transactiedata per kwartaal</div>
+  </div>
+  <div class="placeholder">
+    <div class="placeholder-icon">📊</div>
+    <div class="placeholder-title">Deze sectie wordt geactiveerd zodra GustoCasa haar transactiedata deelt</div>
+    <div class="placeholder-body">
+      We vergelijken GustoCasa's eigen prestaties direct met het Utrecht marktgemiddelde — overbieding, verkooptijd, prijs per m². Concrete data voor elke listing-pitch.
+    </div>
+    <div class="placeholder-fields">
+      <div style="font-size:11px;font-weight:700;color:var(--sub);margin-bottom:8px;text-transform:uppercase;letter-spacing:.07em;">Wat GustoCasa per kwartaal aanlevert (15 min werk):</div>
+      <ul>
+        <li>Adres, vraagprijs, verkoopprijs</li>
+        <li>Datum online Funda + datum koopovereenkomst</li>
+        <li>Woningoppervlak in m²</li>
+      </ul>
+      <div style="font-size:11px;color:#9ca3af;margin-top:10px;">Wij berekenen: overbieding % · verkooptijd · prijs/m² — en benchmarken vs markt</div>
+    </div>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- 90-DAY RECOMMENDATIONS -->
+  <div class="sec">
+    <div class="sec-label">Aanbevelingen Q2 2026</div>
+    <div class="sec-title">90-Dagen Actieplan voor GustoCasa</div>
+  </div>
+  <div class="chart-row three">
+    <div class="chart-card">
+      <div style="font-size:22px;margin-bottom:8px;">🌱</div>
+      <div class="ct">Nu: Lente Verkoop Window</div>
+      <div style="font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:8px">Stuur verkopers nu door. Maart–juni is historisch de sterkste periode. Met +24% meer aanbod in 2026 is wachten kostbaarder dan ooit — kopers hebben meer keuze in de zomer.</div>
+    </div>
+    <div class="chart-card">
+      <div style="font-size:22px;margin-bottom:8px;">⚡</div>
+      <div class="ct">Q2: Energielabel Conversaties</div>
+      <div style="font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:8px">Gebruik het energielabel als verkoopargument. Woningen met label A realiseren ~18% meer. De EU 2033-deadline is nu urgenter dan ooit. Concrete data om bezwaren van kopers te weerleggen én verkopers te adviseren over verduurzaming.</div>
+    </div>
+    <div class="chart-card">
+      <div style="font-size:22px;margin-bottom:8px;">🏗️</div>
+      <div class="ct">Q3: Nieuwbouw Awareness</div>
+      <div style="font-size:12.5px;color:var(--sub);line-height:1.7;margin-top:8px">Merwedekanaalzone Fase 1 wordt Q3 2026 opgeleverd (+1.200 woningen). Dit vergroot het aanbod sterk. Positioneer bestaand aanbod vóór deze oplevering — nieuwbouw trekt starters weg uit het bestaande segment.</div>
+    </div>
+  </div>
+
+</div><!-- /inner -->
+</div><!-- /quarterly-body -->
+
+<div class="footer">
+  <div class="footer-brand">Gusto<span>Casa</span> × TrendsOnFire</div>
+  <div class="footer-note">Data: Kadaster/CBS via huisverkopen.nl · NVM kwartaaldata · hypotheekrente.nl · Gemeente Utrecht woningbouwmonitor · 2 april 2026</div>
+</div>
+
+<script>
+const C_NAVY='#1a2340',C_ORANGE='#e8622a',C_GREEN='#1e7c4e',C_GOLD='#c9a35a';
+function rgba(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`;}
+const grid='rgba(0,0,0,0.06)';
+
+/* 1. PRICE TREND — monthly */
+new Chart(document.getElementById('priceChart'),{type:'line',data:{
+  labels:['Sep','Okt','Nov','Dec','Jan','Feb'],
+  datasets:[
+    {label:'Bevestigd (Kadaster)',data:[null,null,null,null,null,562500],borderColor:C_ORANGE,backgroundColor:rgba(C_ORANGE,0.07),borderWidth:3,tension:.35,fill:true,pointBackgroundColor:[C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_ORANGE],pointRadius:[3,3,3,3,3,9],pointBorderColor:'#fff',pointBorderWidth:2},
+    {label:'Schatting (kwartaaldata)',data:[520000,525000,530000,540000,550000,null],borderColor:rgba(C_NAVY,.45),borderDash:[5,4],backgroundColor:'transparent',borderWidth:2,tension:.35,pointBackgroundColor:rgba(C_NAVY,.4),pointRadius:3,pointBorderColor:'#fff',pointBorderWidth:1}
+  ]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:10},boxWidth:10,padding:8}}},scales:{y:{grid:{color:grid},beginAtZero:false,min:505000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K',font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+/* 2. NEIGHBOURHOOD — quarterly */
+const neighLabels=['Kanaleneiland','Overvecht','Lunetten','Leidsche Rijn','Lombok','Binnenstad','Wittevrouwen'];
+const neighData=[4000,4150,5200,5900,6600,7800,8500];
+const neighConfirmed=[false,true,false,false,false,false,true];
+new Chart(document.getElementById('neighChart'),{type:'bar',data:{
+  labels:neighLabels,
+  datasets:[{data:neighData,backgroundColor:neighConfirmed.map(c=>c?rgba(C_GREEN,.8):rgba(C_NAVY,.5)),borderRadius:4}]
+},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'€'+ctx.raw.toLocaleString('nl-NL')+'/m²'+(neighConfirmed[ctx.dataIndex]?' (bevestigd)':' (schatting)')}}},scales:{x:{grid:{color:grid},ticks:{callback:v=>'€'+(v/1000).toFixed(1)+'K',font:{size:10}}},y:{grid:{display:false},ticks:{font:{size:11}}}}}});
+
+/* 3. HISTORICAL — quarterly */
+new Chart(document.getElementById('histChart'),{type:'line',data:{
+  labels:['2020','2021','2022','2023','2024','2025','Q1 2026'],
+  datasets:[{data:[367,415,462,418,495,549,562],borderColor:C_NAVY,backgroundColor:rgba(C_NAVY,.07),borderWidth:2.5,tension:.3,fill:true,pointBackgroundColor:[C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_ORANGE],pointRadius:[4,4,4,4,4,4,8],pointBorderColor:'#fff',pointBorderWidth:2}]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:grid},beginAtZero:false,min:340,ticks:{callback:v=>'€'+(v)+'K',font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+/* 4. SEASONAL — quarterly */
+const sp=[97,100,108,112,110,106,98,93,104,106,101,91];
+new Chart(document.getElementById('seasonChart'),{type:'bar',data:{
+  labels:['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'],
+  datasets:[{data:sp,backgroundColor:sp.map((_,i)=>i>=2&&i<=5?C_ORANGE:i>=8&&i<=9?rgba(C_ORANGE,.5):rgba(C_NAVY,.18)),borderRadius:3}]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw}% van vraagprijs`}}},scales:{y:{grid:{color:grid},min:82,max:116,ticks:{callback:v=>v+'%',font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+/* 5. PRICE BANDS — quarterly [ILLUSTRATIVE] */
+new Chart(document.getElementById('bandChart'),{type:'bar',data:{
+  labels:['<€300K','€300–400K','€400–500K','€500–600K','€600–750K','>€750K'],
+  datasets:[{data:[4,11,23,28,20,14],backgroundColor:['#6b7280','#6b7280',C_ORANGE,C_ORANGE,rgba(C_NAVY,.6),rgba(C_NAVY,.4)],borderRadius:4}]
+},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw}% van transacties`}}},scales:{x:{grid:{color:grid},ticks:{callback:v=>v+'%',font:{size:10}}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+/* 6. DAYS BY BAND — quarterly */
+new Chart(document.getElementById('daysChart'),{type:'bar',data:{
+  labels:['<€300K','€300–400K','€400–500K','€500–600K','€600–750K','>€750K'],
+  datasets:[{data:[18,14,10,11,15,22],backgroundColor:['#9ca3af','#6b7280',C_ORANGE,C_ORANGE,rgba(C_NAVY,.6),rgba(C_NAVY,.4)],borderRadius:4}]
+},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} dagen gem.`}}},scales:{x:{grid:{color:grid},min:0,ticks:{callback:v=>v+'d',font:{size:10}}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+/* 7. ENERGY LABELS — quarterly */
+new Chart(document.getElementById('energyChart'),{type:'bar',data:{
+  labels:['A (best)','B','C (basis)','D','E','F','G (slechtst)'],
+  datasets:[{data:[18,9,0,-6,-12,-18,-25],backgroundColor:[C_GREEN,rgba(C_GREEN,.7),'#9ca3af',rgba(233,99,42,.4),rgba(233,99,42,.6),C_ORANGE,'#b91c1c'],borderRadius:3}]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw>0?'+':''}${ctx.raw}% vs label C`}}},scales:{y:{grid:{color:grid},ticks:{callback:v=>`${v>0?'+':''}${v}%`,font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:11}}}}}});
+
+/* 8. ECB SCENARIOS — quarterly */
+const scenLabels=['Q1 2026','Q2 2026','Q3 2026','Q4 2026','Q1 2027','Q2 2027','Q3 2027','Q4 2027','Q1 2028'];
+new Chart(document.getElementById('scenChart'),{type:'line',data:{
+  labels:scenLabels,
+  datasets:[
+    {label:'Basisscenario (rente stabiel)',data:[562,565,570,576,583,590,598,605,612],borderColor:C_GREEN,backgroundColor:'transparent',borderWidth:2.5,tension:.3,pointBackgroundColor:C_GREEN,pointRadius:3,pointBorderColor:'#fff',pointBorderWidth:1},
+    {label:'Bullscenario (ECB verlaagt)',data:[562,568,577,588,600,612,624,638,655],borderColor:'#3b82f6',backgroundColor:'transparent',borderWidth:2,borderDash:[0,0],tension:.3,pointBackgroundColor:'#3b82f6',pointRadius:3,pointBorderColor:'#fff',pointBorderWidth:1},
+    {label:'Bearscenario (externe schok)',data:[562,555,545,535,526,521,518,516,515],borderColor:'#c0392b',backgroundColor:'transparent',borderWidth:2,borderDash:[4,3],tension:.3,pointBackgroundColor:'#c0392b',pointRadius:3,pointBorderColor:'#fff',pointBorderWidth:1}
+  ]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:10},boxWidth:10,padding:8}}},scales:{y:{grid:{color:grid},beginAtZero:false,min:490,ticks:{callback:v=>'€'+(v)+'K',font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}});
+</script>
+</body>
+</html>
