@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Go-To-Market: Real Estate Intelligence NL — TrendsOnFire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 80px; }
+    .wrapper { max-width: 1020px; margin: 0 auto; }
+
+    /* HEADER */
+    .page-header { background: #0f2340; border-radius: 14px; padding: 32px 36px; margin-bottom: 32px; color: white; }
+    .page-header h1 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .page-header .sub { font-size: 13px; color: rgba(255,255,255,.5); }
+    .page-header .meta { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 8px; }
+
+    /* SECTION HEADINGS */
+    .section-title { font-size: 13px; font-weight: 800; color: #0f2340; text-transform: uppercase; letter-spacing: .07em; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+
+    /* CARD */
+    .card { background: white; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.07); padding: 22px 26px; margin-bottom: 16px; }
+    .card h3 { font-size: 15px; font-weight: 700; color: #0f2340; margin-bottom: 6px; }
+    .card p, .card li { font-size: 13px; color: #374151; }
+
+    /* VERDICT BANNER */
+    .verdict { background: #0f2340; border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; color: white; }
+    .verdict .v-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #e8622a; margin-bottom: 8px; }
+    .verdict h2 { font-size: 18px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+    .verdict p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.65; }
+
+    /* SEGMENT GRID */
+    .segment-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 16px; }
+    @media(max-width:760px){ .segment-grid { grid-template-columns: 1fr; } }
+    .segment-card { background: white; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.07); overflow: hidden; }
+    .segment-card .sc-head { padding: 16px 20px 12px; }
+    .segment-card .sc-head h3 { font-size: 14px; font-weight: 800; color: #0f2340; }
+    .segment-card .sc-head .sc-sub { font-size: 12px; color: #6b7280; margin-top: 2px; }
+    .segment-card .sc-body { padding: 0 20px 18px; }
+    .segment-card .sc-body p { font-size: 12.5px; color: #374151; margin-bottom: 10px; line-height: 1.55; }
+    .segment-card .sc-pros, .segment-card .sc-cons { list-style: none; margin-bottom: 10px; }
+    .segment-card .sc-pros li, .segment-card .sc-cons li { font-size: 12px; color: #374151; padding: 2px 0 2px 18px; position: relative; }
+    .segment-card .sc-pros li::before { content: '✓'; position: absolute; left: 0; color: #1e7c4e; font-weight: 700; }
+    .segment-card .sc-cons li::before { content: '✗'; position: absolute; left: 0; color: #c0392b; font-weight: 700; }
+    .segment-card .sc-verdict { font-size: 11px; font-weight: 700; padding: 8px 20px; text-transform: uppercase; letter-spacing: .06em; }
+    .seg-go   .sc-head { border-top: 4px solid #1e7c4e; }
+    .seg-go   .sc-verdict { background: #ecfdf5; color: #065f46; }
+    .seg-wait .sc-head { border-top: 4px solid #f59e0b; }
+    .seg-wait .sc-verdict { background: #fffbeb; color: #92400e; }
+    .seg-no   .sc-head { border-top: 4px solid #c0392b; }
+    .seg-no   .sc-verdict { background: #fef2f2; color: #991b1b; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #f8fafc; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #6b7280; padding: 10px 14px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    tbody td { padding: 11px 14px; border-bottom: 1px solid #f3f4f6; color: #374151; vertical-align: top; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: #f9fafb; }
+    strong { font-weight: 700; }
+
+    /* PHASE BLOCKS */
+    .phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 16px; }
+    @media(max-width:700px){ .phase-grid { grid-template-columns: 1fr; } }
+    .phase { background: white; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,.07); padding: 18px 20px; }
+    .phase .ph-label { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #e8622a; margin-bottom: 6px; }
+    .phase h4 { font-size: 13px; font-weight: 700; color: #0f2340; margin-bottom: 8px; }
+    .phase ul { list-style: none; }
+    .phase ul li { font-size: 12px; color: #374151; padding: 3px 0 3px 14px; position: relative; }
+    .phase ul li::before { content: '→'; position: absolute; left: 0; color: #e8622a; }
+    .phase .ph-metric { margin-top: 12px; padding-top: 10px; border-top: 1px solid #f3f4f6; font-size: 11px; font-weight: 600; color: #6b7280; }
+    .phase .ph-metric strong { color: #0f2340; }
+
+    /* KPI ROW */
+    .kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 16px; }
+    @media(max-width:700px){ .kpi-row { grid-template-columns: repeat(2,1fr); } }
+    .kpi { background: white; border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 5px rgba(0,0,0,.07); border-bottom: 3px solid #e8622a; }
+    .kpi .kpi-val { font-size: 22px; font-weight: 800; color: #0f2340; letter-spacing: -.5px; }
+    .kpi .kpi-lbl { font-size: 11px; color: #6b7280; margin-top: 3px; }
+
+    /* OUTREACH TABLE */
+    .channel-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; }
+    .ch-primary { background: #dcfce7; color: #166534; }
+    .ch-secondary { background: #dbeafe; color: #1e40af; }
+    .ch-tertiary { background: #f3f4f6; color: #374151; }
+
+    /* CALLOUT */
+    .callout { border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; line-height: 1.6; }
+    .callout-blue { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e3a5f; }
+    .callout-orange { background: #fff7ed; border-left: 4px solid #e8622a; color: #7c2d12; }
+    .callout-green { background: #f0fdf4; border-left: 4px solid #1e7c4e; color: #14532d; }
+
+    /* REVENUE TABLE */
+    .rev-highlight { background: #fff7ed; font-weight: 700; }
+
+    /* HOME LINK */
+    .home { display: inline-block; margin-top: 36px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 11.5px; font-family: monospace; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <h1>Go-To-Market Plan — Real Estate Market Intelligence · Netherlands</h1>
+    <div class="sub">TrendsOnFire · Internal Strategy Document · Not for distribution</div>
+    <div class="meta">Created April 2026 · Product: Monthly market intelligence reports for Dutch real estate agencies</div>
+  </div>
+
+  <!-- MARKET OPPORTUNITY -->
+  <div class="section-title">Market Opportunity</div>
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-val">~7,500</div>
+      <div class="kpi-lbl">NVM-registered agencies in NL</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">~4,200</div>
+      <div class="kpi-lbl">Boutique agencies (1–5 agents) — primary target</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">€295</div>
+      <div class="kpi-lbl">Monthly price point per boutique client</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">€1.5M</div>
+      <div class="kpi-lbl">ARR at 1% market penetration (42 clients)</div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>Why real estate agencies specifically?</strong> Every Dutch real estate agent needs local market data for three recurring jobs: (1) winning listing meetings against competitors, (2) advising buyers on price and timing, (3) maintaining a professional LinkedIn presence. They currently do this manually — pulling from NVM, Funda, CBS, and their own memory. TrendsOnFire replaces 4–6 hours of monthly research with one automated report delivered on the 12th. The ROI case is immediate and unambiguous.
+  </div>
+
+  <!-- SEGMENT ANALYSIS -->
+  <div class="section-title">Segment Analysis — Which Agency to Target First?</div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="v-label">Recommendation</div>
+    <h2>Start with boutique independents (1–5 agents). Scale to mid-size. Avoid franchises until year 2.</h2>
+    <p>The boutique segment has the fastest sales cycle (days, not months), the highest pain intensity (owner does everything personally), and the lowest friction to close. One LinkedIn message + one call is enough. At €295/month, the decision is beneath the level of deliberation for any agency earning €200K+ per year. Build 15–20 proof-of-concept clients fast, then use those case studies to move up-market to mid-size agencies at €495–695/month.</p>
+  </div>
+
+  <div class="segment-grid">
+    <!-- BOUTIQUE -->
+    <div class="segment-card seg-go">
+      <div class="sc-head">
+        <h3>🎯 Boutique Independents</h3>
+        <div class="sc-sub">1–5 agents · €150K–€400K revenue</div>
+      </div>
+      <div class="sc-body">
+        <p>Owner-operated agencies in single cities. High personal brand focus, active on LinkedIn. Owner makes all decisions. Pain is acute — they research everything manually.</p>
+        <ul class="sc-pros">
+          <li>Owner = decision maker, no committee</li>
+          <li>€295/mo is trivial vs €6K per instruction</li>
+          <li>High personal brand motivation</li>
+          <li>Fast close: 1 week from first contact</li>
+          <li>4,200+ in NL — large pool</li>
+          <li>GustoCasa is the proven prototype</li>
+        </ul>
+        <ul class="sc-cons">
+          <li>Lower contract value per client</li>
+          <li>Higher churn if market slows</li>
+        </ul>
+        <div class="sc-verdict">✓ Start here — Phase 1</div>
+      </div>
+    </div>
+
+    <!-- MID-SIZE -->
+    <div class="segment-card seg-wait">
+      <div class="sc-head">
+        <h3>📈 Mid-Size Independents</h3>
+        <div class="sc-sub">5–20 agents · €400K–€2M revenue</div>
+      </div>
+      <div class="sc-body">
+        <p>Professional agencies with multiple agents, often NVM board members or regional market leaders. Marketing-conscious, data-literate. Owner still decides but may involve a manager.</p>
+        <ul class="sc-pros">
+          <li>Higher contract value (€495–695/mo)</li>
+          <li>Multiple agents = more product value</li>
+          <li>Budget for tools and marketing</li>
+          <li>Referenceable for next tier</li>
+        </ul>
+        <ul class="sc-cons">
+          <li>2–4 week sales cycle</li>
+          <li>May request customisation</li>
+          <li>Smaller pool (~800 in NL)</li>
+        </ul>
+        <div class="sc-verdict">→ Phase 2 — after 10 boutique clients</div>
+      </div>
+    </div>
+
+    <!-- FRANCHISE -->
+    <div class="segment-card seg-no">
+      <div class="sc-head">
+        <h3>🏢 Franchise Networks</h3>
+        <div class="sc-sub">Makelaarsland, ERA, Century21, Huis & Erf</div>
+      </div>
+      <div class="sc-body">
+        <p>National franchise networks with hundreds of affiliated offices. High potential contract value but enterprise sales dynamics. Often have existing data tool partnerships or internal research teams.</p>
+        <ul class="sc-cons">
+          <li>6–18 month sales cycle</li>
+          <li>Multiple decision makers, procurement</li>
+          <li>Existing PropTech tool contracts</li>
+          <li>May want white-label or API</li>
+          <li>Hard to reach without warm intro</li>
+        </ul>
+        <ul class="sc-pros">
+          <li>€5K–25K/month potential deal</li>
+        </ul>
+        <div class="sc-verdict">✗ Not yet — Year 2 with case studies</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CITY ROLLOUT -->
+  <div class="section-title">City-by-City Rollout Strategy</div>
+
+  <div class="callout callout-green">
+    <strong>Key principle:</strong> Build deep in one city before expanding. The report is most valuable when the data is hyper-local and the agent knows TrendsOnFire understands their specific market. Start with Utrecht (proof of concept already live), then expand market by market. Each new city requires ~4 hours to build the data layer; the report template reuses automatically.
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Phase</th>
+          <th>Boutique Agencies (est.)</th>
+          <th>Avg Transaction Price</th>
+          <th>Market Signal</th>
+          <th>Why This Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Utrecht</strong></td>
+          <td><span style="background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Now</span></td>
+          <td>~180</td>
+          <td>€521K</td>
+          <td>Very competitive, high overbid</td>
+          <td>Data layer built, GustoCasa is live proof-of-concept</td>
+        </tr>
+        <tr>
+          <td><strong>Amsterdam</strong></td>
+          <td><span style="background:#dbeafe;color:#1e40af;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Month 2–3</span></td>
+          <td>~420</td>
+          <td>€620K</td>
+          <td>Highest prices, most competitive</td>
+          <td>Largest pool, highest willingness to pay, intense competition drives agent anxiety</td>
+        </tr>
+        <tr>
+          <td><strong>Den Haag</strong></td>
+          <td><span style="background:#dbeafe;color:#1e40af;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Month 3–4</span></td>
+          <td>~280</td>
+          <td>€430K</td>
+          <td>Expat demand, international buyers</td>
+          <td>Expat segment is high value, agents need English-language materials</td>
+        </tr>
+        <tr>
+          <td><strong>Rotterdam</strong></td>
+          <td><span style="background:#f3f4f6;color:#374151;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Month 4–5</span></td>
+          <td>~310</td>
+          <td>€380K</td>
+          <td>Fast-rising market, neighbourhood divergence</td>
+          <td>High neighbourhood variation = high report value; strong boutique agency culture</td>
+        </tr>
+        <tr>
+          <td><strong>Eindhoven</strong></td>
+          <td><span style="background:#f3f4f6;color:#374151;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Month 5–6</span></td>
+          <td>~140</td>
+          <td>€410K</td>
+          <td>ASML tech corridor, expat demand</td>
+          <td>Fast-growing market, international buyer base, limited local data tools</td>
+        </tr>
+        <tr>
+          <td><strong>Groningen / Haarlem / Leiden</strong></td>
+          <td><span style="background:#f3f4f6;color:#374151;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;">Month 6+</span></td>
+          <td>~90–130 each</td>
+          <td>€310K–€440K</td>
+          <td>University cities, tight supply</td>
+          <td>University city dynamics mirror Utrecht well; easy data layer adaptation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- OUTREACH STRATEGY -->
+  <div class="section-title">Outreach Strategy — How to Reach Boutique Agencies</div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <table>
+      <thead>
+        <tr><th>Channel</th><th>Priority</th><th>Approach</th><th>Expected Response Rate</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>LinkedIn DM</strong></td>
+          <td><span class="channel-tag ch-primary">Primary</span></td>
+          <td>Personal note referencing their recent LinkedIn post + link to live market dashboard for their city. Short, specific, no sales language.</td>
+          <td>15–25% reply rate</td>
+        </tr>
+        <tr>
+          <td><strong>Direct email</strong></td>
+          <td><span class="channel-tag ch-primary">Primary</span></td>
+          <td>Personalised email (like the Lindy template) with specific data point about their market. Include links to sample report + proposal.</td>
+          <td>8–15% reply rate</td>
+        </tr>
+        <tr>
+          <td><strong>Funda.nl agency list</strong></td>
+          <td><span class="channel-tag ch-secondary">Source</span></td>
+          <td>All NVM agencies with contact info are listed on Funda. Filter by city and agency size. Primary prospecting database.</td>
+          <td>N/A — data source</td>
+        </tr>
+        <tr>
+          <td><strong>NVM directory</strong></td>
+          <td><span class="channel-tag ch-secondary">Source</span></td>
+          <td>Full registry of registered makelaars. Available at nvm.nl. Cross-reference with LinkedIn to find active/social agents.</td>
+          <td>N/A — data source</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn content (inbound)</strong></td>
+          <td><span class="channel-tag ch-secondary">Secondary</span></td>
+          <td>Post monthly Utrecht market highlights on TrendsOnFire LinkedIn. Tag local agents. Demonstrate product quality publicly — agents come to you.</td>
+          <td>Builds over 3–6 months</td>
+        </tr>
+        <tr>
+          <td><strong>Referral from existing clients</strong></td>
+          <td><span class="channel-tag ch-secondary">Secondary</span></td>
+          <td>After 3 months with a client, ask for one introduction to another agent in their network. Agents know each other well locally.</td>
+          <td>30–40% conversion</td>
+        </tr>
+        <tr>
+          <td><strong>Cold calling</strong></td>
+          <td><span class="channel-tag ch-tertiary">Tertiary</span></td>
+          <td>Only after LinkedIn warm-up. Phone number on Funda listing. Use only if email + LinkedIn have had no response after 2 weeks.</td>
+          <td>5–10% conversion</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-orange">
+    <strong>The "Lindy approach" — what worked:</strong> Reference their existing LinkedIn content specifically. Don't pitch — offer to show them something already built for their agency. Send the live dashboard link + sample report before the call. By the time they get on the call, they've already seen the product. The call is 20 minutes, not a pitch — it's a "does this fit your workflow?" conversation.
+  </div>
+
+  <!-- KEY MESSAGES -->
+  <div class="section-title">Key Messages by Target Segment</div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h3>For boutique owner-agents (1–5 agents)</h3>
+    <p style="margin-top:8px;color:#374151;">"You already know your market. This gives you the numbers to prove it — in every listing meeting, every LinkedIn post, every client conversation. It replaces 4 hours of monthly research with one report in your inbox on the 12th. One extra instruction per year pays for it 20 times over."</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <h3>For mid-size agencies (5–20 agents)</h3>
+    <p style="margin-top:8px;color:#374151;">"Every agent in your team walks into listing meetings with the same data. Your agency becomes the market authority in your city — not just one talented agent. The LinkedIn post goes out under your brand every month, automatically."</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <h3>Objection: "I already use NVM data"</h3>
+    <p style="margin-top:8px;color:#374151;">NVM data is national quarterly summaries. The TrendsOnFire report is monthly, city-specific, neighbourhood-level, with overbidding analysis, mortgage rate tracking, buyer origin intelligence, seasonal timing, and ECB scenario modelling — plus your own performance benchmarked against the market. NVM data is an ingredient. This is the finished meal.</p>
+  </div>
+
+  <!-- REVENUE MODEL -->
+  <div class="section-title">Revenue Model &amp; Year-1 Projections</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Milestone</th><th>Clients</th><th>Avg MRR/client</th><th>Monthly Revenue</th><th>Annual Run Rate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>End of Month 3</td><td>5</td><td>€270</td><td>€1,350</td><td>€16,200</td></tr>
+        <tr><td>End of Month 6</td><td>15</td><td>€285</td><td>€4,275</td><td>€51,300</td></tr>
+        <tr><td>End of Month 9</td><td>28</td><td>€295</td><td>€8,260</td><td>€99,120</td></tr>
+        <tr class="rev-highlight"><td><strong>End of Year 1</strong></td><td><strong>42</strong></td><td><strong>€310</strong></td><td><strong>€13,020</strong></td><td><strong>€156,240</strong></td></tr>
+        <tr><td>Year 2 (with mid-size)</td><td>80+</td><td>€380</td><td>€30,400+</td><td>€364,800+</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px;color:#9ca3af;margin-top:10px;">Assumptions: 10% monthly churn on boutique tier · Average price blends Starter (€195) and Full Intelligence (€295) clients · Mid-size clients at €495–695/month from month 9 onward.</p>
+  </div>
+
+  <!-- 90 DAY PLAN -->
+  <div class="section-title">90-Day Action Plan</div>
+
+  <div class="phase-grid">
+    <div class="phase">
+      <div class="ph-label">Days 1–30</div>
+      <h4>Validate &amp; Close First 3 Clients</h4>
+      <ul>
+        <li>Close GustoCasa (Lindy Hendriks)</li>
+        <li>Identify 20 Utrecht boutique agencies on Funda + LinkedIn</li>
+        <li>Send personalised outreach to all 20 (Lindy template)</li>
+        <li>Build Amsterdam data layer</li>
+        <li>Post Utrecht market highlights on TrendsOnFire LinkedIn</li>
+        <li>Target: 3 paying clients by end of month</li>
+      </ul>
+      <div class="ph-metric">Target MRR: <strong>~€885</strong></div>
+    </div>
+    <div class="phase">
+      <div class="ph-label">Days 31–60</div>
+      <h4>Expand to Amsterdam &amp; Scale Outreach</h4>
+      <ul>
+        <li>Launch Amsterdam sample report + proposal page</li>
+        <li>Outreach to 30 Amsterdam boutique agencies</li>
+        <li>Ask Utrecht clients for 1 referral each</li>
+        <li>Build Den Haag data layer</li>
+        <li>Systematise outreach: templated but personalised per city</li>
+        <li>Target: 8–10 paying clients total</li>
+      </ul>
+      <div class="ph-metric">Target MRR: <strong>~€2,650</strong></div>
+    </div>
+    <div class="phase">
+      <div class="ph-label">Days 61–90</div>
+      <h4>Three Cities, Mid-Size Pipeline</h4>
+      <ul>
+        <li>Launch Den Haag + Rotterdam outreach</li>
+        <li>Identify 5 mid-size agency targets (5–15 agents)</li>
+        <li>Build team pricing tier (€495/month)</li>
+        <li>First monthly reports delivered to all clients</li>
+        <li>Collect testimonials from early clients</li>
+        <li>Target: 15 paying clients total</li>
+      </ul>
+      <div class="ph-metric">Target MRR: <strong>~€4,275</strong></div>
+    </div>
+  </div>
+
+  <!-- COMPETITIVE LANDSCAPE -->
+  <div class="section-title">Competitive Landscape</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Competitor / Alternative</th><th>What they offer</th><th>Weakness vs TrendsOnFire</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>NVM membership data</strong></td>
+          <td>Quarterly national + regional summaries</td>
+          <td>National, quarterly, no neighbourhood level, no LinkedIn assets, no benchmarking</td>
+        </tr>
+        <tr>
+          <td><strong>Funda Marktinzicht</strong></td>
+          <td>Supply/demand stats per city</td>
+          <td>Raw data, no interpretation, no report format, no LinkedIn integration, no benchmarking</td>
+        </tr>
+        <tr>
+          <td><strong>Calcasa / Brainbay</strong></td>
+          <td>AVM and valuation data for larger players</td>
+          <td>Expensive, complex, designed for mortgage lenders not boutique agents, no ready-to-use content</td>
+        </tr>
+        <tr>
+          <td><strong>DIY (agent does own research)</strong></td>
+          <td>Custom — agent pulls own data from multiple sources</td>
+          <td>Takes 4–6 hours/month, inconsistent quality, no benchmarking, no LinkedIn template</td>
+        </tr>
+        <tr>
+          <td><strong>Generic PropTech dashboards</strong></td>
+          <td>Data visualisation tools (e.g. Tableau for real estate)</td>
+          <td>Require agent to build and maintain themselves; not localised; no narrative or strategy layer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-blue">
+    <strong>Defensibility:</strong> TrendsOnFire is not a data tool — it is an intelligence service with human interpretation, local expertise, and ready-to-deploy content assets (report + LinkedIn post + dashboard). Competitors provide ingredients. TrendsOnFire provides the finished product. The longer the client relationship, the more the benchmarking section becomes uniquely valuable — GustoCasa's own transaction data cannot be replicated by any competitor.
+  </div>
+
+  <!-- RISKS -->
+  <div class="section-title">Key Risks &amp; Mitigations</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Likelihood</th><th>Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Slow uptake — agents interested but don't convert</strong></td>
+          <td>Medium</td>
+          <td>Always send the sample report before the call. The product closes itself once seen. Offer a 1-month trial at reduced rate.</td>
+        </tr>
+        <tr>
+          <td><strong>Churn if agent has quiet period</strong></td>
+          <td>Medium</td>
+          <td>Monthly rolling contract is honest but creates churn risk. Lock in 6-month discount option. Remind clients of value at month 2.</td>
+        </tr>
+        <tr>
+          <td><strong>Data sourcing time per new city</strong></td>
+          <td>Low–Medium</td>
+          <td>First city (Utrecht) took longest. Amsterdam data layer can reuse ~60% of the template. Build a repeatable data collection checklist per city.</td>
+        </tr>
+        <tr>
+          <td><strong>NVM changes data access policy</strong></td>
+          <td>Low</td>
+          <td>All sources are public (NVM quarterly reports, Kadaster, CBS, Funda public). No proprietary data dependency.</td>
+        </tr>
+        <tr>
+          <td><strong>Competitor copies the model</strong></td>
+          <td>Low (now)</td>
+          <td>Speed and local depth are the moat. Building city-by-city database and client benchmarking data creates switching costs after 3+ months.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="home" href="/admin/delisted.html">← Back to Admin</a>
+
+</div>
+</body>
+</html>
