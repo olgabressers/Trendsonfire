@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Sample vs Real Data — GustoCasa Report Audit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 80px; }
+    .wrapper { max-width: 1000px; margin: 0 auto; }
+
+    h1 { font-size: 22px; font-weight: 800; color: #0f2340; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+    .intro { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 14px 18px; font-size: 13px; color: #92400e; margin-bottom: 36px; line-height: 1.6; }
+
+    /* SECTION BLOCK */
+    .section { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.08); margin-bottom: 32px; overflow: hidden; }
+    .section-header { padding: 16px 24px; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 12px; }
+    .section-header h2 { font-size: 15px; font-weight: 800; color: #0f2340; }
+    .section-header .sec-note { font-size: 12px; color: #9ca3af; margin-left: auto; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: #f8fafc; }
+    th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; padding: 10px 20px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f9fafb; }
+
+    .data-point { font-weight: 600; color: #111827; }
+    .val-fake { font-weight: 700; color: #b91c1c; font-size: 14px; }
+    .val-real { font-weight: 700; color: #065f46; font-size: 14px; }
+    .source { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+
+    /* STATUS BADGES */
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 10px; letter-spacing: .4px; white-space: nowrap; }
+    .badge-wrong   { background: #fee2e2; color: #b91c1c; }
+    .badge-close   { background: #fef3c7; color: #92400e; }
+    .badge-ok      { background: #d1fae5; color: #065f46; }
+    .badge-missing { background: #f3f4f6; color: #6b7280; }
+    .badge-nodata  { background: #ede9fe; color: #5b21b6; }
+
+    /* LEGEND */
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #374151; }
+
+    .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+
+    .note { font-size: 12px; color: #6b7280; font-style: italic; margin-top: 2px; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <h1>Sample vs Real Data — GustoCasa Report Audit</h1>
+  <div class="meta">Internal audit · English only · Not for distribution</div>
+  <div class="intro">
+    This page compares every data point in the sample report sent to Lindy Hendriks against real, sourced data found online. Use this to identify what needs correcting before any real subscription report is delivered.<br><br>
+    <strong>Sources used:</strong> huisverkopen.nl (Kadaster/NVM aggregator, Feb–Mar 2026), NVM regio Utrecht Q3 2025, grandia-aankoopmakelaars.nl (wijkprijzen), DNB/ECB (interest rates), ahfinance.amsterdam (mortgage rates).
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="badge badge-wrong">Wrong</span> Significantly off — must be corrected</div>
+    <div class="legend-item"><span class="badge badge-close">Close</span> Directionally right, minor difference</div>
+    <div class="legend-item"><span class="badge badge-ok">OK</span> Matches real data well</div>
+    <div class="legend-item"><span class="badge badge-nodata">Needs Lindy</span> Cannot be sourced — requires her transaction data</div>
+    <div class="legend-item"><span class="badge badge-missing">Not found</span> Could not verify — no public source</div>
+  </div>
+
+  <!-- ══════════════ KPI STRIP ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>KPI Strip — Top of Report</h2>
+      <span class="sec-note">4 headline numbers shown above all charts</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Avg Transaction Price</td>
+          <td class="val-fake">€521K</td>
+          <td class="val-real">€519,673 (Mar 2026)<br>€562,500 (Feb 2026)</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>Two sources give different figures. €521K is within range of Kadaster data. Minor discrepancy — acceptable.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Avg Overbidding %</td>
+          <td class="val-fake">12.2%</td>
+          <td class="val-real">8.2% (Feb 2026)</td>
+          <td><span class="badge badge-wrong">Wrong</span></td>
+          <td>Real figure is 8.2% per huisverkopen.nl (Feb 2026). The 12.2% in the report is ~50% too high. Must be corrected to 8.2%.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Homes Sold (monthly)</td>
+          <td class="val-fake">873</td>
+          <td class="val-real">~397/month (4,764 ÷ 12 in 2025)</td>
+          <td><span class="badge badge-wrong">Wrong</span></td>
+          <td>Annual 2025 transactions = 4,764. Monthly average ≈ 397. The 873 figure is roughly double reality.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Active Funda Seekers</td>
+          <td class="val-fake">20,040</td>
+          <td class="val-real">Not published publicly</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>Funda does not publish seeker counts by city publicly. This number is made up and cannot be verified or replaced with a real figure. Consider removing this KPI.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Seekers per Property (14.3×)</td>
+          <td class="val-fake">14.3</td>
+          <td class="val-real">Not published publicly</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>Derived from the fake seeker count above. No public source. Remove or replace with a real scarcity metric (e.g. months of supply).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ SECTION 1 — MARKET SNAPSHOT ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Section 1 — Monthly Market Snapshot</h2>
+      <span class="sec-note">Price trends, overbid trend, supply/demand charts</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Days on market (market avg)</td>
+          <td class="val-fake">21.5 days</td>
+          <td class="val-real">~12 days (Feb 2026)<br>24 days (Q4 2025)</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>Sources vary between 12 and 24 days depending on measurement period. The 21.5 in the report is within that range but on the high end. Safest to use ~12 days (Feb 2026 most current).</td>
+        </tr>
+        <tr>
+          <td class="data-point">% homes sold above asking</td>
+          <td class="val-fake">Not shown in KPI (overbid % used)</td>
+          <td class="val-real">79.7% (Q3 2025)</td>
+          <td><span class="badge badge-ok">OK</span></td>
+          <td>Not directly shown in the sample but the overbid narrative is consistent. This real number could be added as a strong supporting KPI.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Transaction volume YoY</td>
+          <td class="val-fake">+61 homes vs January (monthly delta)</td>
+          <td class="val-real">+19.2% YoY annual (2025 vs 2024)</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>Monthly delta (873 vs 812) is completely fabricated. Annual YoY trend (+19.2%) is real but not monthly. Cannot compare directly.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Historic price trend 2020–2026</td>
+          <td class="val-fake">Full chart with specific €K values per year</td>
+          <td class="val-real">CBS: +13% in province Utrecht (2025). Rabobank: +7% expected 2025, +3–4% 2026</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>The chart trend shape (rise → 2023 dip → recovery) is directionally correct based on real NVM/CBS data. Specific annual €K values per year were estimated, not sourced. Directionally reliable.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Buyer agent penetration (47%)</td>
+          <td class="val-fake">47% rising to 50%</td>
+          <td class="val-real">Not found in public data</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>NVM does not publish buyer agent usage % by city. This series and trend line are fabricated. Consider removing the chart entirely.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ NEIGHBOURHOOD PRICES ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Section 1c — Neighbourhood Price Intelligence (price/m²)</h2>
+      <span class="sec-note">Table + bar chart showing 6 Utrecht neighbourhoods</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%">Neighbourhood</th>
+          <th style="width:18%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Wittevrouwen</td>
+          <td class="val-fake">€4,320/m²</td>
+          <td class="val-real">&gt;€8,500/m²</td>
+          <td><span class="badge badge-wrong">Wrong</span></td>
+          <td>Real figure is more than double what the report shows. This is a serious error. Source: grandia-aankoopmakelaars.nl.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Overvecht</td>
+          <td class="val-fake">€2,180/m²</td>
+          <td class="val-real">~€4,150/m²</td>
+          <td><span class="badge badge-wrong">Wrong</span></td>
+          <td>Real figure is almost double the sample. Source: grandia-aankoopmakelaars.nl.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Kanaleneiland</td>
+          <td class="val-fake">€2,010/m²</td>
+          <td class="val-real">~€4,150/m²</td>
+          <td><span class="badge badge-wrong">Wrong</span></td>
+          <td>Same issue as Overvecht — roughly double in reality. Source: grandia-aankoopmakelaars.nl.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Daalsebuurt</td>
+          <td class="val-fake">€4,850/m²</td>
+          <td class="val-real">Not found</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>No public price/m² data found specifically for Daalsebuurt. Cannot confirm or deny.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Pijlsweerd / Elinkwijk</td>
+          <td class="val-fake">€3,280 / €3,050/m²</td>
+          <td class="val-real">Not found</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>No public data for these two neighbourhoods specifically. Cannot confirm.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ MORTGAGE RATES ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Section 1d — Mortgage Rate Tracker</h2>
+      <span class="sec-note">10-year fixed rates per lender</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Rate range (all lenders)</td>
+          <td class="val-fake">3.59% – 4.18%</td>
+          <td class="val-real">3.6% – 4.1% (Mar 2026)</td>
+          <td><span class="badge badge-ok">OK</span></td>
+          <td>The overall range matches real data closely. Individual lender rates (SNS, ING, ABN, etc.) were not verified per lender but the range is correct. Acceptable.</td>
+        </tr>
+        <tr>
+          <td class="data-point">ECB deposit rate</td>
+          <td class="val-fake">Not explicitly stated</td>
+          <td class="val-real">2.0% (unchanged Mar 2026)</td>
+          <td><span class="badge badge-ok">OK</span></td>
+          <td>Not directly shown as a KPI in the report but the narrative context is consistent with ECB holding at 2%.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ SECTION 2 — BENCHMARKING ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Section 2 — GustoCasa Performance Benchmarking</h2>
+      <span class="sec-note">GustoCasa-specific KPIs vs market — requires Lindy's transaction data</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">GustoCasa overbid %</td>
+          <td class="val-fake">19.8%</td>
+          <td class="val-real">Unknown — needs Lindy's data</td>
+          <td><span class="badge badge-nodata">Needs Lindy</span></td>
+          <td>Cannot be sourced publicly. Lindy must provide monthly transaction records. Also note: the market baseline used (12.2%) is itself wrong — real is 8.2%.</td>
+        </tr>
+        <tr>
+          <td class="data-point">GustoCasa days on market</td>
+          <td class="val-fake">8.8 days</td>
+          <td class="val-real">Unknown — needs Lindy's data</td>
+          <td><span class="badge badge-nodata">Needs Lindy</span></td>
+          <td>Cannot be sourced publicly. Also note: the market baseline (21.5 days) is high — real current data shows ~12 days city average.</td>
+        </tr>
+        <tr>
+          <td class="data-point">GustoCasa price/m²</td>
+          <td class="val-fake">€4,820/m²</td>
+          <td class="val-real">Unknown — needs Lindy's data</td>
+          <td><span class="badge badge-nodata">Needs Lindy</span></td>
+          <td>Cannot be sourced publicly. The market baseline (€4,380/m²) is also wrong — real neighbourhood data shows €4,150–8,500+ depending on area. City-wide average not directly published.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ SECTION 3 — TIMING ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Section 3 — Listing Timing Optimizer (seasonal patterns)</h2>
+      <span class="sec-note">% of asking price by listing month, days on market by month</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Best listing month (March–May)</td>
+          <td class="val-fake">April: 112% of asking</td>
+          <td class="val-real">Spring consistently best — widely confirmed by NVM</td>
+          <td><span class="badge badge-ok">OK</span></td>
+          <td>The seasonal pattern (spring best, December worst) is well-documented by NVM. Exact % values per month are illustrative but directionally correct.</td>
+        </tr>
+        <tr>
+          <td class="data-point">December performance</td>
+          <td class="val-fake">91% of asking / 34 days</td>
+          <td class="val-real">Worst month — confirmed but exact % not found</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>December being the weakest month is real. The specific 91% and 34-day figures are illustrative but plausible.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ SECTIONS 4–11 ══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Sections 4–11 — Price Bands, Energy Labels, ECB Scenarios, etc.</h2>
+      <span class="sec-note">Supporting analysis sections</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:22%">Data Point</th>
+          <th style="width:20%">In Sample Report</th>
+          <th style="width:20%">Real Data</th>
+          <th style="width:10%">Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="data-point">Price band competition (26–31 buyers per home in €450–650K)</td>
+          <td class="val-fake">26–31 buyers/property</td>
+          <td class="val-real">Not published publicly</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>Funda does not publish buyer-per-listing ratios by price band. These numbers are illustrative. The narrative (high competition in mid-range) is directionally correct.</td>
+        </tr>
+        <tr>
+          <td class="data-point">€400–500K = 31% of transactions</td>
+          <td class="val-fake">31%</td>
+          <td class="val-real">Not found by segment</td>
+          <td><span class="badge badge-missing">Not found</span></td>
+          <td>NVM does not publish Utrecht transaction share by price band publicly. Illustrative.</td>
+        </tr>
+        <tr>
+          <td class="data-point">Energy label price premium (A = +18%, G = −28%)</td>
+          <td class="val-fake">A: +18% · G: −28%</td>
+          <td class="val-real">CBS/NVM confirm A premium and EFG discount exist — magnitudes plausible</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>The direction is confirmed by CBS energy label research. Exact % per label not published for Utrecht specifically. Directionally valid.</td>
+        </tr>
+        <tr>
+          <td class="data-point">ECB scenarios (base / cut / shock)</td>
+          <td class="val-fake">3 scenarios with rate paths</td>
+          <td class="val-real">ECB at 2.0%, stable — no cuts expected in 2026</td>
+          <td><span class="badge badge-close">Close</span></td>
+          <td>The base scenario (rates stable) matches reality. Cut and shock scenarios are forward-looking — acceptable as scenario analysis, not presented as fact.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════ SUMMARY ══════════════ -->
+  <div style="background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,.08);padding:24px 28px;margin-bottom:32px;">
+    <h2 style="font-size:15px;font-weight:800;color:#0f2340;margin-bottom:16px;">Summary — What Must Change Before Real Report Delivery</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40%">Issue</th>
+          <th style="width:20%">Priority</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Overbid % is 12.2% — real is 8.2%</td>
+          <td><span class="badge badge-wrong">Must fix</span></td>
+          <td>Change to 8.2% in KPI strip and Section 2 baseline. Source: huisverkopen.nl Feb 2026.</td>
+        </tr>
+        <tr>
+          <td>Homes sold (873/month) is roughly double reality (~397)</td>
+          <td><span class="badge badge-wrong">Must fix</span></td>
+          <td>Use ~397 or source exact monthly figure from Kadaster download.</td>
+        </tr>
+        <tr>
+          <td>Neighbourhood prices are wrong by 2× (Wittevrouwen, Overvecht, Kanaleneiland)</td>
+          <td><span class="badge badge-wrong">Must fix</span></td>
+          <td>Update to: Wittevrouwen &gt;€8,500/m², Overvecht/Kanaleneiland ~€4,150/m². Source: grandia-aankoopmakelaars.nl.</td>
+        </tr>
+        <tr>
+          <td>Active Funda Seekers (20,040) and 14.3× ratio are invented</td>
+          <td><span class="badge badge-wrong">Must fix</span></td>
+          <td>Remove these KPIs entirely. No public source exists. Replace with % sold above asking (79.7%) instead.</td>
+        </tr>
+        <tr>
+          <td>Section 2 benchmarking — all three GustoCasa KPIs</td>
+          <td><span class="badge badge-nodata">Needs Lindy</span></td>
+          <td>Cannot deliver without her monthly transaction data. Keep the section structure but populate with real data once she subscribes.</td>
+        </tr>
+        <tr>
+          <td>Buyer agent penetration chart — no public source</td>
+          <td><span class="badge badge-close">Low priority</span></td>
+          <td>Consider removing or replacing with a real statistic. NVM does not publish this.</td>
+        </tr>
+        <tr>
+          <td>Mortgage rates (3.59%–4.18%) — range is correct</td>
+          <td><span class="badge badge-ok">No action</span></td>
+          <td>Within real range of 3.6%–4.1%. Acceptable.</td>
+        </tr>
+        <tr>
+          <td>Seasonal timing patterns — directionally correct</td>
+          <td><span class="badge badge-ok">No action</span></td>
+          <td>Spring best / December worst is well-documented. Exact % values are illustrative but acceptable for scenario planning.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="home" href="/admin/delisted.html">← Back to Admin</a>
+
+</div>
+</body>
+</html>
