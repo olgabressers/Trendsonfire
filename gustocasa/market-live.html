@@ -149,9 +149,50 @@
     .powered-by a { color: var(--orange); text-decoration: none; font-weight: 600; }
     .powered-by a:hover { text-decoration: underline; }
     .update-note { font-size: 11px; color: var(--sub); margin-top: 4px; }
+
+    /* WATERMARK */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 100px,
+        rgba(26,35,64,0.045) 100px,
+        rgba(26,35,64,0.045) 101px
+      );
+    }
+    .watermark-text {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 9998;
+      overflow: hidden;
+    }
+    .watermark-text::before {
+      content: 'trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 400%;
+      height: 400%;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: rgba(26,35,64,0.07);
+      word-spacing: 60px;
+      line-height: 80px;
+      transform: rotate(-35deg);
+      font-family: 'Inter', sans-serif;
+      text-transform: lowercase;
+    }
   </style>
 </head>
 <body>
+<div class="watermark-text"></div>
 
 <div class="header">
   <div class="header-left" style="display:flex;align-items:center;gap:14px;">
@@ -165,7 +206,7 @@
   </div>
   <div class="header-right">
     <div class="report-label">📊 Live Market Data — March 2026</div>
-    <div class="update-date">Updated 12 April 2026 · Next update: 12 May 2026</div>
+    <div class="update-date">Updated 12 March 2026 · Next update: 12 April 2026</div>
   </div>
 </div>
 
@@ -182,7 +223,7 @@
     <div class="kpi-change hot">🔥 Top 5 nationally</div>
   </div>
   <div class="kpi">
-    <div class="kpi-value">8.8 days</div>
+    <div class="kpi-value">21.5 days</div>
     <div class="kpi-label">Avg Days on Market</div>
     <div class="kpi-change up">↓ Fast — seller's market</div>
   </div>
@@ -236,7 +277,7 @@
 <!-- FOOTER -->
 <div class="powered-by">
   <div>Market intelligence powered by <a href="https://trendsonfire.com" target="_blank">TrendsOnFire</a> · Updated on the 12th of each month · Data: NVM, Kadaster, Funda, CBS</div>
-  <div class="update-note">This page is published exclusively for GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · For the full intelligence report, contact <a href="mailto:market@trendsonfire.com">market@trendsonfire.com</a></div>
+  <div class="update-note">This page is published exclusively for GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · For the full intelligence report, contact <a href="mailto:contact@trendsonfire.com">contact@trendsonfire.com</a></div>
 </div>
 
 <script>
