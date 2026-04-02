@@ -61,14 +61,14 @@
       padding: 72px 40px 60px; text-align: center;
     }
     .hero-stats {
-      display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap;
+      display: flex; justify-content: stretch; align-items: stretch;
       background: var(--white); border-bottom: 3px solid var(--off-white);
-      box-shadow: 0 2px 12px rgba(28,58,43,.07);
+      box-shadow: 0 2px 12px rgba(28,58,43,.07); overflow: hidden;
     }
-    .hero-stat { padding: 22px 36px; border-right: 1px solid var(--off-white); display: flex; flex-direction: column; justify-content: center; }
+    .hero-stat { flex: 1; padding: 18px 16px; border-right: 1px solid var(--off-white); display: flex; flex-direction: column; justify-content: center; text-align: center; }
     .hero-stat:last-child { border-right: none; }
-    .hero-stat .hs-value { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); letter-spacing: -.5px; }
-    .hero-stat .hs-label { font-size: 10.5px; color: var(--text-light); text-transform: uppercase; letter-spacing: .1em; margin-top: 3px; }
+    .hero-stat .hs-value { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--green); letter-spacing: -.5px; white-space: nowrap; }
+    .hero-stat .hs-label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: .07em; margin-top: 3px; line-height: 1.3; }
     .hero-eyebrow {
       display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .16em;
       text-transform: uppercase; color: var(--gold);
@@ -285,19 +285,19 @@
 <div class="hero-stats">
   <div class="hero-stat">
     <div class="hs-value">€521K</div>
-    <div class="hs-label">Avg transaction price · Utrecht</div>
+    <div class="hs-label">Avg transaction price</div>
   </div>
   <div class="hero-stat">
     <div class="hs-value">12.2%</div>
-    <div class="hs-label">Avg overbid rate · Feb 2026</div>
+    <div class="hs-label">Avg overbid · Feb 2026</div>
   </div>
   <div class="hero-stat">
     <div class="hs-value">21.5 days</div>
-    <div class="hs-label">Avg days on market · Utrecht</div>
+    <div class="hs-label">Avg days on market</div>
   </div>
   <div class="hero-stat">
     <div class="hs-value">14.3×</div>
-    <div class="hs-label">Buyers per listing on Funda</div>
+    <div class="hs-label">Buyers per listing</div>
   </div>
   <div class="hero-stat">
     <div class="hs-value">+42%</div>
@@ -311,7 +311,7 @@
     <div style="max-width:780px;margin:0 auto;text-align:center;">
       <div class="section-label" style="color:var(--gold-light);" data-i18n="sample-label">Built For You — See the Full Potential</div>
       <h2 class="section-title" style="color:white;" data-i18n="sample-h2">Your February Report Is Ready — Right Now</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,.7);margin:0 auto 0;" data-i18n="sample-sub">We didn't wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.</p>
+      <p class="section-sub" style="color:rgba(255,255,255,.7);margin:0 auto 0;" data-i18n="sample-sub">The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.</p>
       <div class="preview-box">
         <div class="preview-label">Live Report — GustoCasa · Utrecht Market Intelligence · February 2026</div>
         <h3>11 Sections · 15+ Charts · Neighbourhood Data · Your Performance vs Market</h3>
@@ -534,7 +534,7 @@ const T = {
     'btn-sample': 'View GustoCasa Sample Report →',
     'sample-label': 'Built For You — See the Full Potential',
     'sample-h2': 'Your February Report Is Ready — Right Now',
-    'sample-sub': 'We didn\'t wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.',
+    'sample-sub': 'The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.',
     'sample-btn': 'Open the Full GustoCasa Report →',
     'financial-label': 'The Business Case',
     'financial-h2': 'One Extra Instruction Pays for This Service for a Year',
@@ -589,7 +589,7 @@ const T = {
     'btn-sample': 'Bekijk GustoCasa Voorbeeldrapport →',
     'sample-label': 'Speciaal Voor U Gebouwd — Ontdek het Volledige Potentieel',
     'sample-h2': 'Uw Februarirapport Is Nu Klaar',
-    'sample-sub': 'We hebben niet gewacht op een getekend contract. Het februari 2026 Utrecht marktrapport, speciaal opgebouwd voor GustoCasa, staat live en wacht op u.',
+    'sample-sub': 'Het februari 2026 Utrecht marktrapport, speciaal opgebouwd voor GustoCasa, staat live en wacht op u.',
     'sample-btn': 'Open het Volledige GustoCasa Rapport →',
     'financial-label': 'De Business Case',
     'financial-h2': 'Één Extra Opdracht Betaalt Deze Service een Jaar Lang',
@@ -644,7 +644,7 @@ const T = {
     'btn-sample': 'Ver Informe de Muestra de GustoCasa →',
     'sample-label': 'Creado Para Usted — Vea el Potencial Completo',
     'sample-h2': 'Su Informe de Febrero Está Listo — Ahora Mismo',
-    'sample-sub': 'No esperamos a un contrato firmado. El informe de mercado de Utrecht de febrero de 2026, construido específicamente para GustoCasa, está en vivo y le espera.',
+    'sample-sub': 'El informe de mercado de Utrecht de febrero de 2026, construido específicamente para GustoCasa, está en vivo y le espera.',
     'sample-btn': 'Abrir el Informe Completo de GustoCasa →',
     'financial-label': 'El Caso de Negocio',
     'financial-h2': 'Un Encargo Extra Paga Este Servicio Durante un Año',
