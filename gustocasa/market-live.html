@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utrecht Housing Market — Live Intelligence · GustoCasa × TrendsOnFire</title>
+  <title>Utrecht Woningmarkt — Live Intelligence · GustoCasa × TrendsOnFire</title>
 
   <!-- Open Graph for LinkedIn sharing -->
-  <meta property="og:title" content="Utrecht Housing Market — April 2026 Update" />
-  <meta property="og:description" content="Utrecht is in the top decile nationally. Avg transaction price €521K · 14.3 buyers per listing · Best listing window: March–May. Data by TrendsOnFire for GustoCasa." />
+  <meta property="og:title" content="Utrecht Woningmarkt — April 2026 Update" />
+  <meta property="og:description" content="Utrecht behoort tot de top-deciel nationaal. Gem. transactieprijs €521K · 14,3 kopers per woning · Beste aanbiedingsmoment: maart–mei. Data door TrendsOnFire voor GustoCasa." />
   <meta property="og:image" content="https://trendsonfire.com/og-image.png" />
   <meta property="og:url" content="https://trendsonfire.com/gustocasa/market-live.html" />
   <meta property="og:type" content="website" />
@@ -34,14 +34,10 @@
 
     /* HEADER */
     .header {
-      background: var(--navy);
-      color: #fff;
+      background: var(--navy); color: #fff;
       padding: 20px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
     }
     .header-left .brand { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; }
     .header-left .brand span { color: var(--orange); }
@@ -50,14 +46,19 @@
     .header-right .report-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); }
     .header-right .update-date { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
 
-    /* KPI STRIP */
-    .kpi-strip {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 0;
-      flex-wrap: wrap;
+    /* LANGUAGE SWITCHER */
+    .lang-switcher { display: flex; gap: 4px; justify-content: flex-end; margin-bottom: 8px; }
+    .lang-btn {
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.6); font-size: 11px; font-weight: 600; letter-spacing: .08em;
+      padding: 4px 10px; border-radius: 3px; cursor: pointer; transition: all .15s;
+      font-family: 'Inter', sans-serif;
     }
+    .lang-btn:hover { background: rgba(255,255,255,.2); color: white; }
+    .lang-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+    /* KPI STRIP */
+    .kpi-strip { background: var(--white); border-bottom: 1px solid var(--border); display: flex; gap: 0; flex-wrap: wrap; }
     .kpi { flex: 1; min-width: 150px; padding: 16px 24px; border-right: 1px solid var(--border); }
     .kpi:last-child { border-right: none; }
     .kpi-value { font-size: 26px; font-weight: 800; color: var(--navy); }
@@ -72,35 +73,13 @@
     /* MARKET STATUS BANNER */
     .status-banner {
       background: linear-gradient(135deg, var(--navy) 0%, #2d3e6e 100%);
-      color: white;
-      border-radius: 12px;
-      padding: 20px 28px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
+      color: white; border-radius: 12px; padding: 20px 28px;
+      display: flex; align-items: center; gap: 20px; margin-bottom: 28px; flex-wrap: wrap;
     }
     .thermo-wrap { flex: 1; min-width: 220px; }
     .thermo-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-    .thermo-track {
-      height: 12px;
-      border-radius: 6px;
-      background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b, #ef4444);
-      position: relative;
-      margin-bottom: 6px;
-    }
-    .thermo-marker {
-      position: absolute;
-      top: -4px;
-      left: 88%;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      border: 3px solid #ef4444;
-    }
+    .thermo-track { height: 12px; border-radius: 6px; background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b, #ef4444); position: relative; margin-bottom: 6px; }
+    .thermo-marker { position: absolute; top: -4px; left: 88%; width: 20px; height: 20px; background: white; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border: 3px solid #ef4444; }
     .thermo-labels { display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.45); }
     .thermo-status { font-size: 18px; font-weight: 800; color: #fbbf24; margin-top: 10px; }
     .status-insight { flex: 2; min-width: 240px; }
@@ -110,14 +89,7 @@
     /* CHART GRID */
     .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
     @media (max-width: 680px) { .chart-grid { grid-template-columns: 1fr; } }
-
-    .chart-card {
-      background: var(--white);
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      padding: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
+    .chart-card { background: var(--white); border-radius: 10px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
     .chart-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
     .chart-source { font-size: 11px; color: var(--sub); margin-bottom: 14px; }
     .chart-wrap { height: 180px; }
@@ -126,26 +98,13 @@
     .chart-insight.highlight { color: var(--green); font-weight: 600; }
 
     /* BEST TIME CALLOUT */
-    .best-time-card {
-      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-      border: 2px solid #16a34a;
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin-bottom: 28px;
-    }
+    .best-time-card { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #16a34a; border-radius: 10px; padding: 18px 22px; margin-bottom: 28px; }
     .best-time-card .bt-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #166534; margin-bottom: 6px; }
     .best-time-card .bt-headline { font-size: 17px; font-weight: 800; color: #14532d; margin-bottom: 6px; }
     .best-time-card .bt-body { font-size: 13px; color: #166534; line-height: 1.6; }
 
     /* POWERED BY FOOTER */
-    .powered-by {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--sub);
-      margin-top: 12px;
-    }
+    .powered-by { text-align: center; padding: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--sub); margin-top: 12px; }
     .powered-by a { color: var(--orange); text-decoration: none; font-weight: 600; }
     .powered-by a:hover { text-decoration: underline; }
     .update-note { font-size: 11px; color: var(--sub); margin-top: 4px; }
@@ -168,12 +127,16 @@
     </div>
     <div>
       <div class="brand">Gusto<span>Casa</span></div>
-      <div class="tagline">Utrecht Housing Market Intelligence</div>
+      <div class="tagline" data-i18n="tagline">Utrecht Woningmarkt Intelligence</div>
     </div>
   </div>
   <div class="header-right">
-    <div class="report-label">📊 Live Market Data — March 2026</div>
-    <div class="update-date">Updated 12 March 2026 · Next update: 12 April 2026</div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="nl" onclick="setLang('nl')">NL</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="report-label" data-i18n="report-label">📊 Live Marktdata — Maart 2026</div>
+    <div class="update-date" data-i18n="update-date">Bijgewerkt 12 maart 2026 · Volgende update: 12 april 2026</div>
   </div>
 </div>
 
@@ -181,23 +144,23 @@
 <div class="kpi-strip">
   <div class="kpi">
     <div class="kpi-value">€521K</div>
-    <div class="kpi-label">Avg Transaction Price</div>
-    <div class="kpi-change up">↑ +2.5% vs last year</div>
+    <div class="kpi-label" data-i18n="kpi1-label">Gem. Transactieprijs</div>
+    <div class="kpi-change up" data-i18n="kpi1-change">↑ +2,5% t.o.v. vorig jaar</div>
   </div>
   <div class="kpi">
-    <div class="kpi-value">12.2%</div>
-    <div class="kpi-label">Avg Overbid Rate</div>
-    <div class="kpi-change hot">🔥 Top 5 nationally</div>
+    <div class="kpi-value">12,2%</div>
+    <div class="kpi-label" data-i18n="kpi2-label">Gem. Overbod</div>
+    <div class="kpi-change hot" data-i18n="kpi2-change">🔥 Top 5 nationaal</div>
   </div>
   <div class="kpi">
-    <div class="kpi-value">21.5 days</div>
-    <div class="kpi-label">Avg Days on Market</div>
-    <div class="kpi-change up">↓ Fast — seller's market</div>
+    <div class="kpi-value">21,5 dagen</div>
+    <div class="kpi-label" data-i18n="kpi3-label">Gem. Verkooptijd</div>
+    <div class="kpi-change up" data-i18n="kpi3-change">↓ Snel — verkopersmarkt</div>
   </div>
   <div class="kpi">
-    <div class="kpi-value">14.3×</div>
-    <div class="kpi-label">Buyers per Listing</div>
-    <div class="kpi-change hot">🔥 High competition</div>
+    <div class="kpi-value">14,3×</div>
+    <div class="kpi-label" data-i18n="kpi4-label">Kopers per Woning</div>
+    <div class="kpi-change hot" data-i18n="kpi4-change">🔥 Hoge concurrentie</div>
   </div>
 </div>
 
@@ -206,45 +169,50 @@
   <!-- MARKET THERMOMETER -->
   <div class="status-banner">
     <div class="thermo-wrap">
-      <div class="thermo-title">Utrecht Market Temperature</div>
+      <div class="thermo-title" data-i18n="thermo-title">Utrecht Markttemperatuur</div>
       <div class="thermo-track"><div class="thermo-marker"></div></div>
-      <div class="thermo-labels"><span>Cool</span><span>Warm</span><span>Hot</span><span>Very Hot</span></div>
-      <div class="thermo-status">🔥 VERY HOT</div>
+      <div class="thermo-labels">
+        <span data-i18n="thermo-cool">Koel</span>
+        <span data-i18n="thermo-warm">Warm</span>
+        <span data-i18n="thermo-hot">Heet</span>
+        <span data-i18n="thermo-vhot">Zeer Heet</span>
+      </div>
+      <div class="thermo-status" data-i18n="thermo-status">🔥 ZEER HEET</div>
     </div>
     <div class="status-insight">
-      <p>For every home listed on Funda in Utrecht, there are <strong>14.3 registered buyers</strong>. Utrecht is in the <strong>top decile nationally</strong>. Buyer demand structurally exceeds supply — maintaining strong upward price pressure across all segments.</p>
+      <p data-i18n="thermo-insight">Voor elke woning die aangeboden wordt op Funda in Utrecht zijn er <strong>14,3 geregistreerde kopers</strong>. Utrecht behoort tot het <strong>top-deciel nationaal</strong>. De vraag van kopers overschrijdt structureel het aanbod — met sterke opwaartse prijsdruk in alle segmenten.</p>
     </div>
   </div>
 
   <!-- CHARTS -->
   <div class="chart-grid">
     <div class="chart-card">
-      <div class="chart-title">Price Trend — Utrecht (6 Months)</div>
-      <div class="chart-source">Source: NVM · Average transaction price (€)</div>
+      <div class="chart-title" data-i18n="chart1-title">Prijsontwikkeling — Utrecht (6 Maanden)</div>
+      <div class="chart-source" data-i18n="chart1-source">Bron: NVM · Gemiddelde transactieprijs (€)</div>
       <div class="chart-wrap"><canvas id="chartPrice"></canvas></div>
-      <div class="chart-insight"><strong>+2.6%</strong> over 6 months. Consistent upward trajectory despite interest rate environment. Utrecht outperforms the national average.</div>
+      <div class="chart-insight" data-i18n="chart1-insight"><strong>+2,6%</strong> over 6 maanden. Consistente stijging ondanks de renteomgeving. Utrecht presteert beter dan het nationaal gemiddelde.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Best Month to List — % of Asking Price Achieved</div>
-      <div class="chart-source">Source: NVM seasonal analysis</div>
+      <div class="chart-title" data-i18n="chart2-title">Beste Maand om aan te Bieden — % van Vraagprijs Gerealiseerd</div>
+      <div class="chart-source" data-i18n="chart2-source">Bron: NVM seizoensanalyse</div>
       <div class="chart-wrap"><canvas id="chartSeasonal"></canvas></div>
-      <div class="chart-insight highlight">March–May = peak selling season. April listings average 112% of asking price.</div>
+      <div class="chart-insight highlight" data-i18n="chart2-insight">Maart–mei = piekverkoopseizoen. April-aanbiedingen realiseren gemiddeld 112% van de vraagprijs.</div>
     </div>
   </div>
 
   <!-- BEST TIME TO LIST -->
   <div class="best-time-card">
-    <div class="bt-label">💡 Market Signal — Right Now</div>
-    <div class="bt-headline">BEST TIME TO LIST: March–May 2026</div>
-    <div class="bt-body">Sellers who list in April may achieve on average <strong>12% above asking price</strong>. August listings historically achieve only 93% of asking — a 19-point swing vs April. If you are considering selling, contact GustoCasa now to plan your listing timing.</div>
+    <div class="bt-label" data-i18n="bt-label">💡 Marktsignaal — Nu</div>
+    <div class="bt-headline" data-i18n="bt-headline">BESTE TIJD OM AAN TE BIEDEN: MAART–MEI 2026</div>
+    <div class="bt-body" data-i18n="bt-body">Verkopers die in april aanbieden kunnen gemiddeld <strong>12% boven de vraagprijs</strong> realiseren. Augustus-aanbiedingen halen historisch slechts 93% — een verschil van 19 procentpunt ten opzichte van april. Overweegt u te verkopen? Neem nu contact op met GustoCasa om uw timing te plannen.</div>
   </div>
 
 </div>
 
 <!-- FOOTER -->
 <div class="powered-by">
-  <div>Market intelligence powered by <a href="https://trendsonfire.com" target="_blank">TrendsOnFire</a> · Updated on the 12th of each month · Data: NVM, Kadaster, Funda, CBS</div>
-  <div class="update-note">This page is published exclusively for GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · For the full intelligence report, contact <a href="mailto:contact@trendsonfire.com">contact@trendsonfire.com</a></div>
+  <div data-i18n="footer1">Marktintelligentie door <a href="https://trendsonfire.com" target="_blank">TrendsOnFire</a> · Maandelijks bijgewerkt op de 12e · Data: NVM, Kadaster, Funda, CBS</div>
+  <div class="update-note" data-i18n="footer2">Deze pagina is gepubliceerd voor GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · Voor het volledige rapport, contact <a href="mailto:contact@trendsonfire.com">contact@trendsonfire.com</a></div>
 </div>
 
 <script>
@@ -259,7 +227,7 @@ const gridColor = 'rgba(0,0,0,0.06)';
 new Chart(document.getElementById('chartPrice'), {
   type: 'line',
   data: {
-    labels: ['Sep','Oct','Nov','Dec','Jan','Feb'],
+    labels: ['Sep','Okt','Nov','Dec','Jan','Feb'],
     datasets: [{
       data: [508000,505000,501000,517000,521000,521000],
       borderColor: C_NAVY, backgroundColor: rgba(C_NAVY,0.06),
@@ -279,11 +247,12 @@ new Chart(document.getElementById('chartPrice'), {
 });
 
 const pubPct = [97,100,108,112,110,106,98,93,104,106,101,91];
-const months12 = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-new Chart(document.getElementById('chartSeasonal'), {
+const months12NL = ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+const months12EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const seasonalChart = new Chart(document.getElementById('chartSeasonal'), {
   type: 'bar',
   data: {
-    labels: months12,
+    labels: months12NL,
     datasets: [{
       data: pubPct,
       backgroundColor: pubPct.map((_,i) => (i>=2&&i<=4) ? C_GREEN : rgba(C_NAVY,0.3)),
@@ -294,12 +263,87 @@ new Chart(document.getElementById('chartSeasonal'), {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { display: false } },
     scales: {
-      y: { grid: { color: gridColor }, min: 85,
-           ticks: { callback: v => v+'%' } },
+      y: { grid: { color: gridColor }, min: 85, ticks: { callback: v => v+'%' } },
       x: { grid: { display: false } }
     }
   }
 });
+</script>
+
+<script>
+const T = {
+  nl: {
+    'tagline': 'Utrecht Woningmarkt Intelligence',
+    'report-label': '📊 Live Marktdata — Maart 2026',
+    'update-date': 'Bijgewerkt 12 maart 2026 · Volgende update: 12 april 2026',
+    'kpi1-label': 'Gem. Transactieprijs',
+    'kpi1-change': '↑ +2,5% t.o.v. vorig jaar',
+    'kpi2-label': 'Gem. Overbod',
+    'kpi2-change': '🔥 Top 5 nationaal',
+    'kpi3-label': 'Gem. Verkooptijd',
+    'kpi3-change': '↓ Snel — verkopersmarkt',
+    'kpi4-label': 'Kopers per Woning',
+    'kpi4-change': '🔥 Hoge concurrentie',
+    'thermo-title': 'Utrecht Markttemperatuur',
+    'thermo-cool': 'Koel', 'thermo-warm': 'Warm', 'thermo-hot': 'Heet', 'thermo-vhot': 'Zeer Heet',
+    'thermo-status': '🔥 ZEER HEET',
+    'thermo-insight': 'Voor elke woning die aangeboden wordt op Funda in Utrecht zijn er <strong>14,3 geregistreerde kopers</strong>. Utrecht behoort tot het <strong>top-deciel nationaal</strong>. De vraag van kopers overschrijdt structureel het aanbod — met sterke opwaartse prijsdruk in alle segmenten.',
+    'chart1-title': 'Prijsontwikkeling — Utrecht (6 Maanden)',
+    'chart1-source': 'Bron: NVM · Gemiddelde transactieprijs (€)',
+    'chart1-insight': '<strong>+2,6%</strong> over 6 maanden. Consistente stijging ondanks de renteomgeving. Utrecht presteert beter dan het nationaal gemiddelde.',
+    'chart2-title': 'Beste Maand om aan te Bieden — % van Vraagprijs Gerealiseerd',
+    'chart2-source': 'Bron: NVM seizoensanalyse',
+    'chart2-insight': 'Maart–mei = piekverkoopseizoen. April-aanbiedingen realiseren gemiddeld 112% van de vraagprijs.',
+    'bt-label': '💡 Marktsignaal — Nu',
+    'bt-headline': 'BESTE TIJD OM AAN TE BIEDEN: MAART–MEI 2026',
+    'bt-body': 'Verkopers die in april aanbieden kunnen gemiddeld <strong>12% boven de vraagprijs</strong> realiseren. Augustus-aanbiedingen halen historisch slechts 93% — een verschil van 19 procentpunt ten opzichte van april. Overweegt u te verkopen? Neem nu contact op met GustoCasa om uw timing te plannen.',
+    'footer1': 'Marktintelligentie door <a href="https://trendsonfire.com" target="_blank">TrendsOnFire</a> · Maandelijks bijgewerkt op de 12e · Data: NVM, Kadaster, Funda, CBS',
+    'footer2': 'Deze pagina is gepubliceerd voor GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · Voor het volledige rapport, contact <a href="mailto:contact@trendsonfire.com">contact@trendsonfire.com</a>',
+  },
+  en: {
+    'tagline': 'Utrecht Housing Market Intelligence',
+    'report-label': '📊 Live Market Data — March 2026',
+    'update-date': 'Updated 12 March 2026 · Next update: 12 April 2026',
+    'kpi1-label': 'Avg Transaction Price',
+    'kpi1-change': '↑ +2.5% vs last year',
+    'kpi2-label': 'Avg Overbid Rate',
+    'kpi2-change': '🔥 Top 5 nationally',
+    'kpi3-label': 'Avg Days on Market',
+    'kpi3-change': '↓ Fast — seller\'s market',
+    'kpi4-label': 'Buyers per Listing',
+    'kpi4-change': '🔥 High competition',
+    'thermo-title': 'Utrecht Market Temperature',
+    'thermo-cool': 'Cool', 'thermo-warm': 'Warm', 'thermo-hot': 'Hot', 'thermo-vhot': 'Very Hot',
+    'thermo-status': '🔥 VERY HOT',
+    'thermo-insight': 'For every home listed on Funda in Utrecht, there are <strong>14.3 registered buyers</strong>. Utrecht is in the <strong>top decile nationally</strong>. Buyer demand structurally exceeds supply — maintaining strong upward price pressure across all segments.',
+    'chart1-title': 'Price Trend — Utrecht (6 Months)',
+    'chart1-source': 'Source: NVM · Average transaction price (€)',
+    'chart1-insight': '<strong>+2.6%</strong> over 6 months. Consistent upward trajectory despite interest rate environment. Utrecht outperforms the national average.',
+    'chart2-title': 'Best Month to List — % of Asking Price Achieved',
+    'chart2-source': 'Source: NVM seasonal analysis',
+    'chart2-insight': 'March–May = peak selling season. April listings average 112% of asking price.',
+    'bt-label': '💡 Market Signal — Right Now',
+    'bt-headline': 'BEST TIME TO LIST: MARCH–MAY 2026',
+    'bt-body': 'Sellers who list in April may achieve on average <strong>12% above asking price</strong>. August listings historically achieve only 93% of asking — a 19-point swing vs April. If you are considering selling, contact GustoCasa now to plan your listing timing.',
+    'footer1': 'Market intelligence powered by <a href="https://trendsonfire.com" target="_blank">TrendsOnFire</a> · Updated on the 12th of each month · Data: NVM, Kadaster, Funda, CBS',
+    'footer2': 'This page is published for GustoCasa · <a href="https://gustocasa.nl" target="_blank">gustocasa.nl</a> · For the full intelligence report, contact <a href="mailto:contact@trendsonfire.com">contact@trendsonfire.com</a>',
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (T[lang][key] !== undefined) el.innerHTML = T[lang][key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  seasonalChart.data.labels = lang === 'nl' ? months12NL : months12EN;
+  seasonalChart.update();
+  localStorage.setItem('ml-lang', lang);
+}
+
+// Default NL, override only if user explicitly chose EN
+const saved = localStorage.getItem('ml-lang');
+setLang(saved === 'en' ? 'en' : 'nl');
 </script>
 
 <script>
@@ -313,8 +357,8 @@ new Chart(document.getElementById('chartSeasonal'), {
     ctx.save();
     ctx.translate(c.width/2, c.height/2);
     ctx.rotate(-35 * Math.PI / 180);
-    ctx.font = 'bold 20px Inter, Arial, sans-serif';
-    ctx.fillStyle = 'rgba(26,35,64,0.30)';
+    ctx.font = 'bold 16px Inter, Arial, sans-serif';
+    ctx.fillStyle = 'rgba(26,35,64,0.10)';
     ctx.textAlign = 'center';
     var text = 'trendsonfire.com';
     var gap = 220;
