@@ -7,50 +7,59 @@
   <title>Delisted Pages — TrendsOnFire Admin</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #111827; line-height: 1.6; padding: 40px 24px; }
-    .wrapper { max-width: 960px; margin: 0 auto; }
-    h1 { font-size: 22px; font-weight: 800; color: #0f2340; margin-bottom: 6px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 60px; }
+    .wrapper { max-width: 980px; margin: 0 auto; }
+
+    h1 { font-size: 22px; font-weight: 800; color: #0f2340; margin-bottom: 4px; }
     .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
-    .notice { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #92400e; margin-bottom: 36px; }
+    .notice { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #92400e; margin-bottom: 40px; }
 
-    /* SECTION HEADINGS */
-    .section-heading {
-      display: flex; align-items: center; gap: 12px;
-      margin: 40px 0 12px;
+    /* BLOCK */
+    .block { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.08); margin-bottom: 28px; overflow: hidden; }
+    .block-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px; border-bottom: 1px solid #e5e7eb;
     }
-    .section-heading h2 { font-size: 16px; font-weight: 800; color: #0f2340; }
-    .section-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .dot-gc    { background: #1c3a2b; }
-    .dot-masa  { background: #b45309; }
-    .dot-tof   { background: #b91c1c; }
-    .dot-other { background: #4338ca; }
+    .block-icon { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .block-header h2 { font-size: 15px; font-weight: 800; color: #0f2340; }
+    .block-header .sub { font-size: 12px; color: #9ca3af; margin-top: 1px; }
 
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 8px; }
-    th { background: #0f2340; color: white; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
-    td { padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: #f9fafb; }
-    td a { color: #1d4ed8; text-decoration: none; }
-    td a:hover { text-decoration: underline; }
-    .file-path { font-size: 11px; color: #9ca3af; margin-top: 2px; font-family: monospace; }
-    .notes { font-size: 12.5px; color: #6b7280; }
+    /* ROW */
+    .row { display: flex; align-items: flex-start; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    .row:last-child { border-bottom: none; }
+    .row:hover { background: #f9fafb; }
+    .row-left { flex: 1; min-width: 0; }
+    .row-left a { font-size: 14px; font-weight: 600; color: #1d4ed8; text-decoration: none; }
+    .row-left a:hover { text-decoration: underline; }
+    .file-path { font-size: 11px; color: #9ca3af; font-family: monospace; margin-top: 2px; }
+    .row-note { font-size: 12.5px; color: #6b7280; margin-top: 4px; line-height: 1.5; }
+    .row-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; padding-top: 2px; }
+    .row-date { font-size: 11px; color: #9ca3af; white-space: nowrap; }
 
     /* TAGS */
     .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 10px; letter-spacing: .4px; white-space: nowrap; }
-    .tag-delisted  { background: #fee2e2; color: #b91c1c; }
-    .tag-proposal  { background: #fef3c7; color: #92400e; }
-    .tag-public    { background: #d1fae5; color: #065f46; }
-    .tag-research  { background: #dbeafe; color: #1e40af; }
-    .tag-service   { background: #ede9fe; color: #5b21b6; }
+    .tag-proposal { background: #fef3c7; color: #92400e; }
+    .tag-public   { background: #d1fae5; color: #065f46; }
+    .tag-sample   { background: #e0f2fe; color: #0369a1; }
+    .tag-linkedin { background: #ede9fe; color: #5b21b6; }
+    .tag-delisted { background: #fee2e2; color: #b91c1c; }
+    .tag-research { background: #dbeafe; color: #1e40af; }
+    .tag-service  { background: #f3f4f6; color: #374151; }
+
+    /* COLORS PER BLOCK */
+    .gc    .block-icon { background: #d1fae5; }
+    .masa  .block-icon { background: #fef3c7; }
+    .tof   .block-icon { background: #fee2e2; }
+    .other .block-icon { background: #e0e7ff; }
 
     /* HOW TO RELIST */
-    .relist-section { margin-top: 44px; }
-    .relist-section h2 { font-size: 15px; font-weight: 700; color: #0f2340; margin-bottom: 10px; }
-    .steps { background: white; border-radius: 10px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
-    .steps ol { padding-left: 20px; font-size: 13.5px; color: #374151; }
-    .steps li { margin-bottom: 8px; }
-    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-family: monospace; }
-    .home { display: inline-block; margin-top: 32px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .relist { margin-top: 44px; }
+    .relist h2 { font-size: 14px; font-weight: 700; color: #0f2340; margin-bottom: 10px; }
+    .relist .steps { background: white; border-radius: 10px; padding: 18px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .relist ol { padding-left: 20px; font-size: 13px; color: #374151; }
+    .relist li { margin-bottom: 7px; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 11.5px; font-family: monospace; }
+    .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
     .home:hover { color: #111827; }
   </style>
 </head>
@@ -58,161 +67,180 @@
 <div class="wrapper">
 
   <h1>TrendsOnFire — Hidden &amp; Delisted Pages</h1>
-  <div class="meta">Admin view &nbsp;·&nbsp; Not indexed by Google &nbsp;·&nbsp; Not linked from navigation</div>
-  <div class="notice">All hidden pages are listed below by client/project. None are indexed by Google or linked from navigation. Always add new hidden pages here.</div>
+  <div class="meta">Admin view · Not indexed by Google · Not linked from navigation</div>
+  <div class="notice">All hidden pages listed below by project. Always add new pages here when created.</div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- GUSTOCASA                              -->
-  <!-- ═══════════════════════════════════════ -->
-  <div class="section-heading">
-    <div class="section-dot dot-gc"></div>
-    <h2>GustoCasa — Utrecht (Lindy Hendriks)</h2>
-  </div>
-  <table>
-    <thead>
-      <tr><th>Page</th><th>Type</th><th>Date</th><th>Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/admin/gustocasa-proposal.html" target="_blank">Proposal for Lindy Hendriks →</a>
-          <div class="file-path">admin/gustocasa-proposal.html</div>
-        </td>
-        <td><span class="tag tag-proposal">Proposal</span></td>
-        <td>2 Apr 2026</td>
-        <td class="notes">Personalised sales proposal — pricing €195/€295 p/m, ROI case, EN/NL/ES switcher, phone + email CTA. <strong>Send this first.</strong></td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank">Monthly Intelligence Report — February 2026 →</a>
-          <div class="file-path">admin/sample-gustocasa.html</div>
-        </td>
-        <td><span class="tag tag-proposal">Sample report</span></td>
-        <td>31 Mar 2026</td>
-        <td class="notes">Full 11-section report, 21 charts — prices, overbid, neighbourhood, benchmarking, seasonal timing, ECB scenarios. EN/NL/ES switcher.</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/gustocasa/market-live.html" target="_blank">Public Live Market Dashboard →</a>
-          <div class="file-path">gustocasa/market-live.html</div>
-        </td>
-        <td><span class="tag tag-public">Public</span></td>
-        <td>2 Apr 2026</td>
-        <td class="notes">Public page for GustoCasa to share on LinkedIn / embed on gustocasa.nl. Updated 12th of each month. Open Graph tags for LinkedIn preview card.</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/admin/gustocasa-linkedin.html" target="_blank">LinkedIn Post Template — April 2026 →</a>
-          <div class="file-path">admin/gustocasa-linkedin.html</div>
-        </td>
-        <td><span class="tag tag-proposal">LinkedIn</span></td>
-        <td>2 Apr 2026</td>
-        <td class="notes">Ready-to-post content — Dutch + English, one-click copy, hashtag picker, best posting time guide.</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- ══════════════════════════════ -->
+  <!-- GUSTOCASA                     -->
+  <!-- ══════════════════════════════ -->
+  <div class="block gc">
+    <div class="block-header">
+      <div class="block-icon">🏡</div>
+      <div>
+        <h2>GustoCasa</h2>
+        <div class="sub">Utrecht · Lindy Hendriks · 4 pages</div>
+      </div>
+    </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- MASA INTERNATIONAL                     -->
-  <!-- ═══════════════════════════════════════ -->
-  <div class="section-heading">
-    <div class="section-dot dot-masa"></div>
-    <h2>MASA International — Spain (masainternational.nl)</h2>
-  </div>
-  <table>
-    <thead>
-      <tr><th>Page</th><th>Type</th><th>Date</th><th>Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/admin/sample-masainternational.html" target="_blank">Sample Deliverable — Costa Blanca Intelligence →</a>
-          <div class="file-path">admin/sample-masainternational.html</div>
-        </td>
-        <td><span class="tag tag-proposal">Sample report</span></td>
-        <td>31 Mar 2026</td>
-        <td class="notes">Quarterly report — Costa Blanca, Costa Cálida, foreign buyer intelligence, rental yields, forecasts.</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/admin/gustocasa-proposal.html" target="_blank">Proposal for Lindy Hendriks →</a>
+        <div class="file-path">admin/gustocasa-proposal.html</div>
+        <div class="row-note">Personalised sales proposal — pricing €195/€295 p/m, ROI case, EN/NL/ES language switcher, phone + email CTA. <strong>Send this first.</strong></div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-proposal">Proposal</span>
+        <span class="row-date">2 Apr 2026</span>
+      </div>
+    </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- TRENDSONFIRE DELISTED ARTICLES         -->
-  <!-- ═══════════════════════════════════════ -->
-  <div class="section-heading">
-    <div class="section-dot dot-tof"></div>
-    <h2>TrendsOnFire — Delisted Articles</h2>
-  </div>
-  <table>
-    <thead>
-      <tr><th>Page</th><th>Type</th><th>Date</th><th>Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/retail/sporting-goods-gaps.html" target="_blank">Champion — Sporting Goods Competitive Analysis →</a>
-          <div class="file-path">retail/sporting-goods-gaps.html</div>
-        </td>
-        <td><span class="tag tag-delisted">Delisted</span></td>
-        <td>Mar 2026</td>
-        <td class="notes">Strategic — removed from nav &amp; sitemap</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/retail/hard-luxury-brands.html" target="_blank">Hard Luxury Brands — European Market Intelligence 2026 →</a>
-          <div class="file-path">retail/hard-luxury-brands.html</div>
-        </td>
-        <td><span class="tag tag-delisted">Delisted</span></td>
-        <td>30 Mar 2026</td>
-        <td class="notes">Strategic — removed from nav &amp; sitemap</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/education-government/uwv.html" target="_blank">UWV Transformatie Intelligence →</a>
-          <div class="file-path">education-government/uwv.html</div>
-        </td>
-        <td><span class="tag tag-delisted">Delisted</span></td>
-        <td>30 Mar 2026</td>
-        <td class="notes">Strategic — removed from nav &amp; sitemap</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/admin/sample-gustocasa.html" target="_blank">Monthly Intelligence Report — February 2026 →</a>
+        <div class="file-path">admin/sample-gustocasa.html</div>
+        <div class="row-note">Full 11-section report, 21 charts — prices, overbid, neighbourhood, benchmarking, seasonal timing, ECB scenarios. EN/NL/ES switcher.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-sample">Sample report</span>
+        <span class="row-date">31 Mar 2026</span>
+      </div>
+    </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- OTHER PRIVATE PAGES                    -->
-  <!-- ═══════════════════════════════════════ -->
-  <div class="section-heading">
-    <div class="section-dot dot-other"></div>
-    <h2>Other Private Pages</h2>
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/gustocasa/market-live.html" target="_blank">Public Live Market Dashboard →</a>
+        <div class="file-path">gustocasa/market-live.html</div>
+        <div class="row-note">Public page for GustoCasa to share on LinkedIn / embed on gustocasa.nl. Updated 12th of each month. Open Graph tags for LinkedIn preview card.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-public">Public</span>
+        <span class="row-date">2 Apr 2026</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/admin/gustocasa-linkedin.html" target="_blank">LinkedIn Post Template — April 2026 →</a>
+        <div class="file-path">admin/gustocasa-linkedin.html</div>
+        <div class="row-note">Ready-to-post content — Dutch + English, one-click copy, hashtag picker, best posting time guide.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-linkedin">LinkedIn</span>
+        <span class="row-date">2 Apr 2026</span>
+      </div>
+    </div>
   </div>
-  <table>
-    <thead>
-      <tr><th>Page</th><th>Type</th><th>Date</th><th>Notes</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/admin/silva-utrecht.html" target="_blank">Silva Method Utrecht — Russian Market Intelligence →</a>
-          <div class="file-path">admin/silva-utrecht.html</div>
-        </td>
-        <td><span class="tag tag-research">Research</span></td>
-        <td>30 Mar 2026</td>
-        <td class="notes">Market sizing for Russian-language Silva Method training in Utrecht</td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://trendsonfire.com/services/real-estate-agencies.html" target="_blank">Market Intelligence for Real Estate Agencies →</a>
-          <div class="file-path">services/real-estate-agencies.html</div>
-        </td>
-        <td><span class="tag tag-service">Service page</span></td>
-        <td>31 Mar 2026</td>
-        <td class="notes">Commercial proposition for real estate agencies in NL, Spain and Germany — share link directly with prospects</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <!-- ══════════════════════════════ -->
+  <!-- MASA INTERNATIONAL            -->
+  <!-- ══════════════════════════════ -->
+  <div class="block masa">
+    <div class="block-header">
+      <div class="block-icon">🌞</div>
+      <div>
+        <h2>MASA International</h2>
+        <div class="sub">Spain — Costa Blanca / Costa Cálida · masainternational.nl · 1 page</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/admin/sample-masainternational.html" target="_blank">Sample Deliverable — Costa Blanca Intelligence →</a>
+        <div class="file-path">admin/sample-masainternational.html</div>
+        <div class="row-note">Quarterly report — Costa Blanca, Costa Cálida, foreign buyer intelligence, rental yields, forecasts.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-sample">Sample report</span>
+        <span class="row-date">31 Mar 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- TRENDSONFIRE DELISTED         -->
+  <!-- ══════════════════════════════ -->
+  <div class="block tof">
+    <div class="block-header">
+      <div class="block-icon">📰</div>
+      <div>
+        <h2>TrendsOnFire — Delisted Articles</h2>
+        <div class="sub">Removed from nav &amp; sitemap · Still accessible by direct URL</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/retail/sporting-goods-gaps.html" target="_blank">Champion — Sporting Goods Competitive Analysis →</a>
+        <div class="file-path">retail/sporting-goods-gaps.html</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-delisted">Delisted</span>
+        <span class="row-date">Mar 2026</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/retail/hard-luxury-brands.html" target="_blank">Hard Luxury Brands — European Market Intelligence 2026 →</a>
+        <div class="file-path">retail/hard-luxury-brands.html</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-delisted">Delisted</span>
+        <span class="row-date">30 Mar 2026</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/education-government/uwv.html" target="_blank">UWV Transformatie Intelligence →</a>
+        <div class="file-path">education-government/uwv.html</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-delisted">Delisted</span>
+        <span class="row-date">30 Mar 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ -->
+  <!-- OTHER                         -->
+  <!-- ══════════════════════════════ -->
+  <div class="block other">
+    <div class="block-header">
+      <div class="block-icon">🔒</div>
+      <div>
+        <h2>Other Private Pages</h2>
+        <div class="sub">Research &amp; service pages not linked from navigation</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/admin/silva-utrecht.html" target="_blank">Silva Method Utrecht — Russian Market Intelligence →</a>
+        <div class="file-path">admin/silva-utrecht.html</div>
+        <div class="row-note">Market sizing for Russian-language Silva Method training in Utrecht.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-research">Research</span>
+        <span class="row-date">30 Mar 2026</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row-left">
+        <a href="https://trendsonfire.com/services/real-estate-agencies.html" target="_blank">Market Intelligence for Real Estate Agencies →</a>
+        <div class="file-path">services/real-estate-agencies.html</div>
+        <div class="row-note">Commercial proposition for real estate agencies in NL, Spain and Germany — share link directly with prospects.</div>
+      </div>
+      <div class="row-right">
+        <span class="tag tag-service">Service page</span>
+        <span class="row-date">31 Mar 2026</span>
+      </div>
+    </div>
+  </div>
 
   <!-- HOW TO RELIST -->
-  <div class="relist-section">
+  <div class="relist">
     <h2>How to relist a delisted article</h2>
     <div class="steps">
       <ol>
