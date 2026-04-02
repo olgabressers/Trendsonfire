@@ -526,6 +526,104 @@
     <strong>Watch this space:</strong> NVM is investing in Brainbay and could improve member tools. The window to establish client relationships and benchmarking data is open now — and closes as incumbents improve. Speed of market penetration matters.
   </div>
 
+  <!-- SCALABILITY -->
+  <div class="section-title">Scalability — How to Grow Without Drowning</div>
+
+  <div class="callout callout-orange">
+    <strong>The core tension:</strong> The benchmarking section (client's own data vs market) is the strongest selling point — but it's also the only part that requires manual work per client. Everything else in the report is the same for every agency in the same city. The scalability strategy is to maximise the shared layer and minimise the per-client layer.
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:12px;">What is shared vs personalised in each report</h3>
+    <table>
+      <thead><tr><th>Report component</th><th>Shared across all city clients?</th><th>Time per city/month</th><th>Time per client/month</th></tr></thead>
+      <tbody>
+        <tr><td>Market data (prices, overbid, supply/demand)</td><td style="color:#166534;font-weight:700;">Yes — update once</td><td>~2–3h</td><td>~10 min (copy paste)</td></tr>
+        <tr><td>Neighbourhood price intelligence</td><td style="color:#166534;font-weight:700;">Yes — same for all Utrecht agents</td><td>included above</td><td>—</td></tr>
+        <tr><td>Mortgage rate tracker</td><td style="color:#166534;font-weight:700;">Yes</td><td>included above</td><td>—</td></tr>
+        <tr><td>Seasonal patterns, ECB scenarios</td><td style="color:#166534;font-weight:700;">Yes — rarely changes</td><td>~30 min</td><td>—</td></tr>
+        <tr><td>Performance benchmarking (client's own data)</td><td style="color:#c0392b;font-weight:700;">No — unique per client</td><td>—</td><td>~30 min</td></tr>
+        <tr><td>LinkedIn post template</td><td style="color:#f59e0b;font-weight:700;">Mostly shared — minor personalisation</td><td>~30 min</td><td>~10 min</td></tr>
+        <tr><td>Public dashboard (market-live)</td><td style="color:#f59e0b;font-weight:700;">City data shared — client branding unique</td><td>~30 min</td><td>~15 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:12px;">Time model per growth phase</h3>
+    <table>
+      <thead><tr><th>Scale</th><th>City updates</th><th>Benchmarking (30 min each)</th><th>LinkedIn + dashboard (25 min each)</th><th>Total/month</th><th>Revenue (avg €275)</th></tr></thead>
+      <tbody>
+        <tr><td>5 clients, 1 city</td><td>3h</td><td>2.5h</td><td>2h</td><td><strong>~8h</strong></td><td>~€1,375 MRR</td></tr>
+        <tr><td>15 clients, 2 cities</td><td>6h</td><td>7.5h</td><td>6h</td><td><strong>~20h</strong></td><td>~€4,125 MRR</td></tr>
+        <tr><td>30 clients, 4 cities</td><td>12h</td><td>15h</td><td>12h</td><td><strong>~39h</strong></td><td>~€8,250 MRR</td></tr>
+        <tr style="background:#fff7ed;"><td><strong>Hire threshold: ~25 clients</strong></td><td colspan="4">At ~30h/month of mechanical work, a part-time data assistant (€15–20/h, 20h/month) costs ~€350/month — covered by 1.5 clients. Hire at 25 clients.</td><td></td></tr>
+        <tr><td>50 clients, 6 cities</td><td>18h</td><td>25h</td><td>20h</td><td><strong>~63h</strong> (split with assistant)</td><td>~€13,750 MRR</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:12px;">Three-phase scalability roadmap</h3>
+    <table>
+      <thead><tr><th>Phase</th><th>Clients</th><th>Approach</th><th>Bottleneck</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 1: Manual</strong><br/><span style="font-size:11px;color:#6b7280;">Now → 15 clients</span></td>
+          <td>1–15</td>
+          <td>One HTML file per city, manually updated. Client copy has their name + benchmarking section swapped in. Takes ~30 min per client to personalise. Benchmarking data collected via monthly email or Google Form from client.</td>
+          <td>Your time. Manageable.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2: Semi-automated</strong><br/><span style="font-size:11px;color:#6b7280;">15–40 clients</span></td>
+          <td>15–40</td>
+          <td>One master city HTML template. One JSON config file per client (name, logo URL, benchmarking data). Simple script generates personalised HTML from template + config. Part-time assistant collects client transaction data and updates config files monthly.</td>
+          <td>Building the template system (~1–2 days of dev work). Worth doing at 15 clients.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3: Platform</strong><br/><span style="font-size:11px;color:#6b7280;">40+ clients</span></td>
+          <td>40+</td>
+          <td>Client login portal. Clients enter their own transaction data. Reports auto-generate. Dashboard auto-updates. LinkedIn post auto-drafted and sent for approval. This is a proper SaaS product — requires technical investment or technical co-founder.</td>
+          <td>Significant technical build. Cross this bridge when revenue justifies it.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECURITY -->
+  <div class="section-title">URL Security — Protecting Client Reports</div>
+
+  <div class="callout callout-orange">
+    <strong>Current problem:</strong> URLs like <code>admin/sample-gustocasa.html</code> and <code>gustocasa/market-live.html</code> are guessable by anyone who knows the naming convention. A competitor agency could find a rival's benchmarking data, pricing, and transaction history. This must be fixed before signing more clients.
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:12px;">Solution: random token in URL path</h3>
+    <p style="font-size:13px;color:#374151;margin-bottom:14px;">Add an 8-character random token to each client's folder path. No backend required — works on static GitHub Pages hosting. The token is unguessable (36⁸ = 2.8 trillion combinations) and not indexed by Google (noindex meta already set).</p>
+    <table>
+      <thead><tr><th>Type</th><th>Current (guessable)</th><th>Fixed (secure)</th></tr></thead>
+      <tbody>
+        <tr><td>Sample report</td><td><code>admin/sample-gustocasa.html</code></td><td><code>admin/clients/a7f3k2b9/report.html</code></td></tr>
+        <tr><td>Proposal</td><td><code>admin/gustocasa-proposal.html</code></td><td><code>admin/clients/a7f3k2b9/proposal.html</code></td></tr>
+        <tr><td>Live dashboard</td><td><code>gustocasa/market-live.html</code></td><td><code>clients/a7f3k2b9/market-live.html</code></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:#6b7280;margin-top:12px;">Each client gets one token for all their URLs. Token is stored in the delisted.html admin registry. This is the same approach used by Dropbox, Google Docs, and Calendly for "anyone with the link" sharing.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3 style="margin-bottom:12px;">Implementation plan</h3>
+    <table>
+      <thead><tr><th>Step</th><th>Action</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Generate tokens for existing clients (GustoCasa: rename to <code>admin/clients/[token]/</code>). Update delisted.html registry.</td><td style="color:#c0392b;font-weight:700;">Do now — before next client</td></tr>
+        <tr><td>2</td><td>Send Lindy the new URLs. Old URLs still work during transition (keep old files in place for 2 weeks then delete).</td><td style="color:#c0392b;font-weight:700;">Same day as step 1</td></tr>
+        <tr><td>3</td><td>All future clients: create folder <code>admin/clients/[random-token]/</code> from day one. Never use agency name in URL.</td><td style="color:#166534;font-weight:700;">Standard going forward</td></tr>
+        <tr><td>4</td><td>For the public dashboard (market-live): since this is shared publicly by the agent themselves, the URL can remain readable — e.g. <code>utrecht/market-live.html</code> (city only, no client name). All agents in Utrecht share the same public dashboard.</td><td style="color:#6b7280;">Nice to have</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- RISKS -->
   <div class="section-title">Key Risks &amp; Mitigations</div>
   <div class="card">
