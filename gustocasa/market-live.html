@@ -151,34 +151,15 @@
     .update-note { font-size: 11px; color: var(--sub); margin-top: 4px; }
 
     /* WATERMARK */
-    .watermark-text {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      pointer-events: none;
-      z-index: 9998;
-      overflow: hidden;
-    }
-    .watermark-text::before {
-      content: 'trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com';
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 400%;
-      height: 400%;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      color: rgba(26,35,64,0.35);
-      word-spacing: 40px;
-      line-height: 88px;
-      transform: rotate(-35deg);
-      font-family: 'Inter', sans-serif;
-      text-transform: lowercase;
+    #watermark-canvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 9998;
     }
   </style>
 </head>
 <body>
-<div class="watermark-text"></div>
+<canvas id="watermark-canvas"></canvas>
 
 <div class="header">
   <div class="header-left" style="display:flex;align-items:center;gap:14px;">
@@ -319,6 +300,37 @@ new Chart(document.getElementById('chartSeasonal'), {
     }
   }
 });
+</script>
+
+<script>
+(function() {
+  var c = document.getElementById('watermark-canvas');
+  function draw() {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    var ctx = c.getContext('2d');
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.save();
+    ctx.translate(c.width/2, c.height/2);
+    ctx.rotate(-35 * Math.PI / 180);
+    ctx.font = 'bold 20px Inter, Arial, sans-serif';
+    ctx.fillStyle = 'rgba(26,35,64,0.30)';
+    ctx.textAlign = 'center';
+    var text = 'trendsonfire.com';
+    var gap = 220;
+    var rowH = 80;
+    var cols = Math.ceil(c.width / gap) + 4;
+    var rows = Math.ceil(c.height / rowH) + 6;
+    for (var r = -rows; r <= rows; r++) {
+      for (var col = -cols; col <= cols; col++) {
+        ctx.fillText(text, col * gap, r * rowH);
+      }
+    }
+    ctx.restore();
+  }
+  draw();
+  window.addEventListener('resize', draw);
+})();
 </script>
 </body>
 </html>
