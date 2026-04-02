@@ -61,13 +61,14 @@
       padding: 72px 40px 60px; text-align: center;
     }
     .hero-stats {
-      display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
-      background: var(--white); border-bottom: 1px solid var(--border);
+      display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap;
+      background: var(--white); border-bottom: 3px solid var(--off-white);
+      box-shadow: 0 2px 12px rgba(28,58,43,.07);
     }
-    .hero-stat { padding: 20px 32px; border-right: 1px solid var(--border); }
+    .hero-stat { padding: 22px 36px; border-right: 1px solid var(--off-white); display: flex; flex-direction: column; justify-content: center; }
     .hero-stat:last-child { border-right: none; }
-    .hero-stat .hs-value { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--green); }
-    .hero-stat .hs-label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+    .hero-stat .hs-value { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); letter-spacing: -.5px; }
+    .hero-stat .hs-label { font-size: 10.5px; color: var(--text-light); text-transform: uppercase; letter-spacing: .1em; margin-top: 3px; }
     .hero-eyebrow {
       display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .16em;
       text-transform: uppercase; color: var(--gold);
@@ -256,7 +257,7 @@
       <img src="https://usercontent.one/wp/www.gustocasa.nl/wp-content/uploads/elementor/thumbs/Logo_Zwart_Klein-300x300-oevycf9vk7j04w4fpzpgcckm8ae1uvt8mpixru2skg.png?media=1765979487" alt="GustoCasa" />
     </div>
     <div class="separator"></div>
-    <div class="tof">Trends<span>On</span>Fire</div>
+    <a href="https://trendsonfire.com" class="tof" style="text-decoration:none;">Trends<span>On</span>Fire</a>
   </div>
   <div class="header-right">
     <div class="lang-switcher">
@@ -264,16 +265,16 @@
       <button class="lang-btn" data-lang="nl" onclick="setLang('nl')">NL</button>
       <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
     </div>
-    <strong>Prepared for Lindy Hendriks · GustoCasa</strong>
+    <strong style="color:white;">GustoCasa × TrendsOnFire</strong>
     <span class="sub">Private proposal · April 2026 · Confidential</span>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow" data-i18n="hero-eyebrow">GustoCasa × TrendsOnFire · Market Intelligence Partnership Proposal</div>
-  <h1 data-i18n="hero-h1">Give Your Clients the Data<br>They're Already <em>Googling.</em></h1>
-  <p class="hero-sub" data-i18n="hero-sub">Every seller and buyer in Utrecht is checking the market before they call an agent. We make sure the data they find has your name on it — and that you walk into every listing meeting better prepared than any competitor.</p>
+  <div class="hero-eyebrow" data-i18n="hero-eyebrow">Market Intelligence Partnership Proposal · April 2026</div>
+  <h1 data-i18n="hero-h1">Give Your Clients the Data<br><em>Nobody Else Can Give Them.</em></h1>
+  <p class="hero-sub" data-i18n="hero-sub">Your clients Google the Utrecht market before they call you. Be the agent whose data they find — and the one who walks into every listing meeting with numbers your competitors simply don't have. Market intelligence that turns conversations into instructions.</p>
   <div class="hero-actions">
     <a href="#pricing" class="btn-gold" data-i18n="btn-offer">See the Offer</a>
     <a href="sample-gustocasa.html" target="_blank" class="btn-ghost" data-i18n="btn-sample">View GustoCasa Sample Report →</a>
@@ -291,8 +292,8 @@
     <div class="hs-label">Avg overbid rate · Feb 2026</div>
   </div>
   <div class="hero-stat">
-    <div class="hs-value">8.8 days</div>
-    <div class="hs-label">Avg days on market</div>
+    <div class="hs-value">21.5 days</div>
+    <div class="hs-label">Avg days on market · Utrecht</div>
   </div>
   <div class="hero-stat">
     <div class="hs-value">14.3×</div>
@@ -308,7 +309,7 @@
 <section class="section" style="background:var(--green);padding-top:56px;padding-bottom:56px;">
   <div class="inner">
     <div style="max-width:780px;margin:0 auto;text-align:center;">
-      <div class="section-label" style="color:var(--gold-light);" data-i18n="sample-label">Already Done — No Contract Needed</div>
+      <div class="section-label" style="color:var(--gold-light);" data-i18n="sample-label">Built For You — See the Full Potential</div>
       <h2 class="section-title" style="color:white;" data-i18n="sample-h2">Your February Report Is Ready — Right Now</h2>
       <p class="section-sub" style="color:rgba(255,255,255,.7);margin:0 auto 0;" data-i18n="sample-sub">We didn't wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.</p>
       <div class="preview-box">
@@ -526,12 +527,12 @@
 <script>
 const T = {
   en: {
-    'hero-eyebrow': 'GustoCasa × TrendsOnFire · Market Intelligence Partnership Proposal',
-    'hero-h1': 'Give Your Clients the Data<br>They\'re Already <em>Googling.</em>',
-    'hero-sub': 'Every seller and buyer in Utrecht is checking the market before they call an agent. We make sure the data they find has your name on it — and that you walk into every listing meeting better prepared than any competitor.',
+    'hero-eyebrow': 'Market Intelligence Partnership Proposal · April 2026',
+    'hero-h1': 'Give Your Clients the Data<br><em>Nobody Else Can Give Them.</em>',
+    'hero-sub': 'Your clients Google the Utrecht market before they call you. Be the agent whose data they find — and the one who walks into every listing meeting with numbers your competitors simply don\'t have. Market intelligence that turns conversations into instructions.',
     'btn-offer': 'See the Offer',
     'btn-sample': 'View GustoCasa Sample Report →',
-    'sample-label': 'Already Done — No Contract Needed',
+    'sample-label': 'Built For You — See the Full Potential',
     'sample-h2': 'Your February Report Is Ready — Right Now',
     'sample-sub': 'We didn\'t wait for a signed contract. The February 2026 Utrecht market report, built specifically for GustoCasa, is live and waiting for you.',
     'sample-btn': 'Open the Full GustoCasa Report →',
@@ -581,12 +582,12 @@ const T = {
     'footer-text': '© 2026 TrendsOnFire · Prepared for GustoCasa · Confidential',
   },
   nl: {
-    'hero-eyebrow': 'GustoCasa × TrendsOnFire · Marktintelligentie Partnerschap',
-    'hero-h1': 'Geef Uw Klanten de Data<br>die Ze Al <em>Googelen.</em>',
-    'hero-sub': 'Elke verkoper en koper in Utrecht controleert de markt voordat ze een makelaar bellen. Wij zorgen ervoor dat de data die ze vinden úw naam draagt — en dat u elke verkoopgesprek beter voorbereid instapt dan welke concurrent dan ook.',
+    'hero-eyebrow': 'Marktintelligentie Partnerschap Voorstel · April 2026',
+    'hero-h1': 'Geef Uw Klanten de Data<br><em>die Niemand Anders Heeft.</em>',
+    'hero-sub': 'Uw klanten Googelen de Utrechtse markt voordat ze u bellen. Zorg dat de data die ze vinden uw naam draagt — en loop elk verkoopgesprek binnen met cijfers die uw concurrenten simpelweg niet hebben. Marktintelligentie die gesprekken omzet in opdrachten.',
     'btn-offer': 'Bekijk het Aanbod',
     'btn-sample': 'Bekijk GustoCasa Voorbeeldrapport →',
-    'sample-label': 'Al Gereed — Geen Contract Nodig',
+    'sample-label': 'Speciaal Voor U Gebouwd — Ontdek het Volledige Potentieel',
     'sample-h2': 'Uw Februarirapport Is Nu Klaar',
     'sample-sub': 'We hebben niet gewacht op een getekend contract. Het februari 2026 Utrecht marktrapport, speciaal opgebouwd voor GustoCasa, staat live en wacht op u.',
     'sample-btn': 'Open het Volledige GustoCasa Rapport →',
@@ -636,12 +637,12 @@ const T = {
     'footer-text': '© 2026 TrendsOnFire · Voorbereid voor GustoCasa · Vertrouwelijk',
   },
   es: {
-    'hero-eyebrow': 'GustoCasa × TrendsOnFire · Propuesta de Inteligencia de Mercado',
-    'hero-h1': 'Dé a Sus Clientes los Datos<br>que Ya <em>Buscan.</em>',
-    'hero-sub': 'Cada vendedor y comprador en Utrecht consulta el mercado antes de llamar a un agente. Nos aseguramos de que los datos que encuentren lleven su nombre — y de que entre a cada reunión mejor preparada que cualquier competidor.',
+    'hero-eyebrow': 'Propuesta de Inteligencia de Mercado · Abril 2026',
+    'hero-h1': 'Dé a Sus Clientes los Datos<br><em>que Nadie Más Puede Darles.</em>',
+    'hero-sub': 'Sus clientes buscan el mercado de Utrecht en Google antes de llamarle. Sea el agente cuyos datos encuentren — y entre a cada reunión de venta con cifras que sus competidores simplemente no tienen. Inteligencia de mercado que convierte conversaciones en instrucciones.',
     'btn-offer': 'Ver la Oferta',
     'btn-sample': 'Ver Informe de Muestra de GustoCasa →',
-    'sample-label': 'Ya Listo — Sin Contrato Necesario',
+    'sample-label': 'Creado Para Usted — Vea el Potencial Completo',
     'sample-h2': 'Su Informe de Febrero Está Listo — Ahora Mismo',
     'sample-sub': 'No esperamos a un contrato firmado. El informe de mercado de Utrecht de febrero de 2026, construido específicamente para GustoCasa, está en vivo y le espera.',
     'sample-btn': 'Abrir el Informe Completo de GustoCasa →',
