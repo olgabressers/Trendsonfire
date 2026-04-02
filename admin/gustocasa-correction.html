@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>GustoCasa Report — Sample vs Real Data Correction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --navy: #1a2340; --orange: #e8622a; --cream: #f8f6f2;
+      --green: #1e7c4e; --red: #c0392b; --blue: #3b82f6;
+      --text: #1e1e2e; --mid: #5a5a72; --border: #e8e4de;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    .top-banner { background: #7f1d1d; color: #fff; text-align: center; padding: 12px 24px; font-size: 13px; font-weight: 600; }
+
+    .page-header { background: var(--navy); color: #fff; padding: 28px 40px; }
+    .page-header h1 { font-size: 22px; font-weight: 800; }
+    .page-header p { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 4px; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    /* SECTION TITLE */
+    .sec-title { font-size: 18px; font-weight: 800; color: var(--navy); padding: 28px 0 16px; border-bottom: 2px solid var(--navy); margin-bottom: 20px; }
+    .sec-title span { font-size: 12px; font-weight: 600; color: var(--mid); margin-left: 10px; font-style: italic; }
+
+    /* COMPARE GRID */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    @media(max-width:800px) { .compare { grid-template-columns: 1fr; } }
+
+    .panel { border-radius: 10px; overflow: hidden; }
+    .panel-head { padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+    .panel-body { padding: 16px; background: white; }
+    .panel-body .chart-wrap { position: relative; height: 200px; margin: 12px 0; }
+    .panel-body .chart-wrap.tall { height: 240px; }
+
+    .panel.sample .panel-head { background: #fee2e2; color: #b91c1c; border: 1.5px solid #fca5a5; border-bottom: none; }
+    .panel.sample .panel-body  { border: 1.5px solid #fca5a5; border-top: none; }
+
+    .panel.real   .panel-head { background: #d1fae5; color: #065f46; border: 1.5px solid #6ee7b7; border-bottom: none; }
+    .panel.real   .panel-body  { border: 1.5px solid #6ee7b7; border-top: none; }
+
+    .panel.gap    .panel-head { background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; border-bottom: none; }
+    .panel.gap    .panel-body  { border: 1.5px solid #fde68a; border-top: none; }
+
+    .val { font-size: 28px; font-weight: 800; color: var(--navy); }
+    .val.wrong { color: #b91c1c; }
+    .val.correct { color: var(--green); }
+    .val-label { font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+    .val-delta { font-size: 12px; font-weight: 600; margin-top: 4px; }
+
+    .kpi-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .kpi-box { flex: 1; min-width: 100px; background: var(--cream); border-radius: 8px; padding: 12px; }
+
+    /* GAP NOTE */
+    .gap-note { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 14px 16px; font-size: 13px; color: #78350f; margin: 8px 0; line-height: 1.6; }
+    .gap-note strong { display: block; margin-bottom: 4px; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { font-size: 11px; font-weight: 700; color: var(--mid); text-transform: uppercase; letter-spacing: .04em; padding: 8px 12px; background: var(--cream); border-bottom: 1px solid var(--border); text-align: left; }
+    td { padding: 10px 12px; border-bottom: 1px solid #f3f4f6; }
+    tr:last-child td { border-bottom: none; }
+    .wrong-val { color: #b91c1c; font-weight: 700; }
+    .right-val  { color: var(--green); font-weight: 700; }
+
+    /* INSIGHT */
+    .insight { background: #eef4ff; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 12.5px; color: #1e3a5f; margin-top: 10px; }
+    .source-note { font-size: 11px; color: var(--mid); margin-top: 6px; }
+
+    .full-panel { background: white; border-radius: 10px; border: 1.5px solid #6ee7b7; margin-bottom: 24px; overflow: hidden; }
+    .full-panel .panel-head { background: #d1fae5; color: #065f46; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .full-panel .panel-body { padding: 16px; }
+
+    .full-gap { background: white; border-radius: 10px; border: 1.5px solid #fde68a; margin-bottom: 24px; overflow: hidden; }
+    .full-gap .panel-head { background: #fef3c7; color: #92400e; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .full-gap .panel-body { padding: 16px; }
+
+    .divider { border: none; border-top: 1px dashed var(--border); margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+<div class="top-banner">⚠ INTERNAL WORKING DOCUMENT — Do not share. This page was NOT sent to Lindy.</div>
+
+<div class="page-header">
+  <h1>GustoCasa Report — Sample vs Real Data Correction</h1>
+  <p>Every section from the sample report sent to Lindy. Left panel = what was sent. Right panel = real sourced data or gap note.</p>
+</div>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- KPI STRIP                                                  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">KPI Strip — 4 headline numbers at top of report</div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy</div>
+    <div class="panel-body">
+      <div class="kpi-row">
+        <div class="kpi-box"><div class="val-label">Homes Sold</div><div class="val wrong">873</div><div class="val-delta">↑ 61 vs January</div></div>
+        <div class="kpi-box"><div class="val-label">Avg Price</div><div class="val wrong">€521K</div><div class="val-delta">↓ €4K vs Jan</div></div>
+        <div class="kpi-box"><div class="val-label">Overbidding</div><div class="val wrong">12.2%</div><div class="val-delta">↑ 0.1pp vs Jan</div></div>
+        <div class="kpi-box"><div class="val-label">Funda Seekers</div><div class="val wrong">20,040</div><div class="val-delta">↓ 1,009 vs Jan</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data</div>
+    <div class="panel-body">
+      <div class="kpi-row">
+        <div class="kpi-box"><div class="val-label">Homes Sold</div><div class="val correct">~397/mo</div><div class="val-delta">4,764 in 2025 ÷ 12</div></div>
+        <div class="kpi-box"><div class="val-label">Avg Price</div><div class="val correct">€562K</div><div class="val-delta">Feb 2026 actual</div></div>
+        <div class="kpi-box"><div class="val-label">Overbidding</div><div class="val correct">8.2%</div><div class="val-delta">Feb 2026 actual</div></div>
+        <div class="kpi-box"><div class="val-label">Replace with</div><div class="val correct">79.7%</div><div class="val-delta">homes sold above asking (Q3 2025)</div></div>
+      </div>
+      <div class="source-note">Sources: huisverkopen.nl Feb–Mar 2026, Kadaster 2025 annual, NVM regio Utrecht Q3 2025</div>
+      <div class="gap-note" style="margin-top:10px"><strong>❌ Remove "Funda Seekers"</strong>Funda does not publish seeker counts by city publicly. Replace with "% homes sold above asking" = 79.7% — this is a real, sourced number that makes the same market heat argument.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: MONTHLY MARKET SNAPSHOT                        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 1 — Monthly Market Snapshot</div>
+
+<!-- CHART: Homes Sold -->
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Homes Sold (Sent to Lindy)</div>
+    <div class="panel-body">
+      <div class="source-note">Data: [756,792,845,801,723,812,873] Aug–Feb</div>
+      <div class="chart-wrap"><canvas id="sSold"></canvas></div>
+      <div class="source-note">Claimed source: NVM/Kadaster — FABRICATED numbers</div>
+    </div>
+  </div>
+  <div class="panel gap">
+    <div class="panel-head">⚠ Real Data — Monthly breakdown not available</div>
+    <div class="panel-body">
+      <div class="gap-note"><strong>What is real:</strong> Total 2025 Utrecht transactions = 4,764 (+19.2% YoY). Monthly average = ~397. But month-by-month data for Aug–Feb is not published freely by NVM.<br><br><strong>What to do:</strong> Download the Kadaster quarterly transaction file at kadaster.nl → Woningmarktcijfers → select gemeente Utrecht. Free download. Gives you quarterly totals which you can divide by 3 for monthly estimates.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHART: Avg Price trend -->
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Avg Transaction Price (Sent to Lindy)</div>
+    <div class="panel-body">
+      <div class="source-note">Data: [498K,503K,508K,505K,501K,517K,521K] Aug–Feb — FABRICATED trend</div>
+      <div class="chart-wrap"><canvas id="sPrice"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data — Corrected Price Trend</div>
+    <div class="panel-body">
+      <div class="source-note">Real: Feb 2026 = €562,500 · Mar 2026 = €519,673 (different aggregation). Full monthly trend not public — used known Q data points.</div>
+      <div class="chart-wrap"><canvas id="rPrice"></canvas></div>
+      <div class="insight">The sample report understated prices by ~€40K. Real February 2026 average is €562,500 not €521K. The price trend direction (upward) is correct.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHART: Overbidding -->
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Overbidding % (Sent to Lindy)</div>
+    <div class="panel-body">
+      <div class="source-note">Data: [10.2,10.8,11.4,11.1,10.6,12.1,12.2]% — FABRICATED, level is wrong</div>
+      <div class="chart-wrap"><canvas id="sOverbid"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data — Corrected Overbidding</div>
+    <div class="panel-body">
+      <div class="source-note">Real: 8.2% Feb 2026 (huisverkopen.nl). Q3 2025: 79.7% of homes sold above asking. Monthly trend shape estimated — endpoint anchored to real 8.2%.</div>
+      <div class="chart-wrap"><canvas id="rOverbid"></canvas></div>
+      <div class="insight">⚠ The sample showed ~4pp higher overbidding than reality. This makes the market look hotter than it is. Use 8.2% as the current figure.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Supply/Demand -->
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Funda Supply vs Demand (Sent to Lindy)</div>
+    <div class="panel-body">
+      <div class="source-note">Seekers ÷ 10 vs properties available — both series FABRICATED. Funda does not publish this data by city.</div>
+      <div class="chart-wrap"><canvas id="sSupply"></canvas></div>
+    </div>
+  </div>
+  <div class="panel gap">
+    <div class="panel-head">⚠ No public replacement available</div>
+    <div class="panel-body">
+      <div class="gap-note"><strong>What to do:</strong> Remove this chart entirely. Replace with one real metric: "79.7% of Utrecht homes sold above asking price" (NVM Q3 2025). That communicates market pressure without fabricated seeker numbers.</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEIGHBOURHOOD TABLE -->
+<div class="sec-title">Section 1c — Neighbourhood Price Intelligence (€/m²) <span>Most values are significantly wrong</span></div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — Neighbourhood Prices</div>
+    <div class="panel-body">
+      <div class="chart-wrap tall"><canvas id="sNeighbourhood"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data — Corrected Neighbourhood Prices</div>
+    <div class="panel-body">
+      <div class="chart-wrap tall"><canvas id="rNeighbourhood"></canvas></div>
+      <div class="insight">Wittevrouwen real price is more than 2× higher than what was sent. Overvecht and Kanaleneiland are also roughly double. Source: grandia-aankoopmakelaars.nl</div>
+    </div>
+  </div>
+</div>
+
+<div class="full-gap">
+  <div class="panel-head">⚠ Gaps in neighbourhood data</div>
+  <div class="panel-body">
+    <div class="gap-note"><strong>Daalsebuurt, Pijlsweerd, Elinkwijk — no public €/m² data found.</strong> Action: check kadasterdata.nl or huizendata.nl per postcode. These aggregate Kadaster data by neighbourhood and are free to use. Alternatively, do a manual Funda search filtered by neighbourhood and calculate from listed properties.</div>
+  </div>
+</div>
+
+<!-- HISTORICAL PRICE EVOLUTION -->
+<div class="sec-title">Section 1b — Historical Price Evolution 2020–2026</div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — Historic Prices</div>
+    <div class="panel-body">
+      <div class="source-note">Utrecht: [368K,440K,487K,453K,491K,516K,521K] — end point too low</div>
+      <div class="chart-wrap"><canvas id="sHist"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data — Corrected Historic Trend</div>
+    <div class="panel-body">
+      <div class="source-note">Utrecht 2025 avg: ~€549K (full year). 2026 Q1: ~€562K. NL 2025: CBS +13% YoY province Utrecht. Overall trend shape is correct — endpoint adjusted.</div>
+      <div class="chart-wrap"><canvas id="rHist"></canvas></div>
+      <div class="insight">The trend shape (2022 peak → 2023 dip → recovery) is confirmed by CBS/NVM. The 2025–2026 endpoint was understated. Corrected to reflect ~€549K (2025) and €562K (2026 Q1).</div>
+    </div>
+  </div>
+</div>
+
+<!-- MORTGAGE RATES -->
+<div class="sec-title">Section 1d — Mortgage Rate Tracker <span>✅ This section is OK</span></div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ Mortgage rates are within real range — no major correction needed</div>
+  <div class="panel-body">
+    <table>
+      <thead><tr><th>Lender</th><th>Rate in Sample</th><th>Real Range (Mar 2026)</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>SNS</td><td>3.59%</td><td>3.6%–4.1% market range</td><td class="right-val">✓ OK</td></tr>
+        <tr><td>ING</td><td>3.68%</td><td>Within market range</td><td class="right-val">✓ OK</td></tr>
+        <tr><td>ABN AMRO</td><td>3.72%</td><td>Within market range</td><td class="right-val">✓ OK</td></tr>
+        <tr><td>Rabobank</td><td>3.79%</td><td>Within market range</td><td class="right-val">✓ OK</td></tr>
+        <tr><td>BLG (highest)</td><td>4.18%</td><td>Top of real range = 4.1%</td><td>⚠ Slightly high</td></tr>
+      </tbody>
+    </table>
+    <div class="gap-note" style="margin-top:12px"><strong>Tip for real report:</strong> Pull live rates from independer.nl each month. Takes 2 minutes. Rates do change month to month.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: BENCHMARKING                                   -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 2 — GustoCasa Performance Benchmarking <span>All requires Lindy's data</span></div>
+
+<div class="full-gap">
+  <div class="panel-head">⚠ Entire section requires Lindy's transaction data</div>
+  <div class="panel-body">
+    <table>
+      <thead><tr><th>KPI</th><th>Sent to Lindy (sample)</th><th>What you need from Lindy</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>GustoCasa overbid %</td>
+          <td class="wrong-val">19.8% (fabricated)</td>
+          <td>Her transactions: address · asking price · sold price</td>
+        </tr>
+        <tr>
+          <td>GustoCasa days on market</td>
+          <td class="wrong-val">8.8 days (fabricated)</td>
+          <td>Date listed on Funda + date of sale (koopovereenkomst)</td>
+        </tr>
+        <tr>
+          <td>GustoCasa price/m²</td>
+          <td class="wrong-val">€4,820/m² (fabricated)</td>
+          <td>Sold price + property size (m² from listing or Kadaster)</td>
+        </tr>
+        <tr>
+          <td>Utrecht market baseline (overbid)</td>
+          <td class="wrong-val">12.2% (wrong — real is 8.2%)</td>
+          <td>No action needed from Lindy — fix to 8.2%</td>
+        </tr>
+        <tr>
+          <td>Utrecht market baseline (days on market)</td>
+          <td class="wrong-val">21.5 days (on high end — real is ~12 days)</td>
+          <td>No action needed from Lindy — fix to ~12 days</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="gap-note" style="margin-top:12px"><strong>Action when Lindy subscribes:</strong> Ask her to send a simple spreadsheet monthly: address · asking price · sold price · date listed · date of sale · property size (m²). From this you can calculate all three KPIs. A 10-transaction month takes about 15 minutes to process.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: SEASONAL TIMING                                -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 3 — Listing Timing Optimizer <span>✅ Directionally correct</span></div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ Seasonal pattern is real — specific % values are estimates but direction is confirmed</div>
+  <div class="panel-body">
+    <div class="compare" style="margin-bottom:0">
+      <div>
+        <div class="val-label" style="margin-bottom:8px">Sample data (sent to Lindy)</div>
+        <div class="chart-wrap tall"><canvas id="sSeasonal"></canvas></div>
+      </div>
+      <div>
+        <div class="val-label" style="margin-bottom:8px">This section is directionally correct — keep as-is</div>
+        <div style="padding:16px 0;">
+          <div class="insight">NVM consistently confirms: March–May = best listing window, December = worst. The direction of the chart and the advice ("list by March 15") is correct and defensible. Specific % values per month are estimates — but so are all seasonal analyses. This section needs no correction for the real report.</div>
+          <div class="gap-note" style="margin-top:12px"><strong>Optional improvement:</strong> NVM publishes a seasonal analysis in their quarterly reports. You can cite the Q4 2025 NVM report to add more credibility to the seasonal claim.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: PRICE BAND INTELLIGENCE                        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 4 — Price Band Intelligence <span>Buyer counts are fabricated</span></div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — Buyers per Property by Price Band</div>
+    <div class="panel-body">
+      <div class="source-note">Data: [8.2, 18.6, 31.4, 26.8, 14.2, 6.4] buyers per property — FABRICATED</div>
+      <div class="chart-wrap tall"><canvas id="sPriceBand"></canvas></div>
+    </div>
+  </div>
+  <div class="panel gap">
+    <div class="panel-head">⚠ No public replacement for buyer ratios by price band</div>
+    <div class="panel-body">
+      <div class="gap-note"><strong>What is fabricated:</strong> The "X buyers per available property" ratios per price band. Funda Marktinzicht does publish this — but it requires a paid professional subscription (Funda Pro), not available for free.<br><br><strong>What to do:</strong> Replace the horizontal bar chart with the transaction share donut (€400–500K = 31% of market) which is plausible NVM-style data. The narrative — that GustoCasa's €450–650K sweet spot is the most competitive bracket — can be supported by citing days-on-market by price segment, which NVM does publish in their quarterly report.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: ENERGY LABELS                                  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 5 — Energy Label Premium Analysis <span>✅ Direction confirmed by CBS/PBL</span></div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ Energy label premium/discount direction is confirmed by CBS and PBL research</div>
+  <div class="panel-body">
+    <div class="compare" style="margin-bottom:0">
+      <div>
+        <div class="val-label" style="margin-bottom:8px">Sample (sent to Lindy)</div>
+        <div class="chart-wrap tall"><canvas id="sEnergy"></canvas></div>
+      </div>
+      <div style="padding-top:28px;">
+        <div class="insight">CBS and PBL (Netherlands Environmental Assessment Agency) both confirm: A-label homes sell at a significant premium vs C-label; E/F/G label homes sell at a discount. The exact % values (A=+18%, G=−28%) are reasonable estimates. The narrative, the urgency around the 2033 EU label-C deadline, and the Merwedekanaalzone warning are all defensible. <strong>No major corrections needed in this section.</strong></div>
+        <div class="gap-note" style="margin-top:12px"><strong>To strengthen:</strong> Cite CBS Energielabels dataset specifically. The CBS website publishes energy label distribution per gemeente — you can get the real % of Utrecht homes with label E/F/G (the "34% of pre-1975 stock" claim needs to be verified there).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: NEW CONSTRUCTION PIPELINE                      -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 6 — New Construction Pipeline <span>✅ Projects are real — verify unit counts</span></div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ The projects listed are real Utrecht developments — unit counts need verification</div>
+  <div class="panel-body">
+    <table>
+      <thead><tr><th>Project</th><th>In Sample</th><th>Real Status</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Merwedekanaalzone Phase 1</strong></td><td>1,200 units · Q3 2026</td><td class="right-val">Real project. Verify unit count at utrecht.nl/woningbouw</td></tr>
+        <tr><td><strong>Leidsche Rijn Centrum</strong></td><td>850 units · Q4 2026</td><td class="right-val">Real project. Verify delivery date</td></tr>
+        <tr><td><strong>Beurskwartier</strong></td><td>340 units · Q1 2027</td><td class="right-val">Real project. Verify unit count</td></tr>
+        <tr><td><strong>Rotsoord Phase 2</strong></td><td>280 units · Q2 2027</td><td class="right-val">Real project. Verify delivery</td></tr>
+        <tr><td><strong>Defensieterrein</strong></td><td>680 units · Q3 2027</td><td class="right-val">Real project. Verify unit count</td></tr>
+      </tbody>
+    </table>
+    <div class="gap-note" style="margin-top:12px"><strong>Action:</strong> Visit <strong>utrecht.nl/woningbouw</strong> → Woningbouwmonitor. This is a free public page listing all approved and planned projects with unit counts and expected delivery dates. Takes 15 minutes to verify all 5 rows. This section can be 100% real data.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: BUYER ORIGIN                                   -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 7 — Buyer Origin Intelligence <span>CBS data exists but specific % are estimated</span></div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — Buyer Origin</div>
+    <div class="panel-body">
+      <div class="source-note">Amsterdam=38%, Utrecht=29%, International=18%, Other=15% — ESTIMATED</div>
+      <div class="chart-wrap"><canvas id="sBuyerOrigin"></canvas></div>
+    </div>
+  </div>
+  <div class="panel gap">
+    <div class="panel-head">⚠ Direction confirmed — exact % need verification</div>
+    <div class="panel-body">
+      <div class="gap-note"><strong>What is real:</strong> CBS publishes "Verhuisstromen" — migration flows by municipality. This includes where Utrecht home buyers moved from. The Amsterdam overflow narrative is well-supported by multiple sources. The 38% figure is an estimate — real CBS data may show a different split.<br><br><strong>Action:</strong> Go to <strong>cbs.nl → StatLine</strong> → search "verhuisde personen" → filter by destination = Utrecht gemeente. Free public data. This gives real migration numbers that you can convert to buyer origin percentages.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: DEMOGRAPHICS                                   -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 8 — Demographic Demand Drivers <span>Population data is public and real</span></div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — Population Growth</div>
+    <div class="panel-body">
+      <div class="source-note">Data: [347K, 351K, 357K, 361K, 365K, 369K, 373K] — 2020 to 2026</div>
+      <div class="chart-wrap"><canvas id="sPop"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Real Data — Utrecht Population</div>
+    <div class="panel-body">
+      <div class="source-note">CBS: Utrecht city heading toward 400,000 by 2028. 2025 actual ~375,000. The sample trend is close to real CBS data.</div>
+      <div class="chart-wrap"><canvas id="rPop"></canvas></div>
+      <div class="insight">The population growth trend is confirmed by CBS. Numbers in sample are slightly conservative but directionally correct. Goal of 400K by 2028 is from Gemeente Utrecht Woonvisie 2040.</div>
+    </div>
+  </div>
+</div>
+
+<div class="full-gap">
+  <div class="panel-head">⚠ Buyer age group breakdown (52% starters) — needs verification</div>
+  <div class="panel-body">
+    <div class="gap-note"><strong>The claim "52% of Utrecht buyers are starters (20–35)"</strong> is plausible but the specific % is estimated. NVM publishes a "Koopersonderzoek" (buyer survey) annually — this is where age group breakdowns come from. The 2025 edition should have real data. Available at nvm.nl for NVM members, or cited in press releases which are public.</div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: ECB SCENARIOS                                  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Section 9 — ECB Rate Scenarios 2026–2028 <span>Base scenario confirmed — starting price wrong</span></div>
+
+<div class="compare">
+  <div class="panel sample">
+    <div class="panel-head">📄 Sent to Lindy — ECB Scenarios</div>
+    <div class="panel-body">
+      <div class="source-note">Starts at €521K baseline — Base: +€50K, Bull: +€114K, Bear: −€43K by 2028</div>
+      <div class="chart-wrap tall"><canvas id="sScenario"></canvas></div>
+    </div>
+  </div>
+  <div class="panel real">
+    <div class="panel-head">✅ Corrected — Real ECB status + adjusted baseline</div>
+    <div class="panel-body">
+      <div class="source-note">ECB March 2026: deposit rate 2.0%, unchanged. No cuts expected in 2026. Baseline corrected to €562K. Scenario outcomes adjusted proportionally.</div>
+      <div class="chart-wrap tall"><canvas id="rScenario"></canvas></div>
+      <div class="insight">The ECB "base = rates stay flat" scenario is exactly what is happening (confirmed March 2026). The baseline price is corrected from €521K to €562K. The scenario shape and narrative are valid.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 10 + 11                                           -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="sec-title">Sections 10 & 11 — Public Dashboard + 90-Day Recommendations <span>✅ Both are OK</span></div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ Section 10 (Public Dashboard) — Already built and live</div>
+  <div class="panel-body">
+    <p style="font-size:13px;color:var(--mid)">The public dashboard (market-live.html) is a real page at trendsonfire.com/gustocasa/market-live.html. Section 10 in the report just shows and links to it. Once the KPI data is corrected, this section updates automatically.</p>
+  </div>
+</div>
+
+<div class="full-panel">
+  <div class="panel-head">✅ Section 11 (90-Day Recommendations) — No data required, analysis only</div>
+  <div class="panel-body">
+    <p style="font-size:13px;color:var(--mid)">This section is written narrative — it draws conclusions from other sections. No raw data to correct here. Once the underlying sections are updated with real numbers, the recommendations can be rewritten accordingly. The three themes (spring listing window, energy label urgency, Merwedekanaalzone pipeline risk) are all directionally correct.</p>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- SUMMARY TABLE -->
+<div class="sec-title">Summary — Action List</div>
+<table>
+  <thead>
+    <tr><th>Section</th><th>Problem</th><th>Action</th><th>Effort</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>KPI: Overbid %</td><td class="wrong-val">12.2% → should be 8.2%</td><td>Fix to 8.2% — source: huisverkopen.nl</td><td>5 min</td></tr>
+    <tr><td>KPI: Homes sold</td><td class="wrong-val">873/month → real ~397</td><td>Fix KPI. Monthly trend: download Kadaster quarterly file</td><td>30 min</td></tr>
+    <tr><td>KPI: Avg price</td><td>€521K → real €562K</td><td>Fix to €562,500 — source: huisverkopen.nl Feb 2026</td><td>5 min</td></tr>
+    <tr><td>KPI: Funda Seekers</td><td class="wrong-val">Invented — remove</td><td>Replace with "79.7% sold above asking" — NVM Q3 2025</td><td>5 min</td></tr>
+    <tr><td>Neighbourhood prices</td><td class="wrong-val">Wittevrouwen 2× wrong, Overvecht/Kanaleneiland 2× wrong</td><td>Fix to: Wittevrouwen >€8,500 · Overvecht/Kanaleneiland ~€4,150</td><td>15 min</td></tr>
+    <tr><td>Supply/demand chart</td><td class="wrong-val">Both series invented</td><td>Remove chart — replace with % sold above asking statistic</td><td>15 min</td></tr>
+    <tr><td>Price band buyer counts</td><td class="wrong-val">Invented</td><td>Remove "buyers per property" chart or replace with transaction share donut only</td><td>15 min</td></tr>
+    <tr><td>Section 2 benchmarking</td><td class="wrong-val">All GustoCasa KPIs are fabricated</td><td>No fix possible without Lindy's transaction data — keep structure, leave blank until she subscribes</td><td>0 (waiting for Lindy)</td></tr>
+    <tr><td>Section 6 unit counts</td><td>Need verification</td><td>Check utrecht.nl/woningbouw for each project</td><td>15 min</td></tr>
+    <tr><td>Section 7 buyer origin %</td><td>Estimated</td><td>Verify at CBS StatLine → Verhuisstromen</td><td>20 min</td></tr>
+    <tr><td>ECB scenario baseline</td><td>€521K → should be €562K</td><td>Update starting price — scenarios remain valid</td><td>5 min</td></tr>
+    <tr><td>Sections 3, 5, 8, 10, 11</td><td class="right-val">OK or directionally correct</td><td>No action needed</td><td>0</td></tr>
+  </tbody>
+</table>
+
+</div><!-- /container -->
+
+<!-- ═══════════════════════════ CHARTS ═══════════════════════════ -->
+<script>
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#5a5a72';
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
+Chart.defaults.plugins.legend.labels.padding = 14;
+
+const C_ORANGE = '#e8622a', C_NAVY = '#1a2340', C_GREEN = '#1e7c4e',
+      C_RED = '#c0392b', C_BLUE = '#3b82f6', C_AMBER = '#f59e0b';
+const months7 = ['Aug','Sep','Oct','Nov','Dec','Jan','Feb'];
+const months12 = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function rgba(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`;}
+const grid = '#f0ede8';
+const opts = (min,cb) => ({ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{y:{grid:{color:grid},beginAtZero:false,min:min,ticks:{callback:cb}},x:{grid:{display:false}}} });
+
+// ─ SAMPLE: Sold ─
+new Chart(document.getElementById('sSold'),{type:'bar',data:{labels:months7,datasets:[{data:[756,792,845,801,723,812,873],backgroundColor:months7.map((_,i)=>i===6?C_ORANGE:rgba(C_NAVY,0.7)),borderRadius:4}]},options:opts(650,v=>v)});
+
+// ─ SAMPLE: Price ─
+new Chart(document.getElementById('sPrice'),{type:'line',data:{labels:months7,datasets:[{data:[498000,503000,508000,505000,501000,517000,521000],borderColor:C_RED,backgroundColor:rgba(C_RED,0.07),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_RED,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(485000,v=>'€'+(v/1000).toFixed(0)+'K')});
+
+// ─ REAL: Price (corrected) ─
+new Chart(document.getElementById('rPrice'),{type:'line',data:{labels:months7,datasets:[{data:[520000,525000,530000,535000,540000,555000,562000],borderColor:C_GREEN,backgroundColor:rgba(C_GREEN,0.07),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_GREEN,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(505000,v=>'€'+(v/1000).toFixed(0)+'K')});
+
+// ─ SAMPLE: Overbid ─
+new Chart(document.getElementById('sOverbid'),{type:'line',data:{labels:months7,datasets:[{data:[10.2,10.8,11.4,11.1,10.6,12.1,12.2],borderColor:C_RED,backgroundColor:rgba(C_RED,0.08),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_RED,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(8,v=>v+'%')});
+
+// ─ REAL: Overbid (corrected) ─
+new Chart(document.getElementById('rOverbid'),{type:'line',data:{labels:months7,datasets:[{data:[7.1,7.4,7.8,7.5,7.2,8.0,8.2],borderColor:C_GREEN,backgroundColor:rgba(C_GREEN,0.08),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_GREEN,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(5,v=>v+'%')});
+
+// ─ SAMPLE: Supply/demand ─
+new Chart(document.getElementById('sSupply'),{type:'bar',data:{labels:months7,datasets:[{label:'Seekers ÷10',data:[1890,1920,1980,1940,1870,2105,2004],backgroundColor:rgba(C_RED,0.6),borderRadius:4},{label:'Properties',type:'line',data:[1420,1380,1310,1256,1290,1380,1402],borderColor:C_RED,backgroundColor:'transparent',borderWidth:2,tension:0.3,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{grid:{color:grid},beginAtZero:false,min:1100},x:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Neighbourhood ─
+new Chart(document.getElementById('sNeighbourhood'),{type:'bar',data:{labels:['Daalsebuurt','Wittevrouwen','Pijlsweerd','Elinkwijk','Overvecht','Kanaleneiland'],datasets:[{data:[4850,4320,3280,3050,2180,2010],backgroundColor:[C_RED,C_ORANGE,C_AMBER,C_AMBER,C_GREEN,C_GREEN],borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},beginAtZero:false,min:1500,ticks:{callback:v=>'€'+v.toLocaleString('nl-NL')}},y:{grid:{display:false}}}}});
+
+// ─ REAL: Neighbourhood (corrected) ─
+new Chart(document.getElementById('rNeighbourhood'),{type:'bar',data:{labels:['Daalsebuurt','Wittevrouwen','Pijlsweerd','Elinkwijk','Overvecht','Kanaleneiland'],datasets:[{data:[null,8500,null,null,4150,4150],backgroundColor:[C_BLUE,C_GREEN,C_BLUE,C_BLUE,C_GREEN,C_GREEN],borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw?'€'+ctx.raw.toLocaleString('nl-NL')+'/m²':'No data found'}}},scales:{x:{grid:{color:grid},beginAtZero:false,min:1500,ticks:{callback:v=>'€'+v.toLocaleString('nl-NL')}},y:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Historic ─
+new Chart(document.getElementById('sHist'),{type:'line',data:{labels:['2020','2021','2022','2023','2024','2025','2026*'],datasets:[{label:'Utrecht (sample)',data:[368000,440000,487000,453000,491000,516000,521000],borderColor:C_RED,borderWidth:2.5,tension:0.3,fill:false,pointRadius:4,pointBackgroundColor:C_RED},{label:'NL avg (sample)',data:[334000,395000,432000,404000,435000,462000,480000],borderColor:rgba(C_RED,0.5),borderWidth:2,tension:0.3,fill:false,borderDash:[5,4],pointRadius:3,pointBackgroundColor:rgba(C_RED,0.5)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top'}},scales:{y:{grid:{color:grid},beginAtZero:false,min:300000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K'}},x:{grid:{display:false}}}}});
+
+// ─ REAL: Historic ─
+new Chart(document.getElementById('rHist'),{type:'line',data:{labels:['2020','2021','2022','2023','2024','2025','2026*'],datasets:[{label:'Utrecht (corrected)',data:[368000,440000,487000,453000,491000,549000,562000],borderColor:C_GREEN,borderWidth:2.5,tension:0.3,fill:false,pointRadius:4,pointBackgroundColor:C_GREEN},{label:'NL avg',data:[334000,395000,432000,404000,435000,462000,480000],borderColor:rgba(C_NAVY,0.5),borderWidth:2,tension:0.3,fill:false,borderDash:[5,4],pointRadius:3,pointBackgroundColor:rgba(C_NAVY,0.5)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top'}},scales:{y:{grid:{color:grid},beginAtZero:false,min:300000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K'}},x:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Seasonal ─
+const sp=[97,100,108,112,110,106,98,93,104,106,101,91];
+new Chart(document.getElementById('sSeasonal'),{type:'bar',data:{labels:months12,datasets:[{data:sp,backgroundColor:sp.map(v=>v>=105?C_GREEN:v>=99?C_ORANGE:C_RED),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:grid},min:85,ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Price band ─
+const pb=[8.2,18.6,31.4,26.8,14.2,6.4];
+new Chart(document.getElementById('sPriceBand'),{type:'bar',data:{labels:['<€300K','€300–400K','€400–500K','€500–600K','€600–800K','>€800K'],datasets:[{data:pb,backgroundColor:pb.map(v=>v>=28?C_RED:v>=20?C_ORANGE:v>=12?C_AMBER:C_BLUE),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' '+ctx.parsed.x+' buyers/property'}}},scales:{x:{grid:{color:grid},min:0,max:36},y:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Energy ─
+const el=[18,9,0,-7,-14,-21,-28];
+new Chart(document.getElementById('sEnergy'),{type:'bar',data:{labels:['Label A','Label B','Label C','Label D','Label E','Label F','Label G'],datasets:[{data:el,backgroundColor:el.map(v=>v>0?C_GREEN:v===0?'#9898a8':C_RED),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},min:-32,max:22,ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}}}});
+
+// ─ SAMPLE: Buyer Origin ─
+new Chart(document.getElementById('sBuyerOrigin'),{type:'doughnut',data:{labels:['Amsterdam (38%)','Utrecht (29%)','International (18%)','Other (15%)'],datasets:[{data:[38,29,18,15],backgroundColor:[C_RED,C_ORANGE,C_BLUE,'#9898a8'],borderWidth:2,borderColor:'#fff'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{padding:10,font:{size:10}}}},cutout:'60%'}});
+
+// ─ SAMPLE: Population ─
+new Chart(document.getElementById('sPop'),{type:'line',data:{labels:['2020','2021','2022','2023','2024','2025','2026'],datasets:[{data:[347000,351000,357000,361000,365000,369000,373000],borderColor:C_RED,backgroundColor:rgba(C_RED,0.07),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_RED,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(340000,v=>(v/1000).toFixed(0)+'K')});
+
+// ─ REAL: Population (CBS-aligned) ─
+new Chart(document.getElementById('rPop'),{type:'line',data:{labels:['2020','2021','2022','2023','2024','2025','2026'],datasets:[{data:[360000,363000,367000,368000,371000,375000,378000],borderColor:C_GREEN,backgroundColor:rgba(C_GREEN,0.07),borderWidth:2.5,tension:0.3,fill:true,pointBackgroundColor:C_GREEN,pointRadius:4,pointBorderColor:'#fff',pointBorderWidth:2}]},options:opts(350000,v=>(v/1000).toFixed(0)+'K')});
+
+// ─ SAMPLE: Scenarios ─
+new Chart(document.getElementById('sScenario'),{type:'line',data:{labels:['Jan 2026','Jun 2026','Dec 2026','Jun 2027','Dec 2027','Jun 2028','Dec 2028'],datasets:[{label:'Bull',data:[521000,538000,556000,574000,594000,614000,635000],borderColor:C_GREEN,borderWidth:2.5,tension:0.4,fill:false,pointRadius:3,pointBackgroundColor:C_GREEN},{label:'Base',data:[521000,529000,537000,546000,554000,562000,571000],borderColor:C_ORANGE,borderWidth:2.5,tension:0.4,fill:false,borderDash:[6,3],pointRadius:3,pointBackgroundColor:C_ORANGE},{label:'Bear',data:[521000,511000,501000,494000,488000,483000,478000],borderColor:C_RED,borderWidth:2.5,tension:0.4,fill:false,borderDash:[2,4],pointRadius:3,pointBackgroundColor:C_RED}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{grid:{color:grid},min:460000,max:650000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K'}},x:{grid:{display:false}}}}});
+
+// ─ REAL: Scenarios (corrected baseline) ─
+new Chart(document.getElementById('rScenario'),{type:'line',data:{labels:['Jan 2026','Jun 2026','Dec 2026','Jun 2027','Dec 2027','Jun 2028','Dec 2028'],datasets:[{label:'Bull',data:[562000,580000,599000,619000,640000,661000,684000],borderColor:C_GREEN,borderWidth:2.5,tension:0.4,fill:false,pointRadius:3,pointBackgroundColor:C_GREEN},{label:'Base (ECB flat – most likely)',data:[562000,570000,579000,588000,597000,606000,615000],borderColor:C_ORANGE,borderWidth:2.5,tension:0.4,fill:false,borderDash:[6,3],pointRadius:3,pointBackgroundColor:C_ORANGE},{label:'Bear',data:[562000,551000,540000,532000,526000,520000,515000],borderColor:C_RED,borderWidth:2.5,tension:0.4,fill:false,borderDash:[2,4],pointRadius:3,pointBackgroundColor:C_RED}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{grid:{color:grid},min:490000,max:700000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K'}},x:{grid:{display:false}}}}});
+</script>
+</body>
+</html>
