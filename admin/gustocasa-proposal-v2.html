@@ -99,18 +99,18 @@
     @media(max-width:640px){ .product-grid { grid-template-columns: 1fr; } }
 
     /* DEMO SECTION */
-    .demo { background: var(--navy); }
-    .demo .section-label { color: rgba(255,255,255,.45); }
-    .demo .section-title { color: white; }
-    .demo .section-sub { color: rgba(255,255,255,.55); }
+    .demo { background: var(--white); }
+    .demo .section-label { color: var(--gold); }
+    .demo .section-title { color: var(--green); }
+    .demo .section-sub { color: var(--text-mid); }
     .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
-    .demo-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 28px; transition: background .2s; }
-    .demo-card:hover { background: rgba(255,255,255,.10); }
+    .demo-card { background: var(--off-white); border: 1px solid rgba(28,58,43,.08); border-radius: 10px; padding: 28px; transition: background .2s; }
+    .demo-card:hover { background: #eceae3; }
     .demo-card-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); margin-bottom: 8px; }
-    .demo-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-bottom: 8px; }
-    .demo-card p { font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.65; margin-bottom: 20px; }
-    .demo-link { display: inline-block; font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: .04em; }
-    .demo-link:hover { color: var(--gold-light); }
+    .demo-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--green); margin-bottom: 8px; }
+    .demo-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; }
+    .demo-link { display: inline-block; font-size: 13px; font-weight: 600; color: var(--green-light); text-decoration: none; letter-spacing: .04em; }
+    .demo-link:hover { color: var(--green); text-decoration: underline; }
     @media(max-width:640px){ .demo-grid { grid-template-columns: 1fr; } }
 
     /* ROI SECTION */
@@ -232,7 +232,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow" data-i18n="hero-eyebrow">Marktintelligentie Voorstel · April 2026</div>
-  <h1 data-i18n="hero-h1">Jouw Markt.<br><em>Onze Content. Klaar op de 12e.</em></h1>
+  <h1 data-i18n="hero-h1">Jouw Markt.<br><em>Onze Content. Maandelijks bijgewerkt.</em></h1>
   <p class="hero-sub" data-i18n="hero-sub">Je kent de Utrechtse woningmarkt beter dan welk algoritme dan ook. Wij maken daar elke maand een professioneel rapport, live dashboard en LinkedIn-post van — automatisch, zonder handmatig werk aan jouw kant.</p>
   <div class="hero-actions">
     <a href="#pricing" class="btn-gold" data-i18n="btn-offer">Bekijk het Aanbod</a>
@@ -245,7 +245,7 @@
   <div class="stat-item"><div class="stat-value">€562K</div><div class="stat-label" data-i18n="stat-1">Gem. transactieprijs · Feb 2026</div></div>
   <div class="stat-item"><div class="stat-value">8,2%</div><div class="stat-label" data-i18n="stat-2">Gem. overbieding · Utrecht</div></div>
   <div class="stat-item"><div class="stat-value">12 dagen</div><div class="stat-label" data-i18n="stat-3">Gem. verkooptijd · Feb 2026</div></div>
-  <div class="stat-item"><div class="stat-value">+24%</div><div class="stat-label" data-i18n="stat-4">Aanbodgroei jaar-op-jaar</div></div>
+  <div class="stat-item"><div class="stat-value">+53%</div><div class="stat-label" data-i18n="stat-4">Prijsgroei sinds 2020</div></div>
 </div>
 
 <!-- THE PROBLEM -->
@@ -332,8 +332,8 @@
       <div class="demo-card">
         <div class="demo-card-label" data-i18n="d2-label">Live Dashboard — Publiek Deelbaar</div>
         <h3 data-i18n="d2-title">Live Market Dashboard</h3>
-        <p data-i18n="d2-desc">Jouw eigen publieke pagina op trendsonfire.com/gustocasa — deelbaar op LinkedIn, te embedden op gustocasa.nl, elke maand bijgewerkt. Open Graph tags voor LinkedIn preview card.</p>
-        <a href="../gustocasa/market-live-wip.html" target="_blank" class="demo-link" data-i18n="d2-link">Bekijk live dashboard →</a>
+        <p data-i18n="d2-desc">Jouw eigen publieke pagina op trendsonfire.com/gustocasa — deelbaar op LinkedIn, te embedden op gustocasa.nl, maandelijks bijgewerkt. Toont bevestigde Kadaster/CBS data — geen schattingen, geen aannamen.</p>
+        <a href="../gustocasa/alternative-market-live.html" target="_blank" class="demo-link" data-i18n="d2-link">Bekijk live dashboard →</a>
       </div>
 
       <div class="demo-card">
@@ -345,9 +345,9 @@
 
       <div class="demo-card">
         <div class="demo-card-label" data-i18n="d4-label">LinkedIn Posttekst — Copy-Paste Klaar</div>
-        <h3 data-i18n="d4-title">LinkedIn Post Template April 2026</h3>
-        <p data-i18n="d4-desc">Klaar-voor-gebruik posttekst in het Nederlands — met intro, drie data-hoogtepunten, afsluiting en hashtags. Één klik om te kopiëren. Geschatte posttijd: dinsdag of donderdag 08:00–09:30.</p>
-        <a href="gustocasa-linkedin-wip.html" target="_blank" class="demo-link" data-i18n="d4-link">Bekijk posttekst →</a>
+        <h3 data-i18n="d4-title">LinkedIn Post — Maandelijks Template</h3>
+        <p data-i18n="d4-desc">Elke maand een kant-en-klare posttekst in het Nederlands — opgebouwd rond de actuele kerncijfers van de Monthly Pulse. Intro, drie data-hoogtepunten, afsluiting en hashtags. Één klik kopiëren. Bijgewerkt op de 12e, tegelijk met het rapport.</p>
+        <a href="../gustocasa/linkedin-card.html" target="_blank" class="demo-link" data-i18n="d4-link">Bekijk LinkedIn card →</a>
       </div>
 
     </div>
@@ -461,29 +461,6 @@
   </div>
 </section>
 
-<!-- SCALE NOTE -->
-<section class="section scale">
-  <div class="inner">
-    <div class="section-label" data-i18n="scale-label">Schaalbaarheid</div>
-    <h2 class="section-title" data-i18n="scale-h2">Gebouwd voor Utrecht. Beschikbaar voor Heel Nederland.</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,.55);" data-i18n="scale-sub">Dit systeem is geconfigureerd voor GustoCasa in Utrecht. Dezelfde aanpak werkt voor elke stad en elke boutique makelaar in Nederland.</p>
-    <div class="scale-grid">
-      <div class="scale-card">
-        <h4 data-i18n="sc1-title">Elke Gemeente</h4>
-        <p data-i18n="sc1-desc">Amsterdam, Rotterdam, Den Haag, Eindhoven, Haarlem — dezelfde databronnen (Kadaster, CBS, NVM) zijn beschikbaar voor alle grote Nederlandse steden.</p>
-      </div>
-      <div class="scale-card">
-        <h4 data-i18n="sc2-title">Eigen Pagina op trendsonfire.com</h4>
-        <p data-i18n="sc2-desc">Elke makelaar krijgt een eigen publieke pagina: trendsonfire.com/[stad]/[makelaar]. Jouw pagina is al live op trendsonfire.com/gustocasa.</p>
-      </div>
-      <div class="scale-card">
-        <h4 data-i18n="sc3-title">White-Label Optie</h4>
-        <p data-i18n="sc3-desc">Voorkeur voor eigen branding? Rapporten en dashboard kunnen volledig in jouw huisstijl worden geleverd — jouw logo, jouw kleuren, jouw domein.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section class="section about">
   <div class="inner">
@@ -527,14 +504,14 @@
 const T = {
   en: {
     'hero-eyebrow': 'Market Intelligence Partnership Proposal · April 2026',
-    'hero-h1': 'Your Market.<br><em>Our Content. Ready on the 12th.</em>',
+    'hero-h1': 'Your Market.<br><em>Our Content. Updated Monthly.</em>',
     'hero-sub': 'You know the Utrecht market better than any algorithm. We turn that into a professional monthly report, live dashboard and LinkedIn post — automatically, with no manual work on your side.',
     'btn-offer': 'See the Offer',
     'btn-demo': 'View Sample Report →',
     'stat-1': 'Avg transaction price · Feb 2026',
     'stat-2': 'Avg overbid · Utrecht',
     'stat-3': 'Avg days on market · Feb 2026',
-    'stat-4': 'Supply growth year-on-year',
+    'stat-4': 'Price growth since 2020',
     'problem-label': 'The Problem',
     'problem-h2': 'You Already Write a Monthly Market Update. We Do It in 5 Minutes.',
     'problem-quote': '"873 homes sold in Utrecht... average transaction price €521,000... average overbid 12.2%... Rabobank mortgage rate 4.18%→4.13%..."',
@@ -578,16 +555,16 @@ const T = {
     'd1-link': 'Open sample report →',
     'd2-label': 'Live Dashboard — Publicly Shareable',
     'd2-title': 'Live Market Dashboard',
-    'd2-desc': 'Your own public page at trendsonfire.com/gustocasa — shareable on LinkedIn, embeddable on gustocasa.nl, updated monthly. Open Graph tags for LinkedIn preview card.',
+    'd2-desc': 'Your own public page at trendsonfire.com/gustocasa — shareable on LinkedIn, embeddable on gustocasa.nl, updated monthly. Shows confirmed Kadaster/CBS data — no estimates, no assumptions.',
     'd2-link': 'View live dashboard →',
     'd3-label': 'LinkedIn Card — Screenshot-Ready',
     'd3-title': 'LinkedIn Card February 2026',
     'd3-desc': 'Fixed 1200px card with all key metrics, two charts and mortgage rates. Screenshot and post natively on LinkedIn. Put the link in the first comment for reach.',
     'd3-link': 'View LinkedIn card →',
     'd4-label': 'LinkedIn Post Text — Copy-Paste Ready',
-    'd4-title': 'LinkedIn Post Template April 2026',
-    'd4-desc': 'Ready-to-use post text in Dutch — intro, three data highlights, closing and hashtags. One click to copy. Estimated post time: Tuesday or Thursday 08:00–09:30.',
-    'd4-link': 'View post template →',
+    'd4-title': 'LinkedIn Post — Monthly Template',
+    'd4-desc': 'Every month a ready-to-use post text in Dutch — built around the actual key figures from the Monthly Pulse. Intro, three data highlights, closing and hashtags. One click to copy. Updated on the 12th, together with the report.',
+    'd4-link': 'View LinkedIn card →',
     'roi-section-label': 'The Business Case',
     'roi-h2': 'Half an Extra Instruction Pays for This for an Entire Year',
     'roi-sub': 'Before we talk price — here is why this investment makes financial sense for a boutique agency at your level.',
