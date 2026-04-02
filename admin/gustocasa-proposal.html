@@ -26,14 +26,7 @@
       --shadow:     0 4px 24px rgba(28,58,43,.10);
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; position: relative; }
-
-    /* WATERMARK */
-    #watermark-canvas {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; z-index: 9998;
-    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
 
     /* HEADER */
     .header {
@@ -255,7 +248,6 @@
   </style>
 </head>
 <body>
-<canvas id="watermark-canvas"></canvas>
 
 <!-- HEADER -->
 <div class="header">
@@ -435,7 +427,7 @@
         <h3 class="plan-title" data-i18n="plan1-title">Market Highlights</h3>
         <div class="plan-price"><strong>€195</strong><span> /month excl. VAT</span></div>
         <ul class="plan-features">
-          <li>Monthly 2-page highlights summary — key prices, overbid, demand signals</li>
+          <li>Monthly highlights summary — sold homes, avg prices, overbidding %, demand/supply ratio &amp; neighbourhood price movements</li>
           <li>Public live dashboard (market-live page) updated monthly</li>
           <li>1 LinkedIn post template per month — copy, paste, post</li>
           <li>Delivered on the 12th of each month</li>
@@ -453,8 +445,7 @@
           <li>GustoCasa vs market benchmarking — your own data vs Utrecht average</li>
           <li>Public live dashboard updated monthly</li>
           <li>2 LinkedIn post templates per month</li>
-          <li>Quarterly competitor positioning update</li>
-          <li>2 data questions answered per month</li>
+          <li>Monthly 30-min call to answer your data questions</li>
           <li>White-label option: your brand, your domain</li>
         </ul>
         <div class="plan-note">€3,540/year excl. VAT · Monthly rolling · Cancel anytime</div>
@@ -716,35 +707,5 @@ function setLang(lang) {
 })();
 </script>
 
-<script>
-(function() {
-  var c = document.getElementById('watermark-canvas');
-  function draw() {
-    c.width = window.innerWidth;
-    c.height = document.body.scrollHeight;
-    var ctx = c.getContext('2d');
-    ctx.clearRect(0,0,c.width,c.height);
-    ctx.save();
-    ctx.translate(c.width/2, c.height/2);
-    ctx.rotate(-35 * Math.PI / 180);
-    ctx.font = 'bold 16px Inter, Arial, sans-serif';
-    ctx.fillStyle = 'rgba(26,35,64,0.10)';
-    ctx.textAlign = 'center';
-    var text = 'trendsonfire.com';
-    var gap = 220;
-    var rowH = 80;
-    var cols = Math.ceil(c.width / gap) + 4;
-    var rows = Math.ceil(c.height / rowH) + 6;
-    for (var r = -rows; r <= rows; r++) {
-      for (var col = -cols; col <= cols; col++) {
-        ctx.fillText(text, col * gap, r * rowH);
-      }
-    }
-    ctx.restore();
-  }
-  draw();
-  window.addEventListener('resize', draw);
-})();
-</script>
 </body>
 </html>
