@@ -166,14 +166,13 @@
     }
     .plan:hover { border-color: rgba(28,58,43,.15); box-shadow: var(--shadow); }
     .plan.featured {
-      background: var(--green); border-color: transparent;
-      position: relative; overflow: hidden;
+      background: var(--green); border-color: var(--gold);
+      position: relative;
     }
-    .plan.featured::after {
-      content: 'Recommended'; position: absolute; top: 18px; right: -22px;
-      background: var(--gold); color: var(--green); font-size: 10px; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase; padding: 4px 30px;
-      transform: rotate(45deg); transform-origin: center;
+    .recommended-badge {
+      display: inline-block; background: var(--gold); color: var(--green);
+      font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: 3px 12px; border-radius: 20px; margin-bottom: 10px;
     }
     .plan-name { font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .plan.featured .plan-name { color: var(--gold-light); }
@@ -425,30 +424,30 @@
     <div class="pricing-grid">
       <div class="plan">
         <div class="plan-name" data-i18n="plan1-name">Starter</div>
-        <h3 class="plan-title" data-i18n="plan1-title">Market Update</h3>
+        <h3 class="plan-title" data-i18n="plan1-title">Market Highlights</h3>
         <div class="plan-price"><strong>€195</strong><span> /month excl. VAT</span></div>
         <ul class="plan-features">
-          <li>Monthly Utrecht market report (PDF)</li>
-          <li>Public live dashboard updated monthly</li>
-          <li>LinkedIn post template each month</li>
-          <li>Key data highlights summary</li>
+          <li>Monthly 2-page highlights summary — key prices, overbid, demand signals</li>
+          <li>Public live dashboard (market-live page) updated monthly</li>
+          <li>1 LinkedIn post template per month — copy, paste, post</li>
           <li>Delivered on the 12th of each month</li>
         </ul>
         <div class="plan-note">€2,340/year excl. VAT · Monthly rolling · Cancel anytime</div>
         <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Starter%20Plan&body=Hi%20Olga%2C%0A%0AI%27d%20like%20to%20start%20with%20the%20Market%20Update%20plan%20(%E2%82%AC195%2Fmonth).%0A%0ACan%20we%20discuss%20the%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-outline" data-i18n="plan1-cta">Start with Starter</a>
       </div>
       <div class="plan featured">
+        <span class="recommended-badge">Recommended</span>
         <div class="plan-name" data-i18n="plan2-name">Full Intelligence</div>
         <h3 class="plan-title" data-i18n="plan2-title">Complete Partnership</h3>
         <div class="plan-price"><strong>€295</strong><span> /month excl. VAT</span></div>
         <ul class="plan-features">
-          <li>Everything in Starter</li>
-          <li>Full 11-section intelligence report</li>
-          <li>GustoCasa performance benchmarking</li>
+          <li>Full 11-section report with 21 charts — exactly the sample you've seen</li>
+          <li>GustoCasa vs market benchmarking — your own data vs Utrecht average</li>
+          <li>Public live dashboard updated monthly</li>
           <li>2 LinkedIn post templates per month</li>
           <li>Quarterly competitor positioning update</li>
-          <li>On-call: 2 data questions answered/month</li>
-          <li>White-label: your brand, your domain option</li>
+          <li>2 data questions answered per month</li>
+          <li>White-label option: your brand, your domain</li>
         </ul>
         <div class="plan-note">€3,540/year excl. VAT · Monthly rolling · Cancel anytime</div>
         <a href="mailto:olga.bressers@gmail.com?subject=GustoCasa%20Full%20Intelligence%20Plan&body=Hi%20Olga%2C%0A%0AI%27d%20like%20to%20start%20with%20the%20Full%20Intelligence%20plan%20(%E2%82%AC295%2Fmonth).%0A%0ACan%20we%20discuss%20next%20steps%3F%0A%0ABest%2C%0ALindy" class="plan-cta plan-cta-gold" data-i18n="plan2-cta">Start Full Intelligence</a>
@@ -482,7 +481,7 @@
         <p class="step-desc" data-i18n="step3-desc">Every month on the 12th: new report in your inbox, live dashboard updated, LinkedIn post template ready to copy and paste. Takes you under 5 minutes to publish.</p>
       </div>
     </div>
-    <div class="spanish-note" data-i18n="spanish-note"><strong>Also available:</strong> Similar market intelligence reports can be created for the <strong>Spanish property market</strong> — ideal for agencies working with Dutch and international clients buying in Spain.</div>
+    <div class="spanish-note" data-i18n="spanish-note"><strong>Also available:</strong> Market intelligence reports for the <strong>Spanish property market</strong> are already built and available — in English, Dutch and Spanish. Ideal for agencies working with Dutch and international clients buying in Spain.</div>
   </div>
 </section>
 
@@ -571,7 +570,7 @@ const T = {
     'step2-desc': 'Within 5 days, your first full report arrives. You review it, we refine it once — then it becomes the monthly template, updated with fresh data each month.',
     'step3-title': 'Monthly on the 12th',
     'step3-desc': 'Every month on the 12th: new report in your inbox, live dashboard updated, LinkedIn post template ready to copy and paste. Takes you under 5 minutes to publish.',
-    'spanish-note': '<strong>Also available:</strong> Similar market intelligence reports can be created for the <strong>Spanish property market</strong> — ideal for agencies working with Dutch and international clients buying in Spain.',
+    'spanish-note': '<strong>Also available:</strong> Market intelligence reports for the <strong>Spanish property market</strong> are already built and available — in English, Dutch and Spanish. Ideal for agencies working with Dutch and international clients buying in Spain.',
     'about-role': 'Founder, TrendsOnFire · Senior Executive &amp; Market Analyst',
     'about-p1': '20+ years leading data-driven business decisions across Europe, including P&amp;L leadership of a €150M e-commerce business across 26 countries with teams of 240+ people.',
     'about-p2': 'I built TrendsOnFire to make executive-grade market intelligence accessible to people who need it without paying consulting rates. For GustoCasa, that means one thing: the research that wins you listing meetings, without spending your evenings pulling data from NVM.',
@@ -626,7 +625,7 @@ const T = {
     'step2-desc': 'Binnen 5 dagen arriveert uw eerste volledige rapport. U beoordeelt het, we verfijnen eenmaal — daarna wordt het de maandelijkse sjabloon.',
     'step3-title': 'Maandelijks op de 12e',
     'step3-desc': 'Elke maand op de 12e: nieuw rapport in uw inbox, live dashboard bijgewerkt, LinkedIn berichtsjabloon klaar. Kost u minder dan 5 minuten.',
-    'spanish-note': '<strong>Ook beschikbaar:</strong> Vergelijkbare marktintelligentierapporten zijn beschikbaar voor de <strong>Spaanse woningmarkt</strong> — ideaal voor kantoren die werken met Nederlandse en internationale klanten die in Spanje kopen.',
+    'spanish-note': '<strong>Ook beschikbaar:</strong> Marktintelligentierapporten voor de <strong>Spaanse woningmarkt</strong> zijn al gebouwd en beschikbaar — in het Engels, Nederlands en Spaans. Ideaal voor kantoren die werken met Nederlandse en internationale klanten die in Spanje kopen.',
     'about-role': 'Oprichter, TrendsOnFire · Senior Executive &amp; Marktanalist',
     'about-p1': '20+ jaar leiding gegeven aan datagedreven beslissingen in Europa, inclusief P&amp;L-leiderschap van een €150M e-commerce bedrijf in 26 landen met teams van 240+ mensen.',
     'about-p2': 'Ik bouwde TrendsOnFire om executive-grade marktintelligentie toegankelijk te maken zonder consultancy tarieven te betalen. Voor GustoCasa betekent dat één ding: het onderzoek dat u verkoopgesprekken wint.',
@@ -681,7 +680,7 @@ const T = {
     'step2-desc': 'En 5 días llega su primer informe completo. Lo revisa, lo refinamos una vez — luego se convierte en la plantilla mensual, actualizada con datos frescos cada mes.',
     'step3-title': 'Mensualmente el Día 12',
     'step3-desc': 'Cada mes el día 12: nuevo informe en su bandeja, panel en vivo actualizado, plantilla de LinkedIn lista. Le lleva menos de 5 minutos publicar.',
-    'spanish-note': '<strong>También disponible:</strong> Informes similares pueden crearse para el <strong>mercado inmobiliario español</strong> — ideal para agencias que trabajan con clientes neerlandeses e internacionales que compran en España.',
+    'spanish-note': '<strong>También disponible:</strong> Los informes de inteligencia para el <strong>mercado inmobiliario español</strong> ya están desarrollados y disponibles — en inglés, neerlandés y español. Ideal para agencias que trabajan con clientes neerlandeses e internacionales que compran en España.',
     'about-role': 'Fundadora, TrendsOnFire · Directora Senior &amp; Analista de Mercado',
     'about-p1': 'Más de 20 años liderando decisiones basadas en datos en Europa, incluyendo la dirección de P&amp;L de un negocio de e-commerce de €150M en 26 países con equipos de más de 240 personas.',
     'about-p2': 'Construí TrendsOnFire para hacer accesible la inteligencia de mercado de nivel ejecutivo sin pagar tarifas de consultoría. Para GustoCasa, eso significa una cosa: la investigación que gana reuniones de venta.',
