@@ -376,6 +376,50 @@
       .ratio-box { flex-direction: column; text-align: center; }
     }
 
+    /* WATERMARK */
+    .watermark-bg {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none; z-index: 9998; overflow: hidden;
+    }
+    .watermark-bg::before {
+      content: 'trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com  trendsonfire.com';
+      position: absolute; top: -100%; left: -100%; width: 400%; height: 400%;
+      font-size: 22px; font-weight: 800; letter-spacing: 0.2em;
+      color: rgba(26,35,64,0.3); word-spacing: 40px; line-height: 88px;
+      transform: rotate(-35deg); font-family: 'Inter', sans-serif; text-transform: lowercase;
+    }
+
+    /* PLAN DIVIDER */
+    .plan-divider {
+      margin: 48px 0 0;
+      border: none;
+      border-top: 3px solid #e8622a;
+      position: relative;
+    }
+    .plan-divider-label {
+      display: flex; align-items: center; gap: 14px;
+      margin: 0 0 32px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #1a2340 0%, #2d3e6e 100%);
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    }
+    .plan-divider-label .pdl-badge {
+      background: #e8622a; color: white; font-size: 10px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .1em; padding: 4px 12px;
+      border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+    }
+    .plan-divider-label .pdl-text {
+      font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.5;
+    }
+    .plan-divider-label .pdl-text strong { color: white; }
+    .plan-divider-label .pdl-link {
+      margin-left: auto; flex-shrink: 0;
+      font-size: 12px; font-weight: 700; color: #e8c97a;
+      text-decoration: none; white-space: nowrap;
+    }
+    .plan-divider-label .pdl-link:hover { text-decoration: underline; }
+
     /* LANGUAGE SWITCHER */
     .lang-switcher { display: flex; gap: 4px; justify-content: flex-end; margin-bottom: 8px; }
     .lang-btn {
@@ -389,11 +433,12 @@
   </style>
 </head>
 <body>
+<div class="watermark-bg"></div>
 
 <!-- SAMPLE BANNER -->
 <div class="sample-banner">
   <span data-i18n="sample-banner">⚠ SAMPLE REPORT — Demonstration prepared by TrendsOnFire for GustoCasa. This shows what a monthly intelligence subscription would include.</span>
-  <a href="/services/real-estate-agencies.html" data-i18n="sample-banner-link">→ Learn about our agency intelligence contracts</a>
+  <a href="gustocasa-proposal.html" data-i18n="sample-banner-link">→ Learn about our agency intelligence contracts</a>
 </div>
 
 <!-- REPORT HEADER -->
@@ -630,6 +675,14 @@
     <div class="chart-source">Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026</div>
     <div class="chart-wrap short"><canvas id="chartBuyerAgent"></canvas></div>
     <div class="chart-insight">Buyer agent usage has risen to 47% — up 3pp over six months. This indicates increasing buyer sophistication and competition. Sellers using GustoCasa's full-service approach benefit from professional representation on the instruction side.</div>
+  </div>
+
+  <!-- PLAN DIVIDER -->
+  <hr class="plan-divider"/>
+  <div class="plan-divider-label">
+    <span class="pdl-badge">Full Intelligence — €295/month</span>
+    <span class="pdl-text"><strong>Everything below is included in the Full Intelligence plan only.</strong> The Starter plan (€195/month) provides a highlights summary of Section 1 data. Sections 2–11 are exclusive to Full Intelligence.</span>
+    <a href="gustocasa-proposal.html#pricing" class="pdl-link">→ See pricing</a>
   </div>
 
   <!-- ══════════════════════════════════════════════════ -->
