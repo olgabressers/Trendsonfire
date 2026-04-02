@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -449,8 +449,8 @@
   </div>
   <div class="report-meta">
     <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-lang="nl" onclick="setLang('nl')">NL</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="nl" onclick="setLang('nl')">NL</button>
       <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
     </div>
     <div class="report-title" data-i18n="report-title">Utrecht Housing Market Intelligence — February 2026</div>
@@ -498,23 +498,23 @@
 
   <div class="chart-grid-2">
     <div class="chart-card">
-      <div class="chart-title">Monthly Homes Sold — Utrecht</div>
-      <div class="chart-source">Source: NVM/Kadaster <sup>[1][3]</sup> · Aug 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-sold">Monthly Homes Sold — Utrecht</div>
+      <div class="chart-source" data-i18n="cs-sold">Source: NVM/Kadaster <sup>[1][3]</sup> · Aug 2025 – Feb 2026</div>
       <div class="chart-wrap"><canvas id="chartSold"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Average Transaction Price (€)</div>
-      <div class="chart-source">Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-price">Average Transaction Price (€)</div>
+      <div class="chart-source" data-i18n="cs-price">Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026</div>
       <div class="chart-wrap"><canvas id="chartPrice"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Average Overbidding % — Utrecht Market</div>
-      <div class="chart-source">Source: NVM/Funda <sup>[1][2]</sup> · Aug 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-overbid">Average Overbidding % — Utrecht Market</div>
+      <div class="chart-source" data-i18n="cs-overbid">Source: NVM/Funda <sup>[1][2]</sup> · Aug 2025 – Feb 2026</div>
       <div class="chart-wrap"><canvas id="chartOverbid"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Funda Supply vs Demand (Seekers ÷ 10 vs Properties)</div>
-      <div class="chart-source">Source: Funda <sup>[2]</sup> · Aug 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-supply">Funda Supply vs Demand (Seekers ÷ 10 vs Properties)</div>
+      <div class="chart-source" data-i18n="cs-supply">Source: Funda <sup>[2]</sup> · Aug 2025 – Feb 2026</div>
       <div class="chart-wrap"><canvas id="chartSupplyDemand"></canvas></div>
     </div>
   </div>
@@ -523,8 +523,8 @@
   <div class="ratio-box">
     <div class="ratio-number">14.3</div>
     <div class="ratio-text">
-      <h3>Seekers per Available Property — February 2026</h3>
-      <p>For every home listed on Funda in Utrecht, there are 14.3 active registered seekers. This places Utrecht among the five most competitive housing markets in the Netherlands. Buyer demand is structurally exceeding supply, maintaining strong upward price pressure across all segments. <sup style="color:rgba(255,255,255,0.5)">[2]</sup></p>
+      <h3 data-i18n="ratio-h3">Seekers per Available Property — February 2026</h3>
+      <p data-i18n="ratio-p">For every home listed on Funda in Utrecht, there are 14.3 active registered seekers. This places Utrecht among the five most competitive housing markets in the Netherlands. Buyer demand is structurally exceeding supply, maintaining strong upward price pressure across all segments. <sup style="color:rgba(255,255,255,0.5)">[2]</sup></p>
     </div>
   </div>
 
@@ -532,23 +532,23 @@
   <div class="section-header" style="margin-top:32px; border-bottom: 1px solid var(--border);">
     <h2 style="font-size:16px;" data-i18n="sec1b">Long-Term Price Evolution — Utrecht vs Netherlands (2020–2026)</h2>
   </div>
-  <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;">Annual average transaction prices and year-on-year growth rates. Utrecht consistently commands a premium above the national average and has recovered faster from the 2023 correction. Sources: NVM, Kadaster, CBS. 2026 = Q1 annualised.</p>
+  <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;" data-i18n="s1-hist-p">Annual average transaction prices and year-on-year growth rates. Utrecht consistently commands a premium above the national average and has recovered faster from the 2023 correction. Sources: NVM, Kadaster, CBS. 2026 = Q1 annualised.</p>
 
   <div class="chart-grid-2" style="margin-bottom:8px;">
     <div class="chart-card">
-      <div class="chart-title">Average Transaction Price — Utrecht vs Netherlands (€)</div>
-      <div class="chart-source">Source: NVM / Kadaster <sup>[1][3]</sup> · Annual averages · 2026 = Q1 estimate</div>
+      <div class="chart-title" data-i18n="ct-hist-price">Average Transaction Price — Utrecht vs Netherlands (€)</div>
+      <div class="chart-source" data-i18n="cs-hist-price">Source: NVM / Kadaster <sup>[1][3]</sup> · Annual averages · 2026 = Q1 estimate</div>
       <div class="chart-wrap" style="height:220px;"><canvas id="chartHistoricPrice"></canvas></div>
-      <div class="chart-insight">Utrecht commands a <strong>€50–70K premium</strong> above the national average across the full period. Both markets peaked in 2022, corrected in 2023, and recovered in 2024–2025. Utrecht's recovery has been stronger.</div>
+      <div class="chart-insight" data-i18n="ci-hist-price">Utrecht commands a <strong>€50–70K premium</strong> above the national average across the full period. Both markets peaked in 2022, corrected in 2023, and recovered in 2024–2025. Utrecht's recovery has been stronger.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Year-on-Year Price Growth — Utrecht vs Netherlands (%)</div>
-      <div class="chart-source">Source: NVM / CBS <sup>[1][4]</sup> · Annual % change vs prior year</div>
+      <div class="chart-title" data-i18n="ct-yoy">Year-on-Year Price Growth — Utrecht vs Netherlands (%)</div>
+      <div class="chart-source" data-i18n="cs-yoy">Source: NVM / CBS <sup>[1][4]</sup> · Annual % change vs prior year</div>
       <div class="chart-wrap" style="height:220px;"><canvas id="chartYoY"></canvas></div>
-      <div class="chart-insight">The 2021 boom (+18–20%) and 2023 correction (−6–7%) affected both markets equally. Utrecht's 2024 rebound (+8.4%) outpaced the national average (+7.7%), confirming structural undersupply and sustained buyer demand in the city.</div>
+      <div class="chart-insight" data-i18n="ci-yoy">The 2021 boom (+18–20%) and 2023 correction (−6–7%) affected both markets equally. Utrecht's 2024 rebound (+8.4%) outpaced the national average (+7.7%), confirming structural undersupply and sustained buyer demand in the city.</div>
     </div>
   </div>
-  <div class="callout" style="margin-bottom:28px;">
+  <div class="callout" style="margin-bottom:28px;" data-i18n="callout-sellers-timing">
     <strong>Why this matters for sellers:</strong> Utrecht has never experienced a multi-year price decline — the 2023 dip was a single-year correction, not a structural fall. Sellers who listed in 2024–2025 recovered all peak-level pricing and more. The long-term trend strongly favours listing over waiting.
   </div>
 
@@ -562,10 +562,10 @@
       <table>
         <thead>
           <tr>
-            <th>Neighbourhood</th>
-            <th>Avg Price/m²</th>
-            <th>YoY Change</th>
-            <th>Signal</th>
+            <th data-i18n="th-neighbourhood">Neighbourhood</th>
+            <th data-i18n="th-price-sqm">Avg Price/m²</th>
+            <th data-i18n="th-yoy-change">YoY Change</th>
+            <th data-i18n="th-signal">Signal</th>
           </tr>
         </thead>
         <tbody>
@@ -609,8 +609,8 @@
       </table>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Price per m² by Neighbourhood</div>
-      <div class="chart-source">Source: Kadaster/NVM <sup>[1][3]</sup> · February 2026</div>
+      <div class="chart-title" data-i18n="ct-neighbourhood">Price per m² by Neighbourhood</div>
+      <div class="chart-source" data-i18n="cs-neighbourhood">Source: Kadaster/NVM <sup>[1][3]</sup> · February 2026</div>
       <div class="chart-wrap tall"><canvas id="chartNeighbourhood"></canvas></div>
     </div>
   </div>
@@ -661,23 +661,23 @@
       <div class="lender-bar-wrap"><div class="lender-bar" style="width:88%;background:var(--red)"></div></div>
       <div class="lender-rate">4.18%</div>
     </div>
-    <div class="chart-insight">SNS offers the best available rate at 3.59% — a 59bp spread vs BLG. Advise buyers to prioritise SNS/ING for maximum purchasing power. A 59bp rate difference on a €450K mortgage may reduce monthly payments by approximately €165/month.</div>
+    <div class="chart-insight" data-i18n="ci-mortgage">SNS offers the best available rate at 3.59% — a 59bp spread vs BLG. Advise buyers to prioritise SNS/ING for maximum purchasing power. A 59bp rate difference on a €450K mortgage may reduce monthly payments by approximately €165/month.</div>
   </div>
 
   <!-- Buyer Agent Penetration -->
   <div class="chart-card" style="margin-bottom:20px;">
-    <div class="chart-title">Buyer Agent Penetration — % of Utrecht Transactions Using a Buyer's Agent</div>
-    <div class="chart-source">Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026</div>
+    <div class="chart-title" data-i18n="ct-buyer-agent">Buyer Agent Penetration — % of Utrecht Transactions Using a Buyer's Agent</div>
+    <div class="chart-source" data-i18n="cs-buyer-agent">Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026</div>
     <div class="chart-wrap short"><canvas id="chartBuyerAgent"></canvas></div>
-    <div class="chart-insight">Buyer agent usage has risen to 47% — up 3pp over six months. This indicates increasing buyer sophistication and competition. Sellers using GustoCasa's full-service approach benefit from professional representation on the instruction side.</div>
+    <div class="chart-insight" data-i18n="ci-buyer-agent">Buyer agent usage has risen to 47% — up 3pp over six months. This indicates increasing buyer sophistication and competition. Sellers using GustoCasa's full-service approach benefit from professional representation on the instruction side.</div>
   </div>
 
   <!-- PLAN DIVIDER -->
   <hr class="plan-divider"/>
   <div class="plan-divider-label">
-    <span class="pdl-badge">Full Intelligence — €295/month</span>
-    <span class="pdl-text"><strong>Everything below is included in the Full Intelligence plan only.</strong> The Starter plan (€195/month) provides a highlights summary of Section 1 data. Sections 2–11 are exclusive to Full Intelligence.</span>
-    <a href="gustocasa-proposal.html#pricing" class="pdl-link">→ See pricing</a>
+    <span class="pdl-badge" data-i18n="pdl-badge">Full Intelligence — €295/month</span>
+    <span class="pdl-text" data-i18n="pdl-text-main"><strong>Everything below is included in the Full Intelligence plan only.</strong> The Starter plan (€195/month) provides a highlights summary of Section 1 data. Sections 2–11 are exclusive to Full Intelligence.</span>
+    <a href="gustocasa-proposal.html#pricing" class="pdl-link" data-i18n="pdl-link">→ See pricing</a>
   </div>
 
   <!-- ══════════════════════════════════════════════════ -->
@@ -689,34 +689,34 @@
     <span class="badge-premium">⭐ Premium</span>
   </div>
 
-  <div class="callout purple">
+  <div class="callout purple" data-i18n="callout-exclusive">
     <strong>Exclusive Intelligence:</strong> This section uses GustoCasa's own transaction data combined with NVM benchmarks. It enables Lindy to prove ROI to prospective sellers with hard numbers — transforming sales conversations with objective, irrefutable performance evidence.
   </div>
 
   <div class="chart-grid-2" style="margin-top:16px;">
     <div class="chart-card">
-      <div class="chart-title">Overbidding % — GustoCasa vs Utrecht Market Average</div>
-      <div class="chart-source">Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-overbid-comp">Overbidding % — GustoCasa vs Utrecht Market Average</div>
+      <div class="chart-source" data-i18n="cs-overbid-comp">Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026</div>
       <div class="chart-wrap tall"><canvas id="chartOverbidComp"></canvas></div>
-      <div class="chart-insight"><strong>GustoCasa sells 7.6pp above market average overbid.</strong> In a market averaging 12.2%, GustoCasa clients are achieving 19.8% — a structural performance premium driven by pricing strategy and buyer network depth.</div>
+      <div class="chart-insight" data-i18n="ci-overbid-comp"><strong>GustoCasa sells 7.6pp above market average overbid.</strong> In a market averaging 12.2%, GustoCasa clients are achieving 19.8% — a structural performance premium driven by pricing strategy and buyer network depth.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Days on Market — GustoCasa vs Utrecht Average</div>
-      <div class="chart-source">Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026</div>
+      <div class="chart-title" data-i18n="ct-dom">Days on Market — GustoCasa vs Utrecht Average</div>
+      <div class="chart-source" data-i18n="cs-dom">Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026</div>
       <div class="chart-wrap tall"><canvas id="chartDOM"></canvas></div>
-      <div class="chart-insight"><strong>GustoCasa is 2.4× faster.</strong> Average 8.8 days on market vs Utrecht market average of 21.5 days. Sellers avoid prolonged uncertainty and carrying costs — a tangible, quantifiable benefit of instruction.</div>
+      <div class="chart-insight" data-i18n="ci-dom"><strong>GustoCasa is 2.4× faster.</strong> Average 8.8 days on market vs Utrecht market average of 21.5 days. Sellers avoid prolonged uncertainty and carrying costs — a tangible, quantifiable benefit of instruction.</div>
     </div>
   </div>
 
   <!-- Price per m2 comparison -->
   <div class="chart-card" style="margin-bottom:20px;">
-    <div class="chart-title">Price per m² — GustoCasa vs Utrecht Market Average</div>
-    <div class="chart-source">Source: GustoCasa transaction data + Kadaster <sup>[3]</sup> · February 2026</div>
+    <div class="chart-title" data-i18n="ct-price-sqm-comp">Price per m² — GustoCasa vs Utrecht Market Average</div>
+    <div class="chart-source" data-i18n="cs-price-sqm-comp">Source: GustoCasa transaction data + Kadaster <sup>[3]</sup> · February 2026</div>
     <div style="display:flex;gap:24px;align-items:center;padding:16px 0 8px;flex-wrap:wrap;">
       <div style="flex:1;min-width:240px;">
         <div style="margin-bottom:14px;">
           <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-            <span style="font-size:13px;font-weight:600">GustoCasa Average</span>
+            <span style="font-size:13px;font-weight:600" data-i18n="priceSqm-gc-label">GustoCasa Average</span>
             <span style="font-size:14px;font-weight:800;color:var(--navy)">€4,820/m²</span>
           </div>
           <div style="height:26px;background:var(--cream);border-radius:5px;overflow:hidden;">
@@ -725,7 +725,7 @@
         </div>
         <div>
           <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-            <span style="font-size:13px;font-weight:600">Utrecht Market Average</span>
+            <span style="font-size:13px;font-weight:600" data-i18n="priceSqm-market-label">Utrecht Market Average</span>
             <span style="font-size:14px;font-weight:800;color:var(--text-mid)">€4,380/m²</span>
           </div>
           <div style="height:26px;background:var(--cream);border-radius:5px;overflow:hidden;">
@@ -735,11 +735,11 @@
       </div>
       <div style="text-align:center;padding:20px 32px;background:#edfaf2;border-radius:10px;min-width:150px;">
         <div style="font-size:34px;font-weight:800;color:var(--green);letter-spacing:-1px;">+9.9%</div>
-        <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;">Price Premium</div>
-        <div style="font-size:12px;color:var(--text-mid);margin-top:6px;">€440/m² above market</div>
+        <div style="font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;" data-i18n="priceSqm-premium-label">Price Premium</div>
+        <div style="font-size:12px;color:var(--text-mid);margin-top:6px;" data-i18n="priceSqm-sqm-note">€440/m² above market</div>
       </div>
     </div>
-    <div class="chart-insight">For a typical 110m² Utrecht home, GustoCasa's price premium translates to approximately <strong>€48,400 in additional value for the seller</strong> — a compelling and evidence-based ROI argument for any seller evaluating instruction options.</div>
+    <div class="chart-insight" data-i18n="ci-price-sqm">For a typical 110m² Utrecht home, GustoCasa's price premium translates to approximately <strong>€48,400 in additional value for the seller</strong> — a compelling and evidence-based ROI argument for any seller evaluating instruction options.</div>
   </div>
 
   <!-- ═══════════════════════════════════════ -->
@@ -751,22 +751,22 @@
     <span class="badge-premium">⭐ Premium</span>
   </div>
 
-  <div class="callout green">
+  <div class="callout green" data-i18n="callout-listing-timing">
     <strong>BEST TIME TO LIST: March–May.</strong> Sellers who list in April may achieve on average 12% above asking price. August listings historically achieve only 93% of asking — a 19-point swing vs April. If a seller can wait even 4–6 weeks to list in March, the financial benefit is material. Advise fence-sitting sellers to list by March 15. <sup>[1][4]</sup>
   </div>
 
   <div class="chart-grid-2" style="margin-top:16px;">
     <div class="chart-card">
-      <div class="chart-title">% of Asking Price Achieved by Listing Month</div>
-      <div class="chart-source">Source: NVM seasonal analysis <sup>[1]</sup> + CBS woningmarktcijfers <sup>[4]</sup></div>
+      <div class="chart-title" data-i18n="ct-seasonal">% of Asking Price Achieved by Listing Month</div>
+      <div class="chart-source" data-i18n="cs-seasonal">Source: NVM seasonal analysis <sup>[1]</sup> + CBS woningmarktcijfers <sup>[4]</sup></div>
       <div class="chart-wrap tall"><canvas id="chartSeasonal"></canvas></div>
-      <div class="chart-insight">Green = 105%+ · Orange = 99–104% · Red = below 99%. The March–May window is the prime selling season. December shows the weakest outcomes at 91% — a 21-point swing from the April peak.</div>
+      <div class="chart-insight" data-i18n="ci-seasonal">Green = 105%+ · Orange = 99–104% · Red = below 99%. The March–May window is the prime selling season. December shows the weakest outcomes at 91% — a 21-point swing from the April peak.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Average Days on Market by Listing Month</div>
-      <div class="chart-source">Source: NVM <sup>[1]</sup> + CBS <sup>[4]</sup> · 12-month seasonal pattern</div>
+      <div class="chart-title" data-i18n="ct-seasonal-dom">Average Days on Market by Listing Month</div>
+      <div class="chart-source" data-i18n="cs-seasonal-dom">Source: NVM <sup>[1]</sup> + CBS <sup>[4]</sup> · 12-month seasonal pattern</div>
       <div class="chart-wrap tall"><canvas id="chartSeasonalDOM"></canvas></div>
-      <div class="chart-insight">March–May listings sell in an average of 11–14 days. December listings may linger for 34 days — increasing seller anxiety, carrying costs, and price renegotiation risk. Speed and price outcomes move in lockstep.</div>
+      <div class="chart-insight" data-i18n="ci-seasonal-dom">March–May listings sell in an average of 11–14 days. December listings may linger for 34 days — increasing seller anxiety, carrying costs, and price renegotiation risk. Speed and price outcomes move in lockstep.</div>
     </div>
   </div>
 
@@ -781,18 +781,18 @@
 
   <div class="chart-grid-2">
     <div class="chart-card">
-      <div class="chart-title">Buyers per Available Property — by Price Band</div>
-      <div class="chart-source">Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup> · February 2026</div>
+      <div class="chart-title" data-i18n="ct-price-band">Buyers per Available Property — by Price Band</div>
+      <div class="chart-source" data-i18n="cs-price-band">Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup> · February 2026</div>
       <div class="chart-wrap tall"><canvas id="chartPriceBand"></canvas></div>
-      <div class="callout orange" style="margin-top:12px;font-size:12px;">
+      <div class="callout orange" style="margin-top:12px;font-size:12px;" data-i18n="callout-price-band">
         <strong>GustoCasa's sweet spot (€450–650K) sits at the peak of buyer competition</strong> — with 26–31 buyers per available property. These are ideal conditions for seller outperformance. Sellers in this bracket should expect multiple competing offers within days of listing.
       </div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Transaction Share by Price Band — Utrecht Feb 2026</div>
-      <div class="chart-source">Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup></div>
+      <div class="chart-title" data-i18n="ct-price-pie">Transaction Share by Price Band — Utrecht Feb 2026</div>
+      <div class="chart-source" data-i18n="cs-price-pie">Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup></div>
       <div class="chart-wrap tall"><canvas id="chartPricePie"></canvas></div>
-      <div class="chart-insight">The €400–500K bracket accounts for 31% of all Utrecht transactions — the dominant price segment. Combined with €500–600K, these two bands represent 55% of total market volume.</div>
+      <div class="chart-insight" data-i18n="ci-transaction-share">The €400–500K bracket accounts for 31% of all Utrecht transactions — the dominant price segment. Combined with €500–600K, these two bands represent 55% of total market volume.</div>
     </div>
   </div>
 
@@ -805,26 +805,26 @@
     <span class="badge-premium">⭐ Premium</span>
   </div>
 
-  <div class="callout red">
+  <div class="callout red" data-i18n="callout-energy-red">
     <strong>Urgency Signal:</strong> In Utrecht, 34% of pre-1975 housing stock still carries label E, F or G. Sellers of these properties face an average <strong>€62,000 discount</strong> vs comparable label C homes — and this gap is widening as the 2033 EU minimum label C deadline approaches.
   </div>
 
   <div class="chart-grid-2" style="margin-top:16px;">
     <div class="chart-card">
-      <div class="chart-title">Energy Label Price Premium/Discount vs Label C Baseline</div>
-      <div class="chart-source">Source: CBS Energielabels dataset <sup>[10]</sup>, NVM Energy Premium Analysis <sup>[1]</sup></div>
+      <div class="chart-title" data-i18n="ct-energy-label">Energy Label Price Premium/Discount vs Label C Baseline</div>
+      <div class="chart-source" data-i18n="cs-energy-label">Source: CBS Energielabels dataset <sup>[10]</sup>, NVM Energy Premium Analysis <sup>[1]</sup></div>
       <div class="chart-wrap tall"><canvas id="chartEnergyLabel"></canvas></div>
-      <div class="chart-insight">A label A property may achieve an 18% premium while a label G property could sell at a 28% discount vs an equivalent label C home. On a €500K property, the swing between A and G may represent up to €230,000 in value.</div>
+      <div class="chart-insight" data-i18n="ci-energy-label">A label A property may achieve an 18% premium while a label G property could sell at a 28% discount vs an equivalent label C home. On a €500K property, the swing between A and G may represent up to €230,000 in value.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">E/F/G Label Discount Gap — Growing Over Time</div>
-      <div class="chart-source">Source: PBL Netherlands Environmental Assessment Agency <sup>[11]</sup>, CBS <sup>[10]</sup></div>
+      <div class="chart-title" data-i18n="ct-energy-gap">E/F/G Label Discount Gap — Growing Over Time</div>
+      <div class="chart-source" data-i18n="cs-energy-gap">Source: PBL Netherlands Environmental Assessment Agency <sup>[11]</sup>, CBS <sup>[10]</sup></div>
       <div class="chart-wrap tall"><canvas id="chartEnergyGap"></canvas></div>
-      <div class="chart-insight">The average discount for E/F/G label properties has grown from 8% in 2022 to an estimated 21% in 2026 — and is likely to accelerate further as regulatory deadlines tighten. <strong>Advise sellers to renovate before listing where feasible.</strong></div>
+      <div class="chart-insight" data-i18n="ci-energy-gap">The average discount for E/F/G label properties has grown from 8% in 2022 to an estimated 21% in 2026 — and is likely to accelerate further as regulatory deadlines tighten. <strong>Advise sellers to renovate before listing where feasible.</strong></div>
     </div>
   </div>
 
-  <div class="callout blue">
+  <div class="callout blue" data-i18n="callout-energy-blue">
     <strong>Strategic Opportunity for GustoCasa:</strong> GustoCasa can position as the advisor who helps sellers navigate energy label improvements <em>before</em> listing — capturing renovation referral fees and achieving higher eventual sale prices. A pre-listing energy audit service could be a significant differentiator and revenue stream as the 2033 deadline approaches.
   </div>
 
@@ -841,11 +841,11 @@
     <table class="nc-table">
       <thead>
         <tr>
-          <th>Project</th>
-          <th>Area</th>
-          <th>Units</th>
-          <th>Expected Delivery</th>
-          <th>Resale Impact</th>
+          <th data-i18n="th-project">Project</th>
+          <th data-i18n="th-area">Area</th>
+          <th data-i18n="th-units">Units</th>
+          <th data-i18n="th-delivery">Expected Delivery</th>
+          <th data-i18n="th-impact">Resale Impact</th>
         </tr>
       </thead>
       <tbody>
@@ -888,10 +888,10 @@
     </table>
   </div>
 
-  <div class="callout red">
+  <div class="callout red" data-i18n="callout-pipeline-alert">
     <strong>Pipeline Alert:</strong> Merwedekanaalzone delivery in Q3 2026 will add 1,200 units near Kanaleneiland — directly competing with GustoCasa's resale inventory in the €280–350K bracket. <strong>Sellers in postcodes 3561–3564 should be advised to list before July 2026</strong> to avoid competing against new-build incentives (developer finance, energy label A, manufacturer warranties).
   </div>
-  <div style="font-size:11px;color:var(--text-light);margin-top:-4px;margin-bottom:20px;">Source: Gemeente Utrecht Woningbouwmonitor <sup>[12]</sup>, Kadaster nieuwbouw data <sup>[3]</sup></div>
+  <div style="font-size:11px;color:var(--text-light);margin-top:-4px;margin-bottom:20px;" data-i18n="source-note-pipeline">Source: Gemeente Utrecht Woningbouwmonitor <sup>[12]</sup>, Kadaster nieuwbouw data <sup>[3]</sup></div>
 
   <!-- ════════════════════════════════════════════════ -->
   <!-- SECTION 7: BUYER ORIGIN INTELLIGENCE           -->
@@ -904,22 +904,22 @@
 
   <div class="chart-grid-2">
     <div class="chart-card">
-      <div class="chart-title">Where Utrecht Buyers Come From</div>
-      <div class="chart-source">Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup></div>
+      <div class="chart-title" data-i18n="ct-buyer-origin-donut">Where Utrecht Buyers Come From</div>
+      <div class="chart-source" data-i18n="cs-buyer-origin-donut">Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup></div>
       <div class="chart-wrap"><canvas id="chartBuyerOriginDonut"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Top Buyer Origin Cities / Segments</div>
-      <div class="chart-source">Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup></div>
+      <div class="chart-title" data-i18n="ct-buyer-origin-bar">Top Buyer Origin Cities / Segments</div>
+      <div class="chart-source" data-i18n="cs-buyer-origin-bar">Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup></div>
       <div class="chart-wrap"><canvas id="chartBuyerOriginBar"></canvas></div>
     </div>
   </div>
 
   <div class="chart-grid-2" style="margin-top:0;">
-    <div class="callout orange">
+    <div class="callout orange" data-i18n="callout-buyer-amsterdam">
       <strong>Amsterdam overflow is 38% of Utrecht demand.</strong> These buyers are fleeing €600K+ average prices in Amsterdam. They typically have high budgets, are pre-qualified, and are highly motivated to transact quickly. <strong>GustoCasa's marketing could target Amsterdam:</strong> Google/Meta ads geo-targeted to Amsterdam postal codes (1011–1099) may yield high-intent buyer leads at relatively low cost per lead.
     </div>
-    <div class="callout blue">
+    <div class="callout blue" data-i18n="callout-buyer-expat">
       <strong>Expat Segment (18%):</strong> Driven by ASML (Eindhoven-Utrecht corridor), Rabobank headquarters, and Utrecht Science Park relocation activity. These buyers prioritise speed, transparency, and English-language guidance. GustoCasa's multilingual service and fast execution time (avg 8.8 days) is a structural differentiator in this segment.
     </div>
   </div>
@@ -935,20 +935,20 @@
 
   <div class="chart-grid-2">
     <div class="chart-card">
-      <div class="chart-title">Utrecht Population Growth 2020–2026</div>
-      <div class="chart-source">Source: CBS Bevolkingsstatistieken <sup>[4]</sup> · 2026 = projected</div>
+      <div class="chart-title" data-i18n="ct-population">Utrecht Population Growth 2020–2026</div>
+      <div class="chart-source" data-i18n="cs-population">Source: CBS Bevolkingsstatistieken <sup>[4]</sup> · 2026 = projected</div>
       <div class="chart-wrap"><canvas id="chartPopulation"></canvas></div>
-      <div class="chart-insight">Utrecht is on track to reach 400,000 residents by 2028 — the city growth target. Each new resident represents structural housing demand, keeping absorption rates high even as new supply enters the market.</div>
+      <div class="chart-insight" data-i18n="ci-population">Utrecht is on track to reach 400,000 residents by 2028 — the city growth target. Each new resident represents structural housing demand, keeping absorption rates high even as new supply enters the market.</div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Transaction Share by Buyer Age Group — Utrecht 2025–26</div>
-      <div class="chart-source">Source: NVM Koopersonderzoek 2025 <sup>[1]</sup></div>
+      <div class="chart-title" data-i18n="ct-age-group">Transaction Share by Buyer Age Group — Utrecht 2025–26</div>
+      <div class="chart-source" data-i18n="cs-age-group">Source: NVM Koopersonderzoek 2025 <sup>[1]</sup></div>
       <div class="chart-wrap"><canvas id="chartAgeGroup"></canvas></div>
-      <div class="chart-insight">First-time buyers (starters, 20–35) represent 52% of all transactions — structurally high compared to other Dutch cities, ensuring sustained demand in the €300–500K bracket through 2028.</div>
+      <div class="chart-insight" data-i18n="ci-age-group">First-time buyers (starters, 20–35) represent 52% of all transactions — structurally high compared to other Dutch cities, ensuring sustained demand in the €300–500K bracket through 2028.</div>
     </div>
   </div>
 
-  <div class="callout green">
+  <div class="callout green" data-i18n="callout-key-signal">
     <strong>Key Signal:</strong> First-time buyer average age in Utrecht is <strong>32.4 years</strong> — the youngest of all G4 cities (Amsterdam 35.1, Rotterdam 33.8, The Hague 34.2). Utrecht's young professional base, driven by university and tech sector employment, is likely to ensure sustained starter demand through 2028 and beyond.
   </div>
 
@@ -962,31 +962,31 @@
   </div>
 
   <div class="chart-card" style="margin-bottom:20px;">
-    <div class="chart-title">Utrecht Avg Transaction Price — Three Scenarios (€) · 2026–2028</div>
-    <div class="chart-source">Source: ECB monetary policy projections <sup>[13]</sup>, Oxford Economics NL Housing Model <sup>[14]</sup>, ING Economisch Bureau <sup>[15]</sup></div>
+    <div class="chart-title" data-i18n="ct-scenario">Utrecht Avg Transaction Price — Three Scenarios (€) · 2026–2028</div>
+    <div class="chart-source" data-i18n="cs-scenario">Source: ECB monetary policy projections <sup>[13]</sup>, Oxford Economics NL Housing Model <sup>[14]</sup>, ING Economisch Bureau <sup>[15]</sup></div>
     <div class="chart-wrap tall"><canvas id="chartScenario"></canvas></div>
   </div>
 
   <div style="background:var(--white);border-radius:10px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:20px;">
-    <div style="font-size:12px;color:var(--text-mid);margin-bottom:12px;">Scenario Outcomes — December 2028 Avg Transaction Price vs January 2026 (€521K baseline)</div>
+    <div style="font-size:12px;color:var(--text-mid);margin-bottom:12px;" data-i18n="scenario-desc">Scenario Outcomes — December 2028 Avg Transaction Price vs January 2026 (€521K baseline)</div>
     <div class="scenario-grid">
       <div class="scenario-card bull">
-        <div class="sc-val-lbl">Bull Scenario</div>
+        <div class="sc-val-lbl" data-i18n="sc-bull-label">Bull Scenario</div>
         <div class="sc-val">€635K</div>
-        <div class="sc-val-desc">ECB cuts 50bp by Q3 2026<br/><strong style="color:var(--green)">+€114K gain</strong> over 3 years</div>
+        <div class="sc-val-desc" data-i18n="sc-bull-desc">ECB cuts 50bp by Q3 2026<br/><strong style="color:var(--green)">+€114K gain</strong> over 3 years</div>
       </div>
       <div class="scenario-card base">
-        <div class="sc-val-lbl">Base Scenario</div>
+        <div class="sc-val-lbl" data-i18n="sc-base-label">Base Scenario</div>
         <div class="sc-val">€571K</div>
-        <div class="sc-val-desc">ECB rates stay flat<br/><strong style="color:var(--orange)">+€50K gain</strong> over 3 years</div>
+        <div class="sc-val-desc" data-i18n="sc-base-desc">ECB rates stay flat<br/><strong style="color:var(--orange)">+€50K gain</strong> over 3 years</div>
       </div>
       <div class="scenario-card bear">
-        <div class="sc-val-lbl">Bear Scenario</div>
+        <div class="sc-val-lbl" data-i18n="sc-bear-label">Bear Scenario</div>
         <div class="sc-val">€478K</div>
-        <div class="sc-val-desc">ECB raises 25bp<br/><strong style="color:var(--red)">−€43K loss</strong> over 3 years</div>
+        <div class="sc-val-desc" data-i18n="sc-bear-desc">ECB raises 25bp<br/><strong style="color:var(--red)">−€43K loss</strong> over 3 years</div>
       </div>
     </div>
-    <div class="callout blue" style="margin-top:16px;">
+    <div class="callout blue" style="margin-top:16px;" data-i18n="callout-scenario">
       GustoCasa can use these scenarios to guide client buy/wait decisions. Under the base scenario (most likely), the average Utrecht home may gain €50K in value by 2028. Under the bull scenario, €114K. <strong>This data is likely to strengthen the case for buyers to transact now rather than wait</strong> — and gives sellers realistic upside expectations.
     </div>
   </div>
@@ -1001,50 +1001,50 @@
   </div>
 
   <div class="public-section">
-    <div class="ps-title">🌐 Public Dashboard Module — Ready to Share &amp; Embed</div>
-    <div class="ps-sub">A dedicated public page is maintained by TrendsOnFire and updated on the <strong>12th of each month</strong>. GustoCasa receives this URL and can embed it on their website and share it on LinkedIn as a monthly market update post — positioning GustoCasa as Utrecht's data-driven boutique agency.</div>
+    <div class="ps-title" data-i18n="ps-title">🌐 Public Dashboard Module — Ready to Share &amp; Embed</div>
+    <div class="ps-sub" data-i18n="ps-sub">A dedicated public page is maintained by TrendsOnFire and updated on the <strong>12th of each month</strong>. GustoCasa receives this URL and can embed it on their website and share it on LinkedIn as a monthly market update post — positioning GustoCasa as Utrecht's data-driven boutique agency.</div>
     <div style="background:#1a2340;border-radius:8px;padding:12px 18px;margin:14px 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-      <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);">Your live page URL:</span>
+      <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);" data-i18n="ps-live-label">Your live page URL:</span>
       <a href="https://trendsonfire.com/gustocasa/market-live.html" target="_blank" style="font-size:14px;font-weight:700;color:#e8622a;text-decoration:none;letter-spacing:.01em;">trendsonfire.com/gustocasa/market-live.html</a>
-      <span style="font-size:11px;color:rgba(255,255,255,.45);">· Updated 12th of each month · Open Graph tags included for LinkedIn preview</span>
+      <span style="font-size:11px;color:rgba(255,255,255,.45);" data-i18n="ps-live-note">· Updated 12th of each month · Open Graph tags included for LinkedIn preview</span>
     </div>
 
     <div class="chart-grid-3">
       <div>
         <div class="chart-card">
-          <div class="chart-title">Utrecht Market Thermometer</div>
-          <div class="chart-source">Based on 12.2% overbid · 14.3 demand/supply ratio · Feb 2026</div>
+          <div class="chart-title" data-i18n="ct-thermometer">Utrecht Market Thermometer</div>
+          <div class="chart-source" data-i18n="cs-thermometer">Based on 12.2% overbid · 14.3 demand/supply ratio · Feb 2026</div>
           <div class="thermo-track">
             <div class="thermo-marker"></div>
           </div>
           <div class="thermo-labels">
-            <span>Cool</span>
-            <span>Warm</span>
-            <span>Hot</span>
-            <span>Very Hot</span>
+            <span data-i18n="thermo-cool">Cool</span>
+            <span data-i18n="thermo-warm">Warm</span>
+            <span data-i18n="thermo-hot">Hot</span>
+            <span data-i18n="thermo-very-hot">Very Hot</span>
           </div>
-          <div class="thermo-status">🔥 VERY HOT</div>
-          <div class="chart-insight" style="margin-top:10px;">Market heat index based on overbidding rate, demand/supply ratio, and days on market. Utrecht is in the top decile nationally.</div>
+          <div class="thermo-status" data-i18n="thermo-status">🔥 VERY HOT</div>
+          <div class="chart-insight" style="margin-top:10px;" data-i18n="ci-thermometer">Market heat index based on overbidding rate, demand/supply ratio, and days on market. Utrecht is in the top decile nationally.</div>
         </div>
       </div>
       <div>
         <div class="chart-card">
-          <div class="chart-title">Price Trend — Utrecht (6 Months)</div>
-          <div class="chart-source">Source: NVM <sup>[1]</sup> · Average transaction price (€)</div>
+          <div class="chart-title" data-i18n="ct-public-price">Price Trend — Utrecht (6 Months)</div>
+          <div class="chart-source" data-i18n="cs-public-price">Source: NVM <sup>[1]</sup> · Average transaction price (€)</div>
           <div class="chart-wrap"><canvas id="chartPublicPrice"></canvas></div>
         </div>
       </div>
       <div>
         <div class="chart-card">
-          <div class="chart-title">Best Month to List — Seasonal Outcome</div>
-          <div class="chart-source">Source: NVM <sup>[1]</sup> · % of asking price achieved</div>
+          <div class="chart-title" data-i18n="ct-public-seasonal">Best Month to List — Seasonal Outcome</div>
+          <div class="chart-source" data-i18n="cs-public-seasonal">Source: NVM <sup>[1]</sup> · % of asking price achieved</div>
           <div class="chart-wrap"><canvas id="chartPublicSeasonal"></canvas></div>
-          <div class="chart-insight" style="color:var(--green);font-weight:600;">March–May = peak selling season highlighted</div>
+          <div class="chart-insight" style="color:var(--green);font-weight:600;" data-i18n="ci-public-seasonal">March–May = peak selling season highlighted</div>
         </div>
       </div>
     </div>
 
-    <div class="callout blue" style="margin-top:20px;">
+    <div class="callout blue" style="margin-top:20px;" data-i18n="callout-public-how">
       <strong>How it works:</strong> On the 12th of each month, TrendsOnFire updates the data and publishes the new version to the same URL. GustoCasa does not need to do anything — the page updates automatically.<br/><br/>
       <strong>Two ways to use it:</strong><br/>
       &nbsp;&nbsp;① <strong>LinkedIn (primary):</strong> Post the URL on LinkedIn as a monthly market update. LinkedIn auto-generates a preview card (title, image, description) — GustoCasa looks like a data-driven authority without writing a word. Ideal for seller and buyer lead generation.<br/>
@@ -1062,25 +1062,25 @@
 
   <div class="signal-cards">
     <div class="signal-card green">
-      <div class="sc-label">🟢 Act Now</div>
-      <div class="sc-title">LIST NOW — March–May Window</div>
-      <p>March–May is the highest-yield listing window of the year. Sellers who act now are well-positioned to catch the April overbidding peak (historically 112% of asking price). Advise fence-sitting sellers to list by March 15 to maximise exposure during peak spring market demand. A two-week delay could mean missing the optimal window entirely.</p>
+      <div class="sc-label" data-i18n="sc1-label">🟢 Act Now</div>
+      <div class="sc-title" data-i18n="sc1-title">LIST NOW — March–May Window</div>
+      <p data-i18n="sc1-p">March–May is the highest-yield listing window of the year. Sellers who act now are well-positioned to catch the April overbidding peak (historically 112% of asking price). Advise fence-sitting sellers to list by March 15 to maximise exposure during peak spring market demand. A two-week delay could mean missing the optimal window entirely.</p>
     </div>
     <div class="signal-card orange">
-      <div class="sc-label">🟡 Monitor</div>
-      <div class="sc-title">ENERGY LABEL — Screen Your Pipeline</div>
-      <p>Screen your current seller pipeline for E, F, G label properties. With Merwedekanaalzone delivering Q3 2026, low-label properties in the Kanaleneiland bracket could face double pressure: new-build competition AND a widening energy discount. Price now to reflect reality or advise renovation before listing — before the market adjusts further.</p>
+      <div class="sc-label" data-i18n="sc2-label">🟡 Monitor</div>
+      <div class="sc-title" data-i18n="sc2-title">ENERGY LABEL — Screen Your Pipeline</div>
+      <p data-i18n="sc2-p">Screen your current seller pipeline for E, F, G label properties. With Merwedekanaalzone delivering Q3 2026, low-label properties in the Kanaleneiland bracket could face double pressure: new-build competition AND a widening energy discount. Price now to reflect reality or advise renovation before listing — before the market adjusts further.</p>
     </div>
     <div class="signal-card red">
-      <div class="sc-label">🔴 Urgent</div>
-      <div class="sc-title">KANALENEILAND PIPELINE RISK</div>
-      <p>1,200 new units delivering Q3 2026. Sellers of €280–350K properties in postcodes 3561–3564 should be advised to list before July 2026 or face direct new-build competition. New-build units offer developer finance, energy label A, and manufacturer warranties — resale sellers cannot match these. Time is a material factor here.</p>
+      <div class="sc-label" data-i18n="sc3-label">🔴 Urgent</div>
+      <div class="sc-title" data-i18n="sc3-title">KANALENEILAND PIPELINE RISK</div>
+      <p data-i18n="sc3-p">1,200 new units delivering Q3 2026. Sellers of €280–350K properties in postcodes 3561–3564 should be advised to list before July 2026 or face direct new-build competition. New-build units offer developer finance, energy label A, and manufacturer warranties — resale sellers cannot match these. Time is a material factor here.</p>
     </div>
   </div>
 
   <!-- SOURCES -->
   <div class="sources-section">
-    <h3>Sources &amp; Methodology</h3>
+    <h3 data-i18n="sources-h3">Sources &amp; Methodology</h3>
     <div class="sources-grid">
       <div class="source-item"><sup>[1]</sup> <strong>NVM (Nederlandse Vereniging van Makelaars)</strong> — Woningmarktrapportage Q4 2025 / Maandelijkse marktdata. <a href="https://www.nvm.nl/marktinformatie/woningmarkt/" target="_blank">nvm.nl/marktinformatie</a> · Accessed March 2026</div>
       <div class="source-item"><sup>[2]</sup> <strong>Funda Marktinzicht</strong> — Activiteitsdata woningzoekers, vraag/aanbod ratio. <a href="https://www.funda.nl/marktinzicht/" target="_blank">funda.nl/marktinzicht</a> · February 2026</div>
@@ -1104,8 +1104,8 @@
 
 <!-- FOOTER -->
 <div class="report-footer">
-  <strong>GustoCasa × TrendsOnFire</strong> · Monthly Intelligence · February 2026 · Confidential — Prepared exclusively for Lindy Hendriks, GustoCasa B.V.<br/>
-  <span style="font-size:11px;margin-top:4px;display:block;">TrendsOnFire B.V. · market@trendsonfire.com · trendsonfire.com · All data sourced from public registries and NVM/Funda/CBS datasets.</span>
+  <span data-i18n="footer-main"><strong>GustoCasa × TrendsOnFire</strong> · Monthly Intelligence · February 2026 · Confidential — Prepared exclusively for Lindy Hendriks, GustoCasa B.V.</span><br/>
+  <span style="font-size:11px;margin-top:4px;display:block;" data-i18n="footer-sub">TrendsOnFire B.V. · contact@trendsonfire.com · trendsonfire.com · All data sourced from public registries and NVM/Funda/CBS datasets.</span>
 </div>
 
 <!-- ══════════════════════════ CHARTS ══════════════════════════ -->
@@ -1746,6 +1746,132 @@ const T = {
     'sec9': 'Section 9: Price Trajectory — ECB Rate Scenarios 2026–2028',
     'sec10': 'Section 10: Public Dashboard Module',
     'sec11': 'Section 11: 90-Day Strategic Recommendations',
+    'ratio-h3': 'Seekers per Available Property — February 2026',
+    'ratio-p': 'For every home listed on Funda in Utrecht, there are 14.3 active registered seekers. This places Utrecht among the five most competitive housing markets in the Netherlands. Buyer demand is structurally exceeding supply, maintaining strong upward price pressure across all segments. <sup style="color:rgba(255,255,255,0.5)">[2]</sup>',
+    's1-hist-p': 'Annual average transaction prices and year-on-year growth rates. Utrecht consistently commands a premium above the national average and has recovered faster from the 2023 correction. Sources: NVM, Kadaster, CBS. 2026 = Q1 annualised.',
+    'ct-sold': 'Monthly Homes Sold — Utrecht',
+    'ct-price': 'Average Transaction Price (€)',
+    'ct-overbid': 'Average Overbidding % — Utrecht Market',
+    'ct-supply': 'Funda Supply vs Demand (Seekers ÷ 10 vs Properties)',
+    'ct-hist-price': 'Average Transaction Price — Utrecht vs Netherlands (€)',
+    'ct-yoy': 'Year-on-Year Price Growth — Utrecht vs Netherlands (%)',
+    'ct-neighbourhood': 'Price per m² by Neighbourhood',
+    'ct-buyer-agent': 'Buyer Agent Penetration — % of Utrecht Transactions Using a Buyer\'s Agent',
+    'ct-overbid-comp': 'Overbidding % — GustoCasa vs Utrecht Market Average',
+    'ct-dom': 'Days on Market — GustoCasa vs Utrecht Average',
+    'ct-price-sqm-comp': 'Price per m² — GustoCasa vs Utrecht Market Average',
+    'ct-seasonal': '% of Asking Price Achieved by Listing Month',
+    'ct-seasonal-dom': 'Average Days on Market by Listing Month',
+    'ct-price-band': 'Buyers per Available Property — by Price Band',
+    'ct-price-pie': 'Transaction Share by Price Band — Utrecht Feb 2026',
+    'ct-energy-label': 'Energy Label Price Premium/Discount vs Label C Baseline',
+    'ct-energy-gap': 'E/F/G Label Discount Gap — Growing Over Time',
+    'ct-buyer-origin-donut': 'Where Utrecht Buyers Come From',
+    'ct-buyer-origin-bar': 'Top Buyer Origin Cities / Segments',
+    'ct-population': 'Utrecht Population Growth 2020–2026',
+    'ct-age-group': 'Transaction Share by Buyer Age Group — Utrecht 2025–26',
+    'ct-scenario': 'Utrecht Avg Transaction Price — Three Scenarios (€) · 2026–2028',
+    'ct-thermometer': 'Utrecht Market Thermometer',
+    'ct-public-price': 'Price Trend — Utrecht (6 Months)',
+    'ct-public-seasonal': 'Best Month to List — Seasonal Outcome',
+    'cs-sold': 'Source: NVM/Kadaster <sup>[1][3]</sup> · Aug 2025 – Feb 2026',
+    'cs-price': 'Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026',
+    'cs-overbid': 'Source: NVM/Funda <sup>[1][2]</sup> · Aug 2025 – Feb 2026',
+    'cs-supply': 'Source: Funda <sup>[2]</sup> · Aug 2025 – Feb 2026',
+    'cs-hist-price': 'Source: NVM / Kadaster <sup>[1][3]</sup> · Annual averages · 2026 = Q1 estimate',
+    'cs-yoy': 'Source: NVM / CBS <sup>[1][4]</sup> · Annual % change vs prior year',
+    'cs-neighbourhood': 'Source: Kadaster/NVM <sup>[1][3]</sup> · February 2026',
+    'cs-buyer-agent': 'Source: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026',
+    'cs-overbid-comp': 'Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-dom': 'Source: GustoCasa transaction data + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-price-sqm-comp': 'Source: GustoCasa transaction data + Kadaster <sup>[3]</sup> · February 2026',
+    'cs-seasonal': 'Source: NVM seasonal analysis <sup>[1]</sup> + CBS woningmarktcijfers <sup>[4]</sup>',
+    'cs-seasonal-dom': 'Source: NVM <sup>[1]</sup> + CBS <sup>[4]</sup> · 12-month seasonal pattern',
+    'cs-price-band': 'Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup> · February 2026',
+    'cs-price-pie': 'Source: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup>',
+    'cs-energy-label': 'Source: CBS Energielabels dataset <sup>[10]</sup>, NVM Energy Premium Analysis <sup>[1]</sup>',
+    'cs-energy-gap': 'Source: PBL Netherlands Environmental Assessment Agency <sup>[11]</sup>, CBS <sup>[10]</sup>',
+    'cs-buyer-origin-donut': 'Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-buyer-origin-bar': 'Source: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-population': 'Source: CBS Bevolkingsstatistieken <sup>[4]</sup> · 2026 = projected',
+    'cs-age-group': 'Source: NVM Koopersonderzoek 2025 <sup>[1]</sup>',
+    'cs-scenario': 'Source: ECB monetary policy projections <sup>[13]</sup>, Oxford Economics NL Housing Model <sup>[14]</sup>, ING Economisch Bureau <sup>[15]</sup>',
+    'cs-thermometer': 'Based on 12.2% overbid · 14.3 demand/supply ratio · Feb 2026',
+    'cs-public-price': 'Source: NVM <sup>[1]</sup> · Average transaction price (€)',
+    'cs-public-seasonal': 'Source: NVM <sup>[1]</sup> · % of asking price achieved',
+    'ci-hist-price': 'Utrecht commands a <strong>€50–70K premium</strong> above the national average across the full period. Both markets peaked in 2022, corrected in 2023, and recovered in 2024–2025. Utrecht\'s recovery has been stronger.',
+    'ci-yoy': 'The 2021 boom (+18–20%) and 2023 correction (−6–7%) affected both markets equally. Utrecht\'s 2024 rebound (+8.4%) outpaced the national average (+7.7%), confirming structural undersupply and sustained buyer demand in the city.',
+    'ci-mortgage': 'SNS offers the best available rate at 3.59% — a 59bp spread vs BLG. Advise buyers to prioritise SNS/ING for maximum purchasing power. A 59bp rate difference on a €450K mortgage may reduce monthly payments by approximately €165/month.',
+    'ci-buyer-agent': 'Buyer agent usage has risen to 47% — up 3pp over six months. This indicates increasing buyer sophistication and competition. Sellers using GustoCasa\'s full-service approach benefit from professional representation on the instruction side.',
+    'ci-overbid-comp': '<strong>GustoCasa sells 7.6pp above market average overbid.</strong> In a market averaging 12.2%, GustoCasa clients are achieving 19.8% — a structural performance premium driven by pricing strategy and buyer network depth.',
+    'ci-dom': '<strong>GustoCasa is 2.4× faster.</strong> Average 8.8 days on market vs Utrecht market average of 21.5 days. Sellers avoid prolonged uncertainty and carrying costs — a tangible, quantifiable benefit of instruction.',
+    'ci-price-sqm': 'For a typical 110m² Utrecht home, GustoCasa\'s price premium translates to approximately <strong>€48,400 in additional value for the seller</strong> — a compelling and evidence-based ROI argument for any seller evaluating instruction options.',
+    'ci-seasonal': 'Green = 105%+ · Orange = 99–104% · Red = below 99%. The March–May window is the prime selling season. December shows the weakest outcomes at 91% — a 21-point swing from the April peak.',
+    'ci-seasonal-dom': 'March–May listings sell in an average of 11–14 days. December listings may linger for 34 days — increasing seller anxiety, carrying costs, and price renegotiation risk. Speed and price outcomes move in lockstep.',
+    'ci-transaction-share': 'The €400–500K bracket accounts for 31% of all Utrecht transactions — the dominant price segment. Combined with €500–600K, these two bands represent 55% of total market volume.',
+    'ci-energy-label': 'A label A property may achieve an 18% premium while a label G property could sell at a 28% discount vs an equivalent label C home. On a €500K property, the swing between A and G may represent up to €230,000 in value.',
+    'ci-energy-gap': 'The average discount for E/F/G label properties has grown from 8% in 2022 to an estimated 21% in 2026 — and is likely to accelerate further as regulatory deadlines tighten. <strong>Advise sellers to renovate before listing where feasible.</strong>',
+    'ci-population': 'Utrecht is on track to reach 400,000 residents by 2028 — the city growth target. Each new resident represents structural housing demand, keeping absorption rates high even as new supply enters the market.',
+    'ci-age-group': 'First-time buyers (starters, 20–35) represent 52% of all transactions — structurally high compared to other Dutch cities, ensuring sustained demand in the €300–500K bracket through 2028.',
+    'ci-thermometer': 'Market heat index based on overbidding rate, demand/supply ratio, and days on market. Utrecht is in the top decile nationally.',
+    'ci-public-seasonal': 'March–May = peak selling season highlighted',
+    'callout-sellers-timing': '<strong>Why this matters for sellers:</strong> Utrecht has never experienced a multi-year price decline — the 2023 dip was a single-year correction, not a structural fall. Sellers who listed in 2024–2025 recovered all peak-level pricing and more. The long-term trend strongly favours listing over waiting.',
+    'callout-exclusive': '<strong>Exclusive Intelligence:</strong> This section uses GustoCasa\'s own transaction data combined with NVM benchmarks. It enables Lindy to prove ROI to prospective sellers with hard numbers — transforming sales conversations with objective, irrefutable performance evidence.',
+    'callout-listing-timing': '<strong>BEST TIME TO LIST: March–May.</strong> Sellers who list in April may achieve on average 12% above asking price. August listings historically achieve only 93% of asking — a 19-point swing vs April. If a seller can wait even 4–6 weeks to list in March, the financial benefit is material. Advise fence-sitting sellers to list by March 15. <sup>[1][4]</sup>',
+    'callout-price-band': '<strong>GustoCasa\'s sweet spot (€450–650K) sits at the peak of buyer competition</strong> — with 26–31 buyers per available property. These are ideal conditions for seller outperformance. Sellers in this bracket should expect multiple competing offers within days of listing.',
+    'callout-energy-red': '<strong>Urgency Signal:</strong> In Utrecht, 34% of pre-1975 housing stock still carries label E, F or G. Sellers of these properties face an average <strong>€62,000 discount</strong> vs comparable label C homes — and this gap is widening as the 2033 EU minimum label C deadline approaches.',
+    'callout-energy-blue': '<strong>Strategic Opportunity for GustoCasa:</strong> GustoCasa can position as the advisor who helps sellers navigate energy label improvements <em>before</em> listing — capturing renovation referral fees and achieving higher eventual sale prices. A pre-listing energy audit service could be a significant differentiator and revenue stream as the 2033 deadline approaches.',
+    'callout-pipeline-alert': '<strong>Pipeline Alert:</strong> Merwedekanaalzone delivery in Q3 2026 will add 1,200 units near Kanaleneiland — directly competing with GustoCasa\'s resale inventory in the €280–350K bracket. <strong>Sellers in postcodes 3561–3564 should be advised to list before July 2026</strong> to avoid competing against new-build incentives (developer finance, energy label A, manufacturer warranties).',
+    'callout-buyer-amsterdam': '<strong>Amsterdam overflow is 38% of Utrecht demand.</strong> These buyers are fleeing €600K+ average prices in Amsterdam. They typically have high budgets, are pre-qualified, and are highly motivated to transact quickly. <strong>GustoCasa\'s marketing could target Amsterdam:</strong> Google/Meta ads geo-targeted to Amsterdam postal codes (1011–1099) may yield high-intent buyer leads at relatively low cost per lead.',
+    'callout-buyer-expat': '<strong>Expat Segment (18%):</strong> Driven by ASML (Eindhoven-Utrecht corridor), Rabobank headquarters, and Utrecht Science Park relocation activity. These buyers prioritise speed, transparency, and English-language guidance. GustoCasa\'s multilingual service and fast execution time (avg 8.8 days) is a structural differentiator in this segment.',
+    'callout-key-signal': '<strong>Key Signal:</strong> First-time buyer average age in Utrecht is <strong>32.4 years</strong> — the youngest of all G4 cities (Amsterdam 35.1, Rotterdam 33.8, The Hague 34.2). Utrecht\'s young professional base, driven by university and tech sector employment, is likely to ensure sustained starter demand through 2028 and beyond.',
+    'callout-scenario': 'GustoCasa can use these scenarios to guide client buy/wait decisions. Under the base scenario (most likely), the average Utrecht home may gain €50K in value by 2028. Under the bull scenario, €114K. <strong>This data is likely to strengthen the case for buyers to transact now rather than wait</strong> — and gives sellers realistic upside expectations.',
+    'callout-public-how': '<strong>How it works:</strong> On the 12th of each month, TrendsOnFire updates the data and publishes the new version to the same URL. GustoCasa does not need to do anything — the page updates automatically.<br/><br/><strong>Two ways to use it:</strong><br/>&nbsp;&nbsp;① <strong>LinkedIn (primary):</strong> Post the URL on LinkedIn as a monthly market update. LinkedIn auto-generates a preview card (title, image, description) — GustoCasa looks like a data-driven authority without writing a word. Ideal for seller and buyer lead generation.<br/>&nbsp;&nbsp;② <strong>Website embed:</strong> Paste the URL as an iframe or a button on gustocasa.nl — visitors see live market data without GustoCasa maintaining it themselves.<br/><br/><strong>Estimated impact:</strong> A consistent monthly LinkedIn post with real local data typically generates 3–5× more engagement than generic market commentary. The public-facing data positions GustoCasa as Utrecht\'s most informed boutique agency — a perception advantage very difficult for competitors to replicate.',
+    'th-neighbourhood': 'Neighbourhood',
+    'th-price-sqm': 'Avg Price/m²',
+    'th-yoy-change': 'YoY Change',
+    'th-signal': 'Signal',
+    'th-project': 'Project',
+    'th-area': 'Area',
+    'th-units': 'Units',
+    'th-delivery': 'Expected Delivery',
+    'th-impact': 'Resale Impact',
+    'pdl-badge': 'Full Intelligence — €295/month',
+    'pdl-text-main': '<strong>Everything below is included in the Full Intelligence plan only.</strong> The Starter plan (€195/month) provides a highlights summary of Section 1 data. Sections 2–11 are exclusive to Full Intelligence.',
+    'pdl-link': '→ See pricing',
+    'ps-title': '🌐 Public Dashboard Module — Ready to Share &amp; Embed',
+    'ps-sub': 'A dedicated public page is maintained by TrendsOnFire and updated on the <strong>12th of each month</strong>. GustoCasa receives this URL and can embed it on their website and share it on LinkedIn as a monthly market update post — positioning GustoCasa as Utrecht\'s data-driven boutique agency.',
+    'ps-live-label': 'Your live page URL:',
+    'ps-live-note': '· Updated 12th of each month · Open Graph tags included for LinkedIn preview',
+    'thermo-cool': 'Cool',
+    'thermo-warm': 'Warm',
+    'thermo-hot': 'Hot',
+    'thermo-very-hot': 'Very Hot',
+    'thermo-status': '🔥 VERY HOT',
+    'scenario-desc': 'Scenario Outcomes — December 2028 Avg Transaction Price vs January 2026 (€521K baseline)',
+    'sc-bull-label': 'Bull Scenario',
+    'sc-bull-desc': 'ECB cuts 50bp by Q3 2026<br/><strong style="color:var(--green)">+€114K gain</strong> over 3 years',
+    'sc-base-label': 'Base Scenario',
+    'sc-base-desc': 'ECB rates stay flat<br/><strong style="color:var(--orange)">+€50K gain</strong> over 3 years',
+    'sc-bear-label': 'Bear Scenario',
+    'sc-bear-desc': 'ECB raises 25bp<br/><strong style="color:var(--red)">−€43K loss</strong> over 3 years',
+    'sc1-label': '🟢 Act Now',
+    'sc1-title': 'LIST NOW — March–May Window',
+    'sc1-p': 'March–May is the highest-yield listing window of the year. Sellers who act now are well-positioned to catch the April overbidding peak (historically 112% of asking price). Advise fence-sitting sellers to list by March 15 to maximise exposure during peak spring market demand. A two-week delay could mean missing the optimal window entirely.',
+    'sc2-label': '🟡 Monitor',
+    'sc2-title': 'ENERGY LABEL — Screen Your Pipeline',
+    'sc2-p': 'Screen your current seller pipeline for E, F, G label properties. With Merwedekanaalzone delivering Q3 2026, low-label properties in the Kanaleneiland bracket could face double pressure: new-build competition AND a widening energy discount. Price now to reflect reality or advise renovation before listing — before the market adjusts further.',
+    'sc3-label': '🔴 Urgent',
+    'sc3-title': 'KANALENEILAND PIPELINE RISK',
+    'sc3-p': '1,200 new units delivering Q3 2026. Sellers of €280–350K properties in postcodes 3561–3564 should be advised to list before July 2026 or face direct new-build competition. New-build units offer developer finance, energy label A, and manufacturer warranties — resale sellers cannot match these. Time is a material factor here.',
+    'sources-h3': 'Sources &amp; Methodology',
+    'source-note-pipeline': 'Source: Gemeente Utrecht Woningbouwmonitor <sup>[12]</sup>, Kadaster nieuwbouw data <sup>[3]</sup>',
+    'priceSqm-gc-label': 'GustoCasa Average',
+    'priceSqm-market-label': 'Utrecht Market Average',
+    'priceSqm-premium-label': 'Price Premium',
+    'priceSqm-sqm-note': '€440/m² above market',
+    'footer-main': '<strong>GustoCasa × TrendsOnFire</strong> · Monthly Intelligence · February 2026 · Confidential — Prepared exclusively for Lindy Hendriks, GustoCasa B.V.',
+    'footer-sub': 'TrendsOnFire B.V. · contact@trendsonfire.com · trendsonfire.com · All data sourced from public registries and NVM/Funda/CBS datasets.',
   },
   nl: {
     'sample-banner': '⚠ VOORBEELDRAPPORT — Demonstratie voorbereid door TrendsOnFire voor GustoCasa. Dit toont wat een maandelijks intelligence abonnement zou bevatten.',
@@ -1771,6 +1897,132 @@ const T = {
     'sec9': 'Sectie 9: Prijsontwikkeling — ECB Rente Scenario\'s 2026–2028',
     'sec10': 'Sectie 10: Openbaar Dashboard Module',
     'sec11': 'Sectie 11: 90-Daagse Strategische Aanbevelingen',
+    'ratio-h3': 'Zoekers per Beschikbare Woning — Februari 2026',
+    'ratio-p': 'Voor elke woning op Funda in Utrecht zijn er 14,3 actieve geregistreerde zoekers. Dit plaatst Utrecht bij de vijf meest concurrerende woningmarkten van Nederland. De kopersvraag overstijgt structureel het aanbod, met sterke opwaartse prijsdruk in alle segmenten. <sup style="color:rgba(255,255,255,0.5)">[2]</sup>',
+    's1-hist-p': 'Jaarlijkse gemiddelde transactieprijzen en jaarlijkse groeicijfers. Utrecht heeft structureel een premie boven het landelijk gemiddelde en herstelde sneller van de correctie in 2023. Bronnen: NVM, Kadaster, CBS. 2026 = Q1 geannualiseerd.',
+    'ct-sold': 'Maandelijks Verkochte Woningen — Utrecht',
+    'ct-price': 'Gemiddelde Transactieprijs (€)',
+    'ct-overbid': 'Gemiddeld Overbieden % — Utrechtse Markt',
+    'ct-supply': 'Funda Aanbod vs Vraag (Zoekers ÷ 10 vs Woningen)',
+    'ct-hist-price': 'Gemiddelde Transactieprijs — Utrecht vs Nederland (€)',
+    'ct-yoy': 'Jaarlijkse Prijsgroei — Utrecht vs Nederland (%)',
+    'ct-neighbourhood': 'Prijs per m² per Wijk',
+    'ct-buyer-agent': 'Gebruik Aankoopmakelaar — % van Utrechtse Transacties met Aankoopmakelaar',
+    'ct-overbid-comp': 'Overbieden % — GustoCasa vs Utrechts Marktgemiddelde',
+    'ct-dom': 'Dagen op de Markt — GustoCasa vs Utrechts Gemiddelde',
+    'ct-price-sqm-comp': 'Prijs per m² — GustoCasa vs Utrechts Marktgemiddelde',
+    'ct-seasonal': '% van Vraagprijs Behaald per Aanbiedingsmaand',
+    'ct-seasonal-dom': 'Gemiddelde Dagen op de Markt per Aanbiedingsmaand',
+    'ct-price-band': 'Kopers per Beschikbare Woning — per Prijsklasse',
+    'ct-price-pie': 'Transactieaandeel per Prijsklasse — Utrecht Februari 2026',
+    'ct-energy-label': 'Energielabel Prijspremie/­korting vs Label C Basiswaarde',
+    'ct-energy-gap': 'E/F/G Label Kortingskloof — Groeit in de Tijd',
+    'ct-buyer-origin-donut': 'Waar Utrechtse Kopers Vandaan Komen',
+    'ct-buyer-origin-bar': 'Top Kopersherkomst Steden / Segmenten',
+    'ct-population': 'Bevolkingsgroei Utrecht 2020–2026',
+    'ct-age-group': 'Transactieaandeel per Koperleeftijdsgroep — Utrecht 2025–26',
+    'ct-scenario': 'Utrechts Gem. Transactieprijs — Drie Scenario\'s (€) · 2026–2028',
+    'ct-thermometer': 'Utrecht Marktthermometer',
+    'ct-public-price': 'Prijstrend — Utrecht (6 Maanden)',
+    'ct-public-seasonal': 'Beste Maand om te Verkopen — Seizoensuitkomst',
+    'cs-sold': 'Bron: NVM/Kadaster <sup>[1][3]</sup> · Aug 2025 – Feb 2026',
+    'cs-price': 'Bron: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026',
+    'cs-overbid': 'Bron: NVM/Funda <sup>[1][2]</sup> · Aug 2025 – Feb 2026',
+    'cs-supply': 'Bron: Funda <sup>[2]</sup> · Aug 2025 – Feb 2026',
+    'cs-hist-price': 'Bron: NVM / Kadaster <sup>[1][3]</sup> · Jaargemiddelden · 2026 = Q1 schatting',
+    'cs-yoy': 'Bron: NVM / CBS <sup>[1][4]</sup> · Jaarlijkse % wijziging t.o.v. vorig jaar',
+    'cs-neighbourhood': 'Bron: Kadaster/NVM <sup>[1][3]</sup> · Februari 2026',
+    'cs-buyer-agent': 'Bron: NVM <sup>[1]</sup> · Aug 2025 – Feb 2026',
+    'cs-overbid-comp': 'Bron: GustoCasa transactiedata + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-dom': 'Bron: GustoCasa transactiedata + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-price-sqm-comp': 'Bron: GustoCasa transactiedata + Kadaster <sup>[3]</sup> · Februari 2026',
+    'cs-seasonal': 'Bron: NVM seizoensanalyse <sup>[1]</sup> + CBS woningmarktcijfers <sup>[4]</sup>',
+    'cs-seasonal-dom': 'Bron: NVM <sup>[1]</sup> + CBS <sup>[4]</sup> · 12-maands seizoenspatroon',
+    'cs-price-band': 'Bron: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup> · Februari 2026',
+    'cs-price-pie': 'Bron: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup>',
+    'cs-energy-label': 'Bron: CBS Energielabels dataset <sup>[10]</sup>, NVM Energiepremium Analyse <sup>[1]</sup>',
+    'cs-energy-gap': 'Bron: PBL Netherlands Environmental Assessment Agency <sup>[11]</sup>, CBS <sup>[10]</sup>',
+    'cs-buyer-origin-donut': 'Bron: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-buyer-origin-bar': 'Bron: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-population': 'Bron: CBS Bevolkingsstatistieken <sup>[4]</sup> · 2026 = prognose',
+    'cs-age-group': 'Bron: NVM Koopersonderzoek 2025 <sup>[1]</sup>',
+    'cs-scenario': 'Bron: ECB monetaire beleidsprojecties <sup>[13]</sup>, Oxford Economics NL Woningmarktmodel <sup>[14]</sup>, ING Economisch Bureau <sup>[15]</sup>',
+    'cs-thermometer': 'Gebaseerd op 12,2% overbieden · 14,3 vraag/aanbod ratio · Feb 2026',
+    'cs-public-price': 'Bron: NVM <sup>[1]</sup> · Gemiddelde transactieprijs (€)',
+    'cs-public-seasonal': 'Bron: NVM <sup>[1]</sup> · % van vraagprijs behaald',
+    'ci-hist-price': 'Utrecht kent een <strong>€50–70K premie</strong> boven het landelijk gemiddelde over de gehele periode. Beide markten piekten in 2022, corrigeerden in 2023, en herstelden in 2024–2025. Het herstel van Utrecht was sterker.',
+    'ci-yoy': 'De boom van 2021 (+18–20%) en de correctie van 2023 (−6–7%) troffen beide markten gelijk. Het herstel van Utrecht in 2024 (+8,4%) overtrof het landelijk gemiddelde (+7,7%), wat structureel ondertekort en aanhoudende kopervraag bevestigt.',
+    'ci-mortgage': 'SNS biedt de beste rente op 3,59% — een verschil van 59bp vs BLG. Adviseer kopers SNS/ING te prioriteren voor maximale koopkracht. Een verschil van 59bp op een hypotheek van €450K kan de maandlasten verlagen met circa €165/maand.',
+    'ci-buyer-agent': 'Gebruik van een aankoopmakelaar is gestegen naar 47% — 3pp meer in zes maanden. Dit duidt op toenemende koperskennis en concurrentie. Verkopers die GustoCasa\'s full-service aanpak gebruiken profiteren van professionele begeleiding aan de verkoperskant.',
+    'ci-overbid-comp': '<strong>GustoCasa verkoopt 7,6pp boven het marktgemiddelde overbod.</strong> In een markt met gemiddeld 12,2% behalen GustoCasa-klanten 19,8% — een structurele prestatiepremie dankzij prijsstrategie en kopersnetwerk.',
+    'ci-dom': '<strong>GustoCasa is 2,4× sneller.</strong> Gemiddeld 8,8 dagen op de markt vs Utrechts marktgemiddelde van 21,5 dagen. Verkopers vermijden langdurige onzekerheid en doorloopkosten — een tastbaar, kwantificeerbaar voordeel.',
+    'ci-price-sqm': 'Voor een gemiddelde Utrechtse woning van 110m² vertaalt de prijspremie van GustoCasa zich naar circa <strong>€48.400 extra waarde voor de verkoper</strong> — een overtuigend en onderbouwd ROI-argument voor iedere verkoper.',
+    'ci-seasonal': 'Groen = 105%+ · Oranje = 99–104% · Rood = onder 99%. Het venster maart–mei is het topverkoopseizoen. December toont de zwakste resultaten op 91% — een swing van 21 punten t.o.v. de aprilpiek.',
+    'ci-seasonal-dom': 'Woningen aangeboden in maart–mei worden gemiddeld in 11–14 dagen verkocht. Aanbiedingen in december kunnen 34 dagen blijven staan — met meer onzekerheid, doorloopkosten en prijsheronderhandelingsrisico.',
+    'ci-transaction-share': 'De prijsklasse €400–500K vertegenwoordigt 31% van alle Utrechtse transacties — het dominante segment. Samen met €500–600K vertegenwoordigen deze twee klassen 55% van het totale marktvolume.',
+    'ci-energy-label': 'Een label A-woning kan een premie van 18% behalen, terwijl een label G-woning met 28% korting kan verkopen t.o.v. een vergelijkbare label C-woning. Op een woning van €500K kan het verschil tussen A en G oplopen tot €230.000.',
+    'ci-energy-gap': 'De gemiddelde korting voor E/F/G-label woningen is gegroeid van 8% in 2022 tot een geschatte 21% in 2026 — en zal naar verwachting verder toenemen. <strong>Adviseer verkopers te renoveren vóór de verkoop waar mogelijk.</strong>',
+    'ci-population': 'Utrecht koerst af op 400.000 inwoners in 2028 — de stedelijke groeidoelstelling. Elke nieuwe inwoner vertegenwoordigt structurele woningvraag, waardoor de absorptiegraden hoog blijven.',
+    'ci-age-group': 'Starters (20–35) vertegenwoordigen 52% van alle transacties — structureel hoger dan andere Nederlandse steden. Dit zorgt voor aanhoudende vraag in de klasse €300–500K tot 2028.',
+    'ci-thermometer': 'Markttemperatuurindex op basis van overbiedingspercentage, vraag/aanbod-ratio en dagen op de markt. Utrecht behoort tot de top-10% nationaal.',
+    'ci-public-seasonal': 'Maart–mei = topverkoopseizoen uitgelicht',
+    'callout-sellers-timing': '<strong>Waarom dit belangrijk is voor verkopers:</strong> Utrecht heeft nooit een meerjarige prijsdaling gekend — de dip in 2023 was een éénjarige correctie, geen structurele daling. Verkopers die in 2024–2025 verkochten, herstelden alle piekprijzen en meer. De lange termijntrend pleit sterk voor verkopen boven afwachten.',
+    'callout-exclusive': '<strong>Exclusieve Intelligence:</strong> Dit onderdeel gebruikt GustoCasa\'s eigen transactiedata gecombineerd met NVM-benchmarks. Het stelt Lindy in staat ROI te bewijzen aan potentiële verkopers met harde cijfers — verkoopgesprekken omzetten met objectief, onomstotelijk bewijs.',
+    'callout-listing-timing': '<strong>BESTE MOMENT OM TE VERKOPEN: MAART–MEI.</strong> Verkopers die in april aanbieden kunnen gemiddeld 12% boven de vraagprijs realiseren. Augustus-aanbiedingen halen historisch gezien slechts 93% van de vraagprijs — een verschil van 19 punten t.o.v. april. Als een verkoper ook maar 4–6 weken kan wachten om in maart aan te bieden, is het financiële voordeel aanzienlijk. Adviseer twijfelende verkopers vóór 15 maart aan te bieden. <sup>[1][4]</sup>',
+    'callout-price-band': '<strong>GustoCasa\'s kerngebied (€450–650K) zit op het piek van koperconcurrentie</strong> — met 26–31 kopers per beschikbare woning. Dit zijn ideale omstandigheden voor bovengemiddelde verkoopprestaties. Verkopers in dit segment mogen meerdere concurrerende biedingen verwachten binnen dagen na aanbieding.',
+    'callout-energy-red': '<strong>Urgentiesignaal:</strong> In Utrecht draagt 34% van de woningen van vóór 1975 nog label E, F of G. Verkopers van deze woningen krijgen gemiddeld <strong>€62.000 korting</strong> t.o.v. vergelijkbare label C-woningen — en deze kloof wordt groter naarmate de EU-deadline van 2033 nadert.',
+    'callout-energy-blue': '<strong>Strategische Kans voor GustoCasa:</strong> GustoCasa kan zich positioneren als de adviseur die verkopers helpt bij energielabelverbeteringen <em>vóór</em> de verkoop — en daarmee renovatiereferrals en hogere verkoopprijzen te realiseren. Een pre-verkoop energieauditservice kan een significante differentiator en inkomstenstroom worden naarmate de deadline van 2033 nadert.',
+    'callout-pipeline-alert': '<strong>Pipeline Alert:</strong> De oplevering van Merwedekanaalzone in Q3 2026 voegt 1.200 woningen toe nabij Kanaleneiland — direct concurrerend met GustoCasa\'s bestaand aanbod in de klasse €280–350K. <strong>Verkopers in postcodes 3561–3564 dienen geadviseerd te worden vóór juli 2026 aan te bieden</strong> om te voorkomen dat ze concurreren met nieuwbouwincentives (ontwikkelaarsfinanciering, energielabel A, bouwgaranties).',
+    'callout-buyer-amsterdam': '<strong>Amsterdam-overflow is 38% van de Utrechtse vraag.</strong> Deze kopers ontwijken de gemiddelde Amsterdamse prijs van €600K+. Ze hebben doorgaans ruime budgetten, zijn vooraf gekwalificeerd en zeer gemotiveerd. <strong>GustoCasa\'s marketing zou zich op Amsterdam kunnen richten:</strong> Google/Meta-advertenties gericht op Amsterdamse postcodes (1011–1099) kunnen kwalitatieve koopsignalen genereren tegen relatief lage kosten per lead.',
+    'callout-buyer-expat': '<strong>Expatsegment (18%):</strong> Gedreven door ASML (Eindhoven-Utrecht corridor), Rabobank-hoofdkantoor en Utrecht Science Park. Deze kopers prioriteren snelheid, transparantie en Engelstalige begeleiding. GustoCasa\'s meertalige service en snelle uitvoeringstijd (gem. 8,8 dagen) is een structurele differentiator in dit segment.',
+    'callout-key-signal': '<strong>Belangrijk Signaal:</strong> De gemiddelde leeftijd van starters in Utrecht is <strong>32,4 jaar</strong> — de jongste van alle G4-steden (Amsterdam 35,1, Rotterdam 33,8, Den Haag 34,2). Utrecht\'s jonge professionele basis zal naar verwachting de startervraag tot 2028 en verder op peil houden.',
+    'callout-scenario': 'GustoCasa kan deze scenario\'s gebruiken om klanten bij koop-/wachtbeslissingen te begeleiden. In het basisscenario (meest waarschijnlijk) kan de gemiddelde Utrechtse woning €50K in waarde stijgen tegen 2028. In het optimistische scenario €114K. <strong>Deze gegevens versterken naar alle waarschijnlijkheid de case voor kopers om nu te handelen in plaats van te wachten</strong> — en geeft verkopers realistische verwachtingen.',
+    'callout-public-how': '<strong>Hoe het werkt:</strong> Op de 12e van elke maand werkt TrendsOnFire de gegevens bij en publiceert de nieuwe versie op dezelfde URL. GustoCasa hoeft niets te doen — de pagina wordt automatisch bijgewerkt.<br/><br/><strong>Twee manieren om het te gebruiken:</strong><br/>&nbsp;&nbsp;① <strong>LinkedIn (primair):</strong> Deel de URL op LinkedIn als maandelijkse marktupdate. LinkedIn genereert automatisch een voorbeeldkaart — GustoCasa oogt als een data-gedreven autoriteit zonder één woord te schrijven. Ideaal voor het genereren van verkoper- en koperleads.<br/>&nbsp;&nbsp;② <strong>Website embed:</strong> Plak de URL als iframe of knop op gustocasa.nl — bezoekers zien actuele marktdata zonder dat GustoCasa dit zelf bijhoudt.<br/><br/><strong>Geschatte impact:</strong> Een consistente maandelijkse LinkedIn-post met echte lokale data genereert doorgaans 3–5× meer engagement dan generiek marktcommentaar.',
+    'th-neighbourhood': 'Wijk',
+    'th-price-sqm': 'Gem. Prijs/m²',
+    'th-yoy-change': 'JoJ Verandering',
+    'th-signal': 'Signaal',
+    'th-project': 'Project',
+    'th-area': 'Gebied',
+    'th-units': 'Woningen',
+    'th-delivery': 'Verwachte Oplevering',
+    'th-impact': 'Impact op Bestaand Aanbod',
+    'pdl-badge': 'Full Intelligence — €295/maand',
+    'pdl-text-main': '<strong>Alles hieronder is uitsluitend inbegrepen in het Full Intelligence-abonnement.</strong> Het Starter-abonnement (€195/maand) biedt een samenvattend overzicht van Sectie 1-gegevens. Secties 2–11 zijn exclusief voor Full Intelligence.',
+    'pdl-link': '→ Bekijk prijzen',
+    'ps-title': '🌐 Openbaar Dashboard Module — Klaar om te Delen &amp; Embedden',
+    'ps-sub': 'Een speciale openbare pagina wordt bijgehouden door TrendsOnFire en op de <strong>12e van elke maand</strong> bijgewerkt. GustoCasa ontvangt deze URL en kan deze embedden op hun website en delen op LinkedIn als maandelijkse marktupdate — waarmee GustoCasa zich positioneert als Utrecht\'s data-gedreven boutique-makelaar.',
+    'ps-live-label': 'Uw live pagina URL:',
+    'ps-live-note': '· Bijgewerkt op de 12e van elke maand · Open Graph-tags inbegrepen voor LinkedIn-voorvertoning',
+    'thermo-cool': 'Koel',
+    'thermo-warm': 'Warm',
+    'thermo-hot': 'Heet',
+    'thermo-very-hot': 'Zeer Heet',
+    'thermo-status': '🔥 ZEER HEET',
+    'scenario-desc': 'Scenario Uitkomsten — December 2028 Gem. Transactieprijs vs januari 2026 (€521K basislijn)',
+    'sc-bull-label': 'Optimistisch Scenario',
+    'sc-bull-desc': 'ECB verlaagt 50bp vóór Q3 2026<br/><strong style="color:var(--green)">+€114K winst</strong> over 3 jaar',
+    'sc-base-label': 'Basisscenario',
+    'sc-base-desc': 'ECB-rentes blijven stabiel<br/><strong style="color:var(--orange)">+€50K winst</strong> over 3 jaar',
+    'sc-bear-label': 'Pessimistisch Scenario',
+    'sc-bear-desc': 'ECB verhoogt 25bp<br/><strong style="color:var(--red)">−€43K verlies</strong> over 3 jaar',
+    'sc1-label': '🟢 Handel Nu',
+    'sc1-title': 'BIED NU AAN — Venster Maart–Mei',
+    'sc1-p': 'Maart–mei is het hoogst renderende aanbiedingsvenster van het jaar. Verkopers die nu handelen zijn goed gepositioneerd om de aprilpiek te benutten (historisch 112% van de vraagprijs). Adviseer twijfelende verkopers vóór 15 maart aan te bieden voor maximale exposure. Een vertraging van twee weken kan betekenen dat het optimale venster volledig wordt gemist.',
+    'sc2-label': '🟡 Monitor',
+    'sc2-title': 'ENERGIELABEL — Screeneer Uw Pipeline',
+    'sc2-p': 'Screeneer uw huidige verkopers-pipeline op E, F, G-label woningen. Met de oplevering van Merwedekanaalzone in Q3 2026 kunnen laag-label woningen in de Kanaleneiland-klasse dubbele druk ervaren: nieuwbouwconcurrentie ÉN een toenemende energiekorting. Prijs nu om de realiteit te weerspiegelen of adviseer renovatie vóór verkoop — voordat de markt verder aanpast.',
+    'sc3-label': '🔴 Urgent',
+    'sc3-title': 'KANALENEILAND PIPELINE RISICO',
+    'sc3-p': '1.200 nieuwe woningen worden opgeleverd in Q3 2026. Verkopers van €280–350K woningen in postcodes 3561–3564 dienen geadviseerd te worden vóór juli 2026 aan te bieden of direct nieuwbouwconcurrentie te riskeren. Nieuwbouwwoningen bieden ontwikkelaarsfinanciering, energielabel A en bouwgaranties — bestaande verkopers kunnen dit niet evenaren. Tijd is hier een materiële factor.',
+    'sources-h3': 'Bronnen &amp; Methodologie',
+    'source-note-pipeline': 'Bron: Gemeente Utrecht Woningbouwmonitor <sup>[12]</sup>, Kadaster nieuwbouw data <sup>[3]</sup>',
+    'priceSqm-gc-label': 'GustoCasa Gemiddelde',
+    'priceSqm-market-label': 'Utrechts Marktgemiddelde',
+    'priceSqm-premium-label': 'Prijspremie',
+    'priceSqm-sqm-note': '€440/m² boven markt',
+    'footer-main': '<strong>GustoCasa × TrendsOnFire</strong> · Maandelijkse Intelligence · Februari 2026 · Vertrouwelijk — Uitsluitend voorbereid voor Lindy Hendriks, GustoCasa B.V.',
+    'footer-sub': 'TrendsOnFire B.V. · contact@trendsonfire.com · trendsonfire.com · Alle gegevens afkomstig uit openbare registers en NVM/Funda/CBS datasets.',
   },
   es: {
     'sample-banner': '⚠ INFORME DE MUESTRA — Demostración preparada por TrendsOnFire para GustoCasa. Muestra lo que incluiría una suscripción de inteligencia mensual.',
@@ -1796,6 +2048,132 @@ const T = {
     'sec9': 'Sección 9: Trayectoria de Precios — Escenarios BCE 2026–2028',
     'sec10': 'Sección 10: Módulo de Panel Público',
     'sec11': 'Sección 11: Recomendaciones Estratégicas de 90 Días',
+    'ratio-h3': 'Buscadores por Propiedad Disponible — Febrero 2026',
+    'ratio-p': 'Por cada vivienda publicada en Funda en Utrecht hay 14,3 buscadores activos registrados. Esto sitúa a Utrecht entre los cinco mercados inmobiliarios más competitivos de los Países Bajos. La demanda de compradores supera estructuralmente la oferta, manteniendo una fuerte presión alcista sobre los precios en todos los segmentos. <sup style="color:rgba(255,255,255,0.5)">[2]</sup>',
+    's1-hist-p': 'Precios medios de transacción anuales y tasas de crecimiento interanual. Utrecht registra consistentemente una prima sobre el promedio nacional y se recuperó más rápido de la corrección de 2023. Fuentes: NVM, Kadaster, CBS. 2026 = anualizado T1.',
+    'ct-sold': 'Viviendas Vendidas Mensualmente — Utrecht',
+    'ct-price': 'Precio Medio de Transacción (€)',
+    'ct-overbid': 'Sobrepuja Media % — Mercado de Utrecht',
+    'ct-supply': 'Oferta vs Demanda Funda (Buscadores ÷ 10 vs Propiedades)',
+    'ct-hist-price': 'Precio Medio de Transacción — Utrecht vs Países Bajos (€)',
+    'ct-yoy': 'Crecimiento Anual de Precios — Utrecht vs Países Bajos (%)',
+    'ct-neighbourhood': 'Precio por m² por Barrio',
+    'ct-buyer-agent': 'Penetración de Agente Comprador — % de Transacciones en Utrecht con Agente',
+    'ct-overbid-comp': 'Sobrepuja % — GustoCasa vs Promedio del Mercado de Utrecht',
+    'ct-dom': 'Días en el Mercado — GustoCasa vs Promedio de Utrecht',
+    'ct-price-sqm-comp': 'Precio por m² — GustoCasa vs Promedio del Mercado de Utrecht',
+    'ct-seasonal': '% del Precio de Oferta Logrado por Mes de Publicación',
+    'ct-seasonal-dom': 'Días Promedio en el Mercado por Mes de Publicación',
+    'ct-price-band': 'Compradores por Propiedad Disponible — por Banda de Precio',
+    'ct-price-pie': 'Cuota de Transacciones por Banda de Precio — Utrecht Feb 2026',
+    'ct-energy-label': 'Prima/Descuento de Precio por Etiqueta Energética vs Referencia Etiqueta C',
+    'ct-energy-gap': 'Brecha de Descuento Etiqueta E/F/G — Creciendo con el Tiempo',
+    'ct-buyer-origin-donut': 'Procedencia de los Compradores de Utrecht',
+    'ct-buyer-origin-bar': 'Principales Ciudades / Segmentos de Origen de Compradores',
+    'ct-population': 'Crecimiento de Población en Utrecht 2020–2026',
+    'ct-age-group': 'Cuota de Transacciones por Grupo de Edad del Comprador — Utrecht 2025–26',
+    'ct-scenario': 'Precio Medio de Transacción Utrecht — Tres Escenarios (€) · 2026–2028',
+    'ct-thermometer': 'Termómetro del Mercado de Utrecht',
+    'ct-public-price': 'Tendencia de Precios — Utrecht (6 Meses)',
+    'ct-public-seasonal': 'Mejor Mes para Publicar — Resultado Estacional',
+    'cs-sold': 'Fuente: NVM/Kadaster <sup>[1][3]</sup> · Ago 2025 – Feb 2026',
+    'cs-price': 'Fuente: NVM <sup>[1]</sup> · Ago 2025 – Feb 2026',
+    'cs-overbid': 'Fuente: NVM/Funda <sup>[1][2]</sup> · Ago 2025 – Feb 2026',
+    'cs-supply': 'Fuente: Funda <sup>[2]</sup> · Ago 2025 – Feb 2026',
+    'cs-hist-price': 'Fuente: NVM / Kadaster <sup>[1][3]</sup> · Promedios anuales · 2026 = estimación T1',
+    'cs-yoy': 'Fuente: NVM / CBS <sup>[1][4]</sup> · Variación % anual respecto al año anterior',
+    'cs-neighbourhood': 'Fuente: Kadaster/NVM <sup>[1][3]</sup> · Febrero 2026',
+    'cs-buyer-agent': 'Fuente: NVM <sup>[1]</sup> · Ago 2025 – Feb 2026',
+    'cs-overbid-comp': 'Fuente: Datos de transacciones GustoCasa + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-dom': 'Fuente: Datos de transacciones GustoCasa + NVM <sup>[1]</sup> · Sep 2025 – Feb 2026',
+    'cs-price-sqm-comp': 'Fuente: Datos de transacciones GustoCasa + Kadaster <sup>[3]</sup> · Febrero 2026',
+    'cs-seasonal': 'Fuente: Análisis estacional NVM <sup>[1]</sup> + CBS woningmarktcijfers <sup>[4]</sup>',
+    'cs-seasonal-dom': 'Fuente: NVM <sup>[1]</sup> + CBS <sup>[4]</sup> · Patrón estacional de 12 meses',
+    'cs-price-band': 'Fuente: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup> · Febrero 2026',
+    'cs-price-pie': 'Fuente: NVM <sup>[1]</sup>, Funda Marktinzicht <sup>[2]</sup>',
+    'cs-energy-label': 'Fuente: Dataset CBS Etiquetas Energéticas <sup>[10]</sup>, Análisis NVM de Prima Energética <sup>[1]</sup>',
+    'cs-energy-gap': 'Fuente: PBL Netherlands Environmental Assessment Agency <sup>[11]</sup>, CBS <sup>[10]</sup>',
+    'cs-buyer-origin-donut': 'Fuente: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-buyer-origin-bar': 'Fuente: CBS Verhuisstromen <sup>[4]</sup>, NVM koopersonderzoek <sup>[1]</sup>',
+    'cs-population': 'Fuente: CBS Estadísticas de Población <sup>[4]</sup> · 2026 = proyectado',
+    'cs-age-group': 'Fuente: NVM Koopersonderzoek 2025 <sup>[1]</sup>',
+    'cs-scenario': 'Fuente: Proyecciones de política monetaria BCE <sup>[13]</sup>, Oxford Economics Modelo Inmobiliario NL <sup>[14]</sup>, ING Economisch Bureau <sup>[15]</sup>',
+    'cs-thermometer': 'Basado en sobrepuja 12,2% · ratio demanda/oferta 14,3 · Feb 2026',
+    'cs-public-price': 'Fuente: NVM <sup>[1]</sup> · Precio medio de transacción (€)',
+    'cs-public-seasonal': 'Fuente: NVM <sup>[1]</sup> · % del precio de oferta logrado',
+    'ci-hist-price': 'Utrecht mantiene una <strong>prima de €50–70K</strong> sobre el promedio nacional a lo largo de todo el período. Ambos mercados alcanzaron su pico en 2022, corrigieron en 2023 y se recuperaron en 2024–2025. La recuperación de Utrecht ha sido más intensa.',
+    'ci-yoy': 'El auge de 2021 (+18–20%) y la corrección de 2023 (−6–7%) afectaron a ambos mercados por igual. El rebote de Utrecht en 2024 (+8,4%) superó el promedio nacional (+7,7%), confirmando la insuficiencia estructural de oferta y la sostenida demanda compradora.',
+    'ci-mortgage': 'SNS ofrece el mejor tipo disponible al 3,59% — una diferencia de 59pb respecto a BLG. Aconseje a los compradores priorizar SNS/ING para maximizar su capacidad adquisitiva. Una diferencia de 59pb en una hipoteca de €450K puede reducir la cuota mensual en aproximadamente €165.',
+    'ci-buyer-agent': 'El uso de agente comprador ha aumentado al 47% — 3pp más en seis meses. Esto indica mayor sofisticación y competencia entre compradores. Los vendedores que utilizan el servicio completo de GustoCasa se benefician de representación profesional en el lado del vendedor.',
+    'ci-overbid-comp': '<strong>GustoCasa vende 7,6pp por encima del promedio de sobrepuja del mercado.</strong> En un mercado con un promedio del 12,2%, los clientes de GustoCasa logran el 19,8% — una prima de rendimiento estructural impulsada por estrategia de precios y red de compradores.',
+    'ci-dom': '<strong>GustoCasa es 2,4× más rápido.</strong> Media de 8,8 días en el mercado frente a los 21,5 días del promedio del mercado de Utrecht. Los vendedores evitan prolongadas incertidumbres y costes adicionales — un beneficio tangible y cuantificable.',
+    'ci-price-sqm': 'Para una vivienda típica en Utrecht de 110m², la prima de precio de GustoCasa se traduce en aproximadamente <strong>€48.400 de valor adicional para el vendedor</strong> — un argumento de ROI convincente y basado en evidencia para cualquier vendedor.',
+    'ci-seasonal': 'Verde = 105%+ · Naranja = 99–104% · Rojo = por debajo del 99%. La ventana marzo–mayo es la temporada de venta óptima. Diciembre muestra los peores resultados con un 91% — una oscilación de 21 puntos desde el pico de abril.',
+    'ci-seasonal-dom': 'Las publicaciones de marzo–mayo se venden en un promedio de 11–14 días. Las publicaciones de diciembre pueden mantenerse 34 días — aumentando la ansiedad del vendedor, los costes adicionales y el riesgo de renegociación del precio.',
+    'ci-transaction-share': 'La banda €400–500K representa el 31% de todas las transacciones en Utrecht — el segmento de precio dominante. Junto con €500–600K, estas dos bandas representan el 55% del volumen total del mercado.',
+    'ci-energy-label': 'Una propiedad con etiqueta A puede lograr una prima del 18%, mientras que una con etiqueta G podría venderse con un descuento del 28% respecto a una vivienda equivalente con etiqueta C. En una propiedad de €500K, la diferencia entre A y G puede representar hasta €230.000.',
+    'ci-energy-gap': 'El descuento medio para propiedades con etiqueta E/F/G ha crecido del 8% en 2022 a un estimado 21% en 2026 — y es probable que se acelere a medida que se acerquen los plazos regulatorios. <strong>Aconseje a los vendedores renovar antes de publicar donde sea viable.</strong>',
+    'ci-population': 'Utrecht está en camino de alcanzar 400.000 habitantes en 2028 — el objetivo de crecimiento urbano. Cada nuevo residente representa demanda estructural de vivienda, manteniendo altas las tasas de absorción.',
+    'ci-age-group': 'Los compradores primerizos (starters, 20–35) representan el 52% de todas las transacciones — estructuralmente alto en comparación con otras ciudades holandesas, garantizando demanda sostenida en la banda €300–500K hasta 2028.',
+    'ci-thermometer': 'Índice de temperatura del mercado basado en la tasa de sobrepuja, ratio demanda/oferta y días en el mercado. Utrecht se encuentra en el decil superior a nivel nacional.',
+    'ci-public-seasonal': 'Marzo–mayo = temporada de venta óptima destacada',
+    'callout-sellers-timing': '<strong>Por qué esto importa a los vendedores:</strong> Utrecht nunca ha experimentado una caída de precios plurianual — la caída de 2023 fue una corrección de un solo año, no una bajada estructural. Los vendedores que publicaron en 2024–2025 recuperaron todos los precios de pico y más. La tendencia a largo plazo favorece claramente vender antes que esperar.',
+    'callout-exclusive': '<strong>Inteligencia Exclusiva:</strong> Esta sección utiliza los propios datos de transacciones de GustoCasa combinados con los benchmarks de NVM. Permite a Lindy demostrar el ROI a potenciales vendedores con cifras reales — transformando las conversaciones de venta con evidencia objetiva e irrefutable.',
+    'callout-listing-timing': '<strong>MEJOR MOMENTO PARA PUBLICAR: MARZO–MAYO.</strong> Los vendedores que publican en abril pueden lograr de media un 12% por encima del precio de oferta. Las publicaciones de agosto históricamente solo alcanzan el 93% del precio de oferta — una diferencia de 19 puntos respecto a abril. Si un vendedor puede esperar 4–6 semanas para publicar en marzo, el beneficio financiero es significativo. Aconseje a los vendedores indecisos publicar antes del 15 de marzo. <sup>[1][4]</sup>',
+    'callout-price-band': '<strong>El punto óptimo de GustoCasa (€450–650K) se sitúa en el pico de la competencia compradora</strong> — con 26–31 compradores por propiedad disponible. Estas son condiciones ideales para que los vendedores superen el mercado. Los vendedores en este segmento deben esperar múltiples ofertas competidoras en días tras la publicación.',
+    'callout-energy-red': '<strong>Señal de Urgencia:</strong> En Utrecht, el 34% del parque residencial anterior a 1975 todavía tiene etiqueta E, F o G. Los vendedores de estas propiedades enfrentan un <strong>descuento medio de €62.000</strong> respecto a viviendas comparables con etiqueta C — y esta brecha se está ampliando a medida que se acerca el plazo mínimo de etiqueta C de la UE en 2033.',
+    'callout-energy-blue': '<strong>Oportunidad Estratégica para GustoCasa:</strong> GustoCasa puede posicionarse como el asesor que ayuda a los vendedores a mejorar la etiqueta energética <em>antes</em> de publicar — captando honorarios de referido en reformas y logrando precios de venta más altos. Un servicio de auditoría energética previa a la venta podría ser un diferenciador significativo y una fuente de ingresos a medida que se acerca el plazo de 2033.',
+    'callout-pipeline-alert': '<strong>Alerta de Cartera:</strong> La entrega de Merwedekanaalzone en T3 2026 añadirá 1.200 unidades cerca de Kanaleneiland — compitiendo directamente con el inventario de reventa de GustoCasa en la banda €280–350K. <strong>Se debe aconsejar a los vendedores en los códigos postales 3561–3564 que publiquen antes de julio de 2026</strong> para evitar competir contra incentivos de obra nueva (financiación del promotor, etiqueta energética A, garantías del fabricante).',
+    'callout-buyer-amsterdam': '<strong>El excedente de Ámsterdam representa el 38% de la demanda de Utrecht.</strong> Estos compradores huyen de los precios medios de Ámsterdam superiores a €600K. Suelen tener presupuestos elevados, están precualificados y están muy motivados para cerrar operaciones. <strong>El marketing de GustoCasa podría dirigirse a Ámsterdam:</strong> Anuncios de Google/Meta segmentados geográficamente en códigos postales de Ámsterdam (1011–1099) pueden generar leads de compra de alta intención a un coste relativamente bajo.',
+    'callout-buyer-expat': '<strong>Segmento Expat (18%):</strong> Impulsado por ASML (corredor Eindhoven-Utrecht), la sede de Rabobank y la actividad de reubicación del Utrecht Science Park. Estos compradores priorizan rapidez, transparencia y orientación en inglés. El servicio multilingüe de GustoCasa y el tiempo de ejecución rápido (media 8,8 días) es un diferenciador estructural en este segmento.',
+    'callout-key-signal': '<strong>Señal Clave:</strong> La edad media del comprador primerizo en Utrecht es de <strong>32,4 años</strong> — la más joven de todas las ciudades G4 (Ámsterdam 35,1, Róterdam 33,8, La Haya 34,2). La joven base profesional de Utrecht garantizará previsiblemente una demanda sostenida de starters hasta 2028 y más allá.',
+    'callout-scenario': 'GustoCasa puede usar estos escenarios para orientar las decisiones de compra/espera de sus clientes. En el escenario base (más probable), la vivienda media de Utrecht puede ganar €50K en valor para 2028. En el escenario alcista, €114K. <strong>Estos datos probablemente refuerzan el argumento para que los compradores actúen ahora en lugar de esperar</strong> — y ofrecen a los vendedores expectativas realistas de revalorización.',
+    'callout-public-how': '<strong>Cómo funciona:</strong> El día 12 de cada mes, TrendsOnFire actualiza los datos y publica la nueva versión en la misma URL. GustoCasa no necesita hacer nada — la página se actualiza automáticamente.<br/><br/><strong>Dos formas de usarlo:</strong><br/>&nbsp;&nbsp;① <strong>LinkedIn (principal):</strong> Publica la URL en LinkedIn como actualización mensual del mercado. LinkedIn genera automáticamente una tarjeta de vista previa — GustoCasa parece una autoridad basada en datos sin escribir una sola palabra. Ideal para la generación de leads de vendedores y compradores.<br/>&nbsp;&nbsp;② <strong>Embed en sitio web:</strong> Incluye la URL como iframe o botón en gustocasa.nl — los visitantes ven datos del mercado en tiempo real sin que GustoCasa los gestione.<br/><br/><strong>Impacto estimado:</strong> Una publicación mensual consistente en LinkedIn con datos locales reales genera típicamente 3–5× más engagement que el comentario genérico sobre el mercado.',
+    'th-neighbourhood': 'Barrio',
+    'th-price-sqm': 'Precio Medio/m²',
+    'th-yoy-change': 'Variación Interanual',
+    'th-signal': 'Señal',
+    'th-project': 'Proyecto',
+    'th-area': 'Zona',
+    'th-units': 'Unidades',
+    'th-delivery': 'Entrega Prevista',
+    'th-impact': 'Impacto en Reventa',
+    'pdl-badge': 'Full Intelligence — €295/mes',
+    'pdl-text-main': '<strong>Todo lo que aparece a continuación está incluido exclusivamente en el plan Full Intelligence.</strong> El plan Starter (€195/mes) ofrece un resumen destacado de los datos de la Sección 1. Las Secciones 2–11 son exclusivas de Full Intelligence.',
+    'pdl-link': '→ Ver precios',
+    'ps-title': '🌐 Módulo de Panel Público — Listo para Compartir e Integrar',
+    'ps-sub': 'TrendsOnFire mantiene una página pública dedicada y la actualiza el <strong>día 12 de cada mes</strong>. GustoCasa recibe esta URL y puede integrarla en su sitio web y compartirla en LinkedIn como publicación mensual de actualización del mercado — posicionando a GustoCasa como la agencia boutique impulsada por datos en Utrecht.',
+    'ps-live-label': 'URL de tu página en vivo:',
+    'ps-live-note': '· Actualizado el día 12 de cada mes · Etiquetas Open Graph incluidas para vista previa en LinkedIn',
+    'thermo-cool': 'Frío',
+    'thermo-warm': 'Cálido',
+    'thermo-hot': 'Caliente',
+    'thermo-very-hot': 'Muy Caliente',
+    'thermo-status': '🔥 MUY CALIENTE',
+    'scenario-desc': 'Resultados de Escenarios — Precio Medio de Transacción Dic 2028 vs Enero 2026 (referencia €521K)',
+    'sc-bull-label': 'Escenario Alcista',
+    'sc-bull-desc': 'BCE recorta 50pb antes de T3 2026<br/><strong style="color:var(--green)">+€114K ganancia</strong> en 3 años',
+    'sc-base-label': 'Escenario Base',
+    'sc-base-desc': 'Los tipos del BCE se mantienen estables<br/><strong style="color:var(--orange)">+€50K ganancia</strong> en 3 años',
+    'sc-bear-label': 'Escenario Bajista',
+    'sc-bear-desc': 'BCE sube 25pb<br/><strong style="color:var(--red)">−€43K pérdida</strong> en 3 años',
+    'sc1-label': '🟢 Actuar Ahora',
+    'sc1-title': 'PUBLICAR AHORA — Ventana Marzo–Mayo',
+    'sc1-p': 'Marzo–mayo es la ventana de publicación de mayor rendimiento del año. Los vendedores que actúen ahora están bien posicionados para aprovechar el pico de sobrepuja de abril (históricamente 112% del precio de oferta). Aconseje a los vendedores indecisos que publiquen antes del 15 de marzo para maximizar la exposición durante la demanda pico del mercado primaveral. Un retraso de dos semanas puede significar perder por completo la ventana óptima.',
+    'sc2-label': '🟡 Monitorear',
+    'sc2-title': 'ETIQUETA ENERGÉTICA — Revise Su Cartera',
+    'sc2-p': 'Revise su cartera actual de vendedores en busca de propiedades con etiqueta E, F, G. Con la entrega de Merwedekanaalzone en T3 2026, las propiedades de baja etiqueta en la banda Kanaleneiland podrían enfrentar doble presión: competencia de obra nueva Y un descuento energético creciente. Ajuste el precio ahora para reflejar la realidad o aconseje una reforma antes de publicar — antes de que el mercado ajuste más.',
+    'sc3-label': '🔴 Urgente',
+    'sc3-title': 'RIESGO CARTERA KANALENEILAND',
+    'sc3-p': '1.200 nuevas unidades se entregarán en T3 2026. Se debe aconsejar a los vendedores de propiedades €280–350K en los códigos postales 3561–3564 que publiquen antes de julio de 2026 o se arriesguen a competencia directa con obra nueva. Las unidades de obra nueva ofrecen financiación del promotor, etiqueta energética A y garantías del fabricante — los vendedores de segunda mano no pueden igualar estas ventajas. El tiempo es un factor material aquí.',
+    'sources-h3': 'Fuentes &amp; Metodología',
+    'source-note-pipeline': 'Fuente: Gemeente Utrecht Woningbouwmonitor <sup>[12]</sup>, Datos de obra nueva Kadaster <sup>[3]</sup>',
+    'priceSqm-gc-label': 'Promedio GustoCasa',
+    'priceSqm-market-label': 'Promedio del Mercado de Utrecht',
+    'priceSqm-premium-label': 'Prima de Precio',
+    'priceSqm-sqm-note': '€440/m² por encima del mercado',
+    'footer-main': '<strong>GustoCasa × TrendsOnFire</strong> · Inteligencia Mensual · Febrero 2026 · Confidencial — Preparado exclusivamente para Lindy Hendriks, GustoCasa B.V.',
+    'footer-sub': 'TrendsOnFire B.V. · contact@trendsonfire.com · trendsonfire.com · Todos los datos procedentes de registros públicos y datasets NVM/Funda/CBS.',
   }
 };
 
@@ -1811,7 +2189,7 @@ function setLang(lang) {
 
 (function() {
   const saved = localStorage.getItem('gc-lang');
-  if (saved && T[saved]) setLang(saved);
+  setLang(saved && T[saved] ? saved : 'nl');
 })();
 </script>
 
@@ -1827,7 +2205,7 @@ function setLang(lang) {
     ctx.translate(c.width/2, c.height/2);
     ctx.rotate(-35 * Math.PI / 180);
     ctx.font = 'bold 20px Inter, Arial, sans-serif';
-    ctx.fillStyle = 'rgba(26,35,64,0.28)';
+    ctx.fillStyle = 'rgba(26,35,64,0.10)';
     ctx.textAlign = 'center';
     var text = 'trendsonfire.com';
     var gap = 220;
