@@ -663,13 +663,9 @@ function setLang(lang) {
     if (T[lang] && T[lang][key]) el.innerHTML = T[lang][key];
   });
 }
-// Preserve active state on reload
+// NL only — EN button removed, always load NL
 (function(){
-  const stored = sessionStorage.getItem('lang') || 'nl';
-  if (stored !== 'nl') setLang(stored);
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.addEventListener('click', () => { sessionStorage.setItem('lang', b.dataset.lang); });
-  });
+  sessionStorage.removeItem('lang');
 })();
 </script>
 </body>
