@@ -110,6 +110,17 @@
     .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
     .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
 
+    /* Methodology box */
+    .method-box{background:#fff8e1;border:1px solid #ffd54f;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:13px;line-height:1.7;color:#78350f}
+    .method-box strong{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#92400e}
+    .method-box .src-row{display:flex;gap:8px;margin-bottom:4px;align-items:baseline}
+    .src-tag{font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+    .src-verified{background:#d1fae5;color:#065f46}
+    .src-consensus{background:#dbeafe;color:#1e40af}
+    .src-unverified{background:#fee2e2;color:#991b1b}
+    /* NL note */
+    .nl-note{background:#fff0f0;border:1px solid #fca5a5;border-radius:6px;padding:12px 16px;font-size:12px;color:#991b1b;margin-bottom:24px;line-height:1.6}
+
     footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
     footer a{color:#94a3b8;text-decoration:none}
     footer a:hover{color:white}
@@ -184,6 +195,14 @@
 
 <main>
 
+  <!-- DATA METHODOLOGY NOTE -->
+  <div class="method-box">
+    <strong>Data methodology — what is verified and what is estimated</strong>
+    <div class="src-row"><span class="src-tag src-verified">VERIFIED</span> ECB rate trajectory — official ECB data, directly citable. Country-level Eurostat Housing Price Index (direction and broad magnitude per country). Germany construction completions (Destatis).</div>
+    <div class="src-row"><span class="src-tag src-consensus">ANALYST CONSENSUS</span> Rental yields, Price-to-Income ratios, 2026–2027 forecasts — compiled from Eurostat, ECB affordability metrics, Knight Frank, Deloitte and national statistical offices. Individual data points are not linked to a single published database entry. Treat as directionally accurate, not citable as precise figures.</div>
+    <div class="src-row"><span class="src-tag src-unverified">VERIFY BEFORE USE</span> Netherlands city deep-dive (Utrecht, Amsterdam, Rotterdam price levels and YoY growth) — figures are consistent with Kadaster/CBS data in magnitude but are not directly sourced from a specific Kadaster publication. Verify at <strong>cbs.nl</strong> or <strong>huisverkopen.nl</strong> before citing.</div>
+  </div>
+
   <!-- KPIs -->
   <div class="kpi-row">
     <div class="kpi">
@@ -226,7 +245,7 @@
       <div class="chart-wrap"><canvas id="chart-growth"></canvas></div>
     </div>
     <div class="chart-box">
-      <h3>Forecast: Expected Price Change 2026–2027 (%)</h3>
+      <h3>Forecast: Expected Price Change 2026–2027 (%) — Analyst consensus estimates</h3>
       <div class="chart-wrap"><canvas id="chart-forecast"></canvas></div>
     </div>
   </div>
@@ -254,7 +273,7 @@
         <th>Country</th>
         <th>2024 Growth</th>
         <th>2025 Growth</th>
-        <th>2026–27 Forecast</th>
+        <th>2026–27 Forecast (est.)</th>
         <th>Trend</th>
         <th>Rental Yield</th>
         <th>P2I Ratio</th>
@@ -489,6 +508,7 @@
 
   <!-- Netherlands deep dive chart -->
   <div class="section-title" style="margin-top:40px;">Netherlands City Deep-Dive — Q1 2025</div>
+  <div class="nl-note">Figures below are consistent with Kadaster/CBS data in magnitude but are not directly sourced from a specific Kadaster publication. Verify exact values at <strong>cbs.nl</strong> or <strong>huisverkopen.nl</strong> before citing in client-facing material.</div>
   <div class="chart-grid">
     <div class="chart-box">
       <h3>Dutch City Price Growth YoY (Q1 2025)</h3>
@@ -577,7 +597,7 @@
   <div class="section-title">2026–2027 Price Growth Forecast by Tier</div>
   <div class="chart-grid">
     <div class="chart-box">
-      <h3>Projected Cumulative Growth 2026–2027 by Market Tier</h3>
+      <h3>Projected Cumulative Growth 2026–2027 by Market Tier — Analyst consensus estimates</h3>
       <div class="chart-wrap"><canvas id="chart-tier"></canvas></div>
     </div>
     <div class="chart-box">
