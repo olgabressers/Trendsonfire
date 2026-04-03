@@ -9,39 +9,38 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── SCREENSHOT INSTRUCTIONS (invisible on print) ── */
+    /* HOWTO BAR */
     .howto {
       font-family: -apple-system, sans-serif;
       background: #1a2340; color: rgba(255,255,255,0.7);
-      padding: 12px 24px; font-size: 12px; text-align: center;
-      letter-spacing: 0.02em;
+      padding: 10px 20px; font-size: 12px; letter-spacing: 0.02em;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
     }
     .howto strong { color: #e8622a; }
+    .howto-msg { flex: 1; min-width: 220px; }
+    .howto-controls { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+    .howto-sep { color: rgba(255,255,255,0.2); }
+    .lang-btn, .fit-btn {
+      padding: 4px 11px; border-radius: 4px; font-size: 11px; font-weight: 700;
+      cursor: pointer; transition: all .15s; letter-spacing: 0.04em;
+      border: 1px solid rgba(255,255,255,0.25); background: transparent; color: rgba(255,255,255,0.55);
+    }
+    .lang-btn:hover, .fit-btn:hover { border-color: rgba(255,255,255,0.6); color: white; }
+    .lang-btn.active { background: #e8622a; border-color: #e8622a; color: white; }
+    .fit-btn.active { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); color: white; }
     @media print { .howto { display: none; } }
 
-    /* ── CARD — fixed 1200px, screenshot-ready ── */
+    /* CARD */
     body { background: #d6d2cc; margin: 0; padding: 20px 0 40px; }
+    .card-outer { display: flex; justify-content: center; }
     .card {
-      width: 1200px;
-      margin: 0 auto;
-      font-family: 'Inter', sans-serif;
-      color: #1e1e2e;
-      font-size: 14px;
-      line-height: 1.5;
-      background: #f0ece6;
-      border-radius: 0;
-      overflow: hidden;
+      width: 1200px; flex-shrink: 0;
+      font-family: 'Inter', sans-serif; color: #1e1e2e; font-size: 14px; line-height: 1.5;
+      background: #f0ece6; overflow: hidden;
     }
 
     /* HEADER */
-    .hdr {
-      background: #1a2340;
-      color: white;
-      padding: 28px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .hdr { background: #1a2340; color: white; padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; }
     .brand { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; }
     .brand span { color: #e8622a; }
     .brand-sub { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.09em; margin-top: 5px; }
@@ -49,31 +48,18 @@
     .hdr-month { font-size: 17px; font-weight: 700; color: white; }
     .hdr-powered { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 5px; }
 
-    /* CONTENT */
+    /* BODY */
     .body { padding: 28px 40px 32px; }
 
     /* KPI ROW */
     .kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
-    .kpi {
-      background: white;
-      border-radius: 10px;
-      padding: 18px 20px;
-      border-top: 4px solid #e8622a;
-    }
+    .kpi { background: white; border-radius: 10px; padding: 18px 20px; border-top: 4px solid #e8622a; }
     .kv { font-size: 30px; font-weight: 800; color: #1a2340; line-height: 1; }
     .kl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: #6b7280; margin-top: 6px; }
     .ks { font-size: 10px; color: #9ca3af; margin-top: 3px; }
 
     /* THERMOMETER */
-    .thermo {
-      background: linear-gradient(135deg, #1a2340 0%, #273559 100%);
-      border-radius: 10px;
-      padding: 22px 30px;
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      margin-bottom: 22px;
-    }
+    .thermo { background: linear-gradient(135deg, #1a2340 0%, #273559 100%); border-radius: 10px; padding: 22px 30px; display: flex; align-items: center; gap: 32px; margin-bottom: 22px; }
     .thermo-left { flex: 0 0 260px; }
     .tl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
     .track { height: 13px; border-radius: 7px; background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b, #ef4444); position: relative; margin-bottom: 8px; }
@@ -83,21 +69,16 @@
     .thermo-text { flex: 1; font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.75; }
     .thermo-text strong { color: white; }
 
-    /* CHART ROW */
+    /* CHARTS */
     .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
     .chart-card { background: white; border-radius: 10px; padding: 18px 20px; }
     .ct { font-size: 12px; font-weight: 700; color: #1a2340; margin-bottom: 2px; }
     .cs { font-size: 10px; color: #9ca3af; margin-bottom: 12px; }
     .cw { height: 175px; }
 
-    /* SIGNAL + RATES ROW */
+    /* SIGNAL + RATES */
     .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .signal {
-      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-      border: 2px solid #16a34a;
-      border-radius: 10px;
-      padding: 20px 22px;
-    }
+    .signal { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #16a34a; border-radius: 10px; padding: 20px 22px; }
     .sig-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: #166534; margin-bottom: 7px; }
     .sig-head { font-size: 15px; font-weight: 800; color: #14532d; margin-bottom: 8px; line-height: 1.3; }
     .sig-body { font-size: 12px; color: #166534; line-height: 1.75; }
@@ -114,39 +95,35 @@
     .rate-note { font-size: 10px; color: #6b7280; margin-top: 10px; line-height: 1.6; }
 
     /* FOOTER */
-    .footer {
-      background: #1a2340;
-      color: rgba(255,255,255,0.4);
-      font-size: 11px;
-      padding: 14px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .footer { background: #1a2340; color: rgba(255,255,255,0.4); font-size: 11px; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; }
     .footer strong { color: rgba(255,255,255,0.75); }
   </style>
 </head>
 <body>
 
-<!-- ── INSTRUCTIONS — not part of the card ── -->
-<div class="howto">
-  <strong>Screenshot instructie:</strong> Zoom browser op 100% → rechtermuisknop → "Screenshot maken" (of gebruik Cmd+Shift+4 op Mac) → selecteer alleen de kaart hieronder → upload direct naar LinkedIn als afbeelding · Zet de link in de eerste reactie
+<!-- HOWTO BAR (hidden in embed mode) -->
+<div class="howto" id="howtoBar">
+  <div class="howto-msg" id="howto-msg"><strong>Screenshot:</strong> Zoom 100% → rechtermuisknop → "Screenshot maken" (of Cmd+Shift+4 op Mac) → selecteer de kaart → upload naar LinkedIn · Link in eerste reactie</div>
+  <div class="howto-controls">
+    <button class="fit-btn" id="fitBtn" onclick="toggleFit()">Passend maken</button>
+    <span class="howto-sep">|</span>
+    <button class="lang-btn active" id="btn-nl" onclick="setLang('nl')">NL</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- THE CARD — screenshot everything below this line          -->
-<!-- ══════════════════════════════════════════════════════════ -->
-<div class="card">
+<div class="card-outer" id="cardOuter">
+<div class="card" id="theCard">
 
   <!-- HEADER -->
   <div class="hdr">
     <div>
       <div class="brand">Gusto<span>Casa</span></div>
-      <div class="brand-sub">Utrecht · Woningmarkt Intelligence</div>
+      <div class="brand-sub" data-key="brand-sub">Utrecht · Woningmarkt Intelligence</div>
     </div>
     <div class="hdr-right">
-      <div class="hdr-month">Maandupdate · Februari 2026</div>
-      <div class="hdr-powered">Data: Kadaster/CBS · hypotheekrente.nl · NVM · Powered by TrendsOnFire</div>
+      <div class="hdr-month" data-key="hdr-month">Maandupdate · Februari 2026</div>
+      <div class="hdr-powered" data-key="hdr-powered">Data: Kadaster/CBS · hypotheekrente.nl · Powered by TrendsOnFire</div>
     </div>
   </div>
 
@@ -156,35 +133,40 @@
     <div class="kpi-row">
       <div class="kpi">
         <div class="kv">€562K</div>
-        <div class="kl">Gem. transactieprijs</div>
-        <div class="ks">Februari 2026 · Kadaster</div>
+        <div class="kl" data-key="kl-price">Gem. transactieprijs</div>
+        <div class="ks" data-key="ks-price">Februari 2026 · Kadaster</div>
       </div>
       <div class="kpi">
         <div class="kv">8,2%</div>
-        <div class="kl">Gem. overbieding</div>
-        <div class="ks">Utrecht stad · Kadaster</div>
+        <div class="kl" data-key="kl-overbid">Gem. overbieding</div>
+        <div class="ks" data-key="ks-overbid">Utrecht stad · Kadaster</div>
       </div>
       <div class="kpi">
         <div class="kv">12 dgn</div>
-        <div class="kl">Gem. verkooptijd</div>
-        <div class="ks">Februari 2026</div>
+        <div class="kl" data-key="kl-days">Gem. verkooptijd</div>
+        <div class="ks" data-key="ks-days">Februari 2026</div>
       </div>
       <div class="kpi">
         <div class="kv">+24%</div>
-        <div class="kl">Aanbodgroei JoJ</div>
-        <div class="ks">Meer woningen op markt</div>
+        <div class="kl" data-key="kl-supply">Aanbodgroei JoJ</div>
+        <div class="ks" data-key="ks-supply">Meer woningen op markt</div>
       </div>
     </div>
 
     <!-- THERMOMETER -->
     <div class="thermo">
       <div class="thermo-left">
-        <div class="tl">Utrecht Markttemperatuur</div>
+        <div class="tl" data-key="tl">Utrecht Markttemperatuur</div>
         <div class="track"><div class="needle"></div></div>
-        <div class="tscale"><span>Koel</span><span>Warm</span><span>Hot</span><span>Zeer Hot</span></div>
+        <div class="tscale">
+          <span data-key="ts-cool">Koel</span>
+          <span data-key="ts-warm">Warm</span>
+          <span data-key="ts-hot">Hot</span>
+          <span data-key="ts-xhot">Zeer Hot</span>
+        </div>
         <div class="tstatus">🔥 HOT</div>
       </div>
-      <div class="thermo-text">
+      <div class="thermo-text" data-key="thermo-text">
         <strong>79,7% van de Utrechtse woningen verkoopt boven de vraagprijs</strong> (NVM). Gemiddelde overbieding bedraagt <strong>8,2%</strong> — kopers concurreren hard, maar de extremen van 2022 zijn achter ons. Het aanbod is met <strong>+24%</strong> gegroeid ten opzichte van vorig jaar: verkopers staan sterker dan ooit, maar timing en presentatie zijn nu beslissender dan bij krappe markt.
       </div>
     </div>
@@ -192,13 +174,13 @@
     <!-- CHARTS -->
     <div class="chart-row">
       <div class="chart-card">
-        <div class="ct">Prijsontwikkeling Utrecht — 6 Maanden</div>
-        <div class="cs">Kadaster via huisverkopen.nl · Februari bevestigd · Sep–Jan: schatting op kwartaaldata</div>
+        <div class="ct" data-key="ct-price">Prijsontwikkeling Utrecht — 6 Maanden</div>
+        <div class="cs" data-key="cs-price">Kadaster via huisverkopen.nl · Februari bevestigd · Sep–Jan: schatting op kwartaaldata</div>
         <div class="cw"><canvas id="priceChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="ct">Beste Verkoopmaand — % van Vraagprijs Gerealiseerd</div>
-        <div class="cs">Bron: NVM seizoensanalyse · Jaarpatroon · Oranje = lente piek · Licht oranje = herfst piek</div>
+        <div class="ct" data-key="ct-season">Beste Verkoopmaand — % van Vraagprijs Gerealiseerd</div>
+        <div class="cs" data-key="cs-season">Bron: NVM seizoensanalyse · Jaarpatroon · Oranje = lente piek · Licht oranje = herfst piek</div>
         <div class="cw"><canvas id="seasonChart"></canvas></div>
       </div>
     </div>
@@ -206,40 +188,40 @@
     <!-- SIGNAL + RATES -->
     <div class="bottom-row">
       <div class="signal">
-        <div class="sig-label">💡 Marktsignaal — April 2026</div>
-        <div class="sig-head">LENTE = BESTE MOMENT OM TE VERKOPEN</div>
-        <div class="sig-body">
-          NVM-data bevestigt: <strong>maart–juni</strong> geeft structureel de hoogste opbrengst. Lente-woningen presteren tot <strong>20 procentpunt</strong> beter dan december. Met +24% meer aanbod in 2026 is vroeg starten extra belangrijk.<br><br>
-          <strong>Tweede goede periode:</strong> september–oktober (zichtbaar in de grafiek). Daarna daalt de marktactiviteit richting het einde van het jaar.<br><br>
-          <span style="font-size:11px;opacity:0.75">Bron: NVM seizoensanalyse · huisverkopen.nl feb 2026</span>
-        </div>
+        <div class="sig-label" data-key="sig-label">💡 Marktsignaal — April 2026</div>
+        <div class="sig-head" data-key="sig-head">LENTE = BESTE MOMENT OM TE VERKOPEN</div>
+        <div class="sig-body" data-key="sig-body">NVM-data bevestigt: <strong>maart–juni</strong> geeft structureel de hoogste opbrengst. Lente-woningen presteren tot <strong>20 procentpunt</strong> beter dan december. Met +24% meer aanbod in 2026 is vroeg starten extra belangrijk.<br><br><strong>Tweede goede periode:</strong> september–oktober (zichtbaar in de grafiek). Daarna daalt de marktactiviteit richting het einde van het jaar.<br><br><span style="font-size:11px;opacity:0.75">Bron: NVM seizoensanalyse · huisverkopen.nl feb 2026</span></div>
       </div>
       <div class="rates-card">
-        <div class="rt">Hypotheekrente — 10 Jaar Vast · April 2026</div>
-        <div class="rs">Bron: hypotheekrente.nl · ECB depositorente: 2,0% (ongewijzigd) · Dagelijks bijgewerkt</div>
+        <div class="rt" data-key="rt">Hypotheekrente — 10 Jaar Vast · April 2026</div>
+        <div class="rs" data-key="rs">Bron: hypotheekrente.nl · ECB depositorente: 2,0% (ongewijzigd) · Dagelijks bijgewerkt</div>
         <table class="rt-tbl">
           <thead>
-            <tr><th>Type</th><th>Rente</th><th>Opmerking</th></tr>
+            <tr>
+              <th data-key="th-type">Type</th>
+              <th data-key="th-rate">Rente</th>
+              <th data-key="th-note">Opmerking</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Laagste — met NHG</strong></td>
+              <td data-key="r0-type"><strong>Laagste — met NHG</strong></td>
               <td><span class="big-rate">2,78%</span></td>
-              <td>ASN Bank</td>
+              <td data-key="r0-note">ASN Bank</td>
             </tr>
             <tr>
-              <td>Marktbereik standaard</td>
+              <td data-key="r1-type">Marktbereik standaard</td>
               <td><strong>3,75% – 4,0%+</strong></td>
-              <td>Zonder NHG</td>
+              <td data-key="r1-note">Zonder NHG</td>
             </tr>
             <tr>
-              <td>ECB depositorente</td>
+              <td data-key="r2-type">ECB depositorente</td>
               <td><strong>2,0%</strong></td>
-              <td>Stabiel · Geen verlaging verwacht in 2026</td>
+              <td data-key="r2-note">Stabiel · Geen verlaging verwacht in 2026</td>
             </tr>
           </tbody>
         </table>
-        <div class="rate-note">Rentes zijn gestabiliseerd na de daling in 2024–2025. Geen ECB-verlaging verwacht in 2026 — kopers die nu vastleggen vermijden opwaarts risico. Vergelijk alle rentes op <strong>hypotheekrente.nl</strong>.</div>
+        <div class="rate-note" data-key="rate-note">Rentes zijn gestabiliseerd na de daling in 2024–2025. Geen ECB-verlaging verwacht in 2026 — kopers die nu vastleggen vermijden opwaarts risico. Vergelijk alle rentes op <strong>hypotheekrente.nl</strong>.</div>
       </div>
     </div>
 
@@ -247,58 +229,202 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <div>Data: <strong>Kadaster/CBS via huisverkopen.nl · hypotheekrente.nl · NVM</strong> · Bijgewerkt 2 april 2026</div>
-    <div>Market intelligence by <strong>TrendsOnFire</strong> voor GustoCasa · trendsonfire.com/gustocasa</div>
+    <div data-key="footer-l">Data: <strong>Kadaster/CBS via huisverkopen.nl · hypotheekrente.nl · NVM</strong> · Bijgewerkt 2 april 2026</div>
+    <div data-key="footer-r">Market intelligence by <strong>TrendsOnFire</strong> voor GustoCasa · trendsonfire.com/gustocasa</div>
   </div>
 
 </div><!-- end .card -->
+</div><!-- end .card-outer -->
 
 <script>
-const C_NAVY='#1a2340', C_ORANGE='#e8622a', C_GREEN='#1e7c4e';
-function rgba(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`;}
-const grid='rgba(0,0,0,0.06)';
-
-/* PRICE CHART */
-new Chart(document.getElementById('priceChart'),{type:'line',data:{
-  labels:['Sep','Okt','Nov','Dec','Jan','Feb'],
-  datasets:[
-    {label:'Bevestigd (Kadaster)',data:[null,null,null,null,null,562500],
-     borderColor:C_ORANGE,backgroundColor:rgba(C_ORANGE,0.07),borderWidth:3,tension:0.35,fill:true,
-     pointBackgroundColor:[C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_ORANGE],
-     pointRadius:[3,3,3,3,3,8],pointBorderColor:'#fff',pointBorderWidth:2},
-    {label:'Schatting (kwartaaldata)',data:[520000,525000,530000,540000,550000,null],
-     borderColor:rgba(C_NAVY,0.45),borderDash:[5,4],backgroundColor:'transparent',
-     borderWidth:2,tension:0.35,
-     pointBackgroundColor:rgba(C_NAVY,0.45),pointRadius:3,pointBorderColor:'#fff',pointBorderWidth:2}
-  ]
-},options:{responsive:true,maintainAspectRatio:false,
-  plugins:{legend:{position:'top',labels:{font:{size:10},boxWidth:10,padding:8}}},
-  scales:{
-    y:{grid:{color:grid},beginAtZero:false,min:505000,ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'K',font:{size:10}}},
-    x:{grid:{display:false},ticks:{font:{size:10}}}
-  }
-}});
-
-/* SEASONAL CHART — all 12 months, two peaks */
-const sp=[97,100,108,112,110,106,98,93,104,106,101,91];
-// Jan=0…Dec=11 · spring peak: Mar(2)–Jun(5) · autumn peak: Sep(8)–Oct(9)
-const colors=sp.map((_,i)=>{
-  if(i>=2&&i<=5) return C_ORANGE;
-  if(i>=8&&i<=9) return rgba(C_ORANGE,0.55);
-  return rgba(C_NAVY,0.18);
-});
-new Chart(document.getElementById('seasonChart'),{type:'bar',data:{
-  labels:['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'],
-  datasets:[{data:sp,backgroundColor:colors,borderRadius:4,borderSkipped:false}]
-},options:{responsive:true,maintainAspectRatio:false,
-  plugins:{legend:{display:false},
-    tooltip:{callbacks:{label:ctx=>`${ctx.raw}% van vraagprijs`}}
+/* ── TRANSLATIONS ── */
+const LANG = {
+  nl: {
+    'brand-sub':   'Utrecht · Woningmarkt Intelligence',
+    'hdr-month':   'Maandupdate · Februari 2026',
+    'hdr-powered': 'Data: Kadaster/CBS · hypotheekrente.nl · Powered by TrendsOnFire',
+    'kl-price':  'Gem. transactieprijs',     'ks-price':  'Februari 2026 · Kadaster',
+    'kl-overbid':'Gem. overbieding',          'ks-overbid':'Utrecht stad · Kadaster',
+    'kl-days':   'Gem. verkooptijd',          'ks-days':   'Februari 2026',
+    'kl-supply': 'Aanbodgroei JoJ',           'ks-supply': 'Meer woningen op markt',
+    'tl':        'Utrecht Markttemperatuur',
+    'ts-cool':'Koel','ts-warm':'Warm','ts-hot':'Hot','ts-xhot':'Zeer Hot',
+    'thermo-text': '<strong>79,7% van de Utrechtse woningen verkoopt boven de vraagprijs</strong> (NVM). Gemiddelde overbieding bedraagt <strong>8,2%</strong> — kopers concurreren hard, maar de extremen van 2022 zijn achter ons. Het aanbod is met <strong>+24%</strong> gegroeid ten opzichte van vorig jaar: verkopers staan sterker dan ooit, maar timing en presentatie zijn nu beslissender dan bij krappe markt.',
+    'ct-price':  'Prijsontwikkeling Utrecht — 6 Maanden',
+    'cs-price':  'Kadaster via huisverkopen.nl · Februari bevestigd · Sep–Jan: schatting op kwartaaldata',
+    'ct-season': 'Beste Verkoopmaand — % van Vraagprijs Gerealiseerd',
+    'cs-season': 'Bron: NVM seizoensanalyse · Jaarpatroon · Oranje = lente piek · Licht oranje = herfst piek',
+    'sig-label': '💡 Marktsignaal — April 2026',
+    'sig-head':  'LENTE = BESTE MOMENT OM TE VERKOPEN',
+    'sig-body':  'NVM-data bevestigt: <strong>maart–juni</strong> geeft structureel de hoogste opbrengst. Lente-woningen presteren tot <strong>20 procentpunt</strong> beter dan december. Met +24% meer aanbod in 2026 is vroeg starten extra belangrijk.<br><br><strong>Tweede goede periode:</strong> september–oktober (zichtbaar in de grafiek). Daarna daalt de marktactiviteit richting het einde van het jaar.<br><br><span style="font-size:11px;opacity:0.75">Bron: NVM seizoensanalyse · huisverkopen.nl feb 2026</span>',
+    'rt':        'Hypotheekrente — 10 Jaar Vast · April 2026',
+    'rs':        'Bron: hypotheekrente.nl · ECB depositorente: 2,0% (ongewijzigd) · Dagelijks bijgewerkt',
+    'th-type':'Type','th-rate':'Rente','th-note':'Opmerking',
+    'r0-type':'<strong>Laagste — met NHG</strong>','r0-note':'ASN Bank',
+    'r1-type':'Marktbereik standaard','r1-note':'Zonder NHG',
+    'r2-type':'ECB depositorente','r2-note':'Stabiel · Geen verlaging verwacht in 2026',
+    'rate-note': 'Rentes zijn gestabiliseerd na de daling in 2024–2025. Geen ECB-verlaging verwacht in 2026 — kopers die nu vastleggen vermijden opwaarts risico. Vergelijk alle rentes op <strong>hypotheekrente.nl</strong>.',
+    'footer-l':  'Data: <strong>Kadaster/CBS via huisverkopen.nl · hypotheekrente.nl · NVM</strong> · Bijgewerkt 2 april 2026',
+    'footer-r':  'Market intelligence by <strong>TrendsOnFire</strong> voor GustoCasa · trendsonfire.com/gustocasa',
+    'price-months':  ['Sep','Okt','Nov','Dec','Jan','Feb'],
+    'season-months': ['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'],
+    'ds-confirmed':  'Bevestigd (Kadaster)',
+    'ds-estimate':   'Schatting (kwartaaldata)',
+    'season-tip':    ctx => `${ctx.raw}% van vraagprijs`,
+    'howto-msg': '<strong>Screenshot:</strong> Zoom 100% → rechtermuisknop → "Screenshot maken" (of Cmd+Shift+4 op Mac) → selecteer de kaart → upload naar LinkedIn · Link in eerste reactie',
   },
-  scales:{
-    y:{grid:{color:grid},min:82,max:116,ticks:{callback:v=>v+'%',font:{size:10}}},
-    x:{grid:{display:false},ticks:{font:{size:10}}}
+  en: {
+    'brand-sub':   'Utrecht · Housing Market Intelligence',
+    'hdr-month':   'Monthly Update · February 2026',
+    'hdr-powered': 'Data: Kadaster/CBS · hypotheekrente.nl · Powered by TrendsOnFire',
+    'kl-price':  'Avg. transaction price',   'ks-price':  'February 2026 · Kadaster',
+    'kl-overbid':'Avg. overbid',              'ks-overbid':'Utrecht city · Kadaster',
+    'kl-days':   'Avg. days on market',       'ks-days':   'February 2026',
+    'kl-supply': 'Supply growth YoY',         'ks-supply': 'More homes on market',
+    'tl':        'Utrecht Market Temperature',
+    'ts-cool':'Cool','ts-warm':'Warm','ts-hot':'Hot','ts-xhot':'Very Hot',
+    'thermo-text': '<strong>79.7% of Utrecht homes sell above asking price</strong> (NVM). Average overbid is <strong>8.2%</strong> — buyers compete hard, but the extremes of 2022 are behind us. Supply has grown <strong>+24%</strong> compared to last year: sellers are in a strong position, but timing and presentation are now more decisive than in a tight market.',
+    'ct-price':  'Price Development Utrecht — 6 Months',
+    'cs-price':  'Kadaster via huisverkopen.nl · February confirmed · Sep–Jan: estimate based on quarterly data',
+    'ct-season': 'Best Month to Sell — % of Asking Price Achieved',
+    'cs-season': 'Source: NVM seasonal analysis · Annual pattern · Orange = spring peak · Light orange = autumn peak',
+    'sig-label': '💡 Market Signal — April 2026',
+    'sig-head':  'SPRING = BEST TIME TO SELL',
+    'sig-body':  'NVM data confirms: <strong>March–June</strong> structurally delivers the highest returns. Spring listings outperform December by up to <strong>20 percentage points</strong>. With +24% more supply in 2026, starting early is extra important.<br><br><strong>Second good period:</strong> September–October (visible in chart). Market activity then declines towards year-end.<br><br><span style="font-size:11px;opacity:0.75">Source: NVM seasonal analysis · huisverkopen.nl Feb 2026</span>',
+    'rt':        'Mortgage Rates — 10 Year Fixed · April 2026',
+    'rs':        'Source: hypotheekrente.nl · ECB deposit rate: 2.0% (unchanged) · Updated daily',
+    'th-type':'Type','th-rate':'Rate','th-note':'Note',
+    'r0-type':'<strong>Lowest — with NHG</strong>','r0-note':'ASN Bank',
+    'r1-type':'Market range standard','r1-note':'Without NHG',
+    'r2-type':'ECB deposit rate','r2-note':'Stable · No cut expected in 2026',
+    'rate-note': 'Rates have stabilised after the 2024–2025 decline. No ECB cut expected in 2026 — buyers locking in now avoid upward risk. Compare all rates at <strong>hypotheekrente.nl</strong>.',
+    'footer-l':  'Data: <strong>Kadaster/CBS via huisverkopen.nl · hypotheekrente.nl · NVM</strong> · Updated 2 April 2026',
+    'footer-r':  'Market intelligence by <strong>TrendsOnFire</strong> for GustoCasa · trendsonfire.com/gustocasa',
+    'price-months':  ['Sep','Oct','Nov','Dec','Jan','Feb'],
+    'season-months': ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    'ds-confirmed':  'Confirmed (Kadaster)',
+    'ds-estimate':   'Estimate (quarterly data)',
+    'season-tip':    ctx => `${ctx.raw}% of asking price`,
+    'howto-msg': '<strong>Screenshot:</strong> Zoom to 100% → right-click → "Take screenshot" (or Cmd+Shift+4 on Mac) → select the card → upload to LinkedIn · Add the link in the first comment',
   }
-}});
+};
+
+/* ── EMBED MODE ── */
+const isEmbed = new URLSearchParams(location.search).get('embed') === '1';
+if (isEmbed) {
+  document.getElementById('howtoBar').style.display = 'none';
+  document.body.style.padding = '0';
+  document.body.style.background = 'transparent';
+}
+
+/* ── STATE ── */
+let currentLang = 'nl';
+let priceChart, seasonChart;
+let fitActive = false;
+
+/* ── CHART COLORS ── */
+const C_NAVY = '#1a2340', C_ORANGE = '#e8622a';
+function rgba(hex, a) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+const grid = 'rgba(0,0,0,0.06)';
+
+/* ── BUILD CHARTS ── */
+function buildCharts(lang) {
+  const T = LANG[lang];
+  const sp = [97,100,108,112,110,106,98,93,104,106,101,91];
+  const colors = sp.map((_,i) => {
+    if (i >= 2 && i <= 5) return C_ORANGE;
+    if (i >= 8 && i <= 9) return rgba(C_ORANGE, 0.55);
+    return rgba(C_NAVY, 0.18);
+  });
+
+  if (priceChart) priceChart.destroy();
+  if (seasonChart) seasonChart.destroy();
+
+  priceChart = new Chart(document.getElementById('priceChart'), {
+    type: 'line',
+    data: {
+      labels: T['price-months'],
+      datasets: [
+        { label: T['ds-confirmed'], data: [null,null,null,null,null,562500],
+          borderColor: C_ORANGE, backgroundColor: rgba(C_ORANGE,0.07), borderWidth: 3, tension: 0.35, fill: true,
+          pointBackgroundColor: [C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_NAVY,C_ORANGE],
+          pointRadius: [3,3,3,3,3,8], pointBorderColor: '#fff', pointBorderWidth: 2 },
+        { label: T['ds-estimate'], data: [520000,525000,530000,540000,550000,null],
+          borderColor: rgba(C_NAVY,0.45), borderDash: [5,4], backgroundColor: 'transparent',
+          borderWidth: 2, tension: 0.35,
+          pointBackgroundColor: rgba(C_NAVY,0.45), pointRadius: 3, pointBorderColor: '#fff', pointBorderWidth: 2 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 10 }, boxWidth: 10, padding: 8 } } },
+      scales: {
+        y: { grid: { color: grid }, beginAtZero: false, min: 505000, ticks: { callback: v => '€'+(v/1000).toFixed(0)+'K', font: { size: 10 } } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+      }
+    }
+  });
+
+  seasonChart = new Chart(document.getElementById('seasonChart'), {
+    type: 'bar',
+    data: {
+      labels: T['season-months'],
+      datasets: [{ data: sp, backgroundColor: colors, borderRadius: 4, borderSkipped: false }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: T['season-tip'] } } },
+      scales: {
+        y: { grid: { color: grid }, min: 82, max: 116, ticks: { callback: v => v+'%', font: { size: 10 } } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+/* ── SET LANGUAGE ── */
+function setLang(lang) {
+  currentLang = lang;
+  const T = LANG[lang];
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (T[key] !== undefined) el.innerHTML = T[key];
+  });
+  const howtoMsg = document.getElementById('howto-msg');
+  if (howtoMsg) howtoMsg.innerHTML = T['howto-msg'];
+  document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  buildCharts(lang);
+}
+
+/* ── FIT TO SCREEN ── */
+function toggleFit() {
+  fitActive = !fitActive;
+  const card = document.getElementById('theCard');
+  const outer = document.getElementById('cardOuter');
+  const btn = document.getElementById('fitBtn');
+  if (fitActive) {
+    const scale = Math.min(1, (window.innerWidth - 20) / 1200);
+    card.style.transform = `scale(${scale})`;
+    card.style.transformOrigin = 'top center';
+    outer.style.height = (scale * card.offsetHeight) + 'px';
+    outer.style.overflow = 'hidden';
+    btn.classList.add('active');
+    btn.textContent = 'Volledig formaat';
+  } else {
+    card.style.transform = '';
+    outer.style.height = '';
+    outer.style.overflow = '';
+    btn.classList.remove('active');
+    btn.textContent = 'Passend maken';
+  }
+}
+
+/* ── INIT ── */
+buildCharts('nl');
 </script>
 </body>
 </html>

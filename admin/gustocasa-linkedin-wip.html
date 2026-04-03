@@ -159,8 +159,14 @@
       </div>
     </div>
 
+    <!-- post language toggle -->
+    <div style="padding: 10px 24px 0; display:flex; gap:6px; border-bottom: 1px solid var(--border);">
+      <button onclick="previewLang('nl')" id="prev-nl" style="padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--fuchsia);background:var(--fuchsia);color:white;">NL</button>
+      <button onclick="previewLang('en')" id="prev-en" style="padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--sub);">EN</button>
+    </div>
+
     <div class="post-body" style="padding-bottom:0;">
-      <div class="post-text"><strong>Utrecht woningmarkt — februari 2026</strong>
+      <div id="post-nl" class="post-text"><strong>Utrecht woningmarkt — februari 2026</strong>
 
 De cijfers van vorige maand zijn binnen.
 
@@ -175,14 +181,29 @@ Ben je van plan te kopen of te verkopen? Neem contact op voor een vrijblijvend g
 
 #Utrecht #Woningmarkt #Vastgoed #GustoCasa #Makelaar #Koopwoning #Overbieden</div>
 
+      <div id="post-en" class="post-text" style="display:none;"><strong>Utrecht housing market — February 2026</strong>
+
+Last month's figures are in.
+
+· Average transaction price: <strong>€562,000</strong>
+· Average overbid: <strong>8.2%</strong> — 79.7% of homes sold above asking price
+· Average days on market: <strong>12 days</strong>
+· Supply: <strong>+24%</strong> more listings than last year
+
+More supply, but the market remains active. Prices are rising — Utrecht continues to be one of the fastest-moving markets in the Netherlands.
+
+Thinking of buying or selling? Get in touch for a no-obligation conversation.
+
+#Utrecht #HousingMarket #RealEstate #GustoCasa #Makelaar</div>
+
       <!-- LinkedIn card visual attachment -->
       <div style="margin: 16px -24px 0; overflow: hidden; border-top: 1px solid var(--border);">
-        <div style="position:relative; width:100%; height:0; padding-bottom:52.5%; overflow:hidden; background:#f0f2f5;">
+        <div style="position:relative; overflow:hidden; height:626px; background:#f0ece6;">
           <iframe
-            src="../gustocasa/linkedin-card.html"
+            src="../gustocasa/linkedin-card.html?embed=1"
             scrolling="no"
-            style="position:absolute; top:0; left:0; width:1200px; height:630px;
-                   transform: scale(0.675); transform-origin: top left;
+            style="position:absolute; top:0; left:0; width:1200px; height:920px;
+                   transform: scale(0.68); transform-origin: top left;
                    border:none; pointer-events:none;"
           ></iframe>
         </div>
@@ -281,6 +302,15 @@ Thinking of buying or selling? Get in touch for a no-obligation conversation.
 </div>
 
 <script>
+function previewLang(lang) {
+  document.getElementById('post-nl').style.display = lang === 'nl' ? '' : 'none';
+  document.getElementById('post-en').style.display = lang === 'en' ? '' : 'none';
+  const active = 'padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--fuchsia);background:var(--fuchsia);color:white;';
+  const idle   = 'padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--sub);';
+  document.getElementById('prev-nl').style.cssText = lang === 'nl' ? active : idle;
+  document.getElementById('prev-en').style.cssText = lang === 'en' ? active : idle;
+}
+
 function copyText(id, btn) {
   const el = document.getElementById(id);
   el.select();
