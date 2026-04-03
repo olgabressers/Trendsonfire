@@ -42,6 +42,9 @@
     .part-sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;}
     .part-date{margin-left:auto;text-align:right;font-size:11px;color:rgba(255,255,255,.4);}
     .part-date strong{color:rgba(255,255,255,.75);font-size:12px;display:block;}
+    .plan-pill{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:10px;margin-top:5px;}
+    .plan-pill.starter{background:rgba(232,98,42,.2);color:#f59060;border:1px solid rgba(232,98,42,.3);}
+    .plan-pill.full-int{background:rgba(201,163,90,.2);color:#c9a35a;border:1px solid rgba(201,163,90,.3);}
 
     /* CONTENT AREAS */
     .monthly-body{background:#f0ece6;padding:24px 40px 32px;}
@@ -175,6 +178,7 @@
   <span class="part-badge" data-key="m-badge">Maandelijks</span>
   <div>
     <div class="part-title">Monthly Market Pulse</div>
+    <span class="plan-pill starter" data-key="m-plan">Starter · €175/maand</span>
     <div class="part-sub" data-key="m-sub">3 elementen die elke maand worden bijgewerkt — geleverd voor de 15e van de maand</div>
   </div>
   <div class="part-date">
@@ -272,6 +276,7 @@
   <span class="part-badge" data-key="q-badge">Kwartaal</span>
   <div>
     <div class="part-title">Quarterly Deep Intelligence Report</div>
+    <span class="plan-pill full-int" data-key="q-plan">Full Intelligence · €295/maand</span>
     <div class="part-sub" data-key="q-sub">7 secties · Structurele marktanalyse · Q1 in mei · Q2 in aug · Q3 in nov · Q4 in feb</div>
   </div>
   <div class="part-date">
@@ -535,6 +540,7 @@ const LANG = {
     'hdr-period': 'Februari 2026 · Q1 2026',
     'hdr-delivery':'Voorbeeldrapport · Volledig pakket',
     'm-badge':    'Maandelijks',
+    'm-plan':     'Starter · €175/maand',
     'm-sub':      '3 elementen die elke maand worden bijgewerkt — geleverd voor de 15e van de maand',
     'm-period':   'Februari 2026',
     'm-delivery': 'Data: Kadaster/CBS · gepubliceerd voor 15 mrt 2026',
@@ -565,6 +571,7 @@ const LANG = {
     'li-sub':     '+ Klaar-voor-gebruik post tekst in het Nederlands én Engels met hashtags en de beste posttijd.',
     'li-btn':     'Bekijk LinkedIn Card →',
     'q-badge':    'Kwartaal',
+    'q-plan':     'Full Intelligence · €295/maand',
     'q-sub':      '7 secties · Structurele marktanalyse · Q1 in mei · Q2 in aug · Q3 in nov · Q4 in feb',
     'q-delivery': 'Data: CBS/Kadaster · geleverd mei 2026',
     'q1-label':   'Sectie 1 van 7 — Markttemperatuur',

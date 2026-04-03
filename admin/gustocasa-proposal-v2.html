@@ -106,6 +106,13 @@
     .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
     .demo-card { background: var(--off-white); border: 1px solid rgba(28,58,43,.08); border-radius: 10px; padding: 28px; transition: background .2s; }
     .demo-card:hover { background: #eceae3; }
+    .demo-card.tier-monthly { background: #fdf7f4; border-color: rgba(232,98,42,.25); border-left: 3px solid #e8622a; }
+    .demo-card.tier-monthly:hover { background: #faeee7; }
+    .demo-card.tier-full { background: #f5f3ee; border-color: rgba(201,163,90,.3); border-left: 3px solid #c9a35a; }
+    .demo-card.tier-full:hover { background: #ede9df; }
+    .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 3px 10px; border-radius: 10px; margin-bottom: 10px; }
+    .tier-badge.monthly { background: rgba(232,98,42,.12); color: #b83d0f; }
+    .tier-badge.full { background: rgba(201,163,90,.2); color: #7a5820; }
     .demo-card-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); margin-bottom: 8px; }
     .demo-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--green); margin-bottom: 8px; }
     .demo-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; }
@@ -322,31 +329,35 @@
     <p class="section-sub" data-i18n="demo-sub">Je ziet geen mockups. Dit zijn werkende pagina's, live op trendsonfire.com, gebouwd voor Utrecht. Klik en bekijk.</p>
     <div class="demo-grid">
 
-      <div class="demo-card">
-        <div class="demo-card-label" data-i18n="d1-label">Full Intelligence — Voorbeeldrapport</div>
-        <h3 data-i18n="d1-title">Voorbeeldrapport — Beide Lagen</h3>
-        <p data-i18n="d1-desc">Het volledige twee-tier rapport: Monthly Market Pulse bovenaan (geleverd voor de 15e), gevolgd door de Quarterly Deep Intelligence sectie (Q1 in mei). 7 secties, 8 grafieken — wijkprijzen, energielabels, nieuwbouw en ECB-scenario's.</p>
-        <a href="sample-gustocasa-option-a.html" target="_blank" class="demo-link" data-i18n="d1-link">Open voorbeeldrapport →</a>
-      </div>
-
-      <div class="demo-card">
-        <div class="demo-card-label" data-i18n="d2-label">Monthly Pulse — Live Dashboard</div>
-        <h3 data-i18n="d2-title">Live Market Dashboard</h3>
-        <p data-i18n="d2-desc">Een volledige publieke marktpagina op trendsonfire.com/gustocasa — met interactieve grafieken, marktthermometer, hypotheekrentes en alle maandelijkse kerncijfers in één overzicht. Stuur de link naar kopers en verkopers, zet hem in je e-mailhandtekening of embed hem op gustocasa.nl. Bezoekers zien altijd de meest actuele data. De LinkedIn Card is een eenmalig screenshot voor LinkedIn; dit is de permanente informatiebron die klanten op elk moment kunnen raadplegen.</p>
-      </div>
-
-      <div class="demo-card">
+      <div class="demo-card tier-monthly">
+        <div class="tier-badge monthly" data-i18n="tier-monthly-badge">Monthly Pulse · €175/maand</div>
         <div class="demo-card-label" data-i18n="d3-label">Monthly Pulse — LinkedIn Card</div>
         <h3 data-i18n="d3-title">LinkedIn Card Februari 2026</h3>
-        <p data-i18n="d3-desc">Vaste 1200px-kaart met alle kerncijfers, twee grafieken en hypotheekrentes. Bijgewerkt voor de 15e. Ontworpen om als afbeelding op LinkedIn te plaatsen — geen link, geen algoritmepenalty. Verschil met het dashboard: dit is een visuele kaart om te screenshotten, geen webpagina.</p>
+        <p data-i18n="d3-desc">Vaste 1200px-kaart met alle kerncijfers, twee grafieken en hypotheekrentes. In het Nederlands en Engels. Bijgewerkt voor de 15e. Ontworpen om als afbeelding op LinkedIn te plaatsen — geen link, geen algoritmepenalty.</p>
         <a href="../gustocasa/linkedin-card.html" target="_blank" class="demo-link" data-i18n="d3-link">Bekijk LinkedIn card →</a>
       </div>
 
-      <div class="demo-card">
+      <div class="demo-card tier-monthly">
+        <div class="tier-badge monthly" data-i18n="tier-monthly-badge-2">Monthly Pulse · €175/maand</div>
         <div class="demo-card-label" data-i18n="d4-label">Monthly Pulse — LinkedIn Post</div>
         <h3 data-i18n="d4-title">LinkedIn Post — Maandelijks</h3>
         <p data-i18n="d4-desc">Kant-en-klare posttekst in het Nederlands en Engels — opgebouwd rond de bevestigde kerncijfers van de Monthly Pulse. Bulletpoints, geen jargon. Bijgewerkt voor de 15e, tegelijk met het rapport.</p>
         <a href="gustocasa-linkedin-wip.html" target="_blank" class="demo-link" data-i18n="d4-link">Bekijk voorbeeld post →</a>
+      </div>
+
+      <div class="demo-card tier-full">
+        <div class="tier-badge full" data-i18n="tier-full-badge">Full Intelligence · €295/maand</div>
+        <div class="demo-card-label" data-i18n="d1-label">Full Intelligence — Voorbeeldrapport</div>
+        <h3 data-i18n="d1-title">Voorbeeldrapport — Beide Lagen</h3>
+        <p data-i18n="d1-desc">Het volledige twee-tier rapport: Monthly Market Pulse bovenaan (beide plannen) + Quarterly Deep Intelligence sectie (alleen Full Intelligence · Q1 in mei). 7 secties, 8 grafieken — wijkprijzen, energielabels, nieuwbouw en ECB-scenario's.</p>
+        <a href="sample-gustocasa-option-a.html" target="_blank" class="demo-link" data-i18n="d1-link">Open voorbeeldrapport →</a>
+      </div>
+
+      <div class="demo-card tier-full">
+        <div class="tier-badge full" data-i18n="tier-full-badge-2">Full Intelligence · €295/maand</div>
+        <div class="demo-card-label" data-i18n="d2-label">Full Intelligence — White Label</div>
+        <h3 data-i18n="d2-title">White Label — Jouw Branding</h3>
+        <p data-i18n="d2-desc">Alle rapporten en de marktpagina worden geleverd zonder TrendsOnFire-logo, in jouw huisstijl, op jouw domein (bijv. gustocasa.nl/markt). Voor jouw klanten is TrendsOnFire volledig onzichtbaar — zij zien alleen het GustoCasa-merk.</p>
       </div>
 
     </div>
@@ -404,8 +415,8 @@
           <li data-i18n="p1-f1">4 kerncijfers maandelijks bijgewerkt (Kadaster/CBS)</li>
           <li data-i18n="p1-f2">Prijstrendgrafiek met nieuw bevestigd maandpunt</li>
           <li data-i18n="p1-f3">Hypotheekrentetabel — actueel van hypotheekrente.nl</li>
-          <li data-i18n="p1-f4">LinkedIn Card — ready to publish, maandelijks nieuw</li>
-          <li data-i18n="p1-f5">LinkedIn posttekst in het Nederlands</li>
+          <li data-i18n="p1-f4">LinkedIn Card — ready to publish, maandelijks nieuw (NL, EN)</li>
+          <li data-i18n="p1-f5">LinkedIn posttekst in het Nederlands en Engels</li>
           <li data-i18n="p1-f6">Live dashboard bijgewerkt voor de 15e</li>
         </ul>
         <div class="plan-note" data-i18n="p1-note">€2.100/jaar excl. btw · Maandelijks opzegbaar</div>
@@ -540,6 +551,10 @@ const T = {
     't2-6': 'New construction pipeline Utrecht — specific projects and market impact',
     't2-7': 'ECB rate scenarios 2026–2028 — three scenarios for price development',
     't2-8': '90-day recommendations specific to GustoCasa\'s market segment',
+    'tier-monthly-badge': 'Monthly Pulse · €175/month',
+    'tier-monthly-badge-2': 'Monthly Pulse · €175/month',
+    'tier-full-badge': 'Full Intelligence · €295/month',
+    'tier-full-badge-2': 'Full Intelligence · €295/month',
     'demo-label': 'Live Examples',
     'demo-h2': 'Everything Is Already Built for GustoCasa',
     'demo-sub': 'No mockups. These are working pages, live on trendsonfire.com, built for Utrecht. Click and explore.',
@@ -547,9 +562,9 @@ const T = {
     'd1-title': 'Sample Report — Both Tiers',
     'd1-desc': 'The full two-tier report: Monthly Market Pulse at the top (delivered by the 15th), followed by the Quarterly Deep Intelligence section (Q1 in May). 7 sections, 8 charts — neighbourhood prices, energy labels, new construction and ECB scenarios.',
     'd1-link': 'Open sample report →',
-    'd2-label': 'Monthly Pulse — Live Dashboard',
-    'd2-title': 'Live Market Dashboard',
-    'd2-desc': 'A full public market page at trendsonfire.com/gustocasa — interactive charts, market thermometer, mortgage rates and all monthly key figures in one overview. Share the link with buyers and sellers, add it to your email signature or embed it on gustocasa.nl. Visitors always see the most current data. The LinkedIn Card is a one-off screenshot for LinkedIn posts; this is the permanent information source clients can consult at any time.',
+    'd2-label': 'Full Intelligence — White Label',
+    'd2-title': 'White Label — Your Branding',
+    'd2-desc': 'All reports and the market page are delivered without the TrendsOnFire logo, in your house style, on your domain (e.g. gustocasa.nl/markt). For your clients, TrendsOnFire is completely invisible — they only see the GustoCasa brand.',
     'd3-label': 'Monthly Pulse — LinkedIn Card',
     'd3-title': 'LinkedIn Card February 2026',
     'd3-desc': 'Fixed 1200px card with all key metrics, two charts and mortgage rates. Updated by the 15th. Designed to be posted as an image on LinkedIn — no link, no algorithm penalty. Difference from the dashboard: this is a visual card to screenshot, not a webpage.',
@@ -580,8 +595,8 @@ const T = {
     'p1-f1': '4 key metrics updated monthly (Kadaster/CBS)',
     'p1-f2': 'Price trend chart with new confirmed monthly point',
     'p1-f3': 'Mortgage rates table — live from hypotheekrente.nl',
-    'p1-f4': 'LinkedIn Card — ready to publish, monthly refresh',
-    'p1-f5': 'LinkedIn post text in Dutch',
+    'p1-f4': 'LinkedIn Card — ready to publish, monthly refresh (NL, EN)',
+    'p1-f5': 'LinkedIn post text in Dutch and English',
     'p1-f6': 'Live dashboard updated by the 15th',
     'p1-note': '€2,100/year excl. VAT · Cancel anytime',
     'p1-cta': 'Start Monthly Pulse',
