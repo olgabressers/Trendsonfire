@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Services — TrendsOnFire Strategy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 80px; }
+    .wrapper { max-width: 1020px; margin: 0 auto; }
+
+    .page-header { background: #0f2340; border-radius: 14px; padding: 32px 36px; margin-bottom: 32px; color: white; }
+    .page-header h1 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .page-header .sub { font-size: 13px; color: rgba(255,255,255,.5); }
+    .page-header .meta { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 8px; }
+
+    .section-title { font-size: 13px; font-weight: 800; color: #0f2340; text-transform: uppercase; letter-spacing: .07em; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+
+    .card { background: white; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.07); padding: 22px 26px; margin-bottom: 16px; }
+    .card h3 { font-size: 15px; font-weight: 700; color: #0f2340; margin-bottom: 6px; }
+    .card p, .card li { font-size: 13px; color: #374151; }
+
+    .callout { border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; line-height: 1.6; }
+    .callout-blue   { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e3a5f; }
+    .callout-orange { background: #fff7ed; border-left: 4px solid #e8622a; color: #7c2d12; }
+    .callout-green  { background: #f0fdf4; border-left: 4px solid #1e7c4e; color: #14532d; }
+    .callout-red    { background: #fef2f2; border-left: 4px solid #dc2626; color: #7f1d1d; }
+
+    /* SEGMENT CARDS */
+    .segment-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 16px; }
+    @media(max-width:700px){ .segment-grid { grid-template-columns: 1fr; } }
+    .seg { background: white; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,.07); overflow: hidden; }
+    .seg-head { padding: 18px 22px 12px; border-top: 4px solid #e8622a; }
+    .seg-head h3 { font-size: 14px; font-weight: 800; color: #0f2340; }
+    .seg-head .seg-sub { font-size: 12px; color: #6b7280; margin-top: 2px; }
+    .seg-body { padding: 0 22px 18px; }
+    .seg-body p { font-size: 12.5px; color: #374151; margin-bottom: 10px; line-height: 1.55; margin-top: 10px; }
+    .seg-body ul { list-style: none; margin-bottom: 10px; }
+    .seg-body ul li { font-size: 12px; color: #374151; padding: 3px 0 3px 18px; position: relative; }
+    .seg-body ul li::before { content: '→'; position: absolute; left: 0; color: #e8622a; font-weight: 700; }
+    .seg-label { font-size: 11px; font-weight: 700; padding: 8px 22px; text-transform: uppercase; letter-spacing: .06em; background: #f8fafc; color: #374151; border-top: 1px solid #f3f4f6; }
+
+    .seg-investors .seg-head { border-top-color: #1e7c4e; }
+    .seg-hr        .seg-head { border-top-color: #3b82f6; }
+    .seg-dev       .seg-head { border-top-color: #8b5cf6; }
+    .seg-consult   .seg-head { border-top-color: #f59e0b; }
+    .seg-multi     .seg-head { border-top-color: #06b6d4; }
+    .seg-linkedin  .seg-head { border-top-color: #0077b5; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #f8fafc; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #6b7280; padding: 10px 14px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    tbody td { padding: 11px 14px; border-bottom: 1px solid #f3f4f6; color: #374151; vertical-align: top; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: #f9fafb; }
+
+    .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 10px; letter-spacing: .3px; white-space: nowrap; }
+    .tag-go   { background: #dcfce7; color: #166534; }
+    .tag-wait { background: #fef9c3; color: #92400e; }
+    .tag-no   { background: #fee2e2; color: #991b1b; }
+
+    .data-ok  { color: #166534; font-weight: 700; }
+    .data-no  { color: #991b1b; font-weight: 700; }
+
+    .home { display: inline-block; margin-top: 36px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 11.5px; font-family: monospace; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="page-header">
+    <h1>Services Offered by TrendsOnFire — Strategy &amp; Client Map</h1>
+    <div class="sub">TrendsOnFire · Internal Strategy Document · Not for distribution</div>
+    <div class="meta">Updated April 2026 · Post-GustoCasa pivot · Built on public data: CBS, Kadaster, Eurostat, ECB</div>
+  </div>
+
+  <!-- WHAT WE ARE -->
+  <div class="section-title">What TrendsOnFire Actually Is</div>
+
+  <div class="callout callout-blue">
+    <strong>TrendsOnFire is a macro/strategic market intelligence platform.</strong> All data comes from public statistical sources: CBS, Kadaster, Eurostat, ECB, ONS, and equivalent national agencies. Reports are monthly or quarterly. They cover city-level and national-level trends, price trajectories, demographic shifts, ECB rate scenarios, and EU comparisons.<br/><br/>
+    This is <strong>not</strong> a real-time transaction feed. It does not replicate NVM/Brainbay data. It does not provide individual listing data, overbid ratios by street, or days-on-market for a specific agency. Clients who need that level of operational detail are not the right fit.
+  </div>
+
+  <div class="callout callout-red">
+    <strong>Lesson from GustoCasa (April 2026):</strong> GustoCasa declined because they already have NVM/Brainbay transaction data at a level we cannot match. Active real estate agencies need operational, near-real-time data. TrendsOnFire provides strategic, macro data. These are different products for different buyers. Never pitch real estate agencies on data freshness or granularity.
+  </div>
+
+  <!-- DATA CAPABILITIES -->
+  <div class="section-title">Data We Can and Cannot Deliver</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Data type</th><th>Can deliver?</th><th>Source</th><th>Cadence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>National/city housing price trends</td><td class="data-ok">Yes</td><td>CBS, Kadaster</td><td>Monthly</td></tr>
+        <tr><td>EU country housing comparisons</td><td class="data-ok">Yes</td><td>Eurostat</td><td>Quarterly</td></tr>
+        <tr><td>ECB interest rate scenarios &amp; mortgage rate trends</td><td class="data-ok">Yes</td><td>ECB, public lender rates</td><td>Monthly</td></tr>
+        <tr><td>Population, migration &amp; housing shortage data</td><td class="data-ok">Yes</td><td>CBS, PBL</td><td>Quarterly/Annual</td></tr>
+        <tr><td>New construction pipeline</td><td class="data-ok">Yes</td><td>CBS, RVO</td><td>Quarterly</td></tr>
+        <tr><td>Rental market trends</td><td class="data-ok">Yes</td><td>CBS, WiWonen survey</td><td>Annual (with monthly proxies)</td></tr>
+        <tr><td>Energy label distribution</td><td class="data-ok">Yes</td><td>RVO, CBS</td><td>Annual</td></tr>
+        <tr><td>Foreign buyer flows (EU level)</td><td class="data-ok">Yes</td><td>Eurostat, ECB</td><td>Annual</td></tr>
+        <tr><td>Individual agency transaction detail</td><td class="data-no">No</td><td>NVM/Brainbay — no access</td><td>—</td></tr>
+        <tr><td>Real-time listings or days-on-market</td><td class="data-no">No</td><td>Funda/NVM required</td><td>—</td></tr>
+        <tr><td>Neighbourhood street-level overbid ratios</td><td class="data-no">No</td><td>NVM/Brainbay required</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CLIENT SEGMENTS -->
+  <div class="section-title">Client Segments — Who Buys This and Why</div>
+
+  <div class="segment-grid">
+
+    <!-- INVESTORS -->
+    <div class="seg seg-investors">
+      <div class="seg-head">
+        <h3>Real Estate Investors</h3>
+        <div class="seg-sub">Private equity · Family offices · Buy-to-let portfolios</div>
+      </div>
+      <div class="seg-body">
+        <p>Make long-term capital allocation decisions across cities and countries. Need macro price trajectories, yield trends, regulatory risk, and ECB rate forecasts. Do not need daily transaction feeds — they need the big picture 3–5 years out.</p>
+        <ul>
+          <li>City-level price trend reports (quarterly)</li>
+          <li>EU country comparison for capital allocation</li>
+          <li>ECB rate scenario modelling — impact on yields</li>
+          <li>Housing shortage vs new construction gap analysis</li>
+          <li>Rental yield benchmarking across cities</li>
+        </ul>
+      </div>
+      <div class="seg-label">Priority: HIGH — data fits perfectly · Decision cycle: weeks</div>
+    </div>
+
+    <!-- HR / CORPORATE RELOCATION -->
+    <div class="seg seg-hr">
+      <div class="seg-head">
+        <h3>HR &amp; Corporate Relocation</h3>
+        <div class="seg-sub">Multinationals · ASML, Shell, KPMG, Booking.com · Relocation agencies</div>
+      </div>
+      <div class="seg-body">
+        <p>Companies relocating international staff need housing market briefings: which city to settle people, what rents and purchase prices look like, cost-of-living trajectory, and which neighbourhoods are realistic on an expat salary. HR teams don't have time to build this themselves.</p>
+        <ul>
+          <li>City-by-city comparison: Amsterdam vs Utrecht vs Eindhoven</li>
+          <li>Expat housing cost briefings (rent + purchase)</li>
+          <li>Cost-of-living trend analysis</li>
+          <li>Quarterly update: has the market shifted since we placed last batch?</li>
+          <li>EU briefings for cross-border relocations</li>
+        </ul>
+      </div>
+      <div class="seg-label">Priority: HIGH — recurring need · Budget sits in HR/facilities · Annual contract</div>
+    </div>
+
+    <!-- PROPERTY DEVELOPERS -->
+    <div class="seg seg-dev">
+      <div class="seg-head">
+        <h3>Property Developers</h3>
+        <div class="seg-sub">Project developers · Woningcorporaties · Area development</div>
+      </div>
+      <div class="seg-body">
+        <p>Plan projects 2–5 years out. Need population growth projections, housing shortage forecasts, planning pipeline, and price band analysis for the segment they are building in. CBS and PBL data is ideal — but packaged, not raw. They buy time saved, not data they don't have.</p>
+        <ul>
+          <li>Market feasibility briefings per city or neighbourhood</li>
+          <li>Population &amp; household growth projections</li>
+          <li>Housing shortage gap (demand vs supply pipeline)</li>
+          <li>Price band distribution — what segment is undersupplied</li>
+          <li>Energy label requirements &amp; new construction trends</li>
+        </ul>
+      </div>
+      <div class="seg-label">Priority: MEDIUM — longer sales cycle · Higher contract value</div>
+    </div>
+
+    <!-- CONSULTANCIES -->
+    <div class="seg seg-consult">
+      <div class="seg-head">
+        <h3>Consultancies &amp; Strategy Firms</h3>
+        <div class="seg-sub">McKinsey, BCG, Deloitte, boutique real estate advisors</div>
+      </div>
+      <div class="seg-body">
+        <p>When working on real estate, market entry, or urban development mandates, consultants need packaged market intelligence they can use in client deliverables. They would rather buy a white-label briefing than build from scratch — especially for markets outside their primary expertise.</p>
+        <ul>
+          <li>White-label country or city briefings</li>
+          <li>EU market comparison packs for market entry work</li>
+          <li>Data snapshots for slide decks and client reports</li>
+          <li>Ongoing subscription for teams covering real estate</li>
+        </ul>
+      </div>
+      <div class="seg-label">Priority: MEDIUM — strong fit · Reach via LinkedIn or direct intro</div>
+    </div>
+
+    <!-- MULTINATIONALS ENTERING NL/EU -->
+    <div class="seg seg-multi">
+      <div class="seg-head">
+        <h3>Multinationals Entering NL or EU</h3>
+        <div class="seg-sub">US / Asian companies setting up European HQ</div>
+      </div>
+      <div class="seg-body">
+        <p>Companies choosing between Amsterdam, Dublin, Luxembourg, or Frankfurt for their European base need comparative real estate, labour market, and cost-of-living intelligence. A one-time briefing pack or annual subscription covers their setup period.</p>
+        <ul>
+          <li>City selection briefings: NL vs EU alternatives</li>
+          <li>Office market context (where staff will live)</li>
+          <li>Housing affordability vs salary benchmarks</li>
+          <li>Expat relocation cost modelling</li>
+        </ul>
+      </div>
+      <div class="seg-label">Priority: MEDIUM — one-time or annual · Higher unit price</div>
+    </div>
+
+    <!-- LINKEDIN INBOUND -->
+    <div class="seg seg-linkedin">
+      <div class="seg-head">
+        <h3>LinkedIn Content → Inbound Leads</h3>
+        <div class="seg-sub">Olga's personal profile · TrendsOnFire page · Thought leadership</div>
+      </div>
+      <div class="seg-body">
+        <p>The fastest route to paid clients is not cold outreach — it is Olga posting sharp, data-backed market intelligence on LinkedIn every week. The right companies see it, recognise the quality, and reach out. This builds a pipeline without a sales team.</p>
+        <ul>
+          <li>Post monthly: NL housing market snapshot (CBS data)</li>
+          <li>Post quarterly: EU housing comparison (Eurostat)</li>
+          <li>Post on ECB decisions: rate impact on Dutch buyers</li>
+          <li>Post on CBS/Kadaster releases within 48 hours</li>
+          <li>Always end with: "Full briefing available — link in bio"</li>
+        </ul>
+      </div>
+      <div class="seg-label">Primary growth channel · Builds authority over 3–6 months · No sales budget needed</div>
+    </div>
+
+  </div>
+
+  <!-- PRIORITY MATRIX -->
+  <div class="section-title">Prioritisation — Where to Start</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Segment</th><th>Data fit</th><th>Sales cycle</th><th>Price point</th><th>Reach via LinkedIn?</th><th>Start when</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Real estate investors</strong></td>
+          <td class="data-ok">Excellent</td>
+          <td>2–4 weeks</td>
+          <td>€300–600/month</td>
+          <td>Yes — active on LinkedIn</td>
+          <td><span class="tag tag-go">Now</span></td>
+        </tr>
+        <tr>
+          <td><strong>HR / Corporate relocation</strong></td>
+          <td class="data-ok">Excellent</td>
+          <td>4–8 weeks</td>
+          <td>€400–800/month</td>
+          <td>Yes — HR leaders on LinkedIn</td>
+          <td><span class="tag tag-go">Now</span></td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn content machine</strong></td>
+          <td class="data-ok">Excellent</td>
+          <td>3–6 months to build pipeline</td>
+          <td>—</td>
+          <td>This IS the channel</td>
+          <td><span class="tag tag-go">Now</span></td>
+        </tr>
+        <tr>
+          <td><strong>Property developers</strong></td>
+          <td class="data-ok">Strong</td>
+          <td>4–12 weeks</td>
+          <td>€500–1,200/month</td>
+          <td>Partially</td>
+          <td><span class="tag tag-wait">After first clients</span></td>
+        </tr>
+        <tr>
+          <td><strong>Consultancies</strong></td>
+          <td class="data-ok">Strong</td>
+          <td>4–8 weeks</td>
+          <td>€400–900/month</td>
+          <td>Yes</td>
+          <td><span class="tag tag-wait">After first clients</span></td>
+        </tr>
+        <tr>
+          <td><strong>Multinationals entering NL/EU</strong></td>
+          <td class="data-ok">Good</td>
+          <td>6–16 weeks</td>
+          <td>€1,000–3,000 one-off</td>
+          <td>Partially</td>
+          <td><span class="tag tag-wait">After proof of concept</span></td>
+        </tr>
+        <tr>
+          <td><strong>Active real estate agencies</strong></td>
+          <td class="data-no">Poor — they have better data</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="tag tag-no">Do not target</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WHAT A REPORT LOOKS LIKE -->
+  <div class="section-title">What Each Client Type Would Receive</div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h3>Real estate investor — quarterly briefing</h3>
+    <p style="margin-top:8px;">City-level price trend (CBS/Kadaster), rental yield benchmarking, housing shortage vs new construction pipeline, ECB rate scenarios and impact on affordability, population and migration inflow. 8–12 pages. Delivered first week of each quarter. Available in NL/EN. Branded under TrendsOnFire or white-labelled.</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <h3>HR / relocation team — city comparison pack</h3>
+    <p style="margin-top:8px;">Side-by-side: Amsterdam, Utrecht, Eindhoven, Rotterdam, Den Haag. For each: avg purchase price, avg rent (1–3 bed), price growth trajectory, commute context, expat concentration, energy cost index. One-time delivery or quarterly update. EN only. Can include EU cities on request (Eurostat-sourced).</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <h3>Property developer — feasibility briefing</h3>
+    <p style="margin-top:8px;">Market demand analysis for a specific city or segment: population growth to 2030, household formation, housing shortage gap, planning pipeline (CBS/RVO), price band distribution, energy label transition pace. Typically one-off with optional quarterly update. Higher price point justified by specificity.</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <h3>LinkedIn content — monthly post series</h3>
+    <p style="margin-top:8px;">Based on each CBS/Kadaster/Eurostat release: one post with a sharp data point, one visual (chart from TrendsOnFire), two-sentence takeaway, CTA to full briefing. Builds Olga's authority as a housing intelligence analyst. Drives inbound from all other segments over time.</p>
+  </div>
+
+  <!-- OUTREACH APPROACH -->
+  <div class="section-title">How to Approach Prospects</div>
+
+  <div class="callout callout-green">
+    <strong>Core principle — same as GustoCasa but for the right clients:</strong> Never cold pitch. First demonstrate the product. Post on LinkedIn → they see it. Then send a short message: "I built a market briefing relevant to your team — would you like to see it?" Attach a sample relevant to their sector and city. The product closes itself once seen by the right audience.
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Channel</th><th>For which segment</th><th>Approach</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>LinkedIn posts (Olga's profile)</strong></td>
+          <td>All segments</td>
+          <td>Post market data insights monthly. Investors, HR leads, developers, and consultants all follow housing data. Inbound interest arrives within 3–6 months of consistent posting.</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn DM</strong></td>
+          <td>Investors, HR leads, consultants</td>
+          <td>Reference their recent post or company news. Share a specific data point relevant to them. Offer to send a sample briefing — not a sales deck.</td>
+        </tr>
+        <tr>
+          <td><strong>Direct email</strong></td>
+          <td>Property developers, multinationals</td>
+          <td>Short personalised email with one specific insight about their market or project type. Link to relevant sample report page on trendsonfire.com.</td>
+        </tr>
+        <tr>
+          <td><strong>Olga's network (warm)</strong></td>
+          <td>All segments</td>
+          <td>Given Olga's background in real estate and data, there are existing contacts in investor, developer, and corporate circles. Warm intro is fastest path to first client.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGES STILL NEEDED -->
+  <div class="section-title">Pages Still to Build</div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Page</th><th>Purpose</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sample report — real estate investor</strong></td>
+          <td>Show a quarterly briefing: price trends, yields, ECB scenarios. The GustoCasa sample adapted for an investor audience, stripped of agency-specific sections.</td>
+          <td><span class="tag tag-wait">To build</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sample report — HR / relocation</strong></td>
+          <td>City comparison pack: Amsterdam vs Utrecht vs Eindhoven. Costs, trends, commute context. EN only.</td>
+          <td><span class="tag tag-wait">To build</span></td>
+        </tr>
+        <tr>
+          <td><strong>Services landing page (public)</strong></td>
+          <td>Public-facing page on trendsonfire.com listing what TrendsOnFire offers and to whom. Replace the current agency-focused services page.</td>
+          <td><span class="tag tag-wait">To build</span></td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn content calendar</strong></td>
+          <td>Monthly schedule of posts: which data release, what angle, draft copy. Admin page for Olga's own use.</td>
+          <td><span class="tag tag-wait">To build</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a class="home" href="/admin/delisted.html">← Back to Admin</a>
+
+</div>
+</body>
+</html>
