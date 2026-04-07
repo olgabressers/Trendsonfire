@@ -73,6 +73,7 @@
       .stats { grid-template-columns:1fr 1fr; }
       .two-col { grid-template-columns:1fr !important; }
       .trends-grid { grid-template-columns:1fr; }
+      .articles-grid { grid-template-columns:1fr !important; }
       .region-cards { grid-template-columns:1fr 1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
       .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
@@ -184,120 +185,103 @@
 
 <main>
 
-  <!-- ── CONSUMER PRODUCTS ─────────────────────────────────────────────── -->
-  <div class="trends-title">Consumer Products</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:48px;">
+  <!-- ── ARTICLES ──────────────────────────────────────────────────────── -->
+  <div class="trends-title">Published Reports</div>
+  <div class="articles-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;">
 
-    <div class="coming-soon" style="border-color:#dc2626;border-style:solid;cursor:pointer;margin-bottom:0;position:relative;" onclick="location.href='furniture-market.html'">
-      <div style="position:absolute;top:14px;right:14px;background:#dc2626;color:white;font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px;letter-spacing:1px;">BREAKING</div>
-      <div class="cs-icon">🛋️</div>
-      <h2>The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market</h2>
-      <p>Fonq collapses after 18 years. A structural analysis of why online pure-play furniture keeps failing in Europe — return economics, last-mile costs, housing market sensitivity — and who is actually winning in 2026.</p>
-      <a href="furniture-market.html" style="display:inline-block;margin-top:16px;background:#dc2626;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Read the analysis →</a>
-    </div>
+    <a href="furniture-market.html" class="trend-card" style="text-decoration:none;border-top:3px solid #dc2626;cursor:pointer;">
+      <div class="tc-tag" style="color:#dc2626;">Consumer Products</div>
+      <div class="tc-title">The Furniture Trap &mdash; What Fonq&rsquo;s Bankruptcy Reveals About Europe&rsquo;s Online Home Market</div>
+      <div class="tc-body">Why online pure-play furniture keeps failing in Europe &mdash; return economics, last-mile costs, housing market sensitivity &mdash; and who is actually winning in 2026.</div>
+    </a>
 
-    <div class="coming-soon" style="border-color:#e05c00;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='sporting-goods-brands.html'">
-      <div class="cs-icon">👟</div>
-      <h2>Sporting Goods Brands — European Market Analysis — Live</h2>
-      <p>Competitive intelligence across 18 brands — Nike, Adidas, Puma, On Running, Lululemon and more. DTC maturity, omni-channel capability, European footprint, and 9 white space opportunities.</p>
-      <a href="sporting-goods-brands.html" style="display:inline-block;margin-top:16px;background:#e05c00;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the analysis →</a>
-    </div>
+    <a href="sporting-goods-brands.html" class="trend-card" style="text-decoration:none;border-top:3px solid #e05c00;cursor:pointer;">
+      <div class="tc-tag" style="color:#e05c00;">Sporting Goods</div>
+      <div class="tc-title">Sporting Goods Brands &mdash; European Market Analysis</div>
+      <div class="tc-body">Competitive intelligence across 18 brands &mdash; Nike, Adidas, Puma, On Running, Lululemon and more. DTC maturity, omni-channel capability, and 9 white space opportunities.</div>
+    </a>
 
-    <div class="coming-soon" style="border-color:#111;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='nike.html'">
-      <div class="cs-icon">✔</div>
-      <h2>Nike EMEA Transformation Tracker — Live</h2>
-      <p>Nike's 2022–2026 transformation: DTC reset, EMEA revenue trends, competitor benchmarks, omni-channel maturity, men's planning capability, and 10 strategic opportunities.</p>
-      <a href="nike.html" style="display:inline-block;margin-top:16px;background:#111;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the dashboard →</a>
-    </div>
+    <a href="nike.html" class="trend-card" style="text-decoration:none;border-top:3px solid #111;cursor:pointer;">
+      <div class="tc-tag" style="color:#111;">Nike</div>
+      <div class="tc-title">Nike Transformation Intelligence &mdash; EMEA Focus</div>
+      <div class="tc-body">FY2025 revenue &minus;10%, DTC reversal, EMEA restructuring under Elliott Hill, competitive benchmarks, and 10 strategic opportunities.</div>
+    </a>
 
-    <div class="coming-soon" style="border-color:var(--fuchsia);border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='../v2/index.html'">
-      <div class="cs-icon">📦</div>
-      <h2>NL Inventory Visibility Monitor — Live</h2>
-      <p>Real-time stock transparency benchmarking across 43 Dutch retailers in 6 categories — who shows live stock, delivery dates, and back-in-stock alerts.</p>
-      <a href="../v2/index.html" style="display:inline-block;margin-top:16px;background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Open tracker →</a>
-    </div>
+    <a href="../v2/index.html" class="trend-card" style="text-decoration:none;border-top:3px solid var(--fuchsia);cursor:pointer;">
+      <div class="tc-tag" style="color:var(--fuchsia);">Inventory Intelligence</div>
+      <div class="tc-title">NL Inventory Visibility Monitor</div>
+      <div class="tc-body">Stock transparency benchmarking across 43 Dutch retailers in 6 categories &mdash; who shows live stock, delivery dates, and back-in-stock alerts.</div>
+    </a>
 
-  </div>
+    <a href="b2b-marketplace.html" class="trend-card" style="text-decoration:none;border-top:3px solid #0369a1;cursor:pointer;">
+      <div class="tc-tag" style="color:#0369a1;">Marketplaces</div>
+      <div class="tc-title">B2B Marketplace Intelligence &mdash; Europe</div>
+      <div class="tc-body">Market size, sector white space, pan-European expansion playbook, M&amp;A valuation benchmarks, and strategic moves in European B2B marketplaces.</div>
+    </a>
 
-  <!-- ── MARKETPLACES ──────────────────────────────────────────────────── -->
-  <div class="trends-title">Marketplaces</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:48px;">
-
-    <div class="coming-soon" style="border-color:#0369a1;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='b2b-marketplace.html'">
-      <div class="cs-icon">🏭</div>
-      <h2>B2B Marketplace Intelligence — Europe Live</h2>
-      <p>Market size, sector white space, pan-European expansion playbook, M&amp;A valuation benchmarks, and 6 strategic moves nobody has made yet in European B2B marketplaces.</p>
-      <a href="b2b-marketplace.html" style="display:inline-block;margin-top:16px;background:#0369a1;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the data →</a>
-    </div>
+    <a href="flexibility-markets.html" class="trend-card" style="text-decoration:none;border-top:3px solid #ca8a04;cursor:pointer;">
+      <div class="tc-tag" style="color:#ca8a04;">Energy</div>
+      <div class="tc-title">European Energy Flexibility Markets &amp; Demand Response Intelligence 2026</div>
+      <div class="tc-body">How Europe&rsquo;s balancing markets, VPPs, and demand response are reshaping the energy landscape &mdash; NL, BE, and FR market intelligence.</div>
+    </a>
 
   </div>
 
-  <!-- ── ENERGY ────────────────────────────────────────────────────────── -->
-  <div class="trends-title">Energy</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:48px;">
-
-    <div class="coming-soon" style="border-color:#ca8a04;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='flexibility-markets.html'">
-      <div class="cs-icon">⚡</div>
-      <h2>European Energy Flexibility Markets &amp; Demand Response Intelligence 2026</h2>
-      <p>How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape — market size, key players, regulatory framework, and COO operational benchmarks across NL, BE, and FR.</p>
-      <a href="flexibility-markets.html" style="display:inline-block;margin-top:16px;background:#ca8a04;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the analysis →</a>
-    </div>
-
-  </div>
-
-  <div class="trends-title">Key Retail &amp; E-Commerce Trends — 2026</div>
+  <div class="trends-title">Key Retail &amp; E-Commerce Trends &mdash; 2026</div>
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-bottom:20px;">Trend observations are editorial analysis based on the TrendsOnFire NL Inventory Visibility Monitor (43 retailers, March 2026) and publicly available industry research. Specific percentages without a named source are editorial estimates and should be treated as directional.</div>
   <div class="trends-grid">
 
     <div class="trend-card">
-      <div class="tc-tag">🔥 Inventory Visibility</div>
+      <div class="tc-tag">Inventory Visibility</div>
       <div class="tc-title">Real-time stock transparency is now a conversion driver, not a nice-to-have</div>
-      <div class="tc-body">Retailers showing live stock levels, low-stock alerts, and variant availability see <strong>15–25% higher add-to-cart rates</strong>. Yet 47% of NL fashion retailers still don't surface stock signals at variant level.</div>
+      <div class="tc-body">Retailers showing live stock levels, low-stock alerts, and variant availability are likely to see materially higher add-to-cart rates. Yet based on the TrendsOnFire NL audit, <strong>nearly half of NL fashion retailers still do not surface stock signals at variant level</strong>.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">📦 Fulfilment</div>
-      <div class="tc-title">Delivery date accuracy has become a trust signal — not just a logistics metric</div>
-      <div class="tc-body">Shoppers treat promised delivery dates as a purchase commitment. <strong>Retailers who miss dates lose 34% of that customer's future spend</strong>. Only 53% of NL retailers currently show delivery dates tied to real inventory.</div>
+      <div class="tc-tag">Fulfilment</div>
+      <div class="tc-title">Delivery date accuracy has become a trust signal &mdash; not just a logistics metric</div>
+      <div class="tc-body">Shoppers treat promised delivery dates as a purchase commitment. Based on the TrendsOnFire NL audit, <strong>only about half of NL retailers currently show delivery dates tied to real inventory</strong> &mdash; the rest show generic estimates or no date at all.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🏬 Store Integration</div>
+      <div class="tc-tag">Store Integration</div>
       <div class="tc-title">Store-level inventory visibility is the new baseline for omni-channel retail</div>
-      <div class="tc-body">Department stores and electronics retailers lead on store-level stock visibility. <strong>Fashion lags significantly</strong> — only 4 out of 13 NL fashion brands assessed allow shoppers to check store-level availability online.</div>
+      <div class="tc-body">Department stores and electronics retailers lead on store-level stock visibility. <strong>Fashion lags significantly</strong> &mdash; only 4 out of 13 NL fashion brands assessed in the TrendsOnFire monitor allow shoppers to check store-level availability online.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🔔 Engagement</div>
+      <div class="tc-tag">Engagement</div>
       <div class="tc-title">Back-in-stock notifications: the most under-used re-engagement tool in retail</div>
-      <div class="tc-body">Brands with back-in-stock alerts recover <strong>up to 22% of lost demand</strong>. Luxury brands are missing this almost entirely — only 2 of 5 NL luxury brands assessed offer this feature.</div>
+      <div class="tc-body">Back-in-stock alerts are a proven demand recovery mechanism. Based on the TrendsOnFire NL audit, <strong>luxury brands are missing this almost entirely</strong> &mdash; only 2 of 5 NL luxury brands assessed offer this feature.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🛍️ Luxury Retail</div>
-      <div class="tc-title">Luxury's deliberate scarcity strategy conflicts with digital shopper expectations</div>
-      <div class="tc-body">Luxury brands resist low-stock urgency messaging to protect brand positioning. But <strong>digital-native luxury shoppers expect transparency</strong>. Tiffany &amp; Co leads with 5/6 criteria — others risk losing younger affluent consumers.</div>
+      <div class="tc-tag">Luxury Retail</div>
+      <div class="tc-title">Luxury&rsquo;s deliberate scarcity strategy conflicts with digital shopper expectations</div>
+      <div class="tc-body">Luxury brands resist low-stock urgency messaging to protect brand positioning. But <strong>digital-native luxury shoppers increasingly expect transparency</strong>. In the TrendsOnFire NL audit, Tiffany &amp; Co leads with 5/6 criteria met.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">⚡ Checkout Experience</div>
-      <div class="tc-title">One-click checkout is no longer a luxury — it's an expectation</div>
-      <div class="tc-body">Brands that haven't simplified payment flows are losing <strong>20–30% of carts at checkout</strong>. BNPL, digital wallets, and one-click options are now baseline expectations for shoppers under 45.</div>
+      <div class="tc-tag">Checkout Experience</div>
+      <div class="tc-title">Simplified checkout is no longer a luxury &mdash; it is an expectation</div>
+      <div class="tc-body">BNPL, digital wallets, and one-click options are now baseline expectations for shoppers under 45. Brands that have not simplified payment flows may be losing a significant share of carts at checkout &mdash; an industry-wide pattern consistently reported by Baymard Institute research.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🏪 BOPIS</div>
-      <div class="tc-title">Buy Online, Pick Up In Store is no longer differentiating — it's table stakes</div>
-      <div class="tc-body">BOPIS adoption has crossed the tipping point. <strong>Retailers without it are losing 12–18% of transactions</strong> to competitors. The new battleground is speed: same-hour pickup is the next frontier.</div>
+      <div class="tc-tag">BOPIS</div>
+      <div class="tc-title">Buy Online, Pick Up In Store is no longer differentiating &mdash; it is table stakes</div>
+      <div class="tc-body">Click &amp; collect adoption has crossed the tipping point across European retail. The new battleground is speed: same-hour pickup is emerging as the next frontier for retailers with dense store networks.</div>
     </div>
 
   </div>
 
+  <!-- ABOUT THE AUTHOR -->
   <div class="li-cta">
     <div>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700">Available for</p>
-      <p>Interim management &amp; consulting services in retail, e-commerce, and business transformation across Europe.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700">About the Author</p>
+      <p>TrendsOnFire is a market intelligence platform publishing editorial analysis on retail, technology, and transformation trends across Europe. Written by Olga Bressers, a senior executive with experience in commercial operations, omni-channel strategy, and business transformation.</p>
     </div>
-    <a href="../contact/">Connect →</a>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
   </div>
 </main>
 
