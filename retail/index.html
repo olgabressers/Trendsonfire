@@ -74,6 +74,7 @@
       .two-col { grid-template-columns:1fr !important; }
       .trends-grid { grid-template-columns:1fr; }
       .articles-grid { grid-template-columns:1fr !important; }
+      .articles-grid a { margin-bottom:0; }
       .region-cards { grid-template-columns:1fr 1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
       .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
@@ -185,44 +186,74 @@
 
 <main>
 
-  <!-- ── ARTICLES ──────────────────────────────────────────────────────── -->
+  <!-- ── REPORTS ──────────────────────────────────────────────────────── -->
   <div class="trends-title">Published Reports</div>
   <div class="articles-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;">
 
-    <a href="furniture-market.html" class="trend-card" style="text-decoration:none;border-top:3px solid #dc2626;cursor:pointer;">
-      <div class="tc-tag" style="color:#dc2626;">Consumer Products</div>
-      <div class="tc-title">The Furniture Trap &mdash; What Fonq&rsquo;s Bankruptcy Reveals About Europe&rsquo;s Online Home Market</div>
-      <div class="tc-body">Why online pure-play furniture keeps failing in Europe &mdash; return economics, last-mile costs, housing market sensitivity &mdash; and who is actually winning in 2026.</div>
+    <a href="furniture-market.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#dc2626,#991b1b);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 21h18M4 18h16V8a2 2 0 00-2-2H6a2 2 0 00-2 2v10z"/><path d="M2 18h20v3H2z"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Analysis</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">The Furniture Trap &mdash; Why Fonq Failed After 18 Years</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Return economics, last-mile costs, housing market sensitivity &mdash; and who is actually winning in European online furniture.</div>
+      </div>
     </a>
 
-    <a href="sporting-goods-brands.html" class="trend-card" style="text-decoration:none;border-top:3px solid #e05c00;cursor:pointer;">
-      <div class="tc-tag" style="color:#e05c00;">Sporting Goods</div>
-      <div class="tc-title">Sporting Goods Brands &mdash; European Market Analysis</div>
-      <div class="tc-body">Competitive intelligence across 18 brands &mdash; Nike, Adidas, Puma, On Running, Lululemon and more. DTC maturity, omni-channel capability, and 9 white space opportunities.</div>
+    <a href="sporting-goods-brands.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#e05c00,#9a3412);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">18 Brands</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">Where Sporting Goods Brands Are Losing &mdash; and Where the White Space Is</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Nike, Adidas, On Running, Lululemon and 14 more. DTC maturity, omni-channel capability, and 9 white space opportunities.</div>
+      </div>
     </a>
 
-    <a href="nike.html" class="trend-card" style="text-decoration:none;border-top:3px solid #111;cursor:pointer;">
-      <div class="tc-tag" style="color:#111;">Nike</div>
-      <div class="tc-title">Nike Transformation Intelligence &mdash; EMEA Focus</div>
-      <div class="tc-body">FY2025 revenue &minus;10%, DTC reversal, EMEA restructuring under Elliott Hill, competitive benchmarks, and 10 strategic opportunities.</div>
+    <a href="nike.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#111,#1a1a2e);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Deep Dive</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">Nike: The Transformation That Had to Happen &mdash; and What Comes Next</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">FY2025 revenue &minus;10%, DTC reversal, EMEA restructuring under Elliott Hill, and 10 strategic opportunities.</div>
+      </div>
     </a>
 
-    <a href="../v2/index.html" class="trend-card" style="text-decoration:none;border-top:3px solid var(--fuchsia);cursor:pointer;">
-      <div class="tc-tag" style="color:var(--fuchsia);">Inventory Intelligence</div>
-      <div class="tc-title">NL Inventory Visibility Monitor</div>
-      <div class="tc-body">Stock transparency benchmarking across 43 Dutch retailers in 6 categories &mdash; who shows live stock, delivery dates, and back-in-stock alerts.</div>
+    <a href="../v2/index.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#8b1a6a,#5b1147);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Live Tracker</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">NL Inventory Visibility Monitor &mdash; 43 Retailers Benchmarked</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Who shows live stock, delivery dates, and back-in-stock alerts? Real-time audit across 6 retail categories.</div>
+      </div>
     </a>
 
-    <a href="b2b-marketplace.html" class="trend-card" style="text-decoration:none;border-top:3px solid #0369a1;cursor:pointer;">
-      <div class="tc-tag" style="color:#0369a1;">Marketplaces</div>
-      <div class="tc-title">B2B Marketplace Intelligence &mdash; Europe</div>
-      <div class="tc-body">Market size, sector white space, pan-European expansion playbook, M&amp;A valuation benchmarks, and strategic moves in European B2B marketplaces.</div>
+    <a href="b2b-marketplace.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#0369a1,#0c4a6e);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Market Data</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">The B2B Marketplace Opportunity in Europe &mdash; &euro;1.5T and 12% Penetrated</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Sector gaps, pan-European expansion playbook, M&amp;A benchmarks, and the strategic moves nobody has made yet.</div>
+      </div>
     </a>
 
-    <a href="flexibility-markets.html" class="trend-card" style="text-decoration:none;border-top:3px solid #ca8a04;cursor:pointer;">
-      <div class="tc-tag" style="color:#ca8a04;">Energy</div>
-      <div class="tc-title">European Energy Flexibility Markets &amp; Demand Response Intelligence 2026</div>
-      <div class="tc-body">How Europe&rsquo;s balancing markets, VPPs, and demand response are reshaping the energy landscape &mdash; NL, BE, and FR market intelligence.</div>
+    <a href="flexibility-markets.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#ca8a04,#78350f);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Energy</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">Europe&rsquo;s Energy Flexibility Revolution &mdash; Balancing Markets, VPPs &amp; Demand Response</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">How distributed assets are bidding into real-time markets &mdash; NL, BE, and FR regulatory framework and key players.</div>
+      </div>
     </a>
 
   </div>
