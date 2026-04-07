@@ -90,13 +90,6 @@
     .badge-a { background: #fef3c7; color: #92400e; }
     .badge-r { background: #fee2e2; color: #991b1b; }
 
-    /* KPI table */
-    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
-    .kpi-card { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 20px; }
-    .kpi-metric { font-size: 26px; font-weight: 800; color: var(--violet); margin-bottom: 4px; }
-    .kpi-label { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .kpi-desc { font-size: 11.5px; color: var(--sub); line-height: 1.4; }
-
     /* Country cards */
     .country-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
     .country-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; }
@@ -106,6 +99,24 @@
     .country-facts li { font-size: 12px; color: var(--sub); padding-left: 14px; position: relative; line-height: 1.4; }
     .country-facts li::before { content: '▸'; position: absolute; left: 0; color: var(--violet); font-size: 9px; top: 3px; }
     .country-facts li strong { color: var(--text); }
+
+    /* Source note */
+    .source-note { font-size: 11.5px; color: #9ca3af; margin-top: 10px; padding: 10px 14px; background: #f9fafb; border-radius: 6px; line-height: 1.5; border-left: 3px solid #e5e7eb; }
+
+    /* Inline bar chart */
+    .bar-chart { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .bc-row { display: flex; align-items: center; gap: 10px; }
+    .bc-label { font-size: 12px; font-weight: 600; color: var(--text); width: 140px; flex-shrink: 0; line-height: 1.3; }
+    .bc-track { flex: 1; background: #f1f5f9; border-radius: 5px; height: 24px; overflow: hidden; }
+    .bc-fill { height: 100%; border-radius: 5px; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: white; white-space: nowrap; }
+    .bc-value { font-size: 12px; font-weight: 700; color: var(--navy); width: 56px; text-align: right; flex-shrink: 0; }
+
+    /* Conclusion */
+    .conclusion-box { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1px solid #c4b5fd; border-radius: 14px; padding: 32px; margin-bottom: 40px; }
+    .conclusion-box h2 { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .conclusion-box p { font-size: 14px; color: #374151; line-height: 1.75; margin-bottom: 12px; }
+    .conclusion-box p:last-child { margin-bottom: 0; }
+    .conclusion-box strong { color: var(--navy); }
 
     /* Regulatory timeline */
     .reg-timeline { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
@@ -223,33 +234,70 @@
   <div class="stat-cards">
     <div class="stat-card">
       <div class="sc-label">European Lighting Market 2025</div>
-      <div class="sc-value">€14.2B</div>
-      <div class="sc-desc">Total EU market across commercial, industrial, residential, and outdoor segments</div>
+      <div class="sc-value">~€12–16B</div>
+      <div class="sc-desc">Total EU market estimate across commercial, industrial, residential, and outdoor. <em style="font-size:10px;color:#9ca3af;">[Industry research estimate — exact figure not publicly verifiable; range cited by multiple market research publications]</em></div>
     </div>
     <div class="stat-card">
-      <div class="sc-label">LED Penetration Rate</div>
-      <div class="sc-value green">~76%</div>
-      <div class="sc-desc">Share of EU lighting installations now using LED technology; up from ~30% in 2017</div>
+      <div class="sc-label">Global Residential LED Sales Share (2022)</div>
+      <div class="sc-value green">~50%</div>
+      <div class="sc-desc">Share of global residential lighting sales using LED technology; up from ~5% in 2013. <em style="font-size:10px;color:#9ca3af;">Source: IEA, Lighting sector data 2023</em></div>
     </div>
     <div class="stat-card">
-      <div class="sc-label">Smart Lighting CAGR 2025–2030</div>
-      <div class="sc-value green">~18%</div>
-      <div class="sc-desc">Connected and IoT-enabled lighting growing rapidly from a low base (&lt;15% penetration)</div>
+      <div class="sc-label">IEA LED Target for Net Zero</div>
+      <div class="sc-value green">100%</div>
+      <div class="sc-desc">All lighting sales globally should be LED by 2025 per IEA Net Zero Emissions scenario. LED efficacy must reach ~140 lm/W by 2030. <em style="font-size:10px;color:#9ca3af;">Source: IEA, Lighting 2023</em></div>
     </div>
     <div class="stat-card">
       <div class="sc-label">China Share of Global LED Components</div>
-      <div class="sc-value amber">~65%</div>
-      <div class="sc-desc">Chinese manufacturers produce the majority of global LED chips, drivers, and finished luminaires</div>
+      <div class="sc-value amber">Majority</div>
+      <div class="sc-desc">Chinese manufacturers produce the largest share of global LED chips, drivers, and finished luminaires. Guangdong cluster accounts for a significant share of global production capacity. <em style="font-size:10px;color:#9ca3af;">[Industry observation — exact % not from a single verifiable public source]</em></div>
     </div>
     <div class="stat-card">
-      <div class="sc-label">Commercial Buildings Segment</div>
-      <div class="sc-value">€6.1B</div>
-      <div class="sc-desc">Largest single segment — offices, retail, hospitality — driven by spec and key account channels</div>
+      <div class="sc-label">Lighting share of EU household energy</div>
+      <div class="sc-value">14.5%</div>
+      <div class="sc-desc">Lighting and electrical appliances share of final energy consumption in EU households (2023). Electricity covers 100% of lighting energy needs. <em style="font-size:10px;color:#9ca3af;">Source: Eurostat, Energy consumption in households 2023</em></div>
     </div>
     <div class="stat-card">
-      <div class="sc-label">Energy Savings vs Conventional</div>
-      <div class="sc-value green">up to 85%</div>
-      <div class="sc-desc">LED vs incandescent/halogen; additional 30–50% possible with smart dimming and controls</div>
+      <div class="sc-label">Energy Savings vs Incandescent</div>
+      <div class="sc-value green">~85%</div>
+      <div class="sc-desc">LED efficacy exceeds 100 lm/W vs ~15 lm/W for incandescent — implying ~85% energy reduction for equivalent light output. Additional 30–50% possible with smart controls. <em style="font-size:10px;color:#9ca3af;">Source: IEA, Lighting 2023</em></div>
+    </div>
+  </div>
+
+  <!-- LED ADOPTION CHART -->
+  <div class="section" style="margin-bottom:40px;">
+    <div class="section-title">LED Adoption Trajectory — Global Residential Sales</div>
+    <div class="section-divider"></div>
+    <div class="card">
+      <p style="font-size:13px;color:var(--sub);margin-bottom:20px;line-height:1.6;">Share of global residential lighting sales that are LED technology. Growth from ~5% in 2013 to ~50% in 2022 is confirmed by IEA. The IEA Net Zero scenario targets 100% LED sales by 2025. Intermediate points (2016, 2019) are linear interpolations between confirmed data points and are labelled as estimates.</p>
+      <div class="bar-chart">
+        <div class="bc-row">
+          <div class="bc-label">2013 (IEA confirmed)</div>
+          <div class="bc-track"><div class="bc-fill" style="width:5%;background:#c4b5fd;min-width:32px;">~5%</div></div>
+          <div class="bc-value">~5%</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">2016 <em style="font-size:10px;font-weight:400;color:#9ca3af;">[est.]</em></div>
+          <div class="bc-track"><div class="bc-fill" style="width:18%;background:#a78bfa;">~18%</div></div>
+          <div class="bc-value">~18%</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">2019 <em style="font-size:10px;font-weight:400;color:#9ca3af;">[est.]</em></div>
+          <div class="bc-track"><div class="bc-fill" style="width:36%;background:#8b5cf6;">~36%</div></div>
+          <div class="bc-value">~36%</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">2022 (IEA confirmed)</div>
+          <div class="bc-track"><div class="bc-fill" style="width:50%;background:#7c3aed;">~50%</div></div>
+          <div class="bc-value">~50%</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">2025 IEA Net Zero target</div>
+          <div class="bc-track"><div class="bc-fill" style="width:100%;background:#059669;">100% — all sales should be LED by 2025 per IEA</div></div>
+          <div class="bc-value">100%</div>
+        </div>
+      </div>
+      <div class="source-note">Source: IEA, Lighting sector data 2023 (energy.iea.org). Confirmed data points: ~5% in 2013, ~50% in 2022. Intermediate figures are linear interpolations, labelled [est.]. Note: this tracks global <em>residential</em> new sales share — commercial installed base penetration and EU-specific figures may differ. The IEA does not publish a single EU-only LED penetration figure.</div>
     </div>
   </div>
 
@@ -305,6 +353,7 @@
           </li>
         </ul>
         <p style="font-size:12px;color:var(--sub);margin-top:16px;line-height:1.5;">The commercial insight: every regulatory phase-out creates a window of 12–24 months where installers and facility managers replace entire installations — not just lamps. This is the B2B sales moment. Positioning service and replacement contracts ahead of each deadline is the highest-ROI commercial activity in the sector.</p>
+        <div class="source-note">Source: EU Regulation 2019/2020 (Ecodesign requirements for light sources and separate control gear). Phase-out dates are regulatory fact from official EU legislation. Available at: eur-lex.europa.eu. The 2027 tightening is anticipated based on published Ecodesign Working Plan — not yet confirmed regulation.</div>
       </div>
       <div class="card">
         <div class="card-tag">EU Energy Label — A-G Scale</div>
@@ -313,6 +362,7 @@
         <p style="margin-bottom: 14px;">This creates a persistent upgrade signal in the market. Building managers and procurement teams see "B" or "C" on their current LED fixtures and may perceive that higher-efficiency alternatives exist — which they do, as Class A products on the new scale represent the top ~5% of efficient LED products.</p>
         <p style="margin-bottom: 14px;"><strong>The commercial opportunity:</strong> position premium LED and smart-enabled luminaires against the new energy label scale. A Class A luminaire with DALI controls and occupancy sensing can achieve payback in under 5 years in a commercial building context — making the upgrade conversation financially straightforward.</p>
         <p>For installers and distributors, the label rescaling means <strong>every existing LED installation from pre-2021 is a potential upgrade conversation</strong> — even if the customer believes they already "did LED."</p>
+        <div class="source-note">Source: EU Regulation 2021/341 amended EU energy labelling for light sources. New A–G scale effective September 2021, replacing the old A+/A++/A+++ classification. Official EU label information: energy-label.eu.</div>
       </div>
     </div>
   </div>
@@ -339,7 +389,7 @@
             <tr>
               <td><strong>Signify (Philips brand)</strong></td>
               <td class="sub">Netherlands</td>
-              <td><span class="badge badge-v">Market leader ~28% share</span></td>
+              <td><span class="badge badge-v">Global market leader</span></td>
               <td class="sub">Brand recognition, full portfolio, Interact IoT platform</td>
               <td><span class="badge badge-g">Dominant across EU</span></td>
               <td class="sub">Spec + distribution</td>
@@ -396,7 +446,34 @@
         </table>
       </div>
     </div>
-    <p style="font-size:12px;color:var(--sub);margin-top:10px;padding:0 4px;">Source: Company reports, industry estimates, public filings. Market share figures are indicative. EU Ecodesign anti-dumping duties apply selectively to Chinese LED tube products (since 2013).</p>
+    <div class="source-note" style="margin:12px 4px 0;">Positioning based on editorial analysis of publicly available information. No market share percentages are stated as specific % cannot be verified from free public sources. Revenue figures and employee counts sourced from Wikipedia / company annual reports where publicly listed. EU anti-dumping duties on Chinese LED tube products in force since 2013.</div>
+    <div style="padding:24px 0 0;">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Verified Revenue — Publicly Listed Companies</div>
+      <div style="font-size:12px;color:var(--sub);margin-bottom:16px;">Only two European lighting companies disclose comparable public revenue. OPPLE (SHA: 603515) is listed in China but does not break out European revenue publicly. Trilux is private.</div>
+      <div class="bar-chart">
+        <div class="bc-row">
+          <div class="bc-label">Signify 2024</div>
+          <div class="bc-track"><div class="bc-fill" style="width:100%;background:#5b21b6;">€6.14B global revenue</div></div>
+          <div class="bc-value">€6.14B</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">Zumtobel FY2022/23</div>
+          <div class="bc-track"><div class="bc-fill" style="width:19.7%;background:#7c3aed;">€1.21B</div></div>
+          <div class="bc-value">€1.21B</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">ams-OSRAM</div>
+          <div class="bc-track" style="background:#f1f5f9;"><span style="font-size:11px;color:#9ca3af;padding-left:10px;line-height:24px;display:inline-block;">Revenue not split by lighting segment since 2020 pivot to automotive/photonics</span></div>
+          <div class="bc-value" style="color:#9ca3af;">n/a</div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-label">OPPLE Europe</div>
+          <div class="bc-track" style="background:#f1f5f9;"><span style="font-size:11px;color:#9ca3af;padding-left:10px;line-height:24px;display:inline-block;">European revenue not publicly disclosed</span></div>
+          <div class="bc-value" style="color:#9ca3af;">n/a</div>
+        </div>
+      </div>
+      <div class="source-note" style="margin-top:12px;">Sources: Signify — Wikipedia (annual report 2024, Euronext Amsterdam: LIGHT). Zumtobel — Wikipedia (FY2022/23 annual report). ams-OSRAM — repositioned toward automotive/photonics after AMS AG acquisition July 2020 (Wikipedia). OPPLE — listed on Shanghai Stock Exchange (SHA: 603515); European revenue not separately disclosed.</div>
+    </div>
   </div>
 
   <!-- CHINA TO EUROPE SUPPLY CHAIN -->
@@ -474,112 +551,182 @@
   <div class="section">
     <div class="section-title">Country Intelligence — Key EU Markets</div>
     <div class="section-divider"></div>
-    <div class="section-sub">Five largest or strategically important EU markets — each with distinct channel dynamics, customer profiles, and competitive intensity.</div>
-    <div class="country-cards">
-      <div class="country-card">
-        <div class="country-flag">🇩🇪</div>
-        <div class="country-name">Germany</div>
-        <ul class="country-facts">
-          <li><strong>Largest EU market</strong> — approximately €3.2B, highly specification-driven</li>
-          <li>Strong preference for EU/German-quality brands and CE-certified products</li>
-          <li>Electrical wholesale channel: Sonepar DE, Rexel DE dominant</li>
-          <li>OPPLE growing through Würth and Hagemeyer distribution</li>
-          <li>Industrial and outdoor segment large — automotive and manufacturing facilities</li>
-          <li>High sensitivity to product documentation and warranty terms</li>
-        </ul>
+    <div class="section-sub">Five major EU markets — each with distinct competitive dynamics, channel structure, and leading players. Country market sizes are editorial estimates; no single free public source provides country-level professional lighting breakdowns.</div>
+
+    <!-- GERMANY -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:28px;">🇩🇪</span>
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);">Germany</div>
+          <div style="font-size:12px;color:var(--sub);">Largest EU market — highly specification-driven · estimated €3B+ [ILLUSTRATIVE estimate — no public source]</div>
+        </div>
       </div>
-      <div class="country-card">
-        <div class="country-flag">🇫🇷</div>
-        <div class="country-name">France</div>
-        <ul class="country-facts">
-          <li><strong>€2.1B market</strong> — architect specification culture very strong</li>
-          <li>Public procurement significant: EDF Luminus municipal contracts</li>
-          <li>Leroy Merlin key DIY and professional channel account</li>
-          <li>French energy transition targets driving commercial retrofit activity</li>
-          <li>Strong hospitality and luxury retail segment — high CRI requirements</li>
-        </ul>
-      </div>
-      <div class="country-card">
-        <div class="country-flag">🇳🇱</div>
-        <div class="country-name">Netherlands</div>
-        <ul class="country-facts">
-          <li><strong>€0.7B market</strong> but OPPLE's European HQ — home market advantage in Eindhoven</li>
-          <li>Dense commercial real estate sector driving office lighting specification</li>
-          <li>DIY and renovation retail: Gamma, Karwei, Praxis key accounts</li>
-          <li>Amsterdam smart city initiatives creating public procurement opportunity</li>
-          <li>Strong housing corporation (woningcorporatie) procurement for social housing</li>
-        </ul>
-      </div>
-      <div class="country-card">
-        <div class="country-flag">🇵🇱</div>
-        <div class="country-name">Poland</div>
-        <ul class="country-facts">
-          <li><strong>€0.8B market</strong> — fastest growing EU market, large construction pipeline</li>
-          <li>Price-sensitive market, Chinese brands (OPPLE, Philips budget range) strong</li>
-          <li>EU cohesion funds driving public building retrofits and smart city projects</li>
-          <li>Large warehouse and logistics real estate sector — industrial lighting demand</li>
-          <li>Growing spec channel as Polish architecture practices develop</li>
-        </ul>
-      </div>
-      <div class="country-card">
-        <div class="country-flag">🇮🇹</div>
-        <div class="country-name">Italy</div>
-        <ul class="country-facts">
-          <li><strong>€1.4B market</strong> — design-led, architect influence very strong</li>
-          <li>Zumtobel and iGuzzini dominant in premium architectural segment</li>
-          <li>Strong hospitality and luxury retail — high design value expectations</li>
-          <li>Italian LED manufacturers (iGuzzini, Artemide) maintain local design premium</li>
-          <li>Significant public building retrofit pipeline via Superbonus-type incentive schemes</li>
-        </ul>
+      <div class="two-col" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Market Characteristics</div>
+          <ul class="country-facts">
+            <li>Strong preference for German or EU-certified brands — product documentation, LM-80 data, warranty terms are scrutinised</li>
+            <li>Industrial segment large — automotive, manufacturing, logistics facilities</li>
+            <li>Electrical wholesale dominated by Sonepar DE and Rexel DE; Hagemeyer/Wesco also present</li>
+            <li>Public procurement (municipalities, federal buildings) subject to HOAI and VOB procurement rules</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Competitive Landscape</div>
+          <ul class="country-facts">
+            <li><strong>Signify (Philips brand):</strong> dominant across all channels — spec, wholesale, and consumer retail</li>
+            <li><strong>Zumtobel / Tridonic:</strong> strong in premium architectural and controls segment; German-speaking market is home territory</li>
+            <li><strong>Trilux:</strong> Arnsberg-based, one of Germany's largest professional lighting manufacturers — deep spec channel relationships</li>
+            <li><strong>OPPLE:</strong> growing through distribution partnerships; price-competitive challenger in industrial and commercial segments</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <!-- FRANCE -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:28px;">🇫🇷</span>
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);">France</div>
+          <div style="font-size:12px;color:var(--sub);">Architect-led specification culture · strong public procurement · estimated €2B+ [ILLUSTRATIVE estimate]</div>
+        </div>
+      </div>
+      <div class="two-col" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Market Characteristics</div>
+          <ul class="country-facts">
+            <li>Architect specification culture is strong — lighting designers embedded in major Paris and regional practices</li>
+            <li>Public procurement significant: municipal street lighting, social housing, public buildings</li>
+            <li>French energy transition law (Loi Énergie-Climat) and RE2020 building regulation driving commercial retrofit</li>
+            <li>Hospitality and luxury retail — high CRI requirements, premium positioning important</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Competitive Landscape</div>
+          <ul class="country-facts">
+            <li><strong>Signify:</strong> market-wide presence across professional and consumer channels</li>
+            <li><strong>Rexel / Sonepar:</strong> major electrical wholesale distributors, both French-headquartered — deep channel power</li>
+            <li><strong>Trilux / Zumtobel:</strong> present in premium professional segment, particularly office and healthcare</li>
+            <li><strong>OPPLE:</strong> distribution-led entry; limited spec channel presence; competitive on price for commercial retrofit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- NETHERLANDS -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:28px;">🇳🇱</span>
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);">Netherlands</div>
+          <div style="font-size:12px;color:var(--sub);">HQ market for both Signify and OPPLE Europe · dense commercial real estate · estimated €0.6–0.8B [ILLUSTRATIVE estimate]</div>
+        </div>
+      </div>
+      <div class="two-col" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Market Characteristics</div>
+          <ul class="country-facts">
+            <li>Dense commercial real estate sector — Amsterdam, Rotterdam, Utrecht office markets drive specification activity</li>
+            <li>Strong housing corporation (woningcorporatie) procurement for social housing retrofit</li>
+            <li>DIY and renovation retail: Gamma, Karwei, Praxis key consumer and light-professional accounts</li>
+            <li>Smart city programmes (Amsterdam, Eindhoven) creating public lighting procurement opportunity</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Competitive Landscape</div>
+          <ul class="country-facts">
+            <li><strong>Signify (HQ Eindhoven):</strong> home market — very strong across all channels, Interact smart platform actively marketed</li>
+            <li><strong>OPPLE (EU HQ Eindhoven since 2013):</strong> home market for European operations; competitive on price and distribution coverage</li>
+            <li><strong>Trilux / Zumtobel:</strong> present in professional segment; less dominant than in German-speaking markets</li>
+            <li>Both major players being Eindhoven-based creates unusual local competitive intensity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- POLAND -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:28px;">🇵🇱</span>
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);">Poland</div>
+          <div style="font-size:12px;color:var(--sub);">Fastest-growing EU construction market · price-sensitive · large logistics real estate sector · estimated €0.7–0.9B [ILLUSTRATIVE estimate]</div>
+        </div>
+      </div>
+      <div class="two-col" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;Letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Market Characteristics</div>
+          <ul class="country-facts">
+            <li>Large construction pipeline — residential, warehouse, logistics, retail development</li>
+            <li>EU cohesion funds (2021–2027 programming period) driving public building energy retrofits</li>
+            <li>Price-sensitive market: cost per lumen is a primary purchasing criterion</li>
+            <li>Industrial lighting demand large — automotive supply chain, food processing, logistics</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Competitive Landscape</div>
+          <ul class="country-facts">
+            <li><strong>Signify (Philips + value ranges):</strong> broad coverage; budget ranges competitive with Chinese brands</li>
+            <li><strong>OPPLE / other Chinese brands:</strong> price-competitive strength; strong in distribution channel for commercial and industrial</li>
+            <li><strong>Trilux / Zumtobel:</strong> present in specification segment; less dominant than Western European markets</li>
+            <li>Growing spec channel as Polish architectural and engineering practices develop — incumbents investing in local relationships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITALY -->
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:28px;">🇮🇹</span>
+        <div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);">Italy</div>
+          <div style="font-size:12px;color:var(--sub);">Design-led · Italian manufacturers strong in premium · significant public retrofit pipeline · estimated €1.2–1.6B [ILLUSTRATIVE estimate]</div>
+        </div>
+      </div>
+      <div class="two-col" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Market Characteristics</div>
+          <ul class="country-facts">
+            <li>Architect influence very strong — Milan design culture sets aesthetic benchmarks for all of Europe</li>
+            <li>Hospitality and luxury retail: high CRI, visual appeal, and brand story are key purchasing drivers</li>
+            <li>Public building retrofit pipeline following Italian building incentive schemes (Superbonus and related programmes)</li>
+            <li>Strong local manufacturing heritage — Italian lighting brands command design premium internationally</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--violet);margin-bottom:8px;">Competitive Landscape</div>
+          <ul class="country-facts">
+            <li><strong>iGuzzini / Artemide / Flos (Italian brands):</strong> dominant in premium architectural and hospitality segments; strong specifier loyalty</li>
+            <li><strong>Zumtobel:</strong> strong in professional architectural; direct subsidiary in Italy</li>
+            <li><strong>Signify:</strong> market-wide presence, particularly strong in commercial and distribution channels</li>
+            <li><strong>OPPLE:</strong> limited spec channel presence; distribution-led with price-competitive positioning in commercial and retail segments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="source-note" style="margin-top:12px;">Country market size figures are editorial estimates based on relative GDP, construction output, and lighting intensity proxies. No single free public database publishes country-level professional lighting market sizes. Treat these as directional indicators only.</div>
   </div>
 
-  <!-- MD EUROPE KPIs -->
-  <div class="section">
-    <div class="section-title">MD Europe — Commercial KPIs &amp; Benchmarks</div>
-    <div class="section-divider"></div>
-    <div class="section-sub">What strong commercial performance looks like for a European market leadership role in professional LED and smart lighting.</div>
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-metric">€0.8–1.5M</div>
-        <div class="kpi-label">Revenue per Country Manager</div>
-        <div class="kpi-desc">Managed revenue typical for a European lighting market MD or country commercial lead — varies by market size (DE at upper end, NL/BE at lower).</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-metric">25–40%</div>
-        <div class="kpi-label">Specification Win Rate</div>
-        <div class="kpi-desc">Industry benchmark: percentage of projects where your product is specified that ultimately convert to purchase. Strong spec management and follow-through is required to close this gap.</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-metric">60%+</div>
-        <div class="kpi-label">Distribution Coverage Target</div>
-        <div class="kpi-desc">Percentage of electrical wholesale branches (top-tier Sonepar, Rexel, Hagemeyer) that actively stock and can next-day deliver your core range. Below 60% means lost pull-through from specification wins.</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-metric">&gt;85%</div>
-        <div class="kpi-label">Key Account Retention</div>
-        <div class="kpi-desc">Annual retention target for top 20 accounts. In lighting, account loss is often permanent — switching to a competitor during a major refit cycle may lock out a brand for 5+ years.</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-metric">35–50%</div>
-        <div class="kpi-label">Gross Margin — Spec Products</div>
-        <div class="kpi-desc">Branded specification-grade luminaires. Distribution channel products carry 20–30% GM. Smart and controls products may be slightly higher. Chinese challenger brands compress margin in distribution but rarely in spec.</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-metric">8–15%</div>
-        <div class="kpi-label">LED → Smart Upsell Rate</div>
-        <div class="kpi-desc">Percentage of LED project clients converting to smart controls within 3 years of initial LED installation. Building a systematic follow-up programme around this 3-year window is the highest-ROI smart lighting commercial activity.</div>
-      </div>
-    </div>
+  <!-- CONCLUSION -->
+  <div class="conclusion-box">
+    <h2>Conclusion — Where the European Lighting Market Is Headed</h2>
+    <p>The European lighting market is at an inflection point. The first wave of the LED transition — replacing incandescent and halogen lamps — is largely complete in residential segments, and the IEA confirms that global residential LED sales reached approximately 50% of the total by 2022. The commercial and industrial installed base still offers significant retrofit opportunity, particularly as EU Ecodesign regulation continues to phase out fluorescent technology, creating mandatory replacement cycles in offices, retail, and public buildings through 2025 and beyond.</p>
+    <p>The competitive structure is consolidating around a smaller number of capable players. <strong>Signify (€6.14B, 2024) retains clear global leadership</strong> through brand strength, distribution breadth, and its Interact connected lighting platform. <strong>Zumtobel (€1.21B, FY2022/23) and Trilux (~€1B estimated)</strong> hold strong positions in the European professional specification segment, particularly in architectural and premium commercial applications. <strong>ams-OSRAM has pivoted away</strong> from general illumination toward automotive and photonics since its 2020 acquisition by AMS AG, reducing its direct competitive relevance in commercial lighting.</p>
+    <p>The most consequential strategic question for the next five years is whether <strong>Chinese manufacturers with European footholds — OPPLE being the most established, with a decade of investment from its Eindhoven base — can close the gap in the specification channel</strong>, which remains dominated by incumbents through showrooms, specifier relationships, and CPD programmes. Distribution-led growth has limits; winning in specification is what creates margin and competitive durability. Whether OPPLE and similar challengers build or acquire that channel capability will determine the shape of the European market by 2030.</p>
+    <p>The smart lighting segment — connected, sensor-enabled, IoT-integrated — remains below 15% of commercial installations and represents the primary growth opportunity beyond basic LED replacement. The winners in smart lighting will be those that can combine product capability with the software platforms and integration partnerships that facility managers and building operators increasingly require. This is a channel and capability race as much as a technology race.</p>
+    <div class="source-note" style="margin-top:16px;">This analysis draws on: IEA Lighting sector data (2023); Wikipedia / public company filings for Signify, Zumtobel, ams-OSRAM, Trilux, OPPLE; EU Regulation 2019/2020 (Ecodesign); Eurostat energy household data (2023). All market size estimates and competitive positions are editorial analysis based on publicly available information. Numbers without a specific named source are labelled [ILLUSTRATIVE].</div>
   </div>
 
   <div class="li-cta">
     <div>
-      <p>Available for</p>
-      <p>Interim commercial leadership and go-to-market strategy consulting across European B2B technology, energy efficiency, and industrial sectors.</p>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a market intelligence platform covering European business, technology, and sector trends. Analysis is written by Olga Bressers, a senior executive with a background spanning commercial operations, data strategy, and business development across European markets.</p>
     </div>
-    <a href="../contact/">Connect →</a>
+    <a href="../olgabressers/index.html">About Olga Bressers →</a>
   </div>
 
 </main>
