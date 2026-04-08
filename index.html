@@ -39,7 +39,7 @@
     .hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 50%, #0f2340 100%); color: white; padding: 96px 32px 80px; text-align: center; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(139,26,106,.12) 0%, transparent 60%); }
     .hero .inner { max-width: 720px; margin: auto; position: relative; z-index: 1; }
-    .hero .eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.4); font-weight: 600; margin-bottom: 20px; }
+    .hero .eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: white; font-weight: 600; margin-bottom: 20px; }
     .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 800; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.5px; }
     .hero h1 span { color: var(--fuchsia); }
     .hero p { font-size: 16px; color: rgba(255,255,255,.6); max-width: 540px; margin: 0 auto 36px; line-height: 1.75; }
@@ -55,7 +55,8 @@
     .s-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
     .s-card-accent { padding: 18px 24px 14px; display: flex; align-items: center; gap: 14px; }
     .s-card-accent svg { flex-shrink: 0; }
-    .s-card-accent-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); }
+    .s-card-accent-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); flex: 1; }
+    .s-card-date { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.55); letter-spacing: 0.5px; flex-shrink: 0; }
     .s-card-body { padding: 18px 24px 24px; flex: 1; display: flex; flex-direction: column; }
     .s-card-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; transition: color .15s; }
     .s-card:hover .s-card-title { color: var(--fuchsia); }
@@ -194,6 +195,7 @@
     <div class="eyebrow">Market Intelligence Platform</div>
     <h1>See what others <span>miss</span></h1>
     <p>The market moves that matter across European retail, technology, supply chain, and transformation — researched, analysed, and published before the mainstream catches up.</p>
+    <p style="color:white;font-size:18px;font-weight:700;margin-bottom:36px;">Read them to be ahead of the curve.</p>
     <a class="hero-cta" href="#sections">Explore Intelligence</a>
   </div>
 </div>
@@ -207,6 +209,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#dc2626,#991b1b);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <div class="s-card-accent-label">Retail &amp; E-Commerce</div>
+        <span class="s-card-date">Updated Apr 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">Sporting Goods, Nike, B2B Marketplaces, Furniture, Energy</div>
@@ -222,6 +225,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#8b1a6a,#5b1147);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         <div class="s-card-accent-label">People &amp; Transformation</div>
+        <span class="s-card-date">Updated Apr 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">Salaries, Layoffs, Transformation Readiness, DTC Leadership</div>
@@ -237,6 +241,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
         <div class="s-card-accent-label">Technology &amp; Media</div>
+        <span class="s-card-date">Updated Apr 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">EAA Compliance, CPaaS, LED Lighting, Podcast Market</div>
@@ -252,6 +257,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#ca8a04,#78350f);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         <div class="s-card-accent-label">Supply Chain</div>
+        <span class="s-card-date">Updated Q1 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">Device Lifecycle, Manufacturing Footprint, Nearshoring</div>
@@ -267,6 +273,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#059669,#064e3b);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
         <div class="s-card-accent-label">Education &amp; Government</div>
+        <span class="s-card-date">Updated Q1 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">University Programs, Student Grants, Public Sector</div>
@@ -282,6 +289,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <div class="s-card-accent-label">Finance &amp; Compliance</div>
+        <span class="s-card-date">Updated Q1 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">Counterfeiting, InsurTech, Crypto Regulation</div>
@@ -297,6 +305,7 @@
       <div class="s-card-accent" style="background:linear-gradient(135deg,#111827,#1f2937);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
         <div class="s-card-accent-label">Real Estate</div>
+        <span class="s-card-date">Updated Q1 2026</span>
       </div>
       <div class="s-card-body">
         <div class="s-card-title">European Housing Market Intelligence 2026&ndash;2027</div>
