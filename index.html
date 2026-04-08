@@ -51,17 +51,18 @@
     .sections-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sub); margin-bottom: 32px; text-align: center; }
     .sections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-    .s-card { background: white; border-radius: 10px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .2s, transform .2s; color: inherit; display: flex; flex-direction: column; cursor: pointer; text-decoration: none; }
+    .s-card { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .2s, transform .2s; color: inherit; display: flex; flex-direction: column; cursor: pointer; text-decoration: none; }
     .s-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
-    .s-card-header { padding: 28px 28px 0; }
-    .s-card-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
-    .s-card-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.25; transition: color .15s; }
+    .s-card-accent { padding: 18px 24px 14px; display: flex; align-items: center; gap: 14px; }
+    .s-card-accent svg { flex-shrink: 0; }
+    .s-card-accent-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); }
+    .s-card-body { padding: 18px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+    .s-card-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; transition: color .15s; }
     .s-card:hover .s-card-title { color: var(--fuchsia); }
-    .s-card-sub { font-size: 12px; color: var(--sub); font-weight: 500; letter-spacing: 0.3px; }
-    .s-card-body { padding: 16px 28px 24px; flex: 1; display: flex; flex-direction: column; }
-    .s-card-desc { font-size: 13.5px; color: var(--sub); line-height: 1.65; flex: 1; }
-    .s-card-footer { padding: 0 28px 24px; }
-    .s-card-link { font-size: 12px; font-weight: 700; color: var(--fuchsia); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; }
+    .s-card-sub { font-size: 11px; color: var(--sub); font-weight: 600; letter-spacing: 0.3px; margin-bottom: 10px; }
+    .s-card-desc { font-size: 13px; color: var(--sub); line-height: 1.6; flex: 1; }
+    .s-card-footer { padding: 0 24px 20px; }
+    .s-card-link { font-size: 12px; font-weight: 700; color: var(--fuchsia); text-decoration: none; letter-spacing: 0.5px; }
     .s-card:hover .s-card-link { text-decoration: underline; }
 
     /* ABOUT STRIP */
@@ -178,6 +179,7 @@
     <a href="supply-chain/index.html">Supply Chain</a>
     <a href="education-government/index.html">Education &amp; Government</a>
     <a href="finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="real-estate/index.html">Real Estate</a>
     <a href="olgabressers/index.html">About the Author</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
@@ -191,7 +193,7 @@
   <div class="inner">
     <div class="eyebrow">Market Intelligence Platform</div>
     <h1>See what others <span>miss</span></h1>
-    <p>Editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Data-driven. Independent. No opinions without evidence.</p>
+    <p>The market moves that matter across European retail, technology, supply chain, and transformation — researched, analysed, and published before the mainstream catches up.</p>
     <a class="hero-cta" href="#sections">Explore Intelligence</a>
   </div>
 </div>
@@ -202,12 +204,13 @@
   <div class="sections-grid">
 
     <a class="s-card" href="retail/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Retail &amp; E-Commerce</div>
-        <div class="s-card-title">Sporting Goods, Nike, B2B Marketplaces, Furniture, Energy</div>
-        <div class="s-card-sub">6 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#dc2626,#991b1b);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <div class="s-card-accent-label">Retail &amp; E-Commerce</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">Sporting Goods, Nike, B2B Marketplaces, Furniture, Energy</div>
+        <div class="s-card-sub">6 published reports</div>
         <p class="s-card-desc">Competitive intelligence across European sporting goods brands, Nike's transformation, B2B marketplace dynamics, furniture market economics, and energy flexibility markets.</p>
       </div>
       <div class="s-card-footer">
@@ -216,12 +219,13 @@
     </a>
 
     <a class="s-card" href="people/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">People &amp; Transformation</div>
-        <div class="s-card-title">Salaries, Layoffs, Transformation Readiness, DTC Leadership</div>
-        <div class="s-card-sub">7 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#8b1a6a,#5b1147);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="s-card-accent-label">People &amp; Transformation</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">Salaries, Layoffs, Transformation Readiness, DTC Leadership</div>
+        <div class="s-card-sub">7 published reports</div>
         <p class="s-card-desc">Executive salary benchmarks across 32 European markets, Netherlands corporate layoff tracking, transformation maturity, and luxury DTC leadership intelligence.</p>
       </div>
       <div class="s-card-footer">
@@ -230,12 +234,13 @@
     </a>
 
     <a class="s-card" href="technology/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Technology &amp; Media</div>
-        <div class="s-card-title">EAA Compliance, CPaaS, LED Lighting, Podcast Market</div>
-        <div class="s-card-sub">5 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        <div class="s-card-accent-label">Technology &amp; Media</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">EAA Compliance, CPaaS, LED Lighting, Podcast Market</div>
+        <div class="s-card-sub">5 published reports</div>
         <p class="s-card-desc">European Accessibility Act readiness, conversational commerce platforms, smart lighting market intelligence, and Dutch podcast market dynamics.</p>
       </div>
       <div class="s-card-footer">
@@ -244,12 +249,13 @@
     </a>
 
     <a class="s-card" href="supply-chain/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Supply Chain</div>
-        <div class="s-card-title">Device Lifecycle, Manufacturing Footprint, Nearshoring</div>
-        <div class="s-card-sub">2 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#ca8a04,#78350f);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <div class="s-card-accent-label">Supply Chain</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">Device Lifecycle, Manufacturing Footprint, Nearshoring</div>
+        <div class="s-card-sub">2 published reports</div>
         <p class="s-card-desc">European device lifecycle management, global manufacturing footprint strategy, nearshoring trends, and geopolitical trade risk for apparel and FMCG.</p>
       </div>
       <div class="s-card-footer">
@@ -258,12 +264,13 @@
     </a>
 
     <a class="s-card" href="education-government/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Education &amp; Government</div>
-        <div class="s-card-title">University Programs, Student Grants, Public Sector</div>
-        <div class="s-card-sub">3 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#059669,#064e3b);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <div class="s-card-accent-label">Education &amp; Government</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">University Programs, Student Grants, Public Sector</div>
+        <div class="s-card-sub">3 published reports</div>
         <p class="s-card-desc">English-language bachelor programs across European universities, scholarship and grant guides, and public sector digital transformation intelligence.</p>
       </div>
       <div class="s-card-footer">
@@ -272,12 +279,13 @@
     </a>
 
     <a class="s-card" href="finance-compliance/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Finance &amp; Compliance</div>
-        <div class="s-card-title">Counterfeiting, InsurTech, Crypto Regulation</div>
-        <div class="s-card-sub">3 published reports</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="s-card-accent-label">Finance &amp; Compliance</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">Counterfeiting, InsurTech, Crypto Regulation</div>
+        <div class="s-card-sub">3 published reports</div>
         <p class="s-card-desc">Global counterfeiting intelligence, European SME insurance market disruption, and crypto regulation tracking across EU member states.</p>
       </div>
       <div class="s-card-footer">
@@ -286,12 +294,13 @@
     </a>
 
     <a class="s-card" href="real-estate/index.html">
-      <div class="s-card-header">
-        <div class="s-card-label">Real Estate</div>
-        <div class="s-card-title">European Housing Market Intelligence 2026-2027</div>
-        <div class="s-card-sub">1 published report</div>
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#111827,#1f2937);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+        <div class="s-card-accent-label">Real Estate</div>
       </div>
       <div class="s-card-body">
+        <div class="s-card-title">European Housing Market Intelligence 2026&ndash;2027</div>
+        <div class="s-card-sub">1 published report</div>
         <p class="s-card-desc">Price trends, forecasts, and investment scores for 20 European housing markets. ECB rate impact, rental yields, and where to buy vs. where to wait.</p>
       </div>
       <div class="s-card-footer">
