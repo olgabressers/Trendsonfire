@@ -79,6 +79,8 @@
       .stats { grid-template-columns:1fr 1fr; }
       .two-col { grid-template-columns:1fr !important; }
       .trends-grid { grid-template-columns:1fr; }
+      .articles-grid { grid-template-columns:1fr !important; }
+      .articles-grid a { margin-bottom:0; }
       .region-cards { grid-template-columns:1fr 1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
       .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
@@ -183,57 +185,79 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Technology &amp; Media</div>
     <div class="sec-eyebrow">Technology &amp; Media Intelligence</div>
     <h1>Technology &amp; Media</h1>
-    <p>Tracking how AI, digital operating models, emerging technology, and media dynamics are reshaping retail, e-commerce, and commerce organisations.</p>
+    <p>Where AI meets commerce: tracking the technology shifts, lighting market disruption, and media dynamics reshaping how European businesses operate, compete, and grow.</p>
   </div>
 </div>
 
 <main>
-  <div class="tracker-grid">
-    <div class="tracker-card" onclick="location.href='led-smart-lighting.html'">
-      <div class="tc-icon">💡</div>
-      <div class="tc-live-badge">LIVE</div>
-      <h2>European LED &amp; Smart Lighting Market Intelligence 2026</h2>
-      <p>How EU energy regulation, smart building adoption and Chinese manufacturers are reshaping Europe's €14B lighting market &mdash; competitive landscape, supply chain, and commercial channel intelligence.</p>
-      <a class="tc-link" href="led-smart-lighting.html">View Dashboard &rarr;</a>
-    </div>
-    <div class="tracker-card" onclick="location.href='../media/podcasts.html'">
-      <div class="tc-icon">🎙️</div>
-      <div class="tc-live-badge">LIVE</div>
-      <h2>Podcast Trends Dashboard &mdash; Media Intelligence</h2>
-      <p>Global podcast growth, Dutch aggregator market share, podcasts as a sales channel, retail &amp; ecommerce shows to follow &mdash; and voices from the industry.</p>
-      <a class="tc-link" href="../media/podcasts.html">View Dashboard &rarr;</a>
-    </div>
+  <!-- ── REPORTS ──────────────────────────────────────────────────────── -->
+  <div class="trends-title">Published Reports</div>
+  <div class="articles-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;">
+
+    <a href="led-smart-lighting.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#0369a1,#0c4a6e);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">LED &amp; Smart Lighting</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">European LED &amp; Smart Lighting Market Intelligence 2026</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">How EU energy regulation, smart building adoption and Chinese manufacturers are reshaping Europe&rsquo;s lighting market &mdash; competitive landscape, supply chain, and commercial channels.</div>
+      </div>
+    </a>
+
+    <a href="opple-europe-market.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#ca8a04,#78350f);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Opple Europe</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">Opple Europe &mdash; Market Entry &amp; Competitive Intelligence</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Chinese lighting manufacturer&rsquo;s European expansion strategy, competitive positioning against Signify and Osram, and channel entry analysis.</div>
+      </div>
+    </a>
+
+    <a href="../media/podcasts.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#7c3aed,#4c1d95);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Podcast Trends</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">Podcast Trends Dashboard &mdash; Media Intelligence</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Global podcast growth, Dutch aggregator market share, podcasts as a sales channel, retail &amp; ecommerce shows to follow &mdash; and voices from the industry.</div>
+      </div>
+    </a>
+
   </div>
 
   <div class="trends-title">Key Technology Trends — 2026</div>
   <div class="trends-grid">
 
     <div class="trend-card">
-      <div class="tc-tag">🤖 AI in Retail</div>
+      <div class="tc-tag">AI in Retail</div>
       <div class="tc-title">AI is separating the top quartile from the rest — the gap is widening fast</div>
       <div class="tc-body">Retailers using AI for demand forecasting, personalisation, and operations are seeing <strong>2–4× better outcomes</strong>. The laggards aren't just behind — they're falling further behind every quarter.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">⚙️ Operating Models</div>
+      <div class="tc-tag">Operating Models</div>
       <div class="tc-title">The AI-first operating model requires role redesign, not just tool deployment</div>
       <div class="tc-body">Organisations adding AI as a bolt-on to existing structures are not seeing the gains. <strong>The leaders are redesigning workflows, decision rights, and team structures</strong> around AI capabilities.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">📊 Data Strategy</div>
+      <div class="tc-tag">Data Strategy</div>
       <div class="tc-title">First-party data is now a strategic asset — most organisations are still treating it as IT</div>
       <div class="tc-body">With third-party signals declining, retailers and commerce businesses that have invested in zero-party and first-party data strategies are <strong>building durable competitive advantages</strong>.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🔗 Integration</div>
+      <div class="tc-tag">Integration</div>
       <div class="tc-title">Legacy system integration is the hidden blocker of digital transformation</div>
-      <div class="tc-body">85% of transformation programmes hit legacy integration walls. <strong>Organisations that invest in API-first architecture and composable commerce stacks</strong> are moving significantly faster.</div>
+      <div class="tc-body">A majority of transformation programmes hit legacy integration walls. <strong>Organisations that invest in API-first architecture and composable commerce stacks</strong> are moving significantly faster.</div>
     </div>
 
     <div class="trend-card">
-      <div class="tc-tag">🛡️ Digital Trust</div>
+      <div class="tc-tag">Digital Trust</div>
       <div class="tc-title">Consumer trust in AI-driven experiences is the next differentiator</div>
       <div class="tc-body">Shoppers increasingly notice and respond to AI-driven personalisation — <strong>positively when transparent, negatively when intrusive</strong>. Digital trust is becoming a brand metric.</div>
     </div>

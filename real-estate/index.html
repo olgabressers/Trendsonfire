@@ -47,7 +47,10 @@
     .tc-body{font-size:13.5px;color:var(--sub);line-height:1.65}
 
     .li-cta{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .li-cta a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none}
+    .li-cta div p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .li-cta div p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
+    .li-cta a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s}
+    .li-cta a:hover{background:#7a1660}
 
     .nav-search-btn{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;padding:0 10px 0 14px;height:100%;display:flex;align-items:center;gap:5px;transition:color .15s;font-size:12px;font-weight:500;font-family:inherit;border-left:1px solid rgba(255,255,255,.15);margin-left:6px;flex-shrink:0}
     .nav-search-btn:hover{color:white}
@@ -107,53 +110,56 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Real Estate</div>
     <div class="sec-eyebrow">Real Estate Intelligence</div>
     <h1>European Housing Market Trends</h1>
-    <p>Where prices are rising, where they're falling, and where the smart money is moving — across 20 European markets, 2026 to 2027.</p>
+    <p>Where to buy, where to wait, and where correction risk is highest — price trends, rental yields, and investment signals across 20 European markets.</p>
   </div>
 </div>
 
 <main>
-  <div class="trends-title">Real Estate Intelligence — 2026</div>
-  <div class="trends-grid">
+  <div class="trends-title">Published Reports</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px;">
 
-    <div class="trend-card" onclick="location.href='european-housing-market.html'" style="border-color:#7c3aed;border-style:solid;">
-      <div style="font-size:48px;margin-bottom:16px;">🏠</div>
-      <div class="tc-tag">🌍 Europe · 20 Markets</div>
-      <div class="tc-title">European Housing Market Intelligence 2026–2027</div>
-      <div class="tc-body">Where to buy, where to avoid. Price trends, rental yields, ECB rate impact, and investment attractiveness scores — with 8 interactive charts and full country comparison table.</div>
-      <a href="european-housing-market.html" style="display:inline-block;margin-top:16px;background:#7c3aed;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">View dashboard →</a>
-    </div>
+    <a href="european-housing-market.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
+      <div style="background:linear-gradient(135deg,#111827,#1f2937);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">20 Markets Compared</div>
+      </div>
+      <div style="padding:18px 22px 22px;">
+        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">European Housing Market Intelligence 2026&ndash;2027</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">Price trends, rental yields, ECB rate impact, and investment attractiveness scores &mdash; with 8 interactive charts and full country comparison table.</div>
+      </div>
+    </a>
 
   </div>
 
   <div class="trends-title">Key Real Estate Signals — 2026</div>
   <div class="trends-grid">
     <div class="trend-card">
-      <div class="tc-tag">🟢 Strong Buy</div>
+      <div class="tc-tag">Strong Buy</div>
       <div class="tc-title">Romania, Hungary, Bulgaria: CEE remains the best value in Europe</div>
       <div class="tc-body">Romania is −22% undervalued at €1,676/m². Hungary growing at +21% YoY. Bulgaria offers 18%+ growth with entry prices still among the lowest in the EU. CEE catch-up still has years to run.</div>
     </div>
     <div class="trend-card">
-      <div class="tc-tag">🟡 Watch</div>
+      <div class="tc-tag">Watch</div>
       <div class="tc-title">Portugal and Greece showing affordability stress — growth may be peaking</div>
       <div class="tc-body">Portugal's P2I ratio hit 153 (OECD average: 114). Greece allocates 36% of income to housing — the highest in the EU. Both markets still growing but demand fatigue is emerging.</div>
     </div>
     <div class="trend-card">
-      <div class="tc-tag">🏦 Macro</div>
+      <div class="tc-tag">Macro</div>
       <div class="tc-title">ECB at 2.15% — the rate-cut tailwind is largely priced in for 2026</div>
       <div class="tc-body">Six rate cuts from mid-2024 drove mortgage approvals up 37% and sparked the 2025 recovery. With rates now stable at 2.15%, further price gains must come from fundamentals — not financing tailwinds.</div>
     </div>
     <div class="trend-card">
-      <div class="tc-tag">🏗️ Supply</div>
+      <div class="tc-tag">Supply</div>
       <div class="tc-title">10 million unit EU housing deficit keeps long-term floor under prices</div>
       <div class="tc-body">Germany completed only 252,000 homes in 2024 against a target of 400,000. EU-wide shortfall is 10 million units. This structural constraint prevents any broad price collapse — supply simply cannot catch up.</div>
     </div>
     <div class="trend-card">
-      <div class="tc-tag">💶 Yield Play</div>
+      <div class="tc-tag">Yield Play</div>
       <div class="tc-title">Italy and Latvia offer best rental yields in Europe — 7.5–8%</div>
       <div class="tc-body">Italy combines undervaluation with 7.56% gross rental yields. Latvia tops the continent at 8.06%. For income-focused investors, these two markets offer compelling risk-adjusted returns in the current rate environment.</div>
     </div>
     <div class="trend-card">
-      <div class="tc-tag">🔴 Avoid</div>
+      <div class="tc-tag">Avoid</div>
       <div class="tc-title">Luxembourg: +37% overvalued by ECB metrics — highest correction risk</div>
       <div class="tc-body">Luxembourg is flagged as the most overvalued housing market in the EU by ECB analysis. Combined with low rental yields and limited population growth, it offers the worst risk-reward profile of any European market in 2026.</div>
     </div>

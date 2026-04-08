@@ -49,10 +49,14 @@
 
     main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    .coming-soon { background: white; border-radius: 14px; border: 2px dashed var(--border); padding: 48px; text-align: center; margin-bottom: 48px; }
-    .coming-soon .cs-icon { font-size: 48px; margin-bottom: 16px; }
-    .coming-soon h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .coming-soon p { color: var(--sub); font-size: 14px; max-width: 440px; margin: 0 auto; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 48px; }
+    .articles-grid a { text-decoration: none; display: block; background: white; border-radius: 14px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.06); transition: transform .15s, box-shadow .15s; }
+    .articles-grid a:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+    .card-header { padding: 20px 22px 16px; display: flex; align-items: center; gap: 14px; }
+    .card-hook { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .card-body { padding: 18px 22px 22px; }
+    .card-title { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 8px; }
+    .card-desc { font-size: 13px; color: var(--sub); line-height: 1.6; }
 
     .trends-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
     .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 48px; }
@@ -82,6 +86,7 @@
       main, .inner { padding-left:16px !important; padding-right:16px !important; }
       .sec-header { padding:32px 16px 28px; }
       .trends-grid { grid-template-columns:1fr; }
+      .articles-grid { grid-template-columns:1fr !important; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
     }
   
@@ -144,26 +149,37 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Education &amp; Government</div>
     <div class="sec-eyebrow">Education &amp; Government Intelligence</div>
     <h1>Public Sector &amp; Education Trends</h1>
-    <p>Tracking digital transformation, organisational change, and capability development across Dutch public sector organisations — from uitvoeringsorganisaties to universities.</p>
+    <p>Where to study, how to fund it, and what is changing in European higher education — original intelligence on universities, grants, and public sector transformation.</p>
   </div>
 </div>
 
 <main>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:48px;">
 
-    <div class="coming-soon" style="border-color:#0d9488;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='universities.html'">
-      <div class="cs-icon">🎓</div>
-      <h2>European Universities — English Bachelor Programs &amp; Rankings</h2>
-      <p>Official QS rankings, annual tuition for EU students, countries with free higher education, and a focused view on chemistry, biotech, pharma, and biomedical programs — including a full Netherlands deep-dive.</p>
-      <a href="universities.html" style="display:inline-block;margin-top:16px;background:#0d9488;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the dashboard →</a>
-    </div>
+  <!-- ── REPORTS ──────────────────────────────────────────────────────── -->
+  <div class="trends-title">Published Reports</div>
+  <div class="articles-grid">
 
-    <div class="coming-soon" style="border-color:#7c3aed;border-style:solid;cursor:pointer;margin-bottom:0" onclick="location.href='grants.html'">
-      <div class="cs-icon">💰</div>
-      <h2>Grants &amp; Scholarships — Financing Your European Study</h2>
-      <p>DUO studiefinanciering, Erasmus+, Dutch foundation grants, and university scholarships explained — how much, how easy, which universities qualify, and a step-by-step guide for science students.</p>
-      <a href="grants.html" style="display:inline-block;margin-top:16px;background:#7c3aed;color:white;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none">Explore the dashboard →</a>
-    </div>
+    <a href="grants.html">
+      <div class="card-header" style="background:linear-gradient(135deg,#059669,#064e3b);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+        <div class="card-hook">Fund Your Future</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Grants &amp; Scholarships &mdash; Financing Your European Study</div>
+        <div class="card-desc">DUO studiefinanciering, Erasmus+, Dutch foundation grants, and university scholarships explained &mdash; how much, how easy, which universities qualify, and a step-by-step guide for science students.</div>
+      </div>
+    </a>
+
+    <a href="universities.html">
+      <div class="card-header" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
+        <div class="card-hook">Rankings &amp; Programs</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">European Universities &mdash; English Bachelor Programs &amp; Rankings</div>
+        <div class="card-desc">Official QS rankings, annual tuition for EU students, countries with free higher education, and a focused view on chemistry, biotech, pharma, and biomedical programs &mdash; including a full Netherlands deep-dive.</div>
+      </div>
+    </a>
 
   </div>
 
@@ -211,9 +227,9 @@
   <div class="li-cta">
     <div>
       <p>About the Author</p>
-      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+      <p>TrendsOnFire is an AI-powered market intelligence platform publishing editorial analysis on retail, technology, supply chain, education, and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial and digital operations, e-commerce, omni-channel strategy, and business transformation.</p>
     </div>
-    <a href="../olgabressers/index.html">Contact →</a>
+    <a href="../olgabressers/index.html">Meet Olga &rarr;</a>
   </div>
 </main>
 
