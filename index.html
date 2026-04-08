@@ -12,8 +12,8 @@
   </script>
   <meta name="google-site-verification" content="vx288tO666GblC4sy70I7D6t6NrxTZ6w3FbwbnERSWI"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>TrendsOnFire — Business Intelligence by Olga Bressers</title>
-  <meta name="description" content="TrendsOnFire tracks what's actually changing in retail, e-commerce, people and transformation — with data and 20+ years of executive experience by Olga Bressers."/>
+  <title>TrendsOnFire — Market Intelligence Platform</title>
+  <meta name="description" content="TrendsOnFire — AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -36,43 +36,41 @@
     .nav-search-btn:hover { color: white; }
 
     /* HERO */
-    .hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 100%); color: white; padding: 80px 32px 72px; text-align: center; }
-    .hero .inner { max-width: 700px; margin: auto; }
-    .hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b1a6a; font-weight: 700; margin-bottom: 16px; }
-    .hero h1 { font-size: clamp(32px, 6vw, 54px); font-weight: 800; line-height: 1.08; margin-bottom: 20px; }
-    .hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
-    .hero-cta { display: inline-block; background: #8b1a6a; color: white; font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: 8px; text-decoration: none; transition: background .15s; }
+    .hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 50%, #0f2340 100%); color: white; padding: 96px 32px 80px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(139,26,106,.12) 0%, transparent 60%); }
+    .hero .inner { max-width: 720px; margin: auto; position: relative; z-index: 1; }
+    .hero .eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.4); font-weight: 600; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 800; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.5px; }
+    .hero h1 span { color: var(--fuchsia); }
+    .hero p { font-size: 16px; color: rgba(255,255,255,.6); max-width: 540px; margin: 0 auto 36px; line-height: 1.75; }
+    .hero-cta { display: inline-block; background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 13px 32px; border-radius: 6px; text-decoration: none; transition: background .15s; letter-spacing: 0.3px; }
     .hero-cta:hover { background: #7a1660; }
 
-    /* SECTIONS GRID */
-    .sections-wrap { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
-    .sections-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 24px; }
-    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; }
+    /* SECTION CARDS */
+    .sections-wrap { max-width: 1100px; margin: 0 auto; padding: 64px 24px 56px; }
+    .sections-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sub); margin-bottom: 32px; text-align: center; }
+    .sections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-    /* SECTION CARD */
-    .s-card { background: white; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); overflow: hidden; transition: box-shadow .2s, transform .2s; color: inherit; display: flex; flex-direction: column; cursor: pointer; text-decoration: none; }
-    .s-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.12); transform: translateY(-2px); }
-    .s-card-top { padding: 24px 24px 0; display: flex; align-items: flex-start; gap: 14px; }
-    .s-icon { width: 48px; height: 48px; border-radius: 12px; background: #f7e8f3; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-    .s-card-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 4px; text-decoration: none; display: block; transition: color .15s; }
+    .s-card { background: white; border-radius: 10px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .2s, transform .2s; color: inherit; display: flex; flex-direction: column; cursor: pointer; text-decoration: none; }
+    .s-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .s-card-header { padding: 28px 28px 0; }
+    .s-card-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
+    .s-card-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.25; transition: color .15s; }
     .s-card:hover .s-card-title { color: var(--fuchsia); }
-    .s-card-sub { font-size: 12px; color: var(--sub); font-weight: 500; }
-    .s-card-body { padding: 16px 24px; flex: 1; }
-    .s-card-desc { font-size: 13.5px; color: var(--sub); line-height: 1.6; margin-bottom: 14px; }
-    .trend-teaser { background: #fdf3fb; border-radius: 8px; padding: 11px 14px; border-left: 3px solid #8b1a6a; font-size: 12.5px; line-height: 1.55; }
-    .trend-teaser .t-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8b1a6a; margin-bottom: 4px; }
-    .trend-teaser .t-text { color: var(--text); }
-    .s-card-footer { padding: 14px 24px 20px; display: flex; align-items: center; justify-content: space-between; }
-    .s-badge { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: #f7e8f3; color: #8b1a6a; }
-    .s-link { font-size: 13px; font-weight: 700; color: #8b1a6a; text-decoration: none; display: flex; align-items: center; gap: 4px; }
-    .s-card:hover .s-link { text-decoration: underline; }
+    .s-card-sub { font-size: 12px; color: var(--sub); font-weight: 500; letter-spacing: 0.3px; }
+    .s-card-body { padding: 16px 28px 24px; flex: 1; display: flex; flex-direction: column; }
+    .s-card-desc { font-size: 13.5px; color: var(--sub); line-height: 1.65; flex: 1; }
+    .s-card-footer { padding: 0 28px 24px; }
+    .s-card-link { font-size: 12px; font-weight: 700; color: var(--fuchsia); text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase; }
+    .s-card:hover .s-card-link { text-decoration: underline; }
 
     /* ABOUT STRIP */
-    .about-strip { background: white; border-top: 1px solid var(--border); padding: 56px 32px; text-align: center; }
-    .about-strip .inner { max-width: 640px; margin: auto; }
-    .about-strip p { font-size: 16px; color: var(--sub); line-height: 1.7; margin-bottom: 20px; }
-    .about-strip a { display: inline-block; background: #8b1a6a; color: white; font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: background .15s; }
-    .about-strip a:hover { background: #7a1660; }
+    .about-strip { background: var(--navy); padding: 56px 32px; }
+    .about-strip .inner { max-width: 800px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .about-strip p { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.75; max-width: 560px; }
+    .about-strip .label { font-size: 12px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 8px; }
+    .about-strip a.btn { display: inline-block; background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 28px; border-radius: 6px; text-decoration: none; transition: background .15s; white-space: nowrap; flex-shrink: 0; }
+    .about-strip a.btn:hover { background: #7a1660; }
 
     /* FOOTER */
     footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
@@ -97,7 +95,7 @@
     .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
 
-    /* MOBILE NAV */
+    /* MOBILE */
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
@@ -106,39 +104,28 @@
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
       .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; }
+      .hero { padding:64px 16px 56px; }
+      .sections-grid { grid-template-columns:1fr; }
+      .about-strip .inner { flex-direction:column; align-items:flex-start; }
+      .about-strip { padding:40px 24px; }
     }
-    /* GENERAL RESPONSIVE */
-    @media(max-width:768px){
-      main, .inner { padding-left:16px !important; padding-right:16px !important; }
-      .sec-header, header { padding:32px 16px 28px; }
-      .stats { grid-template-columns:1fr 1fr; }
-      .two-col { grid-template-columns:1fr !important; }
-      .trends-grid { grid-template-columns:1fr; }
-      .region-cards { grid-template-columns:1fr 1fr; }
-      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
-      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
-      .filter-bar select, .filter-bar input { width:100%; }
-      .filter-reset { margin-left:0; }
-    }
-    @media(max-width:480px){
-      .stats { grid-template-columns:1fr; }
-      .region-cards { grid-template-columns:1fr; }
-      .level-grid { grid-template-columns:1fr 1fr; }
+    @media(min-width:769px) and (max-width:1024px){
+      .sections-grid { grid-template-columns:1fr 1fr; }
     }
   </style>
   <link rel="canonical" href="https://trendsonfire.com/"/>
   <meta name="author" content="Olga Bressers"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="TrendsOnFire"/>
-  <meta property="og:title" content="TrendsOnFire — Business Intelligence by Olga Bressers"/>
-  <meta property="og:description" content="TrendsOnFire tracks what's actually changing in retail, e-commerce, people and transformation — with data and 20+ years of executive experience."/>
+  <meta property="og:title" content="TrendsOnFire — Market Intelligence Platform"/>
+  <meta property="og:description" content="AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
   <meta property="og:url" content="https://trendsonfire.com/"/>
   <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="TrendsOnFire — Business Intelligence by Olga Bressers"/>
-  <meta name="twitter:description" content="TrendsOnFire tracks what's actually changing in retail, e-commerce, people and transformation — with data and 20+ years of executive experience."/>
+  <meta name="twitter:title" content="TrendsOnFire — Market Intelligence Platform"/>
+  <meta name="twitter:description" content="AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
   <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
   <script type="application/ld+json">
   {
@@ -148,26 +135,9 @@
         "@type": "Organization",
         "name": "TrendsOnFire",
         "url": "https://trendsonfire.com",
-        "logo": "https://trendsonfire.com/logo.svg",
-        "description": "Business intelligence tracking real shifts in retail, e-commerce, people and transformation.",
-        "founder": {
-          "@type": "Person",
-          "name": "Olga Bressers"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/olgabressers"
-        ]
-      },
-      {
-        "@type": "Person",
-        "name": "Olga Bressers",
-        "url": "https://trendsonfire.com/olgabressers/",
-        "jobTitle": "Business Intelligence Expert & Founder",
-        "description": "Executive with 20+ years of experience in retail, e-commerce and transformation.",
-        "sameAs": [
-          "https://www.linkedin.com/in/olgabressers",
-          "https://trendsonfire.com"
-        ]
+        "description": "AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.",
+        "founder": { "@type": "Person", "name": "Olga Bressers" },
+        "sameAs": ["https://www.linkedin.com/in/olgabressers"]
       },
       {
         "@type": "WebSite",
@@ -175,10 +145,7 @@
         "url": "https://trendsonfire.com",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://trendsonfire.com/tags/?q={search_term_string}"
-          },
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://trendsonfire.com/tags/?q={search_term_string}" },
           "query-input": "required name=search_term_string"
         }
       }
@@ -203,16 +170,14 @@
       <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
     <a href="retail/index.html">Retail &amp; E-Commerce</a>
     <a href="people/index.html">People &amp; Transformation</a>
-    <a href="technology/index.html">Technology</a>
+    <a href="technology/index.html">Technology &amp; Media</a>
     <a href="supply-chain/index.html">Supply Chain</a>
     <a href="education-government/index.html">Education &amp; Government</a>
     <a href="finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="real-estate/index.html">Real Estate</a>
-    <a href="media/index.html">Media</a>
     <a href="olgabressers/index.html">About the Author</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
@@ -224,191 +189,99 @@
 <!-- HERO -->
 <div class="hero">
   <div class="inner">
-    <div class="eyebrow"><span style="color:white">Business Intelligence</span> by Olga Bressers</div>
-    <h1>See what others miss</h1>
-    <p>Tracking what's actually changing in retail, e-commerce, technology, supply chain, education, governance, and transformation — with data and 20+ years of executive experience, not just opinions.</p>
-    <a class="hero-cta" href="#sections">Explore ↓</a>
+    <div class="eyebrow">Market Intelligence Platform</div>
+    <h1>See what others <span>miss</span></h1>
+    <p>Editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Data-driven. Independent. No opinions without evidence.</p>
+    <a class="hero-cta" href="#sections">Explore Intelligence</a>
   </div>
 </div>
 
 <!-- SECTION CARDS -->
 <div class="sections-wrap" id="sections">
-  <div class="sections-label">Explore by topic</div>
+  <div class="sections-label">Intelligence by sector</div>
   <div class="sections-grid">
 
-    <!-- RETAIL & E-COMMERCE -->
     <a class="s-card" href="retail/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">🏬</div>
-        <div>
-          <span class="s-card-title">Retail &amp; E-Commerce</span>
-          <div class="s-card-sub">Inventory · Checkout · Omni-Channel</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">Retail &amp; E-Commerce</div>
+        <div class="s-card-title">Sporting Goods, Nike, B2B Marketplaces, Furniture, Energy</div>
+        <div class="s-card-sub">6 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Tracking how retailers and e-commerce brands perform on inventory visibility, checkout experience, and omni-channel integration.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">Only 56% of NL fashion retailers show real-time stock — leaving significant conversion on the table.</div>
-        </div>
+        <p class="s-card-desc">Competitive intelligence across European sporting goods brands, Nike's transformation, B2B marketplace dynamics, furniture market economics, and energy flexibility markets.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
-    <!-- PEOPLE & TRANSFORMATION -->
     <a class="s-card" href="people/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">👥</div>
-        <div>
-          <span class="s-card-title">People &amp; Transformation</span>
-          <div class="s-card-sub">Talent · Change · Org design</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">People &amp; Transformation</div>
+        <div class="s-card-title">Salaries, Layoffs, Transformation Readiness, DTC Leadership</div>
+        <div class="s-card-sub">7 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Tracking workforce transformation, change management maturity, and how organisations across Europe approach people-first transformation.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">70% of transformation programmes fail. The root cause is almost always people readiness, not technology.</div>
-        </div>
+        <p class="s-card-desc">Executive salary benchmarks across 32 European markets, Netherlands corporate layoff tracking, transformation maturity, and luxury DTC leadership intelligence.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
-    <!-- TECHNOLOGY -->
     <a class="s-card" href="technology/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">💡</div>
-        <div>
-          <span class="s-card-title">Technology</span>
-          <div class="s-card-sub">AI · Digital operating models · Tech strategy</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">Technology &amp; Media</div>
+        <div class="s-card-title">EAA Compliance, CPaaS, LED Lighting, Podcast Market</div>
+        <div class="s-card-sub">5 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Analysing how AI adoption, digital operating models, and emerging technology are reshaping retail and commerce organisations.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">Organisations redesigning roles and workflows around AI — not just adding tools — are pulling ahead fast.</div>
-        </div>
+        <p class="s-card-desc">European Accessibility Act readiness, conversational commerce platforms, smart lighting market intelligence, and Dutch podcast market dynamics.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Coming soon</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
-    <!-- SUPPLY CHAIN -->
     <a class="s-card" href="supply-chain/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">📦</div>
-        <div>
-          <span class="s-card-title">Supply Chain</span>
-          <div class="s-card-sub">Logistics · DLM · Operations intelligence</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">Supply Chain</div>
+        <div class="s-card-title">Device Lifecycle, Manufacturing Footprint, Nearshoring</div>
+        <div class="s-card-sub">2 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Tracking supply chain transformation across European markets — from device lifecycle management and reverse logistics to operations maturity and DTC fulfilment.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">The European DLM market is growing at 9% CAGR — driven by sustainability mandates and operator cost pressure.</div>
-        </div>
+        <p class="s-card-desc">European device lifecycle management, global manufacturing footprint strategy, nearshoring trends, and geopolitical trade risk for apparel and FMCG.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
-    <!-- EDUCATION & GOVERNMENT -->
     <a class="s-card" href="education-government/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">🏛</div>
-        <div>
-          <span class="s-card-title">Education &amp; Government</span>
-          <div class="s-card-sub">Public sector · Digital gov · Workforce</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">Education &amp; Government</div>
+        <div class="s-card-title">University Programs, Student Grants, Public Sector</div>
+        <div class="s-card-sub">3 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Tracking digital transformation and organisational change in Dutch and European public sector organisations — from social services to education institutions.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">Dutch public sector digitalisation is accelerating — but change readiness and workforce capability remain the critical bottleneck.</div>
-        </div>
+        <p class="s-card-desc">English-language bachelor programs across European universities, scholarship and grant guides, and public sector digital transformation intelligence.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
-    <!-- FINANCE & COMPLIANCE -->
     <a class="s-card" href="finance-compliance/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">🛡</div>
-        <div>
-          <span class="s-card-title">Finance &amp; Compliance</span>
-          <div class="s-card-sub">Anti-Counterfeiting · Brand Protection · IP</div>
-        </div>
+      <div class="s-card-header">
+        <div class="s-card-label">Finance &amp; Compliance</div>
+        <div class="s-card-title">Counterfeiting, InsurTech, Crypto Regulation</div>
+        <div class="s-card-sub">3 published reports</div>
       </div>
       <div class="s-card-body">
-        <p class="s-card-desc">Tracking the global fight against counterfeiting — sector exposure, enforcement effectiveness, and brand protection strategies across 130+ countries.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">Global counterfeiting reached $4.5 trillion. Over 60% of fakes now move through e-commerce platforms — brand protection has gone digital.</div>
-        </div>
+        <p class="s-card-desc">Global counterfeiting intelligence, European SME insurance market disruption, and crypto regulation tracking across EU member states.</p>
       </div>
       <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
-      </div>
-    </a>
-
-    <!-- MEDIA -->
-    <a class="s-card" href="media/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">🎙️</div>
-        <div>
-          <span class="s-card-title">Media</span>
-          <div class="s-card-sub">Podcasts · Media Coverage · Sales Channels</div>
-        </div>
-      </div>
-      <div class="s-card-body">
-        <p class="s-card-desc">Podcast market trends, NL aggregator landscape, podcasts as a sales and media coverage channel, and the shows shaping retail and ecommerce thinking in 2026.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Trending</div>
-          <div class="t-text">Podcast listenership in the Netherlands grew 18% in 2025 — now 5M+ monthly listeners. Spotify commands 72% of the market. Host-read ads convert at 2–4x the rate of display.</div>
-        </div>
-      </div>
-      <div class="s-card-footer">
-        <span class="s-badge">Live tracker</span>
-        <span class="s-link">Explore →</span>
-      </div>
-    </a>
-
-    <!-- ABOUT THE AUTHOR -->
-    <a class="s-card" href="olgabressers/index.html">
-      <div class="s-card-top">
-        <div class="s-icon">👤</div>
-        <div>
-          <span class="s-card-title">About the Author</span>
-          <div class="s-card-sub">Executive · Leader · Speaker</div>
-        </div>
-      </div>
-      <div class="s-card-body">
-        <p class="s-card-desc">20+ years building and transforming commerce organisations at Richemont, Adidas, Nike and IBM. Open to senior leadership roles — permanent, interim or consulting — across Europe.</p>
-        <div class="trend-teaser">
-          <div class="t-label">Why it matters</div>
-          <div class="t-text">Deep European market expertise across 26+ countries — combined with hands-on operations, e-commerce, and transformation delivery.</div>
-        </div>
-      </div>
-      <div class="s-card-footer">
-        <span class="s-badge">Meet Olga</span>
-        <span class="s-link">Explore →</span>
+        <span class="s-card-link">Explore reports &rarr;</span>
       </div>
     </a>
 
@@ -418,14 +291,17 @@
 <!-- ABOUT STRIP -->
 <div class="about-strip">
   <div class="inner">
-    <p>TrendsOnFire is curated by Olga Bressers — senior executive with 20+ years in e-commerce, omni-channel, supply chain, and business &amp; digital transformation.</p>
-    <a href="olgabressers/index.html">Work with Olga →</a>
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a class="btn" href="olgabressers/index.html">Work with Olga &rarr;</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> — All analysis is editorial and based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &mdash; All analysis is editorial and based on publicly available information. Not investment advice.</p>
 </footer>
 
 <!-- SEARCH OVERLAY -->
@@ -433,10 +309,10 @@
   <div class="search-inner">
     <div class="search-box">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
-      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags..." autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">&times;</button>
     </div>
-    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div class="search-hint">Press ESC to close</div>
     <div id="search-results" role="list"></div>
   </div>
 </div>
@@ -446,228 +322,62 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
 
-// ── ARTICLE INDEX ──────────────────────────────────────────────────────────────
 var ARTICLES = [
-  {
-    title: 'The Furniture Trap — What Fonq\'s Bankruptcy Reveals About Europe\'s Online Home Market',
-    url: '/retail/furniture-market.html',
-    section: 'Retail & E-Commerce',
-    desc: 'Why pure-play online furniture retail in Europe keeps failing — return economics, last-mile costs, and who is actually winning.',
-    tags: ['Online Retail','Furniture Market','Netherlands','Europe','Bankruptcy','Market Analysis','Return Logistics','DTC']
-  },
-  {
-    title: 'Nike Transformation Intelligence — EMEA Focus',
-    url: '/retail/nike.html',
-    section: 'Retail & E-Commerce',
-    desc: 'Nike\'s DTC strategy, EMEA transformation, and retail repositioning in the European market.',
-    tags: ['Nike','Sporting Goods','DTC','Digital Transformation','EMEA','Brand Strategy','Retail']
-  },
-  {
-    title: 'Sporting Goods Brands — European Market Analysis',
-    url: '/retail/sporting-goods-brands.html',
-    section: 'Retail & E-Commerce',
-    desc: 'Competitive analysis of sporting goods brands across European markets — positioning, channels and growth dynamics.',
-    tags: ['Sporting Goods','European Market','Brand Strategy','Market Analysis','Physical Retail']
-  },
-  {
-    title: 'B2B Marketplace Intelligence — Europe',
-    url: '/retail/b2b-marketplace.html',
-    section: 'Retail & E-Commerce',
-    desc: 'Mapping Europe\'s B2B marketplace landscape — platforms, adoption trends and opportunities for brands and distributors.',
-    tags: ['B2B','Marketplace','E-Commerce','Platform Strategy','Europe']
-  },
-  {
-    title: 'Student Side Jobs — Earning Opportunities in the Netherlands',
-    url: '/people/student-side-jobs.html',
-    section: 'People & Transformation',
-    desc: 'Complete guide to side income for students in the Netherlands — from AI services and UGC to physical jobs, with real hourly rates.',
-    tags: ['Student Jobs','Netherlands','Freelance','AI & Technology','Side Income','Gig Economy','Online Earning']
-  },
-  {
-    title: 'European Executive Salary Index',
-    url: '/people/salary-index.html',
-    section: 'People & Transformation',
-    desc: 'Benchmarking executive and senior management salaries across European retail, e-commerce and transformation roles.',
-    tags: ['Salaries','Netherlands','Executive Compensation','Market Analysis','Europe','Retail']
-  },
-  {
-    title: 'Netherlands Corporate Layoff Tracker',
-    url: '/people/nl-layoffs.html',
-    section: 'People & Transformation',
-    desc: 'Tracking corporate layoffs and restructuring announcements across Dutch companies — retail, tech and beyond.',
-    tags: ['Layoffs','Netherlands','Retail','Workforce','Corporate Restructuring','Market Analysis']
-  },
-  {
-    title: 'European Corporate Transformation Intelligence',
-    url: '/people/eu-transformation.html',
-    section: 'People & Transformation',
-    desc: 'Tracking digital transformation maturity across European corporations — change readiness, people capability and outcomes.',
-    tags: ['Digital Transformation','Europe','Change Management','Corporate Strategy','Talent & People']
-  },
-  {
-    title: 'Luxury & Consumer DTC Leadership Tracker',
-    url: '/people/luxury-dtc-leader.html',
-    section: 'People & Transformation',
-    desc: 'Leadership intelligence for luxury and consumer DTC brands — executive moves, strategic priorities and talent trends.',
-    tags: ['Luxury Retail','DTC','Leadership','Brand Strategy','E-Commerce','Consumer Brands']
-  },
-  {
-    title: 'Philips Transformation Intelligence — Netherlands Focus',
-    url: '/transformation/philips.html',
-    section: 'People & Transformation',
-    desc: 'Deep-dive into Philips\' ongoing corporate transformation — restructuring, digital strategy and operational change.',
-    tags: ['Philips','Digital Transformation','Netherlands','Corporate Strategy','Technology']
-  },
-  {
-    title: 'CEE Transformation Index',
-    url: '/transformation/cee-index.html',
-    section: 'People & Transformation',
-    desc: 'Tracking digital and organisational transformation across Central and Eastern European markets.',
-    tags: ['Digital Transformation','CEE','Europe','Market Analysis','Corporate Strategy']
-  },
-  {
-    title: 'Global Counterfeiting Intelligence — European Market',
-    url: '/finance-compliance/counterfeiting.html',
-    section: 'Finance & Compliance',
-    desc: 'Mapping the $4.5 trillion counterfeiting problem — sector exposure, enforcement effectiveness and brand protection strategies.',
-    tags: ['Anti-Counterfeiting','Brand Protection','Compliance','E-Commerce','Global Market','IP']
-  },
-  {
-    title: 'European InsurTech & SME Insurance Market Intelligence 2026',
-    url: '/finance-compliance/insurtech-sme.html',
-    section: 'Finance & Compliance',
-    desc: 'Europe\'s €180B SME insurance market — digital disruption, AI underwriting, competitive landscape, regulatory complexity, and expansion opportunity.',
-    tags: ['InsurTech','SME Insurance','European Expansion','AI Insurance','Fintech','Regulatory Compliance']
-  },
-  {
-    title: 'EAA Accessibility Compliance Tracker',
-    url: '/technology/eaa-tracker.html',
-    section: 'Technology',
-    desc: 'Tracking European Accessibility Act compliance readiness across retailers and digital platforms — deadline June 2025.',
-    tags: ['European Accessibility Act','Compliance','Technology','Digital Regulation','Europe','Accessibility']
-  },
-  {
-    title: 'European CPaaS & Conversational Commerce Intelligence 2026',
-    url: '/technology/cpaas-conversational-commerce.html',
-    section: 'Technology',
-    desc: 'Market intelligence on CPaaS, business messaging (WhatsApp, RCS, SMS), payment orchestration, and conversational commerce platforms.',
-    tags: ['CPaaS','Business Messaging','Conversational Commerce','Payments','WhatsApp Business','RCS','Netherlands','SaaS Platform','Digital Commerce','B2B Sales','Payment Orchestration','Enterprise Software']
-  },
-  {
-    title: 'European LED & Smart Lighting Market Intelligence 2026',
-    url: '/technology/led-smart-lighting.html',
-    section: 'Technology',
-    desc: 'How EU energy regulation, smart building adoption and Chinese manufacturers are reshaping Europe\'s €14B lighting market — competitive landscape, supply chain, and commercial channel intelligence.',
-    tags: ['LED Lighting','Smart Lighting','Energy Efficiency','Netherlands','Ecodesign','Supply Chain','Commercial Real Estate','IoT','China Manufacturing','B2B Sales','OPPLE','Signify']
-  },
-  {
-    title: 'Device Lifecycle Management — Telco Supply Chain Intelligence',
-    url: '/supply-chain/dlm-trends.html',
-    section: 'Supply Chain',
-    desc: 'Tracking European DLM market growth, reverse logistics trends and sustainability mandates in the telco sector.',
-    tags: ['Supply Chain','Device Lifecycle','Telco','Sustainability','Technology','Market Analysis']
-  },
-  {
-    title: 'Global Manufacturing Footprint & Supply Chain Transformation Intelligence 2026',
-    url: '/supply-chain/manufacturing-footprint.html',
-    section: 'Supply Chain',
-    desc: 'Global manufacturing footprint strategy, nearshoring trends, geopolitical trade risk, CapEx/OpEx models, and antifragile supply chain design for the Apparel and FMCG sectors.',
-    tags: ['Supply Chain','Manufacturing','Nearshoring','Geopolitical Risk','Transformation','ESG','Apparel','Operations Strategy']
-  },
-  {
-    title: 'University Grants & Scholarships — European Study',
-    url: '/education-government/grants.html',
-    section: 'Education & Government',
-    desc: 'A practical guide to grants and scholarships available for students studying at European universities.',
-    tags: ['University Grants','Netherlands','Europe','Education','Students','Funding']
-  },
-  {
-    title: 'European Universities — English Bachelor Programs & Rankings',
-    url: '/education-government/universities.html',
-    section: 'Education & Government',
-    desc: 'Comparative intelligence on English-language bachelor programs across top European universities.',
-    tags: ['Universities','Netherlands','Europe','Education','English Programs','Rankings']
-  },
-  {
-    title: 'Podcast Trends Dashboard — Media Intelligence',
-    url: '/media/podcasts.html',
-    section: 'Media',
-    desc: 'Tracking Dutch podcast market growth, platform dynamics, top retail shows, and podcast as a sales and advertising channel.',
-    tags: ['Podcasts','Netherlands','Media','Marketing','Retail','Advertising']
-  },
-  {
-    title: 'European Housing Market Intelligence 2026–2027',
-    url: '/real-estate/european-housing-market.html',
-    section: 'Real Estate',
-    desc: 'Where to buy, where to avoid — price trends, forecasts and investment scores for 20 European markets.',
-    tags: ['Real Estate','Housing','Europe','Investment','Rental Yield','ECB','Netherlands','Germany','Portugal','Hungary','Romania']
-  },
-  {
-    title: 'European Energy Flexibility Markets & Demand Response Intelligence 2026',
-    url: '/retail/flexibility-markets.html',
-    section: 'Retail & E-Commerce',
-    desc: 'How Europe\'s balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape — market size, key aggregators, regulatory framework, and COO benchmarks across NL, BE, FR.',
-    tags: ['Energy','Flexibility Markets','Demand Response','VPP','Netherlands','Belgium','France','REMIT','Energy Transition','Balancing Markets','Aggregators']
-  }
+  { title:'The Furniture Trap', url:'/retail/furniture-market.html', section:'Retail & E-Commerce', desc:'Why pure-play online furniture retail in Europe keeps failing.', tags:['Online Retail','Furniture','Netherlands','Europe'] },
+  { title:'Nike Transformation Intelligence', url:'/retail/nike.html', section:'Retail & E-Commerce', desc:'Nike DTC strategy, EMEA transformation, and retail repositioning.', tags:['Nike','Sporting Goods','DTC','EMEA'] },
+  { title:'Sporting Goods Brands', url:'/retail/sporting-goods-brands.html', section:'Retail & E-Commerce', desc:'Competitive analysis of sporting goods brands across European markets.', tags:['Sporting Goods','European Market','Brand Strategy'] },
+  { title:'B2B Marketplace Intelligence', url:'/retail/b2b-marketplace.html', section:'Retail & E-Commerce', desc:'Mapping Europe B2B marketplace landscape.', tags:['B2B','Marketplace','E-Commerce','Europe'] },
+  { title:'Energy Flexibility Markets', url:'/retail/flexibility-markets.html', section:'Retail & E-Commerce', desc:'European balancing markets, VPPs, and demand response.', tags:['Energy','Flexibility','Demand Response','VPP'] },
+  { title:'Student Side Jobs', url:'/people/student-side-jobs.html', section:'People & Transformation', desc:'Side income for students in the Netherlands.', tags:['Student Jobs','Netherlands','Freelance'] },
+  { title:'Executive Salary Index', url:'/people/salary-index.html', section:'People & Transformation', desc:'Executive salaries across 32 European markets.', tags:['Salaries','Executive Compensation','Europe'] },
+  { title:'NL Corporate Layoff Tracker', url:'/people/nl-layoffs.html', section:'People & Transformation', desc:'Corporate layoffs across Dutch companies.', tags:['Layoffs','Netherlands','Restructuring'] },
+  { title:'EU Transformation Intelligence', url:'/people/eu-transformation.html', section:'People & Transformation', desc:'Digital transformation maturity across European corporations.', tags:['Transformation','Europe','Change Management'] },
+  { title:'Luxury DTC Leadership Tracker', url:'/people/luxury-dtc-leader.html', section:'People & Transformation', desc:'Leadership intelligence for luxury and consumer DTC brands.', tags:['Luxury','DTC','Leadership'] },
+  { title:'Philips Transformation Intelligence', url:'/transformation/philips.html', section:'People & Transformation', desc:'Philips corporate transformation deep-dive.', tags:['Philips','Transformation','Netherlands'] },
+  { title:'CEE Transformation Index', url:'/transformation/cee-index.html', section:'People & Transformation', desc:'Transformation across Central and Eastern Europe.', tags:['CEE','Transformation','Europe'] },
+  { title:'Counterfeiting Intelligence', url:'/finance-compliance/counterfeiting.html', section:'Finance & Compliance', desc:'Global counterfeiting problem mapping.', tags:['Counterfeiting','Brand Protection','Compliance'] },
+  { title:'InsurTech & SME Insurance', url:'/finance-compliance/insurtech-sme.html', section:'Finance & Compliance', desc:'European SME insurance market intelligence.', tags:['InsurTech','SME Insurance','Fintech'] },
+  { title:'Crypto & Digital Assets', url:'/finance-compliance/crypto-intelligence.html', section:'Finance & Compliance', desc:'European crypto regulation and market dynamics.', tags:['Crypto','Digital Assets','Regulation'] },
+  { title:'EAA Compliance Tracker', url:'/technology/eaa-tracker.html', section:'Technology & Media', desc:'European Accessibility Act compliance readiness.', tags:['EAA','Compliance','Accessibility'] },
+  { title:'CPaaS & Conversational Commerce', url:'/technology/cpaas-conversational-commerce.html', section:'Technology & Media', desc:'CPaaS, business messaging, and payment orchestration.', tags:['CPaaS','Messaging','Payments'] },
+  { title:'LED & Smart Lighting', url:'/technology/led-smart-lighting.html', section:'Technology & Media', desc:'European lighting market intelligence.', tags:['LED','Smart Lighting','Energy'] },
+  { title:'Podcast Trends Dashboard', url:'/media/podcasts.html', section:'Technology & Media', desc:'Dutch podcast market growth and dynamics.', tags:['Podcasts','Netherlands','Media'] },
+  { title:'Device Lifecycle Management', url:'/supply-chain/dlm-trends.html', section:'Supply Chain', desc:'European DLM market and reverse logistics.', tags:['DLM','Telco','Sustainability'] },
+  { title:'Manufacturing Footprint', url:'/supply-chain/manufacturing-footprint.html', section:'Supply Chain', desc:'Global manufacturing footprint and nearshoring.', tags:['Manufacturing','Nearshoring','Geopolitical Risk'] },
+  { title:'University Grants & Scholarships', url:'/education-government/grants.html', section:'Education & Government', desc:'Grants and scholarships for European university students.', tags:['Grants','Education','Students'] },
+  { title:'European Universities', url:'/education-government/universities.html', section:'Education & Government', desc:'English-language bachelor programs across Europe.', tags:['Universities','Education','English Programs'] },
+  { title:'European Housing Market', url:'/real-estate/european-housing-market.html', section:'Real Estate', desc:'Price trends and investment scores for 20 European markets.', tags:['Real Estate','Housing','Investment'] }
 ];
 
-// ── SEARCH FUNCTIONS ───────────────────────────────────────────────────────────
 function openSearch() {
-  var overlay = document.getElementById('search-overlay');
-  overlay.style.display = 'block';
+  var o = document.getElementById('search-overlay');
+  o.style.display = 'block';
   document.getElementById('search-input').value = '';
-  document.getElementById('search-results').innerHTML = '<div class="search-empty">Start typing to find articles…</div>';
+  document.getElementById('search-results').innerHTML = '<div class="search-empty">Start typing to find articles\u2026</div>';
   document.body.style.overflow = 'hidden';
   setTimeout(function(){ document.getElementById('search-input').focus(); }, 60);
 }
-
 function closeSearch() {
   document.getElementById('search-overlay').style.display = 'none';
   document.body.style.overflow = '';
 }
-
 document.getElementById('search-input').addEventListener('input', function(){
   var q = this.value.toLowerCase().trim();
-  var container = document.getElementById('search-results');
-  if (!q) {
-    container.innerHTML = '<div class="search-empty">Start typing to find articles…</div>';
-    return;
-  }
-  var matches = ARTICLES.filter(function(a){
-    return (a.title + ' ' + a.section + ' ' + a.desc + ' ' + a.tags.join(' ')).toLowerCase().indexOf(q) !== -1;
-  });
-  if (!matches.length) {
-    container.innerHTML = '<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">' + q + '</strong>"</div>';
-    return;
-  }
-  container.innerHTML = matches.map(function(a){
-    var tagHtml = a.tags.slice(0,4).map(function(t){ return '<span class="sr-tag">'+t+'</span>'; }).join('');
-    return '<a class="search-result" href="'+a.url+'" role="listitem">'
-      + '<div class="sr-section">'+a.section+'</div>'
-      + '<div class="sr-title">'+a.title+'</div>'
-      + '<div class="sr-desc">'+a.desc+'</div>'
-      + '<div class="sr-tags">'+tagHtml+'</div>'
-      + '</a>';
+  var c = document.getElementById('search-results');
+  if (!q) { c.innerHTML = '<div class="search-empty">Start typing to find articles\u2026</div>'; return; }
+  var m = ARTICLES.filter(function(a){ return (a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q) !== -1; });
+  if (!m.length) { c.innerHTML = '<div class="search-empty">No results for "'+q+'"</div>'; return; }
+  c.innerHTML = m.map(function(a){
+    var t = a.tags.slice(0,3).map(function(x){ return '<span class="sr-tag">'+x+'</span>'; }).join('');
+    return '<a class="search-result" href="'+a.url+'"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';
   }).join('');
 });
-
-document.getElementById('search-input').addEventListener('keydown', function(e){
-  if (e.key === 'Enter') {
-    var first = document.querySelector('.search-result');
-    if (first) { window.location = first.href; }
-  }
-});
-
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape') closeSearch();
-});
-
-document.getElementById('search-overlay').addEventListener('click', function(e){
-  if (e.target === this) closeSearch();
-});
+document.getElementById('search-input').addEventListener('keydown', function(e){ if (e.key==='Enter') { var f=document.querySelector('.search-result'); if(f) window.location=f.href; } });
+document.addEventListener('keydown', function(e){ if (e.key==='Escape') closeSearch(); });
+document.getElementById('search-overlay').addEventListener('click', function(e){ if (e.target===this) closeSearch(); });
 </script>
 
-<!-- COOKIE NOTICE BANNER -->
+<!-- COOKIE NOTICE -->
 <div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
