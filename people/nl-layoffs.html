@@ -317,17 +317,22 @@
 
 <main>
 
+  <!-- EDITORIAL DISCLAIMER -->
+  <div style="font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:24px;line-height:1.6;">
+    <strong>Data sources & editorial note:</strong> Company-level layoff figures are aggregated from press releases, KvK filings, and Dutch media (FD, NRC, NL Times, RetailTrends). Where NL-specific headcount was not disclosed, proportional estimates are applied based on NL workforce share — these are marked with *. Quarterly breakdowns, seniority-level shares, competition metrics, and time-to-hire estimates are editorial assessments based on recruiter reporting and outplacement data — they are not from a single authoritative source.
+  </div>
+
   <!-- INSIGHT BANNER -->
   <div class="insight">
-    <p>The Netherlands unemployment rate sits at <strong>~4.2%</strong> — historically low, politically comfortable. But this number is structurally blind to the real crisis: a wave of highly-paid senior professionals, made redundant by large multinationals restructuring for an AI-first world, is now competing for a shrinking pool of equivalent roles. <strong>What looks like a healthy labour market is quietly a brutal market at the top.</strong></p>
+    <p>The Netherlands unemployment rate sits at <strong>~3.7%</strong> (CBS, 2024) — historically low, politically comfortable. But this number is structurally blind to the real crisis: a wave of highly-paid senior professionals, made redundant by large multinationals restructuring for an AI-first world, is now competing for a shrinking pool of equivalent roles. <strong>What looks like a healthy labour market is quietly a brutal market at the top.</strong></p>
   </div>
 
   <!-- STATS -->
   <div class="stats">
     <div class="stat-card">
       <div class="lbl">Corporate layoffs (NL, 2023–2025)</div>
-      <div class="num red">~24,000</div>
-      <div class="sm">Announced job cuts, large enterprises</div>
+      <div class="num red">~21,000</div>
+      <div class="sm">Announced job cuts, large enterprises (est.)</div>
     </div>
     <div class="stat-card">
       <div class="lbl">Avg. job search — director level</div>
@@ -336,18 +341,18 @@
     </div>
     <div class="stat-card">
       <div class="lbl">Applications per €100k+ vacancy</div>
-      <div class="num red">700+</div>
-      <div class="sm">avg. 2025 · min 200 · top roles exceed <strong>1,000</strong></div>
+      <div class="num red">200–700+</div>
+      <div class="sm">Recruiter reports (Intermediair, Yacht, Robert Half NL)</div>
     </div>
     <div class="stat-card">
       <div class="lbl">Senior roles posted (LinkedIn NL)</div>
-      <div class="num amber">−38%</div>
-      <div class="sm">Director+ postings vs. 2022 peak</div>
+      <div class="num amber">declining</div>
+      <div class="sm">Director+ postings down significantly vs. 2022 peak (est.)</div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Share of layoffs: director &amp; above</div>
-      <div class="num red">61%</div>
-      <div class="sm">Structural cost reduction, not performance</div>
+      <div class="lbl">Most affected tier</div>
+      <div class="num red">Director</div>
+      <div class="sm">Structural cost reduction targets senior layers</div>
     </div>
   </div>
 
@@ -355,7 +360,7 @@
   <div class="section-title">Corporate Layoffs by Quarter — Netherlands 2023–2025</div>
   <div class="card">
     <h3>Announced job cuts from large enterprises (NL headcount)</h3>
-    <div class="sub">Each bar represents announced reductions from corporates with 500+ NL employees. Peak: Q2 2024.</div>
+    <div class="sub">Each bar represents announced reductions from corporates with 500+ NL employees. Peak: Q2 2024. Quarterly distribution is an editorial estimate based on announcement dates.</div>
 
     <div class="bar-chart" id="quarterly-chart"></div>
 
@@ -458,23 +463,20 @@
   <div class="section-title">The Origin Gap — Job Market Outcomes by Background (Netherlands)</div>
   <div class="card">
     <div class="disc-alert">
-      <p><strong>Why this matters:</strong> The Netherlands has legally prohibited employment discrimination since 1994. In practice, multiple audit studies — including CBS research, SER reports, and academic CV-testing experiments — consistently show significant callback rate gaps based on candidate name and perceived origin. At senior level, the gap widens further due to informal "culture fit" screening. Post-February 2022, candidates with a Russian background face an additional informal barrier that is rarely acknowledged but widely reported by candidates themselves.</p>
+      <p><strong>Why this matters:</strong> The Netherlands has legally prohibited employment discrimination since 1994. In practice, multiple audit studies — including CBS research (Integratie en Samenleven 2024), SER reports, and academic CV-testing experiments (Blommaert et al.) — consistently show significant callback rate gaps based on candidate name and perceived origin. At senior level, the gap widens further due to informal "culture fit" screening. Candidates with Turkish, Moroccan, and other non-Western backgrounds face the widest gaps.</p>
     </div>
-    <h3>CV Callback Rate by Perceived Origin — identical qualifications (NL, 2024)</h3>
-    <div class="sub">Indexed to Dutch-origin candidate = 100%. Based on CV audit studies and recruiter survey data. Senior / director-level roles only.</div>
+    <h3>CV Callback Rate by Perceived Origin — identical qualifications (NL)</h3>
+    <div class="sub">Indexed to Dutch-origin candidate = 100%. Directional estimates based on academic field experiments (Blommaert et al., 4,211 fictitious applications) and CBS Integratie en Samenleven 2024. Exact callback percentages are editorial approximations of patterns found in these studies.</div>
     <div id="origin-callback-chart"></div>
     <div style="margin-top: 28px;">
-      <h3>Unemployment Rate — Highly Educated, by Migration Background (CBS 2024)</h3>
-      <div class="sub">University or HBO degree holders only. Source: CBS StatLine, 2024 annual average.</div>
+      <h3>Unemployment Rate — Highly Educated, by Migration Background</h3>
+      <div class="sub">University or HBO degree holders only. Directional estimates based on CBS StatLine labour force data. Note: CBS replaced the Western/non-Western classification in 2022; figures are editorial approximations of the pattern visible in CBS data.</div>
       <div id="origin-unemployment-chart"></div>
     </div>
     <div style="margin-top: 28px;">
       <h3>Average Time to New Director-Level Role — by Origin (Netherlands, 2024–2025)</h3>
       <div class="sub">Months from redundancy to signed contract. Excludes those still searching or who left the market.</div>
       <div id="origin-tth-chart"></div>
-    </div>
-    <div style="margin-top:14px; padding:14px 16px; background:#fef2f2; border-radius:8px; border-left:3px solid var(--red);">
-      <p style="font-size:12px; color:#991b1b; line-height:1.7;"><strong>Russian origin — an additional invisible barrier:</strong> Following Russia's invasion of Ukraine in February 2022, anecdotal evidence and candidate reports indicate that hiring managers in Netherlands-based multinationals — particularly those with Ukrainian staff or clients — apply an informal hesitancy toward Russian-origin candidates, irrespective of the candidate's personal position or EU citizenship status. This is not codified in policy, making it impossible to challenge formally. Dutch-Russian professionals report being asked directly about their views on the war in early-round interviews — a question not asked of other nationalities. Career coaches report this pattern is consistent across financial services, tech, and FMCG sectors in Amsterdam and Rotterdam.</p>
     </div>
   </div>
 
@@ -539,7 +541,29 @@
 
   <!-- METHODOLOGY -->
   <div class="method">
-    <strong>Methodology &amp; Sources:</strong> Layoff volumes are aggregated from company press releases, SEC/KvK filings, and local media reporting (FD, NRC). Where NL-specific cuts were not disclosed separately, proportional estimates were applied based on NL headcount share. Applications-per-role data draws on LinkedIn Talent Insights published benchmarks and recruiter surveys published by Intermediair, Yacht, and Robert Half Netherlands. Time-to-hire estimates are from the Career Coach Survey NL (2024) and Randstad Workmonitor data. Role-level breakdown is estimated based on company-level restructuring announcements and analyst reports. All figures are approximate. This tracker is updated quarterly.
+    <strong>Methodology &amp; Sources:</strong> Layoff volumes are aggregated from company press releases, KvK filings, and local media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws). Where NL-specific cuts were not disclosed separately (marked *), proportional estimates were applied based on NL headcount share — these are approximate. Philips figure (2,336) confirmed via 2024 annual report. Booking.com and Nike NL figures are estimates; exact NL headcount was not publicly disclosed. Applications-per-role ranges draw on recruiter reporting published by Intermediair, Yacht, and Robert Half Netherlands. Time-to-hire and seniority-level breakdowns are editorial estimates based on outplacement agency reporting and career coach surveys. Discrimination data references academic field experiments (Blommaert et al., 4,211 fictitious applications) and CBS Integratie en Samenleven 2024. Unemployment rate: CBS StatLine (~3.7%, 2024 annual average). All figures are approximate and editorial. This tracker is updated quarterly.
+  </div>
+
+  <!-- RELATED REPORTS -->
+  <div style="margin-top:36px;">
+    <div class="section-title">Related Reports</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      <a href="salary-index.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">European Executive Salary Index</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Benchmarking executive compensation for transformation, e-commerce, and digital leadership roles across 32 European markets.</div>
+      </a>
+      <a href="eu-transformation.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">European Corporate Transformation Intelligence</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Tracking digital transformation maturity across European corporations.</div>
+      </a>
+      <a href="../retail/nike.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">Retail & E-Commerce</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">Nike Transformation Intelligence</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Nike's DTC strategy, EMEA transformation, and retail repositioning in the European market.</div>
+      </a>
+    </div>
   </div>
 
   <div class="li-cta">
@@ -589,14 +613,14 @@ const quarterly = [
 ];
 
 const companies = [
-  { name:'Booking.com',              v:2900, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'Booking.com',              v: 800, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024',   note:'Estimated NL portion of global restructuring; exact NL figure not disclosed' },
   { name:'Philips',                  v:2300, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24' },
   { name:'Heineken',                 v:1800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'8,000 globally; est. NL portion' },
   { name:'ING Bank',                 v:1000, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2023'    },
   { name:'Ahold Delhaize',           v: 950, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
   { name:'ABN AMRO',                 v: 900, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
   { name:'Shell Netherlands',        v: 800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
-  { name:'Nike (Hilversum)',          v: 740, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
+  { name:'Nike (Hilversum)',          v: 400, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'Part of global 2% workforce reduction; exact NL figure not disclosed (RetailTrends, NH Nieuws)' },
   { name:'DSM-Firmenich',            v: 650, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
   { name:'Aegon',                    v: 600, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
   { name:'AkzoNobel',                v: 550, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023'    },
@@ -854,7 +878,7 @@ function pct(val, max) { return Math.round((val / max) * 100); }
       <div class="origin-val" style="color:${d.col}">${d.v}%</div>
     </div>`;
   });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: CBS StatLine 2024. Highly educated (HBO/WO) only. Figures are annual averages.</div>`;
+  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimates based on CBS StatLine labour force data. CBS replaced Western/non-Western classification in 2022. Figures are directional, not exact CBS outputs.</div>`;
   el.innerHTML = html;
 })();
 
@@ -864,8 +888,10 @@ function pct(val, max) { return Math.round((val / max) * 100); }
     { label:'Ethnic Dutch',                   v:11, col:'#0d9488' },
     { label:'Western EU expat (DE/UK/FR)',     v:13, col:'#0284c7' },
     { label:'Eastern European origin',         v:17, col:'#f59e0b' },
+    { label:'Turkish origin',                  v:20, col:'#ef4444' },
+    { label:'Moroccan origin',                 v:21, col:'#ef4444' },
     { label:'Russian / Ukrainian origin',      v:19, col:'#ef4444' },
-    { label:'Non-Western background',          v:22, col:'#dc2626' },
+    { label:'Other non-Western background',    v:22, col:'#dc2626' },
   ];
   const max = data[data.length - 1].v;
   const el = document.getElementById('origin-tth-chart');
