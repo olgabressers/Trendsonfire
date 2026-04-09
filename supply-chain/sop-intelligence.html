@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>S&amp;OP to IBP — The Evolution of Supply Chain Planning — TrendsOnFire</title>
+  <meta name="description" content="From spreadsheet-based S&amp;OP to AI-powered Integrated Business Planning: market data, maturity benchmarks and strategic impact. Sources: Gartner, McKinsey, BCG."/>
+  <link rel="canonical" href="https://trendsonfire.com/supply-chain/sop-intelligence.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="S&amp;OP to IBP — The Evolution of Supply Chain Planning"/>
+  <meta property="og:description" content="Market data, maturity benchmarks and strategic impact of S&amp;OP and Integrated Business Planning. Sources: Gartner, McKinsey, BCG."/>
+  <meta property="og:url" content="https://trendsonfire.com/supply-chain/sop-intelligence.html"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+    .nav-links{display:flex;margin-left:auto}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#0f2340 50%,#1a1a2e 100%);color:white;padding:52px 32px 44px}
+    .hero-inner{max-width:1100px;margin:auto}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
+    .hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+    .hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:640px}
+    .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+    .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
+
+    main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+
+    .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:8px}
+    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-wrap{position:relative;height:280px}
+
+    /* Timeline */
+    .timeline{position:relative;padding:20px 0 20px 0;margin-bottom:8px}
+    .tl-line{position:absolute;left:28px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#8b1a6a,#0f2340);border-radius:2px}
+    .tl-item{position:relative;padding-left:64px;margin-bottom:28px}
+    .tl-dot{position:absolute;left:20px;top:4px;width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 2px var(--fuchsia)}
+    .tl-year{font-size:13px;font-weight:800;color:var(--fuchsia);margin-bottom:2px}
+    .tl-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+    .tl-desc{font-size:12.5px;color:var(--sub);line-height:1.5}
+
+    /* Maturity model */
+    .maturity{display:flex;gap:0;margin-bottom:8px;overflow-x:auto}
+    .mat-stage{flex:1;min-width:140px;padding:20px 16px;text-align:center;color:white;position:relative}
+    .mat-stage:first-child{border-radius:12px 0 0 12px}
+    .mat-stage:last-child{border-radius:0 12px 12px 0}
+    .mat-num{font-size:28px;font-weight:800;opacity:.4;margin-bottom:4px}
+    .mat-name{font-size:13px;font-weight:700;margin-bottom:6px}
+    .mat-desc{font-size:11px;opacity:.8;line-height:1.4}
+    .mat-label{display:inline-block;margin-top:8px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,.2)}
+
+    /* KPI cards */
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:8px}
+    .kpi{background:white;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .kpi-val{font-size:28px;font-weight:800;margin-bottom:4px}
+    .kpi-label{font-size:12px;color:var(--sub);line-height:1.4}
+    .kpi-src{font-size:10px;color:#d1d5db;margin-top:8px}
+
+    .src-note{font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px}
+    .src-note a{color:#6b7280}
+
+    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
+    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+
+    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer a{color:#94a3b8;text-decoration:none}
+    footer a:hover{color:white}
+
+    @media(max-width:768px){
+      .chart-grid{grid-template-columns:1fr}
+      .chart-wrap{height:220px}
+      main,.hero{padding-left:16px!important;padding-right:16px!important}
+      .maturity{flex-direction:column}
+      .mat-stage{border-radius:0!important}
+      .mat-stage:first-child{border-radius:12px 12px 0 0!important}
+      .mat-stage:last-child{border-radius:0 0 12px 12px!important}
+      .kpi-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Supply Chain</a> / S&amp;OP Intelligence</div>
+    <div class="eyebrow">Supply Chain Planning Intelligence</div>
+    <h1>S&amp;OP to IBP — The Evolution of Supply Chain Planning</h1>
+    <p>How Sales &amp; Operations Planning evolved from a monthly spreadsheet exercise to AI-powered Integrated Business Planning — and why most organisations are still stuck in the middle.</p>
+    <div class="hero-meta">
+      <span>Published: April 2026</span>
+      <span>Sources: Gartner, McKinsey, BCG</span>
+      <span>Olga Bressers</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══ SECTION 1: KPI HEADLINE CARDS ══ -->
+  <div class="section-title">The S&amp;OP / IBP Landscape in Numbers</div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--navy)">$28.4B</div>
+      <div class="kpi-label">Global SCM software market (2025)</div>
+      <div class="kpi-src">Grand View Research</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--fuchsia)">$53B</div>
+      <div class="kpi-label">SCM software with agentic AI by 2030</div>
+      <div class="kpi-src">Gartner, April 2026</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--green)">+1-2pp</div>
+      <div class="kpi-label">EBIT improvement from mature IBP</div>
+      <div class="kpi-src">McKinsey (170+ companies)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--red)">23%</div>
+      <div class="kpi-label">of supply chain orgs have a formal AI strategy</div>
+      <div class="kpi-src">Gartner survey, Jan 2025</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://www.grandviewresearch.com/industry-analysis/supply-chain-management-market-report" target="_blank" rel="noopener">Grand View Research — SCM Market Report</a> |
+    <a href="https://itsupplychain.com/gartner-forecasts-supply-chain-management-software-with-agentic-ai-will-grow-to-53-billion-in-spend-by-2030/" target="_blank" rel="noopener">Gartner via IT Supply Chain, April 2026</a> |
+    <a href="https://www.mckinsey.com/capabilities/operations/our-insights/a-better-way-to-drive-your-business" target="_blank" rel="noopener">McKinsey — A better way to drive your business</a> |
+    <a href="https://www.gartner.com/en/newsroom/2025-06-11-gartner-survey-shows-just-23-percent-of-supply-chain-organizations-have-a-formal-ai-strategy" target="_blank" rel="noopener">Gartner AI Strategy Survey, June 2025</a>
+  </div>
+
+  <!-- ══ SECTION 2: EVOLUTION TIMELINE ══ -->
+  <div class="section-title">The Evolution: From MRP to AI-Powered IBP</div>
+
+  <div style="background:white;border-radius:14px;border:1px solid var(--border);padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px">
+    <div class="timeline">
+      <div class="tl-line"></div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#d97706"></div>
+        <div class="tl-year">1964</div>
+        <div class="tl-title">First MRP System</div>
+        <div class="tl-desc">Joseph Orlicky (IBM) implements the first Material Requirements Planning system at Black &amp; Decker. By 1975, ~700 companies use MRP.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#d97706"></div>
+        <div class="tl-year">1983</div>
+        <div class="tl-title">MRP II — Manufacturing Resource Planning</div>
+        <div class="tl-desc">Oliver Wight expands MRP into MRP II, integrating scheduling, capacity planning, marketing, engineering and HR into a single planning framework.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#8b1a6a"></div>
+        <div class="tl-year">1985-1988</div>
+        <div class="tl-title">S&amp;OP Is Born</div>
+        <div class="tl-desc">Dick Ling (Oliver Wight) creates Sales &amp; Operations Planning. The first S&amp;OP book "Orchestrating Success" is published in 1988 by Ling &amp; Goddard.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#1d4ed8"></div>
+        <div class="tl-year">Late 1990s</div>
+        <div class="tl-title">Portfolio Integration</div>
+        <div class="tl-desc">Oliver Wight adds product and portfolio management to S&amp;OP, connecting new product introduction with demand and supply planning.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#059669"></div>
+        <div class="tl-year">2005</div>
+        <div class="tl-title">Integrated Business Planning (IBP)</div>
+        <div class="tl-desc">Oliver Wight coins the term IBP to supersede S&amp;OP — adding full financial integration, strategic alignment, and executive-led decision-making.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#7c3aed"></div>
+        <div class="tl-year">2020s</div>
+        <div class="tl-title">AI-Powered Planning</div>
+        <div class="tl-desc">Demand sensing, digital twins, and agentic AI enter supply chain planning. Gartner forecasts 60% of enterprises will adopt agentic AI in SCM by 2030.</div>
+      </div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://en.wikipedia.org/wiki/Sales_and_operations_planning" target="_blank" rel="noopener">Wikipedia — S&amp;OP</a> |
+    <a href="https://en.wikipedia.org/wiki/Material_requirements_planning" target="_blank" rel="noopener">Wikipedia — MRP</a> |
+    <a href="https://www.consultancy.uk/news/34585/oliver-wight-on-the-evolution-of-business-planning" target="_blank" rel="noopener">Consultancy.uk — Oliver Wight on the evolution of business planning</a> |
+    <a href="https://oliverwight-eame.com/transitioning-from-sales-and-operations-planning-to-integrated-business-planning/" target="_blank" rel="noopener">Oliver Wight EAME — Transitioning from S&amp;OP to IBP</a>
+  </div>
+
+  <!-- ══ SECTION 3: GARTNER MATURITY MODEL ══ -->
+  <div class="section-title">Gartner S&amp;OP Maturity Model — Where Most Organisations Get Stuck</div>
+
+  <div class="maturity">
+    <div class="mat-stage" style="background:#dc2626">
+      <div class="mat-num">1</div>
+      <div class="mat-name">React</div>
+      <div class="mat-desc">Firefighting. Disconnected plans. Spreadsheet-driven.</div>
+      <div class="mat-label">Most common</div>
+    </div>
+    <div class="mat-stage" style="background:#d97706">
+      <div class="mat-num">2</div>
+      <div class="mat-name">Anticipate</div>
+      <div class="mat-desc">Basic demand planning. Monthly S&amp;OP cycle exists but siloed.</div>
+      <div class="mat-label">Most common</div>
+    </div>
+    <div class="mat-stage" style="background:#0ea5e9">
+      <div class="mat-num">3</div>
+      <div class="mat-name">Integrate</div>
+      <div class="mat-desc">Cross-functional alignment. Demand and supply connected.</div>
+      <div class="mat-label">Transition zone</div>
+    </div>
+    <div class="mat-stage" style="background:#1d4ed8">
+      <div class="mat-num">4</div>
+      <div class="mat-name">Collaborate</div>
+      <div class="mat-desc">External partners integrated. Financial planning aligned.</div>
+      <div class="mat-label">IBP starts here</div>
+    </div>
+    <div class="mat-stage" style="background:#059669">
+      <div class="mat-num">5</div>
+      <div class="mat-name">Orchestrate</div>
+      <div class="mat-desc">AI-driven. Autonomous sensing. Continuous optimisation.</div>
+      <div class="mat-label">Very few</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:4px;margin-top:12px">Most organisations remain at stages 1-3. The transition from stage 3 (Integrate) to stage 4 (Collaborate) is where S&amp;OP becomes IBP — shifting from operational alignment to strategic, executive-led decision-making.</p>
+  <div class="src-note">
+    <strong>Source:</strong>
+    <a href="https://www.gartner.com/en/documents/2587021" target="_blank" rel="noopener">Gartner — Five-Stage S&amp;OP Maturity Model</a> (paywalled) |
+    Summary: <a href="https://www.jedox.com/en/blog/5-sop-maturity-levels/" target="_blank" rel="noopener">Jedox — 5 S&amp;OP Maturity Levels</a>
+  </div>
+
+  <!-- ══ SECTION 4: CHARTS ══ -->
+  <div class="section-title">Market Data — SCM Software &amp; AI Adoption</div>
+
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>SCM Software Market Size (USD Billions)</h3>
+      <div class="chart-wrap"><canvas id="chart-scm"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>Agentic AI Adoption in SCM (% of Enterprises)</h3>
+      <div class="chart-wrap"><canvas id="chart-ai"></canvas></div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    SCM market: <a href="https://www.grandviewresearch.com/industry-analysis/supply-chain-management-market-report" target="_blank" rel="noopener">Grand View Research, 2025</a> (2024-2025 actual, 2026-2030 projected at 11.4% CAGR) |
+    AI adoption: <a href="https://itsupplychain.com/gartner-forecasts-supply-chain-management-software-with-agentic-ai-will-grow-to-53-billion-in-spend-by-2030/" target="_blank" rel="noopener">Gartner, April 2026</a> (5% in 2025, 60% projected by 2030)
+  </div>
+
+  <!-- ══ SECTION 5: McKINSEY IBP BENEFITS ══ -->
+  <div class="section-title">The Business Case — Measured IBP Impact</div>
+
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>IBP Impact vs. Non-IBP Organisations (McKinsey, 170+ companies)</h3>
+      <div class="chart-wrap"><canvas id="chart-ibp"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>The Reality Check — AI Maturity Gap</h3>
+      <div class="chart-wrap"><canvas id="chart-gap"></canvas></div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    IBP impact: <a href="https://www.mckinsey.com/capabilities/operations/our-insights/a-better-way-to-drive-your-business" target="_blank" rel="noopener">McKinsey — A better way to drive your business</a> (assessment of 170+ companies over 5 years) |
+    AI gaps: <a href="https://www.bcg.com/publications/2026/supply-chain-planning-why-ai-alone-isnt-enough" target="_blank" rel="noopener">BCG — Supply Chain Planning 2026</a> |
+    <a href="https://www.gartner.com/en/newsroom/2025-06-11-gartner-survey-shows-just-23-percent-of-supply-chain-organizations-have-a-formal-ai-strategy" target="_blank" rel="noopener">Gartner AI Strategy Survey</a> |
+    <a href="https://www.gartner.com/en/newsroom/press-releases/2025-05-07-gartner-predicts-60-percent-of-supply-chain-digital-adoption-efforts-will-fail-to-deliver-promised-value-by-2028" target="_blank" rel="noopener">Gartner — 60% of digital adoption will fail by 2028</a>
+  </div>
+
+  <!-- ══ SECTION 6: AI SIGNALS ══ -->
+  <div class="section-title">Key Signals — 2026 and Beyond</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:8px">
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">AI Disruption</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">SCM software with agentic AI could reach $53B by 2030 — up from &lt;$2B in 2025</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">Gartner projects 60% of enterprises using SCM software will adopt agentic AI capabilities by 2030, up from 5% in 2025.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://itsupplychain.com/gartner-forecasts-supply-chain-management-software-with-agentic-ai-will-grow-to-53-billion-in-spend-by-2030/" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, April 2026</a></div>
+    </div>
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Talent Gap</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">90% of supply chain leaders say they lack sufficient talent for digitisation</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">McKinsey's Global Supply Chain Leader Survey found the biggest barrier to digital transformation is not technology — it is people and skills.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-risk-survey-2024" target="_blank" rel="noopener" style="color:#9ca3af">McKinsey, 2024</a></div>
+    </div>
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Adoption Reality</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">Only ~20% of organisations report meaningful value from AI in supply chain planning</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">BCG found that as little as 7% report value from agentic or GenAI usage. What separates leaders from laggards is not technology itself, but how planners apply it.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.bcg.com/publications/2026/supply-chain-planning-why-ai-alone-isnt-enough" target="_blank" rel="noopener" style="color:#9ca3af">BCG, February 2026</a></div>
+    </div>
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Workforce Impact</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">55% of supply chain leaders expect agentic AI to reduce entry-level hiring needs</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">A Gartner survey of supply chain leaders suggests AI will reshape junior roles — making experienced planners who can govern AI systems more valuable.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-02-25-gartner-survey-shows-55-percent-of-supply-chain-leaders-expect-agentic-ai-to-reduce-entry-level-hiring-needs" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, February 2026</a></div>
+    </div>
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Failure Risk</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">60% of supply chain digital adoption efforts may fail to deliver value by 2028</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">Gartner attributes this to insufficient investment in learning and development — the technology works, but people are not trained to use it effectively.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.gartner.com/en/newsroom/press-releases/2025-05-07-gartner-predicts-60-percent-of-supply-chain-digital-adoption-efforts-will-fail-to-deliver-promised-value-by-2028" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, May 2025</a></div>
+    </div>
+
+    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Scale</div>
+      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">SAP IBP: 2,293 companies, 30,000+ daily users across 79 countries</div>
+      <div style="font-size:13px;color:var(--sub);line-height:1.6">SAP's Integrated Business Planning platform runs 20,000 forecast algorithms daily, processing 8.1 trillion planning points in 2025 — showing the scale of modern planning operations.</div>
+      <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://community.sap.com/t5/supply-chain-management-blog-posts-by-sap/sap-integrated-business-planning-key-2025-highlights-and-what-s-next/ba-p/14367643" target="_blank" rel="noopener" style="color:#9ca3af">SAP Community Blog, 2025</a></div>
+    </div>
+
+  </div>
+  <div class="src-note">
+    <strong>All signal cards are individually sourced above.</strong> Each card links to the original publication.
+  </div>
+
+  <!-- ══ CTA ══ -->
+  <div class="cta-bar">
+    <div>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> — All analysis is editorial and based on publicly available information.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// Chart 1: SCM Software Market Size
+new Chart(document.getElementById('chart-scm'),{
+  type:'bar',
+  data:{
+    labels:['2024','2025','2026*','2027*','2028*','2029*','2030*'],
+    datasets:[{
+      label:'USD Billions',
+      data:[25.7,28.4,31.6,35.2,39.2,43.7,48.6],
+      backgroundColor:['#0f2340','#0f2340','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)'],
+      borderRadius:4
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return'$'+c.raw+'B';}}}
+    },
+    scales:{y:{ticks:{callback:function(v){return'$'+v+'B';}},grid:{color:'#f3f4f6'}}}
+  }
+});
+
+// Chart 2: AI Adoption in SCM
+new Chart(document.getElementById('chart-ai'),{
+  type:'line',
+  data:{
+    labels:['2025','2026*','2027*','2028*','2029*','2030*'],
+    datasets:[{
+      label:'% of enterprises',
+      data:[5,15,25,37,48,60],
+      borderColor:'#8b1a6a',
+      backgroundColor:'rgba(139,26,106,.1)',
+      fill:true,
+      tension:.4,
+      pointBackgroundColor:'#8b1a6a',
+      pointRadius:5
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return c.raw+'% of enterprises';}}}
+    },
+    scales:{y:{min:0,max:70,ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'}}}
+  }
+});
+
+// Chart 3: McKinsey IBP Benefits
+new Chart(document.getElementById('chart-ibp'),{
+  type:'bar',
+  data:{
+    labels:['EBIT improvement','Service level improvement','Freight cost reduction','Missed sales reduction'],
+    datasets:[{
+      label:'Low end',
+      data:[1,5,10,40],
+      backgroundColor:'#0ea5e9',
+      borderRadius:4
+    },{
+      label:'High end',
+      data:[1,15,5,10],
+      backgroundColor:'#0f2340',
+      borderRadius:4
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{font:{size:11}}},
+      tooltip:{callbacks:{label:function(c){
+        var ranges=['+1-2 pp','+5-20 pp','-10-15%','-40-50%'];
+        return ranges[c.dataIndex];
+      }}}
+    },
+    scales:{
+      x:{stacked:true,ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'},max:55},
+      y:{stacked:true,grid:{display:false}}
+    }
+  }
+});
+
+// Chart 4: AI Maturity Gap
+new Chart(document.getElementById('chart-gap'),{
+  type:'bar',
+  data:{
+    labels:['Have formal\nAI strategy','Report meaningful\nvalue from AI','Report value from\nagentic/GenAI','Digital adoption\nmay fail by 2028'],
+    datasets:[{
+      label:'% of organisations',
+      data:[23,20,7,60],
+      backgroundColor:['#d97706','#dc2626','#dc2626','#6b7280'],
+      borderRadius:4
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return c.raw+'%';}}}
+    },
+    scales:{y:{max:70,ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'}}}
+  }
+});
+</script>
+</body>
+</html>
