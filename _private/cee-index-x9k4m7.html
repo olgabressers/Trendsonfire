@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>CEE Transformation Index — TrendsOnFire</title>
+  <meta name="description" content="CEE Transformation Index — tracking digital and operational transformation maturity across Central and Eastern European markets. TrendsOnFire."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0f2340;
+      --fuchsia: #8b1a6a;
+      --accent:  #8b1a6a;
+      --al:      #f7e8f3;
+      --border:  #e5e7eb;
+      --bg:      #f8fafc;
+      --text:    #111827;
+      --sub:     #6b7280;
+      --adv:     #0d9488;
+      --dev:     #f59e0b;
+      --bas:     #ef4444;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    /* HEADER */
+    header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
+    header h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 660px; }
+    .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: auto; padding: 40px 24px 80px; }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: white; border-radius: 12px; padding: 20px 22px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .num { font-size: 38px; font-weight: 800; line-height: 1; }
+    .stat-card .sm { font-size: 12px; color: var(--sub); margin-top: 5px; }
+    .stat-card.total .num    { color: var(--navy); }
+    .stat-card.advanced .num { color: var(--adv); }
+    .stat-card.devlp .num    { color: var(--dev); }
+    .stat-card.basic .num    { color: var(--bas); }
+
+    /* FILTERS */
+    .filter-bar { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 22px; margin-bottom: 28px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .filter-bar label { font-size: 12px; font-weight: 600; color: var(--sub); text-transform: uppercase; letter-spacing: .5px; }
+    .filter-bar select, .filter-bar input { border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 13px; color: var(--text); background: var(--bg); outline: none; }
+    .filter-bar select:focus, .filter-bar input:focus { border-color: var(--accent); }
+    .filter-bar input { min-width: 200px; }
+    .filter-reset { margin-left: auto; font-size: 12px; color: var(--accent); cursor: pointer; font-weight: 600; background: none; border: none; }
+    .filter-reset:hover { text-decoration: underline; }
+
+    /* CRITERIA LEGEND */
+    .criteria-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 28px; margin-bottom: 28px; }
+    .criteria-card h3 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+    .criterion { display: flex; align-items: flex-start; gap: 10px; }
+    .cr-badge { background: var(--accent); color: white; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .cr-text { font-size: 12.5px; color: var(--sub); }
+    .cr-text strong { color: var(--text); display: block; font-size: 12px; }
+
+    /* SECTOR BREAKDOWN */
+    .section-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 28px; }
+    .section-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 18px; }
+    .sector-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .sec-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+    .sec-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .sec-count { font-size: 11px; color: var(--sub); margin-bottom: 10px; }
+    .mini-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 2px; }
+    .mb-adv { background: var(--adv); border-radius: 2px; }
+    .mb-dev { background: var(--dev); border-radius: 2px; }
+    .mb-bas { background: var(--bas); border-radius: 2px; }
+    .sec-legend { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    .sl { font-size: 10px; color: var(--sub); display: flex; align-items: center; gap: 4px; }
+    .sl-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* TABLE */
+    .table-wrap { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+    .table-header { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    .table-header h3 { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .result-count { font-size: 12px; color: var(--sub); }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { background: #f1f5f9; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--sub); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); cursor: pointer; white-space: nowrap; }
+    thead th:hover { color: var(--navy); }
+    tbody tr { border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #fafafa; }
+    td { padding: 13px 16px; font-size: 13px; vertical-align: middle; }
+    .td-name { font-weight: 700; color: var(--navy); }
+    .td-sector { font-size: 11px; color: var(--sub); margin-top: 2px; }
+    .dot { display: inline-block; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; color: white; text-align: center; line-height: 20px; }
+    .dot-yes { background: var(--adv); }
+    .dot-no  { background: #e5e7eb; color: #9ca3af; }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 4px; letter-spacing: .5px; white-space: nowrap; }
+    .badge-adv { background: #d1fae5; color: #065f46; }
+    .badge-dev { background: #fef3c7; color: #92400e; }
+    .badge-bas { background: #fee2e2; color: #991b1b; }
+    .score-bar { display: flex; gap: 3px; align-items: center; }
+    .sb-pip { width: 10px; height: 10px; border-radius: 2px; }
+    .sb-on  { background: var(--accent); }
+    .sb-off { background: #e5e7eb; }
+
+    /* CTA */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    .no-results { padding: 48px; text-align: center; color: var(--sub); font-size: 14px; }
+
+    /* METHODOLOGY */
+    .method-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px 32px; margin-top: 28px; }
+    .method-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .method-card p { font-size: 13.5px; color: var(--sub); line-height: 1.7; }
+    .method-card p strong { color: var(--text); }
+
+    /* MOBILE NAV */
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+    }
+    /* GENERAL RESPONSIVE */
+    @media(max-width:768px){
+      main, .inner { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header, header { padding:32px 16px 28px; }
+      .stats { grid-template-columns:1fr 1fr; }
+      .two-col { grid-template-columns:1fr !important; }
+      .trends-grid { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr 1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
+      .filter-bar select, .filter-bar input { width:100%; }
+      .filter-reset { margin-left:0; }
+    }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr; }
+      .level-grid { grid-template-columns:1fr 1fr; }
+    }
+    /* TABLE RESPONSIVE */
+    @media(max-width:768px){
+      .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      table { min-width:600px; }
+      th, td { padding:10px 12px; font-size:12px; }
+    }
+
+    /* FEEDBACK FORM */
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+  </style>
+    <link rel="canonical" href="https://trendsonfire.com/transformation/cee-index.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="CEE Transformation Index — TrendsOnFire"/>
+  <meta property="og:description" content="Benchmarking business and digital transformation across Central and Eastern Europe."/>
+  <meta property="og:url" content="https://trendsonfire.com/transformation/cee-index.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="CEE Transformation Index — TrendsOnFire"/>
+  <meta name="twitter:description" content="Benchmarking business and digital transformation across Central and Eastern Europe."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "CEE Transformation Index",
+    "description": "Benchmarking business and digital transformation across Central and Eastern Europe.",
+    "url": "https://trendsonfire.com/transformation/cee-index.html",
+    "author": {
+      "@type": "Person",
+      "name": "Olga Bressers",
+      "url": "https://trendsonfire.com/olgabressers/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrendsOnFire",
+      "url": "https://trendsonfire.com"
+    }
+  }
+  </script>
+  <style>
+    #tof-gate { position:fixed;inset:0;background:#0f2340;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    #tof-gate .box { background:white;border-radius:14px;padding:40px 36px;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.4); }
+    #tof-gate h2 { font-size:18px;color:#0f2340;margin:0 0 12px; }
+    #tof-gate p { font-size:13px;color:#6b7280;margin:0 0 18px;line-height:1.5; }
+    #tof-gate input { width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;outline:none;margin-bottom:12px; }
+    #tof-gate input:focus { border-color:#8b1a6a; }
+    #tof-gate button { width:100%;background:#8b1a6a;color:white;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit; }
+    #tof-gate button:hover { background:#7a1660; }
+    #tof-gate .err { color:#dc2626;font-size:12px;margin-top:8px;min-height:16px; }
+  </style>
+</head>
+<body>
+
+<div id="tof-gate">
+  <div class="box">
+    <h2>Private Page</h2>
+    <p>This page is restricted. Enter access key to continue.</p>
+    <input id="tof-pwd" type="password" placeholder="Access key" autofocus/>
+    <button onclick="tofUnlock()">Unlock</button>
+    <div class="err" id="tof-err"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var EXPECTED = "olga-trendsonfire-2026";
+  if(sessionStorage.getItem('tof_unlock')==='1'){
+    document.getElementById('tof-gate').style.display='none';
+  }
+  window.tofUnlock=function(){
+    var v=document.getElementById('tof-pwd').value;
+    if(v===EXPECTED){
+      sessionStorage.setItem('tof_unlock','1');
+      document.getElementById('tof-gate').style.display='none';
+    } else {
+      document.getElementById('tof-err').textContent='Wrong access key.';
+    }
+  };
+  document.getElementById('tof-pwd').addEventListener('keydown',function(e){
+    if(e.key==='Enter') tofUnlock();
+  });
+})();
+</script>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html" class="active">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<header>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Transformation</a> / CEE Index</div>
+    <div class="eyebrow">Interactive Tracker · 2026</div>
+    <h1>Eastern European Market<br>Transformation Index</h1>
+    <p>Assessing how 34 major multinationals approach business transformation across Central &amp; Eastern Europe — leadership localisation, cultural adaptation, and programme governance.</p>
+    <div class="meta">
+      <span>34 organisations assessed</span>
+      <span>5 sectors</span>
+      <span>6 criteria</span>
+      <span>Markets: PL · CZ · HU · RO · SK · HR · RS · Baltics</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div style="font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:24px;line-height:1.6;">
+    <strong>Editorial note:</strong> All company assessments are editorial analysis based on publicly available information including annual reports, LinkedIn organisational data, published case studies, and press releases. Scores reflect TrendsOnFire editorial judgment, not a standardised audit methodology. Individual assessments may not reflect current state.
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card total">
+      <div class="lbl">Assessed</div>
+      <div class="num" id="s-total">34</div>
+      <div class="sm">Organisations</div>
+    </div>
+    <div class="stat-card advanced">
+      <div class="lbl">Advanced</div>
+      <div class="num" id="s-adv">—</div>
+      <div class="sm">5–6 criteria met</div>
+    </div>
+    <div class="stat-card devlp">
+      <div class="lbl">Developing</div>
+      <div class="num" id="s-dev">—</div>
+      <div class="sm">3–4 criteria met</div>
+    </div>
+    <div class="stat-card basic">
+      <div class="lbl">Basic</div>
+      <div class="num" id="s-bas">—</div>
+      <div class="sm">0–2 criteria met</div>
+    </div>
+  </div>
+
+  <!-- CRITERIA -->
+  <div class="criteria-card">
+    <h3>Assessment Criteria</h3>
+    <div class="criteria-grid">
+      <div class="criterion">
+        <span class="cr-badge">C1</span>
+        <div class="cr-text"><strong>Local Programme Leadership</strong>Transformation led by local executives, not HQ-imposed</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C2</span>
+        <div class="cr-text"><strong>Cultural Adaptation</strong>Change methodology adapted for local context, not copy-pasted from HQ</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C3</span>
+        <div class="cr-text"><strong>Local Language Communications</strong>Change communications delivered in mother tongue, not English-only</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C4</span>
+        <div class="cr-text"><strong>Local Talent Development</strong>Investing in building local change capability vs. flying in consultants</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C5</span>
+        <div class="cr-text"><strong>Governance Localisation</strong>PMO and steering committees include meaningful local representation</div>
+      </div>
+      <div class="criterion">
+        <span class="cr-badge">C6</span>
+        <div class="cr-text"><strong>Outcome Transparency</strong>Published results, case studies, or measurable outcomes for CEE programmes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-bar">
+    <label>Country</label>
+    <select id="f-country">
+      <option value="">All markets</option>
+      <option value="PL">Poland</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="HU">Hungary</option>
+      <option value="RO">Romania</option>
+      <option value="SK">Slovakia</option>
+      <option value="HR">Croatia</option>
+      <option value="RS">Serbia</option>
+      <option value="Baltics">Baltics</option>
+    </select>
+    <label>Sector</label>
+    <select id="f-sector">
+      <option value="">All sectors</option>
+    </select>
+    <label>Status</label>
+    <select id="f-status">
+      <option value="">All</option>
+      <option value="Advanced">Advanced</option>
+      <option value="Developing">Developing</option>
+      <option value="Basic">Basic</option>
+    </select>
+    <input id="f-search" type="text" placeholder="Search organisation…"/>
+    <button class="filter-reset" onclick="resetFilters()">Reset filters</button>
+  </div>
+
+  <!-- SECTOR BREAKDOWN -->
+  <div class="section-card">
+    <h3>Results by Sector</h3>
+    <div class="sector-cards" id="sector-cards"></div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <div class="table-header">
+      <h3>All Organisations</h3>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Organisation ↕</th>
+          <th onclick="sortBy('sector')">Sector ↕</th>
+          <th>Markets</th>
+          <th title="Local Programme Leadership">C1</th>
+          <th title="Cultural Adaptation">C2</th>
+          <th title="Local Language Communications">C3</th>
+          <th title="Local Talent Development">C4</th>
+          <th title="Governance Localisation">C5</th>
+          <th title="Outcome Transparency">C6</th>
+          <th onclick="sortBy('score')">Score ↕</th>
+          <th onclick="sortBy('status')">Status ↕</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="no-results" id="no-results" style="display:none">No organisations match your filters.</div>
+  </div>
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;">
+    <strong>Source:</strong> Editorial assessments based on company annual reports, LinkedIn organisational data, published case studies, and press releases. Assessments are not verified by the companies listed.
+  </div>
+
+  <!-- RELATED REPORTS -->
+  <div style="margin-top:32px;">
+    <h3 style="font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;">Related Reports</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      <a href="../people/eu-transformation.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">European Corporate Transformation Intelligence</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Tracking digital transformation maturity across European corporations.</div>
+      </a>
+      <a href="philips.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">Philips Transformation Intelligence</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Deep-dive into Philips' corporate transformation.</div>
+      </a>
+      <a href="../people/salary-index.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">European Executive Salary Index</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Benchmarking executive and senior management salaries across European roles.</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="li-cta">
+    <div>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact →</a>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="method-card">
+    <h3>Methodology &amp; Data Sources</h3>
+    <p>Assessments in this index are based on <strong>publicly available information</strong> — including company annual reports, LinkedIn organisational data, published case studies, press releases, and professional industry knowledge. Each criterion reflects observable, documented behaviour rather than self-reported claims.</p>
+    <p style="margin-top:10px">This is a <strong>living index</strong>, updated as new information becomes available. Scores reflect the state of publicly available evidence at time of publication and may not capture internal programmes not visible externally. Organisations are assessed at the CEE regional level, not individual country subsidiaries.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--sub)">Rating scale: <strong>Advanced</strong> = 5–6 criteria met · <strong>Developing</strong> = 3–4 criteria met · <strong>Basic</strong> = 0–2 criteria met. Assessments are made independently and organisations have not been contacted for verification. See below to submit a correction.</p>
+  </div>
+
+</main>
+
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> — All analysis is editorial and based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+const companies = [
+  // Retail & FMCG
+  { name:"Allegro",         sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Biedronka",       sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"IKEA",            sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Pepco Group",     sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"CCC Group",       sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Decathlon",       sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
+  { name:"Unilever CEE",    sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
+  { name:"Nestlé CEE",      sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"H&M",             sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR"], c1:false, c2:true, c3:true, c4:false, c5:false, c6:false },
+  { name:"Inditex",         sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Lidl CEE",        sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO","HR","RS"], c1:false, c2:false, c3:true, c4:false, c5:false, c6:false },
+  { name:"Kaufland",        sector:"Retail & FMCG",    markets:["CZ","SK","RO","HR","RS"], c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Auchan",          sector:"Retail & FMCG",    markets:["PL","HU","RO"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
+  { name:"Tesco CEE",       sector:"Retail & FMCG",    markets:["CZ","SK","HU"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
+  // Banking & Finance
+  { name:"ING Bank",        sector:"Banking & Finance", markets:["PL","RO","CZ"],         c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"Erste Bank",      sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"PKO Bank Polski",  sector:"Banking & Finance",markets:["PL"],                   c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
+  { name:"OTP Bank",        sector:"Banking & Finance", markets:["HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:false },
+  { name:"Raiffeisen Bank", sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  { name:"UniCredit CEE",   sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:false, c5:true, c6:false },
+  // Technology
+  { name:"Microsoft CEE",   sector:"Technology",        markets:["PL","CZ","HU","RO","SK"], c1:false, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"SAP CEE",         sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
+  { name:"Google CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"Amazon CEE",      sector:"Technology",        markets:["PL","CZ"],              c1:false, c2:false, c3:false, c4:false, c5:false, c6:false },
+  { name:"Oracle CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
+  // Consulting
+  { name:"PwC CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Deloitte CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"McKinsey CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
+  { name:"BCG CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
+  { name:"KPMG CEE",        sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  // Manufacturing & Industry
+  { name:"Philip Morris Int'l", sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
+  { name:"Volkswagen Group",    sector:"Manufacturing", markets:["CZ","SK","HU","PL"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
+  { name:"Mondelez CEE",        sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
+  { name:"Richemont CEE",       sector:"Manufacturing", markets:["CZ","PL","HU"],         c1:false, c2:true,  c3:false, c4:true,  c5:false, c6:false },
+];
+
+const SECTORS = ["Retail & FMCG","Banking & Finance","Technology","Consulting","Manufacturing"];
+
+function score(r){ return [r.c1,r.c2,r.c3,r.c4,r.c5,r.c6].filter(Boolean).length; }
+function status(r){
+  const s = score(r);
+  return s >= 5 ? "Advanced" : s >= 3 ? "Developing" : "Basic";
+}
+
+let sortKey = "name", sortDir = 1;
+
+function sortBy(key){
+  if(sortKey === key) sortDir *= -1;
+  else { sortKey = key; sortDir = 1; }
+  render();
+}
+
+function resetFilters(){
+  document.getElementById("f-country").value = "";
+  document.getElementById("f-sector").value = "";
+  document.getElementById("f-status").value = "";
+  document.getElementById("f-search").value = "";
+  render();
+}
+
+function filtered(){
+  const country = document.getElementById("f-country").value;
+  const sec = document.getElementById("f-sector").value;
+  const st  = document.getElementById("f-status").value;
+  const q   = document.getElementById("f-search").value.toLowerCase();
+  return companies.filter(r =>
+    (!country || r.markets.includes(country)) &&
+    (!sec || r.sector === sec) &&
+    (!st  || status(r) === st) &&
+    (!q   || r.name.toLowerCase().includes(q) || r.sector.toLowerCase().includes(q))
+  );
+}
+
+function dot(val){ return `<span class="dot ${val?'dot-yes':'dot-no'}">${val?'✓':'✗'}</span>`; }
+
+function statusBadge(s){
+  const cls = s==="Advanced"?"badge-adv":s==="Developing"?"badge-dev":"badge-bas";
+  return `<span class="badge ${cls}">${s}</span>`;
+}
+
+function scorePips(r){
+  const s = score(r);
+  return `<div class="score-bar">${[1,2,3,4,5,6].map(i=>`<div class="sb-pip ${i<=s?'sb-on':'sb-off'}"></div>`).join("")} <span style="font-size:11px;color:var(--sub);margin-left:4px">${s}/6</span></div>`;
+}
+
+function render(){
+  const data = filtered().sort((a,b)=>{
+    let av, bv;
+    if(sortKey==="name")   { av=a.name;       bv=b.name; }
+    if(sortKey==="sector") { av=a.sector;      bv=b.sector; }
+    if(sortKey==="score")  { av=score(a);      bv=score(b); }
+    if(sortKey==="status") { av=status(a);     bv=status(b); }
+    return av > bv ? sortDir : av < bv ? -sortDir : 0;
+  });
+
+  // Stats
+  const adv = data.filter(r=>status(r)==="Advanced").length;
+  const dev = data.filter(r=>status(r)==="Developing").length;
+  const bas = data.filter(r=>status(r)==="Basic").length;
+  document.getElementById("s-total").textContent = data.length;
+  document.getElementById("s-adv").textContent = adv;
+  document.getElementById("s-dev").textContent = dev;
+  document.getElementById("s-bas").textContent = bas;
+  document.getElementById("result-count").textContent = `${data.length} organisation${data.length!==1?"s":""}`;
+
+  // Sector cards
+  const sc = document.getElementById("sector-cards");
+  const secData = SECTORS.map(s=>{
+    const rows = data.filter(r=>r.sector===s);
+    const a = rows.filter(r=>status(r)==="Advanced").length;
+    const d = rows.filter(r=>status(r)==="Developing").length;
+    const b = rows.filter(r=>status(r)==="Basic").length;
+    return {s, rows, a, d, b};
+  }).filter(x=>x.rows.length>0);
+
+  sc.innerHTML = secData.map(({s,rows,a,d,b})=>{
+    const t = rows.length;
+    const ap = Math.round(a/t*100), dp = Math.round(d/t*100), bp = 100-ap-dp;
+    return `<div class="sec-card">
+      <div class="sec-name">${s}</div>
+      <div class="sec-count">${t} organisation${t!==1?"s":""}</div>
+      <div class="mini-bar">
+        <div class="mb-adv" style="width:${ap}%"></div>
+        <div class="mb-dev" style="width:${dp}%"></div>
+        <div class="mb-bas" style="width:${bp}%"></div>
+      </div>
+      <div class="sec-legend">
+        <div class="sl"><div class="sl-dot" style="background:var(--adv)"></div>${a} Adv</div>
+        <div class="sl"><div class="sl-dot" style="background:var(--dev)"></div>${d} Dev</div>
+        <div class="sl"><div class="sl-dot" style="background:var(--bas)"></div>${b} Bas</div>
+      </div>
+    </div>`;
+  }).join("");
+
+  // Table
+  const tbody = document.getElementById("tbody");
+  const noRes = document.getElementById("no-results");
+  if(data.length===0){
+    tbody.innerHTML=""; noRes.style.display="block";
+  } else {
+    noRes.style.display="none";
+    tbody.innerHTML = data.map(r=>`<tr>
+      <td><div class="td-name">${r.name}</div><div class="td-sector">${r.sector}</div></td>
+      <td style="font-size:12px;color:var(--sub)">${r.sector}</td>
+      <td style="font-size:11px;color:var(--sub);line-height:1.8">${r.markets.join(" · ")}</td>
+      <td>${dot(r.c1)}</td>
+      <td>${dot(r.c2)}</td>
+      <td>${dot(r.c3)}</td>
+      <td>${dot(r.c4)}</td>
+      <td>${dot(r.c5)}</td>
+      <td>${dot(r.c6)}</td>
+      <td>${scorePips(r)}</td>
+      <td>${statusBadge(status(r))}</td>
+    </tr>`).join("");
+  }
+}
+
+// Populate sector dropdown
+const sel = document.getElementById("f-sector");
+SECTORS.forEach(s=>{ const o=document.createElement("option"); o.value=s; o.textContent=s; sel.appendChild(o); });
+
+["f-country","f-sector","f-status","f-search"].forEach(id=>document.getElementById(id).addEventListener("input",render));
+render();
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+
+<!-- ARTICLE TAGS -->
+<div style="background:white;border-top:1px solid #e5e7eb;">
+  <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <a href="/tags/#tag-digital-transformation" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Digital Transformation</a><a href="/tags/#tag-cee" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">CEE</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Europe</a><a href="/tags/#tag-market-analysis" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Market Analysis</a><a href="/tags/#tag-corporate-strategy" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Corporate Strategy</a>
+    </div>
+  </div>
+</div>
+<!-- COOKIE NOTICE BANNER -->
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
+    This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
+    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+  </p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('tof_cookie_notice')){
+    var b=document.getElementById("cookie-notice");
+    if(b)b.style.display="flex";
+  }
+})();
+</script>
+
+<script>
+var ARTICLES=[
+  {title:"The Furniture Trap \u2014 What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing \u2014 return economics, last-mile costs, and who is actually winning.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Market Analysis"]},
+  {title:"Nike Transformation Intelligence \u2014 EMEA Focus",url:"/retail/nike.html",section:"Retail & E-Commerce",desc:"Nike's DTC strategy, EMEA transformation, and retail repositioning in the European market.",tags:["Nike","Sporting Goods","DTC","Digital Transformation","EMEA"]},
+  {title:"Sporting Goods Brands \u2014 European Market Analysis",url:"/retail/sporting-goods-brands.html",section:"Retail & E-Commerce",desc:"Competitive analysis of sporting goods brands across European markets.",tags:["Sporting Goods","European Market","Brand Strategy","Market Analysis"]},
+  {title:"B2B Marketplace Intelligence \u2014 Europe",url:"/retail/b2b-marketplace.html",section:"Retail & E-Commerce",desc:"Mapping Europe's B2B marketplace landscape \u2014 platforms, adoption trends and opportunities.",tags:["B2B","Marketplace","E-Commerce","Platform Strategy","Europe"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Netherlands","Belgium","France","REMIT"]},
+  {title:"Student Side Jobs \u2014 Earning Opportunities in the Netherlands",url:"/people/student-side-jobs.html",section:"People & Transformation",desc:"Complete guide to side income for students in the Netherlands.",tags:["Student Jobs","Netherlands","Freelance","AI & Technology","Side Income"]},
+  {title:"European Executive Salary Index",url:"/people/salary-index.html",section:"People & Transformation",desc:"Benchmarking executive and senior management salaries across European roles.",tags:["Salaries","Netherlands","Executive Compensation","Europe","Retail"]},
+  {title:"Netherlands Corporate Layoff Tracker",url:"/people/nl-layoffs.html",section:"People & Transformation",desc:"Tracking corporate layoffs and restructuring announcements across Dutch companies.",tags:["Layoffs","Netherlands","Retail","Workforce","Corporate Restructuring"]},
+  {title:"European Corporate Transformation Intelligence",url:"/people/eu-transformation.html",section:"People & Transformation",desc:"Tracking digital transformation maturity across European corporations.",tags:["Digital Transformation","Europe","Change Management","Corporate Strategy"]},
+  {title:"Luxury & Consumer DTC Leadership Tracker",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"Leadership intelligence for luxury and consumer DTC brands.",tags:["Luxury Retail","DTC","Leadership","Brand Strategy","E-Commerce"]},
+  {title:"Philips Transformation Intelligence",url:"/transformation/philips.html",section:"People & Transformation",desc:"Deep-dive into Philips' corporate transformation.",tags:["Philips","Digital Transformation","Netherlands","Corporate Strategy"]},
+  {title:"CEE Transformation Index",url:"/transformation/cee-index.html",section:"People & Transformation",desc:"Tracking digital and organisational transformation across Central and Eastern European markets.",tags:["Digital Transformation","CEE","Europe","Market Analysis"]},
+  {title:"Global Counterfeiting Intelligence \u2014 European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"Mapping the $4.5 trillion counterfeiting problem.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce"]},
+  {title:"University Grants & Scholarships \u2014 European Study",url:"/education-government/grants.html",section:"Education & Government",desc:"A practical guide to grants and scholarships for students at European universities.",tags:["University Grants","Netherlands","Europe","Education","Students"]},
+  {title:"UWV Transformatie Intelligence",url:"/education-government/uwv.html",section:"Education & Government",desc:"Tracking the digital transformation of UWV.",tags:["UWV","Netherlands","Employment","Government","Workforce"]},
+  {title:"European Universities \u2014 English Bachelor Programs & Rankings",url:"/education-government/universities.html",section:"Education & Government",desc:"Comparative intelligence on English-language bachelor programs across top European universities.",tags:["Universities","Netherlands","Europe","Education","English Programs"]},
+  {title:"Podcast Trends Dashboard \u2014 Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Tracking Dutch podcast market growth, platform dynamics, and podcast as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Retail"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+</script>
+</body>
+</html>

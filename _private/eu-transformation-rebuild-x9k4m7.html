@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
+  <title>European Corporate Transformation — A Strategic Framework | TrendsOnFire</title>
+  <meta name="description" content="A strategic framework for understanding corporate transformation across Europe — the 12 transformation types, what triggers them, and what published research says about success and failure."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --accent:#4338ca; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    .hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 100%); color: white; padding: 52px 32px 44px; }
+    .hero .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(22px, 4vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,.78); max-width: 700px; }
+    .hero-meta { margin-top: 18px; font-size: 12px; color: rgba(255,255,255,.45); line-height: 1.7; }
+    .hero-meta a { color: rgba(255,255,255,.55); text-decoration: underline; }
+
+    main { max-width: 1100px; margin: auto; padding: 48px 24px 80px; }
+
+    .sec-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
+    .sec-intro { font-size: 14px; color: var(--sub); line-height: 1.7; margin-bottom: 24px; max-width: 780px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px; }
+    .stat-card { background: white; border-radius: 12px; padding: 22px 24px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .stat-num { font-size: 32px; font-weight: 800; line-height: 1; color: var(--navy); }
+    .stat-label { font-size: 13px; color: var(--text); margin-top: 8px; font-weight: 600; }
+    .stat-source { font-size: 11px; color: var(--sub); margin-top: 6px; }
+    .stat-source a { color: var(--accent); text-decoration: underline; }
+
+    .source-note { font-size: 11.5px; color: #9ca3af; padding: 12px 16px; background: #f9fafb; border-radius: 6px; border-left: 3px solid #e5e7eb; margin-top: 16px; margin-bottom: 36px; line-height: 1.55; }
+    .source-note a { color: var(--accent); text-decoration: underline; }
+    .source-note strong { color: var(--text); }
+
+    .type-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; margin-bottom: 20px; }
+    .type-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .type-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .type-label { font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; padding: 4px 10px; border-radius: 5px; color: white; white-space: nowrap; }
+    .type-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .type-card p { font-size: 13px; color: var(--sub); line-height: 1.65; margin-bottom: 12px; }
+    .type-drivers { list-style: none; }
+    .type-drivers li { font-size: 12px; color: var(--sub); padding: 3px 0; display: flex; align-items: flex-start; gap: 7px; }
+    .type-drivers li::before { content: "→"; color: var(--fuchsia); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+
+    .case-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 16px; }
+    .case-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .case-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
+    .case-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+    .case-card p { font-size: 13px; color: var(--sub); line-height: 1.6; margin-bottom: 10px; }
+    .case-card .case-source { font-size: 11px; color: var(--sub); padding-top: 10px; border-top: 1px solid #f1f5f9; }
+    .case-card .case-source a { color: var(--accent); text-decoration: underline; }
+
+    .insight-banner { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 14px; padding: 28px 32px; margin-bottom: 40px; border-left: 4px solid var(--fuchsia); }
+    .insight-banner p { color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.75; }
+    .insight-banner strong { color: white; }
+
+    .quote-box { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .quote-box .q-text { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 14px; }
+    .quote-box .q-attr { font-size: 12px; color: var(--sub); }
+    .quote-box .q-attr a { color: var(--accent); text-decoration: underline; }
+
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      main { padding-left:16px !important; padding-right:16px !important; }
+      .hero { padding:32px 16px 28px; }
+      .type-grid { grid-template-columns:1fr; }
+      .case-grid { grid-template-columns:1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+    }
+
+    /* Gate */
+    #tof-gate { position:fixed;inset:0;background:#0f2340;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    #tof-gate .box { background:white;border-radius:14px;padding:40px 36px;max-width:380px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.4); }
+    #tof-gate h2 { font-size:18px;color:#0f2340;margin:0 0 12px; }
+    #tof-gate p { font-size:13px;color:#6b7280;margin:0 0 18px;line-height:1.5; }
+    #tof-gate input { width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;outline:none;margin-bottom:12px; }
+    #tof-gate input:focus { border-color:#8b1a6a; }
+    #tof-gate button { width:100%;background:#8b1a6a;color:white;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit; }
+    #tof-gate button:hover { background:#7a1660; }
+    #tof-gate .err { color:#dc2626;font-size:12px;margin-top:8px;min-height:16px; }
+  </style>
+</head>
+<body>
+
+<div id="tof-gate">
+  <div class="box">
+    <h2>Private Page</h2>
+    <p>This page is restricted. Enter access key to continue.</p>
+    <input id="tof-pwd" type="password" placeholder="Access key" autofocus/>
+    <button onclick="tofUnlock()">Unlock</button>
+    <div class="err" id="tof-err"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var EXPECTED = "olga-trendsonfire-2026";
+  if(sessionStorage.getItem('tof_unlock')==='1'){
+    document.getElementById('tof-gate').style.display='none';
+  }
+  window.tofUnlock=function(){
+    var v=document.getElementById('tof-pwd').value;
+    if(v===EXPECTED){
+      sessionStorage.setItem('tof_unlock','1');
+      document.getElementById('tof-gate').style.display='none';
+    } else {
+      document.getElementById('tof-err').textContent='Wrong access key.';
+    }
+  };
+  document.getElementById('tof-pwd').addEventListener('keydown',function(e){
+    if(e.key==='Enter') tofUnlock();
+  });
+})();
+</script>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html" class="active">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / People &amp; Transformation / European Corporate Transformation</div>
+    <div class="eyebrow">Strategic Framework · Europe 2026</div>
+    <h1>European Corporate Transformation — A Strategic Framework</h1>
+    <p>A working framework for understanding the 12 most common types of corporate transformation, what published research says about why most fail, and what is currently happening at major European companies. Built on named, citable sources.</p>
+    <div class="hero-meta">
+      Published 10 April 2026 · Sources: <a href="https://www.mckinsey.com/capabilities/transformation/our-insights" target="_blank">McKinsey &amp; Company</a>, <a href="https://www.bcg.com/capabilities/business-transformation" target="_blank">BCG</a>, public corporate announcements
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- WHAT THIS PAGE IS -->
+  <div class="sec-title">What this page is — and what it is not</div>
+  <p class="sec-intro">This is a qualitative framework, not a quantitative survey. Every number on this page traces to a named source with a clickable URL. Where TrendsOnFire offers an opinion (e.g. on what is driving a wave of transformation in a specific sector), it is clearly framed as opinion. The 12-type taxonomy below is a working framework — it is how TrendsOnFire categorises corporate transformation activity, drawing on the language used by major strategy consultancies. It is not proprietary research and does not claim to be.</p>
+
+  <!-- VERIFIED RESEARCH -->
+  <div class="sec-title">What the published research actually says about transformation success</div>
+  <p class="sec-intro">Two of the most cited findings on transformation success come from McKinsey and BCG. Both are published, both are linkable, and both have held up across multiple rounds of research.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num">~70%</div>
+      <div class="stat-label">of transformations fail to deliver their stated objectives</div>
+      <div class="stat-source">Source: <a href="https://www.mckinsey.com/capabilities/transformation/our-insights/why-do-most-transformations-fail-a-conversation-with-harry-robinson" target="_blank">McKinsey — Why do most transformations fail? (Harry Robinson)</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">26%</div>
+      <div class="stat-label">average success rate across all transformations surveyed by McKinsey</div>
+      <div class="stat-source">Source: <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/successful-transformations" target="_blank">McKinsey — The science behind successful organizational transformations</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">79%</div>
+      <div class="stat-label">success rate when organisations follow a rigorous, action-oriented approach across all transformation actions</div>
+      <div class="stat-source">Source: <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/how%20to%20beat%20the%20transformation%20odds/how_to_beat_the_transformation_odds.pdf" target="_blank">McKinsey — How to beat the transformation odds</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">1 in 4</div>
+      <div class="stat-label">transformations deliver value-creating, enduring change (BCG)</div>
+      <div class="stat-source">Source: <a href="https://www.bcg.com/publications/2024/how-ceos-can-beat-the-transformation-odds" target="_blank">BCG — How CEOs Can Beat the Transformation Odds (2024)</a></div>
+    </div>
+  </div>
+  <div class="source-note">
+    <strong>How to read these numbers.</strong> The "70% fail" figure has become a shorthand for the difficulty of corporate transformation and is cited by McKinsey, BCG, and most major change-management researchers. McKinsey's own research nuances this: when organisations follow a disciplined, action-oriented approach to all the moves the research identifies, the success rate climbs to 79%. The implication is not "transformations are doomed" — it is "the vast majority of organisations skip the disciplines that determine success".
+  </div>
+
+  <!-- KEY FINDINGS QUOTE BLOCK -->
+  <div class="sec-title">What the research says about why transformations succeed</div>
+
+  <div class="quote-box">
+    <p class="q-text">"At organizations that took a rigorous, action-oriented approach and completed their transformations, executives report a 79 percent success rate — three times the average for all transformations."</p>
+    <div class="q-attr">— McKinsey, <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/how%20to%20beat%20the%20transformation%20odds/how_to_beat_the_transformation_odds.pdf" target="_blank">How to beat the transformation odds</a></div>
+  </div>
+
+  <div class="quote-box">
+    <p class="q-text">"The most successful organizations are more likely to involve employees and engage them in face-to-face communication, specifically using line-manager briefings — cited by 65 percent of respondents whose transformations were successful."</p>
+    <div class="q-attr">— McKinsey, <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/successful-transformations" target="_blank">The science behind successful organizational transformations</a></div>
+  </div>
+
+  <div class="quote-box">
+    <p class="q-text">"Transformations are most successful when managed through a transformation office, which can improve value creation by up to 50 percent."</p>
+    <div class="q-attr">— BCG, <a href="https://www.bcg.com/publications/2024/how-ceos-can-beat-the-transformation-odds" target="_blank">How CEOs Can Beat the Transformation Odds (2024)</a></div>
+  </div>
+
+  <div class="quote-box">
+    <p class="q-text">"Transformations with a long-term strategic orientation are associated with 12.5 percentage points higher TSR over five years."</p>
+    <div class="q-attr">— BCG, <a href="https://www.bcg.com/publications/2024/how-to-create-a-transformation-that-lasts" target="_blank">How to Create a Transformation That Lasts (2024)</a></div>
+  </div>
+
+  <div class="source-note">
+    <strong>Pattern across the research.</strong> The two most rigorous published studies (McKinsey and BCG, both updated within the last 24 months) point to the same set of factors: clear strategic intent, dedicated transformation governance, leadership conviction visible to the workforce, and meaningful employee involvement. The factors that do <em>not</em> appear in the success literature are equally telling: technology choice, vendor selection, consultant brand, and benchmarking maturity scores.
+  </div>
+
+  <!-- INSIGHT -->
+  <div class="insight-banner">
+    <p><strong>The TrendsOnFire view.</strong> The published research is consistent and has been for a decade. The reason transformations still fail at the same rate is not that the success factors are unknown — they are well documented. The reason is that the disciplines required (rigorous governance, sustained leadership attention, employee involvement, long-term orientation) are exactly the things organisations under cost pressure quietly drop first. Whoever can hold those disciplines together when the quarter looks bad is the rare leader who finishes a transformation.</p>
+  </div>
+
+  <!-- 12 TYPES -->
+  <div class="sec-title">The 12 types of corporate transformation — a working taxonomy</div>
+  <p class="sec-intro">This taxonomy is how TrendsOnFire categorises the work commonly described as "transformation" across European companies. It is not proprietary research and does not represent a survey. It is a framework drawn from the language used by major strategy consultancies and from observation of how programmes are scoped inside large European corporates.</p>
+
+  <div class="type-grid">
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#0f2340;">Operating Model</span></div>
+      <h3>Redesigning how the organisation creates and delivers value</h3>
+      <p>Restructuring the architecture of how a business operates — governance, decision rights, capabilities, and the relationship between functions, geographies, and business units.</p>
+      <ul class="type-drivers">
+        <li>Strategy refresh forcing structural follow-through</li>
+        <li>Margin pressure from new entrants or commoditisation</li>
+        <li>Post-merger integration of multiple legacy entities</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#7c3aed;">Digital &amp; Technology</span></div>
+      <h3>Modernising the technology stack and digital capabilities</h3>
+      <p>Replacing legacy core systems, building digital channels, modernising data architecture, and embedding AI into operations and customer experience.</p>
+      <ul class="type-drivers">
+        <li>End-of-life of legacy ERP or core banking systems</li>
+        <li>Customer expectations reset by digital-native competitors</li>
+        <li>AI / generative AI capabilities becoming table stakes</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#d97706;">Compliance &amp; Regulatory</span></div>
+      <h3>Rebuilding processes to meet new regulatory requirements</h3>
+      <p>Reshaping compliance infrastructure, controls, and reporting in response to new regulation — often with material business model implications, not just policy changes.</p>
+      <ul class="type-drivers">
+        <li>New EU regulation (DORA, AI Act, CSRD, GPSR, MiCA)</li>
+        <li>Sectoral compliance failures triggering enforcement</li>
+        <li>Cross-border data and privacy regimes diverging</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#65a30d;">ESG &amp; Sustainability</span></div>
+      <h3>Embedding sustainability into operations and reporting</h3>
+      <p>Decarbonising supply chains, building scope-3 reporting capability, redesigning products for circularity, and aligning with CSRD reporting obligations.</p>
+      <ul class="type-drivers">
+        <li>CSRD and EU Taxonomy reporting deadlines</li>
+        <li>Investor and customer pressure on scope-3 emissions</li>
+        <li>Material physical-climate exposure forcing supply chain redesign</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#4f46e5;">HR &amp; Workforce</span></div>
+      <h3>Reshaping the workforce, skills mix, and HR operating model</h3>
+      <p>Workforce planning for AI-augmented work, reskilling at scale, redesigning the HR function, and rethinking the employee value proposition.</p>
+      <ul class="type-drivers">
+        <li>AI-driven productivity changing role definitions</li>
+        <li>Demographic and labour market tightness in core European markets</li>
+        <li>Hybrid and distributed work becoming permanent</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#16a34a;">Finance Transformation</span></div>
+      <h3>Modernising finance processes, reporting, and the CFO function</h3>
+      <p>Closing the books faster, building forecasting and planning capability, automating transactional finance, and elevating the CFO function from steward to strategic partner.</p>
+      <ul class="type-drivers">
+        <li>Group consolidations after M&amp;A activity</li>
+        <li>ERP migration creating an opportunity to redesign processes</li>
+        <li>Investor pressure for cleaner, faster reporting</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#475569;">Org Design &amp; Restructuring</span></div>
+      <h3>Cost-out, headcount reduction, and structural simplification</h3>
+      <p>Programmes whose primary purpose is to reduce structural cost and remove organisational complexity — often a response to deteriorating margins or activist investor pressure.</p>
+      <ul class="type-drivers">
+        <li>Margin compression from input-cost shocks</li>
+        <li>Activist investor pressure for shareholder returns</li>
+        <li>Sectoral demand shock requiring permanent capacity reduction</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#ea580c;">CX &amp; Commercial</span></div>
+      <h3>Rebuilding the commercial engine and customer experience</h3>
+      <p>Sales force redesign, commercial operating model change, customer experience redesign, pricing transformation, and the move from product-out to customer-in.</p>
+      <ul class="type-drivers">
+        <li>Loss of share to digital-native or DTC competitors</li>
+        <li>Pricing power eroding under inflation pass-through limits</li>
+        <li>Channel mix shift from wholesale to direct</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#0891b2;">Supply Chain &amp; Procurement</span></div>
+      <h3>Resilience, regionalisation, and digital supply chain</h3>
+      <p>Reshaping sourcing and logistics for resilience after sequential shocks, regionalising production, building digital supply chain visibility, and modernising procurement.</p>
+      <ul class="type-drivers">
+        <li>Tariffs and trade barriers reshaping flows</li>
+        <li>Single-source dependency exposed by Covid and Red Sea disruption</li>
+        <li>S&amp;OP / IBP maturity gaps becoming visible at board level</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#0d9488;">Operational Excellence</span></div>
+      <h3>Lean, Six Sigma, and continuous improvement programmes</h3>
+      <p>Productivity programmes focused on waste reduction, cycle time, defect rates, and capacity unlock — often the first transformation type a new operations leader sponsors.</p>
+      <ul class="type-drivers">
+        <li>Productivity gap to best-in-class peers</li>
+        <li>Capacity constraint without capital available for expansion</li>
+        <li>New ops leadership wanting an early credibility win</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#e11d48;">M&amp;A Integration (PMI)</span></div>
+      <h3>Post-merger integration of acquired entities</h3>
+      <p>The structured work of integrating an acquired business — Day-1 readiness, synergy capture, systems integration, talent retention, and culture work.</p>
+      <ul class="type-drivers">
+        <li>Strategic acquisition closing</li>
+        <li>Take-private deals requiring rapid value capture</li>
+        <li>Carve-out separation from a parent company</li>
+      </ul>
+    </div>
+
+    <div class="type-card">
+      <div class="type-card-header"><span class="type-label" style="background:#8b1a6a;">Cultural Transformation</span></div>
+      <h3>Reshaping behaviours, values, and ways of working</h3>
+      <p>Programmes focused on changing how people behave, decide, and collaborate — usually triggered by a strategy refresh, leadership change, or a serious cultural failure.</p>
+      <ul class="type-drivers">
+        <li>New CEO setting a different operating tone</li>
+        <li>Cultural failure exposed by misconduct or attrition</li>
+        <li>Cultural integration of two merged organisations</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- LIVE EXAMPLES -->
+  <div class="sec-title">What is actually happening — verified European corporate transformation examples (2025–2026)</div>
+  <p class="sec-intro">A small set of public, named examples of major European transformation programmes currently underway. Each links to a public source. These are not a representative sample — they are illustrative of the categories above.</p>
+
+  <div class="case-grid">
+
+    <div class="case-card">
+      <div class="case-tag">Banking · Netherlands</div>
+      <h4>ABN AMRO — 5,200 jobs to be cut by 2028 in AI-driven overhaul</h4>
+      <p>New CEO Marguerite Bérard announced in November 2025 a strategic plan to eliminate ~5,200 full-time positions (~20% of workforce) by 2028, alongside an AI investment programme. By February 2026, ~1,500 positions had been eliminated. Targets: ROE ≥12%, cost-to-income ratio &lt;55% by 2028.</p>
+      <div class="case-source">Source: <a href="https://www.abnamro.com/en/news/abn-amro-presents-roadmap-for-profitable-growth-and-new-financial-targets" target="_blank">ABN AMRO investor news</a> · <a href="https://nltimes.nl/2026/02/11/abn-amro-cuts-1500-positions-2025-30-planned-5200-layoffs-complete" target="_blank">NL Times (Feb 2026)</a></div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-tag">Automotive · Germany</div>
+      <h4>Volkswagen — 35,000 German job cuts by 2030, first production halt at Dresden</h4>
+      <p>After the "Zukunft Volkswagen" agreement with IG Metall in late 2024, VW committed to reducing the German workforce by &gt;35,000 by 2030, cutting 734,000 units of capacity, and relocating Golf production to Puebla, Mexico from 2027. In December 2025, VW halted vehicle production at its Dresden plant — the first production shutdown at a German VW site in 88 years.</p>
+      <div class="case-source">Source: <a href="https://www.automotivemanufacturingsolutions.com/oems/volkswagens-plan-to-close-two-german-assembly-plants-is-an-existential-crisis-for-legacy-auto-but-only-part-of-the-solution/541536" target="_blank">Automotive Manufacturing Solutions</a> · <a href="https://www.assemblymag.com/articles/99714-volkswagen-announces-first-ever-production-closure-at-german-plant" target="_blank">Assembly Magazine (Dec 2025)</a></div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-tag">Healthtech · Netherlands</div>
+      <h4>Philips — multi-year operating model and portfolio reshape</h4>
+      <p>Philips launched a multi-year transformation plan announced in early 2023 cutting ~10,000 roles globally (13% of headcount) and targeting €2B in savings between 2023–2025, with 6,000 of those cuts announced in a second wave. The programme was triggered by the Respironics product recall and is repositioning the group around image-guided therapy, monitoring, ultrasound and personal health.</p>
+      <div class="case-source">Source: <a href="https://www.medtechdive.com/news/philips-eliminate-6000-jobs-q4-earnings/641484/" target="_blank">MedTech Dive</a></div>
+    </div>
+
+  </div>
+  <div class="source-note">
+    <strong>Why this list is short.</strong> Three real, verified examples are more credible than thirty unsourced country profiles. Each of these can be traced to a named public source and stress-tested against the company's own communications. If a reader wants more cases, the same approach (named source, public link) will be applied — not a fabricated table.
+  </div>
+
+  <!-- LINKEDIN ANGLES -->
+  <div class="sec-title">LinkedIn Article Angles</div>
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="case-tag">Article 1</div>
+      <h4>The "70% of transformations fail" stat is 25 years old. It is still right — and that is the problem.</h4>
+      <p>The success factors have been published since the early 2000s. Why does the failure rate not move? A look at what organisations under cost pressure quietly drop first.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Article 2</div>
+      <h4>The 12 transformation types every senior leader should be able to name</h4>
+      <p>A working taxonomy for what "transformation" actually means inside European corporates — and why scoping confusion is the root cause of half the failures.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Article 3</div>
+      <h4>What ABN AMRO, Volkswagen and Philips have in common — and what they don't</h4>
+      <p>Three of Europe's most public transformation programmes. Three completely different drivers. One thing they share: a CEO willing to say the cost out loud.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Article 4</div>
+      <h4>The transformation office: BCG says it can lift value capture by 50%. Most companies still don't have one.</h4>
+      <p>Why a dedicated transformation office is the highest-leverage governance choice — and why most boards still treat it as an overhead.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Article 5</div>
+      <h4>The skills that make a transformation leader — what the research actually says</h4>
+      <p>Skipping the invented competency frameworks and going to what McKinsey and BCG actually publish: face-to-face communication, employee involvement, long-term orientation. The boring answers are the right ones.</p>
+    </div>
+  </div>
+
+  <div class="li-cta">
+    <div>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &mdash; All analysis is editorial and based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
