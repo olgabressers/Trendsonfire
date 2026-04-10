@@ -13,6 +13,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
   <title>European Corporate Transformation — A Strategic Framework | TrendsOnFire</title>
   <meta name="description" content="A strategic framework for understanding corporate transformation across Europe — the 12 transformation types, what triggers them, and what published research says about success and failure."/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --accent:#4338ca; }
@@ -71,6 +72,23 @@
     .insight-banner { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 14px; padding: 28px 32px; margin-bottom: 40px; border-left: 4px solid var(--fuchsia); }
     .insight-banner p { color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.75; }
     .insight-banner strong { color: white; }
+
+    .chart-box { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 24px 26px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .chart-box h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .chart-box .chart-sub { font-size: 12px; color: var(--sub); margin-bottom: 18px; line-height: 1.5; }
+    .chart-wrap { position: relative; height: 320px; }
+    .chart-wrap-tall { position: relative; height: 420px; }
+    .two-col-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 16px; }
+    @media(max-width:768px){ .two-col-charts { grid-template-columns: 1fr; } .chart-wrap, .chart-wrap-tall { height: 280px; } }
+
+    .timeline-reg { position: relative; padding-left: 28px; }
+    .timeline-reg::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+    .tl-reg-item { position: relative; margin-bottom: 18px; }
+    .tl-reg-item::before { content: ''; position: absolute; left: -24px; top: 5px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--fuchsia); background: white; }
+    .tl-reg-date { font-size: 11px; font-weight: 700; color: var(--fuchsia); letter-spacing: 0.5px; }
+    .tl-reg-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .tl-reg-body { font-size: 12.5px; color: var(--sub); margin-top: 4px; line-height: 1.55; }
+    .tl-reg-body a { color: var(--accent); text-decoration: underline; }
 
     .quote-box { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
     .quote-box .q-text { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 14px; }
@@ -217,6 +235,16 @@
   </div>
   <div class="source-note">
     <strong>How to read these numbers.</strong> The "70% fail" figure has become a shorthand for the difficulty of corporate transformation and is cited by McKinsey, BCG, and most major change-management researchers. McKinsey's own research nuances this: when organisations follow a disciplined, action-oriented approach to all the moves the research identifies, the success rate climbs to 79%. The implication is not "transformations are doomed" — it is "the vast majority of organisations skip the disciplines that determine success".
+  </div>
+
+  <!-- CHART 1: Success rate gap -->
+  <div class="chart-box">
+    <h3>The discipline gap — average vs. rigorous transformation success rates</h3>
+    <div class="chart-sub">McKinsey's research finds that the average transformation succeeds 26% of the time. When organisations apply a disciplined, action-oriented approach across all the moves the research identifies, the success rate climbs to 79% — a 3x improvement.</div>
+    <div class="chart-wrap"><canvas id="successChart"></canvas></div>
+  </div>
+  <div class="source-note">
+    <strong>Source:</strong> <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/successful-transformations" target="_blank">McKinsey — The science behind successful organizational transformations</a> · <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/how%20to%20beat%20the%20transformation%20odds/how_to_beat_the_transformation_odds.pdf" target="_blank">McKinsey — How to beat the transformation odds (PDF)</a>. The 26% figure is the survey-wide average; the 79% figure applies to organisations that completed every action in McKinsey's framework.
   </div>
 
   <!-- KEY FINDINGS QUOTE BLOCK -->
@@ -423,6 +451,89 @@
     <strong>Why this list is short.</strong> Three real, verified examples are more credible than thirty unsourced country profiles. Each of these can be traced to a named public source and stress-tested against the company's own communications. If a reader wants more cases, the same approach (named source, public link) will be applied — not a fabricated table.
   </div>
 
+  <!-- CHART 2: Major announced job cuts -->
+  <div class="sec-title">The scale of European corporate restructuring 2024–2026</div>
+  <p class="sec-intro">A snapshot of announced workforce reductions at major European employers. Every figure below is a publicly announced number traced to a named source. This is not a complete tracker — it is a sample of large, public, multi-year programmes that illustrate the magnitude of current transformation activity.</p>
+
+  <div class="chart-box">
+    <h3>Announced job cuts at major European companies (2024–2026)</h3>
+    <div class="chart-sub">Each figure is the headline number announced by the company itself, covering the full multi-year programme. Programme end-dates differ by company.</div>
+    <div class="chart-wrap-tall"><canvas id="layoffsChart"></canvas></div>
+  </div>
+  <div class="source-note">
+    <strong>Sources:</strong>
+    Volkswagen 35,000 by 2030 — <a href="https://www.automotivemanufacturingsolutions.com/oems/volkswagens-plan-to-close-two-german-assembly-plants-is-an-existential-crisis-for-legacy-auto-but-only-part-of-the-solution/541536" target="_blank">Automotive Manufacturing Solutions</a> ·
+    HSBC 20,000 (AI-driven) — <a href="https://americanbazaaronline.com/2026/03/20/hsbc-plans-to-cut-20000-jobs-to-be-taken-by-ai-477270/" target="_blank">American Bazaar (March 2026)</a> ·
+    Nestlé 16,000 by 2027 — <a href="https://www.cnbc.com/2025/10/16/nestle-3q-earnings-announces-16000-job-cuts.html" target="_blank">CNBC (Oct 2025)</a> ·
+    UBS ~14,000 (CS integration since 2023) — <a href="https://finance.yahoo.com/news/ubs-group-miss-workforce-reduction-145500721.html" target="_blank">Yahoo Finance / Bloomberg</a> ·
+    Bayer 12,492 (Q2 2023–Q2 2025 actual) — <a href="https://www.biospace.com/job-trends/layoffs-from-just-6-pharmas-could-wipe-out-over-39-000-jobs" target="_blank">BioSpace</a> ·
+    Philips 16,000 total (10,000 + 6,000) — <a href="https://www.medtechdive.com/news/philips-eliminate-6000-jobs-q4-earnings/641484/" target="_blank">MedTech Dive</a> ·
+    Telefónica ~7,000 — <a href="https://punchng.com/full-list-european-firms-cut-jobs-as-economic-pressures-bite-harder/" target="_blank">Reuters via Punch</a> ·
+    ABN AMRO 5,200 by 2028 — <a href="https://www.abnamro.com/en/news/abn-amro-presents-roadmap-for-profitable-growth-and-new-financial-targets" target="_blank">ABN AMRO investor news</a> ·
+    Ford Europe 4,000 by 2027 — <a href="https://punchng.com/full-list-european-firms-cut-jobs-as-economic-pressures-bite-harder/" target="_blank">Reuters via Punch</a> ·
+    Deutsche Bank 3,500 — <a href="https://www.cnn.com/2024/02/01/business/deutsche-bank-job-cuts/index.html" target="_blank">CNN Business</a> ·
+    Zalando ~2,700 (Erfurt closure) — <a href="https://allwork.space/2025/09/layoffs-sweep-through-europe-amid-difficult-economic-conditions/" target="_blank">Allwork.space</a>
+  </div>
+
+  <!-- CHART 3: Sector mix of cuts -->
+  <div class="two-col-charts">
+    <div class="chart-box">
+      <h3>The sector pattern — where the cuts are concentrated</h3>
+      <div class="chart-sub">Total announced reductions across the named programmes above, grouped by sector.</div>
+      <div class="chart-wrap"><canvas id="sectorChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>What the research identifies as the highest-leverage success moves</h3>
+      <div class="chart-sub">Findings published by McKinsey and BCG with quantified impact on transformation outcomes.</div>
+      <div class="chart-wrap"><canvas id="leversChart"></canvas></div>
+    </div>
+  </div>
+  <div class="source-note">
+    <strong>Sources:</strong> Sector chart aggregates the announced figures from the layoff chart above (same company sources). Levers chart: line-manager briefings 65% — <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/successful-transformations" target="_blank">McKinsey</a>; transformation office +50% value capture and long-term orientation +12.5pp TSR — <a href="https://www.bcg.com/publications/2024/how-ceos-can-beat-the-transformation-odds" target="_blank">BCG (2024)</a>; full-discipline approach 79% success vs 26% baseline — <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/how%20to%20beat%20the%20transformation%20odds/how_to_beat_the_transformation_odds.pdf" target="_blank">McKinsey</a>.
+  </div>
+
+  <!-- REGULATORY TIMELINE -->
+  <div class="sec-title">EU regulatory timeline driving compliance transformation 2025–2027</div>
+  <p class="sec-intro">Compliance transformation across European companies is largely driven by a wave of EU regulation entering force between 2025 and 2027. These dates are public and verifiable.</p>
+
+  <div class="chart-box">
+    <div class="timeline-reg">
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">17 January 2025</div>
+        <div class="tl-reg-title">DORA — Digital Operational Resilience Act enters application</div>
+        <div class="tl-reg-body">All financial entities and their critical ICT service providers in the EU must comply. Source: <a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" target="_blank">EIOPA</a></div>
+      </div>
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">2 February 2025</div>
+        <div class="tl-reg-title">EU AI Act — prohibitions and general provisions in force</div>
+        <div class="tl-reg-body">Bans on AI systems posing unacceptable risks become enforceable. Source: <a href="https://www.dataguard.com/eu-ai-act/timeline" target="_blank">DataGuard EU AI Act timeline</a></div>
+      </div>
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">2 August 2025</div>
+        <div class="tl-reg-title">EU AI Act — general-purpose AI model obligations begin</div>
+        <div class="tl-reg-body">Governance infrastructure operational; obligations for providers of general-purpose AI models start applying. Source: <a href="https://www.gtlaw.com/en/insights/2025/7/eu-ai-act-key-compliance-considerations-ahead-of-august-2025" target="_blank">Greenberg Traurig</a></div>
+      </div>
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">2 August 2026</div>
+        <div class="tl-reg-title">EU AI Act — high-risk AI system requirements apply</div>
+        <div class="tl-reg-body">High-risk AI systems (including in financial services) must meet full conformity requirements. Source: <a href="https://www.legalnodes.com/article/eu-ai-act-2026-updates-compliance-requirements-and-business-risks" target="_blank">LegalNodes</a></div>
+      </div>
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">2 August 2027</div>
+        <div class="tl-reg-title">EU AI Act — remaining provisions fully applicable</div>
+        <div class="tl-reg-body">Final phase of the AI Act, including obligations for legacy high-risk systems already in use. Source: <a href="https://www.dataguard.com/eu-ai-act/timeline" target="_blank">DataGuard EU AI Act timeline</a></div>
+      </div>
+      <div class="tl-reg-item">
+        <div class="tl-reg-date">CSRD — postponed</div>
+        <div class="tl-reg-title">Corporate Sustainability Reporting Directive — wave 2 and 3 postponed by 2 years</div>
+        <div class="tl-reg-body">Following the EU Omnibus, wave 2 (FY2025 reporting in 2026) and wave 3 (FY2026) are postponed by two years; applicability threshold raised to 1,000 employees and €450M turnover. Source: <a href="https://verdaio.ai/news.html?lang=pt" target="_blank">Verdaio EU compliance updates</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="source-note">
+    <strong>How to read this timeline.</strong> Each of these regulations is a transformation trigger. DORA forces every European bank, insurer, asset manager, and ICT service provider to redesign operational resilience. The AI Act forces every company deploying AI in high-risk use cases (HR, credit, healthcare, infrastructure) to build conformity assessment processes that did not exist before. The CSRD postponement is itself transformation news — many large groups had already restructured finance and reporting functions for the original 2025 deadline.
+  </div>
+
   <!-- LINKEDIN ANGLES -->
   <div class="sec-title">LinkedIn Article Angles</div>
   <div class="case-grid">
@@ -470,6 +581,139 @@
 <script>
 document.querySelector('.nav-burger').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+<script>
+// CHART 1 — Success rate gap (McKinsey)
+new Chart(document.getElementById('successChart'),{
+  type:'bar',
+  data:{
+    labels:['Average transformation','Disciplined approach (all moves applied)'],
+    datasets:[{
+      label:'Success rate (%)',
+      data:[26,79],
+      backgroundColor:['#9ca3af','#8b1a6a'],
+      borderRadius:8,
+      barThickness:80
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return c.raw+'% success rate'}}}
+    },
+    scales:{
+      y:{beginAtZero:true,max:100,ticks:{callback:function(v){return v+'%'}},grid:{color:'#f3f4f6'}},
+      x:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}
+    }
+  }
+});
+
+// CHART 2 — Major announced job cuts at European companies
+new Chart(document.getElementById('layoffsChart'),{
+  type:'bar',
+  data:{
+    labels:[
+      'Volkswagen (DE) — by 2030',
+      'HSBC (UK) — AI-driven',
+      'Nestlé (CH) — by 2027',
+      'Philips (NL) — total programme',
+      'UBS (CH) — CS integration',
+      'Bayer (DE) — actual to Q2 2025',
+      'Telefónica (ES)',
+      'ABN AMRO (NL) — by 2028',
+      'Ford Europe — by 2027',
+      'Deutsche Bank (DE)',
+      'Zalando (DE) — Erfurt closure'
+    ],
+    datasets:[{
+      label:'Announced job reductions',
+      data:[35000,20000,16000,16000,14000,12492,7000,5200,4000,3500,2700],
+      backgroundColor:[
+        '#0f2340','#0f2340','#dc2626','#dc2626','#0f2340',
+        '#7c3aed','#dc2626','#0f2340','#0f2340','#0f2340','#dc2626'
+      ],
+      borderRadius:6,barThickness:22
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return c.raw.toLocaleString()+' jobs'}}}
+    },
+    scales:{
+      x:{beginAtZero:true,ticks:{callback:function(v){return (v/1000)+'k'}},grid:{color:'#f3f4f6'}},
+      y:{grid:{display:false},ticks:{font:{size:11}}}
+    }
+  }
+});
+
+// CHART 3 — Sector mix
+// Banking & financial services (HSBC + UBS + ABN AMRO + Deutsche Bank) = 20000+14000+5200+3500 = 42700
+// Automotive (VW + Ford) = 35000+4000 = 39000
+// Consumer / FMCG / E-commerce (Nestlé + Telefónica + Zalando) = 16000+7000+2700 = 25700
+// Healthtech / Pharma (Philips + Bayer) = 16000+12492 = 28492
+new Chart(document.getElementById('sectorChart'),{
+  type:'doughnut',
+  data:{
+    labels:['Banking & Financial Services','Automotive','Healthtech & Pharma','Consumer / FMCG / E-commerce'],
+    datasets:[{
+      data:[42700,39000,28492,25700],
+      backgroundColor:['#0f2340','#475569','#7c3aed','#dc2626'],
+      borderWidth:2,borderColor:'#fff'
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{font:{size:11},boxWidth:12,padding:10}},
+      tooltip:{callbacks:{label:function(c){return c.label+': '+c.raw.toLocaleString()+' jobs'}}}
+    },
+    cutout:'58%'
+  }
+});
+
+// CHART 4 — Highest-leverage success moves
+new Chart(document.getElementById('leversChart'),{
+  type:'bar',
+  data:{
+    labels:[
+      'Full disciplined approach (vs avg)',
+      'Line-manager briefings (in successful tx)',
+      'Transformation office (value capture lift)',
+      'Long-term orientation (5-yr TSR uplift)'
+    ],
+    datasets:[{
+      label:'Impact',
+      data:[53,65,50,12.5],
+      backgroundColor:['#8b1a6a','#0f2340','#7c3aed','#16a34a'],
+      borderRadius:6,barThickness:24
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){
+        var labels=[
+          '+53 percentage points (26% → 79%)',
+          '65% of successful transformations used them',
+          '+50% improvement in value capture',
+          '+12.5 percentage points TSR over 5 years'
+        ];
+        return labels[c.dataIndex];
+      }}}
+    },
+    scales:{
+      x:{beginAtZero:true,max:70,ticks:{callback:function(v){return v}},grid:{color:'#f3f4f6'}},
+      y:{grid:{display:false},ticks:{font:{size:10.5}}}
+    }
+  }
 });
 </script>
 
