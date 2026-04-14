@@ -519,7 +519,7 @@ const sectors = [
   { name: 'Smartphones', val: 4.2, color: '#0369a1', note: 'EUIPO/ITU · 8.3% of EU legitimate sales · 14M units lost' },
   { name: 'Cosmetics & personal care', val: 3.0, color: '#8b1a6a', note: 'EUIPO 2024 · 4.8% of sector turnover · 32,000 jobs lost' },
   { name: 'Wines & spirits', val: 2.3, color: '#ca8a04', note: 'EUIPO · 5,700 jobs lost · €2B in lost tax revenue' },
-  { name: 'Toys & games', val: 1.0, color: '#15803d', note: 'EUIPO 2024 · 8.7% of sector turnover · 3,600 jobs lost' },
+  { name: 'Toys & games', val: 1.0, color: '#15803d', note: 'EUIPO 2024 · 8.7% of sector turnover · 3,600 jobs lost' }
 ];
 const sc = document.getElementById('sector-chart');
 const maxS = 15;
@@ -540,7 +540,7 @@ const reach = [
   { name: 'UNIFAB (France)', val: 45, color: '#8b1a6a', note: 'Strong in EU and francophone markets · policy focus' },
   { name: 'INTA', val: 191, color: '#ca8a04', note: 'Trademark policy and education · 7,200+ members across 191 countries (inta.org)' },
   { name: 'Anti-Counterfeiting Group (ACG)', val: 30, color: '#15803d', note: 'UK and European focus · brand owner membership body' },
-  { name: 'Pharmaceutical Security Institute (PSI)', val: 115, color: '#dc2626', note: 'Pharma sector only · 40+ member companies (psi-inc.org)' },
+  { name: 'Pharmaceutical Security Institute (PSI)', val: 115, color: '#dc2626', note: 'Pharma sector only · 40+ member companies (psi-inc.org)' }
 ];
 const maxR = 200;
 const rc2 = document.getElementById('reach-chart');
@@ -560,7 +560,7 @@ const origins = [
   { name: 'China (mainland)', val: 56, color: '#dc2626', note: 'Largest single source — clothing, electronics, accessories · EU Customs 2023' },
   { name: 'Hong Kong', val: 9, color: '#c2410c', note: 'Transit hub; repackaging and relabelling operations · EU Customs 2023' },
   { name: 'Turkey', val: 8, color: '#ca8a04', note: 'Growing source for clothing, accessories, and cosmetics · EU Customs 2023' },
-  { name: 'Other', val: 27, color: '#9ca3af', note: 'India, Morocco, UAE, Pakistan, Bangladesh, Vietnam and other countries · EU Customs 2023' },
+  { name: 'Other', val: 27, color: '#9ca3af', note: 'India, Morocco, UAE, Pakistan, Bangladesh, Vietnam and other countries · EU Customs 2023' }
 ];
 const oc = document.getElementById('origin-chart');
 origins.forEach(o => {
@@ -608,9 +608,7 @@ var ARTICLES=[
   {title:"Netherlands Corporate Layoff Tracker",url:"/people/nl-layoffs.html",section:"People & Transformation",desc:"Tracking corporate layoffs and restructuring announcements across Dutch companies.",tags:["Layoffs","Netherlands","Retail","Workforce","Corporate Restructuring"]},
   {title:"Luxury & Consumer DTC Leadership Tracker",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"Leadership intelligence for luxury and consumer DTC brands.",tags:["Luxury Retail","DTC","Leadership","Brand Strategy","E-Commerce"]},
   {title:"Global Counterfeiting Intelligence \u2014 European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"Mapping the $4.5 trillion counterfeiting problem.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce"]},
-  {title:"University Grants & Scholarships \u2014 European Study",url:"/education-government/grants.html",section:"Education & Government",desc:"A practical guide to grants and scholarships for students at European universities.",tags:["University Grants","Netherlands","Europe","Education","Students"]},
   {title:"UWV Transformatie Intelligence",url:"/education-government/uwv.html",section:"Education & Government",desc:"Tracking the digital transformation of UWV.",tags:["UWV","Netherlands","Employment","Government","Workforce"]},
-  {title:"European Universities \u2014 English Bachelor Programs & Rankings",url:"/education-government/universities.html",section:"Education & Government",desc:"Comparative intelligence on English-language bachelor programs across top European universities.",tags:["Universities","Netherlands","Europe","Education","English Programs"]},
   {title:"Podcast Trends Dashboard \u2014 Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Tracking Dutch podcast market growth, platform dynamics, and podcast as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Retail"]}
 ];
 function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}

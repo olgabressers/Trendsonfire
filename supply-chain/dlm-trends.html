@@ -565,7 +565,7 @@ const flows = [
   { name: 'SWAP (Same-day Exchange) — pristine condition', val: 28, max: 80, color: '#0369a1', note: 'Immediate replacement; fastest growing as DaaS (Device-as-a-Service) scales' },
   { name: 'Warranty returns & break-fix', val: 18, max: 80, color: '#8b1a6a', note: 'Higher processing complexity; repair capability required' },
   { name: 'Early termination returns', val: 12, max: 80, color: '#ca8a04', note: 'Often disputed condition; commercial risk for carrier' },
-  { name: 'End-of-life / Waste Electrical and Electronic Equipment (WEEE) disposal', val: 8, max: 80, color: '#6b7280', note: 'Non-refurbishable volume; compliance cost centre' },
+  { name: 'End-of-life / Waste Electrical and Electronic Equipment (WEEE) disposal', val: 8, max: 80, color: '#6b7280', note: 'Non-refurbishable volume; compliance cost centre' }
 ];
 
 const fc = document.getElementById('flow-chart');
@@ -592,7 +592,7 @@ const operators = [
   { name: 'Telefónica / O2', val: 62, color: '#0369a1', note: 'Growing capability; recent 3PL contract expansion' },
   { name: 'KPN (Netherlands)', val: 55, color: '#15803d', note: 'Good single-market depth; limited cross-border DLM' },
   { name: 'T-Mobile NL / Odido', val: 48, color: '#8b1a6a', note: 'In transition post-rebrand; DLM investment underway' },
-  { name: 'Average smaller operators', val: 32, color: '#9ca3af', note: 'Mostly manual returns processing; limited refurb capability' },
+  { name: 'Average smaller operators', val: 32, color: '#9ca3af', note: 'Mostly manual returns processing; limited refurb capability' }
 ];
 
 const rc = document.getElementById('refurb-chart');
@@ -618,7 +618,7 @@ const cevaMetrics = [
   { metric: 'Device triage & grading speed',      ceva: 85, ingram: 80, dhl: 65 },
   { metric: 'Refurbishment & resale capability',  ceva: 80, ingram: 75, dhl: 55 },
   { metric: 'Tripartite contract governance',     ceva: 85, ingram: 65, dhl: 58 },
-  { metric: 'EU Right to Repair readiness',       ceva: 74, ingram: 78, dhl: 60 },
+  { metric: 'EU Right to Repair readiness',       ceva: 74, ingram: 78, dhl: 60 }
 ];
 
 const cc = document.getElementById('ceva-chart');
@@ -690,9 +690,7 @@ var ARTICLES=[
   {title:"Luxury & Consumer DTC Leadership Tracker",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"Leadership intelligence for luxury and consumer DTC brands.",tags:["Luxury Retail","DTC","Leadership","Brand Strategy","E-Commerce"]},
   {title:"Global Counterfeiting Intelligence \u2014 European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"Mapping the $4.5 trillion counterfeiting problem.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce"]},
   {title:"Device Lifecycle Management \u2014 Telco Supply Chain Intelligence",url:"/supply-chain/dlm-trends.html",section:"Supply Chain",desc:"Tracking European DLM market growth, reverse logistics trends and sustainability mandates.",tags:["Supply Chain","Device Lifecycle","Telco","Sustainability"]},
-  {title:"University Grants & Scholarships \u2014 European Study",url:"/education-government/grants.html",section:"Education & Government",desc:"A practical guide to grants and scholarships for students at European universities.",tags:["University Grants","Netherlands","Europe","Education","Students"]},
   {title:"UWV Transformatie Intelligence",url:"/education-government/uwv.html",section:"Education & Government",desc:"Tracking the digital transformation of UWV.",tags:["UWV","Netherlands","Employment","Government","Workforce"]},
-  {title:"European Universities \u2014 English Bachelor Programs & Rankings",url:"/education-government/universities.html",section:"Education & Government",desc:"Comparative intelligence on English-language bachelor programs across top European universities.",tags:["Universities","Netherlands","Europe","Education","English Programs"]},
   {title:"Podcast Trends Dashboard \u2014 Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Tracking Dutch podcast market growth, platform dynamics, and podcast as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Retail"]}
 ];
 function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
