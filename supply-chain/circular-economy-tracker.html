@@ -339,11 +339,19 @@
       </div>
     </div>
 
-    <div class="chart-box">
-      <h3>Vinted: from €596M (2023) to €813M (2024)</h3>
-      <div class="csub">Group revenue and net profit, FY2023 &rarr; FY2024. Source: <a href="https://company.vinted.com/newsroom/vinted-reaches-profitability" target="_blank" style="color:var(--link);text-decoration:underline;">Vinted FY2024 results</a>.</div>
-      <div class="chart-wrap"><canvas id="vintedChart"></canvas></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+      <div class="chart-box" style="margin-bottom:0;">
+        <h3>Vinted Group revenue (&euro;M)</h3>
+        <div class="csub">FY2023 &rarr; FY2024 &middot; +36% YoY</div>
+        <div class="chart-wrap" style="height:220px;"><canvas id="vintedRevChart"></canvas></div>
+      </div>
+      <div class="chart-box" style="margin-bottom:0;">
+        <h3>Vinted Group net profit (&euro;M)</h3>
+        <div class="csub">FY2023 &rarr; FY2024 &middot; +330% YoY</div>
+        <div class="chart-wrap" style="height:220px;"><canvas id="vintedProfitChart"></canvas></div>
+      </div>
     </div>
+    <div style="font-size:11.5px;color:var(--sub);margin-bottom:16px;">Source: <a href="https://company.vinted.com/newsroom/vinted-reaches-profitability" target="_blank" style="color:var(--link);text-decoration:underline;">Vinted FY2024 results</a>.</div>
   </div>
 
   <!-- ============================================ -->
@@ -506,11 +514,29 @@
       </div>
     </div>
 
-    <div class="chart-box">
-      <h3>Too Good To Go &mdash; verified KPIs</h3>
-      <div class="csub">Revenue from the Danish parent company&apos;s 2024 annual filing (CVR). Users, countries and meals-saved figures from <a href="https://www.toogoodtogo.com/impact-report" target="_blank" style="color:var(--link);text-decoration:underline;">TGTG Impact Report</a> and <a href="https://regnskaber.cvrapi.dk/40316573/amNsb3VkczovLzAzL2M0L2EyLzY5LzY5LzRkMTgtNDg5OS1hMzliLTQ1NzRiMmIzMmUwNw.pdf" target="_blank" style="color:var(--link);text-decoration:underline;">TGTG ApS Annual Report 2024</a>.</div>
-      <div class="chart-wrap"><canvas id="tgtgChart"></canvas></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:14px;">
+      <div style="background:white;border:1px solid var(--border);border-left:4px solid #ef4444;border-radius:10px;padding:18px 22px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">2024 revenue (DK entity)</div>
+        <div style="font-size:26px;font-weight:800;color:var(--navy);">DKK 725M</div>
+        <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">+33% YoY (DKK 545M in 2023)</div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-left:4px solid #f87171;border-radius:10px;padding:18px 22px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">Registered users</div>
+        <div style="font-size:26px;font-weight:800;color:var(--navy);">120M+</div>
+        <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Across 21 countries</div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-left:4px solid #fb923c;border-radius:10px;padding:18px 22px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">Active business partners</div>
+        <div style="font-size:26px;font-weight:800;color:var(--navy);">180,000</div>
+        <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Restaurants, cafés, retailers</div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-left:4px solid #dc2626;border-radius:10px;padding:18px 22px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">Meals saved since 2016</div>
+        <div style="font-size:26px;font-weight:800;color:var(--navy);">500M+</div>
+        <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Cumulative impact</div>
+      </div>
     </div>
+    <div style="font-size:11.5px;color:var(--sub);margin-bottom:16px;">Sources: <a href="https://regnskaber.cvrapi.dk/40316573/amNsb3VkczovLzAzL2M0L2EyLzY5LzY5LzRkMTgtNDg5OS1hMzliLTQ1NzRiMmIzMmUwNw.pdf" target="_blank" style="color:var(--link);text-decoration:underline;">Too Good To Go ApS Annual Report 2024 (Danish CVR)</a> &middot; <a href="https://www.toogoodtogo.com/impact-report" target="_blank" style="color:var(--link);text-decoration:underline;">TGTG Impact Report</a>.</div>
   </div>
 
   <!-- ============================================ -->
@@ -585,21 +611,53 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
 
-// Vinted chart
-new Chart(document.getElementById('vintedChart'),{
+// Vinted revenue chart
+new Chart(document.getElementById('vintedRevChart'),{
   type:'bar',
   data:{
     labels:['FY2023','FY2024'],
-    datasets:[
-      {label:'Revenue (€M)',data:[596.3,813.4],backgroundColor:'#14b8a6',borderRadius:6,barThickness:60},
-      {label:'Net profit (€M)',data:[17.8,76.7],backgroundColor:'#0f766e',borderRadius:6,barThickness:60}
-    ]
+    datasets:[{
+      label:'Revenue (€M)',
+      data:[596.3,813.4],
+      backgroundColor:['#14b8a6','#0d9488'],
+      borderRadius:6,
+      barThickness:80
+    }]
   },
   options:{
     responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12,padding:10}}},
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return '€'+c.raw+'M revenue'}}}
+    },
     scales:{
-      y:{beginAtZero:true,grid:{color:'#f3f4f6'},ticks:{callback:function(v){return '€'+v+'M'}}},
+      y:{beginAtZero:true,max:900,grid:{color:'#f3f4f6'},ticks:{callback:function(v){return '€'+v+'M'}}},
+      x:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}
+    }
+  }
+});
+
+// Vinted net profit chart
+new Chart(document.getElementById('vintedProfitChart'),{
+  type:'bar',
+  data:{
+    labels:['FY2023','FY2024'],
+    datasets:[{
+      label:'Net profit (€M)',
+      data:[17.8,76.7],
+      backgroundColor:['#0f766e','#064e3b'],
+      borderRadius:6,
+      barThickness:80
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return '€'+c.raw+'M net profit'}}}
+    },
+    scales:{
+      y:{beginAtZero:true,max:90,grid:{color:'#f3f4f6'},ticks:{callback:function(v){return '€'+v+'M'}}},
       x:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}
     }
   }
@@ -631,35 +689,7 @@ new Chart(document.getElementById('backChart'),{
   }
 });
 
-// Too Good To Go chart
-new Chart(document.getElementById('tgtgChart'),{
-  type:'bar',
-  data:{
-    labels:['Revenue DK (DKK M)','Users (M)','Countries','Meals saved since 2016 (M)'],
-    datasets:[{
-      label:'KPIs',
-      data:[725,120,21,500],
-      backgroundColor:['#ef4444','#f87171','#fb923c','#dc2626'],
-      borderRadius:6,
-      barThickness:60
-    }]
-  },
-  options:{
-    indexAxis:'y',
-    responsive:true,maintainAspectRatio:false,
-    plugins:{
-      legend:{display:false},
-      tooltip:{callbacks:{label:function(c){
-        var labels=['DKK 725M revenue 2024 (Danish ApS, +33% YoY)','120M+ registered users','21 countries (EU + N. America)','500M+ meals saved since 2016'];
-        return labels[c.dataIndex];
-      }}}
-    },
-    scales:{
-      x:{beginAtZero:true,grid:{color:'#f3f4f6'}},
-      y:{grid:{display:false},ticks:{font:{size:11}}}
-    }
-  }
-});
+// Too Good To Go chart removed — replaced with KPI tiles (mixing absolute scales like DKK 725M, 120M users and 21 countries on one axis was misleading)
 </script>
 </body>
 </html>
