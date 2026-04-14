@@ -390,9 +390,10 @@
 
   <!-- ABOUT -->
   <div class="li-cta">
-    <div>
+    <div style="flex:1;min-width:0;">
       <p>About the Author</p>
-      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
     </div>
     <a href="../olgabressers/index.html">Contact →</a>
   </div>
@@ -566,7 +567,6 @@ new Chart(document.getElementById('confidenceChart'),{
 // Search
 var ARTICLES=[
   {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands"]},
-  {title:"Nike Transformation Intelligence — EMEA Focus",url:"/retail/nike.html",section:"Retail & E-Commerce",desc:"Nike's DTC strategy and retail repositioning.",tags:["Nike","DTC","EMEA"]},
   {title:"S&OP to AI-Powered IBP — Supply Chain Intelligence",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"The evolution from S&OP to IBP and the AI revolution in supply chain planning.",tags:["S&OP","IBP","Supply Chain","AI"]},
   {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Counterfeiting","Brand Protection","Compliance"]}];
 function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing…</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
