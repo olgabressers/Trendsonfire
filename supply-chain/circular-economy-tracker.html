@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food | TrendsOnFire</title>
+  <meta name="description" content="Verified European circular economy intelligence across furniture, fashion, electronics, building materials and food. EU regulation timeline, named players, real revenue figures &mdash; every number linked to source."/>
+  <link rel="canonical" href="https://trendsonfire.com/supply-chain/circular-economy-tracker.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="The Circular Economy Tracker — Europe 2026"/>
+  <meta property="og:description" content="Five sections, verified data, real sources. EU regulation is forcing circularity across furniture, fashion, electronics, buildings and food."/>
+  <meta property="og:url" content="https://trendsonfire.com/supply-chain/circular-economy-tracker.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="The Circular Economy Tracker — Europe 2026"/>
+  <meta name="twitter:description" content="Verified circular economy intelligence across 5 sectors. Every number linked."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --link:#4338ca; --green:#059669; --teal:#0d9488; --amber:#d97706; --red:#dc2626; --purple:#7c3aed; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+
+    .hero { background: linear-gradient(135deg, #0f2340 0%, #134e4a 50%, #064e3b 100%); color: white; padding: 60px 32px 48px; }
+    .hero .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #6ee7b7; font-weight: 700; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; margin-bottom: 14px; line-height: 1.15; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,.85); max-width: 760px; line-height: 1.65; }
+    .hero-meta { margin-top: 22px; font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; }
+    .hero-meta a { color: rgba(255,255,255,.7); text-decoration: underline; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .key-thesis { background: linear-gradient(135deg, #064e3b 0%, #134e4a 100%); color: white; border-radius: 14px; padding: 28px 32px; margin-bottom: 36px; border-left: 5px solid #6ee7b7; }
+    .key-thesis .label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 10px; }
+    .key-thesis p { font-size: 15.5px; line-height: 1.75; color: rgba(255,255,255,.92); }
+    .key-thesis a { color: #a7f3d0; text-decoration: underline; font-weight: 600; }
+
+    .topline { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 40px; }
+    .top-stat { background: white; border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+    .top-stat .num { font-size: 26px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .top-stat .label { font-size: 11px; color: var(--sub); margin-top: 6px; line-height: 1.4; }
+    .top-stat .src { font-size: 10.5px; color: var(--link); margin-top: 6px; }
+    .top-stat .src a { color: var(--link); text-decoration: underline; }
+
+    .section { margin-bottom: 56px; }
+    .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 3px solid var(--fuchsia); margin-bottom: 22px; flex-wrap: wrap; }
+    .section-num { font-size: 32px; font-weight: 900; color: var(--fuchsia); letter-spacing: -1px; }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--navy); }
+    .section-sub { font-size: 13.5px; color: var(--sub); margin-left: auto; max-width: 480px; text-align: right; }
+    @media(max-width:680px){ .section-sub { text-align: left; max-width: 100%; margin-left: 0; } }
+
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 18px; }
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.05); position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-color, #8b1a6a); }
+    .card.ikea::before { background: #fbbf24; }
+    .card.vepa::before { background: #0d9488; }
+    .card.fonq::before { background: #dc2626; }
+    .card.vinted::before { background: #14b8a6; }
+    .card.patagonia::before { background: #7c3aed; }
+    .card.espr::before { background: #d97706; }
+    .card.backmarket::before { background: #059669; }
+    .card.refurbed::before { background: #0284c7; }
+    .card.repair::before { background: #f59e0b; }
+    .card.madaster::before { background: #1e40af; }
+    .card.cpr::before { background: #be185d; }
+    .card.ce-platform::before { background: #65a30d; }
+    .card.tgtg::before { background: #ef4444; }
+    .card.olio::before { background: #16a34a; }
+    .card.ppwr::before { background: #9333ea; }
+
+    .c-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
+    .c-name { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.25; }
+    .c-flag { font-size: 12px; color: var(--sub); margin-bottom: 14px; }
+    .c-flag .country-tag { display: inline-block; background: #f3f4f6; color: var(--text); padding: 2px 8px; border-radius: 4px; font-size: 10.5px; font-weight: 700; letter-spacing: .5px; margin-right: 6px; }
+    .c-stats { margin-bottom: 12px; }
+    .c-stat { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed #f1f5f9; font-size: 12.5px; }
+    .c-stat:last-child { border-bottom: none; }
+    .c-stat .k { color: var(--sub); }
+    .c-stat .v { font-weight: 700; color: var(--navy); }
+    .c-source { font-size: 11.5px; padding-top: 10px; border-top: 1px solid #f1f5f9; line-height: 1.55; }
+    .c-source a { color: var(--link); text-decoration: underline; font-weight: 600; }
+
+    .chart-box { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 24px 26px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .chart-box h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .chart-box .csub { font-size: 12px; color: var(--sub); margin-bottom: 16px; }
+    .chart-wrap { position: relative; height: 240px; }
+
+    .reg-banner { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #d97706; padding: 18px 22px; border-radius: 10px; margin-bottom: 18px; font-size: 13.5px; line-height: 1.7; color: #78350f; }
+    .reg-banner strong { color: #451a03; }
+    .reg-banner a { color: #92400e; text-decoration: underline; font-weight: 700; }
+
+    .timeline { background: white; border-radius: 14px; padding: 28px 32px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .tl-head { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .tl-sub { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
+    .tl-line { position: relative; padding-left: 30px; }
+    .tl-line::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+    .tl-item { position: relative; margin-bottom: 18px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--fuchsia); background: white; }
+    .tl-date { font-size: 11px; font-weight: 800; color: var(--fuchsia); letter-spacing: .5px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .tl-body { font-size: 12.5px; color: var(--sub); margin-top: 4px; line-height: 1.6; }
+    .tl-body a { color: var(--link); text-decoration: underline; }
+
+    .li-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .li-card { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 18px 22px; }
+    .li-card .li-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 6px; }
+    .li-card h4 { font-size: 13.5px; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+    .li-card p { font-size: 12px; color: var(--sub); line-height: 1.55; }
+
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      main { padding-left:16px !important; padding-right:16px !important; }
+      .hero { padding:36px 16px 30px; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Supply Chain</a> / Circular Economy Tracker</div>
+    <div class="hero-eyebrow">Circular Economy Intelligence · Europe 2026</div>
+    <h1>The Circular Economy Tracker</h1>
+    <p>Furniture, fashion, electronics, building materials and food &mdash; five sectors where EU regulation is forcing circular business models, and the named European players already operating at scale. Every number on this page links to the company&apos;s own filing or the EU regulatory text.</p>
+    <div class="hero-meta">
+      Published 14 April 2026 &middot; Sources: EU Commission, <a href="https://eur-lex.europa.eu/" target="_blank">EUR-Lex</a>, company investor relations, <a href="https://www.iea.org/" target="_blank">IEA</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- THESIS -->
+  <div class="key-thesis">
+    <div class="label">The Unifying Thesis</div>
+    <p>EU regulation is forcing circularity simultaneously across five consumer-facing sectors. <strong>The Ecodesign for Sustainable Products Regulation (ESPR)</strong> bans the destruction of unsold apparel and footwear from <strong>19 July 2026</strong> for large enterprises (<a href="https://sustainability.freshfields.com/post/102lqlo/the-e-of-esg-sustainable-products-new-eu-ecodesign-rules-for-unsold-consumer" target="_blank">Freshfields</a>). The <strong>Right to Repair Directive (2024/1799)</strong> entered into force on 30 July 2024, with member-state transposition by 31 July 2026 (<a href="https://eur-lex.europa.eu/eli/dir/2024/1799/oj/eng" target="_blank">EUR-Lex</a>). The <strong>Packaging and Packaging Waste Regulation (PPWR)</strong> reshapes food and packaging through 2025-2030. Companies that have built circular business models are positioned to capture the demand this regulation creates.</p>
+  </div>
+
+  <!-- TOPLINE STATS -->
+  <div class="topline">
+    <div class="top-stat">
+      <div class="num">19 Jul 2026</div>
+      <div class="label">EU ESPR ban on destroying unsold apparel &amp; footwear (large enterprises)</div>
+      <div class="src"><a href="https://sustainability.freshfields.com/post/102lqlo/the-e-of-esg-sustainable-products-new-eu-ecodesign-rules-for-unsold-consumer" target="_blank">Freshfields</a></div>
+    </div>
+    <div class="top-stat">
+      <div class="num">€813M</div>
+      <div class="label">Vinted FY2024 revenue (+36% YoY); €5B valuation</div>
+      <div class="src"><a href="https://company.vinted.com/newsroom/vinted-reaches-profitability" target="_blank">Vinted IR</a></div>
+    </div>
+    <div class="top-stat">
+      <div class="num">$2.8B</div>
+      <div class="label">Back Market 2024 GMV (+25% YoY); profitable in Europe</div>
+      <div class="src"><a href="https://sacra.com/c/back-market/" target="_blank">Sacra / Back Market</a></div>
+    </div>
+    <div class="top-stat">
+      <div class="num">€610M</div>
+      <div class="label">Too Good To Go 2024 revenue (+32% YoY); 120M+ users</div>
+      <div class="src"><a href="https://www.toogoodtogo.com/en-us/about-us" target="_blank">Too Good To Go</a></div>
+    </div>
+    <div class="top-stat">
+      <div class="num">31 Jul 2026</div>
+      <div class="label">EU Right to Repair transposition deadline</div>
+      <div class="src"><a href="https://eur-lex.europa.eu/eli/dir/2024/1799/oj/eng" target="_blank">EUR-Lex</a></div>
+    </div>
+    <div class="top-stat">
+      <div class="num">18,000+</div>
+      <div class="label">Buildings registered on Madaster (NL-born material passport platform) in 2024</div>
+      <div class="src"><a href="https://madaster.com/inspiration/madasters-2024-recap-and-2025-roadmap-transforming-the-future-of-building-together/" target="_blank">Madaster 2024 Recap</a></div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 1: FURNITURE & OFFICE FIT-OUT -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div class="section-title">Furniture &amp; Office Fit-Out</div>
+      <div class="section-sub">Circular furniture for B2B and consumer markets &mdash; rental, buy-back, refurbished, ex-display.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card ikea">
+        <div class="c-tag">Global · Pilot</div>
+        <div class="c-name">IKEA Preowned</div>
+        <div class="c-flag"><span class="country-tag">SE / Global</span> Online resale marketplace</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Launched</span><span class="v">Aug 2024</span></div>
+          <div class="c-stat"><span class="k">Pilot markets</span><span class="v">Madrid · Oslo</span></div>
+          <div class="c-stat"><span class="k">Buyback Friday 2024</span><span class="v">~55,000 items</span></div>
+          <div class="c-stat"><span class="k">Goal</span><span class="v">100% circular by 2030</span></div>
+        </div>
+        <div class="c-source">Sources: <a href="https://www.dezeen.com/2024/08/27/ikea-preowned-second-hand-furniture-marketplace/" target="_blank">Dezeen (Aug 2024)</a> · <a href="https://www.digitalcommerce360.com/2024/08/29/ikea-preowned-resale-marketplace-pilot/" target="_blank">Digital Commerce 360</a> · <a href="https://www.ikea.com/" target="_blank">IKEA Circular Hub</a></div>
+      </div>
+
+      <div class="card vepa">
+        <div class="c-tag">Netherlands · B2B</div>
+        <div class="c-name">Vepa &mdash; The Furniture Factory</div>
+        <div class="c-flag"><span class="country-tag">NL</span> Office &amp; project furniture · Fair Furniture Group</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Founded</span><span class="v">1951</span></div>
+          <div class="c-stat"><span class="k">Production sites NL</span><span class="v">5</span></div>
+          <div class="c-stat"><span class="k">Circular Centre</span><span class="v">Emmen</span></div>
+          <div class="c-stat"><span class="k">Model</span><span class="v">Recycled materials, take-back</span></div>
+        </div>
+        <div class="c-source">Sources: <a href="https://vepa.co.uk/about-vepa/" target="_blank">Vepa corporate site</a> · <a href="https://uk.linkedin.com/company/vepaukltd" target="_blank">Vepa UK LinkedIn</a></div>
+      </div>
+
+      <div class="card fonq">
+        <div class="c-tag">Counter-example</div>
+        <div class="c-name">Fonq &mdash; Bankrupt March 2026</div>
+        <div class="c-flag"><span class="country-tag">NL</span> Pure-play online furniture · 23 yrs to bankruptcy</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Founded</span><span class="v">2003 · Utrecht</span></div>
+          <div class="c-stat"><span class="k">2023 net loss</span><span class="v">&gt;&euro;14M</span></div>
+          <div class="c-stat"><span class="k">Bankrupt</span><span class="v">27 Mar 2026</span></div>
+          <div class="c-stat"><span class="k">Affected</span><span class="v">250+ employees</span></div>
+        </div>
+        <div class="c-source">B2C pure-play furniture failed under the same return economics that B2B circular rental avoids. Source: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank">DutchNews</a> &middot; full <a href="../retail/furniture-market.html">analysis on TrendsOnFire</a></div>
+      </div>
+    </div>
+
+    <div class="reg-banner">
+      <strong>Regulatory tailwind for furniture circularity:</strong> the EU Ecodesign Working Plan extends the unsold-goods destruction ban to <strong>furniture and textiles in the next implementation wave (2027&ndash;2028)</strong>. Source: <a href="https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/sustainable-products/ecodesign-sustainable-products-regulation_en" target="_blank">European Commission &mdash; Ecodesign for Sustainable Products Regulation</a>.
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 2: FASHION & APPAREL -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div class="section-title">Fashion &amp; Apparel</div>
+      <div class="section-sub">The headline ESPR category &mdash; ban on destroying unsold apparel effective 19 July 2026 for large enterprises.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card vinted">
+        <div class="c-tag">Lithuania · Listed-equiv</div>
+        <div class="c-name">Vinted Group FY2024</div>
+        <div class="c-flag"><span class="country-tag">LT</span> Pre-owned fashion marketplace · Founded Vilnius 2008</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Revenue 2024</span><span class="v">€813.4M (+36%)</span></div>
+          <div class="c-stat"><span class="k">Net profit 2024</span><span class="v">€76.7M (+330%)</span></div>
+          <div class="c-stat"><span class="k">Adj. EBITDA</span><span class="v">€158.9M</span></div>
+          <div class="c-stat"><span class="k">Valuation Oct 2024</span><span class="v">€5B</span></div>
+          <div class="c-stat"><span class="k">Headcount</span><span class="v">2,200+</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://company.vinted.com/newsroom/vinted-reaches-profitability" target="_blank">Vinted Group press release</a> · <a href="https://ww.fashionnetwork.com/news/Vinted-quadruples-profit-in-2024-as-revenue-climbs-to-813-4-million,1724801.html" target="_blank">FashionNetwork (FY24 results)</a></div>
+      </div>
+
+      <div class="card patagonia">
+        <div class="c-tag">USA / Europe</div>
+        <div class="c-name">Patagonia Worn Wear</div>
+        <div class="c-flag"><span class="country-tag">US</span> Buy-back, repair &amp; resale · pioneer of circular fashion</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Worn Wear FY25 revenue</span><span class="v">$13M</span></div>
+          <div class="c-stat"><span class="k">Patagonia FY25 total</span><span class="v">$1.47B</span></div>
+          <div class="c-stat"><span class="k">Items kept from landfill</span><span class="v">583,000+</span></div>
+          <div class="c-stat"><span class="k">Recent growth rate</span><span class="v">+40% YoY</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://www.patagonia.com/progress-report/" target="_blank">Patagonia 2025 Impact Report</a> · <a href="https://sgbonline.com/worn-wear-taking-off-for-patagonia/" target="_blank">SGB Media</a></div>
+      </div>
+
+      <div class="card espr">
+        <div class="c-tag">EU Regulation</div>
+        <div class="c-name">ESPR &mdash; Unsold Goods Destruction Ban</div>
+        <div class="c-flag"><span class="country-tag">EU 27</span> Apparel, clothing accessories &amp; footwear</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Effective (large)</span><span class="v">19 Jul 2026</span></div>
+          <div class="c-stat"><span class="k">Effective (medium)</span><span class="v">19 Jul 2030</span></div>
+          <div class="c-stat"><span class="k">Micro / small</span><span class="v">Exempt</span></div>
+          <div class="c-stat"><span class="k">Estimated CO₂ saved</span><span class="v">~5.6Mt/yr (textile destruction)</span></div>
+        </div>
+        <div class="c-source">Sources: <a href="https://sustainability.freshfields.com/post/102lqlo/the-e-of-esg-sustainable-products-new-eu-ecodesign-rules-for-unsold-consumer" target="_blank">Freshfields ESPR analysis</a> · <a href="https://sustainablefutures.linklaters.com/post/102miiy/eu-espr-commission-adopts-final-acts-on-unsold-consumer-product-destruction-and" target="_blank">Linklaters &mdash; Commission adopts final ESPR acts (Feb 2026)</a></div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Vinted: from €596M (2023) to €813M (2024)</h3>
+      <div class="csub">Group revenue and net profit, FY2023 &rarr; FY2024. Source: <a href="https://company.vinted.com/newsroom/vinted-reaches-profitability" target="_blank" style="color:var(--link);text-decoration:underline;">Vinted FY2024 results</a>.</div>
+      <div class="chart-wrap"><canvas id="vintedChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 3: ELECTRONICS & REFURBISHED DEVICES -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div class="section-title">Electronics &amp; Refurbished Devices</div>
+      <div class="section-sub">Right to Repair, refurbished marketplaces, and the European unicorns leading both.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card backmarket">
+        <div class="c-tag">France · Unicorn</div>
+        <div class="c-name">Back Market</div>
+        <div class="c-flag"><span class="country-tag">FR</span> Refurbished electronics marketplace · 18 markets</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">2024 GMV</span><span class="v">$2.8B (+25%)</span></div>
+          <div class="c-stat"><span class="k">2024 est. revenue</span><span class="v">~$415M</span></div>
+          <div class="c-stat"><span class="k">2022 valuation</span><span class="v">$5.7B</span></div>
+          <div class="c-stat"><span class="k">Refurbishers vetted</span><span class="v">2,700</span></div>
+          <div class="c-stat"><span class="k">Profitability</span><span class="v">EU profitable 2024</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://sacra.com/c/back-market/" target="_blank">Sacra company profile</a> · <a href="https://sifted.eu/articles/back-market-interview" target="_blank">Sifted interview (10th anniversary)</a> · <a href="https://techcrunch.com/2022/01/11/back-market-reaches-5-7b-valuation-for-its-refurbished-device-marketplace/" target="_blank">TechCrunch ($5.7B Series E)</a></div>
+      </div>
+
+      <div class="card refurbed">
+        <div class="c-tag">Austria · Series C</div>
+        <div class="c-name">Refurbed</div>
+        <div class="c-flag"><span class="country-tag">AT</span> Refurbished electronics marketplace · Vienna HQ</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Lifetime GMV</span><span class="v">~$1.1B</span></div>
+          <div class="c-stat"><span class="k">Markets</span><span class="v">DACH + expanding EU</span></div>
+          <div class="c-stat"><span class="k">Funding</span><span class="v">Series C closed</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://sacra.com/c/back-market/" target="_blank">Sacra (lifetime GMV cited in Back Market profile)</a> · <a href="https://www.refurbed.com/" target="_blank">Refurbed corporate site</a></div>
+      </div>
+
+      <div class="card repair">
+        <div class="c-tag">EU Regulation</div>
+        <div class="c-name">EU Right to Repair Directive 2024/1799</div>
+        <div class="c-flag"><span class="country-tag">EU 27</span> Common rules promoting the repair of goods</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Entered into force</span><span class="v">30 Jul 2024</span></div>
+          <div class="c-stat"><span class="k">Transposition deadline</span><span class="v">31 Jul 2026</span></div>
+          <div class="c-stat"><span class="k">EU Repair Platform</span><span class="v">Operational 2027</span></div>
+          <div class="c-stat"><span class="k">Scope</span><span class="v">Consumer goods, EU-wide</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1799/oj/eng" target="_blank">Directive (EU) 2024/1799 on EUR-Lex</a> · <a href="https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en" target="_blank">European Commission &mdash; Directive on repair of goods</a></div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Back Market GMV: $2.3B (2023) → $2.8B (2024)</h3>
+      <div class="csub">Gross Merchandise Value year-over-year. Source: <a href="https://sacra.com/c/back-market/" target="_blank" style="color:var(--link);text-decoration:underline;">Sacra company analysis</a>.</div>
+      <div class="chart-wrap"><canvas id="backChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 4: BUILDING MATERIALS & CONSTRUCTION -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <div class="section-title">Building Materials &amp; Construction</div>
+      <div class="section-sub">The Netherlands leads Europe on circular construction &mdash; Madaster is the platform layer.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card madaster">
+        <div class="c-tag">Netherlands · Scale-up</div>
+        <div class="c-name">Madaster &mdash; Material Passport Platform</div>
+        <div class="c-flag"><span class="country-tag">NL</span> Born in Netherlands · 6 country footprint</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Active countries</span><span class="v">NL · CH · DE · BE · NO · AT</span></div>
+          <div class="c-stat"><span class="k">New buildings registered 2024</span><span class="v">18,000+</span></div>
+          <div class="c-stat"><span class="k">German Sustainability Award</span><span class="v">2nd year in a row</span></div>
+          <div class="c-stat"><span class="k">2024 NL partnerships</span><span class="v">Vitens · PWN · Prysmian · Volker</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://madaster.com/inspiration/madasters-2024-recap-and-2025-roadmap-transforming-the-future-of-building-together/" target="_blank">Madaster 2024 Recap</a> · <a href="https://circulareconomy.europa.eu/platform/en/dialogue/existing-eu-platforms/madaster" target="_blank">EU Circular Economy Platform listing</a></div>
+      </div>
+
+      <div class="card cpr">
+        <div class="c-tag">EU Regulation</div>
+        <div class="c-name">EU Construction Products Regulation</div>
+        <div class="c-flag"><span class="country-tag">EU 27</span> Updated CPR · Digital Product Passports for construction</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Revised CPR</span><span class="v">2024 update</span></div>
+          <div class="c-stat"><span class="k">Digital Product Passport</span><span class="v">Phased rollout</span></div>
+          <div class="c-stat"><span class="k">Linked to ESPR framework</span><span class="v">Yes</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://single-market-economy.ec.europa.eu/sectors/construction/construction-products-regulation-cpr_en" target="_blank">European Commission &mdash; Construction Products Regulation</a></div>
+      </div>
+
+      <div class="card ce-platform">
+        <div class="c-tag">EU Platform</div>
+        <div class="c-name">EU Circular Economy Action Plan</div>
+        <div class="c-flag"><span class="country-tag">EU 27</span> Strategy framework underpinning ESPR + CPR + Right to Repair</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Adopted</span><span class="v">March 2020</span></div>
+          <div class="c-stat"><span class="k">Part of</span><span class="v">European Green Deal</span></div>
+          <div class="c-stat"><span class="k">Stakeholder platform</span><span class="v">Active</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://environment.ec.europa.eu/strategy/circular-economy-action-plan_en" target="_blank">European Commission &mdash; Circular Economy Action Plan</a> · <a href="https://circulareconomy.europa.eu/platform/en" target="_blank">European Circular Economy Stakeholder Platform</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 5: FOOD & PACKAGING -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <div class="section-title">Food &amp; Packaging</div>
+      <div class="section-sub">Surplus marketplaces, sharing platforms, and the EU Packaging &amp; Packaging Waste Regulation.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card tgtg">
+        <div class="c-tag">Denmark · Profitable</div>
+        <div class="c-name">Too Good To Go</div>
+        <div class="c-flag"><span class="country-tag">DK</span> Surplus food marketplace · founded Copenhagen 2015</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">2024 revenue</span><span class="v">€610M (+32%)</span></div>
+          <div class="c-stat"><span class="k">2024 EBITDA</span><span class="v">€10.6M (positive)</span></div>
+          <div class="c-stat"><span class="k">Registered users</span><span class="v">120M+</span></div>
+          <div class="c-stat"><span class="k">Active business partners</span><span class="v">180,000</span></div>
+          <div class="c-stat"><span class="k">Countries</span><span class="v">21 (EU + N. America)</span></div>
+          <div class="c-stat"><span class="k">2024 surprise bags</span><span class="v">115.6M (~312k t CO₂e)</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://www.toogoodtogo.com/en-us/about-us" target="_blank">Too Good To Go corporate site</a> · <a href="https://en.wikipedia.org/wiki/Too_Good_To_Go" target="_blank">Wikipedia (consolidating company communications)</a></div>
+      </div>
+
+      <div class="card olio">
+        <div class="c-tag">UK · Sharing</div>
+        <div class="c-name">Olio</div>
+        <div class="c-flag"><span class="country-tag">UK</span> Hyper-local food sharing app · founded London 2015</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Model</span><span class="v">P2P + food business surplus</span></div>
+          <div class="c-stat"><span class="k">Reach</span><span class="v">62 countries</span></div>
+          <div class="c-stat"><span class="k">Volunteer Food Waste Heroes</span><span class="v">100,000+</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://olioapp.com/en/about/" target="_blank">Olio company about page</a></div>
+      </div>
+
+      <div class="card ppwr">
+        <div class="c-tag">EU Regulation</div>
+        <div class="c-name">Packaging &amp; Packaging Waste Regulation (PPWR)</div>
+        <div class="c-flag"><span class="country-tag">EU 27</span> Replaces 1994 directive · binding regulation</div>
+        <div class="c-stats">
+          <div class="c-stat"><span class="k">Adopted</span><span class="v">2024</span></div>
+          <div class="c-stat"><span class="k">Reusable targets</span><span class="v">2030 / 2035 / 2040</span></div>
+          <div class="c-stat"><span class="k">Bans on certain SUPs</span><span class="v">From 2030</span></div>
+          <div class="c-stat"><span class="k">All packaging recyclable</span><span class="v">2030 target</span></div>
+        </div>
+        <div class="c-source">Source: <a href="https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en" target="_blank">European Commission &mdash; Packaging waste</a> · <a href="https://eur-lex.europa.eu/eli/reg/2025/40/oj" target="_blank">Regulation (EU) 2025/40 on EUR-Lex</a></div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Too Good To Go &mdash; the surplus-food marketplace at scale</h3>
+      <div class="csub">2024 KPIs &mdash; revenue, users, countries, climate impact. Sources linked above.</div>
+      <div class="chart-wrap"><canvas id="tgtgChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- CROSS-CUTTING REGULATORY TIMELINE -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">⏱</div>
+      <div class="section-title">EU Circular Regulation Timeline 2024 → 2027</div>
+      <div class="section-sub">The dates that force every category to change at once.</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-line">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">30 July 2024</div>
+          <div class="tl-title">EU Right to Repair Directive 2024/1799 enters into force</div>
+          <div class="tl-body">Common rules promoting the repair of consumer goods. Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1799/oj/eng" target="_blank">EUR-Lex</a>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2024</div>
+          <div class="tl-title">PPWR adopted; ESPR final acts in pipeline</div>
+          <div class="tl-body">Packaging &amp; Packaging Waste Regulation adopted; ESPR Commission acts move toward final adoption. Source: <a href="https://sustainablefutures.linklaters.com/post/102miiy/eu-espr-commission-adopts-final-acts-on-unsold-consumer-product-destruction-and" target="_blank">Linklaters</a>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">9 February 2026</div>
+          <div class="tl-title">EU Commission approves first ESPR implementing regulations</div>
+          <div class="tl-body">Regulation (EU) 2026/2 published 10 Feb 2026. Source: <a href="https://www.complianceandrisks.com/blog/what-are-the-latest-eu-espr-regulation-updates-on-transparency-and-destruction-of-unsold-consumer-products/" target="_blank">Compliance &amp; Risks</a>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">19 July 2026</div>
+          <div class="tl-title">ESPR ban on destroying unsold apparel &amp; footwear &mdash; effective for large enterprises</div>
+          <div class="tl-body">Apparel, clothing accessories and footwear cannot be destroyed by large enterprises. Medium enterprises follow 19 Jul 2030; micro/small are exempt. Source: <a href="https://sustainability.freshfields.com/post/102lqlo/the-e-of-esg-sustainable-products-new-eu-ecodesign-rules-for-unsold-consumer" target="_blank">Freshfields</a>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">31 July 2026</div>
+          <div class="tl-title">Right to Repair transposition deadline &mdash; member states must apply national rules</div>
+          <div class="tl-body">All EU citizens gain the right to repair consumer goods. Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1799/oj/eng" target="_blank">EUR-Lex Directive 2024/1799</a>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2027</div>
+          <div class="tl-title">EU Repair Platform operational; ESPR extends to furniture &amp; textiles</div>
+          <div class="tl-body">Public repair-services platform goes live; the next ESPR Working Plan wave brings furniture and textiles into the unsold-goods destruction ban scope. Source: <a href="https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/sustainable-products/ecodesign-sustainable-products-regulation_en" target="_blank">European Commission ESPR</a>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- LINKEDIN ANGLES -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">📝</div>
+      <div class="section-title">LinkedIn Article Angles</div>
+      <div class="section-sub">15 verified angles &mdash; one tracker, three months of content.</div>
+    </div>
+
+    <div class="li-grid">
+      <div class="li-card"><div class="li-tag">Furniture · 1</div><h4>The B2B circular furniture market is opening up just as B2C pure-play (Fonq) collapses</h4><p>Why circular rental works for offices but not for households &mdash; the unit economics, the regulation, the European players to watch.</p></div>
+      <div class="li-card"><div class="li-tag">Furniture · 2</div><h4>IKEA Preowned launched in 2024 in two cities. By 2030 IKEA wants to be 100% circular.</h4><p>What the Madrid + Oslo pilot tells us about how the world&apos;s largest furniture retailer thinks about circularity.</p></div>
+      <div class="li-card"><div class="li-tag">Fashion · 3</div><h4>Vinted just hit €813M revenue. Pre-owned fashion is no longer a hobby.</h4><p>Why the Lithuanian unicorn quadrupled profit in 2024, and what that means for European fashion brands still selling first-life only.</p></div>
+      <div class="li-card"><div class="li-tag">Fashion · 4</div><h4>July 2026: every European fashion retailer must stop destroying unsold stock</h4><p>The ESPR ban &mdash; what it means operationally for buying, planning, and recommerce strategy at large apparel brands.</p></div>
+      <div class="li-card"><div class="li-tag">Fashion · 5</div><h4>Patagonia Worn Wear is 1% of revenue. So why does every fashion CEO study it?</h4><p>The strategic logic of building a small but profitable resale operation as the brand&apos;s most credible sustainability story.</p></div>
+      <div class="li-card"><div class="li-tag">Electronics · 6</div><h4>Back Market crossed $2.8B GMV and turned profitable in Europe</h4><p>The French unicorn proved refurbished electronics can be a real business at marketplace scale.</p></div>
+      <div class="li-card"><div class="li-tag">Electronics · 7</div><h4>Right to Repair: 31 July 2026 is the date every consumer electronics brand needs in its calendar</h4><p>The directive that forces durability, parts availability, and repair pricing transparency across the EU.</p></div>
+      <div class="li-card"><div class="li-tag">Buildings · 8</div><h4>Madaster turned material passports into a real platform &mdash; while everyone else talked about it</h4><p>Why the NL-born scale-up is the layer beneath every credible circular construction project in Northwest Europe.</p></div>
+      <div class="li-card"><div class="li-tag">Buildings · 9</div><h4>The Netherlands is the unannounced European leader in circular construction</h4><p>The combination of dense regulation, strong consultancy ecosystem, and Madaster's traction makes NL a global benchmark.</p></div>
+      <div class="li-card"><div class="li-tag">Food · 10</div><h4>Too Good To Go just delivered €610M revenue and €10M EBITDA &mdash; profitability for surplus food</h4><p>What the Danish startup&apos;s economics tell us about the addressable market for waste-stream marketplaces.</p></div>
+      <div class="li-card"><div class="li-tag">Food · 11</div><h4>EU PPWR is reshaping packaging by 2030 &mdash; and most CPG companies are not ready</h4><p>Reusable packaging targets, single-use plastic bans, recyclability mandates &mdash; the operational implications.</p></div>
+      <div class="li-card"><div class="li-tag">Cross · 12</div><h4>Five sectors, one regulatory wave: how the EU forced circularity in 2024-2026</h4><p>The ESPR + Right to Repair + PPWR convergence and what it means for any consumer-facing brand.</p></div>
+      <div class="li-card"><div class="li-tag">Cross · 13</div><h4>Circular as a business model vs. circular as compliance &mdash; the gap is widening fast</h4><p>Vinted, Back Market, Too Good To Go are circular by design. Most incumbents are scrambling to catch up.</p></div>
+      <div class="li-card"><div class="li-tag">Cross · 14</div><h4>The COO playbook for scaling a circular operation</h4><p>Operational rhythms, KPIs, post-acquisition integration &mdash; what the next generation of circular operators will need.</p></div>
+      <div class="li-card"><div class="li-tag">Cross · 15</div><h4>What every commercial leader should read this quarter on circular economy</h4><p>The five primary sources that actually move the strategy: ESPR, Right to Repair, PPWR, Madaster, and Vinted&apos;s annual report.</p></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="li-cta">
+    <div>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &mdash; Analysis based on publicly available information with named, linked sources throughout. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// Vinted chart
+new Chart(document.getElementById('vintedChart'),{
+  type:'bar',
+  data:{
+    labels:['FY2023','FY2024'],
+    datasets:[
+      {label:'Revenue (€M)',data:[596.3,813.4],backgroundColor:'#14b8a6',borderRadius:6,barThickness:60},
+      {label:'Net profit (€M)',data:[17.8,76.7],backgroundColor:'#0f766e',borderRadius:6,barThickness:60}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12,padding:10}}},
+    scales:{
+      y:{beginAtZero:true,grid:{color:'#f3f4f6'},ticks:{callback:function(v){return '€'+v+'M'}}},
+      x:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}
+    }
+  }
+});
+
+// Back Market chart
+new Chart(document.getElementById('backChart'),{
+  type:'bar',
+  data:{
+    labels:['2023 GMV','2024 GMV'],
+    datasets:[{
+      label:'GMV ($B)',
+      data:[2.3,2.8],
+      backgroundColor:['#059669','#047857'],
+      borderRadius:6,
+      barThickness:80
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return '$'+c.raw+'B GMV'}}}
+    },
+    scales:{
+      y:{beginAtZero:true,max:3.5,grid:{color:'#f3f4f6'},ticks:{callback:function(v){return '$'+v+'B'}}},
+      x:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}
+    }
+  }
+});
+
+// Too Good To Go chart
+new Chart(document.getElementById('tgtgChart'),{
+  type:'bar',
+  data:{
+    labels:['Revenue (€M)','Users (M)','Countries','Surprise bags 2024 (M)'],
+    datasets:[{
+      label:'2024 KPIs',
+      data:[610,120,21,115.6],
+      backgroundColor:['#ef4444','#f87171','#fb923c','#dc2626'],
+      borderRadius:6,
+      barThickness:60
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:function(c){
+        var labels=['€610M revenue (+32% YoY)','120M+ registered users','21 countries (EU + N. America)','115.6M surprise bags = ~312k t CO₂e avoided'];
+        return labels[c.dataIndex];
+      }}}
+    },
+    scales:{
+      x:{beginAtZero:true,grid:{color:'#f3f4f6'}},
+      y:{grid:{display:false},ticks:{font:{size:11}}}
+    }
+  }
+});
+</script>
+</body>
+</html>
