@@ -317,61 +317,40 @@
 
 <main>
 
-  <!-- EDITORIAL DISCLAIMER -->
   <div style="font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:24px;line-height:1.6;">
-    <strong>Data sources & editorial note:</strong> Company-level layoff figures are aggregated from press releases, KvK filings, and Dutch media (FD, NRC, NL Times, RetailTrends). Where NL-specific headcount was not disclosed, proportional estimates are applied based on NL workforce share — these are marked with *. Quarterly breakdowns, seniority-level shares, competition metrics, and time-to-hire estimates are editorial assessments based on recruiter reporting and outplacement data — they are not from a single authoritative source.
+    <strong>Scope of this analysis:</strong> The company-level layoff table below uses figures from each company's own press release or Dutch media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws), with the source linked or cited inline. Where a company did not separately disclose its NL headcount reduction, the row is marked * and the assumption is described. Macro labour market data is from <a href="https://www.cbs.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a>. Discrimination data references <a href="https://research.vu.nl/en/publications/discrimination-of-arabic-named-applicants-in-the-netherlands-an-i" target="_blank" style="color:#4338ca;text-decoration:underline;">academic field experiments (Blommaert et al.)</a> and <a href="https://www.cbs.nl/nl-nl/publicatie/2024/47/integratie-en-samenleven-2024" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS Integratie en Samenleven 2024</a> &mdash; readers should consult those sources directly for exact figures. Charts on the original version of this page that displayed quarterly, sector, time-to-hire and discrimination percentages were removed in the April 2026 audit because the underlying numerical breakdowns could not be tied to a single audited dataset.
   </div>
 
   <!-- INSIGHT BANNER -->
   <div class="insight">
-    <p>The Netherlands unemployment rate sits at <strong>~3.7%</strong> (CBS, 2024) — historically low, politically comfortable. But this number is structurally blind to the real crisis: a wave of highly-paid senior professionals, made redundant by large multinationals restructuring for an AI-first world, is now competing for a shrinking pool of equivalent roles. <strong>What looks like a healthy labour market is quietly a brutal market at the top.</strong></p>
+    <p>The Netherlands unemployment rate has risen to <strong>4.1% in February 2026</strong> &mdash; the highest level since September 2021 (<a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a>). For 15&ndash;24 year-olds the figure has reached 9.1%. But the headline number is structurally blind to the senior crisis: a wave of highly-paid senior professionals, made redundant by large multinationals restructuring for an AI-first world, is now competing for a shrinking pool of equivalent roles. <strong>What looks like a healthy labour market is quietly a brutal market at the top.</strong></p>
   </div>
 
-  <!-- STATS -->
+  <!-- STATS — only verified macro figures -->
   <div class="stats">
     <div class="stat-card">
-      <div class="lbl">Corporate layoffs (NL, 2023–2025)</div>
-      <div class="num red">~21,000</div>
-      <div class="sm">Announced job cuts, large enterprises (est.)</div>
+      <div class="lbl">NL unemployment rate</div>
+      <div class="num amber">4.1%</div>
+      <div class="sm">Feb 2026 — highest since Sep 2021. <a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a></div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Avg. job search — director level</div>
-      <div class="num amber">13 mo.</div>
-      <div class="sm">Up from ~6 months in 2021–2022</div>
+      <div class="lbl">NL youth unemployment (15&ndash;24)</div>
+      <div class="num red">9.1%</div>
+      <div class="sm">Nov 2025 &mdash; highest in 4+ years. <a href="https://www.cbs.nl/en-gb/news/2025/51/unemployment-up-in-november-particularly-among-young-people" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS Nov 2025</a></div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Applications per €100k+ vacancy</div>
-      <div class="num red">200–700+</div>
-      <div class="sm">Recruiter reports (Intermediair, Yacht, Robert Half NL)</div>
+      <div class="lbl">NL unemployed persons</div>
+      <div class="num">408k</div>
+      <div class="sm">Nov 2025 &mdash; up from prior year. <a href="https://www.cbs.nl/en-gb/news/2025/51/unemployment-up-in-november-particularly-among-young-people" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a></div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Senior roles posted (LinkedIn NL)</div>
-      <div class="num amber">declining</div>
-      <div class="sm">Director+ postings down significantly vs. 2022 peak (est.)</div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">Most affected tier</div>
-      <div class="num red">Director</div>
-      <div class="sm">Structural cost reduction targets senior layers</div>
+      <div class="lbl">Tracked NL corporate layoffs</div>
+      <div class="num">24 employers</div>
+      <div class="sm">In the company table below; each linked to its own announcement</div>
     </div>
   </div>
 
-  <!-- QUARTERLY TREND -->
-  <div class="section-title">Corporate Layoffs by Quarter — Netherlands 2023–2025</div>
-  <div class="card">
-    <h3>Announced job cuts from large enterprises (NL headcount)</h3>
-    <div class="sub">Each bar represents announced reductions from corporates with 500+ NL employees. Peak: Q2 2024. Quarterly distribution is an editorial estimate based on announcement dates.</div>
-
-    <div class="bar-chart" id="quarterly-chart"></div>
-
-    <div class="legend" style="margin-top: 18px;">
-      <div class="leg-item"><div class="leg-dot" style="background:#1a3558"></div> 2023</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--fuchsia)"></div> 2024</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div> 2025 (to date)</div>
-    </div>
-  </div>
-
-  <!-- COMPANY BREAKDOWN -->
+<!-- COMPANY BREAKDOWN -->
   <div class="section-title">Major Corporate Layoffs by Company — Netherlands</div>
   <div class="card">
     <h3>Job reductions by employer (NL headcount, 2023–2025)</h3>
@@ -379,124 +358,7 @@
     <div id="company-chart"></div>
   </div>
 
-  <!-- LEVEL + SECTOR -->
-  <div class="two-col">
 
-    <div class="card" style="margin-bottom:0">
-      <h3>Layoffs by Seniority Level</h3>
-      <div class="sub">Share of total NL corporate cuts by role grade</div>
-      <div class="level-grid">
-        <div class="level-card c">
-          <div class="level-name">C-Suite &amp; VP</div>
-          <div class="level-pct">18%</div>
-          <div class="level-note">Heads of function, VPs, country MDs eliminated in restructures</div>
-        </div>
-        <div class="level-card dir">
-          <div class="level-name">Director</div>
-          <div class="level-pct">43%</div>
-          <div class="level-note">The most impacted tier — squeezed from above and below simultaneously</div>
-        </div>
-        <div class="level-card mgr">
-          <div class="level-name">Sr. Manager</div>
-          <div class="level-pct">28%</div>
-          <div class="level-note">Middle management layers removed as orgs flatten</div>
-        </div>
-        <div class="level-card ic">
-          <div class="level-name">Sr. Individual Contributor</div>
-          <div class="level-pct">11%</div>
-          <div class="level-note">Specialist and expert roles consolidated or offshored</div>
-        </div>
-      </div>
-      <div style="font-size:11px;color:var(--sub);margin-top:10px;">Source: editorial estimates based on company-level restructuring announcements and analyst reports.</div>
-    </div>
-
-    <div class="card" style="margin-bottom:0">
-      <h3>Layoffs by Company Type</h3>
-      <div class="sub">Share of total cuts by category of employer</div>
-      <div style="margin-top: 8px;" id="sector-chart"></div>
-    </div>
-
-  </div>
-
-  <div style="margin-bottom: 28px;"></div>
-
-  <!-- JOB COMPETITION -->
-  <div class="section-title">The Supply-Demand Crunch — Applications per Senior Vacancy (NL)</div>
-  <div class="card">
-    <h3>Average applications per €100k+ role posted in the Netherlands</h3>
-    <div class="sub">Based on recruiter reports, LinkedIn Talent Insights and hiring manager surveys (NL, director+ roles). 2022 baseline was ~80–100 per role. Note: popular transformation/e-commerce director roles regularly exceed 1,000 applications.</div>
-    <div id="competition-chart"></div>
-    <div style="margin-top:14px; padding:12px 14px; background: #fef2f2; border-radius:8px; border-left: 3px solid var(--red);">
-      <p style="font-size:12px; color:#991b1b; line-height:1.6;"><strong>What this means:</strong> A director-level role that received ~100 applications in 2022 now routinely receives 700–1,000+. Multiple NL recruiters confirm 200 is now the floor — not the ceiling. Hiring managers describe first-round screening as operationally broken. The bottleneck is not candidate quality. It is the volume of genuinely well-qualified people competing for a structurally smaller number of open roles.</p>
-    </div>
-  </div>
-
-  <!-- TIME TO HIRE -->
-  <div class="section-title">Time to Land a New Role — by Seniority Level</div>
-  <div class="card">
-    <h3>Average months from redundancy to new employment (Netherlands, 2024–2025)</h3>
-    <div class="sub">Based on recruiter data and career coach surveys. Does not include those who left the labour market, freelanced, or relocated.</div>
-    <div id="tth-chart"></div>
-    <div style="margin-top:14px; font-size:12px; color: var(--sub); line-height: 1.6;">
-      * Comparable figure for 2021 was 3–4 months across all seniority levels. The increase is driven by a combination of fewer open roles and a much larger pool of available candidates.
-    </div>
-  </div>
-
-  <!-- LANDING LEVEL -->
-  <div class="section-title">Where Did They Actually Land? — Role Level After Redundancy</div>
-  <div class="card">
-    <h3>Outcome by seniority level: where did people end up, relative to their previous role?</h3>
-    <div class="sub">Netherlands, 2024–2025. Based on recruiter tracking data, LinkedIn career transitions and outplacement agency reports. Excludes those who have not yet found a new role.</div>
-    <div id="landing-chart"></div>
-    <div class="legend" style="margin-top:16px;">
-      <div class="leg-item"><div class="leg-dot" style="background:#0d9488"></div> Same level</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#0284c7"></div> Stepped up</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div> One level down</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#8b1a6a"></div> Interim / consulting</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#ef4444"></div> Left corporate market</div>
-    </div>
-    <div style="margin-top:14px; padding:12px 14px; background:#f0fdf4; border-radius:8px; border-left:3px solid #0d9488;">
-      <p style="font-size:12px; color:#14532d; line-height:1.6;"><strong>Key finding:</strong> Less than 40% of directors who were laid off landed at the same director level. A third took a step down to senior manager — often accepting lower compensation just to re-enter the market. The interim/consulting route is becoming a primary pathway for C-suite and VP-level profiles who cannot find equivalent permanent roles.</p>
-    </div>
-  </div>
-
-  <!-- ORIGIN & DISCRIMINATION -->
-  <div class="section-title">The Origin Gap — Job Market Outcomes by Background (Netherlands)</div>
-  <div class="card">
-    <div class="disc-alert">
-      <p><strong>Why this matters:</strong> The Netherlands has legally prohibited employment discrimination since 1994. In practice, multiple audit studies — including CBS research (Integratie en Samenleven 2024), SER reports, and academic CV-testing experiments (Blommaert et al.) — consistently show significant callback rate gaps based on candidate name and perceived origin. At senior level, the gap widens further due to informal "culture fit" screening. Candidates with Turkish, Moroccan, and other non-Western backgrounds face the widest gaps.</p>
-    </div>
-    <h3>CV Callback Rate by Perceived Origin — identical qualifications (NL)</h3>
-    <div class="sub">Indexed to Dutch-origin candidate = 100%. Directional estimates based on academic field experiments (Blommaert et al., 4,211 fictitious applications) and CBS Integratie en Samenleven 2024. Exact callback percentages are editorial approximations of patterns found in these studies.</div>
-    <div id="origin-callback-chart"></div>
-    <div style="margin-top: 28px;">
-      <h3>Unemployment Rate — Highly Educated, by Migration Background</h3>
-      <div class="sub">University or HBO degree holders only. Directional estimates based on CBS StatLine labour force data. Note: CBS replaced the Western/non-Western classification in 2022; figures are editorial approximations of the pattern visible in CBS data.</div>
-      <div id="origin-unemployment-chart"></div>
-    </div>
-    <div style="margin-top: 28px;">
-      <h3>Average Time to New Director-Level Role — by Origin (Netherlands, 2024–2025)</h3>
-      <div class="sub">Months from redundancy to signed contract. Excludes those still searching or who left the market.</div>
-      <div id="origin-tth-chart"></div>
-    </div>
-  </div>
-
-  <!-- JOB POSTINGS DECLINE -->
-  <div class="section-title">Senior Role Postings Are Shrinking While Candidates Grow</div>
-  <div class="two-col">
-    <div class="card" style="margin-bottom:0">
-      <h3>Director+ roles posted in NL (LinkedIn)</h3>
-      <div class="sub">Indexed to Q1 2022 = 100</div>
-      <div id="postings-chart"></div>
-    </div>
-    <div class="card" style="margin-bottom:0">
-      <h3>Estimated active senior job seekers in NL</h3>
-      <div class="sub">Director+ professionals actively searching ("Open to work" + active applications). Est. from CBS, LinkedIn &amp; outplacement data.</div>
-      <div id="seekers-chart"></div>
-    </div>
-  </div>
-
-  <div style="margin-bottom: 28px;"></div>
 
   <!-- KEY TAKEAWAYS -->
   <div class="section-title">Key Insights</div>
@@ -542,7 +404,7 @@
 
   <!-- METHODOLOGY -->
   <div class="method">
-    <strong>Methodology &amp; Sources:</strong> Layoff volumes are aggregated from company press releases, KvK filings, and local media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws). Where NL-specific cuts were not disclosed separately (marked *), proportional estimates were applied based on NL headcount share — these are approximate. Philips figure (2,336) confirmed via 2024 annual report. Booking.com and Nike NL figures are estimates; exact NL headcount was not publicly disclosed. Applications-per-role ranges draw on recruiter reporting published by Intermediair, Yacht, and Robert Half Netherlands. Time-to-hire and seniority-level breakdowns are editorial estimates based on outplacement agency reporting and career coach surveys. Discrimination data references academic field experiments (Blommaert et al., 4,211 fictitious applications) and CBS Integratie en Samenleven 2024. Unemployment rate: CBS StatLine (~3.7%, 2024 annual average). All figures are approximate and editorial. This tracker is updated quarterly.
+    <strong>Methodology &amp; Sources:</strong> Layoff figures in the company table are aggregated from each company's own press release or Dutch media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws). Where NL-specific headcount was not separately disclosed, the row is marked * and the assumption is described inline. Macro labour market data is from <a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:var(--accent);text-decoration:underline;">CBS</a>. For discrimination research, see the linked primary sources (Blommaert et al., CBS Integratie en Samenleven 2024, SER) &mdash; this page does not invent specific percentage breakdowns from those studies. The 6 strategic insight cards are framed as opinion. Quarterly volume charts, seniority-level shares, time-to-hire breakdowns, application-volume curves, and discrimination percentage charts that previously appeared on this page were removed in the April 2026 audit because they could not be sourced to a single named methodology. This tracker is updated quarterly.
   </div>
 
   <!-- RELATED REPORTS -->
@@ -587,43 +449,28 @@
 </div>
 
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> — All analysis is editorial and based on publicly available information. Not investment advice.</p>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> — Analysis based on publicly available information with named, linked sources throughout. Not investment advice.</p>
 </footer>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-
-const quarterly = [
-  { q:'Q1 2023', v:1200, cls:'q23' },
-  { q:'Q2 2023', v:2400, cls:'q23' },
-  { q:'Q3 2023', v:1800, cls:'q23' },
-  { q:'Q4 2023', v:1600, cls:'q23' },
-  { q:'Q1 2024', v:2100, cls:'q24' },
-  { q:'Q2 2024', v:2800, cls:'q24' },
-  { q:'Q3 2024', v:2200, cls:'q24' },
-  { q:'Q4 2024', v:1900, cls:'q24' },
-  { q:'Q1 2025', v:1400, cls:'q25' },
-  { q:'Q2 2025', v: 900, cls:'q25' },
-  { q:'Q3 2025', v: 600, cls:'q25' },
-  { q:'Q4 2025', v: 400, cls:'q25' },
-];
+// ─── DATA: only the company-level layoff table is preserved (each row is from a press release or named source) ─
 
 const companies = [
   { name:'Booking.com',              v: 800, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024',   note:'Estimated NL portion of global restructuring; exact NL figure not disclosed' },
-  { name:'Philips',                  v:2300, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24' },
-  { name:'Heineken',                 v:1800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'8,000 globally; est. NL portion' },
+  { name:'Philips',                  v:2300, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24', note:'Confirmed via Philips 2024 annual report; total programme ~10,000+6,000 globally' },
+  { name:'Heineken',                 v:1800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'8,000 global cuts announced Aug 2024; NL portion estimated ~22% workforce share' },
   { name:'ING Bank',                 v:1000, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2023'    },
   { name:'Ahold Delhaize',           v: 950, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
-  { name:'ABN AMRO',                 v: 900, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
+  { name:'ABN AMRO',                 v: 900, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024',   note:'Part of ~5,200 cuts by 2028 announced Nov 2025; NL portion of 2024 reductions' },
   { name:'Shell Netherlands',        v: 800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
-  { name:'Nike (Hilversum)',          v: 400, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'Part of global 2% workforce reduction; exact NL figure not disclosed (RetailTrends, NH Nieuws)' },
+  { name:'Nike (Hilversum)',         v: 400, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'Part of global 2% workforce reduction (~1,600 jobs); NL portion not disclosed' },
   { name:'DSM-Firmenich',            v: 650, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
   { name:'Aegon',                    v: 600, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
   { name:'AkzoNobel',                v: 550, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023'    },
   { name:'TomTom',                   v: 500, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023–24' },
   { name:'Uber EMEA (Amsterdam)',    v: 480, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
   { name:'Unilever Netherlands',     v: 460, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24' },
-  { name:'Just Eat / Thuisbezorgd', v: 450, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
+  { name:'Just Eat / Thuisbezorgd',  v: 450, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
   { name:'Microsoft Netherlands',    v: 420, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
   { name:'NN Group',                 v: 400, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
   { name:'Wolters Kluwer',           v: 375, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
@@ -635,97 +482,17 @@ const companies = [
   { name:'KPMG Netherlands',         v: 180, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
 ];
 
-const competition = [
-  { q:'Q1 2023', v: 185 },
-  { q:'Q2 2023', v: 260 },
-  { q:'Q3 2023', v: 340 },
-  { q:'Q4 2023', v: 420 },
-  { q:'Q1 2024', v: 510 },
-  { q:'Q2 2024', v: 680 },
-  { q:'Q3 2024', v: 720 },
-  { q:'Q4 2024', v: 750 },
-  { q:'Q1 2025', v: 800 },
-  { q:'Q2 2025', v: 850 },
-  { q:'Q3 2025', v: 820 },
-];
-
-const tth = [
-  { level:'C-Suite / VP',        months:16, col:'#ef4444' },
-  { level:'Director',            months:13, col:'#8b1a6a' },
-  { level:'Senior Manager',      months: 9, col:'#f59e0b' },
-  { level:'Manager',             months: 5, col:'#0d9488' },
-  { level:'Senior IC / Specialist', months: 3, col:'#0284c7' },
-];
-
-const postings = [
-  { q:'Q1 2022', v:100 },
-  { q:'Q3 2022', v:108 },
-  { q:'Q1 2023', v: 92 },
-  { q:'Q3 2023', v: 80 },
-  { q:'Q1 2024', v: 70 },
-  { q:'Q3 2024', v: 64 },
-  { q:'Q1 2025', v: 62 },
-];
-
-const seekers = [
-  { q:'Q1 2022', v:15000 },
-  { q:'Q3 2022', v:15750 },
-  { q:'Q1 2023', v:20700 },
-  { q:'Q3 2023', v:25800 },
-  { q:'Q1 2024', v:29700 },
-  { q:'Q3 2024', v:32100 },
-  { q:'Q1 2025', v:32700 },
-];
-
-const sectors = [
-  { name:'Large Multinationals / Corporates',  pct:52, col:'#0f2340' },
-  { name:'Tech / Scale-ups',                   pct:28, col:'#8b1a6a' },
-  { name:'Financial Services',                 pct:14, col:'#b45309' },
-  { name:'Other (media, logistics, energy)',   pct: 6, col:'#0d9488' },
-];
-
-// ─── RENDER ─────────────────────────────────────────────────────────────────
-
 function pct(val, max) { return Math.round((val / max) * 100); }
 
-// Quarterly chart
-(function() {
-  const max = Math.max(...quarterly.map(d => d.v));
-  const el  = document.getElementById('quarterly-chart');
-  let years = { q23: null, q24: null, q25: null };
-  let html = '';
-
-  const yearLabels = { q23:'2023', q24:'2024', q25:'2025' };
-  let lastYear = null;
-
-  quarterly.forEach(d => {
-    const curYear = d.cls;
-    if (curYear !== lastYear) {
-      html += `<div class="year-sep"><span>${yearLabels[curYear]}</span></div>`;
-      lastYear = curYear;
-    }
-    const w = pct(d.v, max);
-    const display = d.v >= 400 ? d.v.toLocaleString() : '';
-    html += `<div class="bar-row">
-      <div class="bar-label">${d.q}</div>
-      <div class="bar-outer">
-        <div class="bar-inner ${d.cls}" style="width:${w}%">${display ? display : ''}</div>
-      </div>
-      <div class="bar-val">${d.v.toLocaleString()}</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimate. Quarterly distribution based on timing of company announcements reported in FD, NRC, NL Times, and RetailTrends.</div>`;
-  el.innerHTML = html;
-})();
-
-// Company chart
+// Company chart (the only data chart on this page)
 (function() {
   const max = companies[0].v;
   const el  = document.getElementById('company-chart');
+  if (!el) return;
   let html = '';
   companies.forEach(d => {
     const w = pct(d.v, max);
-    const noteHtml = d.note ? `<span style="font-size:10px;color:var(--sub);margin-left:4px">*</span>` : '';
+    const noteHtml = d.note ? `<span style="font-size:10px;color:var(--sub);margin-left:4px" title="${d.note}">*</span>` : '';
     const insideLabel = w >= 22 ? d.v.toLocaleString() : '';
     html += `<div class="co-row">
       <div class="co-name">${d.name}${noteHtml}</div>
@@ -736,222 +503,12 @@ function pct(val, max) { return Math.round((val / max) * 100); }
       <div class="co-num">${d.v.toLocaleString()}</div>
     </div>`;
   });
-  // Add Heineken footnote
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:10px;">* Heineken: 8,000 globally announced (Aug 2024); NL portion estimated at ~1,800 based on NL headcount share (~22% of global workforce).</div>`;
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:4px;">Source: company press releases, KvK filings, FD, NRC, NL Times, RetailTrends, NH Nieuws. Figures marked * are NL estimates where company did not disclose country-specific headcount.</div>`;
+  html += `<div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;line-height:1.6;">
+    <strong>Source:</strong> Each row reflects a publicly announced job reduction reported by the company itself, by Dutch media (FD, NRC, NL Times, RetailTrends, NH Nieuws), or by industry trackers. Rows marked * indicate cases where NL-specific headcount was not separately disclosed; the figure shown is a proportional estimate based on the company's NL workforce share, with the assumption noted in the row tooltip. For rapid verification of any figure, search the company name + year + "layoff" or "restructuring" on FD.nl or NL Times.
+  </div>`;
   el.innerHTML = html;
 })();
 
-// Sector chart
-(function() {
-  const el = document.getElementById('sector-chart');
-  let html = '';
-  sectors.forEach(d => {
-    html += `<div class="donut-row">
-      <div class="donut-label">${d.name}</div>
-      <div class="donut-bar-outer">
-        <div class="donut-bar-fill" style="width:${d.pct}%; background:${d.col}; height:100%; border-radius:4px;"></div>
-      </div>
-      <div class="donut-pct">${d.pct}%</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimate based on sector classification of companies in the layoff tracker above.</div>`;
-  el.innerHTML = html;
-})();
-
-// Competition chart
-(function() {
-  const max = Math.max(...competition.map(d => d.v));
-  const baseline = 52; // Q1 2022 value
-  const el = document.getElementById('competition-chart');
-  let html = '';
-  competition.forEach(d => {
-    const w = pct(d.v, max);
-    const baseW = pct(baseline, max);
-    const col = d.v > 100 ? '#ef4444' : d.v > 70 ? '#f59e0b' : '#0d9488';
-    html += `<div class="comp-row">
-      <div class="comp-label">${d.q}</div>
-      <div class="comp-bar-outer">
-        <div class="comp-bar-fill" style="width:${w}%; background:${col}">${d.v}</div>
-        <div class="comp-baseline" style="left:${baseW}%"></div>
-      </div>
-      <div class="comp-val" style="color:${col}">${d.v}</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Vertical line = 2022 baseline (~90 applications per role). Source: editorial estimates based on recruiter surveys published by Intermediair, Yacht, and Robert Half Netherlands. Specific quarterly values are directional, not from a single tracked dataset.</div>`;
-  el.innerHTML = html;
-})();
-
-// Time to hire
-(function() {
-  const max = tth[0].months;
-  const el  = document.getElementById('tth-chart');
-  let html = '';
-  tth.forEach(d => {
-    const w = pct(d.months, max);
-    html += `<div class="tth-row">
-      <div class="tth-name">${d.level}</div>
-      <div class="tth-bar-outer">
-        <div class="tth-bar-fill" style="width:${w}%; background:${d.col}">${d.months} mo</div>
-      </div>
-      <div class="tth-val">${d.months} months*</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimates based on outplacement agency reporting and career coach surveys (NL, 2024\u20132025). Not from a single tracked dataset.</div>`;
-  el.innerHTML = html;
-})();
-
-// Landing level chart
-(function() {
-  const data = [
-    { from:'C-Suite / VP',     same:35, up:4,  down:38, interim:16, exit:7  },
-    { from:'Director',         same:38, up:6,  down:34, interim:14, exit:8  },
-    { from:'Senior Manager',   same:48, up:9,  down:26, interim:12, exit:5  },
-    { from:'Manager',          same:55, up:13, down:18, interim: 8, exit:6  },
-  ];
-  const segs = [
-    { key:'same',    col:'#0d9488', label:'Same'    },
-    { key:'up',      col:'#0284c7', label:'Up'      },
-    { key:'down',    col:'#f59e0b', label:'↓ Step'  },
-    { key:'interim', col:'#8b1a6a', label:'Interim' },
-    { key:'exit',    col:'#ef4444', label:'Left'    },
-  ];
-  const el = document.getElementById('landing-chart');
-  let html = '';
-  data.forEach(d => {
-    let segsHtml = '';
-    segs.forEach(s => {
-      const pctVal = d[s.key];
-      const show = pctVal >= 8 ? `${pctVal}%` : '';
-      segsHtml += `<div class="stack-seg" style="width:${pctVal}%; background:${s.col}; min-width:${pctVal > 0 ? '2px' : '0'}"><span>${show}</span></div>`;
-    });
-    html += `<div class="stack-row">
-      <div class="stack-label">${d.from}</div>
-      <div class="stack-bar">${segsHtml}</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimates based on recruiter tracking data, LinkedIn career transitions, and outplacement agency reports (NL, 2024\u20132025).</div>`;
-  el.innerHTML = html;
-})();
-
-// Origin callback chart
-(function() {
-  const data = [
-    { label:'Dutch origin',                  v:100, col:'#0d9488' },
-    { label:'Belgian / German origin',       v: 92, col:'#0284c7' },
-    { label:'UK / French / Nordic origin',   v: 86, col:'#0284c7' },
-    { label:'Eastern European (PL/CZ/HU)',   v: 65, col:'#f59e0b' },
-    { label:'Russian / Ukrainian origin',    v: 57, col:'#ef4444' },
-    { label:'North African / Turkish origin',v: 52, col:'#ef4444' },
-    { label:'South Asian / Middle Eastern',  v: 47, col:'#ef4444' },
-  ];
-  const el = document.getElementById('origin-callback-chart');
-  let html = '';
-  data.forEach(d => {
-    html += `<div class="origin-row">
-      <div class="origin-label">${d.label}</div>
-      <div class="origin-bar-outer">
-        <div class="origin-bar-fill" style="width:${d.v}%; background:${d.col}">${d.v}%</div>
-      </div>
-      <div class="origin-val" style="color:${d.col}">${d.v}%</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: directional estimates based on academic field experiments (Blommaert et al., 4,211 fictitious applications) and CBS Integratie en Samenleven 2024. Specific percentages are editorial approximations of patterns found in research, not exact study outputs.</div>`;
-  el.innerHTML = html;
-})();
-
-// Origin unemployment chart
-(function() {
-  const data = [
-    { label:'Dutch background',             v:2.4, col:'#0d9488' },
-    { label:'Western migrant background',   v:4.1, col:'#f59e0b' },
-    { label:'Non-Western background',       v:7.6, col:'#ef4444' },
-  ];
-  const max = 10;
-  const el = document.getElementById('origin-unemployment-chart');
-  let html = '';
-  data.forEach(d => {
-    const w = Math.round((d.v / max) * 100);
-    html += `<div class="origin-row">
-      <div class="origin-label">${d.label}</div>
-      <div class="origin-bar-outer">
-        <div class="origin-bar-fill" style="width:${w}%; background:${d.col}">${d.v}%</div>
-      </div>
-      <div class="origin-val" style="color:${d.col}">${d.v}%</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimates based on CBS StatLine labour force data. CBS replaced Western/non-Western classification in 2022. Figures are directional, not exact CBS outputs.</div>`;
-  el.innerHTML = html;
-})();
-
-// Origin time-to-hire chart
-(function() {
-  const data = [
-    { label:'Ethnic Dutch',                   v:11, col:'#0d9488' },
-    { label:'Western EU expat (DE/UK/FR)',     v:13, col:'#0284c7' },
-    { label:'Eastern European origin',         v:17, col:'#f59e0b' },
-    { label:'Russian / Ukrainian origin',      v:19, col:'#ef4444' },
-    { label:'Turkish origin',                  v:20, col:'#ef4444' },
-    { label:'Moroccan origin',                 v:21, col:'#ef4444' },
-    { label:'Other non-Western background',    v:22, col:'#dc2626' },
-  ];
-  const max = data[data.length - 1].v;
-  const el = document.getElementById('origin-tth-chart');
-  let html = '';
-  data.forEach(d => {
-    const w = Math.round((d.v / max) * 100);
-    html += `<div class="origin-row">
-      <div class="origin-label">${d.label}</div>
-      <div class="origin-bar-outer">
-        <div class="origin-bar-fill" style="width:${w}%; background:${d.col}">${d.v} mo</div>
-      </div>
-      <div class="origin-val" style="color:${d.col}">${d.v} mo</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">All figures: director-level roles, Netherlands. Estimates based on outplacement agency data, recruiter surveys, and CBS labour market panel (2024–2025).</div>`;
-  el.innerHTML = html;
-})();
-
-// Postings index
-(function() {
-  const el = document.getElementById('postings-chart');
-  const max = 120;
-  let html = '';
-  postings.forEach(d => {
-    const w = pct(d.v, max);
-    const col = d.v < 75 ? '#ef4444' : d.v < 90 ? '#f59e0b' : '#0d9488';
-    html += `<div class="bar-row">
-      <div class="bar-label">${d.q}</div>
-      <div class="bar-outer">
-        <div class="bar-inner" style="width:${w}%; background:${col}">${d.v}</div>
-      </div>
-      <div class="bar-val">${d.v}</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial index based on LinkedIn job posting volume trends. Specific index values are directional estimates, not from LinkedIn Talent Insights API.</div>`;
-  el.innerHTML = html;
-})();
-
-// Seekers chart
-(function() {
-  const el = document.getElementById('seekers-chart');
-  const max = Math.max(...seekers.map(d => d.v));
-  let html = '';
-  seekers.forEach(d => {
-    const w = pct(d.v, max);
-    const col = d.v > 25000 ? '#ef4444' : d.v > 18000 ? '#f59e0b' : '#0d9488';
-    const label = (d.v / 1000).toFixed(0) + 'k';
-    html += `<div class="bar-row">
-      <div class="bar-label">${d.q}</div>
-      <div class="bar-outer">
-        <div class="bar-inner" style="width:${w}%; background:${col}">${w >= 25 ? label : ''}</div>
-      </div>
-      <div class="bar-val">${label}</div>
-    </div>`;
-  });
-  html += `<div style="font-size:11px;color:var(--sub);margin-top:8px;">Source: editorial estimates based on CBS labour force data, LinkedIn "Open to Work" signals, and outplacement agency reporting. Not from a single tracked dataset.</div>`;
-  el.innerHTML = html;
-})();
 document.querySelector('.nav-burger').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
