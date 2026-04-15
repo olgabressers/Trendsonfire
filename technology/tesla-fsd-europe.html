@@ -30,8 +30,12 @@
       --navy: #0f2340;
       --navy-mid: #1e3a5f;
       --navy-soft: #475569;
-      --accent: #b45309;
+      --accent: #b45309;           /* amber — alerts, story markers */
       --accent-light: #fef3c7;
+      --growth: #0369a1;            /* blue — growth / leader */
+      --peak: #0d9488;              /* teal — record / positive peak */
+      --alarm: #dc2626;             /* red — warning / inventory build */
+      --dim: #94a3b8;               /* grey — dip / low */
       --bg: #f7f8fa;
       --text: #111827;
       --sub: #6b7280;
@@ -113,10 +117,13 @@
     .qbars { display: flex; align-items: flex-end; gap: 14px; height: 320px; padding: 16px 8px 36px; background: #fafbfc; border: 1px solid var(--border); border-radius: 10px; position: relative; }
     .qbar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; position: relative; }
     .qbar .bar { width: 100%; min-height: 8px; border-radius: 4px 4px 0 0; background: var(--navy-mid); }
-    .qbar.dim .bar { background: #cbd5e1; }
-    .qbar.accent .bar { background: var(--navy-soft); }
+    .qbar.dim .bar { background: var(--dim); }
+    .qbar.peak .bar { background: var(--peak); }
+    .qbar.accent .bar { background: var(--alarm); }
     .qbar .val { font-size: 11px; font-weight: 700; color: var(--navy); position: absolute; top: -20px; white-space: nowrap; }
-    .qbar.accent .val { color: var(--navy-soft); }
+    .qbar.dim .val { color: var(--dim); }
+    .qbar.peak .val { color: var(--peak); }
+    .qbar.accent .val { color: var(--alarm); }
     .qbar .lbl { font-size: 10.5px; color: var(--sub); white-space: nowrap; font-weight: 600; position: absolute; bottom: -28px; }
 
     /* COUNTRY HORIZONTAL BARS — uniform style */
@@ -413,11 +420,11 @@
         <div class="qbar"><div class="bar" style="height:99.7%;"><span class="val">496K</span></div><div class="lbl">Q4 24</div></div>
         <div class="qbar dim"><div class="bar" style="height:68%;"><span class="val">337K</span></div><div class="lbl">Q1 25</div></div>
         <div class="qbar"><div class="bar" style="height:77%;"><span class="val">384K</span></div><div class="lbl">Q2 25</div></div>
-        <div class="qbar"><div class="bar" style="height:100%;"><span class="val">497K</span></div><div class="lbl">Q3 25</div></div>
+        <div class="qbar peak"><div class="bar" style="height:100%;"><span class="val">497K</span></div><div class="lbl">Q3 25</div></div>
         <div class="qbar"><div class="bar" style="height:84%;"><span class="val">418K</span></div><div class="lbl">Q4 25</div></div>
         <div class="qbar accent"><div class="bar" style="height:72%;"><span class="val">358K</span></div><div class="lbl">Q1 26</div></div>
       </div>
-      <p style="font-size: 12.5px; color: var(--sub); margin-top: 32px;"><strong style="color:var(--navy);">Grey Q1 25:</strong> Model Y refresh production downtime. <strong style="color:var(--navy);">Q3 25 peak:</strong> US $7,500 federal EV tax credit pull-forward (credit expired 30 Sep 2025). <strong style="color:var(--accent);">Amber Q1 26:</strong> 408K built minus 358K delivered = <strong>50K vehicles into inventory in a single quarter</strong>.</p>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 32px;"><strong style="color:var(--dim);">Grey Q1 25:</strong> Model Y refresh production downtime. <strong style="color:var(--peak);">Teal Q3 25 peak:</strong> US $7,500 federal EV tax credit pull-forward (credit expired 30 Sep 2025). <strong style="color:var(--alarm);">Red Q1 26:</strong> 408K built minus 358K delivered = <strong>50K vehicles into inventory in a single quarter</strong>.</p>
       <div class="src">
         <strong>Source:</strong>
         <a href="https://ir.tesla.com/" target="_blank">Tesla Investor Relations &middot; Quarterly Production &amp; Delivery releases</a> &middot;
@@ -527,7 +534,7 @@
     <!-- Forecast card -->
     <div class="card" style="margin-top: 16px;">
       <h3>Where this goes &mdash; EV share of new car sales, forecast to 2030</h3>
-      <p style="font-size: 12.5px; color: var(--sub); margin-bottom: 14px;">Based on IEA Global EV Outlook 2025 and BloombergNEF Electric Vehicle Outlook. Percentages = share of all new light vehicles sold, not absolute volumes.</p>
+      <p style="font-size: 12.5px; color: var(--sub); margin-bottom: 14px;">All figures are approximate percentages of new light-vehicle sales. Based on the IEA Global EV Outlook 2025 and BloombergNEF Electric Vehicle Outlook.</p>
 
       <table class="yoy-table" style="margin-bottom:14px;">
         <thead>
@@ -539,11 +546,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td class="country-cell">China</td><td class="num-cell">~48%</td><td class="num-cell">&mdash;</td><td class="num-cell now">~80%</td></tr>
-          <tr><td class="country-cell">Europe</td><td class="num-cell">~25%</td><td class="num-cell">~31%</td><td class="num-cell now">~60&ndash;63%</td></tr>
-          <tr><td class="country-cell">Global average</td><td class="num-cell">~21%</td><td class="num-cell">~27.5%</td><td class="num-cell now">~43%</td></tr>
-          <tr><td class="country-cell">Southeast Asia</td><td class="num-cell">&mdash;</td><td class="num-cell">&mdash;</td><td class="num-cell now">~25%</td></tr>
-          <tr><td class="country-cell">United States</td><td class="num-cell">~10%</td><td class="num-cell">&mdash;</td><td class="num-cell now">~20%</td></tr>
+          <tr><td class="country-cell">China</td><td class="num-cell">48%</td><td class="num-cell">&mdash;</td><td class="num-cell now">80%</td></tr>
+          <tr><td class="country-cell">Europe</td><td class="num-cell">25%</td><td class="num-cell">31%</td><td class="num-cell now">60&ndash;63%</td></tr>
+          <tr><td class="country-cell">Global average</td><td class="num-cell">21%</td><td class="num-cell">27.5%</td><td class="num-cell now">43%</td></tr>
+          <tr><td class="country-cell">Southeast Asia</td><td class="num-cell">&mdash;</td><td class="num-cell">&mdash;</td><td class="num-cell now">25%</td></tr>
+          <tr><td class="country-cell">United States</td><td class="num-cell">10%</td><td class="num-cell">&mdash;</td><td class="num-cell now">20%</td></tr>
         </tbody>
       </table>
 
