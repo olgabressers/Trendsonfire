@@ -69,7 +69,7 @@
 
     /* SECTIONS */
     .sec { margin-bottom: 52px; }
-    .sec-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy-soft); margin-bottom: 10px; }
+    .sec-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
     .sec-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.25; letter-spacing: -0.3px; }
     .sec-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 22px; max-width: 820px; }
 
@@ -81,16 +81,22 @@
     .card strong { color: var(--navy); font-weight: 700; }
     .card a { color: var(--link); text-decoration: underline; }
 
-    .src { font-size: 11px; color: var(--sub); padding: 8px 12px; background: #f9fafb; border-radius: 4px; margin-top: 14px; line-height: 1.6; }
+    .src { font-size: 11px; color: var(--sub); padding: 10px 14px; background: #f9fafb; border-radius: 4px; border-left: 3px solid var(--accent); margin-top: 14px; line-height: 1.6; }
     .src strong { color: var(--navy); }
     .src a { color: var(--navy); text-decoration: underline; font-weight: 600; }
 
     /* SAE LEVELS */
     .lvl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
-    .lvl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; border-top: 3px solid var(--navy-soft); }
-    .lvl-cell.active { border-top-color: var(--navy); background: #f7f8fa; box-shadow: 0 2px 8px rgba(15,35,64,.08); }
+    /* Levels L0-L5 — progressive navy gradient = autonomy capability */
+    .lvl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; border-top: 3px solid #cbd5e1; transition: box-shadow .15s; }
+    .lvl-cell.l0 { border-top-color: #cbd5e1; }
+    .lvl-cell.l1 { border-top-color: #94a3b8; }
+    .lvl-cell.l2 { border-top-color: var(--accent); background: #fffbeb; box-shadow: 0 2px 12px rgba(180,83,9,.12); }
+    .lvl-cell.l3 { border-top-color: var(--navy-soft); }
+    .lvl-cell.l4 { border-top-color: var(--navy-mid); }
+    .lvl-cell.l5 { border-top-color: var(--navy); }
     .lvl-cell .lvl-num { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; color: var(--sub); text-transform: uppercase; margin-bottom: 4px; }
-    .lvl-cell.active .lvl-num { color: var(--navy); font-weight: 800; }
+    .lvl-cell.l2 .lvl-num { color: var(--accent); font-weight: 800; }
     .lvl-cell .lvl-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
     .lvl-cell .lvl-desc { font-size: 12px; color: var(--sub); line-height: 1.5; }
     .lvl-cell .lvl-eg { font-size: 11px; color: var(--navy); margin-top: 8px; font-weight: 600; }
@@ -121,9 +127,9 @@
     .ctry-fill { height: 100%; border-radius: 4px; background: var(--navy-mid); }
     .ctry-fill.alt { background: var(--accent); }
     .ctry-units { font-size: 13px; font-weight: 700; color: var(--navy); text-align: right; }
-    .ctry-yoy { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; text-align: center; white-space: nowrap; background: transparent; color: var(--sub); letter-spacing: 0.3px; }
-    .ctry-yoy.up { color: var(--navy); font-weight: 700; }
-    .ctry-yoy.down { color: #9ca3af; }
+    .ctry-yoy { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 4px; text-align: center; white-space: nowrap; background: #f1f3f6; color: var(--navy-soft); letter-spacing: 0.3px; }
+    .ctry-yoy.up { background: var(--navy); color: white; }
+    .ctry-yoy.down { background: #fef3c7; color: var(--accent); }
 
     /* GLOBAL COMPARISON GRID */
     .gl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
@@ -144,17 +150,17 @@
     .lvl-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: var(--navy); color: white; }
     .lvl-tag.amber { background: var(--navy-soft); }
 
-    /* INSIGHT — quiet, navy accent only */
-    .insight { background: white; border: 1px solid var(--border); border-left: 3px solid var(--navy); border-radius: 8px; padding: 20px 24px; margin: 18px 0; }
-    .insight .ct { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    /* INSIGHT — amber left accent (story markers) */
+    .insight { background: white; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 18px 0; }
+    .insight .ct { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
     .insight .cb { font-size: 13.5px; color: #334155; line-height: 1.7; }
     .insight .cb strong { color: var(--navy); font-weight: 700; }
 
-    /* ENERGY GRID — quiet, no colour accents */
+    /* ENERGY GRID — amber accent (crisis signal, meaning-driven) */
     .energy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-    .e-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
+    .e-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--accent); }
     .e-cell .el { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .e-cell .ev { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.5px; }
+    .e-cell .ev { font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -0.5px; }
     .e-cell .en { font-size: 12px; color: var(--sub); margin-top: 6px; line-height: 1.4; }
 
     /* About / footer */
@@ -307,37 +313,37 @@
     <div class="sec-sub">SAE J3016 standard. The only level Tesla&rsquo;s FSD operates at today is Level 2 &mdash; the same category as adaptive cruise control.</div>
 
     <div class="lvl-grid">
-      <div class="lvl-cell">
+      <div class="lvl-cell l0">
         <div class="lvl-num">Level 0</div>
         <div class="lvl-name">No automation</div>
         <div class="lvl-desc">The driver does everything. Some warning systems may exist (lane-departure beep) but they don&rsquo;t intervene.</div>
         <div class="lvl-eg">Most cars built before 2010</div>
       </div>
-      <div class="lvl-cell">
+      <div class="lvl-cell l1">
         <div class="lvl-num">Level 1</div>
         <div class="lvl-name">Driver assistance</div>
         <div class="lvl-desc">One feature at a time helps the driver &mdash; either steering or speed, not both.</div>
         <div class="lvl-eg">Adaptive cruise control alone</div>
       </div>
-      <div class="lvl-cell active">
-        <div class="lvl-num">Level 2</div>
+      <div class="lvl-cell l2">
+        <div class="lvl-num">Level 2 · Tesla is here</div>
         <div class="lvl-name">Partial automation</div>
         <div class="lvl-desc">Steering AND speed automated together. Driver must keep hands on wheel and eyes on the road. Driver is legally responsible at all times.</div>
         <div class="lvl-eg">Tesla FSD Supervised, Tesla Autopilot, GM Super Cruise</div>
       </div>
-      <div class="lvl-cell">
+      <div class="lvl-cell l3">
         <div class="lvl-num">Level 3</div>
         <div class="lvl-name">Conditional automation</div>
         <div class="lvl-desc">Car drives itself in defined conditions (e.g. highway under 95 km/h). Driver can take eyes off the road but must be ready to take over within seconds when asked.</div>
         <div class="lvl-eg">Mercedes Drive Pilot, BMW Personal Pilot</div>
       </div>
-      <div class="lvl-cell">
+      <div class="lvl-cell l4">
         <div class="lvl-num">Level 4</div>
         <div class="lvl-name">High automation</div>
         <div class="lvl-desc">Car drives itself end-to-end inside a defined operating area (geofenced city, fixed highway). No human in the seat needed inside the zone.</div>
         <div class="lvl-eg">Waymo robotaxi, Baidu Apollo Go, Cruise (suspended)</div>
       </div>
-      <div class="lvl-cell">
+      <div class="lvl-cell l5">
         <div class="lvl-num">Level 5</div>
         <div class="lvl-name">Full automation</div>
         <div class="lvl-desc">Car drives itself anywhere a human could, in any weather. The steering wheel becomes optional. Does not exist commercially.</div>
@@ -762,10 +768,10 @@
         .yoy-table .country-cell { font-weight: 700; color: var(--navy); }
         .yoy-table .num-cell { text-align: right; font-variant-numeric: tabular-nums; color: #64748b; }
         .yoy-table .num-cell.now { color: var(--navy); font-weight: 700; }
-        .yoy-table .yoy-cell { text-align: center; font-weight: 700; }
-        .yoy-cell.high { color: #15803d; }
-        .yoy-cell.mid { color: #1e3a5f; }
-        .yoy-cell.flat { color: #6b7280; }
+        .yoy-table .yoy-cell { text-align: center; font-weight: 800; font-size: 12.5px; }
+        .yoy-cell.high { color: var(--accent); }
+        .yoy-cell.mid { color: var(--navy-mid); }
+        .yoy-cell.flat { color: #94a3b8; font-weight: 600; }
         @media(max-width:768px){
           .yoy-table thead th, .yoy-table tbody td { padding: 9px 8px; font-size: 12px; }
           .yoy-table .country-cell { font-size: 12px; }
