@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tesla in Europe — FSD lands, BYD closes the gap, and how this compares to US, China and the Gulf | TrendsOnFire</title>
+  <meta name="description" content="Tesla FSD Supervised approved in the Netherlands 10 April 2026 — first in Europe. Tesla's two-year decline, the European competitive race, comparison with US, China and Middle East, and the March 2026 energy shock."/>
+  <link rel="canonical" href="https://trendsonfire.com/technology/tesla-fsd-europe.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Tesla in Europe — FSD lands, BYD closes the gap, and how this compares to US, China and the Gulf"/>
+  <meta property="og:description" content="NL first in Europe for Tesla FSD. Two years of declining deliveries. Europe vs US vs China vs Middle East. March 2026 energy shock — visual market intelligence."/>
+  <meta property="og:url" content="https://trendsonfire.com/technology/tesla-fsd-europe.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Tesla in Europe — Visual Market Intelligence"/>
+  <meta name="twitter:description" content="NL FSD approval, Tesla's decline, Europe vs US vs China vs Middle East, energy shock."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2340;
+      --navy-mid: #1e3a5f;
+      --navy-soft: #475569;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --bg: #f7f8fa;
+      --text: #111827;
+      --sub: #6b7280;
+      --border: #e5e7eb;
+      --link: #1e3a5f;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+
+    nav { background: var(--navy); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+
+    /* HERO — single navy gradient */
+    header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: white; padding: 60px 32px 44px; }
+    header .inner { max-width: 1180px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 14px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-light); font-weight: 700; margin-bottom: 14px; }
+    header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 18px; line-height: 1.15; letter-spacing: -0.5px; }
+    header .sub { font-size: 16px; color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; line-height: 1.55; }
+    .header-meta { font-size:11.5px; color:rgba(255,255,255,.55); margin-bottom: 28px; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 14px; }
+    .stat-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 18px 20px; }
+    .stat-card .sl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; color: rgba(255,255,255,.6); margin-bottom: 6px; }
+    .stat-card .sv { font-size: 28px; font-weight: 800; color: white; line-height: 1; margin-bottom: 5px; letter-spacing: -0.5px; }
+    .stat-card .sn { font-size: 11px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .stat-card .ssrc { font-size: 9.5px; color: rgba(255,255,255,.45); margin-top: 8px; line-height: 1.3; letter-spacing: .2px; }
+    .stat-card .ssrc a { color: rgba(255,255,255,.7); text-decoration: underline; }
+
+    main { max-width: 1180px; margin: 0 auto; padding: 56px 24px 60px; }
+
+    /* SECTIONS */
+    .sec { margin-bottom: 52px; }
+    .sec-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .sec-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.25; letter-spacing: -0.3px; }
+    .sec-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 22px; max-width: 820px; }
+
+    /* CARDS */
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 26px 30px; margin-bottom: 14px; }
+    .card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.2px; }
+    .card p { font-size: 13.5px; color: #334155; line-height: 1.65; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--navy); font-weight: 700; }
+    .card a { color: var(--link); text-decoration: underline; }
+
+    .src { font-size: 11.5px; color: var(--sub); padding: 10px 14px; background: #f9fafb; border-radius: 6px; border-left: 3px solid var(--navy); margin-top: 14px; line-height: 1.6; }
+    .src strong { color: var(--navy); }
+    .src a { color: var(--navy); text-decoration: underline; font-weight: 600; }
+
+    /* SAE LEVELS */
+    .lvl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+    .lvl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; border-top: 3px solid var(--navy-soft); }
+    .lvl-cell.active { border-top-color: var(--accent); background: #fffbeb; }
+    .lvl-cell .lvl-num { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; color: var(--sub); text-transform: uppercase; margin-bottom: 4px; }
+    .lvl-cell.active .lvl-num { color: var(--accent); }
+    .lvl-cell .lvl-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .lvl-cell .lvl-desc { font-size: 12px; color: var(--sub); line-height: 1.5; }
+    .lvl-cell .lvl-eg { font-size: 11px; color: var(--navy); margin-top: 8px; font-weight: 600; }
+
+    /* AUTONOMY PRICING */
+    .price-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
+    .price-cell { padding: 18px 20px; border-radius: 10px; background: white; border: 1px solid var(--border); border-top: 4px solid var(--navy-mid); }
+    .price-cell .pname { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 6px; }
+    .price-cell .pval { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.3px; line-height: 1.1; }
+    .price-cell .pn { font-size: 12px; color: var(--sub); margin-top: 6px; }
+    .price-cell .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; background: var(--bg); color: var(--navy); margin-bottom: 8px; }
+
+    /* QUARTERLY BARS — uniform navy */
+    .qbars { display: flex; align-items: flex-end; gap: 14px; height: 320px; padding: 16px 8px 36px; background: #fafbfc; border: 1px solid var(--border); border-radius: 10px; position: relative; }
+    .qbar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; position: relative; }
+    .qbar .bar { width: 100%; min-height: 8px; border-radius: 4px 4px 0 0; background: var(--navy-mid); }
+    .qbar.dim .bar { background: #cbd5e1; }
+    .qbar.accent .bar { background: var(--accent); }
+    .qbar .val { font-size: 11px; font-weight: 700; color: var(--navy); position: absolute; top: -20px; white-space: nowrap; }
+    .qbar.accent .val { color: var(--accent); }
+    .qbar .lbl { font-size: 10.5px; color: var(--sub); white-space: nowrap; font-weight: 600; position: absolute; bottom: -28px; }
+
+    /* COUNTRY HORIZONTAL BARS — uniform style */
+    .ctry-row { display: grid; grid-template-columns: 130px 1fr 90px 70px; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
+    .ctry-row:last-child { border-bottom: none; }
+    .ctry-name { font-weight: 700; color: var(--navy); font-size: 13.5px; }
+    .ctry-bar { background: #f1f3f6; height: 20px; border-radius: 4px; position: relative; overflow: hidden; }
+    .ctry-fill { height: 100%; border-radius: 4px; background: var(--navy-mid); }
+    .ctry-fill.alt { background: var(--accent); }
+    .ctry-units { font-size: 13px; font-weight: 700; color: var(--navy); text-align: right; }
+    .ctry-yoy { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-align: center; white-space: nowrap; background: #f1f3f6; color: var(--navy); }
+    .ctry-yoy.up { background: var(--navy); color: white; }
+    .ctry-yoy.down { background: #fee2e2; color: #991b1b; }
+
+    /* GLOBAL COMPARISON GRID */
+    .gl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .gl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--navy); }
+    .gl-cell.alt { border-top-color: var(--accent); }
+    .gl-cell .gl-region { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+    .gl-cell .gl-num { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.5px; }
+    .gl-cell .gl-label { font-size: 12px; color: var(--sub); margin: 4px 0 12px; }
+    .gl-cell .gl-stat { font-size: 12px; color: #334155; line-height: 1.55; padding-top: 12px; border-top: 1px solid #f1f3f6; }
+    .gl-cell .gl-stat strong { color: var(--navy); }
+
+    /* WORLD MAP TABLE */
+    .gl-table { width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .gl-table thead th { background: var(--navy); color: white; padding: 11px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+    .gl-table tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); }
+    .gl-table tbody tr:last-child td { border-bottom: none; }
+    .gl-table tbody tr:nth-child(even) td { background: #fafbfc; }
+    .lvl-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: var(--navy); color: white; }
+    .lvl-tag.amber { background: var(--accent); }
+
+    /* INSIGHT — subtle */
+    .insight { background: white; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .insight .ct { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+    .insight .cb { font-size: 13.5px; color: #334155; line-height: 1.6; }
+    .insight .cb strong { color: var(--navy); font-weight: 700; }
+
+    /* ENERGY GRID — uniform amber accent */
+    .energy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .e-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; border-top: 3px solid var(--accent); }
+    .e-cell .el { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 6px; }
+    .e-cell .ev { font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -0.3px; }
+    .e-cell .en { font-size: 12px; color: var(--sub); margin-top: 4px; line-height: 1.4; }
+
+    /* About / footer */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 30px 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
+    .li-cta > div { flex: 1; min-width: 0; }
+    .li-cta p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+    .li-cta p { color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.55; margin-bottom: 10px; }
+    .li-cta p:last-child { margin-bottom: 0; }
+    .li-cta a.btn { background: #8b1a6a; color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      main { padding:32px 16px 60px; }
+      header { padding: 36px 16px 28px; }
+      .qbars { height: 240px; gap: 6px; }
+      .qbar .lbl { font-size: 9px; }
+      .qbar .val { font-size: 9.5px; }
+      .ctry-row { grid-template-columns: 100px 1fr 70px 60px; gap: 8px; }
+      .ctry-name { font-size: 12px; }
+      .sec-title { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="index.html" class="active">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<header>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Technology &amp; Media</a> / Tesla in Europe</div>
+    <div class="eyebrow">Visual Market Intelligence · Europe · April 2026</div>
+    <h1>Tesla&rsquo;s European reset &mdash; FSD lands, BYD closes the gap, and how this compares to US, China and the Gulf</h1>
+    <p class="sub">A visual read of what just happened: the Netherlands gave Tesla its first European autonomy approval, two years of decline, the new competitive league table, what this looks like next to the US, China and the Middle East &mdash; and the energy shock that may decide who wins the next quarter.</p>
+    <div class="header-meta">Sources: RDW · Tesla IR · IEA · IMF · ACEA · Electrek · Automotive News · Updated 15 April 2026</div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="sl">NL approval</div>
+        <div class="sv">10 Apr 2026</div>
+        <div class="sn">First EU regulator to greenlight Tesla FSD</div>
+        <div class="ssrc">Source: <a href="https://electrek.co/2026/04/10/tesla-fsd-supervised-approved-netherlands-rdw-europe/" target="_blank">Electrek &middot; RDW</a></div>
+      </div>
+      <div class="stat-card">
+        <div class="sl">Tesla EU 2025 vs 2024</div>
+        <div class="sv">−27.8%</div>
+        <div class="sn">326k → 235k registrations</div>
+        <div class="ssrc">Source: <a href="https://electrek.co/2026/01/06/tesla-full-2025-data-europe-total-bloodbath/" target="_blank">Electrek &middot; full year 2025</a></div>
+      </div>
+      <div class="stat-card">
+        <div class="sl">BYD EU growth (Feb 2026)</div>
+        <div class="sv">+162%</div>
+        <div class="sn">17,954 vs 6,844 a year earlier</div>
+        <div class="ssrc">Source: <a href="https://carboncredits.com/byd-surges-272-in-europe-sales-as-tesla-slumps/" target="_blank">Carbon Credits &middot; BYD EU growth</a></div>
+      </div>
+      <div class="stat-card">
+        <div class="sl">Brent crude spike</div>
+        <div class="sv">+55%</div>
+        <div class="sn">$72 → $112/bbl in March 2026</div>
+        <div class="ssrc">Source: <a href="https://www.iea.org/reports/oil-market-report-march-2026" target="_blank">IEA Oil Market Report</a></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 01 · THE NEWS                               -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">01 · The news</div>
+    <div class="sec-title">The Netherlands becomes the first EU country to approve Tesla FSD</div>
+    <div class="sec-sub">10 April 2026, Dutch RDW, under UN Regulation R-171. Level 2 Supervised &mdash; not self-driving.</div>
+
+    <div class="card">
+      <h3>How Tesla pricing compares to the other autonomous-driving systems on the road</h3>
+      <p style="margin-bottom: 14px;">Dutch owners can activate FSD Supervised today &mdash; €99/month or €7,500 one-time. The only other system commercially active in Europe is Mercedes-Benz Drive Pilot. Waymo runs the most autonomous service in the world but only in selected US cities.</p>
+      <div class="price-strip">
+        <div class="price-cell">
+          <span class="badge">Level 2 Supervised</span>
+          <div class="pname">Tesla FSD &middot; Netherlands</div>
+          <div class="pval">€99 / month</div>
+          <div class="pn">or €7,500 one-time. Driver responsible at all times. Available 11 April 2026.</div>
+        </div>
+        <div class="price-cell">
+          <span class="badge">Level 3 Conditional</span>
+          <div class="pname">Mercedes Drive Pilot &middot; Germany</div>
+          <div class="pval">€5,950 one-time</div>
+          <div class="pn">Activation including VAT in Germany. Up to 95 km/h on autobahns. EQS / S-Class only. Car legally responsible inside operating envelope.</div>
+        </div>
+        <div class="price-cell">
+          <span class="badge">Level 4 High</span>
+          <div class="pname">Waymo robotaxi &middot; 6 US cities</div>
+          <div class="pval">Per ride</div>
+          <div class="pn">Fully driverless commercial service. Phoenix, San Francisco, LA, Austin, Atlanta, Miami. London + Tokyo planned.</div>
+        </div>
+      </div>
+      <div class="src">
+        <strong>Sources:</strong>
+        <a href="https://electrek.co/2026/04/10/tesla-fsd-supervised-approved-netherlands-rdw-europe/" target="_blank">Electrek &middot; NL FSD approval &amp; pricing</a> &middot;
+        <a href="https://www.topspeed.com/mercedes-benz-level-3-self-driving-subscription/" target="_blank">TopSpeed &middot; Mercedes Drive Pilot price (€5,950 Germany)</a> &middot;
+        <a href="https://group.mercedes-benz.com/innovation/product-innovation/autonomous-driving/drive-pilot.html" target="_blank">Mercedes-Benz &middot; Drive Pilot</a> &middot;
+        <a href="https://parameter.io/waymo-eyes-2026-driverless-rides-expansion/" target="_blank">Parameter &middot; Waymo expansion</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 02 · SAE LEVELS EXPLAINED                  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">02 · The five levels of autonomy</div>
+    <div class="sec-title">What Levels 1, 2, 3, 4 and 5 actually mean</div>
+    <div class="sec-sub">SAE J3016 standard. The only level Tesla&rsquo;s FSD operates at today is Level 2 &mdash; the same category as adaptive cruise control.</div>
+
+    <div class="lvl-grid">
+      <div class="lvl-cell">
+        <div class="lvl-num">Level 0</div>
+        <div class="lvl-name">No automation</div>
+        <div class="lvl-desc">The driver does everything. Some warning systems may exist (lane-departure beep) but they don&rsquo;t intervene.</div>
+        <div class="lvl-eg">Most cars built before 2010</div>
+      </div>
+      <div class="lvl-cell">
+        <div class="lvl-num">Level 1</div>
+        <div class="lvl-name">Driver assistance</div>
+        <div class="lvl-desc">One feature at a time helps the driver &mdash; either steering or speed, not both.</div>
+        <div class="lvl-eg">Adaptive cruise control alone</div>
+      </div>
+      <div class="lvl-cell active">
+        <div class="lvl-num">Level 2</div>
+        <div class="lvl-name">Partial automation</div>
+        <div class="lvl-desc">Steering AND speed automated together. Driver must keep hands on wheel and eyes on the road. Driver is legally responsible at all times.</div>
+        <div class="lvl-eg">Tesla FSD Supervised, Tesla Autopilot, GM Super Cruise</div>
+      </div>
+      <div class="lvl-cell">
+        <div class="lvl-num">Level 3</div>
+        <div class="lvl-name">Conditional automation</div>
+        <div class="lvl-desc">Car drives itself in defined conditions (e.g. highway under 95 km/h). Driver can take eyes off the road but must be ready to take over within seconds when asked.</div>
+        <div class="lvl-eg">Mercedes Drive Pilot, BMW Personal Pilot</div>
+      </div>
+      <div class="lvl-cell">
+        <div class="lvl-num">Level 4</div>
+        <div class="lvl-name">High automation</div>
+        <div class="lvl-desc">Car drives itself end-to-end inside a defined operating area (geofenced city, fixed highway). No human in the seat needed inside the zone.</div>
+        <div class="lvl-eg">Waymo robotaxi, Baidu Apollo Go, Cruise (suspended)</div>
+      </div>
+      <div class="lvl-cell">
+        <div class="lvl-num">Level 5</div>
+        <div class="lvl-name">Full automation</div>
+        <div class="lvl-desc">Car drives itself anywhere a human could, in any weather. The steering wheel becomes optional. Does not exist commercially.</div>
+        <div class="lvl-eg">No vehicle on the road today</div>
+      </div>
+    </div>
+    <div class="src">
+      <strong>Source:</strong>
+      <a href="https://www.sae.org/standards/content/j3016_202104/" target="_blank">SAE J3016 &mdash; Taxonomy of Driving Automation</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 03 · GLOBAL MAP                              -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">03 · The world map</div>
+    <div class="sec-title">Where you can legally let a car drive itself today</div>
+    <div class="sec-sub">By jurisdiction and SAE level, April 2026</div>
+
+    <div style="overflow-x:auto;">
+    <table class="gl-table">
+      <thead>
+        <tr><th>Where</th><th>Level</th><th>What is operating</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Tesla FSD Supervised &middot; 7 countries</strong></td><td><span class="lvl-tag">L2</span></td><td>United States &middot; Canada &middot; Mexico &middot; Australia &middot; New Zealand &middot; South Korea &middot; Netherlands (from 10 Apr 2026) &mdash; driver responsible at all times</td></tr>
+        <tr><td><strong>Tesla Robotaxi &middot; Austin TX</strong></td><td><span class="lvl-tag amber">pilot</span></td><td>Commercial &ldquo;Robotaxi&rdquo; service launched 22 June 2025. Geofenced downtown Austin, safety monitor in front passenger seat &mdash; not yet fully driverless</td></tr>
+        <tr><td><strong>Tesla FSD &middot; expected Summer 2026</strong></td><td><span class="lvl-tag">L2</span></td><td>Germany &middot; France &middot; Belgium &middot; Spain &middot; Italy &mdash; EU-wide rollout targeted by Tesla for summer 2026, leveraging the NL RDW type approval as reference</td></tr>
+        <tr><td><strong>Germany</strong></td><td><span class="lvl-tag">L3</span></td><td>Mercedes Drive Pilot &mdash; autobahns, up to 95 km/h</td></tr>
+        <tr><td><strong>California &amp; Nevada</strong></td><td><span class="lvl-tag">L3</span></td><td>Mercedes Drive Pilot &mdash; selected highways, up to 60 km/h</td></tr>
+        <tr><td><strong>6 US cities</strong></td><td><span class="lvl-tag amber">L4</span></td><td>Waymo robotaxi &mdash; Phoenix, SF, LA, Austin, Atlanta, Miami &mdash; fully driverless commercial</td></tr>
+        <tr><td><strong>4 Chinese cities</strong></td><td><span class="lvl-tag amber">L4</span></td><td>Baidu Apollo Go &amp; Pony.ai robotaxis &mdash; Beijing, Shanghai, Shenzhen, Guangzhou</td></tr>
+        <tr><td><strong>Japan (Fukui)</strong></td><td><span class="lvl-tag amber">L4</span></td><td>Limited-area approval since 2023</td></tr>
+        <tr><td><strong>United Kingdom</strong></td><td><span class="lvl-tag">L3</span></td><td>Automated Vehicles Act 2024 framework, pilot stage</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="src" style="margin-top: 12px;">
+      <strong>Sources:</strong>
+      <a href="https://environmentalhealthsafetybrief.sidley.com/2026/03/04/a-new-global-milestone-for-autonomous-vehicles-what-the-un-global-technical-regulation-on-automated-driving-systems-means-for-autonomy-in-the-u-s-and-around-the-world/" target="_blank">Sidley &middot; UN Global Technical Regulation on ADS (Jan 2026)</a> &middot;
+      <a href="https://www.notateslaapp.com/news/3875/tesla-fsd-global-roadmap-is-your-country-next" target="_blank">NotATeslaApp &middot; FSD global roadmap (7 countries)</a> &middot;
+      <a href="https://en.wikipedia.org/wiki/Tesla_Robotaxi" target="_blank">Tesla Robotaxi &mdash; Austin launch June 2025</a> &middot;
+      <a href="https://notanfsdtracker.com/tesla-fsd-europe-2026-timeline-sooner-than-you-expect/" target="_blank">FSD Tracker &middot; EU rollout Summer 2026</a> &middot;
+      <a href="https://en.wikipedia.org/wiki/Waymo" target="_blank">Waymo &mdash; operating cities</a>
+    </div>
+
+    <div class="insight">
+      <div class="ct">Where Tesla actually sits on the SAE scale</div>
+      <div class="cb">Tesla&rsquo;s personal-car FSD &mdash; in the US and now the Netherlands &mdash; is <strong>Level 2 Supervised</strong>. Same legal category as adaptive cruise control. The driver is always responsible. Tesla&rsquo;s only attempt at higher autonomy is the <strong>Robotaxi pilot in Austin (June 2025)</strong> &mdash; geofenced downtown, with a human safety monitor in the passenger seat. Not Level 5. Not even fully Level 4. <strong>Waymo, not Tesla, runs the most autonomous service in the world today.</strong></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 04 · TESLA QUARTERLY EVOLUTION              -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">04 · The trend behind the headline</div>
+    <div class="sec-title">Tesla&rsquo;s quarterly deliveries &mdash; two years that changed everything</div>
+    <div class="sec-sub">Global deliveries Q1 2024 → Q1 2026. The Model Y refresh hole, the Q3 2025 record (just before the US tax credit expired), the Q1 2026 inventory build.</div>
+
+    <div class="card">
+      <div class="qbars">
+        <div class="qbar"><div class="bar" style="height:78%;"><span class="val">387K</span></div><div class="lbl">Q1 24</div></div>
+        <div class="qbar"><div class="bar" style="height:89%;"><span class="val">444K</span></div><div class="lbl">Q2 24</div></div>
+        <div class="qbar"><div class="bar" style="height:93%;"><span class="val">463K</span></div><div class="lbl">Q3 24</div></div>
+        <div class="qbar"><div class="bar" style="height:99.7%;"><span class="val">496K</span></div><div class="lbl">Q4 24</div></div>
+        <div class="qbar dim"><div class="bar" style="height:68%;"><span class="val">337K</span></div><div class="lbl">Q1 25</div></div>
+        <div class="qbar"><div class="bar" style="height:77%;"><span class="val">384K</span></div><div class="lbl">Q2 25</div></div>
+        <div class="qbar"><div class="bar" style="height:100%;"><span class="val">497K</span></div><div class="lbl">Q3 25</div></div>
+        <div class="qbar"><div class="bar" style="height:84%;"><span class="val">418K</span></div><div class="lbl">Q4 25</div></div>
+        <div class="qbar accent"><div class="bar" style="height:72%;"><span class="val">358K</span></div><div class="lbl">Q1 26</div></div>
+      </div>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 32px;"><strong style="color:var(--navy);">Grey Q1 25:</strong> Model Y refresh production downtime. <strong style="color:var(--navy);">Q3 25 peak:</strong> US $7,500 federal EV tax credit pull-forward (credit expired 30 Sep 2025). <strong style="color:var(--accent);">Amber Q1 26:</strong> 408K built minus 358K delivered = <strong>50K vehicles into inventory in a single quarter</strong>.</p>
+      <div class="src">
+        <strong>Source:</strong>
+        <a href="https://ir.tesla.com/" target="_blank">Tesla Investor Relations &middot; Quarterly Production &amp; Delivery releases</a> &middot;
+        <a href="https://electrek.co/2026/04/02/tesla-tsla-q1-2026-delivery-results-misses-expectations/" target="_blank">Electrek &middot; Q1 2026 delivery miss</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 05 · TESLA GLOBAL — REGIONAL VIEW           -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">05 · The global picture</div>
+    <div class="sec-title">Tesla in Q1 2026 &mdash; China carries the company, Europe halves, Middle East is just starting</div>
+    <div class="sec-sub">Where Tesla&rsquo;s 358,023 Q1 2026 deliveries actually came from</div>
+
+    <div class="gl-grid">
+      <div class="gl-cell">
+        <div class="gl-region">China &middot; Q1 2026</div>
+        <div class="gl-num">~214,800</div>
+        <div class="gl-label">~60% of global deliveries</div>
+        <div class="gl-stat">March alone: <strong>85,670 wholesale deliveries</strong> (+46% YoY). The single market that kept Q1 from collapsing further. Aggressive pricing, Shanghai Gigafactory output, and a maturing local EV market all helping.</div>
+      </div>
+      <div class="gl-cell">
+        <div class="gl-region">United States &middot; full year 2025</div>
+        <div class="gl-num">46%</div>
+        <div class="gl-label">Tesla&rsquo;s share of US EV market (down from 49% in 2024)</div>
+        <div class="gl-stat">Tesla US sales <strong>589,000 in 2025 (−7% YoY)</strong>. Still the clear US market leader, but GM more than doubled volumes to 150,000 (+48% YoY, now 13% share). The loss of the $7,500 federal tax credit on 30 Sep 2025 is changing the math for buyers.</div>
+      </div>
+      <div class="gl-cell alt">
+        <div class="gl-region">Europe &middot; Q1 2026</div>
+        <div class="gl-num">−49%</div>
+        <div class="gl-label">vs Q1 2025</div>
+        <div class="gl-stat">Tesla&rsquo;s weakest region by far. Year-on-year deliveries roughly halved in the first quarter despite the March bounce in registrations. The European OEMs and BYD took the share Tesla lost.</div>
+      </div>
+      <div class="gl-cell">
+        <div class="gl-region">UAE, Saudi, Qatar &middot; new market</div>
+        <div class="gl-num">2026</div>
+        <div class="gl-label">Cybertruck deliveries underway</div>
+        <div class="gl-stat">Tesla opened in <strong>Saudi Arabia April 2025</strong> (its first showroom in Riyadh). Cybertruck deliveries to UAE began January 2026 (~63 units in the Dubai launch event). The regional EV market is forecast to nearly triple from <strong>$2.7B in 2023 to $7.6B by 2028</strong>.</div>
+      </div>
+    </div>
+    <div class="src">
+      <strong>Sources:</strong>
+      <a href="https://cnevpost.com/2026/04/02/tesla-q1-2026-global-deliveries/" target="_blank">CnEVPost &middot; Tesla Q1 2026 by region</a> &middot;
+      <a href="https://www.basenor.com/blogs/news/tesla-china-march-2026-85-670-wholesale-deliveries-up-46" target="_blank">Tesla China March 2026 deliveries</a> &middot;
+      <a href="https://cleantechnica.com/2026/02/04/tesla-had-46-of-us-ev-market-in-2025-down-from-49-in-2024-gm-13-ford-7/" target="_blank">CleanTechnica &middot; Tesla 46% of US EV market 2025</a> &middot;
+      <a href="https://www.cnbc.com/2025/04/10/tesla-launches-sales-in-saudi-arabia-amid-chinese-competition.html" target="_blank">CNBC &middot; Tesla launches in Saudi Arabia</a> &middot;
+      <a href="https://electrek.co/2026/01/26/tesla-brings-cybertruck-to-middle-east-amid-us-demand-collapse/" target="_blank">Electrek &middot; Cybertruck Middle East</a>
+    </div>
+
+    <div class="insight">
+      <div class="ct">Three different Teslas, three different stories</div>
+      <div class="cb"><strong>Tesla in 2026 is no longer one company.</strong> It is a Chinese-volume business holding the global numbers up; a US business holding share but seeing demand soften without subsidies; a European business in active decline; and a Middle East business that doesn&rsquo;t exist yet, betting on the Cybertruck and Gulf wealth. Each region needs a different commercial playbook &mdash; and the FSD rollout will land into very different markets.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 06 · GLOBAL EV MARKET BY REGION             -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">06 · The global EV market</div>
+    <div class="sec-title">EV sales in 2025 by region &mdash; one bucket each</div>
+    <div class="sec-sub">Where the 20.7 million EVs sold globally last year actually went</div>
+
+    <div class="card">
+      <h3>Global EV sales 2025 &middot; total 20.7 million units (+20% YoY)</h3>
+      <div class="ctry-row">
+        <div class="ctry-name">China</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:100%;"></div></div>
+        <div class="ctry-units">13.2M</div>
+        <div class="ctry-yoy up">+17%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Europe</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:25.8%;"></div></div>
+        <div class="ctry-units">3.4M</div>
+        <div class="ctry-yoy up">+33%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">United States</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:12.1%;"></div></div>
+        <div class="ctry-units">1.6M</div>
+        <div class="ctry-yoy down">−4%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Rest of world<br><span style="font-weight:400;font-size:11px;color:var(--sub);">(Middle East, LatAm, Asia, Africa)</span></div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:9.8%;"></div></div>
+        <div class="ctry-units">1.3M</div>
+        <div class="ctry-yoy up">+48%</div>
+      </div>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;"><strong>China alone is bigger than the rest of the world combined.</strong> 53% of all new cars sold in China in 2025 were electric. Europe grew faster than China in percentage terms (+33%) but from a much smaller base. The US is the outlier &mdash; EV sales fell <strong>−4% in 2025</strong>, the first annual contraction in seven years. Analysts forecast the US market will shrink by roughly a third in 2026 after the federal $7,500 tax credit expired on 30 September 2025.</p>
+      <div class="src">
+        <strong>Sources:</strong>
+        <a href="https://source.benchmarkminerals.com/article/global-ev-sales-reach-20-7-million-units-in-2025-growing-by-20" target="_blank">Benchmark Minerals &middot; Global EV sales 20.7M in 2025</a> &middot;
+        <a href="https://electrek.co/2025/12/11/global-ev-sales-jump-21-in-2025-as-europe-surges-and-the-us-stalls/" target="_blank">Electrek &middot; +21% global, Europe +33%</a> &middot;
+        <a href="https://www.coxautoinc.com/insights/q4-2025-ev-sales-report-commentary/" target="_blank">Cox Automotive &middot; US EV sales −4% 2025 (Q4 collapse)</a> &middot;
+        <a href="https://www.iea.org/reports/global-ev-outlook-2025/trends-in-electric-car-markets-2" target="_blank">IEA Global EV Outlook 2025</a>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="ct">What this means for Tesla</div>
+      <div class="cb">Tesla&rsquo;s ~1.6M total annual deliveries = roughly <strong>8% of the global EV market</strong>. Inside its three big regions: it dominates US share (~48%), is rebounding in China (+23.5% Q1), and is in active decline in Europe. The Middle East market is small but growing fastest globally (+48%) &mdash; which is why Tesla opened in Saudi Arabia in 2025 and started Cybertruck deliveries in the UAE in January 2026.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 07 · COMPETITION VIEW 2025                  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">07 · The European competition</div>
+    <div class="sec-title">Who actually won Europe in 2025</div>
+    <div class="sec-sub">Manufacturer-group share, country EV markets, and where BYD <em>(Build Your Dreams &mdash; the Chinese EV maker, world&rsquo;s largest by volume)</em> is winning</div>
+
+    <div class="card">
+      <h3>European EV market &mdash; manufacturer group share, full year 2025</h3>
+      <div class="ctry-row">
+        <div class="ctry-name">VW Group</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:100%;"></div></div>
+        <div class="ctry-units">27%</div>
+        <div class="ctry-yoy up">leader</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Stellantis</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:51.9%;"></div></div>
+        <div class="ctry-units">14%</div>
+        <div class="ctry-yoy down">declining</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">BMW Group</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:25%;"></div></div>
+        <div class="ctry-units">3rd</div>
+        <div class="ctry-yoy">gaining</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Tesla</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:25%;"></div></div>
+        <div class="ctry-units">~7%</div>
+        <div class="ctry-yoy down">−26.9%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">BYD</div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:6%;"></div></div>
+        <div class="ctry-units">~1.5%</div>
+        <div class="ctry-yoy up">+268.6%</div>
+      </div>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;">VW Group leads on group share. Stellantis is the largest declining group. <strong>BYD&rsquo;s share climbed from 0.4% to 1.5% in twelve months</strong> &mdash; the steepest entry by any non-European brand on record.</p>
+      <div class="src">
+        <strong>Source:</strong>
+        <a href="https://www.best-selling-cars.com/europe/2025-full-year-europe-best-selling-car-manufacturers-and-brands/" target="_blank">Best-Selling Cars &middot; Europe 2025 manufacturer rankings</a> &middot;
+        <a href="https://www.acea.auto/pc-registrations/new-car-registrations-1-8-in-2025-battery-electric-17-4-market-share/" target="_blank">ACEA &middot; 2025 BEV market share 17.4%</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>European EV markets &middot; 2025 &mdash; volume + adoption share</h3>
+      <p style="font-size: 12.5px; color: var(--sub); margin-bottom: 14px;">Top 3 by absolute BEV volume; the rest sorted by EV market-share leadership.</p>
+      <div class="ctry-row">
+        <div class="ctry-name">Germany</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:100%;"></div></div>
+        <div class="ctry-units">545,142</div>
+        <div class="ctry-yoy up">+43%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">United Kingdom</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:86.8%;"></div></div>
+        <div class="ctry-units">473,348</div>
+        <div class="ctry-yoy up">+24%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">France</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:60%;"></div></div>
+        <div class="ctry-units">326,922</div>
+        <div class="ctry-yoy">+13%</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>EV adoption leaders &middot; BEV share of all new cars in 2025</h3>
+      <p style="font-size: 12.5px; color: var(--sub); margin-bottom: 14px;">A different lens &mdash; how electric the new-car fleet has actually become.</p>
+      <div class="ctry-row">
+        <div class="ctry-name">Norway</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:100%;"></div></div>
+        <div class="ctry-units">96%</div>
+        <div class="ctry-yoy up">leader</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Denmark</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:71%;"></div></div>
+        <div class="ctry-units">68%</div>
+        <div class="ctry-yoy up">strong</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Sweden</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:65%;"></div></div>
+        <div class="ctry-units">~63%</div>
+        <div class="ctry-yoy up">BEV+PHEV</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Netherlands</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:42%;"></div></div>
+        <div class="ctry-units">40%</div>
+        <div class="ctry-yoy up">strong</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Belgium</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:45%;"></div></div>
+        <div class="ctry-units">~43%</div>
+        <div class="ctry-yoy up">BEV+PHEV</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Germany</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:31%;"></div></div>
+        <div class="ctry-units">~30%</div>
+        <div class="ctry-yoy">BEV+PHEV</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Spain</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:9%;"></div></div>
+        <div class="ctry-units">9%</div>
+        <div class="ctry-yoy">+86% growth</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Italy</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:6%;"></div></div>
+        <div class="ctry-units">6%</div>
+        <div class="ctry-yoy">slow</div>
+      </div>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;">Total European BEV sales grew <strong>+30% in 2025</strong>, reaching <strong>20% of all new-car registrations</strong>. Nordics + Netherlands have effectively decided the question of EV adoption; Southern Europe is just beginning &mdash; Spain BEV registrations grew +86% off a small base.</p>
+      <div class="src">
+        <strong>Sources:</strong>
+        <a href="https://www.best-selling-cars.com/europe/2025-full-year-europe-bev-electric-car-sales-per-european-country/" target="_blank">Best-Selling Cars &middot; BEV by country 2025</a> &middot;
+        <a href="https://ecarstrade.com/blog/ev-adoption-rates-europe" target="_blank">eCarsTrade &middot; 2025 EV adoption rate by country</a> &middot;
+        <a href="https://www.electrive.com/2025/12/05/cam-study-sales-of-electric-cars-rise-in-europe-by-26-2-per-cent/" target="_blank">CAM Study via electrive.com</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>BYD&rsquo;s European 2025 &mdash; country by country</h3>
+      <div class="ctry-row">
+        <div class="ctry-name">United Kingdom</div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:100%;"></div></div>
+        <div class="ctry-units">51,422</div>
+        <div class="ctry-yoy up">+400%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Germany</div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:45.3%;"></div></div>
+        <div class="ctry-units">23,306</div>
+        <div class="ctry-yoy up">+706%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Norway</div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:11.5%;"></div></div>
+        <div class="ctry-units">5,927</div>
+        <div class="ctry-yoy up">+100%</div>
+      </div>
+      <div class="ctry-row">
+        <div class="ctry-name">Netherlands</div>
+        <div class="ctry-bar"><div class="ctry-fill alt" style="width:8.5%;"></div></div>
+        <div class="ctry-units">4,370</div>
+        <div class="ctry-yoy up">~3x</div>
+      </div>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;"><strong>UK was BYD&rsquo;s biggest European market in 2025</strong> &mdash; ahead of Germany. Total BYD European registrations: 187,657 (+268.6% YoY).</p>
+      <div class="src">
+        <strong>Sources:</strong>
+        <a href="https://cnevpost.com/2026/01/27/byd-european-registrations-surge-in-2025-tesla-slips/" target="_blank">CnEVPost &middot; BYD +268.6% Europe 2025</a> &middot;
+        <a href="https://tridenstechnology.com/byd-sales-statistics/" target="_blank">Tridens &middot; BYD by country statistics</a>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="ct">The competitive picture in one line</div>
+      <div class="cb"><strong>VW Group runs Europe.</strong> Stellantis is shrinking. BMW is quietly gaining. Tesla collapsed. <strong>BYD is the story</strong> &mdash; the only Chinese brand to materially break out, with the UK as its biggest beachhead and a near-tenfold jump on a small base.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 07 · TESLA EUROPE BY COUNTRY MARCH 2026     -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">08 · Tesla in Europe by country</div>
+    <div class="sec-title">March 2025 → March 2026 &mdash; the energy-shock month, country by country</div>
+    <div class="sec-sub">Absolute units side-by-side. March 2026 is the first month after Brent crude jumped +55% &mdash; and registrations rebounded across every major market.</div>
+
+    <div class="card">
+      <h3>Tesla registrations &middot; March 2025 vs March 2026 &middot; 11 European markets</h3>
+      <p style="font-size: 12.5px; color: var(--sub); margin: -8px 0 16px;">Sorted by March 2026 absolute volume. March 2026 from Reuters / Automotive News national registration data; March 2025 derived from the YoY growth reported in those same sources.</p>
+
+      <style>
+        .yoy-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .yoy-table thead th { background: var(--navy); color: white; padding: 12px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+        .yoy-table thead th.num { text-align: right; }
+        .yoy-table tbody td { padding: 11px 14px; border-bottom: 1px solid #f1f3f6; }
+        .yoy-table tbody tr:last-child td { border-bottom: none; }
+        .yoy-table tbody tr:nth-child(even) td { background: #fafbfc; }
+        .yoy-table .country-cell { font-weight: 700; color: var(--navy); }
+        .yoy-table .num-cell { text-align: right; font-variant-numeric: tabular-nums; color: #64748b; }
+        .yoy-table .num-cell.now { color: var(--navy); font-weight: 700; }
+        .yoy-table .yoy-cell { text-align: center; font-weight: 700; }
+        .yoy-cell.high { color: #15803d; }
+        .yoy-cell.mid { color: #1e3a5f; }
+        .yoy-cell.flat { color: #6b7280; }
+        @media(max-width:768px){
+          .yoy-table thead th, .yoy-table tbody td { padding: 9px 8px; font-size: 12px; }
+          .yoy-table .country-cell { font-size: 12px; }
+        }
+      </style>
+
+      <table class="yoy-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th class="num">March 2025</th>
+            <th class="num">March 2026</th>
+            <th style="text-align:center;">YoY change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="country-cell">France</td><td class="num-cell">3,158</td><td class="num-cell now">9,569</td><td class="yoy-cell high">+203%</td></tr>
+          <tr><td class="country-cell">Germany</td><td class="num-cell">2,229</td><td class="num-cell now">9,252</td><td class="yoy-cell high">+315%</td></tr>
+          <tr><td class="country-cell">United Kingdom</td><td class="num-cell">7,166</td><td class="num-cell now">8,599</td><td class="yoy-cell mid">+20%</td></tr>
+          <tr><td class="country-cell">Norway</td><td class="num-cell">2,212</td><td class="num-cell now">6,150</td><td class="yoy-cell high">+178%</td></tr>
+          <tr><td class="country-cell">Italy</td><td class="num-cell">2,212</td><td class="num-cell now">2,920</td><td class="yoy-cell mid">+32%</td></tr>
+          <tr><td class="country-cell">Spain</td><td class="num-cell">1,982</td><td class="num-cell now">2,477</td><td class="yoy-cell mid">+25%</td></tr>
+          <tr><td class="country-cell">Netherlands</td><td class="num-cell">1,058</td><td class="num-cell now">1,819</td><td class="yoy-cell high">+72%</td></tr>
+          <tr><td class="country-cell">Belgium</td><td class="num-cell">956</td><td class="num-cell now">1,806</td><td class="yoy-cell high">+89%</td></tr>
+          <tr><td class="country-cell">Denmark</td><td class="num-cell">910</td><td class="num-cell now">1,784</td><td class="yoy-cell high">+96%</td></tr>
+          <tr><td class="country-cell">Sweden</td><td class="num-cell">593</td><td class="num-cell now">1,447</td><td class="yoy-cell high">+144%</td></tr>
+          <tr><td class="country-cell">Switzerland</td><td class="num-cell">663</td><td class="num-cell now">674</td><td class="yoy-cell flat">+1.7%</td></tr>
+          <tr style="background:var(--navy);color:white;font-weight:700;">
+            <td style="padding:12px 14px;color:white;">Total · 11 markets</td>
+            <td class="num-cell" style="color:rgba(255,255,255,.7);">23,139</td>
+            <td class="num-cell" style="color:white;">46,497</td>
+            <td class="yoy-cell" style="color:#fde047;">+101%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="src">
+        <strong>Sources:</strong>
+        <a href="https://newmobility.news/en/2026/04/07/tesla-makes-a-comeback-in-european-sales-charts/" target="_blank">newmobility.news &middot; Tesla March 2026 European recovery</a> &middot;
+        <a href="https://money.usnews.com/investing/news/articles/2026-04-01/tesla-french-car-registrations-triple-in-march" target="_blank">Reuters via U.S. News &middot; Tesla March 2026 11-country breakdown</a> &middot;
+        <a href="https://www.basenor.com/blogs/news/tesla-germany-registrations-quadruple-in-march-best-ever" target="_blank">Tesla Germany +315% best March ever</a> &middot;
+        <a href="https://teslanorth.com/2026/04/02/teslas-european-recovery-registrations-double-across-nordic-countries/" target="_blank">TeslaNorth &middot; Nordic recovery</a>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="ct">Did the energy shock lift the numbers?</div>
+      <div class="cb">The honest read is <strong>partly</strong>. The March 2026 rebound has three plausible drivers stacked on top of each other: <strong>(1)</strong> a very low March 2025 base (Model Y refresh + brand backlash), <strong>(2)</strong> the refreshed cheaper Model Y now shipping in volume across Europe, and <strong>(3)</strong> the Brent +55% / TTF +59% pump-price shock from early March pulling consumers toward EVs. Untangling the three needs another quarter of data &mdash; Q2 2026 will tell whether the lift sticks once the base effect normalises.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 08 · ENERGY SHOCK                           -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">09 · The wildcard</div>
+    <div class="sec-title">The March 2026 energy shock</div>
+    <div class="sec-sub">Geopolitical tensions in the Middle East disrupted crude and LNG flows through the Strait of Hormuz, sending prices vertical</div>
+
+    <div class="energy-grid">
+      <div class="e-cell">
+        <div class="el">Brent crude · Feb 28 → Mar 27</div>
+        <div class="ev">+55%</div>
+        <div class="en">$72 → $112 / barrel</div>
+      </div>
+      <div class="e-cell">
+        <div class="el">Brent crude · daily peak</div>
+        <div class="ev">$128</div>
+        <div class="en">/ barrel · 2 April 2026</div>
+      </div>
+      <div class="e-cell">
+        <div class="el">European TTF gas · March</div>
+        <div class="ev">+59%</div>
+        <div class="en">peak ~€70 / MWh</div>
+      </div>
+      <div class="e-cell">
+        <div class="el">IEA Brent average · March</div>
+        <div class="ev">$103</div>
+        <div class="en">/ barrel · +$32 vs February</div>
+      </div>
+    </div>
+    <div class="src" style="margin-top: 14px;">
+      <strong>Sources:</strong>
+      <a href="https://www.iea.org/reports/oil-market-report-march-2026" target="_blank">IEA Oil Market Report &middot; March 2026</a> &middot;
+      <a href="https://www.eia.gov/outlooks/steo/report/global_oil.php" target="_blank">U.S. EIA Short-Term Energy Outlook</a> &middot;
+      <a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-4-14-the-march-shock-world-bank-reports-massive-60-surge-in-european-natural-gas-prices" target="_blank">World Bank &middot; March Shock 60% gas surge</a>
+    </div>
+
+    <div class="insight">
+      <div class="ct">Read-through for Tesla and the European EV race</div>
+      <div class="cb">Sustained pump-price pain accelerates EV consideration &mdash; that&rsquo;s the 2022 playbook. The IMF cut its 2026 global growth forecast in mid-April, citing the same energy shock. The question is <strong>not whether EV demand rises, but who captures it</strong>: Tesla&rsquo;s March bounce, BYD&rsquo;s aggressive pricing, or the European OEMs leveraging dealer networks the Chinese brands haven&rsquo;t built yet.</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 09 · RETAIL TRANSFORMATION                  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">10 · The retail story</div>
+    <div class="sec-title">Three things Tesla rebuilt that the rest of car retail still struggles with</div>
+
+    <style>
+      .retail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 14px; }
+      @media(max-width:768px){ .retail-grid { grid-template-columns: 1fr; } }
+      .retail-block { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 26px 24px; border-top: 4px solid var(--accent); display: flex; flex-direction: column; }
+      .retail-num { font-size: 38px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 10px; letter-spacing: -1px; }
+      .retail-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+      .retail-body { font-size: 13px; color: #334155; line-height: 1.6; }
+      .retail-body strong { color: var(--navy); font-weight: 700; }
+    </style>
+
+    <div class="retail-grid">
+      <div class="retail-block">
+        <div class="retail-num">01</div>
+        <div class="retail-title">Direct sales, no franchised dealers</div>
+        <div class="retail-body">Tesla <strong>owns its showrooms</strong>, prices transparently online, and pockets what dealers normally take. In 2026 it&rsquo;s actually <em>adding</em> physical stores in Europe &mdash; partly reversing online-only &mdash; but the order still happens online.</div>
+      </div>
+
+      <div class="retail-block">
+        <div class="retail-num">02</div>
+        <div class="retail-title">Over-the-air updates as a business model</div>
+        <div class="retail-body">On 10 April a Dutch Tesla owner drove the same car she woke up to. On 11 April it had FSD Supervised. <strong>No service appointment.</strong> That&rsquo;s a post-sale revenue model traditional dealer P&amp;Ls were never built for.</div>
+      </div>
+
+      <div class="retail-block">
+        <div class="retail-num">03</div>
+        <div class="retail-title">The category lesson is universal</div>
+        <div class="retail-body">Same playbook: Apple Stores, Gucci own-boutiques (91% DTC), Nike DTC push, every modern D2C brand. <em>Own the customer data, own the post-purchase, accept higher operating cost for higher margin and a known customer.</em></div>
+      </div>
+    </div>
+
+    <div class="src">
+      <strong>Source:</strong>
+      <a href="https://www.autonews.com/retail/tesla-adds-european-stores-reversing-online-only-sales-strategy/" target="_blank">Automotive News &middot; Tesla adds European stores, reversing online-only strategy</a>
+    </div>
+
+    <div class="insight">
+      <div class="ct">For retail leaders in any category</div>
+      <div class="cb">The transformation question isn&rsquo;t &ldquo;do we copy Tesla&rsquo;s showroom layout&rdquo; &mdash; it&rsquo;s &ldquo;<strong>what becomes our equivalent of the over-the-air update?</strong>&rdquo; What product or service do we sell that we can keep making more valuable to the customer <em>after</em> they bought it?</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 10 · WATCH LIST                             -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sec">
+    <div class="sec-num">11 · Watch list</div>
+    <div class="sec-title">The next 90 days</div>
+
+    <div class="card">
+      <p><strong>22 April 2026 &middot; Tesla Q1 financials.</strong> Deliveries are known. Open: gross margin, ASP after price cuts, regional commentary on the energy shock and the FSD Supervised rollout.</p>
+      <p><strong>Summer 2026 &middot; EU-wide FSD Supervised rollout.</strong> Germany, France, Belgium, Spain, Italy in the queue. Expect staggered, country-by-country activation rather than a single switch.</p>
+      <p><strong>Brent and TTF trajectory.</strong> If energy stays elevated through Q2, EV consideration lifts. Q2 European registrations show whether March was a base-effect bounce or genuine recovery.</p>
+      <p><strong>BYD &amp; the Chinese EV expansion.</strong> The competitive race in Europe matters more than the regulatory story.</p>
+    </div>
+  </div>
+
+  <!-- About the Author -->
+  <div class="li-cta">
+    <div>
+      <p>About the Author</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p>Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a class="btn" href="../contact/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
