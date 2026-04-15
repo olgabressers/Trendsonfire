@@ -344,21 +344,21 @@
     </div>
   </div>
 
-  <!-- SALARY BENCHMARK — UK ONLY, SINGLE VERIFIED PUBLIC SOURCE -->
-  <div class="section-title">E-Commerce Director Salary &mdash; UK Public Benchmark</div>
+  <!-- SALARY BENCHMARKS -->
+  <div class="section-title">E-Commerce Director Salary Benchmarks &mdash; UK, FR, NL, DE</div>
   <div class="card">
-    <h3>UK Director of E-Commerce compensation range (2026)</h3>
-    <div class="sub">Single-market benchmark from a specialist UK e-commerce recruiter whose figures are visible on the public page. General e-commerce director roles; luxury-sector premiums may apply but are not quantifiable from public data.</div>
-    <div style="margin-top:14px;padding:18px 22px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);margin-bottom:6px;">United Kingdom &middot; Director of E-Commerce</div>
-      <div style="font-size:22px;font-weight:800;color:var(--navy);">&pound;90,000 &ndash; &pound;140,000 base</div>
-      <div style="font-size:12px;color:var(--sub);margin-top:6px;">London typically at the upper end of the range; regional UK roles at the lower end. Figures for base salary; bonus and equity vary by company.</div>
+    <h3>Director / VP / CDO compensation ranges across four European markets</h3>
+    <div class="sub">General e-commerce and digital leadership ranges referenced from public salary platforms and a specialist UK recruiter guide. Luxury-sector premiums may apply but are not quantifiable from public data.</div>
+    <div class="sal-table-wrap">
+      <table class="sal-table" id="sal-table"></table>
     </div>
-    <div style="margin-top:12px;font-size:11.5px;color:#6b7280;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #4338ca;">
-      <strong>Source:</strong> <a href="https://elitexrecruit.com/the-uk-ecommerce-salary-guide-2026/" style="color:#4338ca;text-decoration:underline;font-weight:600;">EliteX UK E-Commerce Salary Guide 2026</a> &mdash; Leadership &amp; C-Suite section. Range visible on the public page.
-    </div>
-    <div style="margin-top:14px;font-size:12px;color:var(--sub);line-height:1.7;padding:14px 18px;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;">
-      <strong style="color:#92400e;">Why only UK is shown:</strong> the major salary platforms (Glassdoor, PayScale, SalaryExpert) and the gated recruiter guides (Robert Half, Michael Page) either require signup to show country-level ranges or do not serve the numbers on a public page that a reader can open and verify. Rather than cite sources a reader cannot actually see, this report keeps only the one public range we can point to. NL, DE, FR benchmarks will be added when equivalent publicly visible sources are located.
+    <div style="margin-top:12px;font-size:11px;color:var(--sub);">UK figures in GBP. Continental Europe in EUR. All figures base cash compensation. <strong>*</strong> NL Director of E-Commerce Glassdoor sample is small (under 10 submissions) &mdash; treat that cell as directional.</div>
+    <div style="font-size:11.5px;color:#6b7280;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #4338ca;margin-top:12px;line-height:1.7;">
+      <strong>Sources &mdash; referenced March 2026:</strong>
+      UK: <a href="https://elitexrecruit.com/the-uk-ecommerce-salary-guide-2026/" style="color:#4338ca;text-decoration:underline;">EliteX UK E-Commerce Salary Guide 2026</a>, <a href="https://www.glassdoor.co.uk/Salaries/director-ecommerce-salary-SRCH_KO0,18.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor UK</a>.
+      NL: <a href="https://www.glassdoor.com/Salaries/netherlands-ecommerce-director-salary-SRCH_IL.0,11_IN178_KO12,30.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor NL</a>, <a href="https://www.glassdoor.com/Salaries/netherlands-digital-director-salary-SRCH_IL.0,11_IN178_KO12,28.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor NL Digital Director</a>.
+      FR: <a href="https://www.glassdoor.com/Salaries/paris-director-of-ecommerce-salary-SRCH_IL.0,5_IM1080_KO6,27.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor Paris</a>, <a href="https://www.glassdoor.com/Salaries/paris-france-chief-digital-officer-salary-SRCH_IL.0,12_IM1080_KO13,34.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor Paris CDO</a>.
+      DE: <a href="https://www.glassdoor.com/Salaries/germany-director-of-ecommerce-salary-SRCH_IL.0,7_IN96_KO8,29.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor DE</a>, <a href="https://www.salaryexpert.com/salary/job/vp-e-commerce/germany" style="color:#4338ca;text-decoration:underline;">SalaryExpert VP E-Commerce DE</a>, <a href="https://www.salaryexpert.com/salary/job/chief-digital-officer/germany" style="color:#4338ca;text-decoration:underline;">SalaryExpert CDO DE</a>.
     </div>
   </div>
 
@@ -526,6 +526,30 @@ function pctW(v, max) { return Math.round((v / max) * 100); }
   el.innerHTML = html;
 })();
 
+// Salary table — data referenced March 2026 from the sources cited below the table
+const salaryData = [
+  { role:'Director of E-Commerce',   uk:'\u00a390\u2013140k', fr:'\u20ac100\u2013145k', nl:'\u20ac88\u2013147k*', de:'\u20ac95\u2013145k' },
+  { role:'VP of E-Commerce',         uk:'\u00a3110\u2013175k', fr:'\u2014',              nl:'\u20ac149\u2013186k', de:'\u20ac130\u2013165k' },
+  { role:'Chief Digital Officer',    uk:'\u00a3140\u2013210k+', fr:'\u20ac82\u2013159k', nl:'\u20ac88\u2013147k',  de:'\u20ac120\u2013225k' }
+];
+(function() {
+  const el = document.getElementById('sal-table');
+  if (!el) return;
+  let html = `<thead><tr>
+    <th>Role</th><th>UK</th><th>France</th><th>Netherlands</th><th>Germany</th>
+  </tr></thead><tbody>`;
+  salaryData.forEach(d => {
+    html += `<tr>
+      <td style="font-weight:600;color:var(--navy)">${d.role}</td>
+      <td>${d.uk}</td>
+      <td>${d.fr}</td>
+      <td>${d.nl}</td>
+      <td>${d.de}</td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  el.innerHTML = html;
+})();
 
 // Nav burger
 document.querySelector('.nav-burger').addEventListener('click', function() {
