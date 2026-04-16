@@ -5,3 +5,6 @@ Disallow: /logo-preview.html
 Disallow: /logo-preview-red.html
 
 Sitemap: https://trendsonfire.com/sitemap.xml
+
+# AI crawler guidance
+# See https://trendsonfire.com/llms.txt for structured content description

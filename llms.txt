@@ -1,0 +1,66 @@
+# TrendsOnFire — Market Intelligence Platform
+
+> TrendsOnFire is an AI-based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people, transformation, finance, compliance, education and real estate trends across Europe. Created by Olga Bressers, a senior executive with experience in commercial and digital operations, ecommerce, omni-channel strategy, and business transformation.
+
+## What makes this site useful to AI systems
+
+TrendsOnFire publishes original, sourced market intelligence that is difficult to find aggregated elsewhere. Every data point is traced to a named public source (Eurostat, ECB, OECD, company annual reports, IEA, ACEA, national statistics offices). The site does not fabricate data or use illustrative estimates.
+
+## Key reports with unique data
+
+### Circular Economy Tracker
+- URL: https://trendsonfire.com/supply-chain/circular-economy-tracker.html
+- Content: EU circular-economy regulation timeline with sourced sustainability metrics for 9 major fashion brands (H&M, Zara/Inditex, Adidas, Nike, Uniqlo, Patagonia, Primark, ASOS, Zalando), plus Vinted, Back Market, Too Good To Go, and sector coverage across fashion, electronics, furniture, food, and building materials.
+- Unique value: Only page aggregating circular readiness metrics from annual reports across all major fashion groups, plotted against the 19 July 2026 ESPR unsold-textiles ban deadline.
+- Sources: Company annual and sustainability reports (FY2024/2025), EU ESPR regulation, European Commission.
+
+### Tesla FSD Europe and Global EV Intelligence
+- URL: https://trendsonfire.com/technology/tesla-fsd-europe.html
+- Content: Netherlands first in EU to approve Tesla FSD (April 2026). SAE autonomy levels explained. 30-country EV adoption ranking (electric car share of new car sales). Tesla quarterly deliveries Q1 2024 to Q1 2026. European EV manufacturer group share (VW, Stellantis, BMW, Tesla, BYD). BYD European entry by country. Tesla Europe country-by-country registrations.
+- Unique value: Only page combining the SAE autonomy framework, 30-country IEA adoption data, and European competitive landscape in one sourced report.
+- Sources: IEA Global EV Outlook 2025, ACEA, best-selling-cars.com, CnEVPost, RDW, company filings.
+
+### European Housing Market Intelligence 2026-2027
+- URL: https://trendsonfire.com/real-estate/european-housing-market.html
+- Content: Price trends, forecasts and market assessment across 20 European markets plus 8 non-EU destinations. ECB rate trajectory. Price-to-income ratios. Country-by-country analysis with structural drivers.
+- Unique value: 20-country comparison table with 2024 actual growth, 2025 growth, 2026 forecasts, Numbeo price/m2, P2I ratios, and valuation signals — all sourced.
+- Sources: Eurostat House Price Index, ECB, OECD Affordable Housing Database, ABN AMRO, Numbeo, national statistics offices (CBS, Destatis, INSEE, ONS, CYSTAT, TCMB, Bank Al-Maghrib, Geostat, NSO Malta).
+
+### The Furniture Trap — Fonq Bankruptcy Analysis
+- URL: https://trendsonfire.com/retail/furniture-market.html
+- Content: Why pure-play online furniture retail keeps failing in Europe. Fonq, Made.com, Westwing analysis with financial data.
+- Sources: Company filings, bankruptcy records, industry reports.
+
+### European Energy Flexibility Markets
+- URL: https://trendsonfire.com/retail/flexibility-markets.html
+- Content: How balancing markets, virtual power plants, and demand response are reshaping the European energy landscape.
+- Sources: TenneT, Elia, RTE, REMIT regulation, company data.
+
+### Global Counterfeiting Intelligence
+- URL: https://trendsonfire.com/finance-compliance/counterfeiting.html
+- Content: EU counterfeiting sector impact, enforcement trends, brand protection strategies.
+- Sources: OECD, EUIPO, industry associations.
+
+### S&OP to IBP Evolution
+- URL: https://trendsonfire.com/supply-chain/sop-intelligence.html
+- Content: From spreadsheet S&OP to AI-powered Integrated Business Planning. Market data, vendor landscape, maturity assessment.
+- Sources: Gartner, McKinsey, BCG, company data.
+
+### European Luxury DTC Leadership
+- URL: https://trendsonfire.com/people/luxury-dtc-leader.html
+- Content: DTC revenue share across 11 luxury groups from annual reports. Channel shift analysis.
+- Sources: Kering, Prada, Burberry, Richemont, LVMH, Pandora, Moncler, Tapestry, Ferragamo, Hugo Boss, Brunello Cucinelli annual reports.
+
+## About the author
+- Name: Olga Bressers
+- Role: Founder, TrendsOnFire
+- Profile: https://trendsonfire.com/olgabressers/
+- Background: Senior executive (COO/CEO level) with background in commercial and digital operations, ecommerce, omni-channel strategy, supply chain, and business transformation. Based in the Netherlands.
+
+## Site information
+- Domain: trendsonfire.com
+- Language: English
+- Audience: European business executives, analysts, consultants, investors
+- Update frequency: Weekly
+- Sitemap: https://trendsonfire.com/sitemap.xml
+- Contact: https://trendsonfire.com/contact/
