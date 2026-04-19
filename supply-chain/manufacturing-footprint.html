@@ -12,6 +12,7 @@
     gtag('config', 'G-115WQYBB0Z');
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>Global Manufacturing Footprint &amp; Supply Chain Transformation Intelligence 2026 — TrendsOnFire</title>
   <meta name="description" content="Global manufacturing footprint strategy, nearshoring trends, geopolitical trade risk, CapEx/OpEx models, and antifragile supply chain design for the Apparel and FMCG sectors."/>
   <link rel="canonical" href="https://trendsonfire.com/supply-chain/manufacturing-footprint.html"/>
@@ -29,21 +30,21 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc;
-      --text:#111827; --sub:#6b7280;
+      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7;
+      --text:#111827; --sub:#7a7a7a;
       --green:#15803d; --green-dark:#14532d; --green-mid:#166534; --green-light:#dcfce7; --green-pale:#f0fdf4;
       --amber:#d97706; --amber-light:#fef3c7;
       --red:#dc2626; --red-light:#fee2e2;
       --blue:#1d4ed8; --blue-light:#dbeafe;
       --purple:#7c3aed; --purple-light:#ede9fe;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
     .return-bar { background: var(--green-pale); border-bottom:1px solid #bbf7d0; padding:10px 32px; font-size:12px; color:var(--green-dark); }
@@ -55,7 +56,7 @@
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #86efac; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
     header .sub { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; margin-bottom: 28px; }
     .header-meta { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
     .header-meta span { font-size:11px; color:rgba(255,255,255,.55); display:flex; align-items:center; gap:5px; }
@@ -70,32 +71,32 @@
     .disclaimer-box p { font-size:12px; color:#713f12; line-height:1.55; }
 
     main { max-width: 1100px; margin: 0 auto; padding: 44px 24px 80px; }
-    .section-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
+    .section-title { font-size: 18px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--gold, #b8976a); }
     .section-sub { font-size: 12px; color: var(--sub); margin-top: -14px; margin-bottom: 20px; }
     .section-block { margin-bottom: 52px; }
 
     /* Info cards */
     .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 16px; }
-    .ic { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .ic { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
     .ic-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .ic-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 7px; line-height: 1.35; }
+    .ic-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 7px; line-height: 1.35; }
     .ic-body { font-size: 13px; color: var(--sub); line-height: 1.65; }
     .ic-body strong { color: var(--text); font-weight: 600; }
 
     /* Insight banner */
-    .insight-banner { background: linear-gradient(135deg, #14532d 0%, #166534 100%); border-radius: 12px; border-left: 4px solid #4ade80; padding: 22px 28px; margin-bottom: 44px; }
+    .insight-banner { background: linear-gradient(135deg, #14532d 0%, #166534 100%); border-radius: 0; border-left: 4px solid #4ade80; padding: 22px 28px; margin-bottom: 44px; }
     .insight-banner p { font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.7; }
     .insight-banner strong { color: #86efac; }
 
     /* Chart card */
-    .chart-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 26px; box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 20px; }
-    .chart-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .chart-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 24px 26px; ; margin-bottom: 20px; }
+    .chart-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 5px; }
     .chart-sub { font-size: 11.5px; color: var(--sub); margin-bottom: 18px; }
     .heat-insight { background: var(--green-pale); border-left: 3px solid var(--green); padding: 12px 16px; border-radius: 0 6px 6px 0; margin-top: 16px; font-size: 13px; color: #14532d; line-height: 1.6; }
     .heat-insight strong { color: #052e16; }
 
     .bar-row { margin-bottom: 12px; }
-    .bar-label { font-size: 12.5px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .bar-label { font-size: 12.5px; font-weight: 600; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .bar-track { height: 22px; background: #f3f4f6; border-radius: 4px; overflow: hidden; }
     .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 10px; font-size: 10px; font-weight: 700; color: white; }
 
@@ -104,10 +105,10 @@
     .rtable { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     .rtable thead tr { background: #14532d; color: white; }
     .rtable thead th { padding: 11px 14px; text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap; }
-    .rtable tbody tr { border-bottom: 1px solid var(--border); }
+    .rtable tbody tr { border-bottom: 1px solid var(--rule, #e2dfd9); }
     .rtable tbody tr:hover { background: var(--green-pale); }
     .rtable tbody td { padding: 10px 14px; vertical-align: top; line-height: 1.5; }
-    .rtable tbody td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+    .rtable tbody td:first-child { font-weight: 700; color: var(--ink, #0a0f1a); white-space: nowrap; }
     .badge { display: inline-block; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 3px; letter-spacing: 0.5px; }
     .b-low  { background:#d1fae5; color:#065f46; }
     .b-med  { background:#fef3c7; color:#78350f; }
@@ -116,7 +117,7 @@
 
     /* 3-column framework */
     .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 0; }
-    .fcol { border-radius: 12px; border: 1px solid var(--border); padding: 22px; }
+    .fcol { border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px; }
     .fcol-head { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid currentColor; }
     .fcol ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
     .fcol ul li { font-size: 12.5px; line-height: 1.5; padding-left: 14px; position: relative; }
@@ -124,24 +125,24 @@
 
     /* Trend cards */
     .trend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; }
-    .tc { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .tc { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
     .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
-    .tc-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 7px; line-height: 1.35; }
+    .tc-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 7px; line-height: 1.35; }
     .tc-body { font-size: 13px; color: var(--sub); line-height: 1.65; }
     .tc-body strong { color: var(--text); font-weight: 600; }
 
     /* Timeline / migration */
     .timeline { position: relative; padding-left: 36px; }
-    .timeline::before { content:''; position:absolute; left:14px; top:0; bottom:0; width:2px; background: var(--border); }
+    .timeline::before { content:''; position:absolute; left:14px; top:0; bottom:0; width:2px; background: var(--rule, #e2dfd9); }
     .tl-item { position: relative; margin-bottom: 20px; }
-    .tl-dot { position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: white; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 0 0 2px var(--border); }
-    .tl-body { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 14px 18px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-    .tl-title { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .tl-dot { position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: white; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 0 0 2px var(--rule, #e2dfd9); }
+    .tl-body { background: white; border-radius: 10px; border: 1px solid var(--rule, #e2dfd9); padding: 14px 18px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .tl-title { font-size: 13.5px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .tl-text { font-size: 12.5px; color: var(--sub); line-height: 1.6; }
     .tl-text strong { color: var(--text); }
 
     /* Director framework box */
-    .fw-box { background: var(--navy); border-radius: 14px; padding: 32px 36px; }
+    .fw-box { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; }
     .fw-title { font-size: 17px; font-weight: 800; color: white; margin-bottom: 8px; }
     .fw-sub { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 24px; }
     .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; }
@@ -149,14 +150,14 @@
     .fw-q { font-size: 13px; font-weight: 700; color: #86efac; margin-bottom: 6px; line-height: 1.4; }
     .fw-hint { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.55; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
 
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; white-space:normal; text-align:left; }
       header { padding:32px 16px 28px; }
@@ -173,19 +174,19 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
@@ -214,36 +215,35 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
-    <a href="index.html" class="active">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
 </nav>
@@ -252,7 +252,7 @@
   <a href="index.html">← Supply Chain Intelligence</a>
 </div>
 
-<header>
+<div class="art-hero">
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Supply Chain</a> / Manufacturing Footprint</div>
     <div class="eyebrow">Market Intelligence · Supply Chain Strategy</div>
@@ -290,7 +290,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <div class="disclaimer-box" style="padding:13px 24px;margin-top:20px;">
   <p><strong>Editorial note:</strong> This dashboard is based on publicly available information, industry reports, and editorial assessment as of March 2026. All company assessments represent reasonably held opinions based on observable public data. Predictions use hedged language ("may", "is expected to", "appears to") as outcomes remain subject to macroeconomic and geopolitical uncertainty.</p>
@@ -494,7 +494,7 @@
     <div class="three-col">
       <div class="fcol" style="background:#fff1f2;border-color:#fecdd3;color:#991b1b;">
         <div class="fcol-head" style="color:#dc2626;">Fragile</div>
-        <ul style="color:#6b7280;">
+        <ul style="color:#7a7a7a;">
           <li style="color:#374151;">Single-source manufacturing (China-only)</li>
           <li style="color:#374151;">Optimised for cost — no redundancy built in</li>
           <li style="color:#374151;">Long, linear supply chains with no pivot capability</li>
@@ -505,7 +505,7 @@
       </div>
       <div class="fcol" style="background:#fefce8;border-color:#fde047;">
         <div class="fcol-head" style="color:#ca8a04;">Resilient</div>
-        <ul style="color:#6b7280;">
+        <ul style="color:#7a7a7a;">
           <li style="color:#374151;">Dual-source model (primary + backup supplier)</li>
           <li style="color:#374151;">Safety stock buffers absorb short-term disruption</li>
           <li style="color:#374151;">Business continuity plans exist but rarely tested</li>
@@ -516,7 +516,7 @@
       </div>
       <div class="fcol" style="background:var(--green-pale);border-color:#86efac;">
         <div class="fcol-head" style="color:#15803d;">Antifragile</div>
-        <ul style="color:#6b7280;">
+        <ul style="color:#7a7a7a;">
           <li style="color:#374151;">Multi-region Adaptive Footprint — can pivot between sites</li>
           <li style="color:#374151;">Disruption triggers automatic production rebalancing</li>
           <li style="color:#374151;">Geopolitical volatility creates competitive advantage</li>
@@ -583,7 +583,7 @@
   <div class="section-block">
     <div class="section-title">Business Migration Playbook — From Strategy to Execution</div>
     <p class="section-sub">Key phases in executing a manufacturing site migration or production line relocation. Based on best practice and editorial assessment of publicly documented transformations.</p>
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-dot">1</div>
@@ -674,12 +674,12 @@
   </div>
 
   <!-- ── Related articles ───────────────────────────────────────────────── -->
-  <div style="background:#f8fafc;border-top:1px solid var(--border);padding:40px 0 0;">
+  <div style="background:#faf9f7;border-top:1px solid var(--rule, #e2dfd9);padding:40px 0 0;">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--sub);margin-bottom:20px;">More Supply Chain Intelligence</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#15803d;margin-bottom:8px;">Market Intelligence · Live</div>
         <div style="font-size:15px;font-weight:700;color:#111827;line-height:1.35;margin-bottom:10px;">Device Lifecycle Management — Telco Supply Chain Intelligence</div>
-        <div style="font-size:13px;color:#6b7280;line-height:1.5;">Reverse logistics, refurbishment economics, 3PL strategy, and contract complexity in European telecoms.</div>
+        <div style="font-size:13px;color:#7a7a7a;line-height:1.5;">Reverse logistics, refurbishment economics, 3PL strategy, and contract complexity in European telecoms.</div>
         <div style="margin-top:14px;font-size:12px;font-weight:700;color:#15803d;">Read analysis →</div>
       </a>
     </div>
@@ -688,9 +688,9 @@
 </main>
 
 <!-- TAGS -->
-<div style="background:white;border-top:1px solid #e5e7eb;">
+<div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
       <a href="/tags/#tag-supply-chain" rel="tag" style="display:inline-block;background:#f0fdf4;color:#14532d;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #bbf7d0;">Supply Chain</a>
       <a href="/tags/#tag-manufacturing" rel="tag" style="display:inline-block;background:#f0fdf4;color:#14532d;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #bbf7d0;">Manufacturing</a>
@@ -705,11 +705,11 @@
 </div>
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Circular Economy Tracker</a>
-      <a href="sop-intelligence.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">S&OP to IBP Evolution</a>
+      <a href="circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Circular Economy Tracker</a>
+      <a href="sop-intelligence.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">S&OP to IBP Evolution</a>
     </div>
   </div>
 </div>
@@ -730,8 +730,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -756,7 +757,7 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
   data.forEach(function(d){
     var pct = d.v;
     html += '<div class="bar-row">';
-    html += '<div class="bar-label">' + d.l + ' <span style="font-size:11px;font-weight:400;color:#6b7280;">' + d.note + '</span></div>';
+    html += '<div class="bar-label">' + d.l + ' <span style="font-size:11px;font-weight:400;color:#7a7a7a;">' + d.note + '</span></div>';
     html += '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + d.color + ';">' + d.v + '/100</div></div>';
     html += '</div>';
   });
@@ -781,7 +782,7 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
   html += '</div>';
   data.forEach(function(d){
     html += '<div style="margin-bottom:10px;">';
-    html += '<div style="font-size:12px;font-weight:600;color:#111827;margin-bottom:4px;">' + d.l + ' <span style="font-size:10px;font-weight:400;color:#6b7280;">— ' + d.note + '</span></div>';
+    html += '<div style="font-size:12px;font-weight:600;color:#111827;margin-bottom:4px;">' + d.l + ' <span style="font-size:10px;font-weight:400;color:#7a7a7a;">— ' + d.note + '</span></div>';
     html += '<div style="display:flex;flex-direction:column;gap:3px;">';
     html += '<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:58px;color:#dc2626;font-weight:700;">China</span><div class="bar-track" style="flex:1;height:16px;"><div style="height:100%;width:' + (d.china * 3.5) + 'px;max-width:100%;background:#dc2626;border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:9px;font-weight:700;color:white;">' + d.china + '%</div></div></div>';
     html += '<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:10px;width:58px;color:#15803d;font-weight:700;">Near</span><div class="bar-track" style="flex:1;height:16px;"><div style="height:100%;width:' + (d.near * 3.5) + 'px;max-width:100%;background:#15803d;border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:9px;font-weight:700;color:white;">' + d.near + '%</div></div></div>';
@@ -791,13 +792,13 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 })();
 </script>
 
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
-    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
-    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+    <a href="/legal/privacy.html" style="color:#d4c4a8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#d4c4a8;font-weight:600;">Disclaimer</a>
   </p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#b8976a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
 </div>
 <script>
 (function(){

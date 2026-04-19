@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Netherlands Corporate Layoff Tracker — TrendsOnFire</title>
+  <meta name="description" content="Netherlands corporate layoff tracker — tracking announced workforce reductions at major Dutch and international companies operating in the Netherlands."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0f2340;
+      --fuchsia:#8b1a6a;
+      --border: #e5e7eb;
+      --bg:     #f8fafc;
+      --text:   #111827;
+      --sub:    #6b7280;
+      --teal:   #0d9488;
+      --amber:  #f59e0b;
+      --red:    #ef4444;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: var(--navy); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: var(--fuchsia); }
+
+    header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    header .inner { max-width: 1100px; margin: auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
+    header h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; }
+    .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
+
+    main { max-width: 1100px; margin: auto; padding: 40px 24px 80px; }
+
+    /* SECTION TITLES */
+    .section-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--fuchsia); display: flex; align-items: center; gap: 8px; }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat-card { background: white; border-radius: 12px; padding: 22px 24px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 8px; }
+    .stat-card .num { font-size: 34px; font-weight: 800; line-height: 1; color: var(--navy); }
+    .stat-card .num.red { color: var(--red); }
+    .stat-card .num.amber { color: var(--amber); }
+    .stat-card .num.teal { color: var(--teal); }
+    .stat-card .sm { font-size: 12px; color: var(--sub); margin-top: 6px; }
+    .stat-card .trend-up { color: var(--red); font-weight: 700; }
+    .stat-card .trend-dn { color: var(--teal); font-weight: 700; }
+
+    /* INSIGHT BANNER */
+    .insight { background: linear-gradient(135deg, #1a0a14 0%, #2d1240 100%); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; border-left: 4px solid var(--fuchsia); }
+    .insight p { font-size: 14px; color: rgba(255,255,255,.85); line-height: 1.7; }
+    .insight strong { color: white; }
+
+    /* CARD */
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 28px; }
+    .card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .card .sub { font-size: 12px; color: var(--sub); margin-bottom: 20px; }
+
+    /* QUARTERLY BARS */
+    .bar-chart { display: flex; flex-direction: column; gap: 6px; }
+    .bar-row { display: flex; align-items: center; gap: 10px; }
+    .bar-label { font-size: 11px; color: var(--sub); width: 52px; flex-shrink: 0; text-align: right; }
+    .bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 26px; overflow: hidden; }
+    .bar-inner { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; transition: width .5s ease; min-width: 2px; }
+    .bar-val { font-size: 11px; color: var(--sub); width: 46px; flex-shrink: 0; }
+
+    .bar-inner.q23 { background: #1a3558; }
+    .bar-inner.q24 { background: var(--fuchsia); }
+    .bar-inner.q25 { background: var(--teal); }
+    .year-sep { display: flex; align-items: center; gap: 8px; margin: 8px 0 4px; }
+    .year-sep span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--sub); }
+    .year-sep::before, .year-sep::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* COMPANY BARS */
+    .co-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .co-name { font-size: 12px; font-weight: 600; color: var(--text); width: 190px; flex-shrink: 0; }
+    .co-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; }
+    .tag-corp { background: #e8eef6; color: var(--navy); }
+    .tag-tech { background: #f7e8f3; color: var(--fuchsia); }
+    .tag-fin  { background: #fef3c7; color: #92400e; }
+    .co-bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 22px; overflow: hidden; }
+    .co-bar-inner { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: white; }
+    .co-num { font-size: 12px; color: var(--sub); width: 60px; flex-shrink: 0; text-align: right; }
+
+    /* LEVEL BREAKDOWN */
+    .level-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 8px; }
+    .level-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; position: relative; overflow: hidden; }
+    .level-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .level-card.c { border-top-color: var(--red); }
+    .level-card.c::before { background: var(--red); }
+    .level-card.dir { border-top-color: var(--fuchsia); }
+    .level-card.dir::before { background: var(--fuchsia); }
+    .level-card.mgr { border-top-color: var(--amber); }
+    .level-card.mgr::before { background: var(--amber); }
+    .level-card.ic { border-top-color: var(--teal); }
+    .level-card.ic::before { background: var(--teal); }
+    .level-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .level-pct { font-size: 28px; font-weight: 800; line-height: 1.1; margin-bottom: 4px; }
+    .level-card.c .level-pct { color: var(--red); }
+    .level-card.dir .level-pct { color: var(--fuchsia); }
+    .level-card.mgr .level-pct { color: var(--amber); }
+    .level-card.ic .level-pct { color: var(--teal); }
+    .level-note { font-size: 11px; color: var(--sub); line-height: 1.4; }
+
+    /* COMPETITION BARS */
+    .comp-row { display: grid; grid-template-columns: 52px 1fr 54px; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .comp-label { font-size: 11px; color: var(--sub); text-align: right; }
+    .comp-bar-outer { background: var(--bg); border-radius: 4px; height: 24px; overflow: hidden; position: relative; }
+    .comp-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .comp-val { font-size: 12px; font-weight: 700; }
+    .comp-baseline { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(0,0,0,.15); z-index: 2; }
+
+    /* TIME TO HIRE */
+    .tth-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .tth-name { font-size: 12px; font-weight: 600; color: var(--text); width: 160px; flex-shrink: 0; }
+    .tth-bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 22px; overflow: hidden; }
+    .tth-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .tth-val { font-size: 12px; color: var(--sub); width: 80px; flex-shrink: 0; }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* SECTOR MIX */
+    .donut-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .donut-label { font-size: 12px; color: var(--text); flex: 1; }
+    .donut-bar-outer { width: 200px; background: var(--bg); border-radius: 4px; height: 18px; overflow: hidden; }
+    .donut-bar-fill { height: 100%; border-radius: 4px; }
+    .donut-pct { font-size: 12px; font-weight: 700; color: var(--sub); width: 36px; text-align: right; }
+
+    /* LEGEND */
+    .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+    .leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--sub); }
+    .leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+    /* STACKED LANDING CHART */
+    .stack-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .stack-label { font-size: 12px; font-weight: 600; color: var(--text); width: 160px; flex-shrink: 0; }
+    .stack-bar { flex: 1; height: 28px; display: flex; border-radius: 6px; overflow: hidden; }
+    .stack-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; transition: width .4s; overflow: hidden; min-width: 0; }
+    .stack-seg span { white-space: nowrap; overflow: hidden; }
+
+    /* ORIGIN CHART */
+    .origin-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .origin-label { font-size: 12px; color: var(--text); width: 220px; flex-shrink: 0; }
+    .origin-bar-outer { flex: 1; background: var(--bg); border-radius: 4px; height: 24px; overflow: hidden; }
+    .origin-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 700; color: white; }
+    .origin-val { font-size: 12px; font-weight: 700; color: var(--sub); width: 50px; flex-shrink: 0; }
+
+    .disc-alert { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .disc-alert p { font-size: 13px; color: #78350f; line-height: 1.65; }
+    .disc-alert strong { color: #92400e; }
+
+    /* METHODOLOGY */
+    .method { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 24px; font-size: 12px; color: var(--sub); line-height: 1.7; }
+    .method strong { color: var(--text); }
+
+    /* CTA */
+    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 40px; }
+    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
+    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #7a1660; }
+
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* MOBILE NAV */
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+    }
+    /* GENERAL RESPONSIVE */
+    @media(max-width:768px){
+      main, .inner { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header, header { padding:32px 16px 28px; }
+      .stats { grid-template-columns:1fr 1fr; }
+      .two-col { grid-template-columns:1fr !important; }
+      .trends-grid { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr 1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
+      .filter-bar select, .filter-bar input { width:100%; }
+      .filter-reset { margin-left:0; }
+    }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr; }
+      .level-grid { grid-template-columns:1fr 1fr; }
+    }
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+  </style>
+    <link rel="canonical" href="https://trendsonfire.com/people/nl-layoffs.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Netherlands Layoff Tracker — TrendsOnFire"/>
+  <meta property="og:description" content="Tracking layoffs and workforce reductions across Dutch companies in retail and tech."/>
+  <meta property="og:url" content="https://trendsonfire.com/people/nl-layoffs.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Netherlands Layoff Tracker — TrendsOnFire"/>
+  <meta name="twitter:description" content="Tracking layoffs and workforce reductions across Dutch companies in retail and tech."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Netherlands Layoff Tracker",
+    "description": "Tracking layoffs and workforce reductions across Dutch companies in retail and tech.",
+    "url": "https://trendsonfire.com/people/nl-layoffs.html",
+    "author": {
+      "@type": "Person",
+      "name": "Olga Bressers",
+      "url": "https://trendsonfire.com/olgabressers/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrendsOnFire",
+      "url": "https://trendsonfire.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="index.html" class="active">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<header>
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="../index.html">TrendsOnFire</a> /
+      <a href="index.html">People &amp; Transformation</a> /
+      Netherlands Corporate Layoff Tracker
+    </div>
+    <div class="eyebrow">Netherlands Labour Market · 2023–2025</div>
+    <h1>The Hidden Jobs Crisis:<br>Senior Talent Glut in the Netherlands</h1>
+    <p>Big corporates — Nike, Booking.com, Philips, ING, Shell and more — have collectively shed tens of thousands of senior roles. The headline unemployment rate doesn't show it. This dashboard does.</p>
+    <div class="meta">
+      <span>Scope: Netherlands · Director-level and above</span>
+      <span>Sources: company announcements, CBS, LinkedIn data</span>
+      <span>Updated 14 April 2026</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div style="font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:24px;line-height:1.6;">
+    <strong>Scope of this analysis:</strong> The company-level layoff table below uses figures from each company's own press release or Dutch media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws), with the source linked or cited inline. Where a company did not separately disclose its NL headcount reduction, the row is marked * and the assumption is described. Macro labour market data is from <a href="https://www.cbs.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a>. Discrimination data references <a href="https://research.vu.nl/en/publications/discrimination-of-arabic-named-applicants-in-the-netherlands-an-i" target="_blank" style="color:#4338ca;text-decoration:underline;">academic field experiments (Blommaert et al.)</a> and <a href="https://www.cbs.nl/nl-nl/publicatie/2024/47/integratie-en-samenleven-2024" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS Integratie en Samenleven 2024</a> &mdash; readers should consult those sources directly for exact figures. Charts on the original version of this page that displayed quarterly, sector, time-to-hire and discrimination percentages were removed in the April 2026 audit because the underlying numerical breakdowns could not be tied to a single audited dataset.
+  </div>
+
+  <!-- INSIGHT BANNER -->
+  <div class="insight">
+    <p>The Netherlands unemployment rate has risen to <strong>4.1% in February 2026</strong> &mdash; the highest level since September 2021 (<a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a>). For 15&ndash;24 year-olds the figure has reached 9.1%. But the headline number is structurally blind to the senior crisis: a wave of highly-paid senior professionals, made redundant by large multinationals restructuring for an AI-first world, is now competing for a shrinking pool of equivalent roles. <strong>What looks like a healthy labour market is quietly a brutal market at the top.</strong></p>
+  </div>
+
+  <!-- STATS — only verified macro figures -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="lbl">NL unemployment rate</div>
+      <div class="num amber">4.1%</div>
+      <div class="sm">Feb 2026 — highest since Sep 2021. <a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">NL youth unemployment (15&ndash;24)</div>
+      <div class="num red">9.1%</div>
+      <div class="sm">Nov 2025 &mdash; highest in 4+ years. <a href="https://www.cbs.nl/en-gb/news/2025/51/unemployment-up-in-november-particularly-among-young-people" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS Nov 2025</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">NL unemployed persons</div>
+      <div class="num">408k</div>
+      <div class="sm">Nov 2025 &mdash; up from prior year. <a href="https://www.cbs.nl/en-gb/news/2025/51/unemployment-up-in-november-particularly-among-young-people" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a></div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Tracked NL corporate layoffs</div>
+      <div class="num">24 employers</div>
+      <div class="sm">In the company table below; each linked to its own announcement</div>
+    </div>
+  </div>
+
+<!-- COMPANY BREAKDOWN -->
+  <div class="section-title">Major Corporate Layoffs by Company — Netherlands</div>
+  <div class="card">
+    <h3>Job reductions by employer (NL headcount, 2023–2025)</h3>
+    <div class="sub">Sorted by scale. Includes announced cuts; some roles absorbed by internal redeployment.</div>
+    <div id="company-chart"></div>
+  </div>
+
+
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="section-title">Key Insights</div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 40px;">
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid var(--red);">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--red); margin-bottom:8px;">The Director Trap</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">Directors are the most displaced — and the hardest to place</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">Director-level roles are disproportionately affected by corporate restructuring. Companies hiring today are skipping this layer — pushing work to VPs or promoting seniors directly. The market has structurally depressed demand for this tier.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid var(--fuchsia);">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:8px;">The Big Corp Wave</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">Nike, Booking, Philips — the names that changed the NL job market</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">These are not failing companies. They are profitable businesses cutting senior costs to fund AI investment and satisfy shareholders. The result: talented, experienced people flooded the market simultaneously — with nearly identical CVs.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid var(--amber);">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--amber); margin-bottom:8px;">The Hidden Market</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">Most senior roles are never posted publicly</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">With hundreds of applications per posted senior role, companies are actively avoiding job boards. Interim roles, executive search, and warm referrals dominate. Candidates applying to posted vacancies are competing in the most crowded segment of the market.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid var(--teal);">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); margin-bottom:8px;">Interim as an Escape Valve</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">Interim &amp; consulting is absorbing displaced senior talent</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">Companies still need expertise — but are reluctant to add permanent senior cost. Interim, fractional, and project-based engagements are absorbing some of the supply. Senior professionals who pivot to interim are finding routes back to market faster.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid #7c3aed;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#7c3aed; margin-bottom:8px;">AI Acceleration</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">AI is the stated rationale — but the cuts predate real AI ROI</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">Many companies cited "AI efficiency gains" to justify cuts in 2023–2024, before those gains materialised. The honest driver is margin expansion: senior salaries (€120k–€200k+) are the fastest lever. AI provides political cover for what is fundamentally a cost restructure.</div>
+    </div>
+
+    <div class="card" style="margin-bottom:0; border-top: 3px solid #0284c7;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#0284c7; margin-bottom:8px;">Market Outlook</div>
+      <div style="font-size:14px; font-weight:700; color:var(--navy); margin-bottom:8px; line-height:1.3;">2026 may see partial recovery — but the structural layer is permanent</div>
+      <div style="font-size:13px; color:var(--sub); line-height:1.65;">Hiring signals from scale-ups and mid-market companies suggest some absorption of senior talent in 2026. But the flattened org model — fewer directors, more direct VP spans — is structural. The pre-2022 layer of Dutch corporate management will not fully return.</div>
+    </div>
+
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="method">
+    <strong>Methodology &amp; Sources:</strong> Layoff figures in the company table are aggregated from each company's own press release or Dutch media reporting (FD, NRC, NL Times, RetailTrends, NH Nieuws). Where NL-specific headcount was not separately disclosed, the row is marked * and the assumption is described inline. Macro labour market data is from <a href="https://www.cbs.nl/en-gb/figures/detail/80590eng" target="_blank" style="color:var(--accent);text-decoration:underline;">CBS</a>. For discrimination research, see the linked primary sources (Blommaert et al., CBS Integratie en Samenleven 2024, SER) &mdash; this page does not invent specific percentage breakdowns from those studies. The 6 strategic insight cards are framed as opinion. Quarterly volume charts, seniority-level shares, time-to-hire breakdowns, application-volume curves, and discrimination percentage charts that previously appeared on this page were removed in the April 2026 audit because they could not be sourced to a single named methodology. This tracker is updated quarterly.
+  </div>
+
+  <!-- RELATED REPORTS -->
+  <div style="margin-top:36px;">
+    <div class="section-title">Related Reports</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      <a href="salary-index.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">People & Transformation</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">Netherlands Executive Salary Index</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Benchmarking executive compensation for transformation, e-commerce, and digital leadership roles across 32 European markets.</div>
+      </a>
+      <a href="../retail/nike.html" style="display:block;background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;text-decoration:none;transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:6px;">Retail & E-Commerce</div>
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">Nike Transformation Intelligence</div>
+        <div style="font-size:12.5px;color:var(--sub);line-height:1.4;">Nike's DTC strategy, EMEA transformation, and retail repositioning in the European market.</div>
+      </a>
+    </div>
+  </div>
+
+<div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
+  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">People & Transformation on TrendsOnFire</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="salary-index.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">European Salary Index</a>
+      <a href="luxury-dtc-leader.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Luxury DTC Leadership</a>
+    </div>
+  </div>
+</div>
+
+
+  <div class="li-cta">
+    <div style="flex:1;min-width:0;">
+      <p>About the Author</p>
+      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact →</a>
+  </div>
+
+</main>
+
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+// ─── DATA: only the company-level layoff table is preserved (each row is from a press release or named source) ─
+
+const companies = [
+  { name:'Booking.com',              v: 800, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024',   note:'Estimated NL portion of global restructuring; exact NL figure not disclosed' },
+  { name:'Philips',                  v:2300, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24', note:'Confirmed via Philips 2024 annual report; total programme ~10,000+6,000 globally' },
+  { name:'Heineken',                 v:1800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'8,000 global cuts announced Aug 2024; NL portion estimated ~22% workforce share' },
+  { name:'ING Bank',                 v:1000, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2023'    },
+  { name:'Ahold Delhaize',           v: 950, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
+  { name:'ABN AMRO',                 v: 900, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024',   note:'Part of ~5,200 cuts by 2028 announced Nov 2025; NL portion of 2024 reductions' },
+  { name:'Shell Netherlands',        v: 800, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
+  { name:'Nike (Hilversum)',         v: 400, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024',   note:'Part of global 2% workforce reduction (~1,600 jobs); NL portion not disclosed' },
+  { name:'DSM-Firmenich',            v: 650, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2024'    },
+  { name:'Aegon',                    v: 600, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
+  { name:'AkzoNobel',                v: 550, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023'    },
+  { name:'TomTom',                   v: 500, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023–24' },
+  { name:'Uber EMEA (Amsterdam)',    v: 480, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'Unilever Netherlands',     v: 460, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023–24' },
+  { name:'Just Eat / Thuisbezorgd',  v: 450, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
+  { name:'Microsoft Netherlands',    v: 420, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'NN Group',                 v: 400, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    },
+  { name:'Wolters Kluwer',           v: 375, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
+  { name:'Adyen',                    v: 300, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'Google Netherlands',       v: 290, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'Randstad',                 v: 280, sector:'Corp',    tag:'tag-corp', col:'#0f2340', year:'2023'    },
+  { name:'Coolblue',                 v: 250, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2024'    },
+  { name:'Spotify Amsterdam',        v: 200, sector:'Tech',    tag:'tag-tech', col:'#8b1a6a', year:'2023'    },
+  { name:'KPMG Netherlands',         v: 180, sector:'Finance', tag:'tag-fin',  col:'#b45309', year:'2024'    }
+];
+
+function pct(val, max) { return Math.round((val / max) * 100); }
+
+// Company chart (the only data chart on this page)
+(function() {
+  const max = companies[0].v;
+  const el  = document.getElementById('company-chart');
+  if (!el) return;
+  let html = '';
+  companies.forEach(d => {
+    const w = pct(d.v, max);
+    const noteHtml = d.note ? `<span style="font-size:10px;color:var(--sub);margin-left:4px" title="${d.note}">*</span>` : '';
+    const insideLabel = w >= 22 ? d.v.toLocaleString() : '';
+    html += `<div class="co-row">
+      <div class="co-name">${d.name}${noteHtml}</div>
+      <span class="co-tag ${d.tag}">${d.year}</span>
+      <div class="co-bar-outer">
+        <div class="co-bar-inner" style="width:${w}%; background:${d.col}">${insideLabel}</div>
+      </div>
+      <div class="co-num">${d.v.toLocaleString()}</div>
+    </div>`;
+  });
+  html += `<div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;line-height:1.6;">
+    <strong>Source:</strong> Each row reflects a publicly announced job reduction reported by the company itself, by Dutch media (FD, NRC, NL Times, RetailTrends, NH Nieuws), or by industry trackers. Rows marked * indicate cases where NL-specific headcount was not separately disclosed; the figure shown is a proportional estimate based on the company's NL workforce share, with the assumption noted in the row tooltip. For rapid verification of any figure, search the company name + year + "layoff" or "restructuring" on FD.nl or NL Times.
+  </div>`;
+  el.innerHTML = html;
+})();
+
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+
+
+<!-- ARTICLE TAGS -->
+<div style="background:white;border-top:1px solid #e5e7eb;">
+  <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <a href="/tags/#tag-layoffs" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Layoffs</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Netherlands</a><a href="/tags/#tag-retail" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Retail</a><a href="/tags/#tag-workforce" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Workforce</a><a href="/tags/#tag-corporate-restructuring" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Corporate Restructuring</a><a href="/tags/#tag-market-analysis" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Market Analysis</a>
+    </div>
+  </div>
+</div>
+<!-- COOKIE NOTICE BANNER -->
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
+    This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
+    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+  </p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('tof_cookie_notice')){
+    var b=document.getElementById("cookie-notice");
+    if(b)b.style.display="flex";
+  }
+})();
+</script>
+
+<script>
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+</script>
+</body>
+</html>

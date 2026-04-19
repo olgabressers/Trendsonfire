@@ -11,71 +11,72 @@
     gtag('js', new Date());
     gtag('config', 'G-115WQYBB0Z');
   </script><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>B2B Marketplace Intelligence — Europe — TrendsOnFire</title>
   <meta name="description" content="European B2B marketplace intelligence tracker — which sectors are adopting digital marketplaces and where the gaps are. TrendsOnFire."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --blue:#0369a1; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    :root { --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a; --blue:#0369a1; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
-    .sec-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
+    .sec-header { background: linear-gradient(135deg, var(--ink, #0a0f1a) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
     .sec-header .inner { max-width: 1100px; margin: auto; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
     .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 10px; }
-    .sec-header h1 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .sec-header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
     .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 720px; margin-bottom: 16px; }
     .sec-meta { font-size: 12px; color: rgba(255,255,255,.5); display: flex; gap: 20px; flex-wrap: wrap; }
 
     main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
 
     /* Insight banner */
-    .insight-banner { background: linear-gradient(135deg, #0a1929 0%, #0f2340 100%); border-left: 4px solid var(--fuchsia); border-radius: 12px; padding: 28px 32px; margin-bottom: 40px; color: white; font-size: 15px; line-height: 1.8; }
+    .insight-banner { background: linear-gradient(135deg, #060a12 0%, #0a0f1a 100%); border-left: 4px solid var(--gold, #b8976a); border-radius: 0; padding: 28px 32px; margin-bottom: 40px; color: white; font-size: 15px; line-height: 1.8; }
     .insight-banner strong { color: #e2c0d8; }
 
     /* Stat cards */
     .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 16px; margin-bottom: 48px; }
-    .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .stat-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .stat-card .sc-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
     .stat-card .sc-value { font-size: 36px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; }
     .stat-card .sc-desc { font-size: 12px; color: var(--sub); line-height: 1.4; }
 
     /* Sections */
     .section { margin-bottom: 60px; }
-    .section-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-title { font-size: 20px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .section-sub { font-size: 14px; color: var(--sub); margin-bottom: 24px; line-height: 1.55; }
     .section-divider { height: 3px; background: linear-gradient(90deg, var(--blue) 0%, transparent 100%); border-radius: 2px; margin-bottom: 24px; }
 
     /* Country bar chart */
-    .bar-chart { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px 28px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .bar-chart { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 28px 28px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-    .bar-label { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 110px; text-align: right; flex-shrink: 0; }
+    .bar-label { font-size: 13px; font-weight: 600; color: var(--ink, #0a0f1a); min-width: 110px; text-align: right; flex-shrink: 0; }
     .bar-track { flex: 1; background: #f1f5f9; border-radius: 6px; height: 30px; position: relative; overflow: visible; }
     .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-right: 10px; position: relative; transition: width 0.6s ease; }
     .bar-val { font-size: 12px; font-weight: 800; color: white; margin-left: auto; white-space: nowrap; padding-right: 8px; }
     .bar-adoption { font-size: 11px; font-weight: 700; color: var(--sub); position: absolute; left: calc(100% + 8px); white-space: nowrap; }
 
     /* Tables */
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
 
     /* Opportunity sector table */
     .opp-table { width: 100%; border-collapse: collapse; background: white; min-width: 780px; font-size: 13px; }
-    .opp-table thead th { background: var(--navy); color: white; padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; white-space: nowrap; }
+    .opp-table thead th { background: var(--ink, #0a0f1a); color: white; padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; white-space: nowrap; }
     .opp-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 200px; }
     .opp-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .opp-table tbody td { padding: 10px 8px; text-align: center; font-size: 12px; border-bottom: 1px solid #f1f3f5; }
-    .opp-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); }
+    .opp-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--ink, #0a0f1a); }
     .cell-green { background: #dcfce7; color: #166534; border-radius: 5px; padding: 3px 8px; display: inline-block; font-weight: 700; }
     .cell-amber { background: #fef9c3; color: #854d0e; border-radius: 5px; padding: 3px 8px; display: inline-block; font-weight: 700; }
     .cell-red   { background: #fee2e2; color: #991b1b; border-radius: 5px; padding: 3px 8px; display: inline-block; font-weight: 700; }
-    .cell-grey  { background: #f3f4f6; color: #6b7280; border-radius: 5px; padding: 3px 8px; display: inline-block; font-weight: 700; }
+    .cell-grey  { background: #f3f4f6; color: #7a7a7a; border-radius: 5px; padding: 3px 8px; display: inline-block; font-weight: 700; }
     .stars-5 { color: #0d9488; font-size: 15px; font-weight: 800; }
     .stars-4 { color: #14b8a6; font-size: 15px; font-weight: 800; }
     .stars-3 { color: #f59e0b; font-size: 15px; font-weight: 800; }
@@ -83,18 +84,18 @@
 
     /* Expansion table */
     .exp-table { width: 100%; border-collapse: collapse; background: white; min-width: 780px; font-size: 13px; }
-    .exp-table thead th { background: var(--navy); color: white; padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; white-space: nowrap; }
+    .exp-table thead th { background: var(--ink, #0a0f1a); color: white; padding: 12px 10px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.4px; white-space: nowrap; }
     .exp-table thead th:first-child { text-align: left; padding-left: 18px; min-width: 120px; }
     .exp-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .exp-table tbody td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #f1f3f5; }
-    .exp-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--navy); }
+    .exp-table tbody td:first-child { text-align: left; padding-left: 18px; font-size: 13px; font-weight: 600; color: var(--ink, #0a0f1a); }
     .circles { display: flex; gap: 3px; justify-content: center; align-items: center; }
     .dot { width: 13px; height: 13px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
     .dot-5 { background: #0d9488; }
     .dot-4 { background: #5eead4; }
     .dot-3 { background: #f59e0b; }
     .dot-2, .dot-1 { background: #ef4444; }
-    .dot-empty { background: #e5e7eb; }
+    .dot-empty { background: #e2dfd9; }
     .verdict-badge { display: inline-block; border-radius: 20px; padding: 3px 12px; font-size: 11px; font-weight: 700; white-space: nowrap; }
     .verdict-go-first  { background: #0d9488; color: white; }
     .verdict-strong-yes { background: #14b8a6; color: white; }
@@ -110,70 +111,70 @@
 
     /* M&A section */
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .ma-chart { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-    .ma-chart h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+    .ma-chart { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .ma-chart h3 { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 20px; }
     .ma-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-    .ma-bar-label { font-size: 12px; font-weight: 600; color: var(--navy); min-width: 140px; flex-shrink: 0; line-height: 1.3; }
+    .ma-bar-label { font-size: 12px; font-weight: 600; color: var(--ink, #0a0f1a); min-width: 140px; flex-shrink: 0; line-height: 1.3; }
     .ma-bar-track { flex: 1; background: #f1f5f9; border-radius: 6px; height: 28px; position: relative; }
     .ma-bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; }
     .ma-bar-val { font-size: 11px; font-weight: 800; color: white; padding-right: 8px; white-space: nowrap; }
     .ma-bar-range { font-size: 11px; color: var(--sub); position: absolute; left: calc(100% + 8px); white-space: nowrap; top: 50%; transform: translateY(-50%); }
 
-    .buyer-list { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-    .buyer-list h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
-    .buyer-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+    .buyer-list { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .buyer-list h3 { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 20px; }
+    .buyer-card { border: 1px solid var(--rule, #e2dfd9); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
     .buyer-card:last-child { margin-bottom: 0; }
     .buyer-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
     .buyer-tag-strategic { background: #dbeafe; color: #1e40af; }
     .buyer-tag-financial  { background: #f0fdf4; color: #166534; }
     .buyer-tag-hybrid     { background: #fef3c7; color: #92400e; }
-    .buyer-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .buyer-name { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .buyer-desc { font-size: 12px; color: var(--sub); line-height: 1.55; }
 
-    .ma-note { font-size: 14px; color: var(--text); line-height: 1.7; padding: 18px 24px; background: white; border-radius: 10px; border-left: 4px solid var(--fuchsia); margin-top: 20px; }
-    .ma-note strong { color: var(--fuchsia); }
+    .ma-note { font-size: 14px; color: var(--text); line-height: 1.7; padding: 18px 24px; background: white; border-radius: 10px; border-left: 4px solid var(--gold, #b8976a); margin-top: 20px; }
+    .ma-note strong { color: var(--gold, #b8976a); }
 
     /* Value levers */
     .levers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-    .lever-card { background: white; border-radius: 12px; border: 1px solid var(--border); border-left-width: 5px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
-    .lever-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .lever-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); border-left-width: 5px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+    .lever-name { font-size: 15px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 8px; }
     .lever-body { font-size: 13.5px; color: var(--sub); line-height: 1.65; margin-bottom: 12px; }
-    .lever-champion { background: #f8fafc; border-radius: 7px; padding: 10px 14px; font-size: 12px; color: var(--sub); }
-    .lever-champion strong { color: var(--navy); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .lever-champion { background: #faf9f7; border-radius: 7px; padding: 10px 14px; font-size: 12px; color: var(--sub); }
+    .lever-champion strong { color: var(--ink, #0a0f1a); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
 
     /* Strategic ideas */
     .ideas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .idea-card { background: white; border-radius: 12px; border: 1px solid var(--border); border-top-width: 4px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+    .idea-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); border-top-width: 4px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
     .idea-num { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .idea-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+    .idea-title { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 10px; line-height: 1.3; }
     .idea-body { font-size: 13.5px; color: var(--sub); line-height: 1.7; margin-bottom: 14px; }
     .idea-status { display: inline-block; background: #f1f5f9; color: var(--sub); font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 20px; }
-    .idea-status strong { color: var(--navy); }
+    .idea-status strong { color: var(--ink, #0a0f1a); }
 
     /* Metrics grid */
     .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .metric-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; gap: 18px; align-items: flex-start; }
+    .metric-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; gap: 18px; align-items: flex-start; }
     .metric-icon { width: 42px; height: 42px; border-radius: 10px; background: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .metric-icon svg { width: 20px; height: 20px; }
-    .metric-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .metric-name { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .metric-benchmark { font-size: 18px; font-weight: 800; color: var(--blue); margin-bottom: 4px; line-height: 1.1; }
     .metric-signal { font-size: 12px; color: var(--sub); line-height: 1.4; }
 
     /* Methodology */
-    .methodology { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 24px 28px; margin-bottom: 40px; }
-    .methodology h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .methodology { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 24px 28px; margin-bottom: 40px; }
+    .methodology h3 { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 10px; }
     .methodology p, .methodology li { font-size: 13px; color: var(--sub); line-height: 1.7; }
     .methodology ul { padding-left: 20px; }
     .methodology li { margin-bottom: 4px; }
 
     /* CTA */
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
     .li-cta a { background: var(--blue); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
     .li-cta a:hover { background: #0284c7; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
 
@@ -182,7 +183,7 @@
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy); padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--ink, #0a0f1a); padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
       main { padding-left:16px !important; padding-right:16px !important; }
@@ -206,19 +207,19 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
@@ -255,36 +256,35 @@
     }
   }
   </script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="index.html" class="active">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../retail/index.html" class="active">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
 </nav>
@@ -312,8 +312,8 @@
   </div>
 
   <!-- Source pointers replacing previously-fabricated stat cards -->
-  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px 26px;margin-bottom:40px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-    <div style="font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Where to find primary data on European B2B marketplaces</div>
+  <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px 26px;margin-bottom:40px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+    <div style="font-size:13px;font-weight:700;color:var(--ink, #0a0f1a);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Where to find primary data on European B2B marketplaces</div>
     <ul style="font-size:13.5px;color:var(--sub);line-height:1.85;padding-left:22px;">
       <li><a href="https://dealroom.co/guides/european-b2b-marketplaces" style="color:var(--accent);text-decoration:underline;" target="_blank">Dealroom — European B2B marketplaces guide</a>: funding, deal activity, top companies (free overview; full data paywalled).</li>
       <li><a href="https://dealroom.co/" style="color:var(--accent);text-decoration:underline;" target="_blank">Dealroom.co</a>: VC investment tracking at the company level.</li>
@@ -321,7 +321,7 @@
       <li>Listed strategic acquirers&rsquo; annual reports (Boels Verhuur, Loxam, IMCD, Travis Perkins, W&uuml;rth Group, Nemetschek): deal cadence and valuation multiples visible in acquisition disclosures.</li>
       <li>EU Observatory on the Online Platform Economy: <a href="https://platformobservatory.eu/" style="color:var(--accent);text-decoration:underline;" target="_blank">platformobservatory.eu</a>.</li>
     </ul>
-    <div style="font-size:11.5px;color:var(--sub);margin-top:14px;padding-top:12px;border-top:1px solid var(--border);line-height:1.6;">Headline quantitative stats previously on this page (&ldquo;&euro;1.5T total market&rdquo;, &ldquo;12% marketplace share&rdquo;, &ldquo;22% CAGR&rdquo;, &ldquo;300+ marketplaces&rdquo;, &ldquo;&euro;2.1B VC funding&rdquo;, &ldquo;6&ndash;8&times; exit multiple&rdquo;) were removed in the April 2026 audit because they could not be sourced to a named publication. Use the linked sources above for current figures.</div>
+    <div style="font-size:11.5px;color:var(--sub);margin-top:14px;padding-top:12px;border-top:1px solid var(--rule, #e2dfd9);line-height:1.6;">Headline quantitative stats previously on this page (&ldquo;&euro;1.5T total market&rdquo;, &ldquo;12% marketplace share&rdquo;, &ldquo;22% CAGR&rdquo;, &ldquo;300+ marketplaces&rdquo;, &ldquo;&euro;2.1B VC funding&rdquo;, &ldquo;6&ndash;8&times; exit multiple&rdquo;) were removed in the April 2026 audit because they could not be sourced to a named publication. Use the linked sources above for current figures.</div>
   </div>
 
 <!-- Section 4: M&A Valuation -->
@@ -378,7 +378,7 @@
         <div class="lever-body">How much of each transaction the platform captures. B2B marketplaces typically charge 2&ndash;8% of GMV.</div>
         <div class="lever-champion"><strong>Champion metric</strong>4%+ blended take rate with payment integration</div>
       </div>
-      <div class="lever-card" style="border-left-color:#8b1a6a">
+      <div class="lever-card" style="border-left-color: #8b6a2f">
         <div class="lever-name">Network Density</div>
         <div class="lever-body">The number of active buyers AND sellers per market/geography. Thin networks are vulnerable to disintermediation.</div>
         <div class="lever-champion"><strong>Champion metric</strong>&gt;50 active suppliers per buyer cohort in target geography</div>
@@ -424,7 +424,7 @@
         <div class="idea-body">Asset-sharing and local equipment rental directly reduces transport kilometres. Each km avoided generates a measurable CO&sub2; saving. With the EU ETS (Emissions Trading System) and CSRD reporting requirements, buyers increasingly need to document their Scope 3 emissions reduction. A marketplace that automatically calculates and certifies the carbon saving of each transaction &mdash; and packages these as tradeable credits or ESG reports &mdash; creates a completely new revenue stream that competitors cannot easily replicate.</div>
         <div class="idea-status"><strong>Status:</strong> No European B2B marketplace has launched a carbon credit layer as of Q1 2026</div>
       </div>
-      <div class="idea-card" style="border-top-color:#8b1a6a">
+      <div class="idea-card" style="border-top-color: #8b6a2f">
         <div class="idea-num">Idea 03 &middot; Public Procurement Integration</div>
         <div class="idea-title">EU mandatory e-invoicing as a distribution channel</div>
         <div class="idea-body">The EU requires e-invoicing for all public contracts above &euro;10,000 from 2024. Any marketplace connected to government procurement systems becomes a regulated utility rather than a discretionary tool. Construction and civil engineering are among the largest categories of public spending in every European country. A marketplace with a verified e-invoicing integration and pre-qualification for public tenders would be structurally sticky and extremely hard to displace.</div>
@@ -475,30 +475,30 @@
   </div>
 
   <!-- RELATED REPORTS -->
-  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:24px 28px;margin-bottom:28px;">
-    <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px;">Related Reports &mdash; Retail &amp; E-Commerce</div>
+  <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px 28px;margin-bottom:28px;">
+    <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:16px;">Related Reports &mdash; Retail &amp; E-Commerce</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;">
-      <a href="nike.html" style="display:block;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#f8fafc'">
-        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Nike Transformation Intelligence</div>
+      <a href="nike.html" style="display:block;background:#faf9f7;border:1px solid var(--rule, #e2dfd9);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#faf9f7'">
+        <div style="font-size:13px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:4px;">Nike Transformation Intelligence</div>
         <div style="font-size:12px;color:var(--sub);line-height:1.5;">FY2025 revenue &minus;10%, DTC reversal, EMEA restructuring, and the road back under Elliott Hill.</div>
       </a>
-      <a href="sporting-goods-brands.html" style="display:block;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#f8fafc'">
-        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Sporting Goods Brands &mdash; European Market Analysis</div>
+      <a href="sporting-goods-brands.html" style="display:block;background:#faf9f7;border:1px solid var(--rule, #e2dfd9);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#faf9f7'">
+        <div style="font-size:13px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:4px;">Sporting Goods Brands &mdash; European Market Analysis</div>
         <div style="font-size:12px;color:var(--sub);line-height:1.5;">18-brand competitive gap matrix: DTC, omni-channel, European footprint, and white space opportunities.</div>
       </a>
-      <a href="furniture-market.html" style="display:block;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#f8fafc'">
-        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">The Furniture Trap &mdash; Fonq&rsquo;s Bankruptcy</div>
+      <a href="furniture-market.html" style="display:block;background:#faf9f7;border:1px solid var(--rule, #e2dfd9);border-radius:10px;padding:16px 18px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='#faf9f7'">
+        <div style="font-size:13px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:4px;">The Furniture Trap &mdash; Fonq&rsquo;s Bankruptcy</div>
         <div style="font-size:12px;color:var(--sub);line-height:1.5;">Why pure-play online retail in Europe keeps failing &mdash; return economics, last-mile costs, and DTC lessons.</div>
       </a>
     </div>
   </div>
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Retail & E-Commerce on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Retail & E-Commerce on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="furniture-market.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">The Furniture Trap</a>
-      <a href="flexibility-markets.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Energy Flexibility Markets</a>
+      <a href="furniture-market.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">The Furniture Trap</a>
+      <a href="flexibility-markets.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Energy Flexibility Markets</a>
     </div>
   </div>
 </div>
@@ -530,8 +530,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -582,22 +583,22 @@ document.querySelector('.nav-burger').addEventListener('click', function(){
 
 
 <!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e5e7eb;">
+<div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-b2b" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">B2B</a><a href="/tags/#tag-marketplace" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Marketplace</a><a href="/tags/#tag-e-commerce" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">E-Commerce</a><a href="/tags/#tag-platform-strategy" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Platform Strategy</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Europe</a>
+      <a href="/tags/#tag-b2b" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">B2B</a><a href="/tags/#tag-marketplace" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Marketplace</a><a href="/tags/#tag-e-commerce" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">E-Commerce</a><a href="/tags/#tag-platform-strategy" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Platform Strategy</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Europe</a>
     </div>
   </div>
 </div>
 <!-- COOKIE NOTICE BANNER -->
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
-    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
-    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+    <a href="/legal/privacy.html" style="color:#d4c4a8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#d4c4a8;font-weight:600;">Disclaimer</a>
   </p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#b8976a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
 </div>
 <script>
 (function(){

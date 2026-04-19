@@ -11,6 +11,7 @@
     gtag('config', 'G-115WQYBB0Z');
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>Electric Vehicle Evolution — Tesla, BYD and the 2026 reset | TrendsOnFire</title>
   <meta name="description" content="Tesla FSD Supervised approved in the Netherlands 10 April 2026 — first in Europe. Tesla's two-year decline, the European competitive race, comparison with US, China and Middle East, and the March 2026 energy shock."/>
   <link rel="canonical" href="https://trendsonfire.com/technology/tesla-fsd-europe.html"/>
@@ -28,7 +29,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0f2340;
+      --navy: #0a0f1a;
       --navy-mid: #1e3a5f;
       --navy-soft: #475569;
       --accent: #b45309;            /* amber — alerts, story markers */
@@ -39,26 +40,26 @@
       --dim: #94a3b8;               /* warm grey — dip / low */
       --bg: #f7f8fa;
       --text: #111827;
-      --sub: #6b7280;
-      --border: #e5e7eb;
+      --sub: #7a7a7a;
+      --border: #e2dfd9;
       --link: #1e3a5f;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.55; }
 
-    nav { background: var(--navy); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: var(--ink, #0a0f1a); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
     /* HERO — single navy gradient */
-    header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: white; padding: 60px 32px 44px; }
+    header { background: linear-gradient(135deg, var(--ink, #0a0f1a) 0%, var(--navy-mid) 100%); color: white; padding: 60px 32px 44px; }
     header .inner { max-width: 1180px; margin: auto; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 14px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.65); font-weight: 700; margin-bottom: 14px; }
-    header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 18px; line-height: 1.15; letter-spacing: -0.5px; }
+    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 18px; line-height: 1.15; letter-spacing: -0.5px; }
     header .sub { font-size: 16px; color: rgba(255,255,255,.78); max-width: 820px; margin-bottom: 28px; line-height: 1.55; }
     .header-meta { font-size:11.5px; color:rgba(255,255,255,.55); margin-bottom: 28px; }
 
@@ -75,53 +76,53 @@
     /* SECTIONS */
     .sec { margin-bottom: 52px; }
     .sec-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-    .sec-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.25; letter-spacing: -0.3px; }
+    .sec-title { font-size: 24px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 8px; line-height: 1.25; letter-spacing: -0.3px; }
     .sec-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 22px; max-width: 820px; }
 
     /* CARDS */
-    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 26px 30px; margin-bottom: 14px; }
-    .card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.2px; }
+    .card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 26px 30px; margin-bottom: 14px; }
+    .card h3 { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 16px; letter-spacing: -0.2px; }
     .card p { font-size: 13.5px; color: #334155; line-height: 1.65; margin-bottom: 10px; }
     .card p:last-child { margin-bottom: 0; }
-    .card strong { color: var(--navy); font-weight: 700; }
+    .card strong { color: var(--ink, #0a0f1a); font-weight: 700; }
     .card a { color: var(--link); text-decoration: underline; }
 
     .src { font-size: 11px; color: var(--sub); padding: 10px 14px; background: #f9fafb; border-radius: 4px; border-left: 3px solid var(--accent); margin-top: 14px; line-height: 1.6; }
-    .src strong { color: var(--navy); }
-    .src a { color: var(--navy); text-decoration: underline; font-weight: 600; }
+    .src strong { color: var(--ink, #0a0f1a); }
+    .src a { color: var(--ink, #0a0f1a); text-decoration: underline; font-weight: 600; }
 
     /* SAE LEVELS */
     .lvl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
     /* Levels L0-L5 — progressive navy gradient = autonomy capability */
-    .lvl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; border-top: 3px solid #cbd5e1; transition: box-shadow .15s; }
+    .lvl-cell { background: white; border: 1px solid var(--rule, #e2dfd9); border-radius: 10px; padding: 16px 18px; border-top: 3px solid #cbd5e1; transition: box-shadow .15s; }
     .lvl-cell.l0 { border-top-color: #cbd5e1; }
     .lvl-cell.l1 { border-top-color: #94a3b8; }
     .lvl-cell.l2 { border-top-color: var(--accent); background: #fffbeb; box-shadow: 0 2px 12px rgba(180,83,9,.12); }
     .lvl-cell.l3 { border-top-color: var(--navy-soft); }
     .lvl-cell.l4 { border-top-color: var(--navy-mid); }
-    .lvl-cell.l5 { border-top-color: var(--navy); }
+    .lvl-cell.l5 { border-top-color: var(--ink, #0a0f1a); }
     .lvl-cell .lvl-num { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; color: var(--sub); text-transform: uppercase; margin-bottom: 4px; }
     .lvl-cell.l2 .lvl-num { color: var(--accent); font-weight: 800; }
-    .lvl-cell .lvl-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .lvl-cell .lvl-name { font-size: 15px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .lvl-cell .lvl-desc { font-size: 12px; color: var(--sub); line-height: 1.5; }
-    .lvl-cell .lvl-eg { font-size: 11px; color: var(--navy); margin-top: 8px; font-weight: 600; }
+    .lvl-cell .lvl-eg { font-size: 11px; color: var(--ink, #0a0f1a); margin-top: 8px; font-weight: 600; }
 
     /* AUTONOMY PRICING */
     .price-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
-    .price-cell { padding: 18px 20px; border-radius: 10px; background: white; border: 1px solid var(--border); border-top: 4px solid var(--navy-mid); }
+    .price-cell { padding: 18px 20px; border-radius: 10px; background: white; border: 1px solid var(--rule, #e2dfd9); border-top: 4px solid var(--navy-mid); }
     .price-cell .pname { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 6px; }
-    .price-cell .pval { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.3px; line-height: 1.1; }
+    .price-cell .pval { font-size: 22px; font-weight: 800; color: var(--ink, #0a0f1a); letter-spacing: -0.3px; line-height: 1.1; }
     .price-cell .pn { font-size: 12px; color: var(--sub); margin-top: 6px; }
-    .price-cell .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; background: var(--bg); color: var(--navy); margin-bottom: 8px; }
+    .price-cell .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; background: var(--paper, #faf9f7); color: var(--ink, #0a0f1a); margin-bottom: 8px; }
 
     /* QUARTERLY BARS — uniform navy */
-    .qbars { display: flex; align-items: flex-end; gap: 14px; height: 320px; padding: 16px 8px 36px; background: #fafbfc; border: 1px solid var(--border); border-radius: 10px; position: relative; }
+    .qbars { display: flex; align-items: flex-end; gap: 14px; height: 320px; padding: 16px 8px 36px; background: #fafbfc; border: 1px solid var(--rule, #e2dfd9); border-radius: 10px; position: relative; }
     .qbar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; position: relative; }
     .qbar .bar { width: 100%; min-height: 8px; border-radius: 4px 4px 0 0; background: var(--navy-mid); }
     .qbar.dim .bar { background: var(--dim); }
     .qbar.peak .bar { background: var(--peak); }
     .qbar.accent .bar { background: var(--accent-deep); }
-    .qbar .val { font-size: 11px; font-weight: 700; color: var(--navy); position: absolute; top: -20px; white-space: nowrap; }
+    .qbar .val { font-size: 11px; font-weight: 700; color: var(--ink, #0a0f1a); position: absolute; top: -20px; white-space: nowrap; }
     .qbar.dim .val { color: var(--dim); }
     .qbar.peak .val { color: var(--peak); }
     .qbar.accent .val { color: var(--accent-deep); }
@@ -130,63 +131,63 @@
     /* COUNTRY HORIZONTAL BARS — uniform style */
     .ctry-row { display: grid; grid-template-columns: 130px 1fr 90px 70px; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
     .ctry-row:last-child { border-bottom: none; }
-    .ctry-name { font-weight: 700; color: var(--navy); font-size: 13.5px; }
+    .ctry-name { font-weight: 700; color: var(--ink, #0a0f1a); font-size: 13.5px; }
     .ctry-bar { background: #f1f3f6; height: 20px; border-radius: 4px; position: relative; overflow: hidden; }
     .ctry-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--navy-mid) 0%, var(--growth) 100%); }
     .ctry-fill.alt { background: var(--accent); }
-    .ctry-units { font-size: 13px; font-weight: 700; color: var(--navy); text-align: right; }
+    .ctry-units { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); text-align: right; }
     .ctry-yoy { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 4px; text-align: center; white-space: nowrap; background: #f1f3f6; color: var(--navy-soft); letter-spacing: 0.3px; }
-    .ctry-yoy.up { background: var(--navy); color: white; }
+    .ctry-yoy.up { background: var(--ink, #0a0f1a); color: white; }
     .ctry-yoy.down { background: #fef3c7; color: var(--accent); }
 
     /* GLOBAL COMPARISON GRID */
     .gl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-    .gl-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--navy); }
+    .gl-cell { background: white; border: 1px solid var(--rule, #e2dfd9); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--ink, #0a0f1a); }
     .gl-cell.alt { border-top-color: var(--accent); }
     .gl-cell .gl-region { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .gl-cell .gl-num { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.5px; }
+    .gl-cell .gl-num { font-size: 28px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1.1; letter-spacing: -0.5px; }
     .gl-cell .gl-label { font-size: 12px; color: var(--sub); margin: 4px 0 12px; }
     .gl-cell .gl-stat { font-size: 12px; color: #334155; line-height: 1.55; padding-top: 12px; border-top: 1px solid #f1f3f6; }
-    .gl-cell .gl-stat strong { color: var(--navy); }
+    .gl-cell .gl-stat strong { color: var(--ink, #0a0f1a); }
 
     /* WORLD MAP TABLE */
-    .gl-table { width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
-    .gl-table thead th { background: var(--navy); color: white; padding: 11px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
-    .gl-table tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); }
+    .gl-table { width: 100%; border-collapse: collapse; font-size: 13px; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule, #e2dfd9); }
+    .gl-table thead th { background: var(--ink, #0a0f1a); color: white; padding: 11px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+    .gl-table tbody td { padding: 11px 14px; border-bottom: 1px solid var(--rule, #e2dfd9); }
     .gl-table tbody tr:last-child td { border-bottom: none; }
     .gl-table tbody tr:nth-child(even) td { background: #fafbfc; }
-    .lvl-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: var(--navy); color: white; }
+    .lvl-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: var(--ink, #0a0f1a); color: white; }
     .lvl-tag.amber { background: var(--navy-soft); }
 
     /* INSIGHT — amber left accent (story markers) */
-    .insight { background: white; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 18px 0; }
+    .insight { background: white; border: 1px solid var(--rule, #e2dfd9); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 18px 0; }
     .insight .ct { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
     .insight .cb { font-size: 13.5px; color: #334155; line-height: 1.7; }
-    .insight .cb strong { color: var(--navy); font-weight: 700; }
+    .insight .cb strong { color: var(--ink, #0a0f1a); font-weight: 700; }
 
     /* ENERGY GRID — amber accent (crisis signal, meaning-driven) */
     .energy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-    .e-cell { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--accent); }
+    .e-cell { background: white; border: 1px solid var(--rule, #e2dfd9); border-radius: 10px; padding: 20px 22px; border-top: 3px solid var(--accent); }
     .e-cell .el { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
     .e-cell .ev { font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -0.5px; }
     .e-cell .en { font-size: 12px; color: var(--sub); margin-top: 6px; line-height: 1.4; }
 
     /* About / footer */
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 30px 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
+    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 30px 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
     .li-cta > div { flex: 1; min-width: 0; }
     .li-cta p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
     .li-cta p { color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.55; margin-bottom: 10px; }
     .li-cta p:last-child { margin-bottom: 0; }
-    .li-cta a.btn { background: #8b1a6a; color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+    .li-cta a.btn { background: #b8976a; color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
 
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy); padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--ink, #0a0f1a); padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
       main { padding:32px 16px 60px; }
@@ -201,42 +202,46 @@
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Electric Vehicle Evolution — Tesla FSD Europe, BYD, and the 2026 Reset", "description": "Netherlands first in EU to approve Tesla FSD. 30-country EV adoption ranking, European manufacturer group share, BYD entry analysis, Tesla quarterly deliveries.", "datePublished": "2026-04-16", "dateModified": "2026-04-16", "url": "https://trendsonfire.com/technology/tesla-fsd-europe.html", "author": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}, "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"}, "keywords": ["Tesla", "FSD", "electric vehicles", "BYD", "EV adoption", "Europe", "IEA", "autonomous driving"], "inLanguage": "en", "isAccessibleForFree": true}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com", "description": "AI-based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.", "founder": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}}</script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="../index.html">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="index.html" class="active">Technology &amp; Media</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html" class="active">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
 </nav>
 
-<header>
+<div class="art-hero">
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Technology &amp; Media</a> / Tesla in Europe</div>
     <div class="eyebrow">Visual Market Intelligence · Europe · April 2026</div>
     <h1>Electric Vehicle Evolution &mdash; Tesla, BYD and the 2026 reset</h1>
     <p class="sub">A visual read of what just happened: the Netherlands gave Tesla its first European autonomy approval, two years of decline, the new competitive league table, what this looks like next to the US, China and the Middle East &mdash; and the energy shock that may decide who wins the next quarter.</p>
-    <div class="header-meta">Sources: RDW · Tesla IR · IEA · BloombergNEF · ACEA · JATO · ICCT · Motor Trader · CnEVPost · Updated 17 April 2026</div>
+    <div class="header-meta">Sources: RDW · Tesla IR · IEA · BloombergNEF · ACEA · Electrek · Automotive News · Updated 16 April 2026</div>
     <div class="stat-row">
       <div class="stat-card">
         <div class="sl">NL approval</div>
@@ -264,7 +269,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <main>
 
@@ -609,45 +614,42 @@
     <div class="sec-sub">Manufacturer-group share, country EV markets, and where BYD <em>(Build Your Dreams &mdash; the Chinese EV maker, world&rsquo;s largest by volume)</em> is winning</div>
 
     <div class="card">
-      <h3>European BEV market &mdash; manufacturer group share, full year 2025</h3>
-      <p style="font-size: 12.5px; color: var(--sub); margin-bottom: 14px;">Share of battery-electric vehicle registrations across EU + EFTA + UK, full year 2025. Total European BEV market: ~2.65 million units.</p>
+      <h3>European EV market &mdash; manufacturer group share, full year 2025</h3>
       <div class="ctry-row">
         <div class="ctry-name">VW Group</div>
         <div class="ctry-bar"><div class="ctry-fill" style="width:100%;"></div></div>
-        <div class="ctry-units">~27%</div>
-        <div class="ctry-yoy up">overtook Tesla</div>
+        <div class="ctry-units">27%</div>
+        <div class="ctry-yoy up">leader</div>
       </div>
       <div class="ctry-row">
         <div class="ctry-name">Stellantis</div>
-        <div class="ctry-bar"><div class="ctry-fill" style="width:41%;"></div></div>
-        <div class="ctry-units">~11%</div>
-        <div class="ctry-yoy up">+3pp BEV</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:51.9%;"></div></div>
+        <div class="ctry-units">14%</div>
+        <div class="ctry-yoy down">declining</div>
       </div>
       <div class="ctry-row">
         <div class="ctry-name">BMW Group</div>
-        <div class="ctry-bar"><div class="ctry-fill" style="width:41%;"></div></div>
-        <div class="ctry-units">~11%</div>
-        <div class="ctry-yoy up">+28% YoY</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:25%;"></div></div>
+        <div class="ctry-units">3rd</div>
+        <div class="ctry-yoy">gaining</div>
       </div>
       <div class="ctry-row">
         <div class="ctry-name">Tesla</div>
-        <div class="ctry-bar"><div class="ctry-fill" style="width:33%;"></div></div>
-        <div class="ctry-units">~9%</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:25%;"></div></div>
+        <div class="ctry-units">~7%</div>
         <div class="ctry-yoy down">−26.9%</div>
       </div>
       <div class="ctry-row">
         <div class="ctry-name">BYD</div>
-        <div class="ctry-bar"><div class="ctry-fill" style="width:26%;"></div></div>
-        <div class="ctry-units">~7%</div>
+        <div class="ctry-bar"><div class="ctry-fill" style="width:6%;"></div></div>
+        <div class="ctry-units">~1.5%</div>
         <div class="ctry-yoy up">+268.6%</div>
       </div>
-      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;"><strong>VW Group overtook Tesla as Europe's #1 BEV seller in 2025</strong> &mdash; the first time since Tesla entered the continent. Tesla fell 26.9% (238,656 units). BYD surged from 50,912 to 187,657 units in twelve months &mdash; the steepest entry by any non-European brand on record.</p>
+      <p style="font-size: 12.5px; color: var(--sub); margin-top: 14px;">VW Group leads on group share. Stellantis is the largest declining group. <strong>BYD&rsquo;s share climbed from 0.4% to 1.5% in twelve months</strong> &mdash; the steepest entry by any non-European brand on record.</p>
       <div class="src">
         <strong>Source:</strong>
-        <a href="https://www.motortrader.com/motor-trader-news/automotive-news/volkswagen-overtakes-tesla-as-best-selling-bev-brand-across-europe-06-02-2026" target="_blank">Motor Trader &middot; VW overtakes Tesla as best-selling BEV brand</a> &middot;
-        <a href="https://cnevpost.com/2026/01/27/byd-european-registrations-surge-in-2025-tesla-slips/" target="_blank">CnEVPost &middot; BYD +268.6%, Tesla −26.9% Europe 2025</a> &middot;
-        <a href="https://www.whichev.net/2026/02/06/europes-ev-market-hits-turning-point-in-2025-as-bev-sales-surge-to-19-5-share-and-volkswagen-overtakes-tesla/" target="_blank">WhichEV &middot; BEV 19.5% share, VW overtakes Tesla</a> &middot;
-        <a href="https://theicct.org/pr-europe-battery-electric-market-closes-2025-19-average/" target="_blank">ICCT &middot; Europe BEV market 2025</a>
+        <a href="https://www.best-selling-cars.com/europe/2025-full-year-europe-best-selling-car-manufacturers-and-brands/" target="_blank">Best-Selling Cars &middot; Europe 2025 manufacturer rankings</a> &middot;
+        <a href="https://www.acea.auto/pc-registrations/new-car-registrations-1-8-in-2025-battery-electric-17-4-market-share/" target="_blank">ACEA &middot; 2025 BEV market share 17.4%</a>
       </div>
     </div>
 
@@ -773,14 +775,14 @@
 
       <style>
         .yoy-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-        .yoy-table thead th { background: var(--navy); color: white; padding: 12px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+        .yoy-table thead th { background: var(--ink, #0a0f1a); color: white; padding: 12px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
         .yoy-table thead th.num { text-align: right; }
         .yoy-table tbody td { padding: 11px 14px; border-bottom: 1px solid #f1f3f6; }
         .yoy-table tbody tr:last-child td { border-bottom: none; }
         .yoy-table tbody tr:nth-child(even) td { background: #fafbfc; }
-        .yoy-table .country-cell { font-weight: 700; color: var(--navy); }
+        .yoy-table .country-cell { font-weight: 700; color: var(--ink, #0a0f1a); }
         .yoy-table .num-cell { text-align: right; font-variant-numeric: tabular-nums; color: #64748b; }
-        .yoy-table .num-cell.now { color: var(--navy); font-weight: 700; }
+        .yoy-table .num-cell.now { color: var(--ink, #0a0f1a); font-weight: 700; }
         .yoy-table .yoy-cell { text-align: center; font-weight: 800; font-size: 12.5px; }
         .yoy-cell.high { color: var(--accent); }
         .yoy-cell.mid { color: var(--navy-mid); }
@@ -812,7 +814,7 @@
           <tr><td class="country-cell">Denmark</td><td class="num-cell">910</td><td class="num-cell now">1,784</td><td class="yoy-cell high">+96%</td></tr>
           <tr><td class="country-cell">Sweden</td><td class="num-cell">593</td><td class="num-cell now">1,447</td><td class="yoy-cell high">+144%</td></tr>
           <tr><td class="country-cell">Switzerland</td><td class="num-cell">663</td><td class="num-cell now">674</td><td class="yoy-cell flat">+1.7%</td></tr>
-          <tr style="background:var(--navy);color:white;font-weight:700;">
+          <tr style="background:var(--ink, #0a0f1a);color:white;font-weight:700;">
             <td style="padding:12px 14px;color:white;">Total · 11 markets</td>
             <td class="num-cell" style="color:rgba(255,255,255,.7);">23,139</td>
             <td class="num-cell" style="color:white;">46,497</td>
@@ -889,11 +891,11 @@
     <style>
       .retail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 14px; }
       @media(max-width:768px){ .retail-grid { grid-template-columns: 1fr; } }
-      .retail-block { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 26px 24px; border-top: 4px solid var(--accent); display: flex; flex-direction: column; }
+      .retail-block { background: white; border: 1px solid var(--rule, #e2dfd9); border-radius: 0; padding: 26px 24px; border-top: 4px solid var(--accent); display: flex; flex-direction: column; }
       .retail-num { font-size: 38px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 10px; letter-spacing: -1px; }
-      .retail-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+      .retail-title { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 12px; line-height: 1.3; }
       .retail-body { font-size: 13px; color: #334155; line-height: 1.6; }
-      .retail-body strong { color: var(--navy); font-weight: 700; }
+      .retail-body strong { color: var(--ink, #0a0f1a); font-weight: 700; }
     </style>
 
     <div class="retail-grid">
@@ -945,11 +947,11 @@
   <!-- About the Author -->
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Technology & Media on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Technology & Media on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="cpaas-conversational-commerce.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">CPaaS & Conversational Commerce</a>
-      <a href="eaa-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">European Accessibility Act</a>
+      <a href="cpaas-conversational-commerce.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">CPaaS & Conversational Commerce</a>
+      <a href="eaa-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">European Accessibility Act</a>
     </div>
   </div>
 </div>
@@ -966,8 +968,9 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>

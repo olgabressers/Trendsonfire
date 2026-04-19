@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script>
+  <meta name="google-site-verification" content="vx288tO666GblC4sy70I7D6t6NrxTZ6w3FbwbnERSWI"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TrendsOnFire — AI-Powered Strategic Intelligence Platform</title>
+  <meta name="description" content="TrendsOnFire — AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0f2340;
+      --fuchsia: #8b1a6a;
+      --border:  #e5e7eb;
+      --bg:      #f8fafc;
+      --text:    #111827;
+      --sub:     #6b7280;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #0f2340 0%, #1a3558 50%, #0f2340 100%); color: white; padding: 96px 32px 80px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(139,26,106,.12) 0%, transparent 60%); }
+    .hero .inner { max-width: 720px; margin: auto; position: relative; z-index: 1; }
+    .hero .eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: white; font-weight: 600; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 800; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.5px; }
+    .hero h1 span { color: var(--fuchsia); }
+    .hero p { font-size: 16px; color: rgba(255,255,255,.6); max-width: 540px; margin: 0 auto 36px; line-height: 1.75; }
+    .hero-cta { display: inline-block; background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 13px 32px; border-radius: 6px; text-decoration: none; transition: background .15s; letter-spacing: 0.3px; }
+    .hero-cta:hover { background: #7a1660; }
+
+    /* SECTION CARDS */
+    .sections-wrap { max-width: 1100px; margin: 0 auto; padding: 64px 24px 56px; }
+    .sections-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sub); margin-bottom: 32px; text-align: center; }
+    .sections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .s-card { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; transition: box-shadow .2s, transform .2s; color: inherit; display: flex; flex-direction: column; cursor: pointer; text-decoration: none; }
+    .s-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.1); transform: translateY(-3px); }
+    .s-card-accent { padding: 18px 24px 14px; display: flex; align-items: center; gap: 14px; }
+    .s-card-accent svg { flex-shrink: 0; }
+    .s-card-accent-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); flex: 1; }
+    .s-card-date { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.55); letter-spacing: 0.5px; flex-shrink: 0; }
+    .s-card-body { padding: 18px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+    .s-card-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; transition: color .15s; }
+    .s-card:hover .s-card-title { color: var(--fuchsia); }
+    .s-card-sub { font-size: 11px; color: var(--sub); font-weight: 600; letter-spacing: 0.3px; margin-bottom: 10px; }
+    .s-card-desc { font-size: 13px; color: var(--sub); line-height: 1.6; flex: 1; }
+    .s-card-footer { padding: 0 24px 20px; }
+    .s-card-link { font-size: 12px; font-weight: 700; color: var(--fuchsia); text-decoration: none; letter-spacing: 0.5px; }
+    .s-card:hover .s-card-link { text-decoration: underline; }
+
+    /* ABOUT STRIP */
+    .about-strip { background: var(--navy); padding: 56px 32px; }
+    .about-strip .inner { max-width: 800px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .about-strip p { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.75; max-width: 560px; }
+    .about-strip .label { font-size: 12px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 8px; }
+    .about-strip a.btn { display: inline-block; background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 28px; border-radius: 6px; text-decoration: none; transition: background .15s; white-space: nowrap; flex-shrink: 0; }
+    .about-strip a.btn:hover { background: #7a1660; }
+
+    /* FOOTER */
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* SEARCH OVERLAY */
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+
+    /* MOBILE */
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; }
+      .hero { padding:64px 16px 56px; }
+      .sections-grid { grid-template-columns:1fr; }
+      .about-strip .inner { flex-direction:column; align-items:flex-start; }
+      .about-strip { padding:40px 24px; }
+    }
+    @media(min-width:769px) and (max-width:1024px){
+      .sections-grid { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+  <link rel="canonical" href="https://trendsonfire.com/"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="TrendsOnFire — AI-Powered Strategic Intelligence Platform"/>
+  <meta property="og:description" content="AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
+  <meta property="og:url" content="https://trendsonfire.com/"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="TrendsOnFire — AI-Powered Strategic Intelligence Platform"/>
+  <meta name="twitter:description" content="AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "TrendsOnFire",
+        "url": "https://trendsonfire.com",
+        "description": "AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.",
+        "founder": { "@type": "Person", "name": "Olga Bressers" },
+        "sameAs": ["https://www.linkedin.com/in/olgabressers"]
+      },
+      {
+        "@type": "WebSite",
+        "name": "TrendsOnFire",
+        "url": "https://trendsonfire.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://trendsonfire.com/tags/?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="people/index.html">People &amp; Transformation</a>
+    <a href="technology/index.html">Technology &amp; Media</a>
+    <a href="supply-chain/index.html">Supply Chain</a>
+    <a href="education-government/index.html">Education &amp; Government</a>
+    <a href="finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="real-estate/index.html">Real Estate</a>
+    <a href="olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="inner">
+    <div class="eyebrow">AI-Powered Strategic Intelligence Platform</div>
+    <h1>See what others <span>miss</span></h1>
+    <p>The market moves that matter across European retail, technology, supply chain, and transformation — researched, analysed, and published before the mainstream catches up.</p>
+    <p style="color:white;font-size:18px;font-weight:700;margin-bottom:36px;">Read them on Trends On Fire to be ahead of the curve.</p>
+    <a class="hero-cta" href="#sections">Explore Intelligence</a>
+  </div>
+</div>
+
+<!-- SECTION CARDS -->
+<div class="sections-wrap" id="sections">
+  <div class="sections-label">Intelligence by sector</div>
+  <div class="sections-grid">
+
+    <a class="s-card" href="retail/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#dc2626,#991b1b);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <div class="s-card-accent-label">Retail &amp; E-Commerce</div>
+        <span class="s-card-date">Updated Apr 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">Furniture Market &amp; Energy Flexibility</div>
+        <div class="s-card-sub">2 published reports</div>
+        <p class="s-card-desc">Why pure-play online furniture retail keeps failing in Europe (Fonq case), and how Europe&rsquo;s balancing markets, virtual power plants and demand response are reshaping the energy landscape.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="people/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#8b1a6a,#5b1147);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="s-card-accent-label">People &amp; Transformation</div>
+        <span class="s-card-date">Updated Apr 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">European Luxury DTC Leadership Market</div>
+        <div class="s-card-sub">1 published report</div>
+        <p class="s-card-desc">DTC revenue share across 11 luxury and premium groups from their own annual reports, plus salary benchmarks and observations on the leadership talent market.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="technology/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        <div class="s-card-accent-label">Technology &amp; Media</div>
+        <span class="s-card-date">Updated Apr 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">Electric Vehicle Evolution &amp; Opple Europe</div>
+        <div class="s-card-sub">3 published reports</div>
+        <p class="s-card-desc">Tesla, BYD and the 2026 reset following the Netherlands becoming the first European country to approve Tesla FSD. Opple Europe market entry vs Signify and Osram. Dutch podcast market dynamics and aggregator share.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="supply-chain/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#ca8a04,#78350f);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <div class="s-card-accent-label">Supply Chain</div>
+        <span class="s-card-date">Updated Q1 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">Circular Economy Tracker &amp; S&amp;OP to IBP</div>
+        <div class="s-card-sub">2 published reports</div>
+        <p class="s-card-desc">EU circular-economy regulation across fashion, furniture, electronics, food and buildings; and the evolution of supply chain planning from spreadsheet S&amp;OP to AI-powered IBP. Sources: EU Commission, Gartner, McKinsey, BCG.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="education-government/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#059669,#064e3b);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <div class="s-card-accent-label">Education &amp; Government</div>
+        <span class="s-card-date">Updated Q1 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">New insights in preparation</div>
+        <div class="s-card-sub">Coming soon</div>
+        <p class="s-card-desc">Education &amp; Government reports are being refreshed. New analysis covering EU digital-government programmes, the AI Act in public administration, and higher-education funding will appear here shortly.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="finance-compliance/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="s-card-accent-label">Finance &amp; Compliance</div>
+        <span class="s-card-date">Updated Q1 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">Counterfeiting Intelligence</div>
+        <div class="s-card-sub">1 published report</div>
+        <p class="s-card-desc">Global counterfeiting mapped with European market focus &mdash; EU customs seizures, e-commerce exposure, GPSR obligations, and what enforcement actually works. Sources: OECD, EUIPO, EU Customs.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+    <a class="s-card" href="real-estate/index.html">
+      <div class="s-card-accent" style="background:linear-gradient(135deg,#111827,#1f2937);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+        <div class="s-card-accent-label">Real Estate</div>
+        <span class="s-card-date">Updated Q1 2026</span>
+      </div>
+      <div class="s-card-body">
+        <div class="s-card-title">European Housing Market Intelligence 2026&ndash;2027</div>
+        <div class="s-card-sub">1 published report</div>
+        <p class="s-card-desc">Price trends, forecasts, and investment scores for 20 European housing markets. ECB rate impact, rental yields, and where to buy vs. where to wait.</p>
+      </div>
+      <div class="s-card-footer">
+        <span class="s-card-link">Explore reports &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="inner">
+    <div style="flex:1;min-width:0;">
+      <div class="label">About the Author</div>
+      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
+    </div>
+    <a class="btn" href="olgabressers/index.html">Contact &rarr;</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags..." autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">&times;</button>
+    </div>
+    <div class="search-hint">Press ESC to close</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+
+function openSearch() {
+  var o = document.getElementById('search-overlay');
+  o.style.display = 'block';
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-results').innerHTML = '<div class="search-empty">Start typing to find articles\u2026</div>';
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ document.getElementById('search-input').focus(); }, 60);
+}
+function closeSearch() {
+  document.getElementById('search-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('search-input').addEventListener('input', function(){
+  var q = this.value.toLowerCase().trim();
+  var c = document.getElementById('search-results');
+  if (!q) { c.innerHTML = '<div class="search-empty">Start typing to find articles\u2026</div>'; return; }
+  var m = ARTICLES.filter(function(a){ return (a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q) !== -1; });
+  if (!m.length) { c.innerHTML = '<div class="search-empty">No results for "'+q+'"</div>'; return; }
+  c.innerHTML = m.map(function(a){
+    var t = a.tags.slice(0,3).map(function(x){ return '<span class="sr-tag">'+x+'</span>'; }).join('');
+    return '<a class="search-result" href="'+a.url+'"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';
+  }).join('');
+});
+document.getElementById('search-input').addEventListener('keydown', function(e){ if (e.key==='Enter') { var f=document.querySelector('.search-result'); if(f) window.location=f.href; } });
+document.addEventListener('keydown', function(e){ if (e.key==='Escape') closeSearch(); });
+document.getElementById('search-overlay').addEventListener('click', function(e){ if (e.target===this) closeSearch(); });
+</script>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
+    This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
+    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+  </p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('tof_cookie_notice')){
+    var b=document.getElementById("cookie-notice");
+    if(b)b.style.display="flex";
+  }
+})();
+</script>
+</body>
+</html>

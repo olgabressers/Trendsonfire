@@ -11,6 +11,7 @@
     gtag('config', 'G-115WQYBB0Z');
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>Podcast Trends Dashboard — Media Intelligence — TrendsOnFire</title>
   <meta name="description" content="Podcast market trends, NL aggregator share, podcasts as a sales channel, retail and ecommerce shows, and media coverage strategies. Data-driven analysis by Olga Bressers."/>
   <link rel="canonical" href="https://trendsonfire.com/media/podcasts.html"/>
@@ -30,7 +31,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280;
+      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a;
       --orange:#ea580c; --orange-dark:#431407; --orange-light:#fff7ed; --orange-mid:#fed7aa;
       --green:#059669; --green-light:#d1fae5;
       --purple:#7c3aed; --purple-light:#ede9fe;
@@ -38,13 +39,13 @@
       --teal:#0d9488; --teal-light:#ccfbf1;
       --amber:#d97706; --amber-light:#fef3c7;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
     header { background: linear-gradient(135deg, #431407 0%, #ea580c 100%); color: white; padding: 48px 32px 40px; }
     header .inner { max-width: 1100px; margin: auto; }
@@ -52,7 +53,7 @@
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
     .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #fed7aa; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-size: clamp(22px,4vw,36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px,4vw,36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
     header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; }
     .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
 
@@ -60,28 +61,28 @@
 
     /* Stats */
     .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 16px; margin-bottom: 48px; }
-    .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .stat-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 18px 20px; ; }
     .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); font-weight: 700; margin-bottom: 5px; }
-    .stat-val { font-size: 26px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .stat-val { font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1; }
     .stat-val.orange { color: var(--orange); }
     .stat-note { font-size: 12px; color: var(--sub); margin-top: 4px; }
 
     /* Section */
     .section-block { margin-bottom: 56px; }
-    .section-title { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 24px; }
 
     /* Insight */
-    .insight { border-radius: 14px; padding: 22px 26px; color: white; margin-bottom: 48px; display: flex; gap: 14px; align-items: flex-start; }
+    .insight { border-radius: 0; padding: 22px 26px; color: white; margin-bottom: 48px; display: flex; gap: 14px; align-items: flex-start; }
     .insight.orange { background: linear-gradient(135deg, #431407, #ea580c); }
-    .insight.navy { background: linear-gradient(135deg, #0f2340, #1d4ed8); }
+    .insight.navy { background: linear-gradient(135deg, #0a0f1a, #1d4ed8); }
     .insight-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
     .insight-text { font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.65; }
     .insight-text strong { color: white; }
 
     /* Bar chart */
-    .chart-box { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 26px 28px 18px; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
-    .chart-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .chart-box { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 26px 28px 18px; ; }
+    .chart-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .chart-sub { font-size: 12px; color: var(--sub); margin-bottom: 20px; }
     .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 9px; }
     .bar-label { width: 190px; font-size: 12.5px; color: var(--text); flex-shrink: 0; text-align: right; line-height: 1.3; }
@@ -90,39 +91,39 @@
 
     /* Growth line indicators */
     .growth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin-top: 24px; }
-    .growth-card { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 16px 18px; }
+    .growth-card { background: white; border-radius: 10px; border: 1px solid var(--rule, #e2dfd9); padding: 16px 18px; }
     .growth-year { font-size: 12px; font-weight: 700; color: var(--sub); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-    .growth-val { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .growth-val { font-size: 20px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 2px; }
     .growth-note { font-size: 12px; color: var(--sub); }
     .growth-arrow { color: var(--green); font-weight: 700; }
 
     /* Sales channel cards */
     .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 18px; }
-    .channel-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .channel-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px; ; }
     .cc-icon { font-size: 28px; margin-bottom: 10px; }
-    .cc-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+    .cc-title { font-size: 15px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; line-height: 1.3; }
     .cc-body { font-size: 13px; color: var(--sub); line-height: 1.6; }
     .cc-body strong { color: var(--text); font-weight: 600; }
-    .cc-metric { display: inline-block; margin-top: 12px; background: #0f2340; color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 5px; }
+    .cc-metric { display: inline-block; margin-top: 12px; background: #0a0f1a; color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 5px; }
 
     /* Podcast cards (retail/ecommerce list) */
     .pod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 16px; }
-    .pod-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .pod-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
     .pod-card.featured { border-color: var(--orange); border-width: 2px; background: linear-gradient(135deg, #fff7ed, white); }
     .pod-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
     .pod-icon { font-size: 28px; flex-shrink: 0; }
     .pod-meta { flex: 1; }
-    .pod-name { font-size: 14px; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 2px; }
+    .pod-name { font-size: 14px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1.3; margin-bottom: 2px; }
     .pod-host { font-size: 12px; color: var(--sub); }
     .pod-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-    .pod-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: #0f2340; color: white; }
+    .pod-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .5px; background: #0a0f1a; color: white; }
     .pod-tag.retail,
     .pod-tag.ecom,
     .pod-tag.brand,
     .pod-tag.supply,
     .pod-tag.strategy,
     .pod-tag.nl,
-    .pod-tag.featured { background: #0f2340; color: white; }
+    .pod-tag.featured { background: #0a0f1a; color: white; }
     .pod-body { font-size: 13px; color: var(--sub); line-height: 1.6; }
     .pod-body strong { color: var(--text); font-weight: 600; }
     .pod-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-size: 12px; font-weight: 700; color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(234,88,12,.3); }
@@ -131,27 +132,27 @@
 
     /* Media coverage section */
     .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 18px; }
-    .cov-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; }
+    .cov-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px; }
     .cov-type { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .cov-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+    .cov-title { font-size: 15px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; line-height: 1.3; }
     .cov-body { font-size: 13px; color: var(--sub); line-height: 1.6; }
     .cov-body strong { color: var(--text); font-weight: 600; }
     .cov-rating { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-    .cov-pill { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 4px; background: #0f2340; color: white; }
+    .cov-pill { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 4px; background: #0a0f1a; color: white; }
     .cov-pill.reach,
     .cov-pill.trust,
     .cov-pill.cost,
     .cov-pill.hard,
-    .cov-pill.easy { background: #0f2340; color: white; }
+    .cov-pill.easy { background: #0a0f1a; color: white; }
 
     /* CTA */
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
-    .li-cta a:hover { background: #7a1660; }
+    .li-cta a { background: var(--gold, #b8976a); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #a07850; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
 
@@ -159,7 +160,7 @@
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; text-align:left; white-space:normal; }
       main { padding-left:16px !important; padding-right:16px !important; }
@@ -173,19 +174,19 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
@@ -214,40 +215,39 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a class="active" href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html" class="active">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
 </nav>
 
-<header>
+<div class="art-hero">
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Media</a> / Podcast Trends</div>
     <div class="eyebrow">Media Intelligence · Podcasts</div>
@@ -259,7 +259,7 @@
       <span>Updated 14 April 2026</span>
     </div>
   </div>
-</header>
+</div>
 
 <main>
 
@@ -351,19 +351,19 @@
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
         <div style="background:#fff7ed;border-radius:8px;padding:12px 14px;border:1px solid #fdba74;">
           <div style="font-size:12px;font-weight:700;color:#431407;margin-bottom:4px;">Spotify — Why it dominates</div>
-          <div style="font-size:12px;color:#6b7280;line-height:1.5;">Free tier with ads, premium without, integrated with music. Dutch language UI, NL editorial curation, and Podimo competition keeps Spotify aggressive with exclusive NL content deals.</div>
+          <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Free tier with ads, premium without, integrated with music. Dutch language UI, NL editorial curation, and Podimo competition keeps Spotify aggressive with exclusive NL content deals.</div>
         </div>
         <div style="background:#f0fdf4;border-radius:8px;padding:12px 14px;border:1px solid #bbf7d0;">
           <div style="font-size:12px;font-weight:700;color:#065f46;margin-bottom:4px;">YouTube — The challenger</div>
-          <div style="font-size:12px;color:#6b7280;line-height:1.5;">Video podcasts on YouTube are the fastest-growing format. Many NL listeners don't count YouTube as "podcast" but consume the same content. Underrepresented in traditional surveys.</div>
+          <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Video podcasts on YouTube are the fastest-growing format. Many NL listeners don't count YouTube as "podcast" but consume the same content. Underrepresented in traditional surveys.</div>
         </div>
         <div style="background:#ede9fe;border-radius:8px;padding:12px 14px;border:1px solid #c4b5fd;">
           <div style="font-size:12px;font-weight:700;color:#4c1d95;margin-bottom:4px;">Podimo — NL subscription upstart</div>
-          <div style="font-size:12px;color:#6b7280;line-height:1.5;">Danish-origin subscription podcast platform that invested heavily in Dutch exclusive content (NPO Radio, Blendle). Growing fast among 25–45 NL listeners willing to pay for premium audio.</div>
+          <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Danish-origin subscription podcast platform that invested heavily in Dutch exclusive content (NPO Radio, Blendle). Growing fast among 25–45 NL listeners willing to pay for premium audio.</div>
         </div>
         <div style="background:#fef3c7;border-radius:8px;padding:12px 14px;border:1px solid #fcd34d;">
           <div style="font-size:12px;font-weight:700;color:#78350f;margin-bottom:4px;">Apple Podcasts — Declining share</div>
-          <div style="font-size:12px;color:#6b7280;line-height:1.5;">Still essential for distribution (many NL iPhone users) but losing ground to Spotify. No free Android version hurts reach. Important to be listed here regardless of where listeners actually play episodes.</div>
+          <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Still essential for distribution (many NL iPhone users) but losing ground to Spotify. No free Android version hurts reach. Important to be listed here regardless of where listeners actually play episodes.</div>
         </div>
       </div>
     </div>
@@ -457,30 +457,30 @@
     <!-- Regional breakdown cards -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:32px;">
 
-      <div style="background:white;border-radius:12px;border:2px solid var(--orange);padding:20px 22px;">
+      <div style="background:white;border-radius: 0;border:2px solid var(--orange);padding:20px 22px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Global</div>
-        <div style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:4px;">growing</div>
+        <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">growing</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Multi-billion-USD global podcast ad market</div>
         <div style="font-size:12.5px;color:#374151;line-height:1.55;">For latest global figures see <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC studies</a> and <a href="https://www.iabeurope.eu/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe</a>. Growth driven by programmatic buying, video podcast inventory, and emerging-market expansion.</div>
       </div>
 
-      <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:20px 22px;">
+      <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1d4ed8;margin-bottom:8px;">United States</div>
-        <div style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:4px;">$2.4B</div>
+        <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">$2.4B</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">US podcast ad revenue 2024 (+26.4% YoY)</div>
         <div style="font-size:12.5px;color:#374151;line-height:1.55;">Most mature market. Host-read ads dominant. IAB projects podcasting will reach ~$2.6B by 2026. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study (2024 results, May 2024)</a>.</div>
       </div>
 
-      <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:20px 22px;">
+      <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:8px;">Europe</div>
-        <div style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:4px;">growing</div>
+        <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">growing</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Fastest-growing major region for podcast advertising</div>
         <div style="font-size:12.5px;color:#374151;line-height:1.55;">UK is Europe&apos;s largest podcast ad market, followed by Germany, France, and the Nordics. For published European audio &amp; podcast ad-spend data see <a href="https://www.iabeurope.eu/all-news/iab-europe-adex-benchmark-2024-report-now-available/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe AdEx Benchmark</a>.</div>
       </div>
 
-      <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:20px 22px;">
+      <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
         <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7c3aed;margin-bottom:8px;">Netherlands</div>
-        <div style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:4px;">small</div>
+        <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">small</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">but highly engaged audience</div>
         <div style="font-size:12.5px;color:#374151;line-height:1.55;">Spotify Audience Network is a primary buying platform; NPO Radio podcasts and Podimo exclusives are key NL inventory. For Dutch audio audience and ad-spend data see <a href="https://www.spot.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">SPOT NL</a> and <a href="https://www.nlo.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">NLO</a>.</div>
       </div>
@@ -747,11 +747,11 @@
   <!-- CTA -->
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Also on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Also on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="../technology/cpaas-conversational-commerce.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">CPaaS & Conversational Commerce</a>
-      <a href="../retail/furniture-market.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">The Furniture Trap</a>
+      <a href="../technology/cpaas-conversational-commerce.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">CPaaS & Conversational Commerce</a>
+      <a href="../retail/furniture-market.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">The Furniture Trap</a>
     </div>
   </div>
 </div>
@@ -781,8 +781,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -868,7 +869,7 @@
     {c:'Spain', v:55, color:'#d97706'},
     {c:'Italy', v:40, color:'#7c3aed'},
     {c:'Netherlands', v:35, color:'#ea580c'},
-    {c:'Belgium', v:18, color:'#6b7280'},
+    {c:'Belgium', v:18, color:'#7a7a7a'},
     {c:'Poland', v:15, color:'#9ca3af'},
     {c:'Other Europe', v:42, color:'#d1d5db'}
   ];
@@ -925,21 +926,21 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 </script>
 
 <!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e5e7eb;">
+<div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-podcasts" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Podcasts</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Netherlands</a><a href="/tags/#tag-media" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Media</a><a href="/tags/#tag-marketing" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Marketing</a><a href="/tags/#tag-retail" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Retail</a><a href="/tags/#tag-advertising" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Advertising</a>
+      <a href="/tags/#tag-podcasts" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Podcasts</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Netherlands</a><a href="/tags/#tag-media" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Media</a><a href="/tags/#tag-marketing" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Marketing</a><a href="/tags/#tag-retail" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Retail</a><a href="/tags/#tag-advertising" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Advertising</a>
     </div>
   </div>
 </div>
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
-    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
-    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+    <a href="/legal/privacy.html" style="color:#d4c4a8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#d4c4a8;font-weight:600;">Disclaimer</a>
   </p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#b8976a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
 </div>
 <script>
 (function(){

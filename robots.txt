@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /v1/
 Disallow: /v2/
+Disallow: /admin/
+Disallow: /book/
 Disallow: /logo-preview.html
 Disallow: /logo-preview-red.html
 

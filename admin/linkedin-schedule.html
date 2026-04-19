@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>LinkedIn Posts Schedule — TrendsOnFire Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 60px; }
+    .wrapper { max-width: 1200px; margin: 0 auto; }
+
+    h1 { font-size: 22px; font-weight: 800; color: #0f2340; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+    .notice { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #92400e; margin-bottom: 24px; }
+
+    /* Performance headline bar */
+    .perf-bar {
+      background: white; border-radius: 10px; padding: 18px 22px;
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-bottom: 36px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
+    .perf-item { display: flex; flex-direction: column; }
+    .perf-num { font-size: 22px; font-weight: 800; color: #0f2340; line-height: 1; }
+    .perf-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7280; font-weight: 700; margin-top: 4px; }
+
+    /* SECTOR BLOCK */
+    .sector { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.06); margin-bottom: 28px; overflow: hidden; }
+    .sector-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px; border-bottom: 1px solid #e5e7eb;
+      background: linear-gradient(to right, #f9fafb, white);
+    }
+    .sector-icon { width: 40px; height: 40px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .sector-header h2 { font-size: 16px; font-weight: 800; color: #0f2340; }
+    .sector-header .sub { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+
+    .sector-perf {
+      margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap;
+    }
+    .sp-item { font-size: 11px; color: #6b7280; font-weight: 600; }
+    .sp-item strong { color: #0f2340; font-size: 13px; font-weight: 800; }
+
+    /* COLUMNS inside sector */
+    .sector-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    @media (max-width: 860px) { .sector-body { grid-template-columns: 1fr; } }
+
+    .col { padding: 20px 24px; }
+    .col:first-child { border-right: 1px solid #e5e7eb; }
+    @media (max-width: 860px) { .col:first-child { border-right: none; border-bottom: 1px solid #e5e7eb; } }
+
+    .col-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7280; margin-bottom: 12px; }
+    .row { padding: 10px 0; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 10px; }
+    .row:last-child { border-bottom: none; }
+    .row-left { flex: 1; min-width: 0; }
+    .row-left a { font-size: 13px; font-weight: 600; color: #1d4ed8; text-decoration: none; }
+    .row-left a:hover { text-decoration: underline; }
+    .row-note { font-size: 11.5px; color: #6b7280; margin-top: 3px; line-height: 1.5; }
+
+    .row-right { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .metric { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 9px; letter-spacing: .3px; }
+    .metric-high { background: #dcfce7; color: #14532d; }
+    .metric-mid  { background: #fef3c7; color: #92400e; }
+    .metric-low  { background: #fee2e2; color: #b91c1c; }
+    .metric-scheduled { background: #dbeafe; color: #1e40af; }
+    .metric-idea  { background: #f3f4f6; color: #4b5563; }
+    .metric-noart { background: #ede9fe; color: #5b21b6; }
+
+    .post-date { font-size: 10px; color: #9ca3af; letter-spacing: .3px; white-space: nowrap; }
+
+    /* Priority ideas — numbered list */
+    .ideas-list { counter-reset: idea; }
+    .idea-row {
+      counter-increment: idea;
+      padding: 10px 0 10px 28px;
+      border-bottom: 1px solid #f3f4f6;
+      position: relative;
+    }
+    .idea-row:last-child { border-bottom: none; }
+    .idea-row::before {
+      content: counter(idea);
+      position: absolute;
+      left: 0; top: 10px;
+      width: 20px; height: 20px;
+      background: #0f2340;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+    .idea-title { font-size: 13px; font-weight: 700; color: #0f2340; margin-bottom: 3px; }
+    .idea-desc { font-size: 11.5px; color: #6b7280; line-height: 1.5; }
+
+    /* LEGEND */
+    .legend {
+      background: white; border-radius: 10px; padding: 14px 20px;
+      display: flex; gap: 20px; flex-wrap: wrap;
+      margin-bottom: 24px;
+      font-size: 12px; color: #374151;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .legend .metric { display: inline-block; margin-right: 6px; }
+
+    /* PRIORITY SUMMARY BOX */
+    .priority-box {
+      background: white;
+      border-left: 4px solid #16a34a;
+      border-radius: 10px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .priority-box h3 { font-size: 13px; font-weight: 800; color: #14532d; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+    .priority-box p { font-size: 13px; color: #374151; }
+    .priority-box strong { color: #0f2340; }
+
+    .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <h1>TrendsOnFire — LinkedIn Posts Schedule &amp; Priority</h1>
+  <div class="meta">Admin view · Internal planning · Not indexed · Updated 19 April 2026</div>
+  <div class="notice">
+    Post ideas organised by website section. Priority is audience-driven — sectors where posts perform get the next article written first.
+    Formula for every post: tension hook → EU deadline → matrix visual → 4 brand hashtags + 1 broad tag → question close.
+  </div>
+
+  <!-- Performance summary -->
+  <div class="perf-bar">
+    <div class="perf-item"><div class="perf-num">4,938</div><div class="perf-label">Best post impressions</div></div>
+    <div class="perf-item"><div class="perf-num">H&amp;M post</div><div class="perf-label">Best performer (17 Apr)</div></div>
+    <div class="perf-item"><div class="perf-num">Retail</div><div class="perf-label">Top-performing sector</div></div>
+    <div class="perf-item"><div class="perf-num">6</div><div class="perf-label">Followers / best post</div></div>
+    <div class="perf-item"><div class="perf-num">3</div><div class="perf-label">Scheduled this week</div></div>
+  </div>
+
+  <!-- Priority summary -->
+  <div class="priority-box">
+    <h3>Priority rule</h3>
+    <p>
+      Posts that clear <strong>2,000+ impressions</strong> signal a strong sector → replicate formula on adjacent topics, write new articles if needed.
+      Posts under <strong>500 impressions</strong> → deprioritise that sector's variants.
+      Current leader: <strong>Retail (fashion circularity)</strong> with 4,938 impressions — next priority for new articles and follow-up posts.
+    </p>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <span><span class="metric metric-high">HIGH</span> ≥2K impressions</span>
+    <span><span class="metric metric-mid">MID</span> 500–2K</span>
+    <span><span class="metric metric-low">LOW</span> &lt;500</span>
+    <span><span class="metric metric-scheduled">SCHEDULED</span> queued on Buffer</span>
+    <span><span class="metric metric-idea">IDEA</span> planned, article ready</span>
+    <span><span class="metric metric-noart">NEW ARTICLE</span> needs writing first</span>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- RETAIL (top performer)                      -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#fef2f2,white);">
+      <div class="sector-icon" style="background:#fee2e2;">🛍️</div>
+      <div>
+        <h2>Retail &amp; E-Commerce</h2>
+        <div class="sub">Top-performing sector · fashion circularity drove 4,938 impressions</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>7</strong> articles</div>
+        <div class="sp-item"><strong>2</strong> posts done</div>
+        <div class="sp-item"><strong>1</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <!-- Articles + Posts done -->
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../retail/furniture-market.html" target="_blank">The Furniture Trap — Fonq bankruptcy →</a>
+            <div class="row-note">Post: 28 Mar 2026 · Furniture Trap LinkedIn</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-mid">~1K</span>
+            <span class="post-date">28 Mar</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/circular-economy-tracker.html" target="_blank">Fashion Circularity Readiness →</a>
+            <div class="row-note">Post: 17 Apr 2026 · 8-brand matrix (H&amp;M, Adidas, Zara, Nike, ASOS, Patagonia, Primark, Uniqlo)</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-high">4,938</span>
+            <span class="post-date">17 Apr</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/circular-economy-tracker.html" target="_blank">H&amp;M Circular Transition FY2025 →</a>
+            <div class="row-note">Scheduled 21 Apr (Tuesday)</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-scheduled">Scheduled</span>
+            <span class="post-date">21 Apr</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../retail/flexibility-markets.html" target="_blank">Energy Flexibility Markets →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../retail/sporting-goods-brands.html" target="_blank">Sporting Goods Brands (18 brands) →</a>
+            <div class="row-note">No post yet · Strong candidate for matrix format</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../retail/nike.html" target="_blank">Nike Transformation EMEA →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../retail/b2b-marketplace.html" target="_blank">B2B Marketplace Intelligence →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <!-- Priority ideas for next posts -->
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">Sporting Goods DTC Maturity Matrix (8 brands)</div>
+            <div class="idea-desc">Nike, Adidas, On, Lululemon, Puma, Gymshark, Under Armour, New Balance. Hook: "Lululemon DTC 92%. Nike 42%. Same decade." Tag: DPP regulation. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Online Furniture Casualties Map (Europe)</div>
+            <div class="idea-desc">Follow-up to Furniture Trap. Wayfair, Made.com, Fonq, Westwing, Maisons du Monde, Home24. Hook: "Five European online furniture casualties in three years." Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Nike vs On Running vs Hoka — Transformation Scoreboard</div>
+            <div class="idea-desc">3-way comparison: revenue growth, DTC %, community-led marketing. Hook: "Nike −10%. On +32%. Hoka +34%." Article exists but may need On/Hoka supplement.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Circular Economy — Furniture Sector (new article)</div>
+            <div class="idea-desc">IKEA Preowned, Sellpy, Vinted, Ahrend, Gispen, Madaster. Tied to ESPR product-passport deadline. Needs dedicated article — currently only covered inside the circular economy tracker.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- TECHNOLOGY                                   -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#eff6ff,white);">
+      <div class="sector-icon" style="background:#dbeafe;">💻</div>
+      <div>
+        <h2>Technology &amp; Media</h2>
+        <div class="sub">EV cluster doing consistently · 500–2K range</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>5</strong> articles</div>
+        <div class="sp-item"><strong>2</strong> posts done</div>
+        <div class="sp-item"><strong>2</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/tesla-fsd-europe.html" target="_blank">Tesla FSD Approved in NL →</a>
+            <div class="row-note">Post: 16 Apr 2026</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-mid">531</span>
+            <span class="post-date">16 Apr</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/tesla-fsd-europe.html" target="_blank">EV Adoption Ranking (IEA) →</a>
+            <div class="row-note">Scheduled 20 Apr (Monday 10:45)</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-scheduled">Scheduled</span>
+            <span class="post-date">20 Apr</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/tesla-fsd-europe.html" target="_blank">Who Won Europe EV 2025 →</a>
+            <div class="row-note">Scheduled 22 Apr (Wednesday 8:15)</div>
+          </div>
+          <div class="row-right">
+            <span class="metric metric-scheduled">Scheduled</span>
+            <span class="post-date">22 Apr</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/opple-europe-market.html" target="_blank">Opple Europe (lighting) →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/led-smart-lighting.html" target="_blank">LED &amp; Smart Lighting →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/cpaas-conversational-commerce.html" target="_blank">CPaaS &amp; Conversational Commerce →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../technology/eaa-tracker.html" target="_blank">EAA Accessibility Compliance Tracker →</a>
+            <div class="row-note">No post yet · Deadline angle very strong (25 June)</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">CPaaS European Leadership Matrix</div>
+            <div class="idea-desc">Twilio, Infobip, MessageBird, Sinch, Vonage, Meta Business. Hook: "Twilio €4.4B. Infobip €1.85B. Same market, same year." Tied to EU AI Act high-risk obligations. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">European Accessibility Act — 25 June 2026 Deadline</div>
+            <div class="idea-desc">Which brands will miss the deadline. Hook: "From 25 June 2026, every digital product in the EU must be accessible." Named brands: Amazon, Bol.com, Zalando, eBay, Booking. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Lighting Big-5 Europe (Signify, Opple, Zumtobel, Osram, Trilux)</div>
+            <div class="idea-desc">Market share + innovation matrix. Hook: "Signify dominant. Opple arriving. Zumtobel premium." Articles exist.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- FINANCE & COMPLIANCE (BIG MAC NEXT)         -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#f5f3ff,white);">
+      <div class="sector-icon" style="background:#ede9fe;">💶</div>
+      <div>
+        <h2>Finance &amp; Compliance</h2>
+        <div class="sub">Big Mac queued as next post after Europe EV</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>4</strong> articles</div>
+        <div class="sp-item"><strong>0</strong> posts done</div>
+        <div class="sp-item"><strong>1</strong> queued</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../finance-compliance/big-mac-economy.html" target="_blank">The Big Mac Economy →</a>
+            <div class="row-note">Data audited 17 Apr · Ready for LinkedIn post</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">NEXT UP</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../finance-compliance/counterfeiting.html" target="_blank">Global Counterfeiting Intelligence →</a>
+            <div class="row-note">No post yet · €467B global trade angle</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../finance-compliance/crypto-intelligence.html" target="_blank">Crypto Intelligence 2026 →</a>
+            <div class="row-note">No post yet · MiCA regulation angle</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../finance-compliance/insurtech-sme.html" target="_blank">InsurTech &amp; SME Insurance →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">Big Mac Economy — Europe repriced</div>
+            <div class="idea-desc">Hook: "Swiss Big Mac €7.50. Hungarian Big Mac €3.20. Same burger, same year." Named countries + purchasing power divergence. Tied to ECB rate path 2026. Article exists, audited.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">EU Customs Seizures 2023 — Counterfeiting Map</div>
+            <div class="idea-desc">Hook: "EU customs seized 152 million fakes in 2023 — 77% more than 2022." Named country origins (China 56%, HK 9%, TR 8%). Tied to GPSR regulation. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">MiCA Crypto Regulation Impact on European Exchanges</div>
+            <div class="idea-desc">Coinbase, Bitstamp, Kraken, Binance — who is EU-ready. Hook: "MiCA fully applicable since 30 Dec 2024. Who passed?" Article exists.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- REAL ESTATE                                  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#fff7ed,white);">
+      <div class="sector-icon" style="background:#fed7aa;">🏠</div>
+      <div>
+        <h2>Real Estate</h2>
+        <div class="sub">20-country comparison — strong matrix material</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>2</strong> articles</div>
+        <div class="sp-item"><strong>0</strong> posts done</div>
+        <div class="sp-item"><strong>0</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../real-estate/european-housing-market.html" target="_blank">European Housing Market 2026–2027 →</a>
+            <div class="row-note">No post yet · 20 countries · Strong matrix candidate</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../real-estate/netherlands-housing-market.html" target="_blank">Netherlands Housing Deep-Dive →</a>
+            <div class="row-note">No post yet · 6 Dutch cities</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">European Housing — Top 3 vs Bottom 3 (2025 returns)</div>
+            <div class="idea-desc">Hook: "Hungary +21%. Germany +3%. Finland flat. One continent, three realities." Named countries + ECB rate impact. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Dutch Cities Housing Pressure Index</div>
+            <div class="idea-desc">Amsterdam, Utrecht, Rotterdam, Den Haag, Groningen, Eindhoven. Hook: "Amsterdam €9,400/m². Groningen €4,700/m². One country." Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Outside-EU Investor Magnets (new article)</div>
+            <div class="idea-desc">Dubai, Cyprus, Portugal, Greece, Montenegro — golden visa / foreign buyer flows. Hook: "Portugal +17% in 2025. Cyprus +2.7%. Different stories, same capital flow." Partial data exists in European housing article.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- PEOPLE & TRANSFORMATION                      -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#fdf4ff,white);">
+      <div class="sector-icon" style="background:#f5d0fe;">👥</div>
+      <div>
+        <h2>People &amp; Transformation</h2>
+        <div class="sub">Luxury DTC piece strong · Pay Transparency deadline angle</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>5</strong> articles</div>
+        <div class="sp-item"><strong>0</strong> posts done</div>
+        <div class="sp-item"><strong>0</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../people/luxury-dtc-leader.html" target="_blank">Luxury DTC Leadership Market →</a>
+            <div class="row-note">No post yet · 11 luxury groups DTC %</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../people/salary-index.html" target="_blank">European Salary Index →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../people/nl-layoffs.html" target="_blank">NL Layoffs Tracker →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../people/student-side-jobs.html" target="_blank">Student Side Jobs →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../people/eu-transformation.html" target="_blank">EU Transformation Intelligence →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">Luxury DTC Leadership — 11-Group Matrix</div>
+            <div class="idea-desc">Kering, Richemont, LVMH, Prada, Burberry, Moncler, Tapestry, Pandora, Ferragamo, Hugo Boss, Brunello Cucinelli. Hook: "LV/Dior 100% DTC. Brunello Cucinelli 67%. The leadership gap underneath." Tied to DPP deadline. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">EU Pay Transparency Directive — Who is Ready</div>
+            <div class="idea-desc">Needs new article. Deadline 7 June 2026. Named companies: FTSE 100, CAC 40 progress. High viral potential — every executive reads this.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">NL Layoffs 2024–2026 Tracker</div>
+            <div class="idea-desc">Booking, Philips, ASML, TomTom. Hook: "Dutch tech layoffs 2024–26: who cut, when, why." Article exists (may need audit for freshness).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SUPPLY CHAIN                                 -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#fefce8,white);">
+      <div class="sector-icon" style="background:#fef9c3;">📦</div>
+      <div>
+        <h2>Supply Chain</h2>
+        <div class="sub">Circular economy flagship article · drove H&amp;M post</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>4</strong> articles</div>
+        <div class="sp-item"><strong>1</strong> post done (H&amp;M)</div>
+        <div class="sp-item"><strong>1</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/circular-economy-tracker.html" target="_blank">Circular Economy Tracker →</a>
+            <div class="row-note">H&amp;M post 17 Apr · 4,938 impressions</div>
+          </div>
+          <div class="row-right"><span class="metric metric-high">4,938</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/sop-intelligence.html" target="_blank">S&amp;OP to IBP Evolution →</a>
+            <div class="row-note">No post yet · Gartner, McKinsey, BCG sourced</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/dlm-trends.html" target="_blank">Device Lifecycle Management →</a>
+            <div class="row-note">No post yet · Telco + refurbishment angle</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../supply-chain/manufacturing-footprint.html" target="_blank">Manufacturing Footprint →</a>
+            <div class="row-note">No post yet · Nearshoring angle</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">Circular Furniture Sector — IKEA vs the Specialists</div>
+            <div class="idea-desc">IKEA Preowned, Sellpy, Vinted Home, Ahrend, Gispen, Madaster. Hook: "IKEA now sells its own used furniture. What does that mean for the rest?" Article exists (inside circular tracker).</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">S&amp;OP to IBP — 7-Vendor Maturity Matrix</div>
+            <div class="idea-desc">SAP IBP, o9, Kinaxis, Blue Yonder, Anaplan, Oracle, OMP. Hook: "The AI planning vendors that actually delivered in 2025." Tied to CSRD reporting requirements. Article exists.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">European Manufacturing Reshoring Map</div>
+            <div class="idea-desc">TSMC, Intel, STMicro, Bosch — where they are building EU fabs. Hook: "€80B of EU chip subsidies. Here is where it landed." Tied to EU Chips Act. Article exists.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- EDUCATION & GOVERNMENT                       -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="sector">
+    <div class="sector-header" style="background:linear-gradient(to right,#ecfdf5,white);">
+      <div class="sector-icon" style="background:#d1fae5;">🏛️</div>
+      <div>
+        <h2>Education &amp; Government</h2>
+        <div class="sub">Strong deadline angles (eIDAS, AI Act, Digital Decade 2030)</div>
+      </div>
+      <div class="sector-perf">
+        <div class="sp-item"><strong>2</strong> articles</div>
+        <div class="sp-item"><strong>0</strong> posts done</div>
+        <div class="sp-item"><strong>0</strong> scheduled</div>
+      </div>
+    </div>
+
+    <div class="sector-body">
+      <div class="col">
+        <div class="col-title">Articles on site · Posts done</div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../education-government/grants.html" target="_blank">EU Grants Intelligence →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+
+        <div class="row">
+          <div class="row-left">
+            <a href="../education-government/universities.html" target="_blank">European Universities Initiative →</a>
+            <div class="row-note">No post yet</div>
+          </div>
+          <div class="row-right"><span class="metric metric-idea">Idea</span></div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="col-title">Next post ideas · priority order</div>
+
+        <div class="ideas-list">
+          <div class="idea-row">
+            <div class="idea-title">EU Digital Identity Wallet — Member State Scoreboard</div>
+            <div class="idea-desc">Needs new article. Deadline 20 May 2026 for all MS. Germany, France, NL, Italy progress. Hook: "Every EU citizen must have a digital wallet by May 2026. Which countries are on track?"</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">EU AI Act — 2 August 2026 Readiness Index</div>
+            <div class="idea-desc">Needs new article. High-risk AI systems come under full scope. Hook: "From 2 Aug 2026, AI used in hiring, credit, education is high-risk. Who is ready?" Sources: EC, national AI offices.</div>
+          </div>
+
+          <div class="idea-row">
+            <div class="idea-title">Erasmus+ 2021–2027 Country Allocation</div>
+            <div class="idea-desc">€26.2B across 33 countries. Hook: "How much Erasmus+ goes to each country — and who actually uses it." Article exists.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="home" href="../index.html">← back to TrendsOnFire</a>
+  <a class="home" href="delisted.html" style="margin-left:16px;">Admin index →</a>
+
+</div>
+</body>
+</html>

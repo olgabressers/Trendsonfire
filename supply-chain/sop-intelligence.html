@@ -6,6 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>S&amp;OP to IBP — The Evolution of Supply Chain Planning — TrendsOnFire</title>
   <meta name="description" content="From spreadsheet-based S&amp;OP to AI-powered Integrated Business Planning: market data, maturity benchmarks and strategic impact. Sources: Gartner, McKinsey, BCG."/>
   <link rel="canonical" href="https://trendsonfire.com/supply-chain/sop-intelligence.html"/>
@@ -18,18 +19,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    :root{--navy:#0a0f1a;--fuchsia:#b8976a;--border:#e2dfd9;--bg:#faf9f7;--text:#111827;--sub:#7a7a7a;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper, #faf9f7);color:var(--text);line-height:1.6}
 
-    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    nav{background:#0a0f1a;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
     .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
     .nav-links{display:flex;margin-left:auto}
     .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
-    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color: #8b6a2f}
     .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
-    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
 
-    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#0f2340 50%,#1a1a2e 100%);color:white;padding:52px 32px 44px}
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#0a0f1a 50%,#1a1a2e 100%);color:white;padding:52px 32px 44px}
     .hero-inner{max-width:1100px;margin:auto}
     .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
     .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
@@ -40,26 +41,26 @@
     .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
 
     main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
-    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+    .section-title{font-size:18px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold, #b8976a)}
 
     .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:8px}
-    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-box{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:16px}
     .chart-wrap{position:relative;height:280px}
 
     /* Timeline */
     .timeline{position:relative;padding:20px 0 20px 0;margin-bottom:8px}
-    .tl-line{position:absolute;left:28px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#8b1a6a,#0f2340);border-radius:2px}
+    .tl-line{position:absolute;left:28px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#b8976a,#0a0f1a);border-radius:2px}
     .tl-item{position:relative;padding-left:64px;margin-bottom:28px}
-    .tl-dot{position:absolute;left:20px;top:4px;width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 2px var(--fuchsia)}
-    .tl-year{font-size:13px;font-weight:800;color:var(--fuchsia);margin-bottom:2px}
-    .tl-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+    .tl-dot{position:absolute;left:20px;top:4px;width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 2px var(--gold, #b8976a)}
+    .tl-year{font-size:13px;font-weight:800;color:var(--gold, #b8976a);margin-bottom:2px}
+    .tl-title{font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:2px}
     .tl-desc{font-size:12.5px;color:var(--sub);line-height:1.5}
 
     /* Maturity model */
     .maturity{display:flex;gap:0;margin-bottom:8px;overflow-x:auto}
     .mat-stage{flex:1;min-width:140px;padding:20px 16px;text-align:center;color:white;position:relative}
-    .mat-stage:first-child{border-radius:12px 0 0 12px}
+    .mat-stage:first-child{border-radius: 0 0 0 12px}
     .mat-stage:last-child{border-radius:0 12px 12px 0}
     .mat-num{font-size:28px;font-weight:800;opacity:.4;margin-bottom:4px}
     .mat-name{font-size:13px;font-weight:700;margin-bottom:6px}
@@ -68,20 +69,20 @@
 
     /* KPI cards */
     .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:8px}
-    .kpi{background:white;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .kpi{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
     .kpi-val{font-size:28px;font-weight:800;margin-bottom:4px}
     .kpi-label{font-size:12px;color:var(--sub);line-height:1.4}
     .kpi-src{font-size:10px;color:#d1d5db;margin-top:8px}
 
-    .src-note{font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px}
-    .src-note a{color:#6b7280}
+    .src-note{font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px}
+    .src-note a{color:#7a7a7a}
 
-    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar{background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
     .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
     .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
-    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+    .cta-bar a{background:var(--gold, #b8976a);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
 
-    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer{background:#060a12;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
     footer a{color:#94a3b8;text-decoration:none}
     footer a:hover{color:white}
 
@@ -91,7 +92,7 @@
       main,.hero{padding-left:16px!important;padding-right:16px!important}
       .maturity{flex-direction:column}
       .mat-stage{border-radius:0!important}
-      .mat-stage:first-child{border-radius:12px 12px 0 0!important}
+      .mat-stage:first-child{border-radius: 0 12px 0 0!important}
       .mat-stage:last-child{border-radius:0 0 12px 12px!important}
       .kpi-grid{grid-template-columns:1fr 1fr}
       .compare-grid{grid-template-columns:1fr!important}
@@ -103,19 +104,19 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
@@ -144,38 +145,36 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">&#9776;</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
-    <a href="index.html" class="active">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
-
 </nav>
 
 <div class="hero">
@@ -198,12 +197,12 @@
 
   <div class="kpi-grid">
     <div class="kpi">
-      <div class="kpi-val" style="color:var(--navy)">$28.4B</div>
+      <div class="kpi-val" style="color:var(--ink, #0a0f1a)">$28.4B</div>
       <div class="kpi-label">Global SCM software market (2025)</div>
       <div class="kpi-src">Grand View Research</div>
     </div>
     <div class="kpi">
-      <div class="kpi-val" style="color:var(--fuchsia)">$53B</div>
+      <div class="kpi-val" style="color:var(--gold, #b8976a)">$53B</div>
       <div class="kpi-label">SCM software with agentic AI by 2030</div>
       <div class="kpi-src">Gartner, April 2026</div>
     </div>
@@ -314,44 +313,44 @@
 
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:8px">
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">AI Disruption</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">SCM software with agentic AI could reach $53B by 2030 — up from &lt;$2B in 2025</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">AI Disruption</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">SCM software with agentic AI could reach $53B by 2030 — up from &lt;$2B in 2025</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">Gartner projects 60% of enterprises using SCM software will adopt agentic AI capabilities by 2030, up from 5% in 2025.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://itsupplychain.com/gartner-forecasts-supply-chain-management-software-with-agentic-ai-will-grow-to-53-billion-in-spend-by-2030/" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, April 2026</a></div>
     </div>
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Talent Gap</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">90% of supply chain leaders say they lack sufficient talent for digitisation</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">Talent Gap</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">90% of supply chain leaders say they lack sufficient talent for digitisation</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">McKinsey's Global Supply Chain Leader Survey found the biggest barrier to digital transformation is not technology — it is people and skills.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.mckinsey.com/capabilities/operations/our-insights/supply-chain-risk-survey-2024" target="_blank" rel="noopener" style="color:#9ca3af">McKinsey, 2024</a></div>
     </div>
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Adoption Reality</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">Only ~20% of organisations report meaningful value from AI in supply chain planning</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">Adoption Reality</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">Only ~20% of organisations report meaningful value from AI in supply chain planning</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">BCG found that as little as 7% report value from agentic or GenAI usage. What separates leaders from laggards is not technology itself, but how planners apply it.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.bcg.com/publications/2026/supply-chain-planning-why-ai-alone-isnt-enough" target="_blank" rel="noopener" style="color:#9ca3af">BCG, February 2026</a></div>
     </div>
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Workforce Impact</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">55% of supply chain leaders expect agentic AI to reduce entry-level hiring needs</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">Workforce Impact</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">55% of supply chain leaders expect agentic AI to reduce entry-level hiring needs</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">A Gartner survey of supply chain leaders suggests AI will reshape junior roles — making experienced planners who can govern AI systems more valuable.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-02-25-gartner-survey-shows-55-percent-of-supply-chain-leaders-expect-agentic-ai-to-reduce-entry-level-hiring-needs" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, February 2026</a></div>
     </div>
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Failure Risk</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">60% of supply chain digital adoption efforts may fail to deliver value by 2028</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">Failure Risk</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">60% of supply chain digital adoption efforts may fail to deliver value by 2028</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">Gartner attributes this to insufficient investment in learning and development — the technology works, but people are not trained to use it effectively.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://www.gartner.com/en/newsroom/press-releases/2025-05-07-gartner-predicts-60-percent-of-supply-chain-digital-adoption-efforts-will-fail-to-deliver-promised-value-by-2028" target="_blank" rel="noopener" style="color:#9ca3af">Gartner, May 2025</a></div>
     </div>
 
-    <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">Scale</div>
-      <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3">SAP IBP: 2,293 companies, 30,000+ daily users across 79 countries</div>
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:10px">Scale</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;line-height:1.3">SAP IBP: 2,293 companies, 30,000+ daily users across 79 countries</div>
       <div style="font-size:13px;color:var(--sub);line-height:1.6">SAP's Integrated Business Planning platform runs 20,000 forecast algorithms daily, processing 8.1 trillion planning points in 2025 — showing the scale of modern planning operations.</div>
       <div style="font-size:10px;color:#d1d5db;margin-top:8px"><a href="https://community.sap.com/t5/supply-chain-management-blog-posts-by-sap/sap-integrated-business-planning-key-2025-highlights-and-what-s-next/ba-p/14367643" target="_blank" rel="noopener" style="color:#9ca3af">SAP Community Blog, 2025</a></div>
     </div>
@@ -364,7 +363,7 @@
   <!-- ══ SECTION 7: S&OP TO IBP TRANSITION ══ -->
   <div class="section-title">From S&amp;OP to IBP — What Changes and Why It Matters</div>
 
-  <div class="compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.06)">
+  <div class="compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;border-radius: 0;overflow:hidden;border:1px solid var(--rule, #e2dfd9);box-shadow:0 1px 4px rgba(0,0,0,.06)">
     <div style="background:#fff3e0;padding:28px">
       <div style="font-size:15px;font-weight:800;color:#92400e;margin-bottom:16px">Traditional S&amp;OP</div>
       <div style="font-size:13px;color:#78350f;line-height:1.8">
@@ -406,9 +405,9 @@
   <div class="section-title">Who Uses What — Company S&amp;OP / IBP Implementations</div>
 
   <div style="overflow-x:auto;margin-bottom:8px">
-    <table style="width:100%;border-collapse:collapse;font-size:13px;background:white;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;background:white;border-radius: 0;overflow:hidden;border:1px solid var(--rule, #e2dfd9);box-shadow:0 1px 4px rgba(0,0,0,.06)">
       <thead>
-        <tr style="background:var(--navy);color:white">
+        <tr style="background:var(--ink, #0a0f1a);color:white">
           <th style="padding:14px 16px;text-align:left;font-weight:700;font-size:12px">Company</th>
           <th style="padding:14px 16px;text-align:left;font-weight:700;font-size:12px">Industry</th>
           <th style="padding:14px 16px;text-align:left;font-weight:700;font-size:12px">Platform</th>
@@ -422,84 +421,84 @@
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Beverages</td>
           <td style="padding:12px 16px"><span style="background:#ede9fe;color:#6d28d9;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">o9 Solutions</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Inventory -20%, forecast accuracy +11pp to 87%, 85% touchless planning in US</td>
-          <td style="padding:12px 16px"><a href="https://o9solutions.com/articles/ab-inbev-journey-with-o9-transforming-supply-chain-planning" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">o9</a></td>
+          <td style="padding:12px 16px"><a href="https://o9solutions.com/articles/ab-inbev-journey-with-o9-transforming-supply-chain-planning" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">o9</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6;background:#fafafa">
           <td style="padding:12px 16px;font-weight:600">Kraft Heinz</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Food</td>
           <td style="padding:12px 16px"><span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">OMP Unison</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">8,000 SKUs, 300+ facilities, 300+ planners, end-to-end planning</td>
-          <td style="padding:12px 16px"><a href="https://supplychaindigital.com/news/omp-helping-power-kraft-heinzs-intelligent-supply-chain" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">SC Digital</a></td>
+          <td style="padding:12px 16px"><a href="https://supplychaindigital.com/news/omp-helping-power-kraft-heinzs-intelligent-supply-chain" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">SC Digital</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6">
           <td style="padding:12px 16px;font-weight:600">Unilever</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Consumer</td>
           <td style="padding:12px 16px"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Kinaxis</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Deployed across N. America, LATAM, Europe, Australia/NZ</td>
-          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/news/press-releases/2019/unilever-enhances-global-supply-chain-planning-kinaxis" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Kinaxis</a></td>
+          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/news/press-releases/2019/unilever-enhances-global-supply-chain-planning-kinaxis" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Kinaxis</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6;background:#fafafa">
           <td style="padding:12px 16px;font-weight:600">Nestl&eacute;</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Food</td>
           <td style="padding:12px 16px"><span style="background:#ede9fe;color:#6d28d9;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">o9 Solutions</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Deploying globally across all markets</td>
-          <td style="padding:12px 16px"><a href="https://supplychaindigital.com/digital-supply-chain/o9-planning-platform-wins-favour-with-google-nestle-ge" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">SC Digital</a></td>
+          <td style="padding:12px 16px"><a href="https://supplychaindigital.com/digital-supply-chain/o9-planning-platform-wins-favour-with-google-nestle-ge" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">SC Digital</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6">
           <td style="padding:12px 16px;font-weight:600">Est&eacute;e Lauder</td>
           <td style="padding:12px 16px;color:var(--sub)">Beauty / Luxury</td>
           <td style="padding:12px 16px"><span style="background:#ede9fe;color:#6d28d9;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">o9 Solutions</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Forecast accuracy +10%, service levels in high 90s</td>
-          <td style="padding:12px 16px"><a href="https://o9solutions.com/news/estee-lauder-transformed-planning-and-decision-making-with-o9/" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">o9</a></td>
+          <td style="padding:12px 16px"><a href="https://o9solutions.com/news/estee-lauder-transformed-planning-and-decision-making-with-o9/" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">o9</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6;background:#fafafa">
           <td style="padding:12px 16px;font-weight:600">Syngenta</td>
           <td style="padding:12px 16px;color:var(--sub)">Agriculture / Chemicals</td>
           <td style="padding:12px 16px"><span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">SAP IBP</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Largest SAP IBP deployment: 100 countries, 2,000+ users</td>
-          <td style="padding:12px 16px"><a href="https://www.infosysblogs.com/supply-chain/2019/04/how_syngenta_sowed_the_seeds_o.html" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Infosys</a></td>
+          <td style="padding:12px 16px"><a href="https://www.infosysblogs.com/supply-chain/2019/04/how_syngenta_sowed_the_seeds_o.html" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Infosys</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6">
           <td style="padding:12px 16px;font-weight:600">Johnson &amp; Johnson</td>
           <td style="padding:12px 16px;color:var(--sub)">Pharma / MedTech</td>
           <td style="padding:12px 16px"><span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">OMP Unison</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">APT 2.0 transformation: automate, anticipate, accelerate</td>
-          <td style="padding:12px 16px"><a href="https://omp.com/news-events/news/2025/johnson-and-johnson-present-blueprint-for-supply-chain-transformation-at-gartner" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">OMP</a></td>
+          <td style="padding:12px 16px"><a href="https://omp.com/news-events/news/2025/johnson-and-johnson-present-blueprint-for-supply-chain-transformation-at-gartner" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">OMP</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6;background:#fafafa">
           <td style="padding:12px 16px;font-weight:600">Coca-Cola EP</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Beverages</td>
           <td style="padding:12px 16px"><span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Board</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">90% automated financial data input, 48 plants, 85 warehouses</td>
-          <td style="padding:12px 16px"><a href="https://www.board.com/customer/integrated-corporate-planning-coca-cola-europacific-partners" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Board</a></td>
+          <td style="padding:12px 16px"><a href="https://www.board.com/customer/integrated-corporate-planning-coca-cola-europacific-partners" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Board</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6">
           <td style="padding:12px 16px;font-weight:600">Mondelez</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Snacks</td>
           <td style="padding:12px 16px"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Oliver Wight IBP</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">IBP process consultancy + internal certification</td>
-          <td style="padding:12px 16px"><a href="https://oliverwight-eame.com/case-studies/mondelez/" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">OW</a></td>
+          <td style="padding:12px 16px"><a href="https://oliverwight-eame.com/case-studies/mondelez/" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">OW</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6;background:#fafafa">
           <td style="padding:12px 16px;font-weight:600">Volvo Cars</td>
           <td style="padding:12px 16px;color:var(--sub)">Automotive</td>
           <td style="padding:12px 16px"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Kinaxis</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Managing gas-to-electric transition complexity</td>
-          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Kinaxis</a></td>
+          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Kinaxis</a></td>
         </tr>
         <tr style="border-bottom:1px solid #f3f4f6">
           <td style="padding:12px 16px;font-weight:600">Bosch</td>
           <td style="padding:12px 16px;color:var(--sub)">Industrial / Electronics</td>
           <td style="padding:12px 16px"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Kinaxis</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Global supply chain resilience and digitalisation</td>
-          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Kinaxis</a></td>
+          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Kinaxis</a></td>
         </tr>
         <tr>
           <td style="padding:12px 16px;font-weight:600">Mars</td>
           <td style="padding:12px 16px;color:var(--sub)">FMCG / Confectionery</td>
           <td style="padding:12px 16px"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">Kinaxis</span></td>
           <td style="padding:12px 16px;color:var(--sub);font-size:12px">Digital supply chain transformation</td>
-          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--fuchsia);font-size:11px">Kinaxis</a></td>
+          <td style="padding:12px 16px"><a href="https://www.kinaxis.com/en/customer-success-stories-case-studies" target="_blank" rel="noopener" style="color:var(--gold, #b8976a);font-size:11px">Kinaxis</a></td>
         </tr>
       </tbody>
     </table>
@@ -516,7 +515,7 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:8px">
 
     <!-- Leaders -->
-    <div style="background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
         <div style="background:#059669;color:white;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px">Leaders</div>
       </div>
@@ -531,7 +530,7 @@
     </div>
 
     <!-- Challengers -->
-    <div style="background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
         <div style="background:#d97706;color:white;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px">Challengers</div>
       </div>
@@ -544,7 +543,7 @@
     </div>
 
     <!-- Visionaries -->
-    <div style="background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+    <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
         <div style="background:#7c3aed;color:white;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px">Visionaries</div>
       </div>
@@ -595,7 +594,7 @@
   <!-- ══ EVOLUTION TIMELINE (moved to end) ══ -->
   <div class="section-title">The Evolution: From MRP to AI-Powered IBP</div>
 
-  <div style="background:white;border-radius:14px;border:1px solid var(--border);padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px">
+  <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px">
     <div class="timeline">
       <div class="tl-line"></div>
 
@@ -614,7 +613,7 @@
       </div>
 
       <div class="tl-item">
-        <div class="tl-dot" style="background:#8b1a6a"></div>
+        <div class="tl-dot" style="background:#b8976a"></div>
         <div class="tl-year">1985-1988</div>
         <div class="tl-title">S&amp;OP Is Born</div>
         <div class="tl-desc">Dick Ling (Oliver Wight) creates Sales &amp; Operations Planning. The first S&amp;OP book "Orchestrating Success" is published in 1988 by Ling &amp; Goddard.</div>
@@ -660,11 +659,11 @@
   </div>
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Circular Economy Tracker</a>
-      <a href="manufacturing-footprint.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Manufacturing Footprint</a>
+      <a href="circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Circular Economy Tracker</a>
+      <a href="manufacturing-footprint.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Manufacturing Footprint</a>
     </div>
   </div>
 </div>
@@ -695,6 +694,7 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
@@ -712,7 +712,7 @@ new Chart(document.getElementById('chart-scm'),{
     datasets:[{
       label:'USD Billions',
       data:[25.7,28.4,31.6,35.2,39.2,43.7,48.6],
-      backgroundColor:['#0f2340','#0f2340','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)'],
+      backgroundColor:['#0a0f1a','#0a0f1a','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)','rgba(15,35,64,.5)'],
       borderRadius:4
     }]
   },
@@ -733,11 +733,11 @@ new Chart(document.getElementById('chart-ai'),{
     datasets:[{
       label:'% of enterprises',
       data:[5,15,25,37,48,60],
-      borderColor:'#8b1a6a',
+      borderColor:'#b8976a',
       backgroundColor:'rgba(139,26,106,.1)',
       fill:true,
       tension:.4,
-      pointBackgroundColor:'#8b1a6a',
+      pointBackgroundColor:'#b8976a',
       pointRadius:5
     }]
   },
@@ -758,7 +758,7 @@ new Chart(document.getElementById('chart-ibp'),{
     datasets:[{
       label:'McKinsey reported range',
       data:[[1,2],[5,20],[10,15],[40,50]],
-      backgroundColor:['#0f2340','#0ea5e9','#8b1a6a','#059669'],
+      backgroundColor:['#0a0f1a','#0ea5e9','#b8976a','#059669'],
       borderRadius:4,
       barThickness:22
     }]
@@ -788,7 +788,7 @@ new Chart(document.getElementById('chart-gap'),{
     datasets:[{
       label:'% of organisations',
       data:[23,20,7,60],
-      backgroundColor:['#d97706','#dc2626','#dc2626','#6b7280'],
+      backgroundColor:['#d97706','#dc2626','#dc2626','#7a7a7a'],
       borderRadius:4
     }]
   },

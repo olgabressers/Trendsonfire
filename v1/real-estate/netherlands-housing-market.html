@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Netherlands Housing Market — City Deep-Dive — TrendsOnFire</title>
+  <meta name="description" content="Price per m², rental yields and affordability across 6 major Dutch cities — Amsterdam, Utrecht, Eindhoven, Den Haag, Rotterdam, Groningen. Source: Numbeo April 2026."/>
+  <link rel="canonical" href="https://trendsonfire.com/real-estate/netherlands-housing-market.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Netherlands Housing Market — City Deep-Dive"/>
+  <meta property="og:description" content="Price per m², rental yields and affordability across 6 major Dutch cities."/>
+  <meta property="og:url" content="https://trendsonfire.com/real-estate/netherlands-housing-market.html"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+    .nav-links{display:flex;margin-left:auto}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0f2340 100%);color:white;padding:52px 32px 44px}
+    .hero-inner{max-width:1100px;margin:auto}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
+    .hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+    .hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:640px}
+    .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+    .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
+
+    main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+
+    .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:24px}
+    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-wrap{position:relative;height:280px}
+    @media(max-width:768px){.chart-grid{grid-template-columns:1fr}.chart-wrap{height:220px}main,.hero{padding-left:16px!important;padding-right:16px!important}}
+
+    .method-box{background:#fff8e1;border:1px solid #ffd54f;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:13px;line-height:1.7;color:#78350f}
+    .method-box strong{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#92400e}
+
+    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
+    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+
+    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer a{color:#94a3b8;text-decoration:none}
+    footer a:hover{color:white}
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="index.html" class="active">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Real Estate</a> / Netherlands Housing Market</div>
+    <div class="eyebrow">Real Estate Intelligence · Netherlands</div>
+    <h1>Netherlands Housing Market — City Deep-Dive</h1>
+    <p>Price per m², rental yields and affordability across 6 major Dutch cities. Based on Numbeo crowd-sourced data from verified buyers and renters.</p>
+    <div class="hero-meta">
+      <span>6 cities analysed</span>
+      <span>Data: April 2026</span>
+      <span>Source: Numbeo</span>
+      <span>Olga Bressers</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <div class="method-box">
+    <strong>Data source</strong>
+    All data on this page is from <a href="https://www.numbeo.com/property-investment/country_result.jsp?country=Netherlands" target="_blank" rel="noopener" style="color:#78350f;font-weight:600;">Numbeo Netherlands — Property Investment, April 2026</a>. Numbeo is a crowd-sourced database of property prices, rental costs and quality of life metrics, contributed by verified buyers and renters. This is not Kadaster transaction data — use as directional comparison across cities, not as a precise transaction benchmark.
+  </div>
+
+  <div class="section-title">Netherlands City Deep-Dive</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:24px;">Price per m², rental yields and affordability across 6 major Dutch cities — Amsterdam, Utrecht, Eindhoven, Den Haag, Rotterdam and Groningen.</p>
+
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>Price per m² — City Centre (EUR, April 2026)</h3>
+      <div class="chart-wrap"><canvas id="chart-nl-sqm"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>Gross Rental Yield — City Centre (%, April 2026)</h3>
+      <div class="chart-wrap"><canvas id="chart-nl-yield"></canvas></div>
+    </div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>Price-to-Income Ratio by City (April 2026)</h3>
+      <div class="chart-wrap"><canvas id="chart-nl-p2i"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>City Centre vs. Outside Centre — Price per m² (EUR)</h3>
+      <div class="chart-wrap"><canvas id="chart-nl-compare"></canvas></div>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:40px;">
+    <strong>Source:</strong> <a href="https://www.numbeo.com/property-investment/country_result.jsp?country=Netherlands" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo Netherlands — Property Investment, April 2026</a>. Crowd-sourced from verified buyers and renters. Not Kadaster transaction data.
+  </div>
+
+  <p style="font-size:13px;color:var(--sub);margin-bottom:40px;">This page is part of the <a href="european-housing-market.html" style="color:var(--blue);font-weight:600;">European Housing Market Intelligence 2026–2027</a> report covering 20 European markets.</p>
+
+  <div class="cta-bar">
+    <div style="flex:1;min-width:0;">
+      <p>About the Author</p>
+      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// NL city charts (Source: Numbeo April 2026)
+var nlCities = ['Amsterdam','Utrecht','Eindhoven','Den Haag','Rotterdam','Groningen'];
+var nlSqmCentre = [9361,6734,5610,5547,5107,4732];
+var nlSqmOutside = [6324,4884,4124,4153,3558,3500];
+var nlYield = [4.82,5.27,5.17,5.93,6.44,4.71];
+var nlP2I = [8.95,7.30,7.31,6.18,6.17,7.00];
+
+new Chart(document.getElementById('chart-nl-sqm'),{
+  type:'bar',
+  data:{labels:nlCities,datasets:[{label:'EUR/m² city centre',data:nlSqmCentre,backgroundColor:['#8b1a6a','#059669','#0ea5e9','#d97706','#1d4ed8','#6b7280'],borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return'EUR '+(v/1000).toFixed(1)+'K';}},grid:{color:'#f3f4f6'}}}}
+});
+
+new Chart(document.getElementById('chart-nl-yield'),{
+  type:'bar',
+  data:{labels:nlCities,datasets:[{label:'Gross yield %',data:nlYield,backgroundColor:nlYield.map(function(v){return v>=6?'#059669':v>=5?'#0ea5e9':'#d97706';}),borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'}}}}
+});
+
+new Chart(document.getElementById('chart-nl-p2i'),{
+  type:'bar',
+  data:{labels:nlCities,datasets:[{label:'P2I ratio',data:nlP2I,backgroundColor:nlP2I.map(function(v){return v>=8?'#dc2626':v>=7?'#d97706':'#059669';}),borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.raw+'\u00d7 income';}}}},scales:{y:{min:5,grid:{color:'#f3f4f6'}}}}
+});
+
+new Chart(document.getElementById('chart-nl-compare'),{
+  type:'bar',
+  data:{labels:nlCities,datasets:[
+    {label:'City centre',data:nlSqmCentre,backgroundColor:'#8b1a6a',borderRadius:4},
+    {label:'Outside centre',data:nlSqmOutside,backgroundColor:'rgba(139,26,106,.3)',borderRadius:4}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return'EUR '+(v/1000).toFixed(1)+'K';}},grid:{color:'#f3f4f6'}}}}
+});
+</script>
+
+<script>
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles…</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles…</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+</script>
+
+</body>
+</html>

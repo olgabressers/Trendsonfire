@@ -6,6 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>European Housing Market Intelligence 2026–2027 — TrendsOnFire</title>
   <meta name="description" content="European housing price trends, forecasts and market assessment across 20 markets — 2026 to 2027. Sources: Eurostat, ECB, OECD, Knight Frank, Deloitte. Not investment advice."/>
   <link rel="canonical" href="https://trendsonfire.com/real-estate/european-housing-market.html"/>
@@ -19,18 +20,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    :root{--navy:#0a0f1a;--fuchsia:#b8976a;--border:#e2dfd9;--bg:#faf9f7;--text:#111827;--sub:#7a7a7a;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper, #faf9f7);color:var(--text);line-height:1.6}
 
-    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    nav{background:#0a0f1a;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
     .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
     .nav-links{display:flex;margin-left:auto}
     .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
-    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color: #8b6a2f}
     .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
-    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
 
-    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0f2340 100%);color:white;padding:52px 32px 44px}
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0a0f1a 100%);color:white;padding:52px 32px 44px}
     .hero-inner{max-width:1100px;margin:auto}
     .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
     .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
@@ -41,26 +42,26 @@
     .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
 
     main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
-    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+    .section-title{font-size:18px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold, #b8976a)}
 
     /* KPIs */
     .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:40px}
-    .kpi{background:white;border-radius:12px;border:1px solid var(--border);padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-    .kpi-value{font-size:26px;font-weight:800;color:var(--navy);line-height:1}
+    .kpi{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .kpi-value{font-size:26px;font-weight:800;color:var(--ink, #0a0f1a);line-height:1}
     .kpi-label{font-size:12px;color:var(--sub);margin-top:4px;line-height:1.4}
-    .kpi-note{font-size:11px;color:var(--fuchsia);margin-top:6px;font-weight:600}
+    .kpi-note{font-size:11px;color:var(--gold, #b8976a);margin-top:6px;font-weight:600}
 
     /* Charts */
     .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:40px}
-    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-box{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:16px}
     .chart-wrap{position:relative;height:280px}
     @media(max-width:768px){.chart-grid{grid-template-columns:1fr}.chart-wrap{height:220px}}
 
     /* Big comparison table */
-    .comp-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:40px;font-size:13px}
-    .comp-table th{background:var(--navy);color:white;padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px}
-    .comp-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+    .comp-table{width:100%;border-collapse:collapse;background:white;border-radius: 0;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:40px;font-size:13px}
+    .comp-table th{background:var(--ink, #0a0f1a);color:white;padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px}
+    .comp-table td{padding:10px 12px;border-bottom:1px solid var(--rule, #e2dfd9);vertical-align:middle}
     .comp-table tr:last-child td{border-bottom:none}
     .comp-table tr:hover td{background:#f0f4ff}
     .trend-up{color:var(--green);font-weight:700}
@@ -79,15 +80,15 @@
 
     /* Cards */
     .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:40px}
-    .card{background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-    .card-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:8px}
-    .card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .card{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .card-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold, #b8976a);margin-bottom:8px}
+    .card h3{font-size:15px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px}
     .card p,.card li{font-size:13.5px;color:var(--sub);line-height:1.65}
     .card ul{padding-left:16px}
 
     /* Verdict boxes */
     .verdict-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
-    .verdict-box{border-radius:12px;padding:20px 22px;border:1px solid}
+    .verdict-box{border-radius: 0;padding:20px 22px;border:1px solid}
     .verdict-box.buy{background:#f0fdf4;border-color:#86efac}
     .verdict-box.hold{background:#fffbeb;border-color:#fcd34d}
     .verdict-box.avoid{background:#fef2f2;border-color:#fca5a5}
@@ -101,15 +102,15 @@
     .verdict-box.avoid ul{color:#7f1d1d}
 
     /* Callout */
-    .callout{background:var(--navy);color:white;border-radius:12px;padding:24px 28px;margin-bottom:40px}
+    .callout{background:var(--ink, #0a0f1a);color:white;border-radius: 0;padding:24px 28px;margin-bottom:40px}
     .callout h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#c4b5fd}
     .callout p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.65}
 
     /* CTA */
-    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar{background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
     .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
     .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
-    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+    .cta-bar a{background:var(--gold, #b8976a);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
 
     /* Methodology box */
     .method-box{background:#fff8e1;border:1px solid #ffd54f;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:13px;line-height:1.7;color:#78350f}
@@ -119,7 +120,7 @@
     .src-verified{background:#d1fae5;color:#065f46}
     .src-consensus{background:#dbeafe;color:#1e40af}
     .src-unverified{background:#fee2e2;color:#991b1b}
-    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer{background:#060a12;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
     footer a{color:#94a3b8;text-decoration:none}
     footer a:hover{color:white}
 
@@ -128,52 +129,51 @@
     .nav-search-btn:hover{color:white}
     #search-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,41,0.97);z-index:2000;overflow-y:auto}
     .search-inner{max-width:760px;margin:0 auto;padding:48px 24px}
-    .search-box{display:flex;align-items:center;gap:12px;background:white;border-radius:12px;padding:4px 4px 4px 20px;margin-bottom:8px}
+    .search-box{display:flex;align-items:center;gap:12px;background:white;border-radius: 0;padding:4px 4px 4px 20px;margin-bottom:8px}
     #search-input{flex:1;font-size:17px;border:none;outline:none;font-family:inherit;color:#111827;padding:12px 0;background:transparent}
     #search-input::placeholder{color:#9ca3af}
-    .search-close{background:#f3f4f6;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:18px;color:#6b7280;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .search-close{background:#f3f4f6;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:18px;color:#7a7a7a;flex-shrink:0;display:flex;align-items:center;justify-content:center}
     .search-hint{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:28px;padding-left:4px}
     .search-result{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px 20px;margin-bottom:10px;text-decoration:none;transition:background .15s}
     .search-result:hover{background:rgba(255,255,255,.12)}
-    .sr-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c97fb8;margin-bottom:4px}
+    .sr-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d4c4a8;margin-bottom:4px}
     .sr-title{font-size:15px;font-weight:700;color:white;margin-bottom:4px}
     .sr-desc{font-size:12.5px;color:rgba(255,255,255,.55)}
     .sr-tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
-    .sr-tag{font-size:10px;background:rgba(139,26,106,.4);color:#e8a8d8;padding:2px 8px;border-radius:10px}
+    .sr-tag{font-size:10px;background:rgba(184,151,106,.25);color:#d4c4a8;padding:2px 8px;border-radius:10px}
     .search-empty{color:rgba(255,255,255,.4);font-size:15px;text-align:center;padding:40px 0}
     @media(max-width:768px){main,.hero{padding-left:16px!important;padding-right:16px!important}.nav-search-btn{border-left:none;order:3;margin-left:0}}
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "European Housing Market Intelligence 2026–2027", "description": "Price trends, forecasts and market assessment across 20 European markets. Sources: Eurostat, ECB, OECD, ABN AMRO, national statistics offices.", "datePublished": "2026-04-08", "dateModified": "2026-04-16", "url": "https://trendsonfire.com/real-estate/european-housing-market.html", "author": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}, "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"}, "keywords": ["European housing market", "real estate", "Eurostat", "ECB", "house prices", "property investment"], "inLanguage": "en", "isAccessibleForFree": true}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com", "description": "AI-based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.", "founder": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}}</script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html" class="active">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="index.html" class="active">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
 </nav>
@@ -198,7 +198,7 @@
   <!-- DATA METHODOLOGY NOTE -->
   <div class="method-box">
     <strong>Data sources &amp; methodology</strong>
-    <div class="src-row"><span class="src-tag src-verified">PRIMARY SOURCES</span> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#78350f;">ECB deposit facility rate</a>. <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#78350f;">Eurostat House Price Index</a>. <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#78350f;">Destatis</a> (Germany construction). <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#78350f;">EU JRC</a> (housing shortfall). <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a> (refugee flows NL).</div>
+    <div class="src-row"><span class="src-tag src-verified">PRIMARY SOURCES</span> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#78350f;">ECB deposit facility rate</a>. <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#78350f;">Eurostat House Price Index</a>. <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#78350f;">Destatis</a> (Germany construction). <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#78350f;">EU JRC</a> (housing shortfall). <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#7a7a7a;">CBS</a> (refugee flows NL).</div>
     <div class="src-row"><span class="src-tag src-consensus">SECONDARY SOURCES</span> Price-to-Income ratios from <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#78350f;">OECD Affordable Housing Database</a>. 2026–2027 forecasts compiled from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#78350f;">ABN AMRO</a> and other published analyst estimates.</div>
     <div class="src-row"><span class="src-tag src-consensus">FORECASTS</span> All 2026–2027 projections are analyst consensus estimates. They are not investment advice. See disclaimer below.</div>
   </div>
@@ -208,12 +208,12 @@
     <div class="kpi">
       <div class="kpi-value">+5.5%</div>
       <div class="kpi-label">EU-wide house price growth Q3 2025</div>
-      <div class="kpi-note">Euro area: +5.1% · <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color:#8b1a6a;">Eurostat</a></div>
+      <div class="kpi-note">Euro area: +5.1% · <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color: #8b6a2f;">Eurostat</a></div>
     </div>
     <div class="kpi">
       <div class="kpi-value">+21%</div>
       <div class="kpi-label">Fastest market: Hungary YoY Q3 2025</div>
-      <div class="kpi-note">10-yr cumulative: ~250%+ · <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#8b1a6a;">Eurostat HPI</a></div>
+      <div class="kpi-note">10-yr cumulative: ~250%+ · <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color: #8b6a2f;">Eurostat HPI</a></div>
     </div>
     <div class="kpi">
       <div class="kpi-value">−1.5%</div>
@@ -233,11 +233,11 @@
     <div class="kpi">
       <div class="kpi-value">251,900</div>
       <div class="kpi-label">Germany housing completions 2024</div>
-      <div class="kpi-note">−14.4% YoY, target: 400K · <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#8b1a6a;">Destatis</a></div>
+      <div class="kpi-note">−14.4% YoY, target: 400K · <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color: #8b6a2f;">Destatis</a></div>
     </div>
   </div>
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> EU-wide: <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI Q3 2025</a> (+5.5% EU, +5.1% euro area). Hungary YoY: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>. ECB deposit rate: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ecb.europa.eu</a>. Germany completions: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#6b7280;">Destatis</a>. Housing shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#6b7280;">EU JRC Dec 2025</a>.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> EU-wide: <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI Q3 2025</a> (+5.5% EU, +5.1% euro area). Hungary YoY: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI</a>. ECB deposit rate: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ecb.europa.eu</a>. Germany completions: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#7a7a7a;">Destatis</a>. Housing shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#7a7a7a;">EU JRC Dec 2025</a>.
   </div>
 
   <!-- CHART 1 + 2 -->
@@ -253,8 +253,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> 2024–2025 growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat House Price Index</a> + national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden). 2026 forecasts: midpoints of analyst consensus ranges from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#6b7280;">ABN AMRO</a> and other published analyst estimates.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> 2024–2025 growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat House Price Index</a> + national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden). 2026 forecasts: midpoints of analyst consensus ranges from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ABN AMRO</a> and other published analyst estimates.
   </div>
 
   <!-- CHART 3 + 4 -->
@@ -265,8 +265,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Source:</strong> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB key interest rates — ecb.europa.eu</a>.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Source:</strong> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ECB key interest rates — ecb.europa.eu</a>.
   </div>
 
   <!-- BIG COMPARISON TABLE -->
@@ -534,10 +534,10 @@
   </table>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> Price growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>. Price/m²: <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=EUR&itemId=100&region=150" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> — see definition below. P2I ratios: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD</a>. 2026 forecasts: <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#6b7280;">ABN AMRO</a> and other analyst estimates. Valuation: <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB affordability metrics</a>. Outlook signals are assessments based on verified data.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Price growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI</a>. Price/m²: <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=EUR&itemId=100&region=150" target="_blank" rel="noopener" style="color:#7a7a7a;">Numbeo</a> — see definition below. P2I ratios: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#7a7a7a;">OECD</a>. 2026 forecasts: <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ABN AMRO</a> and other analyst estimates. Valuation: <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ECB affordability metrics</a>. Outlook signals are assessments based on verified data.
     <br/><br/>
-    <strong>Numbeo price/m² — what it measures:</strong> <a href="https://www.numbeo.com/common/motivation_and_methodology.jsp" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> shows the average price per m² to buy an apartment in city centres, calculated as a <strong>weighted average across all cities in each country</strong> (weighted by number of contributors). It is not a capital-city price — for example, the Netherlands figure (€5,980) blends Amsterdam (~€9,400/m²) with Rotterdam (~€5,100/m²), Groningen (~€4,700/m²) and other cities. Data is crowd-sourced from contributors and official sources, filtered for spam, and reflects submissions from the trailing 12 months (primarily 2025). Numbeo is not transaction data — use as directional country-level comparison, not a precise benchmark.
+    <strong>Numbeo price/m² — what it measures:</strong> <a href="https://www.numbeo.com/common/motivation_and_methodology.jsp" target="_blank" rel="noopener" style="color:#7a7a7a;">Numbeo</a> shows the average price per m² to buy an apartment in city centres, calculated as a <strong>weighted average across all cities in each country</strong> (weighted by number of contributors). It is not a capital-city price — for example, the Netherlands figure (€5,980) blends Amsterdam (~€9,400/m²) with Rotterdam (~€5,100/m²), Groningen (~€4,700/m²) and other cities. Data is crowd-sourced from contributors and official sources, filtered for spam, and reflects submissions from the trailing 12 months (primarily 2025). Numbeo is not transaction data — use as directional country-level comparison, not a precise benchmark.
   </div>
 
   <!-- COUNTRY SUMMARIES -->
@@ -647,8 +647,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> Country-specific price growth from <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a> and national statistics offices. Hungary cumulative growth: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI 2015=100</a>. Ireland P2I: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a>. Policy references (Golden Visa, CSOK, euro adoption, stamp duty) are public government announcements.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Country-specific price growth from <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI</a> and national statistics offices. Hungary cumulative growth: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI 2015=100</a>. Ireland P2I: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#7a7a7a;">OECD</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#7a7a7a;">CBS</a>. Policy references (Golden Visa, CSOK, euro adoption, stamp duty) are public government announcements.
   </div>
 
   <!-- Popular second home destinations outside EU -->
@@ -746,8 +746,8 @@
   </table>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources &amp; methodology:</strong> 2024 and 2025 growth figures are YoY from national statistics offices or central banks — each linked in the Source column. Price per m² (city centre apartments, USD) from <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=USD&itemId=100" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> — weighted average across all cities in each country (not capital-city only), crowd-sourced from contributors and official sources, reflecting trailing 12 months (primarily 2025). Use as directional comparison, not a precise benchmark. Outlook signals are assessments based on the verified growth data and current market conditions — they are not forecasts and not investment advice. No 2026 price forecasts are provided for these markets because no verifiable analyst consensus exists. Consult local legal and financial advice before any transaction.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources &amp; methodology:</strong> 2024 and 2025 growth figures are YoY from national statistics offices or central banks — each linked in the Source column. Price per m² (city centre apartments, USD) from <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=USD&itemId=100" target="_blank" rel="noopener" style="color:#7a7a7a;">Numbeo</a> — weighted average across all cities in each country (not capital-city only), crowd-sourced from contributors and official sources, reflecting trailing 12 months (primarily 2025). Use as directional comparison, not a precise benchmark. Outlook signals are assessments based on the verified growth data and current market conditions — they are not forecasts and not investment advice. No 2026 price forecasts are provided for these markets because no verifiable analyst consensus exists. Consult local legal and financial advice before any transaction.
   </div>
 
   <!-- Key drivers -->
@@ -785,8 +785,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> Supply shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#6b7280;">EU JRC Dec 2025</a>. Germany construction: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#6b7280;">Destatis</a>. ECB rates: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ecb.europa.eu</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a>. Hungary cumulative: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Supply shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#7a7a7a;">EU JRC Dec 2025</a>. Germany construction: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#7a7a7a;">Destatis</a>. ECB rates: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ecb.europa.eu</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#7a7a7a;">CBS</a>. Hungary cumulative: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI</a>.
   </div>
 
   <!-- Verdict section -->
@@ -826,8 +826,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Source:</strong> Market assessments are based on the verified price growth data in the table above and <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD affordability metrics</a>.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Source:</strong> Market assessments are based on the verified price growth data in the table above and <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#7a7a7a;">OECD affordability metrics</a>.
   </div>
 
   <div class="method-box" style="margin-top:0;">
@@ -852,8 +852,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
-    <strong>Sources:</strong> Tier groupings and P2I values: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>, <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB affordability analysis</a>, <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD Affordable Housing Database</a>. Tier forecasts are aggregations from individual country estimates — not predictions.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Tier groupings and P2I values: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#7a7a7a;">Eurostat HPI</a>, <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#7a7a7a;">ECB affordability analysis</a>, <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#7a7a7a;">OECD Affordable Housing Database</a>. Tier forecasts are aggregations from individual country estimates — not predictions.
   </div>
 
   <!-- Conclusion callout -->
@@ -863,11 +863,11 @@
   </div>
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Also on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Also on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="../finance-compliance/big-mac-economy.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">The Big Mac Economy</a>
-      <a href="../supply-chain/circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Circular Economy Tracker</a>
+      <a href="../finance-compliance/big-mac-economy.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">The Big Mac Economy</a>
+      <a href="../supply-chain/circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Circular Economy Tracker</a>
     </div>
   </div>
 </div>
@@ -895,8 +895,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -956,7 +957,7 @@ new Chart(document.getElementById('chart-ecb'),{
   data:{
     labels:['Jan 2022','Jul 2022','Jan 2023','Jul 2023','Jan 2024','Jun 2024','Sep 2024','Dec 2024','Jun 2025','Mar 2026'],
     datasets:[
-      {label:'ECB Deposit Rate',data:[-0.5,0,2.0,3.5,4.0,3.75,3.5,3.0,2.0,2.0],borderColor:'#8b1a6a',backgroundColor:'rgba(139,26,106,.1)',tension:.4,fill:true,borderWidth:2}
+      {label:'ECB Deposit Rate',data:[-0.5,0,2.0,3.5,4.0,3.75,3.5,3.0,2.0,2.0],borderColor:'#b8976a',backgroundColor:'rgba(139,26,106,.1)',tension:.4,fill:true,borderWidth:2}
     ]
   },
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'}}}}
@@ -986,9 +987,9 @@ new Chart(document.getElementById('chart-p2i'),{
 });
 </script>
 
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;">This site does not use tracking or advertising cookies. <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a></p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;">OK, got it</button>
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;">This site does not use tracking or advertising cookies. <a href="/legal/privacy.html" style="color:#d4c4a8;font-weight:600;">Privacy Policy</a></p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#b8976a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;">OK, got it</button>
 </div>
 <script>(function(){if(!localStorage.getItem('tof_cookie_notice')){var b=document.getElementById("cookie-notice");if(b)b.style.display="flex";}})()</script>
 </body>

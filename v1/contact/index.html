@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-115WQYBB0Z');
+  </script><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Get in Touch — TrendsOnFire</title>
+  <meta name="description" content="Get in touch with TrendsOnFire and Olga Bressers — for consulting enquiries, collaborations, or questions about the intelligence trackers."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+
+    /* PAGE HEADER */
+    .page-header { background: linear-gradient(135deg, #0f2340 0%, #1a3558 100%); color: white; padding: 56px 32px 48px; }
+    .page-header .inner { max-width: 1100px; margin: auto; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 12px; }
+    .page-header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+    .page-header p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 520px; }
+
+    /* MAIN LAYOUT */
+    main { max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 380px 1fr; gap: 56px; align-items: start; }
+    @media(max-width:780px){ main { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* LEFT COLUMN */
+    .contact-info h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .contact-info .role { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
+
+    .contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .ci-icon { width: 44px; height: 44px; background: #f7e8f3; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .ci-body .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); font-weight: 700; margin-bottom: 2px; }
+    .ci-body a { color: var(--navy); text-decoration: none; font-size: 15px; font-weight: 500; }
+    .ci-body a:hover { color: var(--fuchsia); }
+    .ci-body span { color: var(--navy); font-size: 15px; }
+
+    .availability { background: #f7e8f3; border-radius: 12px; padding: 20px; margin-top: 28px; border-left: 3px solid var(--fuchsia); }
+    .availability .av-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--fuchsia); margin-bottom: 8px; }
+    .availability p { font-size: 13.5px; color: var(--sub); line-height: 1.6; }
+
+    /* FORM */
+    .contact-form-wrap { background: white; border-radius: 16px; border: 1px solid var(--border); padding: 36px; box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+    .form-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:500px){ .form-row { grid-template-columns: 1fr; } }
+    .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--sub); }
+    .form-field input,
+    .form-field select,
+    .form-field textarea { border: 1.5px solid var(--border); border-radius: 8px; padding: 11px 14px; font-size: 14px; font-family: inherit; color: var(--text); background: var(--bg); outline: none; transition: border-color .15s; resize: vertical; }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--fuchsia); background: white; }
+    .form-field textarea { min-height: 120px; }
+    .submit-btn { background: var(--fuchsia); color: white; border: none; border-radius: 8px; padding: 13px 28px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background .15s; font-family: inherit; }
+    .submit-btn:hover { background: #7a1660; }
+
+    /* FOOTER */
+    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* MOBILE NAV */
+    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    @media(max-width:768px){
+      nav { padding:0 16px; flex-wrap:wrap; }
+      .nav-burger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+    }
+    /* GENERAL RESPONSIVE */
+    @media(max-width:768px){
+      main, .inner { padding-left:16px !important; padding-right:16px !important; }
+      .sec-header, header, .page-header { padding:32px 16px 28px; }
+      .stats { grid-template-columns:1fr 1fr; }
+      .two-col { grid-template-columns:1fr !important; }
+      .trends-grid { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr 1fr; }
+      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
+      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
+      .filter-bar select, .filter-bar input { width:100%; }
+      .filter-reset { margin-left:0; }
+    }
+    @media(max-width:480px){
+      .stats { grid-template-columns:1fr; }
+      .region-cards { grid-template-columns:1fr; }
+      .level-grid { grid-template-columns:1fr 1fr; }
+    }
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+  </style>
+    <link rel="canonical" href="https://trendsonfire.com/contact/"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Contact — TrendsOnFire"/>
+  <meta property="og:description" content="Get in touch with Olga Bressers and the TrendsOnFire team."/>
+  <meta property="og:url" content="https://trendsonfire.com/contact/"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Contact — TrendsOnFire"/>
+  <meta name="twitter:description" content="Get in touch with Olga Bressers and the TrendsOnFire team."/>
+  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contact TrendsOnFire",
+    "description": "Get in touch with Olga Bressers and the TrendsOnFire team.",
+    "url": "https://trendsonfire.com/contact/",
+    "author": {
+      "@type": "Person",
+      "name": "Olga Bressers",
+      "url": "https://trendsonfire.com/olgabressers/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TrendsOnFire",
+      "url": "https://trendsonfire.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="inner">
+    <div class="eyebrow">Contact</div>
+    <h1>Get in Touch</h1>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- LEFT: CONTACT DETAILS -->
+  <div class="contact-info">
+    <h2>Olga Bressers</h2>
+    <div class="role">Senior Executive &amp; Transformation Leader</div>
+
+    <div class="contact-item">
+      <div class="ci-icon">✉️</div>
+      <div class="ci-body">
+        <div class="label">Email</div>
+        <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="ci-icon">📞</div>
+      <div class="ci-body">
+        <div class="label">Phone</div>
+        <a href="tel:+31647779797">+31 6 4777 9797</a>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="ci-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#8b1a6a"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
+      <div class="ci-body">
+        <div class="label">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/olgabressers/" target="_blank">Connect on LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="availability">
+      <div class="av-label">Connect</div>
+      <p>to discuss how I can support your business to grow and perform, in the Netherlands or internationally.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: CONTACT FORM -->
+  <div class="contact-form-wrap">
+    <div class="form-title">Send a message</div>
+    <form action="https://formspree.io/f/maqanlan" method="POST">
+      <input type="hidden" name="_subject" value="Contact via TrendsOnFire"/>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Name *</label>
+          <input type="text" name="name" placeholder="Your name" required/>
+        </div>
+        <div class="form-field">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Your organisation"/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Email *</label>
+        <input type="email" name="email" placeholder="your@email.com" required/>
+      </div>
+      <div class="form-field">
+        <label>Type of enquiry</label>
+        <select name="type">
+          <option value="">Select type…</option>
+          <option value="Permanent Role">Permanent Role</option>
+          <option value="Interim Management">Interim Management</option>
+          <option value="Advisory">Advisory</option>
+          <option value="Speaking">Speaking</option>
+          <option value="TrendsOnFire Content Feedback">TrendsOnFire Content Feedback</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Message *</label>
+        <textarea name="message" placeholder="Tell me about the role or project, timeline, and what you're looking for…" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send message →</button>
+    </form>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+<!-- COOKIE NOTICE BANNER -->
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
+    This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
+    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+  </p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('tof_cookie_notice')){
+    var b=document.getElementById("cookie-notice");
+    if(b)b.style.display="flex";
+  }
+})();
+</script>
+
+<script>
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+</script>
+</body>
+</html>

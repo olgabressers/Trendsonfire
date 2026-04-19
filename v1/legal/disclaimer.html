@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Disclaimer — TrendsOnFire</title>
+  <meta name="description" content="Disclaimer for TrendsOnFire.com — scope of information, accuracy limitations, liability exclusions, financial content, company references, intellectual property, and applicable law."/>
+  <meta name="robots" content="noindex, follow"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--light:#f3e8f0;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+
+    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center;}
+    .nav-links{display:flex;margin-left:auto;}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center;}
+    .nav-links a:hover{color:white;border-bottom-color:#8b1a6a;}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto;}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap;}.nav-burger{display:block;}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px;}.nav-links.open{display:flex;}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px;}}
+
+    .page-hero{background:linear-gradient(135deg,#0f2340 0%,#1a3558 100%);color:white;padding:48px 32px 40px;}
+    .page-hero .inner{max-width:800px;margin:0 auto;}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px;}
+    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c97fb8;font-weight:700;margin-bottom:10px;}
+    .page-hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:10px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:580px;}
+
+    .content{max-width:800px;margin:0 auto;padding:48px 24px 80px;}
+
+    .toc{background:white;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:40px;}
+    .toc-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--sub);margin-bottom:12px;}
+    .toc ol{padding-left:20px;column-count:2;column-gap:24px;}
+    .toc li{margin-bottom:6px;break-inside:avoid;}
+    .toc a{color:var(--fuchsia);text-decoration:none;font-size:13.5px;font-weight:500;}
+    .toc a:hover{text-decoration:underline;}
+    @media(max-width:560px){.toc ol{column-count:1;}}
+
+    .section{background:white;border-radius:14px;border:1px solid var(--border);padding:28px 32px;margin-bottom:24px;}
+    .section h2{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--light);display:flex;align-items:center;gap:10px;}
+    .section h3{font-size:15px;font-weight:700;color:var(--navy);margin:20px 0 8px;}
+    .section p{font-size:14px;color:#374151;line-height:1.8;margin-bottom:12px;}
+    .section p:last-child{margin-bottom:0;}
+    .section ul,.section ol{padding-left:22px;margin-bottom:14px;}
+    .section li{font-size:14px;color:#374151;line-height:1.75;margin-bottom:6px;}
+    .section strong{color:var(--text);font-weight:700;}
+    .section a{color:var(--fuchsia);}
+
+    .warning-box{background:#fefce8;border:1.5px solid #ca8a04;border-radius:10px;padding:16px 20px;margin:16px 0;}
+    .warning-box p{color:#713f12;margin:0;font-size:13.5px;line-height:1.65;}
+    .danger-box{background:#fef2f2;border:2px solid #dc2626;border-radius:10px;padding:18px 22px;margin:16px 0;}
+    .danger-box .dh{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#b91c1c;margin-bottom:8px;}
+    .danger-box p{color:#7f1d1d;margin:0;font-size:13.5px;line-height:1.65;}
+    .highlight-box{background:var(--light);border:1.5px solid #ddb5d4;border-radius:10px;padding:16px 20px;margin:16px 0;}
+    .highlight-box p{color:#4a1942;margin:0;font-size:13.5px;line-height:1.65;}
+
+    .contact-box{background:var(--navy);border-radius:14px;padding:28px;color:white;text-align:center;margin-top:32px;}
+    .contact-box h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+    .contact-box p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:4px;}
+    .contact-box a{color:#c97fb8;}
+
+    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px;}
+    footer a{color:#94a3b8;text-decoration:none;}
+    footer a:hover{color:white;}
+  
+    /* ── SEARCH ── */
+    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
+    .nav-search-btn:hover { color: white; }
+    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
+    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
+    #search-input::placeholder { color: #9ca3af; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e5e7eb; }
+    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+  </style>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Disclaimer — TrendsOnFire"/>
+  <meta property="og:description" content="Disclaimer for TrendsOnFire."/>
+  <meta property="og:url" content="https://trendsonfire.com/legal/disclaimer.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Disclaimer",
+    "description":"Disclaimer for TrendsOnFire.",
+    "url":"https://trendsonfire.com/legal/disclaimer.html",
+    "author":{"@type":"Person","name":"Olga Bressers","url":"https://trendsonfire.com/olgabressers/"},
+    "publisher":{"@type":"Organization","name":"TrendsOnFire","url":"https://trendsonfire.com"}
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="180" height="45">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="/people/index.html">People &amp; Transformation</a>
+    <a href="/technology/index.html">Technology &amp; Media</a>
+    <a href="/supply-chain/index.html">Supply Chain</a>
+    <a href="/education-government/index.html">Education &amp; Government</a>
+    <a href="/finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="/real-estate/index.html">Real Estate</a>
+    <a href="/olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="/index.html">TrendsOnFire</a> / Disclaimer</div>
+    <div class="eyebrow">Legal</div>
+    <h1>Disclaimer</h1>
+    <p>Scope, accuracy limitations, liability exclusions, financial content warnings, company references, intellectual property, and applicable law for all content on TrendsOnFire.com.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#about">About TrendsOnFire</a></li>
+      <li><a href="#nature">Nature of the content</a></li>
+      <li><a href="#data-accuracy">Data accuracy &amp; currency</a></li>
+      <li><a href="#no-advice">Not professional advice</a></li>
+      <li><a href="#financial-crypto">Financial &amp; crypto content</a></li>
+      <li><a href="#company-references">Company &amp; brand references</a></li>
+      <li><a href="#forward-looking">Forward-looking statements</a></li>
+      <li><a href="#salary-data">Salary &amp; labour market data</a></li>
+      <li><a href="#earning-claims">Income &amp; earning potential claims</a></li>
+      <li><a href="#education-data">Education &amp; grants data</a></li>
+      <li><a href="#liability">Liability &amp; exclusions</a></li>
+      <li><a href="#editorial">Editorial independence</a></li>
+      <li><a href="#ip">Intellectual property &amp; trademarks</a></li>
+      <li><a href="#external-links">External links</a></li>
+      <li><a href="#law">Applicable law &amp; disputes</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ABOUT -->
+  <div class="section" id="about">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      1. About TrendsOnFire
+    </h2>
+    <p>TrendsOnFire is an independent editorial business intelligence platform covering trends in retail &amp; e-commerce, people &amp; transformation, technology, supply chain, finance &amp; compliance, education &amp; government, and media. The site is curated by <strong>Olga Bressers</strong>, a senior executive with 20+ years of experience in international commerce and transformation.</p>
+    <p>The website is accessible at <strong>https://trendsonfire.com</strong> and is hosted on GitHub Pages (Microsoft/GitHub infrastructure).</p>
+    <p><strong>Contact:</strong> <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+    <p>For our privacy policy and information about data processing, please refer to our <a href="/legal/privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <!-- 2. NATURE -->
+  <div class="section" id="nature">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      2. Nature of the content
+    </h2>
+    <p>All content on TrendsOnFire — including articles, trend analyses, indices, trackers, dashboards, commentary, data visualisations, and forecasts — is <strong>editorial in nature</strong>. It is based on publicly available information and the analytical perspective of the author, produced for general informational and educational purposes.</p>
+    <p>Content is compiled and published in good faith. It is <strong>not</strong> based on proprietary research, exclusive data licences, or formal certified market research methodologies unless explicitly stated otherwise. It may incorporate AI-assisted drafting and analysis tools. All content published on TrendsOnFire is reviewed and edited by a human author prior to publication.</p>
+    <div class="highlight-box">
+      <p><strong>What TrendsOnFire is:</strong> An independent editorial point of view on observable trends, based on publicly available data, industry experience, and professional judgement. It is <em>not</em> a research bureau, registered financial analyst, legal firm, HR consultancy, or regulated information service.</p>
+    </div>
+  </div>
+
+  <!-- 3. DATA ACCURACY -->
+  <div class="section" id="data-accuracy">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      3. Data accuracy &amp; currency
+    </h2>
+    <p>While we take care to ensure accuracy, the information published on TrendsOnFire is provided on an <strong>"as is" basis</strong>. We make no representations or warranties, express or implied, regarding:</p>
+    <ul>
+      <li>The completeness, accuracy, or reliability of any information, data, or analysis</li>
+      <li>Whether information is current or up to date — market conditions, statistics, company situations, prices, and legal/regulatory environments can change rapidly</li>
+      <li>The suitability of any analysis for a particular purpose</li>
+    </ul>
+    <p>Data referenced in trackers and dashboards is sourced from publicly available reports, industry publications, company announcements, regulatory filings, and news sources. Sources are cited where possible. Market data (including cryptocurrency prices and market caps) is highly volatile and figures stated at the time of publication may be significantly different by the time of reading.</p>
+    <div class="warning-box">
+      <p><strong>Important:</strong> Data points on this site reflect the state of information at the time of publication. They should not be treated as real-time, definitive, or legally binding figures. Always verify critical data through primary sources before making any decisions.</p>
+    </div>
+  </div>
+
+  <!-- 4. NOT PROFESSIONAL ADVICE -->
+  <div class="section" id="no-advice">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      4. Not professional advice
+    </h2>
+    <p><strong>The information on TrendsOnFire is for general informational and educational purposes only and does not constitute professional advice of any kind.</strong></p>
+    <p>Specifically, no content on this site constitutes:</p>
+    <ul>
+      <li><strong>Business or strategic advice</strong> — analyses and trend observations are editorial commentary, not tailored recommendations for your specific organisation or situation</li>
+      <li><strong>Legal advice</strong> — nothing on this site should be interpreted as legal guidance, legal opinion, or the practice of law</li>
+      <li><strong>Financial or investment advice</strong> — content does not constitute investment research, financial product advice, or advice regulated under MiFID II, the Dutch Wet op het financieel toezicht (Wft), or any other financial services regulation</li>
+      <li><strong>Crypto asset advice</strong> — content relating to cryptocurrency markets, price forecasts, and specific assets is informational and educational only; see Section 5 below</li>
+      <li><strong>HR or employment advice</strong> — salary data and workforce analyses are general market observations, not formal compensation benchmarks or employment law guidance</li>
+      <li><strong>Tax advice</strong> — any references to tax treatment (including Box 3 in the Netherlands) are general informational notes only and not personalised tax advice</li>
+      <li><strong>Consulting services</strong> — reading this site does not create a client–consultant relationship of any kind</li>
+      <li><strong>User responsibility</strong> — users are solely responsible for how they interpret and apply any content on this site to their own circumstances</li>
+    </ul>
+    <p>For advice tailored to your specific situation, please engage a qualified and regulated professional. To explore working with Olga Bressers directly, please visit the <a href="/real-estate/index.html">Real Estate</a>
+    <a href="/olgabressers/index.html">About the Author</a> page.</p>
+  </div>
+
+  <!-- 5. FINANCIAL & CRYPTO -->
+  <div class="section" id="financial-crypto">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      5. Financial content &amp; cryptocurrency
+    </h2>
+
+    <div class="danger-box">
+      <div class="dh">⚠ Critical — Please read this section carefully</div>
+      <p><strong>Nothing on TrendsOnFire constitutes financial advice, investment advice, or a recommendation to buy, sell, or hold any financial product, security, or cryptocurrency.</strong> TrendsOnFire is not a licensed or registered investment adviser, financial analyst, or financial services provider in the Netherlands, the EU, or any other jurisdiction.</p>
+    </div>
+
+    <h3>Cryptocurrency content</h3>
+    <p>TrendsOnFire publishes content about cryptocurrency markets, including market trend analysis, price forecast scenarios attributed to third-party analysts, asset descriptions, risk assessments, and general orientation guides. The following limitations and warnings apply to all such content:</p>
+    <ul>
+      <li><strong>Price targets and forecasts</strong> are sourced from third-party public analyst research and are not the views or predictions of TrendsOnFire. They are illustrative ranges only and have no predictive value</li>
+      <li><strong>"Consider / Watch / Avoid" categorisations</strong> and similar frameworks are general research orientation tools based on publicly available information. They are <em>not</em> buy, hold, or sell recommendations</li>
+      <li>Cryptocurrency assets are <strong>highly speculative and volatile</strong>. Values can fall 80–90% rapidly. You can lose your entire investment</li>
+      <li>Cryptocurrency markets are largely <strong>unregulated or lightly regulated</strong> and do not benefit from the investor protection schemes that apply to regulated financial products (e.g., the Investor Compensation Scheme or deposit guarantee)</li>
+      <li>Past performance of any asset is not indicative of future results</li>
+      <li>TrendsOnFire is not registered with De Nederlandsche Bank (DNB), the Autoriteit Financiële Markten (AFM), or any equivalent EU/non-EU financial regulator to provide financial services or investment advice</li>
+    </ul>
+
+    <h3>General financial and market data</h3>
+    <p>Market sizing figures, revenue estimates, growth rates, and other financial metrics referenced in retail, supply chain, and other sections are sourced from publicly available reports and industry estimates. They are for orientation only and should not be used as the basis for investment, M&amp;A, or funding decisions without independent verification from qualified financial professionals.</p>
+
+    <div class="warning-box">
+      <p><strong>Before making any financial or investment decision</strong> — including in cryptocurrency — always conduct your own independent research, verify data from primary sources, and consult a qualified and regulated financial adviser.</p>
+    </div>
+  </div>
+
+  <!-- 6. COMPANY REFERENCES -->
+  <div class="section" id="company-references">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      6. Company &amp; brand references
+    </h2>
+    <p>TrendsOnFire content references named companies, brands, organisations, and individuals in the context of market trend analysis and editorial commentary. The following applies to all such references:</p>
+    <ul>
+      <li>All company and brand names, logos, and trademarks mentioned on this site are the property of their respective owners. Mention of any company, brand, or product does not imply affiliation with, endorsement by, or sponsorship from that entity</li>
+      <li>Analysis and commentary about named companies — including assessments of strategy, performance, financial situation, or market position — is editorial opinion based on publicly available information. It does not constitute a statement of fact, a legal determination, or a formal analyst rating</li>
+      <li>References to companies in financial difficulty, bankruptcy, restructuring, or regulatory scrutiny are based on publicly reported information and are not intended to harm the reputation of those entities or their stakeholders</li>
+      <li>Market position assessments (e.g., "struggling," "winning," "at risk") are editorial shorthand for trend analysis and should not be taken as definitive commercial or legal conclusions</li>
+      <li>TrendsOnFire has no commercial relationship with any of the companies it analyses unless explicitly disclosed</li>
+    </ul>
+    <p>Opinions expressed about named companies are reasonably held based on information publicly available at the time of publication, and are subject to change as circumstances develop.</p>
+    <p>If you represent a company mentioned on this site and believe content about your organisation is factually incorrect, please contact us at <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a>. We review all correction requests promptly.</p>
+  </div>
+
+  <!-- 7. FORWARD-LOOKING STATEMENTS -->
+  <div class="section" id="forward-looking">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      7. Forward-looking statements &amp; forecasts
+    </h2>
+    <p>TrendsOnFire content frequently includes forward-looking statements — projections, market forecasts, growth estimates, and scenario analyses. These are identified by words such as "may," "will," "expect," "forecast," "estimate," "predict," "could," "bull case," "bear case," and similar expressions.</p>
+    <p><strong>All forward-looking statements are subject to significant uncertainty and risk.</strong> Actual outcomes may differ materially from forecasts due to:</p>
+    <ul>
+      <li>Changes in macroeconomic conditions, interest rates, and liquidity</li>
+      <li>Regulatory changes at EU, national, or international level</li>
+      <li>Competitive dynamics and market disruptions</li>
+      <li>Geopolitical events, crises, or black swan events</li>
+      <li>Technological changes that alter market dynamics</li>
+      <li>Company-specific developments not predictable at time of publication</li>
+    </ul>
+    <p>Forecasts and scenarios cited on this site are sourced from third-party analyst research or represent editorial scenarios for illustrative purposes. They do not represent guarantees, commitments, or formal analyst coverage. TrendsOnFire accepts no liability for decisions made on the basis of forward-looking content.</p>
+  </div>
+
+  <!-- 8. SALARY DATA -->
+  <div class="section" id="salary-data">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      8. Salary &amp; labour market data
+    </h2>
+    <p>TrendsOnFire publishes salary indices, executive compensation benchmarks, layoff trackers, and other labour market analyses. The following limitations apply:</p>
+    <ul>
+      <li>Salary figures represent <strong>market observations</strong> derived from publicly available sources (job postings, industry surveys, published reports) and are not the result of formal, certified compensation surveys</li>
+      <li>Individual compensation depends on many factors not captured in aggregate data, including company size, sector, location, scope of role, performance, negotiation, and benefits structure</li>
+      <li>Layoff and redundancy data is sourced from public announcements, news reports, and company filings — completeness and accuracy cannot be guaranteed</li>
+      <li>All figures are indicative and may be outdated by the time of reading</li>
+      <li>No content in TrendsOnFire salary or workforce sections constitutes HR advice, employment law guidance, or a basis for legal proceedings</li>
+    </ul>
+    <div class="warning-box">
+      <p><strong>Do not use salary or headcount data on this site as the sole basis for employment decisions, compensation negotiations, or HR planning</strong> without verifying figures through dedicated compensation surveys, HR professionals, and legal counsel.</p>
+    </div>
+  </div>
+
+  <!-- 9. EARNING CLAIMS -->
+  <div class="section" id="earning-claims">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      9. Income &amp; earning potential claims
+    </h2>
+    <p>TrendsOnFire publishes content about side income opportunities, freelance rates, student jobs, and earning potential (e.g., the Student Side Jobs and related content). The following limitations apply to all such content:</p>
+    <ul>
+      <li>Hourly rate ranges and income estimates are indicative market observations sourced from job platforms, industry reports, and publicly available data — they are <strong>not guaranteed earnings</strong></li>
+      <li>Actual income depends on individual skill level, experience, location, effort, market conditions, platform algorithms, client demand, and many other factors</li>
+      <li>References to AI-related or digital earning opportunities reflect a rapidly changing market — income potential can change significantly in a short period</li>
+      <li>Content does not account for tax obligations, platform fees, equipment costs, or other expenses that affect net income</li>
+      <li>Individual results will vary. No income guarantee or projection is implied or warranted</li>
+    </ul>
+  </div>
+
+  <!-- 10. EDUCATION DATA -->
+  <div class="section" id="education-data">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      10. Education, grants &amp; government data
+    </h2>
+    <p>TrendsOnFire publishes content about universities, grants, scholarships, and government programmes (including UWV and Dutch/EU public sector topics). The following limitations apply:</p>
+    <ul>
+      <li>Grant amounts, application deadlines, and eligibility criteria change frequently. Always verify current details directly with the relevant institution, government body, or programme office</li>
+      <li>University rankings, tuition fees, and programme availability are subject to change annually. Verify with individual universities before applying</li>
+      <li>Content about government agencies (such as UWV) reflects editorial analysis of publicly reported information and is not an official communication from or endorsement by those agencies</li>
+      <li>Nothing in education content constitutes immigration advice, application guidance, or enrolment support</li>
+    </ul>
+  </div>
+
+  <!-- 11. LIABILITY -->
+  <div class="section" id="liability">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      11. Liability &amp; exclusions
+    </h2>
+    <p>To the maximum extent permitted by applicable law, <strong>Olga Bressers and TrendsOnFire accept no liability whatsoever</strong> for:</p>
+    <ul>
+      <li>Direct, indirect, incidental, special, or consequential loss or damage arising from the use of, or reliance on, any information published on this site</li>
+      <li>Financial loss — including from investment decisions, cryptocurrency purchases, trading activity, or business decisions — made on the basis of content on this site</li>
+      <li>Business decisions, investments, hiring decisions, restructuring, or strategic changes made on the basis of content on this site</li>
+      <li>Errors, omissions, inaccuracies, or outdated information in any content</li>
+      <li>Temporary or permanent unavailability of the website</li>
+      <li>Actions, omissions, insolvency, or conduct of any third parties referenced on this site</li>
+      <li>Any damage resulting from the use of external websites linked from this site</li>
+      <li>Any claim arising from the use of AI-assisted content generation tools in the production of content</li>
+    </ul>
+    <p>By using this website, you acknowledge that you do so entirely at your own risk, and that you will independently verify any information before acting on it.</p>
+    <p>Nothing in this disclaimer excludes or limits liability where such exclusion or limitation is not permitted under applicable EU or Dutch consumer protection laws, including the EU Consumer Rights Directive and Book 6 of the Dutch Civil Code (Burgerlijk Wetboek).</p>
+  </div>
+
+  <!-- 12. EDITORIAL -->
+  <div class="section" id="editorial">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      12. Editorial independence
+    </h2>
+    <p>TrendsOnFire is an independently operated editorial platform. All analytical content, trend assessments, and commentary reflect the professional judgement of the author and are not influenced by commercial relationships, advertising relationships, or third-party payments.</p>
+    <ul>
+      <li>No company, brand, or organisation pays for editorial coverage, ranking, assessment, or inclusion on this site</li>
+      <li>The site does not currently carry paid advertising or sponsored content. If this changes in future, sponsored content will be clearly labelled</li>
+      <li>Mentions of companies, products, or services in trend analyses are editorial observations, not commercial endorsements or paid placements</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Corrections are welcome.</strong> If you identify a factual error in any published content, please contact us at <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a>. We review and correct errors promptly.</p>
+    </div>
+  </div>
+
+  <!-- 13. IP & TRADEMARKS -->
+  <div class="section" id="ip">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      13. Intellectual property &amp; trademarks
+    </h2>
+    <p>All original content on TrendsOnFire — including but not limited to texts, analyses, indices, trackers, data visualisations, commentary, design, the TrendsOnFire name, logo, and code — is the intellectual property of Olga Bressers / TrendsOnFire and is protected by copyright and applicable intellectual property rights.</p>
+    <p><strong>Without prior written permission, it is not permitted to:</strong></p>
+    <ul>
+      <li>Copy, reproduce, or distribute our content in whole or in part for commercial purposes</li>
+      <li>Commercially exploit our analyses, trackers, indices, or dashboards</li>
+      <li>Scrape, systematically index, or use the website or its content for training AI models, machine-learning systems, or large language models</li>
+      <li>Use the TrendsOnFire brand name, logo, or domain in a way that may cause confusion or imply affiliation</li>
+    </ul>
+    <p>Citing or linking to our content in editorial contexts (e.g., in an article, blog, or social media post) is permitted provided you include a clear attribution and hyperlink to the original page. For any other uses, please contact <a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a>.</p>
+
+    <h3>Third-party trademarks</h3>
+    <p>All company names, brand names, product names, and trademarks mentioned on TrendsOnFire that are not owned by Olga Bressers / TrendsOnFire are the property of their respective owners. Their use on this site is for editorial identification and informational purposes only and does not imply any affiliation with, sponsorship by, or endorsement by those trademark owners.</p>
+  </div>
+
+  <!-- 14. EXTERNAL LINKS -->
+  <div class="section" id="external-links">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      14. External links
+    </h2>
+    <p>This website contains links to external websites operated by third parties. These links are provided for informational purposes only. <strong>TrendsOnFire is not responsible for:</strong></p>
+    <ul>
+      <li>The content, accuracy, or completeness of external websites we link to</li>
+      <li>The privacy policy, cookie settings, or security practices of external websites</li>
+      <li>Products, services, or content offered on external websites — including cryptocurrency exchanges, financial platforms, or third-party information providers</li>
+      <li>Any financial or other damage resulting from the use of external websites</li>
+    </ul>
+    <p>Linking to an external website does not imply endorsement of its content, products, or services. We recommend reading the terms, privacy policy, and regulatory status of any third-party platform before using it.</p>
+  </div>
+
+  <!-- 15. LAW -->
+  <div class="section" id="law">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b1a6a" stroke-width="2" stroke-linecap="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+      15. Applicable law &amp; disputes
+    </h2>
+    <p>This disclaimer, the content of TrendsOnFire, and all disputes arising from them are governed exclusively by <strong>Dutch law</strong>.</p>
+    <p>Disputes shall be submitted exclusively to the competent court in the Netherlands. Consumers in the EU may also use the European Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+    <p>If any provision of this disclaimer is found to be invalid or unenforceable under applicable law, the remaining provisions remain in full force and effect.</p>
+    <p>TrendsOnFire reserves the right to modify this disclaimer at any time without prior notice. The most current version is always available on this page. By continuing to use the website after any modification, you accept the most recent version of this disclaimer.</p>
+    <p style="font-size:13px;color:var(--sub);margin-top:8px;"><strong>Version:</strong> 2.0 &nbsp;·&nbsp; <strong>Last updated:</strong> 29 March 2026</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box" id="contact">
+    <h3>Questions, corrections, or feedback?</h3>
+    <p>Found an error, want to flag an issue with any published content, or have questions about this disclaimer?</p>
+    <p><a href="mailto:olga.bressers@gmail.com">olga.bressers@gmail.com</a></p>
+  </div>
+
+  <p style="font-size:11px;color:var(--sub);margin-top:24px;text-align:center;">Version 2.0 · Last updated: 29 March 2026 · TrendsOnFire</p>
+
+</div>
+
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
+      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
+    <div id="search-results" role="list"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+
+<script>
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+</script>
+</body>
+</html>

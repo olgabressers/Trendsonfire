@@ -7,6 +7,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>Netherlands Housing Market — City Deep-Dive — TrendsOnFire</title>
   <meta name="description" content="Price per m², rental yields and affordability across 6 major Dutch cities — Amsterdam, Utrecht, Eindhoven, Den Haag, Rotterdam, Groningen. Source: Numbeo April 2026."/>
   <link rel="canonical" href="https://trendsonfire.com/real-estate/netherlands-housing-market.html"/>
@@ -19,18 +20,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    :root{--navy:#0a0f1a;--fuchsia:#b8976a;--border:#e2dfd9;--bg:#faf9f7;--text:#111827;--sub:#7a7a7a;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper, #faf9f7);color:var(--text);line-height:1.6}
 
-    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    nav{background:#0a0f1a;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
     .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
     .nav-links{display:flex;margin-left:auto}
     .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
-    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color: #8b6a2f}
     .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
-    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
 
-    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0f2340 100%);color:white;padding:52px 32px 44px}
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0a0f1a 100%);color:white;padding:52px 32px 44px}
     .hero-inner{max-width:1100px;margin:auto}
     .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
     .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
@@ -41,23 +42,23 @@
     .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
 
     main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
-    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+    .section-title{font-size:18px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold, #b8976a)}
 
     .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:24px}
-    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-box{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:16px}
     .chart-wrap{position:relative;height:280px}
     @media(max-width:768px){.chart-grid{grid-template-columns:1fr}.chart-wrap{height:220px}main,.hero{padding-left:16px!important;padding-right:16px!important}}
 
     .method-box{background:#fff8e1;border:1px solid #ffd54f;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:13px;line-height:1.7;color:#78350f}
     .method-box strong{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#92400e}
 
-    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar{background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
     .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
     .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
-    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+    .cta-bar a{background:var(--gold, #b8976a);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
 
-    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer{background:#060a12;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
     footer a{color:#94a3b8;text-decoration:none}
     footer a:hover{color:white}
   
@@ -66,54 +67,52 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html" class="active">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="index.html" class="active">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
-
 </nav>
 
 <div class="hero">
@@ -162,8 +161,8 @@
     </div>
   </div>
 
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:40px;">
-    <strong>Source:</strong> <a href="https://www.numbeo.com/property-investment/country_result.jsp?country=Netherlands" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo Netherlands — Property Investment, April 2026</a>. Crowd-sourced from verified buyers and renters. Not Kadaster transaction data.
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;margin-bottom:40px;">
+    <strong>Source:</strong> <a href="https://www.numbeo.com/property-investment/country_result.jsp?country=Netherlands" target="_blank" rel="noopener" style="color:#7a7a7a;">Numbeo Netherlands — Property Investment, April 2026</a>. Crowd-sourced from verified buyers and renters. Not Kadaster transaction data.
   </div>
 
   <p style="font-size:13px;color:var(--sub);margin-bottom:40px;">This page is part of the <a href="european-housing-market.html" style="color:var(--blue);font-weight:600;">European Housing Market Intelligence 2026–2027</a> report covering 20 European markets.</p>
@@ -193,8 +192,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -211,7 +211,7 @@ var nlP2I = [8.95,7.30,7.31,6.18,6.17,7.00];
 
 new Chart(document.getElementById('chart-nl-sqm'),{
   type:'bar',
-  data:{labels:nlCities,datasets:[{label:'EUR/m² city centre',data:nlSqmCentre,backgroundColor:['#8b1a6a','#059669','#0ea5e9','#d97706','#1d4ed8','#6b7280'],borderRadius:4}]},
+  data:{labels:nlCities,datasets:[{label:'EUR/m² city centre',data:nlSqmCentre,backgroundColor:['#b8976a','#059669','#0ea5e9','#d97706','#1d4ed8','#7a7a7a'],borderRadius:4}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return'EUR '+(v/1000).toFixed(1)+'K';}},grid:{color:'#f3f4f6'}}}}
 });
 
@@ -230,7 +230,7 @@ new Chart(document.getElementById('chart-nl-p2i'),{
 new Chart(document.getElementById('chart-nl-compare'),{
   type:'bar',
   data:{labels:nlCities,datasets:[
-    {label:'City centre',data:nlSqmCentre,backgroundColor:'#8b1a6a',borderRadius:4},
+    {label:'City centre',data:nlSqmCentre,backgroundColor:'#b8976a',borderRadius:4},
     {label:'Outside centre',data:nlSqmOutside,backgroundColor:'rgba(139,26,106,.3)',borderRadius:4}
   ]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return'EUR '+(v/1000).toFixed(1)+'K';}},grid:{color:'#f3f4f6'}}}}

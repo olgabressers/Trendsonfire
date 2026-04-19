@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>European Housing Market Intelligence 2026–2027 — TrendsOnFire</title>
+  <meta name="description" content="European housing price trends, forecasts and market assessment across 20 markets — 2026 to 2027. Sources: Eurostat, ECB, OECD, Knight Frank, Deloitte. Not investment advice."/>
+  <link rel="canonical" href="https://trendsonfire.com/real-estate/european-housing-market.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="European Housing Market Intelligence 2026–2027"/>
+  <meta property="og:description" content="Price trends, forecasts and market assessment for 20 European markets. Sources: Eurostat, ECB, OECD. Not investment advice."/>
+  <meta property="og:url" content="https://trendsonfire.com/real-estate/european-housing-market.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0f2340;--fuchsia:#8b1a6a;--border:#e5e7eb;--bg:#f8fafc;--text:#111827;--sub:#6b7280;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+    nav{background:#0f2340;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+    .nav-links{display:flex;margin-left:auto}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b1a6a}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0f2340;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+
+    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0f2340 100%);color:white;padding:52px 32px 44px}
+    .hero-inner{max-width:1100px;margin:auto}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
+    .hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+    .hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:640px}
+    .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+    .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
+
+    main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+    .section-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--fuchsia)}
+
+    /* KPIs */
+    .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:40px}
+    .kpi{background:white;border-radius:12px;border:1px solid var(--border);padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .kpi-value{font-size:26px;font-weight:800;color:var(--navy);line-height:1}
+    .kpi-label{font-size:12px;color:var(--sub);margin-top:4px;line-height:1.4}
+    .kpi-note{font-size:11px;color:var(--fuchsia);margin-top:6px;font-weight:600}
+
+    /* Charts */
+    .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:40px}
+    .chart-box{background:white;border-radius:14px;border:1px solid var(--border);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .chart-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px}
+    .chart-wrap{position:relative;height:280px}
+    @media(max-width:768px){.chart-grid{grid-template-columns:1fr}.chart-wrap{height:220px}}
+
+    /* Big comparison table */
+    .comp-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:40px;font-size:13px}
+    .comp-table th{background:var(--navy);color:white;padding:10px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.5px}
+    .comp-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+    .comp-table tr:last-child td{border-bottom:none}
+    .comp-table tr:hover td{background:#f0f4ff}
+    .trend-up{color:var(--green);font-weight:700}
+    .trend-dn{color:var(--red);font-weight:700}
+    .trend-flat{color:var(--amber);font-weight:700}
+
+    /* Signal badges */
+    .sig{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:.5px;white-space:nowrap}
+    .sig-buy{background:#d1fae5;color:#065f46}
+    .sig-hold{background:#fef3c7;color:#92400e}
+    .sig-avoid{background:#fee2e2;color:#991b1b}
+    .sig-watch{background:#dbeafe;color:#1e40af}
+
+    /* Heat bar */
+    .heat-bar{height:10px;border-radius:5px;display:inline-block;vertical-align:middle;min-width:4px}
+
+    /* Cards */
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:40px}
+    .card{background:white;border-radius:12px;border:1px solid var(--border);padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .card-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:8px}
+    .card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .card p,.card li{font-size:13.5px;color:var(--sub);line-height:1.65}
+    .card ul{padding-left:16px}
+
+    /* Verdict boxes */
+    .verdict-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
+    .verdict-box{border-radius:12px;padding:20px 22px;border:1px solid}
+    .verdict-box.buy{background:#f0fdf4;border-color:#86efac}
+    .verdict-box.hold{background:#fffbeb;border-color:#fcd34d}
+    .verdict-box.avoid{background:#fef2f2;border-color:#fca5a5}
+    .verdict-box h3{font-size:14px;font-weight:800;margin-bottom:10px}
+    .verdict-box.buy h3{color:#166534}
+    .verdict-box.hold h3{color:#92400e}
+    .verdict-box.avoid h3{color:#991b1b}
+    .verdict-box ul{padding-left:16px;font-size:13px;line-height:1.9}
+    .verdict-box.buy ul{color:#166534}
+    .verdict-box.hold ul{color:#78350f}
+    .verdict-box.avoid ul{color:#7f1d1d}
+
+    /* Callout */
+    .callout{background:var(--navy);color:white;border-radius:12px;padding:24px 28px;margin-bottom:40px}
+    .callout h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#c4b5fd}
+    .callout p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.65}
+
+    /* CTA */
+    .cta-bar{background:var(--navy);border-radius:14px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .cta-bar p:first-child{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+    .cta-bar p:last-child{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
+    .cta-bar a{background:var(--fuchsia);color:white;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap}
+
+    /* Methodology box */
+    .method-box{background:#fff8e1;border:1px solid #ffd54f;border-left:4px solid #f59e0b;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:13px;line-height:1.7;color:#78350f}
+    .method-box strong{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#92400e}
+    .method-box .src-row{display:flex;gap:8px;margin-bottom:4px;align-items:baseline}
+    .src-tag{font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+    .src-verified{background:#d1fae5;color:#065f46}
+    .src-consensus{background:#dbeafe;color:#1e40af}
+    .src-unverified{background:#fee2e2;color:#991b1b}
+    footer{background:#0a1929;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer a{color:#94a3b8;text-decoration:none}
+    footer a:hover{color:white}
+
+    /* Search overlay (copy from other pages) */
+    .nav-search-btn{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;padding:0 10px 0 14px;height:100%;display:flex;align-items:center;gap:5px;transition:color .15s;font-size:12px;font-weight:500;font-family:inherit;border-left:1px solid rgba(255,255,255,.15);margin-left:6px;flex-shrink:0}
+    .nav-search-btn:hover{color:white}
+    #search-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,41,0.97);z-index:2000;overflow-y:auto}
+    .search-inner{max-width:760px;margin:0 auto;padding:48px 24px}
+    .search-box{display:flex;align-items:center;gap:12px;background:white;border-radius:12px;padding:4px 4px 4px 20px;margin-bottom:8px}
+    #search-input{flex:1;font-size:17px;border:none;outline:none;font-family:inherit;color:#111827;padding:12px 0;background:transparent}
+    #search-input::placeholder{color:#9ca3af}
+    .search-close{background:#f3f4f6;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:18px;color:#6b7280;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .search-hint{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:28px;padding-left:4px}
+    .search-result{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px 20px;margin-bottom:10px;text-decoration:none;transition:background .15s}
+    .search-result:hover{background:rgba(255,255,255,.12)}
+    .sr-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c97fb8;margin-bottom:4px}
+    .sr-title{font-size:15px;font-weight:700;color:white;margin-bottom:4px}
+    .sr-desc{font-size:12.5px;color:rgba(255,255,255,.55)}
+    .sr-tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+    .sr-tag{font-size:10px;background:rgba(139,26,106,.4);color:#e8a8d8;padding:2px 8px;border-radius:10px}
+    .search-empty{color:rgba(255,255,255,.4);font-size:15px;text-align:center;padding:40px 0}
+    @media(max-width:768px){main,.hero{padding-left:16px!important;padding-right:16px!important}.nav-search-btn{border-left:none;order:3;margin-left:0}}
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "European Housing Market Intelligence 2026–2027", "description": "Price trends, forecasts and market assessment across 20 European markets. Sources: Eurostat, ECB, OECD, ABN AMRO, national statistics offices.", "datePublished": "2026-04-08", "dateModified": "2026-04-16", "url": "https://trendsonfire.com/real-estate/european-housing-market.html", "author": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}, "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"}, "keywords": ["European housing market", "real estate", "Eurostat", "ECB", "house prices", "property investment"], "inLanguage": "en", "isAccessibleForFree": true}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com", "description": "AI-based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.", "founder": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}}</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
+      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
+      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+      </text>
+      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="index.html" class="active">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Real Estate</a> / European Housing Market</div>
+    <div class="eyebrow">Real Estate Intelligence · Europe</div>
+    <h1>European Housing Market 2026–2027</h1>
+    <p>Price trends, forecasts and investment attractiveness across 20 European markets. Sources: Eurostat, ECB, OECD, ABN AMRO, national statistics offices. Not investment advice.</p>
+    <div class="hero-meta">
+      <span>Updated 16 April 2026</span>
+      <span>20 markets analysed</span>
+      <span>Data: 2024–2027 forecasts</span>
+      <span>Sources: Eurostat · ECB · OECD · ABN AMRO · national statistics offices</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- DATA METHODOLOGY NOTE -->
+  <div class="method-box">
+    <strong>Data sources &amp; methodology</strong>
+    <div class="src-row"><span class="src-tag src-verified">PRIMARY SOURCES</span> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#78350f;">ECB deposit facility rate</a>. <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#78350f;">Eurostat House Price Index</a>. <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#78350f;">Destatis</a> (Germany construction). <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#78350f;">EU JRC</a> (housing shortfall). <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a> (refugee flows NL).</div>
+    <div class="src-row"><span class="src-tag src-consensus">SECONDARY SOURCES</span> Price-to-Income ratios from <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#78350f;">OECD Affordable Housing Database</a>. 2026–2027 forecasts compiled from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#78350f;">ABN AMRO</a> and other published analyst estimates.</div>
+    <div class="src-row"><span class="src-tag src-consensus">FORECASTS</span> All 2026–2027 projections are analyst consensus estimates. They are not investment advice. See disclaimer below.</div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-value">+5.5%</div>
+      <div class="kpi-label">EU-wide house price growth Q3 2025</div>
+      <div class="kpi-note">Euro area: +5.1% · <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color:#8b1a6a;">Eurostat</a></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">+21%</div>
+      <div class="kpi-label">Fastest market: Hungary YoY Q3 2025</div>
+      <div class="kpi-note">10-yr cumulative: ~250%+ · <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#8b1a6a;">Eurostat HPI</a></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">−1.5%</div>
+      <div class="kpi-label">Only declining EU market: Finland (2025)</div>
+      <div class="kpi-note">Undervalued — recovery opportunity</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">2.0%</div>
+      <div class="kpi-label">ECB deposit rate (Mar 2026)</div>
+      <div class="kpi-note">Down from 4.0% peak in Sep 2023</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">10M</div>
+      <div class="kpi-label">Housing unit shortfall across EU</div>
+      <div class="kpi-note">Key driver of price pressure</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">251,900</div>
+      <div class="kpi-label">Germany housing completions 2024</div>
+      <div class="kpi-note">−14.4% YoY, target: 400K · <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#8b1a6a;">Destatis</a></div>
+    </div>
+  </div>
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> EU-wide: <a href="https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-09012026-bp" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI Q3 2025</a> (+5.5% EU, +5.1% euro area). Hungary YoY: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>. ECB deposit rate: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ecb.europa.eu</a>. Germany completions: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#6b7280;">Destatis</a>. Housing shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#6b7280;">EU JRC Dec 2025</a>.
+  </div>
+
+  <!-- CHART 1 + 2 -->
+  <div class="section-title">Price Growth by Country — 2024 to 2027 Forecast</div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>YoY House Price Growth 2024–2025 (% change)</h3>
+      <div class="chart-wrap"><canvas id="chart-growth"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>Forecast: Expected Price Change 2026–2027 (%) — Analyst consensus estimates</h3>
+      <div class="chart-wrap"><canvas id="chart-forecast"></canvas></div>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> 2024–2025 growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat House Price Index</a> + national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden). 2026 forecasts: midpoints of analyst consensus ranges from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#6b7280;">ABN AMRO</a> and other published analyst estimates.
+  </div>
+
+  <!-- CHART 3 + 4 -->
+  <div class="chart-grid" style="grid-template-columns:1fr;">
+    <div class="chart-box">
+      <h3>ECB Deposit Facility Rate — Jan 2022 to Mar 2026</h3>
+      <div class="chart-wrap"><canvas id="chart-ecb"></canvas></div>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Source:</strong> <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB key interest rates — ecb.europa.eu</a>.
+  </div>
+
+  <!-- BIG COMPARISON TABLE -->
+  <div class="section-title">Full Market Comparison — 20 Countries</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">Sorted by 2025 price growth. Heat bars show relative performance. Forecasts are analyst consensus estimates. Sources: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:var(--blue);">Eurostat House Price Index</a> (Q3 2025 release); <a href="https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/bank_interest_rates/housing_market/html/index.en.html" target="_blank" rel="noopener" style="color:var(--blue);">ECB Housing Market statistics</a>; <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:var(--blue);">ABN AMRO Housing Market Forecast 2026</a>; national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden, CSO Ireland, CZSO, KSH Hungary, NSI Bulgaria, INE Portugal, INE Spain, INSSE Romania).</p>
+
+  <div style="overflow-x:auto;">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>2024 Growth</th>
+        <th>2025 Growth</th>
+        <th>2026 Forecast</th>
+        <th>Key 2026 Factor</th>
+        <th>Trend</th>
+        <th>Price/m² (Numbeo, 2025)</th>
+        <th>P2I Ratio</th>
+        <th>Valuation</th>
+        <th>Outlook</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>🇭🇺 Hungary</strong></td>
+        <td class="trend-up">+12.8%</td>
+        <td class="trend-up">+21.1%</td>
+        <td>+8–12%</td>
+        <td style="font-size:11px;color:var(--sub);">Wage growth + CSOK subsidies</td>
+        <td><span class="heat-bar" style="width:95px;background:#059669;"></span></td>
+        <td>€3,194</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇵🇹 Portugal</strong></td>
+        <td class="trend-up">+9.1%</td>
+        <td class="trend-up">+17.0%</td>
+        <td>+6–9%</td>
+        <td style="font-size:11px;color:var(--sub);">Algarve + lifestyle migration continues</td>
+        <td><span class="heat-bar" style="width:85px;background:#059669;"></span></td>
+        <td>€3,477</td>
+        <td>High (153)</td>
+        <td>Overvalued</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇧🇬 Bulgaria</strong></td>
+        <td class="trend-up">+16.5%</td>
+        <td class="trend-up">+15.4%</td>
+        <td>+8–10%</td>
+        <td style="font-size:11px;color:#059669;font-weight:700;">★ Euro adopted Jan 1 2026 — removes currency risk</td>
+        <td><span class="heat-bar" style="width:82px;background:#059669;"></span></td>
+        <td>€1,967</td>
+        <td>Low</td>
+        <td>Fair value</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇭🇷 Croatia</strong></td>
+        <td class="trend-up">+12.3%</td>
+        <td class="trend-up">+13.1%</td>
+        <td>+6–8%</td>
+        <td style="font-size:11px;color:var(--sub);">Dalmatian coast, German/Austrian demand</td>
+        <td><span class="heat-bar" style="width:76px;background:#059669;"></span></td>
+        <td>€3,950</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇷🇴 Romania</strong></td>
+        <td class="trend-up">+11.5%</td>
+        <td class="trend-up">+12–14%</td>
+        <td>+8–11%</td>
+        <td style="font-size:11px;color:var(--sub);">EU funds + Bucharest still deeply undervalued</td>
+        <td><span class="heat-bar" style="width:75px;background:#059669;"></span></td>
+        <td>€2,217</td>
+        <td>Low</td>
+        <td>Undervalued</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇪🇸 Spain</strong></td>
+        <td class="trend-up">+11.2%</td>
+        <td class="trend-up">+12–13%</td>
+        <td>+5–7%</td>
+        <td style="font-size:11px;color:#059669;font-weight:700;">★ Strongest growth in 18 years; chronic supply shortage</td>
+        <td><span class="heat-bar" style="width:73px;background:#059669;"></span></td>
+        <td>€3,769</td>
+        <td>Moderate</td>
+        <td>Slightly over</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇨🇿 Czech Republic</strong></td>
+        <td class="trend-up">+6–10%</td>
+        <td class="trend-up">+10.5%</td>
+        <td>+5–7%</td>
+        <td style="font-size:11px;color:var(--sub);">CNB cut rates earlier than ECB; Prague recovering</td>
+        <td><span class="heat-bar" style="width:68px;background:#059669;"></span></td>
+        <td>€4,625</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇳🇱 Netherlands</strong></td>
+        <td class="trend-up">+8.2%</td>
+        <td class="trend-up">+8–9%</td>
+        <td>+3% (ABN AMRO)</td>
+        <td style="font-size:11px;color:var(--sub);">Affordability ceiling limiting further gains</td>
+        <td><span class="heat-bar" style="width:62px;background:#059669;"></span></td>
+        <td>€5,980</td>
+        <td>High (>130)</td>
+        <td>Slightly over</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇬🇷 Greece</strong></td>
+        <td class="trend-up">+8.7%</td>
+        <td class="trend-up">+7.7%</td>
+        <td>+4–6%</td>
+        <td style="font-size:11px;color:var(--sub);">Tourist markets overvalued; Golden Visa raised to €800k</td>
+        <td><span class="heat-bar" style="width:58px;background:#059669;"></span></td>
+        <td>€2,719</td>
+        <td>High</td>
+        <td>Overvalued</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇮🇪 Ireland</strong></td>
+        <td class="trend-up">+3.9%</td>
+        <td class="trend-up">+6–8%</td>
+        <td>+4–6%</td>
+        <td style="font-size:11px;color:var(--sub);">Near-zero supply; highest P2I in Western Europe</td>
+        <td><span class="heat-bar" style="width:55px;background:#059669;"></span></td>
+        <td>€4,521</td>
+        <td>Very High (8× income)</td>
+        <td>Undervalued</td>
+        <td><span class="sig sig-watch">WATCH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇵🇱 Poland</strong></td>
+        <td class="trend-up">+19.3%</td>
+        <td class="trend-flat">+3–5%</td>
+        <td>+4–6%</td>
+        <td style="font-size:11px;color:var(--sub);">Gov. subsidy scheme ended; soft landing underway</td>
+        <td><span class="heat-bar" style="width:40px;background:#d97706;"></span></td>
+        <td>€3,317</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇨🇭 Switzerland</strong></td>
+        <td class="trend-up">+4.0%</td>
+        <td class="trend-up">+4.5%</td>
+        <td>+2.5–3.5%</td>
+        <td style="font-size:11px;color:var(--sub);">SNB cuts; safe-haven demand; tight zoning</td>
+        <td><span class="heat-bar" style="width:42px;background:#d97706;"></span></td>
+        <td>€16,244</td>
+        <td>High</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇮🇹 Italy</strong></td>
+        <td class="trend-up">+3–4%</td>
+        <td class="trend-up">+3–5%</td>
+        <td>+3–5%</td>
+        <td style="font-size:11px;color:var(--sub);">Flat tax for new residents; remote worker inflow</td>
+        <td><span class="heat-bar" style="width:40px;background:#d97706;"></span></td>
+        <td>€3,308</td>
+        <td>Low</td>
+        <td>Undervalued</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇩🇪 Germany</strong></td>
+        <td class="trend-dn">−1.6%</td>
+        <td class="trend-up">+3.2%</td>
+        <td>+2–4%</td>
+        <td style="font-size:11px;color:#059669;font-weight:700;">★ First recovery after 2022–2024 correction</td>
+        <td><span class="heat-bar" style="width:36px;background:#d97706;"></span></td>
+        <td>€5,409</td>
+        <td>High</td>
+        <td>Fair</td>
+        <td><span class="sig sig-watch">WATCH</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇧🇪 Belgium</strong></td>
+        <td class="trend-up">+1.3%</td>
+        <td class="trend-up">+3.2%</td>
+        <td>+2–3%</td>
+        <td style="font-size:11px;color:var(--sub);">Stable low-volatility market; Brussels steady</td>
+        <td><span class="heat-bar" style="width:36px;background:#d97706;"></span></td>
+        <td>€3,800</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇬🇧 United Kingdom</strong></td>
+        <td class="trend-up">+4.0%</td>
+        <td class="trend-up">+2.8%</td>
+        <td>+2.5–3.5%</td>
+        <td style="font-size:11px;color:var(--sub);">Stamp duty deadline Apr 2025 front-loaded demand; H2 softer</td>
+        <td><span class="heat-bar" style="width:32px;background:#d97706;"></span></td>
+        <td>€4,973</td>
+        <td>High</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇩🇰 Denmark</strong></td>
+        <td class="trend-up">+2–3%</td>
+        <td class="trend-up">+2–3%</td>
+        <td>+1–3%</td>
+        <td style="font-size:11px;color:var(--sub);">Steady mature market; Copenhagen affordability stretched</td>
+        <td><span class="heat-bar" style="width:28px;background:#d97706;"></span></td>
+        <td>€5,432</td>
+        <td>High</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇸🇪 Sweden</strong></td>
+        <td class="trend-flat">~0%</td>
+        <td class="trend-up">~+1%</td>
+        <td>+2–3%</td>
+        <td style="font-size:11px;color:#059669;font-weight:700;">★ Mortgage amortisation reform Apr 2026 — demand boost expected</td>
+        <td><span class="heat-bar" style="width:16px;background:#d97706;"></span></td>
+        <td>€5,349</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇫🇷 France</strong></td>
+        <td class="trend-dn">−3.7%</td>
+        <td class="trend-up">~+1%</td>
+        <td>+1–2%</td>
+        <td style="font-size:11px;color:var(--sub);">Sharpest 2024 correction in EU; slow ECB-driven recovery</td>
+        <td><span class="heat-bar" style="width:14px;background:#d97706;"></span></td>
+        <td>€4,938</td>
+        <td>Moderate</td>
+        <td>Fair</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>🇫🇮 Finland</strong></td>
+        <td class="trend-dn">−3.5%</td>
+        <td class="trend-dn">−1 to −2%</td>
+        <td>0 to +1%</td>
+        <td style="font-size:11px;color:var(--sub);">Only EU market still declining; apartment oversupply in Helsinki</td>
+        <td><span class="heat-bar" style="width:10px;background:#dc2626;"></span></td>
+        <td>€4,711</td>
+        <td>Low</td>
+        <td>Undervalued</td>
+        <td><span class="sig sig-watch">WATCH</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Price growth: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>. Price/m²: <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=EUR&itemId=100&region=150" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> — see definition below. P2I ratios: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD</a>. 2026 forecasts: <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#6b7280;">ABN AMRO</a> and other analyst estimates. Valuation: <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB affordability metrics</a>. Outlook signals are assessments based on verified data.
+    <br/><br/>
+    <strong>Numbeo price/m² — what it measures:</strong> <a href="https://www.numbeo.com/common/motivation_and_methodology.jsp" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> shows the average price per m² to buy an apartment in city centres, calculated as a <strong>weighted average across all cities in each country</strong> (weighted by number of contributors). It is not a capital-city price — for example, the Netherlands figure (€5,980) blends Amsterdam (~€9,400/m²) with Rotterdam (~€5,100/m²), Groningen (~€4,700/m²) and other cities. Data is crowd-sourced from contributors and official sources, filtered for spam, and reflects submissions from the trailing 12 months (primarily 2025). Numbeo is not transaction data — use as directional country-level comparison, not a precise benchmark.
+  </div>
+
+  <!-- COUNTRY SUMMARIES -->
+  <div class="section-title" style="margin-top:44px;">Key Trends by Country</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:24px;">What's actually driving the numbers in each market — and what to watch in 2026.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">🇭🇺 Hungary — #1 in EU 2025</div>
+      <h3>+21% and still accelerating</h3>
+      <p>Hungary leads Europe by a wide margin. Government home purchase subsidies (CSOK) combined with strong wage growth and limited new residential construction are fuelling the run. Budapest is the headline, but regional cities (Debrecen, Győr) are growing faster as buyers seek affordability. Forecast +8–12% for 2026 as subsidies continue and ECB-linked rate cuts feed through.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇵🇹 Portugal — Demand outpacing supply</div>
+      <h3>+17% despite Golden Visa closure</h3>
+      <p>Portugal closed its Golden Visa to property buyers in 2023 — and prices accelerated anyway. The demand base has shifted to lifestyle migrants from Northern Europe and the UK, with the Algarve and Silver Coast drawing retirees and remote workers. Lisbon and Porto face stretched affordability (P2I 153, OECD) with limited new supply. NHR tax regime changes created short-term uncertainty without materially slowing demand.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇧🇬 Bulgaria — Structural inflection point</div>
+      <h3>Euro adoption changes everything</h3>
+      <p>Bulgaria's euro adoption on January 1, 2026 is the most significant structural event in any EU housing market this year. It removes currency risk for eurozone buyers, directly expanding the accessible buyer pool. Sofia has been one of the EU's fastest-growing capitals for two years. Entry prices remain among Europe's lowest. The macro case for Bulgaria is stronger now than at any prior point.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇭🇷 Croatia — Euro dividend continuing</div>
+      <h3>Dalmatian coast in sustained demand</h3>
+      <p>Croatia adopted the euro in 2023 and eliminated the friction that previously kept German and Austrian buyers cautious. Dalmatian coastal property — Split, Dubrovnik hinterland, Istria — is being absorbed by Western European buyers at a rate local supply cannot match. Planning restrictions on coastal development make this structural.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇷🇴 Romania — Undervalued opportunity</div>
+      <h3>Undervalued with strong growth trajectory</h3>
+      <p>Romania remains undervalued by ECB affordability metrics, with prices below fundamental fair value. EU fund inflows are financing infrastructure that historically precedes property appreciation cycles. Currency risk (not yet eurozone) is the key friction. Bucharest has a growing tech sector, and young professional demand may be structurally increasing.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇪🇸 Spain — Strongest cycle in 18 years</div>
+      <h3>Supply crisis meets record foreign demand</h3>
+      <p>Spain is experiencing its strongest housing market in 18 years. Foreign buyers — British, German, Dutch, American, Latin American — are competing in coastal and urban markets with near-zero supply of new homes at accessible price points. Wage growth and low unemployment are supporting domestic demand simultaneously. Málaga, Valencia, and Alicante are the hottest markets. Government rent controls in Barcelona and Madrid have reduced rental supply and pushed more buyers into the ownership market — amplifying price pressure.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇨🇿 Czech Republic — Recovery confirmed</div>
+      <h3>Prague rebounding after mortgage shock</h3>
+      <p>The Czech National Bank cut interest rates ahead of the ECB, making Czech mortgages more accessible from early 2024. This front-ran demand recovery in Prague, where prices corrected in 2022–2023. 2025 growth of +10.5% suggests the correction has been absorbed. Czech Republic remains a steady mid-tier market with fair valuations and a growing tech and finance workforce concentrated in Prague.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇳🇱 Netherlands — Running into ceiling</div>
+      <h3>Strong growth, but affordability is the constraint</h3>
+      <p>The Netherlands has grown 8%+ per year for two consecutive years but ABN AMRO forecasts a deceleration to +3% in 2026 as affordability limits further momentum. The supply shortage is structural — the government has repeatedly missed housing construction targets, and planning approvals remain slow. Net migration is at record highs, sustaining underlying demand.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇬🇷 Greece — Tourist premium vs. affordability</div>
+      <h3>Foreign buyers dominate prime markets</h3>
+      <p>Greece's growth is heavily concentrated in tourist-adjacent markets — Athens, Mykonos, Santorini, Thessaloniki. The Golden Visa threshold was raised to €800,000 in prime areas in 2024, reducing speculative foreign buyer volume at the lower end. Local affordability is severely stretched. Markets outside tourism zones are growing more slowly.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇮🇪 Ireland — Highest pressure in Western Europe</div>
+      <h3>8× income ratios with no supply relief</h3>
+      <p>Ireland has the most extreme price-to-income ratio in Western Europe at approximately 8× average annual earnings (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:var(--blue);">OECD</a>). Construction output has increased but planning bottlenecks, labour costs, and land assembly challenges keep new supply chronically below demand. The tech sector in Dublin sustains high-income demand.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇵🇱 Poland — Post-boom normalisation</div>
+      <h3>Soft landing after 2024 subsidy surge</h3>
+      <p>Poland's +19.3% in 2024 was driven almost entirely by the government's "Safe Credit 2%" subsidy programme, which was discontinued. Without that support, 2025 demand has normalised to +3–5%. Warsaw remains active with international and domestic demand. The underlying market is healthy — Poland has low housing stock per capita relative to EU peers and a growing middle class — but expects moderation rather than acceleration in 2026.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇨🇭 Switzerland — Stable and expensive</div>
+      <h3>SNB cuts unlock some demand, but supply stays tight</h3>
+      <p>Switzerland is among Europe's most expensive markets in absolute terms and also among its most stable. The SNB's rate cuts in 2024–2025 made mortgages more accessible for the first time in years, releasing some pent-up demand. Tight zoning laws prevent meaningful supply increases. Geneva and Zurich are driven by international business demand. Luxury segment remains active. Growth of 2.5–3.5% expected to continue — consistent, low-volatility, and accessible only to high-net-worth buyers.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇮🇹 Italy — The undervalued contrarian play</div>
+      <h3>Prices still below 2008 peaks — undervalued</h3>
+      <p>Italy is widely reported as one of the few major Western European markets where residential prices remain below their pre-2008 peak in real terms. The government's flat tax regime for new residents has attracted remote workers and retirees, particularly in Puglia, Sicily, and Tuscany. Milan's luxury market is performing strongly. The friction is bureaucracy and slow transaction processes — but for investors with patience and legal support, the value case is compelling.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇩🇪 Germany — First recovery after correction</div>
+      <h3>2024 was the bottom; 2025 confirms the turn</h3>
+      <p>Germany experienced one of Europe's sharpest corrections between 2022 and 2024 as mortgage rates rose sharply. The 2025 recovery to +3.2% confirms the correction has bottomed. Berlin, Munich, and Hamburg are leading the rebound. Demand is supported by ECB rate cuts and significant pent-up household formation. Political uncertainty following the 2025 election and continued industrial sector challenges mean recovery is cautious rather than explosive. 2026 forecast: +2–4%.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇧🇪 Belgium — Steady as it goes</div>
+      <h3>Low volatility, consistent modest growth</h3>
+      <p>Belgium is Europe's most predictable market. Price growth has tracked 1–3% per year for most of the past decade, with 2025 showing mild acceleration to +3.2%. Brussels EU quarter benefits from international institutional demand. Antwerp and Ghent are recovering steadily. No structural shocks anticipated in 2026. Low volatility makes Belgium a wealth-preservation market rather than a growth play.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇬🇧 United Kingdom — Stamp duty distortion</div>
+      <h3>2025 front-loaded by deadline; H2 slower</h3>
+      <p>The UK stamp duty holiday deadline of March 31, 2025 created a surge of completions in Q1 2025, front-loading demand that then normalised. Underlying market is stable with +2.5–3.5% forecast for 2026. London prime is steady; regional cities (Manchester, Birmingham, Leeds) are outperforming on affordability grounds. Mortgage rates remain elevated relative to 2020–2021 lows, capping upside.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇩🇰 Denmark — Mature and stable</div>
+      <h3>Copenhagen affordability stretched; regions steady</h3>
+      <p>Denmark is a mature, low-volatility market with consistent 2–3% annual growth. Copenhagen affordability is stretched, limiting further acceleration. Regional markets are more accessible and showing similar growth rates. No structural 2026 catalysts identified. The Danish mortgage system — one of Europe's most sophisticated — provides good market stability and transparent pricing. A reliable market for capital preservation with modest appreciation.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇸🇪 Sweden — End of a long correction</div>
+      <h3>Mortgage reform in April 2026 may be the catalyst</h3>
+      <p>Sweden's housing market corrected sharply in 2022–2023 as mortgage rates rose and household debt burdens became acute. Recovery has been slow — ~0% growth in 2024 and ~+1% in 2025. The key 2026 catalyst is a mortgage amortisation reform expected in April 2026 that will relax mandatory amortisation requirements for many households, effectively freeing up purchasing power. Stockholm is already showing early positive signals. 2026 forecast upgraded to +2–3% on this basis.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇫🇷 France — Sharpest correction, slowest recovery</div>
+      <h3>−3.7% in 2024; first green shoots in 2025</h3>
+      <p>France saw the EU's sharpest price correction in 2024 at −3.7%, concentrated in Paris and major cities. French buyers are significantly more mortgage-dependent than Southern European counterparts, making the market more sensitive to rate changes. ECB cuts in 2024–2025 are slowly unlocking frozen transactions. Paris prices fell for over two years before stabilising in late 2025. The recovery is likely to be gradual — +1–2% in 2026 — as affordability remains stretched and the rate relief is only partially transmitted to mortgage costs.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">🇫🇮 Finland — The outlier still declining</div>
+      <h3>Only EU market with sustained price falls</h3>
+      <p>Finland is the only European market where prices are still falling in 2025, improving slightly from −3.5% in 2024 to −1 to −2% in 2025. The structural problem is an oversupply of new apartments in Helsinki built during the low-rate era, combined with weak domestic demand from high household debt levels and a sluggish economy. The Bank of Finland expects potential stabilisation in 2026 if ECB rates continue falling. Finland is theoretically undervalued — but the supply glut means the path to appreciation requires time, not just lower rates.</p>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Country-specific price growth from <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a> and national statistics offices. Hungary cumulative growth: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI 2015=100</a>. Ireland P2I: <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a>. Policy references (Golden Visa, CSOK, euro adoption, stamp duty) are public government announcements.
+  </div>
+
+  <!-- Popular second home destinations outside EU -->
+  <div class="section-title" style="margin-top:40px;">Popular Second Home Destinations Outside the EU</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:6px;">Growing demand from European buyers looking beyond EU borders — driven by lower entry prices, lifestyle appeal, and diversification strategies.</p>
+  <p style="font-size:11px;color:#dc2626;font-weight:700;margin-bottom:16px;">Note (Apr 2026): Regional security developments in the Middle East are materially affecting some markets below. Pre-2026 forecasts may no longer reflect current conditions. Price growth figures are nominal in local currency unless stated. Consult local legal and financial advice before any transaction.</p>
+
+  <div style="overflow-x:auto;">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>2024 Growth</th>
+        <th>2025 Growth</th>
+        <th>Source</th>
+        <th>Price/m² city centre (Numbeo, 2025)</th>
+        <th>Market Context (Apr 2026)</th>
+        <th>Outlook</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dubai</strong></td>
+        <td class="trend-up">+27.5%</td>
+        <td class="trend-up">+19.8% (Dec)</td>
+        <td style="font-size:11px;"><a href="https://dubailand.gov.ae/en/open-data/research/annual-report-real-estate-sector-performance-2024/" target="_blank" rel="noopener" style="color:var(--blue);">DLD 2024</a> · <a href="https://valustrat.com/products/vpi-dubai-residential-capital-values-december-2025" target="_blank" rel="noopener" style="color:var(--blue);">ValuStrat Dec 2025</a></td>
+        <td>$5,844</td>
+        <td>Regional security disruptions since Feb 2026. Airspace closures. Rating agencies flagging correction risk. Elevated uncertainty.</td>
+        <td><span class="sig sig-buy" style="background:#fee2e2;color:#b91c1c;">HIGH RISK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Cyprus</strong></td>
+        <td class="trend-up">+2.7% (Q3)</td>
+        <td class="trend-up">+1.0% (Q2)</td>
+        <td style="font-size:11px;"><a href="https://www.gov.cy/en/economy-and-finance/house-price-index-hpi-3rd-quarter-2024/" target="_blank" rel="noopener" style="color:var(--blue);">CYSTAT HPI 2024</a> · <a href="https://index.cy/articles/cyprus-house-price-index-q2-2025-market-growth-moderates-to-1-0-annually/" target="_blank" rel="noopener" style="color:var(--blue);">Q2 2025</a></td>
+        <td>$3,855</td>
+        <td>Beneficiary of international buyer relocation. EU membership provides legal safety. Moderating from 2024.</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>Turkey</strong></td>
+        <td class="trend-up">+29.4% nom<br/><span style="font-size:10px;color:var(--red);">−12% real</span></td>
+        <td class="trend-up">+29.0% nom<br/><span style="font-size:10px;color:var(--red);">−1.4% real</span></td>
+        <td style="font-size:11px;"><a href="https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Statistics/Real+Sector+Statistics/Residential+Property+Price+Index/" target="_blank" rel="noopener" style="color:var(--blue);">TCMB RPPI</a></td>
+        <td>$1,783</td>
+        <td>Elevated risk from regional security developments in 2026. High uncertainty from proximity to instability.</td>
+        <td><span class="sig sig-watch">WATCH</span></td>
+      </tr>
+      <tr>
+        <td><strong>Thailand</strong></td>
+        <td class="trend-flat">n/a</td>
+        <td class="trend-flat">+0.6% (Q4)</td>
+        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/asia/thailand/price-history" target="_blank" rel="noopener" style="color:var(--blue);">Bank of Thailand via GPG</a></td>
+        <td>$3,880</td>
+        <td>Stable market. Long-stay visa programme expanded 2024.</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>Morocco</strong></td>
+        <td class="trend-up">+1.65% (Q4)</td>
+        <td class="trend-up">+1.2% (Q3)</td>
+        <td style="font-size:11px;"><a href="https://www.bkam.ma/en/Statistics/Prices/Publications-ipai/Real-estate-price-index" target="_blank" rel="noopener" style="color:var(--blue);">Bank Al-Maghrib REPI</a></td>
+        <td>$1,620</td>
+        <td>Stable market. Currency repatriation restrictions remain a friction.</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+      <tr>
+        <td><strong>Montenegro</strong></td>
+        <td class="trend-up">+20.8%</td>
+        <td class="trend-up">+20.2% (Q3)</td>
+        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/europe/montenegro/price-history" target="_blank" rel="noopener" style="color:var(--blue);">MONSTAT via GPG</a></td>
+        <td>$3,103</td>
+        <td>EU candidate status driving structural demand. Stable conditions.</td>
+        <td><span class="sig sig-buy">STRONG GROWTH</span></td>
+      </tr>
+      <tr>
+        <td><strong>Georgia</strong></td>
+        <td class="trend-up">+10.4% (Q4)</td>
+        <td class="trend-up">+3.3% (Q4)</td>
+        <td style="font-size:11px;"><a href="https://www.geostat.ge/en/modules/categories/698/residential-property-price-index" target="_blank" rel="noopener" style="color:var(--blue);">Geostat 2024</a> · <a href="https://www.geostat.ge/en/single-news/3654/residential-property-price-index-iv-quarter-of-2025" target="_blank" rel="noopener" style="color:var(--blue);">Q4 2025</a></td>
+        <td>$1,608</td>
+        <td>Growth moderating after post-2022 international capital inflow. Non-EU legal framework.</td>
+        <td><span class="sig sig-watch">WATCH</span></td>
+      </tr>
+      <tr>
+        <td><strong>Malta</strong></td>
+        <td class="trend-up">+5.0%</td>
+        <td class="trend-up">+5.7% (Q3)</td>
+        <td style="font-size:11px;"><a href="https://nso.gov.mt/property/residential-property-price-index-rppi-q4-2024/" target="_blank" rel="noopener" style="color:var(--blue);">NSO 2024</a> · <a href="https://nso.gov.mt/residential-property-price-index-rppi-q3-2025/" target="_blank" rel="noopener" style="color:var(--blue);">Q3 2025</a></td>
+        <td>$4,485</td>
+        <td>EU member. HNWIs seeking EU-based alternatives. Supply constrained.</td>
+        <td><span class="sig sig-hold">STABLE</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources &amp; methodology:</strong> 2024 and 2025 growth figures are YoY from national statistics offices or central banks — each linked in the Source column. Price per m² (city centre apartments, USD) from <a href="https://www.numbeo.com/cost-of-living/prices_by_country.jsp?displayCurrency=USD&itemId=100" target="_blank" rel="noopener" style="color:#6b7280;">Numbeo</a> — weighted average across all cities in each country (not capital-city only), crowd-sourced from contributors and official sources, reflecting trailing 12 months (primarily 2025). Use as directional comparison, not a precise benchmark. Outlook signals are assessments based on the verified growth data and current market conditions — they are not forecasts and not investment advice. No 2026 price forecasts are provided for these markets because no verifiable analyst consensus exists. Consult local legal and financial advice before any transaction.
+  </div>
+
+  <!-- Key drivers -->
+  <div class="section-title">What Is Driving European Housing Markets</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">Supply Crisis</div>
+      <h3>Structural supply shortage</h3>
+      <p>The EU needs <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:var(--blue);">more than 2 million new homes per year through 2035</a> (EU JRC) but is building ~1.6 million annually (<a href="https://commission.europa.eu/topics/employment-and-social-affairs/affordability/affordable-housing_en" target="_blank" rel="noopener" style="color:var(--blue);">European Commission</a>). Germany completed <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:var(--blue);">251,900 units in 2024 — down 14.4%</a> and far below its 400,000 target. Supply shortage is the single biggest price driver across all markets.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">ECB Rate Cuts</div>
+      <h3>From 4.0% to 2.0%</h3>
+      <p>The ECB cut the <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:var(--blue);">deposit facility rate 8 times</a> from June 2024 to mid-2025, from 4.0% to 2.0%. European mortgage rates have followed down from ~4.5% peak to ~3.4%. This has directly fuelled the 2025 price recovery as affordability improved across eurozone markets.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Migration & Demographics</div>
+      <h3>Urbanisation + EU mobility</h3>
+      <p>Migration into tech hubs (Amsterdam, Dublin, Berlin, Kraków, Prague) continues to compress supply. Refugee flows (<a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:var(--blue);">~120,000+ in NL alone, CBS</a>) add rental demand. CEE countries see returning diaspora and young household formation driving demand.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">CEE Catch-Up</div>
+      <h3>Eastern Europe's decade of growth</h3>
+      <p>Hungary (<a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:var(--blue);">~250%+ since 2015, Eurostat HPI</a>), Romania and Bulgaria are in a multi-decade catch-up cycle. Lower absolute prices, strong income growth, EU membership, and improving infrastructure keep demand structurally elevated.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Affordability Limits</div>
+      <h3>The ceiling is closing in</h3>
+      <p>Portugal's P2I ratio hit 153 (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:var(--blue);">OECD average: 114.8</a>). Ireland costs ~8× average income. These markets may be approaching affordability ceilings that cap further price growth.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Rental Pressure</div>
+      <h3>Renting is pushing people to buy</h3>
+      <p>Rental regulations tightened across the EU (Amsterdam, Berlin, Lisbon) push renters toward ownership and push investors toward unregulated markets. Falling ECB rates make buying more attractive again after the 2022–2023 rate shock that paused purchase decisions.</p>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Supply shortfall: <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#6b7280;">EU JRC Dec 2025</a>. Germany construction: <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#6b7280;">Destatis</a>. ECB rates: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ecb.europa.eu</a>. Refugee flows NL: <a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#6b7280;">CBS</a>. Hungary cumulative: <a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>.
+  </div>
+
+  <!-- Verdict section -->
+  <div class="section-title">Market Assessment 2026–2027</div>
+  <p style="font-size:12px;color:#dc2626;font-weight:600;margin-bottom:16px;padding:10px 14px;background:#fef2f2;border-radius:6px;border-left:3px solid #fca5a5;">This assessment is based on the public data sources cited above. It is not investment advice, a recommendation to buy or sell property, or a substitute for independent professional advice. Past performance does not predict future results.</p>
+  <div class="verdict-grid">
+    <div class="verdict-box buy">
+      <h3>Strong Growth Markets</h3>
+      <ul>
+        <li><strong>Romania</strong> — undervalued by ECB metrics, +12–14% growth, low entry prices</li>
+        <li><strong>Hungary</strong> — +21% momentum, CSOK subsidies, strong wage growth</li>
+        <li><strong>Bulgaria</strong> — +16.5% growth (2024), lowest EU prices, euro adoption Jan 2026</li>
+        <li><strong>Italy</strong> — Undervalued, prices still below 2008 peak, stable market</li>
+        <li><strong>Czech Republic</strong> — +10.5% in 2025, recovery confirmed after mortgage shock</li>
+        <li><strong>Poland</strong> — Moderating to healthy levels after +19% peak, strong fundamentals</li>
+        <li><strong>Spain</strong> — +12–13% in 2025, strongest cycle in 18 years, chronic supply shortage</li>
+      </ul>
+    </div>
+    <div class="verdict-box hold">
+      <h3>Moderate Growth — Mixed Outlook</h3>
+      <ul>
+        <li><strong>Netherlands</strong> — Growth slowing after 2024 recovery; P2I ratio stretched above 130; selective city opportunities remain</li>
+        <li><strong>Germany</strong> — Recovery underway but construction crisis limits upside; watch Frankfurt/Munich</li>
+        <li><strong>Ireland</strong> — Affordability at breaking point (8× income); near-zero supply</li>
+        <li><strong>Finland</strong> — Undervalued but only declining market; patience required</li>
+        <li><strong>Switzerland</strong> — Safe but limited upside; high entry cost</li>
+      </ul>
+    </div>
+    <div class="verdict-box avoid">
+      <h3>Weak Growth — Elevated Risk</h3>
+      <ul>
+        <li><strong>Portugal</strong> — P2I 153, +17% growth may be unsustainable; demand fatigue risk</li>
+        <li><strong>Greece</strong> — P2I stretched, overheated tourist markets, Golden Visa raised to €800K</li>
+        <li><strong>France</strong> — Weakest eurozone performer; structural stagnation; −3.7% in 2024</li>
+        <li><strong>Sweden</strong> — Slow recovery, limited upside until mortgage reform takes effect</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Source:</strong> Market assessments are based on the verified price growth data in the table above and <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD affordability metrics</a>.
+  </div>
+
+  <div class="method-box" style="margin-top:0;">
+    <strong>Market Assessment — Methodology</strong>
+    Countries are grouped into three tiers (Strong Growth / Moderate Growth / Weak Growth) based on a combination of:<br/>
+    <strong>1. Price growth trajectory</strong> — YoY growth from <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#78350f;">Eurostat House Price Index</a> (Q3 2025) and 2026 consensus forecasts from <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#78350f;">ABN AMRO</a> and other analyst estimates.<br/>
+    <strong>2. Affordability</strong> — Price-to-Income ratios from the <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#78350f;">OECD Affordable Housing Database</a>. Markets where P2I exceeds 130 are flagged as stretched.<br/>
+    <strong>3. Structural factors</strong> — policy events (euro adoption, subsidy programmes, stamp duty changes, mortgage reforms) sourced from government announcements, and supply-demand dynamics from <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#78350f;">EU JRC</a> and <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#78350f;">Destatis</a>.<br/><br/>
+    The tier placement is an assessment by TrendsOnFire based on these data inputs. It is not investment advice.
+  </div>
+
+  <!-- Forecast chart -->
+  <div class="section-title">2026–2027 Price Growth Forecast by Tier</div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <h3>Projected Cumulative Growth 2026–2027 by Market Tier — Analyst consensus estimates</h3>
+      <div class="chart-wrap"><canvas id="chart-tier"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h3>Price-to-Income Ratio — Most Unaffordable Markets (2024)</h3>
+      <div class="chart-wrap"><canvas id="chart-p2i"></canvas></div>
+    </div>
+  </div>
+
+  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;margin-bottom:32px;">
+    <strong>Sources:</strong> Tier groupings and P2I values: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#6b7280;">Eurostat HPI</a>, <a href="https://www.ecb.europa.eu/press/economic-bulletin/focus/2024/html/ecb.ebbox202401_05~55ba5bbcf0.en.html" target="_blank" rel="noopener" style="color:#6b7280;">ECB affordability analysis</a>, <a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#6b7280;">OECD Affordable Housing Database</a>. Tier forecasts are aggregations from individual country estimates — not predictions.
+  </div>
+
+  <!-- Conclusion callout -->
+  <div class="callout">
+    <h3>The Big Picture — What 2026–2027 Holds</h3>
+    <p>Europe's housing market is in a recovery cycle driven by ECB rate cuts, chronic supply shortage, and structural demand from migration and urbanisation. The CEE markets (Romania, Hungary, Bulgaria, Czech Republic, Poland) offer the best combination of growth trajectory and entry price. Western Europe is increasingly a hold story — prices in the Netherlands, Germany, and Ireland are stretched by affordability metrics. The three markets to watch most carefully: Romania for long-term capital gain, Italy for value, and Finland as a contrarian recovery play. Portugal and Greece show signs of demand fatigue and are approaching price ceilings. The ECB holding the deposit rate at 2.0% provides support but the easy gains from the 2024–2025 rate-cut tailwind are largely priced in for 2026–2027.</p>
+  </div>
+
+<div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
+  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Also on TrendsOnFire</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="../finance-compliance/big-mac-economy.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">The Big Mac Economy</a>
+      <a href="../supply-chain/circular-economy-tracker.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Circular Economy Tracker</a>
+    </div>
+  </div>
+</div>
+
+  <div class="cta-bar">
+    <div style="flex:1;min-width:0;">
+      <p>About the Author</p>
+      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html">Contact →</a>
+  </div>
+
+</main>
+
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off"/>
+      <button class="search-close" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-hint">Press ESC to close</div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+</footer>
+
+<script>
+// Nav burger
+document.querySelector('.nav-burger').addEventListener('click',function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// Search
+var ARTICLES=[
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
+  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
+  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
+  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
+  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
+  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
+  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
+  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing…</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing…</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results</div>';return;}
+  c.innerHTML=m.map(function(a){return'<a class="search-result" href="'+a.url+'"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div></a>';}).join('');
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+
+// Charts
+var countries=['Hungary','Bulgaria','Portugal','Romania','Poland','Croatia','Greece','Ireland','Czech Rep.','Netherlands','Spain','Italy','Belgium','Germany','UK','Switzerland','Denmark','Sweden','France','Finland'];
+var growth2025=[21.1,15.4,17.0,13.0,4.0,13.1,7.7,7.0,10.5,8.5,12.5,4.0,3.2,3.2,2.8,4.5,2.5,1.0,1.0,-1.5];
+var colors2025=growth2025.map(function(v){return v>10?'#059669':v>3?'#0ea5e9':v>0?'#d97706':'#dc2626';});
+
+new Chart(document.getElementById('chart-growth'),{
+  type:'bar',
+  data:{labels:countries,datasets:[{label:'2025 YoY %',data:growth2025,backgroundColor:colors2025,borderRadius:4}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.raw+'%';}}}},scales:{x:{grid:{color:'#f3f4f6'},ticks:{callback:function(v){return v+'%';}}}}}
+});
+
+var forecast2026=[10,9,7.5,9.5,5,7,5,5,6,3,6,4,2.5,3,3,3,2,2.5,1.5,0.5];
+var forecastColors=forecast2026.map(function(v){return v>=7?'#059669':v>=4?'#0ea5e9':'#d97706';});
+
+new Chart(document.getElementById('chart-forecast'),{
+  type:'bar',
+  data:{labels:countries,datasets:[{label:'2026 forecast %',data:forecast2026,backgroundColor:forecastColors,borderRadius:4}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.raw+'%';}}}},scales:{x:{grid:{color:'#f3f4f6'},ticks:{callback:function(v){return v+'%';}}}}}
+});
+
+// ECB chart (deposit facility rate)
+new Chart(document.getElementById('chart-ecb'),{
+  type:'line',
+  data:{
+    labels:['Jan 2022','Jul 2022','Jan 2023','Jul 2023','Jan 2024','Jun 2024','Sep 2024','Dec 2024','Jun 2025','Mar 2026'],
+    datasets:[
+      {label:'ECB Deposit Rate',data:[-0.5,0,2.0,3.5,4.0,3.75,3.5,3.0,2.0,2.0],borderColor:'#8b1a6a',backgroundColor:'rgba(139,26,106,.1)',tension:.4,fill:true,borderWidth:2}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return v+'%';}},grid:{color:'#f3f4f6'}}}}
+});
+
+// Tier chart
+new Chart(document.getElementById('chart-tier'),{
+  type:'bar',
+  data:{
+    labels:['CEE High Growth\n(HU/BG/RO/PL)','CEE Moderate\n(CZ/HR)','Southern\n(PT/ES/GR)','Western Core\n(NL/DE/BE)','Nordics\n(SE/DK/FI)','Western Slow\n(FR/UK)'],
+    datasets:[
+      {label:'2026 Est. %',data:[9,6.5,5,3.5,2,2],backgroundColor:'#059669',borderRadius:4},
+      {label:'2027 Est. %',data:[8,6,4.5,3,2,2],backgroundColor:'#0ea5e9',borderRadius:4}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return v+'%';}}}}}
+});
+
+// P2I chart
+new Chart(document.getElementById('chart-p2i'),{
+  type:'bar',
+  data:{
+    labels:['Portugal','Netherlands','Ireland','Hungary','Czech Rep.','Greece','Germany','EU Avg'],
+    datasets:[{label:'P2I Index',data:[153,132,130,125,118,110,108,114.8],backgroundColor:function(ctx){var v=ctx.raw;return v>130?'#dc2626':v>115?'#d97706':'#059669';},borderRadius:4}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return 'P2I: '+c.raw;}}}},scales:{y:{min:90}}}
+});
+</script>
+
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;">This site does not use tracking or advertising cookies. <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a></p>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;">OK, got it</button>
+</div>
+<script>(function(){if(!localStorage.getItem('tof_cookie_notice')){var b=document.getElementById("cookie-notice");if(b)b.style.display="flex";}})()</script>
+</body>
+</html>

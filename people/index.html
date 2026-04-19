@@ -1,334 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-115WQYBB0Z');
-  </script><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>People &amp; Transformation Trends — TrendsOnFire</title>
-  <meta name="description" content="People and transformation trend intelligence: workforce change, change management maturity, and org design across Europe. TrendsOnFire by Olga Bressers."/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>People & Transformation Trends — TrendsOnFire</title>
+<meta name="description" content="Executive salaries, labour-market regulation, and the talent shifts reshaping European business."/>
+<link rel="canonical" href="https://trendsonfire.com/people/"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../style.css"/>
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
-    .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
-    .nav-links { display: flex; margin-left: auto; }
-    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+<!-- OpenGraph -->
+<meta property="og:title" content="People & Transformation Trends — TrendsOnFire"/>
+<meta property="og:description" content="Executive salaries, labour-market regulation, and the talent shifts reshaping European business."/>
+<meta property="og:url" content="https://trendsonfire.com/people/"/>
+<meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+<meta property="og:type" content="website"/>
 
-    .sec-header { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
-    .sec-header .inner { max-width: 1100px; margin: auto; }
-    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
-    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
-    .breadcrumb a:hover { color: white; }
-    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--fuchsia); font-weight: 700; margin-bottom: 10px; }
-    .sec-header h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
-    .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "People & Transformation Trends — TrendsOnFire",
+  "description": "Executive salaries, labour-market regulation, and the talent shifts reshaping European business.",
+  "url": "https://trendsonfire.com/people/",
+  "dateModified": "2026-04-14",
+  "author": {"@type": "Person", "name": "Olga Bressers"},
+  "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"},
+  "isAccessibleForFree": true,
+  "keywords": ["people trends", "transformation", "executive salaries", "EU labour market", "talent intelligence"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TrendsOnFire",
+  "url": "https://trendsonfire.com",
+  "founder": {"@type": "Person", "name": "Olga Bressers"}
+}
+</script>
 
-    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
-
-    .coming-soon { background: white; border-radius: 14px; border: 2px dashed var(--border); padding: 48px; text-align: center; margin-bottom: 0; flex: 1 1 280px; max-width: 340px; }
-    .coming-soon .cs-icon { font-size: 48px; margin-bottom: 16px; }
-    .coming-soon h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .coming-soon p { color: var(--sub); font-size: 14px; max-width: 440px; margin: 0 auto; }
-
-    .trends-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
-    .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 48px; }
-    .trend-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 10px; }
-    .tc-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
-    .tc-body { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
-    .tc-body strong { color: var(--text); font-weight: 600; }
-
-    .cee-link-card { background: linear-gradient(135deg, var(--navy) 0%, #1a3558 100%); border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); text-decoration: none; display: block; transition: box-shadow .2s, transform .2s; }
-    .cee-link-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.2); transform: translateY(-2px); }
-    .cee-link-card .tc-tag { color: #8b1a6a; }
-    .cee-link-card .tc-title { color: white; margin-bottom: 10px; }
-    .cee-link-card .tc-body { color: rgba(255,255,255,.7); }
-    .cee-link-card .cee-btn { display: inline-block; margin-top: 14px; background: var(--fuchsia); color: white; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 6px; }
-
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
-    .li-cta a:hover { background: #7a1660; }
-
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
-    footer a { color: #94a3b8; text-decoration: none; }
-    footer a:hover { color: white; }
-
-    /* MOBILE NAV */
-    .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
-    @media(max-width:768px){
-      nav { padding:0 16px; flex-wrap:wrap; }
-      .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:var(--navy,#0f2340); padding:8px 0 16px; }
-      .nav-links.open { display:flex; }
-      .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
-    }
-    /* GENERAL RESPONSIVE */
-    @media(max-width:768px){
-      main, .inner { padding-left:16px !important; padding-right:16px !important; }
-      .sec-header, header { padding:32px 16px 28px; }
-      .stats { grid-template-columns:1fr 1fr; }
-      .two-col { grid-template-columns:1fr !important; }
-      .trends-grid { grid-template-columns:1fr; }
-      .articles-grid { grid-template-columns:1fr !important; }
-      .region-cards { grid-template-columns:1fr 1fr; }
-      .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
-      .filter-bar { flex-direction:column; align-items:stretch; gap:10px; }
-      .filter-bar select, .filter-bar input { width:100%; }
-      .filter-reset { margin-left:0; }
-    }
-    @media(max-width:480px){
-      .stats { grid-template-columns:1fr; }
-      .region-cards { grid-template-columns:1fr; }
-      .level-grid { grid-template-columns:1fr 1fr; }
-    }
-  
-    /* ── SEARCH ── */
-    .nav-search-btn { background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0 10px 0 14px; height: 100%; display: flex; align-items: center; gap: 5px; transition: color .15s; font-size: 12px; font-weight: 500; font-family: inherit; border-left: 1px solid rgba(255,255,255,.15); margin-left: 6px; flex-shrink: 0; }
-    .nav-search-btn:hover { color: white; }
-    #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
-    .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
-    #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
-    #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
-    .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
-    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
-    .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
-    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
-    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
-    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
-    .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
-    @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
-  </style>
-    <link rel="canonical" href="https://trendsonfire.com/people/"/>
-  <meta name="author" content="Olga Bressers"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="TrendsOnFire"/>
-  <meta property="og:title" content="People & Transformation Intelligence — TrendsOnFire"/>
-  <meta property="og:description" content="Tracking executive moves, layoffs, salary benchmarks and leadership trends."/>
-  <meta property="og:url" content="https://trendsonfire.com/people/"/>
-  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="People & Transformation Intelligence — TrendsOnFire"/>
-  <meta name="twitter:description" content="Tracking executive moves, layoffs, salary benchmarks and leadership trends."/>
-  <meta name="twitter:image" content="https://trendsonfire.com/og-image.png"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "People & Transformation Intelligence",
-    "description": "Tracking executive moves, layoffs, salary benchmarks and leadership trends.",
-    "url": "https://trendsonfire.com/people/",
-    "author": {
-      "@type": "Person",
-      "name": "Olga Bressers",
-      "url": "https://trendsonfire.com/olgabressers/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "TrendsOnFire",
-      "url": "https://trendsonfire.com"
-    }
-  }
-  </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+  <a href="../index.html" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
-  <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="index.html" class="active">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
-  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  <button class="nav-search-btn" onclick="document.getElementById('search-overlay').style.display='block';document.getElementById('search-input').focus();">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="5"/><line x1="10" y1="10" x2="13" y2="13"/></svg>
     Search
   </button>
 </nav>
 
-<div class="sec-header">
+<!-- HERO -->
+<section class="sec-hero">
   <div class="inner">
-    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / People &amp; Transformation</div>
-    <div class="sec-eyebrow">People &amp; Transformation Intelligence</div>
-    <h1>People &amp; Transformation Intelligence</h1>
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; People & Transformation</div>
+    <div class="eyebrow">People & Transformation Intelligence</div>
+    <h1>People & Transformation Intelligence</h1>
     <p>Executive salaries, labour-market regulation, and the talent shifts reshaping European business.</p>
-    <div style="font-size:11.5px;color:rgba(255,255,255,.55);margin-top:14px;letter-spacing:0.3px;">Updated 14 April 2026</div>
+    <div class="sec-date">Updated 14 April 2026</div>
   </div>
-</div>
+</section>
 
-<main>
-  <!-- ── REPORTS ──────────────────────────────────────────────────────── -->
-  <div class="trends-title">Published Reports</div>
-  <div class="articles-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:48px;">
-
-    <a href="luxury-dtc-leader.html" style="text-decoration:none;display:block;background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.1)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'">
-      <div style="background:linear-gradient(135deg,#8b1a6a,#5b1147);padding:20px 22px 16px;display:flex;align-items:center;gap:14px;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);">Luxury &middot; DTC &middot; Leadership</div>
-      </div>
-      <div style="padding:18px 22px 22px;">
-        <div style="font-size:16px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:8px;">European Luxury DTC Leadership Market</div>
-        <div style="font-size:13px;color:var(--sub);line-height:1.6;">DTC revenue share across 11 luxury and premium groups from their own annual reports (Kering, Prada, Burberry, Richemont, Moncler, Tapestry, Pandora, Ferragamo, Hugo Boss, Brunello Cucinelli, LVMH) &mdash; plus salary benchmarks and talent-market observations.</div>
-      </div>
+<!-- PUBLISHED REPORTS -->
+<section class="articles-wrap">
+  <h2 class="articles-section-title">Published Reports</h2>
+  <div class="articles-grid">
+    <a href="luxury-dtc-leader.html" class="art-card">
+      <div class="art-card-tag">Published Report</div>
+      <div class="art-card-title">European Luxury DTC Leadership Market</div>
+      <div class="art-card-desc">DTC revenue share across 11 luxury and premium groups from their own annual reports (Kering, Prada, Burberry, Richemont, Moncler, Tapestry, Pandora, Ferragamo, Hugo Boss, Brunello Cucinelli, LVMH) — plus salary benchmarks and talent-market observations.</div>
+      <div class="art-card-link">Read report &rarr;</div>
     </a>
-
   </div>
 
-  <!-- ── TRENDS ──────────────────────────────────────────────────────── -->
-  <div class="trends-title">Key People &amp; Transformation Trends &mdash; 2026</div>
+  <!-- TREND CARDS -->
+  <h2 class="trends-title">Trend Intelligence</h2>
   <div class="trends-grid">
-
     <div class="trend-card">
       <div class="tc-tag">Pay Transparency</div>
       <div class="tc-title">EU Pay Transparency Directive must be transposed into national law by 7 June 2026</div>
-      <div class="tc-body"><a href="https://eur-lex.europa.eu/eli/dir/2023/970/oj/eng" target="_blank" style="color:#4338ca;text-decoration:underline;">Directive (EU) 2023/970</a> requires employers to disclose pay ranges in job postings, give workers the right to information on pay levels, and (for companies with 100+ employees) publish gender pay-gap reports from 2027 onwards. Member States must transpose by <strong>7 June 2026</strong>. Source: <a href="https://ec.europa.eu/social/main.jsp?catId=1196&amp;langId=en" target="_blank" style="color:#4338ca;text-decoration:underline;">European Commission &mdash; Pay transparency</a>.</div>
+      <div class="tc-body">Directive (EU) 2023/970 requires employers to disclose pay ranges in job postings, give workers the right to information on pay levels, and (for companies with 100+ employees) publish gender pay-gap reports from 2027 onwards. Member States must transpose by 7 June 2026. Source: <a href="https://ec.europa.eu/social/main.jsp?catId=1196&langId=en" style="color:#4338ca;text-decoration:underline;">European Commission — Pay transparency</a></div>
     </div>
-
     <div class="trend-card">
       <div class="tc-tag">AI in HR</div>
       <div class="tc-title">EU AI Act classifies AI systems used in recruitment and HR decisions as high-risk</div>
-      <div class="tc-body"><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng" target="_blank" style="color:#4338ca;text-decoration:underline;">Regulation (EU) 2024/1689 &mdash; Annex III</a> lists employment-related AI systems (candidate screening, performance evaluation, task allocation, monitoring) as high-risk. High-risk obligations apply from <strong>2 August 2026</strong>. HR functions deploying AI need documentation, human oversight and bias testing by that date. Source: <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" style="color:#4338ca;text-decoration:underline;">European Commission &mdash; AI Act</a>.</div>
+      <div class="tc-body">Regulation (EU) 2024/1689 — Annex III lists employment-related AI systems (candidate screening, performance evaluation, task allocation, monitoring) as high-risk. High-risk obligations apply from 2 August 2026. HR functions deploying AI need documentation, human oversight and bias testing by that date. Source: <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" style="color:#4338ca;text-decoration:underline;">European Commission — AI Act</a></div>
     </div>
-
     <div class="trend-card">
       <div class="tc-tag">Luxury Leadership</div>
       <div class="tc-title">Luxury DTC revenue share has moved faster than the leadership layer that runs it</div>
-      <div class="tc-body">Across 11 publicly listed luxury and premium groups, DTC revenue share ranges from 67% (Brunello Cucinelli) to 100% (LV/Dior), with the average above 80% &mdash; figures sourced directly from each group&rsquo;s 2024 or FY25 annual results. The leadership-market implications are analysed in the <a href="luxury-dtc-leader.html" style="color:#4338ca;text-decoration:underline;">European Luxury DTC Leadership Market report</a>.</div>
+      <div class="tc-body">Across 11 publicly listed luxury and premium groups, DTC revenue share ranges from 67% (Brunello Cucinelli) to 100% (LV/Dior), with the average above 80% — figures sourced directly from each group's 2024 or FY25 annual results. The leadership-market implications are analysed in the European Luxury DTC Leadership Market report. Source: <a href="luxury-dtc-leader.html" style="color:#4338ca;text-decoration:underline;">TrendsOnFire report</a></div>
     </div>
-
     <div class="trend-card">
       <div class="tc-tag">Labour Market</div>
       <div class="tc-title">EU labour and skills shortages persist across most Member States</div>
-      <div class="tc-body">Cedefop&apos;s latest European Skills and Jobs Survey shows structural skill shortages in ICT, engineering, health and green-transition roles across the EU27. According to <a href="https://www.cedefop.europa.eu/en/publications/3098" target="_blank" style="color:#4338ca;text-decoration:underline;">Cedefop (2024)</a>, bottleneck occupations affect employers in the majority of Member States. See also <a href="https://www.eurofound.europa.eu/en/topics/labour-market-change" target="_blank" style="color:#4338ca;text-decoration:underline;">Eurofound &mdash; Labour market change</a>.</div>
+      <div class="tc-body">Cedefop's latest European Skills and Jobs Survey shows structural skill shortages in ICT, engineering, health and green-transition roles across the EU27. Bottleneck occupations affect employers in the majority of Member States. Sources: <a href="https://www.cedefop.europa.eu/en/publications/3098" style="color:#4338ca;text-decoration:underline;">Cedefop</a>, <a href="https://www.eurofound.europa.eu/en/topics/labour-market-change" style="color:#4338ca;text-decoration:underline;">Eurofound</a></div>
     </div>
-
     <div class="trend-card">
-      <div class="tc-tag">Sleep &amp; Productivity</div>
+      <div class="tc-tag">Sleep & Productivity</div>
       <div class="tc-title">Sleep deprivation carries measurable GDP cost across major economies</div>
-      <div class="tc-body"><a href="https://www.rand.org/pubs/research_reports/RR1791.html" target="_blank" style="color:#4338ca;text-decoration:underline;">RAND Europe (2016) &mdash; &ldquo;Why Sleep Matters&rdquo;</a> estimates that insufficient sleep costs the US up to $411B per year (2.28% of GDP) and Japan up to $138B (2.92% of GDP). Similar order-of-magnitude losses are found in the UK, Canada and Germany. Source: <a href="https://www.rand.org/news/press/2016/11/30.html" target="_blank" style="color:#4338ca;text-decoration:underline;">RAND press release, Nov 2016</a>.</div>
+      <div class="tc-body">RAND Europe (2016) — "Why Sleep Matters" estimates that insufficient sleep costs the US up to $411B per year (2.28% of GDP) and Japan up to $138B (2.92% of GDP). Similar order-of-magnitude losses are found in the UK, Canada and Germany. Sources: <a href="https://www.rand.org/pubs/research_reports/RR1791.html" style="color:#4338ca;text-decoration:underline;">RAND report</a>, <a href="https://www.rand.org/news/press/2016/11/30.html" style="color:#4338ca;text-decoration:underline;">RAND press release</a></div>
     </div>
-
     <div class="trend-card">
       <div class="tc-tag">Workforce Reporting</div>
       <div class="tc-title">CSRD expands mandatory workforce-data reporting for thousands of EU companies</div>
-      <div class="tc-body">Under the <a href="https://eur-lex.europa.eu/eli/dir/2022/2464/oj/eng" target="_blank" style="color:#4338ca;text-decoration:underline;">Corporate Sustainability Reporting Directive (EU) 2022/2464</a>, large EU companies must disclose own-workforce metrics (gender pay gap, turnover, training hours, collective bargaining coverage) under ESRS S1 from FY2024/2025 reports. Source: <a href="https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en" target="_blank" style="color:#4338ca;text-decoration:underline;">European Commission &mdash; CSRD</a>.</div>
+      <div class="tc-body">Under the Corporate Sustainability Reporting Directive (EU) 2022/2464, large EU companies must disclose own-workforce metrics (gender pay gap, turnover, training hours, collective bargaining coverage) under ESRS S1 from FY2024/2025 reports. Source: <a href="https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en" style="color:#4338ca;text-decoration:underline;">European Commission — CSRD</a></div>
     </div>
-
   </div>
+</section>
 
-  <!-- ABOUT THE AUTHOR -->
-  <div class="li-cta">
-    <div style="flex:1;min-width:0;">
-      <p>About the Author</p>
-      <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
-      <p style="max-width:none;margin-top:10px;color:rgba(255,255,255,.85);font-size:15px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in sales & digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
     </div>
-    <a href="../olgabressers/index.html">Contact →</a>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
   </div>
-</main>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 TrendsOnFire &middot; Privacy Policy &middot; Disclaimer &middot; Terms &amp; Conditions &middot; Contact — Analysis based on publicly available information. Not investment advice.
+</footer>
 
 <!-- SEARCH OVERLAY -->
-<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
+<div id="search-overlay">
   <div class="search-inner">
     <div class="search-box">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="search-input" type="search" placeholder="Search articles, topics, tags…" autocomplete="off" aria-label="Search"/>
-      <button class="search-close" onclick="closeSearch()" aria-label="Close search">✕</button>
+      <input type="text" id="search-input" placeholder="Search TrendsOnFire..." autocomplete="off"/>
+      <button class="search-close" onclick="document.getElementById('search-overlay').style.display='none';">&times;</button>
     </div>
-    <div class="search-hint">Press ESC to close · Click a result to open the article</div>
-    <div id="search-results" role="list"></div>
+    <div class="search-hint">Type to search published reports and trend intelligence</div>
+    <div id="search-results"></div>
   </div>
 </div>
 
-<footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
-</footer>
-<script>
-document.querySelector('.nav-burger').addEventListener('click',function(){
-  document.querySelector('.nav-links').classList.toggle('open');
-});
-</script>
-
-<!-- COOKIE NOTICE BANNER -->
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
-  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
-    This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
-    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
-    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
-  </p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+<!-- COOKIE NOTICE -->
+<div id="cookie-notice">
+  <p>This site uses cookies for analytics. By continuing to browse you agree to our use of cookies. <a href="../privacy.html">Privacy Policy</a></p>
+  <button onclick="document.getElementById('cookie-notice').style.display='none';localStorage.setItem('cookie-accepted','1');">Accept</button>
 </div>
-<script>
-(function(){
-  if(!localStorage.getItem('tof_cookie_notice')){
-    var b=document.getElementById("cookie-notice");
-    if(b)b.style.display="flex";
-  }
-})();
-</script>
 
 <script>
-var ARTICLES=[
-  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food","Digital Product Passport","Vinted","Back Market","Refurbed","Too Good To Go","IKEA","Sellpy","Ahrend","Gispen","Madaster","H&M","Zara","Inditex","Nike","Adidas","Uniqlo","Patagonia","Primark","ASOS","Zalando","Fonq","Live Light","ReShare","Syre","Galy","Looper Textile"]},
-  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey","BCG","SAP IBP","o9","Kinaxis","Blue Yonder","Anaplan","Oracle","OMP","Logility","John Galt","e2open","GAINSystems","Dassault Systèmes","AB InBev","Kraft Heinz","Unilever","Nestlé","Estée Lauder","Syngenta","Johnson & Johnson","Coca-Cola","Mondelez","Volvo","Bosch","Mars","Oliver Wight"]},
-  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Europe","Bankruptcy","Fonq","IKEA","Westwing","Made.com","Beter Bed","Pure-play","Online Furniture"]},
-  {title:"European Energy Flexibility Markets & Demand Response Intelligence 2026",url:"/retail/flexibility-markets.html",section:"Retail & E-Commerce",desc:"How Europe's balancing markets, virtual power plants, and demand response programmes are reshaping the energy landscape.",tags:["Energy","Flexibility Markets","Demand Response","VPP","Virtual Power Plant","Balancing Markets","Aggregator","Netherlands","Belgium","France","REMIT","TenneT","Elia","RTE","Voltalis","Next Kraftwerke","Octopus","Tesla","ECB","BESS","EV","Heat Pump"]},
-  {title:"European Luxury DTC Leadership Market",url:"/people/luxury-dtc-leader.html",section:"People & Transformation",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports, and what the channel shift means for the leadership market.",tags:["Luxury","DTC","Leadership","Kering","Gucci","Prada","Burberry","Richemont","LVMH","Louis Vuitton","Dior","Pandora","Moncler","Tapestry","Ferragamo","Hugo Boss","Brunello Cucinelli","E-Commerce","Annual Reports"]},
-  {title:"Global Counterfeiting Intelligence — European Market",url:"/finance-compliance/counterfeiting.html",section:"Finance & Compliance",desc:"EU sector impact, enforcement trends, and brand protection strategies.",tags:["Anti-Counterfeiting","Brand Protection","Compliance","E-Commerce","OECD","EUIPO","INTA","React","ACG","GPSR","EU Customs","Falsified Medicines"]},
-  {title:"European Housing Market Intelligence 2026–2027",url:"/real-estate/european-housing-market.html",section:"Real Estate",desc:"Price trends, forecasts and market signals across 20 European markets.",tags:["Real Estate","Housing","Europe","Eurostat","ECB","OECD","Netherlands","Germany","France","Spain","Portugal","Italy","Hungary","Romania","Poland","UK","Switzerland","Greece"]},
-  {title:"OPPLE Lighting in Europe: Competitive Positioning & Market Intelligence 2026",url:"/technology/opple-europe-market.html",section:"Technology",desc:"Chinese lighting manufacturer European expansion, competitive positioning vs Signify and Osram.",tags:["Lighting","LED","OPPLE","Signify","Osram","Zumtobel","Fagerhult","Trilux","Europe","Technology","Smart Lighting"]},
-  {title:"Podcast Trends Dashboard — Media Intelligence",url:"/media/podcasts.html",section:"Media",desc:"Global podcast growth, Dutch aggregator dynamics, podcasts as a marketing channel.",tags:["Podcasts","Netherlands","Media","Marketing","Spotify","Edison Research","SPOT NL","Podimo","Retail","Ecommerce"]},
-  {title:"Electric Vehicle Evolution — Tesla, BYD and the 2026 reset",url:"/technology/tesla-fsd-europe.html",section:"Technology",desc:"Netherlands first in Europe to approve Tesla FSD (10 April 2026). Tesla Q1 performance by region, BYD competitive race, 30-country EV adoption ranking, March 2026 energy shock.",tags:["Tesla","FSD","Autonomous Driving","SAE Levels","Self-Driving","BYD","Netherlands","RDW","Mercedes Drive Pilot","Waymo","Electric Vehicles","EV","Europe","Middle East","Saudi Arabia","Cybertruck","Elon Musk","IEA","BloombergNEF","Energy Crisis","Oil Price","Brent","Robotaxi","Autopilot"]}
+// Search
+const searchData=[
+  {section:"People & Transformation",title:"European Luxury DTC Leadership Market",desc:"DTC revenue share across 11 luxury and premium groups from their own annual reports — plus salary benchmarks and talent-market observations.",url:"luxury-dtc-leader.html",tags:["luxury","DTC","leadership","salaries"]}
 ];
-function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
-function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
-document.getElementById('search-input').addEventListener('input',function(){
-  var q=this.value.toLowerCase().trim();
-  var c=document.getElementById('search-results');
-  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles\u2026</div>';return;}
-  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
-  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
-  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+const si=document.getElementById('search-input'),sr=document.getElementById('search-results');
+si.addEventListener('input',function(){
+  const q=this.value.toLowerCase().trim();
+  if(!q){sr.innerHTML='';return;}
+  const m=searchData.filter(d=>(d.title+d.desc+d.tags.join(' ')+d.section).toLowerCase().includes(q));
+  if(!m.length){sr.innerHTML='<div class="search-empty">No results found</div>';return;}
+  sr.innerHTML=m.map(d=>'<a class="search-result" href="'+d.url+'"><div class="sr-section">'+d.section+'</div><div class="sr-title">'+d.title+'</div><div class="sr-desc">'+d.desc+'</div><div class="sr-tags">'+d.tags.map(t=>'<span class="sr-tag">'+t+'</span>').join('')+'</div></a>').join('');
 });
-document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
-document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('search-overlay').style.display='none';});
+
+// Cookie
+if(!localStorage.getItem('cookie-accepted')){document.getElementById('cookie-notice').style.display='flex';}
 </script>
+
 </body>
 </html>

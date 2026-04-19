@@ -11,6 +11,7 @@
     gtag('config', 'G-115WQYBB0Z');
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food | TrendsOnFire</title>
   <meta name="description" content="European circular economy intelligence across fashion, electronics, food, furniture and building materials. EU regulation timeline, named players, and market revenue figures."/>
   <link rel="canonical" href="https://trendsonfire.com/supply-chain/circular-economy-tracker.html"/>
@@ -30,17 +31,17 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --link:#4338ca; --green:#059669; --teal:#0d9488; --amber:#d97706; --red:#dc2626; --purple:#7c3aed; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    :root { --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a; --link:#4338ca; --green:#059669; --teal:#0d9488; --amber:#d97706; --red:#dc2626; --purple:#7c3aed; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.55; }
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
-    .hero { background: linear-gradient(135deg, #0f2340 0%, #134e4a 50%, #064e3b 100%); color: white; padding: 60px 32px 48px; }
+    .hero { background: linear-gradient(135deg, #0a0f1a 0%, #134e4a 50%, #064e3b 100%); color: white; padding: 60px 32px 48px; }
     .hero .inner { max-width: 1100px; margin: auto; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
@@ -52,28 +53,28 @@
 
     main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
 
-    .key-thesis { background: linear-gradient(135deg, #064e3b 0%, #134e4a 100%); color: white; border-radius: 14px; padding: 28px 32px; margin-bottom: 36px; border-left: 5px solid #6ee7b7; }
+    .key-thesis { background: linear-gradient(135deg, #064e3b 0%, #134e4a 100%); color: white; border-radius: 0; padding: 28px 32px; margin-bottom: 36px; border-left: 5px solid #6ee7b7; }
     .key-thesis .label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 10px; }
     .key-thesis p { font-size: 15.5px; line-height: 1.75; color: rgba(255,255,255,.92); }
     .key-thesis a { color: #a7f3d0; text-decoration: underline; font-weight: 600; }
 
     .topline { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 40px; }
-    .top-stat { background: white; border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.04); }
-    .top-stat .num { font-size: 26px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .top-stat { background: white; border-radius: 0; padding: 18px 20px; border: 1px solid var(--rule, #e2dfd9); box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+    .top-stat .num { font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1; }
     .top-stat .label { font-size: 11px; color: var(--sub); margin-top: 6px; line-height: 1.4; }
     .top-stat .src { font-size: 10.5px; color: var(--link); margin-top: 6px; }
     .top-stat .src a { color: var(--link); text-decoration: underline; }
 
     .section { margin-bottom: 56px; }
-    .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 3px solid var(--fuchsia); margin-bottom: 22px; flex-wrap: wrap; }
-    .section-num { font-size: 32px; font-weight: 900; color: var(--fuchsia); letter-spacing: -1px; }
-    .section-title { font-size: 22px; font-weight: 800; color: var(--navy); }
+    .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 3px solid var(--gold, #b8976a); margin-bottom: 22px; flex-wrap: wrap; }
+    .section-num { font-size: 32px; font-weight: 900; color: var(--gold, #b8976a); letter-spacing: -1px; }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--ink, #0a0f1a); }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-left: auto; max-width: 480px; text-align: right; }
     @media(max-width:680px){ .section-sub { text-align: left; max-width: 100%; margin-left: 0; } }
 
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 18px; }
-    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.05); position: relative; overflow: hidden; }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-color, #8b1a6a); }
+    .card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 24px; ; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-color, #b8976a); }
     .card.ikea::before { background: #fbbf24; }
     .card.vepa::before { background: #0d9488; }
     .card.fonq::before { background: #dc2626; }
@@ -90,20 +91,20 @@
     .card.olio::before { background: #16a34a; }
     .card.ppwr::before { background: #9333ea; }
 
-    .c-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
-    .c-name { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.25; }
+    .c-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold, #b8976a); margin-bottom: 8px; }
+    .c-name { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; line-height: 1.25; }
     .c-flag { font-size: 12px; color: var(--sub); margin-bottom: 14px; }
     .c-flag .country-tag { display: inline-block; background: #f3f4f6; color: var(--text); padding: 2px 8px; border-radius: 4px; font-size: 10.5px; font-weight: 700; letter-spacing: .5px; margin-right: 6px; }
     .c-stats { margin-bottom: 12px; }
     .c-stat { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed #f1f5f9; font-size: 12.5px; }
     .c-stat:last-child { border-bottom: none; }
     .c-stat .k { color: var(--sub); }
-    .c-stat .v { font-weight: 700; color: var(--navy); }
+    .c-stat .v { font-weight: 700; color: var(--ink, #0a0f1a); }
     .c-source { font-size: 11.5px; padding-top: 10px; border-top: 1px solid #f1f5f9; line-height: 1.55; }
     .c-source a { color: var(--link); text-decoration: underline; font-weight: 600; }
 
-    .chart-box { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 24px 26px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .chart-box h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .chart-box { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 24px 26px; margin-bottom: 16px; ; }
+    .chart-box h3 { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .chart-box .csub { font-size: 12px; color: var(--sub); margin-bottom: 16px; }
     .chart-wrap { position: relative; height: 240px; }
 
@@ -111,37 +112,37 @@
     .reg-banner strong { color: #451a03; }
     .reg-banner a { color: #92400e; text-decoration: underline; font-weight: 700; }
 
-    .timeline { background: white; border-radius: 14px; padding: 28px 32px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .tl-head { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .timeline { background: white; border-radius: 0; padding: 28px 32px; border: 1px solid var(--rule, #e2dfd9); ; }
+    .tl-head { font-size: 18px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .tl-sub { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
     .tl-line { position: relative; padding-left: 30px; }
-    .tl-line::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--border); }
+    .tl-line::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--rule, #e2dfd9); }
     .tl-item { position: relative; margin-bottom: 18px; }
     .tl-item:last-child { margin-bottom: 0; }
-    .tl-dot { position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--fuchsia); background: white; }
-    .tl-date { font-size: 11px; font-weight: 800; color: var(--fuchsia); letter-spacing: .5px; }
-    .tl-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .tl-dot { position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--gold, #b8976a); background: white; }
+    .tl-date { font-size: 11px; font-weight: 800; color: var(--gold, #b8976a); letter-spacing: .5px; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-top: 2px; }
     .tl-body { font-size: 12.5px; color: var(--sub); margin-top: 4px; line-height: 1.6; }
     .tl-body a { color: var(--link); text-decoration: underline; }
 
     .li-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .li-card { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 18px 22px; }
-    .li-card .li-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 6px; }
-    .li-card h4 { font-size: 13.5px; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+    .li-card { background: white; border-radius: 10px; border: 1px solid var(--rule, #e2dfd9); padding: 18px 22px; }
+    .li-card .li-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold, #b8976a); margin-bottom: 6px; }
+    .li-card h4 { font-size: 13.5px; color: var(--ink, #0a0f1a); margin-bottom: 6px; line-height: 1.4; }
     .li-card p { font-size: 12px; color: var(--sub); line-height: 1.55; }
 
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
+    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+    .li-cta a { background: var(--gold, #b8976a); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
 
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
       main { padding-left:16px !important; padding-right:16px !important; }
@@ -154,56 +155,54 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Circular Economy Tracker — Fashion, Electronics, Furniture, Food, Building Materials", "description": "EU circular-economy regulation timeline with sourced sustainability metrics for 9 major fashion brands, plus sector coverage across fashion, electronics, furniture, food, and building materials.", "datePublished": "2026-04-16", "dateModified": "2026-04-16", "url": "https://trendsonfire.com/supply-chain/circular-economy-tracker.html", "author": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}, "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"}, "keywords": ["circular economy", "ESPR", "fashion sustainability", "H&M", "Zara", "Adidas", "Nike", "Patagonia", "Uniqlo", "Primark", "ASOS", "Vinted"], "inLanguage": "en", "isAccessibleForFree": true}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com", "description": "AI-based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.", "founder": {"@type": "Person", "name": "Olga Bressers", "url": "https://trendsonfire.com/olgabressers/"}}</script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">&#9776;</button>
-  <div class="nav-links">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
-    <a href="index.html" class="active">Supply Chain</a>
-    <a href="../education-government/index.html">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
-
 </nav>
 
 <div class="hero">
@@ -318,7 +317,7 @@
 
     <!-- NL COMPETITIVE LANDSCAPE — sub-section -->
     <div style="margin-top:32px;">
-      <h3 style="font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px;">Netherlands Furniture Circularity &mdash; The Competitive Landscape</h3>
+      <h3 style="font-size:17px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:6px;">Netherlands Furniture Circularity &mdash; The Competitive Landscape</h3>
       <p style="font-size:13px;color:var(--sub);margin-bottom:18px;max-width:760px;">Two parallel ecosystems are emerging in the Dutch market: <strong>integrators</strong> that rent and rotate furniture across short-stay, expat and hospitality use (KeyPro / Hooft &amp; Petiet under ReShare Living Group, Live Light, In-Lease, RE-PLACE), and <strong>manufacturers</strong> that have built joint refurbishment infrastructure (Ahrend, Gispen, Presikhaaf at the Circulaire Hub in Veghel; Vepa).</p>
 
       <div class="card-grid">
@@ -447,16 +446,16 @@
 
     <!-- FASHION BRANDS READINESS — sub-section -->
     <div style="margin-top:32px;">
-      <h3 style="font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px;">Fashion &amp; Apparel Brands &mdash; Circular Readiness</h3>
+      <h3 style="font-size:17px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:6px;">Fashion &amp; Apparel Brands &mdash; Circular Readiness</h3>
       <p style="font-size:13px;color:var(--sub);margin-bottom:18px;max-width:820px;">How nine major fashion groups are positioned against the EU&apos;s circular mandates. All figures below come from each company&apos;s own published sustainability or annual report. Where a company does not disclose a given metric, the card says so rather than estimating.</p>
 
-      <div style="margin-bottom:18px;padding:14px 18px;background:#fff1f2;border-left:4px solid #8b1a6a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
+      <div style="margin-bottom:18px;padding:14px 18px;background:#fff1f2;border-left:4px solid #b8976a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
         <strong>Key compliance date &mdash; 19 July 2026:</strong> under the EU Ecodesign for Sustainable Products Regulation (ESPR), large companies selling textiles, apparel and footwear in the EU will no longer be allowed to destroy unsold stock. Destruction is only permitted for safety or severe damage, must be documented, and public disclosure of how unsold goods are handled becomes mandatory. Medium-sized companies fall under the ban from 2030. Source: <a href="https://environment.ec.europa.eu/news/new-eu-rules-stop-destruction-unsold-clothes-and-shoes-2026-02-09_en" target="_blank" style="color:#4338ca;text-decoration:underline;">European Commission &mdash; New EU rules to stop destruction of unsold clothes and shoes</a>.
       </div>
 
       <div class="card-grid">
 
-        <div class="card" style="border-top-color:#8b1a6a;">
+        <div class="card" style="border-top-color: #8b6a2f;">
           <div class="c-tag">Sweden · Listed</div>
           <div class="c-name">H&amp;M Group FY2025</div>
           <div class="c-flag"><span class="country-tag">SE</span> Fast fashion · Sellpy pre-owned platform</div>
@@ -470,7 +469,7 @@
           <div class="c-source">Sources: <a href="https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf" target="_blank">H&amp;M Group Annual &amp; Sustainability Report 2025 (PDF, 99pp)</a> &middot; <a href="https://hmgroup.com/news/h-m-hennes-mauritz-ab-publishes-its-annual-and-sustainability-report-2025/" target="_blank">H&amp;M press release 26 Mar 2026</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#0f2340;">
+        <div class="card" style="border-top-color:#0a0f1a;">
           <div class="c-tag">Spain · Listed</div>
           <div class="c-name">Inditex / Zara Pre-Owned</div>
           <div class="c-flag"><span class="country-tag">ES</span> Repair · resale · donation programme</div>
@@ -581,58 +580,58 @@
       </div>
 
       <!-- H&M GROUP — DEEP DIVE -->
-      <div style="margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#fdf2f8 0%,#faf5ff 100%);border:1px solid #f3e0ed;border-radius:14px;">
-        <div style="font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#8b1a6a;font-weight:800;margin-bottom:6px;">Deep dive</div>
-        <h3 style="font-size:22px;font-weight:800;color:#0f2340;margin-bottom:8px;">Inside H&amp;M Group's circular transition (FY2025)</h3>
+      <div style="margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#fdf2f8 0%,#faf5ff 100%);border:1px solid #f3e0ed;border-radius: 0;">
+        <div style="font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Deep dive</div>
+        <h3 style="font-size:22px;font-weight:800;color:#0a0f1a;margin-bottom:8px;">Inside H&amp;M Group's circular transition (FY2025)</h3>
         <p style="font-size:14px;color:#4b5563;margin-bottom:20px;max-width:900px;line-height:1.6;">H&amp;M Group's financial year runs from 1 December to 30 November. The FY2025 Annual &amp; Sustainability Report (published 26 March 2026) puts two figures on the same page that together sketch where the company is on the circular journey: <strong>91%</strong> of commercial materials are now recycled or sustainably sourced, and <strong>0.8%</strong> of group turnover came from resale in FY2025. Both numbers moved the same direction this year &mdash; and the work between them is what closes the gap.</p>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;">
           <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
-            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8b1a6a;font-weight:800;margin-bottom:6px;">Net sales FY2025</div>
-            <div style="font-size:24px;font-weight:800;color:#0f2340;line-height:1.1;">SEK 228B</div>
-            <div style="font-size:11.5px;color:#6b7280;margin-top:4px;">+2% in local currencies</div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Net sales FY2025</div>
+            <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 228B</div>
+            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">+2% in local currencies</div>
           </div>
           <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
-            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8b1a6a;font-weight:800;margin-bottom:6px;">Operating profit</div>
-            <div style="font-size:24px;font-weight:800;color:#0f2340;line-height:1.1;">SEK 18.4B</div>
-            <div style="font-size:11.5px;color:#6b7280;margin-top:4px;">8.1% op. margin</div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Operating profit</div>
+            <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 18.4B</div>
+            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">8.1% op. margin</div>
           </div>
           <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
-            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8b1a6a;font-weight:800;margin-bottom:6px;">Scope 3 emissions</div>
-            <div style="font-size:24px;font-weight:800;color:#0f2340;line-height:1.1;">&minus;34.6%</div>
-            <div style="font-size:11.5px;color:#6b7280;margin-top:4px;">vs 2019 baseline</div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Scope 3 emissions</div>
+            <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">&minus;34.6%</div>
+            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">vs 2019 baseline</div>
           </div>
           <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
-            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8b1a6a;font-weight:800;margin-bottom:6px;">Resale turnover FY25</div>
-            <div style="font-size:24px;font-weight:800;color:#0f2340;line-height:1.1;">SEK 1.84B</div>
-            <div style="font-size:11.5px;color:#6b7280;margin-top:4px;">+27% YoY</div>
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Resale turnover FY25</div>
+            <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 1.84B</div>
+            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">+27% YoY</div>
           </div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #f3e0ed;">
-            <div style="font-size:13px;font-weight:800;color:#0f2340;margin-bottom:10px;">Materials mix FY2025 (commercial products)</div>
+            <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:10px;">Materials mix FY2025 (commercial products)</div>
             <table style="width:100%;font-size:13px;border-collapse:collapse;">
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled or sustainably sourced</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">91% <span style="font-weight:400;color:#9ca3af;">(89% FY24 &middot; 83% FY23)</span></td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled materials alone</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">32% <span style="font-weight:400;color:#9ca3af;">(30% target met)</span></td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled or sustainable packaging</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">86% <span style="font-weight:400;color:#9ca3af;">(84% FY24)</span></td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled packaging materials</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">51%</td></tr>
-              <tr><td style="padding:6px 0;color:#4b5563;">2030 target &mdash; sustainable materials</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">100%</td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled or sustainably sourced</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">91% <span style="font-weight:400;color:#9ca3af;">(89% FY24 &middot; 83% FY23)</span></td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled materials alone</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">32% <span style="font-weight:400;color:#9ca3af;">(30% target met)</span></td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled or sustainable packaging</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">86% <span style="font-weight:400;color:#9ca3af;">(84% FY24)</span></td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled packaging materials</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">51%</td></tr>
+              <tr><td style="padding:6px 0;color:#4b5563;">2030 target &mdash; sustainable materials</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">100%</td></tr>
             </table>
           </div>
           <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #f3e0ed;">
-            <div style="font-size:13px;font-weight:800;color:#0f2340;margin-bottom:10px;">Resale business FY2025</div>
+            <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:10px;">Resale business FY2025</div>
             <table style="width:100%;font-size:13px;border-collapse:collapse;">
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resale share of group turnover</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">0.8% <span style="font-weight:400;color:#9ca3af;">(0.6% FY24 &middot; 0.3% FY22)</span></td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resale total turnover</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">SEK 1,844m <span style="font-weight:400;color:#9ca3af;">(+27% YoY)</span></td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resell markets</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">26 markets via Sellpy &amp; family brands</td></tr>
-              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resell through</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">Sellpy, H&amp;M, ARKET, COS, Weekday, Monki</td></tr>
-              <tr><td style="padding:6px 0;color:#4b5563;">EU Taxonomy alignment (circular)</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0f2340;">0.8% of turnover eligible</td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resale share of group turnover</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">0.8% <span style="font-weight:400;color:#9ca3af;">(0.6% FY24 &middot; 0.3% FY22)</span></td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resale total turnover</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">SEK 1,844m <span style="font-weight:400;color:#9ca3af;">(+27% YoY)</span></td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resell markets</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">26 markets via Sellpy &amp; family brands</td></tr>
+              <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resell through</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">Sellpy, H&amp;M, ARKET, COS, Weekday, Monki</td></tr>
+              <tr><td style="padding:6px 0;color:#4b5563;">EU Taxonomy alignment (circular)</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">0.8% of turnover eligible</td></tr>
             </table>
           </div>
         </div>
 
-        <div style="margin-top:20px;padding:14px 18px;background:#fff1f2;border-left:4px solid #8b1a6a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
+        <div style="margin-top:20px;padding:14px 18px;background:#fff1f2;border-left:4px solid #b8976a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
           <strong>Ventures pipeline &mdash; the bridge between the 91% and the 0.8%.</strong>
           <span><strong>Syre</strong> (with Vargas Holding) is building industrial plants that recycle polyester garment-to-garment at scale, not bottle-to-fabric.</span>
           <span><strong>Galy</strong> is a biotech H&amp;M has invested in that grows cotton from cells in bioreactors rather than fields.</span>
@@ -640,7 +639,7 @@
           <span>Together with Sellpy, these are the pipes that would convert the materials progress into real circular volume.</span>
         </div>
 
-        <div style="margin-top:14px;font-size:11.5px;color:#6b7280;line-height:1.55;">
+        <div style="margin-top:14px;font-size:11.5px;color:#7a7a7a;line-height:1.55;">
           Sources: <a href="https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf" target="_blank" style="color:#4338ca;text-decoration:underline;">H&amp;M Group Annual &amp; Sustainability Report 2025 (PDF, 99pp)</a> &middot; <a href="https://hmgroup.com/news/h-m-hennes-mauritz-ab-publishes-its-annual-and-sustainability-report-2025/" target="_blank" style="color:#4338ca;text-decoration:underline;">H&amp;M press release 26 Mar 2026</a> &middot; <a href="https://hmgroup.com/news/h-and-m-group-and-vargas-launch-syre/" target="_blank" style="color:#4338ca;text-decoration:underline;">Syre launch (H&amp;M press)</a>.
         </div>
       </div>
@@ -811,27 +810,27 @@
       </div>
     </div>
 
-    <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">Too Good To Go &mdash; verified KPIs</h3>
+    <h3 style="font-size:15px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:6px;">Too Good To Go &mdash; verified KPIs</h3>
     <p style="font-size:12.5px;color:var(--sub);margin-bottom:14px;">All four numbers below refer to <strong>Too Good To Go</strong> &mdash; the Danish surplus-food marketplace.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:14px;">
-      <div style="background:white;border:1px solid var(--border);border-left:4px solid #ef4444;border-radius:10px;padding:18px 22px;">
+      <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-left:4px solid #ef4444;border-radius:10px;padding:18px 22px;">
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">TGTG &middot; 2024 revenue (DK entity)</div>
-        <div style="font-size:26px;font-weight:800;color:var(--navy);">DKK 725M</div>
+        <div style="font-size:26px;font-weight:800;color:var(--ink, #0a0f1a);">DKK 725M</div>
         <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">+33% YoY (DKK 545M in 2023)</div>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-left:4px solid #f87171;border-radius:10px;padding:18px 22px;">
+      <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-left:4px solid #f87171;border-radius:10px;padding:18px 22px;">
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">TGTG &middot; Registered users</div>
-        <div style="font-size:26px;font-weight:800;color:var(--navy);">120M+</div>
+        <div style="font-size:26px;font-weight:800;color:var(--ink, #0a0f1a);">120M+</div>
         <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Across 22 countries (17 European + 5 non-European)</div>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-left:4px solid #fb923c;border-radius:10px;padding:18px 22px;">
+      <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-left:4px solid #fb923c;border-radius:10px;padding:18px 22px;">
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">TGTG &middot; Active business partners</div>
-        <div style="font-size:26px;font-weight:800;color:var(--navy);">180,000</div>
+        <div style="font-size:26px;font-weight:800;color:var(--ink, #0a0f1a);">180,000</div>
         <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Restaurants, cafés, retailers</div>
       </div>
-      <div style="background:white;border:1px solid var(--border);border-left:4px solid #dc2626;border-radius:10px;padding:18px 22px;">
+      <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-left:4px solid #dc2626;border-radius:10px;padding:18px 22px;">
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#9ca3af;margin-bottom:6px;">TGTG &middot; Meals saved since 2016</div>
-        <div style="font-size:26px;font-weight:800;color:var(--navy);">500M+</div>
+        <div style="font-size:26px;font-weight:800;color:var(--ink, #0a0f1a);">500M+</div>
         <div style="font-size:11.5px;color:var(--sub);margin-top:4px;">Cumulative impact</div>
       </div>
     </div>
@@ -899,12 +898,12 @@
   <!-- ABOUT -->
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Supply Chain on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="sop-intelligence.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">S&OP to IBP Evolution</a>
-      <a href="manufacturing-footprint.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Manufacturing Footprint</a>
-      <a href="dlm-trends.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Device Lifecycle Management</a>
+      <a href="sop-intelligence.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">S&OP to IBP Evolution</a>
+      <a href="manufacturing-footprint.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Manufacturing Footprint</a>
+      <a href="dlm-trends.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Device Lifecycle Management</a>
     </div>
   </div>
 </div>
@@ -934,6 +933,7 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>

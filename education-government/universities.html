@@ -12,6 +12,7 @@
     gtag('config', 'G-115WQYBB0Z');
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <title>European Universities — English Bachelor Programs &amp; Rankings — TrendsOnFire</title>
   <meta name="description" content="Ranked overview of European universities offering English-taught bachelor programs, tuition fees for EU students, countries with free tuition, and chemistry programs in the Netherlands."/>
   <link rel="canonical" href="https://trendsonfire.com/education-government/universities.html"/>
@@ -31,20 +32,20 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc;
-      --text:#111827; --sub:#6b7280;
+      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7;
+      --text:#111827; --sub:#7a7a7a;
       --blue:#1d4ed8; --blue-dark:#1e3a5f; --blue-light:#dbeafe;
       --green:#059669; --green-light:#d1fae5;
       --amber:#d97706; --amber-light:#fef3c7;
       --teal:#0d9488; --teal-light:#ccfbf1;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
-    nav { background: #0f2340; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+    nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
     .nav-logo { padding: 10px 0; margin-right: 24px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
-    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b1a6a; }
+    .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
     header { background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%); color: white; padding: 48px 32px 40px; }
     header .inner { max-width: 1100px; margin: auto; }
@@ -52,7 +53,7 @@
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
     .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #93c5fd; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-size: clamp(22px,4vw,36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px,4vw,36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
     header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; }
     .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
 
@@ -60,27 +61,27 @@
 
     /* Stat cards */
     .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 16px; margin-bottom: 48px; }
-    .stat-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .stat-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
     .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); font-weight: 700; margin-bottom: 6px; }
-    .stat-val { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .stat-val { font-size: 28px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1; }
     .stat-note { font-size: 12px; color: var(--sub); margin-top: 4px; }
 
     /* Section headers */
     .section-block { margin-bottom: 56px; }
-    .section-title { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 24px; }
 
     /* University table */
-    .uni-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,.07); font-size: 13.5px; }
-    .uni-table thead tr { background: var(--navy); color: white; }
+    .uni-table { width: 100%; border-collapse: collapse; background: white; border-radius: 0; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,.07); font-size: 13.5px; }
+    .uni-table thead tr { background: var(--ink, #0a0f1a); color: white; }
     .uni-table th { padding: 12px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
-    .uni-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .uni-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule, #e2dfd9); vertical-align: middle; }
     .uni-table tbody tr:last-child td { border-bottom: none; }
     .uni-table tbody tr:hover { background: #f0f7ff; }
     .rank-badge { display: inline-block; background: var(--blue-light); color: var(--blue); font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
     .rank-badge.top10 { background: #fef3c7; color: #92400e; }
     .rank-badge.top50 { background: #d1fae5; color: #065f46; }
-    .uni-name { font-weight: 700; color: var(--navy); }
+    .uni-name { font-weight: 700; color: var(--ink, #0a0f1a); }
     .uni-country { font-size: 12px; color: var(--sub); }
     .fee-free { color: var(--green); font-weight: 700; }
     .fee-low { color: var(--teal); font-weight: 600; }
@@ -90,8 +91,8 @@
     .intl-pill { display: inline-block; font-size: 10px; background: #fee2e2; color: #991b1b; border-radius: 4px; padding: 1px 6px; margin-left: 4px; }
 
     /* Bar chart */
-    .bar-section { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 28px 28px 20px; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
-    .chart-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .bar-section { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 28px 28px 20px; ; }
+    .chart-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .chart-sub { font-size: 12px; color: var(--sub); margin-bottom: 20px; }
     .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
     .bar-label { width: 170px; font-size: 12.5px; color: var(--text); flex-shrink: 0; text-align: right; }
@@ -104,10 +105,10 @@
 
     /* Free countries grid */
     .free-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; }
-    .free-card { background: white; border-radius: 12px; border: 2px solid var(--green); padding: 20px 22px; }
+    .free-card { background: white; border-radius: 0; border: 2px solid var(--green); padding: 20px 22px; }
     .free-card.partial { border-color: var(--teal); }
     .free-flag { font-size: 32px; margin-bottom: 8px; }
-    .free-country { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .free-country { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .free-fee { font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
     .free-fee.partial-fee { color: var(--teal); }
     .free-note { font-size: 12.5px; color: var(--sub); line-height: 1.5; }
@@ -115,8 +116,8 @@
 
     /* Chemistry table */
     .chem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 16px; }
-    .chem-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .chem-univ { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .chem-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
+    .chem-univ { font-size: 15px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .chem-country { font-size: 12px; color: var(--sub); margin-bottom: 10px; }
     .chem-prog { font-size: 13px; font-weight: 600; color: var(--teal); margin-bottom: 6px; }
     .chem-detail { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
@@ -133,7 +134,7 @@
     .nl-col-header { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #1e3a5f; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; display: flex; align-items: center; gap: 8px; }
     .nl-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .nl-uni-row { background: white; border-radius: 10px; border: 1px solid #bfdbfe; padding: 14px 16px; margin-bottom: 10px; }
-    .nl-uni-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .nl-uni-name { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 2px; }
     .nl-uni-prog { font-size: 12.5px; color: var(--sub); margin-bottom: 6px; }
     .nl-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 4px; }
     .nl-tag.en { background: #dbeafe; color: #1e40af; }
@@ -142,23 +143,23 @@
     .nl-fee { font-size: 12px; color: var(--sub); margin-top: 4px; }
 
     /* Insight banner */
-    .insight { background: linear-gradient(135deg, #1e3a5f, #1d4ed8); border-radius: 14px; padding: 24px 28px; color: white; margin-bottom: 48px; display: flex; gap: 16px; align-items: flex-start; }
+    .insight { background: linear-gradient(135deg, #1e3a5f, #1d4ed8); border-radius: 0; padding: 24px 28px; color: white; margin-bottom: 48px; display: flex; gap: 16px; align-items: flex-start; }
     .insight-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
     .insight-text { font-size: 14.5px; color: rgba(255,255,255,.9); line-height: 1.65; }
     .insight-text strong { color: white; }
 
     /* CTA */
-    .li-cta { background: var(--navy); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--fuchsia); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
-    .li-cta a:hover { background: #7a1660; }
+    .li-cta a { background: var(--gold, #b8976a); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .li-cta a:hover { background: #a07850; }
 
-    footer { background: #0a1929; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
+    footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: white; }
 
-    .disclaimer { font-size: 12px; color: var(--sub); background: white; border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin-top: 24px; line-height: 1.55; }
+    .disclaimer { font-size: 12px; color: var(--sub); background: white; border: 1px solid var(--rule, #e2dfd9); border-radius: 8px; padding: 14px 18px; margin-top: 24px; line-height: 1.55; }
 
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
     @media(max-width:900px){
@@ -167,7 +168,7 @@
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:#0f2340; padding:8px 0 16px; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; text-align:left; white-space:normal; }
       main { padding-left:16px !important; padding-right:16px !important; }
@@ -184,19 +185,19 @@
     .nav-search-btn:hover { color: white; }
     #search-overlay { display: none; position: fixed; inset: 0; background: rgba(10,25,41,0.97); z-index: 2000; overflow-y: auto; }
     .search-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 48px; }
-    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 12px; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
+    .search-box { display: flex; align-items: center; gap: 12px; background: white; border-radius: 0; padding: 4px 4px 4px 20px; margin-bottom: 8px; }
     #search-input { flex: 1; font-size: 17px; border: none; outline: none; font-family: inherit; color: #111827; padding: 12px 0; background: transparent; }
     #search-input::placeholder { color: #9ca3af; }
-    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #6b7280; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .search-close:hover { background: #e5e7eb; }
+    .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .search-close:hover { background: #e2dfd9; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
     .search-result:hover { background: rgba(255,255,255,.12); }
-    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c97fb8; margin-bottom: 4px; }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
     .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
     .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
     .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-    .sr-tag { font-size: 10px; background: rgba(139,26,106,.4); color: #e8a8d8; padding: 2px 8px; border-radius: 10px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
   </style>
@@ -225,40 +226,39 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="275" height="69">
-      <defs><linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0"><stop offset="0%" stop-color="#8b1a6a"/><stop offset="100%" stop-color="#c97fb8"/></linearGradient></defs>
-      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.32"/>
-      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.62"/>
-      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white"/>
-      <polygon points="42,3 35,15 49,15" fill="url(#lg)"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
       <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
-        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#8b1a6a">Fire</tspan>
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
       </text>
-      <text x="67" y="69" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="white" letter-spacing="2.2" font-weight="600">SEE WHAT OTHERS MISS</text>
     </svg>
   </a>
-  <button class="nav-burger" aria-label="Menu">☰</button>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
-    <a href="../people/index.html">People &amp; Transformation</a>
-    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
-    <a href="index.html" class="active">Education &amp; Government</a>
-    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
-    <a href="../real-estate/index.html">Real Estate</a>
-    <a href="../olgabressers/index.html">About the Author</a>
+    <a href="../education-government/index.html" class="active">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
   </div>
   <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     Search
   </button>
 </nav>
 
-<header>
+<div class="art-hero">
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Education &amp; Government</a> / European Universities</div>
     <div class="eyebrow">Education Intelligence · Europe</div>
@@ -270,7 +270,7 @@
       <span>Updated: March 2026</span>
     </div>
   </div>
-</header>
+</div>
 
 <main>
 
@@ -844,7 +844,7 @@
             <div class="nl-uni-prog">BSc Chemistry</div>
             <span class="nl-tag en">English</span>
             <div class="nl-fee">€2,314/yr · Amsterdam · QS #100</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Full chemistry program, English medium available. Strong analytical and physical chemistry. Amsterdam Science Park campus adjacent to major research institutes.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Full chemistry program, English medium available. Strong analytical and physical chemistry. Amsterdam Science Park campus adjacent to major research institutes.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -853,7 +853,7 @@
             <span class="nl-tag en">English</span>
             <span class="nl-tag related">Chemistry-Related</span>
             <div class="nl-fee">€2,209/yr · Leiden/Delft campus · QS Leiden #163, Delft #47</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Chemistry + biotechnology + engineering. Unique joint degree. Excellent for students wanting chemistry within a broader STEM context. Fully in English.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Chemistry + biotechnology + engineering. Unique joint degree. Excellent for students wanting chemistry within a broader STEM context. Fully in English.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -862,7 +862,7 @@
             <span class="nl-tag en">English</span>
             <span class="nl-tag related">Chemistry-Related</span>
             <div class="nl-fee">€2,209/yr · Wageningen · QS #57</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Chemistry-heavy program with focus on biochemistry, food chemistry, and environmental chemistry. Top-10 globally in agriculture and life sciences. Strong English teaching culture.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Chemistry-heavy program with focus on biochemistry, food chemistry, and environmental chemistry. Top-10 globally in agriculture and life sciences. Strong English teaching culture.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -871,7 +871,7 @@
             <span class="nl-tag en">English</span>
             <span class="nl-tag related">Chemistry-Related</span>
             <div class="nl-fee">€2,314/yr · Nijmegen</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Interdisciplinary molecular science program (chemistry + physics + biology). Fully English-taught. Excellent for students wanting breadth across natural sciences.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Interdisciplinary molecular science program (chemistry + physics + biology). Fully English-taught. Excellent for students wanting breadth across natural sciences.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -879,7 +879,7 @@
             <div class="nl-uni-prog">BSc Chemistry (English stream)</div>
             <span class="nl-tag en">English</span>
             <div class="nl-fee">€2,209/yr · Groningen · QS #127</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Strong chemistry department. English-stream bachelor available alongside Dutch track. Good industry connections (energy sector in Groningen region).</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Strong chemistry department. English-stream bachelor available alongside Dutch track. Good industry connections (energy sector in Groningen region).</div>
           </div>
 
           <div class="nl-uni-row">
@@ -887,7 +887,7 @@
             <div class="nl-uni-prog">BSc Chemical Engineering and Chemistry</div>
             <span class="nl-tag en">English</span>
             <div class="nl-fee">€2,209/yr · Eindhoven · QS #155</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Technical chemistry and chemical engineering. English track being expanded. Industry-facing program; strong partnerships with ASML, Sabic, and DSM/Firmenich.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Technical chemistry and chemical engineering. English track being expanded. Industry-facing program; strong partnerships with ASML, Sabic, and DSM/Firmenich.</div>
           </div>
 
         </div>
@@ -903,7 +903,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,314/yr · Amsterdam · QS #100</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Full chemistry bachelor in Dutch. Same department and facilities as English track. Strong analytical and computational chemistry.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Full chemistry bachelor in Dutch. Same department and facilities as English track. Strong analytical and computational chemistry.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -911,7 +911,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,314/yr · Amsterdam</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Solid chemistry program. Strong links with VU Medical Center and adjacent biology/life sciences programs. Amsterdam campus.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Solid chemistry program. Strong links with VU Medical Center and adjacent biology/life sciences programs. Amsterdam campus.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -919,7 +919,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,209/yr · Leiden · QS #163</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">One of the oldest chemistry departments in the Netherlands. Strong in bio-organic chemistry and materials. Historic university; excellent academic reputation.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">One of the oldest chemistry departments in the Netherlands. Strong in bio-organic chemistry and materials. Historic university; excellent academic reputation.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -927,7 +927,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,314/yr · Utrecht · QS #115</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Strong chemistry department within a large comprehensive university. Good connections with Utrecht University Medical Center. Pharmacy and chemistry offered on same campus.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Strong chemistry department within a large comprehensive university. Good connections with Utrecht University Medical Center. Pharmacy and chemistry offered on same campus.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -935,7 +935,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,209/yr · Groningen · QS #127</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Comprehensive chemistry program. Strong in polymer chemistry, catalysis, and green chemistry. Good student life in Groningen city.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Comprehensive chemistry program. Strong in polymer chemistry, catalysis, and green chemistry. Good student life in Groningen city.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -943,7 +943,7 @@
             <div class="nl-uni-prog">BSc Scheikunde</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,314/yr · Nijmegen</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Chemistry bachelor in Dutch alongside the English Molecular Science program. Strong NMR and spectroscopy research tradition.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Chemistry bachelor in Dutch alongside the English Molecular Science program. Strong NMR and spectroscopy research tradition.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -951,7 +951,7 @@
             <div class="nl-uni-prog">BSc Scheikundige Technologie</div>
             <span class="nl-tag nl">Nederlands</span>
             <div class="nl-fee">€2,209/yr · Eindhoven · QS #155</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Chemical engineering and chemistry in Dutch. Very applied and industry-oriented. Strong laboratory culture; direct links with high-tech industry cluster around Eindhoven.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Chemical engineering and chemistry in Dutch. Very applied and industry-oriented. Strong laboratory culture; direct links with high-tech industry cluster around Eindhoven.</div>
           </div>
 
           <div class="nl-uni-row">
@@ -960,7 +960,7 @@
             <span class="nl-tag nl">Nederlands</span>
             <span class="nl-tag related">Chemistry-Related</span>
             <div class="nl-fee">€2,209/yr · Wageningen · QS #57</div>
-            <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-track equivalent of the English Molecular Life Sciences program. Heavy biochemistry and food chemistry content.</div>
+            <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-track equivalent of the English Molecular Life Sciences program. Heavy biochemistry and food chemistry content.</div>
           </div>
 
         </div>
@@ -977,7 +977,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Pharma</span>
               <div class="nl-fee">€2,209/yr · Leiden · QS #163</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Drug discovery, medicinal chemistry, pharmacokinetics, regulatory affairs. One of the few English-taught pharmaceutical bachelors in continental Europe.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Drug discovery, medicinal chemistry, pharmacokinetics, regulatory affairs. One of the few English-taught pharmaceutical bachelors in continental Europe.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">University of Amsterdam (UvA)</div>
@@ -985,7 +985,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biomedical</span>
               <div class="nl-fee">€2,314/yr · Amsterdam · QS #100</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Molecular biology, biochemistry, pharmacology, and immunology. Links to Amsterdam UMC — one of Europe's largest academic hospitals.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Molecular biology, biochemistry, pharmacology, and immunology. Links to Amsterdam UMC — one of Europe's largest academic hospitals.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Vrije Universiteit Amsterdam (VU)</div>
@@ -993,7 +993,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biomedical</span>
               <div class="nl-fee">€2,314/yr · Amsterdam</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Disease mechanisms, molecular biology, clinical biochemistry. Connected to VU Medical Centre and Amsterdam UMC.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Disease mechanisms, molecular biology, clinical biochemistry. Connected to VU Medical Centre and Amsterdam UMC.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Maastricht University</div>
@@ -1001,7 +1001,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biomedical</span>
               <div class="nl-fee">€2,209/yr · Maastricht</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Fully English, problem-based learning. Small groups, case-based from day one. Very popular with international students.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Fully English, problem-based learning. Small groups, case-based from day one. Very popular with international students.</div>
             </div>
           </div>
           <div>
@@ -1011,7 +1011,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biotech</span>
               <div class="nl-fee">€2,209/yr · Delft/Rotterdam · QS #47</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Biophysics, chemistry, and nanotechnology at the molecular scale. Unique joint degree. Leads to biotech and medical research careers.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Biophysics, chemistry, and nanotechnology at the molecular scale. Unique joint degree. Leads to biotech and medical research careers.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">TU/e Eindhoven</div>
@@ -1019,7 +1019,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Engineering</span>
               <div class="nl-fee">€2,209/yr · Eindhoven · QS #155</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Medical devices, drug delivery systems, implants, diagnostics. Strong chemistry and materials foundation. European leader in biomedical engineering.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Medical devices, drug delivery systems, implants, diagnostics. Strong chemistry and materials foundation. European leader in biomedical engineering.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Wageningen University &amp; Research</div>
@@ -1027,7 +1027,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biotech</span>
               <div class="nl-fee">€2,209/yr · Wageningen · QS #57</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Industrial and molecular biotechnology. Fermentation, genetic engineering, bioprocess technology. Top globally in life sciences.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Industrial and molecular biotechnology. Fermentation, genetic engineering, bioprocess technology. Top globally in life sciences.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">University of Groningen</div>
@@ -1035,7 +1035,7 @@
               <span class="nl-tag en">English</span>
               <span class="nl-tag related">Biomedical</span>
               <div class="nl-fee">€2,209/yr · Groningen · QS #127</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Biochemistry, immunology, physiology, molecular biology. Access to UMCG for early research exposure.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Biochemistry, immunology, physiology, molecular biology. Access to UMCG for early research exposure.</div>
             </div>
           </div>
         </div>
@@ -1052,7 +1052,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Farmacie</span>
               <div class="nl-fee">€2,314/yr · Utrecht · QS #115</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">One of the strongest pharmacy faculties in the Netherlands. Drug synthesis, pharmacokinetics, drug formulation, regulation. Close ties to UMC Utrecht.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">One of the strongest pharmacy faculties in the Netherlands. Drug synthesis, pharmacokinetics, drug formulation, regulation. Close ties to UMC Utrecht.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Rijksuniversiteit Groningen</div>
@@ -1060,7 +1060,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Farmacie</span>
               <div class="nl-fee">€2,209/yr · Groningen · QS #127</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Full pharmacy program. Covers medicinal chemistry, pharmacology, clinical pharmacy. UMCG is on the same campus.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Full pharmacy program. Covers medicinal chemistry, pharmacology, clinical pharmacy. UMCG is on the same campus.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Universiteit Leiden</div>
@@ -1068,7 +1068,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Farmacie</span>
               <div class="nl-fee">€2,209/yr · Leiden · QS #163</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-track pharmaceutical sciences at Leiden. Drug development focus from synthesis to clinical application. Same strong curriculum as English Bio-Pharmaceutical Sciences.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-track pharmaceutical sciences at Leiden. Drug development focus from synthesis to clinical application. Same strong curriculum as English Bio-Pharmaceutical Sciences.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Universiteit van Amsterdam (UvA)</div>
@@ -1076,7 +1076,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Biomedisch</span>
               <div class="nl-fee">€2,314/yr · Amsterdam · QS #100</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-track biomedical sciences covering cell biology, biochemistry, physiology, and immunology. Amsterdam Science Park and Amsterdam UMC integration.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-track biomedical sciences covering cell biology, biochemistry, physiology, and immunology. Amsterdam Science Park and Amsterdam UMC integration.</div>
             </div>
           </div>
           <div>
@@ -1086,7 +1086,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Biomedisch</span>
               <div class="nl-fee">€2,314/yr · Amsterdam</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-language biomedical sciences. Same content as the English track; same VU Medical Centre research environment.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-language biomedical sciences. Same content as the English track; same VU Medical Centre research environment.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">TU Eindhoven</div>
@@ -1094,7 +1094,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Engineering</span>
               <div class="nl-fee">€2,209/yr · Eindhoven · QS #155</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-track biomedical engineering. Medical devices, biomaterials, imaging technology. Very applied and industry-connected curriculum.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-track biomedical engineering. Medical devices, biomaterials, imaging technology. Very applied and industry-connected curriculum.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Wageningen University</div>
@@ -1102,7 +1102,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Biotech</span>
               <div class="nl-fee">€2,209/yr · Wageningen · QS #57</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-track biotechnology at Wageningen. Fermentation, molecular biotechnology, bioprocess engineering. Same world-class research environment as English track.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-track biotechnology at Wageningen. Fermentation, molecular biotechnology, bioprocess engineering. Same world-class research environment as English track.</div>
             </div>
             <div class="nl-uni-row">
               <div class="nl-uni-name">Radboud Universiteit Nijmegen</div>
@@ -1110,7 +1110,7 @@
               <span class="nl-tag nl">Nederlands</span>
               <span class="nl-tag related">Biomedisch</span>
               <div class="nl-fee">€2,314/yr · Nijmegen</div>
-              <div style="font-size:12px;color:#6b7280;margin-top:6px;">Dutch-language biomedical sciences at Radboud. Strong molecular medicine tradition. Connected to Radboudumc — one of the Netherlands' leading academic hospitals.</div>
+              <div style="font-size:12px;color:#7a7a7a;margin-top:6px;">Dutch-language biomedical sciences at Radboud. Strong molecular medicine tradition. Connected to Radboudumc — one of the Netherlands' leading academic hospitals.</div>
             </div>
           </div>
         </div>
@@ -1121,10 +1121,10 @@
   <!-- CTA -->
 
 <div style="max-width:900px;margin:40px auto 0;padding:0 24px;">
-  <div style="border-top:1px solid #e5e7eb;padding-top:24px;margin-bottom:32px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:14px;">Education & Government on TrendsOnFire</div>
+  <div style="border-top:1px solid #e2dfd9;padding-top:24px;margin-bottom:32px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7a7a7a;margin-bottom:14px;">Education & Government on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="grants.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e5e7eb;transition:all .15s;">Grants & Scholarships</a>
+      <a href="grants.html" style="font-size:13px;font-weight:600;color:#4338ca;text-decoration:none;padding:8px 16px;background:#f5f3ff;border-radius:8px;border:1px solid #e2dfd9;transition:all .15s;">Grants & Scholarships</a>
     </div>
   </div>
 </div>
@@ -1154,8 +1154,9 @@
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 TrendsOnFire · <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/disclaimer.html">Disclaimer</a> · <a href="/legal/terms.html">Terms &amp; Conditions</a> · <a href="/contact/">Contact</a> — Analysis based on publicly available information. Not investment advice.</p>
+  <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
 
 <script>
@@ -1198,21 +1199,21 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 
 
 <!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e5e7eb;">
+<div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-universities" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Universities</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Netherlands</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Europe</a><a href="/tags/#tag-education" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Education</a><a href="/tags/#tag-english-programs" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">English Programs</a><a href="/tags/#tag-rankings" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b1a6a;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#8b1a6a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b1a6a'">Rankings</a>
+      <a href="/tags/#tag-universities" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Universities</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Netherlands</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Europe</a><a href="/tags/#tag-education" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Education</a><a href="/tags/#tag-english-programs" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">English Programs</a><a href="/tags/#tag-rankings" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Rankings</a>
     </div>
   </div>
 </div>
-<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0f2340;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.
-    <a href="/legal/privacy.html" style="color:#c97fb8;font-weight:600;">Privacy Policy</a> &middot;
-    <a href="/legal/disclaimer.html" style="color:#c97fb8;font-weight:600;">Disclaimer</a>
+    <a href="/legal/privacy.html" style="color:#d4c4a8;font-weight:600;">Privacy Policy</a> &middot;
+    <a href="/legal/disclaimer.html" style="color:#d4c4a8;font-weight:600;">Disclaimer</a>
   </p>
-  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#8b1a6a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
+  <button onclick="(function(){localStorage.setItem('tof_cookie_notice','1');document.getElementById('cookie-notice').style.display='none';})()" style="background:#b8976a;border:none;color:white;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;cursor:pointer;flex-shrink:0;">OK, got it</button>
 </div>
 <script>
 (function(){
