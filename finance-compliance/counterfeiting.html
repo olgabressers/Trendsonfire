@@ -40,7 +40,7 @@
 
     .art-hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; }
     .art-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
-    .art-hero .inner { max-width: 1100px; margin: auto; position: relative; z-index: 1; }
+    .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; padding: 0 8px; }
     .breadcrumb { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
@@ -49,14 +49,16 @@
     .art-hero p { font-size: 17px; color: rgba(255,255,255,.82); max-width: 780px; line-height: 1.6; }
     .meta { margin-top: 24px; font-size: 13.5px; color: rgba(255,255,255,.65); display: flex; gap: 28px; flex-wrap: wrap; }
 
-    main { max-width: 1100px; margin: auto; padding: 56px 24px 96px; }
+    main { max-width: 1280px; margin: auto; padding: 56px 32px 96px; }
     main a { color: #8b6a2f; }
 
-    .stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 18px; margin-bottom: 36px; }
-    .stat-card { background: white; border-radius: 0; padding: 22px 24px; border: 1px solid var(--rule, #e2dfd9); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; color: #4e4e4e; margin-bottom: 10px; }
-    .stat-card .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 42px; font-weight: 500; line-height: 1; color: #0a0f1a; letter-spacing: -0.5px; }
-    .stat-card .sm { font-size: 13px; color: #4e4e4e; margin-top: 8px; line-height: 1.5; }
+    .stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 36px; }
+    @media(max-width:1100px){ .stats { grid-template-columns: repeat(3, 1fr); } }
+    @media(max-width:640px){ .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card { background: white; border-radius: 0; padding: 20px 18px; border: 1px solid var(--rule, #e2dfd9); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+    .stat-card .lbl { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: #4e4e4e; margin-bottom: 10px; line-height: 1.3; }
+    .stat-card .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 38px; font-weight: 500; line-height: 1; color: #0a0f1a; letter-spacing: -0.5px; }
+    .stat-card .sm { font-size: 12.5px; color: #4e4e4e; margin-top: 8px; line-height: 1.5; }
 
     .insight-banner { background: linear-gradient(135deg,#0a0f1a,#1a1f2e); border-radius: 0; padding: 28px 36px; margin-bottom: 44px; border-left: 4px solid #b8976a; position: relative; }
     .insight-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.06) 0%, transparent 60%); pointer-events:none; }
@@ -131,7 +133,6 @@
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; white-space:normal; text-align:left; }
       main, .inner { padding-left:16px !important; padding-right:16px !important; }
       header { padding:32px 16px 28px; }
-      .stats { grid-template-columns:1fr 1fr; }
       .cap-head, .cap-row { grid-template-columns:1fr; }
       .cap-head { display:none; }
       .player-grid { grid-template-columns:1fr; }
@@ -140,7 +141,6 @@
       .bar-wrap [style*="width:80px"] { width:60px !important; font-size:9px !important; }
     }
     @media(max-width:480px){
-      .stats { grid-template-columns:1fr; }
       .bar-wrap [style*="width:80px"] { width:48px !important; font-size:8px !important; }
     }
   
@@ -495,7 +495,7 @@
 
   <!-- CTA -->
 
-<div style="max-width:1100px;margin:48px auto 0;padding:0 24px;">
+<div style="max-width:1280px;margin:48px auto 0;padding:0 32px;">
   <div style="border-top:1px solid #e2dfd9;padding-top:28px;margin-bottom:36px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#8b6a2f;margin-bottom:18px;">Finance & Compliance on TrendsOnFire</div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;">
@@ -602,7 +602,7 @@ origins.forEach(o => {
 
 <!-- ARTICLE TAGS -->
 <div style="background:white;border-top:1px solid #e2dfd9;">
-  <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
+  <div style="max-width:1280px;margin:0 auto;padding:28px 32px 36px;">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:16px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
       <a href="/tags/#tag-anti-counterfeiting" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Anti-Counterfeiting</a><a href="/tags/#tag-brand-protection" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Brand Protection</a><a href="/tags/#tag-compliance" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Compliance</a><a href="/tags/#tag-e-commerce" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">E-Commerce</a><a href="/tags/#tag-global-market" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Global Market</a><a href="/tags/#tag-ip" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">IP</a>
