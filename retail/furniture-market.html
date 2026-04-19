@@ -29,7 +29,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a;
+      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e;
       --amber:#d97706; --amber-dark:#78350f; --amber-mid:#92400e; --amber-light:#fef3c7; --amber-pale:#fffbeb;
       --red:#dc2626; --red-light:#fee2e2;
       --green:#059669; --green-light:#d1fae5;
@@ -691,6 +691,11 @@
   </div>
 </div>
 
+<style>
+  .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition: all .25s ease; letter-spacing:0.3px; }
+  .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
+</style>
+
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
@@ -758,9 +763,9 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 <!-- ARTICLE TAGS -->
 <div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-online-retail" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Online Retail</a><a href="/tags/#tag-furniture-market" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Furniture Market</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Netherlands</a><a href="/tags/#tag-europe" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Europe</a><a href="/tags/#tag-bankruptcy" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Bankruptcy</a><a href="/tags/#tag-market-analysis" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Market Analysis</a><a href="/tags/#tag-return-logistics" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Return Logistics</a><a href="/tags/#tag-dtc" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">DTC</a>
+      <a href="/tags/#tag-online-retail" rel="tag" class="tof-tag">Online Retail</a><a href="/tags/#tag-furniture-market" rel="tag" class="tof-tag">Furniture Market</a><a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a><a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a><a href="/tags/#tag-bankruptcy" rel="tag" class="tof-tag">Bankruptcy</a><a href="/tags/#tag-market-analysis" rel="tag" class="tof-tag">Market Analysis</a><a href="/tags/#tag-return-logistics" rel="tag" class="tof-tag">Return Logistics</a><a href="/tags/#tag-dtc" rel="tag" class="tof-tag">DTC</a>
     </div>
   </div>
 </div>

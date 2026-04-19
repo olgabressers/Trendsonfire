@@ -31,7 +31,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a;
+      --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e;
       --orange:#ea580c; --orange-dark:#431407; --orange-light:#fff7ed; --orange-mid:#fed7aa;
       --green:#059669; --green-light:#d1fae5;
       --purple:#7c3aed; --purple-light:#ede9fe;
@@ -771,6 +771,11 @@
   </div>
 </div>
 
+<style>
+  .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition: all .25s ease; letter-spacing:0.3px; }
+  .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
+</style>
+
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
@@ -918,9 +923,9 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 <!-- ARTICLE TAGS -->
 <div style="background:white;border-top:1px solid #e2dfd9;">
   <div style="max-width:1100px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#7a7a7a;margin-bottom:12px;">Topics covered</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-podcasts" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Podcasts</a><a href="/tags/#tag-netherlands" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Netherlands</a><a href="/tags/#tag-media" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Media</a><a href="/tags/#tag-marketing" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Marketing</a><a href="/tags/#tag-retail" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Retail</a><a href="/tags/#tag-advertising" rel="tag" style="display:inline-block;background:#f7e8f3;color: #8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;transition:all .15s;" onmouseover="this.style.background='#b8976a';this.style.color='white'" onmouseout="this.style.background='#f7e8f3';this.style.color='#8b6a2f'">Advertising</a>
+      <a href="/tags/#tag-podcasts" rel="tag" class="tof-tag">Podcasts</a><a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a><a href="/tags/#tag-media" rel="tag" class="tof-tag">Media</a><a href="/tags/#tag-marketing" rel="tag" class="tof-tag">Marketing</a><a href="/tags/#tag-retail" rel="tag" class="tof-tag">Retail</a><a href="/tags/#tag-advertising" rel="tag" class="tof-tag">Advertising</a>
     </div>
   </div>
 </div>
