@@ -7,6 +7,30 @@ Disallow: /book/
 Disallow: /logo-preview.html
 Disallow: /logo-preview-red.html
 
+# Delisted articles — not for public indexing
+Disallow: /retail/sporting-goods-brands.html
+Disallow: /retail/nike.html
+Disallow: /retail/b2b-marketplace.html
+Disallow: /retail/sporting-goods-gaps.html
+Disallow: /retail/hard-luxury-brands.html
+Disallow: /people/nl-layoffs.html
+Disallow: /people/salary-index.html
+Disallow: /people/student-side-jobs.html
+Disallow: /people/eu-transformation.html
+Disallow: /technology/cpaas-conversational-commerce.html
+Disallow: /technology/eaa-tracker.html
+Disallow: /technology/led-smart-lighting.html
+Disallow: /supply-chain/dlm-trends.html
+Disallow: /supply-chain/manufacturing-footprint.html
+Disallow: /education-government/universities.html
+Disallow: /education-government/grants.html
+Disallow: /education-government/uwv.html
+Disallow: /finance-compliance/big-mac-economy.html
+Disallow: /finance-compliance/insurtech-sme.html
+Disallow: /finance-compliance/crypto-intelligence.html
+Disallow: /transformation/philips.html
+Disallow: /transformation/cee-index.html
+
 Sitemap: https://trendsonfire.com/sitemap.xml
 
 # AI crawler guidance
