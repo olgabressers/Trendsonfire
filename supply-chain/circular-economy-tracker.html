@@ -31,7 +31,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e; --link:#4338ca; --green:#059669; --teal:#0d9488; --amber:#d97706; --red:#dc2626; --purple:#7c3aed; }
+    :root { --navy:#0a0f1a; --ink:#0a0f1a; --gold:#b8976a; --gold-dark:#8b6a2f; --fuchsia:#b8976a; --border:#e2dfd9; --rule:#e2dfd9; --bg:#faf9f7; --paper:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e; --link:#8b6a2f; --accent:#8b6a2f; --green:#059669; --teal:#0d9488; --amber:#d97706; --red:#dc2626; --purple:#7c3aed; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.55; }
 
     nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
@@ -41,12 +41,13 @@
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
-    .hero { background: linear-gradient(135deg, #0a0f1a 0%, #134e4a 50%, #064e3b 100%); color: white; padding: 60px 32px 48px; }
-    .hero .inner { max-width: 1100px; margin: auto; }
+    .hero { background: #0a0f1a; color: white; padding: 60px 32px 48px; position: relative; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
+    .hero .inner { max-width: 1100px; margin: auto; position: relative; z-index: 1; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
-    .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #6ee7b7; font-weight: 700; margin-bottom: 12px; }
-    .hero h1 { font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; margin-bottom: 14px; line-height: 1.15; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 12px; }
+    .hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.5px; }
     .hero p { font-size: 16px; color: rgba(255,255,255,.85); max-width: 760px; line-height: 1.65; }
     .hero-meta { margin-top: 22px; font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; }
     .hero-meta a { color: rgba(255,255,255,.7); text-decoration: underline; }
@@ -54,45 +55,34 @@
     main { max-width: 1280px; margin: 0 auto; padding: 40px 24px 80px; }
     main a { color: #8b6a2f; }
 
-    .key-thesis { background: linear-gradient(135deg, #064e3b 0%, #134e4a 100%); color: white; border-radius: 0; padding: 28px 32px; margin-bottom: 36px; border-left: 5px solid #6ee7b7; }
-    .key-thesis .label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 10px; }
-    .key-thesis p { font-size: 15.5px; line-height: 1.75; color: rgba(255,255,255,.92); }
-    .key-thesis a { color: #a7f3d0; text-decoration: underline; font-weight: 600; }
+    .key-thesis { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); color: white; border-radius: 0; padding: 28px 32px; margin-bottom: 36px; border-left: 4px solid #b8976a; }
+    .key-thesis .label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #b8976a; margin-bottom: 10px; }
+    .key-thesis p { font-size: 15.5px; line-height: 1.75; color: rgba(255,255,255,.88); }
+    .key-thesis p strong { color: #b8976a; font-weight: 600; }
+    .key-thesis a { color: #b8976a; text-decoration: underline; font-weight: 600; }
 
     .topline { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 40px; }
     .top-stat { background: white; border-radius: 0; padding: 18px 20px; border: 1px solid var(--rule, #e2dfd9); box-shadow: 0 1px 4px rgba(0,0,0,.04); }
     .top-stat .num { font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1; }
     .top-stat .label { font-size: 11px; color: var(--sub); margin-top: 6px; line-height: 1.4; }
-    .top-stat .src { font-size: 10.5px; color: var(--link); margin-top: 6px; }
-    .top-stat .src a { color: var(--link); text-decoration: underline; }
+    .top-stat .src { font-size: 10.5px; color: #8b6a2f; margin-top: 6px; }
+    .top-stat .src a { color: #8b6a2f; text-decoration: underline; }
 
     .section { margin-bottom: 56px; }
-    .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 3px solid var(--gold, #b8976a); margin-bottom: 22px; flex-wrap: wrap; }
-    .section-num { font-size: 32px; font-weight: 900; color: var(--gold, #b8976a); letter-spacing: -1px; }
-    .section-title { font-size: 22px; font-weight: 800; color: var(--ink, #0a0f1a); }
+    .section-head { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; margin-bottom: 22px; flex-wrap: wrap; margin-top: 16px; }
+    .section-num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 32px; font-weight: 500; color: #8b6a2f; letter-spacing: -1px; }
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 500; color: #0a0f1a; letter-spacing: -0.3px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-left: auto; max-width: 480px; text-align: right; }
     @media(max-width:680px){ .section-sub { text-align: left; max-width: 100%; margin-left: 0; } }
 
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 18px; }
-    .card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 24px; ; position: relative; overflow: hidden; }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent-color, #b8976a); }
-    .card.ikea::before { background: #fbbf24; }
-    .card.vepa::before { background: #0d9488; }
-    .card.fonq::before { background: #dc2626; }
-    .card.vinted::before { background: #14b8a6; }
-    .card.patagonia::before { background: #7c3aed; }
-    .card.espr::before { background: #d97706; }
-    .card.backmarket::before { background: #059669; }
-    .card.refurbed::before { background: #0284c7; }
-    .card.repair::before { background: #f59e0b; }
-    .card.madaster::before { background: #1e40af; }
-    .card.cpr::before { background: #be185d; }
-    .card.ce-platform::before { background: #65a30d; }
-    .card.tgtg::before { background: #ef4444; }
-    .card.olio::before { background: #16a34a; }
-    .card.ppwr::before { background: #9333ea; }
+    .card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 24px; ; position: relative; overflow: hidden; border-top: 3px solid #8b6a2f; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 0; background: transparent; }
+    .card.ikea, .card.vepa, .card.fonq, .card.vinted, .card.patagonia, .card.espr,
+    .card.backmarket, .card.refurbed, .card.repair, .card.madaster, .card.cpr,
+    .card.ce-platform, .card.tgtg, .card.olio, .card.ppwr { border-top-color: #8b6a2f; }
 
-    .c-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold, #b8976a); margin-bottom: 8px; }
+    .c-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #8b6a2f; margin-bottom: 8px; }
     .c-name { font-size: 16px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; line-height: 1.25; }
     .c-flag { font-size: 12px; color: var(--sub); margin-bottom: 14px; }
     .c-flag .country-tag { display: inline-block; background: #f3f4f6; color: var(--text); padding: 2px 8px; border-radius: 4px; font-size: 10.5px; font-weight: 700; letter-spacing: .5px; margin-right: 6px; }
@@ -102,16 +92,16 @@
     .c-stat .k { color: var(--sub); }
     .c-stat .v { font-weight: 700; color: var(--ink, #0a0f1a); }
     .c-source { font-size: 11.5px; padding-top: 10px; border-top: 1px solid #f1f5f9; line-height: 1.55; }
-    .c-source a { color: var(--link); text-decoration: underline; font-weight: 600; }
+    .c-source a { color: #8b6a2f; text-decoration: underline; font-weight: 600; }
 
     .chart-box { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 24px 26px; margin-bottom: 16px; ; }
     .chart-box h3 { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 4px; }
     .chart-box .csub { font-size: 12px; color: var(--sub); margin-bottom: 16px; }
     .chart-wrap { position: relative; height: 240px; }
 
-    .reg-banner { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #d97706; padding: 18px 22px; border-radius: 10px; margin-bottom: 18px; font-size: 13.5px; line-height: 1.7; color: #78350f; }
-    .reg-banner strong { color: #451a03; }
-    .reg-banner a { color: #92400e; text-decoration: underline; font-weight: 700; }
+    .reg-banner { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); border-left: 4px solid #b8976a; padding: 18px 22px; border-radius: 0; margin-bottom: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,.88); }
+    .reg-banner strong { color: #b8976a; font-weight: 600; }
+    .reg-banner a { color: #b8976a; text-decoration: underline; font-weight: 700; }
 
     .timeline { background: white; border-radius: 0; padding: 28px 32px; border: 1px solid var(--rule, #e2dfd9); ; }
     .tl-head { font-size: 18px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
@@ -120,22 +110,28 @@
     .tl-line::before { content: ''; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--rule, #e2dfd9); }
     .tl-item { position: relative; margin-bottom: 18px; }
     .tl-item:last-child { margin-bottom: 0; }
-    .tl-dot { position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--gold, #b8976a); background: white; }
-    .tl-date { font-size: 11px; font-weight: 800; color: var(--gold, #b8976a); letter-spacing: .5px; }
+    .tl-dot { position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid #8b6a2f; background: white; }
+    .tl-date { font-size: 11px; font-weight: 800; color: #8b6a2f; letter-spacing: .5px; }
     .tl-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-top: 2px; }
     .tl-body { font-size: 12.5px; color: var(--sub); margin-top: 4px; line-height: 1.6; }
-    .tl-body a { color: var(--link); text-decoration: underline; }
+    .tl-body a { color: #8b6a2f; text-decoration: underline; }
 
     .li-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
     .li-card { background: white; border-radius: 10px; border: 1px solid var(--rule, #e2dfd9); padding: 18px 22px; }
-    .li-card .li-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold, #b8976a); margin-bottom: 6px; }
+    .li-card .li-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #8b6a2f; margin-bottom: 6px; }
     .li-card h4 { font-size: 13.5px; color: var(--ink, #0a0f1a); margin-bottom: 6px; line-height: 1.4; }
     .li-card p { font-size: 12px; color: var(--sub); line-height: 1.55; }
 
-    .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
-    .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-    .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--gold, #b8976a); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+    .li-cta { background: #0a0f1a; border-radius: 0; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 24px; position: relative; }
+    .li-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.06) 0%, transparent 60%); pointer-events:none; }
+    .li-cta > * { position:relative; }
+    .li-cta div p:first-child { font-size: 11px; color: #b8976a; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
+    .li-cta div p:last-child, .li-cta div p:not(:first-child) { color: rgba(255,255,255,.85); font-size: 15.5px; max-width: 640px; line-height: 1.7; }
+    .li-cta a { color: #8b6a2f; background: transparent; font-size: 12px; font-weight: 600; padding: 14px 32px; border: 1px solid rgba(184,151,106,.3); border-radius: 0; text-decoration: none; white-space: nowrap; letter-spacing: 1.5px; text-transform: uppercase; transition: all .25s ease; }
+    .li-cta a:hover { background: rgba(184,151,106,.1); border-color: #8b6a2f; }
+
+    .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition: all .25s ease; letter-spacing:0.3px; }
+    .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
 
     footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
@@ -322,7 +318,7 @@
       <p style="font-size:13px;color:var(--sub);margin-bottom:18px;max-width:760px;">Two parallel ecosystems are emerging in the Dutch market: <strong>integrators</strong> that rent and rotate furniture across short-stay, expat and hospitality use (KeyPro / Hooft &amp; Petiet under ReShare Living Group, Live Light, In-Lease, RE-PLACE), and <strong>manufacturers</strong> that have built joint refurbishment infrastructure (Ahrend, Gispen, Presikhaaf at the Circulaire Hub in Veghel; Vepa).</p>
 
       <div class="card-grid">
-        <div class="card" style="border-top-color:#0d9488;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">NL · Rental Integrator</div>
           <div class="c-name">ReShare Living Group</div>
           <div class="c-flag"><span class="country-tag">NL</span> Holding group combining two Dutch circular-furniture operators</div>
@@ -337,7 +333,7 @@
           <div class="c-source"><strong>Who bought / who sold:</strong> the shareholders of Hooft &amp; Petiet sold the company to ReShare Living Group (KeyPro&apos;s parent platform) in October 2025. Sources: <a href="https://translinkcf.com/2025/10/23/translinkcf-advised-the-shareholders-of-hooft-petiet-on-the-sale-to-reshare-living-group/" target="_blank">TranslinkCF press release (Oct 2025)</a> &middot; <a href="https://www.keypro.nl/en/" target="_blank">KeyPro corporate site</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#7c3aed;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">BE / NL / LU · Hospitality</div>
           <div class="c-name">Live Light</div>
           <div class="c-flag"><span class="country-tag">BE</span> Pay-per-month furniture leasing · circular by design</div>
@@ -349,7 +345,7 @@
           <div class="c-source">Source: <a href="https://www.live-light.com/professionals/hospitality" target="_blank">Live Light &mdash; Hospitality leasing</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#1e40af;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">NL · Manufacturer Hub</div>
           <div class="c-name">Ahrend + Gispen + Presikhaaf &mdash; Circulaire Hub</div>
           <div class="c-flag"><span class="country-tag">NL</span> Joint circular refurbishment facility &middot; Veghel, North Brabant</div>
@@ -363,7 +359,7 @@
           <div class="c-source">Sources: <a href="https://www.ahrend.com/en/press-and-publications/Royal-Ahrend-continues-to-focus-on-circular-operations-and-international-expansion-in-2024/" target="_blank">Royal Ahrend 2024 press release &mdash; 66,740 refurbished items</a> &middot; <a href="https://www.ahrend.com/en/About-Ahrend/making-a-difference-together/circular-services/services/circular-hub/" target="_blank">Ahrend Circular Hub</a> &middot; <a href="https://www.gispen.com/en/news/opening-the-circulaire-hub/" target="_blank">Gispen &mdash; Opening of the Circulaire Hub</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#0284c7;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">NL · Smaller Players</div>
           <div class="c-name">In-Lease &middot; Lyght Living &middot; RE-PLACE</div>
           <div class="c-flag"><span class="country-tag">NL</span> Specialised rental and office-furniture circular models</div>
@@ -450,8 +446,8 @@
       <h3 style="font-size:17px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:6px;">Fashion &amp; Apparel Brands &mdash; Circular Readiness</h3>
       <p style="font-size:13px;color:var(--sub);margin-bottom:18px;max-width:820px;">How nine major fashion groups are positioned against the EU&apos;s circular mandates. All figures below come from each company&apos;s own published sustainability or annual report. Where a company does not disclose a given metric, the card says so rather than estimating.</p>
 
-      <div style="margin-bottom:18px;padding:14px 18px;background:#fff1f2;border-left:4px solid #b8976a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
-        <strong>Key compliance date &mdash; 19 July 2026:</strong> under the EU Ecodesign for Sustainable Products Regulation (ESPR), large companies selling textiles, apparel and footwear in the EU will no longer be allowed to destroy unsold stock. Destruction is only permitted for safety or severe damage, must be documented, and public disclosure of how unsold goods are handled becomes mandatory. Medium-sized companies fall under the ban from 2030. Source: <a href="https://environment.ec.europa.eu/news/new-eu-rules-stop-destruction-unsold-clothes-and-shoes-2026-02-09_en" target="_blank" style="color:#4338ca;text-decoration:underline;">European Commission &mdash; New EU rules to stop destruction of unsold clothes and shoes</a>.
+      <div style="margin-bottom:18px;padding:14px 18px;background:#faf9f7;border-left:4px solid #8b6a2f;border-radius:0;font-size:13px;color:#1f1f1f;line-height:1.6;">
+        <strong>Key compliance date &mdash; 19 July 2026:</strong> under the EU Ecodesign for Sustainable Products Regulation (ESPR), large companies selling textiles, apparel and footwear in the EU will no longer be allowed to destroy unsold stock. Destruction is only permitted for safety or severe damage, must be documented, and public disclosure of how unsold goods are handled becomes mandatory. Medium-sized companies fall under the ban from 2030. Source: <a href="https://environment.ec.europa.eu/news/new-eu-rules-stop-destruction-unsold-clothes-and-shoes-2026-02-09_en" target="_blank" style="color:#8b6a2f;text-decoration:underline;">European Commission &mdash; New EU rules to stop destruction of unsold clothes and shoes</a>.
       </div>
 
       <div class="card-grid">
@@ -470,7 +466,7 @@
           <div class="c-source">Sources: <a href="https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf" target="_blank">H&amp;M Group Annual &amp; Sustainability Report 2025 (PDF, 99pp)</a> &middot; <a href="https://hmgroup.com/news/h-m-hennes-mauritz-ab-publishes-its-annual-and-sustainability-report-2025/" target="_blank">H&amp;M press release 26 Mar 2026</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#0a0f1a;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">Spain · Listed</div>
           <div class="c-name">Inditex / Zara Pre-Owned</div>
           <div class="c-flag"><span class="country-tag">ES</span> Repair · resale · donation programme</div>
@@ -485,7 +481,7 @@
           <div class="c-source">Sources: <a href="https://static.inditex.com/annualreport2024/en/download-center" target="_blank">Inditex Annual Report 2024</a> &middot; <a href="https://www.inditex.com/itxcomweb/us/en/sustainability" target="_blank">Inditex Sustainability</a> &middot; <a href="https://www.retailtouchpoints.com/topics/sustainability/zara-pre-owned-program-to-debut-in-u-s-next-month" target="_blank">Retail TouchPoints</a> &middot; <a href="https://www.fashiondive.com/news/zara-preowned-repair-recycle-donation/730899/" target="_blank">Fashion Dive</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#a83d80;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">Germany · Listed</div>
           <div class="c-name">Adidas</div>
           <div class="c-flag"><span class="country-tag">DE</span> Sportswear · Choose to Give Back resale (US)</div>
@@ -498,7 +494,7 @@
           <div class="c-source">Source: <a href="https://report.adidas-group.com/2024/en/group-management-report-sustainability-statement/esrs-e5-resource-use-and-circular-economy/overview.html" target="_blank">Adidas Annual Report 2024 &mdash; ESRS E5 Circular Economy</a> &middot; <a href="https://www.adidas-group.com/en/sustainability/planet/circularity" target="_blank">Adidas Circularity strategy</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#d45ab0;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">Japan · Listed</div>
           <div class="c-name">Uniqlo / Fast Retailing FY2024</div>
           <div class="c-flag"><span class="country-tag">JP</span> RE.UNIQLO programme (since 2020)</div>
@@ -511,7 +507,7 @@
           <div class="c-source">Sources: <a href="https://www.fastretailing.com/eng/sustainability/environment/pdf/FastRetailingTCFDReport_eng.pdf" target="_blank">Fast Retailing TCFD Report 2024 (PDF)</a> &middot; <a href="https://www.fastretailing.com/eng/sustainability/products/recycle.html" target="_blank">Fast Retailing &mdash; LifeWear recycling</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#f97316;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">US · Listed</div>
           <div class="c-name">Nike FY2024</div>
           <div class="c-flag"><span class="country-tag">US</span> Sportswear · Nike Refurbished &amp; Nike Grind</div>
@@ -525,7 +521,7 @@
           <div class="c-source">Sources: <a href="https://media.about.nike.com/files/460d3198-9609-4f5b-b18c-d4e7aa570bff/FY24_NIKE,-Inc.-Sustainability-Data.pdf" target="_blank">Nike FY24 Sustainability Data (PDF)</a> &middot; <a href="https://about.nike.com/en/newsroom/releases/nike-refurbished-circularity-model" target="_blank">Nike Refurbished announcement</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#7c3aed;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">US / Europe</div>
           <div class="c-name">Patagonia Worn Wear</div>
           <div class="c-flag"><span class="country-tag">US</span> Buy-back, repair &amp; resale pioneer</div>
@@ -538,7 +534,7 @@
           <div class="c-source">Sources: <a href="https://www.patagonia.com/progress-report/" target="_blank">Patagonia 2025 Impact Report</a> &middot; <a href="https://sgbonline.com/worn-wear-taking-off-for-patagonia/" target="_blank">SGB Media</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#be185d;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">Ireland / UK · Value</div>
           <div class="c-name">Primark</div>
           <div class="c-flag"><span class="country-tag">IE</span> Value fast fashion · Circular Product Standard</div>
@@ -551,7 +547,7 @@
           <div class="c-source">Source: <a href="https://wwd.com/sourcing-journal/sustainability/primark-circular-product-standard-sustainability-united-kingdom-textiles-1238913772/" target="_blank">WWD Sourcing Journal &mdash; Primark Circular Product Standard</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#0284c7;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">Germany · Listed</div>
           <div class="c-name">Zalando FY2024</div>
           <div class="c-flag"><span class="country-tag">DE</span> Fashion marketplace · Pre-owned channel</div>
@@ -565,7 +561,7 @@
           <div class="c-source">Sources: <a href="https://corporate.zalando.com/en/investor-relations/key-figures-2024" target="_blank">Zalando Corporate &mdash; Key Figures 2024</a> &middot; <a href="https://fashionunited.com/news/business/zalando-more-than-triples-annual-profit/2025030664831" target="_blank">FashionUnited FY24 results</a></div>
         </div>
 
-        <div class="card" style="border-top-color:#16a34a;">
+        <div class="card" style="border-top-color:#8b6a2f;">
           <div class="c-tag">UK · Listed</div>
           <div class="c-name">ASOS</div>
           <div class="c-flag"><span class="country-tag">UK</span> Fashion e-commerce · Vintage &amp; Thrift+ pilot</div>
@@ -581,36 +577,36 @@
       </div>
 
       <!-- H&M GROUP — DEEP DIVE -->
-      <div style="margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#fdf2f8 0%,#faf5ff 100%);border:1px solid #f3e0ed;border-radius: 0;">
+      <div style="margin-top:32px;padding:28px 32px;background:#faf9f7;border:1px solid #e2dfd9;border-radius: 0;">
         <div style="font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Deep dive</div>
         <h3 style="font-size:22px;font-weight:800;color:#0a0f1a;margin-bottom:8px;">Inside H&amp;M Group's circular transition (FY2025)</h3>
         <p style="font-size:14px;color:#4b5563;margin-bottom:20px;max-width:900px;line-height:1.6;">H&amp;M Group's financial year runs from 1 December to 30 November. The FY2025 Annual &amp; Sustainability Report (published 26 March 2026) puts two figures on the same page that together sketch where the company is on the circular journey: <strong>91%</strong> of commercial materials are now recycled or sustainably sourced, and <strong>0.8%</strong> of group turnover came from resale in FY2025. Both numbers moved the same direction this year &mdash; and the work between them is what closes the gap.</p>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;">
-          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #e2dfd9;">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Net sales FY2025</div>
             <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 228B</div>
-            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">+2% in local currencies</div>
+            <div style="font-size:11.5px;color:#4e4e4e;margin-top:4px;">+2% in local currencies</div>
           </div>
-          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #e2dfd9;">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Operating profit</div>
             <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 18.4B</div>
-            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">8.1% op. margin</div>
+            <div style="font-size:11.5px;color:#4e4e4e;margin-top:4px;">8.1% op. margin</div>
           </div>
-          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #e2dfd9;">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Scope 3 emissions</div>
             <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">&minus;34.6%</div>
-            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">vs 2019 baseline</div>
+            <div style="font-size:11.5px;color:#4e4e4e;margin-top:4px;">vs 2019 baseline</div>
           </div>
-          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:16px 18px;border:1px solid #e2dfd9;">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color: #8b6a2f;font-weight:800;margin-bottom:6px;">Resale turnover FY25</div>
             <div style="font-size:24px;font-weight:800;color:#0a0f1a;line-height:1.1;">SEK 1.84B</div>
-            <div style="font-size:11.5px;color:#7a7a7a;margin-top:4px;">+27% YoY</div>
+            <div style="font-size:11.5px;color:#4e4e4e;margin-top:4px;">+27% YoY</div>
           </div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-          <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #e2dfd9;">
             <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:10px;">Materials mix FY2025 (commercial products)</div>
             <table style="width:100%;font-size:13px;border-collapse:collapse;">
               <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Recycled or sustainably sourced</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">91% <span style="font-weight:400;color:#9ca3af;">(89% FY24 &middot; 83% FY23)</span></td></tr>
@@ -620,7 +616,7 @@
               <tr><td style="padding:6px 0;color:#4b5563;">2030 target &mdash; sustainable materials</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">100%</td></tr>
             </table>
           </div>
-          <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #f3e0ed;">
+          <div style="background:white;border-radius:10px;padding:18px 20px;border:1px solid #e2dfd9;">
             <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:10px;">Resale business FY2025</div>
             <table style="width:100%;font-size:13px;border-collapse:collapse;">
               <tr style="border-bottom:1px solid #f3e0ed;"><td style="padding:6px 0;color:#4b5563;">Resale share of group turnover</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#0a0f1a;">0.8% <span style="font-weight:400;color:#9ca3af;">(0.6% FY24 &middot; 0.3% FY22)</span></td></tr>
@@ -632,7 +628,7 @@
           </div>
         </div>
 
-        <div style="margin-top:20px;padding:14px 18px;background:#fff1f2;border-left:4px solid #b8976a;border-radius:8px;font-size:13px;color:#4c1d33;line-height:1.6;">
+        <div style="margin-top:20px;padding:14px 18px;background:#faf9f7;border-left:4px solid #8b6a2f;border-radius:0;font-size:13px;color:#1f1f1f;line-height:1.6;">
           <strong>Ventures pipeline &mdash; the bridge between the 91% and the 0.8%.</strong>
           <span><strong>Syre</strong> (with Vargas Holding) is building industrial plants that recycle polyester garment-to-garment at scale, not bottle-to-fabric.</span>
           <span><strong>Galy</strong> is a biotech H&amp;M has invested in that grows cotton from cells in bioreactors rather than fields.</span>
@@ -640,13 +636,13 @@
           <span>Together with Sellpy, these are the pipes that would convert the materials progress into real circular volume.</span>
         </div>
 
-        <div style="margin-top:14px;font-size:11.5px;color:#7a7a7a;line-height:1.55;">
-          Sources: <a href="https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf" target="_blank" style="color:#4338ca;text-decoration:underline;">H&amp;M Group Annual &amp; Sustainability Report 2025 (PDF, 99pp)</a> &middot; <a href="https://hmgroup.com/news/h-m-hennes-mauritz-ab-publishes-its-annual-and-sustainability-report-2025/" target="_blank" style="color:#4338ca;text-decoration:underline;">H&amp;M press release 26 Mar 2026</a> &middot; <a href="https://hmgroup.com/news/h-and-m-group-and-vargas-launch-syre/" target="_blank" style="color:#4338ca;text-decoration:underline;">Syre launch (H&amp;M press)</a>.
+        <div style="margin-top:14px;font-size:11.5px;color:#4e4e4e;line-height:1.55;">
+          Sources: <a href="https://hmgroup.com/wp-content/uploads/2026/03/HM-Group-Annual-and-sustainability-report-2025.pdf" target="_blank" style="color:#8b6a2f;text-decoration:underline;">H&amp;M Group Annual &amp; Sustainability Report 2025 (PDF, 99pp)</a> &middot; <a href="https://hmgroup.com/news/h-m-hennes-mauritz-ab-publishes-its-annual-and-sustainability-report-2025/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">H&amp;M press release 26 Mar 2026</a> &middot; <a href="https://hmgroup.com/news/h-and-m-group-and-vargas-launch-syre/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Syre launch (H&amp;M press)</a>.
         </div>
       </div>
 
-      <div style="margin-top:16px;padding:14px 18px;background:#fef9c3;border-left:4px solid #d97706;border-radius:8px;font-size:13px;color:#78350f;line-height:1.6;">
-        <strong>Digital Product Passport timeline:</strong> textiles are the #1 priority product group under the <a href="https://green-forum.ec.europa.eu/news/2025-2030-working-plan-2025-07-11_en" target="_blank" style="color:#4338ca;text-decoration:underline;">EU ESPR Working Plan 2025&ndash;2030</a> (adopted 16 April 2025). The textile delegated act is expected late 2026 to Q2 2027, with an 18-month compliance window. Mandatory Digital Product Passports for textiles are projected for around <strong>mid-2028</strong>. Source: <a href="https://www.sgs.com/en/news/2025/06/safeguards-07325-eu-releases-espr-working-plan-2025-2030-prioritizing-textiles-for-sustainability" target="_blank" style="color:#4338ca;text-decoration:underline;">SGS ESPR Working Plan analysis</a> &middot; <a href="https://www.inriver.com/resources/digital-product-passports-guide-fashion-footwear-apparel/" target="_blank" style="color:#4338ca;text-decoration:underline;">Inriver &mdash; DPP fashion guide</a>.
+      <div style="margin-top:16px;padding:14px 18px;background:linear-gradient(135deg,#0a0f1a,#1a1f2e);border-left:4px solid #b8976a;border-radius:0;font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;">
+        <strong>Digital Product Passport timeline:</strong> textiles are the #1 priority product group under the <a href="https://green-forum.ec.europa.eu/news/2025-2030-working-plan-2025-07-11_en" target="_blank" style="color:#8b6a2f;text-decoration:underline;">EU ESPR Working Plan 2025&ndash;2030</a> (adopted 16 April 2025). The textile delegated act is expected late 2026 to Q2 2027, with an 18-month compliance window. Mandatory Digital Product Passports for textiles are projected for around <strong>mid-2028</strong>. Source: <a href="https://www.sgs.com/en/news/2025/06/safeguards-07325-eu-releases-espr-working-plan-2025-2030-prioritizing-textiles-for-sustainability" target="_blank" style="color:#8b6a2f;text-decoration:underline;">SGS ESPR Working Plan analysis</a> &middot; <a href="https://www.inriver.com/resources/digital-product-passports-guide-fashion-footwear-apparel/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Inriver &mdash; DPP fashion guide</a>.
       </div>
     </div>
   </div>
@@ -893,6 +889,19 @@
           <div class="tl-body">Once the textiles delegated act is adopted (expected Q2 2027), an ~18-month compliance window puts mandatory DPP for apparel and footwear around mid-2028 to early 2029. Every garment sold in the EU will carry a machine-readable passport covering composition, origin, repairability and end-of-life. Sources: <a href="https://www.circularise.com/blogs/dpps-required-by-eu-legislation-across-sectors" target="_blank">Circularise &mdash; DPP by EU legislation</a> &middot; <a href="https://www.carbonfact.com/blog/policy/digital-product-passport-fashion" target="_blank">Carbonfact &mdash; DPP for fashion</a> &middot; <a href="https://green-forum.ec.europa.eu/news/2025-2030-working-plan-2025-07-11_en" target="_blank">EC ESPR Working Plan 2025-2030</a>.</div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE TAGS -->
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-circular-economy" rel="tag" class="tof-tag">Circular Economy</a>
+      <a href="/tags/#tag-espr" rel="tag" class="tof-tag">ESPR</a>
+      <a href="/tags/#tag-eu-regulation" rel="tag" class="tof-tag">EU Regulation</a>
+      <a href="/tags/#tag-fashion" rel="tag" class="tof-tag">Fashion</a>
+      <a href="/tags/#tag-furniture" rel="tag" class="tof-tag">Furniture</a>
+      <a href="/tags/#tag-electronics" rel="tag" class="tof-tag">Electronics</a>
     </div>
   </div>
 

@@ -31,19 +31,24 @@
     .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
     @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
 
-    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0a0f1a 100%);color:white;padding:52px 32px 44px}
-    .hero-inner{max-width:1100px;margin:auto}
+    .hero{background:#0a0f1a;color:white;padding:52px 32px 44px;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%);pointer-events:none}
+    .hero-inner{max-width:1100px;margin:auto;position:relative;z-index:1}
     .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
     .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
-    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
-    .hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:10px}
+    .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,5vw,48px);font-weight:400;line-height:1.1;letter-spacing:-0.5px;margin-bottom:12px}
     .hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:640px}
     .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
     .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
 
     main{max-width:1280px;margin:0 auto;padding:48px 24px 80px}
     main a { color: #8b6a2f; }
-    .section-title{font-size:18px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold, #b8976a)}
+    .section-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,3vw,30px);font-weight:500;color:#0a0f1a;margin-top:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #8b6a2f;letter-spacing:-0.3px}
+
+    /* Luxury tag block */
+    .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition:all .25s ease; letter-spacing:0.3px; }
+    .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
 
     .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:24px}
     .chart-box{background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
@@ -166,7 +171,19 @@
     <strong>Source:</strong> <a href="https://www.numbeo.com/property-investment/country_result.jsp?country=Netherlands" target="_blank" rel="noopener" style="color:#7a7a7a;">Numbeo Netherlands — Property Investment, April 2026</a>. Crowd-sourced from verified buyers and renters. Not Kadaster transaction data.
   </div>
 
-  <p style="font-size:13px;color:var(--sub);margin-bottom:40px;">This page is part of the <a href="european-housing-market.html" style="color:var(--blue);font-weight:600;">European Housing Market Intelligence 2026–2027</a> report covering 20 European markets.</p>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:40px;">This page is part of the <a href="european-housing-market.html" style="color:#8b6a2f;font-weight:600;">European Housing Market Intelligence 2026–2027</a> report covering 20 European markets.</p>
+
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a>
+      <a href="/tags/#tag-housing" rel="tag" class="tof-tag">Housing</a>
+      <a href="/tags/#tag-real-estate" rel="tag" class="tof-tag">Real Estate</a>
+      <a href="/tags/#tag-amsterdam" rel="tag" class="tof-tag">Amsterdam</a>
+      <a href="/tags/#tag-rotterdam" rel="tag" class="tof-tag">Rotterdam</a>
+      <a href="/tags/#tag-utrecht" rel="tag" class="tof-tag">Utrecht</a>
+    </div>
+  </div>
 
   <div class="cta-bar">
     <div style="flex:1;min-width:0;">

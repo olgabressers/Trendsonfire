@@ -42,35 +42,36 @@
     .nav-search-btn:hover { color: white; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
-    .sec-header { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 50%, var(--ink, #0a0f1a) 100%); color: white; padding: 52px 32px 44px; }
-    .sec-header .inner { max-width: 1280px; margin: auto; }
+    .sec-header { background: #0a0f1a; color: white; padding: 52px 32px 44px; position: relative; overflow: hidden; }
+    .sec-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events: none; }
+    .sec-header .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #a78bfa; font-weight: 700; margin-bottom: 10px; }
-    .sec-header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 10px; }
+    .sec-header h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; margin-bottom: 14px; line-height: 1.1; letter-spacing: -0.5px; }
     .sec-header .lead { font-size: 15px; color: rgba(255,255,255,.78); max-width: 720px; line-height: 1.7; margin-bottom: 20px; }
     .sec-meta { font-size: 12px; color: rgba(255,255,255,.45); display: flex; gap: 20px; flex-wrap: wrap; }
 
     main { max-width: 1280px; margin: 0 auto; padding: 48px 24px 80px; }
     main a { color: #8b6a2f; }
 
-    .insight-banner { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 100%); border-left: 4px solid var(--violet); border-radius: 0; padding: 26px 30px; margin-bottom: 40px; color: white; font-size: 15px; line-height: 1.75; }
-    .insight-banner strong { color: #c4b5fd; }
+    .insight-banner { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); border-left: 4px solid #b8976a; border-radius: 0; padding: 26px 30px; margin-bottom: 40px; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.75; }
+    .insight-banner strong { color: #b8976a; }
 
     .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 48px; }
     .stat-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .stat-card .sc-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .stat-card .sc-value { font-size: 32px; font-weight: 800; color: var(--violet); line-height: 1; margin-bottom: 6px; }
+    .stat-card .sc-value { font-size: 32px; font-weight: 800; color: #8b6a2f; line-height: 1; margin-bottom: 6px; }
     .stat-card .sc-value.green { color: var(--green); }
-    .stat-card .sc-value.amber { color: var(--amber); }
+    .stat-card .sc-value.amber { color: #8b6a2f; }
     .stat-card .sc-value.navy { color: var(--ink, #0a0f1a); }
     .stat-card .sc-desc { font-size: 12px; color: var(--sub); line-height: 1.4; }
 
     .section { margin-bottom: 56px; }
-    .section-title { font-size: 20px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; }
     .section-sub { font-size: 14px; color: var(--sub); margin-bottom: 24px; line-height: 1.5; }
-    .section-divider { height: 3px; background: linear-gradient(90deg, var(--violet) 0%, transparent 100%); border-radius: 2px; margin-bottom: 24px; }
+    .section-divider { display:none; }
 
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
@@ -79,7 +80,7 @@
     .card h3 { font-size: 15px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; line-height: 1.3; }
     .card p { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
     .card p strong { color: var(--text); font-weight: 600; }
-    .card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--violet); margin-bottom: 10px; }
+    .card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8b6a2f; margin-bottom: 10px; }
 
     /* Bar chart styles */
     .bar-chart { display: flex; flex-direction: column; gap: 14px; }
@@ -99,7 +100,7 @@
     .led-year { font-size: 12px; font-weight: 700; color: var(--sub); width: 44px; flex-shrink: 0; }
     .led-track { flex: 1; background: #f1f5f9; border-radius: 5px; height: 24px; overflow: hidden; }
     .led-fill { height: 100%; border-radius: 5px; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: white; }
-    .led-pct { font-size: 13px; font-weight: 700; color: var(--green); width: 48px; flex-shrink: 0; text-align: right; }
+    .led-pct { font-size: 13px; font-weight: 700; color: #8b6a2f; width: 48px; flex-shrink: 0; text-align: right; }
 
     /* Positioning matrix */
     .pos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
@@ -110,19 +111,22 @@
     .pos-row { display: flex; gap: 8px; margin-bottom: 6px; align-items: flex-start; }
     .pos-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
     .pos-text { font-size: 12px; color: var(--sub); line-height: 1.4; }
-    .badge-leader { background: #ede9fe; color: #5b21b6; }
-    .badge-challenger { background: #fef9c3; color: #854d0e; }
+    .badge-leader { background: #f5f0e6; color: #8b6a2f; }
+    .badge-challenger { background: #f5f0e6; color: #8b6a2f; }
     .badge-niche { background: #f0fdf4; color: #14532d; }
     .badge-pivot { background: #fef2f2; color: #991b1b; }
 
     /* Regulatory timeline */
     .reg-list { display: flex; flex-direction: column; gap: 12px; }
     .reg-item { display: flex; gap: 14px; align-items: flex-start; }
-    .reg-year { background: var(--violet); color: white; font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .reg-year { background: #8b6a2f; color: white; font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
     .reg-body { font-size: 13px; color: var(--sub); line-height: 1.5; }
     .reg-body strong { color: var(--text); }
 
     .source-note { font-size: 11.5px; color: #9ca3af; margin-top: 8px; padding: 10px 14px; background: #f9fafb; border-radius: 6px; line-height: 1.5; border-left: 3px solid #e2dfd9; }
+
+    .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition:all .25s ease; letter-spacing:0.3px; }
+    .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
 
     .li-cta { background: var(--ink, #0a0f1a); border-radius: 0; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
@@ -234,22 +238,22 @@
     <div class="stat-card">
       <div class="sc-label">Signify global revenue 2024</div>
       <div class="sc-value navy">€6.14B</div>
-      <div class="sc-desc">World's largest lighting company &mdash; OPPLE's primary global benchmark. Source: <a href="https://www.signify.com/static/2024/signify-annual-report-2024.pdf" target="_blank" style="color:var(--violet);text-decoration:underline;">Signify Annual Report 2024</a>.</div>
+      <div class="sc-desc">World's largest lighting company &mdash; OPPLE's primary global benchmark. Source: <a href="https://www.signify.com/static/2024/signify-annual-report-2024.pdf" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Signify Annual Report 2024</a>.</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">LED residential sales share (global, 2022)</div>
       <div class="sc-value green">~50%</div>
-      <div class="sc-desc">Up from ~5% in 2013. Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA Lighting</a>.</div>
+      <div class="sc-desc">Up from ~5% in 2013. Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA Lighting</a>.</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">OPPLE European footprint</div>
-      <div class="sc-value violet" style="color:var(--violet)">34</div>
-      <div class="sc-desc">European countries where OPPLE is active, from its Eindhoven HQ established 2013. Source: <a href="https://www.opple.com/" target="_blank" style="color:var(--violet);text-decoration:underline;">OPPLE corporate site</a>.</div>
+      <div class="sc-value violet" style="color:#8b6a2f">34</div>
+      <div class="sc-desc">European countries where OPPLE is active, from its Eindhoven HQ established 2013. Source: <a href="https://www.opple.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">OPPLE corporate site</a>.</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">Zumtobel revenue FY2022/23</div>
       <div class="sc-value navy">€1.21B</div>
-      <div class="sc-desc">Self-described European market leader for professional lighting systems. Source: <a href="https://z.lighting/en/" target="_blank" style="color:var(--violet);text-decoration:underline;">Zumtobel Group</a>; revenue from FY2022/23 annual report.</div>
+      <div class="sc-desc">Self-described European market leader for professional lighting systems. Source: <a href="https://z.lighting/en/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Zumtobel Group</a>; revenue from FY2022/23 annual report.</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">OPPLE global manufacturing</div>
@@ -259,7 +263,7 @@
     <div class="stat-card">
       <div class="sc-label">LED target (IEA Net Zero)</div>
       <div class="sc-value green">100%</div>
-      <div class="sc-desc">All global lighting sales should be LED by 2025 per IEA Net Zero scenario. Source: <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA Net Zero by 2050</a>.</div>
+      <div class="sc-desc">All global lighting sales should be LED by 2025 per IEA Net Zero scenario. Source: <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA Net Zero by 2050</a>.</div>
     </div>
   </div>
 
@@ -368,16 +372,16 @@
           <div class="led-track"><div class="led-fill" style="width:100%;background:#047857;">100% — IEA Net Zero target</div></div>
           <div class="led-pct">100%</div>
         </div>
-        <p class="source-note">Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA Lighting tracker</a>. The 2017 and 2020 figures are linear interpolations between the IEA-confirmed 2013 (~5%) and 2022 (~50%) data points. The 2025 target is from <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA Net Zero by 2050</a>.</p>
+        <p class="source-note">Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA Lighting tracker</a>. The 2017 and 2020 figures are linear interpolations between the IEA-confirmed 2013 (~5%) and 2022 (~50%) data points. The 2025 target is from <a href="https://www.iea.org/reports/net-zero-by-2050" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA Net Zero by 2050</a>.</p>
       </div>
 
       <div class="card">
         <div class="card-tag">Why This Matters for European Strategy</div>
         <h3>Saturation in Residential Creates Pressure to Win in Commercial</h3>
         <p style="margin-bottom:12px;">As residential LED penetration approaches saturation, volume growth increasingly depends on the <strong>commercial and industrial retrofit market</strong> — office buildings, retail, hospitality, warehouses, and public infrastructure. These segments have longer sales cycles, higher average order values, and are more defensible once specified.</p>
-        <p style="margin-bottom:12px;">The <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA</a> notes that approximately 90 countries now have Minimum Energy Performance Standards (MEPS) covering most of global lighting energy consumption. In Europe, EU Ecodesign Regulation has accelerated the phase-out of fluorescent lamps, creating mandatory replacement cycles in commercial buildings that could not otherwise be deferred.</p>
+        <p style="margin-bottom:12px;">The <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA</a> notes that approximately 90 countries now have Minimum Energy Performance Standards (MEPS) covering most of global lighting energy consumption. In Europe, EU Ecodesign Regulation has accelerated the phase-out of fluorescent lamps, creating mandatory replacement cycles in commercial buildings that could not otherwise be deferred.</p>
         <p style="margin-bottom:12px;"><strong>For a challenger brand like OPPLE</strong>, this regulatory tailwind means demand exists — the strategic question is whether the European commercial organisation (sales force, specification relationships, distribution agreements) is scaled and positioned to capture it ahead of incumbents with decades of channel investment.</p>
-        <p style="font-size:12px;color:var(--sub);">LED efficacy benchmark: current residential LEDs typically exceed 100 lm/W; IEA targets continued efficacy gains through 2030. Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:var(--violet);text-decoration:underline;">IEA Lighting</a>.</p>
+        <p style="font-size:12px;color:var(--sub);">LED efficacy benchmark: current residential LEDs typically exceed 100 lm/W; IEA targets continued efficacy gains through 2030. Source: <a href="https://www.iea.org/energy-system/buildings/lighting" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IEA Lighting</a>.</p>
       </div>
     </div>
   </div>
@@ -397,7 +401,7 @@
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Continues to market under the Philips brand — very strong brand recognition in Europe</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Dominant across specification, distribution, and consumer channels</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#d97706;"></div><div class="pos-text">Revenue declined in 2024; facing margin pressure as LED commoditises</div></div>
-        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.signify.com/global/our-company/investors" target="_blank" style="color:var(--violet);">Signify Investor Relations</a> &mdash; Listed Euronext Amsterdam (LIGHT).</p>
+        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.signify.com/global/our-company/investors" target="_blank" style="color:#8b6a2f;">Signify Investor Relations</a> &mdash; Listed Euronext Amsterdam (LIGHT).</p>
       </div>
 
       <div class="pos-card">
@@ -408,7 +412,7 @@
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Two divisions: Zumtobel (luminaires) + Tridonic (lighting components / controls)</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">10 production facilities; sales in ~90 countries</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#d97706;"></div><div class="pos-text">Premium segment focus — limited price competition with OPPLE's target price points</div></div>
-        <p class="source-note" style="margin-top:10px;">Source: <a href="https://z.lighting/en/investors/" target="_blank" style="color:var(--violet);">Zumtobel Group annual report FY2022/23</a>.</p>
+        <p class="source-note" style="margin-top:10px;">Source: <a href="https://z.lighting/en/investors/" target="_blank" style="color:#8b6a2f;">Zumtobel Group annual report FY2022/23</a>.</p>
       </div>
 
       <div class="pos-card">
@@ -418,7 +422,7 @@
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">~34,000 employees; strong technology and component heritage</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#dc2626;"></div><div class="pos-text">Since 2020 acquisition, significantly repositioned toward automotive lighting, sensors, and optical semiconductors</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#dc2626;"></div><div class="pos-text">General illumination is no longer the primary strategic focus — reducing direct competition with OPPLE in commercial lighting</div></div>
-        <p class="source-note" style="margin-top:10px;">Source: <a href="https://ams-osram.com/investor" target="_blank" style="color:var(--violet);">ams-OSRAM Investor Relations</a>.</p>
+        <p class="source-note" style="margin-top:10px;">Source: <a href="https://ams-osram.com/investor" target="_blank" style="color:#8b6a2f;">ams-OSRAM Investor Relations</a>.</p>
       </div>
 
       <div class="pos-card">
@@ -429,10 +433,10 @@
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Direct subsidiaries in 13+ European countries including NL, DE, FR, UK, IT, PL</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Focus: office, healthcare, education, retail, industrial — high specification channel intensity</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#d97706;"></div><div class="pos-text">Private — revenue not disclosed; primarily European in scope</div></div>
-        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.trilux.com/en/" target="_blank" style="color:var(--violet);">Trilux corporate site</a>.</p>
+        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.trilux.com/en/" target="_blank" style="color:#8b6a2f;">Trilux corporate site</a>.</p>
       </div>
 
-      <div class="pos-card" style="border-top: 3px solid var(--violet);">
+      <div class="pos-card" style="border-top: 3px solid #8b6a2f;">
         <div class="pos-company">OPPLE Lighting</div>
         <div class="pos-hq">Shanghai, China · EU HQ Eindhoven, Netherlands (since 2013)</div>
         <span class="pos-badge badge-challenger">Challenger — growing European presence</span>
@@ -452,7 +456,7 @@
         <div class="pos-row"><div class="pos-dot" style="background:#d97706;"></div><div class="pos-text">Operate primarily as OEM manufacturers and private-label suppliers to European distributors and retail chains</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#d97706;"></div><div class="pos-text">No direct branded European commercial presence comparable to OPPLE's Eindhoven operation</div></div>
         <div class="pos-row"><div class="pos-dot" style="background:#059669;"></div><div class="pos-text">Significant manufacturing scale and cost competitiveness — relevant as supply chain partners or competitive benchmarks</div></div>
-        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.opple.com/" target="_blank" style="color:var(--violet);">OPPLE corporate site</a>. Note: company does not separately disclose European operations financials.</p>
+        <p class="source-note" style="margin-top:10px;">Source: <a href="https://www.opple.com/" target="_blank" style="color:#8b6a2f;">OPPLE corporate site</a>. Note: company does not separately disclose European operations financials.</p>
       </div>
     </div>
   </div>
@@ -516,6 +520,18 @@
         </div>
       </div>
       <p class="source-note" style="margin-top:16px;">Sources: Signify — Wikipedia (180 countries). Zumtobel — Wikipedia ("sales and partner companies in nearly 90 countries"). OPPLE global — Wikipedia ("over 50 countries" per Wikipedia; "over 70 countries" per job posting April 2026). OPPLE Europe — job posting April 2026. Trilux — Wikipedia (direct EU subsidiaries listed). Note: "countries" metrics are not fully comparable — some reflect direct subsidiaries, others distribution partnerships.</p>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-lighting" rel="tag" class="tof-tag">Lighting</a>
+      <a href="/tags/#tag-led" rel="tag" class="tof-tag">LED</a>
+      <a href="/tags/#tag-opple" rel="tag" class="tof-tag">OPPLE</a>
+      <a href="/tags/#tag-signify" rel="tag" class="tof-tag">Signify</a>
+      <a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a>
+      <a href="/tags/#tag-technology" rel="tag" class="tof-tag">Technology</a>
     </div>
   </div>
 

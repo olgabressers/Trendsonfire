@@ -46,15 +46,16 @@
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
-    header { background: linear-gradient(135deg, #78350f 0%, #d97706 100%); color: white; padding: 48px 32px 40px; }
-    header .inner { max-width: 1280px; margin: auto; }
+    .art-hero { background: #0a0f1a; color: white; padding: 48px 32px 40px; position: relative; }
+    .art-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
+    .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #fde68a; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px,4vw,40px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
-    header h1 span { color: #fde68a; }
-    header p { font-size: 15px; color: rgba(255,255,255,.82); max-width: 720px; line-height: 1.65; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 10px; }
+    .art-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px,5vw,48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .art-hero h1 span { color: #b8976a; }
+    .art-hero p { font-size: 15px; color: rgba(255,255,255,.82); max-width: 720px; line-height: 1.65; }
     .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
     .breaking-tag { display: inline-block; background: #dc2626; color: white; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
 
@@ -71,15 +72,15 @@
     .stat-note { font-size: 12px; color: var(--sub); margin-top: 4px; }
 
     .section-block { margin-bottom: 56px; }
-    .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px,3vw,30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; display: flex; align-items: center; gap: 10px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 24px; }
 
-    .insight { border-radius: 0; padding: 24px 28px; color: white; margin-bottom: 48px; }
-    .insight.amber { background: linear-gradient(135deg, #78350f, #d97706); }
-    .insight.red { background: linear-gradient(135deg, #7f1d1d, #dc2626); }
-    .insight.navy { background: linear-gradient(135deg, #0a0f1a, #1d4ed8); }
-    .insight-body { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,.92); }
-    .insight-body strong { color: white; }
+    .insight { border-radius: 0; padding: 24px 28px; color: white; margin-bottom: 48px; background: linear-gradient(135deg, #0a0f1a, #1a1f2e); border-left: 4px solid #b8976a; }
+    .insight.amber { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); }
+    .insight.red { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); }
+    .insight.navy { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); }
+    .insight-body { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,.88); }
+    .insight-body strong { color: #b8976a; }
 
     /* Fonq breakdown box */
     .fonq-box { background: white; border-radius: 0; border: 2px solid var(--red); padding: 28px 32px; margin-bottom: 48px; }
@@ -261,32 +262,32 @@
     <div class="stat-card">
       <div class="stat-label">European furniture market (CSIL)</div>
       <div class="stat-val amber">~€110B</div>
-      <div class="stat-note">2025 estimate · Source: <a href="https://www.worldfurnitureonline.com/report/the-furniture-industry-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">CSIL via World Furniture Online</a></div>
+      <div class="stat-note">2025 estimate · Source: <a href="https://www.worldfurnitureonline.com/report/the-furniture-industry-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CSIL via World Furniture Online</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Average furniture online return rate</div>
       <div class="stat-val red">17%</div>
-      <div class="stat-note">Furniture category 2024 · Source: <a href="https://www.upcounting.com/blog/average-ecommerce-return-rate" target="_blank" style="color:#4338ca;text-decoration:underline;">upCounting e-commerce return rate report (2025)</a></div>
+      <div class="stat-note">Furniture category 2024 · Source: <a href="https://www.upcounting.com/blog/average-ecommerce-return-rate" target="_blank" style="color:#8b6a2f;text-decoration:underline;">upCounting e-commerce return rate report (2025)</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">EU furniture e-commerce buyers</div>
       <div class="stat-val amber">26%</div>
-      <div class="stat-note">Of EU consumers purchased furniture/home/garden online in last 3 months of 2024 · Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">Statista — E-commerce returns in Europe</a></div>
+      <div class="stat-note">Of EU consumers purchased furniture/home/garden online in last 3 months of 2024 · Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Statista — E-commerce returns in Europe</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Fonq founded → bankrupt</div>
       <div class="stat-val red">23 yrs</div>
-      <div class="stat-note">2003 → 27 March 2026 · Utrecht · Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#4338ca;text-decoration:underline;">DutchNews</a> · <a href="https://www.faillissementen.com/insolventies/nederlandse-insolventies/321386/67476597/faillissement-fonq-groep-bv" target="_blank" style="color:#4338ca;text-decoration:underline;">Faillissementen.com</a></div>
+      <div class="stat-note">2003 → 27 March 2026 · Utrecht · Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">DutchNews</a> · <a href="https://www.faillissementen.com/insolventies/nederlandse-insolventies/321386/67476597/faillissement-fonq-groep-bv" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Faillissementen.com</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Fonq employees affected</div>
       <div class="stat-val red">250+</div>
-      <div class="stat-note">Reported at bankruptcy filing · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#4338ca;text-decoration:underline;">Wonen360</a></div>
+      <div class="stat-note">Reported at bankruptcy filing · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Wonen360</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Fonq 2023 loss</div>
       <div class="stat-val red">−€14M</div>
-      <div class="stat-note">Reported net loss in 2023 financial filings · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#4338ca;text-decoration:underline;">Wonen360</a></div>
+      <div class="stat-note">Reported net loss in 2023 financial filings · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Wonen360</a></div>
     </div>
   </div>
 
@@ -339,7 +340,7 @@
         </div>
       </div>
       <div class="fonq-body">
-        <strong>What went wrong:</strong> The Dutch housing market slowdown from 2022 onwards reduced consumer spending on home furnishings, rising interest rates increased the cost of carrying working capital, and competition from marketplace-based players (bol.com, Amazon EU) compressed margins. Fonq's 2024 acquisition of Naduvi added scale but did not solve the underlying unit economics. Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#4338ca;text-decoration:underline;">DutchNews (March 2026)</a> · <a href="https://nltimes.nl/2026/03/27/online-home-store-fonq-declared-bankrupt-100-jobs-risk" target="_blank" style="color:#4338ca;text-decoration:underline;">NL Times</a> · <a href="https://www.interiordaily.com/article/9824125/final-curtain-falls-for-fonq-court-declares-e-commerce-group-bankrupt/" target="_blank" style="color:#4338ca;text-decoration:underline;">Interior Daily</a>.
+        <strong>What went wrong:</strong> The Dutch housing market slowdown from 2022 onwards reduced consumer spending on home furnishings, rising interest rates increased the cost of carrying working capital, and competition from marketplace-based players (bol.com, Amazon EU) compressed margins. Fonq's 2024 acquisition of Naduvi added scale but did not solve the underlying unit economics. Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">DutchNews (March 2026)</a> · <a href="https://nltimes.nl/2026/03/27/online-home-store-fonq-declared-bankrupt-100-jobs-risk" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NL Times</a> · <a href="https://www.interiordaily.com/article/9824125/final-curtain-falls-for-fonq-court-declares-e-commerce-group-bankrupt/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Interior Daily</a>.
       </div>
     </div>
   </div>
@@ -353,27 +354,27 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">June 2021</div>
-        <div class="tl-text"><strong>Made.com IPO at £775M.</strong> The UK online furniture retailer goes public in June 2021 at 200p per share, valuing the company at around £775 million. Shares fall 7% on the first day of trading. Source: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#4338ca;text-decoration:underline;">TechCrunch</a>.</div>
+        <div class="tl-text"><strong>Made.com IPO at £775M.</strong> The UK online furniture retailer goes public in June 2021 at 200p per share, valuing the company at around £775 million. Shares fall 7% on the first day of trading. Source: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">TechCrunch</a>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">November 2022</div>
-        <div class="tl-text"><strong>Made.com enters administration.</strong> 16 months after its IPO, Made.com's shares are suspended on 1 November 2022; the company enters administration on 9 November. Outstanding debts to suppliers and warehouse operators totalled £75 million. Next buys the Made.com brand and IP for £3.4 million in a pre-pack administration. Sources: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#4338ca;text-decoration:underline;">TechCrunch</a> · <a href="https://www.retaildetail.eu/news/home/made-com-bankrupt-next-buys-brand/" target="_blank" style="color:#4338ca;text-decoration:underline;">RetailDetail EU</a>.</div>
+        <div class="tl-text"><strong>Made.com enters administration.</strong> 16 months after its IPO, Made.com's shares are suspended on 1 November 2022; the company enters administration on 9 November. Outstanding debts to suppliers and warehouse operators totalled £75 million. Next buys the Made.com brand and IP for £3.4 million in a pre-pack administration. Sources: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">TechCrunch</a> · <a href="https://www.retaildetail.eu/news/home/made-com-bankrupt-next-buys-brand/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">RetailDetail EU</a>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">January 2024</div>
-        <div class="tl-text"><strong>Wayfair cuts 1,650 jobs (13% of global workforce).</strong> Announced 19 January 2024, the third Wayfair restructuring since summer 2022. Expected to deliver annualised savings of over $280 million. Source: <a href="https://investor.wayfair.com/news/news-details/2024/Wayfair-Announces-Workforce-Realignment-Plan/default.aspx" target="_blank" style="color:#4338ca;text-decoration:underline;">Wayfair investor news</a> · <a href="https://www.cnbc.com/2024/01/19/wayfair-layoffs-home-goods-retailer-to-cut-1650-employees.html" target="_blank" style="color:#4338ca;text-decoration:underline;">CNBC</a>.</div>
+        <div class="tl-text"><strong>Wayfair cuts 1,650 jobs (13% of global workforce).</strong> Announced 19 January 2024, the third Wayfair restructuring since summer 2022. Expected to deliver annualised savings of over $280 million. Source: <a href="https://investor.wayfair.com/news/news-details/2024/Wayfair-Announces-Workforce-Realignment-Plan/default.aspx" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Wayfair investor news</a> · <a href="https://www.cnbc.com/2024/01/19/wayfair-layoffs-home-goods-retailer-to-cut-1650-employees.html" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CNBC</a>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">FY 2024</div>
-        <div class="tl-text"><strong>Maisons du Monde swings to €115M net loss.</strong> 2024 net sales of €1.002 billion with an 11% top-line decline. Net loss of €115.3M (vs. €8.8M profit in 2023), including an €81M goodwill impairment. EBITDA margin fell to 14.5% from 18.4%. The group secured banking covenant adjustments until June 2025. Source: <a href="https://www.globenewswire.com/news-release/2025/03/11/3040259/0/en/MAISONS-DU-MONDE-ANNUAL-RESULTS-2024-IN-LINE-WITH-GUIDANCE.html" target="_blank" style="color:#4338ca;text-decoration:underline;">Maisons du Monde 2024 annual results release</a>.</div>
+        <div class="tl-text"><strong>Maisons du Monde swings to €115M net loss.</strong> 2024 net sales of €1.002 billion with an 11% top-line decline. Net loss of €115.3M (vs. €8.8M profit in 2023), including an €81M goodwill impairment. EBITDA margin fell to 14.5% from 18.4%. The group secured banking covenant adjustments until June 2025. Source: <a href="https://www.globenewswire.com/news-release/2025/03/11/3040259/0/en/MAISONS-DU-MONDE-ANNUAL-RESULTS-2024-IN-LINE-WITH-GUIDANCE.html" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Maisons du Monde 2024 annual results release</a>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot red"></div>
         <div class="tl-year red">27 March 2026</div>
-        <div class="tl-text"><strong>Fonq declared bankrupt.</strong> Utrecht court declares Fonq Groep B.V. bankrupt; Noor Zetteler appointed curator. 250+ employees affected. The bankruptcy covers Fonq.nl and multiple subsidiary webshops (Curver, Moleskine.nl, Wijnrekshop.nl). Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#4338ca;text-decoration:underline;">DutchNews</a> · <a href="https://nltimes.nl/2026/03/27/online-home-store-fonq-declared-bankrupt-100-jobs-risk" target="_blank" style="color:#4338ca;text-decoration:underline;">NL Times</a>.</div>
+        <div class="tl-text"><strong>Fonq declared bankrupt.</strong> Utrecht court declares Fonq Groep B.V. bankrupt; Noor Zetteler appointed curator. 250+ employees affected. The bankruptcy covers Fonq.nl and multiple subsidiary webshops (Curver, Moleskine.nl, Wijnrekshop.nl). Sources: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">DutchNews</a> · <a href="https://nltimes.nl/2026/03/27/online-home-store-fonq-declared-bankrupt-100-jobs-risk" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NL Times</a>.</div>
       </div>
     </div>
   </div>
@@ -388,13 +389,13 @@
         <div class="chart-title">Online Furniture Market Size by Country — 2025 (€B)</div>
         <div class="chart-sub">Estimated total online furniture &amp; home spending · excludes marketplaces replatformed traffic</div>
         <div id="market-size-chart"></div>
-        <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;">Source: <a href="https://www.worldfurnitureonline.com/report/the-furniture-industry-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">CSIL — The Furniture Industry in Europe</a>. Country split of the ~€110B total European furniture market. Country values are CSIL's reported country-level shares; figures rounded.</div>
+        <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;">Source: <a href="https://www.worldfurnitureonline.com/report/the-furniture-industry-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CSIL — The Furniture Industry in Europe</a>. Country split of the ~€110B total European furniture market. Country values are CSIL's reported country-level shares; figures rounded.</div>
       </div>
       <div class="chart-box">
         <div class="chart-title">Online Penetration — Furniture vs Other Categories (% online)</div>
         <div class="chart-sub">Share of total retail spending happening online · furniture structurally under-indexed</div>
         <div id="penetration-chart"></div>
-        <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;">Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">Statista — E-commerce returns in Europe</a>. Statista reports that 26% of EU consumers bought furniture/home/garden online in the last quarter of 2024 — used here as the benchmark penetration signal for the furniture category. Other category values are category e-commerce shares reported by Statista.</div>
+        <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e2dfd9;margin-top:12px;">Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Statista — E-commerce returns in Europe</a>. Statista reports that 26% of EU consumers bought furniture/home/garden online in the last quarter of 2024 — used here as the benchmark penetration signal for the furniture category. Other category values are category e-commerce shares reported by Statista.</div>
       </div>
     </div>
   </div>
@@ -410,15 +411,15 @@
         <div class="problem-icon">📦</div>
         <div class="problem-title">The Return Trap — High Rate, Enormous Cost</div>
         <div class="problem-stat red">17%</div>
-        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">Average furniture online return rate (2024) · Source: <a href="https://www.upcounting.com/blog/average-ecommerce-return-rate" target="_blank" style="color:#4338ca;text-decoration:underline;">upCounting</a></div>
-        <div class="problem-body">Furniture is bought by appearance online and judged by reality at home. Colour, size, texture and quality all disappoint at a rate that fashion and electronics retailers do not face. Processing a single furniture return can cost 20–65% of the item's original price when all associated expenses (reverse shipping, inspection, restocking, damage write-offs) are included (<a href="https://www.opensend.com/post/return-shipping-cost-statistics" target="_blank" style="color:#4338ca;text-decoration:underline;">Opensend return cost research</a>). In Europe, around 7% of total e-commerce revenue was returned in 2024 across all categories (<a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">Statista</a>). Furniture sits well above that average.</div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">Average furniture online return rate (2024) · Source: <a href="https://www.upcounting.com/blog/average-ecommerce-return-rate" target="_blank" style="color:#8b6a2f;text-decoration:underline;">upCounting</a></div>
+        <div class="problem-body">Furniture is bought by appearance online and judged by reality at home. Colour, size, texture and quality all disappoint at a rate that fashion and electronics retailers do not face. Processing a single furniture return can cost 20–65% of the item's original price when all associated expenses (reverse shipping, inspection, restocking, damage write-offs) are included (<a href="https://www.opensend.com/post/return-shipping-cost-statistics" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Opensend return cost research</a>). In Europe, around 7% of total e-commerce revenue was returned in 2024 across all categories (<a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Statista</a>). Furniture sits well above that average.</div>
       </div>
 
       <div class="problem-card">
         <div class="problem-icon">🚛</div>
         <div class="problem-title">Last-Mile Delivery — Specialist Carriers, 2-Person Teams</div>
         <div class="problem-stat">12%</div>
-        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">Of returns caused by damage during last-mile delivery · Source: <a href="https://www.clickpost.ai/blog/ecommerce-returns-in-furniture" target="_blank" style="color:#4338ca;text-decoration:underline;">ClickPost — E-commerce Returns in Furniture</a></div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">Of returns caused by damage during last-mile delivery · Source: <a href="https://www.clickpost.ai/blog/ecommerce-returns-in-furniture" target="_blank" style="color:#8b6a2f;text-decoration:underline;">ClickPost — E-commerce Returns in Furniture</a></div>
         <div class="problem-body">A wardrobe, sofa or dining table cannot go in a standard van. It requires specialist carriers, 2-person teams, timed delivery windows, and customer co-ordination. In dense Dutch cities with narrow staircases and canal houses, successful delivery is structurally harder than in suburban markets. Damage during last-mile delivery alone accounts for 12% of furniture returns, on top of the buyer's-remorse returns.</div>
       </div>
 
@@ -426,7 +427,7 @@
         <div class="problem-icon">🏠</div>
         <div class="problem-title">Housing Market Sensitivity — People Move, Then Buy Furniture</div>
         <div class="problem-stat" style="color:var(--blue);">~222K → ~195K</div>
-        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">NL residential transactions 2021 peak vs 2023 · Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS construction and housing statistics</a></div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">NL residential transactions 2021 peak vs 2023 · Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CBS construction and housing statistics</a></div>
         <div class="problem-body"><strong>A large share of major furniture purchases is triggered by a move.</strong> When the housing market stalls — as it did across the Netherlands, Germany, and Sweden from 2022 as mortgage rates rose — furniture demand falls with it. Unlike fashion or food, furniture is not a recurring purchase driven by taste or season. It is event-driven. Fewer housing transactions translate directly into fewer major furniture purchases.</div>
       </div>
 
@@ -434,7 +435,7 @@
         <div class="problem-icon">🪑</div>
         <div class="problem-title">Touch &amp; Feel — The Experience Gap Online Cannot Fully Close</div>
         <div class="problem-stat" style="color:var(--teal);">AR reduces returns</div>
-        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">IKEA Place app has helped reduce product returns by ~20% since 2017 · Source: <a href="https://www.datanext.ai/case-study/ikea-augmented-reality-furniture/" target="_blank" style="color:#4338ca;text-decoration:underline;">Datanext IKEA AR case study</a></div>
+        <div style="font-size:11px;color:var(--sub);margin-bottom:10px;">IKEA Place app has helped reduce product returns by ~20% since 2017 · Source: <a href="https://www.datanext.ai/case-study/ikea-augmented-reality-furniture/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Datanext IKEA AR case study</a></div>
         <div class="problem-body"><strong>Furniture is a sensory purchase.</strong> Customers sit on sofas, feel fabric quality, test drawer mechanisms, and judge wood grain in person. AR visualisation is beginning to close this gap — IKEA's Place app has helped reduce IKEA's product returns by around 20% since its 2017 launch — but AR adoption across the category remains concentrated in the largest players.</div>
       </div>
 
@@ -452,32 +453,32 @@
         <div class="nl-card">
           <div class="nl-card-label">NL housing transactions 2021</div>
           <div class="nl-card-val">~222K</div>
-          <div class="nl-card-note">Peak year · Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a></div>
+          <div class="nl-card-note">Peak year · Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CBS</a></div>
         </div>
         <div class="nl-card">
           <div class="nl-card-label">NL housing transactions 2023</div>
           <div class="nl-card-val">~195K</div>
-          <div class="nl-card-note">Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#4338ca;text-decoration:underline;">CBS</a> · Rabobank housing market reports</div>
+          <div class="nl-card-note">Source: <a href="https://www.cbs.nl/en-gb/economy/construction-and-housing" target="_blank" style="color:#8b6a2f;text-decoration:underline;">CBS</a> · Rabobank housing market reports</div>
         </div>
         <div class="nl-card">
           <div class="nl-card-label">NL Q4 2024 avg home price</div>
           <div class="nl-card-val">€462K</div>
-          <div class="nl-card-note">+12% YoY · Source: <a href="https://nltimes.nl/2024/12/23/dutch-home-sales-prices-show-largest-jump-two-years-12-eu462000" target="_blank" style="color:#4338ca;text-decoration:underline;">NL Times / CBS</a></div>
+          <div class="nl-card-note">+12% YoY · Source: <a href="https://nltimes.nl/2024/12/23/dutch-home-sales-prices-show-largest-jump-two-years-12-eu462000" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NL Times / CBS</a></div>
         </div>
         <div class="nl-card">
           <div class="nl-card-label">IKEA stores in NL</div>
           <div class="nl-card-val">13 + 1</div>
-          <div class="nl-card-note">13 full stores + 1 Plan &amp; Order Point · Source: <a href="https://www.ikea.com/nl/en/stores/" target="_blank" style="color:#4338ca;text-decoration:underline;">IKEA NL stores</a></div>
+          <div class="nl-card-note">13 full stores + 1 Plan &amp; Order Point · Source: <a href="https://www.ikea.com/nl/en/stores/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IKEA NL stores</a></div>
         </div>
         <div class="nl-card">
           <div class="nl-card-label">EU furniture online buyers</div>
           <div class="nl-card-val">26%</div>
-          <div class="nl-card-note">Of EU consumers Q4 2024 · Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#4338ca;text-decoration:underline;">Statista</a></div>
+          <div class="nl-card-note">Of EU consumers Q4 2024 · Source: <a href="https://www.statista.com/topics/11361/e-commerce-returns-in-europe/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Statista</a></div>
         </div>
         <div class="nl-card">
           <div class="nl-card-label">Fonq 2023 loss</div>
           <div class="nl-card-val" style="color:var(--red);">&gt;€14M</div>
-          <div class="nl-card-note">Net loss · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#4338ca;text-decoration:underline;">Wonen360</a></div>
+          <div class="nl-card-note">Net loss · Source: <a href="https://www.wonen360.nl/article/9824101/doek-valt-definitief-voor-fonq-rechtbank-verklaart-e-commercegroep-failliet/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Wonen360</a></div>
         </div>
       </div>
       <p style="font-size:13.5px;color:var(--sub);line-height:1.65;">The Dutch market is mature, digitally sophisticated, and competitive. It has the advantage of high online adoption but is dominated by players (IKEA with 13 physical stores, bol.com as a marketplace) whose structural models do not carry the same return-logistics and working-capital risk that sank Fonq. <strong>IKEA customers decide in a showroom, not on a website.</strong> <strong>Bol.com does not carry the inventory risk — its sellers do.</strong> These are not coincidences; they are the competitive moat that pure-play online specialists have not found a way around.</p>
@@ -527,21 +528,21 @@
             <td>US / UK / DE</td>
             <td>Marketplace · dropship-heavy</td>
             <td><span class="status-pill struggle">Restructuring</span></td>
-            <td>Announced 1,650 job cuts (13% of workforce) on 19 Jan 2024 — third restructuring since summer 2022. Expected annualised savings &gt;$280M. Source: <a href="https://investor.wayfair.com/news/news-details/2024/Wayfair-Announces-Workforce-Realignment-Plan/default.aspx" target="_blank" style="color:#4338ca;text-decoration:underline;">Wayfair investor news</a>.</td>
+            <td>Announced 1,650 job cuts (13% of workforce) on 19 Jan 2024 — third restructuring since summer 2022. Expected annualised savings &gt;$280M. Source: <a href="https://investor.wayfair.com/news/news-details/2024/Wayfair-Announces-Workforce-Realignment-Plan/default.aspx" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Wayfair investor news</a>.</td>
           </tr>
           <tr>
             <td><strong>Westwing Group</strong></td>
             <td>Germany</td>
             <td>Curated online home · premium repositioning</td>
             <td><span class="status-pill stable">Stabilising</span></td>
-            <td>2024 revenue of €425–455M with +4% YoY growth; completed platform migration and moved to a more premium assortment. Q1 2025 adjusted EBITDA margin 8.5%. FY2025 guidance: revenue −4% to +2% YoY, EBITDA margin 6–8%. Source: <a href="https://www.eqs-news.com/news/corporate/westwing-delivers-2024-results-at-the-upper-end-of-guidance-and-expects-to-significantly-improve-profitability-with-an-adjusted-ebitda-margin-of-6-to-8-in-2025/29d78297-9301-4a1d-803f-084d9fdbe480" target="_blank" style="color:#4338ca;text-decoration:underline;">Westwing FY2024 release</a>.</td>
+            <td>2024 revenue of €425–455M with +4% YoY growth; completed platform migration and moved to a more premium assortment. Q1 2025 adjusted EBITDA margin 8.5%. FY2025 guidance: revenue −4% to +2% YoY, EBITDA margin 6–8%. Source: <a href="https://www.eqs-news.com/news/corporate/westwing-delivers-2024-results-at-the-upper-end-of-guidance-and-expects-to-significantly-improve-profitability-with-an-adjusted-ebitda-margin-of-6-to-8-in-2025/29d78297-9301-4a1d-803f-084d9fdbe480" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Westwing FY2024 release</a>.</td>
           </tr>
           <tr>
             <td><strong>Maisons du Monde</strong></td>
             <td>France</td>
             <td>Omnichannel · own design</td>
             <td><span class="status-pill struggle">Under pressure</span></td>
-            <td>2024 net sales €1.002B (−11% YoY). Net loss of €115.3M including €81M goodwill impairment. EBITDA margin 14.5% (down from 18.4%). Secured banking covenant adjustments until June 2025. Source: <a href="https://www.globenewswire.com/news-release/2025/03/11/3040259/0/en/MAISONS-DU-MONDE-ANNUAL-RESULTS-2024-IN-LINE-WITH-GUIDANCE.html" target="_blank" style="color:#4338ca;text-decoration:underline;">Maisons du Monde 2024 results</a>.</td>
+            <td>2024 net sales €1.002B (−11% YoY). Net loss of €115.3M including €81M goodwill impairment. EBITDA margin 14.5% (down from 18.4%). Secured banking covenant adjustments until June 2025. Source: <a href="https://www.globenewswire.com/news-release/2025/03/11/3040259/0/en/MAISONS-DU-MONDE-ANNUAL-RESULTS-2024-IN-LINE-WITH-GUIDANCE.html" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Maisons du Monde 2024 results</a>.</td>
           </tr>
           <tr>
             <td><strong>Zalando Home</strong></td>
@@ -562,14 +563,14 @@
             <td>UK / EU</td>
             <td>Online DTC · own design</td>
             <td><span class="status-pill bankrupt">Bankrupt · Nov 2022</span></td>
-            <td>IPO'd June 2021 at £775M valuation (200p per share). Shares suspended 1 Nov 2022; entered administration 9 Nov 2022. Outstanding supplier/warehouse debts ~£75M. Next acquired the brand and IP for £3.4M in pre-pack administration. Source: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#4338ca;text-decoration:underline;">TechCrunch</a> · <a href="https://www.retaildetail.eu/news/home/made-com-bankrupt-next-buys-brand/" target="_blank" style="color:#4338ca;text-decoration:underline;">RetailDetail</a>.</td>
+            <td>IPO'd June 2021 at £775M valuation (200p per share). Shares suspended 1 Nov 2022; entered administration 9 Nov 2022. Outstanding supplier/warehouse debts ~£75M. Next acquired the brand and IP for £3.4M in pre-pack administration. Source: <a href="https://techcrunch.com/2022/11/01/16-months-after-its-ipo-uk-online-retailer-made-com-prepares-for-administration/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">TechCrunch</a> · <a href="https://www.retaildetail.eu/news/home/made-com-bankrupt-next-buys-brand/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">RetailDetail</a>.</td>
           </tr>
           <tr>
             <td><strong>Fonq</strong></td>
             <td>Netherlands</td>
             <td>Online pure-play · broad assortment</td>
             <td><span class="status-pill bankrupt">Bankrupt · Mar 2026</span></td>
-            <td>Founded 2003 in Utrecht; acquired Naduvi in 2024. Reported &gt;€14M net loss in 2023; declared bankrupt by Utrecht court on 27 March 2026 with Noor Zetteler appointed curator. 250+ employees affected. Source: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#4338ca;text-decoration:underline;">DutchNews</a>.</td>
+            <td>Founded 2003 in Utrecht; acquired Naduvi in 2024. Reported &gt;€14M net loss in 2023; declared bankrupt by Utrecht court on 27 March 2026 with Noor Zetteler appointed curator. 250+ employees affected. Source: <a href="https://www.dutchnews.nl/2026/03/online-home-furnishings-group-fonq-declared-bankrupt/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">DutchNews</a>.</td>
           </tr>
         </tbody>
       </table>
@@ -635,27 +636,27 @@
 
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;">
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Consolidation</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Consolidation</div>
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">Fonq's inventory and customer base is likely to be absorbed — primarily by bol.com and IKEA online</div>
         <div style="font-size:13px;color:var(--sub);line-height:1.6;">When a major pure-play fails, its customers do not disappear. They migrate to wherever the assortment now lives. Expect bol.com to onboard Fonq's former suppliers aggressively within weeks of the bankruptcy resolution.</div>
       </div>
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Housing Recovery</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Housing Recovery</div>
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">Dutch and EU housing markets are beginning to recover — furniture demand may follow within 12–18 months</div>
         <div style="font-size:13px;color:var(--sub);line-height:1.6;">NL housing transactions are showing early recovery signals in early 2026 as mortgage rates ease. A sustained housing recovery could benefit the entire furniture category — but pure-play online appears less well-positioned to capture it. Omnichannel and marketplace players appear better placed.</div>
       </div>
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">AR / AI Adoption</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">AR / AI Adoption</div>
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">IKEA's AR Place app has already reduced returns by around 20%; broader category adoption could structurally improve online furniture economics</div>
-        <div style="font-size:13px;color:var(--sub);line-height:1.6;">IKEA Place has helped reduce product returns by ~20% since its 2017 launch, and lifted online sales by ~35%. As AR visualisation becomes more accessible on smartphones, players investing early may gain a meaningful head start in one of the most expensive cost lines in the category. Source: <a href="https://www.datanext.ai/case-study/ikea-augmented-reality-furniture/" target="_blank" style="color:#4338ca;text-decoration:underline;">Datanext — IKEA AR furniture case study</a>.</div>
+        <div style="font-size:13px;color:var(--sub);line-height:1.6;">IKEA Place has helped reduce product returns by ~20% since its 2017 launch, and lifted online sales by ~35%. As AR visualisation becomes more accessible on smartphones, players investing early may gain a meaningful head start in one of the most expensive cost lines in the category. Source: <a href="https://www.datanext.ai/case-study/ikea-augmented-reality-furniture/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Datanext — IKEA AR furniture case study</a>.</div>
       </div>
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">Circular Economy</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Circular Economy</div>
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">Second-hand and refurbished furniture is becoming a mainstream category — not just a charity shop</div>
         <div style="font-size:13px;color:var(--sub);line-height:1.6;">Platforms like Vinted Home, Facebook Marketplace, and 2ememain.be are growing furniture resale rapidly among under-40s. Brands offering buy-back and certified refurbishment programs can extend their revenue model beyond the initial sale — and acquire new customers at near-zero CAC.</div>
       </div>
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">NL Market Reshaping</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">NL Market Reshaping</div>
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">The Netherlands is likely to emerge more concentrated — IKEA, bol.com, and Beter Bed as the top 3, with a wide gap below</div>
         <div style="font-size:13px;color:var(--sub);line-height:1.6;">Fonq's departure leaves a significant gap in the €400–1,200 online furniture segment in the Netherlands. Leen Bakker (physical) and JYSK have an opportunity. International players (Westwing, Wayfair) may make moves. Watch for M&amp;A activity in H2 2026.</div>
       </div>
@@ -664,6 +665,21 @@
         <div style="font-size:14px;font-weight:700;color:var(--ink, #0a0f1a);margin-bottom:8px;">Westwing and Maisons du Monde remain vulnerable if consumer spending does not recover in H2 2026</div>
         <div style="font-size:13px;color:var(--sub);line-height:1.6;">Both have significant debt, declining revenues, and are operating in the same structural headwinds that killed Fonq. Omnichannel gives Maisons du Monde more resilience. Westwing's club model could pivot toward marketplace — but execution risk is high. Monitor Q3 2026 earnings closely.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- TOPICS COVERED -->
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-online-retail" rel="tag" class="tof-tag">Online Retail</a>
+      <a href="/tags/#tag-furniture-market" rel="tag" class="tof-tag">Furniture Market</a>
+      <a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a>
+      <a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a>
+      <a href="/tags/#tag-bankruptcy" rel="tag" class="tof-tag">Bankruptcy</a>
+      <a href="/tags/#tag-market-analysis" rel="tag" class="tof-tag">Market Analysis</a>
+      <a href="/tags/#tag-return-logistics" rel="tag" class="tof-tag">Return Logistics</a>
+      <a href="/tags/#tag-dtc" rel="tag" class="tof-tag">DTC</a>
     </div>
   </div>
 
@@ -761,15 +777,6 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 </script>
 
 
-<!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e2dfd9;">
-  <div style="max-width:1280px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-online-retail" rel="tag" class="tof-tag">Online Retail</a><a href="/tags/#tag-furniture-market" rel="tag" class="tof-tag">Furniture Market</a><a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a><a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a><a href="/tags/#tag-bankruptcy" rel="tag" class="tof-tag">Bankruptcy</a><a href="/tags/#tag-market-analysis" rel="tag" class="tof-tag">Market Analysis</a><a href="/tags/#tag-return-logistics" rel="tag" class="tof-tag">Return Logistics</a><a href="/tags/#tag-dtc" rel="tag" class="tof-tag">DTC</a>
-    </div>
-  </div>
-</div>
 <!-- COOKIE NOTICE BANNER -->
 <div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">

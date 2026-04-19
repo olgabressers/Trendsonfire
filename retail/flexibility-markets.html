@@ -51,13 +51,14 @@
     .return-bar a { color:var(--amber-dark); text-decoration:none; font-weight:600; }
     .return-bar a:hover { text-decoration:underline; }
 
-    header { background: linear-gradient(135deg, #78350f 0%, #92400e 55%, #b45309 100%); color: white; padding: 48px 32px 40px; }
-    header .inner { max-width: 1280px; margin: auto; }
+    .art-hero { background: #0a0f1a; color: white; padding: 48px 32px 40px; position: relative; }
+    .art-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
+    .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #fcd34d; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
-    header .sub { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; margin-bottom: 28px; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 10px; }
+    .art-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .art-hero .sub { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; margin-bottom: 28px; }
     .header-meta { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:28px; }
     .header-meta span { font-size:11px; color:rgba(255,255,255,.55); display:flex; align-items:center; gap:5px; }
 
@@ -85,9 +86,9 @@
     .ic-body strong { color: var(--text); font-weight: 600; }
 
     /* Insight banner */
-    .insight-banner { background: linear-gradient(135deg, #78350f 0%, #92400e 100%); border-radius: 0; border-left: 4px solid #fcd34d; padding: 22px 28px; margin-bottom: 44px; }
-    .insight-banner p { font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.7; }
-    .insight-banner strong { color: #fcd34d; }
+    .insight-banner { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); border-radius: 0; border-left: 4px solid #b8976a; padding: 22px 28px; margin-bottom: 44px; }
+    .insight-banner p { font-size: 14px; color: rgba(255,255,255,.88); line-height: 1.7; }
+    .insight-banner strong { color: #b8976a; }
 
     /* Chart card */
     .chart-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 24px 26px; ; margin-bottom: 20px; }
@@ -128,7 +129,7 @@
     /* Trend cards */
     .trend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; }
     .tc { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
-    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .tc-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8b6a2f; margin-bottom: 8px; }
     .tc-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 7px; line-height: 1.35; }
     .tc-body { font-size: 13px; color: var(--sub); line-height: 1.65; }
     .tc-body strong { color: var(--text); font-weight: 600; }
@@ -216,6 +217,9 @@
     .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
     @media(max-width:768px){ .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; } }
+
+    .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition:all .25s ease; letter-spacing:0.3px; }
+    .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
   </style>
   <script type="application/ld+json">
   {
@@ -338,9 +342,9 @@
 
 <div class="info-grid">
       <div class="ic">
-        <div class="ic-tag" style="color:#ca8a04">FCR / Primary Reserve</div>
+        <div class="ic-tag" style="color:#8b6a2f">FCR / Primary Reserve</div>
         <div class="ic-title">Fastest-responding, highest value per MW</div>
-        <div class="ic-body">Frequency Containment Reserve requires response within 30 seconds. For current FCR clearing prices, see <a href="https://transparency.entsoe.eu/" style="color:#4338ca;text-decoration:underline;" target="_blank">ENTSO-E Transparency Platform</a> and individual TSO publications (TenneT, Elia). Batteries dominate; industrial loads increasingly qualifying.</div>
+        <div class="ic-body">Frequency Containment Reserve requires response within 30 seconds. For current FCR clearing prices, see <a href="https://transparency.entsoe.eu/" style="color:#8b6a2f;text-decoration:underline;" target="_blank">ENTSO-E Transparency Platform</a> and individual TSO publications (TenneT, Elia). Batteries dominate; industrial loads increasingly qualifying.</div>
       </div>
       <div class="ic">
         <div class="ic-tag" style="color:#0369a1">aFRR / Secondary Reserve</div>
@@ -387,7 +391,7 @@
       <div class="fcol" style="color:#7c3aed;background:#faf5ff">
         <div class="fcol-head">Emerging Potential</div>
         <ul>
-          <li><strong>Residential heat pumps</strong> — a growing installed base in NL; demand flexibility emerging via smart tariffs (see <a href="https://www.rvo.nl/" style="color:#4338ca;text-decoration:underline;" target="_blank">RVO</a> for installed base statistics)</li>
+          <li><strong>Residential heat pumps</strong> — a growing installed base in NL; demand flexibility emerging via smart tariffs (see <a href="https://www.rvo.nl/" style="color:#8b6a2f;text-decoration:underline;" target="_blank">RVO</a> for installed base statistics)</li>
           <li><strong>Vehicle-to-Grid (V2G)</strong> — pilots active; commercial scale 2026–2028</li>
           <li><strong>Green hydrogen electrolysers</strong> — natural flexibility sink for excess renewable</li>
           <li><strong>Peer-to-peer energy trading</strong> — community energy, prosumer markets</li>
@@ -427,7 +431,7 @@
             <td>Paris, FR</td>
             <td>France (dominant), expanding EU</td>
             <td>Residential electric heating, commercial HVAC</td>
-            <td>Mass residential aggregation (<a href="https://www.voltalis.com/en/" style="color:#4338ca;text-decoration:underline;" target="_blank">Voltalis company communications</a>), NEBEF pioneer</td>
+            <td>Mass residential aggregation (<a href="https://www.voltalis.com/en/" style="color:#8b6a2f;text-decoration:underline;" target="_blank">Voltalis company communications</a>), NEBEF pioneer</td>
             <td><span class="badge b-lead">Advanced</span></td>
           </tr>
           <tr>
@@ -507,7 +511,7 @@
         <div class="rc-country">Belgium</div>
         <div class="rc-sub">Elia · Fluvius · CREG</div>
         <ul>
-          <li><strong>CRM (Capacity Remuneration Mechanism)</strong> — Y-1 auction for 2025-2026 delivery cost ~€182.9M (<a href="https://www.elia.be/en/press/2024/10/20241031_elia-publishes-crm-auction-results" style="color:#4338ca;text-decoration:underline;" target="_blank">Elia press release, Oct 2024</a>)</li>
+          <li><strong>CRM (Capacity Remuneration Mechanism)</strong> — Y-1 auction for 2025-2026 delivery cost ~€182.9M (<a href="https://www.elia.be/en/press/2024/10/20241031_elia-publishes-crm-auction-results" style="color:#8b6a2f;text-decoration:underline;" target="_blank">Elia press release, Oct 2024</a>)</li>
           <li><strong>Elia aFRR/mFRR</strong> — well-developed, aggregators compete directly</li>
           <li><strong>Fluvius local flexibility</strong> — pilot zones launched 2024 in Antwerp, Ghent</li>
           <li><strong>Industrial load</strong> (chemicals, steel) — largest DR potential in NW Europe</li>
@@ -523,7 +527,7 @@
           <li><strong>NEBEF (Notification d'Echange de Blocs d'Effacement)</strong> — France's DR mechanism, well-established</li>
           <li><strong>RTE FCR/aFRR</strong> tendered via PICASSO; France net importer in winter peaks</li>
           <li><strong>PPE (Programmations Pluriannuelles de l'Énergie)</strong> sets 2024–2028 flexibility targets</li>
-          <li><strong>Voltalis dominates</strong> residential aggregation in France (per <a href="https://www.voltalis.com/en/" style="color:#4338ca;text-decoration:underline;" target="_blank">Voltalis company communications</a>); difficult for new entrants</li>
+          <li><strong>Voltalis dominates</strong> residential aggregation in France (per <a href="https://www.voltalis.com/en/" style="color:#8b6a2f;text-decoration:underline;" target="_blank">Voltalis company communications</a>); difficult for new entrants</li>
           <li>Independent aggregator framework — CRE-approved, but market more concentrated than NL/BE</li>
           <li><strong>Nuclear fleet variability</strong> creates unique intraday imbalance opportunity for DR</li>
         </ul>
@@ -645,7 +649,7 @@
 
 <div class="info-grid">
       <div class="ic">
-        <div class="ic-tag" style="color:#ca8a04">Asset Onboarding</div>
+        <div class="ic-tag" style="color:#8b6a2f">Asset Onboarding</div>
         <div class="ic-title">Time-to-revenue: 4–12 weeks for industrial assets</div>
         <div class="ic-body">Industrial demand response assets typically require <strong>4–12 weeks</strong> from contract signing to first dispatch — site survey, control system integration, baseline calibration, and TSO pre-qualification. Residential and EV assets can be faster (days to 2 weeks) but require mass-scale onboarding processes.</div>
       </div>
@@ -695,7 +699,7 @@
       <div class="tc">
         <div class="tc-tag">EV Integration</div>
         <div class="tc-title">Smart EV charging is the next mass-scale flexibility source in NL and BE</div>
-        <div class="tc-body">NL's BEV penetration reached 40.2% of new car sales in 2025 (156,139 new BEV registrations — <a href="https://www.electrive.com/2025/04/03/35-3-per-cent-of-new-registrations-in-the-netherlands-are-electric/" style="color:#4338ca;text-decoration:underline;" target="_blank">electrive.com / RAI Vereniging</a>) and public charging points reached ~210,000 in January 2026 (<a href="https://nltimes.nl/2026/01/29/netherlands-triples-public-ev-chargers-210000-five-years-demand-grows" style="color:#4338ca;text-decoration:underline;" target="_blank">NL Times</a>). The strategic opportunity — framed as opinion — is that this asset base translates into flexibility capacity only with coordinated smart-charging aggregation, OCPP interoperability, and consumer billing integration.</div>
+        <div class="tc-body">NL's BEV penetration reached 40.2% of new car sales in 2025 (156,139 new BEV registrations — <a href="https://www.electrive.com/2025/04/03/35-3-per-cent-of-new-registrations-in-the-netherlands-are-electric/" style="color:#8b6a2f;text-decoration:underline;" target="_blank">electrive.com / RAI Vereniging</a>) and public charging points reached ~210,000 in January 2026 (<a href="https://nltimes.nl/2026/01/29/netherlands-triples-public-ev-chargers-210000-five-years-demand-grows" style="color:#8b6a2f;text-decoration:underline;" target="_blank">NL Times</a>). The strategic opportunity — framed as opinion — is that this asset base translates into flexibility capacity only with coordinated smart-charging aggregation, OCPP interoperability, and consumer billing integration.</div>
       </div>
       <div class="tc">
         <div class="tc-tag">Digitisation</div>
@@ -714,6 +718,19 @@
       </div>
     </div>
   </div>
+    </div>
+  </div>
+
+  <!-- TOPICS COVERED -->
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-energy" rel="tag" class="tof-tag">Energy</a>
+      <a href="/tags/#tag-flexibility-markets" rel="tag" class="tof-tag">Flexibility Markets</a>
+      <a href="/tags/#tag-demand-response" rel="tag" class="tof-tag">Demand Response</a>
+      <a href="/tags/#tag-virtual-power-plant" rel="tag" class="tof-tag">Virtual Power Plant</a>
+      <a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a>
+      <a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a>
     </div>
   </div>
 

@@ -20,7 +20,8 @@
     :root {
       --navy:   #0a0f1a;
       --fuchsia:#b8976a;
-      --gold:   #b45309;
+      --gold:   #b8976a;
+      --gold-dark: #8b6a2f;
       --border: #e2dfd9;
       --bg:     #faf9f7;
       --text:   #1f1f1f;
@@ -28,7 +29,7 @@
       --teal:   #0d9488;
       --amber:  #f59e0b;
       --red:    #ef4444;
-      --lux:    #7c3aed;
+      --lux:    #8b6a2f;
     }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
@@ -40,22 +41,23 @@
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
-    /* HEADER */
-    header { background: linear-gradient(135deg, #1a0a14 0%, #0a0f1a 60%, #1a3558 100%); color: white; padding: 48px 32px 40px; }
-    header .inner { max-width: 1280px; margin: auto; }
-    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
-    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    /* HEADER — deep navy + radial gold overlay */
+    header, .art-hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; }
+    header::before, .art-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
+    header .inner, .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c4b5fd; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px, 4vw, 36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
-    header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; }
-    .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 14px; }
+    header h1, .art-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px; }
+    header p, .art-hero p { font-size: 17px; color: rgba(255,255,255,.82); max-width: 780px; line-height: 1.6; }
+    .meta { margin-top: 24px; font-size: 13.5px; color: rgba(255,255,255,.65); display: flex; gap: 28px; flex-wrap: wrap; }
 
     main { max-width: 1280px; margin: auto; padding: 40px 24px 80px; }
     main a { color: #8b6a2f; }
 
     /* SECTION TITLES */
-    .section-title { font-size: 14px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gold, #b8976a); display: flex; align-items: center; gap: 8px; }
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; line-height: 1.2; }
 
     /* STATS */
     .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
@@ -64,7 +66,7 @@
     .stat-card .num { font-size: 34px; font-weight: 800; line-height: 1; color: var(--ink, #0a0f1a); }
     .stat-card .num.lux { color: var(--lux); }
     .stat-card .num.teal { color: var(--teal); }
-    .stat-card .num.gold { color: var(--gold); }
+    .stat-card .num.gold { color: #8b6a2f; }
     .stat-card .num.red { color: var(--red); }
     .stat-card .sm { font-size: 12px; color: var(--sub); margin-top: 6px; }
 
@@ -305,8 +307,8 @@
   </div>
 
   <!-- INSIGHT BANNER -->
-  <div style="background:linear-gradient(135deg,#1a0a14,#2d1240);border-radius: 0;padding:20px 24px;margin-bottom:40px;border-left:4px solid #c4b5fd;">
-    <p style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;">The annual reports tell the story: across 12 major luxury and premium groups, DTC revenue share ranges from 67% (Brunello Cucinelli) to 100% (Louis Vuitton, Dior). The average sits above 80%. The pattern we observe from public job postings and executive-search activity is that DTC channel share has moved faster than the leadership layer that runs it &mdash; <strong style="color:white">the pool of leaders who combine luxury brand fluency with real DTC P&amp;L ownership is notably shallow</strong>, which is why retained-search timelines in this space are longer than in adjacent consumer sectors.</p>
+  <div style="background:linear-gradient(135deg,#0a0f1a,#1a1f2e);border-radius:0;padding:28px 36px;margin-bottom:40px;border-left:4px solid #b8976a;position:relative;">
+    <p style="font-size:16px;color:rgba(255,255,255,.88);line-height:1.75;position:relative;">The annual reports tell the story: across 12 major luxury and premium groups, DTC revenue share ranges from 67% (Brunello Cucinelli) to 100% (Louis Vuitton, Dior). The average sits above 80%. The pattern we observe from public job postings and executive-search activity is that DTC channel share has moved faster than the leadership layer that runs it &mdash; <strong style="color:#b8976a;font-weight:600;">the pool of leaders who combine luxury brand fluency with real DTC P&amp;L ownership is notably shallow</strong>, which is why retained-search timelines in this space are longer than in adjacent consumer sectors.</p>
   </div>
 
   <!-- DTC REVENUE CHART -->
@@ -355,12 +357,12 @@
       <table class="sal-table" id="sal-table"></table>
     </div>
     <div style="margin-top:12px;font-size:11px;color:var(--sub);">UK figures in GBP. Continental Europe in EUR. All figures base cash compensation. <strong>*</strong> NL Director of E-Commerce Glassdoor sample is small (under 10 submissions) &mdash; treat that cell as directional.</div>
-    <div style="font-size:11.5px;color:#7a7a7a;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #4338ca;margin-top:12px;line-height:1.7;">
+    <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #8b6a2f;margin-top:12px;line-height:1.7;">
       <strong>Sources &mdash; referenced March 2026:</strong>
-      UK: <a href="https://elitexrecruit.com/the-uk-ecommerce-salary-guide-2026/" style="color:#4338ca;text-decoration:underline;">EliteX UK E-Commerce Salary Guide 2026</a>, <a href="https://www.glassdoor.co.uk/Salaries/director-ecommerce-salary-SRCH_KO0,18.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor UK</a>.
-      NL: <a href="https://www.glassdoor.com/Salaries/netherlands-ecommerce-director-salary-SRCH_IL.0,11_IN178_KO12,30.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor NL</a>, <a href="https://www.glassdoor.com/Salaries/netherlands-digital-director-salary-SRCH_IL.0,11_IN178_KO12,28.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor NL Digital Director</a>.
-      FR: <a href="https://www.glassdoor.com/Salaries/paris-director-of-ecommerce-salary-SRCH_IL.0,5_IM1080_KO6,27.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor Paris</a>, <a href="https://www.glassdoor.com/Salaries/paris-france-chief-digital-officer-salary-SRCH_IL.0,12_IM1080_KO13,34.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor Paris CDO</a>.
-      DE: <a href="https://www.glassdoor.com/Salaries/germany-director-of-ecommerce-salary-SRCH_IL.0,7_IN96_KO8,29.htm" style="color:#4338ca;text-decoration:underline;">Glassdoor DE</a>, <a href="https://www.salaryexpert.com/salary/job/vp-e-commerce/germany" style="color:#4338ca;text-decoration:underline;">SalaryExpert VP E-Commerce DE</a>, <a href="https://www.salaryexpert.com/salary/job/chief-digital-officer/germany" style="color:#4338ca;text-decoration:underline;">SalaryExpert CDO DE</a>.
+      UK: <a href="https://elitexrecruit.com/the-uk-ecommerce-salary-guide-2026/" style="color:#8b6a2f;text-decoration:underline;">EliteX UK E-Commerce Salary Guide 2026</a>, <a href="https://www.glassdoor.co.uk/Salaries/director-ecommerce-salary-SRCH_KO0,18.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor UK</a>.
+      NL: <a href="https://www.glassdoor.com/Salaries/netherlands-ecommerce-director-salary-SRCH_IL.0,11_IN178_KO12,30.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor NL</a>, <a href="https://www.glassdoor.com/Salaries/netherlands-digital-director-salary-SRCH_IL.0,11_IN178_KO12,28.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor NL Digital Director</a>.
+      FR: <a href="https://www.glassdoor.com/Salaries/paris-director-of-ecommerce-salary-SRCH_IL.0,5_IM1080_KO6,27.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor Paris</a>, <a href="https://www.glassdoor.com/Salaries/paris-france-chief-digital-officer-salary-SRCH_IL.0,12_IM1080_KO13,34.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor Paris CDO</a>.
+      DE: <a href="https://www.glassdoor.com/Salaries/germany-director-of-ecommerce-salary-SRCH_IL.0,7_IN96_KO8,29.htm" style="color:#8b6a2f;text-decoration:underline;">Glassdoor DE</a>, <a href="https://www.salaryexpert.com/salary/job/vp-e-commerce/germany" style="color:#8b6a2f;text-decoration:underline;">SalaryExpert VP E-Commerce DE</a>, <a href="https://www.salaryexpert.com/salary/job/chief-digital-officer/germany" style="color:#8b6a2f;text-decoration:underline;">SalaryExpert CDO DE</a>.
     </div>
   </div>
 
@@ -398,10 +400,10 @@
       <div class="ic-body">Specialist UK e-commerce recruiter EliteX publishes its 2026 salary guide on an open public page. London typically at the upper end, regional UK at the lower end. Luxury-sector premiums may apply but are not quantified in public salary data. <em>(<a href="https://elitexrecruit.com/the-uk-ecommerce-salary-guide-2026/" style="color:var(--gold, #b8976a);">EliteX UK E-commerce Salary Guide 2026</a>)</em></div>
     </div>
 
-    <div class="insight-card" style="border-top:3px solid var(--amber);">
-      <div class="ic-tag" style="color:var(--amber);">Prada: Fastest Riser</div>
+    <div class="insight-card" style="border-top:3px solid #8b6a2f;">
+      <div class="ic-tag" style="color:#8b6a2f;">Prada: Fastest Riser</div>
       <div class="ic-title">Prada Group reached 89% DTC in 2024 — retail revenue up 18% YoY, driven by Miu Miu</div>
-      <div class="ic-body">Prada&rsquo;s retail sales hit &euro;4.8B in 2024, up 18%, while wholesale grew only 7%. The Miu Miu brand has been the growth engine. <strong>At 89% DTC, Prada is now the second-highest among publicly listed luxury groups after LVMH&rsquo;s own-boutique brands.</strong> <em>(<a href="https://www.pradagroup.com/en/news-media/press-releases-documents/2025/25-03-04-prada-group-2024-fy-results.html" style="color:var(--amber);">Prada 2024 FY Results</a>)</em></div>
+      <div class="ic-body">Prada&rsquo;s retail sales hit &euro;4.8B in 2024, up 18%, while wholesale grew only 7%. The Miu Miu brand has been the growth engine. <strong>At 89% DTC, Prada is now the second-highest among publicly listed luxury groups after LVMH&rsquo;s own-boutique brands.</strong> <em>(<a href="https://www.pradagroup.com/en/news-media/press-releases-documents/2025/25-03-04-prada-group-2024-fy-results.html" style="color:#8b6a2f;">Prada 2024 FY Results</a>)</em></div>
     </div>
 
   </div>
@@ -425,6 +427,19 @@
       <br>
       <strong style="color:var(--ink, #0a0f1a);">Transformation Research</strong><br>
       <a href="https://www.mckinsey.com/capabilities/transformation/our-insights/why-do-most-transformations-fail-a-conversation-with-harry-robinson" style="color:var(--lux);" target="_blank">McKinsey — Why Do Most Transformations Fail?</a> — 70% failure rate (originally Kotter, 1996)
+    </div>
+  </div>
+
+  <!-- Topics covered -->
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-luxury-retail" rel="tag" class="tof-tag">Luxury Retail</a>
+      <a href="/tags/#tag-dtc" rel="tag" class="tof-tag">DTC</a>
+      <a href="/tags/#tag-leadership" rel="tag" class="tof-tag">Leadership</a>
+      <a href="/tags/#tag-brand-strategy" rel="tag" class="tof-tag">Brand Strategy</a>
+      <a href="/tags/#tag-e-commerce" rel="tag" class="tof-tag">E-Commerce</a>
+      <a href="/tags/#tag-consumer-brands" rel="tag" class="tof-tag">Consumer Brands</a>
     </div>
   </div>
 
@@ -567,15 +582,6 @@ document.querySelector('.nav-burger').addEventListener('click', function() {
 
 
 
-<!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e2dfd9;">
-  <div style="max-width:1280px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-luxury-retail" rel="tag" class="tof-tag">Luxury Retail</a><a href="/tags/#tag-dtc" rel="tag" class="tof-tag">DTC</a><a href="/tags/#tag-leadership" rel="tag" class="tof-tag">Leadership</a><a href="/tags/#tag-brand-strategy" rel="tag" class="tof-tag">Brand Strategy</a><a href="/tags/#tag-e-commerce" rel="tag" class="tof-tag">E-Commerce</a><a href="/tags/#tag-consumer-brands" rel="tag" class="tof-tag">Consumer Brands</a>
-    </div>
-  </div>
-</div>
 <!-- COOKIE NOTICE BANNER -->
 <div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">

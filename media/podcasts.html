@@ -47,13 +47,15 @@
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
-    header { background: linear-gradient(135deg, #431407 0%, #ea580c 100%); color: white; padding: 48px 32px 40px; }
-    header .inner { max-width: 1280px; margin: auto; }
+    header, .art-hero { background: #0a0f1a; color: white; padding: 48px 32px 40px; position: relative; overflow: hidden; }
+    header::before, .art-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events: none; }
+    header .inner, .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; }
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #fed7aa; font-weight: 700; margin-bottom: 10px; }
-    header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(22px,4vw,36px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 10px; }
+    header h1, .art-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px,5vw,48px); font-weight: 400; line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .art-hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; }
     header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 700px; }
     .meta { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; gap: 24px; flex-wrap: wrap; }
 
@@ -65,21 +67,21 @@
     .stat-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 18px 20px; ; }
     .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); font-weight: 700; margin-bottom: 5px; }
     .stat-val { font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); line-height: 1; }
-    .stat-val.orange { color: var(--orange); }
+    .stat-val.orange { color: #8b6a2f; }
     .stat-note { font-size: 12px; color: var(--sub); margin-top: 4px; }
 
     /* Section */
     .section-block { margin-bottom: 56px; }
-    .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px,3vw,30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 24px; }
 
     /* Insight */
-    .insight { border-radius: 0; padding: 22px 26px; color: white; margin-bottom: 48px; display: flex; gap: 14px; align-items: flex-start; }
-    .insight.orange { background: linear-gradient(135deg, #431407, #ea580c); }
-    .insight.navy { background: linear-gradient(135deg, #0a0f1a, #1d4ed8); }
+    .insight { border-radius: 0; padding: 22px 26px; color: rgba(255,255,255,.88); margin-bottom: 48px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid #b8976a; }
+    .insight.orange { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); }
+    .insight.navy { background: linear-gradient(135deg, #0a0f1a, #1a1f2e); }
     .insight-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
-    .insight-text { font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.65; }
-    .insight-text strong { color: white; }
+    .insight-text { font-size: 14px; color: rgba(255,255,255,.88); line-height: 1.65; }
+    .insight-text strong { color: #b8976a; }
 
     /* Bar chart */
     .chart-box { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 26px 28px 18px; ; }
@@ -110,7 +112,7 @@
     /* Podcast cards (retail/ecommerce list) */
     .pod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 16px; }
     .pod-card { background: white; border-radius: 0; border: 1px solid var(--rule, #e2dfd9); padding: 20px 22px; ; }
-    .pod-card.featured { border-color: var(--orange); border-width: 2px; background: linear-gradient(135deg, #fff7ed, white); }
+    .pod-card.featured { border-color: #8b6a2f; border-width: 2px; background: linear-gradient(135deg, #faf6ee, white); }
     .pod-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
     .pod-icon { font-size: 28px; flex-shrink: 0; }
     .pod-meta { flex: 1; }
@@ -127,9 +129,9 @@
     .pod-tag.featured { background: #0a0f1a; color: white; }
     .pod-body { font-size: 13px; color: var(--sub); line-height: 1.6; }
     .pod-body strong { color: var(--text); font-weight: 600; }
-    .pod-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-size: 12px; font-weight: 700; color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(234,88,12,.3); }
-    .pod-link:hover { color: var(--orange-dark); }
-    .featured-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+    .pod-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-size: 12px; font-weight: 700; color: #8b6a2f; text-decoration: none; border-bottom: 1px solid rgba(139,106,47,.3); }
+    .pod-link:hover { color: #0a0f1a; }
+    .featured-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #8b6a2f; margin-bottom: 8px; }
 
     /* Media coverage section */
     .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 18px; }
@@ -269,46 +271,46 @@
     <div class="stat-card">
       <div class="stat-label">Global listeners 2025</div>
       <div class="stat-val orange">~584M</div>
-      <div class="stat-note">+6.8% vs 2024 (~547M). Source: <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research Infinite Dial 2025</a></div>
+      <div class="stat-note">+6.8% vs 2024 (~547M). Source: <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research Infinite Dial 2025</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">US podcast ad revenue 2024</div>
       <div class="stat-val orange">$2.4B</div>
-      <div class="stat-note">+26.4% YoY. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study 2024</a></div>
+      <div class="stat-note">+26.4% YoY. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study 2024</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Spotify video podcasts</div>
       <div class="stat-val orange">300k+</div>
-      <div class="stat-note">Library grew 100k (2023) → 300k (2024). Source: <a href="https://newsroom.spotify.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify Newsroom</a></div>
+      <div class="stat-note">Library grew 100k (2023) → 300k (2024). Source: <a href="https://newsroom.spotify.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify Newsroom</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">US podcasting forecast 2026</div>
       <div class="stat-val orange">~$2.6B</div>
-      <div class="stat-note">IAB projection. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC US Podcast Ad Study</a></div>
+      <div class="stat-note">IAB projection. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC US Podcast Ad Study</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Apple iOS 18 RCS</div>
       <div class="stat-val orange">Sept 2024</div>
-      <div class="stat-note">Apple enabled RCS in iOS 18 — context for the broader business-messaging shift. Source: <a href="https://blog.webex.com/customer-experience/rcs-ios-18/" target="_blank" style="color:#4338ca;text-decoration:underline;">Webex / Apple iOS 18 RCS</a></div>
+      <div class="stat-note">Apple enabled RCS in iOS 18 — context for the broader business-messaging shift. Source: <a href="https://blog.webex.com/customer-experience/rcs-ios-18/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Webex / Apple iOS 18 RCS</a></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">NL listening data</div>
       <div class="stat-val orange">→ NLO</div>
-      <div class="stat-note">For audited Dutch podcast/audio listener data see <a href="https://www.nlo.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">NLO (Nationaal Luister Onderzoek)</a> and <a href="https://www.spot.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">SPOT NL</a></div>
+      <div class="stat-note">For audited Dutch podcast/audio listener data see <a href="https://www.nlo.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NLO (Nationaal Luister Onderzoek)</a> and <a href="https://www.spot.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">SPOT NL</a></div>
     </div>
   </div>
 
   <!-- Insight -->
   <div class="insight orange">
     <div class="insight-text">
-      <strong>Podcasts are one of the fastest-growing media channels in Europe.</strong> Global listening continues to climb (+6.8% YoY 2024 → 2025 per <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research Infinite Dial 2025</a>), and US podcast ad revenue grew 26.4% in 2024 to $2.4B (<a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC</a>). Host-read ads remain the highest-trust paid format in digital audio. For Dutch-market specifics see <a href="https://www.spot.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">SPOT NL</a>.
+      <strong>Podcasts are one of the fastest-growing media channels in Europe.</strong> Global listening continues to climb (+6.8% YoY 2024 → 2025 per <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research Infinite Dial 2025</a>), and US podcast ad revenue grew 26.4% in 2024 to $2.4B (<a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC</a>). Host-read ads remain the highest-trust paid format in digital audio. For Dutch-market specifics see <a href="https://www.spot.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">SPOT NL</a>.
     </div>
   </div>
 
   <!-- Section 1: Global growth -->
   <div class="section-block">
     <div class="section-title">Global Podcast Growth — 2018 to 2027</div>
-    <div class="section-sub">Monthly active listeners worldwide. Sources: <a href="https://www.edisonresearch.com/the-infinite-dial/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research Infinite Dial</a> &middot; <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC US Podcast Ad Revenue Study 2024</a> &middot; <a href="https://newsroom.spotify.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify Newsroom</a></div>
+    <div class="section-sub">Monthly active listeners worldwide. Sources: <a href="https://www.edisonresearch.com/the-infinite-dial/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research Infinite Dial</a> &middot; <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC US Podcast Ad Revenue Study 2024</a> &middot; <a href="https://newsroom.spotify.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify Newsroom</a></div>
 
     <div class="chart-box" style="margin-bottom:24px;">
       <div class="chart-title">Global Monthly Podcast Listeners (millions)</div>
@@ -320,22 +322,22 @@
       <div class="growth-card">
         <div class="growth-year">2024 listener base</div>
         <div class="growth-val">~547M <span class="growth-arrow">↑</span></div>
-        <div class="growth-note">Global podcast listener base 2024. Source: <a href="https://www.edisonresearch.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research</a> / industry tracking</div>
+        <div class="growth-note">Global podcast listener base 2024. Source: <a href="https://www.edisonresearch.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research</a> / industry tracking</div>
       </div>
       <div class="growth-card">
         <div class="growth-year">2025 listener base</div>
         <div class="growth-val">~584M <span class="growth-arrow">↑</span></div>
-        <div class="growth-note">Up ~6.8% YoY. Source: industry-aggregated tracking, see <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research Infinite Dial 2025</a></div>
+        <div class="growth-note">Up ~6.8% YoY. Source: industry-aggregated tracking, see <a href="https://www.edisonresearch.com/the-infinite-dial-2025/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research Infinite Dial 2025</a></div>
       </div>
       <div class="growth-card">
         <div class="growth-year">Spotify video podcasts</div>
         <div class="growth-val">300k+ <span class="growth-arrow">↑</span></div>
-        <div class="growth-note">Spotify video podcast library grew from 100k (2023) to 300k+ (2024). Source: <a href="https://newsroom.spotify.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify Newsroom</a></div>
+        <div class="growth-note">Spotify video podcast library grew from 100k (2023) to 300k+ (2024). Source: <a href="https://newsroom.spotify.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify Newsroom</a></div>
       </div>
       <div class="growth-card">
         <div class="growth-year">US podcast ad rev 2024</div>
         <div class="growth-val">$2.4B <span class="growth-arrow">↑</span></div>
-        <div class="growth-note">+26.4% YoY. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC US Podcast Ad Revenue Study 2024</a></div>
+        <div class="growth-note">+26.4% YoY. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC US Podcast Ad Revenue Study 2024</a></div>
       </div>
     </div>
   </div>
@@ -343,27 +345,27 @@
   <!-- Section 2: NL aggregator market share -->
   <div class="section-block">
     <div class="section-title">Podcast Aggregators — Netherlands Market Share 2025</div>
-    <div class="section-sub">Share of Dutch podcast listeners by platform. Methodology note: there is no single free public dataset that publishes comparable Dutch podcast platform market shares; values shown reflect the rough order from <a href="https://www.spot.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">SPOT NL</a> media research and platform-published listener data (<a href="https://newsroom.spotify.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify Newsroom</a>, Podimo press releases). For audited Dutch listening data see <a href="https://www.nlo.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">NLO (Nationaal Luister Onderzoek)</a>.</div>
+    <div class="section-sub">Share of Dutch podcast listeners by platform. Methodology note: there is no single free public dataset that publishes comparable Dutch podcast platform market shares; values shown reflect the rough order from <a href="https://www.spot.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">SPOT NL</a> media research and platform-published listener data (<a href="https://newsroom.spotify.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify Newsroom</a>, Podimo press releases). For audited Dutch listening data see <a href="https://www.nlo.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NLO (Nationaal Luister Onderzoek)</a>.</div>
 
     <div class="chart-box">
       <div class="chart-title">Platform share of Dutch podcast listeners</div>
       <div class="chart-sub">% of monthly podcast listeners in the Netherlands using each platform as primary or secondary</div>
       <div id="nl-chart"></div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
-        <div style="background:#fff7ed;border-radius:8px;padding:12px 14px;border:1px solid #fdba74;">
-          <div style="font-size:12px;font-weight:700;color:#431407;margin-bottom:4px;">Spotify — Why it dominates</div>
+        <div style="background:#faf6ee;border-radius:8px;padding:12px 14px;border:1px solid #d4c4a8;">
+          <div style="font-size:12px;font-weight:700;color:#8b6a2f;margin-bottom:4px;">Spotify — Why it dominates</div>
           <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Free tier with ads, premium without, integrated with music. Dutch language UI, NL editorial curation, and Podimo competition keeps Spotify aggressive with exclusive NL content deals.</div>
         </div>
-        <div style="background:#f0fdf4;border-radius:8px;padding:12px 14px;border:1px solid #bbf7d0;">
-          <div style="font-size:12px;font-weight:700;color:#065f46;margin-bottom:4px;">YouTube — The challenger</div>
+        <div style="background:#faf6ee;border-radius:8px;padding:12px 14px;border:1px solid #d4c4a8;">
+          <div style="font-size:12px;font-weight:700;color:#8b6a2f;margin-bottom:4px;">YouTube — The challenger</div>
           <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Video podcasts on YouTube are the fastest-growing format. Many NL listeners don't count YouTube as "podcast" but consume the same content. Underrepresented in traditional surveys.</div>
         </div>
-        <div style="background:#ede9fe;border-radius:8px;padding:12px 14px;border:1px solid #c4b5fd;">
-          <div style="font-size:12px;font-weight:700;color:#4c1d95;margin-bottom:4px;">Podimo — NL subscription upstart</div>
+        <div style="background:#faf6ee;border-radius:8px;padding:12px 14px;border:1px solid #d4c4a8;">
+          <div style="font-size:12px;font-weight:700;color:#8b6a2f;margin-bottom:4px;">Podimo — NL subscription upstart</div>
           <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Danish-origin subscription podcast platform that invested heavily in Dutch exclusive content (NPO Radio, Blendle). Growing fast among 25–45 NL listeners willing to pay for premium audio.</div>
         </div>
-        <div style="background:#fef3c7;border-radius:8px;padding:12px 14px;border:1px solid #fcd34d;">
-          <div style="font-size:12px;font-weight:700;color:#78350f;margin-bottom:4px;">Apple Podcasts — Declining share</div>
+        <div style="background:#faf6ee;border-radius:8px;padding:12px 14px;border:1px solid #d4c4a8;">
+          <div style="font-size:12px;font-weight:700;color:#8b6a2f;margin-bottom:4px;">Apple Podcasts — Declining share</div>
           <div style="font-size:12px;color:#7a7a7a;line-height:1.5;">Still essential for distribution (many NL iPhone users) but losing ground to Spotify. No free Android version hurts reach. Important to be listed here regardless of where listeners actually play episodes.</div>
         </div>
       </div>
@@ -380,7 +382,7 @@
       <div class="cov-card">
         <div class="cov-type">Guest Appearance</div>
         <div class="cov-title">Being a podcast guest — the most effective B2B thought leadership format</div>
-        <div class="cov-body">A 45-minute podcast interview creates more decision-maker exposure than most press releases. <strong>Listeners typically finish a high share of podcast episodes</strong> &mdash; far more time spent than any text article. For published listener-engagement data see <a href="https://www.edisonresearch.com/the-podcast-consumer/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research The Podcast Consumer</a>. For retail and commerce executives, shows like Omni Talk, Future Commerce, and Dutch B2B shows deliver a senior audience already in learning mode.<br><br>Guest appearances are typically free, require only 1 hour of preparation, and generate content reusable across LinkedIn, YouTube, and newsletters.</div>
+        <div class="cov-body">A 45-minute podcast interview creates more decision-maker exposure than most press releases. <strong>Listeners typically finish a high share of podcast episodes</strong> &mdash; far more time spent than any text article. For published listener-engagement data see <a href="https://www.edisonresearch.com/the-podcast-consumer/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research The Podcast Consumer</a>. For retail and commerce executives, shows like Omni Talk, Future Commerce, and Dutch B2B shows deliver a senior audience already in learning mode.<br><br>Guest appearances are typically free, require only 1 hour of preparation, and generate content reusable across LinkedIn, YouTube, and newsletters.</div>
         <div class="cov-rating">
           <span class="cov-pill reach">High reach</span>
           <span class="cov-pill trust">Very high trust</span>
@@ -404,7 +406,7 @@
       <div class="cov-card">
         <div class="cov-type">Sponsorship / Ad</div>
         <div class="cov-title">Sponsoring established shows — measurable brand reach for commerce brands</div>
-        <div class="cov-body">Host-read ads are the most trusted ad format in digital media — <strong>Podcast listeners report high trust in host recommendations</strong> compared to other digital ad formats. For published trust-benchmark data see <a href="https://www.edisonresearch.com/the-podcast-consumer/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research The Podcast Consumer</a> and <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC podcast study</a>. For DTC and retail brands in the Netherlands, sponsoring niche shows (retail tech, ecommerce, entrepreneurship) costs €500–3,000 per episode for shows with 5,000–20,000 listeners.<br><br>Promo codes and dedicated landing pages make ROI measurable. Conversion rates of 2–5% are common for relevant audience-offer matches — far above most digital channels.</div>
+        <div class="cov-body">Host-read ads are the most trusted ad format in digital media — <strong>Podcast listeners report high trust in host recommendations</strong> compared to other digital ad formats. For published trust-benchmark data see <a href="https://www.edisonresearch.com/the-podcast-consumer/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research The Podcast Consumer</a> and <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC podcast study</a>. For DTC and retail brands in the Netherlands, sponsoring niche shows (retail tech, ecommerce, entrepreneurship) costs €500–3,000 per episode for shows with 5,000–20,000 listeners.<br><br>Promo codes and dedicated landing pages make ROI measurable. Conversion rates of 2–5% are common for relevant audience-offer matches — far above most digital channels.</div>
         <div class="cov-rating">
           <span class="cov-pill reach">Scalable reach</span>
           <span class="cov-pill trust">High trust</span>
@@ -443,13 +445,13 @@
 
       <div class="chart-box">
         <div class="chart-title">Global Podcast Ad Revenue — 2019 to 2027</div>
-        <div class="chart-sub">USD billions. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study 2024</a> (US figures); global totals from <a href="https://www.edisonresearch.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Edison Research</a> and <a href="https://newsroom.spotify.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify</a> reporting.</div>
+        <div class="chart-sub">USD billions. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study 2024</a> (US figures); global totals from <a href="https://www.edisonresearch.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Edison Research</a> and <a href="https://newsroom.spotify.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify</a> reporting.</div>
         <div id="global-rev-chart"></div>
       </div>
 
       <div class="chart-box">
         <div class="chart-title">Podcast Ad Revenue by Region — 2025</div>
-        <div class="chart-sub">Sources: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC US Podcast Ad Study</a> for US ($2.4B, 2024, +26.4% YoY); regional figures shown reflect broader market commentary from <a href="https://www.iabeurope.eu/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe</a> and <a href="https://www.spotifyadvertising.com/" target="_blank" style="color:#4338ca;text-decoration:underline;">Spotify Advertising</a>; not a single audited dataset.</div>
+        <div class="chart-sub">Sources: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC US Podcast Ad Study</a> for US ($2.4B, 2024, +26.4% YoY); regional figures shown reflect broader market commentary from <a href="https://www.iabeurope.eu/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB Europe</a> and <a href="https://www.spotifyadvertising.com/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">Spotify Advertising</a>; not a single audited dataset.</div>
         <div id="regional-rev-chart"></div>
       </div>
 
@@ -458,32 +460,32 @@
     <!-- Regional breakdown cards -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:32px;">
 
-      <div style="background:white;border-radius: 0;border:2px solid var(--orange);padding:20px 22px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">Global</div>
+      <div style="background:white;border-radius: 0;border:2px solid #8b6a2f;padding:20px 22px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Global</div>
         <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">growing</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Multi-billion-USD global podcast ad market</div>
-        <div style="font-size:12.5px;color:#374151;line-height:1.55;">For latest global figures see <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC studies</a> and <a href="https://www.iabeurope.eu/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe</a>. Growth driven by programmatic buying, video podcast inventory, and emerging-market expansion.</div>
+        <div style="font-size:12.5px;color:#374151;line-height:1.55;">For latest global figures see <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC studies</a> and <a href="https://www.iabeurope.eu/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB Europe</a>. Growth driven by programmatic buying, video podcast inventory, and emerging-market expansion.</div>
       </div>
 
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1d4ed8;margin-bottom:8px;">United States</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">United States</div>
         <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">$2.4B</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">US podcast ad revenue 2024 (+26.4% YoY)</div>
-        <div style="font-size:12.5px;color:#374151;line-height:1.55;">Most mature market. Host-read ads dominant. IAB projects podcasting will reach ~$2.6B by 2026. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study (2024 results, May 2024)</a>.</div>
+        <div style="font-size:12.5px;color:#374151;line-height:1.55;">Most mature market. Host-read ads dominant. IAB projects podcasting will reach ~$2.6B by 2026. Source: <a href="https://www.iab.com/insights/us-podcast-advertising-revenue-study-2024/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB / PwC U.S. Podcast Advertising Revenue Study (2024 results, May 2024)</a>.</div>
       </div>
 
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:8px;">Europe</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Europe</div>
         <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">growing</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Fastest-growing major region for podcast advertising</div>
-        <div style="font-size:12.5px;color:#374151;line-height:1.55;">UK is Europe&apos;s largest podcast ad market, followed by Germany, France, and the Nordics. For published European audio &amp; podcast ad-spend data see <a href="https://www.iabeurope.eu/all-news/iab-europe-adex-benchmark-2024-report-now-available/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe AdEx Benchmark</a>.</div>
+        <div style="font-size:12.5px;color:#374151;line-height:1.55;">UK is Europe&apos;s largest podcast ad market, followed by Germany, France, and the Nordics. For published European audio &amp; podcast ad-spend data see <a href="https://www.iabeurope.eu/all-news/iab-europe-adex-benchmark-2024-report-now-available/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB Europe AdEx Benchmark</a>.</div>
       </div>
 
       <div style="background:white;border-radius: 0;border:1px solid var(--rule, #e2dfd9);padding:20px 22px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7c3aed;margin-bottom:8px;">Netherlands</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:8px;">Netherlands</div>
         <div style="font-size:28px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:4px;">small</div>
         <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">but highly engaged audience</div>
-        <div style="font-size:12.5px;color:#374151;line-height:1.55;">Spotify Audience Network is a primary buying platform; NPO Radio podcasts and Podimo exclusives are key NL inventory. For Dutch audio audience and ad-spend data see <a href="https://www.spot.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">SPOT NL</a> and <a href="https://www.nlo.nl/" target="_blank" style="color:#4338ca;text-decoration:underline;">NLO</a>.</div>
+        <div style="font-size:12.5px;color:#374151;line-height:1.55;">Spotify Audience Network is a primary buying platform; NPO Radio podcasts and Podimo exclusives are key NL inventory. For Dutch audio audience and ad-spend data see <a href="https://www.spot.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">SPOT NL</a> and <a href="https://www.nlo.nl/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">NLO</a>.</div>
       </div>
 
     </div>
@@ -491,7 +493,7 @@
     <!-- Europe breakdown chart -->
     <div class="chart-box" style="margin-bottom:32px;">
       <div class="chart-title">European Podcast Ad Revenue by Country — 2025</div>
-      <div class="chart-sub">Estimated &euro;M. For published European audio ad spend see <a href="https://www.iabeurope.eu/" target="_blank" style="color:#4338ca;text-decoration:underline;">IAB Europe AdEx Benchmark</a>. Country splits shown reflect rough order from public commentary &mdash; no single free public source publishes a clean per-country audited podcast ad-spend breakdown.</div>
+      <div class="chart-sub">Estimated &euro;M. For published European audio ad spend see <a href="https://www.iabeurope.eu/" target="_blank" style="color:#8b6a2f;text-decoration:underline;">IAB Europe AdEx Benchmark</a>. Country splits shown reflect rough order from public commentary &mdash; no single free public source publishes a clean per-country audited podcast ad-spend breakdown.</div>
       <div id="europe-chart"></div>
       <div style="margin-top:14px;font-size:12px;color:var(--sub);font-style:italic;">Europe total ~€680M · growing at 22% YoY vs global average of 16% · UK counted separately from continental Europe in most studies; included here for completeness.</div>
     </div>
@@ -550,7 +552,7 @@
 
     <!-- Olga's podcast — featured -->
     <div style="margin-bottom:28px;">
-      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;">Featured — From the TrendsOnFire Author</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:12px;">Featured — From the TrendsOnFire Author</div>
       <div class="pod-card featured">
         <div class="featured-label">Expert Voice · Omni-channel Strategies</div>
         <div class="pod-header">
@@ -745,6 +747,19 @@
     </div>
   </div>
 
+  <!-- ARTICLE TAGS -->
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-podcasts" rel="tag" class="tof-tag">Podcasts</a>
+      <a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a>
+      <a href="/tags/#tag-media" rel="tag" class="tof-tag">Media</a>
+      <a href="/tags/#tag-marketing" rel="tag" class="tof-tag">Marketing</a>
+      <a href="/tags/#tag-retail" rel="tag" class="tof-tag">Retail</a>
+      <a href="/tags/#tag-advertising" rel="tag" class="tof-tag">Advertising</a>
+    </div>
+  </div>
+
   <!-- CTA -->
 
   <div class="li-cta">
@@ -921,15 +936,6 @@ document.querySelector('.nav-burger').addEventListener('click',function(){
 });
 </script>
 
-<!-- ARTICLE TAGS -->
-<div style="background:white;border-top:1px solid #e2dfd9;">
-  <div style="max-width:1280px;margin:0 auto;padding:28px 24px 36px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <a href="/tags/#tag-podcasts" rel="tag" class="tof-tag">Podcasts</a><a href="/tags/#tag-netherlands" rel="tag" class="tof-tag">Netherlands</a><a href="/tags/#tag-media" rel="tag" class="tof-tag">Media</a><a href="/tags/#tag-marketing" rel="tag" class="tof-tag">Marketing</a><a href="/tags/#tag-retail" rel="tag" class="tof-tag">Retail</a><a href="/tags/#tag-advertising" rel="tag" class="tof-tag">Advertising</a>
-    </div>
-  </div>
-</div>
 <div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:white;padding:14px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.3);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:700px;line-height:1.5;">
     This site does not use tracking or advertising cookies. Our hosting provider (GitHub Pages) may log technical access data for security.

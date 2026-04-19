@@ -31,19 +31,24 @@
     .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
     @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
 
-    .hero{background:linear-gradient(135deg,#1e3a5f 0%,#7c3aed 50%,#0a0f1a 100%);color:white;padding:52px 32px 44px}
-    .hero-inner{max-width:1100px;margin:auto}
+    .hero{background:#0a0f1a;color:white;padding:52px 32px 44px;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%);pointer-events:none}
+    .hero-inner{max-width:1100px;margin:auto;position:relative;z-index:1}
     .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:12px}
     .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
-    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c4b5fd;font-weight:700;margin-bottom:10px}
-    .hero h1{font-size:clamp(24px,4vw,40px);font-weight:800;margin-bottom:12px}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:10px}
+    .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,5vw,48px);font-weight:400;line-height:1.1;letter-spacing:-0.5px;margin-bottom:12px}
     .hero p{font-size:15px;color:rgba(255,255,255,.75);max-width:640px}
     .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
     .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
 
     main{max-width:1280px;margin:0 auto;padding:48px 24px 80px}
     main a { color: #8b6a2f; }
-    .section-title{font-size:18px;font-weight:800;color:var(--ink, #0a0f1a);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--gold, #b8976a)}
+    .section-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,3vw,30px);font-weight:500;color:#0a0f1a;margin-top:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #8b6a2f;letter-spacing:-0.3px}
+
+    /* Luxury tag block */
+    .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition:all .25s ease; letter-spacing:0.3px; }
+    .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
 
     /* KPIs */
     .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin-bottom:40px}
@@ -103,9 +108,10 @@
     .verdict-box.avoid ul{color:#7f1d1d}
 
     /* Callout */
-    .callout{background:var(--ink, #0a0f1a);color:white;border-radius: 0;padding:24px 28px;margin-bottom:40px}
-    .callout h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#c4b5fd}
-    .callout p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.65}
+    .callout{background:linear-gradient(135deg, #0a0f1a, #1a1f2e);color:white;border-radius: 0;border-left:4px solid #b8976a;padding:24px 28px;margin-bottom:40px}
+    .callout h3{font-size:15px;font-weight:700;margin-bottom:8px;color:#b8976a}
+    .callout p{font-size:13.5px;color:rgba(255,255,255,.88);line-height:1.65}
+    .callout strong{color:#b8976a}
 
     /* CTA */
     .cta-bar{background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
@@ -272,7 +278,7 @@
 
   <!-- BIG COMPARISON TABLE -->
   <div class="section-title">Full Market Comparison — 20 Countries</div>
-  <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">Sorted by 2025 price growth. Heat bars show relative performance. Forecasts are analyst consensus estimates. Sources: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:var(--blue);">Eurostat House Price Index</a> (Q3 2025 release); <a href="https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/bank_interest_rates/housing_market/html/index.en.html" target="_blank" rel="noopener" style="color:var(--blue);">ECB Housing Market statistics</a>; <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:var(--blue);">ABN AMRO Housing Market Forecast 2026</a>; national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden, CSO Ireland, CZSO, KSH Hungary, NSI Bulgaria, INE Portugal, INE Spain, INSSE Romania).</p>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">Sorted by 2025 price growth. Heat bars show relative performance. Forecasts are analyst consensus estimates. Sources: <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table" target="_blank" rel="noopener" style="color:#8b6a2f;">Eurostat House Price Index</a> (Q3 2025 release); <a href="https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/bank_interest_rates/housing_market/html/index.en.html" target="_blank" rel="noopener" style="color:#8b6a2f;">ECB Housing Market statistics</a>; <a href="https://www.abnamro.nl/nl/prive/hypotheken/woningmarkt.html" target="_blank" rel="noopener" style="color:#8b6a2f;">ABN AMRO Housing Market Forecast 2026</a>; national statistics offices (CBS, Destatis, INSEE, ONS, Statistics Finland, Statistics Sweden, CSO Ireland, CZSO, KSH Hungary, NSI Bulgaria, INE Portugal, INE Spain, INSSE Romania).</p>
 
   <div style="overflow-x:auto;">
   <table class="comp-table">
@@ -594,7 +600,7 @@
     <div class="card">
       <div class="card-tag">🇮🇪 Ireland — Highest pressure in Western Europe</div>
       <h3>8× income ratios with no supply relief</h3>
-      <p>Ireland has the most extreme price-to-income ratio in Western Europe at approximately 8× average annual earnings (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:var(--blue);">OECD</a>). Construction output has increased but planning bottlenecks, labour costs, and land assembly challenges keep new supply chronically below demand. The tech sector in Dublin sustains high-income demand.</p>
+      <p>Ireland has the most extreme price-to-income ratio in Western Europe at approximately 8× average annual earnings (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#8b6a2f;">OECD</a>). Construction output has increased but planning bottlenecks, labour costs, and land assembly challenges keep new supply chronically below demand. The tech sector in Dublin sustains high-income demand.</p>
     </div>
     <div class="card">
       <div class="card-tag">🇵🇱 Poland — Post-boom normalisation</div>
@@ -675,7 +681,7 @@
         <td><strong>Dubai</strong></td>
         <td class="trend-up">+27.5%</td>
         <td class="trend-up">+19.8% (Dec)</td>
-        <td style="font-size:11px;"><a href="https://dubailand.gov.ae/en/open-data/research/annual-report-real-estate-sector-performance-2024/" target="_blank" rel="noopener" style="color:var(--blue);">DLD 2024</a> · <a href="https://valustrat.com/products/vpi-dubai-residential-capital-values-december-2025" target="_blank" rel="noopener" style="color:var(--blue);">ValuStrat Dec 2025</a></td>
+        <td style="font-size:11px;"><a href="https://dubailand.gov.ae/en/open-data/research/annual-report-real-estate-sector-performance-2024/" target="_blank" rel="noopener" style="color:#8b6a2f;">DLD 2024</a> · <a href="https://valustrat.com/products/vpi-dubai-residential-capital-values-december-2025" target="_blank" rel="noopener" style="color:#8b6a2f;">ValuStrat Dec 2025</a></td>
         <td>$5,844</td>
         <td>Regional security disruptions since Feb 2026. Airspace closures. Rating agencies flagging correction risk. Elevated uncertainty.</td>
         <td><span class="sig sig-buy" style="background:#fee2e2;color:#b91c1c;">HIGH RISK</span></td>
@@ -684,7 +690,7 @@
         <td><strong>Cyprus</strong></td>
         <td class="trend-up">+2.7% (Q3)</td>
         <td class="trend-up">+1.0% (Q2)</td>
-        <td style="font-size:11px;"><a href="https://www.gov.cy/en/economy-and-finance/house-price-index-hpi-3rd-quarter-2024/" target="_blank" rel="noopener" style="color:var(--blue);">CYSTAT HPI 2024</a> · <a href="https://index.cy/articles/cyprus-house-price-index-q2-2025-market-growth-moderates-to-1-0-annually/" target="_blank" rel="noopener" style="color:var(--blue);">Q2 2025</a></td>
+        <td style="font-size:11px;"><a href="https://www.gov.cy/en/economy-and-finance/house-price-index-hpi-3rd-quarter-2024/" target="_blank" rel="noopener" style="color:#8b6a2f;">CYSTAT HPI 2024</a> · <a href="https://index.cy/articles/cyprus-house-price-index-q2-2025-market-growth-moderates-to-1-0-annually/" target="_blank" rel="noopener" style="color:#8b6a2f;">Q2 2025</a></td>
         <td>$3,855</td>
         <td>Beneficiary of international buyer relocation. EU membership provides legal safety. Moderating from 2024.</td>
         <td><span class="sig sig-hold">STABLE</span></td>
@@ -693,7 +699,7 @@
         <td><strong>Turkey</strong></td>
         <td class="trend-up">+29.4% nom<br/><span style="font-size:10px;color:var(--red);">−12% real</span></td>
         <td class="trend-up">+29.0% nom<br/><span style="font-size:10px;color:var(--red);">−1.4% real</span></td>
-        <td style="font-size:11px;"><a href="https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Statistics/Real+Sector+Statistics/Residential+Property+Price+Index/" target="_blank" rel="noopener" style="color:var(--blue);">TCMB RPPI</a></td>
+        <td style="font-size:11px;"><a href="https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Statistics/Real+Sector+Statistics/Residential+Property+Price+Index/" target="_blank" rel="noopener" style="color:#8b6a2f;">TCMB RPPI</a></td>
         <td>$1,783</td>
         <td>Elevated risk from regional security developments in 2026. High uncertainty from proximity to instability.</td>
         <td><span class="sig sig-watch">WATCH</span></td>
@@ -702,7 +708,7 @@
         <td><strong>Thailand</strong></td>
         <td class="trend-flat">n/a</td>
         <td class="trend-flat">+0.6% (Q4)</td>
-        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/asia/thailand/price-history" target="_blank" rel="noopener" style="color:var(--blue);">Bank of Thailand via GPG</a></td>
+        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/asia/thailand/price-history" target="_blank" rel="noopener" style="color:#8b6a2f;">Bank of Thailand via GPG</a></td>
         <td>$3,880</td>
         <td>Stable market. Long-stay visa programme expanded 2024.</td>
         <td><span class="sig sig-hold">STABLE</span></td>
@@ -711,7 +717,7 @@
         <td><strong>Morocco</strong></td>
         <td class="trend-up">+1.65% (Q4)</td>
         <td class="trend-up">+1.2% (Q3)</td>
-        <td style="font-size:11px;"><a href="https://www.bkam.ma/en/Statistics/Prices/Publications-ipai/Real-estate-price-index" target="_blank" rel="noopener" style="color:var(--blue);">Bank Al-Maghrib REPI</a></td>
+        <td style="font-size:11px;"><a href="https://www.bkam.ma/en/Statistics/Prices/Publications-ipai/Real-estate-price-index" target="_blank" rel="noopener" style="color:#8b6a2f;">Bank Al-Maghrib REPI</a></td>
         <td>$1,620</td>
         <td>Stable market. Currency repatriation restrictions remain a friction.</td>
         <td><span class="sig sig-hold">STABLE</span></td>
@@ -720,7 +726,7 @@
         <td><strong>Montenegro</strong></td>
         <td class="trend-up">+20.8%</td>
         <td class="trend-up">+20.2% (Q3)</td>
-        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/europe/montenegro/price-history" target="_blank" rel="noopener" style="color:var(--blue);">MONSTAT via GPG</a></td>
+        <td style="font-size:11px;"><a href="https://www.globalpropertyguide.com/europe/montenegro/price-history" target="_blank" rel="noopener" style="color:#8b6a2f;">MONSTAT via GPG</a></td>
         <td>$3,103</td>
         <td>EU candidate status driving structural demand. Stable conditions.</td>
         <td><span class="sig sig-buy">STRONG GROWTH</span></td>
@@ -729,7 +735,7 @@
         <td><strong>Georgia</strong></td>
         <td class="trend-up">+10.4% (Q4)</td>
         <td class="trend-up">+3.3% (Q4)</td>
-        <td style="font-size:11px;"><a href="https://www.geostat.ge/en/modules/categories/698/residential-property-price-index" target="_blank" rel="noopener" style="color:var(--blue);">Geostat 2024</a> · <a href="https://www.geostat.ge/en/single-news/3654/residential-property-price-index-iv-quarter-of-2025" target="_blank" rel="noopener" style="color:var(--blue);">Q4 2025</a></td>
+        <td style="font-size:11px;"><a href="https://www.geostat.ge/en/modules/categories/698/residential-property-price-index" target="_blank" rel="noopener" style="color:#8b6a2f;">Geostat 2024</a> · <a href="https://www.geostat.ge/en/single-news/3654/residential-property-price-index-iv-quarter-of-2025" target="_blank" rel="noopener" style="color:#8b6a2f;">Q4 2025</a></td>
         <td>$1,608</td>
         <td>Growth moderating after post-2022 international capital inflow. Non-EU legal framework.</td>
         <td><span class="sig sig-watch">WATCH</span></td>
@@ -738,7 +744,7 @@
         <td><strong>Malta</strong></td>
         <td class="trend-up">+5.0%</td>
         <td class="trend-up">+5.7% (Q3)</td>
-        <td style="font-size:11px;"><a href="https://nso.gov.mt/property/residential-property-price-index-rppi-q4-2024/" target="_blank" rel="noopener" style="color:var(--blue);">NSO 2024</a> · <a href="https://nso.gov.mt/residential-property-price-index-rppi-q3-2025/" target="_blank" rel="noopener" style="color:var(--blue);">Q3 2025</a></td>
+        <td style="font-size:11px;"><a href="https://nso.gov.mt/property/residential-property-price-index-rppi-q4-2024/" target="_blank" rel="noopener" style="color:#8b6a2f;">NSO 2024</a> · <a href="https://nso.gov.mt/residential-property-price-index-rppi-q3-2025/" target="_blank" rel="noopener" style="color:#8b6a2f;">Q3 2025</a></td>
         <td>$4,485</td>
         <td>EU member. HNWIs seeking EU-based alternatives. Supply constrained.</td>
         <td><span class="sig sig-hold">STABLE</span></td>
@@ -757,27 +763,27 @@
     <div class="card">
       <div class="card-tag">Supply Crisis</div>
       <h3>Structural supply shortage</h3>
-      <p>The EU needs <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:var(--blue);">more than 2 million new homes per year through 2035</a> (EU JRC) but is building ~1.6 million annually (<a href="https://commission.europa.eu/topics/employment-and-social-affairs/affordability/affordable-housing_en" target="_blank" rel="noopener" style="color:var(--blue);">European Commission</a>). Germany completed <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:var(--blue);">251,900 units in 2024 — down 14.4%</a> and far below its 400,000 target. Supply shortage is the single biggest price driver across all markets.</p>
+      <p>The EU needs <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/housing-eu-more-2-million-new-homes-year-needed-2035-meet-demand-2025-12-16_en" target="_blank" rel="noopener" style="color:#8b6a2f;">more than 2 million new homes per year through 2035</a> (EU JRC) but is building ~1.6 million annually (<a href="https://commission.europa.eu/topics/employment-and-social-affairs/affordability/affordable-housing_en" target="_blank" rel="noopener" style="color:#8b6a2f;">European Commission</a>). Germany completed <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_183_31121.html" target="_blank" rel="noopener" style="color:#8b6a2f;">251,900 units in 2024 — down 14.4%</a> and far below its 400,000 target. Supply shortage is the single biggest price driver across all markets.</p>
     </div>
     <div class="card">
       <div class="card-tag">ECB Rate Cuts</div>
       <h3>From 4.0% to 2.0%</h3>
-      <p>The ECB cut the <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:var(--blue);">deposit facility rate 8 times</a> from June 2024 to mid-2025, from 4.0% to 2.0%. European mortgage rates have followed down from ~4.5% peak to ~3.4%. This has directly fuelled the 2025 price recovery as affordability improved across eurozone markets.</p>
+      <p>The ECB cut the <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html" target="_blank" rel="noopener" style="color:#8b6a2f;">deposit facility rate 8 times</a> from June 2024 to mid-2025, from 4.0% to 2.0%. European mortgage rates have followed down from ~4.5% peak to ~3.4%. This has directly fuelled the 2025 price recovery as affordability improved across eurozone markets.</p>
     </div>
     <div class="card">
       <div class="card-tag">Migration & Demographics</div>
       <h3>Urbanisation + EU mobility</h3>
-      <p>Migration into tech hubs (Amsterdam, Dublin, Berlin, Kraków, Prague) continues to compress supply. Refugee flows (<a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:var(--blue);">~120,000+ in NL alone, CBS</a>) add rental demand. CEE countries see returning diaspora and young household formation driving demand.</p>
+      <p>Migration into tech hubs (Amsterdam, Dublin, Berlin, Kraków, Prague) continues to compress supply. Refugee flows (<a href="https://www.cbs.nl/en-gb/news/2025/19/4-7-million-refugees-from-ukraine-across-europe" target="_blank" rel="noopener" style="color:#8b6a2f;">~120,000+ in NL alone, CBS</a>) add rental demand. CEE countries see returning diaspora and young household formation driving demand.</p>
     </div>
     <div class="card">
       <div class="card-tag">CEE Catch-Up</div>
       <h3>Eastern Europe's decade of growth</h3>
-      <p>Hungary (<a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:var(--blue);">~250%+ since 2015, Eurostat HPI</a>), Romania and Bulgaria are in a multi-decade catch-up cycle. Lower absolute prices, strong income growth, EU membership, and improving infrastructure keep demand structurally elevated.</p>
+      <p>Hungary (<a href="https://tradingeconomics.com/hungary/house-price-idx-2015-100-eurostat-data.html" target="_blank" rel="noopener" style="color:#8b6a2f;">~250%+ since 2015, Eurostat HPI</a>), Romania and Bulgaria are in a multi-decade catch-up cycle. Lower absolute prices, strong income growth, EU membership, and improving infrastructure keep demand structurally elevated.</p>
     </div>
     <div class="card">
       <div class="card-tag">Affordability Limits</div>
       <h3>The ceiling is closing in</h3>
-      <p>Portugal's P2I ratio hit 153 (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:var(--blue);">OECD average: 114.8</a>). Ireland costs ~8× average income. These markets may be approaching affordability ceilings that cap further price growth.</p>
+      <p>Portugal's P2I ratio hit 153 (<a href="https://www.oecd.org/housing/data/affordable-housing-database/" target="_blank" rel="noopener" style="color:#8b6a2f;">OECD average: 114.8</a>). Ireland costs ~8× average income. These markets may be approaching affordability ceilings that cap further price growth.</p>
     </div>
     <div class="card">
       <div class="card-tag">Rental Pressure</div>
@@ -861,6 +867,18 @@
   <div class="callout">
     <h3>The Big Picture — What 2026–2027 Holds</h3>
     <p>Europe's housing market is in a recovery cycle driven by ECB rate cuts, chronic supply shortage, and structural demand from migration and urbanisation. The CEE markets (Romania, Hungary, Bulgaria, Czech Republic, Poland) offer the best combination of growth trajectory and entry price. Western Europe is increasingly a hold story — prices in the Netherlands, Germany, and Ireland are stretched by affordability metrics. The three markets to watch most carefully: Romania for long-term capital gain, Italy for value, and Finland as a contrarian recovery play. Portugal and Greece show signs of demand fatigue and are approaching price ceilings. The ECB holding the deposit rate at 2.0% provides support but the easy gains from the 2024–2025 rate-cut tailwind are largely priced in for 2026–2027.</p>
+  </div>
+
+  <div style="border-top:1px solid #e2dfd9;padding-top:32px;margin-top:24px;margin-bottom:40px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#8b6a2f;margin-bottom:20px;">Topics covered</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="/tags/#tag-real-estate" rel="tag" class="tof-tag">Real Estate</a>
+      <a href="/tags/#tag-housing" rel="tag" class="tof-tag">Housing</a>
+      <a href="/tags/#tag-europe" rel="tag" class="tof-tag">Europe</a>
+      <a href="/tags/#tag-eurostat" rel="tag" class="tof-tag">Eurostat</a>
+      <a href="/tags/#tag-ecb" rel="tag" class="tof-tag">ECB</a>
+      <a href="/tags/#tag-oecd" rel="tag" class="tof-tag">OECD</a>
+    </div>
   </div>
 
   <div class="cta-bar">
