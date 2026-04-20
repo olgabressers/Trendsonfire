@@ -220,6 +220,14 @@
 
     .tof-tag { display:inline-block; background:transparent; color:#8b6a2f; font-size:13px; font-weight:600; padding:8px 18px; border-radius:0; text-decoration:none; border:1px solid #d4c4a8; transition:all .25s ease; letter-spacing:0.3px; }
     .tof-tag:hover { background:#0a0f1a; color:#b8976a; border-color:#0a0f1a; }
+  
+/* tof-mobile-cta-fix */
+    @media (max-width: 768px) {
+      .li-cta { padding: 26px 20px !important; flex-direction: column !important; align-items: stretch !important; gap: 18px !important; }
+      .li-cta > div { width: 100% !important; flex: none !important; min-width: 0 !important; }
+      .li-cta > div p { max-width: 100% !important; overflow-wrap: break-word !important; }
+      .li-cta a { align-self: flex-start; padding: 12px 22px; font-size: 11.5px; white-space: nowrap; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -732,7 +740,7 @@
   </div>
 
   <!-- ABOUT THE AUTHOR -->
-  <div style="background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:0;">
+  <div class="li-cta" style="background:var(--ink, #0a0f1a);border-radius: 0;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:0;">
     <div style="flex:1;min-width:0;">
       <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:700;">About the Author</p>
       <p style="max-width:none;color:rgba(255,255,255,.85);font-size:15px;">TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
