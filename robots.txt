@@ -25,7 +25,6 @@ Disallow: /supply-chain/manufacturing-footprint.html
 Disallow: /education-government/universities.html
 Disallow: /education-government/grants.html
 Disallow: /education-government/uwv.html
-Disallow: /education-government/future-of-education.html
 Disallow: /finance-compliance/big-mac-economy.html
 Disallow: /finance-compliance/insurtech-sme.html
 Disallow: /finance-compliance/crypto-intelligence.html

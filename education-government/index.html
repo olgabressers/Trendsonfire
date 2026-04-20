@@ -89,12 +89,16 @@
   </div>
 </section>
 
-<!-- REPORTS — COMING SOON -->
+<!-- PUBLISHED REPORTS -->
 <section class="articles-wrap">
   <h2 class="articles-section-title">Published Reports</h2>
-  <div style="border:1px solid var(--rule);padding:48px;text-align:center;margin-bottom:48px;background:var(--warm);">
-    <h2 style="font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:10px;">New insights in preparation</h2>
-    <p style="color:var(--muted);font-size:14px;max-width:440px;margin:0 auto;">Education & Government reports are in preparation. New analysis will appear here shortly.</p>
+  <div class="articles-grid">
+    <a href="future-of-education.html" class="art-card">
+      <div class="art-card-tag">Published Report</div>
+      <div class="art-card-title">The Future of Education — European Intelligence 2026</div>
+      <div class="art-card-desc">The EU wants micro-credentials to replace degrees. 168M people are on Coursera. From August 2026 every AI that grades an exam is high-risk. Ten tensions reshaping European education.</div>
+      <div class="art-card-link">Read report &rarr;</div>
+    </a>
   </div>
 
   <!-- TREND CARDS -->
@@ -170,7 +174,9 @@
 
 <script>
 // Search
-const searchData=[];
+const searchData=[
+  {section:"Education & Government",title:"The Future of Education — European Intelligence 2026",desc:"The EU wants micro-credentials to replace degrees. 168M people are on Coursera. From August 2026 every AI that grades an exam is high-risk. Ten tensions reshaping European education.",url:"future-of-education.html",tags:["education","EU 2030","degree","micro-credentials","OECD","AI Act"]}
+];
 const si=document.getElementById('search-input'),sr=document.getElementById('search-results');
 si.addEventListener('input',function(){
   const q=this.value.toLowerCase().trim();
