@@ -859,15 +859,19 @@ footer a:hover { color: rgba(255,255,255,.7); }
    RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .nav-burger { display: block; }
+  nav { padding: 0 20px; flex-wrap: wrap; }
+  .nav-burger { display: block; margin-left: auto; order: 2; }
   .nav-links {
     display: none; flex-direction: column;
-    width: 100%; background: var(--ink);
+    flex-basis: 100%; width: 100%; order: 10;
+    background: var(--ink);
     padding: 8px 0 20px;
+    margin-left: 0 !important;
+    border-top: 1px solid rgba(184,151,106,.15);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 14px 20px; font-size: 12px; }
+  .nav-links a { padding: 14px 20px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .nav-links a:last-child { border-bottom: none; }
   .nav-search-btn { border-left: none; order: 3; margin-left: 0; padding: 16px 4px 16px 12px; }
 
   .hero { padding: 80px 24px 68px; }
