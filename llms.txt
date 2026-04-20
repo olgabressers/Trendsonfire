@@ -41,6 +41,12 @@ TrendsOnFire publishes original, sourced market intelligence that is difficult t
 - Content: EU counterfeiting sector impact, enforcement trends, brand protection strategies.
 - Sources: OECD, EUIPO, industry associations.
 
+### Digital Product Passport — EU 2027 Rollout Tracker
+- URL: https://trendsonfire.com/supply-chain/digital-product-passport.html
+- Content: Timeline and scope of the EU Digital Product Passport (DPP) rollout under the ESPR Regulation (EU) 2024/1781. Battery passport mandatory 18 Feb 2027; textiles, steel, aluminium, furniture, tyres and detergents phased through 2028-2030. Sections: rollout timeline, product-group scope, passport field map, live pilots (CIRPASS-2 participants including Decathlon, Lindex, Otto Group; Catena-X automotive consortium with BMW, Mercedes-Benz, VW, Bosch, BASF, SAP, Siemens), supply-chain tier 1-3 compliance gap, per-product cost estimates, three 2030 scenarios.
+- Unique value: Only tracker combining the ESPR delegated-act schedule, battery passport precedent, named pilot-programme participants, and supply-chain tier analysis in a single sourced report.
+- Sources: EUR-Lex (ESPR 2024/1781, Battery Regulation 2023/1542), European Commission 2025-2030 ESPR working plan, DG Environment, CIRPASS-2 Horizon Europe, Catena-X Automotive Network, GS1 Digital Link, W3C Verifiable Credentials, ECHA SCIP, European Environment Agency, H&M FY2025 annual report, McKinsey State of Fashion, BCG, Ellen MacArthur Foundation.
+
 ### The Future of Education — European Intelligence 2026
 - URL: https://trendsonfire.com/education-government/future-of-education.html
 - Content: Tertiary education attainment across 29 countries (OECD 2025) and all 27 EU member states (Eurostat 2024) against the EU 2030 target of 45% for 25-34 year-olds. Cost paradox of four credentials (Harvard, Dutch BA, edX MicroMasters, Google Career Certificate). Employer skills-based hiring shifts. EU AI Act compliance cliff for education providers (2 August 2026). Graduate wage premium, employer sentiment, Germany vs UK contrasts, and three 2030 scenarios.
