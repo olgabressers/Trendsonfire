@@ -859,18 +859,21 @@ footer a:hover { color: rgba(255,255,255,.7); }
    RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  nav { padding: 0 20px; flex-wrap: wrap; }
+  nav { padding: 0 20px; position: sticky; top: 0; }
   .nav-burger { display: block; margin-left: auto; order: 2; }
-  .nav-links {
-    display: none; flex-direction: column;
-    flex-basis: 100%; width: 100%; order: 10;
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    width: 100%; margin: 0 !important;
+    flex-direction: column;
     background: var(--ink);
     padding: 8px 0 20px;
-    margin-left: 0 !important;
     border-top: 1px solid rgba(184,151,106,.15);
+    box-shadow: 0 12px 24px rgba(0,0,0,.25);
   }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 14px 20px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .nav-links a { padding: 16px 20px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.05); text-align: left; }
   .nav-links a:last-child { border-bottom: none; }
   .nav-search-btn { border-left: none; order: 3; margin-left: 0; padding: 16px 4px 16px 12px; }
 
