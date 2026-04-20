@@ -76,6 +76,34 @@
     .src-line { font-size:12px; color:#4e4e4e; margin-top:14px; line-height:1.55; }
     .src-line a { color:#8b6a2f; }
 
+    /* GANTT — visual rollout chart */
+    .gantt { background:white; border:1px solid var(--rule); padding:32px 36px; margin-bottom:20px; }
+    .gantt-years { display:grid; grid-template-columns:repeat(7, 1fr); border-bottom:1px solid var(--rule); padding-bottom:8px; margin-bottom:20px; }
+    .gantt-year { font-family:"Cormorant Garamond", Georgia, serif; font-size:15px; color:#4e4e4e; font-weight:600; letter-spacing:0.3px; text-align:left; border-left:1px dotted rgba(139,106,47,.25); padding-left:8px; }
+    .gantt-year:first-child { border-left:none; padding-left:0; }
+    .gantt-year.now { color:#8b6a2f; font-weight:700; }
+    .gantt-row { display:grid; grid-template-columns:180px 1fr; gap:18px; align-items:center; padding:8px 0; }
+    .gantt-label { font-size:13.5px; font-weight:700; color:#0a0f1a; letter-spacing:-0.2px; line-height:1.3; }
+    .gantt-label .sub { display:block; font-size:11px; font-weight:500; color:#8b6a2f; text-transform:uppercase; letter-spacing:1px; margin-top:3px; }
+    .gantt-track { position:relative; height:30px; background:linear-gradient(to right, rgba(184,151,106,.05) 0, rgba(184,151,106,.05) 14.28%, rgba(184,151,106,.05) 14.28%, rgba(184,151,106,.05) 28.56%, rgba(184,151,106,.05) 28.56%, rgba(184,151,106,.05) 42.84%, rgba(184,151,106,.05) 42.84%, rgba(184,151,106,.05) 57.12%, rgba(184,151,106,.05) 57.12%, rgba(184,151,106,.05) 71.40%, rgba(184,151,106,.05) 71.40%, rgba(184,151,106,.05) 85.68%, rgba(184,151,106,.05) 85.68%); background-color:#faf3e6; border-radius:2px; }
+    .gantt-track::after { content:''; position:absolute; top:0; bottom:0; left:0; width:1px; background:repeating-linear-gradient(90deg, transparent 0, transparent calc(14.28% - 1px), rgba(139,106,47,.25) calc(14.28% - 1px), rgba(139,106,47,.25) 14.28%); background-size:100% 100%; pointer-events:none; }
+    .gantt-bar { position:absolute; top:4px; bottom:4px; background:#8b6a2f; border-radius:2px; display:flex; align-items:center; padding:0 10px; color:#fff; font-size:11px; font-weight:700; letter-spacing:0.3px; white-space:nowrap; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+    .gantt-bar.live { background:#0a0f1a; color:#b8976a; }
+    .gantt-today { position:absolute; top:-6px; bottom:-6px; width:2px; background:#b8976a; }
+    .gantt-today::before { content:'Today'; position:absolute; top:-18px; left:50%; transform:translateX(-50%); font-size:10px; letter-spacing:1.5px; color:#8b6a2f; font-weight:700; text-transform:uppercase; white-space:nowrap; }
+
+    /* BAR CHART — tier disclosure */
+    .barchart { background:white; border:1px solid var(--rule); padding:28px 32px; }
+    .bc-row { display:grid; grid-template-columns:180px 1fr 70px; gap:18px; align-items:center; padding:10px 0; }
+    .bc-label { font-size:14px; font-weight:700; color:#0a0f1a; }
+    .bc-label .sub { display:block; font-size:11px; font-weight:500; color:#8b6a2f; text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+    .bc-track { background:rgba(10,15,26,.04); height:26px; border-radius:3px; position:relative; }
+    .bc-fill { height:100%; background:#b8976a; border-radius:3px; }
+    .bc-fill.high { background:#0a0f1a; }
+    .bc-fill.low { background:#d4c4a8; }
+    .bc-val { font-size:15px; font-weight:800; color:#0a0f1a; text-align:right; letter-spacing:-0.3px; }
+    @media(max-width:800px){ .gantt-row, .bc-row { grid-template-columns:1fr; gap:6px; } .gantt-years { display:none; } }
+
     /* TIMELINE */
     .timeline { background:white; border:1px solid var(--rule); padding:24px 28px; }
     .tl-row { display:grid; grid-template-columns:140px 1fr 220px; gap:22px; padding:16px 0; border-bottom:1px solid var(--rule); align-items:start; }
@@ -215,6 +243,57 @@
   <div class="block">
     <div class="sec-title">01 &middot; The <em>rollout</em> timeline</div>
     <div class="sec-sub">The DPP is not one deadline — it is a staged rollout over six years. Batteries go first. Textiles follow. Consumer electronics, steel, aluminium, furniture and tyres are in the European Commission's 2025–2030 working plan. Every date below is public.</div>
+
+    <!-- Visual Gantt chart -->
+    <div class="gantt">
+      <div class="gantt-years">
+        <div class="gantt-year">2024</div>
+        <div class="gantt-year">2025</div>
+        <div class="gantt-year now">2026</div>
+        <div class="gantt-year">2027</div>
+        <div class="gantt-year">2028</div>
+        <div class="gantt-year">2029</div>
+        <div class="gantt-year">2030</div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Batteries<span class="sub">Live &middot; 18 Feb 2027</span></div>
+        <div class="gantt-track">
+          <div class="gantt-today" style="left:28.57%;"></div>
+          <div class="gantt-bar live" style="left:42.86%; right:0;">Mandatory DPP from Feb 2027</div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Textiles &amp; apparel<span class="sub">Expected 2027–28</span></div>
+        <div class="gantt-track">
+          <div class="gantt-bar" style="left:50%; right:14.28%;">Delegated act &middot; 2027–28</div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Iron &amp; steel, aluminium<span class="sub">Expected 2028</span></div>
+        <div class="gantt-track">
+          <div class="gantt-bar" style="left:57.14%; right:14.28%;">Delegated act &middot; 2028</div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Furniture, tyres<span class="sub">Expected 2028–29</span></div>
+        <div class="gantt-track">
+          <div class="gantt-bar" style="left:57.14%; right:0;">Delegated act &middot; 2028–29</div>
+        </div>
+      </div>
+
+      <div class="gantt-row">
+        <div class="gantt-label">Detergents, chemicals<span class="sub">Expected 2029–30</span></div>
+        <div class="gantt-track">
+          <div class="gantt-bar" style="left:71.42%; right:0;">Delegated act &middot; 2029–30</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="src-line" style="margin-bottom:22px;"><strong>Sources:</strong> <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank">ESPR Regulation (EU) 2024/1781</a> · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj" target="_blank">Battery Regulation (EU) 2023/1542</a> · <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_25_971" target="_blank">European Commission — ESPR 2025–2030 working plan (16 April 2025)</a></div>
 
     <div class="timeline">
 
