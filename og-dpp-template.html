@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DPP OG</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#222; font-family:'Inter',-apple-system,sans-serif; margin:0; padding:0; }
+  .og { width:1200px; height:630px; background:#0a0f1a; position:relative; overflow:hidden; color:#fff; display:flex; flex-direction:column; justify-content:space-between; padding:52px 64px 48px; }
+  .og::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 25%, rgba(184,151,106,.18) 0%, transparent 55%); pointer-events:none; }
+  .og::after { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg, transparent, #8b6a2f, transparent); }
+
+  .top-row { display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2; }
+  .eyebrow { font-size:12px; letter-spacing:3.5px; text-transform:uppercase; color:#b8976a; font-weight:700; }
+
+  .body { position:relative; z-index:2; }
+  h1 { font-family:'Cormorant Garamond',serif; font-size:84px; font-weight:400; line-height:1.0; color:#ffffff; letter-spacing:-1.5px; margin-bottom:22px; max-width:980px; }
+  h1 em { color:#b8976a; font-style:italic; font-weight:500; }
+
+  .deadline-row { display:flex; align-items:center; gap:28px; margin-top:4px; }
+  .deadline-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#8b6a2f; font-weight:700; }
+  .deadline-date { font-family:'Inter',sans-serif; font-size:48px; font-weight:900; color:#b8976a; letter-spacing:-1.5px; line-height:1; }
+  .deadline-sub { font-size:14px; color:rgba(255,255,255,.7); font-weight:600; max-width:360px; line-height:1.4; }
+
+  .bottom-row { display:flex; justify-content:space-between; align-items:flex-end; position:relative; z-index:2; }
+  .domain { font-size:15px; letter-spacing:4px; color:#b8976a; font-weight:800; text-transform:uppercase; }
+  .tagline { font-size:11px; letter-spacing:2.5px; color:rgba(255,255,255,.45); text-transform:uppercase; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="og">
+
+  <div class="top-row">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="#ffffff" opacity="0.32"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="#ffffff" opacity="0.62"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="#ffffff"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="#ffffff">Trends</tspan><tspan font-weight="300" fill="#ffffff" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+    <span class="eyebrow">EU Regulation · Tracker</span>
+  </div>
+
+  <div class="body">
+    <h1>The <em>Digital Product Passport</em><br/>is coming to every EU product.</h1>
+    <div class="deadline-row">
+      <div>
+        <div class="deadline-label">First live</div>
+        <div class="deadline-date">18 Feb 2027</div>
+      </div>
+      <div class="deadline-sub">Battery passport first. Textiles, steel, furniture and tyres through 2030.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <span class="domain">trendsonfire.com</span>
+    <span class="tagline">See What Others Miss</span>
+  </div>
+
+</div>
+</body>
+</html>
