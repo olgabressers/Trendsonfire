@@ -301,14 +301,139 @@
     .sig-src a { color:#8b6a2f; font-weight:600; text-decoration:underline; letter-spacing:0.3px; }
   </style>
 
-  <!-- BIG MAC INDEX CHART -->
-  <div class="sec-title">The Big Mac Index — How Expensive Is Your Country?</div>
-  <div class="chart-box">
-    <h3>Big Mac Price by Country (USD, January 2025)</h3>
-    <div class="chart-wrap"><canvas id="bigmacChart"></canvas></div>
+  <!-- BIG MAC — COUNTRY CONTRAST (visual) -->
+  <div class="sec-title">The Big Mac — same burger, seven economies</div>
+  <div class="signal-grid">
+    <div class="signal-card">
+      <div class="sig-label">🇨🇭 Switzerland</div>
+      <div class="sig-big">$7.99</div>
+      <div class="sig-note">The most expensive Big Mac in the world.</div>
+    </div>
+    <div class="signal-card dark">
+      <div class="sig-label">🇦🇷 Argentina</div>
+      <div class="sig-big">$6.95</div>
+      <div class="sig-note">Third most expensive — a direct read of Argentine peso inflation.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇳🇴 Norway</div>
+      <div class="sig-big">$6.67</div>
+      <div class="sig-note">High prices follow high incomes.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇺🇸 United States</div>
+      <div class="sig-big">$5.79</div>
+      <div class="sig-note">The global benchmark — every other price is read against this one.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇬🇧 United Kingdom</div>
+      <div class="sig-big">$5.73</div>
+      <div class="sig-note">Within pennies of the US — sterling broadly at parity.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇪🇺 Euro area (avg)</div>
+      <div class="sig-big">$4.77</div>
+      <div class="sig-note">Roughly 17% below the US — the euro is undervalued against the dollar on PPP.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇨🇳 China</div>
+      <div class="sig-big">$3.52</div>
+      <div class="sig-note">39% below the US price — the yuan remains significantly undervalued by PPP.</div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">🇯🇵 Japan</div>
+      <div class="sig-big">$3.11</div>
+      <div class="sig-note">Deep undervaluation — 46% below the US.</div>
+    </div>
+    <div class="signal-card dark">
+      <div class="sig-label">🇮🇳 India</div>
+      <div class="sig-big">$2.62</div>
+      <div class="sig-note">Under half the US price — the benchmark for low-cost markets.</div>
+    </div>
   </div>
   <div class="source-note">
-    <strong>Source:</strong> <a href="https://worldpopulationreview.com/country-rankings/big-mac-index-by-country" target="_blank">The Economist Big Mac Index (January 2025) via World Population Review</a>. The Big Mac Index was invented by The Economist in 1986 as a lighthearted guide to purchasing power parity (PPP). A Big Mac costing less than $5.79 (US price) suggests the local currency may be undervalued against the dollar; more expensive suggests overvaluation.
+    <strong>Source:</strong> <a href="https://worldpopulationreview.com/country-rankings/big-mac-index-by-country" target="_blank">The Economist Big Mac Index (2025) via World Population Review</a>. The Big Mac Index was created by The Economist in 1986 as a lighthearted guide to purchasing power parity. A Big Mac below the US price of $5.79 suggests a locally undervalued currency on PPP terms.
+  </div>
+
+  <!-- ============ CORPORATE SURVIVORS — 2021 vs 2023 ============ -->
+  <div class="sec-title">Corporate survival — who grew through the 2022 compression</div>
+  <div class="signal-grid">
+    <div class="signal-card dark">
+      <div class="sig-label">Hermès · Luxury</div>
+      <div class="sig-big">+50%</div>
+      <div class="sig-note">Revenue €8.98B (2021) → €13.43B (2023). Strongest performer in European luxury through the inflation cycle.</div>
+      <div class="sig-src"><a href="https://assets-finance.hermes.com/s3fs-public/node/pdf_file/2024-02/1707422069/hermes_20240209_pr_2023fullyearresults_va.pdf" target="_blank">Hermès FY23</a></div>
+    </div>
+    <div class="signal-card dark">
+      <div class="sig-label">ASML · Semiconductors</div>
+      <div class="sig-big">+48%</div>
+      <div class="sig-note">€18.6B → €27.56B. Structural demand for lithography carried ASML through the macro storm.</div>
+      <div class="sig-src"><a href="https://www.asml.com/en/investors/annual-report/2023" target="_blank">ASML AR 2023</a></div>
+    </div>
+    <div class="signal-card dark">
+      <div class="sig-label">LVMH · Luxury</div>
+      <div class="sig-big">+34%</div>
+      <div class="sig-note">€64.2B → €86.15B. Diversified luxury portfolio absorbed the cycle. The clearest "winner" of European luxury.</div>
+      <div class="sig-src"><a href="https://www.lvmh.com/en/investors" target="_blank">LVMH Investors</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">Inditex · Retail</div>
+      <div class="sig-big">+30%</div>
+      <div class="sig-note">€27.72B → €35.95B. Zara's fast-fashion pricing power outperformed the consumer slowdown.</div>
+      <div class="sig-src"><a href="https://www.inditex.com/itxcomweb/us/en/press" target="_blank">Inditex Press</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">Volkswagen · Automotive</div>
+      <div class="sig-big">+29%</div>
+      <div class="sig-note">€250.2B → €322.3B. Premium brand mix (Porsche, Audi) delivered revenue growth even as unit volumes softened.</div>
+      <div class="sig-src"><a href="https://www.volkswagen-group.com/en/press-releases/volkswagen-group-achieves-robust-annual-results-for-2023-with-a-strong-fourth-quarter-18250" target="_blank">VW Group FY23</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">H&M · Retail</div>
+      <div class="sig-big">+19%</div>
+      <div class="sig-note">SEK 199B → SEK 236B. Grew, but pricing discipline gave up share to Inditex and Shein during the period.</div>
+      <div class="sig-src"><a href="https://hmgroup.com/wp-content/uploads/2024/01/H-M-Hennes-Mauritz-AB-Full-year-report-2023.pdf" target="_blank">H&amp;M FY23</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">Kering · Luxury</div>
+      <div class="sig-big">+11%</div>
+      <div class="sig-note">€17.6B → €19.6B. Gucci-heavy mix slowed sharply through 2023. Far behind LVMH and Hermès in the same two years.</div>
+      <div class="sig-src"><a href="https://www.globenewswire.com/news-release/2022/02/17/2386808/0/en/Kering-2021-FY-Results-EXCELLENT-2021-PERFORMANCES-WELL-AHEAD-OF-2019-LEVELS.html" target="_blank">Kering FY21</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">Adidas · Sportswear</div>
+      <div class="sig-big">+1%</div>
+      <div class="sig-note">€21.23B → €21.43B. Effectively flat across the two-year compression window. The clearest "casualty" of the cohort.</div>
+      <div class="sig-src"><a href="https://report.adidas-group.com/2023/en/group-management-report-financial-review/business-performance/income-statement.html" target="_blank">Adidas FY23</a></div>
+    </div>
+  </div>
+  <div class="source-note">
+    <strong>Revenue trajectory:</strong> Company-reported full-year revenue for 2021 vs 2023, showing the two years of the European inflation spike and ECB tightening. All figures from company annual reports / investor releases, linked on each card. The pattern: luxury and tech outperformed; volume-driven retail and sportswear compressed.
+  </div>
+
+  <!-- ============ REAL WAGES ============ -->
+  <div class="sec-title">Real wages — five years of households losing ground</div>
+  <div class="signal-grid">
+    <div class="signal-card dark">
+      <div class="sig-label">EU real wages · 2022</div>
+      <div class="sig-big">−3.9%</div>
+      <div class="sig-note">The largest single-year real-wage decline in EU records, driven by the 2022 energy-price spike.</div>
+      <div class="sig-src"><a href="https://op.europa.eu/webpub/empl/lmwd-annual-review-report-2024/chapter2/wage-developments-and-outlook.html" target="_blank">EU Labour Market &amp; Wage Developments 2024</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">EU real wages · 2023</div>
+      <div class="sig-big">−0.4%</div>
+      <div class="sig-note">Still below inflation. Households saw no recovery despite falling headline inflation.</div>
+      <div class="sig-src"><a href="https://op.europa.eu/webpub/empl/lmwd-annual-review-report-2024/chapter2/wage-developments-and-outlook.html" target="_blank">EC report (2024)</a></div>
+    </div>
+    <div class="signal-card">
+      <div class="sig-label">EU real wages · 2024</div>
+      <div class="sig-big">+2.8%</div>
+      <div class="sig-note">First positive year since 2021 — but the cumulative gap versus 2021 is still negative across most of the eurozone.</div>
+      <div class="sig-src"><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/real-wages-continue-to-recover_3a8a464b/8f8ec0e4-en.pdf" target="_blank">OECD Employment Outlook 2025</a></div>
+    </div>
+  </div>
+  <div class="source-note">
+    <strong>Sources:</strong> <a href="https://op.europa.eu/webpub/empl/lmwd-annual-review-report-2024/chapter2/wage-developments-and-outlook.html" target="_blank">European Commission — Labour Market &amp; Wage Developments 2024</a> · <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/real-wages-continue-to-recover_3a8a464b/8f8ec0e4-en.pdf" target="_blank">OECD Employment Outlook 2025</a>. Cumulative real wages across the EU are still below 2021 in most member states — meaning households are poorer in real terms than before the inflation cycle began.
   </div>
 
   <!-- INFLATION CHART -->
