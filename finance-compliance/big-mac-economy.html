@@ -41,9 +41,10 @@
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
 
-    .hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; }
+    .hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; text-align: left; }
     .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
-    .hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; padding: 0 8px; }
+    .hero .inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; padding: 0 8px; text-align: left; }
+    .hero h1, .hero p, .hero .breadcrumb, .hero .hero-eyebrow, .hero .hero-meta { text-align: left; }
     .breadcrumb { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
@@ -54,7 +55,7 @@
     .hero-meta { margin-top: 24px; font-size: 13.5px; color: rgba(255,255,255,.65); display: flex; gap: 28px; flex-wrap: wrap; }
     .hero-meta a { color: rgba(255,255,255,.78); text-decoration: underline; }
 
-    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+    main { max-width: 1280px; margin: 0 auto; padding: 56px 40px 96px; }
     .sec-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; }
 
     .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
