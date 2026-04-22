@@ -148,6 +148,47 @@
     .pilot-brands { font-size:13px; color:#4e4e4e; line-height:1.55; }
     .pilot-brands strong { color:#0a0f1a; }
 
+    /* COUNTDOWN STRIP */
+    .cd-strip { background:#0a0f1a; display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:52px; }
+    .cd-item { padding:28px 32px; border-right:1px solid rgba(184,151,106,.15); }
+    .cd-item:last-child { border-right:none; }
+    .cd-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:56px; font-weight:500; color:white; line-height:1; letter-spacing:-1px; margin-bottom:10px; }
+    .cd-num.gold { color:#b8976a; }
+    .cd-lbl { font-size:12px; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:1.5px; line-height:1.6; font-weight:600; }
+    @media(max-width:768px){ .cd-strip { grid-template-columns:1fr; } .cd-item { border-right:none; border-bottom:1px solid rgba(184,151,106,.15); } }
+
+    /* READINESS TABLE */
+    .readiness { background:white; border:1px solid var(--rule); margin-top:24px; }
+    .rd-head { display:grid; grid-template-columns:200px 1fr 120px; gap:0; background:#0a0f1a; padding:12px 24px; }
+    .rd-head span { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,.5); }
+    .rd-row { display:grid; grid-template-columns:200px 1fr 120px; gap:0; padding:18px 24px; border-bottom:1px solid var(--rule); align-items:center; }
+    .rd-row:last-child { border-bottom:none; }
+    .rd-who { font-size:14px; font-weight:700; color:#0a0f1a; line-height:1.3; }
+    .rd-who span { display:block; font-size:11px; color:#8b6a2f; font-weight:500; margin-top:3px; text-transform:uppercase; letter-spacing:1px; }
+    .rd-detail { font-size:13px; color:#4e4e4e; line-height:1.5; }
+    .rd-badge { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; padding:6px 12px; border-radius:2px; text-align:center; }
+    .rd-badge.live { background:#0a0f1a; color:#b8976a; }
+    .rd-badge.pilot { background:#faf3e6; color:#8b6a2f; border:1px solid #e8d9b8; }
+    .rd-badge.wait { background:#f5f5f5; color:#9ca3af; border:1px solid #e5e7eb; }
+    @media(max-width:800px){ .rd-head,.rd-row { grid-template-columns:1fr; gap:8px; } .rd-head { display:none; } }
+
+    /* TIER PYRAMID */
+    .tier-chart { background:white; border:1px solid var(--rule); padding:32px 36px; }
+    .tier-row { display:grid; grid-template-columns:180px 1fr 130px; gap:20px; align-items:center; padding:14px 0; border-bottom:1px solid var(--rule); }
+    .tier-row:last-child { border-bottom:none; }
+    .tier-lbl { font-size:13px; font-weight:700; color:#0a0f1a; line-height:1.3; }
+    .tier-lbl span { display:block; font-size:11px; color:#8b6a2f; font-weight:500; text-transform:uppercase; letter-spacing:1px; margin-top:3px; }
+    .tier-track { background:rgba(10,15,26,.04); height:32px; border-radius:3px; position:relative; }
+    .tier-fill { height:100%; border-radius:3px; display:flex; align-items:center; padding:0 12px; font-size:11px; font-weight:700; color:white; letter-spacing:0.3px; white-space:nowrap; overflow:hidden; }
+    .tier-fill.t1 { background:#0a0f1a; width:88%; }
+    .tier-fill.t2 { background:#b8976a; width:52%; }
+    .tier-fill.t3 { background:#e2dfd9; width:20%; color:#9ca3af; }
+    .tier-status { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+    .tier-status.good { color:#0a0f1a; }
+    .tier-status.mid { color:#8b6a2f; }
+    .tier-status.bad { color:#dc2626; }
+    @media(max-width:800px){ .tier-row { grid-template-columns:1fr; gap:6px; } }
+
     /* LI-CTA */
     .li-cta { background:#0a0f1a; padding:32px 40px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-top:24px; position:relative; }
     .li-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.06) 0%, transparent 60%); pointer-events:none; }
@@ -208,7 +249,7 @@
     <p>Every product sold in the EU must carry a verifiable digital passport by 2030. Battery passport goes live <strong style="color:#b8976a">18 February 2027</strong>. Textiles, steel, aluminium, furniture and tyres follow. Below: the deadlines, the data fields, the pilots already running, and where the real compliance gap sits.</p>
     <div class="meta">
       <span>Source &middot; EU Commission, CIRPASS-2, Battery Regulation</span>
-      <span>Updated 20 April 2026</span>
+      <span>Updated 22 April 2026</span>
     </div>
   </div>
 </header>
@@ -238,6 +279,28 @@
       <div class="t-desc">CIRPASS-2 runs textile, electronics &amp; construction pilots; Catena-X runs the battery architecture. <a href="https://cirpass2.eu/" target="_blank">CIRPASS-2</a> &middot; <a href="https://catena-x.net/en/" target="_blank">Catena-X</a></div>
     </div>
   </div>
+
+  <!-- COUNTDOWN STRIP -->
+  <div class="cd-strip">
+    <div class="cd-item">
+      <div class="cd-num" id="cd-battery">—</div>
+      <div class="cd-lbl">days to battery passport<br/>18 Feb 2027</div>
+    </div>
+    <div class="cd-item">
+      <div class="cd-num gold">~365</div>
+      <div class="cd-lbl">days after that<br/>textiles follow (2027–28)</div>
+    </div>
+    <div class="cd-item">
+      <div class="cd-num gold">2030</div>
+      <div class="cd-lbl">end-state: majority of<br/>non-food goods covered</div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var d = new Date('2027-02-18') - new Date();
+      document.getElementById('cd-battery').textContent = Math.ceil(d/864e5);
+    })();
+  </script>
 
   <!-- 01 · TIMELINE -->
   <div class="block">
@@ -447,6 +510,30 @@
       </div>
 
     </div>
+
+    <div class="readiness">
+      <div class="rd-head">
+        <span>Industry</span>
+        <span>Status</span>
+        <span>Readiness</span>
+      </div>
+      <div class="rd-row">
+        <div class="rd-who">Automotive<span>Catena-X consortium</span></div>
+        <div class="rd-detail">Shared battery-passport data architecture live. BMW, Mercedes-Benz, VW, Bosch, BASF, SAP, Siemens co-building. Hard deadline: 18 Feb 2027.</div>
+        <div class="rd-badge live">Live</div>
+      </div>
+      <div class="rd-row">
+        <div class="rd-who">Fashion retail<span>H&amp;M · Decathlon</span></div>
+        <div class="rd-detail">Building independently. H&amp;M piloted on Men's Essentials (2022). Decathlon has 100% RAIN RFID coverage since 2019. Deadline: 2028.</div>
+        <div class="rd-badge pilot">Piloting</div>
+      </div>
+      <div class="rd-row">
+        <div class="rd-who">Rest of industry<span>Most brands</span></div>
+        <div class="rd-detail">Waiting for delegated acts to be finalised before committing to infrastructure investment. Compliance cliff approaches 2028.</div>
+        <div class="rd-badge wait">Waiting</div>
+      </div>
+    </div>
+    <div class="src-line">Source: <a href="https://catena-x.net/en/" target="_blank">Catena-X</a> · <a href="https://eon.xyz/clients/h-m" target="_blank">EON / H&amp;M</a> · <a href="https://www.decathlonrfidservices.com/digital-product-passport-dpp-rain-rfid" target="_blank">Decathlon RFID</a></div>
   </div>
 
   <!-- 05 · THE REAL COMPLIANCE GAP -->
@@ -454,21 +541,27 @@
     <div class="sec-title">05 &middot; Where the real <em>gap</em> sits</div>
     <div class="sec-sub">The Digital Product Passport is not a labelling exercise. It is a supply-chain data architecture. The compliance gap is not between brands with good sustainability marketing and brands with bad marketing — it is between those with tier-2 and tier-3 supplier data and those without.</div>
 
-    <div class="pg-grid">
-      <div class="pg-card">
-        <div class="pg-tag">Tier 1 · Direct supplier</div>
-        <div class="pg-title">Commonly disclosed</div>
-        <div class="pg-body">Final-stage manufacturer — cut &amp; sew for apparel, final assembly for electronics. Public factory lists are maintained by H&amp;M, Nike, Inditex, Adidas and other major brands.</div>
+    <div class="tier-chart">
+      <div class="tier-row">
+        <div class="tier-lbl">Tier 1<span>Direct supplier</span></div>
+        <div class="tier-track">
+          <div class="tier-fill t1">Factory lists public — H&amp;M, Nike, Inditex, Adidas and others</div>
+        </div>
+        <div class="tier-status good">Commonly disclosed</div>
       </div>
-      <div class="pg-card">
-        <div class="pg-tag">Tier 2 · Component</div>
-        <div class="pg-title">Patchy</div>
-        <div class="pg-body">Fabric mills, dye houses, battery cell makers, component suppliers. Disclosure varies brand by brand and is far less complete than tier-1.</div>
+      <div class="tier-row">
+        <div class="tier-lbl">Tier 2<span>Component</span></div>
+        <div class="tier-track">
+          <div class="tier-fill t2">Fabric mills, dye houses, battery cell makers</div>
+        </div>
+        <div class="tier-status mid">Patchy</div>
       </div>
-      <div class="pg-card">
-        <div class="pg-tag">Tier 3+ · Raw material</div>
-        <div class="pg-title">The real DPP compliance cliff</div>
-        <div class="pg-body">Cotton fields, lithium mines, steel mills, rubber plantations. Rarely disclosed today. DPP requires traceability for key inputs (recycled content, substances of concern, country of origin).</div>
+      <div class="tier-row">
+        <div class="tier-lbl">Tier 3+<span>Raw material</span></div>
+        <div class="tier-track">
+          <div class="tier-fill t3">Cotton fields, lithium mines, rubber plantations</div>
+        </div>
+        <div class="tier-status bad">The compliance cliff</div>
       </div>
     </div>
 
