@@ -120,22 +120,38 @@ strong{font-weight:700;color:var(--ink)}
 /* ── MATRIX ── */
 .matrix-wrap{display:grid;grid-template-columns:80px 1fr;grid-template-rows:1fr auto auto;gap:0;margin-bottom:8px}
 .matrix-y-col{grid-row:1;grid-column:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:0 8px 0 0}
-.matrix-y-end{font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap;transform:rotate(-90deg);display:block;letter-spacing:0.3px}
-.matrix-y-title{font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);white-space:nowrap;transform:rotate(-90deg)}
-.matrix-box{position:relative;height:420px;background:white;border:1px solid var(--rule);grid-row:1;grid-column:2}
-.matrix-vline{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--rule)}
-.matrix-hline{position:absolute;top:50%;left:0;right:0;height:1px;background:var(--rule)}
-.m-qlabel{position:absolute;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#d1d5db;pointer-events:none;line-height:1.5;text-align:center}
-.matrix-x-row{grid-row:2;grid-column:2;display:flex;justify-content:space-between;margin-top:8px}
-.matrix-x-row span{font-size:11px;font-weight:700;color:var(--ink)}
-.matrix-x-title{grid-row:3;grid-column:2;text-align:center;font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);margin-top:5px}
+.matrix-y-end{font-size:12px;font-weight:800;color:var(--ink);white-space:nowrap;transform:rotate(-90deg);display:block;letter-spacing:0.5px;text-transform:uppercase}
+.matrix-y-title{font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--sub);white-space:nowrap;transform:rotate(-90deg)}
+.matrix-box{position:relative;height:440px;background:white;border:1px solid var(--rule);grid-row:1;grid-column:2}
+.matrix-vline{position:absolute;left:50%;top:0;bottom:0;width:1px;background:#cbd5e1}
+.matrix-hline{position:absolute;top:50%;left:0;right:0;height:1px;background:#cbd5e1}
+.m-qlabel{position:absolute;font-size:11px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:#8b1a6a;pointer-events:none;line-height:1.5;text-align:center}
+.matrix-x-row{grid-row:2;grid-column:2;display:flex;justify-content:space-between;margin-top:10px}
+.matrix-x-row span{font-size:12px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:0.3px}
+.matrix-x-title{grid-row:3;grid-column:2;text-align:center;font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--sub);margin-top:6px}
 .mdot{position:absolute;transform:translate(-50%,50%)}
-.mdot-circle{width:12px;height:12px;border-radius:50%;background:var(--ink);margin:0 auto}
-.mdot-circle.terra{width:20px;height:20px;background:var(--gold-dark);box-shadow:0 0 0 5px rgba(184,151,106,.2)}
-.mdot-name{font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap;text-align:center;margin-top:6px;line-height:1.3}
-.mdot-name.terra{color:var(--gold-dark);font-size:12px;font-weight:800}
-.mdot-tag{font-size:9.5px;color:#4e4e4e;white-space:nowrap;text-align:center;margin-top:1px}
+.mdot-circle{width:13px;height:13px;border-radius:50%;background:var(--ink);margin:0 auto}
+.mdot-circle.terra{width:20px;height:20px;background:var(--gold-dark);box-shadow:0 0 0 5px rgba(184,151,106,.25)}
+.mdot-name{font-size:11.5px;font-weight:700;color:var(--ink);white-space:nowrap;text-align:center;margin-top:6px;line-height:1.3}
+.mdot-name.terra{color:var(--gold-dark);font-size:12.5px;font-weight:800}
+.mdot-tag{font-size:10px;font-weight:500;color:#4e4e4e;white-space:nowrap;text-align:center;margin-top:2px}
 .mdot-tag.terra{color:var(--gold-dark);font-weight:700}
+
+/* ── COST TABLE ── */
+.cost-table{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:13px}
+.cost-table th{background:var(--navy);color:white;padding:11px 14px;text-align:left;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.cost-table th.right{text-align:right}
+.cost-table td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.cost-table tr:last-child td{border-bottom:none}
+.cost-table .cat-row td{background:#f9fafb;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);padding:8px 14px}
+.cost-table .total-row td{background:var(--navy);color:white;font-weight:800;font-size:13.5px}
+.cost-table .total-row td.right{text-align:right}
+.cost-table td.right{text-align:right;font-weight:700}
+.cost-table td.comp{color:var(--sub);font-size:12.5px}
+.cost-table td.driver{color:var(--sub);font-size:12px;max-width:220px}
+.badge-up{display:inline-block;background:#fee2e2;color:var(--red);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
+.badge-dn{display:inline-block;background:#d1fae5;color:var(--green);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
+.badge-eq{display:inline-block;background:#f3f4f6;color:var(--sub);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
 
 @media print{
   body{background:white}
@@ -441,6 +457,163 @@ strong{font-weight:700;color:var(--ink)}
     <div class="insight" style="margin-top:24px">
       <div class="i-label">The Working Model</div>
       <p>Maxim Nogotkov's operating track record — Svyaznoy, Pandora Russia, Enter — shows a founder who is exceptional at identifying a structural market opportunity and building it fast. Terra Ferra is that same instinct applied to fashion and the creator economy. What it needs alongside that is an operator who ensures the day-to-day machinery runs: designer onboarding, superfan activation, investor reporting, team building. <strong>That is the CEO role.</strong> The founder leads vision and fundraising strategy. The CEO runs the company.</p>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: MVP COST ESTIMATION ── -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <span class="sec-title">MVP Cost to First Revenue — 2022 vs 2026</span>
+    </div>
+
+    <p style="margin-bottom:22px">The table covers every element required to take Terra Ferra from zero to a live, revenue-generating platform — not just the technical build. AI-assisted development, no-code tooling, and generative design tools have roughly halved the cost of software delivery since 2022. Two categories moved in the other direction: legal compliance (Digital Services Act, updated GDPR marketplace obligations) and senior engineering talent, which has become more expensive as demand for AI-capable engineers has outpaced supply.</p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th style="width:30%">Component</th>
+          <th class="right" style="width:16%">2022 (USD)</th>
+          <th class="right" style="width:16%">2026 (USD)</th>
+          <th class="right" style="width:10%">Change</th>
+          <th style="width:28%">Key driver</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="cat-row"><td colspan="5">Technical Build</td></tr>
+        <tr>
+          <td>Product strategy &amp; architecture</td>
+          <td class="right">$15K – $25K</td>
+          <td class="right">$8K – $14K</td>
+          <td class="right"><span class="badge-dn">↓ 45%</span></td>
+          <td class="driver">AI wireframing tools (v0, Figma AI) cut iteration cycles from weeks to days</td>
+        </tr>
+        <tr>
+          <td>UX / UI design</td>
+          <td class="right">$25K – $45K</td>
+          <td class="right">$10K – $20K</td>
+          <td class="right"><span class="badge-dn">↓ 55%</span></td>
+          <td class="driver">Figma AI, Midjourney for assets; AI generates component libraries instantly</td>
+        </tr>
+        <tr>
+          <td>Backend development (marketplace, accounts, revenue engine)</td>
+          <td class="right">$60K – $100K</td>
+          <td class="right">$25K – $50K</td>
+          <td class="right"><span class="badge-dn">↓ 50%</span></td>
+          <td class="driver">GitHub Copilot / Cursor reduce dev time by ~40–50%; better API frameworks</td>
+        </tr>
+        <tr>
+          <td>Frontend (web platform)</td>
+          <td class="right">$30K – $50K</td>
+          <td class="right">$10K – $20K</td>
+          <td class="right"><span class="badge-dn">↓ 60%</span></td>
+          <td class="driver">No-code/low-code (Webflow, Framer) + AI-assisted React covers most of the build</td>
+        </tr>
+        <tr>
+          <td>Mobile app (iOS + Android)</td>
+          <td class="right">$50K – $80K</td>
+          <td class="right">$18K – $35K</td>
+          <td class="right"><span class="badge-dn">↓ 58%</span></td>
+          <td class="driver">React Native + AI code generation; cross-platform efficiency has improved significantly</td>
+        </tr>
+        <tr>
+          <td>Payment &amp; revenue-sharing engine</td>
+          <td class="right">$15K – $25K</td>
+          <td class="right">$10K – $18K</td>
+          <td class="right"><span class="badge-dn">↓ 30%</span></td>
+          <td class="driver">Stripe Connect for marketplaces is more mature; integration is faster</td>
+        </tr>
+        <tr>
+          <td>Community features (profiles, lookbook, messaging)</td>
+          <td class="right">$20K – $35K</td>
+          <td class="right">$8K – $16K</td>
+          <td class="right"><span class="badge-dn">↓ 55%</span></td>
+          <td class="driver">Stream.io, Sendbird and similar SDKs cover most community mechanics off-the-shelf</td>
+        </tr>
+        <tr>
+          <td>QA &amp; testing</td>
+          <td class="right">$12K – $20K</td>
+          <td class="right">$5K – $10K</td>
+          <td class="right"><span class="badge-dn">↓ 58%</span></td>
+          <td class="driver">AI-generated test suites (Playwright AI, Copilot Tests) cut manual QA hours sharply</td>
+        </tr>
+        <tr>
+          <td>DevOps &amp; cloud infrastructure (yr 1)</td>
+          <td class="right">$10K – $18K</td>
+          <td class="right">$9K – $17K</td>
+          <td class="right"><span class="badge-eq">≈ flat</span></td>
+          <td class="driver">Managed services (Vercel, Railway) are cheaper; AWS/GCP base pricing has risen slightly</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">Legal &amp; Compliance</td></tr>
+        <tr>
+          <td>Terms of service, privacy policy, marketplace agreements</td>
+          <td class="right">$8K – $15K</td>
+          <td class="right">$12K – $22K</td>
+          <td class="right"><span class="badge-up">↑ 45%</span></td>
+          <td class="driver">Digital Services Act (EU), updated GDPR marketplace obligations, US state privacy laws</td>
+        </tr>
+        <tr>
+          <td>Payment processing &amp; financial compliance (KYC/AML)</td>
+          <td class="right">$5K – $10K</td>
+          <td class="right">$8K – $16K</td>
+          <td class="right"><span class="badge-up">↑ 50%</span></td>
+          <td class="driver">Revenue-sharing model triggers money-transmitter scrutiny; compliance bar has risen</td>
+        </tr>
+        <tr>
+          <td>IP protection (trademark, brand registration)</td>
+          <td class="right">$3K – $6K</td>
+          <td class="right">$3K – $6K</td>
+          <td class="right"><span class="badge-eq">≈ flat</span></td>
+          <td class="driver">USPTO + EU EUIPO filings; cost unchanged</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="5">Operations &amp; Launch</td></tr>
+        <tr>
+          <td>Customer support tooling &amp; onboarding flows</td>
+          <td class="right">$5K – $10K</td>
+          <td class="right">$3K – $6K</td>
+          <td class="right"><span class="badge-dn">↓ 40%</span></td>
+          <td class="driver">AI chatbots (Intercom AI, Tidio) handle tier-1 support; onboarding built in Notion + Loom</td>
+        </tr>
+        <tr>
+          <td>Security audit (penetration test, data review)</td>
+          <td class="right">$8K – $14K</td>
+          <td class="right">$10K – $18K</td>
+          <td class="right"><span class="badge-up">↑ 25%</span></td>
+          <td class="driver">Payment + revenue data requires formal pentest; standards have tightened post-DORA</td>
+        </tr>
+        <tr>
+          <td>Launch marketing (PR, designer acquisition, first campaign)</td>
+          <td class="right">$15K – $25K</td>
+          <td class="right">$8K – $15K</td>
+          <td class="right"><span class="badge-dn">↓ 45%</span></td>
+          <td class="driver">AI content creation, generative video, targeted social ads are far cheaper per impression</td>
+        </tr>
+        <tr>
+          <td>First team hires (designer success + growth, 6 months)</td>
+          <td class="right">$60K – $90K</td>
+          <td class="right">$70K – $100K</td>
+          <td class="right"><span class="badge-up">↑ 12%</span></td>
+          <td class="driver">Engineering and growth salaries have risen; AI-capable talent commands a premium</td>
+        </tr>
+
+        <tr class="total-row">
+          <td><strong>Total to revenue-generating MVP</strong></td>
+          <td class="right"><strong>$341K – $568K</strong></td>
+          <td class="right"><strong>$227K – $383K</strong></td>
+          <td class="right"><span class="badge-dn" style="background:rgba(255,255,255,.15);color:white">↓ ~35%</span></td>
+          <td style="color:rgba(255,255,255,.7);font-size:12px">AI tools reduce total cost by approx. one third vs 2022</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="src-line">Estimates based on industry benchmarks: <a href="https://clutch.co/app-developers/resources/cost-build-mobile-app" target="_blank">Clutch App Development Survey</a> · <a href="https://www.goodfirms.co/resources/cost-to-develop-marketplace-app" target="_blank">GoodFirms Marketplace Cost Report</a> · Stripe Connect pricing · AWS/Vercel published pricing · average US/EU freelance market rates (Toptal, Arc.dev). Figures are estimated ranges, not quotes.</div>
+
+    <div class="insight" style="margin-top:22px">
+      <div class="i-label">The Implication for Terra Ferra</div>
+      <p>Terra Ferra raised $315K in early 2022 — the lower end of what a credible build required at the time. <strong>The same scope today would cost $227K–$383K, with most of the saving coming from development and design.</strong> A $3M SAFE round now buys roughly 8–13× the runway that $315K bought in 2022. The case for raising now — and building with AI-first tooling — is significantly stronger than it was at founding.</p>
     </div>
   </div>
 
