@@ -36,12 +36,15 @@
     .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 12px; font-weight: 500; padding: 12px 9px; border-bottom: 3px solid transparent; transition: all .15s; white-space: normal; text-align: center; line-height: 1.25; display: flex; align-items: center; }
     .nav-links a:hover, .nav-links a.active { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
+    .nav-search-btn { background:none; border:none; color:rgba(255,255,255,.7); cursor:pointer; padding:0 10px 0 14px; height:100%; display:flex; align-items:center; gap:5px; transition:color .15s; font-size:12px; font-weight:500; font-family:inherit; border-left:1px solid rgba(255,255,255,.15); margin-left:6px; flex-shrink:0; }
+    .nav-search-btn:hover { color:white; }
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
       .nav-burger { display:block; }
       .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; position:absolute; top:100%; left:0; right:0; width:100%; margin:0; box-shadow:0 12px 24px rgba(0,0,0,.25); }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; }
+      .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; }
     }
 
     .art-hero { background:#0a0f1a; color:white; padding:72px 32px 56px; position:relative; }
@@ -217,7 +220,7 @@
 <!-- NAV -->
 <nav>
   <a href="../index.html" class="nav-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="190" height="47">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
       <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
       <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
       <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
@@ -228,7 +231,7 @@
     </svg>
   </a>
   <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-  <div class="nav-links" style="margin-left:auto">
+  <div class="nav-links">
     <a href="../retail/index.html">Retail</a>
     <a href="../people/index.html">People</a>
     <a href="../technology/index.html">Technology</a>
@@ -238,6 +241,10 @@
     <a href="../insights/index.html">Insights</a>
     <a href="../olgabressers/index.html">About</a>
   </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
 </nav>
 
 <!-- HERO -->
