@@ -144,8 +144,10 @@ strong{font-weight:700;color:var(--ink)}
 .cost-table td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
 .cost-table tr:last-child td{border-bottom:none}
 .cost-table .cat-row td{background:#f9fafb;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);padding:8px 14px}
-.cost-table .total-row td{background:var(--navy);color:white;font-weight:800;font-size:13.5px}
+.cost-table .total-row td{background:var(--navy);color:white;font-weight:900;font-size:11px;padding:20px 14px;border-top:4px solid var(--gold-dark)}
 .cost-table .total-row td.right{text-align:right}
+.cost-table .total-row .total-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;display:block;line-height:1.1;color:#fff}
+.cost-table .total-row .total-label{font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);display:block;margin-bottom:4px}
 .cost-table .subtotal-row td{background:#f3f4f6;font-weight:800;font-size:12.5px;border-top:2px solid var(--rule)}
 .cost-table .subtotal-row td.right{text-align:right;font-weight:800}
 .cost-table td.right{text-align:right;font-weight:700}
@@ -657,11 +659,11 @@ strong{font-weight:700;color:var(--ink)}
         </tr>
 
         <tr class="total-row">
-          <td colspan="2"><strong>TOTAL — Revenue-generating MVP</strong></td>
-          <td class="right"><strong>$341K–$568K</strong><span class="wks" style="color:rgba(255,255,255,.7);font-weight:600">~24–32 wks calendar</span></td>
-          <td class="right"><strong>$217K–$383K</strong><span class="wks" style="color:rgba(255,255,255,.7);font-weight:600">~10–16 wks calendar</span></td>
-          <td class="right"><span class="badge-dn" style="background:rgba(255,255,255,.15);color:white">↓ ~35%</span></td>
-          <td style="color:rgba(255,255,255,.65);font-size:11.5px">Calendar weeks assume parallel execution across all tracks. 2026 estimate assumes AI-first tooling throughout.</td>
+          <td colspan="2"><span class="total-label">Total — Revenue-generating MVP</span><strong style="font-size:15px;letter-spacing:0.3px">All tracks combined · to first revenue</strong></td>
+          <td class="right"><span class="total-label">2022 estimate</span><span class="total-num">$341K–$568K</span><span class="wks" style="color:rgba(255,255,255,.6);font-weight:600;font-size:10px">~24–32 calendar weeks</span></td>
+          <td class="right"><span class="total-label">2026 estimate</span><span class="total-num">$217K–$383K</span><span class="wks" style="color:rgba(255,255,255,.6);font-weight:600;font-size:10px">~10–16 calendar weeks</span></td>
+          <td class="right"><span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#b8976a">↓ 35%</span><span class="wks" style="color:rgba(255,255,255,.6);font-size:10px">cost reduction</span></td>
+          <td style="color:rgba(255,255,255,.65);font-size:11px;line-height:1.6">Parallel execution across all tracks. 2026 saving driven by AI tooling in dev, design, and QA. $3M SAFE buys 8–13× the runway vs 2022.</td>
         </tr>
       </tbody>
     </table>
