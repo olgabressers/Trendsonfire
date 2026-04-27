@@ -46,6 +46,7 @@
       border-bottom: 1px solid var(--rule);
       text-decoration: none; color: inherit;
       transition: opacity .2s ease;
+      align-items: flex-start;
     }
     .article:hover { opacity: .75; }
     .article:last-of-type { border-bottom: none; }
@@ -60,7 +61,7 @@
       text-transform: uppercase; letter-spacing: 1px;
       font-weight: 700; margin-top: 2px;
     }
-    .article-body { flex: 1; }
+    .article-body { flex: 1; min-width: 0; }
     .article-tag {
       display: inline-block;
       font-size: 11.5px; font-weight: 700;
@@ -75,7 +76,16 @@
     }
     .article-excerpt {
       font-size: 14.5px; color: var(--text);
-      line-height: 1.7; max-width: 640px;
+      line-height: 1.7;
+    }
+    .article-thumb {
+      flex-shrink: 0; width: 160px;
+    }
+    .article-thumb img {
+      width: 100%; height: 200px;
+      object-fit: cover; object-position: top;
+      border: 1px solid var(--rule);
+      display: block;
     }
     .section-gap { height: 48px; }
 
@@ -83,6 +93,8 @@
       .insights-main { padding: 48px 20px 64px; }
       .article { flex-direction: column; gap: 8px; }
       .article-date { width: auto; display: flex; gap: 6px; align-items: baseline; }
+      .article-thumb { width: 100%; }
+      .article-thumb img { height: 180px; object-position: top; }
     }
   </style>
 </head>
@@ -124,7 +136,7 @@
     <div class="eyebrow">LinkedIn Intelligence Briefs</div>
     <h1>Insights</h1>
     <p>Weekly market intelligence published on LinkedIn. Analysis on the trends reshaping European business.</p>
-    <div class="sec-date">Updated 23 April 2026</div>
+    <div class="sec-date">Updated 27 April 2026</div>
   </div>
 </div>
 
@@ -134,8 +146,18 @@
   <!-- SUPPLY CHAIN -->
   <div class="section-head">
     <h2>Supply Chain</h2>
-    <span class="count">2 briefs</span>
+    <span class="count">3 briefs</span>
   </div>
+
+  <a class="article" href="https://www.linkedin.com/posts/olgabressers_lvmh-hm-lululemon-share-7453352230696603648-wrLQ" target="_blank" rel="noopener">
+    <div class="article-date"><div class="day">24</div><div class="month">Apr</div></div>
+    <div class="article-body">
+      <div class="article-tag">Digital Product Passport</div>
+      <div class="article-title">Balenciaga picked EON. LVMH picked Fairly Made. The 8 vendors building Digital Product Passports for fashion.</div>
+      <p class="article-excerpt">The DPP vendor landscape splits by two dimensions: supply chain traceability vs product identity, and luxury vs mass market. Eight vendors mapped across four quadrants — with the brands that selected each one.</p>
+    </div>
+    <div class="article-thumb"><img src="../supply-chain/visuals/dpp-vendors-2026.png" alt="DPP vendors matrix"/></div>
+  </a>
 
   <a class="article" href="https://www.linkedin.com/feed/update/urn:li:activity:7452959594735235072/" target="_blank" rel="noopener">
     <div class="article-date"><div class="day">23</div><div class="month">Apr</div></div>
@@ -144,6 +166,7 @@
       <div class="article-title">Seven automotive brands are ready. H&amp;M and Decathlon are building independently.</div>
       <p class="article-excerpt">The Catena-X consortium — BMW, Mercedes-Benz, VW, Bosch, BASF, SAP, Siemens — is building the shared data architecture for the EU battery passport, mandatory from 18 February 2027. H&amp;M piloted on Men's Essentials in 2022. Decathlon has 100% RAIN RFID coverage since 2019. Most apparel brands are still waiting for the 2028 delegated act.</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/dpp-brands.png" alt="DPP brands readiness"/></div>
   </a>
 
   <a class="article" href="https://www.linkedin.com/feed/update/urn:li:share:7452265079489724416/" target="_blank" rel="noopener">
@@ -153,6 +176,7 @@
       <div class="article-title">Battery passport 18 Feb 2027. Textiles 2028. Steel and aluminium 2028.</div>
       <p class="article-excerpt">The EU Digital Product Passport rolls out in waves across six years. Batteries go first — automotive is organised around Catena-X. Fashion retail, heavy industry, furniture and tyres follow. The full compliance timeline by product category.</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/dpp-timeline.png" alt="DPP timeline"/></div>
   </a>
 
   <div class="section-gap"></div>
@@ -170,6 +194,7 @@
       <div class="article-title">Pay $347,000 to Harvard. Or under $300 to Google. To get the same job.</div>
       <p class="article-excerpt">EU public university tuition averages €7,800. An edX MicroMasters costs €600–€2,000. Deloitte, Verizon, Target and others now formally recognise Google certificates. By 2030, what will employers actually value: signal or skills?</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/cost-paradox.png" alt="Education cost paradox"/></div>
   </a>
 
   <div class="section-gap"></div>
@@ -187,6 +212,7 @@
       <div class="article-title">Would you let a Tesla drive you through Amsterdam traffic?</div>
       <p class="article-excerpt">The Netherlands approved Tesla Full Self-Driving (Supervised) on 10 April 2026. But Level 2 means you are still the driver. SAE autonomy levels explained.</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/tesla-fsd.png" alt="Tesla FSD visual"/></div>
   </a>
 
   <div class="section-gap"></div>
@@ -204,6 +230,7 @@
       <div class="article-title">H&amp;M reports 91% sustainable materials. ASOS runs a resale pilot. Same EU deadline.</div>
       <p class="article-excerpt">Eight global fashion groups face the ESPR unsold stock ban from 19 July 2026. A readiness matrix shows where each brand stands on materials and take-back programmes.</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/hm-paradox-v2.png" alt="H&M fashion readiness matrix"/></div>
   </a>
 
   <a class="article" href="https://www.linkedin.com/posts/olgabressers_circulareconomy-sustainability-retailleadership-activity-7450105327804387328-ljqw" target="_blank" rel="noopener">
@@ -213,6 +240,7 @@
       <div class="article-title">Regulation is moving faster than the market</div>
       <p class="article-excerpt">Between July 2024 and mid-2028, five consumer categories in Europe shift from voluntary sustainability to mandatory compliance under ESPR.</p>
     </div>
+    <div class="article-thumb"><img src="../assets/linkedin/circular-economy-espr.png" alt="Circular economy ESPR timeline"/></div>
   </a>
 
 </main>
