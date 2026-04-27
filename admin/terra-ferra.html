@@ -146,12 +146,18 @@ strong{font-weight:700;color:var(--ink)}
 .cost-table .cat-row td{background:#f9fafb;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub);padding:8px 14px}
 .cost-table .total-row td{background:var(--navy);color:white;font-weight:800;font-size:13.5px}
 .cost-table .total-row td.right{text-align:right}
+.cost-table .subtotal-row td{background:#f3f4f6;font-weight:800;font-size:12.5px;border-top:2px solid var(--rule)}
+.cost-table .subtotal-row td.right{text-align:right;font-weight:800}
 .cost-table td.right{text-align:right;font-weight:700}
-.cost-table td.comp{color:var(--sub);font-size:12.5px}
-.cost-table td.driver{color:var(--sub);font-size:12px;max-width:220px}
-.badge-up{display:inline-block;background:#fee2e2;color:var(--red);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
-.badge-dn{display:inline-block;background:#d1fae5;color:var(--green);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
-.badge-eq{display:inline-block;background:#f3f4f6;color:var(--sub);font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px}
+.cost-table td.yr{text-align:right;white-space:nowrap}
+.cost-table .wks{font-size:10.5px;color:var(--sub);display:block;margin-top:2px;font-weight:500}
+.cost-table td.driver{color:var(--sub);font-size:12px}
+.badge-up{display:inline-block;background:#fee2e2;color:var(--red);font-size:10px;font-weight:800;padding:2px 7px;border-radius:3px}
+.badge-dn{display:inline-block;background:#d1fae5;color:var(--green);font-size:10px;font-weight:800;padding:2px 7px;border-radius:3px}
+.badge-eq{display:inline-block;background:#f3f4f6;color:var(--sub);font-size:10px;font-weight:800;padding:2px 7px;border-radius:3px}
+.st-done{display:inline-block;background:#d1fae5;color:#065f46;font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.st-part{display:inline-block;background:#fef3c7;color:#92400e;font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.st-open{display:inline-block;background:#f1f5f9;color:#475569;font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:3px;white-space:nowrap}
 
 @media print{
   body{background:white}
@@ -472,139 +478,190 @@ strong{font-weight:700;color:var(--ink)}
     <table class="cost-table">
       <thead>
         <tr>
-          <th style="width:30%">Component</th>
-          <th class="right" style="width:16%">2022 (USD)</th>
-          <th class="right" style="width:16%">2026 (USD)</th>
-          <th class="right" style="width:10%">Change</th>
-          <th style="width:28%">Key driver</th>
+          <th style="width:26%">Component</th>
+          <th style="width:8%">Status</th>
+          <th class="right" style="width:14%">2022 Cost<br/><span style="font-weight:400;text-transform:none;letter-spacing:0">&amp; duration</span></th>
+          <th class="right" style="width:14%">2026 Cost<br/><span style="font-weight:400;text-transform:none;letter-spacing:0">&amp; duration</span></th>
+          <th class="right" style="width:8%">Cost Δ</th>
+          <th style="width:30%">Key driver</th>
         </tr>
       </thead>
       <tbody>
 
-        <tr class="cat-row"><td colspan="5">Technical Build</td></tr>
+        <tr class="cat-row"><td colspan="6">① Technical Build</td></tr>
         <tr>
           <td>Product strategy &amp; architecture</td>
-          <td class="right">$15K – $25K</td>
-          <td class="right">$8K – $14K</td>
+          <td><span class="st-done">✓ Done</span></td>
+          <td class="yr">$15K–$25K<span class="wks">3–4 wks</span></td>
+          <td class="yr">$8K–$14K<span class="wks">1–2 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 45%</span></td>
-          <td class="driver">AI wireframing tools (v0, Figma AI) cut iteration cycles from weeks to days</td>
+          <td class="driver">AI wireframing (v0, Figma AI) cuts iteration from weeks to days</td>
         </tr>
         <tr>
           <td>UX / UI design</td>
-          <td class="right">$25K – $45K</td>
-          <td class="right">$10K – $20K</td>
+          <td><span class="st-part">~ Partial</span></td>
+          <td class="yr">$25K–$45K<span class="wks">6–8 wks</span></td>
+          <td class="yr">$10K–$20K<span class="wks">2–3 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 55%</span></td>
-          <td class="driver">Figma AI, Midjourney for assets; AI generates component libraries instantly</td>
+          <td class="driver">Beta design exists; needs full refresh for public launch + mobile</td>
         </tr>
         <tr>
-          <td>Backend development (marketplace, accounts, revenue engine)</td>
-          <td class="right">$60K – $100K</td>
-          <td class="right">$25K – $50K</td>
+          <td>Backend (marketplace, accounts, revenue engine)</td>
+          <td><span class="st-part">~ Partial</span></td>
+          <td class="yr">$60K–$100K<span class="wks">12–16 wks</span></td>
+          <td class="yr">$25K–$50K<span class="wks">5–8 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 50%</span></td>
-          <td class="driver">GitHub Copilot / Cursor reduce dev time by ~40–50%; better API frameworks</td>
+          <td class="driver">Beta backend exists; needs scaling, security hardening, production-grade APIs</td>
         </tr>
         <tr>
-          <td>Frontend (web platform)</td>
-          <td class="right">$30K – $50K</td>
-          <td class="right">$10K – $20K</td>
+          <td>Frontend web platform</td>
+          <td><span class="st-part">~ Partial</span></td>
+          <td class="yr">$30K–$50K<span class="wks">8–10 wks</span></td>
+          <td class="yr">$10K–$20K<span class="wks">3–5 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 60%</span></td>
-          <td class="driver">No-code/low-code (Webflow, Framer) + AI-assisted React covers most of the build</td>
+          <td class="driver">Beta frontend exists but site is currently down — rebuild needed</td>
         </tr>
         <tr>
           <td>Mobile app (iOS + Android)</td>
-          <td class="right">$50K – $80K</td>
-          <td class="right">$18K – $35K</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$50K–$80K<span class="wks">10–14 wks</span></td>
+          <td class="yr">$18K–$35K<span class="wks">4–7 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 58%</span></td>
-          <td class="driver">React Native + AI code generation; cross-platform efficiency has improved significantly</td>
+          <td class="driver">No public mobile app found; React Native + AI code gen is the path</td>
         </tr>
         <tr>
           <td>Payment &amp; revenue-sharing engine</td>
-          <td class="right">$15K – $25K</td>
-          <td class="right">$10K – $18K</td>
+          <td><span class="st-part">~ Partial</span></td>
+          <td class="yr">$15K–$25K<span class="wks">4–6 wks</span></td>
+          <td class="yr">$10K–$18K<span class="wks">2–3 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 30%</span></td>
-          <td class="driver">Stripe Connect for marketplaces is more mature; integration is faster</td>
+          <td class="driver">7% model is defined; Stripe Connect integration needs production validation</td>
         </tr>
         <tr>
           <td>Community features (profiles, lookbook, messaging)</td>
-          <td class="right">$20K – $35K</td>
-          <td class="right">$8K – $16K</td>
+          <td><span class="st-done">✓ Done</span></td>
+          <td class="yr">$20K–$35K<span class="wks">5–7 wks</span></td>
+          <td class="yr">$8K–$16K<span class="wks">2–4 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 55%</span></td>
-          <td class="driver">Stream.io, Sendbird and similar SDKs cover most community mechanics off-the-shelf</td>
+          <td class="driver">Functional in beta with 10 designers and 2,500 superfans</td>
         </tr>
         <tr>
           <td>QA &amp; testing</td>
-          <td class="right">$12K – $20K</td>
-          <td class="right">$5K – $10K</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$12K–$20K<span class="wks">4–6 wks</span></td>
+          <td class="yr">$5K–$10K<span class="wks">1–2 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 58%</span></td>
-          <td class="driver">AI-generated test suites (Playwright AI, Copilot Tests) cut manual QA hours sharply</td>
+          <td class="driver">Beta QA not sufficient for public launch; AI test suites (Playwright) cut time sharply</td>
         </tr>
         <tr>
           <td>DevOps &amp; cloud infrastructure (yr 1)</td>
-          <td class="right">$10K – $18K</td>
-          <td class="right">$9K – $17K</td>
+          <td><span class="st-done">✓ Done</span></td>
+          <td class="yr">$10K–$18K<span class="wks">2–3 wks</span></td>
+          <td class="yr">$9K–$17K<span class="wks">1–2 wks</span></td>
           <td class="right"><span class="badge-eq">≈ flat</span></td>
-          <td class="driver">Managed services (Vercel, Railway) are cheaper; AWS/GCP base pricing has risen slightly</td>
+          <td class="driver">Running in beta; needs review — site is currently unreachable</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td>Sub-total — Technical Build</td>
+          <td></td>
+          <td class="right">$237K–$398K<span class="wks" style="font-weight:700;color:var(--ink)">~16–20 wks*</span></td>
+          <td class="right">$103K–$200K<span class="wks" style="font-weight:700;color:var(--ink)">~7–10 wks*</span></td>
+          <td class="right"><span class="badge-dn">↓ ~50%</span></td>
+          <td class="driver" style="font-size:11px">*parallel execution; critical path = backend</td>
         </tr>
 
-        <tr class="cat-row"><td colspan="5">Legal &amp; Compliance</td></tr>
+        <tr class="cat-row"><td colspan="6">② Legal &amp; Compliance</td></tr>
         <tr>
-          <td>Terms of service, privacy policy, marketplace agreements</td>
-          <td class="right">$8K – $15K</td>
-          <td class="right">$12K – $22K</td>
+          <td>T&amp;Cs, privacy policy, marketplace agreements</td>
+          <td><span class="st-part">~ Partial</span></td>
+          <td class="yr">$8K–$15K<span class="wks">3–4 wks</span></td>
+          <td class="yr">$12K–$22K<span class="wks">2–3 wks</span></td>
           <td class="right"><span class="badge-up">↑ 45%</span></td>
-          <td class="driver">Digital Services Act (EU), updated GDPR marketplace obligations, US state privacy laws</td>
+          <td class="driver">Digital Services Act + updated GDPR marketplace obligations since 2022</td>
         </tr>
         <tr>
-          <td>Payment processing &amp; financial compliance (KYC/AML)</td>
-          <td class="right">$5K – $10K</td>
-          <td class="right">$8K – $16K</td>
+          <td>Payment &amp; financial compliance (KYC/AML)</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$5K–$10K<span class="wks">4–6 wks</span></td>
+          <td class="yr">$8K–$16K<span class="wks">3–5 wks</span></td>
           <td class="right"><span class="badge-up">↑ 50%</span></td>
-          <td class="driver">Revenue-sharing model triggers money-transmitter scrutiny; compliance bar has risen</td>
+          <td class="driver">Revenue-sharing model triggers money-transmitter scrutiny in US + EU</td>
         </tr>
         <tr>
-          <td>IP protection (trademark, brand registration)</td>
-          <td class="right">$3K – $6K</td>
-          <td class="right">$3K – $6K</td>
+          <td>IP protection (trademark · US + EU)</td>
+          <td><span class="st-done">✓ Done</span></td>
+          <td class="yr">$3K–$6K<span class="wks">2–3 wks</span></td>
+          <td class="yr">$3K–$6K<span class="wks">2–3 wks</span></td>
           <td class="right"><span class="badge-eq">≈ flat</span></td>
-          <td class="driver">USPTO + EU EUIPO filings; cost unchanged</td>
+          <td class="driver">USPTO + EUIPO filings; brand incorporated and operating since 2021</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td>Sub-total — Legal &amp; Compliance</td>
+          <td></td>
+          <td class="right">$16K–$31K<span class="wks" style="font-weight:700;color:var(--ink)">~4–6 wks*</span></td>
+          <td class="right">$23K–$44K<span class="wks" style="font-weight:700;color:var(--ink)">~3–5 wks*</span></td>
+          <td class="right"><span class="badge-up">↑ ~40%</span></td>
+          <td class="driver" style="font-size:11px">*runs parallel to development; KYC is the longest item</td>
         </tr>
 
-        <tr class="cat-row"><td colspan="5">Operations &amp; Launch</td></tr>
+        <tr class="cat-row"><td colspan="6">③ Operations &amp; Launch</td></tr>
         <tr>
           <td>Customer support tooling &amp; onboarding flows</td>
-          <td class="right">$5K – $10K</td>
-          <td class="right">$3K – $6K</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$5K–$10K<span class="wks">1–2 wks</span></td>
+          <td class="yr">$3K–$6K<span class="wks">0.5–1 wk</span></td>
           <td class="right"><span class="badge-dn">↓ 40%</span></td>
-          <td class="driver">AI chatbots (Intercom AI, Tidio) handle tier-1 support; onboarding built in Notion + Loom</td>
+          <td class="driver">Intercom AI / Tidio handle tier-1; onboarding docs in Notion + Loom</td>
         </tr>
         <tr>
-          <td>Security audit (penetration test, data review)</td>
-          <td class="right">$8K – $14K</td>
-          <td class="right">$10K – $18K</td>
+          <td>Security audit (pentest + data review)</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$8K–$14K<span class="wks">2–3 wks</span></td>
+          <td class="yr">$10K–$18K<span class="wks">2–3 wks</span></td>
           <td class="right"><span class="badge-up">↑ 25%</span></td>
-          <td class="driver">Payment + revenue data requires formal pentest; standards have tightened post-DORA</td>
+          <td class="driver">Payment + revenue data requires formal pentest; standards tightened post-DORA</td>
         </tr>
         <tr>
-          <td>Launch marketing (PR, designer acquisition, first campaign)</td>
-          <td class="right">$15K – $25K</td>
-          <td class="right">$8K – $15K</td>
+          <td>Launch marketing (PR, designer acquisition, campaign)</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$15K–$25K<span class="wks">4–6 wks</span></td>
+          <td class="yr">$8K–$15K<span class="wks">2–4 wks</span></td>
           <td class="right"><span class="badge-dn">↓ 45%</span></td>
-          <td class="driver">AI content creation, generative video, targeted social ads are far cheaper per impression</td>
+          <td class="driver">AI content, generative video, targeted social far cheaper per impression</td>
         </tr>
+        <tr class="subtotal-row">
+          <td>Sub-total — Operations &amp; Launch</td>
+          <td></td>
+          <td class="right">$28K–$49K<span class="wks" style="font-weight:700;color:var(--ink)">~5–8 wks*</span></td>
+          <td class="right">$21K–$39K<span class="wks" style="font-weight:700;color:var(--ink)">~3–5 wks*</span></td>
+          <td class="right"><span class="badge-dn">↓ ~22%</span></td>
+          <td class="driver" style="font-size:11px">*runs parallel to final dev phase</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="6">④ First Team Hires (6-month run-rate to first revenue)</td></tr>
         <tr>
-          <td>First team hires (designer success + growth, 6 months)</td>
-          <td class="right">$60K – $90K</td>
-          <td class="right">$70K – $100K</td>
+          <td>Designer success manager + growth lead (6 mo)</td>
+          <td><span class="st-open">○ Open</span></td>
+          <td class="yr">$60K–$90K<span class="wks">6–10 wks to hire</span></td>
+          <td class="yr">$70K–$100K<span class="wks">4–8 wks to hire</span></td>
           <td class="right"><span class="badge-up">↑ 12%</span></td>
-          <td class="driver">Engineering and growth salaries have risen; AI-capable talent commands a premium</td>
+          <td class="driver">Salary rates up; AI-capable talent commands a premium</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td>Sub-total — Team</td>
+          <td></td>
+          <td class="right">$60K–$90K<span class="wks" style="font-weight:700;color:var(--ink)">6–10 wks to hire</span></td>
+          <td class="right">$70K–$100K<span class="wks" style="font-weight:700;color:var(--ink)">4–8 wks to hire</span></td>
+          <td class="right"><span class="badge-up">↑ 12%</span></td>
+          <td></td>
         </tr>
 
         <tr class="total-row">
-          <td><strong>Total to revenue-generating MVP</strong></td>
-          <td class="right"><strong>$341K – $568K</strong></td>
-          <td class="right"><strong>$227K – $383K</strong></td>
+          <td colspan="2"><strong>TOTAL — Revenue-generating MVP</strong></td>
+          <td class="right"><strong>$341K–$568K</strong><span class="wks" style="color:rgba(255,255,255,.7);font-weight:600">~24–32 wks calendar</span></td>
+          <td class="right"><strong>$217K–$383K</strong><span class="wks" style="color:rgba(255,255,255,.7);font-weight:600">~10–16 wks calendar</span></td>
           <td class="right"><span class="badge-dn" style="background:rgba(255,255,255,.15);color:white">↓ ~35%</span></td>
-          <td style="color:rgba(255,255,255,.7);font-size:12px">AI tools reduce total cost by approx. one third vs 2022</td>
+          <td style="color:rgba(255,255,255,.65);font-size:11.5px">Calendar weeks assume parallel execution across all tracks. 2026 estimate assumes AI-first tooling throughout.</td>
         </tr>
       </tbody>
     </table>
