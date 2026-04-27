@@ -117,6 +117,25 @@ strong{font-weight:700;color:var(--ink)}
 .closing-right .name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:white;margin-bottom:4px}
 .closing-right .email{font-size:12px;color:var(--gold-light)}
 
+/* ── MATRIX ── */
+.matrix-outer{position:relative;margin-bottom:8px}
+.matrix-y-label{position:absolute;left:-36px;top:50%;transform:translateY(-50%) rotate(-90deg);font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sub);white-space:nowrap}
+.matrix-box{position:relative;height:420px;background:white;border:1px solid var(--rule);overflow:visible;margin-left:12px}
+.matrix-vline{position:absolute;left:50%;top:4%;bottom:4%;width:1px;background:var(--rule)}
+.matrix-hline{position:absolute;top:50%;left:4%;right:4%;height:1px;background:var(--rule)}
+.m-qlabel{position:absolute;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rule);pointer-events:none;line-height:1.4;text-align:center}
+.matrix-x-row{display:flex;justify-content:space-between;margin-top:8px;margin-left:12px}
+.matrix-x-row span{font-size:10px;font-weight:600;color:#9ca3af;letter-spacing:0.5px}
+.matrix-x-title{text-align:center;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sub);margin-top:4px;margin-left:12px}
+.y-top{position:absolute;left:-48px;top:4%;font-size:9.5px;font-weight:600;color:#9ca3af;letter-spacing:0.3px;transform:rotate(-90deg);transform-origin:right center;white-space:nowrap}
+.y-bottom{position:absolute;left:-48px;bottom:4%;font-size:9.5px;font-weight:600;color:#9ca3af;letter-spacing:0.3px;transform:rotate(-90deg);transform-origin:right center;white-space:nowrap}
+.mdot{position:absolute;transform:translate(-50%,50%)}
+.mdot-circle{width:11px;height:11px;border-radius:50%;background:rgba(10,15,26,.35);margin:0 auto}
+.mdot-circle.terra{width:18px;height:18px;background:var(--gold-dark);box-shadow:0 0 0 4px rgba(184,151,106,.2)}
+.mdot-name{font-size:10.5px;font-weight:600;color:var(--sub);white-space:nowrap;text-align:center;margin-top:5px;line-height:1.3}
+.mdot-name.terra{color:var(--gold-dark);font-size:11.5px;font-weight:800}
+.mdot-tag{font-size:9px;color:#9ca3af;white-space:nowrap;text-align:center;margin-top:1px}
+
 @media print{
   body{background:white}
   .cover{padding:48px 40px 40px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -197,10 +216,98 @@ strong{font-weight:700;color:var(--ink)}
     </div>
   </div>
 
-  <!-- ── SECTION 2: OPPORTUNITIES & GAPS ── -->
+  <!-- ── SECTION 2: COMPETITIVE LANDSCAPE ── -->
   <div class="sec">
     <div class="sec-head">
       <span class="sec-num">02</span>
+      <span class="sec-title">Competitive Landscape</span>
+    </div>
+
+    <p style="margin-bottom:24px">No direct competitor occupies Terra Ferra's position. The diagram maps seven platforms across two dimensions: how fashion-specific they are, and the role the community plays — passive buyer versus active co-investor earning revenue. Terra Ferra stands alone in the top-right.</p>
+
+    <div class="matrix-outer" style="padding-left:52px">
+      <div class="matrix-box">
+        <div class="matrix-vline"></div>
+        <div class="matrix-hline"></div>
+
+        <!-- Quadrant labels -->
+        <div class="m-qlabel" style="left:6%;top:6%;width:18%;color:#e2dfd9">Fashion<br/>audience<br/>no ownership</div>
+        <div class="m-qlabel" style="right:5%;top:6%;width:22%;color:rgba(184,151,106,.2)">Fashion community<br/>as stakeholders</div>
+        <div class="m-qlabel" style="left:6%;bottom:6%;width:20%;color:#e2dfd9">Transactional<br/>marketplace</div>
+        <div class="m-qlabel" style="right:5%;bottom:6%;width:20%;color:#e2dfd9">Community earning<br/>non-fashion</div>
+
+        <!-- Instagram Shopping: fashion-first, passive buyer → left:8%, bottom:65% -->
+        <div class="mdot" style="left:8%;bottom:65%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Instagram Shopping</div>
+          <div class="mdot-tag">Social commerce</div>
+        </div>
+
+        <!-- Vinted: fashion-focused, mostly passive → left:14%, bottom:74% -->
+        <div class="mdot" style="left:16%;bottom:74%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Vinted</div>
+          <div class="mdot-tag">Resale marketplace</div>
+        </div>
+
+        <!-- Depop: fashion-focused, community of sellers, some following → left:22%, bottom:82% -->
+        <div class="mdot" style="left:25%;bottom:82%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Depop</div>
+          <div class="mdot-tag">Social resale</div>
+        </div>
+
+        <!-- Kickstarter: generic, backers have some stake but no revenue share → left:30%, bottom:22% -->
+        <div class="mdot" style="left:32%;bottom:22%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Kickstarter</div>
+          <div class="mdot-tag">Rewards crowdfunding</div>
+        </div>
+
+        <!-- Spring/Teespring: fashion-adjacent, creator earns, fan buys → left:54%, bottom:54% -->
+        <div class="mdot" style="left:54%;bottom:54%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Spring</div>
+          <div class="mdot-tag">Creator merch</div>
+        </div>
+
+        <!-- Patreon: generic, strong patron model, fan pays creator → left:72%, bottom:14% -->
+        <div class="mdot" style="left:72%;bottom:14%">
+          <div class="mdot-circle"></div>
+          <div class="mdot-name">Patreon</div>
+          <div class="mdot-tag">Creator patronage</div>
+        </div>
+
+        <!-- Terra Ferra: fashion-first, community earns revenue → left:87%, bottom:84% -->
+        <div class="mdot" style="left:87%;bottom:84%">
+          <div class="mdot-circle terra"></div>
+          <div class="mdot-name terra">Terra Ferra</div>
+          <div class="mdot-tag" style="color:var(--gold-dark);font-weight:600">Blue ocean</div>
+        </div>
+
+        <!-- Y-axis end labels -->
+        <div style="position:absolute;left:-44px;top:3%;font-size:9.5px;color:#9ca3af;font-weight:600;transform:rotate(-90deg);transform-origin:right center;white-space:nowrap">Fashion-first</div>
+        <div style="position:absolute;left:-44px;bottom:3%;font-size:9.5px;color:#9ca3af;font-weight:600;transform:rotate(-90deg);transform-origin:right center;white-space:nowrap">Generic platform</div>
+      </div>
+      <div class="matrix-x-row">
+        <span>Passive buyer</span>
+        <span>Active co-investor earning revenue</span>
+      </div>
+      <div class="matrix-x-title">Community Role</div>
+    </div>
+    <div style="position:absolute;margin-left:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--sub);position:static;display:block;text-align:center;margin-top:4px"></div>
+    <div class="src-line" style="margin-top:14px">Sources: <a href="https://www.cbinsights.com/company/terra-ferra" target="_blank">CB Insights</a> · <a href="https://www.crunchbase.com/organization/terra-ferra" target="_blank">Crunchbase</a> · <a href="https://www.statista.com/topics/1693/crowdfunding/" target="_blank">Statista crowdfunding data</a> · platform analysis April 2026</div>
+
+    <div class="insight" style="margin-top:22px">
+      <div class="i-label">The White Space</div>
+      <p>Every platform left of centre treats the community as a buyer. Every platform right of centre (Patreon, Spring) lets creators earn from their community — but none do it in fashion, and none make the community itself a co-investor in product launches. <strong>Terra Ferra's top-right position is unoccupied by any scaled competitor.</strong> That is the strategic case.</p>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: OPPORTUNITIES & GAPS ── -->
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
       <span class="sec-title">Opportunities &amp; Gaps</span>
     </div>
 
@@ -231,10 +338,10 @@ strong{font-weight:700;color:var(--ink)}
     <div class="src-line">Sources: <a href="https://www.cbinsights.com/company/terra-ferra" target="_blank">CB Insights Mosaic data</a> · <a href="https://www.sparkxyz.io/projects/9210" target="_blank">SparkXYZ profile</a> · terra-ferra.com (unreachable April 2026) · <a href="https://www.goldmansachs.com/intelligence/pages/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027.html" target="_blank">Goldman Sachs Creator Economy Report</a></div>
   </div>
 
-  <!-- ── SECTION 3: CEO PRIORITIES ── -->
+  <!-- ── SECTION 4: CEO PRIORITIES ── -->
   <div class="sec">
     <div class="sec-head">
-      <span class="sec-num">03</span>
+      <span class="sec-num">04</span>
       <span class="sec-title">Three CEO Priorities</span>
     </div>
 
@@ -281,10 +388,10 @@ strong{font-weight:700;color:var(--ink)}
     </div>
   </div>
 
-  <!-- ── SECTION 4: LEADERSHIP FIT ── -->
+  <!-- ── SECTION 5: LEADERSHIP FIT ── -->
   <div class="sec">
     <div class="sec-head">
-      <span class="sec-num">04</span>
+      <span class="sec-num">05</span>
       <span class="sec-title">What This Role Requires</span>
     </div>
 
