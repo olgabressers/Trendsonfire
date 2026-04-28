@@ -8,11 +8,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="noindex,nofollow"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <title>Influencer Selling in Luxury — Market Intelligence — TrendsOnFire</title>
-  <meta name="description" content="How luxury and affordable luxury brands sell through influencers: MIV and EMV data by brand, platform and campaign type. Cartier, Dior, Bulgari, Coach, Burberry."/>
+  <title>Influencer Selling in Luxury — TrendsOnFire</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0a0f1a; --ink:#0a0f1a; --gold:#b8976a; --gold-dark:#8b6a2f; --border:#e2dfd9; --rule:#e2dfd9; --paper:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e; }
+    :root { --navy:#0a0f1a; --gold:#b8976a; --gold-dark:#8b6a2f; --rule:#e2dfd9; --paper:#faf9f7; --text:#1f1f1f; --sub:#4e4e4e; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper); color: var(--text); line-height: 1.65; font-size: 15.5px; }
 
     nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
@@ -22,84 +21,67 @@
     .nav-links a:hover { color: white; border-bottom-color: #8b6a2f; }
     .nav-burger { display:none; background:none; border:none; color:white; font-size:22px; cursor:pointer; padding:18px 4px; margin-left:auto; }
 
-    .art-hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; }
-    .art-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
-    .art-hero .inner { max-width: 1280px; margin: auto; position: relative; z-index: 1; padding: 0 8px; }
-    .breadcrumb { font-size: 12.5px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
-    .breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 14px; }
-    .art-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 600; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px; }
-    .art-hero p { font-size: 18px; color: rgba(255,255,255,.92); max-width: 780px; line-height: 1.6; }
-    .meta { margin-top: 24px; font-size: 13.5px; color: rgba(255,255,255,.65); display: flex; gap: 28px; flex-wrap: wrap; }
+    /* HERO */
+    .hero { background: #0a0f1a; color: white; padding: 64px 32px 56px; position: relative; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.07) 0%, transparent 60%); pointer-events:none; }
+    .hero .inner { max-width: 900px; margin: auto; position: relative; z-index: 1; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 16px; }
+    .hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(34px, 5vw, 52px); font-weight: 600; line-height: 1.08; margin-bottom: 20px; letter-spacing: -0.5px; }
+    .hero-meta { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 28px; }
 
-    main { max-width: 1280px; margin: auto; padding: 56px 32px 96px; }
+    main { max-width: 900px; margin: auto; padding: 64px 32px 96px; }
     main a { color: #8b6a2f; }
 
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 36px; }
-    @media(max-width:900px){ .stats { grid-template-columns: repeat(2,1fr); } }
-    .stat-card { background: white; padding: 20px 18px; border: 1px solid var(--rule); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-    .stat-card .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: #4e4e4e; margin-bottom: 10px; line-height: 1.3; }
-    .stat-card .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 38px; font-weight: 500; line-height: 1; color: #0a0f1a; letter-spacing: -0.5px; }
-    .stat-card .sm { font-size: 13px; color: #4e4e4e; margin-top: 8px; line-height: 1.5; }
+    /* EXECUTIVE SUMMARY */
+    .exec-summary { margin-bottom: 64px; }
+    .exec-summary .lead { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 500; line-height: 1.5; color: #0a0f1a; margin-bottom: 32px; letter-spacing: -0.2px; border-left: 4px solid #b8976a; padding-left: 24px; }
+    .exec-summary p { font-size: 16px; color: #1f1f1f; line-height: 1.8; margin-bottom: 20px; }
+    .exec-summary p:last-child { margin-bottom: 0; }
+    .exec-summary strong { color: #0a0f1a; font-weight: 700; }
 
-    .insight-banner { background: linear-gradient(135deg,#0a0f1a,#1a1f2e); padding: 28px 36px; margin-bottom: 44px; border-left: 4px solid #b8976a; position: relative; }
-    .insight-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(184,151,106,.06) 0%, transparent 60%); pointer-events:none; }
-    .insight-banner p { position:relative; color: rgba(255,255,255,.88); font-size: 16px; line-height: 1.75; }
-    .insight-banner strong { color: #b8976a; font-weight: 600; }
+    /* VERDICT BOX */
+    .verdict { background: #0a0f1a; color: white; padding: 32px 36px; margin: 48px 0; border-left: 4px solid #b8976a; }
+    .verdict .v-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; margin-bottom: 14px; }
+    .verdict p { font-size: 16px; color: rgba(255,255,255,.88); line-height: 1.8; margin-bottom: 14px; }
+    .verdict p:last-child { margin-bottom: 0; }
+    .verdict strong { color: white; }
 
-    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 500; color: #0a0f1a; margin-top: 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; }
+    /* SECTION */
+    .section-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(22px, 3vw, 28px); font-weight: 500; color: #0a0f1a; margin: 56px 0 24px; padding-bottom: 14px; border-bottom: 1px solid #8b6a2f; letter-spacing: -0.3px; }
 
-    .chart-card { background:white; border:1px solid #e2dfd9; padding:28px; box-shadow:0 1px 4px rgba(0,0,0,.04); margin-bottom:36px; }
-    .chart-title { font-size:17px; font-weight:700; color:#0a0f1a; margin-bottom:6px; letter-spacing:-0.2px; }
-    .chart-sub { font-size:13.5px; color:#4e4e4e; margin-bottom:24px; line-height:1.55; }
-    .chart-sub a { color:#8b6a2f; }
+    /* DATA TABLE */
+    .data-block { margin-bottom: 40px; }
+    .data-block h4 { font-size: 15px; font-weight: 700; color: #0a0f1a; margin-bottom: 6px; }
+    .data-block .sub { font-size: 13.5px; color: #4e4e4e; margin-bottom: 18px; line-height: 1.6; }
 
-    .bar-wrap { margin-bottom:14px; }
+    .bar-wrap { margin-bottom: 16px; }
     .bar-label-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; gap:12px; }
-    .bar-name { font-size:14px; font-weight:600; color:#1f1f1f; }
+    .bar-name { font-size:14.5px; font-weight:600; color:#1f1f1f; }
     .bar-val { font-size:14px; font-weight:700; color:#0a0f1a; white-space:nowrap; }
-    .bar-track { background:#f1f5f9; height:22px; overflow:hidden; }
+    .bar-track { background:#f1f5f9; height:20px; overflow:hidden; }
     .bar-fill { height:100%; display:flex; align-items:center; padding-left:10px; font-size:11px; font-weight:700; color:white; }
-    .bar-note { font-size:13px; color:#4e4e4e; margin-top:4px; line-height:1.5; }
+    .bar-note { font-size:13px; color:#4e4e4e; margin-top:5px; line-height:1.55; }
 
-    .src-note { font-size:12px; color:#6b7280; padding:10px 14px; background:#f9fafb; border-left:3px solid #e2dfd9; margin-top:16px; line-height:1.6; }
-    .src-note a { color:#8b6a2f; }
+    /* INSIGHT PULL */
+    .pull { border-left: 4px solid #e2dfd9; padding: 16px 22px; margin: 28px 0; background: #faf9f7; }
+    .pull p { font-size: 15px; color: #1f1f1f; line-height: 1.75; }
+    .pull strong { color: #0a0f1a; }
 
-    .brand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:20px; margin-bottom:40px; }
-    .brand-card { background:white; border:1px solid #e2dfd9; padding:24px; box-shadow:0 1px 4px rgba(0,0,0,.04); border-top:3px solid #8b6a2f; }
-    .brand-tag { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; color:white; display:inline-block; margin-bottom:12px; }
-    .brand-card h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size:22px; font-weight:600; color:#0a0f1a; margin-bottom:10px; line-height:1.25; letter-spacing:-0.2px; }
-    .brand-card p { font-size:14.5px; color:#1f1f1f; line-height:1.65; margin-bottom:10px; }
-    .brand-card p:last-child { margin-bottom:0; }
-    .brand-card a { color:#8b6a2f; }
-    .kpi-row { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:12px; }
-    .kpi { text-align:center; }
-    .kpi .k-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:30px; font-weight:600; color:#0a0f1a; line-height:1; }
-    .kpi .k-lbl { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#4e4e4e; margin-top:4px; }
+    /* BRAND TABLE */
+    .brand-table { width:100%; border-collapse:collapse; margin-bottom:8px; font-size:14.5px; }
+    .brand-table th { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#4e4e4e; padding:10px 14px; background:#f3f4f6; text-align:left; border-bottom:2px solid #e2dfd9; }
+    .brand-table td { padding:13px 14px; border-bottom:1px solid #f1f5f9; color:#1f1f1f; vertical-align:top; line-height:1.6; }
+    .brand-table td:first-child { font-weight:700; width:22%; }
+    .brand-table tr:last-child td { border-bottom:none; }
 
-    .data-table { width:100%; border-collapse:collapse; margin-bottom:8px; }
-    .data-table th { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#4e4e4e; padding:10px 14px; background:#f3f4f6; text-align:left; border-bottom:2px solid #e2dfd9; }
-    .data-table td { padding:12px 14px; border-bottom:1px solid #f1f5f9; font-size:14px; color:#1f1f1f; vertical-align:top; line-height:1.55; }
-    .data-table td:first-child { font-weight:600; }
-    .data-table tr:last-child td { border-bottom:none; }
-    .data-table tr:hover td { background:#fafafa; }
-    .rank-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:22px; font-weight:600; color:#b8976a; }
+    /* SOURCE LINE */
+    .src { font-size:12px; color:#6b7280; padding:10px 14px; background:#f9fafb; border-left:3px solid #e2dfd9; margin-top:14px; line-height:1.6; }
+    .src a { color:#8b6a2f; }
 
-    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:36px; }
-    @media(max-width:768px){ .two-col { grid-template-columns:1fr; } }
-
-    .heat-insight { border-left:4px solid #8b6a2f; background:#faf9f7; padding:18px 22px; margin-top:18px; font-size:15px; color:#1f1f1f; line-height:1.7; }
-    .heat-insight strong { color:#0a0f1a; font-weight:700; }
-
-    .method-box { background:#f3f4f6; border:1px solid #e2dfd9; padding:24px 28px; margin-top:48px; margin-bottom:36px; }
-    .method-box h4 { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#4e4e4e; margin-bottom:12px; }
-    .method-box p { font-size:14px; color:#4e4e4e; line-height:1.7; margin-bottom:8px; }
-    .method-box p:last-child { margin-bottom:0; }
-
-    .about-block { background:#0a0f1a; color:white; padding:40px; margin-top:56px; border-left:4px solid #b8976a; }
-    .about-block h3 { font-family:"Cormorant Garamond",Georgia,serif; font-size:22px; font-weight:600; color:white; margin-bottom:14px; }
-    .about-block p { font-size:15px; color:rgba(255,255,255,.82); line-height:1.75; margin-bottom:12px; }
-    .about-block a { color:#b8976a; text-decoration:none; }
+    /* METHOD */
+    .method { background:#f3f4f6; border:1px solid #e2dfd9; padding:22px 26px; margin-top:56px; }
+    .method h4 { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#4e4e4e; margin-bottom:10px; }
+    .method p { font-size:13.5px; color:#4e4e4e; line-height:1.7; margin-bottom:6px; }
 
     footer { background:#060a12; color:#64748b; padding:28px 32px; text-align:center; font-size:13px; }
     footer a { color:#94a3b8; text-decoration:none; }
@@ -110,8 +92,7 @@
       .nav-links { display:none; flex-direction:column; width:100%; background:#0a0f1a; padding:8px 0 16px; }
       .nav-links.open { display:flex; position:absolute; top:100%; left:0; right:0; width:100%; margin:0; box-shadow:0 12px 24px rgba(0,0,0,.25); }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; white-space:normal; text-align:left; }
-      main { padding:32px 16px 64px; }
-      .brand-grid { grid-template-columns:1fr; }
+      main { padding:40px 16px 64px; }
     }
   </style>
 </head>
@@ -119,7 +100,7 @@
 
 <nav>
   <a class="nav-logo" href="../index.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="200" height="50">
       <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
       <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
       <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
@@ -142,465 +123,194 @@
   </div>
 </nav>
 
-<div class="art-hero">
+<div class="hero">
   <div class="inner">
-    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / Influencer Selling in Luxury</div>
-    <div class="eyebrow">Luxury · Creator Economy · Brand Intelligence · April 2026</div>
-    <h1>Influencer Selling in Luxury — Who Earns What and Where</h1>
-    <p>How hard luxury, soft luxury, and affordable luxury brands convert influencer activity into commercial impact — with MIV and EMV data by brand, campaign, and platform. No brand discloses revenue attribution; Media Impact Value and Earned Media Value are the public proxies.</p>
-    <div class="meta">
-      <span>45× more EMV from influencer content vs brand-owned (WeArisma 2025)</span>
-      <span>+16% luxury influencer EMV growth YoY (2024)</span>
-      <span>Updated 28 April 2026</span>
-    </div>
+    <div class="eyebrow">Luxury · Creator Commerce · April 2026</div>
+    <h1>Influencer Selling in Luxury — What the Data Actually Shows</h1>
+    <div class="hero-meta">Prepared April 2026 · Sources: Launchmetrics, Lefty, WeArisma, Momentum Works, eMarketer, TikTok Newsroom, Richemont FY25</div>
   </div>
 </div>
 
 <main>
 
-  <!-- KEY METRICS -->
-  <div class="stats">
-    <div class="stat-card">
-      <div class="lbl">Influencer vs brand-owned EMV multiplier</div>
-      <div class="num">45×</div>
-      <div class="sm">Influencer content outperforms brand-owned channels · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma / WWD, Feb 2025</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">Luxury influencer EMV growth (2024 vs 2023)</div>
-      <div class="num">+16%</div>
-      <div class="sm">Global luxury fashion · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma, Feb 2025</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">UK shoppers who bought luxury via social</div>
-      <div class="num">27%</div>
-      <div class="sm">Among those who follow influencers · <a href="https://www.wpp.com/en/news/2025/02/uk-shoppers-buy-luxury-items-directly-through-social-media" target="_blank">WPP survey, Feb 2025</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">Fine jewellery &amp; watches EMV growth (2024)</div>
-      <div class="num">+11%</div>
-      <div class="sm">Year-on-year · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma, Feb 2025</a></div>
-    </div>
-  </div>
+  <!-- ── EXECUTIVE SUMMARY ── -->
+  <div class="exec-summary">
 
-  <!-- KEY FINDING -->
-  <div class="insight-banner">
-    <p><strong>No luxury house publishes influencer-to-revenue conversion.</strong> Richemont's total "communication expenses" were €2.0B in FY24 (9.7% of sales) — covering events, advertising, and digital with no influencer line item. LVMH and Kering report similarly. The industry standard proxies are MIV (Launchmetrics) and EMV (Lefty, WeArisma). These measure media impact generated, not transactions. Every figure on this page is impact value, not sales revenue, unless stated otherwise.</p>
-  </div>
+    <p class="lead">Luxury brands are the world's biggest investors in influencer marketing. They are also the only segment that has not converted that investment into a direct sales channel — and that is a deliberate choice, not a missed opportunity.</p>
 
-  <!-- HARD LUXURY: RICHEMONT -->
-  <h2 class="section-title">Hard Luxury — Richemont Brands</h2>
+    <p>The mechanics are well established. Dior generates <strong>$84M in earned media value from a single Paris fashion week</strong>. Cartier's ambassador Jisoo drove <strong>45% of the brand's entire annual influencer impact from 12 posts</strong>. At the 2025 awards season, Tiffany generated $24M in media value; Cartier $17M; Bulgari $12M. The numbers are large and the model is proven — influencers move luxury brand perception at scale.</p>
 
-  <div class="brand-grid">
+    <p>What they do not do is sell. <strong>Not a single major luxury house — LVMH, Kering, Richemont — operates a first-party storefront on TikTok Shop or Instagram Shopping.</strong> The channel exists. The audience is there: 70% of TikTok's luxury audience has spent over £1,000 on a single fashion item, and 15% say they purchased luxury directly after platform exposure. Luxury brands are absent by choice. Their model is influence-to-boutique, not influence-to-checkout.</p>
 
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#0a0f1a">Cartier · Richemont</span>
-      <h3>Cartier — Ambassador-Led Strategy</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">57%</div><div class="k-lbl">Annual EMV from ambassadors</div></div>
-        <div class="kpi"><div class="k-num">45%</div><div class="k-lbl">EMV from Jisoo alone (2022)</div></div>
-      </div>
-      <p>In 2022, Jisoo Kim (BLACKPINK) generated 45% of Cartier's total annual EMV from 12 posts and 24 stories. The Beautés du Monde activation alone produced <strong>$63.5M EMV</strong> — 24% of Cartier's annual total. Cartier's website crashed when BTS's V (Kim Taehyung) was announced as global ambassador in July 2023.</p>
-      <p>WeArisma's February 2025 report ranked Cartier #1 in fine jewellery/watches across mentions and engagement; Bulgari #1 in impressions and EMV.</p>
-      <p><a href="https://lefty.io/blog/influencer-marketing-for-jewellery" target="_blank">Source: Lefty Jewellery Influencer Marketing Report (2022 data)</a> · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma / WWD, Feb 2025</a></p>
-    </div>
+    <p>Meanwhile social commerce has become a serious retail channel. TikTok Shop reached <strong>$64B in global GMV in 2025</strong>, growing 94% year-on-year, with 60% of that driven by creators. The US social commerce market is $87B. Instagram generated $43B globally. The commerce infrastructure is built. The luxury sector is watching from outside.</p>
 
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#0a0f1a">Bulgari · LVMH</span>
-      <h3>Bulgari — Single Ambassador Dominance</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">$66.8M</div><div class="k-lbl">Lisa total EMV (2022)</div></div>
-        <div class="kpi"><div class="k-num">$40.3M</div><div class="k-lbl">Eden campaign EMV</div></div>
-      </div>
-      <p>Lisa (BLACKPINK) drove $66.8M in EMV for Bulgari in 2022. The Eden Garden of Wonders activation alone generated $40.3M — 12% of Bulgari's full-year EMV. WeArisma ranks Bulgari #1 in hard luxury for total impressions and EMV in 2024.</p>
-      <p><a href="https://lefty.io/blog/influencer-marketing-for-jewellery" target="_blank">Source: Lefty Jewellery Influencer Marketing Report (2022 data)</a> · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma, Feb 2025</a></p>
-    </div>
+    <p>The only luxury selling through TikTok Shop is pre-owned — authenticated resellers moving Hermès, Chanel, Cartier, and Louis Vuitton. Luxe Collective (UK) reached £2M in TikTok Shop sales within months of launching on the platform. The demand is there. The brands are not.</p>
 
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#0a0f1a">Tiffany &amp; Co. · LVMH</span>
-      <h3>Tiffany — Fastest EMV Growth in Hard Luxury</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">+31%</div><div class="k-lbl">EMV growth 2021–22</div></div>
-        <div class="kpi"><div class="k-num">$24M</div><div class="k-lbl">Awards season MIV 2025</div></div>
-      </div>
-      <p>Tiffany recorded the fastest EMV growth in hard luxury between 2021 and 2022 (+31% YoY), driven by Jenna Ortega and the Vision and Virtuosity activation ($36.4M EMV, 13% of annual total). Tiffany ranked #1 in watches and jewellery by MIV at the 2025 awards season (Emmys, Golden Globes, Grammys, SAG, Oscars combined), ahead of Cartier ($17.1M) and Bulgari ($12.4M).</p>
-      <p><a href="https://lefty.io/blog/influencer-marketing-for-jewellery" target="_blank">Source: Lefty (2022 data)</a> · <a href="https://www.hollywoodreporter.com/lifestyle/style/thr-style-luxury-brands-20255-awards-season-roundup-1236168027/" target="_blank">Hollywood Reporter / Launchmetrics, March 2025</a></p>
-    </div>
+    <p><strong>For affordable luxury</strong> — Burberry, Ralph Lauren, Coach — the picture is different. These brands are active on social platforms, capturing Gen Z at scale. Coach added 4.6 million new North American customers in FY25, roughly 70% Gen Z or Millennial. Burberry's fashion week EMV grew 83% year-on-year. They use social to sell, not just to brand.</p>
 
   </div>
 
-  <!-- AWARDS SEASON MIV TABLE -->
-  <div class="chart-card">
-    <div class="chart-title">Awards Season 2025 — Watches &amp; Jewellery MIV</div>
-    <div class="chart-sub">Five shows: Emmys, Golden Globes, Grammys, SAG Awards, Oscars · Total across all categories: <strong>$3.695 billion MIV</strong> · <a href="https://www.hollywoodreporter.com/lifestyle/style/thr-style-luxury-brands-20255-awards-season-roundup-1236168027/" target="_blank">Hollywood Reporter / Launchmetrics, March 2025</a></div>
-
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Tiffany &amp; Co.</span><span class="bar-val">$24M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">Tiffany · #1</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Cartier</span><span class="bar-val">$17.1M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:71%;background:#8b6a2f">#2</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Bulgari</span><span class="bar-val">$12.4M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:52%;background:#8b6a2f">#3</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Lorraine Schwartz</span><span class="bar-val">$8.6M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:36%;background:#4e4e4e">#4</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Chopard</span><span class="bar-val">$6.9M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:29%;background:#4e4e4e">#5</div></div>
-    </div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://www.hollywoodreporter.com/lifestyle/style/thr-style-luxury-brands-20255-awards-season-roundup-1236168027/" target="_blank">Hollywood Reporter — Luxury brands at 2025 awards season, Launchmetrics data, March 2025</a></div>
+  <div class="verdict">
+    <div class="v-label">The Answer</div>
+    <p><strong>Luxury brands (hard luxury and designer houses) use influencers exclusively for brand building — not direct sales.</strong> There is no published revenue figure because there is no direct influencer sales channel. The impact is measured in Media Impact Value and Earned Media Value, not in transactions.</p>
+    <p><strong>Affordable luxury brands use social to sell.</strong> They have measurable customer acquisition and conversion from social platforms, though few publish exact revenue figures by channel.</p>
+    <p><strong>The gap between influence and transaction in luxury is deliberate.</strong> It is also the structural opportunity: the consumer is ready to buy through creators. The brands are not ready to let them.</p>
   </div>
 
-  <!-- SOFT LUXURY: PARIS FW AW25 -->
-  <h2 class="section-title">Soft Luxury — Paris Fashion Week AW25</h2>
+  <!-- ── LUXURY BRANDS: INFLUENCE VS SALES ── -->
+  <h2 class="section-title">Luxury Brands — Influence Without Selling</h2>
 
-  <div class="chart-card">
-    <div class="chart-title">Paris Fashion Week AW25 — Top Brands by EMV</div>
-    <div class="chart-sub">Earned Media Value generated during show season · <a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty Womenswear AW25 Report, March 2025</a> · Note: total Paris PFW MIV per Launchmetrics was <a href="https://wwd.com/fashion-news/designer-luxury/launchmetrics-paris-fashion-week-pfw-thai-1236686770/" target="_blank">$629.6M (+26% YoY)</a></div>
-
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Dior</span><span class="bar-val">$84.3M <span style="font-size:12px;color:#4e4e4e">+36% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">#1</div></div>
-      <div class="bar-note">Engagement rate 3.5% · Share of search +36% YoY</div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Valentino</span><span class="bar-val">$68.7M <span style="font-size:12px;color:#4e4e4e">+261% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:82%;background:#8b6a2f">#2</div></div>
-      <div class="bar-note">Engagement rate 12.5% — highest of top 5</div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Chanel</span><span class="bar-val">$49.9M <span style="font-size:12px;color:#4e4e4e">+55% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:59%;background:#8b6a2f">#3</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Louis Vuitton</span><span class="bar-val">$40.5M <span style="font-size:12px;color:#4e4e4e">+68% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:48%;background:#4e4e4e">#4</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Saint Laurent (YSL)</span><span class="bar-val">$33.7M <span style="font-size:12px;color:#4e4e4e">+5% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:40%;background:#4e4e4e">#5</div></div>
-    </div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty — Womenswear AW25 Top Brands and Influencers, March 2025</a></div>
-  </div>
-
-  <!-- MILAN FW AW25 -->
-  <div class="two-col">
-    <div class="chart-card" style="margin-bottom:0">
-      <div class="chart-title">Milan Fashion Week AW25 — Top Brands by EMV</div>
-      <div class="chart-sub"><a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty, March 2025</a></div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Prada</span><span class="bar-val">$31.7M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">#1 · +34% YoY</div></div>
-        <div class="bar-note">ENHYPEN drove 35% of Prada's show MIV = $23.5M (<a href="https://envimedia.co/as-per-launchmetrics-prada-ruled-media-impact-value-at-milan-fashion-week/" target="_blank">Launchmetrics</a>)</div>
-      </div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Gucci</span><span class="bar-val">$24M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:76%;background:#8b6a2f">#2 · +29% YoY</div></div>
-      </div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Fendi</span><span class="bar-val">$24M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:76%;background:#8b6a2f">#3 · +135% YoY</div></div>
-      </div>
-    </div>
-
-    <div class="chart-card" style="margin-bottom:0">
-      <div class="chart-title">Met Gala 2025 — Top Brands by MIV (48h)</div>
-      <div class="chart-sub">Total Met Gala MIV: <strong>$1.3 billion</strong> (+19% vs 2024) · <a href="https://www.launchmetrics.com/resources/blog/met-gala-2025" target="_blank">Launchmetrics, May 2025</a></div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Louis Vuitton</span><span class="bar-val">$55.2M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">#1</div></div>
-        <div class="bar-note">Lisa (BLACKPINK) $21.3M — 78% from indirect amplification (not Lisa's own posts)</div>
-      </div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Valentino</span><span class="bar-val">$36.5M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:66%;background:#8b6a2f">#2</div></div>
-      </div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Chanel</span><span class="bar-val">$31.5M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:57%;background:#8b6a2f">#3</div></div>
-        <div class="bar-note">Jennie (BLACKPINK) $17.6M</div>
-      </div>
-      <div class="bar-wrap">
-        <div class="bar-label-row"><span class="bar-name">Marc Jacobs</span><span class="bar-val">$24M</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:43%;background:#4e4e4e">#4</div></div>
-        <div class="bar-note">Rihanna $13.5M — indirect echo 93% (Rihanna made no personal posts)</div>
-      </div>
-    </div>
-  </div>
-  <div class="src-note" style="margin-bottom:36px"><strong>Source:</strong> <a href="https://www.launchmetrics.com/resources/blog/met-gala-2025" target="_blank">Launchmetrics — Met Gala 2025 MIV report, May 2025</a> · <a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty — AW25 Womenswear, March 2025</a></div>
-
-  <!-- TOP GLOBAL INFLUENCERS -->
-  <h2 class="section-title">Top Global Influencers by Luxury EMV (2024)</h2>
-
-  <div class="two-col">
-    <div class="chart-card" style="margin-bottom:0">
-      <div class="chart-title">WeArisma Top 10 — Total EMV (2024)</div>
-      <div class="chart-sub"><a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma Luxury State of Influence 2025 / WWD, Feb 2025</a> · 168,903 verified influencer accounts · 64 markets</div>
-      <table class="data-table">
-        <thead><tr><th>#</th><th>Creator</th><th>Total EMV</th><th>Followers</th></tr></thead>
-        <tbody>
-          <tr><td><span class="rank-num">1</span></td><td>Enhypen</td><td style="font-weight:700">$169M</td><td>18M</td></tr>
-          <tr><td><span class="rank-num">2</span></td><td>Jisoo Kim</td><td style="font-weight:700">$150M</td><td>65.5M</td></tr>
-          <tr><td><span class="rank-num">3</span></td><td>Nicki Minaj</td><td style="font-weight:700">$136M</td><td>158M</td></tr>
-          <tr><td><span class="rank-num">4</span></td><td>Felix Lee</td><td style="font-weight:700">$124M</td><td>24.8M</td></tr>
-          <tr><td><span class="rank-num">5</span></td><td>Kim Kardashian</td><td style="font-weight:700">$117M</td><td>216M</td></tr>
-          <tr><td><span class="rank-num">6</span></td><td>Ariana Grande</td><td style="font-weight:700">$115M</td><td>351M</td></tr>
-          <tr><td><span class="rank-num">7</span></td><td>Anne Curtis Smith</td><td style="font-weight:700">$110M</td><td>20M</td></tr>
-          <tr><td><span class="rank-num">8</span></td><td>Kendall Jenner</td><td style="font-weight:700">$110M</td><td>291M</td></tr>
-          <tr><td><span class="rank-num">9</span></td><td>Kylie Jenner</td><td style="font-weight:700">$109M</td><td>259M</td></tr>
-          <tr><td><span class="rank-num">10</span></td><td>Rosé Park</td><td style="font-weight:700">$102M</td><td>80M</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="chart-card" style="margin-bottom:0">
-      <div class="chart-title">Lefty Top Fashion Influencers — Total EMV (2024)</div>
-      <div class="chart-sub"><a href="https://lefty.io/trends/2024" target="_blank">Lefty 2024 Year-End Report, January 2025</a></div>
-      <table class="data-table">
-        <thead><tr><th>Creator</th><th>Total EMV</th><th>Followers</th></tr></thead>
-        <tbody>
-          <tr><td>Jisoo (BLACKPINK)</td><td style="font-weight:700">$227M</td><td>79.7M</td></tr>
-          <tr><td>Rosé (BLACKPINK)</td><td style="font-weight:700">$196M</td><td>82.5M</td></tr>
-          <tr><td>Kim Kardashian</td><td style="font-weight:700">$102M</td><td>358M</td></tr>
-          <tr><td>Cha Eun-woo</td><td style="font-weight:700">$98.9M</td><td>47.1M</td></tr>
-          <tr><td>Kendall Jenner</td><td style="font-weight:700">$75.1M</td><td>289M</td></tr>
-        </tbody>
-      </table>
-      <div class="heat-insight" style="margin-top:20px">
-        <strong>K-Pop dominance:</strong> K-pop acts generated $103M EMV across all AW24 fashion weeks — a 103% YoY increase. K-pop featured in all 10 top brands by EMV. (<a href="https://lefty.io/blog/fashionweek-aw24" target="_blank">Lefty AW24 Fashion Week Report</a>)
-      </div>
-    </div>
-  </div>
-  <div class="src-note" style="margin-bottom:36px"><strong>Note:</strong> WeArisma EMV and Lefty EMV use different methodologies and are not directly comparable. Both are Earned Media Value metrics — see methodology note below.</div>
-
-  <!-- AFFORDABLE LUXURY -->
-  <h2 class="section-title">Affordable Luxury — Burberry, Ralph Lauren, Coach, Hugo Boss</h2>
-
-  <div class="brand-grid">
-
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#1d4ed8">Burberry</span>
-      <h3>Burberry — Strongest Growth in London</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">$11.1M</div><div class="k-lbl">London FW AW25 EMV</div></div>
-        <div class="kpi"><div class="k-num">+83%</div><div class="k-lbl">YoY growth</div></div>
-      </div>
-      <p>Burberry ranked #1 at London Fashion Week AW25 with $11.1M EMV (+83% YoY, engagement rate 3.2%). AW24 London EMV was $8.8M. Daniel Lee's creative direction has accelerated influencer traction since his debut.</p>
-      <p><a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Source: Lefty — Womenswear AW25, March 2025</a> · <a href="https://lefty.io/blog/fashionweek-aw24" target="_blank">Lefty AW24, March 2024</a></p>
-    </div>
-
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#15803d">Ralph Lauren</span>
-      <h3>Ralph Lauren — Highest Virality in Luxury (2024)</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">$39M</div><div class="k-lbl">Paris Olympics MIV</div></div>
-        <div class="kpi"><div class="k-num">#4</div><div class="k-lbl">Global Olympics ranking</div></div>
-      </div>
-      <p>WeArisma named Ralph Lauren the highest-virality luxury brand of 2024, driven by the Paris Olympics and US Open activations. During the Paris 2024 Olympics, Ralph Lauren ranked #4 globally by MIV at $39M, behind Dior ($53M), an unranked #3, and Louis Vuitton ($38M).</p>
-      <p><a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">Source: WeArisma / WWD, Feb 2025</a> · <a href="https://www.luxurytribune.com/en/according-to-launchmetrics-lvmh-dominates-the-ranking-of-brands-with-the-highest-media-impact-during-the-paris-olympics" target="_blank">Launchmetrics / Luxury Tribune, Sept 2024</a></p>
-    </div>
-
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#7c3aed">Coach · Tapestry</span>
-      <h3>Coach — Gen Z Acquisition Without Published EMV</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">4.6M</div><div class="k-lbl">New N. American customers FY25</div></div>
-        <div class="kpi"><div class="k-num">~70%</div><div class="k-lbl">Gen Z / Millennial share</div></div>
-      </div>
-      <p>Tapestry (Coach's parent) reported 4.6 million new North American customers in FY2025, with approximately 70% being Gen Z or Millennial. The brand's influencer and social strategy is credited in investor calls as a driver, though no MIV or EMV figures are published.</p>
-      <p><a href="https://www.tapestry.com/investor-relations/" target="_blank">Source: Tapestry FY25 earnings (investor-relations.tapestry.com)</a></p>
-    </div>
-
-    <div class="brand-card">
-      <span class="brand-tag" style="background:#c2410c">Hugo Boss</span>
-      <h3>Hugo Boss — Only One Influencer Deal Documented</h3>
-      <div class="kpi-row">
-        <div class="kpi"><div class="k-num">€450K</div><div class="k-lbl">Single influencer contract</div></div>
-        <div class="kpi"><div class="k-num">2022</div><div class="k-lbl">Milan FW activation</div></div>
-      </div>
-      <p>The only publicly documented Hugo Boss influencer spend is a single €450,000 contract for a Milan Fashion Week 2022 activation. No annual influencer budget or EMV/MIV data is published. Hugo Boss operates significant social media and creator partnerships but does not disclose the commercial terms or media value in any public filing.</p>
-      <p>Source: press coverage of Milan Fashion Week 2022 influencer activations (no single primary URL; figure reported across multiple trade outlets)</p>
-    </div>
-
-  </div>
-
-  <!-- PLATFORM SPLIT -->
-  <h2 class="section-title">Platform Split — Where Luxury MIV is Generated</h2>
-
-  <div class="chart-card">
-    <div class="chart-title">Platform Share of Total Luxury MIV (H1 2023)</div>
-    <div class="chart-sub">Total across Fashion, Lifestyle, Beauty: <strong>$16.9 billion MIV</strong> · <a href="https://luxurysociety.com/en/world-fashion-lifestyle-and-beauty-instagram-still-reigns-supreme-report/" target="_blank">Launchmetrics × Lyst / Luxury Society, October 2023</a></div>
+  <div class="data-block">
+    <h4>What luxury brands actually measure: Media Impact Value per brand</h4>
+    <p class="sub">MIV is the industry standard for luxury — measures impact of influencer content on brand perception, not on sales. Source: <a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty AW25, March 2025</a> · <a href="https://www.hollywoodreporter.com/lifestyle/style/thr-style-luxury-brands-20255-awards-season-roundup-1236168027/" target="_blank">Launchmetrics / Hollywood Reporter, March 2025</a></p>
 
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Instagram</span><span class="bar-val">57% · ~$9.6B · avg $7.3K per placement</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">Instagram · dominant platform</div></div>
+      <div class="bar-label-row"><span class="bar-name">Dior — Paris FW AW25</span><span class="bar-val">$84.3M EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">#1 globally · +36% YoY</div></div>
+      <div class="bar-note">Creator content generates 2.8× greater impact than Dior's own media channels · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma 2025</a></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Facebook</span><span class="bar-val">~$3.5B</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:36%;background:#8b6a2f"></div></div>
+      <div class="bar-label-row"><span class="bar-name">Valentino — Paris FW AW25</span><span class="bar-val">$68.7M EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:81%;background:#0a0f1a">+261% YoY</div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">YouTube</span><span class="bar-val">~$2.0B · avg $10K per placement</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:21%;background:#8b6a2f">Highest per-placement value</div></div>
+      <div class="bar-label-row"><span class="bar-name">Chanel — Paris FW AW25</span><span class="bar-val">$49.9M EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:59%;background:#4e4e4e">+55% YoY</div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Xiaohongshu (RED)</span><span class="bar-val">~$2.0B</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:21%;background:#4e4e4e">China-critical</div></div>
+      <div class="bar-label-row"><span class="bar-name">Louis Vuitton — Paris FW AW25</span><span class="bar-val">$40.5M EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:48%;background:#4e4e4e">+68% YoY</div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">TikTok</span><span class="bar-val">~$1.8B · avg $7K per placement</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:19%;background:#4e4e4e">Growing fastest — avg MIV overtook Instagram in FW24</div></div>
-    </div>
-
-    <div class="heat-insight" style="margin-top:20px">
-      <strong>TikTok overtaking Instagram at fashion weeks:</strong> At Paris Fashion Week FW24 (SS25), TikTok placements generated <strong>7% more MIV on average</strong> than other platforms, and at Haute Couture Week, TikTok averaged $14.5K per placement — overtaking Instagram as the second-most valuable channel. (<a href="https://wwd.com/fashion-news/designer-luxury/launchmetrics-paris-fashion-week-pfw-thai-1236686770/" target="_blank">Launchmetrics / WWD, October 2024</a>)
-    </div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://luxurysociety.com/en/world-fashion-lifestyle-and-beauty-instagram-still-reigns-supreme-report/" target="_blank">Launchmetrics × Lyst — Fashion, Lifestyle &amp; Beauty on Instagram, Luxury Society, October 2023 (H1 2023 data)</a></div>
-  </div>
-
-  <!-- INDIRECT ECHO -->
-  <div class="chart-card">
-    <div class="chart-title">The Indirect Echo Effect — Why Ambassador Posts Are Only Part of the Story</div>
-    <div class="chart-sub">On average, <strong>77% of ambassador campaign MIV comes from amplification</strong> — media, influencers, and communities sharing the content — not from the ambassador's own posts. Source: <a href="https://www.launchmetrics.com/resources/reports/brand-ambassador-marketing-2025-report" target="_blank">Launchmetrics Brand Ambassador Marketing Report 2025</a></div>
-
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Lewis Hamilton / Dior (Month 1)</span><span class="bar-val">82.8% indirect echo</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:83%;background:#0a0f1a">Hamilton made no personal posts</div></div>
+      <div class="bar-label-row"><span class="bar-name">Cartier — ambassadors (annual, 2022)</span><span class="bar-val">57% of brand EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:57%;background:#8b6a2f">Jisoo alone: 45% from 12 posts · <a href="https://lefty.io/blog/influencer-marketing-for-jewellery" target="_blank" style="color:white">Lefty 2022</a></div></div>
     </div>
     <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Rihanna / Marc Jacobs (Met Gala 2025)</span><span class="bar-val">93% indirect echo</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:93%;background:#0a0f1a">Rihanna made no personal posts</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Lisa / Louis Vuitton (Met Gala 2025)</span><span class="bar-val">78% indirect echo</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:78%;background:#8b6a2f"></div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Dior — creator vs brand-owned media</span><span class="bar-val">2.8× greater impact</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:70%;background:#8b6a2f">Creator content vs Dior's own channels</div></div>
-    </div>
-
-    <div class="src-note"><strong>Source:</strong> <a href="https://www.launchmetrics.com/resources/reports/brand-ambassador-marketing-2025-report" target="_blank">Launchmetrics Brand Ambassador Marketing 2025</a> (gated — figures from press coverage) · <a href="https://www.launchmetrics.com/resources/blog/met-gala-2025" target="_blank">Launchmetrics Met Gala 2025</a> · <a href="https://wwd.com/business-news/marketing-promotion/dior-louis-vuitton-cartier-social-media-winners-wearisma-report-1237006449/" target="_blank">WeArisma / WWD</a></div>
-  </div>
-
-  <!-- SOCIAL COMMERCE SALES BY PLATFORM -->
-  <h2 class="section-title">Social Commerce Sales by Platform — Total and Fashion</h2>
-
-  <!-- KEY STATS -->
-  <div class="stats" style="margin-bottom:28px">
-    <div class="stat-card">
-      <div class="lbl">US social commerce market 2025</div>
-      <div class="num">$87B</div>
-      <div class="sm">+21.5% YoY · 6.9% of retail ecommerce · <a href="https://massmarketretailers.com/emarketer-tiktoks-share-of-u-s-social-commere-approaches-20/" target="_blank">eMarketer, Dec 2025</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">TikTok Shop global GMV 2025</div>
-      <div class="num">$64B</div>
-      <div class="sm">+94% YoY across 16 markets · <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works, Feb 2026</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">Instagram social commerce 2025</div>
-      <div class="num">$43B</div>
-      <div class="sm">Global · 46.8M US shoppers monthly · <a href="https://capitaloneshopping.com/research/instagram-shopping-statistics/" target="_blank">Capital One Shopping, Mar 2026</a></div>
-    </div>
-    <div class="stat-card">
-      <div class="lbl">Douyin (China TikTok) GMV 2024</div>
-      <div class="num">~$490B</div>
-      <div class="sm">¥3.5 trillion CNY · +30% YoY · <a href="https://eu.36kr.com/en/p/3166066575158018" target="_blank">36Kr, Feb 2025</a></div>
+      <div class="bar-label-row"><span class="bar-name">Bulgari — Lisa campaign (2022)</span><span class="bar-val">$66.8M EMV</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:79%;background:#8b6a2f">Single campaign: $40.3M · <a href="https://lefty.io/blog/influencer-marketing-for-jewellery" target="_blank" style="color:white">Lefty 2022</a></div></div>
     </div>
   </div>
 
-  <!-- TIKTOK SHOP -->
-  <div class="chart-card">
-    <div class="chart-title">TikTok Shop GMV — Scale and Growth</div>
-    <div class="chart-sub">Sources: <a href="https://thelowdown.momentum.asia/press-release-tiktok-shop-in-the-u-s-achieves-explosive-growth-in-2024-surpassing-us9-billion-gmv/" target="_blank">Momentum Works + Tabcut, Jan 2025</a> · <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works, Feb 2026</a> · <a href="https://www.emarketer.com/press-releases/tiktok-shop-makes-up-nearly-20-of-social-commerce-in-2025/" target="_blank">eMarketer, Dec 2025</a></div>
-
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">TikTok Shop global 2025</span><span class="bar-val">$64.3B <span style="font-size:12px;color:#4e4e4e">+94% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a"></div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">TikTok Shop global 2024</span><span class="bar-val">$33.2B <span style="font-size:12px;color:#4e4e4e">+121% vs 2023</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:52%;background:#8b6a2f"></div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">TikTok Shop US 2025</span><span class="bar-val">$15.1B <span style="font-size:12px;color:#4e4e4e">+68% YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:23%;background:#8b6a2f"></div></div>
-      <div class="bar-note">eMarketer reports $15.82B for 2025 (methodology differs) · TikTok Shop = 18.2% of US social commerce in 2025, projected 24.1% by 2027</div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">TikTok Shop US 2024</span><span class="bar-val">$9B <span style="font-size:12px;color:#4e4e4e">+650% vs 2023 launch</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:14%;background:#4e4e4e"></div></div>
-      <div class="bar-note">60% influencer-driven ($5.4B) · Videos 58% of GMV · Shops 32% · Livestreams 10%</div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">SE Asia 2025 (TikTok Shop)</span><span class="bar-val">$45.6B <span style="font-size:12px;color:#4e4e4e">doubled YoY</span></span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:71%;background:#4e4e4e"></div></div>
-      <div class="bar-note">Indonesia alone: $13.1B</div>
-    </div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works + Tabcut — TikTok Shop US 2025, February 2026</a> · <a href="https://www.emarketer.com/press-releases/tiktok-shop-makes-up-nearly-20-of-social-commerce-in-2025/" target="_blank">eMarketer, December 2025</a></div>
+  <div class="pull">
+    <p><strong>None of this is sales revenue.</strong> Richemont's total online retail in FY25 was €1.355B — approximately 6% of group sales. Richemont does not break this down by acquisition channel. No luxury house does. The industry tracks brand impact. It does not track influencer-to-checkout. (<a href="https://www.richemont.com/news-media/press-releases-news/richemont-posts-robust-performance-for-the-year-ended-31-march-2025/" target="_blank">Richemont FY25 results</a>)</p>
   </div>
 
-  <!-- BYTEDANCE 2030 -->
-  <div class="insight-banner" style="margin-bottom:36px">
-    <p><strong>ByteDance projected 3rd largest global retailer by 2030.</strong> Flywheel Retail Insights (January 2026) projects TikTok Shop alone reaching approximately $1 trillion in sales — 14.6% of global marketplace share — placing it behind Amazon (#1, ~$1.1T) and Pinduoduo (#2), ahead of Alibaba, Walmart, JD.com, Costco, and Schwarz Group. The ranking reflects TikTok Shop and Douyin combined at ByteDance level; Douyin alone ranks 4th, TikTok Shop alone 7th. Douyin exceeded $500B in GMV in 2024. Note: TikTok's US operations were restructured into a US-based joint venture in early 2025; ByteDance retains a minority share and continues to provide core platform technology. Source: <a href="https://wwd.com/beauty-industry-news/beauty-features/tiktok-shop-amazon-walmart-top-retailers-globally-1238616259/" target="_blank">WWD / Flywheel Retail Insights, February 2026</a></p>
+  <div class="data-block" style="margin-top:32px">
+    <h4>What luxury brands do sell through influencers — the pre-owned exception</h4>
+    <p class="sub">The only luxury commerce actively happening on social platforms is pre-owned, via authenticated resellers. This is not brand-initiated.</p>
+    <table class="brand-table">
+      <thead><tr><th>Who</th><th>What</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Luxe Collective (UK reseller)</td>
+          <td>Pre-owned Chanel, Hermès, Louis Vuitton sold via TikTok Shop. Single livestream: 57,000 viewers.</td>
+          <td>£2M TikTok Shop sales since April 2024 · 26% of total revenue from TikTok in first 3 months · <a href="https://influencermarketinghub.com/tiktok-shop-campaigns-luxury-brands/" target="_blank">Influencer Marketing Hub, 2025</a></td>
+        </tr>
+        <tr>
+          <td>Authenticated resellers (US)</td>
+          <td>Hermès, Chanel, Rolex, Cartier, Louis Vuitton sold via TikTok Shop livestreams. Authentication via Entrupy AI.</td>
+          <td>One session: $30,000+ in a single day · One boutique: ~1,000 designer bags sold via platform · <a href="https://www.thekeyword.co/news/tiktok-shop-moves-into-high-end-luxury-goods" target="_blank">The Keyword, Dec 2025</a></td>
+        </tr>
+        <tr>
+          <td>Major luxury houses (LVMH, Kering, Richemont)</td>
+          <td>No first-party TikTok Shop or Instagram Shopping storefronts.</td>
+          <td>Deliberate absence. Channel conflict, brand dilution, loss of experiential control cited by industry. No published revenue attribution to influencer channels.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- LUXURY ON TIKTOK -->
-  <div class="chart-card">
-    <div class="chart-title">Luxury on TikTok — Audience and Purchase Behaviour</div>
-    <div class="chart-sub">TikTok UK luxury audience research · <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK, July 2025</a></div>
+  <!-- ── AFFORDABLE LUXURY ── -->
+  <h2 class="section-title">Affordable Luxury — Selling Through Social</h2>
 
-    <div class="two-col" style="margin-bottom:0;gap:14px">
-      <div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Luxury audience spent &gt;£1,000 on single item</span><span class="bar-val">70%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:70%;background:#0a0f1a"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Purchased luxury after TikTok exposure</span><span class="bar-val">15%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:15%;background:#8b6a2f"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Discover luxury via user-generated content</span><span class="bar-val">38%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:38%;background:#8b6a2f"></div></div>
-        </div>
-      </div>
-      <div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Purchased secondhand inspired by TikTok trends</span><span class="bar-val">25%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:25%;background:#4e4e4e"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Discover luxury via creator videos</span><span class="bar-val">32%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:32%;background:#4e4e4e"></div></div>
-        </div>
-        <div class="bar-wrap">
-          <div class="bar-label-row"><span class="bar-name">Luxury fashion content comments growth YoY</span><span class="bar-val">+113%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">strongest engagement signal</div></div>
-        </div>
-      </div>
+  <table class="brand-table">
+    <thead><tr><th>Brand</th><th>Social commerce approach</th><th>Measurable result</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Coach (Tapestry)</td>
+        <td>Creator partnerships and social-native campaigns targeting Gen Z. Social credited in earnings calls as primary acquisition driver.</td>
+        <td>4.6M new North American customers FY25 · ~70% Gen Z / Millennial · <a href="https://www.tapestry.com/investor-relations/" target="_blank">Tapestry FY25 earnings</a></td>
+      </tr>
+      <tr>
+        <td>Burberry</td>
+        <td>Active fashion week influencer programme. Daniel Lee creative strategy explicitly designed for social amplification.</td>
+        <td>$11.1M EMV London FW AW25 · +83% YoY · <a href="https://lefty.io/blog/womenswear-aw25-top-brands-and-influencers" target="_blank">Lefty 2025</a></td>
+      </tr>
+      <tr>
+        <td>Ralph Lauren</td>
+        <td>Event-led activations (Paris Olympics, US Open) engineered for social reach. Highest virality score in luxury sector 2024.</td>
+        <td>$39M MIV Paris Olympics 2024 · #4 globally · <a href="https://www.luxurytribune.com/en/according-to-launchmetrics-lvmh-dominates-the-ranking-of-brands-with-the-highest-media-impact-during-the-paris-olympics" target="_blank">Launchmetrics 2024</a></td>
+      </tr>
+      <tr>
+        <td>Hugo Boss</td>
+        <td>Documented influencer activations at fashion weeks. Only one public contract figure available.</td>
+        <td>€450K single influencer deal, Milan FW 2022. No annual figure or conversion data published.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="src" style="margin-bottom:0">No affordable luxury brand publishes influencer-attributed revenue. Customer acquisition data (Coach) and EMV (Burberry, Ralph Lauren) are the best available proxies.</div>
+
+  <!-- ── SOCIAL COMMERCE BY PLATFORM ── -->
+  <h2 class="section-title">Social Commerce by Platform — Market Scale</h2>
+
+  <div class="data-block">
+    <h4>Platform GMV — where creator-driven commerce actually happens</h4>
+    <p class="sub">Sources: <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works + Tabcut, Feb 2026</a> · <a href="https://www.emarketer.com/press-releases/tiktok-shop-makes-up-nearly-20-of-social-commerce-in-2025/" target="_blank">eMarketer, Dec 2025</a> · <a href="https://capitaloneshopping.com/research/instagram-shopping-statistics/" target="_blank">Capital One Shopping, Mar 2026</a> · <a href="https://eu.36kr.com/en/p/3166066575158018" target="_blank">36Kr, Feb 2025</a></p>
+
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">Instagram Shopping — global 2025</span><span class="bar-val">$42.8B</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:67%;background:#0a0f1a">46.8M US monthly shoppers</div></div>
+      <div class="bar-note">46.5% of social media buyers purchase clothing/apparel on Instagram monthly. No luxury-specific revenue breakdown published.</div>
     </div>
-
-    <div class="heat-insight" style="margin-top:20px">
-      <strong>No major luxury house sells directly via TikTok Shop.</strong> LVMH, Kering, and Richemont brands do not operate first-party TikTok Shop storefronts. Luxury on TikTok Shop is driven by authenticated resellers — Luxe Collective (UK) generated £2M in TikTok Shop sales since April 2024, representing 26% of its total revenue in the first three months on the platform. A single livestream reached 57,000 viewers. Pre-owned Hermès, Chanel, Rolex, Cartier, and Louis Vuitton are the top-selling categories via reseller accounts. Sources: <a href="https://influencermarketinghub.com/tiktok-shop-campaigns-luxury-brands/" target="_blank">Influencer Marketing Hub, June 2025</a> · <a href="https://www.thekeyword.co/news/tiktok-shop-moves-into-high-end-luxury-goods" target="_blank">The Keyword, December 2025</a>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">TikTok Shop — global 2025</span><span class="bar-val">$64.3B <span style="font-size:12px;color:#4e4e4e">+94% YoY</span></span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">60% influencer-driven · fastest growing commerce channel</div></div>
+      <div class="bar-note">US: $15.1B · SE Asia: $45.6B · Indonesia alone $13.1B · Women's fashion = 12.56% of platform GMV</div>
     </div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK — The Next Era of Luxury, July 2025</a></div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">TikTok Shop — US 2024</span><span class="bar-val">$9B <span style="font-size:12px;color:#4e4e4e">+650% from launch</span></span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:14%;background:#8b6a2f">$5.4B influencer-driven · Videos 58% · Shops 32% · Livestreams 10%</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">Douyin (China TikTok) — 2024</span><span class="bar-val">~$490B</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#4e4e4e;opacity:.6">¥3.5 trillion CNY · +30% YoY · China's #3 e-commerce platform</div></div>
+      <div class="bar-note">Top influencers (1M+ followers) contributed ~9% of total Douyin GMV · <a href="https://eu.36kr.com/en/p/3166066575158018" target="_blank">36Kr, Feb 2025</a></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">US social commerce total — 2025</span><span class="bar-val">$87B</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a;opacity:.5">6.9% of US retail ecommerce · projected $100B+ in 2026</div></div>
+    </div>
   </div>
 
-  <!-- METHODOLOGY NOTE -->
-  <div class="method-box">
-    <h4>Methodology — MIV vs EMV</h4>
-    <p><strong>MIV (Media Impact Value)</strong> is Launchmetrics' proprietary metric. It factors in content quality, source authority, and industry relevance — not engagement alone. It is the industry standard for luxury brands and fashion weeks.</p>
-    <p><strong>EMV (Earned Media Value)</strong> is used by Lefty and WeArisma. It is primarily engagement-based with platform multipliers applied. MIV and EMV figures for the same event will differ and are not directly comparable across sources.</p>
-    <p><strong>Revenue attribution:</strong> no luxury house — Richemont, LVMH, Kering, Hermès, Chanel — publishes influencer-to-sales conversion data. MIV and EMV measure media impact generated, not transactions completed. Richemont's FY24 total "communication expenses" were €2.0B (9.7% of sales), with no influencer line item disclosed. (<a href="https://www.richemont.com/news-media/press-releases-news/richemont-announces-strong-underlying-performance-for-the-year-ended-31-march-2024/" target="_blank">Richemont FY24 results, richemont.com</a>)</p>
+  <div class="pull">
+    <p><strong>ByteDance (TikTok Shop + Douyin combined) is projected to become the 3rd largest global retailer by 2030</strong> — behind Amazon (~$1.1T) and Pinduoduo, ahead of Alibaba, Walmart and JD.com. TikTok Shop alone is projected at ~$1 trillion in sales and 14.6% of global marketplace share. Source: <a href="https://wwd.com/beauty-industry-news/beauty-features/tiktok-shop-amazon-walmart-top-retailers-globally-1238616259/" target="_blank">WWD / Flywheel Retail Insights, February 2026</a></p>
   </div>
 
+  <div class="data-block" style="margin-top:32px">
+    <h4>Luxury audience on TikTok — purchase intent is real</h4>
+    <p class="sub"><a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK, July 2025</a></p>
+    <table class="brand-table">
+      <thead><tr><th>Finding</th><th>Data</th></tr></thead>
+      <tbody>
+        <tr><td>Luxury audience who spent £1,000+ on a single item</td><td>70% of TikTok's luxury audience</td></tr>
+        <tr><td>Purchased luxury directly after TikTok exposure</td><td>15%</td></tr>
+        <tr><td>Discover luxury via user-generated content</td><td>38%</td></tr>
+        <tr><td>Discover luxury via creator videos</td><td>32%</td></tr>
+        <tr><td>Purchased secondhand inspired by TikTok trends</td><td>25%</td></tr>
+        <tr><td>Luxury fashion content comments growth YoY</td><td>+113%</td></tr>
+        <tr><td>UK shoppers who bought luxury via social (who follow influencers)</td><td>27% · <a href="https://www.wpp.com/en/news/2025/02/uk-shoppers-buy-luxury-items-directly-through-social-media" target="_blank">WPP, Feb 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- METHOD -->
+  <div class="method">
+    <h4>On the data</h4>
+    <p><strong>MIV (Media Impact Value)</strong> — Launchmetrics proprietary metric. Measures content quality, source authority and reach. Industry standard for luxury. It is not sales revenue.</p>
+    <p><strong>EMV (Earned Media Value)</strong> — used by Lefty and WeArisma. Engagement-based with platform multipliers. Not directly comparable to MIV.</p>
+    <p><strong>No luxury house publishes influencer-attributed sales.</strong> Richemont's FY25 total communication expenses were ~€2.0B (9.7% of sales) with no channel breakdown. LVMH and Kering report identically. The absence of data is structural — attribution would require accepting that a creator, not the boutique, closed the sale.</p>
+  </div>
 
 </main>
 
