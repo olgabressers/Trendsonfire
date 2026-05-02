@@ -93,9 +93,47 @@
     .dark-callout strong { color:#b8976a; font-weight:600; }
     .dark-callout a { color:#d4b896; }
 
+    /* ── VERTICAL BAR CHART (TikTok audience) ── */
+    .v-chart-area { display:flex; align-items:flex-end; gap:18px; height:360px; margin-bottom:0; }
+    .v-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+    .v-bar-body { width:100%; background:#c026d3; border-radius:3px 3px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:12px; }
+    .v-bar-pct { font-size:24px; font-weight:900; color:white; letter-spacing:-0.5px; }
+    .v-bar-meta { width:100%; padding-top:12px; text-align:center; }
+    .v-bar-name { font-size:13px; color:#1f1f1f; line-height:1.35; font-weight:500; }
+    .v-bar-tag { margin-top:8px; font-size:14px; font-weight:800; color:#0a0f1a; line-height:1.3; }
+    .vb1 .v-bar-body { height:326px; }
+    .vb2 .v-bar-body { height:178px; }
+    .vb3 .v-bar-body { height:150px; }
+    .vb4 .v-bar-body { height:117px; }
+    .vb5 .v-bar-body { height:71px; background:#9b1fb3; }
+
+    /* ── COUNTRY CARDS ── */
+    .country-row { display:flex; gap:14px; margin-top:28px; margin-bottom:0; }
+    .country-card { flex:1; display:flex; flex-direction:column; align-items:center; gap:10px; padding:22px 12px 18px; background:#f9fafb; border:1px solid #e5e7eb; border-top:3px solid; }
+    .country-card.mature { border-top-color:#0a0f1a; }
+    .country-card.growing { border-top-color:#c026d3; }
+    .country-card.early { border-top-color:#d1d5db; }
+    .c-flag { font-size:40px; line-height:1; }
+    .c-year { font-size:22px; font-weight:900; color:#0a0f1a; letter-spacing:-0.5px; }
+    .c-status { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#4e4e4e; }
+    .c-note { font-size:13px; color:#6b7280; text-align:center; line-height:1.4; }
+
+    /* ── FUCHSIA CALLOUT ── */
+    .fuchsia-callout { background:#fdf4ff; border-left:4px solid #c026d3; padding:20px 24px; margin-top:24px; }
+    .fuchsia-callout p { font-size:15px; color:#0a0f1a; line-height:1.7; }
+    .fuchsia-callout strong { color:#c026d3; }
+
     @media(max-width:768px){
       main { padding:32px 16px 64px; }
       .sec-num { font-size:52px; }
+      .v-chart-area { gap:8px; height:240px; }
+      .vb1 .v-bar-body { height:217px; }
+      .vb2 .v-bar-body { height:118px; }
+      .vb3 .v-bar-body { height:100px; }
+      .vb4 .v-bar-body { height:78px; }
+      .vb5 .v-bar-body { height:47px; }
+      .country-row { flex-wrap:wrap; }
+      .country-card { flex:1 1 calc(50% - 7px); min-width:calc(50% - 7px); }
     }
   </style>
 </head>
@@ -350,6 +388,117 @@
   <div class="dark-callout">
     <p><strong>The structural split, in one sentence:</strong> in 2026, one Western platform has closed-loop social commerce (TikTok Shop), two platforms route discovery to external checkout (Pinterest, Instagram), and one is building toward a number it has not yet disclosed (YouTube).</p>
     <p>The market data is clear about where the growth has gone. What is not yet clear is whether TikTok Shop's structural advantage — creator-driven closed-loop GMV — is a durable moat or a first-mover position that other platforms can replicate once they decide to commit.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4 — LUXURY ON TIKTOK
+  ═══════════════════════════════════════════════ -->
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Luxury on TikTok</div>
+      <div class="sec-title">TikTok's luxury audience — what they do, what they spend, and where Europe sits</div>
+      <div class="sec-sub">70% of TikTok users who follow luxury brands have spent £1,000 or more on a single item. The platform has a high-value audience. The question is whether the brands are positioned to meet them.</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-title">TikTok luxury audience behaviour — UK, 2025</div>
+    <div class="chart-sub">Among TikTok users who follow luxury brands &nbsp;·&nbsp; % of luxury audience segment &nbsp;·&nbsp; <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK, July 2025</a></div>
+
+    <div class="v-chart-area">
+
+      <div class="v-bar-col vb1">
+        <div class="v-bar-body"><span class="v-bar-pct">70%</span></div>
+        <div class="v-bar-meta">
+          <div class="v-bar-name">Spent £1,000+<br>on a single item</div>
+          <div class="v-bar-tag">High-value<br>buyers</div>
+        </div>
+      </div>
+
+      <div class="v-bar-col vb2">
+        <div class="v-bar-body"><span class="v-bar-pct">38%</span></div>
+        <div class="v-bar-meta">
+          <div class="v-bar-name">Discover luxury<br>via UGC</div>
+          <div class="v-bar-tag">Discovery<br>via content</div>
+        </div>
+      </div>
+
+      <div class="v-bar-col vb3">
+        <div class="v-bar-body"><span class="v-bar-pct">32%</span></div>
+        <div class="v-bar-meta">
+          <div class="v-bar-name">Discover luxury<br>via creator videos</div>
+          <div class="v-bar-tag">Discovery<br>via creators</div>
+        </div>
+      </div>
+
+      <div class="v-bar-col vb4">
+        <div class="v-bar-body"><span class="v-bar-pct">25%</span></div>
+        <div class="v-bar-meta">
+          <div class="v-bar-name">Bought luxury<br>secondhand via<br>TikTok</div>
+          <div class="v-bar-tag">Secondhand<br>conversion</div>
+        </div>
+      </div>
+
+      <div class="v-bar-col vb5">
+        <div class="v-bar-body"><span class="v-bar-pct">15%</span></div>
+        <div class="v-bar-meta">
+          <div class="v-bar-name">Bought luxury<br>directly after<br>TikTok exposure</div>
+          <div class="v-bar-tag">Direct<br>conversion</div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2dfd9;margin:36px 0 28px;"/>
+
+    <div class="chart-title" style="font-size:17px;margin-bottom:4px;">TikTok Shop European fashion market — launch timeline</div>
+    <div class="chart-sub">When TikTok Shop became available to fashion sellers in each market</div>
+
+    <div class="country-row">
+
+      <div class="country-card mature">
+        <div class="c-flag">🇬🇧</div>
+        <div class="c-year">2023</div>
+        <div class="c-status">Established</div>
+        <div class="c-note">Largest European<br>TikTok Shop market</div>
+      </div>
+
+      <div class="country-card growing">
+        <div class="c-flag">🇪🇸</div>
+        <div class="c-year">Jun '24</div>
+        <div class="c-status">Growing</div>
+        <div class="c-note">First continental<br>EU market to launch</div>
+      </div>
+
+      <div class="country-card early">
+        <div class="c-flag">🇮🇹</div>
+        <div class="c-year">Mar '25</div>
+        <div class="c-status">Early stage</div>
+        <div class="c-note">Launched<br>March 2025</div>
+      </div>
+
+      <div class="country-card early">
+        <div class="c-flag">🇩🇪</div>
+        <div class="c-year">Mar '25</div>
+        <div class="c-status">Early stage</div>
+        <div class="c-note">Launched<br>March 2025</div>
+      </div>
+
+      <div class="country-card early">
+        <div class="c-flag">🇫🇷</div>
+        <div class="c-year">Mar '25</div>
+        <div class="c-status">Early stage</div>
+        <div class="c-note">Launched<br>March 2025</div>
+      </div>
+
+    </div>
+
+    <div class="fuchsia-callout">
+      <p><strong>The gap:</strong> 70% of TikTok's luxury audience are already £1,000+ buyers — yet only 15% convert directly on-platform. No major luxury house operates a first-party storefront on TikTok Shop. The UK is two years ahead of continental Europe on platform maturity. The consumer is ready. The brands are not.</p>
+    </div>
+
+    <div class="src-note"><strong>Sources:</strong> <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK — The Next Era of Luxury, July 2025</a> (bar chart) · TikTok Shop official launch announcements · <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works 2024–2026</a> (country timeline)</div>
   </div>
 
   <!-- ABOUT THE AUTHOR -->
