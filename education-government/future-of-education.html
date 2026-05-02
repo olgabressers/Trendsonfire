@@ -220,6 +220,10 @@
     <a href="../insights/index.html">Insights</a>
     <a href="../olgabressers/index.html">About</a>
   </div>
+  <button class="nav-search-btn" onclick="openSearch()" aria-label="Search articles">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    Search
+  </button>
 </nav>
 
 <div class="art-hero">
@@ -957,6 +961,13 @@
 <footer>
   <p>&copy; 2026 TrendsOnFire &middot; <a href="/legal/privacy.html">Privacy Policy</a> &middot; <a href="/legal/disclaimer.html">Disclaimer</a> &middot; <a href="/legal/terms.html">Terms &amp; Conditions</a> &middot; <a href="/contact/">Contact</a> &mdash; Analysis based on publicly available information. Not investment advice.</p>
 </footer>
+
+<script>
+function openSearch(){
+  if(typeof window._openSearch==='function'){window._openSearch();}
+  else{window.location.href='../retail/index.html';}
+}
+</script>
 
 </body>
 </html>
