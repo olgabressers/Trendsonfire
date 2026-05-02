@@ -57,16 +57,28 @@
     .heat-insight strong { color:#0a0f1a; font-weight:700; }
     .heat-insight a { color:#8b6a2f; }
 
-    /* ── TIMELINE ── */
-    .timeline { position:relative; padding-left:32px; margin-bottom:36px; }
-    .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:#e2dfd9; }
-    .tl-item { position:relative; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #f1f5f9; }
-    .tl-item:last-child { border-bottom:none; margin-bottom:0; }
-    .tl-item::before { content:''; position:absolute; left:-28px; top:6px; width:10px; height:10px; border-radius:50%; background:#b8976a; border:2px solid white; box-shadow:0 0 0 2px #b8976a; }
-    .tl-year { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#b8976a; margin-bottom:4px; }
-    .tl-event { font-size:15px; font-weight:700; color:#0a0f1a; margin-bottom:4px; line-height:1.35; }
-    .tl-detail { font-size:14px; color:#1f1f1f; line-height:1.6; }
-    .tl-detail a { color:#8b6a2f; }
+    /* ── TIMELINE (horizontal cards) ── */
+    .timeline { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:24px; }
+    .tl-item { background:white; border:1px solid #e2dfd9; border-top:3px solid #b8976a; padding:16px 14px; }
+    .tl-year { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#b8976a; margin-bottom:8px; }
+    .tl-event { font-size:13px; font-weight:700; color:#0a0f1a; line-height:1.4; }
+    .tl-platform { font-size:12px; color:#6b7280; margin-top:5px; }
+
+    /* ── GEN BAR CHART (Section 5) ── */
+    .gen-chart-wrap { display:flex; gap:18px; align-items:flex-end; height:260px; margin:24px 0 32px; }
+    .gen-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+    .gen-bar { width:100%; background:#7c83c9; border-radius:3px 3px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:10px; }
+    .gen-pct { font-size:18px; font-weight:900; color:white; letter-spacing:-0.3px; }
+    .gen-meta { width:100%; text-align:center; padding-top:10px; }
+    .gen-rank { font-size:28px; font-weight:900; color:#0a0f1a; letter-spacing:-0.5px; }
+    .gen-cat { font-size:12.5px; color:#4e4e4e; line-height:1.3; font-weight:500; }
+
+    /* ── COUNTRY RANKING ROW (Section 5) ── */
+    .cr-row { display:flex; gap:12px; margin-top:24px; }
+    .cr-card { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; padding:18px 10px 16px; background:#f9fafb; border:1px solid #e5e7eb; }
+    .cr-flag { font-size:32px; line-height:1; }
+    .cr-rank { font-size:24px; font-weight:900; color:#0a0f1a; letter-spacing:-0.5px; }
+    .cr-country { font-size:11.5px; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
 
     /* ── PLATFORM CARDS ── */
     .platform-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:36px; }
@@ -96,7 +108,7 @@
     /* ── VERTICAL BAR CHART (TikTok audience) ── */
     .v-chart-area { display:flex; align-items:flex-end; gap:18px; height:360px; margin-bottom:0; }
     .v-bar-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
-    .v-bar-body { width:100%; background:#c026d3; border-radius:3px 3px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:12px; }
+    .v-bar-body { width:100%; background:#4338ca; border-radius:3px 3px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:12px; }
     .v-bar-pct { font-size:24px; font-weight:900; color:white; letter-spacing:-0.5px; }
     .v-bar-meta { width:100%; padding-top:12px; text-align:center; }
     .v-bar-name { font-size:13px; color:#1f1f1f; line-height:1.35; font-weight:500; }
@@ -105,7 +117,7 @@
     .vb2 .v-bar-body { height:178px; }
     .vb3 .v-bar-body { height:150px; }
     .vb4 .v-bar-body { height:117px; }
-    .vb5 .v-bar-body { height:71px; background:#9b1fb3; }
+    .vb5 .v-bar-body { height:71px; background:#3730a3; }
 
     /* ── COUNTRY CARDS ── */
     .country-row { display:flex; gap:14px; margin-top:28px; margin-bottom:0; }
@@ -118,11 +130,16 @@
     .c-status { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#4e4e4e; }
     .c-note { font-size:13px; color:#6b7280; text-align:center; line-height:1.4; }
 
-    /* ── FUCHSIA CALLOUT ── */
-    .fuchsia-callout { background:#fdf4ff; border-left:4px solid #c026d3; padding:20px 24px; margin-top:24px; }
+    /* ── SECTION 4 CALLOUT ── */
+    .fuchsia-callout { background:#eef2ff; border-left:4px solid #4338ca; padding:20px 24px; margin-top:24px; }
     .fuchsia-callout p { font-size:15px; color:#0a0f1a; line-height:1.7; }
-    .fuchsia-callout strong { color:#c026d3; }
+    .fuchsia-callout strong { color:#4338ca; }
 
+    @media(max-width:900px){
+      .timeline { grid-template-columns:repeat(2,1fr); }
+      .cr-row { flex-wrap:wrap; }
+      .cr-card { flex:1 1 calc(33% - 8px); }
+    }
     @media(max-width:768px){
       main { padding:32px 16px 64px; }
       .sec-num { font-size:52px; }
@@ -134,6 +151,9 @@
       .vb5 .v-bar-body { height:47px; }
       .country-row { flex-wrap:wrap; }
       .country-card { flex:1 1 calc(50% - 7px); min-width:calc(50% - 7px); }
+      .gen-chart-wrap { height:180px; gap:10px; }
+      .gen-rank { font-size:20px; }
+      .gen-cat { font-size:11px; }
     }
   </style>
 </head>
@@ -228,62 +248,62 @@
 
       <div class="tl-item">
         <div class="tl-year">Jun 2015</div>
-        <div class="tl-event">Pinterest launches Buyable Pins — the first major social checkout</div>
-        <div class="tl-detail">Direct in-app purchase for products pinned from US retailers. The first attempt by any major social platform to close the loop between discovery and transaction. · <a href="https://techcrunch.com/2015/06/02/pinterest-unveils-buyable-pins-a-way-to-purchase-things-directly-from-pinterest/" target="_blank">TechCrunch, June 2015</a></div>
+        <div class="tl-event">Pinterest launches Buyable Pins</div>
+        <div class="tl-platform">First social checkout · US only</div>
       </div>
 
       <div class="tl-item">
-        <div class="tl-year">2016–2017</div>
-        <div class="tl-event">Instagram launches product tagging and shoppable posts</div>
-        <div class="tl-detail">Product tags in feed posts, then Stories shopping stickers in 2018. Discovery-first model — tapping a tag links to the brand's external site. No checkout on-platform yet.</div>
+        <div class="tl-year">2016–17</div>
+        <div class="tl-event">Instagram shoppable posts</div>
+        <div class="tl-platform">Product tags → external site link</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Oct 2018</div>
-        <div class="tl-event">Pinterest retires Buyable Pins — replaces with Product Pins</div>
-        <div class="tl-detail">Three years after launching the first social checkout, Pinterest steps back. Buyable Pins are replaced by Product Pins, which link out to merchant sites rather than closing the sale in-app. · <a href="https://www.clixmarketing.com/blog/2018/10/24/pinterest-sunsets-buyable-pins-introduces-product-pins-in-time-for-holidays/" target="_blank">Clix Marketing, Oct 2018</a></div>
+        <div class="tl-event">Pinterest retires Buyable Pins</div>
+        <div class="tl-platform">3 years · 1st retreat</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Mar 2019</div>
-        <div class="tl-event">Instagram launches native in-app checkout — 26 launch brands</div>
-        <div class="tl-detail">Full closed-loop commerce: browse → purchase without leaving the app. Launch partners include Nike, Zara, Warby Parker, Revolve. The first major Western platform to offer this since Pinterest's 2015 attempt. · <a href="https://techcrunch.com/2021/06/09/instagram-adds-affiliate-and-shop-features-for-creators/" target="_blank">TechCrunch</a></div>
+        <div class="tl-event">Instagram native checkout</div>
+        <div class="tl-platform">26 launch brands · closed loop</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">May 2020</div>
-        <div class="tl-event">Facebook Shops launches for SMB storefronts</div>
-        <div class="tl-detail">Facebook and Instagram Shops introduced as a unified commerce layer, positioned as a tool for small businesses to build in-app storefronts. Checkout available for US merchants on both platforms. · <a href="https://www.godatafeed.com/blog/meta-is-dropping-native-checkout-on-facebook-and-instagram" target="_blank">GoDataFeed</a></div>
+        <div class="tl-event">Facebook Shops launches</div>
+        <div class="tl-platform">SMB storefronts · US checkout</div>
       </div>
 
       <div class="tl-item">
-        <div class="tl-year">2020–2021</div>
-        <div class="tl-event">TikTok Shop launches in UK and Southeast Asia</div>
-        <div class="tl-detail">TikTok Shop goes live in the UK and across Southeast Asian markets, combining short-video discovery with integrated checkout and affiliate creator commissions in a single product.</div>
+        <div class="tl-year">2020–21</div>
+        <div class="tl-event">TikTok Shop · UK &amp; SE Asia</div>
+        <div class="tl-platform">Video + checkout + affiliate</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Jul 2022</div>
-        <div class="tl-event">YouTube Shopping launches with Shopify integration</div>
-        <div class="tl-detail">YouTube introduces product tagging in videos, livestream shopping, and a dedicated shopping explore destination. Shopify integration enables direct checkout links. Available initially in US, India, Brazil. · <a href="https://techcrunch.com/2022/07/19/youtube-rolls-out-new-shopping-features-partnership-shopify/" target="_blank">TechCrunch, July 2022</a></div>
+        <div class="tl-event">YouTube Shopping</div>
+        <div class="tl-platform">Shopify integration · US, IN, BR</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Sep 2023</div>
-        <div class="tl-event">TikTok Shop launches in the United States</div>
-        <div class="tl-detail">US market entry after two years of Southeast Asian and UK operation. Reaches $9B GMV in its first full year (2024) — the fastest GMV ramp ever recorded for a social commerce platform. · <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-in-the-u-s-achieves-explosive-growth-surpassing-us9-billion-gmv-in-2024/" target="_blank">Momentum Works, Jan 2025</a></div>
+        <div class="tl-event">TikTok Shop US launches</div>
+        <div class="tl-platform">$9B GMV year one · fastest ramp</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Sep 2025</div>
-        <div class="tl-event">Meta deprecates native checkout on Facebook and Instagram</div>
-        <div class="tl-detail">Six years after launching in-app checkout, Meta reverses course. Facebook and Instagram Shops now redirect users to external merchant websites rather than completing purchases in-app. TikTok Shop is left as the only platform in Western markets maintaining closed-loop commerce. · <a href="https://www.godatafeed.com/blog/meta-is-dropping-native-checkout-on-facebook-and-instagram" target="_blank">GoDataFeed</a> · <a href="https://www.facebook.com/business/help/623552069600842" target="_blank">Meta Business Help Center</a></div>
+        <div class="tl-event">Meta deprecates checkout</div>
+        <div class="tl-platform">Facebook + Instagram → redirect only</div>
       </div>
 
       <div class="tl-item">
         <div class="tl-year">Mar 2026</div>
-        <div class="tl-event">Instagram relaunches creator affiliate commerce</div>
-        <div class="tl-detail">After shutting down its native affiliate tool in August 2022, Instagram re-enters creator affiliate commerce — years after TikTok Shop affiliates had already become a $15B+ business in the US alone. · <a href="https://www.netinfluencer.com/instagram-re-enters-creator-affiliate-commerce-years-after-rivals-built-lead/" target="_blank">Net Influencer, 2026</a></div>
+        <div class="tl-event">Instagram affiliate relaunch</div>
+        <div class="tl-platform">Creator commerce · no checkout</div>
       </div>
 
     </div>
@@ -499,6 +519,125 @@
     </div>
 
     <div class="src-note"><strong>Sources:</strong> <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK — The Next Era of Luxury, July 2025</a> (bar chart) · TikTok Shop official launch announcements · <a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank">Momentum Works 2024–2026</a> (country timeline)</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5 — TIKTOK MARKET SHARE BY GENERATION
+  ═══════════════════════════════════════════════ -->
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Market Share by Generation</div>
+      <div class="sec-title">TikTok market share per generation — in value</div>
+      <div class="sec-sub">Gen Z indexes highest. Gen X is above the platform average. Every generation of high-value UK fashion shoppers is already on TikTok — the question is whether brands are there to meet them.</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+
+    <!-- TOP: gen bar chart -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+      <div>
+        <div class="chart-title">TikTok Shop UK — market share per generation, in value</div>
+        <div class="chart-sub" style="margin-bottom:0;">% of total UK fashion e-commerce by generation &nbsp;·&nbsp; Q3 2025 &nbsp;·&nbsp; Second-hand excluded</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;margin-left:20px;">
+        <div style="background:#0a0f1a;color:white;font-size:13px;font-weight:800;padding:5px 12px;letter-spacing:0.3px;">TikTok Shop</div>
+        <div style="font-size:28px;line-height:1;">🇬🇧</div>
+      </div>
+    </div>
+
+    <div class="gen-chart-wrap">
+
+      <div class="gen-col">
+        <div class="gen-bar" style="height:212px;"><span class="gen-pct">3.6%</span></div>
+        <div class="gen-meta">
+          <div class="gen-rank">#6</div>
+          <div class="gen-cat">All fashion<br>shoppers</div>
+        </div>
+      </div>
+
+      <div class="gen-col">
+        <div class="gen-bar" style="height:260px;"><span class="gen-pct">4.4%</span></div>
+        <div class="gen-meta">
+          <div class="gen-rank">#5</div>
+          <div class="gen-cat">Gen Z</div>
+        </div>
+      </div>
+
+      <div class="gen-col">
+        <div class="gen-bar" style="height:171px;"><span class="gen-pct">2.9%</span></div>
+        <div class="gen-meta">
+          <div class="gen-rank">#8</div>
+          <div class="gen-cat">Gen Y</div>
+        </div>
+      </div>
+
+      <div class="gen-col">
+        <div class="gen-bar" style="height:207px;"><span class="gen-pct">3.5%</span></div>
+        <div class="gen-meta">
+          <div class="gen-rank">#8</div>
+          <div class="gen-cat">Gen X</div>
+        </div>
+      </div>
+
+      <div class="gen-col">
+        <div class="gen-bar" style="height:118px;"><span class="gen-pct">2%</span></div>
+        <div class="gen-meta">
+          <div class="gen-rank">#10</div>
+          <div class="gen-cat">Gen B</div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2dfd9;margin:8px 0 24px;"/>
+
+    <!-- BOTTOM: country rankings -->
+    <div class="chart-title" style="font-size:16px;margin-bottom:4px;">TikTok Shop's ranking among top fashion e-Retailers in value — Q3 2025</div>
+    <div class="chart-sub" style="margin-bottom:0;">Second-hand excluded</div>
+
+    <div class="cr-row">
+
+      <div class="cr-card">
+        <div class="cr-flag">🇬🇧</div>
+        <div class="cr-rank">#6th</div>
+        <div class="cr-country">United Kingdom</div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-flag">🇪🇸</div>
+        <div class="cr-rank">#19th</div>
+        <div class="cr-country">Spain</div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-flag">🇮🇹</div>
+        <div class="cr-rank">#20th</div>
+        <div class="cr-country">Italy</div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-flag">🇮🇪</div>
+        <div class="cr-rank">#22nd</div>
+        <div class="cr-country">Ireland</div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-flag">🇩🇪</div>
+        <div class="cr-rank">#23rd</div>
+        <div class="cr-country">Germany</div>
+      </div>
+
+      <div class="cr-card">
+        <div class="cr-flag">🇫🇷</div>
+        <div class="cr-rank">#52nd</div>
+        <div class="cr-country">France</div>
+      </div>
+
+    </div>
+
+    <div class="src-note" style="margin-top:20px;"><strong>Source:</strong> Malte Karsten (LinkedIn, May 2026) · Data: TikTok Shop UK · <a href="https://newsroom.tiktok.com/en-gb/the-next-era-of-luxury-how-tiktok-is-redefining-taste-discovery-and-purchase-behaviour" target="_blank">TikTok Newsroom UK</a> · Q3 2025 UK fashion e-commerce data · Second-hand excluded</div>
   </div>
 
   <!-- ABOUT THE AUTHOR -->
