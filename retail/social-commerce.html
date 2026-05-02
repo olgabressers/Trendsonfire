@@ -64,21 +64,18 @@
     .tl-event { font-size:13px; font-weight:700; color:#0a0f1a; line-height:1.4; }
     .tl-platform { font-size:12px; color:#6b7280; margin-top:5px; }
 
-    /* ── GEN BAR CHART (Section 5) ── */
-    .gen-chart-wrap { display:flex; gap:18px; align-items:flex-end; height:260px; margin:24px 0 32px; }
-    .gen-col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
-    .gen-bar { width:100%; background:#7c83c9; border-radius:3px 3px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:10px; }
-    .gen-pct { font-size:18px; font-weight:900; color:white; letter-spacing:-0.3px; }
-    .gen-meta { width:100%; text-align:center; padding-top:10px; }
-    .gen-rank { font-size:28px; font-weight:900; color:#0a0f1a; letter-spacing:-0.5px; }
-    .gen-cat { font-size:12.5px; color:#4e4e4e; line-height:1.3; font-weight:500; }
-
-    /* ── COUNTRY RANKING ROW (Section 5) ── */
-    .cr-row { display:flex; gap:12px; margin-top:24px; }
-    .cr-card { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; padding:18px 10px 16px; background:#f9fafb; border:1px solid #e5e7eb; }
-    .cr-flag { font-size:32px; line-height:1; }
-    .cr-rank { font-size:24px; font-weight:900; color:#0a0f1a; letter-spacing:-0.5px; }
-    .cr-country { font-size:11.5px; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
+    /* ── MARKET MATURITY GRID (Section 5) ── */
+    .market-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:28px; margin-bottom:0; }
+    .m-card { background:white; border:1px solid #e2dfd9; padding:20px 16px; border-top:3px solid; }
+    .m-card.established { border-top-color:#0a0f1a; }
+    .m-card.growing { border-top-color:#4338ca; }
+    .m-card.early { border-top-color:#d1d5db; }
+    .m-flag { font-size:28px; margin-bottom:8px; line-height:1; }
+    .m-country { font-size:15px; font-weight:800; color:#0a0f1a; margin-bottom:3px; }
+    .m-status { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#6b7280; margin-bottom:12px; }
+    .m-since { font-size:13px; font-weight:700; color:#0a0f1a; margin-bottom:5px; }
+    .m-revenue { font-size:13px; color:#1f1f1f; margin-bottom:3px; }
+    .m-note { font-size:12px; color:#6b7280; line-height:1.45; }
 
     /* ── PLATFORM CARDS ── */
     .platform-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:36px; }
@@ -137,8 +134,7 @@
 
     @media(max-width:900px){
       .timeline { grid-template-columns:repeat(2,1fr); }
-      .cr-row { flex-wrap:wrap; }
-      .cr-card { flex:1 1 calc(33% - 8px); }
+      .market-grid { grid-template-columns:repeat(2,1fr); }
     }
     @media(max-width:768px){
       main { padding:32px 16px 64px; }
@@ -151,9 +147,7 @@
       .vb5 .v-bar-body { height:47px; }
       .country-row { flex-wrap:wrap; }
       .country-card { flex:1 1 calc(50% - 7px); min-width:calc(50% - 7px); }
-      .gen-chart-wrap { height:180px; gap:10px; }
-      .gen-rank { font-size:20px; }
-      .gen-cat { font-size:11px; }
+      .market-grid { grid-template-columns:1fr 1fr; }
     }
   </style>
 </head>
@@ -522,122 +516,94 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════
-       SECTION 5 — TIKTOK MARKET SHARE BY GENERATION
+       SECTION 5 — EUROPEAN MARKET MATURITY
   ═══════════════════════════════════════════════ -->
   <div class="sec-header">
     <div class="sec-num">05</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Market Share by Generation</div>
-      <div class="sec-title">TikTok market share per generation — in value</div>
-      <div class="sec-sub">Gen Z indexes highest. Gen X is above the platform average. Every generation of high-value UK fashion shoppers is already on TikTok — the question is whether brands are there to meet them.</div>
+      <div class="sec-eyebrow">European Market Maturity</div>
+      <div class="sec-title">TikTok Shop Europe — how far each market has come</div>
+      <div class="sec-sub">The UK launched in 2023. Spain followed in June 2024. Germany, Italy and France went live in March 2025. The gap in seller revenue tells the rest of the story.</div>
     </div>
   </div>
 
   <div class="chart-card">
+    <div class="chart-title">Top seller monthly revenue by country — October 2025</div>
+    <div class="chart-sub">Highest-grossing individual TikTok Shop seller per market &nbsp;·&nbsp; <a href="https://blog.lengow.com/tiktok-shop-whats-selling-across-europe/" target="_blank">Lengow, October 2025</a></div>
 
-    <!-- TOP: gen bar chart -->
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
-      <div>
-        <div class="chart-title">TikTok Shop UK — market share per generation, in value</div>
-        <div class="chart-sub" style="margin-bottom:0;">% of total UK fashion e-commerce by generation &nbsp;·&nbsp; Q3 2025 &nbsp;·&nbsp; Second-hand excluded</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;margin-left:20px;">
-        <div style="background:#0a0f1a;color:white;font-size:13px;font-weight:800;padding:5px 12px;letter-spacing:0.3px;">TikTok Shop</div>
-        <div style="font-size:28px;line-height:1;">🇬🇧</div>
-      </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">🇬🇧 United Kingdom — Established · 200,000+ sellers · Since 2023</span><span class="bar-val">€4.41M / mo</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">&nbsp;</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">🇩🇪 Germany — Early stage · Since Mar 2025 · 24.2M TikTok users</span><span class="bar-val">€618K / mo</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:14%;background:#4338ca">&nbsp;</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">🇫🇷 France — Early stage · Since Mar 2025</span><span class="bar-val">€400K / mo</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:9%;background:#4338ca">&nbsp;</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">🇪🇸 Spain — Growing · First continental EU market · Since Jun 2024</span><span class="bar-val">€305K / mo</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:7%;background:#6366f1">&nbsp;</div></div>
+    </div>
+    <div class="bar-wrap">
+      <div class="bar-label-row"><span class="bar-name">🇮🇹 Italy — Early stage · Since Mar 2025 · 22.8M TikTok users</span><span class="bar-val">€179K / mo</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:4%;background:#4338ca">&nbsp;</div></div>
     </div>
 
-    <div class="gen-chart-wrap">
+    <div class="heat-insight"><strong>The maturity gap in one number:</strong> The UK's top seller generates 7× more per month than the leading seller in any continental European market. Two years of head start translated into 200,000+ active business sellers — a seller base that doubled within a year. (<a href="https://www.netinfluencer.com/tiktok-shop-reaches-200000-uk-business-sellers-as-major-retailers-report-strong-sales/" target="_blank">Net Influencer</a>)</div>
 
-      <div class="gen-col">
-        <div class="gen-bar" style="height:212px;"><span class="gen-pct">3.6%</span></div>
-        <div class="gen-meta">
-          <div class="gen-rank">#6</div>
-          <div class="gen-cat">All fashion<br>shoppers</div>
-        </div>
+    <div class="market-grid">
+
+      <div class="m-card established">
+        <div class="m-flag">🇬🇧</div>
+        <div class="m-country">UK</div>
+        <div class="m-status">Established</div>
+        <div class="m-since">Since 2023</div>
+        <div class="m-revenue">Top seller: €4.41M/mo</div>
+        <div class="m-note">200,000+ business sellers · seller base doubled in a year</div>
       </div>
 
-      <div class="gen-col">
-        <div class="gen-bar" style="height:260px;"><span class="gen-pct">4.4%</span></div>
-        <div class="gen-meta">
-          <div class="gen-rank">#5</div>
-          <div class="gen-cat">Gen Z</div>
-        </div>
+      <div class="m-card growing">
+        <div class="m-flag">🇪🇸</div>
+        <div class="m-country">Spain</div>
+        <div class="m-status">Growing</div>
+        <div class="m-since">Since Jun 2024</div>
+        <div class="m-revenue">Top seller: €305K/mo</div>
+        <div class="m-note">First continental EU market to launch</div>
       </div>
 
-      <div class="gen-col">
-        <div class="gen-bar" style="height:171px;"><span class="gen-pct">2.9%</span></div>
-        <div class="gen-meta">
-          <div class="gen-rank">#8</div>
-          <div class="gen-cat">Gen Y</div>
-        </div>
+      <div class="m-card early">
+        <div class="m-flag">🇩🇪</div>
+        <div class="m-country">Germany</div>
+        <div class="m-status">Early stage</div>
+        <div class="m-since">Since Mar 2025</div>
+        <div class="m-revenue">Top seller: €618K/mo</div>
+        <div class="m-note">24.2M monthly TikTok users at launch</div>
       </div>
 
-      <div class="gen-col">
-        <div class="gen-bar" style="height:207px;"><span class="gen-pct">3.5%</span></div>
-        <div class="gen-meta">
-          <div class="gen-rank">#8</div>
-          <div class="gen-cat">Gen X</div>
-        </div>
+      <div class="m-card early">
+        <div class="m-flag">🇮🇹</div>
+        <div class="m-country">Italy</div>
+        <div class="m-status">Early stage</div>
+        <div class="m-since">Since Mar 2025</div>
+        <div class="m-revenue">Top seller: €179K/mo</div>
+        <div class="m-note">22.8M monthly TikTok users at launch</div>
       </div>
 
-      <div class="gen-col">
-        <div class="gen-bar" style="height:118px;"><span class="gen-pct">2%</span></div>
-        <div class="gen-meta">
-          <div class="gen-rank">#10</div>
-          <div class="gen-cat">Gen B</div>
-        </div>
-      </div>
-
-    </div>
-
-    <hr style="border:none;border-top:1.5px solid #e2dfd9;margin:8px 0 24px;"/>
-
-    <!-- BOTTOM: country rankings -->
-    <div class="chart-title" style="font-size:16px;margin-bottom:4px;">TikTok Shop's ranking among top fashion e-Retailers in value — Q3 2025</div>
-    <div class="chart-sub" style="margin-bottom:0;">Second-hand excluded</div>
-
-    <div class="cr-row">
-
-      <div class="cr-card">
-        <div class="cr-flag">🇬🇧</div>
-        <div class="cr-rank">#6th</div>
-        <div class="cr-country">United Kingdom</div>
-      </div>
-
-      <div class="cr-card">
-        <div class="cr-flag">🇪🇸</div>
-        <div class="cr-rank">#19th</div>
-        <div class="cr-country">Spain</div>
-      </div>
-
-      <div class="cr-card">
-        <div class="cr-flag">🇮🇹</div>
-        <div class="cr-rank">#20th</div>
-        <div class="cr-country">Italy</div>
-      </div>
-
-      <div class="cr-card">
-        <div class="cr-flag">🇮🇪</div>
-        <div class="cr-rank">#22nd</div>
-        <div class="cr-country">Ireland</div>
-      </div>
-
-      <div class="cr-card">
-        <div class="cr-flag">🇩🇪</div>
-        <div class="cr-rank">#23rd</div>
-        <div class="cr-country">Germany</div>
-      </div>
-
-      <div class="cr-card">
-        <div class="cr-flag">🇫🇷</div>
-        <div class="cr-rank">#52nd</div>
-        <div class="cr-country">France</div>
+      <div class="m-card early">
+        <div class="m-flag">🇫🇷</div>
+        <div class="m-country">France</div>
+        <div class="m-status">Early stage</div>
+        <div class="m-since">Since Mar 2025</div>
+        <div class="m-revenue">Top seller: €400K/mo</div>
+        <div class="m-note">Part of 72M+ DE+IT+FR combined TikTok user base</div>
       </div>
 
     </div>
 
-    <div class="src-note" style="margin-top:20px;"><strong>Source:</strong> TikTok Shop UK · <a href="https://www.imrg.org/blog/how-uk-brands-can-dominate-tiktok-shop/" target="_blank">IMRG UK fashion e-commerce data</a> · Q3 2025 · Second-hand excluded · Netherlands, Belgium, Poland and Sweden were not live on TikTok Shop in Q3 2025 (launched 2026)</div>
+    <div class="src-note" style="margin-top:20px;"><strong>Sources:</strong> <a href="https://blog.lengow.com/tiktok-shop-whats-selling-across-europe/" target="_blank">Lengow — TikTok Shop Europe, October 2025</a> (top seller revenue) &nbsp;·&nbsp; <a href="https://www.netinfluencer.com/tiktok-shop-reaches-200000-uk-business-sellers-as-major-retailers-report-strong-sales/" target="_blank">Net Influencer</a> (UK seller count) &nbsp;·&nbsp; <a href="https://ecommercegermany.com/blog/tiktok-shop-expands-to-germany-france-italy/" target="_blank">eCommerce Germany</a> (user base at March 2025 launch)</div>
   </div>
 
   <!-- ABOUT THE AUTHOR -->
