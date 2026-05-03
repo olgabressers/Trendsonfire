@@ -61,6 +61,11 @@
     .q-text::before { content:'\201C'; font-size:80px; color:rgba(192,38,211,.2); position:absolute; top:-20px; left:-20px; font-family:"Cormorant Garamond",Georgia,serif; line-height:1; }
     .q-attr { font-size:14px; color:rgba(255,255,255,.65); position:relative; }
 
+    /* ── SECTION SUMMARY (compact dark box at top of every section) ── */
+    .sec-summary { background:#0a0f1a; border-top:4px solid var(--fuchsia); padding:22px 28px; margin-bottom:40px; color:rgba(255,255,255,.92); font-size:15px; line-height:1.7; }
+    .sec-summary .lbl { font-size:12px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:10px; }
+    .sec-summary strong { color:white; font-weight:700; }
+
     /* ── SECTION HEADERS ── */
     .sec-header { display:flex; align-items:flex-start; gap:20px; margin:64px 0 32px; padding-bottom:20px; border-bottom:2px solid #0a0f1a; }
     .sec-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:80px; font-weight:600; color:#e8e5e0; line-height:0.9; flex-shrink:0; }
@@ -305,8 +310,14 @@
     <div class="impl-card">
       <div class="impl-num">03</div>
       <div class="impl-head">Designers will not pay before they have earned.</div>
-      <div class="impl-body">Designers turning down a monthly fee before earning a single dollar from the platform is a familiar pattern in two-sided markets. <strong>Across PacSun, Coach, TikTok Shop and Luxe Collective, the same rule applies — sales come first, then the supply side commits.</strong> The order matters: first earning, then fee. How to deliver that first earning at Terra Ferra depends on the current product state, existing designer relationships, and the founder's roadmap.</div>
+      <div class="impl-body">Designers turning down a monthly fee before earning a single dollar from the platform is a familiar pattern in two-sided markets. <strong>Across PacSun, Coach, TikTok Shop and Luxe Collective, the same rule applies — sales come first, then the supply side commits.</strong> The order matters: first earning, then fee. Delivering that first earning is the operational unlock for the platform.</div>
     </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY CLOSING -->
+  <div class="fuchsia-callout" style="margin-top:8px">
+    <p>The luxury industry's deliberate choice to keep checkout out of influencer campaigns — $629M in Paris Fashion Week EMV, $1.3B at the Met Gala, €2.1B in Richemont's communication budget, none of it connected to a transaction layer — has produced an unserved market: designers with engaged audiences, no commercial infrastructure, and no platform built for their transaction. <strong>That is the founding condition Terra Ferra was built into.</strong></p>
+    <p>Emerging designers have audiences they trust, the conversion mechanic is proven at every scale, and no platform yet serves this segment with the right infrastructure. The data confirms the opportunity is real and the timing is now. <strong>That is the kind of strategic challenge I would want to take on as CEO.</strong></p>
   </div>
 
 
@@ -320,6 +331,11 @@
       <div class="sec-title">What luxury brands get from influencer selling</div>
       <div class="sec-sub">Hard luxury uses influencers to build brand desirability — not drive checkout. Affordable luxury uses creators to acquire customers directly. Both strategies work. Neither is accessible at emerging-designer scale.</div>
     </div>
+  </div>
+
+  <div class="sec-summary">
+    <div class="lbl">Section summary</div>
+    <p>Hard luxury (Cartier, Bulgari, Tiffany, Dior) routes influence to brand desirability — not checkout. Affordable luxury (Coach, Burberry, Hugo Boss, Tory Burch, Kate Spade, Ralph Lauren) uses creators for direct customer acquisition. <strong>Both strategies work; neither is accessible at emerging-designer scale.</strong></p>
   </div>
 
   <div class="toc-mini">
@@ -639,6 +655,11 @@
     </div>
   </div>
 
+  <div class="sec-summary">
+    <div class="lbl">Section summary</div>
+    <p>$87B in US social commerce in 2025 across all platforms. TikTok Shop alone reached $64B GMV globally, <strong>60% creator-driven</strong>. 70% of TikTok's UK luxury audience has spent £1,000+ on a single luxury item. <strong>The buyer is already on the platform.</strong></p>
+  </div>
+
   <div class="stats" style="grid-template-columns:repeat(5,1fr)">
     <div class="stat-card">
       <div class="lbl">US Social Commerce 2025 — all platforms</div>
@@ -774,6 +795,11 @@
     </div>
   </div>
 
+  <div class="sec-summary">
+    <div class="lbl">Section summary</div>
+    <p>Dior's $84M EMV from one fashion week and Coach's 4.6M new customers both work — <strong>but require fashion week budgets, ambassador contracts, and hundreds of millions in communication spend.</strong> What emerging designers have instead is what money cannot buy: a community that personally trusts them.</p>
+  </div>
+
   <div class="compare-grid">
     <div class="compare-card luxury-model">
       <div class="compare-label lux">Luxury Ambassador Model</div>
@@ -882,6 +908,11 @@
     </div>
   </div>
 
+  <div class="sec-summary">
+    <div class="lbl">Section summary</div>
+    <p>Spring (merchandise), Patreon (subscriptions), Kickstarter (one-off crowdfunding), Shopify (DTC storefront with no audience) — <strong>no platform combines pre-sales, fan community, and revenue sharing for designers selling original collections.</strong> PacSun showed a 5,000-follower creator can drive 11,000 units in 48 hours when the infrastructure exists. The infrastructure is the gap.</p>
+  </div>
+
   <!-- SUPPLY-SIDE ECONOMICS -->
   <div class="chart-card" style="margin-bottom:28px">
     <div class="chart-title">What Micro-Creators Currently Earn — Without a Pre-Sale Platform</div>
@@ -937,12 +968,6 @@
     <p><strong>Why the benchmark data doesn't exist:</strong> there is no public data on "what a designer with 15K followers earns per collection launch" because no platform has served this market at scale and measured it. The data gap is not a research failure — it is the market gap. When a platform solves this problem and starts tracking it, that data will exist. Until then, the absence of the number is the evidence of the opportunity.</p>
   </div>
 
-
-  <!-- CEO CLOSING -->
-  <div class="fuchsia-callout" style="margin-top:8px">
-    <p>The luxury industry's deliberate choice to keep checkout out of influencer campaigns — $629M in Paris Fashion Week EMV, $1.3B at the Met Gala, €2.1B in Richemont's communication budget, none of it connected to a transaction layer — has produced an unserved market: designers with engaged audiences, no commercial infrastructure, and no platform built for their transaction. <strong>That is the founding condition Terra Ferra was built into.</strong></p>
-    <p>The market signals are aligned: emerging designers have audiences they trust, the conversion mechanic is proven at every scale, and no platform yet serves this segment with the right infrastructure. The data confirms the opportunity is real and the timing is now. <strong>That is the kind of strategic challenge I would want to take on as CEO</strong> — combining what this analysis surfaces with Maxim's vision for the platform, the current product state, and the existing designer relationships.</p>
-  </div>
 
 
 </main>
