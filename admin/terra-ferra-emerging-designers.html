@@ -40,15 +40,18 @@
     main a { color:#8b6a2f; }
 
     /* ── TABLE OF CONTENTS ── */
-    .toc { position:static; background:white; border:1px solid var(--rule); border-left:3px solid var(--fuchsia); padding:14px 20px; margin:0 0 32px 0; box-shadow:0 1px 3px rgba(0,0,0,.04); }
-    .toc-label { font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:8px; }
-    .toc-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(5,1fr); gap:6px 18px; }
-    @media(max-width:900px){ .toc-list { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:560px){ .toc-list { grid-template-columns:1fr; } }
-    .toc-list li { display:flex; align-items:baseline; gap:8px; padding:0; border:none; }
-    .toc-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:15px; font-weight:700; color:var(--fuchsia); flex-shrink:0; min-width:18px; }
-    .toc-list a { color:#0a0f1a; text-decoration:none; font-size:12.5px; font-weight:600; line-height:1.35; transition:color .15s; }
+    .toc { position:static; background:white; border:1px solid var(--rule); border-left:4px solid var(--fuchsia); padding:28px 32px; margin:0 0 48px 0; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+    .toc-label { font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:18px; }
+    .toc-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:10px 28px; }
+    @media(max-width:720px){ .toc-list { grid-template-columns:1fr; } }
+    .toc-list li { display:flex; align-items:baseline; gap:14px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
+    .toc-list li:last-child, .toc-list li:nth-last-child(2):nth-child(odd) { border-bottom:none; }
+    .toc-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:22px; font-weight:600; color:var(--fuchsia); flex-shrink:0; min-width:32px; }
+    .toc-list a { color:#0a0f1a; text-decoration:none; font-size:15px; font-weight:600; line-height:1.4; transition:color .15s; }
     .toc-list a:hover { color:var(--fuchsia); }
+    .toc-mini { background:#0a0f1a; border-left:4px solid var(--fuchsia); padding:18px 24px; margin-bottom:24px; position:relative; }
+    .toc-mini .q-eyebrow { font-size:12px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:10px; }
+    .toc-mini .q-text { font-family:"Cormorant Garamond",Georgia,serif; font-size:19px; color:white; line-height:1.45; font-style:italic; }
 
     /* ── QUESTION BLOCK ── */
     .question-block { background:#0a0f1a; border-left:6px solid var(--fuchsia); padding:40px 44px; margin-bottom:60px; position:relative; overflow:hidden; }
@@ -285,10 +288,15 @@
   <div class="sec-header" id="sec-1" style="margin-top:0">
     <div class="sec-num">01</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">The Market Question</div>
-      <div class="sec-title">What do luxury brands actually get from selling through influencers — and what does that mean for emerging designers?</div>
+      <div class="sec-eyebrow">The Data</div>
+      <div class="sec-title">What luxury brands get from influencer selling</div>
       <div class="sec-sub">Hard luxury uses influencers to build brand desirability — not drive checkout. Affordable luxury uses creators to acquire customers directly. Both strategies work. Neither is accessible at emerging-designer scale.</div>
     </div>
+  </div>
+
+  <div class="toc-mini">
+    <div class="q-eyebrow">The Market Question</div>
+    <div class="q-text">What do luxury brands and affordable luxury brands actually get from selling through influencers — and what does that mean for the emerging designer market?</div>
   </div>
 
   <!-- TOP STATS -->
