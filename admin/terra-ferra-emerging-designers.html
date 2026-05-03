@@ -40,14 +40,14 @@
     main a { color:#8b6a2f; }
 
     /* ── TABLE OF CONTENTS ── */
-    .toc { background:white; border:1px solid var(--rule); border-left:4px solid var(--fuchsia); padding:28px 32px; margin-bottom:48px; box-shadow:0 1px 4px rgba(0,0,0,.04); }
-    .toc-label { font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:18px; }
-    .toc-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:10px 28px; }
-    @media(max-width:720px){ .toc-list { grid-template-columns:1fr; } }
-    .toc-list li { display:flex; align-items:baseline; gap:14px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
-    .toc-list li:last-child, .toc-list li:nth-last-child(2):nth-child(odd) { border-bottom:none; }
-    .toc-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:22px; font-weight:600; color:var(--fuchsia); flex-shrink:0; min-width:32px; }
-    .toc-list a { color:#0a0f1a; text-decoration:none; font-size:15px; font-weight:600; line-height:1.4; transition:color .15s; }
+    .toc { position:static; background:white; border:1px solid var(--rule); border-left:3px solid var(--fuchsia); padding:14px 20px; margin:0 0 32px 0; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+    .toc-label { font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:8px; }
+    .toc-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(5,1fr); gap:6px 18px; }
+    @media(max-width:900px){ .toc-list { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:560px){ .toc-list { grid-template-columns:1fr; } }
+    .toc-list li { display:flex; align-items:baseline; gap:8px; padding:0; border:none; }
+    .toc-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:15px; font-weight:700; color:var(--fuchsia); flex-shrink:0; min-width:18px; }
+    .toc-list a { color:#0a0f1a; text-decoration:none; font-size:12.5px; font-weight:600; line-height:1.35; transition:color .15s; }
     .toc-list a:hover { color:var(--fuchsia); }
 
     /* ── QUESTION BLOCK ── */
@@ -265,17 +265,9 @@
 <main>
 
   <!-- ═══════════════════════════════════════════════
-       THE QUESTION
-  ═══════════════════════════════════════════════ -->
-  <div class="question-block">
-    <div class="q-eyebrow">The Market Question</div>
-    <div class="q-text">What do luxury brands and affordable luxury brands actually get from selling through influencers — and what does that mean for the emerging designer market?</div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════
        TABLE OF CONTENTS
   ═══════════════════════════════════════════════ -->
-  <nav class="toc" aria-label="Table of contents">
+  <div class="toc" role="navigation" aria-label="Table of contents">
     <div class="toc-label">In this report</div>
     <ul class="toc-list">
       <li><span class="toc-num">01</span><a href="#sec-1">What luxury brands get from influencer selling</a></li>
@@ -284,17 +276,17 @@
       <li><span class="toc-num">04</span><a href="#sec-4">Designers have the audience. No platform gives them the tools.</a></li>
       <li><span class="toc-num">05</span><a href="#sec-5">What this means for Terra Ferra</a></li>
     </ul>
-  </nav>
+  </div>
 
 
   <!-- ═══════════════════════════════════════════════
        SECTION 1 — THE ANSWER
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header" id="sec-1">
+  <div class="sec-header" id="sec-1" style="margin-top:0">
     <div class="sec-num">01</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">The Data</div>
-      <div class="sec-title">What luxury brands get from influencer selling</div>
+      <div class="sec-eyebrow">The Market Question</div>
+      <div class="sec-title">What do luxury brands actually get from selling through influencers — and what does that mean for emerging designers?</div>
       <div class="sec-sub">Hard luxury uses influencers to build brand desirability — not drive checkout. Affordable luxury uses creators to acquire customers directly. Both strategies work. Neither is accessible at emerging-designer scale.</div>
     </div>
   </div>
@@ -729,18 +721,28 @@
     <div class="findings-label">The Closest Proof Case — Small Creator, Real Revenue</div>
     <div class="chart-title">PacSun: a 5,000-follower creator drove 11,000 units in 48 hours</div>
     <div class="chart-sub">A single affiliate creator with 5,000 TikTok followers posted about PacSun's Casey Jean before Black Friday 2023. Full-year 2024: $20M in TikTok Shop revenue. By mid-2025, TikTok Shop accounted for 10% of PacSun's e-commerce. · <a href="https://digiday.com/marketing/how-fashion-retailer-pacsuns-viral-jeans-moment-on-tiktok-is-part-of-its-bigger-bet-on-creators/" target="_blank">Digiday, July 2025</a></div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Creator follower count at time of post</span><span class="bar-val">5,000</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:5%;background:var(--fuchsia)">Terra Ferra's target range starts here</div></div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
+      <div style="background:#fdf4ff;border:1px solid #f5d0fe;border-top:4px solid var(--fuchsia);padding:22px 20px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">The creator</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:600;color:#0a0f1a;line-height:1;margin-bottom:8px">5,000</div>
+        <div style="font-size:13.5px;font-weight:700;color:#1f1f1f;margin-bottom:6px">followers at time of post</div>
+        <div style="font-size:12.5px;color:#1f1f1f;line-height:1.5">Terra Ferra's target range starts here</div>
+      </div>
+      <div style="background:white;border:1px solid #e2dfd9;border-top:4px solid var(--fuchsia);padding:22px 20px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--fuchsia);margin-bottom:10px">The output</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:600;color:#0a0f1a;line-height:1;margin-bottom:8px">11,000</div>
+        <div style="font-size:13.5px;font-weight:700;color:#1f1f1f;margin-bottom:6px">pairs sold in 48 hours</div>
+        <div style="font-size:12.5px;color:#1f1f1f;line-height:1.5">From one TikTok video, pre–Black Friday 2023</div>
+      </div>
+      <div style="background:#0a0f1a;border-top:4px solid var(--fuchsia);padding:22px 20px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#e879f9;margin-bottom:10px">The annual result</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:600;color:white;line-height:1;margin-bottom:8px">$20M</div>
+        <div style="font-size:13.5px;font-weight:700;color:white;margin-bottom:6px">PacSun TikTok Shop GMV, FY2024</div>
+        <div style="font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.5">10% of total e-commerce by mid-2025</div>
+      </div>
     </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">Units sold in 48 hours from one video</span><span class="bar-val">11,000 pairs</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--fuchsia)">Pre–Black Friday 2023</div></div>
-    </div>
-    <div class="bar-wrap">
-      <div class="bar-label-row"><span class="bar-name">PacSun TikTok Shop GMV — full year 2024</span><span class="bar-val">$20M</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">10% of total e-commerce by mid-2025</div></div>
-    </div>
+
     <div class="heat-insight">PacSun is a $200M+ retailer — the brand scale is different. But the creator who triggered the moment had 5,000 followers, the bottom of Terra Ferra's target supply base. The conversion mechanic is identical. The variable is whether the infrastructure exists to close the transaction.</div>
     <div class="src-note"><strong>Source:</strong> <a href="https://digiday.com/marketing/how-fashion-retailer-pacsuns-viral-jeans-moment-on-tiktok-is-part-of-its-bigger-bet-on-creators/" target="_blank">Digiday — PacSun on TikTok Shop, July 2025</a></div>
   </div>
