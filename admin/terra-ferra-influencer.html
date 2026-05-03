@@ -216,11 +216,110 @@
       .nav-links.open { display:flex; position:absolute; top:100%; left:0; right:0; width:100%; margin:0; box-shadow:0 12px 24px rgba(0,0,0,.25); }
       .nav-links a { padding:12px 16px; border-bottom:none; font-size:14px; text-align:left; }
       .nav-search-btn { border-left:none; order:3; margin-left:0; padding:16px 4px 16px 12px; }
-      main { padding:32px 16px 64px; }
-      .brand-grid { grid-template-columns:1fr; }
-      .sec-num { font-size:52px; }
-      .question-block { padding:28px 24px; }
+
+      .art-hero { padding:36px 20px 36px; }
+      .art-hero h1 { font-size:28px; line-height:1.15; }
+      .art-hero p { font-size:15px; line-height:1.55; }
+      .meta { font-size:12px; gap:12px; margin-top:14px; }
+
+      main { padding:24px 14px 56px; }
+
+      /* Section headers — stack number above title on mobile */
+      .sec-header { gap:14px; margin:36px 0 20px; padding-bottom:16px; }
+      .sec-num { font-size:48px; }
+      .sec-title { font-size:22px; line-height:1.22; }
+      .sec-eyebrow { font-size:11px; letter-spacing:1.4px; }
+      .sec-sub { font-size:14px; }
+
+      /* Section summary box compaction */
+      .sec-summary { padding:16px 18px; margin-bottom:28px; font-size:14px; line-height:1.65; }
+      .sec-summary .lbl { font-size:10.5px; letter-spacing:1.3px; margin-bottom:8px; }
+
+      /* Toc-mini (Question block) compaction */
+      .toc-mini { padding:14px 18px; margin-bottom:20px; }
+      .toc-mini .q-eyebrow { font-size:10.5px; margin-bottom:8px; }
+      .toc-mini .q-text { font-size:16px; line-height:1.4; }
+
+      /* TOC compact on mobile */
+      .toc { padding:18px 20px; margin-bottom:32px; }
+      .toc-list { gap:8px 16px; }
+
+      /* Brand cards stack */
+      .brand-grid { grid-template-columns:1fr; gap:14px; }
+      .brand-card { padding:20px 18px; }
+      .brand-card h3 { font-size:19px; }
+
+      /* Question block (legacy, if any) */
+      .question-block { padding:24px 18px; }
       .q-text::before { display:none; }
+
+      /* Implication cards stack already at 900px — tighten padding */
+      .impl-card { padding:24px 20px; }
+      .impl-num { font-size:44px; margin-bottom:10px; }
+      .impl-head { font-size:15.5px; }
+      .impl-body { font-size:14px; line-height:1.65; }
+
+      /* Charts and bars */
+      .chart-card { padding:20px 16px; margin-bottom:24px; }
+      .chart-title { font-size:16px; }
+      .chart-sub { font-size:13px; line-height:1.5; }
+      .bar-name { font-size:13px; }
+      .bar-val { font-size:13px; }
+      .bar-track { height:22px; }
+      .bar-fill { font-size:10.5px; padding-left:8px; }
+      .bar-note { font-size:12px; }
+
+      /* Insight banners + fuchsia callouts */
+      .insight-banner { padding:20px 22px; }
+      .insight-banner p { font-size:14.5px; line-height:1.6; }
+      .fuchsia-callout { padding:20px 22px; }
+      .fuchsia-callout p { font-size:14.5px; line-height:1.6; }
+
+      /* Heat insight */
+      .heat-insight { padding:14px 16px; font-size:13.5px; line-height:1.6; }
+
+      /* Stat cards — already 2-col at 900px, refine padding */
+      .stat-card { padding:16px 14px; }
+      .stat-card .lbl { font-size:11px; }
+      .stat-card .num { font-size:34px; }
+      .stat-card .sm { font-size:12px; }
+
+      /* Compare grid */
+      .compare-card { padding:22px 18px; }
+      .compare-headline { font-size:20px; margin-bottom:18px; }
+      .compare-row { padding:10px 0; }
+      .compare-metric { font-size:13px; }
+      .compare-value { font-size:14px; }
+
+      /* Platform cards */
+      .platform-card { padding:20px 18px; }
+      .platform-name { font-size:16px; }
+      .platform-what { font-size:13.5px; }
+      .platform-gap { font-size:13px; }
+
+      /* INLINE GRIDS (need explicit override since they use style="…repeat(N,1fr)…") */
+      .stats[style*="repeat(5"] { grid-template-columns:repeat(2,1fr) !important; }
+      div[style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns:repeat(2,1fr) !important; gap:8px !important; }
+      div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns:1fr !important; gap:12px !important; }
+
+      /* Source notes */
+      .src-note { font-size:12px; padding:10px 12px; }
+
+      /* KPI rows inside brand cards */
+      .kpi-row { gap:18px; }
+      .kpi .k-num { font-size:26px; }
+      .kpi .k-lbl { font-size:11.5px; }
+    }
+
+    @media(max-width:480px){
+      .art-hero h1 { font-size:24px; }
+      .art-hero p { font-size:14px; }
+      .sec-num { font-size:40px; }
+      .sec-title { font-size:19px; }
+      .toc-mini .q-text { font-size:15px; }
+      .impl-num { font-size:38px; }
+      .stat-card .num { font-size:30px; }
+      main { padding:20px 12px 48px; }
     }
   </style>
 </head>
