@@ -39,6 +39,17 @@
     main { max-width:1280px; margin:auto; padding:56px 32px 96px; }
     main a { color:#8b6a2f; }
 
+    /* ── TABLE OF CONTENTS ── */
+    .toc { background:white; border:1px solid var(--rule); border-left:4px solid var(--fuchsia); padding:28px 32px; margin-bottom:48px; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+    .toc-label { font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--fuchsia); margin-bottom:18px; }
+    .toc-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:10px 28px; }
+    @media(max-width:720px){ .toc-list { grid-template-columns:1fr; } }
+    .toc-list li { display:flex; align-items:baseline; gap:14px; padding:6px 0; border-bottom:1px solid #f1f5f9; }
+    .toc-list li:last-child, .toc-list li:nth-last-child(2):nth-child(odd) { border-bottom:none; }
+    .toc-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:22px; font-weight:600; color:var(--fuchsia); flex-shrink:0; min-width:32px; }
+    .toc-list a { color:#0a0f1a; text-decoration:none; font-size:15px; font-weight:600; line-height:1.4; transition:color .15s; }
+    .toc-list a:hover { color:var(--fuchsia); }
+
     /* ── QUESTION BLOCK ── */
     .question-block { background:#0a0f1a; border-left:6px solid var(--fuchsia); padding:40px 44px; margin-bottom:60px; position:relative; overflow:hidden; }
     .question-block::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 15% 50%, rgba(192,38,211,.1) 0%, transparent 55%); pointer-events:none; }
@@ -165,7 +176,7 @@
     .implication-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px; }
     @media(max-width:900px){ .implication-cards { grid-template-columns:1fr; } }
     .impl-card { background:#0a0f1a; padding:32px 28px; border-top:4px solid var(--fuchsia); }
-    .impl-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:56px; font-weight:600; color:rgba(192,38,211,.3); line-height:1; margin-bottom:16px; }
+    .impl-num { font-family:"Cormorant Garamond",Georgia,serif; font-size:56px; font-weight:700; color:#e879f9; line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(232,121,249,.3); }
     .impl-head { font-size:17px; font-weight:700; color:white; line-height:1.4; margin-bottom:14px; }
     .impl-body { font-size:14.5px; color:rgba(255,255,255,.75); line-height:1.75; }
     .impl-body strong { color:white; }
@@ -261,11 +272,25 @@
     <div class="q-text">What do luxury brands and affordable luxury brands actually get from selling through influencers — and what does that mean for the emerging designer market?</div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════
+       TABLE OF CONTENTS
+  ═══════════════════════════════════════════════ -->
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-label">In this report</div>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span><a href="#sec-1">What luxury brands get from influencer selling</a></li>
+      <li><span class="toc-num">02</span><a href="#sec-2">The market making this possible</a></li>
+      <li><span class="toc-num">03</span><a href="#sec-3">The model that works requires budgets emerging designers cannot access</a></li>
+      <li><span class="toc-num">04</span><a href="#sec-4">Designers have the audience. No platform gives them the tools.</a></li>
+      <li><span class="toc-num">05</span><a href="#sec-5">What this means for Terra Ferra</a></li>
+    </ul>
+  </nav>
+
 
   <!-- ═══════════════════════════════════════════════
        SECTION 1 — THE ANSWER
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header">
+  <div class="sec-header" id="sec-1">
     <div class="sec-num">01</div>
     <div class="sec-label">
       <div class="sec-eyebrow">The Data</div>
@@ -527,7 +552,7 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 2 — THE MARKET
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header">
+  <div class="sec-header" id="sec-2">
     <div class="sec-num">02</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Market Scale</div>
@@ -631,7 +656,7 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 3 — THE TWIST
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header twist">
+  <div class="sec-header twist" id="sec-3">
     <div class="sec-num">03</div>
     <div class="sec-label">
       <div class="sec-eyebrow">The Twist</div>
@@ -729,7 +754,7 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 4 — THE GAP
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header gap">
+  <div class="sec-header gap" id="sec-4">
     <div class="sec-num">04</div>
     <div class="sec-label">
       <div class="sec-eyebrow">The Infrastructure Gap</div>
@@ -744,18 +769,18 @@
     <div class="chart-sub">Lumanu analysed 255,000+ brand partnership payments totalling $420M. These figures are brand deal income — fees paid for promoting other brands' products, not own-collection sales revenue. · <a href="https://www.lumanu.com/blog/breaking-down-1-billion-in-creator-payouts-2025-influencer-compensation-insights" target="_blank">Lumanu, April 2026</a></div>
     <div class="bar-wrap">
       <div class="bar-label-row"><span class="bar-name">Nano creators — under 10K followers</span><span class="bar-val">$4,800 / year avg.</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:3%;background:#4e4e4e">Brand partnerships</div></div>
+      <div class="bar-track"><div class="bar-fill" style="width:16%;background:#4e4e4e">Brand partnerships</div></div>
     </div>
     <div class="bar-wrap">
       <div class="bar-label-row"><span class="bar-name">Micro creators — 10K–100K followers</span><span class="bar-val">$38,500 / year avg.</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:21%;background:#8b6a2f">Terra Ferra's primary designer cohort</div></div>
+      <div class="bar-track"><div class="bar-fill" style="width:46%;background:#8b6a2f">Terra Ferra's primary designer cohort</div></div>
     </div>
     <div class="bar-wrap">
       <div class="bar-label-row"><span class="bar-name">Macro creators — 100K–1M followers</span><span class="bar-val">$185,000 / year avg.</span></div>
       <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0a0f1a">Brand partnerships</div></div>
     </div>
     <div class="heat-insight">No equivalent benchmark exists for designers selling their <em>own</em> collections. A designer with 15K followers promoting other brands earns ~$38,500/year. What the same designer earns pre-selling original work to followers who chose to follow them specifically — that number does not exist yet. It is what Terra Ferra's first five pilots will produce.</div>
-    <div class="src-note"><strong>Source:</strong> <a href="https://www.lumanu.com/blog/breaking-down-1-billion-in-creator-payouts-2025-influencer-compensation-insights" target="_blank">Lumanu — Creator Compensation Insights, April 2026</a> · 255,000+ payments, $420M analysed</div>
+    <div class="src-note"><strong>Source:</strong> <a href="https://www.lumanu.com/blog/breaking-down-1-billion-in-creator-payouts-2025-influencer-compensation-insights" target="_blank">Lumanu — Creator Compensation Insights, April 2026</a> · 255,000+ payments, $420M analysed · <em>Bar widths use a square-root scale so the $4,800 bar remains readable; actual amounts are in the value labels.</em></div>
   </div>
 
   <div class="platform-grid">
@@ -797,7 +822,7 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 5 — WHAT THIS MEANS
   ═══════════════════════════════════════════════ -->
-  <div class="sec-header impl">
+  <div class="sec-header impl" id="sec-5">
     <div class="sec-num">05</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Strategic Implication</div>
