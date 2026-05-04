@@ -98,6 +98,17 @@
     .article-thumb:hover img { opacity: .8; }
     .section-gap { height: 48px; }
 
+    /* ── TABLE OF CONTENTS ── */
+    .toc-wrap { background:#f9fafb; border:1px solid #e2dfd9; border-left:3px solid #b8976a; padding:20px 24px 22px; margin-bottom:48px; }
+    .toc-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#8b6a2f; margin-bottom:16px; }
+    .toc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .toc-item { display:flex; justify-content:space-between; align-items:center; text-decoration:none; padding:10px 14px; border:1px solid #e2dfd9; background:white; transition:border-color .2s; }
+    .toc-item:hover { border-color:#b8976a; }
+    .toc-name { font-size:14px; font-weight:600; color:#0a0f1a; line-height:1.3; }
+    .toc-cnt { font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; font-weight:600; color:#b8976a; line-height:1; margin-left:12px; flex-shrink:0; }
+    @media(max-width:700px){ .toc-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:440px){ .toc-grid { grid-template-columns:1fr; } }
+
     @media (max-width: 768px) {
       .insights-main { padding: 48px 20px 64px; }
       .article { flex-direction: column; gap: 8px; }
@@ -139,21 +150,35 @@
   </button>
 </nav>
 
-<!-- HERO (using shared .sec-hero class — matches other section pages) -->
-<div class="sec-hero">
+<!-- HERO -->
+<section class="sec-hero">
   <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Insights</div>
     <div class="eyebrow">LinkedIn Intelligence Briefs</div>
     <h1>Insights</h1>
     <p>Weekly market intelligence published on LinkedIn. Analysis on the trends reshaping European business.</p>
     <div class="sec-date">Updated 4 May 2026</div>
   </div>
-</div>
+</section>
 
 <!-- MAIN -->
 <main class="insights-main">
 
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc-wrap" aria-label="Page sections">
+    <div class="toc-label">Topics in this page</div>
+    <div class="toc-grid">
+      <a href="#social-commerce" class="toc-item"><span class="toc-name">Social Commerce</span><span class="toc-cnt">1</span></a>
+      <a href="#ai-future-of-work" class="toc-item"><span class="toc-name">AI &amp; Future of Work</span><span class="toc-cnt">1</span></a>
+      <a href="#supply-chain" class="toc-item"><span class="toc-name">Supply Chain</span><span class="toc-cnt">3</span></a>
+      <a href="#education" class="toc-item"><span class="toc-name">Education &amp; Government</span><span class="toc-cnt">2</span></a>
+      <a href="#electric-vehicles" class="toc-item"><span class="toc-name">Electric Vehicles</span><span class="toc-cnt">3</span></a>
+      <a href="#circular-economy" class="toc-item"><span class="toc-name">Circular Economy</span><span class="toc-cnt">2</span></a>
+    </div>
+  </nav>
+
   <!-- SOCIAL COMMERCE -->
-  <div class="section-head">
+  <div class="section-head" id="social-commerce">
     <h2>Social Commerce</h2>
     <span class="count">1 brief</span>
   </div>
@@ -171,7 +196,7 @@
   <div class="section-gap"></div>
 
   <!-- AI & FUTURE OF WORK -->
-  <div class="section-head">
+  <div class="section-head" id="ai-future-of-work">
     <h2>AI &amp; Future of Work</h2>
     <span class="count">1 brief</span>
   </div>
@@ -189,7 +214,7 @@
   <div class="section-gap"></div>
 
   <!-- SUPPLY CHAIN -->
-  <div class="section-head">
+  <div class="section-head" id="supply-chain">
     <h2>Supply Chain</h2>
     <span class="count">3 briefs</span>
   </div>
@@ -227,7 +252,7 @@
   <div class="section-gap"></div>
 
   <!-- EDUCATION -->
-  <div class="section-head">
+  <div class="section-head" id="education">
     <h2>Education &amp; Government</h2>
     <span class="count">2 briefs</span>
   </div>
@@ -255,7 +280,7 @@
   <div class="section-gap"></div>
 
   <!-- ELECTRIC VEHICLES -->
-  <div class="section-head">
+  <div class="section-head" id="electric-vehicles">
     <h2>Electric Vehicles</h2>
     <span class="count">3 briefs</span>
   </div>
@@ -293,7 +318,7 @@
   <div class="section-gap"></div>
 
   <!-- CIRCULAR ECONOMY -->
-  <div class="section-head">
+  <div class="section-head" id="circular-economy">
     <h2>Circular Economy</h2>
     <span class="count">2 briefs</span>
   </div>
