@@ -135,6 +135,14 @@
     .insight p{font-size:15.5px;line-height:1.75;color:rgba(255,255,255,.9);position:relative}
     .insight strong{color:#b8976a}
 
+    .cta-bar{background:#0a0f1a;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:40px;margin-top:24px;position:relative}
+    .cta-bar::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(184,151,106,.06) 0%,transparent 60%);pointer-events:none}
+    .cta-bar>*{position:relative}
+    .cta-bar p:first-child{font-size:11px;color:#b8976a;margin-bottom:10px;text-transform:uppercase;letter-spacing:3px;font-weight:700}
+    .cta-bar p:not(:first-child){color:rgba(255,255,255,.85);font-size:15px;max-width:640px;line-height:1.7}
+    .cta-bar a{color:#8b6a2f;background:transparent;font-size:12px;font-weight:600;padding:14px 32px;border:1px solid rgba(184,151,106,.3);text-decoration:none;white-space:nowrap;letter-spacing:1.5px;text-transform:uppercase;transition:all .25s ease}
+    .cta-bar a:hover{background:rgba(184,151,106,.1);border-color:#8b6a2f}
+
     footer{background:#060a12;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
     footer a{color:#94a3b8;text-decoration:none}
     footer a:hover{color:white}
@@ -167,6 +175,7 @@
       .org-grid{grid-template-columns:1fr}
       .hq-grid{grid-template-columns:1fr 1fr}
       .kpi-grid{grid-template-columns:1fr 1fr}
+      .cta-bar{padding:24px 20px;flex-direction:column}
     }
   </style>
 </head>
@@ -449,19 +458,17 @@
     <p><strong>The commercial-to-humanitarian skills gap is operational, not ethical.</strong> DHL's 900 disaster-response volunteers are logistics professionals, not aid workers. Kuehne+Nagel's 40 Copenhagen-based humanitarian experts came from freight. The LET consortium runs Gaza aid coordination with the same tools used to run consumer goods distribution. The sector needs operators who know how supply chains work — and are ready to apply that knowledge at a different kind of scale.</p>
   </div>
 
-</main>
-
-<!-- ABOUT STRIP -->
-<section class="about-strip">
-  <div class="inner">
-    <div>
-      <div class="label">About the Author</div>
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div style="flex:1;min-width:0;">
+      <p>About the Author</p>
       <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, finance, compliance, education, people and transformation trends across Europe.</p>
       <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in sales &amp; digital operations, ecommerce, omni-channel retail, supply chain, programs management and business transformation.</p>
     </div>
-    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
   </div>
-</section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
