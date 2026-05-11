@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    width:1200px;
+    background:#0a0f1a;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:white;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .card{
+    width:1200px;
+    background:#0a0f1a;
+    padding:64px 64px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* Subtle texture */
+  .card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(ellipse at 15% 30%, rgba(184,151,106,.09) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 70%, rgba(3,105,161,.06) 0%, transparent 55%);
+    pointer-events:none;
+  }
+
+  .inner{position:relative;z-index:1}
+
+  /* Header */
+  .eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#b8976a;margin-bottom:14px;
+  }
+  .headline{
+    font-size:32px;font-weight:800;line-height:1.2;
+    color:white;margin-bottom:8px;max-width:900px;
+  }
+  .sub{
+    font-size:16px;color:rgba(255,255,255,.6);margin-bottom:48px;font-weight:400;
+  }
+
+  /* Main comparison grid */
+  .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;
+  }
+
+  .col{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    padding:32px 28px;
+    position:relative;
+  }
+  .col-commercial{border-top:4px solid #b8976a}
+  .col-humanitarian{border-top:4px solid #0369a1}
+
+  .col-label{
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .col-commercial .col-label{color:#b8976a}
+  .col-humanitarian .col-label{color:#5ba4cf}
+
+  .col-brand{
+    font-size:26px;font-weight:800;color:white;margin-bottom:20px;
+  }
+
+  .big-number{
+    font-size:80px;font-weight:800;line-height:1;margin-bottom:0;
+  }
+  .col-commercial .big-number{color:#b8976a}
+  .col-humanitarian .big-number{color:#5ba4cf}
+
+  .big-unit{
+    font-size:22px;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:16px;margin-top:4px;
+  }
+
+  .col-context{
+    font-size:15px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:24px;
+    font-weight:400;
+  }
+
+  /* Stat rows inside each col */
+  .stat-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 0;border-top:1px solid rgba(255,255,255,.08);
+  }
+  .stat-label{font-size:13px;color:rgba(255,255,255,.55);font-weight:500}
+  .stat-val{font-size:14px;font-weight:700;color:white}
+
+  /* WFP scale strip */
+  .scale-strip{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    padding:28px 32px;margin-bottom:36px;
+  }
+  .scale-title{
+    font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:#b8976a;margin-bottom:20px;
+  }
+  .scale-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  }
+  .scale-item{padding:0 20px 0 0;border-right:1px solid rgba(255,255,255,.1)}
+  .scale-item:last-child{border-right:none;padding-right:0;padding-left:20px}
+  .scale-item:not(:first-child){padding-left:20px}
+  .scale-num{font-size:32px;font-weight:800;color:white;margin-bottom:4px}
+  .scale-lbl{font-size:13px;color:rgba(255,255,255,.55);line-height:1.4;font-weight:500}
+  .scale-org{font-size:11px;color:#b8976a;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+
+  /* Source footer */
+  .footer{
+    display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid rgba(255,255,255,.12);padding-top:20px;
+  }
+  .footer-src{font-size:12px;color:rgba(255,255,255,.35);line-height:1.5}
+  .footer-brand{
+    font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8976a;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="inner">
+
+    <div class="eyebrow">Supply Chain Intelligence &mdash; TrendsOnFire</div>
+    <div class="headline">Zara restocks a store in 48 hours. DHL deploys disaster teams in 72 &mdash; into places no courier reaches.</div>
+    <div class="sub">Commercial logistics vs humanitarian logistics &mdash; speed, scale and what separates them</div>
+
+    <!-- MAIN COMPARISON -->
+    <div class="compare">
+      <div class="col col-commercial">
+        <div class="col-label">Commercial Retail</div>
+        <div class="col-brand">Inditex / Zara</div>
+        <div class="big-number">48h</div>
+        <div class="big-unit">worldwide store replenishment</div>
+        <div class="col-context">9 distribution centres in Spain. Predictable freight lanes, contracted carriers, customs pre-clearance. New collections reach every store in Europe within 36 hours.</div>
+        <div class="stat-row"><span class="stat-label">Europe delivery</span><span class="stat-val">36 hours</span></div>
+        <div class="stat-row"><span class="stat-label">Worldwide delivery</span><span class="stat-val">48 hours</span></div>
+        <div class="stat-row"><span class="stat-label">Distribution centres</span><span class="stat-val">9 — Spain</span></div>
+        <div class="stat-row"><span class="stat-label">Operating environment</span><span class="stat-val">Stable &amp; predictable</span></div>
+      </div>
+      <div class="col col-humanitarian">
+        <div class="col-label">Emergency Humanitarian — DHL Disaster Response</div>
+        <div class="col-brand">DHL Group DRT</div>
+        <div class="big-number">72h</div>
+        <div class="big-unit">from UN activation to deployment</div>
+        <div class="col-context">4 regional hubs: Singapore, Panama, Dubai, Bonn. Into conflict zones, collapsed airports and flooded access routes. Same speed discipline — completely different operating reality.</div>
+        <div class="stat-row"><span class="stat-label">Trained volunteers</span><span class="stat-val">900+</span></div>
+        <div class="stat-row"><span class="stat-label">Regional hubs</span><span class="stat-val">4 — global coverage</span></div>
+        <div class="stat-row"><span class="stat-label">Disaster hotspot coverage</span><span class="stat-val">80% of global zones</span></div>
+        <div class="stat-row"><span class="stat-label">Operating environment</span><span class="stat-val">Crisis &amp; unpredictable</span></div>
+      </div>
+    </div>
+
+    <!-- WFP SCALE -->
+    <div class="scale-strip">
+      <div class="scale-title">WFP 2024 &mdash; the scale behind the comparison</div>
+      <div class="scale-grid">
+        <div class="scale-item">
+          <div class="scale-org">People</div>
+          <div class="scale-num">124.4M</div>
+          <div class="scale-lbl">people assisted in 2024</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-org">Volume</div>
+          <div class="scale-num">2.5M</div>
+          <div class="scale-lbl">metric tonnes of food delivered</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-org">Funding</div>
+          <div class="scale-num">$9.8B</div>
+          <div class="scale-lbl">raised from 115 funding sources</div>
+        </div>
+        <div class="scale-item">
+          <div class="scale-org">Countries</div>
+          <div class="scale-num">87+</div>
+          <div class="scale-lbl">countries reached in 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-src">
+        Sources: Inditex distribution model (morethanshipping.com) &nbsp;·&nbsp; DHL Group Disaster Response Teams (dhl.com) &nbsp;·&nbsp; WFP Annual Review 2024 (publications.wfp.org)
+      </div>
+      <div class="footer-brand">trendsonfire.com</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

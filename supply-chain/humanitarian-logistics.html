@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-115WQYBB0Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-115WQYBB0Z');</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Humanitarian Logistics at Scale — WFP, UNICEF, UNHCR vs Commercial Operations — TrendsOnFire</title>
+  <meta name="description" content="WFP delivered food to 124 million people in 2024. UNICEF procured $5.6 billion in supplies. Zara ships worldwide in 48 hours. The supply chain comparison that maps a different kind of scale."/>
+  <link rel="canonical" href="https://trendsonfire.com/supply-chain/humanitarian-logistics.html"/>
+  <meta name="author" content="Olga Bressers"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="TrendsOnFire"/>
+  <meta property="og:title" content="Humanitarian Logistics at Scale — WFP, UNICEF, UNHCR vs Commercial Operations"/>
+  <meta property="og:description" content="WFP delivered food to 124 million people in 2024. UNICEF procured $5.6 billion in supplies. Zara ships worldwide in 48 hours. The supply chain infrastructure compared."/>
+  <meta property="og:url" content="https://trendsonfire.com/supply-chain/humanitarian-logistics.html"/>
+  <meta property="og:image" content="https://trendsonfire.com/og-image.png"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Humanitarian Logistics at Scale — WFP, UNICEF, UNHCR vs Commercial Operations",
+    "description": "WFP delivered food to 124 million people in 2024. UNICEF procured $5.6 billion in supplies. How the world's largest humanitarian organisations compare to commercial logistics at scale.",
+    "url": "https://trendsonfire.com/supply-chain/humanitarian-logistics.html",
+    "datePublished": "2026-05-11",
+    "dateModified": "2026-05-11",
+    "author": {"@type": "Person", "name": "Olga Bressers"},
+    "publisher": {"@type": "Organization", "name": "TrendsOnFire", "url": "https://trendsonfire.com"},
+    "isAccessibleForFree": true,
+    "keywords": ["WFP", "UNICEF", "UNHCR", "humanitarian logistics", "supply chain", "Zara", "Inditex", "DHL", "Maersk", "humanitarian operations", "crisis logistics"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TrendsOnFire",
+    "url": "https://trendsonfire.com",
+    "founder": {"@type": "Person", "name": "Olga Bressers"}
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0a0f1a;--ink:#0a0f1a;--gold:#b8976a;--gold-dark:#8b6a2f;--border:#e2dfd9;--rule:#e2dfd9;--bg:#faf9f7;--paper:#faf9f7;--text:#1f1f1f;--sub:#4e4e4e;--accent:#8b6a2f;--link:#8b6a2f;--green:#059669;--amber:#d97706;--red:#dc2626;--blue:#1d4ed8}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--text);line-height:1.6}
+
+    nav{background:#0a0f1a;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-logo{padding:10px 0;margin-right:24px;text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+    .nav-links{display:flex;margin-left:auto}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;font-weight:500;padding:12px 9px;border-bottom:3px solid transparent;transition:all .15s;white-space:normal;text-align:center;line-height:1.25;display:flex;align-items:center}
+    .nav-links a:hover,.nav-links a.active{color:white;border-bottom-color:#8b6a2f}
+    .nav-burger{display:none;background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:18px 4px;margin-left:auto}
+    .nav-search-btn{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;padding:0 10px 0 14px;height:100%;display:flex;align-items:center;gap:5px;transition:color .15s;font-size:12px;font-weight:500;font-family:inherit;border-left:1px solid rgba(255,255,255,.15);margin-left:6px;flex-shrink:0}
+    .nav-search-btn:hover{color:white}
+    @media(max-width:768px){nav{padding:0 16px;flex-wrap:wrap}.nav-burger{display:block}.nav-links{display:none;flex-direction:column;width:100%;background:#0a0f1a;padding:8px 0 16px}.nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;width:100%;margin:0;box-shadow:0 12px 24px rgba(0,0,0,.25)}.nav-links a{padding:12px 16px;border-bottom:none;font-size:14px}}
+
+    .hero{background:#0a0f1a;color:white;padding:64px 48px 56px;position:relative;text-align:left}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(184,151,106,.07) 0%,transparent 60%);pointer-events:none}
+    .hero-inner{max-width:1280px;margin:auto;position:relative;z-index:1}
+    .breadcrumb{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
+    .breadcrumb a{color:rgba(255,255,255,.7);text-decoration:none}
+    .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:10px}
+    .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(30px,5vw,46px);font-weight:600;line-height:1.1;margin-bottom:12px;letter-spacing:-0.5px}
+    .hero p{font-size:17px;color:rgba(255,255,255,.9);max-width:680px;line-height:1.65}
+    .hero-meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+    .hero-meta span{font-size:12px;color:rgba(255,255,255,.55)}
+
+    main{max-width:1280px;margin:0 auto;padding:48px 24px 80px}
+    main a{color:#8b6a2f}
+    .section-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(22px,3vw,28px);font-weight:500;color:#0a0f1a;margin-top:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #8b6a2f;letter-spacing:-0.3px}
+
+    /* KPI cards */
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:8px}
+    .kpi{background:white;border:1px solid var(--rule);padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .kpi-val{font-size:28px;font-weight:800;margin-bottom:4px;color:#0a0f1a}
+    .kpi-label{font-size:13px;color:var(--sub);line-height:1.4;font-weight:600}
+    .kpi-org{font-size:11px;color:#b8976a;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+
+    /* Source note */
+    .src-note{font-size:12px;color:#4e4e4e;padding:10px 14px;background:#f9fafb;border-left:3px solid #8b6a2f;margin-top:12px;margin-bottom:32px;line-height:1.6}
+    .src-note a{color:#8b6a2f}
+
+    /* Comparison block */
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;border:1px solid var(--rule)}
+    .cmp-col{padding:28px 24px}
+    .cmp-col:first-child{background:#0a0f1a;color:white;border-right:1px solid rgba(255,255,255,.1)}
+    .cmp-col:last-child{background:#faf9f7}
+    .cmp-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;opacity:.7}
+    .cmp-brand{font-size:22px;font-weight:800;margin-bottom:4px}
+    .cmp-col:first-child .cmp-brand{color:#b8976a}
+    .cmp-col:last-child .cmp-brand{color:#0a0f1a}
+    .cmp-metric{font-size:36px;font-weight:800;margin:12px 0 4px}
+    .cmp-col:first-child .cmp-metric{color:white}
+    .cmp-col:last-child .cmp-metric{color:#059669}
+    .cmp-unit{font-size:13px;margin-bottom:14px;line-height:1.5;font-weight:600}
+    .cmp-col:first-child .cmp-unit{color:rgba(255,255,255,.7)}
+    .cmp-col:last-child .cmp-unit{color:#4e4e4e}
+    .cmp-detail{font-size:13px;line-height:1.65}
+    .cmp-col:first-child .cmp-detail{color:rgba(255,255,255,.8)}
+    .cmp-col:last-child .cmp-detail{color:#1f1f1f}
+
+    /* Bar comparison */
+    .bar-section{margin-bottom:32px}
+    .bar-row{margin-bottom:18px}
+    .bar-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+    .bar-name{font-size:13px;font-weight:700;color:#0a0f1a}
+    .bar-val{font-size:14px;font-weight:800;color:#0a0f1a}
+    .bar-track{height:14px;background:#f0ece8;border-radius:2px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:2px;transition:width .4s ease}
+    .bar-sub{font-size:12px;color:#4e4e4e;margin-top:4px}
+
+    /* Org cards */
+    .org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:8px}
+    .org-card{background:white;border:1px solid var(--rule);padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.05);border-top:3px solid #8b6a2f}
+    .org-name{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:3px}
+    .org-type{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:12px}
+    .org-stat{font-size:24px;font-weight:800;color:#0a0f1a;margin-bottom:2px}
+    .org-stat-label{font-size:13px;color:#4e4e4e;margin-bottom:12px;font-weight:600}
+    .org-body{font-size:13px;color:#1f1f1f;line-height:1.65}
+
+    /* HQ geography grid */
+    .hq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:8px}
+    .hq-card{background:white;border:1px solid var(--rule);padding:18px 20px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+    .hq-city{font-size:17px;font-weight:800;color:#0a0f1a;margin-bottom:2px}
+    .hq-country{font-size:12px;color:#8b6a2f;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .hq-org{font-size:13px;color:#1f1f1f;font-weight:600;margin-bottom:3px}
+    .hq-role{font-size:12px;color:#4e4e4e;line-height:1.5}
+
+    /* Insight callout */
+    .insight{background:#0a0f1a;color:white;padding:28px 32px;margin:32px 0;border-left:4px solid #b8976a;position:relative}
+    .insight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(184,151,106,.06) 0%,transparent 60%);pointer-events:none}
+    .insight p{font-size:15.5px;line-height:1.75;color:rgba(255,255,255,.9);position:relative}
+    .insight strong{color:#b8976a}
+
+    /* CTA bar */
+    .cta-bar{background:#0a0f1a;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:40px;margin-top:24px;position:relative}
+    .cta-bar::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(184,151,106,.06) 0%,transparent 60%);pointer-events:none}
+    .cta-bar>*{position:relative}
+    .cta-bar .cta-eyebrow{font-size:11px;color:#b8976a;margin-bottom:10px;text-transform:uppercase;letter-spacing:3px;font-weight:700}
+    .cta-bar .cta-body{color:rgba(255,255,255,.85);font-size:15.5px;max-width:640px;line-height:1.7}
+    .cta-bar a{color:#8b6a2f;background:transparent;font-size:12px;font-weight:600;padding:14px 32px;border:1px solid rgba(184,151,106,.3);text-decoration:none;white-space:nowrap;letter-spacing:1.5px;text-transform:uppercase;transition:all .25s ease}
+    .cta-bar a:hover{background:rgba(184,151,106,.1);border-color:#8b6a2f}
+
+    footer{background:#060a12;color:#64748b;padding:28px 32px;text-align:center;font-size:13px}
+    footer a{color:#94a3b8;text-decoration:none}
+    footer a:hover{color:white}
+
+    #search-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,41,.97);z-index:2000;overflow-y:auto}
+    .search-inner{max-width:760px;margin:0 auto;padding:48px 24px}
+    .search-box{display:flex;align-items:center;gap:12px;background:white;padding:4px 4px 4px 20px;margin-bottom:8px}
+    #search-input{flex:1;font-size:17px;border:none;outline:none;font-family:inherit;color:#111827;padding:12px 0;background:transparent}
+    .search-close{background:#f3f4f6;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:18px;color:#7a7a7a;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .search-hint{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:28px;padding-left:4px}
+    #search-results{display:flex;flex-direction:column;gap:2px}
+    .search-result{display:block;padding:16px 18px;background:rgba(255,255,255,.04);text-decoration:none;border:1px solid rgba(255,255,255,.08);transition:background .15s}
+    .search-result:hover{background:rgba(255,255,255,.08)}
+    .sr-section{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8976a;margin-bottom:4px}
+    .sr-title{font-size:15px;font-weight:700;color:white;margin-bottom:4px}
+    .sr-desc{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px}
+    .sr-tags{display:flex;flex-wrap:wrap;gap:4px}
+    .sr-tag{font-size:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);padding:2px 7px}
+    .search-empty{color:rgba(255,255,255,.5);padding:20px 0;font-size:14px}
+
+    #cookie-notice{position:fixed;bottom:0;left:0;right:0;background:#0a0f1a;color:rgba(255,255,255,.85);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:999;font-size:13px;border-top:1px solid rgba(255,255,255,.1)}
+    #cookie-notice a{color:#b8976a}
+    #cookie-notice button{background:#8b6a2f;color:white;border:none;padding:8px 20px;cursor:pointer;font-size:13px;font-family:inherit;white-space:nowrap}
+
+    @media(max-width:768px){
+      .hero{padding:40px 20px 36px}
+      main{padding:32px 16px 60px}
+      .compare-grid{grid-template-columns:1fr}
+      .cmp-col:first-child{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+      .org-grid{grid-template-columns:1fr}
+      .hq-grid{grid-template-columns:1fr 1fr}
+      .kpi-grid{grid-template-columns:1fr 1fr}
+      .cta-bar{padding:24px 20px;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="200" height="50">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html" class="active">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+  <button class="nav-search-btn" onclick="document.getElementById('search-overlay').style.display='block';document.getElementById('search-input').focus();">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="5"/><line x1="10" y1="10" x2="13" y2="13"/></svg>
+    Search
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; <a href="index.html">Supply Chain</a> &nbsp;/&nbsp; Humanitarian Logistics</div>
+    <div class="eyebrow">Supply Chain Intelligence</div>
+    <h1>WFP reached 124 million people in 2024. Zara ships worldwide in 48 hours. The logistics infrastructure compared.</h1>
+    <p>WFP, UNICEF and UNHCR operate supply chains that rival the largest commercial retailers in reach, speed and complexity — without the commercial infrastructure. This brief maps the operating models, the corporate logistics layer that supports them, and what the comparison reveals about supply chain excellence at extreme scale.</p>
+    <div class="hero-meta">
+      <span>Supply Chain &amp; Logistics</span>
+      <span>Sources: WFP, UNICEF, UNHCR, DHL Group, Inditex</span>
+      <span>Updated 11 May 2026</span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- KPI STRIP -->
+  <div class="section-title">The numbers at a glance — 2024</div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-org">WFP</div>
+      <div class="kpi-val" style="color:#b8976a">124.4M</div>
+      <div class="kpi-label">people assisted in 2024</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">WFP</div>
+      <div class="kpi-val" style="color:#b8976a">2.5M</div>
+      <div class="kpi-label">metric tonnes of food delivered</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">WFP</div>
+      <div class="kpi-val" style="color:#b8976a">$9.8B</div>
+      <div class="kpi-label">raised from 115 funding sources</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">UNICEF Supply</div>
+      <div class="kpi-val" style="color:#0369a1">$5.6B</div>
+      <div class="kpi-label">in supplies and services procured</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">UNHCR</div>
+      <div class="kpi-val" style="color:#059669">$10.1B</div>
+      <div class="kpi-label">programmed budget 2024</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">WFP Operations</div>
+      <div class="kpi-val">87+</div>
+      <div class="kpi-label">countries reached in 2024</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://publications.wfp.org/2024/en/annual-report/" target="_blank">WFP Annual Review 2024</a> (124.4M people, 2.5M tonnes, $9.8B, 87 countries) &nbsp;·&nbsp;
+    <a href="https://www.unicef.org/supply/reports/unicef-supply-annual-report-2024" target="_blank">UNICEF Supply Annual Report 2024</a> ($5.6B procurement) &nbsp;·&nbsp;
+    <a href="https://www.unhcr.org/about-unhcr/planning-funding-and-results/budget-and-expenditure" target="_blank">UNHCR Budget &amp; Expenditure 2024</a> ($10.1B programmed, 45% funded)
+  </div>
+
+  <!-- SPEED COMPARISON -->
+  <div class="section-title">Speed at scale — commercial vs humanitarian</div>
+
+  <div class="compare-grid">
+    <div class="cmp-col">
+      <div class="cmp-label">Commercial retail — Inditex / Zara</div>
+      <div class="cmp-brand">Inditex</div>
+      <div class="cmp-metric">48h</div>
+      <div class="cmp-unit">worldwide store replenishment &nbsp;/&nbsp; 36h within Europe</div>
+      <div class="cmp-detail">Inditex operates 9 distribution centres in Spain as the logistics core of its global fast-fashion model. New garments reach stores in Europe within 36 hours and worldwide within 48 hours — a distribution cadence that shaped the industry standard for speed-to-shelf. The model runs on predictable commercial infrastructure: contracted carriers, customs pre-clearance, stable warehouse locations, and consistent freight lanes.</div>
+    </div>
+    <div class="cmp-col">
+      <div class="cmp-label">Emergency humanitarian — DHL Disaster Response Teams</div>
+      <div class="cmp-brand">DHL Group</div>
+      <div class="cmp-metric">72h</div>
+      <div class="cmp-unit">deployment from UN activation — into active crisis zones</div>
+      <div class="cmp-detail">DHL's Disaster Response Teams (DRT) operate from 4 regional hubs: Singapore, Panama, Dubai and Bonn. When activated by the UN, DRT dispatches 900+ specially trained volunteers and relief equipment within 72 hours. The team covers 80% of global disaster hotspots. The logistics run without commercial infrastructure — into conflict zones, collapsed airports, and flooded access routes. Speed is comparable to commercial operations; the operating environment is not.</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://www.morethanshipping.com/how-does-inditex-manage-worldwide-distribution-within-48-hours/" target="_blank">More Than Shipping — Inditex global distribution model</a> (citing Inditex operations data) &nbsp;·&nbsp;
+    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL Group — Disaster Response Teams</a> (4 hubs, 900+ members, 72h activation, 80% hotspot coverage)
+  </div>
+
+  <!-- SCALE COMPARISON -->
+  <div class="section-title">Operating scale — what 2.5 million tonnes looks like</div>
+
+  <div class="bar-section">
+    <div class="bar-row">
+      <div class="bar-header">
+        <span class="bar-name">WFP — food and supplies delivered (2024)</span>
+        <span class="bar-val">2.5M metric tonnes</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#b8976a"></div></div>
+      <div class="bar-sub">Delivered across 87+ countries to 124.4 million people</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-header">
+        <span class="bar-name">UNICEF Supply Division — procurement value (2024)</span>
+        <span class="bar-val">$5.6B</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:87%;background:#0369a1"></div></div>
+      <div class="bar-sub">Vaccines, nutrition, WASH supplies, educational materials — procured across 150+ countries</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-header">
+        <span class="bar-name">UNHCR — programmed budget (2024)</span>
+        <span class="bar-val">$10.1B</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:78%;background:#4e4e4e"></div></div>
+      <div class="bar-sub">45% funded as of November 2024 — the largest funding gap in the agency's history</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-header">
+        <span class="bar-name">WFP — annual budget raised (2024)</span>
+        <span class="bar-val">$9.8B</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:72%;background:#8b6a2f"></div></div>
+      <div class="bar-sub">From 115 funding sources — governments, multilaterals, private donors</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://publications.wfp.org/2024/en/annual-report/" target="_blank">WFP Annual Review 2024</a> &nbsp;·&nbsp;
+    <a href="https://www.unicef.org/supply/reports/unicef-supply-annual-report-2024" target="_blank">UNICEF Supply Annual Report 2024</a> &nbsp;·&nbsp;
+    <a href="https://www.unhcr.org/about-unhcr/planning-funding-and-results/budget-and-expenditure" target="_blank">UNHCR Budget &amp; Expenditure 2024</a>
+  </div>
+
+  <div class="insight">
+    <p>The UNHCR funding gap is the most important number in this brief. A $10.1 billion budget that is only 45% funded means the world's refugee organisation is operating at less than half capacity — not because the operational model fails, but because the funding model does. <strong>The supply chain infrastructure exists. The commercial and governmental will to fund it does not keep pace.</strong></p>
+  </div>
+
+  <!-- CORPORATE HUMANITARIAN LOGISTICS LAYER -->
+  <div class="section-title">The corporate logistics layer — who runs the infrastructure</div>
+  <p style="font-size:14px;color:#1f1f1f;line-height:1.7;margin-bottom:24px;max-width:800px">Three of the world's largest logistics corporations run dedicated humanitarian divisions — not as CSR gestures but as structured operational programmes integrated with UN and NGO partners. They provide the infrastructure humanitarian organisations cannot build alone: pre-positioned warehouses, trained rapid-response teams, and freight coordination at crisis scale.</p>
+
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-name">DHL Group</div>
+      <div class="org-type">Disaster Response Teams (DRT)</div>
+      <div class="org-stat">4</div>
+      <div class="org-stat-label">regional hubs — Singapore, Panama, Dubai, Bonn</div>
+      <div class="org-body">900+ specially trained DRT volunteers deploy within 72 hours of UN activation. The network covers 80% of the world's disaster hotspots. DRT manages on-site logistics coordination at disaster entry points — airports, ports and distribution hubs — allowing humanitarian cargo to move when normal commercial systems have collapsed.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-name">Kuehne+Nagel &amp; HELP Logistics</div>
+      <div class="org-type">Emergency &amp; Relief Logistics</div>
+      <div class="org-stat">120</div>
+      <div class="org-stat-label">logistics experts in strategic global locations</div>
+      <div class="org-body">Kuehne+Nagel has operated emergency and relief logistics for 40 years. The HELP Logistics arm — funded by the Kuhne Foundation — runs 40 dedicated experts from Copenhagen with 120 specialists globally across offices in Singapore, Amman and Nairobi. Works with UN agencies and NGOs 365 days a year on both rapid response and longer-term humanitarian projects.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-name">Logistics Emergency Team (LET)</div>
+      <div class="org-type">Public-Private Consortium — Maersk, Agility, UPS, DP World</div>
+      <div class="org-stat">28,915 m³</div>
+      <div class="org-stat-label">cargo processed in the 2024 Gaza crisis response</div>
+      <div class="org-body">LET is a multi-company consortium coordinating humanitarian freight at crisis scale. In the 2024 Gaza response: 28,915 cubic metres of cargo processed from 21 humanitarian organisations, 1,266 trucks coordinated. The consortium operates a 5,000m² consolidation hub in Amman serving 50+ UN partners and NGOs — a permanent logistics node for Middle East humanitarian operations.</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL Group — DRT programme</a> &nbsp;·&nbsp;
+    <a href="https://www.kuehne-nagel.com/services/emergency-relief-logistics/global-crisis-supply-chain" target="_blank">Kuehne+Nagel — Emergency &amp; Relief Logistics</a> &nbsp;·&nbsp;
+    <a href="https://logcluster.org/en/logistics-emergency-team" target="_blank">Logistics Cluster — Logistics Emergency Team (LET)</a> &nbsp;·&nbsp;
+    <a href="https://www.weforum.org/stories/2025/09/logistics-emergency-team-humanitarian-aid-20-years/" target="_blank">WEF — LET 20 years of humanitarian logistics</a>
+  </div>
+
+  <!-- EUROPEAN HQ GEOGRAPHY -->
+  <div class="section-title">European humanitarian HQ geography</div>
+  <p style="font-size:14px;color:#1f1f1f;line-height:1.7;margin-bottom:24px;max-width:800px">Europe hosts the operational core of the global humanitarian system. The organisations below run their supply, procurement, logistics and shared services from European cities — making Europe the logistics backbone of international aid, not just a donor bloc.</p>
+
+  <div class="hq-grid">
+    <div class="hq-card">
+      <div class="hq-city">Rome</div>
+      <div class="hq-country">Italy</div>
+      <div class="hq-org">WFP — World Food Programme</div>
+      <div class="hq-role">Global HQ. 2.5M tonnes delivered, 124M people reached in 2024.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Brindisi</div>
+      <div class="hq-country">Italy</div>
+      <div class="hq-org">UNHRD — UN Humanitarian Response Depot</div>
+      <div class="hq-role">Global logistics base. One of 6 UNHRD depots worldwide — pre-positioned relief items for rapid deployment.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Copenhagen</div>
+      <div class="hq-country">Denmark</div>
+      <div class="hq-org">UNICEF Supply Division</div>
+      <div class="hq-role">$5.6B in supplies procured in 2024 — vaccines, nutrition, WASH, education materials.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Budapest</div>
+      <div class="hq-country">Hungary</div>
+      <div class="hq-org">UNHCR Global Service Centre</div>
+      <div class="hq-role">Shared services hub for the UN refugee agency — HR, finance, IT, procurement for 130+ country operations.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Geneva</div>
+      <div class="hq-country">Switzerland</div>
+      <div class="hq-org">ICRC / IFRC — Red Cross &amp; Red Crescent</div>
+      <div class="hq-role">ICRC runs conflict-zone operations from Geneva. IFRC coordinates 191 national societies.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Geneva</div>
+      <div class="hq-country">Switzerland</div>
+      <div class="hq-org">UNHCR — Global HQ</div>
+      <div class="hq-role">UN Refugee Agency global headquarters. $10.1B programmed budget, 45% funded in 2024.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Bordeaux</div>
+      <div class="hq-country">France</div>
+      <div class="hq-org">MSF — Medicines Sans Frontieres</div>
+      <div class="hq-role">One of MSF's primary supply and logistics centres — medical supplies to 70+ countries.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Oxford</div>
+      <div class="hq-country">United Kingdom</div>
+      <div class="hq-org">Oxfam International</div>
+      <div class="hq-role">Confederation of 21 independent organisations. Operates emergency response in 90+ countries.</div>
+    </div>
+    <div class="hq-card">
+      <div class="hq-city">Bonn</div>
+      <div class="hq-country">Germany</div>
+      <div class="hq-org">DHL Disaster Response Team — EMEA Hub</div>
+      <div class="hq-role">One of 4 DHL DRT regional hubs. 900+ trained volunteers, 72h deployment capability.</div>
+    </div>
+  </div>
+  <div class="src-note">
+    <strong>Sources:</strong>
+    <a href="https://www.wfp.org/" target="_blank">WFP.org</a> &nbsp;·&nbsp;
+    <a href="https://supply.unicef.org/" target="_blank">UNICEF Supply Division</a> &nbsp;·&nbsp;
+    <a href="https://www.unhcr.org/about-unhcr/planning-funding-and-results/budget-and-expenditure" target="_blank">UNHCR Budget 2024</a> &nbsp;·&nbsp;
+    <a href="https://www.icrc.org/" target="_blank">ICRC</a> &nbsp;·&nbsp;
+    <a href="https://www.msf.org/" target="_blank">MSF</a> &nbsp;·&nbsp;
+    <a href="https://www.oxfam.org/" target="_blank">Oxfam</a> &nbsp;·&nbsp;
+    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL DRT</a>
+  </div>
+
+  <!-- STRATEGIC CLOSE -->
+  <div class="section-title">What this means for supply chain leaders</div>
+  <p style="font-size:15px;color:#1f1f1f;line-height:1.75;margin-bottom:20px;max-width:800px">Commercial supply chain expertise — multi-country distribution, demand planning, carrier management, last-mile optimisation — transfers directly into humanitarian operations. The operating environments differ radically. The underlying disciplines do not.</p>
+  <p style="font-size:15px;color:#1f1f1f;line-height:1.75;margin-bottom:20px;max-width:800px">WFP, UNICEF Supply, and the Logistics Emergency Team are not running simpler versions of commercial supply chains. They are running more complex ones — without predictable demand, without stable geography, without commercial funding, and against a clock measured in lives rather than margins. The skills gap is not technical. It is sectoral familiarity.</p>
+  <p style="font-size:15px;color:#1f1f1f;line-height:1.75;margin-bottom:32px;max-width:800px">For supply chain directors considering the transition to mission-driven or international organisations, the entry points are operational: WFP Supply Chain, UNICEF Supply Division in Copenhagen, UNHCR logistics, and the consulting firms (Dalberg, Palladium, Crown Agents) that place commercial operators into humanitarian engagements at director level.</p>
+
+  <div class="insight">
+    <p><strong>The commercial-to-humanitarian skills gap is operational, not ethical.</strong> DHL's 900 disaster-response volunteers are logistics professionals, not aid workers. Kuehne+Nagel's 40 Copenhagen-based humanitarian experts came from freight. The LET consortium runs Gaza aid coordination with the same tools used to run consumer goods distribution. The sector needs operators who know how supply chains work — and are ready to apply that knowledge at a different kind of scale.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div>
+      <div class="cta-eyebrow">About TrendsOnFire</div>
+      <div class="cta-body">TrendsOnFire publishes sourced market intelligence on supply chain, retail, technology, people and transformation trends across Europe. Created by Olga Bressers — senior executive with 20+ years in commercial operations, ecommerce and business transformation across Nike, Adidas and IBM.</div>
+    </div>
+    <a href="../olgabressers/index.html">Contact &rarr;</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 TrendsOnFire &middot; Privacy Policy &middot; Disclaimer &middot; Terms &amp; Conditions &middot; Contact &mdash; Analysis based on publicly available information. Not investment advice.
+</footer>
+
+<!-- SEARCH OVERLAY -->
+<div id="search-overlay">
+  <div class="search-inner">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search TrendsOnFire..." autocomplete="off"/>
+      <button class="search-close" onclick="document.getElementById('search-overlay').style.display='none';">&times;</button>
+    </div>
+    <div class="search-hint">Type to search published reports and trend intelligence</div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-notice">
+  <p>This site uses cookies for analytics. By continuing to browse you agree to our use of cookies. <a href="../privacy.html">Privacy Policy</a></p>
+  <button onclick="document.getElementById('cookie-notice').style.display='none';localStorage.setItem('cookie-accepted','1');">Accept</button>
+</div>
+
+<script>
+if(localStorage.getItem('cookie-accepted')) document.getElementById('cookie-notice').style.display='none';
+
+const searchData=[
+  {section:"Supply Chain",title:"Humanitarian Logistics at Scale",desc:"WFP, UNICEF, UNHCR vs commercial operations — scale, speed and the corporate logistics layer.",url:"humanitarian-logistics.html",tags:["WFP","UNICEF","UNHCR","DHL","humanitarian","logistics","supply chain"]},
+  {section:"Supply Chain",title:"The Circular Economy Tracker",desc:"Five sectors, named European players and the EU regulation forcing change.",url:"circular-economy-tracker.html",tags:["circular economy","sustainability","WEEE","regulation"]},
+  {section:"Supply Chain",title:"S&OP to IBP",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity benchmarks and strategic impact.",url:"sop-intelligence.html",tags:["S&OP","IBP","planning","supply chain"]},
+  {section:"Supply Chain",title:"Digital Product Passport",desc:"EU 2027 rollout tracker — battery passport, textiles, steel, aluminium and furniture.",url:"digital-product-passport.html",tags:["DPP","ESPR","EU regulation","battery passport"]}
+];
+const si=document.getElementById('search-input'),sr=document.getElementById('search-results');
+si.addEventListener('input',function(){
+  const q=this.value.toLowerCase().trim();
+  if(!q){sr.innerHTML='';return;}
+  const m=searchData.filter(d=>(d.title+d.desc+d.tags.join(' ')+d.section).toLowerCase().includes(q));
+  if(!m.length){sr.innerHTML='<div class="search-empty">No results found</div>';return;}
+  sr.innerHTML=m.map(d=>'<a class="search-result" href="'+d.url+'"><div class="sr-section">'+d.section+'</div><div class="sr-title">'+d.title+'</div><div class="sr-desc">'+d.desc+'</div><div class="sr-tags">'+d.tags.map(t=>'<span class="sr-tag">'+t+'</span>').join('')+'</div></a>').join('');
+});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
+</script>
+</body>
+</html>
