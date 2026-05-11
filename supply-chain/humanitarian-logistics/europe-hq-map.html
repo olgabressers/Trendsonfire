@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    width:1200px;
+    background:#0a0f1a;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:white;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    width:1200px;
+    background:#0a0f1a;
+    padding:56px 64px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(184,151,106,.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(3,105,161,.06) 0%, transparent 55%);
+    pointer-events:none;
+  }
+  .inner{position:relative;z-index:1}
+
+  /* Header */
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#b8976a;margin-bottom:12px;}
+  .headline{font-size:28px;font-weight:800;line-height:1.2;color:white;margin-bottom:6px;max-width:820px;}
+  .sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:36px;}
+
+  /* Branding top-right */
+  .brand{position:absolute;top:56px;right:64px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);}
+  .brand span{color:#b8976a;}
+
+  /* Map container */
+  .map-wrap{position:relative;width:1072px;height:600px;margin:0 auto;}
+
+  /* SVG Europe */
+  .map-wrap svg{position:absolute;inset:0;width:100%;height:100%;}
+
+  /* City marker */
+  .marker{position:absolute;transform:translate(-50%,-50%);text-align:center;cursor:default;}
+  .dot{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+    border:2px solid rgba(255,255,255,.25);
+    margin:0 auto 5px;
+    line-height:1.1;
+    text-align:center;
+    padding:2px;
+  }
+  .dot-gold{background:#b8976a;color:#0a0f1a;}
+  .dot-blue{background:#0369a1;color:white;}
+  .dot-red{background:#dc2626;color:white;}
+  .label{font-size:10.5px;font-weight:700;color:white;white-space:nowrap;line-height:1.3;}
+  .city{font-size:9.5px;color:rgba(255,255,255,.5);white-space:nowrap;}
+
+  /* Cluster: multiple orgs stacked */
+  .cluster{position:absolute;transform:translate(-50%,-50%);}
+  .cluster-title{font-size:11px;font-weight:700;color:white;text-align:center;margin-bottom:6px;white-space:nowrap;}
+  .cluster-city{font-size:9.5px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:8px;}
+  .cluster-dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;max-width:160px;}
+  .cluster-dot{
+    padding:4px 7px;border-radius:20px;
+    font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.2);
+    white-space:nowrap;
+  }
+
+  /* Legend */
+  .legend{margin-top:28px;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+  .legend-item{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.7);}
+  .legend-dot{width:14px;height:14px;border-radius:50%;}
+
+  /* Source */
+  .source{margin-top:16px;font-size:11px;color:rgba(255,255,255,.3);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand"><span>Trends</span>OnFire</div>
+  <div class="inner">
+    <div class="eyebrow">Humanitarian Logistics — Geography</div>
+    <div class="headline">Where humanitarian supply chains are managed: European HQ map</div>
+    <div class="sub">9 major organisations · 5 cities · Geneva, Brussels, Copenhagen, Bonn, Rome</div>
+
+    <div class="map-wrap">
+      <!-- Simplified SVG outline of Europe -->
+      <svg viewBox="0 0 1072 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Europe landmass — simplified path -->
+        <path d="
+          M 280 80
+          L 310 70 L 350 60 L 390 65 L 420 58 L 460 62 L 500 55 L 540 60 L 570 52
+          L 610 58 L 650 50 L 680 55 L 710 48 L 730 55 L 750 50 L 780 58
+          L 800 52 L 820 62 L 840 58 L 860 68 L 870 80 L 880 95
+          L 875 115 L 885 130 L 890 148 L 880 162 L 870 175 L 875 190
+          L 885 205 L 895 220 L 900 238 L 910 255 L 905 275 L 895 290
+          L 880 300 L 865 315 L 855 330 L 840 340 L 820 348 L 800 355
+          L 780 365 L 760 375 L 740 385 L 720 380 L 700 390 L 680 400
+          L 660 410 L 640 420 L 620 415 L 600 425 L 580 430 L 560 420
+          L 540 415 L 520 425 L 500 430 L 480 420 L 460 410 L 440 400
+          L 420 410 L 400 415 L 380 410 L 360 420 L 340 415 L 320 425
+          L 300 420 L 280 430 L 260 420 L 240 410 L 220 415 L 200 420
+          L 180 415 L 165 400 L 160 385 L 170 370 L 165 355 L 155 340
+          L 150 325 L 158 310 L 170 298 L 180 285 L 190 272 L 200 258
+          L 195 242 L 200 228 L 210 215 L 220 202 L 215 188 L 205 175
+          L 200 160 L 208 148 L 220 135 L 230 122 L 242 110 L 255 98 L 268 86 Z
+          M 390 60 L 400 45 L 420 38 L 440 45 L 445 58 Z
+          M 500 55 L 508 38 L 525 30 L 540 38 L 542 55 Z
+          M 730 55 L 738 35 L 756 28 L 770 38 L 768 55 Z
+          M 440 400 L 435 415 L 445 428 L 460 432 L 465 420 Z
+          M 300 420 L 292 435 L 300 448 L 316 450 L 322 438 Z
+        " fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Scandinavia -->
+        <path d="
+          M 560 52 L 565 30 L 575 15 L 590 8 L 610 12 L 625 25 L 630 40 L 625 52 L 610 58 Z
+          M 610 58 L 615 38 L 625 22 L 638 15 L 652 20 L 660 35 L 658 50 L 650 58 Z
+          M 650 50 L 658 30 L 668 18 L 680 25 L 685 40 L 680 52 Z
+        " fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+
+        <!-- UK & Ireland -->
+        <path d="M 168 148 L 175 130 L 188 118 L 200 110 L 210 115 L 218 130 L 215 148 L 205 158 L 188 162 L 175 158 Z" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+        <path d="M 145 155 L 148 142 L 158 138 L 165 145 L 162 158 L 152 162 Z" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+
+        <!-- Italy boot -->
+        <path d="
+          M 540 415 L 548 430 L 555 448 L 560 465 L 558 480 L 548 490 L 535 485 L 528 472 L 530 455 L 525 442 L 520 425 Z
+          M 560 465 L 568 472 L 575 465 L 570 455 Z
+        " fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+
+        <!-- Greece -->
+        <path d="M 680 400 L 688 415 L 695 428 L 690 438 L 678 440 L 672 430 L 674 418 Z" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+
+        <!-- City dots on map (decorative small) -->
+        <!-- Geneva -->
+        <circle cx="502" cy="295" r="4" fill="#b8976a" opacity=".9" filter="url(#glow)"/>
+        <!-- Brussels -->
+        <circle cx="398" cy="218" r="4" fill="#b8976a" opacity=".9" filter="url(#glow)"/>
+        <!-- Copenhagen -->
+        <circle cx="562" cy="128" r="4" fill="#b8976a" opacity=".9" filter="url(#glow)"/>
+        <!-- Bonn -->
+        <circle cx="458" cy="220" r="4" fill="#b8976a" opacity=".9" filter="url(#glow)"/>
+        <!-- Rome -->
+        <circle cx="544" cy="375" r="4" fill="#b8976a" opacity=".9" filter="url(#glow)"/>
+
+        <!-- Connector lines from dots to marker labels (subtle) -->
+        <line x1="502" y1="291" x2="502" y2="252" stroke="rgba(184,151,106,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="398" y1="214" x2="340" y2="175" stroke="rgba(184,151,106,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="562" y1="124" x2="590" y2="90" stroke="rgba(184,151,106,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="458" y1="216" x2="500" y2="180" stroke="rgba(184,151,106,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="544" y1="371" x2="580" y2="345" stroke="rgba(184,151,106,.3)" stroke-width="1" stroke-dasharray="3,3"/>
+      </svg>
+
+      <!-- GENEVA cluster — left of dot -->
+      <div class="cluster" style="left:340px;top:248px;">
+        <div class="cluster-title">Geneva</div>
+        <div class="cluster-city">Switzerland</div>
+        <div class="cluster-dots">
+          <div class="cluster-dot" style="background:#0369a1;color:white;">UNHCR</div>
+          <div class="cluster-dot" style="background:#dc2626;color:white;">ICRC</div>
+          <div class="cluster-dot" style="background:#166534;color:white;">MSF</div>
+        </div>
+      </div>
+
+      <!-- BRUSSELS cluster -->
+      <div class="cluster" style="left:260px;top:170px;">
+        <div class="cluster-title">Brussels</div>
+        <div class="cluster-city">Belgium</div>
+        <div class="cluster-dots">
+          <div class="cluster-dot" style="background:#0369a1;color:white;">WFP EU</div>
+          <div class="cluster-dot" style="background:#166534;color:white;">Save</div>
+          <div class="cluster-dot" style="background:#92400e;color:white;">Oxfam</div>
+        </div>
+      </div>
+
+      <!-- COPENHAGEN -->
+      <div class="marker" style="left:610px;top:88px;">
+        <div class="dot dot-blue" style="background:#0369a1;">UNICEF</div>
+        <div class="label">Copenhagen</div>
+        <div class="city">Denmark · Supply Div.</div>
+      </div>
+
+      <!-- BONN -->
+      <div class="marker" style="left:502px;top:178px;">
+        <div class="dot dot-gold">DHL DRT</div>
+        <div class="label">Bonn</div>
+        <div class="city">Germany</div>
+      </div>
+
+      <!-- ROME -->
+      <div class="marker" style="left:582px;top:340px;">
+        <div class="dot dot-blue" style="background:#0369a1;">WFP</div>
+        <div class="label">Rome</div>
+        <div class="city">Italy · Global HQ</div>
+      </div>
+
+    </div><!-- /map-wrap -->
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#0369a1;"></div> UN Agencies (WFP, UNHCR, UNICEF)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#dc2626;"></div> ICRC</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#166534;"></div> NGOs (MSF, Save the Children, Oxfam)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#b8976a;"></div> Commercial (DHL DRT)</div>
+    </div>
+
+    <div class="source">Sources: official organisation websites · trendsonfire.com</div>
+  </div>
+</div>
+</body>
+</html>
