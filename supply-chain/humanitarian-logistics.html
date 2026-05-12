@@ -349,10 +349,10 @@
   <div class="org-grid">
     <div class="org-card">
       <div class="org-name">DHL Group</div>
-      <div class="org-type">Disaster Response Teams (DRT)</div>
-      <div class="org-stat">4</div>
-      <div class="org-stat-label">regional hubs — Singapore, Panama, Dubai, Bonn</div>
-      <div class="org-body">900+ specially trained DRT volunteers deploy within 72 hours of UN activation. The network covers 80% of the world's disaster hotspots. DRT manages on-site logistics coordination at disaster entry points — airports, ports and distribution hubs — allowing humanitarian cargo to move when normal commercial systems have collapsed.</div>
+      <div class="org-type">GoHelp — Disaster Response Teams (DRT)</div>
+      <div class="org-stat">5</div>
+      <div class="org-stat-label">hubs on 5 continents — Singapore, Panama, Dubai, Johannesburg, Bonn</div>
+      <div class="org-body">1,000+ specially trained DRT volunteers deploy within 72 hours of UN activation. Since 2005, DHL GoHelp has responded to 77 natural catastrophes and moved 70,000 tonnes of life-saving aid. OCHA's longest-standing private sector partner. The GARD programme has prepared 60 airports across 30 countries for disaster operations.</div>
     </div>
     <div class="org-card">
       <div class="org-name">Kuehne+Nagel &amp; HELP Logistics</div>
@@ -375,6 +375,45 @@
     <a href="https://www.kuehne-nagel.com/services/emergency-relief-logistics/global-crisis-supply-chain" target="_blank">Kuehne+Nagel — Emergency &amp; Relief Logistics</a> &nbsp;·&nbsp;
     <a href="https://logcluster.org/en/logistics-emergency-team" target="_blank">Logistics Cluster — Logistics Emergency Team (LET)</a> &nbsp;·&nbsp;
     <a href="https://www.weforum.org/stories/2025/09/logistics-emergency-team-humanitarian-aid-20-years/" target="_blank">WEF — LET 20 years of humanitarian logistics</a>
+  </div>
+
+  <!-- DHL GOHELP 20 YEARS -->
+  <div class="section-title" style="margin-top:40px">DHL GoHelp — 20 years on the frontlines (2005–2025)</div>
+  <p style="font-size:14px;color:#1f1f1f;line-height:1.7;margin-bottom:24px">DHL GoHelp celebrated its 20th anniversary in 2025 as OCHA's longest-standing private sector partner. Since launching after the 2004 Indian Ocean tsunami, the programme has built the most extensive corporate humanitarian logistics network in the world — operating permanently, not on standby.</p>
+
+  <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px">
+    <div class="kpi">
+      <div class="kpi-org">DHL GoHelp — 2005–2025</div>
+      <div class="kpi-val">77</div>
+      <div class="kpi-label">natural disasters responded to</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">DHL GoHelp — 20 years</div>
+      <div class="kpi-val">70,000 t</div>
+      <div class="kpi-label">life-saving aid moved</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">DHL DRT</div>
+      <div class="kpi-val">1,000+</div>
+      <div class="kpi-label">trained volunteers, 72h deployment</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-org">GARD Programme</div>
+      <div class="kpi-val">60</div>
+      <div class="kpi-label">airports prepared in 30 countries</div>
+    </div>
+  </div>
+
+  <div style="background:white;border:1px solid var(--rule);padding:24px;margin-bottom:24px">
+    <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">DHL GoHelp programme reach — cumulative 2005–2025</div>
+    <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">Scale of humanitarian logistics programme across 20 years of operation</div>
+    <canvas id="dhlGohelp" height="110"></canvas>
+  </div>
+
+  <div class="src-note" style="margin-bottom:24px">
+    <strong>Source:</strong>
+    <a href="https://cargoforwarder.eu/2025/08/24/congratulations-gohelp-turns-20/" target="_blank">CargoForwarder — DHL GoHelp turns 20 (August 2025)</a> (77 disasters, 70,000 tonnes, 1,000+ volunteers, 60 airports in 30 countries) &nbsp;·&nbsp;
+    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL Group — DRT programme</a>
   </div>
 
   <!-- 2026 MIDDLE EAST CRISIS -->
@@ -599,10 +638,10 @@
 
   <!-- JOBS CHART -->
   <div style="background:white;border:1px solid var(--rule);padding:24px;margin-top:24px">
-    <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">Humanitarian agency job cuts — 2025</div>
-    <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">Estimated positions cut as a result of US funding withdrawals</div>
-    <canvas id="wfpJobs" height="120"></canvas>
-    <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">The WFP cuts are the largest in absolute terms — up to 7,000 positions from a total workforce of 23,765, a 30% reduction. UNHCR is cutting at the same rate: 30% of 19,800 staff, approximately 5,900 positions. IOM has more than 6,000 staff globally affected by the 30% drop in donor support. These are WFP, UNHCR and IOM cuts only — cuts at UNICEF, WHO, OCHA and dozens of NGOs are additional and not fully quantified.</p>
+    <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">WFP, UNHCR, IOM — total workforce vs. positions cut, 2025</div>
+    <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">Estimated positions cut as a result of US funding withdrawals (red = jobs cut, light = remaining staff)</div>
+    <canvas id="wfpJobs" height="240"></canvas>
+    <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">World Food Programme (WFP): up to 7,000 positions cut from a total workforce of 23,765, a 30% reduction. UN Refugee Agency (UNHCR): 30% of 19,800 staff, approximately 5,900 positions. International Organization for Migration (IOM): 6,000+ positions affected from an estimated total of ~17,000 staff. These three agencies only — cuts at UNICEF, WHO, OCHA and dozens of NGOs are additional and not fully quantified.</p>
     <div class="src-note" style="margin-top:12px;margin-bottom:0">
       <strong>Source:</strong>
       <a href="https://www.developmentaid.org/news-stream/post/195154/layoffs-across-aid-organizations" target="_blank">DevelopmentAid — Layoffs across aid organizations 2025</a> (WFP 30% of 23,765; UNHCR 30% of 19,800; IOM 6,000+ affected)
@@ -611,6 +650,21 @@
 
   <script>
   (function(){
+    new Chart(document.getElementById('dhlGohelp').getContext('2d'),{
+      type:'bar',
+      data:{
+        labels:['Disasters responded to','Airports prepared (GARD)','Countries covered (GARD)'],
+        datasets:[{label:'Count',data:[77,60,30],backgroundColor:['#b8976a','#b8976a','#b8976a'],borderWidth:0}]
+      },
+      options:{
+        indexAxis:'y',
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw+(ctx.dataIndex===0?' disasters':ctx.dataIndex===1?' airports':' countries')}}},
+        scales:{
+          x:{beginAtZero:true,ticks:{stepSize:10},grid:{color:'#f0ece8'}},
+          y:{grid:{display:false},ticks:{font:{size:13,weight:'700'}}}
+        }
+      }
+    });
     new Chart(document.getElementById('wfpFunding').getContext('2d'),{
       type:'bar',
       data:{
@@ -633,20 +687,20 @@
     new Chart(document.getElementById('wfpJobs').getContext('2d'),{
       type:'bar',
       data:{
-        labels:['WFP','UNHCR','IOM'],
-        datasets:[{
-          label:'Jobs cut',
-          data:[7000,5900,6000],
-          backgroundColor:['#dc2626','#dc2626','#dc2626'],
-          borderWidth:0
-        }]
+        labels:[['World Food','Programme (WFP)'],['UN Refugee','Agency (UNHCR)'],['Intl. Org. for','Migration (IOM)']],
+        datasets:[
+          {label:'Jobs cut',data:[7000,5900,6000],backgroundColor:'#dc2626',borderWidth:0,stack:'a'},
+          {label:'Remaining staff',data:[16765,13900,11000],backgroundColor:'rgba(184,151,106,0.25)',borderWidth:0,stack:'a'}
+        ]
       },
       options:{
-        indexAxis:'y',
-        plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'~'+ctx.raw.toLocaleString()+' jobs'}}},
+        plugins:{
+          legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}},
+          tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': ~'+ctx.raw.toLocaleString()}}
+        },
         scales:{
-          x:{beginAtZero:true,ticks:{callback:v=>v.toLocaleString()},grid:{color:'#f0ece8'}},
-          y:{grid:{display:false},ticks:{font:{size:13,weight:'700'}}}
+          y:{stacked:true,beginAtZero:true,ticks:{callback:v=>v.toLocaleString()},grid:{color:'#f0ece8'}},
+          x:{stacked:true,grid:{display:false},ticks:{font:{size:12,weight:'700'}}}
         }
       }
     });
