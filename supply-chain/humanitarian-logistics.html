@@ -285,13 +285,13 @@
       <div class="cmp-brand">DHL Group</div>
       <div class="cmp-metric">72h</div>
       <div class="cmp-unit">deployment from UN activation — into active crisis zones</div>
-      <div class="cmp-detail">DHL's Disaster Response Teams (DRT) operate from 4 regional hubs: Singapore, Panama, Dubai and Bonn. When activated by the UN, DRT dispatches 900+ specially trained volunteers and relief equipment within 72 hours. The team covers 80% of global disaster hotspots. The logistics run without commercial infrastructure — into conflict zones, collapsed airports, and flooded access routes. Speed is comparable to commercial operations; the operating environment is not.</div>
+      <div class="cmp-detail">DHL's Disaster Response Teams (DRT) operate from 5 regional hubs: Singapore, Panama, Dubai, Johannesburg and Bonn. When activated by the UN, DRT dispatches 1,000+ specially trained volunteers and relief equipment within 72 hours. The team covers 80% of global disaster hotspots. The logistics run without commercial infrastructure — into conflict zones, collapsed airports, and flooded access routes. Speed is comparable to commercial operations; the operating environment is not.</div>
     </div>
   </div>
   <div class="src-note">
     <strong>Sources:</strong>
     <a href="https://www.morethanshipping.com/how-does-inditex-manage-worldwide-distribution-within-48-hours/" target="_blank">More Than Shipping — Inditex global distribution model</a> (citing Inditex operations data) &nbsp;·&nbsp;
-    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL Group — Disaster Response Teams</a> (4 hubs, 900+ members, 72h activation, 80% hotspot coverage)
+    <a href="https://group.dhl.com/en/sustainability/social-impact-programs/disaster-management/disaster-response-teams.html" target="_blank">DHL Group — Disaster Response Teams</a> (5 hubs, 1,000+ volunteers, 72h activation, 80% hotspot coverage)
   </div>
 
   <!-- SCALE COMPARISON -->
@@ -539,7 +539,7 @@
       <div class="hq-city">Bonn</div>
       <div class="hq-country">Germany</div>
       <div class="hq-org">DHL Disaster Response Team — EMEA Hub</div>
-      <div class="hq-role">One of 4 DHL DRT regional hubs. 900+ trained volunteers, 72h deployment capability.</div>
+      <div class="hq-role">One of 5 DHL DRT regional hubs. 1,000+ trained volunteers, 72h deployment capability.</div>
     </div>
   </div>
   <div class="src-note">
@@ -659,7 +659,7 @@
   <div style="background:white;border:1px solid var(--rule);padding:24px;margin-top:24px">
     <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">WFP, UNHCR, IOM — total workforce vs. positions cut, 2025</div>
     <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">Estimated positions cut as a result of US funding withdrawals (red = jobs cut, light = remaining staff)</div>
-    <canvas id="wfpJobs" height="240"></canvas>
+    <canvas id="wfpJobs" style="max-height:155px"></canvas>
     <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">World Food Programme (WFP): up to 7,000 positions cut from a total workforce of 23,765, a 30% reduction. UN Refugee Agency (UNHCR): 30% of 19,800 staff, approximately 5,900 positions. International Organization for Migration (IOM): 6,000+ positions affected from an estimated total of ~17,000 staff. These three agencies only — cuts at UNICEF, WHO, OCHA and dozens of NGOs are additional and not fully quantified.</p>
     <div class="src-note" style="margin-top:12px;margin-bottom:0">
       <strong>Source:</strong>
@@ -691,20 +691,22 @@
     new Chart(document.getElementById('wfpJobs').getContext('2d'),{
       type:'bar',
       data:{
-        labels:[['World Food','Programme (WFP)'],['UN Refugee','Agency (UNHCR)'],['Intl. Org. for','Migration (IOM)']],
+        labels:['WFP','UNHCR','IOM'],
         datasets:[
-          {label:'Jobs cut',data:[7000,5900,6000],backgroundColor:'#dc2626',borderWidth:0,stack:'a'},
-          {label:'Remaining staff',data:[16765,13900,11000],backgroundColor:'rgba(184,151,106,0.25)',borderWidth:0,stack:'a'}
+          {label:'Jobs cut',data:[7000,5900,6000],backgroundColor:'#dc2626',borderWidth:0,stack:'a',borderRadius:2},
+          {label:'Remaining staff',data:[16765,13900,11000],backgroundColor:'rgba(184,151,106,0.18)',borderWidth:1,borderColor:'rgba(184,151,106,0.35)',stack:'a',borderRadius:2}
         ]
       },
       options:{
+        indexAxis:'y',
+        maintainAspectRatio:false,
         plugins:{
-          legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}},
-          tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': ~'+ctx.raw.toLocaleString()}}
+          legend:{position:'bottom',labels:{font:{size:11},boxWidth:10,padding:16}},
+          tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.raw.toLocaleString()}}
         },
         scales:{
-          y:{stacked:true,beginAtZero:true,ticks:{callback:v=>v.toLocaleString()},grid:{color:'#f0ece8'}},
-          x:{stacked:true,grid:{display:false},ticks:{font:{size:12,weight:'700'}}}
+          x:{stacked:true,beginAtZero:true,ticks:{callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v,font:{size:11}},grid:{color:'#f0ece8'},border:{display:false}},
+          y:{stacked:true,grid:{display:false},ticks:{font:{size:12,weight:'600'},color:'#0a0f1a'}}
         }
       }
     });
@@ -730,7 +732,7 @@
   <p style="font-size:15px;color:#1f1f1f;line-height:1.75;margin-bottom:32px">The 2026 Middle East escalation has made this comparison newly urgent. Humanitarian organisations are not operating in a parallel system — they are competing for capacity on the same freight lanes, the same ports, and the same carrier networks as commercial operators. When supply routes close and global transport capacity drops from 97% to 77%, both systems absorb the shock simultaneously. The organisations with pre-positioned stock and multi-corridor flexibility — WFP's six-depot network, LET's Amman hub — maintain delivery continuity. Those dependent on single-corridor routing, cannot.</p>
 
   <div class="insight">
-    <p><strong>The commercial-to-humanitarian skills gap is operational, not ethical.</strong> DHL's 900 disaster-response volunteers are logistics professionals, not aid workers. Kuehne+Nagel's 40 Copenhagen-based humanitarian experts came from freight. The LET consortium runs major crisis coordination with the same tools used to run consumer goods distribution. The sector needs operators who know how supply chains work — and are ready to apply that knowledge at a different kind of scale.</p>
+    <p><strong>The commercial-to-humanitarian skills gap is operational, not ethical.</strong> DHL's 1,000+ disaster-response volunteers are logistics professionals, not aid workers. Kuehne+Nagel's 40 Copenhagen-based humanitarian experts came from freight. The LET consortium runs major crisis coordination with the same tools used to run consumer goods distribution. The sector needs operators who know how supply chains work — and are ready to apply that knowledge at a different kind of scale.</p>
   </div>
 
   <!-- CTA -->
