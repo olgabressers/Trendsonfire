@@ -405,8 +405,28 @@
   </div>
 
   <div style="background:white;border:1px solid var(--rule);padding:24px;margin-bottom:24px">
-    <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:16px">DHL GoHelp — 20 years of humanitarian response (2005–2025)</div>
-    <canvas id="dhlGohelp" height="220"></canvas>
+    <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:16px">Two programmes, one mission — how DHL GoHelp operates</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px">
+      <div style="background:#faf9f7;border:1px solid var(--rule);border-radius:8px;padding:20px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#b8976a;margin-bottom:8px">DRT — Disaster Response Teams</div>
+        <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:10px">Deploys after disaster</div>
+        <div style="font-size:13px;color:#4e4e4e;line-height:1.6">Pre-trained logistics specialists fly to the affected airport within 72 hours. They restore cargo operations so aid can move when the local supply chain has collapsed.</div>
+        <div style="margin-top:14px;display:flex;gap:16px">
+          <div><div style="font-size:22px;font-weight:900;color:#0a0f1a">77</div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888">Activations</div></div>
+          <div><div style="font-size:22px;font-weight:900;color:#0a0f1a">72h</div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888">Deployment target</div></div>
+          <div><div style="font-size:22px;font-weight:900;color:#0a0f1a">1,000+</div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888">Volunteers</div></div>
+        </div>
+      </div>
+      <div style="background:#faf9f7;border:1px solid var(--rule);border-radius:8px;padding:20px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#b8976a;margin-bottom:8px">GARD — Get Airports Ready for Disasters</div>
+        <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:10px">Prepares before disaster</div>
+        <div style="font-size:13px;color:#4e4e4e;line-height:1.6">Trains airport staff and installs procedures at strategic airports before any crisis. When a disaster strikes nearby, those airports can keep functioning as aid distribution hubs.</div>
+        <div style="margin-top:14px;display:flex;gap:16px">
+          <div><div style="font-size:22px;font-weight:900;color:#0a0f1a">60+</div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888">Airports trained</div></div>
+          <div><div style="font-size:22px;font-weight:900;color:#0a0f1a">30</div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888">Countries</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="src-note" style="margin-bottom:24px">
@@ -649,20 +669,6 @@
 
   <script>
   (function(){
-    new Chart(document.getElementById('dhlGohelp').getContext('2d'),{
-      type:'bar',
-      data:{
-        labels:['Disasters responded to','Airports prepared (GARD)','Countries covered (GARD)'],
-        datasets:[{label:'Count',data:[77,60,30],backgroundColor:['#b8976a','#c4a87a','#d4b890'],borderRadius:4,borderWidth:0}]
-      },
-      options:{
-        plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw+(ctx.dataIndex===0?' disasters':ctx.dataIndex===1?' airports':' countries')}}},
-        scales:{
-          y:{beginAtZero:true,ticks:{stepSize:10},grid:{color:'#f0ece8'}},
-          x:{grid:{display:false},ticks:{font:{size:12,weight:'700'},maxRotation:0}}
-        }
-      }
-    });
     new Chart(document.getElementById('wfpFunding').getContext('2d'),{
       type:'bar',
       data:{
