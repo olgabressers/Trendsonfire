@@ -8,6 +8,13 @@ TrendsOnFire publishes original, sourced market intelligence that is difficult t
 
 ## Key reports with unique data
 
+### Humanitarian Logistics at Scale — WFP, UNICEF, UNHCR vs Commercial Operations
+- URL: https://trendsonfire.com/supply-chain/humanitarian-logistics.html
+- Content: Full operational comparison of the world's largest humanitarian supply chains vs commercial retail logistics. WFP reached 124.4M people in 2024, delivered 2.5M metric tonnes across 87+ countries on $9.8B raised from 115 funding sources. UNICEF Supply Division procured $5.6B in supplies. UNHCR programmed budget $10.1B (45% funded). Inditex/Zara: 48h worldwide store replenishment vs DHL Disaster Response Teams: 72h deployment into crisis zones. Corporate humanitarian logistics layer: DHL GoHelp 20-year anniversary (77 disasters, 70,000+ tonnes, 1,000+ volunteers, 60 airports in 30 countries, 5 global hubs), Kuehne+Nagel HELP Logistics, Logistics Emergency Team (LET) consortium (Maersk, Agility, UPS, DP World). 2025 workforce cuts: WFP 7,000 positions (30%), UNHCR 5,900 (30%), IOM 6,000 (35%) — nearly 19,000 jobs eliminated while 343M face acute food insecurity. European HQ geography: Rome (WFP), Brindisi (UNHRD), Copenhagen (UNICEF Supply), Budapest (UNHCR), Geneva (ICRC/IFRC/UNHCR), Bordeaux (MSF), Oxford (Oxfam), Bonn (DHL DRT). 2026 Middle East escalation: freight rates +18%, global transport capacity down to 77%, 45M additional people at acute hunger risk.
+- Unique value: Only page combining sourced operational data for WFP, UNICEF, UNHCR, DHL, Kuehne+Nagel, LET consortium, and the 2025 humanitarian workforce crisis in a single structured report with named sources throughout.
+- Sources: WFP Annual Review 2024, WFP Global Outlook 2025, FSIN/GRFC 2025 and 2026, UNICEF Supply Annual Report 2024, UNHCR Budget 2024, CargoForwarder (DHL GoHelp 20 years, August 2025), DHL Group DRT programme, Kuehne+Nagel HELP Logistics, Logistics Cluster LET, DevelopmentAid (layoffs 2025), PBS NewsHour, WEF.
+- Author: Olga Bressers
+
 ### Circular Economy Tracker
 - URL: https://trendsonfire.com/supply-chain/circular-economy-tracker.html
 - Content: EU circular-economy regulation timeline with sourced sustainability metrics for 9 major fashion brands (H&M, Zara/Inditex, Adidas, Nike, Uniqlo, Patagonia, Primark, ASOS, Zalando), plus Vinted, Back Market, Too Good To Go, and sector coverage across fashion, electronics, furniture, food, and building materials.
