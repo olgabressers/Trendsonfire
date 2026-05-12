@@ -574,7 +574,7 @@
       <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">WFP funding received — US$ billion</div>
       <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">2020–2024 · total contributions received</div>
       <canvas id="wfpFunding" height="200"></canvas>
-      <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">WFP receives no assessed budget from the UN — all contributions are voluntary, meaning no government is legally required to contribute. In practice, governments dominate: the US alone provided $4.5B in 2024, equivalent to 46% of WFP's total. That concentration creates structural fragility. The 2022 spike to $14.1B was driven by the global food and energy shock that followed the Ukraine conflict, which put food security on every major donor's agenda simultaneously. When that crisis faded from headlines, funding collapsed 41% to $8.3B in 2023. In 2025, US funding cuts reduced WFP contributions further: projected 2025 funding is down 40% year-on-year — $6.4B projected against $10B received in 2024. The organisation announced cuts of up to 30% of its global workforce — approximately 6,000 jobs. Afghanistan operations alone face a $622M shortfall over six months.</p>
+      <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">WFP receives no assessed budget from the UN — all contributions are voluntary, meaning no government is legally required to contribute. In practice, governments dominate: the US alone provided $4.5B in 2024, equivalent to 46% of WFP's total. That concentration creates structural fragility. The 2022 spike to $14.1B was driven by the global food and energy shock that followed the Ukraine conflict, which put food security on every major donor's agenda simultaneously. When that crisis faded from headlines, funding collapsed 41% to $8.3B in 2023. In 2025, US funding cuts reduced WFP contributions to $6.5B — a 34% drop from $9.8B in 2024, pushing funding to its lowest level in the five-year period. The organisation announced cuts of up to 30% of its global workforce — approximately 6,000 jobs. Afghanistan operations alone face a $622M shortfall over six months.</p>
       <div class="src-note" style="margin-top:12px;margin-bottom:0">
         <strong>Sources:</strong>
         <a href="https://www.wfp.org/funding" target="_blank">WFP — Contributions by year</a> (2020–2024 actual figures) &nbsp;·&nbsp;
@@ -586,11 +586,12 @@
       <div style="font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:4px">WFP people reached vs global acute food insecurity — millions</div>
       <div style="font-size:12px;color:#4e4e4e;margin-bottom:16px">2022–2024 · WFP people reached vs acute food crisis (GRFC)</div>
       <canvas id="wfpPeople" height="200"></canvas>
-      <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">WFP reached 160 million people in 2022 and 124.4 million in 2024 — a 22% reduction over two years. The number of people in acute food crisis (GRFC methodology, 53 crisis countries) moved in the opposite direction: from 258 million in 2022 to 295 million in 2024. The two bars are diverging. Every year, WFP reaches a smaller fraction of the people in crisis — not because operations have become less effective, but because funding has not kept pace with rising need. WFP's broader 2026 outlook estimates up to 45 million additional people could be pushed into acute hunger due to supply chain disruptions from the Middle East escalation.</p>
+      <p style="font-size:13px;color:#1f1f1f;line-height:1.65;margin-top:16px">WFP reached 160 million people in 2022 and 124.4 million in 2024 — a 22% reduction over two years. The WFP Annual Review 2025 has not yet been published; the 2025 bar shows only food insecurity data. The number of people in acute food crisis (GRFC methodology, IPC Phase 3+) moved in the opposite direction: from 258 million across 53 countries in 2022 to 266 million across 47 countries in 2025. Note: GRFC 2026 analysed fewer countries (47 vs 53 in the 2024 edition); the percentage of the analysed population in crisis actually increased from 22.3% to 22.9%, meaning the underlying crisis deepened even as the absolute number fell. WFP's broader outlook estimates up to 45 million additional people could be pushed into acute hunger due to supply chain disruptions from the 2026 Middle East escalation.</p>
       <div class="src-note" style="margin-top:12px;margin-bottom:0">
         <strong>Sources:</strong>
-        <a href="https://publications.wfp.org/2024/en/annual-report/" target="_blank">WFP Annual Reviews 2022–2024</a> (people reached) &nbsp;·&nbsp;
-        <a href="https://www.fightfoodcrises.net/report/global-report-food-crises-2025/" target="_blank">FSIN/GRFC 2025</a> (295M in 2024, 281M in 2023, 258M in 2022 — IPC Phase 3+ across 53 crisis countries)
+        <a href="https://publications.wfp.org/2024/en/annual-report/" target="_blank">WFP Annual Reviews 2022–2024</a> (people reached; 2025 Annual Review not yet published) &nbsp;·&nbsp;
+        <a href="https://www.fightfoodcrises.net/report/global-report-food-crises-2025/" target="_blank">FSIN/GRFC 2025</a> (295M in 2024, 281M in 2023, 258M in 2022 — IPC Phase 3+, 53 countries) &nbsp;·&nbsp;
+        <a href="https://news.un.org/en/story/2026/04/1167374" target="_blank">FSIN/GRFC 2026</a> (266M in 2025 — IPC Phase 3+, 47 countries; 22.9% of analysed population, up from 22.3% in 2024)
       </div>
     </div>
   </div>
@@ -599,18 +600,18 @@
     new Chart(document.getElementById('wfpFunding').getContext('2d'),{
       type:'bar',
       data:{
-        labels:['2020','2021','2022','2023','2024'],
-        datasets:[{label:'Funding $B',data:[8.4,9.6,14.1,8.3,9.8],backgroundColor:['#b8976a','#b8976a','#8b6a2f','#dc2626','#b8976a'],borderWidth:0}]
+        labels:['2020','2021','2022','2023','2024','2025'],
+        datasets:[{label:'Funding $B',data:[8.4,9.6,14.1,8.3,9.8,6.5],backgroundColor:['#b8976a','#b8976a','#8b6a2f','#dc2626','#b8976a','#dc2626'],borderWidth:0}]
       },
       options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.raw+'B'}}},scales:{y:{beginAtZero:true,ticks:{callback:v=>'$'+v+'B'},grid:{color:'#f0ece8'}},x:{grid:{display:false}}}}
     });
     new Chart(document.getElementById('wfpPeople').getContext('2d'),{
       type:'bar',
       data:{
-        labels:['2022','2023','2024'],
+        labels:['2022','2023','2024','2025'],
         datasets:[
-          {label:'WFP people reached',data:[160,152,124.4],backgroundColor:'#b8976a',borderWidth:0},
-          {label:'In acute food crisis (GRFC)',data:[258,281,295],backgroundColor:'rgba(220,38,38,0.25)',borderWidth:1,borderColor:'#dc2626'}
+          {label:'WFP people reached',data:[160,152,124.4,null],backgroundColor:'#b8976a',borderWidth:0},
+          {label:'In acute food crisis (GRFC)',data:[258,281,295,266],backgroundColor:'rgba(220,38,38,0.25)',borderWidth:1,borderColor:'#dc2626'}
         ]
       },
       options:{plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}},scales:{y:{beginAtZero:false,min:100,ticks:{callback:v=>v+'M'},grid:{color:'#f0ece8'}},x:{grid:{display:false}}}}
