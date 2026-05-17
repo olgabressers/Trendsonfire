@@ -105,9 +105,9 @@
     <a class="s-card" href="retail/index.html">
       <div class="s-card-accent-label">Retail &amp; E-Commerce</div>
       <div class="s-card-date">Updated May 2026</div>
-      <div class="s-card-title">Social Commerce Race, Furniture Market &amp; Energy Flexibility</div>
-      <div class="s-card-sub">3 published reports</div>
-      <p class="s-card-desc">The Social Commerce Race 2015&ndash;2026: six platforms, eleven years, one survivor. Why pure-play online furniture retail keeps failing in Europe (Fonq case), and how Europe&rsquo;s balancing markets, virtual power plants and demand response are reshaping the energy landscape.</p>
+      <div class="s-card-title">Social Commerce Race, Brand Collaborations, Furniture Market &amp; Energy Flexibility</div>
+      <div class="s-card-sub">4 published reports</div>
+      <p class="s-card-desc">The Social Commerce Race 2015&ndash;2026. Swatch &times; Audemars Piguet Royal Pop: how a €385 watch closed 3 stores in one morning. Why pure-play online furniture retail keeps failing in Europe (Fonq case), and Europe&rsquo;s balancing markets and demand response.</p>
       <div class="s-card-link">Explore reports &rarr;</div>
     </a>
 
@@ -167,6 +167,70 @@
 
   </div>
 </div>
+
+<!-- LATEST ARTICLES -->
+<div class="latest-wrap">
+  <div class="latest-inner">
+    <div class="latest-label">Latest Published</div>
+    <div class="latest-grid">
+
+      <a class="latest-card" href="retail/brand-collaborations.html">
+        <div class="latest-date">16 May 2026</div>
+        <div class="latest-tag">Retail &middot; Brand Strategy</div>
+        <div class="latest-title">Swatch closed 3 stores in the Netherlands on Saturday morning. The watch costs €385.</div>
+      </a>
+
+      <a class="latest-card" href="https://www.linkedin.com/posts/olgabressers_ai-chatgpt-claudeai-share-7460958507685818368-gsIw" target="_blank" rel="noopener">
+        <div class="latest-date">15 May 2026</div>
+        <div class="latest-tag">AI &middot; Future of Work</div>
+        <div class="latest-title">Companies are replacing entire teams with AI. The risk is removing the people who could tell the difference between a mistake and the truth.</div>
+      </a>
+
+      <a class="latest-card" href="https://www.linkedin.com/posts/olgabressers_dhl-humanitarianlogistics-supplychain-share-7460599999354277889-yO18" target="_blank" rel="noopener">
+        <div class="latest-date">14 May 2026</div>
+        <div class="latest-tag">Humanitarian Logistics</div>
+        <div class="latest-title">DHL has responded to 77 crises, moved 70,000+ tonnes of relief cargo, and gets logistics moving again in 72 hours.</div>
+      </a>
+
+    </div>
+    <a class="latest-all" href="insights/index.html">All insights &rarr;</a>
+  </div>
+</div>
+
+<style>
+  .latest-wrap { background: var(--warm); padding: 72px 48px; }
+  .latest-inner { max-width: 900px; margin: 0 auto; }
+  .latest-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold-dark); font-weight: 700; margin-bottom: 36px;
+  }
+  .latest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 32px; }
+  .latest-card {
+    display: block; padding: 24px;
+    border: 1px solid var(--rule); background: white;
+    text-decoration: none; transition: border-color .2s;
+  }
+  .latest-card:hover { border-color: var(--gold); }
+  .latest-date {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--text); margin-bottom: 8px;
+  }
+  .latest-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px;
+  }
+  .latest-title {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    color: var(--ink); line-height: 1.35;
+  }
+  .latest-all {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    text-decoration: none; color: var(--gold-dark);
+  }
+  .latest-all:hover { color: var(--gold); }
+  @media (max-width: 768px) { .latest-wrap { padding: 48px 20px; } .latest-grid { grid-template-columns: 1fr; } }
+</style>
 
 <!-- FEATURED -->
 <div class="featured">
@@ -273,6 +337,7 @@
 
 
 var ARTICLES=[
+  {title:"Swatch × Audemars Piguet Royal Pop — 300 people queuing for a €385 watch",url:"/retail/brand-collaborations.html",section:"Retail & E-Commerce",desc:"How a €385 Swatch × AP collaboration closed 3 stores in one morning. MoonSwatch precedent and the 98% brand equity discount.",tags:["Brand Collaboration","Swatch","Audemars Piguet","Luxury Watches","Retail Strategy"]},
   {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Fashion","Electronics"]},
   {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning","Gartner","McKinsey"]},
   {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"/retail/furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands","Fonq"]},
