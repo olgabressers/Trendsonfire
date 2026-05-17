@@ -80,15 +80,21 @@
     .c-stat-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:34px; font-weight:600; color:#0a0f1a; line-height:1; }
     .c-stat-lbl { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#6b6b6b; margin-top:4px; }
 
-    .tracker-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px; }
+    .tracker-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-bottom:36px; border:1px solid #e2dfd9; }
     @media(max-width:900px){ .tracker-grid { grid-template-columns:1fr; } }
-    .tracker-card { background:white; border:1px solid #e2dfd9; padding:24px; }
+    .tracker-card { background:white; padding:32px 28px; border-right:1px solid #e2dfd9; }
+    .tracker-card:last-child { border-right:none; }
     .tc-collab { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#b8976a; margin-bottom:6px; }
-    .tc-date { font-size:12px; color:#6b6b6b; margin-bottom:14px; font-weight:600; }
-    .tc-brands { font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; font-weight:600; color:#0a0f1a; line-height:1.25; margin-bottom:14px; }
+    .tc-date { font-size:12px; color:#6b6b6b; margin-bottom:16px; font-weight:600; letter-spacing:0.3px; }
+    .tc-brands { font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:600; color:#0a0f1a; line-height:1.2; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e8e5e0; }
+    .tc-price-hero { font-family:'Cormorant Garamond',Georgia,serif; font-size:64px; font-weight:600; color:#0a0f1a; line-height:1; letter-spacing:-1px; }
+    .tc-price-lbl { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#b8976a; margin-top:8px; margin-bottom:6px; }
+    .tc-price-vs { font-size:14px; color:#6b6b6b; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e8e5e0; line-height:1.5; }
     .tc-stat { font-family:'Cormorant Garamond',Georgia,serif; font-size:32px; font-weight:600; color:#0a0f1a; line-height:1; }
     .tc-stat-lbl { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#6b6b6b; margin-top:4px; margin-bottom:16px; }
     .tc-body { font-size:14px; color:#1f1f1f; line-height:1.7; }
+    .tc-tag-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .tc-tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; background:#f1ede7; color:#6b5a3e; padding:4px 10px; }
   </style>
 </head>
 <body>
@@ -582,30 +588,48 @@
       <div class="tc-collab">Footwear · Heritage</div>
       <div class="tc-date">February 20, 2026</div>
       <div class="tc-brands">Levi's × Jordan Brand</div>
-      <div class="tc-stat">$230</div>
-      <div class="tc-stat-lbl">Air Jordan 3 retail price</div>
-      <div class="tc-body">Four Air Jordan 3 colorways plus nine apparel pieces. Staged drops tied to cultural moments: Super Bowl LX (Feb 5, San Francisco exclusive) → NBA All-Star Weekend (Feb 13, LA exclusive) → global (Feb 20). Campaign featured Spike Lee reprising his 1991 Levi's "Button Your Fly" appearance. Available on Nike SNKRS, Levi.com and select stores.</div>
-      <div class="src-note" style="margin-top:12px;"><strong>Source:</strong> <a href="https://www.nike.com/a/jordan-levis-release-info" target="_blank" rel="noopener">Nike.com — release details</a></div>
+      <div class="tc-price-hero">$230</div>
+      <div class="tc-price-lbl">Air Jordan 3 — collab retail</div>
+      <div class="tc-price-vs">4 colorways + 9 apparel pieces · Nike SNKRS, Levi.com · staged drops: Super Bowl LX → NBA All-Star → global</div>
+      <div class="tc-tag-row">
+        <span class="tc-tag">Limited</span>
+        <span class="tc-tag">Staged Drops</span>
+        <span class="tc-tag">Cultural Campaign</span>
+      </div>
+      <div class="tc-body">Spike Lee reprised his 1991 Levi's "Button Your Fly" campaign. Three staged release moments tied to US cultural events — exclusive cities first, global last — created rolling demand across six weeks.</div>
+      <div class="src-note" style="margin-top:16px;"><strong>Source:</strong> <a href="https://www.nike.com/a/jordan-levis-release-info" target="_blank" rel="noopener">Nike.com — Levi's × Jordan release details</a></div>
     </div>
 
     <div class="tracker-card">
       <div class="tc-collab">Streetwear · Luxury</div>
       <div class="tc-date">March 19, 2026</div>
       <div class="tc-brands">Supreme × MM6 Maison Margiela</div>
-      <div class="tc-stat">35</div>
-      <div class="tc-stat-lbl">Pieces in the collection</div>
-      <div class="tc-body">The second Supreme × MM6 collaboration. 35-piece range including the first-ever Box Logo zip hoodie — among the most coveted Supreme formats. Schott leather jackets, shearling bombers, Timberland boots with dollar-bill motif, Everlast boxing gloves in hairy suede. Dropped March 19 globally (March 21 in Asia). A second drop followed April 9.</div>
-      <div class="src-note" style="margin-top:12px;"><strong>Source:</strong> <a href="https://hypebeast.com/2026/3/mm6-maison-margiela-supreme-spring-2026-collaboration-collection-release-info" target="_blank" rel="noopener">Hypebeast — collection details</a></div>
+      <div class="tc-price-hero">35</div>
+      <div class="tc-price-lbl">Pieces — global drop, March 19</div>
+      <div class="tc-price-vs">First-ever Supreme Box Logo zip hoodie · Schott leather jackets · Timberland boots · Everlast boxing gloves in hairy suede</div>
+      <div class="tc-tag-row">
+        <span class="tc-tag">First-Ever Format</span>
+        <span class="tc-tag">Global Drop</span>
+        <span class="tc-tag">Resale Premium</span>
+      </div>
+      <div class="tc-body">The Box Logo zip hoodie debuted for the first time in Supreme's history, making this a collector milestone rather than a standard seasonal drop. Second drop followed April 9. Items appeared on StockX at multiples of retail within hours.</div>
+      <div class="src-note" style="margin-top:16px;"><strong>Source:</strong> <a href="https://hypebeast.com/2026/3/mm6-maison-margiela-supreme-spring-2026-collaboration-collection-release-info" target="_blank" rel="noopener">Hypebeast — collection &amp; release details</a></div>
     </div>
 
     <div class="tracker-card">
       <div class="tc-collab">Fashion · Multi-season</div>
       <div class="tc-date">April 24, 2026</div>
       <div class="tc-brands">Gap × Victoria Beckham</div>
-      <div class="tc-stat">$34–$328</div>
-      <div class="tc-stat-lbl">Price range, 38-piece Spring capsule</div>
-      <div class="tc-body">Gap's highest-profile designer partnership in years. 38-piece Spring 2026 capsule built around denim, tailoring, fleece and structured outerwear, available XXS–XXL. Multi-season partnership with further drops planned. Announced April 2026, available at Gap.com and select stores globally from launch day.</div>
-      <div class="src-note" style="margin-top:12px;"><strong>Source:</strong> <a href="https://www.gapinc.com/en-us/articles/2026/04/gap-and-victoria-beckham-announce-multi-season-col" target="_blank" rel="noopener">Gap Inc — official announcement</a></div>
+      <div class="tc-price-hero">$34</div>
+      <div class="tc-price-lbl">Entry price — Victoria Beckham designs</div>
+      <div class="tc-price-vs">38-piece Spring capsule · $34–$328 full range · denim, tailoring, fleece, outerwear · XXS–XXL · multi-season deal</div>
+      <div class="tc-tag-row">
+        <span class="tc-tag">Accessible Luxury</span>
+        <span class="tc-tag">Multi-Season</span>
+        <span class="tc-tag">Full Size Range</span>
+      </div>
+      <div class="tc-body">Gap's most significant designer partnership in over a decade. Victoria Beckham's standalone brand sells tailored pieces from ~£400. At Gap, entry is $34. The multi-season commitment — not a one-off drop — signals both brands treating this as a sustained repositioning, not a hype moment.</div>
+      <div class="src-note" style="margin-top:16px;"><strong>Source:</strong> <a href="https://www.gapinc.com/en-us/articles/2026/04/gap-and-victoria-beckham-announce-multi-season-col" target="_blank" rel="noopener">Gap Inc — official partnership announcement</a></div>
     </div>
 
   </div>
