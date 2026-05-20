@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Terra Ferra — Ideas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --tf:#4B40C2;
+  --tf-dark:#2D2595;
+  --tf-deep:#12102B;
+  --tf-mid:#7169D4;
+  --tf-light:#ECEAF9;
+  --tf-ghost:#F4F2FC;
+  --orange:#E86820;
+  --orange-light:#F5C9A8;
+  --white:#FFFFFF;
+  --off-white:#F7F6FB;
+  --ink:#12102B;
+  --sub:#5B5880;
+  --rule:#D8D4EF;
+}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);line-height:1.6}
+
+/* ─── COVER ─────────────────────────────── */
+.cover{background:var(--tf);color:white;padding:68px 60px 64px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 90% 100%, rgba(18,16,43,.65) 0%,transparent 55%),radial-gradient(ellipse at 10% 0%, rgba(113,105,212,.35) 0%,transparent 50%);pointer-events:none}
+.cover::after{content:'TF';position:absolute;right:-24px;top:-40px;font-size:400px;font-weight:800;color:rgba(232,104,32,.18);letter-spacing:-32px;line-height:1;pointer-events:none;user-select:none}
+.cover-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:48px;flex-wrap:wrap}
+.cover-left{flex:1;min-width:320px}
+.cover-eyebrow{font-size:10px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:30px}
+.tf-logo{font-size:clamp(42px,6vw,80px);font-weight:800;letter-spacing:-2px;line-height:1;text-transform:uppercase;color:white;white-space:nowrap;margin-bottom:16px}
+.tf-tagline{font-size:10.5px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.cover-divider{width:48px;height:2px;background:rgba(255,255,255,.25);margin:24px 0}
+.cover-desc{font-size:14.5px;color:rgba(255,255,255,.72);max-width:480px;line-height:1.65}
+.cover-right{text-align:right;flex-shrink:0;padding-bottom:4px}
+.cover-date{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.38)}
+
+/* ─── LEGEND ─────────────────────────────── */
+.legend{background:white;border-bottom:1px solid var(--rule);padding:14px 60px}
+.legend-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.legend-label{font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);margin-right:14px;opacity:.6}
+
+/* ─── PAGE ───────────────────────────────── */
+.page{max-width:1200px;margin:0 auto;padding:56px 40px 88px}
+
+/* ─── SECTION ────────────────────────────── */
+.sec{margin-bottom:56px}
+.sec-head{margin-bottom:24px;padding-bottom:12px;border-bottom:1.5px solid var(--tf)}
+.sec-title{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--orange)}
+
+/* ─── CARD GRID ──────────────────────────── */
+.idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.idea-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* ─── IDEA CARD ──────────────────────────── */
+.idea-card{background:white;border:1px solid var(--rule);border-top:3px solid var(--tf);padding:24px 24px 20px;display:flex;flex-direction:column}
+.idea-card h4{font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.2px}
+.idea-card p{font-size:12.5px;line-height:1.72;color:var(--sub);flex:1}
+
+/* ─── TAGS ───────────────────────────────── */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:16px}
+.tag{font-size:9px;font-weight:800;letter-spacing:.7px;padding:3px 7px;border-radius:2px;text-transform:uppercase;white-space:nowrap;background:var(--tf-ghost);color:var(--rule)}
+.tag.on{background:var(--tf);color:white}
+.tag.tfd{background:var(--tf-ghost);color:var(--rule)}
+.tag.tfd.on{background:var(--orange);color:white}
+.tag.ext{background:transparent;border:1px solid var(--orange-light);color:var(--orange);font-style:italic;text-transform:none;font-weight:500;font-size:9px;letter-spacing:0}
+
+/* ─── DIVIDER ────────────────────────────── */
+.section-divider{border:none;border-top:1px solid var(--rule);margin:0 0 56px}
+
+/* ─── TOOL CARDS (AI Research) ───────────── */
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+
+.tool-card{background:white;border:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden}
+
+/* App mockup visual */
+.app-preview{height:200px;position:relative;overflow:hidden;flex-shrink:0}
+
+/* Ablo mockup — black, design tool */
+.ablo-preview{background:#0A0A0A}
+.ablo-preview .mock-header{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid #222}
+.ablo-preview .mock-logo{font-size:14px;font-weight:900;color:white;letter-spacing:-0.5px}
+.ablo-preview .mock-sub{font-size:9px;color:#666;letter-spacing:2px;text-transform:uppercase}
+.ablo-preview .mock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:10px 16px}
+.mock-tile{height:64px;border-radius:3px;position:relative;overflow:hidden}
+.mock-tile.t1{background:linear-gradient(135deg,#2D1B69 0%,#6B3FA0 100%)}
+.mock-tile.t2{background:linear-gradient(135deg,#1A3A5C 0%,#2E6DA0 100%)}
+.mock-tile.t3{background:linear-gradient(135deg,#5C1A1A 0%,#A02E2E 100%)}
+.mock-tile.t4{background:linear-gradient(135deg,#1A5C2E 0%,#2EA066 100%)}
+.mock-tile-label{position:absolute;bottom:4px;left:4px;font-size:7px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.ablo-preview .mock-brand-bar{display:flex;gap:6px;padding:6px 16px}
+.mock-brand-chip{background:#1a1a1a;border:1px solid #333;border-radius:2px;padding:3px 7px;font-size:7.5px;font-weight:700;color:#999;letter-spacing:.5px;text-transform:uppercase}
+
+/* LTK mockup — warm coral/cream */
+.ltk-preview{background:#FDF8F5}
+.ltk-preview .mock-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #EDD5C8}
+.ltk-logo-mark{font-size:13px;font-weight:900;color:#D4522A;letter-spacing:-0.5px}
+.ltk-preview .mock-feed{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:8px 10px}
+.feed-card{background:#EED8CC;border-radius:2px;height:62px;position:relative;overflow:hidden}
+.feed-card:nth-child(2){background:#E8C9C0}
+.feed-card:nth-child(3){background:#F0DDD4}
+.feed-card:nth-child(4){background:#EAD0C5}
+.feed-dot{width:18px;height:18px;border-radius:50%;background:#D4522A;position:absolute;bottom:6px;right:6px}
+.ltk-preview .mock-search{margin:6px 10px 0;background:#EDD5C8;border-radius:20px;height:22px;display:flex;align-items:center;padding:0 10px}
+.mock-search-text{font-size:8px;color:#B88878;font-weight:500}
+
+/* ShopMy mockup — clean white, premium */
+.shopmy-preview{background:#FAFAFA}
+.shopmy-preview .mock-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #EBEBEB}
+.shopmy-logo-mark{font-size:11px;font-weight:700;color:#111;letter-spacing:.5px;text-transform:uppercase}
+.shopmy-preview .mock-circles{padding:8px 12px;display:flex;gap:6px;overflow:hidden}
+.circle-item{flex-shrink:0;text-align:center}
+.circle-avatar{width:36px;height:36px;border-radius:50%;margin:0 auto 4px}
+.circle-avatar.c1{background:linear-gradient(135deg,#2D2595,#7169D4)}
+.circle-avatar.c2{background:linear-gradient(135deg,#E86820,#F5C9A8)}
+.circle-avatar.c3{background:linear-gradient(135deg,#1A5C2E,#2EA066)}
+.circle-avatar.c4{background:linear-gradient(135deg,#5C1A4A,#A0307E)}
+.circle-name{font-size:7px;color:#888;font-weight:600;white-space:nowrap}
+.shopmy-preview .mock-products{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:6px 10px}
+.prod-tile{background:#F0F0F0;border-radius:2px;height:50px}
+.prod-tile:nth-child(2){background:#E8E8E8}
+.prod-tile:nth-child(3){background:#ECECEC}
+.shopmy-preview .mock-cta{margin:6px 10px 0;background:#111;border-radius:2px;height:22px;display:flex;align-items:center;justify-content:center}
+.mock-cta-text{font-size:7.5px;font-weight:700;color:white;letter-spacing:1.5px;text-transform:uppercase}
+
+/* Tool card body */
+.tool-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;gap:12px}
+.tool-name{font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
+.tool-url{font-size:10px;color:var(--tf-mid);font-weight:500;margin-top:-8px}
+
+/* Stats table */
+.stats{width:100%;border-collapse:collapse;margin-top:2px}
+.stats tr{border-bottom:1px solid var(--rule)}
+.stats tr:last-child{border-bottom:none}
+.stats td{padding:4px 0;font-size:10.5px;line-height:1.4;vertical-align:top}
+.stats td:first-child{color:var(--sub);width:42%;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.3px;padding-right:8px}
+.stats td:last-child{color:var(--ink);font-weight:500}
+
+/* Strength / Weakness pills */
+.sw-row{display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.sw-item{font-size:10.5px;line-height:1.45;padding:5px 8px;border-radius:2px}
+.sw-item.strength{background:#ECEAF9;color:var(--tf-dark)}
+.sw-item.weakness{background:#FEF3EE;color:#8B3010}
+.sw-label{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px;display:block}
+
+/* ─── TF IDEAS ───────────────────────────── */
+.tf-ideas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tf-idea-card{background:white;border:1px solid var(--rule);border-left:3px solid var(--orange);padding:18px 20px}
+.tf-idea-num{font-size:22px;font-weight:800;color:var(--orange);opacity:.35;line-height:1;margin-bottom:8px}
+.tf-idea-title{font-size:12px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.3px;margin-bottom:7px}
+.tf-idea-body{font-size:11.5px;line-height:1.65;color:var(--sub)}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media(max-width:960px){
+  .cover{padding:40px 24px 44px}.tf-logo{font-size:52px}
+  .legend{padding:12px 24px}.page{padding:32px 20px 64px}
+  .idea-grid,.tool-grid,.tf-ideas-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .idea-grid,.tool-grid,.tf-ideas-grid{grid-template-columns:1fr}
+}
+@media print{
+  body{background:white}
+  .cover,.legend{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .idea-card,.tool-card,.tf-idea-card,.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid}
+  @page{size:A4;margin:10mm}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-left">
+      <div class="cover-eyebrow">Platform Strategy · Working Document</div>
+      <div class="tf-logo">Terra Ferra</div>
+      <div class="tf-tagline">Community Powered Fashion</div>
+      <div class="cover-divider"></div>
+      <div class="cover-desc">Enhancement ideas from the RUS Digital Fashion deck + AI research on Ablo, LTK &amp; ShopMy.</div>
+    </div>
+    <div class="cover-right"><div class="cover-date">May 2026</div></div>
+  </div>
+</div>
+
+<!-- ══ LEGEND ══ -->
+<div class="legend">
+  <div class="legend-inner">
+    <span class="legend-label">Categories</span>
+    <span class="tag on">Experience</span>
+    <span class="tag on">Community</span>
+    <span class="tag on">Sales</span>
+    <span class="tag on">Analytics</span>
+    <span class="tag tfd on">TF $</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ══ SECTION 1: RUS DECK EXTRA IDEAS ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">RUS Digital Fashion Collaboration Platform 3 — Extra Ideas</div>
+    </div>
+    <div class="idea-grid">
+
+      <div class="idea-card">
+        <h4>Demand Intelligence Dashboard</h4>
+        <p>Real-time analytics on which designs, colours and sizes are most tried on and saved. Enables data-driven decisions on what to produce, at what volume, and in which markets.</p>
+        <div class="tags">
+          <span class="tag">Experience</span><span class="tag">Community</span>
+          <span class="tag on">Sales</span><span class="tag on">Analytics</span>
+          <span class="tag tfd on">TF $</span>
+        </div>
+      </div>
+
+      <div class="idea-card">
+        <h4>Virtual Try-On (VTO)</h4>
+        <p>Third-party API integration (Vue.ai, Sizebay, Fit Analytics) — no proprietary build required. Size mapping from two photos achieves 94% accuracy; return rates drop 25–30% and pre-order conversion rises as fit uncertainty is eliminated.</p>
+        <div class="tags">
+          <span class="tag on">Experience</span><span class="tag">Community</span>
+          <span class="tag on">Sales</span><span class="tag">Analytics</span>
+          <span class="tag tfd">TF $</span>
+          <span class="tag ext">External API</span>
+        </div>
+      </div>
+
+      <div class="idea-card">
+        <h4>Style &amp; Size Profile</h4>
+        <p>A one-time setup capturing measurements, colour palette, fabric preferences, and style archetype. Powers personalised recommendations across every designer on the platform — recommendation quality compounds with usage.</p>
+        <div class="tags">
+          <span class="tag on">Experience</span><span class="tag">Community</span>
+          <span class="tag">Sales</span><span class="tag on">Analytics</span>
+          <span class="tag tfd">TF $</span>
+          <span class="tag ext">External API</span>
+        </div>
+      </div>
+
+      <div class="idea-card">
+        <h4>Early Access Premium Tier</h4>
+        <p>Paid consumer subscription unlocks virtual try-on of unreleased prototypes, co-creation voting rights, and first-access pre-orders at a discount. Converts casual browsers into committed community members.</p>
+        <div class="tags">
+          <span class="tag on">Experience</span><span class="tag on">Community</span>
+          <span class="tag on">Sales</span><span class="tag">Analytics</span>
+          <span class="tag tfd on">TF $</span>
+        </div>
+      </div>
+
+      <div class="idea-card">
+        <h4>Data as an Additional Revenue Layer</h4>
+        <p>Anonymised demand signals — top styles by region, real size distributions, colour trend velocity — packaged as premium analytics reports for fashion brands, investors, and industry analysts. Recurring B2B revenue independent of transaction volume.</p>
+        <div class="tags">
+          <span class="tag">Experience</span><span class="tag">Community</span>
+          <span class="tag on">Sales</span><span class="tag on">Analytics</span>
+          <span class="tag tfd on">TF $</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider"/>
+
+  <!-- ══ SECTION 2: AI RESEARCH ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">AI Research</div>
+    </div>
+
+    <!-- 3 tool cards -->
+    <div class="tool-grid">
+
+      <!-- ABLO -->
+      <div class="tool-card">
+        <div class="app-preview ablo-preview">
+          <div class="mock-header">
+            <span class="mock-logo">ABLO</span>
+            <span class="mock-sub">Design for All</span>
+          </div>
+          <div class="mock-grid">
+            <div class="mock-tile t1"><span class="mock-tile-label">Balmain</span></div>
+            <div class="mock-tile t2"><span class="mock-tile-label">Adidas</span></div>
+            <div class="mock-tile t3"><span class="mock-tile-label">Champion</span></div>
+            <div class="mock-tile t4"><span class="mock-tile-label">Crocs</span></div>
+          </div>
+          <div class="ablo-preview mock-brand-bar">
+            <span class="mock-brand-chip">Text→Design</span>
+            <span class="mock-brand-chip">IP License</span>
+            <span class="mock-brand-chip">Creator Royalty</span>
+          </div>
+        </div>
+        <div class="tool-body">
+          <div>
+            <div class="tool-name">Ablo.ai</div>
+            <div class="tool-url">ablo.ai · shop.ablo.ai · studio.ablo.ai</div>
+          </div>
+          <table class="stats">
+            <tr><td>Founded</td><td>2021 — New York</td></tr>
+            <tr><td>Funding</td><td>~$10M (Accel, a16z, Pantera, Polychain)</td></tr>
+            <tr><td>Creators</td><td>3,000+ beta users</td></tr>
+            <tr><td>Revenue</td><td>Not disclosed — growth stage</td></tr>
+            <tr><td>Brands</td><td>Adidas, Balmain, Crocs, Champion, Under Armour, D&amp;G</td></tr>
+            <tr><td>Model</td><td>$8–$40/mo + 8–10% commission on creator sales</td></tr>
+          </table>
+          <div class="sw-row">
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Only platform combining AI design generation + brand IP licensing + automatic creator royalties on remixes. Partners with 10 major global brands.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Very early stage. Blockchain dependency adds complexity. Narrow user base. No disclosed revenue.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LTK -->
+      <div class="tool-card">
+        <div class="app-preview ltk-preview">
+          <div class="mock-header">
+            <span class="ltk-logo-mark">LTK</span>
+            <span style="font-size:8px;color:#B88878;font-weight:600;letter-spacing:.5px">SHOP · FOLLOW · DISCOVER</span>
+          </div>
+          <div class="ltk-preview mock-search"><span class="mock-search-text">Search creators, styles, brands…</span></div>
+          <div class="ltk-preview mock-feed">
+            <div class="feed-card"><div class="feed-dot"></div></div>
+            <div class="feed-card"><div class="feed-dot"></div></div>
+            <div class="feed-card"><div class="feed-dot"></div></div>
+            <div class="feed-card"><div class="feed-dot"></div></div>
+          </div>
+        </div>
+        <div class="tool-body">
+          <div>
+            <div class="tool-name">LTK (RewardStyle)</div>
+            <div class="tool-url">ltk.com · founded as RewardStyle</div>
+          </div>
+          <table class="stats">
+            <tr><td>Founded</td><td>2011 — Dallas, TX</td></tr>
+            <tr><td>Funding</td><td>~$315M · $2B valuation (SoftBank)</td></tr>
+            <tr><td>Creators</td><td>150,000+</td></tr>
+            <tr><td>GMV</td><td>$3B+ annually</td></tr>
+            <tr><td>Brands</td><td>5,000+ (mass market + premium)</td></tr>
+            <tr><td>Geography</td><td>100+ countries, EU hubs: UK, Germany</td></tr>
+          </table>
+          <div class="sw-row">
+            <div class="sw-item strength"><span class="sw-label">Strength</span>15-year head start. $3B+ GMV. Global infrastructure. Millions of monthly consumers in own shopping app. Dominant in EU.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Withholds creator attribution data from brands — biggest trust issue. Growth slowing. Traditional affiliate model being disrupted.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOPMY -->
+      <div class="tool-card">
+        <div class="app-preview shopmy-preview">
+          <div class="mock-header">
+            <span class="shopmy-logo-mark">ShopMy</span>
+            <span style="font-size:8px;color:#888;font-weight:600;letter-spacing:.3px">Circles · Wishlists · Taste</span>
+          </div>
+          <div class="shopmy-preview mock-circles">
+            <div class="circle-item"><div class="circle-avatar c1"></div><div class="circle-name">@ally</div></div>
+            <div class="circle-item"><div class="circle-avatar c2"></div><div class="circle-name">@sofia</div></div>
+            <div class="circle-item"><div class="circle-avatar c3"></div><div class="circle-name">@jade</div></div>
+            <div class="circle-item"><div class="circle-avatar c4"></div><div class="circle-name">@nina</div></div>
+          </div>
+          <div class="shopmy-preview mock-products">
+            <div class="prod-tile"></div>
+            <div class="prod-tile"></div>
+            <div class="prod-tile"></div>
+          </div>
+          <div class="shopmy-preview mock-cta"><span class="mock-cta-text">Shop Circles</span></div>
+        </div>
+        <div class="tool-body">
+          <div>
+            <div class="tool-name">ShopMy</div>
+            <div class="tool-url">shopmy.us · consumer app launched Jul 2025</div>
+          </div>
+          <table class="stats">
+            <tr><td>Founded</td><td>2020 — New York</td></tr>
+            <tr><td>Funding</td><td>$147.5M · $1.5B valuation (20× in 18 mo)</td></tr>
+            <tr><td>Creators</td><td>185,000+ (hand-picked)</td></tr>
+            <tr><td>GMV</td><td>$1B+ · 200% YoY revenue growth</td></tr>
+            <tr><td>Brands</td><td>1,200 premium (Lululemon, Rhode, Nordstrom)</td></tr>
+            <tr><td>Profitability</td><td>Profitable since 2024</td></tr>
+          </table>
+          <div class="sw-row">
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Full creator attribution transparency. 200% growth. Profitable. Premium curation. New consumer app "Circles" — three-sided ecosystem emerging.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Still US-first (UK launched Mar 2025 only). Consumer app very new. 1,200 brands vs LTK's 5,000.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tool-grid -->
+
+    <!-- ══ IDEAS FOR TF ══ -->
+    <div class="sec-head" style="margin-top:8px">
+      <div class="sec-title">Ideas This Raises for Terra Ferra</div>
+    </div>
+    <div class="tf-ideas-grid">
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">01</div>
+        <div class="tf-idea-title">Full Attribution Transparency — Build It In from Day One</div>
+        <div class="tf-idea-body">ShopMy is valued at $1.5B precisely because it shows brands exactly which ambassador drove each sale. LTK withholds this and is now struggling to pivot. Every TF designer should see in real time which ambassador and which superfan drove which order. This is the structural differentiator that makes designers stay and pay.</div>
+      </div>
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">02</div>
+        <div class="tf-idea-title">ShopMy "Circles" → TF Co-Creation Feed</div>
+        <div class="tf-idea-body">ShopMy's consumer app shows curated collections from creators the user follows. TF's version: curated drops by designers + the superfan community that co-created them — the design story as content, not just a product listing. ShopMy proves this consumer layer is where the next billion in GMV comes from. Plan it from the start, not as Phase 2.</div>
+      </div>
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">03</div>
+        <div class="tf-idea-title">Ablo's AI Design Tool for TF Designers</div>
+        <div class="tf-idea-body">TF targets designers at ~$1M revenue, 5K–50K followers — exactly the stage where they have creative vision but limited technical design capability. Ablo (or similar API) could be integrated as TF's AI design tool: sketch-to-digital, on-demand prototyping. Removes the friction between creative idea and shareable pre-order prototype.</div>
+      </div>
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">04</div>
+        <div class="tf-idea-title">Financial Royalties for Co-Creators, Not Just Credit</div>
+        <div class="tf-idea-body">Ablo auto-distributes royalties when a design is remixed. TF's co-creation gives named credit — this should also be financial. When a superfan's colour or silhouette input is used in the final collection, an automatic royalty (cash or platform credit) flows to them. Turns a loyalty mechanic into a genuine economic stake.</div>
+      </div>
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">05</div>
+        <div class="tf-idea-title">Premium Curation Over Volume</div>
+        <div class="tf-idea-body">ShopMy wins with 1,200 premium brands vs LTK's 5,000 mass-market brands. TF should resist onboarding any designer who applies. A curated, high-trust designer roster protects consumer experience and brand perception. Selective = premium. This is also TF's only realistic competitive angle against LTK's scale advantage.</div>
+      </div>
+
+      <div class="tf-idea-card">
+        <div class="tf-idea-num">06</div>
+        <div class="tf-idea-title">The Consumer App Is the Flywheel, Not Phase 2</div>
+        <div class="tf-idea-body">ShopMy built B2B tools first, then launched "Circles" consumer app in July 2025 and immediately validated three-sided model economics. TF's consumer taste profile, wishlist, and co-creation feed should be designed from day one — not added later. The designers need the consumer-side data to justify staying on TF vs going direct to Instagram.</div>
+      </div>
+
+    </div>
+
+  </div><!-- /sec AI Research -->
+
+</div><!-- /page -->
+</body>
+</html>
