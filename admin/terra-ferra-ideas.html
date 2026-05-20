@@ -56,12 +56,16 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 .idea-card{background:white;border:1px solid var(--rule);border-top:3px solid var(--tf);padding:24px 24px 20px;display:flex;flex-direction:column}
 .idea-card h4{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.2px}
 .idea-card p{font-size:13px;line-height:1.72;color:var(--ink);flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+/* category tags — purple */
 .tag{font-size:9px;font-weight:800;letter-spacing:.7px;padding:3px 7px;border-radius:2px;text-transform:uppercase;white-space:nowrap;background:var(--tf-ghost);color:var(--rule)}
 .tag.on{background:var(--tf);color:white}
 .tag.tfd{background:var(--tf-ghost);color:var(--rule)}
-.tag.tfd.on{background:var(--orange);color:white}
+.tag.tfd.on{background:var(--tf);color:white}
 .tag.ext{background:transparent;border:1px solid var(--orange-light);color:var(--orange);font-style:italic;text-transform:none;font-weight:500;font-size:9px;letter-spacing:0}
+/* audience tags — orange */
+.aud{font-size:9px;font-weight:800;letter-spacing:.7px;padding:3px 7px;border-radius:2px;text-transform:uppercase;white-space:nowrap;background:var(--tf-ghost);color:var(--rule)}
+.aud.on{background:var(--orange);color:white}
 
 /* ─── DIVIDER ───────────────────────── */
 .section-divider{border:none;border-top:1px solid var(--rule);margin:0 0 56px}
@@ -146,7 +150,13 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 <!-- ══ LEGEND ══ -->
 <div class="legend">
   <div class="legend-inner">
-    <span class="legend-label">Categories</span>
+    <span class="legend-label">Audience</span>
+    <span class="aud on">Designers</span>
+    <span class="aud on">Superfans</span>
+    <span class="aud on">Consumers</span>
+    <span class="aud on">Platform</span>
+    <span style="width:1px;height:16px;background:var(--rule);display:inline-block;margin:0 10px;vertical-align:middle"></span>
+    <span class="legend-label">Category</span>
     <span class="tag on">Experience</span>
     <span class="tag on">Community</span>
     <span class="tag on">Sales</span>
@@ -168,6 +178,9 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Demand Intelligence Dashboard</h4>
         <p>Real-time analytics on which designs, colours and sizes are most tried on and saved. Enables data-driven decisions on what to produce, at what volume, and in which markets.</p>
         <div class="tags">
+          <span class="aud on">Designers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud">Platform</span>
+        </div>
+        <div class="tags">
           <span class="tag">Experience</span><span class="tag">Community</span>
           <span class="tag on">Sales</span><span class="tag on">Analytics</span>
           <span class="tag tfd on">TF $</span>
@@ -177,6 +190,9 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="idea-card">
         <h4>Virtual Try-On (VTO)</h4>
         <p>Third-party API integration (Vue.ai, Sizebay, Fit Analytics) — no proprietary build required. Size mapping from two photos achieves 94% accuracy; return rates drop 25–30% and pre-order conversion rises as fit uncertainty is eliminated.</p>
+        <div class="tags">
+          <span class="aud on">Designers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+        </div>
         <div class="tags">
           <span class="tag on">Experience</span><span class="tag">Community</span>
           <span class="tag on">Sales</span><span class="tag">Analytics</span>
@@ -189,6 +205,9 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Style &amp; Size Profile</h4>
         <p>A one-time setup capturing measurements, colour palette, fabric preferences, and style archetype. Powers personalised recommendations across every designer on the platform — recommendation quality compounds with usage.</p>
         <div class="tags">
+          <span class="aud">Designers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+        </div>
+        <div class="tags">
           <span class="tag on">Experience</span><span class="tag">Community</span>
           <span class="tag">Sales</span><span class="tag on">Analytics</span>
           <span class="tag tfd">TF $</span>
@@ -200,6 +219,9 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Early Access Premium Tier</h4>
         <p>Paid consumer subscription unlocks virtual try-on of unreleased prototypes, co-creation voting rights, and first-access pre-orders at a discount. Converts casual browsers into committed community members.</p>
         <div class="tags">
+          <span class="aud">Designers</span><span class="aud on">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+        </div>
+        <div class="tags">
           <span class="tag on">Experience</span><span class="tag on">Community</span>
           <span class="tag on">Sales</span><span class="tag">Analytics</span>
           <span class="tag tfd on">TF $</span>
@@ -209,6 +231,9 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="idea-card">
         <h4>Data as an Additional Revenue Layer</h4>
         <p>Anonymised demand signals — top styles by region, real size distributions, colour trend velocity — packaged as premium analytics reports for fashion brands, investors, and industry analysts. Recurring B2B revenue independent of transaction volume.</p>
+        <div class="tags">
+          <span class="aud">Designers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud on">Platform</span>
+        </div>
         <div class="tags">
           <span class="tag">Experience</span><span class="tag">Community</span>
           <span class="tag on">Sales</span><span class="tag on">Analytics</span>
