@@ -127,14 +127,21 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 .tf-idea-title{font-size:12.5px;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px}
 .tf-idea-body{font-size:12.5px;line-height:1.7;color:var(--ink)}
 
+/* ─── EU 2-COL GRID ─────────────────── */
+.eu-grid{grid-template-columns:repeat(2,1fr)}
+
 /* ─── RESPONSIVE ────────────────────── */
 @media(max-width:960px){
   .cover{padding:40px 24px 44px}.tf-logo{font-size:52px}
   .legend{padding:12px 24px}.page{padding:32px 20px 64px}
   .idea-grid,.tool-grid,.tf-ideas-grid{grid-template-columns:1fr 1fr}
+  .eu-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .idea-grid,.tool-grid,.tf-ideas-grid{grid-template-columns:1fr}
+  .idea-grid,.tool-grid,.tf-ideas-grid,.eu-grid{grid-template-columns:1fr}
+  .stats td:first-child{white-space:normal}
+  .cover::after{display:none}
+  .eu-callout{display:block;max-width:100%}
 }
 @media print{
   body{background:white}
@@ -382,13 +389,13 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="tf-idea-card">
         <div class="tf-idea-num">01</div>
         <div class="tf-idea-title">Real-time visibility of ambassador, superfan, order — phase 1 priority</div>
-        <div class="tf-idea-body">Same as ShopMy attribution model. LTK doesn't have it and is losing designers as a result. Core product requirement, not a roadmap item.</div>
+        <div class="tf-idea-body">Same attribution model as ShopMy. LTK doesn't have it and is losing designers because of it. Include in phase 1 product scope.</div>
       </div>
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">02</div>
         <div class="tf-idea-title">Consumer feed: the story behind the drop, not just the product</div>
-        <div class="tf-idea-body">Designer + the superfans who shaped it + the community vote. ShopMy launched Circles in July 2025 for this reason. Spec the consumer layer now — without it, designers have no reason to stay on TF vs. posting direct on Instagram.</div>
+        <div class="tf-idea-body">Designer + the superfans who shaped it + the community vote. ShopMy launched Circles in July 2025 for this reason. Include the consumer layer in phase 1 — without it, designers have no reason to stay on TF over posting direct on Instagram.</div>
       </div>
 
       <div class="tf-idea-card">
@@ -411,8 +418,8 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">06</div>
-        <div class="tf-idea-title">Consumer app — spec it now, not after designer tools ship</div>
-        <div class="tf-idea-body">Designers need consumer engagement data to justify TF over selling direct on Instagram. ShopMy built B2B first and retrofitted consumer in 2025 — it took years. Design both sides from the start.</div>
+        <div class="tf-idea-title">Consumer app: include in phase 1 product scope</div>
+        <div class="tf-idea-body">Consumer engagement data is what keeps designers on TF instead of their own channels. ShopMy built B2B first and added the consumer layer in 2025 — a multi-year delay. Both sides need to be in the initial product scope.</div>
       </div>
 
     </div>
@@ -515,7 +522,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="tf-idea-card">
         <div class="tf-idea-num">01</div>
         <div class="tf-idea-title">Modash: free 14-day trial, no card needed</div>
-        <div class="tf-idea-body">Upload a designer's lookbook → get matched influencers → contact the top 10. That's the sourcing workflow. Run the trial, check match quality, then decide if $199/mo is justified.</div>
+        <div class="tf-idea-body">Upload a designer's lookbook → get matched influencers → contact the top 10. Run the 14-day trial, check match quality, then decide if $199/mo works.</div>
       </div>
 
       <div class="tf-idea-card">
@@ -541,13 +548,13 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
     <div class="sec-head">
       <div class="sec-title">The EU Market Gap</div>
     </div>
-    <div style="background:var(--orange);color:white;padding:18px 24px;margin-bottom:20px;display:inline-block;max-width:780px">
+    <div style="background:var(--orange);color:white;padding:18px 24px;margin-bottom:20px;display:block;max-width:780px">
       <div style="font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;opacity:.7;margin-bottom:8px">The Gap</div>
       <div style="font-size:17px;font-weight:800;line-height:1.45;letter-spacing:-.2px">No European platform combines co-creation, pre-order, and community revenue sharing. TF's model does not exist here yet.</div>
     </div>
     <p style="font-size:13px;line-height:1.7;color:var(--sub);max-width:780px;margin-bottom:28px;">W&amp;B ($95M GMV, profitable) and NOTHS (~$110M revenue) prove the independent designer market is real in Europe — but both are pure marketplaces. Designer produces, consumer buys. That's it.</p>
 
-    <div class="tool-grid" style="grid-template-columns:repeat(2,1fr)">
+    <div class="tool-grid eu-grid">
 
       <!-- ── WOLF & BADGER ── -->
       <div class="tool-card">
@@ -618,7 +625,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="tf-idea-card">
         <div class="tf-idea-num">01</div>
         <div class="tf-idea-title">EU investor pitch: $200M market, co-creation not built yet</div>
-        <div class="tf-idea-body">W&amp;B + NOTHS = $200M+ in profitable EU independent designer revenue. Neither does co-creation, pre-order, or community revenue sharing. Market size is not the question. Gap is the pitch.</div>
+        <div class="tf-idea-body">W&amp;B + NOTHS together generate $200M+ in EU independent designer revenue, both profitable. Neither platform has co-creation, pre-order, or community revenue sharing. TF fills that gap — use as the EU market proof point in fundraising.</div>
       </div>
 
       <div class="tf-idea-card">
