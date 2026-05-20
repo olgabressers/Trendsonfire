@@ -41,8 +41,8 @@
     .sec-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(22px,3vw,34px); font-weight:500; color:#0a0f1a; line-height:1.2; }
     .sec-sub { font-size:15.5px; color:#1f1f1f; margin-top:14px; line-height:1.8; max-width:880px; }
 
-    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:8px; }
-    @media(max-width:900px){ .stats { grid-template-columns:1fr 1fr; } }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:8px; }
+    @media(max-width:1050px){ .stats { grid-template-columns:1fr 1fr; } }
     @media(max-width:520px){ .stats { grid-template-columns:1fr; } }
     .s-card { background:white; padding:22px 20px; border:1px solid #e2dfd9; }
     .s-lbl { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#1f1f1f; margin-bottom:12px; line-height:1.35; }
@@ -86,6 +86,13 @@
     .badge-green { background:#d1fae5; color:#065f46; font-size:11px; font-weight:700; padding:2px 8px; border-radius:2px; white-space:nowrap; }
     .badge-gold { background:#fef3c7; color:#92400e; font-size:11px; font-weight:700; padding:2px 8px; border-radius:2px; white-space:nowrap; }
     .badge-blue { background:#dbeafe; color:#1e40af; font-size:11px; font-weight:700; padding:2px 8px; border-radius:2px; white-space:nowrap; }
+    .deploy-explainer { background:#f5f2ee; border:1px solid #e2dfd9; padding:22px 26px 20px; margin-bottom:26px; }
+    .deploy-explainer-title { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#b8976a; margin-bottom:16px; }
+    .deploy-grid-exp { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    @media(max-width:900px){ .deploy-grid-exp { grid-template-columns:1fr 1fr; } }
+    @media(max-width:520px){ .deploy-grid-exp { grid-template-columns:1fr; } }
+    .deploy-item-label { font-size:13px; font-weight:800; color:#0a0f1a; margin-bottom:5px; }
+    .deploy-item-body { font-size:13px; color:#1f1f1f; line-height:1.65; }
     .co-demo { margin-top:14px; padding-top:14px; border-top:1px solid #f0ece6; }
     .co-demo img { width:100%; display:block; border-radius:4px; border:1px solid #e2dfd9; max-height:200px; object-fit:cover; }
     .co-demo-link { display:inline-block; margin-top:14px; padding-top:14px; border-top:1px solid #f0ece6; font-size:13px; font-weight:700; color:#8b6a2f; text-decoration:none; }
@@ -166,6 +173,11 @@
       <div class="s-lbl">Returners Citing Poor Fit</div>
       <div class="s-num">65%</div>
       <div class="s-src">Share of online shoppers who returned an item specifically because it did not fit. <a href="https://www.shopify.com/enterprise/blog/ecommerce-returns" target="_blank" rel="noopener">DealNews research via Shopify, Feb 2025</a></div>
+    </div>
+    <div class="s-card" style="border-left:3px solid #b8976a;">
+      <div class="s-lbl">Germany — Online Fashion Return Rate</div>
+      <div class="s-num">44%</div>
+      <div class="s-src">Germany has Europe's highest online fashion return rate. EU market rates range from 25% to 44% depending on country. <a href="https://www.trade.gov/country-commercial-guides/germany-ecommerce" target="_blank" rel="noopener">Statista (2022) via US Trade.gov Germany E-Commerce Guide</a></div>
     </div>
   </div>
   <div class="src-note"><strong>Source note:</strong> The $849.9B and 19.3% figures are from the NRF 2025 Retail Returns Landscape. The 65% fit-as-reason figure is from DealNews research cited by <a href="https://www.shopify.com/enterprise/blog/ecommerce-returns" target="_blank" rel="noopener">Shopify's February 2025 returns guide</a>. This represents the percentage of returners who cited fit — not the share of all purchases returned.</div>
@@ -561,12 +573,43 @@
 
   <p class="sec-sub">The nine solutions split across three technology categories, two deployment models (platform-level and brand-level), and two primary customer segments (mass market and luxury/premium). The matrix maps each company on the dimensions that matter most for a retailer evaluating fit-tech adoption.</p>
 
+  <div class="deploy-explainer">
+    <div class="deploy-explainer-title">Deployment types — what each model means</div>
+    <div class="deploy-grid-exp">
+      <div>
+        <div class="deploy-item-label">SaaS plug-in</div>
+        <div class="deploy-item-body">Installed from an app marketplace (e.g. Shopify App Store) with no code. Activated with a few clicks. Vendor manages updates and infrastructure. Fastest time-to-value for retailers already on the supported platform.</div>
+      </div>
+      <div>
+        <div class="deploy-item-label">SaaS / API</div>
+        <div class="deploy-item-body">Cloud subscription accessed via REST or GraphQL API. Requires a developer integration — typically 1–4 weeks of engineering work. More flexible than a plug-in but demands technical resource. Vendor still manages all infrastructure.</div>
+      </div>
+      <div>
+        <div class="deploy-item-label">B2B API</div>
+        <div class="deploy-item-body">Direct API integration with greater flexibility and customisation than a SaaS plug-in. Requires developer resources and longer onboarding. Typically used for enterprise clients, uniform fitting, or custom manufacturing pipelines where standard plug-ins don't fit.</div>
+      </div>
+      <div>
+        <div class="deploy-item-label">B2B SDK / API</div>
+        <div class="deploy-item-body">A software development kit (SDK) bundled with API access. The SDK handles the 3D rendering, AR camera, or body-scan interface; the API carries the data. Higher integration complexity and time-to-deploy. Typically used by luxury brands building custom try-on experiences.</div>
+      </div>
+      <div>
+        <div class="deploy-item-label">Platform (Google / Snap / Walmart)</div>
+        <div class="deploy-item-body">Built into the platform. Brands access the feature automatically by listing products on Google Shopping, running Snap ads, or selling on Walmart.com — no separate technical integration required. The platform handles everything; the brand just provides product listings.</div>
+      </div>
+      <div>
+        <div class="deploy-item-label">App + B2B API</div>
+        <div class="deploy-item-body">Two-sided model. The consumer-facing experience runs through a mobile app that users download; retailers connect via API to pull size profiles or recommendations. Both the shopper and the retailer must adopt for it to function.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="matrix-wrap">
     <table class="matrix">
       <thead>
         <tr>
           <th>Company</th>
           <th>Category</th>
+          <th>Brands using</th>
           <th>How It Works</th>
           <th>Key Metric</th>
           <th>Target Market</th>
@@ -579,6 +622,7 @@
         <tr>
           <td class="co-n">True Fit</td>
           <td><span class="cat">AI Sizing Engine</span></td>
+          <td>Macy's, Lululemon, Brooks Brothers, PacSun, Dick's Sporting Goods, Lucy &amp; Yak</td>
           <td>Matches shopper purchase history to 82M-shopper dataset + 30K brand profiles</td>
           <td>509% Shopify growth in 12 months</td>
           <td>Mass market, mid-market apparel &amp; footwear</td>
@@ -589,6 +633,7 @@
         <tr>
           <td class="co-n">Bold Metrics</td>
           <td><span class="cat">AI Sizing Engine</span></td>
+          <td>Gap, Old Navy, Banana Republic, Athleta</td>
           <td>Digital body twin from minimal inputs; conversational AI sizing (Agentic Protocol)</td>
           <td>Gap Inc. pilot across 4 brands (2026)</td>
           <td>Mid-market to premium apparel</td>
@@ -599,6 +644,7 @@
         <tr>
           <td class="co-n">MySize / Naiz Fit</td>
           <td><span class="cat">AI Sizing Engine</span></td>
+          <td>Not publicly disclosed (18+ countries, 42M+ recommendations delivered)</td>
           <td>AI size recommendation at checkout; 42M+ recommendations across 18 countries</td>
           <td>5.7× conversion lift; −14% returns</td>
           <td>Multi-market, mass to mid</td>
@@ -609,6 +655,7 @@
         <tr>
           <td class="co-n">3DLOOK</td>
           <td><span class="cat">Body Scanning</span></td>
+          <td>1822 Denim, Baynes &amp; Baker, Safariland Group, Bettter</td>
           <td>2-photo AI scan → 80+ body measurements in 45 seconds; 96–97% accuracy</td>
           <td>95%+ measurement repeatability</td>
           <td>Made-to-measure, uniform, workwear</td>
@@ -619,6 +666,7 @@
         <tr>
           <td class="co-n">MySizeID</td>
           <td><span class="cat">Body Scanning</span></td>
+          <td>Retailer clients not separately disclosed (part of MySize group)</td>
           <td>Smartphone sensor + camera measurement; synced size profile across retailers</td>
           <td>—</td>
           <td>Consumer-facing; mid-market retail</td>
@@ -629,6 +677,7 @@
         <tr>
           <td class="co-n">Google Shopping VTO</td>
           <td><span class="cat">Virtual Try-On</span></td>
+          <td>Macy's, Kohl's, Walmart, Nordstrom (at launch, May 2025)</td>
           <td>Upload photo → AI drapes billions of Shopping Graph items on your body</td>
           <td>Billions of items at launch (May 2025)</td>
           <td>All — platform-level reach</td>
@@ -639,6 +688,7 @@
         <tr>
           <td class="co-n">Snap AR Shopping</td>
           <td><span class="cat">Virtual Try-On</span></td>
+          <td>Eyewa (8× ROAS confirmed); available to any brand running Snap Shopping ads</td>
           <td>AR camera lens; up to 20 products tried in one session from brand catalogue</td>
           <td>80% shoppers more confident; 8× ROAS</td>
           <td>Mass market; youth/social audience</td>
@@ -649,6 +699,7 @@
         <tr>
           <td class="co-n">WANNA</td>
           <td><span class="cat">Virtual Try-On</span></td>
+          <td>Dolce &amp; Gabbana, Valentino, Balenciaga, Farfetch, IWC, Diesel, Tod's</td>
           <td>3D/AR try-on for footwear, bags, jewellery, clothing; luxury brand integrations</td>
           <td>6× conversion (Dolce &amp; Gabbana); +9% avg</td>
           <td>Luxury &amp; premium (Valentino, Balenciaga, Farfetch)</td>
@@ -659,6 +710,7 @@
         <tr>
           <td class="co-n">Zero10</td>
           <td><span class="cat">Virtual Try-On</span></td>
+          <td>Coach, Ugg, Macy's, Disney</td>
           <td>Real-time AR camera try-on; digital fashion; in-store AR mirrors</td>
           <td>Coach, Ugg, Macy's, Disney partnerships</td>
           <td>Consumer-facing; retail &amp; entertainment</td>
@@ -669,6 +721,7 @@
         <tr>
           <td class="co-n">Walmart / Zeekit</td>
           <td><span class="cat">Virtual Try-On</span></td>
+          <td>Walmart only (in-house — Zeekit acquired May 2021)</td>
           <td>Photo upload → AI simulates clothing drape on personal body; Walmart.com native</td>
           <td>270,000+ items available</td>
           <td>Mass market — Walmart shoppers</td>
@@ -695,6 +748,102 @@
   <div class="heat-insight" style="margin-bottom:20px;"><strong>2. AI sizing is moving from recommendation to agentic.</strong> Bold Metrics' Agentic Sizing Protocol and its Gap partnership represent the next stage: sizing recommendations delivered through conversational AI agents, not a product-page widget. As AI shopping assistants expand, the sizing engine sits inside the agent — not on the page.</div>
 
   <div class="heat-insight" style="margin-bottom:20px;"><strong>3. The returns problem has not been solved — but the tools are production-ready.</strong> MySize's 14% return rate reduction and WANNA's tracked conversion lifts show that deployed tools are moving measurable outcomes. The gap is adoption: most mid-market retailers have not integrated any sizing technology. The NRF's 19.3% online return rate will persist until the adoption curve closes.</div>
+
+  <!-- SECTION 8 — IMPLEMENTATION GRID -->
+  <div class="sec-header" style="margin-top:72px;">
+    <div class="sec-num">08</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Evaluation Framework</div>
+      <div class="sec-title">Ease of implementation vs. cost — where each solution sits</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">Nine solutions mapped on two dimensions: how complex the integration is, and how much it costs. Platform-based solutions (Google, Snap) sit at the easy and low-cost end — brands just list products on the platform. Custom 3D and SDK integrations (WANNA, 3DLOOK) sit at the complex and high-cost end. Most mid-market options cluster in the middle — API integrations with subscription costs. Only Google Shopping's Virtual Try-On carries no separate cost to brands.</p>
+
+  <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:6px;margin-top:24px;" role="img" aria-label="Scatter chart: ease of implementation vs cost for 9 fashion sizing technology solutions">
+
+    <!-- Background -->
+    <rect width="900" height="520" fill="#0a0f1a" rx="6"/>
+
+    <!-- Dashed grid lines -->
+    <line x1="90" y1="340" x2="860" y2="340" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="90" y1="240" x2="860" y2="240" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="90" y1="140" x2="860" y2="140" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="283" y1="40" x2="283" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="475" y1="40" x2="475" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="668" y1="40" x2="668" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+
+    <!-- Axes -->
+    <line x1="90" y1="440" x2="860" y2="440" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <line x1="90" y1="440" x2="90" y2="40" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <polygon points="863,440 856,436 856,444" fill="#b8976a"/>
+    <polygon points="90,37 86,44 94,44" fill="#b8976a"/>
+
+    <!-- X-axis labels -->
+    <text x="103" y="462" fill="rgba(184,151,106,.75)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Complex to implement</text>
+    <text x="857" y="462" fill="rgba(184,151,106,.75)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Easy to implement →</text>
+
+    <!-- Y-axis labels -->
+    <text x="80" y="444" fill="rgba(255,255,255,.35)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Low cost</text>
+    <text x="80" y="46" fill="rgba(255,255,255,.35)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">High cost</text>
+    <text x="22" y="240" fill="rgba(184,151,106,.6)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 22 240)" letter-spacing="1">COST</text>
+
+    <!-- Optimal zone hint -->
+    <rect x="676" y="362" width="156" height="62" rx="4" fill="rgba(184,151,106,.07)" stroke="rgba(184,151,106,.18)" stroke-width="1"/>
+    <text x="754" y="381" fill="rgba(184,151,106,.5)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle" font-style="italic">Optimal zone</text>
+    <text x="754" y="396" fill="rgba(184,151,106,.38)" font-size="9.5" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Easy + low cost</text>
+
+    <!-- ===== DATA POINTS ===== -->
+    <!-- ease% → svg_x = 90 + ease * 7.7 | cost% → svg_y = 440 - cost * 4.0 -->
+
+    <!-- 1. Google VTO: ease=90, cost=8 → (783, 408) -->
+    <circle cx="783" cy="408" r="12" fill="#b8976a"/>
+    <text x="783" y="393" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Google VTO</text>
+    <text x="783" y="382" fill="rgba(184,151,106,.7)" font-size="9" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Free</text>
+
+    <!-- 2. True Fit: ease=79, cost=40 → (698, 280) -->
+    <circle cx="698" cy="280" r="12" fill="#60a5fa"/>
+    <text x="698" y="265" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">True Fit</text>
+
+    <!-- 3. MySizeID: ease=67, cost=22 → (606, 352) -->
+    <circle cx="606" cy="352" r="12" fill="#fbbf24"/>
+    <text x="606" y="337" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">MySizeID</text>
+
+    <!-- 4. MySize / Naiz Fit: ease=50, cost=52 → (475, 232) -->
+    <circle cx="475" cy="232" r="12" fill="#60a5fa"/>
+    <text x="475" y="217" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Naiz Fit</text>
+
+    <!-- 5. Snap AR: ease=60, cost=56 → (552, 216) -->
+    <circle cx="552" cy="216" r="12" fill="#b8976a"/>
+    <text x="552" y="201" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Snap AR</text>
+
+    <!-- 6. Bold Metrics: ease=40, cost=65 → (398, 180) -->
+    <circle cx="398" cy="180" r="12" fill="#60a5fa"/>
+    <text x="398" y="165" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Bold Metrics</text>
+
+    <!-- 7. Zero10: ease=33, cost=48 → (344, 248) -->
+    <circle cx="344" cy="248" r="12" fill="#b8976a"/>
+    <text x="344" y="268" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zero10</text>
+
+    <!-- 8. 3DLOOK: ease=22, cost=68 → (259, 168) -->
+    <circle cx="259" cy="168" r="12" fill="#fbbf24"/>
+    <text x="259" y="153" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">3DLOOK</text>
+
+    <!-- 9. WANNA: ease=12, cost=83 → (182, 108) -->
+    <circle cx="182" cy="108" r="12" fill="#b8976a"/>
+    <text x="182" y="93" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">WANNA</text>
+
+    <!-- ===== LEGEND ===== -->
+    <rect x="90" y="480" width="810" height="28" fill="rgba(255,255,255,.04)" rx="3"/>
+    <circle cx="110" cy="494" r="6" fill="#60a5fa"/>
+    <text x="122" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">AI Sizing Engine</text>
+    <circle cx="240" cy="494" r="6" fill="#fbbf24"/>
+    <text x="252" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">Body Scanning</text>
+    <circle cx="360" cy="494" r="6" fill="#b8976a"/>
+    <text x="372" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">Virtual Try-On</text>
+    <text x="880" y="498" fill="rgba(255,255,255,.28)" font-size="9.5" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Indicative — most platforms use custom enterprise pricing · trendsonfire.com</text>
+  </svg>
+  <div class="src-note" style="margin-top:12px;"><strong>Notes:</strong> Ease of implementation reflects technical integration complexity based on published documentation. Cost positioning is approximate — only Google Shopping VTO is confirmed free (standard product listing). All other platforms use custom enterprise or subscription pricing not publicly disclosed. AI Sizing Engines (blue) tend to sit in the mid-range on both axes. Body Scanning tools (amber) skew toward complex integration due to photo-capture flows. Virtual Try-On platforms (gold) range from free/platform to highly custom.</div>
 
 </main>
 
