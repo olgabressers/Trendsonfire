@@ -184,9 +184,126 @@
 
   <div class="heat-insight"><strong>The core mechanics:</strong> online shoppers cannot test fit before purchase, so they order multiple sizes (bracketing) and return what does not work. Each returned unit generates a logistics cost that is rarely fully recovered. Sizing technology addresses the problem at the source — before the purchase is made.</div>
 
-  <!-- SECTION 2 — AI SIZING ENGINES -->
+  <!-- SECTION 2 — IMPLEMENTATION GRID -->
   <div class="sec-header">
     <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Evaluation Framework</div>
+      <div class="sec-title">Ease of implementation vs. cost — where each solution sits</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">Nine solutions mapped on two dimensions: how complex the integration is, and how much it costs. Platform-based solutions (Google, Snap) sit at the easy and low-cost end — brands just list products on the platform. Custom 3D and SDK integrations (WANNA, 3DLOOK) sit at the complex and high-cost end. Most mid-market options cluster in the middle — API integrations with subscription costs. Only Google Shopping's Virtual Try-On carries no separate cost to brands.</p>
+
+  <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:6px;margin-top:24px;" role="img" aria-label="Scatter chart: ease of implementation vs cost for 9 fashion sizing technology solutions">
+
+    <!-- Background -->
+    <rect width="900" height="520" fill="#0a0f1a" rx="6"/>
+    <!-- Chart title -->
+    <text x="490" y="18" fill="rgba(184,151,106,0.85)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.5">AI sizing engines · body scanners · virtual try-on — 9 solutions solving fashion's fit problem</text>
+
+    <!-- Dashed grid lines -->
+    <line x1="90" y1="340" x2="860" y2="340" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="90" y1="240" x2="860" y2="240" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="90" y1="140" x2="860" y2="140" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="283" y1="40" x2="283" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="475" y1="40" x2="475" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="668" y1="40" x2="668" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+
+    <!-- Axes -->
+    <line x1="90" y1="440" x2="860" y2="440" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <line x1="90" y1="440" x2="90" y2="40" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <polygon points="863,440 856,436 856,444" fill="#b8976a"/>
+    <polygon points="90,37 86,44 94,44" fill="#b8976a"/>
+
+    <!-- X-axis labels -->
+    <text x="103" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Complex to implement</text>
+    <text x="857" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Easy to implement →</text>
+
+    <!-- Y-axis labels -->
+    <text x="80" y="444" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Low cost</text>
+    <text x="80" y="46" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">High cost</text>
+    <text x="22" y="240" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 22 240)" letter-spacing="1">COST</text>
+
+    <!-- ===== DATA POINTS ===== -->
+    <!-- ease% → svg_x = 90 + ease * 7.7 | cost% → svg_y = 440 - cost * 4.0 -->
+    <!-- Each point: logo image above label, colored circle (category) with monogram, label text between -->
+
+    <!-- 1. Google VTO: ease=90, cost=8 → (783, 408) -->
+    <image href="https://cdn.simpleicons.org/google/white" x="773" y="340" width="20" height="20"/>
+    <text x="783" y="370" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Free</text>
+    <text x="783" y="383" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Google VTO</text>
+    <circle cx="783" cy="408" r="18" fill="#b8976a"/>
+    <text x="783" y="413" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">G</text>
+
+    <!-- 2. True Fit: ease=79, cost=40 → (698, 280) -->
+    <rect x="671" y="229" width="54" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://cdn.prod.website-files.com/64ee50f98275d03e3242bdef/6965564e4b8d279a57a2780d_True-Fit-Full-White.svg" x="673" y="231" width="50" height="14"/>
+    <text x="698" y="257" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">True Fit</text>
+    <circle cx="698" cy="280" r="18" fill="#60a5fa"/>
+    <text x="698" y="285" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">TF</text>
+
+    <!-- 3. MySizeID: ease=67, cost=22 → (606, 352) -->
+    <rect x="586" y="301" width="40" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://mysizeid.com/wp-content/uploads/2023/01/MySizeID.png" x="588" y="303" width="36" height="14"/>
+    <text x="606" y="329" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">MySizeID</text>
+    <circle cx="606" cy="352" r="18" fill="#fbbf24"/>
+    <text x="606" y="357" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">MS</text>
+
+    <!-- 4. Naiz Fit: ease=50, cost=52 → (475, 232) -->
+    <rect x="453" y="183" width="44" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://naiz.fit/wp-content/uploads/2023/10/Naiz-Fit-Logo.png" x="455" y="185" width="40" height="14"/>
+    <text x="475" y="209" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Naiz Fit</text>
+    <circle cx="475" cy="232" r="18" fill="#60a5fa"/>
+    <text x="475" y="237" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">NF</text>
+
+    <!-- 5. Snap AR: ease=60, cost=56 → (552, 216) -->
+    <image href="https://cdn.simpleicons.org/snapchat/white" x="542" y="161" width="20" height="20"/>
+    <text x="552" y="191" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Snap AR</text>
+    <circle cx="552" cy="216" r="18" fill="#b8976a"/>
+    <text x="552" y="221" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">S</text>
+
+    <!-- 6. Bold Metrics: ease=40, cost=65 → (398, 180) -->
+    <rect x="371" y="123" width="54" height="24" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://boldmetrics.com/hs-fs/hubfs/Bold%20Metrics%20Logo%202025/logo-stacked-light.png?width=310&amp;height=172&amp;name=logo-stacked-light.png" x="373" y="125" width="50" height="20"/>
+    <text x="398" y="155" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Bold Metrics</text>
+    <circle cx="398" cy="180" r="18" fill="#60a5fa"/>
+    <text x="398" y="185" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">BM</text>
+
+    <!-- 7. Zero10: ease=33, cost=48 → (344, 248) — no accessible logo -->
+    <circle cx="344" cy="248" r="18" fill="#b8976a"/>
+    <text x="344" y="253" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">Z</text>
+    <text x="344" y="278" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zero10</text>
+
+    <!-- 8. 3DLOOK: ease=22, cost=68 → (259, 168) -->
+    <rect x="232" y="119" width="54" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://3dlook.ai/wp-content/themes/3dlook/assets/img/logo.svg" x="234" y="121" width="50" height="14"/>
+    <text x="259" y="145" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">3DLOOK</text>
+    <circle cx="259" cy="168" r="18" fill="#fbbf24"/>
+    <text x="259" y="173" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">3D</text>
+
+    <!-- 9. WANNA: ease=12, cost=83 → (182, 108) -->
+    <rect x="160" y="55" width="44" height="20" rx="3" fill="rgba(10,15,26,0.5)"/>
+    <image href="https://wanna.fashion/images/tild3334-6431-4935-a534-346435636237__wanna_white_logo-05.svg" x="162" y="57" width="40" height="16"/>
+    <text x="182" y="83" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">WANNA</text>
+    <circle cx="182" cy="108" r="18" fill="#b8976a"/>
+    <text x="182" y="113" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">W</text>
+
+    <!-- ===== LEGEND ===== -->
+    <rect x="90" y="480" width="810" height="28" fill="rgba(255,255,255,.04)" rx="3"/>
+    <circle cx="110" cy="494" r="6" fill="#60a5fa"/>
+    <text x="122" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">AI Sizing Engine</text>
+    <circle cx="265" cy="494" r="6" fill="#fbbf24"/>
+    <text x="277" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Body Scanning</text>
+    <circle cx="415" cy="494" r="6" fill="#b8976a"/>
+    <text x="427" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Virtual Try-On</text>
+  </svg>
+  <div class="src-note" style="margin-top:12px;"><strong>Notes:</strong> Ease of implementation reflects technical integration complexity based on published documentation. Cost positioning is approximate — only Google Shopping VTO is confirmed free (standard product listing). All other platforms use custom enterprise or subscription pricing not publicly disclosed. AI Sizing Engines (blue) tend to sit in the mid-range on both axes. Body Scanning tools (amber) skew toward complex integration due to photo-capture flows. Virtual Try-On platforms (gold) range from free/platform to highly custom.</div>
+
+
+  <!-- SECTION 3 — AI SIZING ENGINES -->
+  <div class="sec-header">
+    <div class="sec-num">03</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Category 1</div>
       <div class="sec-title">AI Sizing &amp; Fit Recommendation Engines</div>
@@ -266,9 +383,9 @@
   </div>
   <div class="src-note"><strong>Sources:</strong> True Fit certification — <a href="https://retailtimes.co.uk/true-fit-selected-by-shopify-as-the-first-shopify-plus-certified-app-for-fit-and-sizing/" target="_blank" rel="noopener">Retail Times, Nov 2024</a>. Bold Metrics/Gap — <a href="https://wwd.com/business-news/technology/gap-bold-metrics-ai-sizing-agentic-commerce-1238687164/" target="_blank" rel="noopener">WWD, Mar 2026</a>. MySize metrics — <a href="https://www.prnewswire.com/news-releases/mysize-present-year-over-year-growth--2025-targets-15m-revenue--anticipates-strong-2024-finish-close-to-100-growth-from-2022-302339582.html" target="_blank" rel="noopener">PR Newswire</a>.</div>
 
-  <!-- SECTION 3 — BODY SCANNING -->
+  <!-- SECTION 4 — BODY SCANNING -->
   <div class="sec-header">
-    <div class="sec-num">03</div>
+    <div class="sec-num">04</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Category 2</div>
       <div class="sec-title">AI Body Measurement &amp; 3D Scanning</div>
@@ -325,9 +442,9 @@
   </div>
   <div class="src-note"><strong>Sources:</strong> 3DLOOK measurements and accuracy — <a href="https://3dlook.ai/" target="_blank" rel="noopener">3dlook.ai</a>. MySizeID product — <a href="https://www.mysizeid.com/" target="_blank" rel="noopener">mysizeid.com</a>.</div>
 
-  <!-- SECTION 4 — VIRTUAL TRY-ON -->
+  <!-- SECTION 5 — VIRTUAL TRY-ON -->
   <div class="sec-header">
-    <div class="sec-num">04</div>
+    <div class="sec-num">05</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Category 3</div>
       <div class="sec-title">Virtual Try-On: AR, AI Image Generation &amp; 3D</div>
@@ -446,9 +563,9 @@
   </div>
   <div class="src-note"><strong>Sources:</strong> Google VTO — <a href="https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/" target="_blank" rel="noopener">Google Blog, May 2025</a>. Snap — <a href="https://forbusiness.snapchat.com/blog/catalog-powered-shopping-lenses" target="_blank" rel="noopener">Snap for Business</a>. WANNA — <a href="https://wanna.fashion/" target="_blank" rel="noopener">wanna.fashion</a>. Zero10 — <a href="https://zero10.ar/" target="_blank" rel="noopener">zero10.ar</a>. Walmart — <a href="https://corporate.walmart.com/news/2022/09/15/walmart-levels-up-virtual-try-on-for-apparel-with-be-your-own-model-experience" target="_blank" rel="noopener">Walmart Corporate</a>.</div>
 
-  <!-- SECTION 5 — IN-HOUSE TECHNOLOGY -->
+  <!-- SECTION 6 — IN-HOUSE TECHNOLOGY -->
   <div class="sec-header">
-    <div class="sec-num">05</div>
+    <div class="sec-num">06</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Category 4</div>
       <div class="sec-title">In-House Technology — Fashion Retailers Building Their Own</div>
@@ -562,9 +679,9 @@
   </div>
   <div class="src-note"><strong>Sources:</strong> Zara — <a href="https://marketing4ecommerce.net/en/zara-try-on/" target="_blank" rel="noopener">Marketing4Ecommerce</a>. Amazon — <a href="https://aws.amazon.com/blogs/aws/amazon-nova-canvas-update-virtual-try-on-and-style-options-now-available/" target="_blank" rel="noopener">AWS Blog Jul 2025</a>. Zalando — <a href="https://corporate.zalando.com/en/technology/zalando-launches-size-recommendations-based-customers-own-body-measurements" target="_blank" rel="noopener">Zalando Corporate Jul 2023</a>. Nike — <a href="https://www.designboom.com/technology/nike-fit-app-uses-ar-to-measure-feet-with-perfect-accuracy-05-10-2019/" target="_blank" rel="noopener">DesignBoom May 2019</a>. ASOS — <a href="https://www.marketingdive.com/news/asos-in-app-fit-assistant-helps-shoppers-find-the-perfect-size/543090/" target="_blank" rel="noopener">Marketing Dive 2018</a>.</div>
 
-  <!-- SECTION 6 — SOLUTION MATRIX -->
+  <!-- SECTION 7 — SOLUTION MATRIX -->
   <div class="sec-header">
-    <div class="sec-num">06</div>
+    <div class="sec-num">07</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Comparison</div>
       <div class="sec-title">Solution Matrix — 9 Companies Compared</div>
@@ -734,9 +851,9 @@
   </div>
   <div class="src-note"><strong>Matrix sources:</strong> True Fit — Retail Times Nov 2024; Bold Metrics — WWD Mar 2026; MySize — PR Newswire 2025; 3DLOOK — 3dlook.ai; MySizeID — mysizeid.com; Google — Google Blog May 2025; Snap — Snap for Business; WANNA — wanna.fashion; Zero10 — zero10.ar; Walmart — Walmart Corporate Sep 2022.</div>
 
-  <!-- SECTION 7 — WHAT THIS MEANS -->
+  <!-- SECTION 8 — WHAT THIS MEANS -->
   <div class="sec-header">
-    <div class="sec-num">07</div>
+    <div class="sec-num">08</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Market Signal</div>
       <div class="sec-title">Three structural shifts across the nine solutions</div>
@@ -749,119 +866,7 @@
 
   <div class="heat-insight" style="margin-bottom:20px;"><strong>3. The returns problem has not been solved — but the tools are production-ready.</strong> MySize's 14% return rate reduction and WANNA's tracked conversion lifts show that deployed tools are moving measurable outcomes. The gap is adoption: most mid-market retailers have not integrated any sizing technology. The NRF's 19.3% online return rate will persist until the adoption curve closes.</div>
 
-  <!-- SECTION 8 — IMPLEMENTATION GRID -->
-  <div class="sec-header" style="margin-top:72px;">
-    <div class="sec-num">08</div>
-    <div class="sec-label">
-      <div class="sec-eyebrow">Evaluation Framework</div>
-      <div class="sec-title">Ease of implementation vs. cost — where each solution sits</div>
-    </div>
-  </div>
 
-  <p class="sec-sub">Nine solutions mapped on two dimensions: how complex the integration is, and how much it costs. Platform-based solutions (Google, Snap) sit at the easy and low-cost end — brands just list products on the platform. Custom 3D and SDK integrations (WANNA, 3DLOOK) sit at the complex and high-cost end. Most mid-market options cluster in the middle — API integrations with subscription costs. Only Google Shopping's Virtual Try-On carries no separate cost to brands.</p>
-
-  <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:6px;margin-top:24px;" role="img" aria-label="Scatter chart: ease of implementation vs cost for 9 fashion sizing technology solutions">
-
-    <!-- Background -->
-    <rect width="900" height="520" fill="#0a0f1a" rx="6"/>
-
-    <!-- Dashed grid lines -->
-    <line x1="90" y1="340" x2="860" y2="340" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="90" y1="240" x2="860" y2="240" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="90" y1="140" x2="860" y2="140" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="283" y1="40" x2="283" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="475" y1="40" x2="475" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="668" y1="40" x2="668" y2="440" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
-
-    <!-- Axes -->
-    <line x1="90" y1="440" x2="860" y2="440" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
-    <line x1="90" y1="440" x2="90" y2="40" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
-    <polygon points="863,440 856,436 856,444" fill="#b8976a"/>
-    <polygon points="90,37 86,44 94,44" fill="#b8976a"/>
-
-    <!-- X-axis labels -->
-    <text x="103" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Complex to implement</text>
-    <text x="857" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Easy to implement →</text>
-
-    <!-- Y-axis labels -->
-    <text x="80" y="444" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Low cost</text>
-    <text x="80" y="46" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">High cost</text>
-    <text x="22" y="240" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 22 240)" letter-spacing="1">COST</text>
-
-    <!-- ===== DATA POINTS ===== -->
-    <!-- ease% → svg_x = 90 + ease * 7.7 | cost% → svg_y = 440 - cost * 4.0 -->
-    <!-- Each point: logo image above label, colored circle (category) with monogram, label text between -->
-
-    <!-- 1. Google VTO: ease=90, cost=8 → (783, 408) -->
-    <image href="https://cdn.simpleicons.org/google/white" x="773" y="340" width="20" height="20"/>
-    <text x="783" y="370" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Free</text>
-    <text x="783" y="383" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Google VTO</text>
-    <circle cx="783" cy="408" r="18" fill="#b8976a"/>
-    <text x="783" y="413" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">G</text>
-
-    <!-- 2. True Fit: ease=79, cost=40 → (698, 280) -->
-    <rect x="671" y="229" width="54" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://cdn.prod.website-files.com/64ee50f98275d03e3242bdef/6965564e4b8d279a57a2780d_True-Fit-Full-White.svg" x="673" y="231" width="50" height="14"/>
-    <text x="698" y="257" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">True Fit</text>
-    <circle cx="698" cy="280" r="18" fill="#60a5fa"/>
-    <text x="698" y="285" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">TF</text>
-
-    <!-- 3. MySizeID: ease=67, cost=22 → (606, 352) -->
-    <rect x="586" y="301" width="40" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://mysizeid.com/wp-content/uploads/2023/01/MySizeID.png" x="588" y="303" width="36" height="14"/>
-    <text x="606" y="329" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">MySizeID</text>
-    <circle cx="606" cy="352" r="18" fill="#fbbf24"/>
-    <text x="606" y="357" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">MS</text>
-
-    <!-- 4. Naiz Fit: ease=50, cost=52 → (475, 232) -->
-    <rect x="453" y="183" width="44" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://naiz.fit/wp-content/uploads/2023/10/Naiz-Fit-Logo.png" x="455" y="185" width="40" height="14"/>
-    <text x="475" y="209" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Naiz Fit</text>
-    <circle cx="475" cy="232" r="18" fill="#60a5fa"/>
-    <text x="475" y="237" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">NF</text>
-
-    <!-- 5. Snap AR: ease=60, cost=56 → (552, 216) -->
-    <image href="https://cdn.simpleicons.org/snapchat/white" x="542" y="161" width="20" height="20"/>
-    <text x="552" y="191" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Snap AR</text>
-    <circle cx="552" cy="216" r="18" fill="#b8976a"/>
-    <text x="552" y="221" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">S</text>
-
-    <!-- 6. Bold Metrics: ease=40, cost=65 → (398, 180) -->
-    <rect x="371" y="123" width="54" height="24" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://boldmetrics.com/hs-fs/hubfs/Bold%20Metrics%20Logo%202025/logo-stacked-light.png?width=310&amp;height=172&amp;name=logo-stacked-light.png" x="373" y="125" width="50" height="20"/>
-    <text x="398" y="155" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Bold Metrics</text>
-    <circle cx="398" cy="180" r="18" fill="#60a5fa"/>
-    <text x="398" y="185" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">BM</text>
-
-    <!-- 7. Zero10: ease=33, cost=48 → (344, 248) — no accessible logo -->
-    <circle cx="344" cy="248" r="18" fill="#b8976a"/>
-    <text x="344" y="253" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">Z</text>
-    <text x="344" y="278" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zero10</text>
-
-    <!-- 8. 3DLOOK: ease=22, cost=68 → (259, 168) -->
-    <rect x="232" y="119" width="54" height="18" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://3dlook.ai/wp-content/themes/3dlook/assets/img/logo.svg" x="234" y="121" width="50" height="14"/>
-    <text x="259" y="145" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">3DLOOK</text>
-    <circle cx="259" cy="168" r="18" fill="#fbbf24"/>
-    <text x="259" y="173" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">3D</text>
-
-    <!-- 9. WANNA: ease=12, cost=83 → (182, 108) -->
-    <rect x="160" y="55" width="44" height="20" rx="3" fill="rgba(10,15,26,0.5)"/>
-    <image href="https://wanna.fashion/images/tild3334-6431-4935-a534-346435636237__wanna_white_logo-05.svg" x="162" y="57" width="40" height="16"/>
-    <text x="182" y="83" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">WANNA</text>
-    <circle cx="182" cy="108" r="18" fill="#b8976a"/>
-    <text x="182" y="113" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">W</text>
-
-    <!-- ===== LEGEND ===== -->
-    <rect x="90" y="480" width="810" height="28" fill="rgba(255,255,255,.04)" rx="3"/>
-    <circle cx="110" cy="494" r="6" fill="#60a5fa"/>
-    <text x="122" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">AI Sizing Engine</text>
-    <circle cx="265" cy="494" r="6" fill="#fbbf24"/>
-    <text x="277" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Body Scanning</text>
-    <circle cx="415" cy="494" r="6" fill="#b8976a"/>
-    <text x="427" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Virtual Try-On</text>
-  </svg>
-  <div class="src-note" style="margin-top:12px;"><strong>Notes:</strong> Ease of implementation reflects technical integration complexity based on published documentation. Cost positioning is approximate — only Google Shopping VTO is confirmed free (standard product listing). All other platforms use custom enterprise or subscription pricing not publicly disclosed. AI Sizing Engines (blue) tend to sit in the mid-range on both axes. Body Scanning tools (amber) skew toward complex integration due to photo-capture flows. Virtual Try-On platforms (gold) range from free/platform to highly custom.</div>
 
 </main>
 
