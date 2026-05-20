@@ -164,6 +164,11 @@
       <div class="s-num">$849.9B</div>
       <div class="s-src">Projected 2025 total retail return value. <a href="https://nrf.com/research/2025-retail-returns-landscape" target="_blank" rel="noopener">NRF 2025 Retail Returns Landscape</a></div>
     </div>
+    <div class="s-card" style="border-left:3px solid #b8976a;">
+      <div class="s-lbl">Zalando — Fashion Return Rate</div>
+      <div class="s-num">~50%</div>
+      <div class="s-src">Approximately half of all items ordered on Europe's largest fashion platform are returned — driven by free-returns policy and multi-size ordering behaviour. <a href="https://ecommercegermany.com/blog/ecommerce-statistics/" target="_blank" rel="noopener">eCommerce Germany, 2024</a></div>
+    </div>
     <div class="s-card">
       <div class="s-lbl">Online Return Rate 2025</div>
       <div class="s-num">19.3%</div>
@@ -174,13 +179,8 @@
       <div class="s-num">65%</div>
       <div class="s-src">Share of online shoppers who returned an item specifically because it did not fit. <a href="https://www.shopify.com/enterprise/blog/ecommerce-returns" target="_blank" rel="noopener">DealNews research via Shopify, Feb 2025</a></div>
     </div>
-    <div class="s-card" style="border-left:3px solid #b8976a;">
-      <div class="s-lbl">Germany — Online Fashion Return Rate</div>
-      <div class="s-num">44%</div>
-      <div class="s-src">Germany has Europe's highest online fashion return rate. EU market rates range from 25% to 44% depending on country. <a href="https://www.trade.gov/country-commercial-guides/germany-ecommerce" target="_blank" rel="noopener">Statista (2022) via US Trade.gov Germany E-Commerce Guide</a></div>
-    </div>
   </div>
-  <div class="src-note"><strong>Source note:</strong> The $849.9B and 19.3% figures are from the NRF 2025 Retail Returns Landscape. The 65% fit-as-reason figure is from DealNews research cited by <a href="https://www.shopify.com/enterprise/blog/ecommerce-returns" target="_blank" rel="noopener">Shopify's February 2025 returns guide</a>. This represents the percentage of returners who cited fit — not the share of all purchases returned.</div>
+  <div class="src-note"><strong>Source note:</strong> The $849.9B and 19.3% figures are from the NRF 2025 Retail Returns Landscape. The 65% fit-as-reason figure is from DealNews research cited by <a href="https://www.shopify.com/enterprise/blog/ecommerce-returns" target="_blank" rel="noopener">Shopify's February 2025 returns guide</a>. This represents the percentage of returners who cited fit — not the share of all purchases returned. The ~50% Zalando return rate reflects Europe's higher fashion return culture driven by free-returns policies.</div>
 
   <div class="heat-insight"><strong>The core mechanics:</strong> online shoppers cannot test fit before purchase, so they order multiple sizes (bracketing) and return what does not work. Each returned unit generates a logistics cost that is rarely fully recovered. Sizing technology addresses the problem at the source — before the purchase is made.</div>
 
@@ -780,68 +780,71 @@
     <polygon points="90,37 86,44 94,44" fill="#b8976a"/>
 
     <!-- X-axis labels -->
-    <text x="103" y="462" fill="rgba(184,151,106,.75)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Complex to implement</text>
-    <text x="857" y="462" fill="rgba(184,151,106,.75)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Easy to implement →</text>
+    <text x="103" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Complex to implement</text>
+    <text x="857" y="462" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Easy to implement →</text>
 
     <!-- Y-axis labels -->
-    <text x="80" y="444" fill="rgba(255,255,255,.35)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Low cost</text>
-    <text x="80" y="46" fill="rgba(255,255,255,.35)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">High cost</text>
-    <text x="22" y="240" fill="rgba(184,151,106,.6)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 22 240)" letter-spacing="1">COST</text>
-
-    <!-- Optimal zone hint -->
-    <rect x="676" y="362" width="156" height="62" rx="4" fill="rgba(184,151,106,.07)" stroke="rgba(184,151,106,.18)" stroke-width="1"/>
-    <text x="754" y="381" fill="rgba(184,151,106,.5)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle" font-style="italic">Optimal zone</text>
-    <text x="754" y="396" fill="rgba(184,151,106,.38)" font-size="9.5" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Easy + low cost</text>
+    <text x="80" y="444" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Low cost</text>
+    <text x="80" y="46" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">High cost</text>
+    <text x="22" y="240" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 22 240)" letter-spacing="1">COST</text>
 
     <!-- ===== DATA POINTS ===== -->
-    <!-- ease% → svg_x = 90 + ease * 7.7 | cost% → svg_y = 440 - cost * 4.0 -->
+    <!-- ease% → svg_x = 90 + ease * 7.7 | cost% → svg_y = 440 - cost * 4.0 | r=18 | monogram inside circle -->
 
     <!-- 1. Google VTO: ease=90, cost=8 → (783, 408) -->
-    <circle cx="783" cy="408" r="12" fill="#b8976a"/>
-    <text x="783" y="393" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Google VTO</text>
-    <text x="783" y="382" fill="rgba(184,151,106,.7)" font-size="9" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Free</text>
+    <circle cx="783" cy="408" r="18" fill="#b8976a"/>
+    <text x="783" y="413" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">G</text>
+    <text x="783" y="385" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Google VTO</text>
+    <text x="783" y="373" fill="rgba(184,151,106,.9)" font-size="10" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Free</text>
 
     <!-- 2. True Fit: ease=79, cost=40 → (698, 280) -->
-    <circle cx="698" cy="280" r="12" fill="#60a5fa"/>
-    <text x="698" y="265" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">True Fit</text>
+    <circle cx="698" cy="280" r="18" fill="#60a5fa"/>
+    <text x="698" y="285" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">TF</text>
+    <text x="698" y="257" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">True Fit</text>
 
     <!-- 3. MySizeID: ease=67, cost=22 → (606, 352) -->
-    <circle cx="606" cy="352" r="12" fill="#fbbf24"/>
-    <text x="606" y="337" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">MySizeID</text>
+    <circle cx="606" cy="352" r="18" fill="#fbbf24"/>
+    <text x="606" y="357" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">MS</text>
+    <text x="606" y="329" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">MySizeID</text>
 
-    <!-- 4. MySize / Naiz Fit: ease=50, cost=52 → (475, 232) -->
-    <circle cx="475" cy="232" r="12" fill="#60a5fa"/>
-    <text x="475" y="217" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Naiz Fit</text>
+    <!-- 4. Naiz Fit: ease=50, cost=52 → (475, 232) -->
+    <circle cx="475" cy="232" r="18" fill="#60a5fa"/>
+    <text x="475" y="237" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">NF</text>
+    <text x="475" y="209" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Naiz Fit</text>
 
     <!-- 5. Snap AR: ease=60, cost=56 → (552, 216) -->
-    <circle cx="552" cy="216" r="12" fill="#b8976a"/>
-    <text x="552" y="201" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Snap AR</text>
+    <circle cx="552" cy="216" r="18" fill="#b8976a"/>
+    <text x="552" y="221" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">S</text>
+    <text x="552" y="193" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Snap AR</text>
 
     <!-- 6. Bold Metrics: ease=40, cost=65 → (398, 180) -->
-    <circle cx="398" cy="180" r="12" fill="#60a5fa"/>
-    <text x="398" y="165" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Bold Metrics</text>
+    <circle cx="398" cy="180" r="18" fill="#60a5fa"/>
+    <text x="398" y="185" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">BM</text>
+    <text x="398" y="157" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Bold Metrics</text>
 
     <!-- 7. Zero10: ease=33, cost=48 → (344, 248) -->
-    <circle cx="344" cy="248" r="12" fill="#b8976a"/>
-    <text x="344" y="268" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zero10</text>
+    <circle cx="344" cy="248" r="18" fill="#b8976a"/>
+    <text x="344" y="253" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">Z</text>
+    <text x="344" y="278" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zero10</text>
 
     <!-- 8. 3DLOOK: ease=22, cost=68 → (259, 168) -->
-    <circle cx="259" cy="168" r="12" fill="#fbbf24"/>
-    <text x="259" y="153" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">3DLOOK</text>
+    <circle cx="259" cy="168" r="18" fill="#fbbf24"/>
+    <text x="259" y="173" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">3D</text>
+    <text x="259" y="145" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">3DLOOK</text>
 
     <!-- 9. WANNA: ease=12, cost=83 → (182, 108) -->
-    <circle cx="182" cy="108" r="12" fill="#b8976a"/>
-    <text x="182" y="93" fill="white" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">WANNA</text>
+    <circle cx="182" cy="108" r="18" fill="#b8976a"/>
+    <text x="182" y="113" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle">W</text>
+    <text x="182" y="85" fill="white" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">WANNA</text>
 
     <!-- ===== LEGEND ===== -->
     <rect x="90" y="480" width="810" height="28" fill="rgba(255,255,255,.04)" rx="3"/>
     <circle cx="110" cy="494" r="6" fill="#60a5fa"/>
-    <text x="122" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">AI Sizing Engine</text>
-    <circle cx="240" cy="494" r="6" fill="#fbbf24"/>
-    <text x="252" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">Body Scanning</text>
-    <circle cx="360" cy="494" r="6" fill="#b8976a"/>
-    <text x="372" y="498" fill="rgba(255,255,255,.65)" font-size="10.5" font-family="'Helvetica Neue',Arial,sans-serif">Virtual Try-On</text>
-    <text x="880" y="498" fill="rgba(255,255,255,.28)" font-size="9.5" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Indicative — most platforms use custom enterprise pricing · trendsonfire.com</text>
+    <text x="122" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">AI Sizing Engine</text>
+    <circle cx="265" cy="494" r="6" fill="#fbbf24"/>
+    <text x="277" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Body Scanning</text>
+    <circle cx="415" cy="494" r="6" fill="#b8976a"/>
+    <text x="427" y="498" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Virtual Try-On</text>
   </svg>
   <div class="src-note" style="margin-top:12px;"><strong>Notes:</strong> Ease of implementation reflects technical integration complexity based on published documentation. Cost positioning is approximate — only Google Shopping VTO is confirmed free (standard product listing). All other platforms use custom enterprise or subscription pricing not publicly disclosed. AI Sizing Engines (blue) tend to sit in the mid-range on both axes. Body Scanning tools (amber) skew toward complex integration due to photo-capture flows. Virtual Try-On platforms (gold) range from free/platform to highly custom.</div>
 
@@ -882,5 +885,8 @@ function closeSearch(){document.getElementById('search-overlay').style.display='
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
 document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 </script>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#0a0f1a;color:#b8976a;border:1px solid rgba(184,151,106,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#1a2235;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
 </body>
 </html>
