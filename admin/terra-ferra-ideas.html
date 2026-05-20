@@ -46,10 +46,21 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 /* ─── PAGE ──────────────────────────── */
 .page{max-width:1200px;margin:0 auto;padding:56px 40px 88px}
 
+/* ─── TOC ───────────────────────────── */
+.toc{background:white;border:1px solid var(--rule);border-left:3px solid var(--tf);padding:20px 28px;margin-bottom:48px}
+.toc-head{font-size:9px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);opacity:.6;margin-bottom:12px}
+.toc-list{display:flex;flex-direction:column;gap:0}
+.toc-item{display:flex;align-items:baseline;gap:14px;text-decoration:none;color:var(--ink);font-size:13px;font-weight:500;padding:8px 0;border-bottom:1px solid var(--rule)}
+.toc-item:last-child{border-bottom:none}
+.toc-item:hover{color:var(--tf)}
+.toc-num{font-size:10px;font-weight:800;color:var(--orange);min-width:22px;flex-shrink:0}
+
 /* ─── SECTION ───────────────────────── */
 .sec{margin-bottom:56px}
-.sec-head{margin-bottom:24px;padding-bottom:12px;border-bottom:1.5px solid var(--tf)}
+.sec-head{margin-bottom:18px;padding-bottom:12px;border-bottom:1.5px solid var(--tf)}
 .sec-title{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--orange)}
+.sec-legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.sec-legend-sep{width:1px;height:14px;background:var(--rule);display:inline-block;margin:0 8px;flex-shrink:0}
 
 /* ─── IDEA CARDS ────────────────────── */
 .idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -149,30 +160,36 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
   </div>
 </div>
 
-<!-- ══ LEGEND ══ -->
-<div class="legend">
-  <div class="legend-inner">
-    <span class="legend-label">Audience</span>
-    <span class="aud on">Designers</span>
-    <span class="aud on">Superfans</span>
-    <span class="aud on">Consumers</span>
-    <span class="aud on">Platform</span>
-    <span style="width:1px;height:16px;background:var(--rule);display:inline-block;margin:0 10px;vertical-align:middle"></span>
-    <span class="legend-label">Category</span>
-    <span class="tag on">Experience</span>
-    <span class="tag on">Community</span>
-    <span class="tag on">Sales</span>
-    <span class="tag on">Analytics</span>
-    <span class="tag tfd on">TF $</span>
-  </div>
-</div>
-
 <div class="page">
 
+  <!-- ══ TOC ══ -->
+  <nav class="toc">
+    <div class="toc-head">Contents</div>
+    <div class="toc-list">
+      <a href="#sec-rus" class="toc-item"><span class="toc-num">01</span>RUS Digital Fashion Collaboration Platform 3 — Extra Ideas</a>
+      <a href="#sec-ai" class="toc-item"><span class="toc-num">02</span>AI Research — Perplexity Summary</a>
+      <a href="#sec-visual" class="toc-item"><span class="toc-num">03</span>Fashion-Specific Visual AI / Trend Detection</a>
+    </div>
+  </nav>
+
   <!-- ══ SECTION 1 ══ -->
-  <div class="sec">
+  <div class="sec" id="sec-rus">
     <div class="sec-head">
       <div class="sec-title">RUS Digital Fashion Collaboration Platform 3 — Extra Ideas</div>
+      <div class="sec-legend">
+        <span class="legend-label">Audience</span>
+        <span class="aud on">Designers</span>
+        <span class="aud on">Superfans</span>
+        <span class="aud on">Consumers</span>
+        <span class="aud on">Platform</span>
+        <span class="sec-legend-sep"></span>
+        <span class="legend-label">Category</span>
+        <span class="tag on">Experience</span>
+        <span class="tag on">Community</span>
+        <span class="tag on">Sales</span>
+        <span class="tag on">Analytics</span>
+        <span class="tag tfd on">TF $</span>
+      </div>
     </div>
     <div class="idea-grid">
 
@@ -249,7 +266,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
   <hr class="section-divider"/>
 
   <!-- ══ SECTION 2: AI RESEARCH ══ -->
-  <div class="sec">
+  <div class="sec" id="sec-ai">
     <div class="sec-head">
       <div class="sec-title">AI Research — Perplexity Summary</div>
     </div>
@@ -398,7 +415,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
   <hr class="section-divider"/>
 
   <!-- ══ SECTION 3: FASHION VISUAL AI ══ -->
-  <div class="sec">
+  <div class="sec" id="sec-visual">
     <div class="sec-head">
       <div class="sec-title">Fashion-Specific Visual AI / Trend Detection</div>
     </div>
