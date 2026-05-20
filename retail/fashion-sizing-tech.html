@@ -669,6 +669,88 @@
   </div>
   <div class="src-note"><strong>Sources:</strong> Zara — <a href="https://marketing4ecommerce.net/en/zara-try-on/" target="_blank" rel="noopener">Marketing4Ecommerce</a>. Amazon — <a href="https://aws.amazon.com/blogs/aws/amazon-nova-canvas-update-virtual-try-on-and-style-options-now-available/" target="_blank" rel="noopener">AWS Blog Jul 2025</a>. Zalando — <a href="https://corporate.zalando.com/en/technology/zalando-launches-size-recommendations-based-customers-own-body-measurements" target="_blank" rel="noopener">Zalando Corporate Jul 2023</a>. Nike — <a href="https://www.designboom.com/technology/nike-fit-app-uses-ar-to-measure-feet-with-perfect-accuracy-05-10-2019/" target="_blank" rel="noopener">DesignBoom May 2019</a>. ASOS — <a href="https://www.marketingdive.com/news/asos-in-app-fit-assistant-helps-shoppers-find-the-perfect-size/543090/" target="_blank" rel="noopener">Marketing Dive 2018</a>.</div>
 
+  <div style="font-size:clamp(20px,2.8vw,30px);font-weight:800;color:#0a0f1a;margin:40px 0 8px;letter-spacing:-0.5px;line-height:1.15;">5 In-House Solutions — Consumer Effort vs. Technology Generation (2018–2025)</div>
+  <p style="font-size:15px;color:#4b5563;margin:0 0 20px;line-height:1.6;">ASOS built a simple 3-question recommender in 2018. Nike added AR foot scanning in 2019. Seven years later, Amazon launched generative AI try-on requiring a single photo upload — the top-right quadrant: most advanced tech, lowest consumer effort.</p>
+
+  <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:6px;margin-bottom:0;" role="img" aria-label="Scatter chart: 5 fashion retailers plotted by consumer effort required vs technology generation, 2018-2025">
+
+    <!-- Background -->
+    <rect width="900" height="540" fill="#0a0f1a" rx="6"/>
+
+    <!-- Grid lines -->
+    <line x1="100" y1="350" x2="870" y2="350" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="100" y1="250" x2="870" y2="250" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="100" y1="150" x2="870" y2="150" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="293" y1="50" x2="293" y2="450" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="485" y1="50" x2="485" y2="450" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="678" y1="50" x2="678" y2="450" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="5,5"/>
+
+    <!-- Axes -->
+    <line x1="100" y1="450" x2="870" y2="450" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <line x1="100" y1="450" x2="100" y2="50" stroke="rgba(184,151,106,.35)" stroke-width="1.5"/>
+    <polygon points="873,450 866,446 866,454" fill="#b8976a"/>
+    <polygon points="100,47 96,54 104,54" fill="#b8976a"/>
+
+    <!-- Axis labels -->
+    <text x="113" y="472" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600">← Requires more effort (photos / AR scans)</text>
+    <text x="867" y="472" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="end">Passive / minimal effort →</text>
+    <text x="88" y="454" fill="rgba(255,255,255,.55)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Basic</text>
+    <text x="88" y="58" fill="rgba(255,255,255,.55)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="end">Advanced</text>
+    <text x="28" y="252" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" text-anchor="middle" transform="rotate(-90 28 252)" letter-spacing="1">TECH GENERATION</text>
+
+    <!-- "Prize" quadrant callout (top-right) -->
+    <rect x="630" y="58" width="228" height="44" rx="4" fill="rgba(184,151,106,.10)" stroke="rgba(184,151,106,.35)" stroke-width="1"/>
+    <text x="744" y="76" fill="#b8976a" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle" letter-spacing="1.5">THE PRIZE QUADRANT</text>
+    <text x="744" y="93" fill="rgba(255,255,255,.60)" font-size="11" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Advanced tech + low consumer effort</text>
+
+    <!-- ===== DATA POINTS ===== -->
+    <!-- x = 100 + ease * 7.70  |  y = 450 − tech * 3.70 -->
+
+    <!-- 1. ASOS — ease=72, tech=12 → x=654, y=405 -->
+    <rect x="626" y="365" width="56" height="20" rx="3" fill="rgba(20,30,50,0.9)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+    <text x="654" y="379" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle" letter-spacing="2">ASOS</text>
+    <text x="654" y="393" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Fit Assistant</text>
+    <circle cx="654" cy="405" r="10" fill="#60a5fa"/>
+    <text x="654" y="427" fill="rgba(255,255,255,.50)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">2018</text>
+
+    <!-- 2. Nike — ease=40, tech=48 → x=408, y=272 -->
+    <image href="https://cdn.simpleicons.org/nike/white" x="396" y="212" width="24" height="16"/>
+    <text x="408" y="248" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Nike Fit</text>
+    <circle cx="408" cy="272" r="10" fill="#fbbf24"/>
+    <text x="408" y="294" fill="rgba(255,255,255,.50)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">2019</text>
+
+    <!-- 3. Zalando — ease=28, tech=58 → x=316, y=236 -->
+    <rect x="288" y="178" width="56" height="20" rx="3" fill="rgba(255,90,0,.20)" stroke="rgba(255,90,0,.50)" stroke-width="1"/>
+    <text x="316" y="192" fill="#ff8833" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle" letter-spacing="1">zalando</text>
+    <text x="316" y="214" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zalando</text>
+    <circle cx="316" cy="236" r="10" fill="#fbbf24"/>
+    <text x="316" y="258" fill="rgba(255,255,255,.50)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">2023</text>
+
+    <!-- 4. Zara — ease=22, tech=80 → x=269, y=154 -->
+    <rect x="241" y="94" width="56" height="20" rx="3" fill="rgba(20,30,50,0.9)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+    <text x="269" y="108" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" text-anchor="middle" letter-spacing="3">ZARA</text>
+    <text x="269" y="132" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Zara</text>
+    <circle cx="269" cy="154" r="10" fill="#b8976a"/>
+    <text x="269" y="176" fill="rgba(255,255,255,.50)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Dec 2024</text>
+
+    <!-- 5. Amazon — ease=62, tech=87 → x=577, y=128 -->
+    <image href="https://cdn.simpleicons.org/amazon/white" x="562" y="68" width="30" height="20"/>
+    <text x="577" y="106" fill="white" font-size="14" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700" text-anchor="middle">Amazon</text>
+    <circle cx="577" cy="128" r="10" fill="#b8976a"/>
+    <text x="577" y="150" fill="rgba(255,255,255,.50)" font-size="12" font-family="'Helvetica Neue',Arial,sans-serif" text-anchor="middle">Jul 2025</text>
+
+    <!-- ===== LEGEND ===== -->
+    <rect x="100" y="476" width="770" height="28" fill="rgba(255,255,255,.04)" rx="3"/>
+    <circle cx="120" cy="490" r="6" fill="#60a5fa"/>
+    <text x="132" y="494" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">Statistical AI</text>
+    <circle cx="265" cy="490" r="6" fill="#fbbf24"/>
+    <text x="277" y="494" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">AR Body / Foot Scanning</text>
+    <circle cx="450" cy="490" r="6" fill="#b8976a"/>
+    <text x="462" y="494" fill="white" font-size="13" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="700">3D Avatar / Generative AI</text>
+
+  </svg>
+  <div class="src-note" style="margin-top:12px;margin-bottom:40px;"><strong>Notes:</strong> Consumer effort axis reflects the number of steps and types of input required from the shopper — answering questions (low effort) vs. submitting multiple photos or performing AR camera scans (high effort). Technology generation reflects the underlying approach: statistical recommendation model (2018), AR scanning (2019–2023), 3D avatar or generative AI (2024–2025). Amazon Jul 2025 = Nova Canvas VTO API via Amazon Bedrock. Sources: official brand pages and AWS documentation referenced in the cards above.</div>
+
   <!-- SECTION 7 — SOLUTION MATRIX -->
   <div class="sec-header">
     <div class="sec-num">07</div>
