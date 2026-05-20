@@ -168,7 +168,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
     <div class="toc-list">
       <a href="#sec-rus" class="toc-item"><span class="toc-num">01</span>RUS Digital Fashion Collaboration Platform 3 — Extra Ideas</a>
       <a href="#sec-ai" class="toc-item"><span class="toc-num">02</span>AI Research — Perplexity Summary</a>
-      <a href="#sec-visual" class="toc-item"><span class="toc-num">03</span>Fashion-Specific Visual AI / Trend Detection</a>
+      <a href="#sec-visual" class="toc-item"><span class="toc-num">03</span>Style-Based Creator Discovery</a>
       <a href="#sec-eu" class="toc-item"><span class="toc-num">04</span>European Independent Designer Platforms</a>
     </div>
   </nav>
@@ -421,112 +421,92 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 
   <hr class="section-divider"/>
 
-  <!-- ══ SECTION 3: FASHION VISUAL AI ══ -->
+  <!-- ══ SECTION 3: CREATOR DISCOVERY ══ -->
   <div class="sec" id="sec-visual">
     <div class="sec-head">
-      <div class="sec-title">Fashion-Specific Visual AI / Trend Detection</div>
+      <div class="sec-title">Style-Based Creator Discovery</div>
     </div>
 
     <div class="tool-grid">
 
-      <!-- ── HEURITECH ── -->
+      <!-- ── MODASH ── -->
       <div class="tool-card">
-        <div class="app-preview">
-          <img src="ss-heuritech.png" alt="Heuritech website screenshot"/>
-        </div>
         <div class="tool-body">
           <div class="tool-name-row">
-            <div class="tool-name"><a href="https://heuritech.com/" target="_blank">Heuritech</a></div>
-            <div class="tool-url"><a href="https://heuritech.com/" target="_blank">heuritech.com</a></div>
+            <div class="tool-name"><a href="https://www.modash.io/" target="_blank">Modash</a></div>
+            <div class="tool-url"><a href="https://www.modash.io/" target="_blank">modash.io</a></div>
           </div>
           <table class="stats">
-            <tr><td>What it does</td><td>Scans social media images daily using computer vision to detect which fashion aesthetics (silhouettes, colours, motifs) are gaining velocity — before they peak</td></tr>
-            <tr><td>Founded</td><td>2013 — Paris, France</td></tr>
-            <tr><td>Status</td><td>Acquired Nov 2024 by Luxurynsight — no longer independent</td></tr>
-            <tr><td>Funding</td><td>~$5.7M total raised ($4.4M Series A 2019 · €4M round Sep 2025)</td></tr>
-            <tr><td>Clients</td><td><span class="na">Count undisclosed</span></td></tr>
-            <tr><td>Revenue</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Revenue growth</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Model</td><td>B2B SaaS — annual brand subscriptions (now under Luxurynsight)</td></tr>
-            <tr><td>Cost to TF</td><td><span class="na">Not publicly disclosed — pricing on request. Enterprise tier; likely out of range for early-stage TF.</span></td></tr>
-            <tr><td>Technology</td><td>CV + NLP on Instagram &amp; TikTok; 3M images/day</td></tr>
-            <tr><td>Key clients</td><td>Louis Vuitton, Dior (LVMH), Adidas, Kontoor Brands</td></tr>
-            <tr><td>Geography</td><td>Paris HQ · US, Europe, MENA</td></tr>
+            <tr><td>What it does</td><td>Influencer discovery and analytics platform — find creators by audience demographics, engagement rate, or visual aesthetic; manage outreach and track campaign performance</td></tr>
+            <tr><td>Visual aesthetic search</td><td>Yes — upload any reference image to find creators whose content matches that visual style; also accepts natural-language descriptions (e.g. "minimalist beige outfits outdoors"). Available on all plans. (source: modash.io/features/influencer-discovery)</td></tr>
+            <tr><td>Pricing</td><td>$199/mo (Essentials) · $499/mo (Performance) · Enterprise ~$14,700/yr (source: modash.io/pricing)</td></tr>
+            <tr><td>Creators indexed</td><td><span class="na">Not publicly disclosed</span></td></tr>
+            <tr><td>Key fashion clients</td><td><span class="na">Not specifically named — general platform with documented fashion brand usage</span></td></tr>
+            <tr><td>Model</td><td>SaaS subscription — discovery, audience analytics, outreach, campaign tracking</td></tr>
+            <tr><td>Cost to TF</td><td>$199/mo Essentials · 14-day free trial, no credit card required (source: modash.io/pricing)</td></tr>
+            <tr><td>Geography</td><td>Estonia HQ · Global creator database</td></tr>
           </table>
           <div class="sw-row">
-            <div class="sw-item strength"><span class="sw-label">Strength</span>Scans millions of real social media images daily to detect which aesthetic micro-trends (silhouettes, colours, motifs) are gaining velocity — before they peak. Used by LVMH and Adidas for production planning.</div>
-            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Enterprise pricing — not publicly disclosed, no self-serve or API tier for smaller platforms. Acquired by Luxurynsight Nov 2024; future roadmap and pricing structure uncertain. Primarily retrospective trend data, not predictive consumer intent.</div>
-            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>License as a data layer for TF's designer tier — show which aesthetic clusters are trending by region and match designer portfolios to emerging trends. Differentiates TF from LTK as a data-enabled platform. Alternatively, TF's own VTO + save data replicates this signal natively as it scales.</div>
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Confirmed image-upload aesthetic search at the lowest entry price point ($199/mo) among platforms with this capability. 14-day free trial with no credit card — TF can test designer-to-influencer visual matching before any financial commitment.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>General platform, not fashion-specific. Creator database size not disclosed. Aesthetic matching quality for ultra-niche indie fashion styles (e.g. coastal minimalist, quiet luxury) is untested in TF's exact use case.</div>
+            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Primary tool for TF's outreach workflow: upload each target designer's lookbook → surface aesthetically matched influencer candidates → reach out to build the first ambassador cohort. Free trial means this can be validated before TF has revenue. Start here.</div>
           </div>
         </div>
       </div>
 
-      <!-- ── STYLUMIA ── -->
+      <!-- ── ARCHIVE ── -->
       <div class="tool-card">
-        <div class="app-preview">
-          <img src="ss-stylumia.png" alt="Stylumia website screenshot"/>
-        </div>
         <div class="tool-body">
           <div class="tool-name-row">
-            <div class="tool-name"><a href="https://www.stylumia.com/" target="_blank">Stylumia</a></div>
-            <div class="tool-url"><a href="https://www.stylumia.com/" target="_blank">stylumia.com</a></div>
+            <div class="tool-name"><a href="https://archive.com/" target="_blank">Archive</a></div>
+            <div class="tool-url"><a href="https://archive.com/" target="_blank">archive.com</a></div>
           </div>
           <table class="stats">
-            <tr><td>What it does</td><td>Consumer intelligence platform — uses AI and social listening to identify which style DNA (colour, silhouette, occasion) is gaining demand traction before it reaches mainstream search</td></tr>
-            <tr><td>Founded</td><td>2015 — Bengaluru, India</td></tr>
-            <tr><td>Funding</td><td>Seed rounds (2020, 2022) — Series A unconfirmed; total undisclosed</td></tr>
-            <tr><td>Clients</td><td><span class="na">Count undisclosed</span></td></tr>
-            <tr><td>Revenue</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Revenue growth</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Model</td><td>B2B SaaS — consumer intelligence platform</td></tr>
-            <tr><td>Cost to TF</td><td><span class="na">Not publicly disclosed — pricing on request. Mid-market SaaS tier; more accessible than Heuritech but still B2B enterprise pricing.</span></td></tr>
-            <tr><td>Technology</td><td>Generative AI + social listening; style DNA extraction from UGC</td></tr>
-            <tr><td>Key clients</td><td>Bestseller Group (Jack &amp; Jones, Vero Moda), Aditya Birla</td></tr>
-            <tr><td>Geography</td><td>India HQ · US and Europe expansion</td></tr>
+            <tr><td>What it does</td><td>Creator content capture and influencer discovery — automatically captures 100% of Instagram and 98% of TikTok posts from tracked creators; AI Super Search finds new creators by uploaded image or natural language</td></tr>
+            <tr><td>Visual aesthetic search</td><td>Yes — "AI-powered Super Search": upload a lookbook image or describe a look in plain language to surface creators posting visually matching content. Searches across all captured post content. (source: archive.com)</td></tr>
+            <tr><td>Pricing</td><td>Free tier available · Startup (20,000 credits/mo) · Growth (70,000 credits/mo) · Enterprise (150,000 credits/mo) — paid tier pricing on request (source: archive.com/pricing)</td></tr>
+            <tr><td>Creators indexed</td><td><span class="na">Not publicly disclosed</span></td></tr>
+            <tr><td>Key fashion clients</td><td>Allbirds, Uniqlo, POPFLEX, Kitsch, Parade (source: archive.com)</td></tr>
+            <tr><td>Model</td><td>SaaS subscription with credit-based tiers; passive UGC capture runs continuously across tracked creator accounts</td></tr>
+            <tr><td>Cost to TF</td><td>Free tier to start — zero cost while TF's ambassador roster is small; upgrade as it scales (source: archive.com/pricing)</td></tr>
+            <tr><td>Geography</td><td>US · Global creator database</td></tr>
           </table>
           <div class="sw-row">
-            <div class="sw-item strength"><span class="sw-label">Strength</span>Identifies which style DNA (colour story, silhouette, occasion context) is gaining traction across UGC before it appears in search data. Helps brands reduce overstock by designing closer to real demand signals.</div>
-            <div class="sw-item weakness"><span class="sw-label">Weakness</span>India-market skew in client base. Less known in US/EU luxury fashion. Smaller data corpus than Heuritech for Western social media. No published API for integration partners.</div>
-            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Most relevant for TF's Demand Intelligence Dashboard — style-level demand signals (not just SKU-level) help TF designers decide which aesthetic direction to take a collection before going into pre-production. Could also power a "trending in your niche" notification for each TF designer.</div>
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Free tier available — zero cost to start. Dual value: AI aesthetic search for discovering new creators AND automatic UGC capture for every ambassador TF onboards. Every post, story, and reel from TF's creator roster gets captured automatically — this becomes TF's attribution library from day one.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Paid tier pricing not publicly listed — harder to budget at growth stage. Credit-based model means high-volume discovery has a cost ceiling. General DTC platform; aesthetic matching depth for very niche indie fashion styles untested.</div>
+            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Set up Archive on day one for passive UGC capture across TF's first ambassador cohort — this builds the content and attribution library automatically. Use AI Super Search in parallel to find aesthetically matched new influencers for incoming designers. Free tier covers both use cases at TF's early scale.</div>
           </div>
         </div>
       </div>
 
-      <!-- ── SYTE.AI ── -->
+      <!-- ── STORYCLASH ── -->
       <div class="tool-card">
-        <div class="app-preview">
-          <img src="ss-syte.png" alt="Syte.ai website screenshot"/>
-        </div>
         <div class="tool-body">
           <div class="tool-name-row">
-            <div class="tool-name"><a href="https://www.syte.ai/" target="_blank">Syte.ai</a></div>
-            <div class="tool-url"><a href="https://www.syte.ai/" target="_blank">syte.ai</a></div>
+            <div class="tool-name"><a href="https://www.storyclash.com/" target="_blank">Storyclash</a></div>
+            <div class="tool-url"><a href="https://www.storyclash.com/" target="_blank">storyclash.com</a></div>
           </div>
           <table class="stats">
-            <tr><td>What it does</td><td>Visual AI for e-commerce — consumer uploads a photo to find matching products ("shop the look"), plus AI product tagging and style-based discovery for retailers</td></tr>
-            <tr><td>Founded</td><td>2015 — Tel Aviv, Israel</td></tr>
-            <tr><td>Status</td><td>Acquired Dec 2024 by Pereg Ventures / Magma / MizMaa consortium</td></tr>
-            <tr><td>Funding</td><td>$30M Series C · $71M+ total raised (Viola, Storm Ventures, Naver, LG Technology)</td></tr>
-            <tr><td>Clients</td><td><span class="na">Count undisclosed</span></td></tr>
-            <tr><td>Revenue</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Revenue growth</td><td><span class="na">Undisclosed</span></td></tr>
-            <tr><td>Model</td><td>B2B SaaS + API — visual AI for e-commerce discovery</td></tr>
-            <tr><td>Cost to TF</td><td><span class="na">Not publicly disclosed — API pricing on request. Per-query model likely at scale; SaaS base fee for access.</span></td></tr>
-            <tr><td>Technology</td><td>Visual search, "shop the look", AI product tagging, style matching</td></tr>
-            <tr><td>Key clients</td><td>PrettyLittleThing, Marks &amp; Spencer, Farfetch</td></tr>
-            <tr><td>Geography</td><td>Tel Aviv HQ · US, Europe, APAC</td></tr>
+            <tr><td>What it does</td><td>Influencer marketing platform with documented visual AI brand-fit matching — analyzes actual image and video content, not just hashtags or bios, to surface creators whose posts already match a brand's visual aesthetic and values</td></tr>
+            <tr><td>Visual aesthetic search</td><td>Yes — "True AI brand-fit matching: Goes beyond keywords to understand visual aesthetics and brand values." Analyzes post content directly. Positioned as the leading alternative to GRIN specifically for visual-first discovery. (source: storyclash.com, influencermarketinghub.com)</td></tr>
+            <tr><td>Pricing</td><td>€499/mo (Starter) · €999/mo (Growth) · €1,899/mo (Scale) · Enterprise custom · Demo required (source: storyclash.com/pricing)</td></tr>
+            <tr><td>Creators indexed</td><td><span class="na">Not publicly disclosed</span></td></tr>
+            <tr><td>Key fashion clients</td><td><span class="na">Not specifically named — general fashion/lifestyle platform</span></td></tr>
+            <tr><td>Model</td><td>SaaS subscription — influencer discovery, campaign management, visual content analysis</td></tr>
+            <tr><td>Cost to TF</td><td>€499/mo Starter — 2.5× the Modash entry price; demo required before access (source: storyclash.com/pricing)</td></tr>
+            <tr><td>Geography</td><td>European HQ · Global creator database</td></tr>
           </table>
           <div class="sw-row">
-            <div class="sw-item strength"><span class="sw-label">Strength</span>Best-in-class "shop the look" visual search: consumer uploads a photo and instantly sees matching products. API-first architecture designed for integration into third-party platforms. $71M+ raised before acquisition.</div>
-            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Acquired Dec 2024 — product roadmap and pricing under new ownership uncertain. Built for large product catalogs (thousands of SKUs); TF's pre-order model with limited live inventory limits immediate value. Style matching is product-level, not designer-aesthetic-level.</div>
-            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Visual search on TF consumer app — user photographs a street-style look they love and sees matching pre-orders from TF designers. High conversion potential for discovery. Also enables aesthetic-based influencer matching: embed designer portfolio images and influencer feed images into the same vector space, rank by visual style similarity rather than follower count alone.</div>
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Strongest documented visual AI matching in this group — analyzes actual post content rather than metadata, described as "true" aesthetic AI vs. keyword filtering. European HQ and €-denominated pricing aligns with TF's EU expansion plans.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>No free trial confirmed — demo required. €499/mo entry point is 2.5× Modash's $199. Visual AI superiority over Modash and Archive is documented in marketing materials; no independent benchmark comparison available.</div>
+            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Evaluate after testing Modash and Archive. Most relevant when TF scales EU operations and needs European creator discovery at volume — Storyclash's EU infrastructure and deeper visual AI justify the premium at that stage. Do not start here.</div>
           </div>
         </div>
       </div>
 
     </div><!-- /tool-grid -->
 
-    <!-- ── Ideas for TF from Visual AI ── -->
+    <!-- ── Ideas for TF from Creator Discovery ── -->
     <div class="sec-head" style="margin-top:40px">
       <div class="sec-title">Ideas This Raises for Terra Ferra</div>
     </div>
@@ -534,26 +514,20 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">01</div>
-        <div class="tf-idea-title">ML-Powered Style Matching: Designer ↔ Influencer</div>
-        <div class="tf-idea-body">Syte.ai's visual embedding approach (or CLIP-based open-source alternative) can encode both a designer's portfolio and an influencer's feed into the same aesthetic vector space — then rank influencers by style fit score, not just follower count. Core use case: finding ambassadors and designers who share the same visual DNA (e.g. street style, coastal minimalist) without relying on manual category tags.</div>
+        <div class="tf-idea-title">The Workflow: Lookbook In → Matched Ambassadors Out</div>
+        <div class="tf-idea-body">Modash's free trial enables this from day one: upload a target designer's lookbook → surface creators posting in the same visual aesthetic → outreach to the top 10 as TF's first ambassador cohort. This is TF's designer onboarding engine before any proprietary matching is built. Validate the tool in the trial period, then decide whether $199/mo is justified by the quality of matches returned.</div>
       </div>
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">02</div>
-        <div class="tf-idea-title">Visual Search in the TF Consumer App</div>
-        <div class="tf-idea-body">Syte.ai API integration: consumer photographs a look they spotted IRL or on social media → TF surfaces the pre-orders from TF designers with matching aesthetic. Turns passive discovery into active pre-order intent. No large existing catalog needed — even 10–20 active designers provide enough signal to make this useful at launch.</div>
+        <div class="tf-idea-title">Archive Free Tier: Build the UGC Library from Day One</div>
+        <div class="tf-idea-body">Archive captures every Instagram and TikTok post from tracked creators automatically. Set it up across TF's first ambassador cohort on launch day — every post, story, and reel gets indexed into TF's content library at no cost. This becomes the attribution baseline designers see in their dashboard: which ambassador posted what, when, and what it drove.</div>
       </div>
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">03</div>
-        <div class="tf-idea-title">TF's Own Data IS the Trend Intelligence Product</div>
-        <div class="tf-idea-body">Heuritech and Stylumia charge brands enterprise SaaS rates (pricing undisclosed) for trend signals derived from public social media. TF's engagement data (VTO sessions, co-creation votes, wishlist saves, pre-order conversion by style) is first-party demand intent — more valuable and more actionable. TF should not buy Heuritech; TF should eventually compete with it for the "data as revenue" stream.</div>
-      </div>
-
-      <div class="tf-idea-card">
-        <div class="tf-idea-num">04</div>
-        <div class="tf-idea-title">"Trending in Your Niche" Designer Alerts</div>
-        <div class="tf-idea-body">Even without licensing Heuritech, TF can build a lightweight version using its own co-creation votes and save data: notify each designer when a colour, silhouette, or occasion type in their portfolio is gaining traction relative to 30-day baseline. Positions TF as a strategic intelligence partner to designers, not just a sales channel.</div>
+        <div class="tf-idea-title">The Long-Term Moat: TF Builds Its Own Matching Signal</div>
+        <div class="tf-idea-body">Modash and Archive match by visual similarity to reference images — they have no data on which aesthetic pairings actually convert on TF. As TF scales, co-creation votes, wishlist saves, and pre-order conversion by aesthetic become first-party matching signals no external tool has. The open-source FashionCLIP model (Hugging Face) provides the vector embedding layer for a proprietary matcher TF can build on top of its own data. Modash is the tool for today; TF's own signal is the competitive moat for tomorrow.</div>
       </div>
 
     </div>
@@ -598,30 +572,30 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         </div>
       </div>
 
-      <!-- ── DEPOP ── -->
+      <!-- ── NOT ON THE HIGH STREET ── -->
       <div class="tool-card">
         <div class="tool-body">
           <div class="tool-name-row">
-            <div class="tool-name"><a href="https://www.depop.com/" target="_blank">Depop</a></div>
-            <div class="tool-url"><a href="https://www.depop.com/" target="_blank">depop.com</a></div>
+            <div class="tool-name"><a href="https://www.notonthehighstreet.com/" target="_blank">Not On The High Street</a></div>
+            <div class="tool-url"><a href="https://www.notonthehighstreet.com/" target="_blank">notonthehighstreet.com</a></div>
           </div>
           <table class="stats">
-            <tr><td>What it does</td><td>Mobile-first social fashion marketplace where Gen Z creators sell secondhand, vintage, and independent pieces via community-driven discovery</td></tr>
-            <tr><td>Founded</td><td>2011 — originally Roncade, Italy; HQ moved to London 2012</td></tr>
-            <tr><td>Funding</td><td>~$105M VC pre-acquisition (Balderton, General Atlantic); acquired by Etsy $1.625B (2021); being sold to eBay ~$1.2B (announced Feb 2026)</td></tr>
-            <tr><td>Creators</td><td>3.2M active sellers (2024, +41% YoY)</td></tr>
-            <tr><td>GMV</td><td>$789M (2024, +31.6% YoY) — approaching $1B</td></tr>
-            <tr><td>Revenue</td><td>~$85M est. (2024, secondary estimate — not separately disclosed by Etsy)</td></tr>
-            <tr><td>Revenue growth</td><td>GMV +31.6% (2024); US GMV +~60% (2024) — Q4 2024 highest GMV since Etsy acquisition</td></tr>
-            <tr><td>Brands</td><td>N/A — peer-to-peer; 7.0M active buyers (2024, +38% YoY)</td></tr>
-            <tr><td>Model</td><td>Buyer marketplace fee + payment processing + optional Boosted Listings; seller fees eliminated in US/UK Jul 2024</td></tr>
-            <tr><td>Commissions</td><td>Sellers US/UK: 0% (since Jul 2024) · Buyers: up to 5% + $1 per transaction · Outside US/UK sellers: 10% · Boosted Listings: 8–12% (source: Depop newsroom, Help Centre)</td></tr>
-            <tr><td>Geography</td><td>UK origin · US fastest-growing (~60% GMV 2024) · Global · ~90% of buyers under 34</td></tr>
+            <tr><td>What it does</td><td>Curated UK marketplace for independent small businesses — every product must be designed or hand-finished by the seller; covers fashion, gifts, home, food. Zero inventory held by the platform.</td></tr>
+            <tr><td>Founded</td><td>2006 — London, UK; founders Holly Tucker and Sophie Cornish</td></tr>
+            <tr><td>Funding</td><td>~$77.7M total raised (source: Crunchbase)</td></tr>
+            <tr><td>Creators</td><td>5,000+ independent seller businesses; 350,000+ products; 4M+ customers</td></tr>
+            <tr><td>GMV</td><td><span class="na">Not separately disclosed</span></td></tr>
+            <tr><td>Revenue</td><td>~$110M (2024, secondary source — Mintsoft; not confirmed from primary filing)</td></tr>
+            <tr><td>Revenue growth</td><td><span class="na">Not publicly disclosed</span></td></tr>
+            <tr><td>Brands</td><td>N/A — sellers are the independent makers; no separate brand client tier</td></tr>
+            <tr><td>Model</td><td>Annual joining fee + commission per sale; asset-light, no platform inventory</td></tr>
+            <tr><td>Commissions</td><td>25% per sale + £199/year joining fee (source: NOTHS seller terms via Mintsoft)</td></tr>
+            <tr><td>Geography</td><td>UK-primarily · Growing online presence; no significant US expansion confirmed</td></tr>
           </table>
           <div class="sw-row">
-            <div class="sw-item strength"><span class="sw-label">Strength</span>$789M GMV with 3.2M sellers and 7M buyers — built entirely on community and social mechanics Gen Z trusts. Fee pivot in July 2024 (removed seller fees, shifted to buyer side) accelerated GMV +31.6% in one year.</div>
-            <div class="sw-item weakness"><span class="sw-label">Weakness</span>Primarily secondhand/resale — not original design creation, which is TF's core model. Strategic uncertainty from Etsy→eBay ownership transfer (Feb 2026). No co-creation mechanics, no designer-superfan layer, no pre-order model.</div>
-            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Depop's Gen Z audience is TF's target consumer. The fee pivot is a validated data point: removing seller friction drove +31.6% GMV — supports TF's zero-listing-fee model (revenue only on GMV). Depop also confirms that social/community discovery mechanics are the real driver of repeat purchase; TF's co-creation layer is a stronger version of this loop.</div>
+            <div class="sw-item strength"><span class="sw-label">Strength</span>Established UK independent maker marketplace with strong consumer brand recognition — "Not On The High Street" itself communicates independent and unique. 5,000+ vetted sellers, 4M+ customers, ~$110M revenue at zero inventory risk. The "must be designed or hand-finished by the seller" curation rule maintains quality.</div>
+            <div class="sw-item weakness"><span class="sw-label">Weakness</span>UK-only consumer base — no meaningful US or EU expansion. No co-creation, no pre-order, no community revenue sharing. Fashion is a subset of a broad gifts/home/food marketplace — not fashion-native. 25% commission + £199/year is high for early-stage designers.</div>
+            <div class="sw-item tf-apply"><span class="sw-label">TF Applicability</span>Shows that curated independent creator marketplaces reach significant UK scale without VC excess. TF's competitive argument to UK/EU designers: fashion-only focus, co-creation mechanics NOTHS doesn't have, and 7% GMV commission vs NOTHS's ~25% + annual fee. TF is a better deal for any designer already paying NOTHS.</div>
           </div>
         </div>
       </div>
@@ -637,19 +611,19 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="tf-idea-card">
         <div class="tf-idea-num">01</div>
         <div class="tf-idea-title">The Platform That Doesn't Exist Yet in Europe</div>
-        <div class="tf-idea-body">Wolf &amp; Badger has independent designer curation. Depop has the Gen Z community mechanics and social discovery. Neither has co-creation + pre-order + revenue sharing with the community. TF is the combination that doesn't yet exist in Europe — and both W&amp;B and Depop's growth numbers show the appetite is there.</div>
+        <div class="tf-idea-body">Wolf &amp; Badger has independent designer curation. Not On The High Street has the independent maker community and UK scale. Neither has co-creation + pre-order + revenue sharing with the community. TF is the combination that doesn't yet exist in Europe — and both platforms' revenue numbers show the appetite for curated independent creator marketplaces is real.</div>
       </div>
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">02</div>
-        <div class="tf-idea-title">Wolf &amp; Badger's Subscription Blueprint</div>
-        <div class="tf-idea-body">W&amp;B charges designers $375/month + undisclosed commission and generated ~$50M revenue at $95M GMV — implying a ~52% take rate including subscription. TF's model (7% GMV commission, no listing fee) is structurally lower cost for designers. TF can position this directly: same curated designer marketplace, lower fees, plus a co-creation community that W&amp;B does not have.</div>
+        <div class="tf-idea-title">TF's Fee Structure Is a Direct Acquisition Argument</div>
+        <div class="tf-idea-body">W&amp;B charges $375/month + undisclosed commission (implied ~52% take rate). NOTHS charges 25% per sale + £199/year joining fee. TF's 7% GMV commission with no listing or joining fee is structurally cheaper for designers at every revenue level. Any designer already paying W&amp;B or NOTHS has a financial reason to move volume to TF — before co-creation or community benefits are even factored in.</div>
       </div>
 
       <div class="tf-idea-card">
         <div class="tf-idea-num">03</div>
-        <div class="tf-idea-title">Depop's Fee Pivot Validates TF's Revenue Model</div>
-        <div class="tf-idea-body">Depop eliminated seller fees in July 2024 and saw GMV grow +31.6% in the same year. This is a live A/B test confirming: removing seller friction grows the platform faster than extracting fees upfront. TF's GMV-only revenue model (no listing fees, commission only on completed sales) is now backed by Depop's real-world outcome, not just theory.</div>
+        <div class="tf-idea-title">UK Independent Designer Base as TF's EU Beachhead</div>
+        <div class="tf-idea-body">NOTHS has 5,000+ vetted independent UK designer businesses who already sell online and understand the marketplace model. W&amp;B has 2,000+ premium independent brands with US market ambitions. Both represent a ready-made EU designer acquisition pipeline for TF — these creators are already active, already digitally fluent, and are paying higher commissions than TF will charge.</div>
       </div>
 
     </div>
