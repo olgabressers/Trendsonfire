@@ -119,6 +119,8 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
 .sw-item.weakness .sw-label{color:#8B3010}
 .sw-item.tf-apply{background:#FFF3E8}
 .sw-item.tf-apply .sw-label{color:var(--orange)}
+.sw-item.risk{background:#FEE2E2}
+.sw-item.risk .sw-label{color:#991B1B}
 
 /* ─── TF IDEAS ──────────────────────── */
 .tf-ideas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -187,6 +189,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
       <div class="sec-legend">
         <span class="legend-label">Audience</span>
         <span class="aud on">Designers</span>
+        <span class="aud on">Influencers</span>
         <span class="aud on">Superfans</span>
         <span class="aud on">Consumers</span>
         <span class="aud on">Platform</span>
@@ -205,7 +208,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Demand Intelligence Dashboard</h4>
         <p>Real-time analytics on which designs, colours and sizes are most tried on and saved. Enables data-driven decisions on what to produce, at what volume, and in which markets.</p>
         <div class="tags">
-          <span class="aud on">Designers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud">Platform</span>
+          <span class="aud on">Designers</span><span class="aud">Influencers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud">Platform</span>
         </div>
         <div class="tags">
           <span class="tag">Experience</span><span class="tag">Community</span>
@@ -218,7 +221,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Virtual Try-On (VTO)</h4>
         <p>Third-party API integration — no proprietary build required. Production-ready options: <strong>True Fit</strong> (AI sizing across 82M shoppers, 30,000 brands — Shopify Plus Certified), <strong>3DLOOK</strong> (80+ body measurements from 2 photos at 96–97% accuracy), <strong>MySize/Naiz Fit</strong> (14% return rate drop, 5.7× conversion lift in live deployments). For TF's pre-order model, fit confidence removes the primary reason consumers hesitate before committing. <a href="../retail/fashion-sizing-tech.html" target="_blank" style="color:var(--tf);font-weight:700;text-decoration:none;">Sizing technology deep dive →</a></p>
         <div class="tags">
-          <span class="aud on">Designers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+          <span class="aud on">Designers</span><span class="aud on">Influencers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
         </div>
         <div class="tags">
           <span class="tag on">Experience</span><span class="tag">Community</span>
@@ -232,7 +235,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Style &amp; Size Profile</h4>
         <p>A one-time setup capturing measurements, colour palette, fabric preferences, and style archetype. Powers personalised recommendations across every designer on the platform — recommendation quality compounds with usage.</p>
         <div class="tags">
-          <span class="aud">Designers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+          <span class="aud">Designers</span><span class="aud">Influencers</span><span class="aud">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
         </div>
         <div class="tags">
           <span class="tag on">Experience</span><span class="tag">Community</span>
@@ -246,7 +249,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Early Access Premium Tier</h4>
         <p>Paid consumer subscription unlocks virtual try-on of unreleased prototypes, co-creation voting rights, and first-access pre-orders at a discount. Converts casual browsers into committed community members.</p>
         <div class="tags">
-          <span class="aud">Designers</span><span class="aud on">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
+          <span class="aud">Designers</span><span class="aud on">Influencers</span><span class="aud on">Superfans</span><span class="aud on">Consumers</span><span class="aud">Platform</span>
         </div>
         <div class="tags">
           <span class="tag on">Experience</span><span class="tag on">Community</span>
@@ -259,7 +262,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
         <h4>Data as an Additional Revenue Layer</h4>
         <p>Anonymised demand signals — top styles by region, real size distributions, colour trend velocity — packaged as premium analytics reports for fashion brands, investors, and industry analysts. Recurring B2B revenue independent of transaction volume.</p>
         <div class="tags">
-          <span class="aud">Designers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud on">Platform</span>
+          <span class="aud">Designers</span><span class="aud">Influencers</span><span class="aud">Superfans</span><span class="aud">Consumers</span><span class="aud on">Platform</span>
         </div>
         <div class="tags">
           <span class="tag">Experience</span><span class="tag">Community</span>
@@ -342,6 +345,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
           <div class="sw-row">
             <div class="sw-item strength"><span class="sw-label">Strength</span>15-year head start. $3B+ GMV. $562M+ raised. Global infrastructure in 100+ countries. Millions of monthly consumers in its own shopping app.</div>
             <div class="sw-item weakness"><span class="sw-label">Weakness</span>Withholds influencer attribution data from brands — biggest trust issue. Growth slowing. Traditional affiliate model being disrupted by ShopMy.</div>
+            <div class="sw-item risk"><span class="sw-label">Risk for TF</span>150,000 influencers with existing commission history and payout relationships on LTK. 5,000 brands already integrated with LTK's tools and dashboards. Switching cost on both sides is real — influencers and designers need a concrete reason to start over on a new platform with no track record.</div>
           </div>
         </div>
       </div>
@@ -374,6 +378,7 @@ body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink)
           <div class="sw-row">
             <div class="sw-item strength"><span class="sw-label">Strength</span>Full attribution transparency. 200% revenue growth. Profitable. Premium brand curation. Consumer app "Circles" launched Jul 2025 — three-sided ecosystem emerging.</div>
             <div class="sw-item weakness"><span class="sw-label">Weakness</span>Still US-first (UK very early). Consumer app brand new. Narrower brand portfolio than LTK (1,200 vs 5,000).</div>
+            <div class="sw-item risk"><span class="sw-label">Risk for TF</span>ShopMy already delivers full attribution — TF's core differentiator on transparency is not unique. Growing at 200% YoY with $169M raised and profitable — has capital to outspend TF on influencer acquisition. "Circles" consumer community launched July 2025: if it gains traction, TF's community layer is no longer a gap in the market.</div>
           </div>
         </div>
       </div>
