@@ -89,6 +89,27 @@
     @media(max-width:768px){ .store-map-row { grid-template-columns:1fr; } }
 
     .tag-pill { display:inline-block; background:#f1ede7; color:#6b5a3e; font-size:11.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:4px 11px; margin:3px 4px 3px 0; }
+
+    .hero-img-strip { width:100%; height:480px; overflow:hidden; position:relative; }
+    .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
+    .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.65); color:rgba(255,255,255,.65); font-size:11px; padding:6px 14px; letter-spacing:0.3px; }
+
+    .store-photos { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:24px 0 6px; }
+    @media(max-width:640px){ .store-photos { grid-template-columns:1fr; } }
+    .store-photo-wrap { position:relative; overflow:hidden; }
+    .store-photo-wrap img { width:100%; height:260px; object-fit:cover; display:block; }
+    .store-photo-wrap .photo-label { position:absolute; bottom:0; left:0; background:rgba(10,15,26,.72); color:white; font-size:11.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; padding:7px 13px; }
+
+    .campaign-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:32px 0 6px; }
+    @media(max-width:700px){ .campaign-grid { grid-template-columns:1fr; } }
+    .campaign-grid .campaign-img-wrap { position:relative; overflow:hidden; }
+    .campaign-grid img { width:100%; height:380px; object-fit:cover; object-position:center top; display:block; }
+
+    .product-shots { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:28px 0 6px; }
+    @media(max-width:640px){ .product-shots { grid-template-columns:1fr 1fr; } }
+    .product-shots img { width:100%; aspect-ratio:2/3; object-fit:cover; display:block; background:#f9fafb; }
+
+    .img-credit { font-size:11px; color:#9ca3af; margin-top:5px; text-align:right; font-style:italic; }
   </style>
 </head>
 <body>
@@ -107,7 +128,7 @@
   </a>
   <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html" class="active">Retail</a>
+    <a href="../retail/index.html">Retail</a>
     <a href="index.html" class="active">Brands</a>
     <a href="../people/index.html">People</a>
     <a href="../technology/index.html">Technology</a>
@@ -139,6 +160,12 @@
       <span>Updated 27 May 2026</span>
     </div>
   </div>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="hero-img-strip">
+  <img src="img/store-london-interior.jpg" alt="Axel Arigato London flagship store interior — Broadwick Street"/>
+  <div class="img-caption">London flagship, Broadwick Street, Soho · Photo: Wallpaper*</div>
 </div>
 
 <main>
@@ -226,6 +253,18 @@
     </div>
   </div>
   <p class="sec-sub">The retail rollout followed a deliberate sequence: digital-first in all markets, then own-store physical presence in cities with proven digital demand. The brand now operates 16 stores globally (as of September 2024) and ships to 130 countries via its e-commerce platform.</p>
+
+  <div class="store-photos">
+    <div class="store-photo-wrap">
+      <img src="img/store-london-terrazzo.jpg" alt="Axel Arigato London store — terrazzo detail"/>
+      <div class="photo-label">London, Broadwick Street</div>
+    </div>
+    <div class="store-photo-wrap">
+      <img src="img/store-nyc-wwd.jpg" alt="Axel Arigato New York Soho store — opened September 2024"/>
+      <div class="photo-label">New York, Soho — opened Sept 2024</div>
+    </div>
+  </div>
+  <p class="img-credit">Photos: Wallpaper* (London) · WWD (New York)</p>
 
   <div class="store-map-row">
     <div>
@@ -419,6 +458,13 @@
   </div>
   <p class="sec-sub">Axel Arigato occupies the contemporary luxury tier of footwear — above mainstream sportswear (Nike, Adidas) and below heritage luxury (Common Projects, Loro Piana). Core sneaker pricing runs from approximately €210 for entry models (Clean 90) to €380–430 for technical runners (Marathon Runner). Apparel ranges from approximately €170 for knitwear to €610 for outerwear.</p>
 
+  <div class="product-shots">
+    <img src="img/product-clean90-main.jpg" alt="Axel Arigato Clean 90 sneaker — white leather"/>
+    <img src="img/product-clean90-side.jpg" alt="Axel Arigato Clean 90 — side profile"/>
+    <img src="img/product-clean90-back.jpg" alt="Axel Arigato Clean 90 — back view"/>
+  </div>
+  <p class="img-credit">Clean 90 — entry price point, highest volume DTC seller · Photos: Nordstrom</p>
+
   <table class="data-table">
     <thead><tr><th>Category</th><th>Key Products</th><th>Price range</th><th>Notes</th></tr></thead>
     <tbody>
@@ -462,6 +508,16 @@
     <span class="tag-pill">Recycled Polyester</span>
     <span class="tag-pill">No Seasonal Sales</span>
     <span class="tag-pill">Scandinavian Minimalism</span>
+  </div>
+
+  <div style="margin-top:40px;">
+    <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#b8976a;margin-bottom:12px;">FW24 Campaign — "An Infinite Dream"</div>
+    <div class="campaign-grid">
+      <div class="campaign-img-wrap"><img src="img/campaign-fw24-5.jpg" alt="Axel Arigato FW24 campaign — An Infinite Dream"/></div>
+      <div class="campaign-img-wrap"><img src="img/campaign-fw24-7.jpg" alt="Axel Arigato FW24 campaign — styling"/></div>
+      <div class="campaign-img-wrap"><img src="img/campaign-fw24-9.jpg" alt="Axel Arigato FW24 campaign — collection"/></div>
+    </div>
+    <p class="img-credit">FW24 "An Infinite Dream" campaign · Photos: Hypebeast / Axel Arigato</p>
   </div>
 
   <!-- SECTION 08: INVESTMENT & STRATEGIC CONTEXT -->
