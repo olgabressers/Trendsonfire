@@ -112,15 +112,21 @@
     .deal-stat-label { font-size:13px; color:rgba(255,255,255,.8); margin-top:6px; line-height:1.5; }
 
     /* CHALLENGES / OPPORTUNITIES BLOCK */
-    .mk-keys { background:#0a0f1a; padding:72px 48px; margin:48px -48px 0; }
-    @media(max-width:700px){ .mk-keys { padding:48px 20px; margin:48px -20px 0; } }
+    .mk-moment { width:100%; height:300px; overflow:hidden; position:relative; margin:48px -48px 0; width:calc(100% + 96px); }
+    @media(max-width:700px){ .mk-moment { margin:48px -20px 0; width:calc(100% + 40px); height:220px; } }
+    .mk-moment img { width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; }
+    .mk-moment .bm-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(10,15,26,.6) 100%); }
+
+    .mk-keys { background:#0a0f1a; padding:72px 48px; margin:0 -48px 0; }
+    @media(max-width:700px){ .mk-keys { padding:48px 20px; margin:0 -20px; } }
     .mk-header { margin-bottom:48px; }
-    .mk-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#b8976a; font-weight:700; margin-bottom:14px; }
-    .mk-headline { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(26px,3.2vw,38px); color:white; font-weight:500; line-height:1.1; letter-spacing:-.3px; max-width:640px; }
+    .mk-eyebrow { font-size:17px; letter-spacing:3px; text-transform:uppercase; color:#b8976a; font-weight:700; margin-bottom:16px; }
+    .mk-headline { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(22px,2.4vw,34px); color:white; font-weight:500; line-height:1.1; letter-spacing:-.3px; text-transform:uppercase; white-space:nowrap; }
+    @media(max-width:900px){ .mk-headline { white-space:normal; font-size:clamp(20px,3vw,28px); } }
     .mk-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
     @media(max-width:768px){ .mk-grid { grid-template-columns:1fr; } }
     .mk-col { border:1px solid rgba(184,151,106,.45); padding:32px 28px; background:rgba(255,255,255,.02); }
-    .mk-col-label { display:inline-block; font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; padding:5px 13px; margin-bottom:24px; }
+    .mk-col-label { display:inline-block; font-size:13px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; padding:6px 14px; margin-bottom:24px; }
     .mk-col-label.challenge { background:rgba(220,38,38,.18); color:#fca5a5; border:1px solid rgba(220,38,38,.35); }
     .mk-col-label.opportunity { background:rgba(184,151,106,.18); color:#b8976a; border:1px solid rgba(184,151,106,.45); }
     .mk-list { list-style:none; padding:0; margin:0; }
@@ -212,6 +218,12 @@
       <div class="s-num">€4B</div>
       <div class="s-src">Mytheresa + YNAP medium-term target after April 2025 merger. <a href="https://www.globenewswire.com/news-release/2025/04/24/3067104/0/en/MYT-Netherlands-Parent-B-V-Mytheresa-and-Richemont-announce-the-successful-completion-of-mytheresa-s-acquisition-of-YOOX-NET-A-PORTER-YNAP.html" target="_blank" rel="noopener">GlobeNewswire</a></div>
     </div>
+  </div>
+
+  <!-- VISUAL MOMENT -->
+  <div class="mk-moment">
+    <img src="img/mytheresa-campaign.jpg" alt="Mytheresa Holiday 2025 campaign — luxury marketplace visual"/>
+    <div class="bm-overlay"></div>
   </div>
 
   <!-- KEY CONCLUSIONS: CHALLENGES & OPPORTUNITIES -->
