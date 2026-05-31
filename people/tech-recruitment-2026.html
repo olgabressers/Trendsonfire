@@ -597,21 +597,105 @@
   <div style="font-size:clamp(16px,2vw,20px);font-weight:800;color:#0a0f1a;margin:36px 0 6px;">Dutch ICT labour market — UWV live data charts (Q1 2026)</div>
   <p style="font-size:14px;color:#6b7280;margin-bottom:20px;">Source: <a href="https://www.uwv.nl/nl/arbeidsmarktinformatie/sector/ict" target="_blank" rel="noopener" style="color:#8b6a2f;">UWV Arbeidsmarktinformatie — ICT sector</a></p>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;">
-    <div style="border:1px solid #e2dfd9;padding:16px;background:white;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#b8976a;margin-bottom:10px;">ICT Employment (banen)</div>
-      <img src="img/uwv-ict-banen-2026q1.svg" alt="UWV chart: ICT employment in the Netherlands 2026 Q1" style="width:100%;display:block;"/>
+  <!-- Chart 1 — Employment -->
+  <div style="border:1px solid #e2dfd9;background:white;padding:20px 24px;margin-bottom:16px;">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#b8976a;margin-bottom:4px;">Chart 1 — ICT Employment (banen)</div>
+    <div style="font-size:14px;font-weight:600;color:#0a0f1a;margin-bottom:14px;">575,000 ICT professionals employed in NL — recovery visible in H2 2025 after mid-2025 dip</div>
+    <img src="img/uwv-ict-banen-2026q1.svg" alt="UWV chart: ICT employment trend in the Netherlands Q1 2026" style="width:100%;display:block;max-height:340px;object-fit:contain;"/>
+  </div>
+
+  <!-- Chart 2 — Vacancies -->
+  <div style="border:1px solid #e2dfd9;background:white;padding:20px 24px;margin-bottom:16px;">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#b8976a;margin-bottom:4px;">Chart 2 — ICT Vacancies (vacatures)</div>
+    <div style="font-size:14px;font-weight:600;color:#0a0f1a;margin-bottom:14px;">18,800 open roles in Q4 2025 — down from a peak of ~40,000 in mid-2022</div>
+    <img src="img/uwv-ict-vacatures-2026q1.svg" alt="UWV chart: ICT vacancies in the Netherlands Q1 2026" style="width:100%;display:block;max-height:340px;object-fit:contain;"/>
+  </div>
+
+  <!-- Chart 3 — Unemployment -->
+  <div style="border:1px solid #e2dfd9;background:white;padding:20px 24px;margin-bottom:8px;">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#b8976a;margin-bottom:4px;">Chart 3 — ICT Unemployment (WW-uitkeringen)</div>
+    <div style="font-size:14px;font-weight:600;color:#0a0f1a;margin-bottom:14px;">6,200 ICT professionals receiving unemployment benefits (Feb 2026) — rising since 2023, concentrated in ages 27–50</div>
+    <img src="img/uwv-ict-ww-2026q1.svg" alt="UWV chart: ICT professionals on unemployment benefits in the Netherlands Q1 2026" style="width:100%;display:block;max-height:340px;object-fit:contain;"/>
+  </div>
+
+  <div class="src-note"><strong>Source:</strong> <a href="https://www.uwv.nl/nl/arbeidsmarktinformatie/sector/ict" target="_blank" rel="noopener">UWV Arbeidsmarktinformatie — ICT sector, Q1 2026</a>. Charts reproduced from UWV's quarterly ICT labour market update. Data draws on CBS vacancy surveys and UWV benefit payment records.</div>
+
+  <!-- ROLE BREAKDOWN -->
+  <div style="font-size:clamp(16px,2vw,20px);font-weight:800;color:#0a0f1a;margin:40px 0 6px;">Which ICT roles are most affected — NL breakdown by occupation</div>
+  <p style="font-size:14px;color:#6b7280;margin-bottom:20px;">Sources: <a href="https://www.uwv.nl/nl/arbeidsmarktinformatie/sector/ict/meer-icters-ww-ondanks-krappe-arbeidsmarkt" target="_blank" rel="noopener" style="color:#8b6a2f;">UWV — ICT WW analysis</a> · <a href="https://www.linkedin.com/pulse/linkedin-jobs-rise-2026-fastest-growing-roles-europe-gabvc" target="_blank" rel="noopener" style="color:#8b6a2f;">LinkedIn Jobs on the Rise 2026 NL</a></p>
+
+  <div class="split-grid">
+    <div class="split-col">
+      <div class="split-col-head shrink">
+        <div class="dot"></div>
+        Roles with fastest-rising unemployment (WW) in NL
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Software Developer</div>
+          <div class="role-note">Softwareontwikkelaars — HBO/WO level — fastest WW growth despite high demand. AI code generation absorbing junior and mid-level workload.</div>
+        </div>
+        <div class="role-badge badge-red">Rising fast</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Systems Designer / Architect</div>
+          <div class="role-note">Systeemontwerpers en -architecten — senior role hit by banking sector reorgs (ING, ABN AMRO, Rabobank headcount cuts).</div>
+        </div>
+        <div class="role-badge badge-red">Rising fast</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Security Specialist</div>
+          <div class="role-note">Securityspecialisten — paradox: structural shortage AND rising unemployment. Budget cuts affecting security teams despite rising threat surface.</div>
+        </div>
+        <div class="role-badge badge-red">Rising fast</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Servicedesk / Support (MBO level)</div>
+          <div class="role-note">Growing more slowly than HBO/WO roles — AI helpdesks absorbing tier-1 and tier-2 support tickets at scale.</div>
+        </div>
+        <div class="role-badge badge-amber">Growing slower</div>
+      </div>
     </div>
-    <div style="border:1px solid #e2dfd9;padding:16px;background:white;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#b8976a;margin-bottom:10px;">ICT Vacancies (vacatures)</div>
-      <img src="img/uwv-ict-vacatures-2026q1.svg" alt="UWV chart: ICT vacancies in the Netherlands 2026 Q1" style="width:100%;display:block;"/>
-    </div>
-    <div style="border:1px solid #e2dfd9;padding:16px;background:white;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#b8976a;margin-bottom:10px;">ICT Unemployment (WW)</div>
-      <img src="img/uwv-ict-ww-2026q1.svg" alt="UWV chart: ICT unemployment benefits in the Netherlands 2026 Q1" style="width:100%;display:block;"/>
+
+    <div class="split-col">
+      <div class="split-col-head boom" style="background:#f0f4ff;color:#1e3a8a;border-color:#bfdbfe;">
+        <div class="dot" style="background:#1e3a8a;"></div>
+        Fastest-growing NL roles (LinkedIn Jobs on the Rise 2026)
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">AI Engineer</div>
+          <div class="role-note">#1 fastest-growing role in the Netherlands — 2.8 years median experience, 44% hybrid. Top regions: Randstad, Brabant, Groningen.</div>
+        </div>
+        <div class="role-badge badge-green">#1 NL 2026</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Cloud / DevOps Engineer</div>
+          <div class="role-note">Infrastructure automation and MLOps demand continues to grow as Dutch enterprises migrate to cloud and integrate AI workloads.</div>
+        </div>
+        <div class="role-badge badge-green">Strong demand</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Data Engineer / Analyst</div>
+          <div class="role-note">Data pipeline and analytics roles remain in demand — 45% of NL data postings now include AI terms (aligned with EU-wide trend).</div>
+        </div>
+        <div class="role-badge badge-green">Strong demand</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-name">Cybersecurity Specialist</div>
+          <div class="role-note">NL cloud security revenue growing 25.7% through 2029 — Zero Trust, identity management, AI-aware security in demand despite WW paradox.</div>
+        </div>
+        <div class="role-badge badge-amber">Structural shortage</div>
+      </div>
     </div>
   </div>
-  <div class="src-note"><strong>Source:</strong> <a href="https://www.uwv.nl/nl/arbeidsmarktinformatie/sector/ict" target="_blank" rel="noopener">UWV Arbeidsmarktinformatie — ICT sector, Q1 2026</a>. Charts reproduced directly from UWV's published quarterly ICT labour market update. Left: ICT employment (banen); Centre: open ICT vacancies (vacatures); Right: ICT professionals receiving unemployment benefits (WW-uitkeringen).</div>
+  <div class="src-note"><strong>Sources:</strong> UWV — <a href="https://www.uwv.nl/nl/arbeidsmarktinformatie/sector/ict/meer-icters-ww-ondanks-krappe-arbeidsmarkt" target="_blank" rel="noopener">Meer ICT'ers in WW ondanks krappe arbeidsmarkt</a> (software developers, security specialists, systems architects named as roles with fastest WW growth). LinkedIn — <a href="https://www.linkedin.com/pulse/linkedin-jobs-rise-2026-fastest-growing-roles-europe-gabvc" target="_blank" rel="noopener">Jobs on the Rise 2026, Netherlands</a> (AI Engineer #1). Note: UWV does not publish a full role-by-role breakdown in its public dashboard; the four roles above are explicitly named in UWV's published analysis.</div>
 
   <!-- NL narrative insight -->
   <div class="insight">
