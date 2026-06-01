@@ -154,6 +154,30 @@
     @media(max-width:700px){
       .bar-label { width:140px; font-size:12px; }
     }
+
+    /* IBM article — brand-moment + brand-keys */
+    .ibm-moment { width:calc(100% + 96px); height:340px; overflow:hidden; position:relative; margin:0 -48px 0; }
+    @media(max-width:768px){ .ibm-moment { width:calc(100% + 40px); margin:0 -20px 0; height:220px; } }
+    .ibm-moment img { width:100%; height:100%; object-fit:cover; object-position:center 38%; display:block; }
+    .ibm-moment .bm-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, transparent 30%, rgba(10,15,26,.72) 100%); }
+    .ibm-keys { background:#0a0f1a; padding:72px 48px; margin:0 -48px 56px; }
+    @media(max-width:700px){ .ibm-keys { padding:48px 20px; margin:0 -20px 40px; } }
+    .ibm-keys .bk-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:20px; }
+    .ibm-keys .bk-eyebrow { font-size:17px; letter-spacing:3px; text-transform:uppercase; color:#b8976a; font-weight:700; margin-bottom:14px; }
+    .ibm-keys .bk-headline { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(22px,2.8vw,34px); color:white; font-weight:500; line-height:1.15; letter-spacing:-.3px; max-width:700px; }
+    .ibm-keys .bk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    @media(max-width:800px){ .ibm-keys .bk-grid { grid-template-columns:1fr; } }
+    .ibm-keys .bk-card { border:1px solid rgba(184,151,106,.45); padding:32px 26px; background:rgba(255,255,255,0.02); }
+    .ibm-keys .bk-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:104px; color:#b8976a; line-height:0.85; margin-bottom:20px; font-weight:600; }
+    .ibm-keys .bk-card-title { font-size:20px; font-weight:700; color:#ffffff; margin-bottom:18px; line-height:1.3; letter-spacing:-.2px; }
+    .ibm-keys .bk-card ul { list-style:none; padding:0; margin:0; }
+    .ibm-keys .bk-card ul li { font-size:15px; color:#ffffff; padding:10px 0 10px 18px; border-bottom:1px solid rgba(255,255,255,.12); line-height:1.65; position:relative; }
+    .ibm-keys .bk-card ul li:last-child { border-bottom:none; }
+    .ibm-keys .bk-card ul li::before { content:'—'; color:#b8976a; position:absolute; left:0; font-weight:700; }
+    .ibm-keys .bk-card-src { font-size:12px; color:rgba(255,255,255,.6); margin-top:16px; line-height:1.55; }
+    .ibm-keys .bk-card-src a { color:#b8976a; text-decoration:underline; }
+    .ibm-keys .bk-footer { display:flex; justify-content:flex-end; align-items:center; margin-top:44px; padding-top:24px; border-top:1px solid rgba(255,255,255,.18); }
+    .ibm-keys .bk-tof-url { font-size:15px; color:#b8976a; letter-spacing:3px; text-transform:uppercase; font-weight:700; }
   </style>
 </head>
 <body>
@@ -204,6 +228,60 @@
 
 <!-- MAIN -->
 <main>
+
+  <!-- IBM CEO STUDY — VISUAL MOMENT + KEY FINDINGS -->
+  <div class="ibm-moment">
+    <img src="img/yt-ibm-ceo-ai.jpg" alt="IBM CEO Study 2026 — AI leadership and the workforce transformation driving a new wave of tech hiring"/>
+    <div class="bm-overlay"></div>
+  </div>
+
+  <div class="ibm-keys">
+    <div class="bk-header">
+      <div>
+        <div class="bk-eyebrow">IBM CEO Study 2026 — AI Leadership Intelligence</div>
+        <div class="bk-headline">76% of large companies are hiring a Chief AI Officer. 25% of their employees use AI daily. The gap between those two numbers is where the next wave of promotions happens.</div>
+      </div>
+    </div>
+    <div class="bk-grid">
+
+      <div class="bk-card">
+        <div class="bk-num">76%</div>
+        <div class="bk-card-title">CEOs at large companies now have or are hiring a Chief AI Officer</div>
+        <ul>
+          <li>In 2024, that figure was 26%. The CAIO went from niche to standard in 24 months — faster than any executive role in history</li>
+          <li>The comparison to the CISO is exact: the Chief Information Security Officer was invented when the internet created a threat category that no existing executive owned. AI is doing the same to strategy, operations and every function in between</li>
+          <li>40% of CAIOs report directly to the CEO. No playbook exists yet — the first person to define what the role looks like inside a given company wins by default</li>
+        </ul>
+        <div class="bk-card-src">Source: <a href="https://www.youtube.com/watch?v=iIfOprq2kCM" target="_blank" rel="noopener">IBM CEO Study 2026, 2,000 CEOs, median revenue $5.8B · Analysis: youtube.com/watch?v=iIfOprq2kCM</a></div>
+      </div>
+
+      <div class="bk-card">
+        <div class="bk-num">61</div>
+        <div class="bk-card-title">Point gap between employees who have the skills and those who use AI daily</div>
+        <ul>
+          <li>86% of employees at these companies already have the skills to use AI, or could pick them up with minimal training</li>
+          <li>25% actually use AI tools in their daily workflow. The shortfall is not a skills problem — it is a change management problem</li>
+          <li>Nobody is building the bridge from "we have the capability" to "we are saving 40 hours a week." Whoever builds that bridge, in any function, gets promoted</li>
+        </ul>
+        <div class="bk-card-src">Source: <a href="https://www.youtube.com/watch?v=iIfOprq2kCM" target="_blank" rel="noopener">IBM CEO Study 2026 · Analysis: youtube.com/watch?v=iIfOprq2kCM</a></div>
+      </div>
+
+      <div class="bk-card">
+        <div class="bk-num">57%</div>
+        <div class="bk-card-title">Of Chief AI Officers were promoted from inside — not hired from outside</div>
+        <ul>
+          <li>In a separate IBM study of 600 CAIOs, 57% were internal employees who already had the job before there was a title for it</li>
+          <li>85% of CEOs say every functional leader — CMO, CFO, COO, head of sales — must become a tech expert. 77% say talent leadership and tech leadership roles are converging into one job</li>
+          <li>"You do not need to change your role. You need to change which version of your role you are." The AI-native version of any function is the seat that opens next</li>
+        </ul>
+        <div class="bk-card-src">Source: <a href="https://www.youtube.com/watch?v=iIfOprq2kCM" target="_blank" rel="noopener">IBM CEO Study of 600 CAIOs · Analysis: youtube.com/watch?v=iIfOprq2kCM</a></div>
+      </div>
+
+    </div>
+    <div class="bk-footer">
+      <div class="bk-tof-url">TRENDSONFIRE.COM</div>
+    </div>
+  </div>
 
   <!-- HEADLINE STATS -->
   <div class="stats" style="margin-top:0;">
