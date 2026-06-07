@@ -110,8 +110,9 @@
     .bk-tof-url { font-size:15px; color:#b8976a; letter-spacing:3px; text-transform:uppercase; font-weight:700; }
 
     .hero-img-strip { width:100%; height:480px; overflow:hidden; position:relative; }
-    .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
+    .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center center; display:block; }
     .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.65); color:rgba(255,255,255,.65); font-size:11px; padding:6px 14px; letter-spacing:0.3px; }
+    @media(max-width:480px){ .hero-img-strip { height:240px; } }
 
     .mx-strip { width:100%; height:380px; overflow:hidden; position:relative; margin:32px 0 8px; border-radius:2px; }
     .mx-strip img { width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block; }
@@ -185,8 +186,7 @@
 
 <!-- HERO IMAGE — drop img/miele-hero.jpg (Miele kitchen or HQ exterior) -->
 <div class="hero-img-strip">
-  <img src="img/miele-product-ifa.jpg" alt="Miele W1 washing machine — IFA Berlin 2018" onerror="this.parentElement.style.background='#1a2235';this.style.display='none'"/>
-  <div class="img-caption">Miele W1 washing machine · IFA Berlin 2018 · Photo: Matti Blume / Wikimedia Commons (CC BY-SA 4.0)</div>
+  <img src="img/miele-kitchen.png" alt="Miele built-in appliances in a luxury kitchen" onerror="this.parentElement.style.background='#1a2235';this.style.display='none'"/>
 </div>
 
 <main>
