@@ -74,6 +74,30 @@
       .kpi-grid{grid-template-columns:1fr 1fr}
       .sop-ibp-compare{grid-template-columns:1fr!important}
       table{font-size:12px!important}
+      .section-title{font-size:19px!important;margin-bottom:16px}
+    }
+    @media(max-width:600px){
+      /* KPI cards: single column on small phones */
+      .kpi-grid{grid-template-columns:1fr!important}
+      .kpi-val{font-size:24px}
+      /* Section titles even smaller */
+      .section-title{font-size:17px!important}
+      /* Eyebrow labels in compare section */
+      .sop-ibp-compare [style*="font-size:9px"]{font-size:11px!important;letter-spacing:1px}
+      /* Table: convert to stacked card layout */
+      main table thead{display:none}
+      main table,main table tbody,main table tr,main table td{display:block;width:100%;box-sizing:border-box}
+      main table tr{border:1px solid #e2dfd9;margin-bottom:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+      main table td{padding:2px 0!important;border:none!important;font-size:12px!important}
+      main table td:nth-child(2){display:none}
+      main table td:first-child{font-weight:700;font-size:14px!important;color:#0a0f1a!important;padding-bottom:7px!important;border-bottom:1px solid #f0f0f0!important;margin-bottom:4px}
+      main table td:nth-child(3){padding-top:5px!important}
+      main table td:nth-child(4){color:#4e4e4e;padding-top:4px!important;line-height:1.5}
+      main table td:nth-child(4)::before{content:"Results: ";font-weight:700;color:#0a0f1a}
+      main table td:nth-child(5){padding-top:4px!important}
+      main table td:nth-child(5)::before{content:"Source: ";font-weight:700;color:#0a0f1a}
+      /* Hero meta row wrap */
+      .sec-hero .inner>div[style*="flex"]{gap:10px}
     }
   </style>
   <script type="application/ld+json">
