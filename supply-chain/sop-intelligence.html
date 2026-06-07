@@ -20,8 +20,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     /* Page-specific styles only — nav/hero/footer/search come from style.css */
-    main{max-width:1280px;margin:0 auto;padding:48px 24px 80px}
+    main{max-width:1280px;margin:0 auto;padding:48px 40px 80px}
     main a{color:#8b6a2f}
+    .sec-hero .inner{max-width:1280px!important}
+    .sec-hero p{color:rgba(255,255,255,.82)!important}
+    .sop-ibp-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
     .section-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,3vw,30px);font-weight:500;color:#0a0f1a;margin-top:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #8b6a2f;letter-spacing:-0.3px}
 
     .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px;margin-bottom:8px}
@@ -67,7 +70,7 @@
       .mat-stage:first-child{border-radius:0 12px 0 0!important}
       .mat-stage:last-child{border-radius:0 0 12px 12px!important}
       .kpi-grid{grid-template-columns:1fr 1fr}
-      .compare-grid{grid-template-columns:1fr!important}
+      .sop-ibp-compare{grid-template-columns:1fr!important}
       table{font-size:12px!important}
     }
   </style>
@@ -135,8 +138,8 @@
     <h1>S&amp;OP to IBP — The Evolution of Supply Chain Planning</h1>
     <p>How Sales &amp; Operations Planning evolved from a monthly spreadsheet exercise to AI-powered Integrated Business Planning — and why most organisations are still stuck in the middle.</p>
     <div style="display:flex;gap:24px;margin-top:20px;flex-wrap:wrap">
-      <span style="font-size:12px;color:rgba(255,255,255,.55)">Sources: Gartner, McKinsey, BCG, Grand View Research</span>
-      <span style="font-size:12px;color:rgba(255,255,255,.55)">Updated 7 June 2026</span>
+      <span style="font-size:12px;color:rgba(255,255,255,.75)">Sources: Gartner, McKinsey, BCG, Grand View Research</span>
+      <span style="font-size:12px;color:rgba(255,255,255,.75)">Updated 7 June 2026</span>
     </div>
   </div>
 </section>
@@ -314,33 +317,43 @@
   <!-- ══ SECTION 7: S&OP TO IBP TRANSITION ══ -->
   <div class="section-title">From S&amp;OP to IBP — What Changes and Why It Matters</div>
 
-  <div class="compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:8px;border-radius: 0;overflow:hidden;border:1px solid var(--rule, #e2dfd9);box-shadow:0 1px 4px rgba(0,0,0,.06)">
-    <div style="background:#faf9f7;padding:28px;border-right:1px solid #e2dfd9;">
-      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:#0a0f1a;margin-bottom:16px;letter-spacing:-0.2px">Traditional S&amp;OP</div>
-      <div style="font-size:13px;color:#1f1f1f;line-height:1.8">
-        Monthly planning cycle<br>
-        Demand vs. supply balancing<br>
-        Operations-led process<br>
-        Volume-focused<br>
-        Internal data only<br>
-        Reactive to forecast errors<br>
-        Spreadsheets + ERP reports<br>
-        Consensus-driven<br>
-        Functional KPIs
+  <div class="sop-ibp-compare">
+    <!-- S&OP — left column: cream background, red accent -->
+    <div style="background:#faf9f7;border:1px solid #e2dfd9;border-right:none;border-top:4px solid #dc2626">
+      <div style="padding:24px 28px 18px;border-bottom:1px solid #e2dfd9">
+        <div style="font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#dc2626;margin-bottom:8px">Operational Planning</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:600;color:#0a0f1a;letter-spacing:-0.3px;margin-bottom:4px">Traditional S&amp;OP</div>
+        <div style="font-size:12px;color:#6b7280">Sales &amp; Operations Planning</div>
+      </div>
+      <div style="padding:4px 28px 24px">
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Monthly planning cycle</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Demand vs. supply balancing</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Operations-led process</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Volume-focused</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Internal data only</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Reactive to forecast errors</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Spreadsheets + ERP reports</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid #e2dfd9;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Consensus-driven</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;font-size:13px;color:#1f1f1f"><span style="color:#dc2626;flex-shrink:0;font-weight:700">&#8212;</span>Functional KPIs</div>
       </div>
     </div>
-    <div style="background:#faf9f7;padding:28px">
-      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:500;color:#0a0f1a;margin-bottom:16px;letter-spacing:-0.2px">Integrated Business Planning</div>
-      <div style="font-size:13px;color:#1f1f1f;line-height:1.8">
-        Continuous planning with weekly reviews<br>
-        Full P&amp;L integration (revenue, margin, cash)<br>
-        Executive-led, strategy-connected<br>
-        Value-focused (revenue &amp; margin optimisation)<br>
-        External signals (market, competitor, macro)<br>
-        Proactive scenario planning<br>
-        AI/ML-powered planning platforms<br>
-        Decision-driven with trade-off analysis<br>
-        Cross-functional business KPIs
+    <!-- IBP — right column: dark navy, gold accent -->
+    <div style="background:#0a0f1a;border:1px solid #1a2035;border-top:4px solid #b8976a">
+      <div style="padding:24px 28px 18px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#b8976a;margin-bottom:8px">Strategic Planning</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:600;color:white;letter-spacing:-0.3px;margin-bottom:4px">Integrated Business Planning</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65)">From operational alignment to executive-led decisions</div>
+      </div>
+      <div style="padding:4px 28px 24px">
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Continuous planning with weekly reviews</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Full P&amp;L integration (revenue, margin, cash)</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Executive-led, strategy-connected</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Value-focused (revenue &amp; margin optimisation)</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>External signals (market, competitor, macro)</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Proactive scenario planning</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>AI/ML-powered planning platforms</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Decision-driven with trade-off analysis</div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;font-size:13px;color:rgba(255,255,255,.88)"><span style="color:#b8976a;flex-shrink:0;font-weight:700">&#8594;</span>Cross-functional business KPIs</div>
       </div>
     </div>
   </div>
