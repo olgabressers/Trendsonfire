@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Booking.com — Partner Marketing Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#003580;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.05) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#febb02;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,46px);font-weight:400;line-height:1.08;margin-bottom:16px;letter-spacing:-0.5px;max-width:860px;}
+    .art-hero h1 em{color:#febb02;font-style:italic;}
+    .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);max-width:760px;line-height:1.55;}
+    .art-hero .meta{margin-top:18px;font-size:12px;color:rgba(255,255,255,.45);display:flex;gap:20px;flex-wrap:wrap;}
+
+    /* HERO IMAGE */
+    .hero-img-strip{width:100%;height:380px;overflow:hidden;position:relative;}
+    .hero-img-strip img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;}
+    .hero-img-strip .img-caption{position:absolute;bottom:0;right:0;background:rgba(0,53,128,.72);color:rgba(255,255,255,.7);font-size:10.5px;padding:5px 12px;}
+    @media(max-width:640px){.hero-img-strip{height:220px;}}
+
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:18px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4b5563;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:500;line-height:1;color:#003580;letter-spacing:-0.5px;}
+    .s-delta{font-size:11.5px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-src{font-size:11px;color:#4b5563;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#003580;}
+
+    /* CHARTS */
+    .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:44px;}
+    @media(max-width:700px){.charts-grid{grid-template-columns:1fr;}}
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:20px 18px 16px;}
+    .chart-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:11.5px;color:#9ca3af;margin-bottom:14px;}
+    .vchart-bars{display:flex;align-items:flex-end;gap:4px;height:130px;border-bottom:2px solid #e2dfd9;}
+    .vbar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:24px;}
+    .vbar-val{font-size:8.5px;font-weight:700;color:#0a0f1a;margin-bottom:2px;white-space:nowrap;text-align:center;}
+    .vbar-fill{width:85%;border-radius:2px 2px 0 0;background:#003580;}
+    .vbar-fill.covid{background:#d1d5db;}
+    .vbar-fill.latest{background:#febb02;}
+    .vbar-yr{font-size:8.5px;color:#9ca3af;margin-top:4px;text-align:center;}
+    .chart-src{font-size:10.5px;color:#9ca3af;margin-top:8px;line-height:1.5;}
+    .chart-src a{color:#003580;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#003580;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#febb02;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.8vw,32px);color:white;font-weight:400;line-height:1.1;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(254,187,2,.3);padding:22px 20px;background:rgba(255,255,255,.02);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:76px;color:#febb02;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:17px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.2;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:13.5px;color:#ffffff;padding:7px 0 7px 16px;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#febb02;position:absolute;left:0;font-weight:700;}
+    .bk-card-src{font-size:10.5px;color:rgba(255,255,255,.5);margin-top:12px;line-height:1.5;}
+    .bk-card-src a{color:#febb02;text-decoration:underline;}
+
+    /* SECTION HEADER */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:48px 0 18px;padding-bottom:10px;border-bottom:2px solid #003580;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#003580;margin-bottom:4px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.3vw,26px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:11.5px;color:#4b5563;padding:8px 12px;background:#f9fafb;border-left:3px solid #003580;margin-top:10px;line-height:1.6;}
+    .src-note a{color:#003580;}
+
+    /* BRANDS */
+    .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0;}
+    @media(max-width:640px){.brands-grid{grid-template-columns:repeat(2,1fr);}}
+    .brand-card{padding:14px 14px;border:1px solid #e2dfd9;background:white;}
+    .brand-card.in-scope{border-color:#003580;border-width:2px;background:#f0f6ff;}
+    .brand-name{font-size:14px;font-weight:800;color:#0a0f1a;margin-bottom:3px;}
+    .brand-card.in-scope .brand-name{color:#003580;}
+    .brand-desc{font-size:11.5px;color:#4b5563;margin-bottom:7px;line-height:1.4;}
+    .brand-scope{display:inline-block;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:2px;letter-spacing:.5px;text-transform:uppercase;}
+    .scope-yes{background:#003580;color:white;}
+    .scope-no{background:#f3f4f6;color:#9ca3af;}
+
+    /* CHANNELS */
+    .channels-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:900px){.channels-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.channels-grid{grid-template-columns:1fr;}}
+    .ch-card{padding:16px 14px;border:1px solid #e2dfd9;background:white;}
+    .ch-type{font-size:9.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;padding:2px 7px;display:inline-block;border-radius:2px;}
+    .ch-type.operational{background:#dcfce7;color:#14532d;}
+    .ch-type.campaign{background:#dbeafe;color:#1e3a8a;}
+    .ch-type.content{background:#fef3c7;color:#92400e;}
+    .ch-type.event{background:#f3e8ff;color:#6b21a8;}
+    .ch-name{font-size:14px;font-weight:700;color:#0a0f1a;margin-bottom:5px;line-height:1.2;}
+    .ch-reach{font-size:12px;color:#4b5563;margin-bottom:9px;line-height:1.5;}
+    .ch-weight-row{display:flex;align-items:center;gap:7px;}
+    .ch-wlabel{font-size:9.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;width:58px;}
+    .ch-wtrack{flex:1;height:3px;background:#e2dfd9;border-radius:2px;}
+    .ch-wfill{height:100%;border-radius:2px;background:#003580;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:20px;}
+    .kpi-group-label{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#003580;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
+    .kpi-name{font-size:12.5px;font-weight:700;color:#0a0f1a;margin-bottom:3px;line-height:1.3;}
+    .kpi-desc{font-size:11.5px;color:#4b5563;line-height:1.45;}
+    .kpi-row.two{grid-template-columns:repeat(2,1fr);}
+    @media(max-width:560px){.kpi-row.two{grid-template-columns:1fr;}}
+
+    /* PARTNER MIX */
+    .split-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+    @media(max-width:520px){.split-row{grid-template-columns:1fr;}}
+    .split-card{padding:20px 16px;border:1px solid #e2dfd9;}
+    .split-card.accent{background:#003580;border-color:#003580;}
+    .split-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;color:#003580;line-height:1;margin-bottom:5px;}
+    .split-card.accent .split-num{color:#febb02;}
+    .split-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4b5563;}
+    .split-card.accent .split-label{color:rgba(255,255,255,.7);}
+    .split-desc{font-size:12.5px;color:#4b5563;margin-top:7px;line-height:1.5;}
+    .split-card.accent .split-desc{color:rgba(255,255,255,.82);}
+    .bar-chart{margin:12px 0 4px;}
+    .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+    .bar-label{width:140px;font-size:12px;font-weight:700;color:#0a0f1a;flex-shrink:0;line-height:1.3;}
+    @media(max-width:480px){.bar-label{width:90px;font-size:11px;}}
+    .bar-track{flex:1;background:#f1f5f9;height:30px;overflow:hidden;}
+    .bar-fill{height:100%;display:flex;align-items:center;padding-left:10px;font-size:11.5px;font-weight:700;color:white;}
+    .bar-val{width:72px;font-size:12.5px;font-weight:700;color:#0a0f1a;text-align:right;flex-shrink:0;}
+
+    /* PRIORITY TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px;}
+    .pri-table th{background:#003580;color:white;text-align:left;padding:9px 13px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+    .pri-table td{padding:11px 13px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:600;color:#003580;}
+
+    /* GENIUS CALLOUT */
+    .genius-box{background:#003580;padding:24px 22px;margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    @media(max-width:640px){.genius-box{grid-template-columns:1fr;gap:12px;}}
+    .genius-stat{text-align:center;}
+    .genius-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;color:#febb02;line-height:1;}
+    .genius-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.75);margin-top:4px;}
+
+    /* TRANSFORMATION CALLOUT */
+    .transform-box{border-left:4px solid #febb02;background:#fffbeb;padding:16px 18px;margin:14px 0;font-size:13.5px;color:#1f1f1f;line-height:1.7;}
+    .transform-box strong{color:#0a0f1a;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Booking.com</div>
+    <div class="eyebrow">Interview Brief — Global Field Marketing Program Manager · Partner Marketing</div>
+    <h1>Booking.com: <em>one journey for 4 million partners</em></h1>
+    <p>$26.9B revenue. 4M accommodation partners across 220 countries. 87% non-hotel. Partner communications running on separate channels. The role: build a unified partner journey from fragmented infrastructure — during a $400–450M transformation programme.</p>
+    <div class="meta">
+      <span>Sources: Booking Holdings 10-K FY2024, 8-K FY2025, SEC filings, news.booking.com, partner.booking.com</span>
+      <span>Updated 8 June 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="hero-img-strip">
+  <img src="img/booking-hero.jpg" alt="Booking.com Amsterdam campus, Oosterdokseiland"/>
+  <div class="img-caption">Booking.com campus, Oosterdokseiland, Amsterdam · Hufton+Crow / UNStudio</div>
+</div>
+
+<main>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">Revenue FY2025 (latest)</div>
+      <div class="s-num">$26.9B</div>
+      <div class="s-delta">+13% YoY</div>
+      <div class="s-src"><a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm" target="_blank" rel="noopener">8-K FY2025, SEC</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Room Nights FY2025</div>
+      <div class="s-num">1.2B+</div>
+      <div class="s-delta">+8% YoY</div>
+      <div class="s-src"><a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm" target="_blank" rel="noopener">8-K FY2025, SEC</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Accommodation Partners</div>
+      <div class="s-num">4M</div>
+      <div class="s-src">~500K hotels · ~3.5M homes/apts. <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553125000010/bkng-20241231.htm" target="_blank" rel="noopener">10-K FY2024</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Marketing Spend 2024</div>
+      <div class="s-num">$6.8B</div>
+      <div class="s-src">Flat vs 2023. 29% of revenue. <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553125000010/bkng-20241231.htm" target="_blank" rel="noopener">10-K FY2024</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Genius Partners Enrolled</div>
+      <div class="s-num">850K</div>
+      <div class="s-src">Properties enrolled in Genius loyalty programme. <a href="https://partner.booking.com/en-us/solutions/genius_program" target="_blank" rel="noopener">partner.booking.com</a></div>
+    </div>
+  </div>
+
+  <!-- CHARTS: REVENUE + MARKETING SPEND -->
+  <div class="charts-grid">
+    <div class="chart-box">
+      <div class="chart-title">Revenue — Booking Holdings</div>
+      <div class="chart-sub">Annual revenue 2019–2025 (USD billions)</div>
+      <div class="vchart-bars">
+        <div class="vbar">
+          <span class="vbar-val">$15.1B</span>
+          <div class="vbar-fill" style="height:56.1%"></div>
+          <span class="vbar-yr">2019</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$6.8B</span>
+          <div class="vbar-fill covid" style="height:25.3%"></div>
+          <span class="vbar-yr" style="color:#d1d5db;">2020</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$11.0B</span>
+          <div class="vbar-fill" style="height:40.9%"></div>
+          <span class="vbar-yr">2021</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$17.1B</span>
+          <div class="vbar-fill" style="height:63.6%"></div>
+          <span class="vbar-yr">2022</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$21.4B</span>
+          <div class="vbar-fill" style="height:79.6%"></div>
+          <span class="vbar-yr">2023</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$23.7B</span>
+          <div class="vbar-fill" style="height:88.1%"></div>
+          <span class="vbar-yr">2024</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$26.9B</span>
+          <div class="vbar-fill latest" style="height:100%"></div>
+          <span class="vbar-yr" style="color:#003580;font-weight:700;">2025</span>
+        </div>
+      </div>
+      <div class="chart-src">Grey bar = COVID year. Gold = FY2025 (latest). Source: <a href="https://companiesmarketcap.com/booking-holdings/revenue/" target="_blank" rel="noopener">SEC 10-K filings via companiesmarketcap</a> · <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm" target="_blank" rel="noopener">8-K FY2025</a></div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Marketing Spend</div>
+      <div class="chart-sub">Annual marketing expenses 2020–2024 (USD billions)</div>
+      <div class="vchart-bars">
+        <div class="vbar">
+          <span class="vbar-val">$2.2B</span>
+          <div class="vbar-fill" style="height:32.4%"></div>
+          <span class="vbar-yr">2020</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$3.8B</span>
+          <div class="vbar-fill" style="height:55.9%"></div>
+          <span class="vbar-yr">2021</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$6.0B</span>
+          <div class="vbar-fill" style="height:88.2%"></div>
+          <span class="vbar-yr">2022</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$6.8B</span>
+          <div class="vbar-fill latest" style="height:100%"></div>
+          <span class="vbar-yr">2023</span>
+        </div>
+        <div class="vbar">
+          <span class="vbar-val">$6.8B</span>
+          <div class="vbar-fill latest" style="height:100%"></div>
+          <span class="vbar-yr">2024</span>
+        </div>
+      </div>
+      <div class="chart-src">Marketing spend flat in 2023–2024 at $6.8B despite revenue growing 11%. Efficiency pressure is real. Source: <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553125000010/bkng-20241231.htm" target="_blank" rel="noopener">10-K FY2024, SEC</a></div>
+    </div>
+  </div>
+
+  <!-- 3 STRUCTURAL CHALLENGES -->
+  <div class="bk-wrap">
+    <div class="bk-eyebrow">Role Analysis</div>
+    <div class="bk-headline">3 structural challenges this role is built to solve</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">Channel fragmentation</div>
+        <ul>
+          <li>Email, push, and in-app operate independently with no shared partner context or coordinated send logic</li>
+          <li>A partner managing multiple properties receives separate, uncoordinated communication across all three channels simultaneously</li>
+          <li>The recruiter brief states this explicitly: move from separate channels to one integrated partner journey</li>
+        </ul>
+        <div class="bk-card-src">Source: recruiter brief, June 2026</div>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">Hotel-first campaigns reaching 87% non-hotel partners</div>
+        <ul>
+          <li>3.5M of 4M partners are homes, apartments, and unique stays — not hotels</li>
+          <li>In Q1 2025, alternative accommodations were 37% of all room nights and growing at 12% vs 7% overall</li>
+          <li>Central partner campaigns designed for professional hotel operators reach the majority of partners with wrong content and wrong cadence</li>
+        </ul>
+        <div class="bk-card-src">Source: <a href="https://www.sec.gov/Archives/edgar/data/0001075531/000107553125000021/bkngq12025earningspressr.htm" target="_blank" rel="noopener">Q1 2025 earnings 8-K, SEC</a></div>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">Global reach without a governance framework</div>
+        <ul>
+          <li>198 offices across 70 countries. Regional field marketing teams adapt central campaigns without a standard operating model</li>
+          <li>No consistent KPI framework means central cannot measure regional performance or attribute partner revenue to marketing actions</li>
+          <li>The formal JD names this as the core deliverable: a field marketing operating framework enabling global consistency and local execution</li>
+        </ul>
+        <div class="bk-card-src">Source: Booking.com job description; <a href="https://news.booking.com/bookingcom-officially-opens-new-campus-in-the--heart-of-amsterdam/" target="_blank" rel="noopener">news.booking.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSFORMATION CONTEXT -->
+  <div class="transform-box">
+    <strong>Transformation Programme context:</strong> Booking Holdings announced in November 2024 a programme targeting <strong>$400–450M in annual run-rate savings</strong> over three years — workforce reduction (~⅓), process modernisation and procurement efficiency (~⅔). Partner marketing sits inside this context: scale, automate, and improve partner engagement with flat or reduced resources.
+    <span style="display:block;margin-top:6px;font-size:11.5px;color:#6b7280;">Source: <a href="https://www.sec.gov/Archives/edgar/data/0001075531/000107553124000051/bkng-20241108.htm" target="_blank" rel="noopener">SEC 8-K/A, November 2024</a></span>
+  </div>
+
+  <!-- BRANDS IN SCOPE -->
+  <div class="sec-header">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Brands</div>
+      <div class="sec-title">Booking Holdings portfolio — which brands are in scope for this role</div>
+    </div>
+  </div>
+
+  <div class="brands-grid">
+    <div class="brand-card in-scope">
+      <div class="brand-name">Booking.com</div>
+      <div class="brand-desc">Largest brand. Accommodations + full travel. 4M partners. Amsterdam HQ. This role.</div>
+      <span class="brand-scope scope-yes">In scope</span>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Priceline</div>
+      <div class="brand-desc">Discounted + opaque deals. US-centric. Separate partner structure.</div>
+      <span class="brand-scope scope-no">Separate team</span>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Agoda</div>
+      <div class="brand-desc">Accommodation platform, strong Asia. Separate regional partner marketing function.</div>
+      <span class="brand-scope scope-no">Separate team</span>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Kayak</div>
+      <div class="brand-desc">Travel metasearch. No direct accommodation partner relationships.</div>
+      <span class="brand-scope scope-no">Out of scope</span>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">OpenTable</div>
+      <div class="brand-desc">Restaurant reservations. Different partner type (restaurants). Separate function.</div>
+      <span class="brand-scope scope-no">Out of scope</span>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Rentalcars.com</div>
+      <div class="brand-desc">Car rental. No accommodation partner overlap.</div>
+      <span class="brand-scope scope-no">Out of scope</span>
+    </div>
+  </div>
+  <div class="src-note"><strong>To validate in interview:</strong> does this role cover Booking.com only, or are there cross-brand partner marketing synergies with Priceline or Agoda? Source: <a href="https://ir.bookingholdings.com/overview/default.aspx" target="_blank" rel="noopener">Booking Holdings IR</a></div>
+
+  <!-- PARTNER CHANNELS -->
+  <div class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Omnichannel</div>
+      <div class="sec-title">Partner communication channels — confirmed active</div>
+    </div>
+  </div>
+
+  <div class="channels-grid">
+    <div class="ch-card">
+      <span class="ch-type campaign">Campaign</span>
+      <div class="ch-name">Email Newsletter</div>
+      <div class="ch-reach">Opted-in partners. Primary vehicle for programme launches, campaign communications, and product updates. Monthly cadence confirmed.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:90%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type operational">Operational</span>
+      <div class="ch-name">Extranet (Partner Hub)</div>
+      <div class="ch-reach">All 4M partners. Primary management interface. In-extranet notifications drive feature adoption, policy updates, and programme invitations.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:95%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type operational">Operational</span>
+      <div class="ch-name">Pulse App (Push)</div>
+      <div class="ch-reach">Mobile push for bookings, reviews, guest messages. Also used for time-sensitive campaign triggers and partner alerts.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:75%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type content">Content</span>
+      <div class="ch-name">Click. Magazine</div>
+      <div class="ch-reach">Editorial content channel. Travel trends, industry data, and partner guidance. Drives thought leadership and indirect programme awareness.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:45%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type content">Community</span>
+      <div class="ch-name">Partner Community</div>
+      <div class="ch-reach">Discussion forums + Booking.com announcements. Partners share tips; Booking.com publishes updates. Engaged subset of active partners.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:40%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type event">Education</span>
+      <div class="ch-name">Webinars</div>
+      <div class="ch-reach">Programme launches, feature training, market intelligence sessions. Registered attendance. Key channel for new initiative roll-outs.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:50%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type event">Flagship</span>
+      <div class="ch-name">Click. Partner Summit</div>
+      <div class="ch-reach">Annual multi-regional event. 2024 APAC: 250+ invited partners, 98% satisfaction rate. Low reach, very high impact for top-tier partners.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:30%"></div></div>
+      </div>
+    </div>
+    <div class="ch-card" style="border-style:dashed;background:#fafafa;">
+      <span class="ch-type" style="background:#f3f4f6;color:#6b7280;">To validate</span>
+      <div class="ch-name">In-app Messaging (Extranet)</div>
+      <div class="ch-reach">Triggered messages within the partner extranet interface. Separate from push notifications. Confirm whether this runs via Salesforce Marketing Cloud or a separate system.</div>
+      <div class="ch-weight-row">
+        <span class="ch-wlabel">Weight</span>
+        <div class="ch-wtrack"><div class="ch-wfill" style="width:80%"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="src-note"><strong>Sources:</strong> <a href="https://partner.booking.com/en-gb/solutions/extranet" target="_blank" rel="noopener">Booking.com Extranet</a> · <a href="https://partner.booking.com/en-gb/campaign/sign-partner-hub-newsletter" target="_blank" rel="noopener">Partner Newsletter signup</a> · <a href="https://partner.booking.com/en-us/community/events-and-webinars/webinars" target="_blank" rel="noopener">Webinars</a> · <a href="https://sg.gpj.com/case-study/booking-com-click-apac-2024/" target="_blank" rel="noopener">Click. APAC 2024</a> · Weight = campaign marketing relevance, not operational reach</div>
+
+  <!-- GENIUS PROGRAMME -->
+  <div class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Partner Programme</div>
+      <div class="sec-title">Genius — the primary partner engagement lever</div>
+    </div>
+  </div>
+
+  <div class="genius-box">
+    <div class="genius-stat">
+      <div class="genius-num">850K</div>
+      <div class="genius-label">Properties enrolled</div>
+    </div>
+    <div class="genius-stat">
+      <div class="genius-num">+45%</div>
+      <div class="genius-label">Bookings uplift (avg)</div>
+    </div>
+    <div class="genius-stat">
+      <div class="genius-num">50%</div>
+      <div class="genius-label">Room nights from Genius L2+L3 travellers</div>
+    </div>
+  </div>
+  <div class="src-note"><strong>Sources:</strong> Genius programme stats: <a href="https://partner.booking.com/en-us/solutions/genius_program" target="_blank" rel="noopener">partner.booking.com/genius</a> · +70% search views, +45% bookings, +40% revenue per enrolled property cited by Booking.com partner materials · L2+L3 = 30% of active customers driving 50% of room nights: <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm" target="_blank" rel="noopener">8-K Q4 2025</a></div>
+  <p style="margin-top:14px;font-size:13.5px;color:#1f1f1f;line-height:1.65;max-width:860px;">Genius is the most direct connection between partner marketing actions and measurable booking outcomes. Getting more of the 4M partners enrolled — and activated within the programme — is the clearest business impact path for this role. 850K enrolled of 4M total = 21% penetration. The remaining 79% is the opportunity.</p>
+
+  <!-- KPIS -->
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">Full KPI framework — four layers</div>
+    </div>
+  </div>
+
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">North Star — business impact</div>
+      <div class="kpi-row two">
+        <div class="kpi-card">
+          <div class="kpi-name">Partner activation rate</div>
+          <div class="kpi-desc">% of new partners completing onboarding and taking their first booking within 30 days of listing</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Influenced room nights</div>
+          <div class="kpi-desc">Incremental bookings attributable to partner marketing programmes vs. a control group (holdout test)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Channel performance — health of individual communications</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Email open rate &amp; CTR</div>
+          <div class="kpi-desc">Click-to-open rate is more diagnostic than open rate alone — isolates content quality from deliverability</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Push tap-through rate</div>
+          <div class="kpi-desc">% of push notifications tapped. Opt-out rate is the warning signal — rising opt-outs = wrong targeting or frequency</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">In-app engagement rate</div>
+          <div class="kpi-desc">Interaction rate on extranet in-app messages and notifications — closest to the partner at the point of action</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Deliverability &amp; opt-out</div>
+          <div class="kpi-desc">Bounce rate + unsubscribe rate. These go up when over-messaging starts — the first canary in a fragmented channel model</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Journey performance — does the unified flow work</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Journey completion rate</div>
+          <div class="kpi-desc">% of partners completing a given journey vs. dropping out. Each drop-off point is a specific fix</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Conversion rate per stage</div>
+          <div class="kpi-desc">% taking the intended action at each journey step: activate listing, add photos, enrol in Genius, adopt a new feature</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Time-to-first-booking</div>
+          <div class="kpi-desc">Days from partner signup to first confirmed booking — a direct measure of onboarding journey effectiveness</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Channel attribution</div>
+          <div class="kpi-desc">Which channel drove the action in a multi-channel journey — required to allocate budget and optimise the mix</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Partner engagement — long-term health</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Programme adoption rate</div>
+          <div class="kpi-desc">% of partners enrolling in Genius, Preferred Programme, or other central initiatives after a marketing push</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Partner CSAT / NPS</div>
+          <div class="kpi-desc">Satisfaction score from accommodation partners. The JD explicitly names "sustained positive stakeholder feedback" as a success metric</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Retention &amp; reactivation</div>
+          <div class="kpi-desc">% of partners active vs. dormant. Reactivation rate measures whether win-back journeys work</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Engagement depth</div>
+          <div class="kpi-desc">Number of features or programmes a partner uses — a proxy for how deeply embedded in the Booking.com ecosystem they are</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Operational — field marketing framework (formal JD requirement)</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Regional plan delivery</div>
+          <div class="kpi-desc">% of regional teams executing central campaigns on time and on brief. The baseline metric for global consistency</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Central campaign adoption</div>
+          <div class="kpi-desc">% of central campaigns taken up and localised by regional field teams — measures the operating framework's effectiveness</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Stakeholder feedback score</div>
+          <div class="kpi-desc">Rating from account management teams on quality and usefulness of marketing support — named explicitly in the JD</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Inbound request SLA</div>
+          <div class="kpi-desc">Turnaround time on ad-hoc inbound marketing requests from regional or account management teams</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTNER MIX -->
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Partner base</div>
+      <div class="sec-title">The partner split — and why it matters for campaigns</div>
+    </div>
+  </div>
+
+  <div class="split-row">
+    <div class="split-card accent">
+      <div class="split-num">3.5M</div>
+      <div class="split-label">Homes, Apartments &amp; Unique Stays</div>
+      <div class="split-desc">87.5% of all partners. Individual hosts and small operators. Alternative accommodations grew 12% in Q1 2025 — nearly double the overall platform rate of 7%. Increasingly the business driver.</div>
+    </div>
+    <div class="split-card">
+      <div class="split-num">500K</div>
+      <div class="split-label">Hotels, Motels &amp; Resorts</div>
+      <div class="split-desc">12.5% of partners. Professional hotel operators with revenue managers. Higher average booking value per property. Historically the primary audience for central partner marketing campaigns.</div>
+    </div>
+  </div>
+
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label">Homes &amp; Apartments</div>
+      <div class="bar-track"><div class="bar-fill" style="width:87.5%;background:#003580;">87.5% of partner base</div></div>
+      <div class="bar-val">3.5M</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Hotels &amp; Resorts</div>
+      <div class="bar-track"><div class="bar-fill" style="width:12.5%;background:#febb02;color:#0a0f1a;">12.5%</div></div>
+      <div class="bar-val">~500K</div>
+    </div>
+  </div>
+  <div class="src-note"><strong>Sources:</strong> Partner count: <a href="https://www.sec.gov/Archives/edgar/data/1075531/000107553125000010/bkng-20241231.htm" target="_blank" rel="noopener">10-K FY2024</a> · Alternative accommodation room night growth Q1 2025: <a href="https://www.sec.gov/Archives/edgar/data/0001075531/000107553125000021/bkngq12025earningspressr.htm" target="_blank" rel="noopener">8-K Q1 2025, SEC</a></div>
+
+  <!-- PRIORITY STACK -->
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Approach</div>
+      <div class="sec-title">Priority stack for this role</div>
+    </div>
+  </div>
+
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead>
+        <tr>
+          <th style="width:36px;">#</th>
+          <th>Action</th>
+          <th>Why first</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pri-num">1</span></td>
+          <td><strong>Audit partner journey touchpoints</strong> by channel, region, and partner type (hotel vs non-hotel)</td>
+          <td>Can't build one journey without knowing what exists — and where channels overlap or conflict today</td>
+          <td>Journey map: who gets what, on which channel, when</td>
+        </tr>
+        <tr>
+          <td><span class="pri-num">2</span></td>
+          <td><strong>Define channel governance</strong> — ownership, triggers, content rules, frequency caps, conflict resolution</td>
+          <td>Governance is the prerequisite for consistency. Without it, every channel team keeps optimising in isolation</td>
+          <td>Operating framework; sign-off from channel leads and tech</td>
+        </tr>
+        <tr>
+          <td><span class="pri-num">3</span></td>
+          <td><strong>Segment the partner base</strong> by type and lifecycle stage (onboarding, active, at-risk, dormant)</td>
+          <td>Segment-specific journeys outperform generic ones. 3.5M non-hotel partners are underserved by hotel-first campaigns</td>
+          <td>Segmentation taxonomy; CRM data requirements per segment</td>
+        </tr>
+        <tr>
+          <td><span class="pri-num">4</span></td>
+          <td><strong>Build and run the first unified pilot</strong> — onboarding journey, one region, all channels coordinated</td>
+          <td>Proves the model works before scaling globally. Gives regional teams a concrete template to adapt</td>
+          <td>Pilot results vs. baseline; stakeholder case for rollout</td>
+        </tr>
+        <tr>
+          <td><span class="pri-num">5</span></td>
+          <td><strong>Roll out the field marketing framework globally</strong> — KPIs, reporting, central-to-local feedback loop</td>
+          <td>The formal JD requirement: global consistency, local execution, measurable performance per region</td>
+          <td>Regional KPI dashboards; quarterly central-local review rhythm</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="src-note" style="margin-top:16px;"><strong>Tech note:</strong> Salesforce CRM (Sales Cloud + Service Cloud) is confirmed in Booking.com's Strategic Partnerships team. Whether Salesforce Marketing Cloud is the outbound partner communications platform is not confirmed in public sources — to validate in interview 1. Source: <a href="https://www.partnerbase.com/booking-com/salesforce" target="_blank" rel="noopener">Partnerbase</a></div>
+
+</main>
+
+<footer style="background:#003580;color:rgba(255,255,255,.5);text-align:center;padding:18px 24px;font-size:11.5px;">
+  Private brief · Not indexed · trendsonfire.com · Olga Bressers
+</footer>
+
+</body>
+</html>
