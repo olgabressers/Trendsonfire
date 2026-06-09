@@ -253,19 +253,42 @@
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:18px;">
       <div>
         <div class="chart-title">Revenue &amp; Marketing Spend — Booking Holdings</div>
-        <div class="chart-sub">2019–2025 · Shared scale, max $26.9B · Navy = revenue · Gold = marketing spend · Marketing never exceeded 25% of revenue</div>
+        <div class="chart-sub">2019–2025 · Bars: shared dollar scale, max $26.9B · Line: marketing spend as % of revenue (secondary scale 20–40%)</div>
       </div>
-      <div style="display:flex;gap:14px;align-items:center;flex-shrink:0;">
+      <div style="display:flex;gap:14px;align-items:center;flex-shrink:0;flex-wrap:wrap;">
         <span style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0a0f1a;"><span style="display:inline-block;width:12px;height:12px;background:#003580;border-radius:2px;"></span>Revenue</span>
-        <span style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0a0f1a;"><span style="display:inline-block;width:12px;height:12px;background:#febb02;border-radius:2px;"></span>Marketing</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#0a0f1a;"><span style="display:inline-block;width:12px;height:12px;background:#febb02;border-radius:2px;"></span>Marketing spend</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#8B6914;">
+          <span style="position:relative;display:inline-flex;align-items:center;width:26px;height:14px;">
+            <span style="position:absolute;left:0;right:0;top:50%;height:2px;background:#febb02;transform:translateY(-50%);"></span>
+            <span style="position:absolute;left:50%;top:50%;width:7px;height:7px;background:#febb02;border:1.5px solid white;border-radius:50%;transform:translate(-50%,-50%);"></span>
+          </span>
+          Mktg % of revenue
+        </span>
       </div>
     </div>
 
     <!-- BARS -->
     <div style="display:flex;align-items:flex-end;gap:5px;height:240px;border-bottom:2px solid #e2dfd9;overflow-x:auto;min-width:0;position:relative;">
-      <!-- Reference line at $6.8B marketing ceiling = 25.3% of $26.9B scale -->
-      <div style="position:absolute;left:0;right:0;bottom:25.3%;border-top:1px dashed rgba(254,187,2,.6);pointer-events:none;z-index:0;"></div>
-      <div style="position:absolute;right:2px;bottom:calc(25.3% + 4px);font-size:9.5px;font-weight:700;color:#b8860b;pointer-events:none;z-index:0;">$6.8B</div>
+      <!-- Marketing % of revenue trend line (secondary scale: 20%→bottom, 40%→top) -->
+      <!-- Data: 2020=32%, 2021=35%, 2022=35%, 2023=32%, 2024=29%  -->
+      <!-- y = (1 - (value-20)/20) * 100  →  32%→40, 35%→25, 29%→55 -->
+      <!-- x = center of gold bar for each year (% of total flex width) -->
+      <svg style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polyline points="21,40 38,25 54,25 71,40 87,55" fill="none" stroke="#febb02" stroke-width="0.5" stroke-linejoin="round"/>
+      </svg>
+      <!-- Dots (HTML, not SVG, so they stay circular despite chart aspect ratio) -->
+      <div style="position:absolute;left:21%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:38%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:54%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:71%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:87%;top:55%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <!-- % labels above each dot -->
+      <div style="position:absolute;left:21%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
+      <div style="position:absolute;left:38%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
+      <div style="position:absolute;left:54%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
+      <div style="position:absolute;left:71%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
+      <div style="position:absolute;left:87%;top:48%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">29%</div>
 
       <!-- 2019: revenue only -->
       <div style="flex:1;min-width:32px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
