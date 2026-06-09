@@ -275,20 +275,22 @@
       <!-- y = (1 - (value-20)/20) * 100  →  32%→40, 35%→25, 29%→55 -->
       <!-- x = center of gold bar for each year (% of total flex width) -->
       <svg style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polyline points="21,40 38,25 54,25 71,40 87,55" fill="none" stroke="#febb02" stroke-width="0.5" stroke-linejoin="round"/>
+        <polyline points="20,40 35,25 50,25 66,40 81,55 96,50" fill="none" stroke="#febb02" stroke-width="0.5" stroke-linejoin="round"/>
       </svg>
       <!-- Dots (HTML, not SVG, so they stay circular despite chart aspect ratio) -->
-      <div style="position:absolute;left:21%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
-      <div style="position:absolute;left:38%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
-      <div style="position:absolute;left:54%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
-      <div style="position:absolute;left:71%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
-      <div style="position:absolute;left:87%;top:55%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:20%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:35%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:50%;top:25%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:66%;top:40%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:81%;top:55%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
+      <div style="position:absolute;left:96%;top:50%;width:9px;height:9px;background:#febb02;border-radius:50%;border:1.5px solid white;transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.1);"></div>
       <!-- % labels above each dot -->
-      <div style="position:absolute;left:21%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
-      <div style="position:absolute;left:38%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
-      <div style="position:absolute;left:54%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
-      <div style="position:absolute;left:71%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
-      <div style="position:absolute;left:87%;top:48%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">29%</div>
+      <div style="position:absolute;left:20%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
+      <div style="position:absolute;left:35%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
+      <div style="position:absolute;left:50%;top:18%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">35%</div>
+      <div style="position:absolute;left:66%;top:33%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">32%</div>
+      <div style="position:absolute;left:81%;top:48%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">29%</div>
+      <div style="position:absolute;left:96%;top:43%;transform:translateX(-50%);font-size:10px;font-weight:700;color:#8B6914;pointer-events:none;white-space:nowrap;line-height:1;">30%</div>
 
       <!-- 2019: revenue only -->
       <div style="flex:1;min-width:32px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
@@ -356,10 +358,16 @@
         </div>
       </div>
 
-      <!-- 2025: revenue only (latest, gold border) -->
-      <div style="flex:1;min-width:32px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-        <span style="font-size:11.5px;font-weight:800;color:#003580;margin-bottom:3px;white-space:nowrap;">$26.9B</span>
-        <div style="width:75%;background:#003580;border-radius:2px 2px 0 0;height:100%;box-shadow:0 0 0 2px #febb02;"></div>
+      <!-- 2025: revenue + marketing -->
+      <div style="flex:1.8;min-width:56px;display:flex;align-items:flex-end;gap:3px;justify-content:center;height:100%;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+          <span style="font-size:11px;font-weight:800;color:#003580;margin-bottom:3px;white-space:nowrap;">$26.9B</span>
+          <div style="width:80%;background:#003580;border-radius:2px 2px 0 0;height:100%;box-shadow:0 0 0 2px #febb02;"></div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+          <span style="font-size:11px;font-weight:700;color:#0a0f1a;margin-bottom:3px;white-space:nowrap;">$8.2B</span>
+          <div style="width:80%;background:#febb02;border-radius:2px 2px 0 0;height:30.5%;"></div>
+        </div>
       </div>
 
     </div><!-- end bars -->
@@ -393,9 +401,10 @@
         <div style="font-size:11px;color:#16a34a;font-weight:700;margin-top:2px;">Rev +11%</div>
         <div style="font-size:11px;color:#6b7280;font-weight:700;">Mktg 0%</div>
       </div>
-      <div style="flex:1;min-width:32px;text-align:center;">
+      <div style="flex:1.8;min-width:56px;text-align:center;">
         <div style="font-size:12px;font-weight:800;color:#003580;">2025</div>
         <div style="font-size:11px;color:#16a34a;font-weight:700;margin-top:2px;">Rev +13%</div>
+        <div style="font-size:11px;color:#d97706;font-weight:700;">Mktg +20%</div>
       </div>
     </div>
 
@@ -429,7 +438,7 @@
               <td style="padding:8px 12px;border-bottom:1px solid #e8e5e0;text-align:center;font-weight:700;color:#d97706;">+58%</td>
               <td style="padding:8px 12px;border-bottom:1px solid #e8e5e0;text-align:center;font-weight:700;color:#d97706;">+13%</td>
               <td style="padding:8px 12px;border-bottom:1px solid #e8e5e0;text-align:center;font-weight:700;color:#6b7280;">0%</td>
-              <td style="padding:8px 12px;border-bottom:1px solid #e8e5e0;text-align:center;color:#9ca3af;">—</td>
+              <td style="padding:8px 12px;border-bottom:1px solid #e8e5e0;text-align:center;font-weight:700;color:#d97706;">+20%</td>
             </tr>
             <tr>
               <td style="padding:8px 12px;font-weight:700;color:#0a0f1a;white-space:nowrap;">Marketing as % of revenue</td>
@@ -437,7 +446,7 @@
               <td style="padding:8px 12px;text-align:center;color:#1f1f1f;">35%</td>
               <td style="padding:8px 12px;text-align:center;color:#1f1f1f;">32%</td>
               <td style="padding:8px 12px;text-align:center;font-weight:700;color:#003580;">29%</td>
-              <td style="padding:8px 12px;text-align:center;color:#9ca3af;">—</td>
+              <td style="padding:8px 12px;text-align:center;font-weight:700;color:#d97706;">30%</td>
             </tr>
           </tbody>
         </table>
@@ -464,44 +473,64 @@
 
     <p style="font-size:13.5px;color:#0a0f1a;line-height:1.65;margin:0 0 24px;max-width:860px;">Booking Holdings is the largest OTA globally by revenue. The gap with its nearest rivals has widened every year since 2022 — Booking grew 39% between 2022 and 2024, nearly three times faster than Expedia (15%). Airbnb is the direct competitor in alternative accommodations, Booking's fastest-growing partner segment. Trip.com dominates Asia and is the only competitor growing faster than Booking year-on-year.</p>
 
-    <!-- 2024 REVENUE BAR CHART -->
-    <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#003580;margin-bottom:12px;">2024 revenue — four-company comparison · bars indexed to Booking $23.7B = 100%</div>
+    <!-- 2024 REVENUE + MARKETING BAR CHART -->
+    <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#003580;margin-bottom:10px;">2024 revenue — four-company comparison · bars indexed to Booking $23.7B = 100%</div>
+    <div style="display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+      <span style="display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:#0a0f1a;"><span style="display:inline-block;width:14px;height:10px;background:#003580;border-radius:1px;"></span>Revenue</span>
+      <span style="display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:#8B6914;"><span style="display:inline-block;width:14px;height:10px;background:#febb02;border-radius:1px;"></span>Marketing spend</span>
+    </div>
     <div class="bar-chart" style="margin-bottom:28px;">
 
-      <div style="margin-bottom:13px;">
-        <div class="bar-row" style="margin-bottom:4px;">
+      <div style="margin-bottom:14px;">
+        <div class="bar-row" style="margin-bottom:3px;">
           <div class="bar-label">Booking Holdings</div>
           <div class="bar-track"><div class="bar-fill" style="width:100%;background:#003580;">$23.7B &nbsp;·&nbsp; +11% YoY</div></div>
           <div class="bar-val">$23.7B</div>
         </div>
-        <div style="margin-left:150px;font-size:11px;color:#4b5563;line-height:1.4;">Mktg: <strong style="color:#0a0f1a;">$6.8B</strong> &nbsp;·&nbsp; <strong style="color:#16a34a;">29% of rev</strong> &ensp;<span style="color:#9ca3af;">flat 2 years · most efficient ratio since pre-pandemic</span></div>
+        <div class="bar-row" style="margin-bottom:0;">
+          <div class="bar-label" style="font-size:10.5px;color:#8B6914;font-weight:700;">└ Mktg · 29% of rev</div>
+          <div class="bar-track" style="height:20px;background:#fefce8;"><div style="width:29%;height:100%;background:#febb02;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#0a0f1a;">$6.8B</div></div>
+          <div class="bar-val" style="font-size:11px;color:#8B6914;">$6.8B</div>
+        </div>
       </div>
 
-      <div style="margin-bottom:13px;">
-        <div class="bar-row" style="margin-bottom:4px;">
+      <div style="margin-bottom:14px;">
+        <div class="bar-row" style="margin-bottom:3px;">
           <div class="bar-label">Expedia Group</div>
           <div class="bar-track"><div class="bar-fill" style="width:62%;background:#1e40af;">$14.7B &nbsp;·&nbsp; +7% YoY</div></div>
           <div class="bar-val">$14.7B</div>
         </div>
-        <div style="margin-left:150px;font-size:11px;color:#4b5563;line-height:1.4;">Mktg: <strong style="color:#0a0f1a;">$7.6B</strong> &nbsp;·&nbsp; <strong style="color:#dc2626;">52% of rev</strong> &ensp;<span style="color:#9ca3af;">spending more, growing less</span></div>
+        <div class="bar-row" style="margin-bottom:0;">
+          <div class="bar-label" style="font-size:10.5px;color:#dc2626;font-weight:700;">└ Mktg · 52% of rev</div>
+          <div class="bar-track" style="height:20px;background:#fff1f2;"><div style="width:32%;height:100%;background:#febb02;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#0a0f1a;">$7.6B</div></div>
+          <div class="bar-val" style="font-size:11px;color:#dc2626;">$7.6B</div>
+        </div>
       </div>
 
-      <div style="margin-bottom:13px;">
-        <div class="bar-row" style="margin-bottom:4px;">
+      <div style="margin-bottom:14px;">
+        <div class="bar-row" style="margin-bottom:3px;">
           <div class="bar-label">Airbnb</div>
           <div class="bar-track"><div class="bar-fill" style="width:47%;background:#dc2626;">$11.1B &nbsp;·&nbsp; +12% YoY</div></div>
           <div class="bar-val">$11.1B</div>
         </div>
-        <div style="margin-left:150px;font-size:11px;color:#4b5563;line-height:1.4;">Mktg: <strong style="color:#0a0f1a;">$2.1B</strong> &nbsp;·&nbsp; <strong style="color:#d97706;">19% of rev</strong> &ensp;<span style="color:#9ca3af;">brand-first model · TV &amp; OOH, no performance scale</span></div>
+        <div class="bar-row" style="margin-bottom:0;">
+          <div class="bar-label" style="font-size:10.5px;color:#d97706;font-weight:700;">└ Mktg · 19% of rev</div>
+          <div class="bar-track" style="height:20px;background:#fffbeb;"><div style="width:9%;height:100%;background:#febb02;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#0a0f1a;">$2.1B</div></div>
+          <div class="bar-val" style="font-size:11px;color:#d97706;">$2.1B</div>
+        </div>
       </div>
 
       <div style="margin-bottom:4px;">
-        <div class="bar-row" style="margin-bottom:4px;">
+        <div class="bar-row" style="margin-bottom:3px;">
           <div class="bar-label">Trip.com</div>
           <div class="bar-track"><div class="bar-fill" style="width:32%;background:#0d9488;">$7.5B &nbsp;·&nbsp; +20% YoY</div></div>
           <div class="bar-val">$7.5B</div>
         </div>
-        <div style="margin-left:150px;font-size:11px;color:#4b5563;line-height:1.4;">Mktg: <strong style="color:#0a0f1a;">$1.6B</strong> &nbsp;·&nbsp; <strong style="color:#d97706;">21% of rev</strong> &ensp;<span style="color:#9ca3af;">rapid Asia expansion investment</span></div>
+        <div class="bar-row" style="margin-bottom:0;">
+          <div class="bar-label" style="font-size:10.5px;color:#d97706;font-weight:700;">└ Mktg · 21% of rev</div>
+          <div class="bar-track" style="height:20px;background:#fffbeb;"><div style="width:7%;height:100%;background:#febb02;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#0a0f1a;">$1.6B</div></div>
+          <div class="bar-val" style="font-size:11px;color:#d97706;">$1.6B</div>
+        </div>
       </div>
 
     </div>
