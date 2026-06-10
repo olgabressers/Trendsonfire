@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Beerwulf — Head of Customer Experience · Brief</title>
+<meta name="robots" content="noindex,nofollow"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a0f1a;
+  --navy-mid:#111827;
+  --gold:#b8976a;
+  --gold-light:#d4c4a8;
+  --gold-dark:#8b6a2f;
+  --fuchsia:#8b1a6a;
+  --cream:#faf9f7;
+  --rule:#e2dfd9;
+  --sub:#4e4e4e;
+  --ink:#0a0f1a;
+  --green:#059669;
+  --amber:#d97706;
+  --red:#c0392b;
+}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+
+/* NAV */
+nav{background:var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:52px;flex-wrap:wrap}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--gold);text-decoration:none;flex-shrink:0;letter-spacing:0.3px}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;padding:8px 0}
+.nav-links a{font-size:12px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;padding:5px 10px;border-radius:4px;letter-spacing:0.3px;white-space:nowrap;transition:color .15s}
+.nav-links a:hover{color:var(--gold)}
+
+/* COVER */
+.cover{background:var(--navy);color:white;padding:72px 56px 64px;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%, rgba(184,151,106,.12) 0%, transparent 55%);pointer-events:none}
+.cover-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.cover-left{flex:1;min-width:300px}
+.cover-tag{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.cover h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:62px;font-weight:600;line-height:1.0;letter-spacing:-1.5px;margin-bottom:10px}
+.cover h1 span{color:var(--gold);font-style:italic}
+.cover-desc{font-size:16px;color:rgba(255,255,255,.75);max-width:480px;line-height:1.6;margin-top:14px}
+.cover-right{text-align:right;flex-shrink:0}
+.cover-meta{font-size:13px;color:rgba(255,255,255,.7);letter-spacing:0.5px;line-height:1.8}
+.cover-meta strong{color:var(--gold);font-weight:700}
+.cover-date{font-size:13px;color:var(--gold-light);margin-top:10px;letter-spacing:1px;text-transform:uppercase}
+
+/* LAYOUT */
+.page{max-width:1160px;margin:0 auto;padding:56px 40px 80px}
+
+/* SECTION */
+.sec{margin-bottom:56px}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:14px;border-bottom:2px solid var(--fuchsia)}
+.sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:500;color:var(--gold);line-height:1;letter-spacing:-1px;flex-shrink:0}
+.sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.3px}
+
+/* STAT ROW */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-bottom:28px}
+.stat-row-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-bottom:28px}
+.stat-box{background:var(--cream);padding:20px 18px}
+.stat-box .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:5px}
+.stat-box .s-num.gold{color:var(--gold-dark)}
+.stat-box .s-num.fuchsia{color:var(--fuchsia)}
+.stat-box .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--ink);margin-bottom:3px}
+.stat-box .s-src{font-size:13px;color:var(--sub);margin-top:4px}
+
+/* BODY TEXT */
+p{font-size:14.5px;color:#2d2d2d;line-height:1.75;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+strong{font-weight:700;color:var(--ink)}
+
+/* CARDS GRID */
+.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px}
+.gap-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:8px}
+.gap-card{background:white;border:1px solid var(--rule);border-left:4px solid var(--navy);padding:20px 22px}
+.gap-card.amber{border-left-color:var(--amber)}
+.gap-card.green{border-left-color:var(--green)}
+.gap-card.red{border-left-color:var(--red)}
+.gap-card.fuchsia{border-left-color:var(--fuchsia)}
+.gap-card.gold{border-left-color:var(--gold-dark)}
+.gap-card .g-tag{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.gap-card .g-tag.navy{color:var(--navy)}
+.gap-card .g-tag.amber{color:var(--amber)}
+.gap-card .g-tag.green{color:var(--green)}
+.gap-card .g-tag.red{color:var(--red)}
+.gap-card .g-tag.fuchsia{color:var(--fuchsia)}
+.gap-card .g-tag.gold{color:var(--gold-dark)}
+.gap-card h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.gap-card p{font-size:13px;line-height:1.65;color:var(--sub);margin:0}
+
+/* PRIORITY CARDS */
+.priority{background:white;border:1px solid var(--rule);padding:28px 30px;margin-bottom:16px;position:relative;border-top:3px solid var(--gold-dark)}
+.priority.fuchsia{border-top-color:var(--fuchsia)}
+.priority .p-num{position:absolute;top:28px;right:28px;font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;font-weight:600;color:var(--rule);line-height:1}
+.priority .p-tag{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px}
+.priority.fuchsia .p-tag{color:var(--fuchsia)}
+.priority h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:14px;letter-spacing:-0.2px;max-width:80%}
+.priority p{font-size:13.5px;color:var(--sub);line-height:1.7;margin-bottom:12px}
+.priority ul{margin:10px 0 12px 18px}
+.priority ul li{font-size:13.5px;color:var(--sub);line-height:1.7;margin-bottom:6px}
+.priority .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.priority .kpi{background:#f3f4f6;padding:6px 14px;font-size:13px;font-weight:600;color:var(--ink);border-radius:4px}
+.priority .kpi.gold{background:rgba(184,151,106,.15);color:var(--gold-dark)}
+.priority .kpi.fuchsia{background:rgba(139,26,106,.1);color:var(--fuchsia)}
+
+/* INSIGHT BOX */
+.insight{background:var(--navy);color:white;padding:24px 28px;border-left:4px solid var(--fuchsia);margin-bottom:28px}
+.insight .i-label{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.insight p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin:0}
+.insight p strong{color:white}
+
+/* FIT TABLE */
+.fit-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.fit-table th{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--ink);padding:10px 16px;background:#f3f4f6;text-align:left;border-bottom:2px solid var(--rule)}
+.fit-table td{padding:14px 16px;border-bottom:1px solid var(--rule);font-size:13.5px;vertical-align:top;line-height:1.6}
+.fit-table tr:last-child td{border-bottom:none}
+.fit-table td:first-child{font-weight:600;color:var(--ink);width:35%}
+.fit-table td:last-child{color:var(--sub)}
+.badge{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:4px}
+.badge.green{background:rgba(5,150,105,.1);color:var(--green)}
+.badge.amber{background:rgba(217,119,6,.1);color:var(--amber)}
+.badge.red{background:rgba(192,57,43,.1);color:var(--red)}
+
+/* SOURCE LINE */
+.src-line{font-size:12px;color:var(--sub);padding:10px 14px;background:#f9fafb;border-left:3px solid var(--rule);margin-top:10px;line-height:1.6}
+.src-line a{color:var(--gold-dark);text-decoration:underline}
+
+/* TREND ITEM */
+.trend-list{margin:0;padding:0;list-style:none}
+.trend-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.trend-item:last-child{border-bottom:none}
+.trend-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--gold);line-height:1;flex-shrink:0;min-width:28px;margin-top:2px}
+.trend-body h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.trend-body p{font-size:13.5px;color:var(--sub);line-height:1.65;margin:0}
+.trend-body .stat-pill{display:inline-block;background:rgba(139,26,106,.08);color:var(--fuchsia);font-size:12px;font-weight:700;padding:2px 10px;border-radius:3px;margin-right:6px;margin-top:6px}
+
+/* ABOUT STRIP */
+.about-strip{background:var(--navy);padding:40px 56px}
+.about-strip .inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.about-strip .label{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.about-strip p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;max-width:600px;margin-bottom:6px}
+.about-strip p:last-of-type{margin-bottom:0}
+.btn{display:inline-block;padding:12px 24px;background:var(--gold);color:var(--navy);font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.5px;margin-top:16px}
+.btn:hover{background:var(--gold-light)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .cover{padding:48px 28px 40px}
+  .cover h1{font-size:40px}
+  .page{padding:36px 20px 60px}
+  .stat-row,.stat-row-3{grid-template-columns:1fr 1fr}
+  .gap-grid,.gap-grid-3{grid-template-columns:1fr}
+  nav{padding:0 20px}
+  .about-strip{padding:36px 28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">TrendsOnFire</a>
+  <div class="nav-links">
+    <a href="../retail/index.html">Retail &amp; E-Commerce</a>
+    <a href="../people/index.html">People &amp; Transformation</a>
+    <a href="../technology/index.html">Technology &amp; Media</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education/index.html">Education &amp; Government</a>
+    <a href="../finance-compliance/index.html">Finance &amp; Compliance</a>
+    <a href="../real-estate/index.html">Real Estate</a>
+    <a href="../olgabressers/index.html">About the Author</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-left">
+      <div class="cover-tag">Interview Brief · Confidential</div>
+      <h1>Beerwulf<br/><span>Head of Customer Experience</span></h1>
+      <div class="cover-desc">Beerwulf is Heineken's direct-to-consumer e-commerce platform for home draught beer, operating across 7 European markets. The Head of CX role owns customer operations, email engagement, BPO performance, and privacy compliance across all markets.</div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-meta">
+        <strong>Company</strong><br/>Beerwulf / The HEINEKEN Company<br/><br/>
+        <strong>Role</strong><br/>Head of Customer Experience<br/><br/>
+        <strong>Location</strong><br/>Amsterdam (Hybrid)<br/><br/>
+        <strong>Salary range</strong><br/>€75,156 – €93,936 gross
+      </div>
+      <div class="cover-date">Updated 11 June 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page">
+
+  <!-- 01 COMPANY SNAPSHOT -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div class="sec-title">Company Snapshot</div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="s-num gold">2017</div>
+        <div class="s-lbl">Launch year</div>
+        <div class="s-src">Idea to market in 9 months</div>
+      </div>
+      <div class="stat-box">
+        <div class="s-num">7</div>
+        <div class="s-lbl">European markets</div>
+        <div class="s-src">NL, BE, UK, DE, FR, AT, IT</div>
+      </div>
+      <div class="stat-box">
+        <div class="s-num gold">51K+</div>
+        <div class="s-lbl">Trustpilot reviews</div>
+        <div class="s-src">Score: 4.0 / 5.0 ("Great")</div>
+      </div>
+      <div class="stat-box">
+        <div class="s-num">873+</div>
+        <div class="s-lbl">Beer SKUs</div>
+        <div class="s-src">From 150+ brewers, 20 countries</div>
+      </div>
+    </div>
+    <div class="src-line">Sources: <a href="https://www.bundl.com/articles/examples-how-heineken-disrupted-the-craft-beer-market" target="_blank" rel="noopener">Bundl — How Heineken disrupted the craft beer market</a> · <a href="https://eu.beerwulf.com/nl-nl" target="_blank" rel="noopener">beerwulf.com</a> · Trustpilot (beerwulf.com, 2025)</div>
+
+    <p>Beerwulf was created by Heineken in 2016 as a standalone venture reporting directly to Heineken's board, with its own decision-making authority. It operates as a retailer — not a brewer — selling competitors' brands alongside Heineken's own portfolio. The platform launched to the public in March 2017 after a 9-month build and grew from 400 orders per week to 400 orders per hour within its first year.</p>
+
+    <p>The business is built around the <strong>BLADE home draught system</strong>: a professional-grade beer tap appliance for home use, paired with an ongoing supply of 8-litre kegs across Heineken's brand portfolio. The model combines a hardware sale with a recurring keg subscription — a hybrid physical/digital commerce model operating across 7 European markets simultaneously.</p>
+
+    <div class="insight">
+      <div class="i-label">Context for the CX role</div>
+      <p>Beerwulf's customer lifecycle spans hardware purchase → keg subscription → multi-market delivery → hardware support. Each step generates distinct CX needs: onboarding (setup, first pour), subscription management, logistics queries, and hardware failure resolution. The Head of CX sits at the intersection of all of them, operating across BPO-managed customer care in multiple languages.</p>
+    </div>
+  </div>
+
+  <!-- 02 PRODUCT & CUSTOMER MODEL -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-title">Product &amp; Customer Model</div>
+    </div>
+
+    <div class="gap-grid">
+      <div class="gap-card gold">
+        <div class="g-tag gold">BLADE System</div>
+        <h4>Home draught hardware + recurring keg supply</h4>
+        <p>8-litre kegs chilled to 2°C. Stays fresh for 30 days. Approx. 14 pints per keg. Per-pint cost from £1.98. Dimensions: 590×290×471mm. 17.6kg base weight. No CO₂ required. Standard warranty 2 years; extended warranty £49 for 3 years. Brands: Heineken, Birra Moretti, Cruzcampo, Tiger, Affligem, Edelweiss, Gösser, and others.</p>
+      </div>
+      <div class="gap-card navy">
+        <div class="g-tag navy">Subscription &amp; Repeat Purchase</div>
+        <h4>Monthly and bi-monthly keg delivery options</h4>
+        <p>Subscription model available for frequent buyers — monthly or bi-monthly cadence. The recurring revenue model creates predictable fulfilment demand and a defined lifecycle: acquisition → first hardware purchase → keg subscription → retention. Subscription health is a key leading indicator for CX performance: early churn typically tied to setup friction or delivery experience.</p>
+      </div>
+      <div class="gap-card amber">
+        <div class="g-tag amber">B2B Channel</div>
+        <h4>BLADE for Business — hospitality and office use</h4>
+        <p>Separate B2B proposition for bars, offices, and hospitality venues. Originally a hospitality product, BLADE has a distinct B2B support and fulfilment track. B2B customers have higher keg volume, different SLA expectations, and distinct onboarding needs versus consumers.</p>
+      </div>
+      <div class="gap-card red">
+        <div class="g-tag red">Discontinuation Risk</div>
+        <h4>The SUB: discontinued May 2024</h4>
+        <p>The SUB Classic and SUB Compact were discontinued from May 2024. 2-litre SUB kegs discontinued December 2025. Generated significant customer dissatisfaction: owners with 18-month-old machines left with no keg supply. Communication of the decision was flagged by customers as insufficient. This is a live CX legacy issue the incoming Head of CX will inherit.</p>
+      </div>
+    </div>
+    <div class="src-line">Sources: <a href="https://beerwulf.com/pages/blade" target="_blank" rel="noopener">beerwulf.com/pages/blade</a> · <a href="https://beerwulf.com/pages/blade-beer-machine-for-business" target="_blank" rel="noopener">BLADE For Business</a> · Trustpilot customer reviews (beerwulf.com, 2025)</div>
+  </div>
+
+  <!-- 03 CX PERFORMANCE -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-title">CX Performance &amp; Customer Signals</div>
+    </div>
+
+    <div class="stat-row-3">
+      <div class="stat-box">
+        <div class="s-num gold">4.0 / 5</div>
+        <div class="s-lbl">Trustpilot score</div>
+        <div class="s-src">Rated "Great" · 51,000+ reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="s-num fuchsia">7</div>
+        <div class="s-lbl">Markets, one CX team</div>
+        <div class="s-src">Multi-language BPO operation</div>
+      </div>
+      <div class="stat-box">
+        <div class="s-num">2024</div>
+        <div class="s-lbl">SUB discontinuation</div>
+        <div class="s-src">Live legacy complaint volume</div>
+      </div>
+    </div>
+    <div class="src-line">Source: Trustpilot (beerwulf.com) · Beerwulf support pages (gb-support.beerwulf.com)</div>
+
+    <p>Beerwulf's Trustpilot profile shows a pattern consistent with a multi-market subscription hardware business: strong scores for product quality and delivery when things work; concentrated complaint volume around hardware issues, customer service responsiveness, and the SUB discontinuation. The 4.0 score across 51,000+ reviews indicates a structurally functional CX operation with identifiable gaps — not a broken one.</p>
+
+    <p>Key CX pressure points from the public review record: <strong>speed of resolution on hardware faults</strong>, <strong>clarity of communication during product changes</strong> (the SUB discontinuation), and <strong>consistency of service quality across markets</strong>. These map directly to the core scope of the Head of CX role: BPO performance, SLA management, and proactive customer communication.</p>
+
+    <div class="insight">
+      <div class="i-label">What the review data signals for the incoming Head of CX</div>
+      <p>A 4.0 score on 51K reviews is a solid baseline. The gap between 4.0 and 4.4–4.5 sits in resolution speed and proactive communication. The SUB discontinuation created a customer trust deficit that is still generating complaints. The near-term CX priority is structured resolution of legacy hardware complaints and a communication playbook for future product transitions — not a full CX rebuild.</p>
+    </div>
+  </div>
+
+  <!-- 04 THE ROLE -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-title">The Role: Scope &amp; Accountability</div>
+    </div>
+
+    <p>The Head of Customer Experience at Beerwulf owns five distinct accountability areas simultaneously. The role is director-level, reporting into the commercial leadership team, and acts as the <strong>Privacy Officer for all CX-related customer data</strong> — adding a GDPR compliance dimension to a commercial operations role.</p>
+
+    <div class="priority">
+      <div class="p-num">01</div>
+      <div class="p-tag">Customer Operations</div>
+      <h3>End-to-end care performance across 7 markets</h3>
+      <p>Overseeing customer care, managing BPO (Business Process Outsourcing) partners, maintaining SLA performance, and resource forecasting across multiple languages and markets. The BPO management dimension is significant: Beerwulf's scale across 7 European markets means customer care is almost certainly outsourced, with the Head of CX accountable for partner performance rather than direct team management of agents.</p>
+      <div class="kpis">
+        <div class="kpi">SLA performance</div>
+        <div class="kpi">BPO partner management</div>
+        <div class="kpi">Resource forecasting</div>
+        <div class="kpi gold">7 markets · multi-language</div>
+      </div>
+    </div>
+
+    <div class="priority">
+      <div class="p-num">02</div>
+      <div class="p-tag">Customer Engagement</div>
+      <h3>Email, content strategy, and commercial outcomes</h3>
+      <p>Leading email and content strategies with a direct link to commercial performance — retention, upsell, and subscription renewal. This is an unusually commercial scope for a CX role: the Head of CX is responsible not just for resolving issues, but for driving revenue through engagement channels.</p>
+      <div class="kpis">
+        <div class="kpi">Email programme ownership</div>
+        <div class="kpi">Content strategy</div>
+        <div class="kpi gold">Engagement → revenue link</div>
+        <div class="kpi">Subscription retention</div>
+      </div>
+    </div>
+
+    <div class="priority">
+      <div class="p-num">03</div>
+      <div class="p-tag">Voice of Customer</div>
+      <h3>Customer intelligence into business decisions</h3>
+      <p>Acting as the customer voice at leadership level. Converting customer feedback into actionable insights and contributing to structured intelligence approaches. This means translating Trustpilot data, NPS, support ticket themes, and email engagement signals into a coherent picture for the commercial team — not just reporting metrics, but framing the strategic implication.</p>
+      <div class="kpis">
+        <div class="kpi">NPS / CSAT management</div>
+        <div class="kpi">Feedback-to-insight loop</div>
+        <div class="kpi gold">Leadership-level advocacy</div>
+      </div>
+    </div>
+
+    <div class="priority fuchsia">
+      <div class="p-num">04</div>
+      <div class="p-tag fuchsia">Privacy Officer (GDPR)</div>
+      <h3>Data compliance for all CX functions</h3>
+      <p>Serving as Privacy Officer for customer experience functions with GDPR oversight. This is a named compliance accountability — not a shared responsibility. For a multi-market e-commerce business with subscription data, email marketing, and BPO partners processing customer data across 7 EU countries, this is a substantive legal and operational responsibility.</p>
+      <div class="kpis">
+        <div class="kpi fuchsia">GDPR Privacy Officer</div>
+        <div class="kpi">Data processing agreements</div>
+        <div class="kpi">Email consent management</div>
+        <div class="kpi">BPO data handling compliance</div>
+      </div>
+    </div>
+
+    <div class="priority">
+      <div class="p-num">05</div>
+      <div class="p-tag">Technology &amp; Budget</div>
+      <h3>CX tooling, systems, and operational budget</h3>
+      <p>Overseeing the customer experience budget and identifying and implementing tools for improved capabilities. This includes the help desk platform, CRM for email, self-service tools, and any AI-assisted support tooling. The Head of CX makes the build-vs-buy decisions for CX technology within budget authority.</p>
+      <div class="kpis">
+        <div class="kpi">CX budget ownership</div>
+        <div class="kpi">Helpdesk / CRM tooling</div>
+        <div class="kpi gold">AI tooling decisions</div>
+      </div>
+    </div>
+    <div class="src-line">Source: <a href="https://careers.theheinekencompany.com/job/beerwulf/netherlands/head-customer-experience" target="_blank" rel="noopener">Heineken Careers — Head of Customer Experience, Beerwulf</a></div>
+  </div>
+
+  <!-- 05 CX TRENDS 2026 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-title">CX Trends 2026 — Relevant to the Role</div>
+    </div>
+
+    <p>Six trends reshaping e-commerce customer experience in 2026, each with direct implications for Beerwulf's CX strategy.</p>
+
+    <ul class="trend-list">
+      <li class="trend-item">
+        <div class="trend-num">1</div>
+        <div class="trend-body">
+          <h4>Value-seeking customers are becoming less loyal</h4>
+          <p>Nearly half of consumers report worsening financial security. During recessionary periods, consumers prioritise certainty over brand loyalty and seek ways to stretch purchasing power. For a subscription hardware business like Beerwulf, this means subscription pause and cancellation rates are a leading CX and commercial signal — and proactive retention outreach becomes a revenue-protective function, not just a service gesture.</p>
+          <span class="stat-pill">~50% report financial security worsening</span>
+        </div>
+      </li>
+      <li class="trend-item">
+        <div class="trend-num">2</div>
+        <div class="trend-body">
+          <h4>Erosion of human support is consumers' top AI concern</h4>
+          <p>Half of consumers cite loss of human support as their top concern about AI. Nearly 1 in 5 customers report zero benefit from AI-powered support, which performs 12 points below average on usefulness. More than 4 in 5 say they are more likely to remain loyal to companies that prioritise human service. For Beerwulf's BPO model, the implication is that AI deflection without a clear human escalation path actively damages retention rather than reducing cost.</p>
+          <span class="stat-pill">80%+ more loyal to companies prioritising human service</span>
+          <span class="stat-pill">AI support 12 pts below average on usefulness</span>
+        </div>
+      </li>
+      <li class="trend-item">
+        <div class="trend-num">3</div>
+        <div class="trend-body">
+          <h4>Product discovery now starts with AI chatbots</h4>
+          <p>Over one-third of consumers trust AI tools to influence their purchases. Customer journeys increasingly begin with third-party AI tools like ChatGPT before arriving on brand websites. For Beerwulf, this means the product comparison and consideration stage is happening outside the beerwulf.com environment — and the website must be structured to serve both AI crawlers and human visitors arriving pre-informed.</p>
+          <span class="stat-pill">35%+ trust AI for purchase decisions</span>
+        </div>
+      </li>
+      <li class="trend-item">
+        <div class="trend-num">4</div>
+        <div class="trend-body">
+          <h4>Data privacy demands explicit value in exchange for data</h4>
+          <p>While two-thirds of consumers will share data for personalised experiences, generic discounts no longer suffice. Companies must offer quantified savings, special access, or time-saving advantages tailored to specific customer segments. For the Head of CX acting as Privacy Officer, this creates a direct link between GDPR consent management and commercial email performance: the value proposition inside the consent mechanism determines database quality.</p>
+          <span class="stat-pill">65% will share data for personalisation</span>
+        </div>
+      </li>
+      <li class="trend-item">
+        <div class="trend-num">5</div>
+        <div class="trend-body">
+          <h4>Website design must serve both AI and human visitors</h4>
+          <p>As agentic AI expands, sites need optimised readability for algorithms alongside humans. Companies must ensure their brand names appear in AI summaries and design experiences for visitors arriving via AI answer engines. The practical implication for CX: FAQ content, product specs, and support documentation quality now affects AI-driven product discovery — CX content is SEO content.</p>
+        </div>
+      </li>
+      <li class="trend-item">
+        <div class="trend-num">6</div>
+        <div class="trend-body">
+          <h4>Loyalty programmes need restrained, personalised messaging</h4>
+          <p>More than 9 in 10 consumers want customisable reward features. But customers prefer infrequent, helpful communications — like quarterly savings reports — over frequent outreach that feels intrusive. For Beerwulf's email programme, this is a frequency and relevance calibration challenge: the CX team owns a commercial email channel and must balance engagement volume against unsubscribe risk.</p>
+          <span class="stat-pill">90%+ want customisable loyalty features</span>
+        </div>
+      </li>
+    </ul>
+    <div class="src-line">Source: <a href="https://www.customerexperiencedive.com/news/6-customer-experience-trends-2026/808761/" target="_blank" rel="noopener">Customer Experience Dive — 6 CX trends to watch in 2026</a> · <a href="https://onramp.us/blog/customer-experience-statistics" target="_blank" rel="noopener">Onramp — Customer Experience Statistics 2026</a></div>
+  </div>
+
+  <!-- 06 KEY CX METRICS -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div class="sec-title">Key CX Metrics — Industry Benchmarks</div>
+    </div>
+
+    <p>Benchmarks relevant to the Beerwulf context: subscription e-commerce, multi-market BPO, and email engagement.</p>
+
+    <div class="gap-grid-3">
+      <div class="gap-card green">
+        <div class="g-tag green">Retention</div>
+        <h4>5% retention increase = 95% profit increase</h4>
+        <p>For a subscription hardware model, the CX function is directly accretive to margin. Every percentage point of reduced churn compounds on the keg recurring revenue stream.</p>
+      </div>
+      <div class="gap-card fuchsia">
+        <div class="g-tag fuchsia">Subscription Onboarding</div>
+        <h4>92% renewal likelihood with effective training</h4>
+        <p>Hardware products with a learning curve — like the BLADE — see significantly higher subscription renewal when the onboarding experience reduces first-use friction. 86% more loyal when businesses invest in onboarding education.</p>
+      </div>
+      <div class="gap-card gold">
+        <div class="g-tag gold">Personalisation</div>
+        <h4>40% higher revenue vs non-personalised competitors</h4>
+        <p>65% of consumers expect tailored experiences. For email programme ownership at Beerwulf, segmentation by market, keg usage frequency, and hardware vintage is the baseline personalisation layer.</p>
+      </div>
+      <div class="gap-card navy">
+        <div class="g-tag navy">Omnichannel</div>
+        <h4>250% higher purchase rates vs single-channel</h4>
+        <p>90% higher retention through omnichannel engagement. For Beerwulf, the CX touchpoints span web, email, chatbot, phone (BPO), and in-app (if applicable) — coordinating these consistently across 7 markets is the omnichannel CX challenge.</p>
+      </div>
+      <div class="gap-card amber">
+        <div class="g-tag amber">AI in CX</div>
+        <h4>95% of interactions involving AI expected by 2026</h4>
+        <p>80% chatbot adoption predicted for customer service. 90% of companies currently using AI for CX. The critical metric is not adoption rate but resolution rate: AI that deflects without resolving damages the 4.0 Trustpilot score.</p>
+      </div>
+      <div class="gap-card red">
+        <div class="g-tag red">The CX Perception Gap</div>
+        <h4>8% of customers vs 80% of businesses believe superior CX is delivered</h4>
+        <p>59% feel businesses have lost the human element. 54% believe most companies need CX improvement. For Beerwulf, with a 4.0 score on 51K reviews, the gap between internal perception and customer reality is a known risk — closing it requires the feedback-to-insight loop the Head of CX is responsible for building.</p>
+      </div>
+    </div>
+    <div class="src-line">Source: <a href="https://onramp.us/blog/customer-experience-statistics" target="_blank" rel="noopener">Onramp — Customer Experience Statistics 2026</a></div>
+  </div>
+
+  <!-- 07 INTERVIEW ANGLES -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">07</div>
+      <div class="sec-title">Interview Angles — Where the Conversation Will Go</div>
+    </div>
+
+    <table class="fit-table">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>What they are testing</th>
+          <th>Relevant context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BPO management across 7 markets</td>
+          <td>Experience managing outsourced care partners, SLA governance, multi-language quality frameworks</td>
+          <td>Beerwulf's customer care operation is multi-country and multi-language — BPO governance is the operational backbone of this role</td>
+        </tr>
+        <tr>
+          <td>AI + human balance in CX</td>
+          <td>View on where automation works vs where human escalation is non-negotiable; experience implementing AI tools in a care setting</td>
+          <td>Industry data shows AI support performs 12 points below average on usefulness; Trustpilot complaints frequently cite slow or impersonal resolution</td>
+        </tr>
+        <tr>
+          <td>Email as a commercial channel</td>
+          <td>Experience linking email engagement metrics to subscription retention and revenue outcomes; segmentation approach</td>
+          <td>The role explicitly owns email as a commercial function — this is not just communications, it is a revenue line</td>
+        </tr>
+        <tr>
+          <td>GDPR as Privacy Officer</td>
+          <td>Practical experience with data compliance in a multi-market consumer environment; consent management; data processing with BPO partners</td>
+          <td>This is a named accountability in the JD — not a shared responsibility. They need confidence this will be handled, not delegated</td>
+        </tr>
+        <tr>
+          <td>Product discontinuation handling</td>
+          <td>How to manage a large-scale customer communication around a product EOL event; complaint resolution strategy; retention of affected customers</td>
+          <td>The SUB discontinuation is live and ongoing — the incoming Head of CX will need a view on closing this chapter</td>
+        </tr>
+        <tr>
+          <td>VoC into business decisions</td>
+          <td>Experience building a feedback-to-insight loop; how to translate support ticket themes and NPS into commercial recommendations at board level</td>
+          <td>The JD explicitly describes "contributing to structured intelligence approaches" — they want the CX function to produce insight, not just metrics</td>
+        </tr>
+        <tr>
+          <td>Cross-functional collaboration</td>
+          <td>How CX works with e-commerce, logistics, product, and planning teams; experience acting as the customer voice in product and operations decisions</td>
+          <td>Beerwulf's CX is tightly coupled to logistics (keg delivery), product (BLADE hardware), and e-commerce — the Head of CX is a commercial partner, not a service function</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="src-line">Source: <a href="https://careers.theheinekencompany.com/job/beerwulf/netherlands/head-customer-experience" target="_blank" rel="noopener">Heineken Careers — Head of Customer Experience, Beerwulf</a> · Analysis based on role JD and public customer review data</div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+</body>
+</html>
