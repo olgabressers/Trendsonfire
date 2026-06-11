@@ -22,6 +22,8 @@
     .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);max-width:760px;line-height:1.55;}
     .art-hero .meta{margin-top:18px;font-size:12px;color:white;display:flex;gap:20px;flex-wrap:wrap;}
 
+    @media(max-width:700px){.art-hero{padding:40px 16px 32px;}}
+
     /* HERO IMAGE */
     .hero-img-strip{width:100%;height:380px;overflow:hidden;position:relative;}
     .hero-img-strip img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;}
@@ -273,7 +275,8 @@
     </div>
   </div>
 
-  <table class="mkt-table">
+  <div class="pri-wrap">
+  <table class="mkt-table" style="min-width:480px;">
     <thead>
       <tr><th>Market</th><th>Traffic share</th><th>Scale</th><th>Notes</th></tr>
     </thead>
@@ -310,6 +313,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <div class="src-note">Source: <a href="https://www.similarweb.com/website/beerwulf.com/" target="_blank" rel="noopener">SimilarWeb — beerwulf.com, 2026</a> · Monthly visits: 198K · Bounce rate: 44.97% · Avg. session: 1:10 · Pages/visit: 2.76 · MoM traffic growth: +14.45%</div>
 
   <!-- 02: REVENUE GROWTH -->
@@ -407,7 +411,8 @@
     <div class="scope-card">
       <div class="scope-n">05</div>
       <div class="scope-label">Technology &amp; Budget</div>
-      <table class="tool-tbl">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+      <table class="tool-tbl" style="min-width:360px;margin:10px 0 4px;">
         <thead>
           <tr><th>Tool</th><th>Purpose</th><th>Who uses it</th><th>Status</th></tr>
         </thead>
@@ -450,6 +455,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <div class="scope-kpis">
         <span class="scope-kpi">CX budget</span>
         <span class="scope-kpi">Stack consolidation</span>
