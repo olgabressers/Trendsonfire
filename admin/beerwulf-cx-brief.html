@@ -111,6 +111,29 @@
     .trend-body p{font-size:13.5px;color:#1f1f1f;line-height:1.65;margin:0;}
     .stat-tag{display:inline-block;background:rgba(200,146,26,.12);color:#7a5700;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:2px;margin-top:6px;margin-right:4px;}
 
+    /* REVIEW THEME CHART */
+    .rv-split{background:#f9fafb;border:1px solid #e2dfd9;padding:18px 20px;margin:0 0 24px;}
+    .rv-split-bar{display:flex;height:26px;border-radius:3px;overflow:hidden;margin-bottom:7px;}
+    .rv-pos-seg{background:#16a34a;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;}
+    .rv-neg-seg{background:#c8921a;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;}
+    .rv-split-sub{font-size:11px;color:#666;margin-bottom:16px;}
+    .rv-theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:640px){.rv-theme-grid{grid-template-columns:1fr;}}
+    .rv-col-hdr{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid;}
+    .rv-col-hdr.neg{color:#b45309;border-color:#c8921a;}
+    .rv-col-hdr.pos{color:#15803d;border-color:#16a34a;}
+    .rv-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
+    .rv-bar-label{font-size:12px;color:#1f1f1f;flex:1;line-height:1.3;}
+    .rv-bar-track{width:90px;height:7px;background:#e8e5e0;border-radius:2px;flex-shrink:0;}
+    .rv-bar-fill{height:100%;border-radius:2px;}
+    .rv-bar-fill.neg{background:#c8921a;}
+    .rv-bar-fill.pos{background:#16a34a;}
+    .rv-bar-pct{font-size:12px;font-weight:700;color:#0a0f1a;flex-shrink:0;min-width:30px;text-align:right;}
+    .rv-est-note{font-size:10.5px;color:#888;margin-top:12px;font-style:italic;}
+    .pct-neg{display:inline-block;background:#fff4e5;color:#b45309;border:1px solid #f0c080;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:2px;margin-right:6px;}
+    .pct-pos{display:inline-block;background:#f0faf4;color:#15803d;border:1px solid #bbf7d0;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:2px;margin-right:6px;}
+    .trend-pos-hdr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#15803d;margin:26px 0 10px;padding-top:20px;border-top:2px solid #16a34a;}
+
     /* TOOL TABLE */
     .tool-tbl{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0 12px;}
     .tool-tbl th{background:#1a0e00;color:white;text-align:left;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
@@ -571,6 +594,7 @@
     </div>
   </div>
 
+  <!-- STAT BOXES -->
   <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
     <div style="background:#f9fafb;border:1px solid #e2dfd9;padding:14px 20px;flex:1;min-width:140px;">
       <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#1a0e00;line-height:1;font-weight:500;">4.0</div>
@@ -589,11 +613,80 @@
     </div>
   </div>
 
+  <!-- REVIEW SPLIT OVERVIEW -->
+  <div class="rv-split">
+    <div class="rv-split-bar">
+      <div class="rv-pos-seg" style="flex:77">Positive · 77%</div>
+      <div class="rv-neg-seg" style="flex:23">Negative · 23%</div>
+    </div>
+    <div class="rv-split-sub">Estimated from 4.0/5 Trustpilot score · 51,000+ reviews · ~5% neutral (3★) distributed across groups</div>
+    <div class="rv-theme-grid">
+      <div>
+        <div class="rv-col-hdr neg">Negative themes — 23% of reviews</div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">SUB discontinuation &amp; hardware EOL</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:38%"></div></div>
+          <div class="rv-bar-pct">38%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Delivery failures &amp; courier</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:22%"></div></div>
+          <div class="rv-bar-pct">22%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Response speed &amp; dismissiveness</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:18%"></div></div>
+          <div class="rv-bar-pct">18%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Faulty product &amp; refund refusals</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:15%"></div></div>
+          <div class="rv-bar-pct">15%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Post-purchase &amp; warranty</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:7%"></div></div>
+          <div class="rv-bar-pct">7%</div>
+        </div>
+      </div>
+      <div>
+        <div class="rv-col-hdr pos">Positive themes — 77% of reviews</div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Product quality &amp; beer selection</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:33%"></div></div>
+          <div class="rv-bar-pct">33%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Fast &amp; accurate delivery</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:29%"></div></div>
+          <div class="rv-bar-pct">29%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Easy ordering &amp; UX</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:17%"></div></div>
+          <div class="rv-bar-pct">17%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Hardware &amp; taste experience</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:13%"></div></div>
+          <div class="rv-bar-pct">13%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Subscription value &amp; loyalty</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:8%"></div></div>
+          <div class="rv-bar-pct">8%</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv-est-note">Estimated theme distribution — qualitative analysis of Trustpilot review content. Percentages reflect estimated share of theme mentions within each group. Positive/negative split derived from 4.0/5 overall score.</div>
+  </div>
+
+  <!-- NEGATIVE DETAIL -->
   <ul class="trend-list">
     <li class="trend-item">
       <div class="trend-n">1</div>
       <div class="trend-body">
-        <h4>SUB discontinuation — the open wound</h4>
+        <h4><span class="pct-neg">38%</span>SUB discontinuation — the open wound</h4>
         <p>The decision to discontinue SUB Classic &amp; Compact (May 2024) and then 2-litre kegs (December 2025) left customers with hardware they cannot use. The core complaint is not the discontinuation itself — it is the handling: poor advance communication, no refund offered, only a discount on a new machine. Customers who bought recently before the announcement feel deceived. This is the highest-volume complaint cluster and is still active.</p>
         <span class="stat-tag">Highest complaint volume</span>
         <span class="stat-tag">Still live — June 2026</span>
@@ -602,7 +695,7 @@
     <li class="trend-item">
       <div class="trend-n">2</div>
       <div class="trend-body">
-        <h4>Delivery failures — courier reliability and resolution quality</h4>
+        <h4><span class="pct-neg">22%</span>Delivery failures — courier reliability and resolution quality</h4>
         <p>Orders marked as "delivered" when not received. Packages left in lift lobbies without signatures. Damaged packaging despite repeated reports. When raised, the resolution offered is typically a small store credit (£5 reported in one case) rather than a replacement or full refund. The courier (Chronopost cited for some markets) is the operational root cause but the CX team owns the resolution.</p>
         <span class="stat-tag">Parcels returned to sender</span>
         <span class="stat-tag">£5 credit as resolution flagged as inadequate</span>
@@ -611,24 +704,24 @@
     <li class="trend-item">
       <div class="trend-n">3</div>
       <div class="trend-body">
-        <h4>Faulty product &amp; refund refusals</h4>
-        <p>Customers receiving BLADE kegs that produce "all foam and no beer" at premium price points. Faulty machines that stop cooling after 19 months. The complaint is not the fault itself — it is that Beerwulf refuses to take ownership: responses suggest the problem is with the customer's machine, refunds are declined, or customers must wait 10+ days to initiate a return manually. The gap between customer expectation and resolution response is the trigger for low-star reviews.</p>
-        <span class="stat-tag">Flat refusal on faulty product compensation reported</span>
-      </div>
-    </li>
-    <li class="trend-item">
-      <div class="trend-n">4</div>
-      <div class="trend-body">
-        <h4>Response speed and dismissiveness</h4>
+        <h4><span class="pct-neg">18%</span>Response speed and dismissiveness</h4>
         <p>Slow replies, no follow-up after initial contact, and responses that shift blame to the customer are the recurring triggers for 1-2 star reviews. PissedConsumer tracked calls show 0% full resolution rate. The contrast is notable: when Beerwulf does respond well — particularly on BLADE hardware faults — customers leave 5-star reviews praising "fantastic" service. The problem is consistency, not capability.</p>
         <span class="stat-tag">0% full resolution rate (tracked calls)</span>
         <span class="stat-tag">Inconsistency is the core signal</span>
       </div>
     </li>
     <li class="trend-item">
+      <div class="trend-n">4</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">15%</span>Faulty product &amp; refund refusals</h4>
+        <p>Customers receiving BLADE kegs that produce "all foam and no beer" at premium price points. Faulty machines that stop cooling after 19 months. The complaint is not the fault itself — it is that Beerwulf refuses to take ownership: responses suggest the problem is with the customer's machine, refunds are declined, or customers must wait 10+ days to initiate a return manually. The gap between customer expectation and resolution response is the trigger for low-star reviews.</p>
+        <span class="stat-tag">Flat refusal on faulty product compensation reported</span>
+      </div>
+    </li>
+    <li class="trend-item">
       <div class="trend-n">5</div>
       <div class="trend-body">
-        <h4>Post-purchase support gaps — returns and warranty</h4>
+        <h4><span class="pct-neg">7%</span>Post-purchase support gaps — returns and warranty</h4>
         <p>Customers reporting broken machines after 4 months with no collection arranged for repair. Defective Beertender returned, no contact for 2 weeks, then told to manually initiate the refund process and wait another 10 days. The after-sales support infrastructure — returns logistics, repair coordination, warranty replacement — is the operational gap most visible in low-star reviews.</p>
         <span class="stat-tag">2-week no-contact period reported</span>
         <span class="stat-tag">Returns process requires customer to initiate manually</span>
@@ -636,12 +729,52 @@
     </li>
   </ul>
 
-  <div style="margin-top:16px;background:#f0faf4;border:1px solid #bbf7d0;padding:14px 18px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#16a34a;margin-bottom:6px;">What customers praise</div>
-    <div style="font-size:13.5px;color:#1f1f1f;line-height:1.6;">Fast delivery (2-day, consistently cited) · Easy ordering experience · Beer quality and variety · Responsive resolution when BLADE hardware faults are handled well · Long-term subscribers report loyalty to the product</div>
-  </div>
+  <!-- POSITIVE DETAIL -->
+  <div class="trend-pos-hdr">What 77% of reviewers say — positive themes</div>
+  <ul class="trend-list">
+    <li class="trend-item">
+      <div class="trend-n">1</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">33%</span>Product quality &amp; beer selection</h4>
+        <p>150+ brewers across 20 countries consistently cited as the primary reason to subscribe. Craft variety, range of styles, and the quality of what arrives in the keg are the most frequently mentioned positives — the product proposition itself is strong and regularly praised.</p>
+        <span class="stat-tag">Selection depth cited as primary differentiator</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">2</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">29%</span>Fast &amp; accurate delivery</h4>
+        <p>2-day delivery is cited consistently and is the strongest, most reliable positive touchpoint in the customer journey. Customers who receive their order correctly and on time — without exception — leave 4-5 star reviews. Delivery is Beerwulf's highest-performing operational moment when it works.</p>
+        <span class="stat-tag">2-day delivery consistently cited</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">3</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">17%</span>Easy ordering &amp; subscription UX</h4>
+        <p>Straightforward website, easy subscription management, and a frictionless reorder journey are praised across markets. Customers note that changing keg selections, pausing subscriptions, or managing their account is simple — the self-service digital experience reduces contact volume when it functions well.</p>
+        <span class="stat-tag">Self-service ease cited as loyalty driver</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">4</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">13%</span>Hardware &amp; taste experience</h4>
+        <p>BLADE machine performance and the at-home draught quality earn strong reviews. Customers who have a working machine and receive quality kegs consistently describe the experience as superior to canned or bottled alternatives. When the hardware delivers, it converts occasional buyers into long-term subscribers.</p>
+        <span class="stat-tag">At-home draught quality cited as unique</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">5</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">8%</span>Subscription value &amp; long-term loyalty</h4>
+        <p>Long-term subscribers — particularly those on BLADE before the SUB discontinuation — report high overall satisfaction with the value of the subscription model. Convenience, variety per delivery, and consistent service over time build a loyal base that is the most resilient segment of Beerwulf's customer pool.</p>
+        <span class="stat-tag">Long-term subscribers most loyal segment</span>
+      </div>
+    </li>
+  </ul>
 
-  <div class="src-note" style="margin-top:12px;">Sources: <a href="https://www.trustpilot.com/review/beerwulf.com" target="_blank" rel="noopener">Trustpilot — beerwulf.com (51,000+ reviews)</a> · <a href="https://www.pissedconsumer.com/company/beerwulf-uk/customer-service.html" target="_blank" rel="noopener">PissedConsumer — Beerwulf UK</a> · <a href="https://britainreviews.co.uk/food-drinks/beerwulf-reviews" target="_blank" rel="noopener">BritainReviews — Beerwulf 2025</a></div>
+  <div class="src-note" style="margin-top:12px;">Sources: <a href="https://www.trustpilot.com/review/beerwulf.com" target="_blank" rel="noopener">Trustpilot — beerwulf.com (51,000+ reviews)</a> · <a href="https://www.pissedconsumer.com/company/beerwulf-uk/customer-service.html" target="_blank" rel="noopener">PissedConsumer — Beerwulf UK</a> · <a href="https://britainreviews.co.uk/food-drinks/beerwulf-reviews" target="_blank" rel="noopener">BritainReviews — Beerwulf 2025</a> · Theme distribution: qualitative analysis of review content</div>
 
 </main>
 
