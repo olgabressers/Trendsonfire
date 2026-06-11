@@ -110,6 +110,14 @@
     .trend-body h4{font-size:14px;font-weight:700;color:#0a0f1a;margin-bottom:5px;}
     .trend-body p{font-size:13.5px;color:#1f1f1f;line-height:1.65;margin:0;}
     .stat-tag{display:inline-block;background:rgba(200,146,26,.12);color:#7a5700;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:2px;margin-top:6px;margin-right:4px;}
+
+    /* TOOL TABLE */
+    .tool-tbl{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0 12px;}
+    .tool-tbl th{background:#1a0e00;color:white;text-align:left;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+    .tool-tbl td{padding:7px 10px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.4;}
+    .tool-tbl tr:last-child td{border-bottom:none;}
+    .t-conf{color:#16a34a;font-weight:700;white-space:nowrap;}
+    .t-tbc{color:#c8921a;font-weight:700;white-space:nowrap;}
   </style>
 </head>
 <body>
@@ -374,11 +382,53 @@
     <div class="scope-card">
       <div class="scope-n">05</div>
       <div class="scope-label">Technology &amp; Budget</div>
-      <div class="scope-desc">Confirmed stack: Freshdesk (NL entity) and Zendesk (UK) as helpdesk platforms — a fragmented multi-market setup. Zowie as AI automation layer on top. Shopify as the ecommerce and order management backend. The Head of CX holds budget authority and makes consolidation and build-vs-buy decisions across this stack.</div>
+      <table class="tool-tbl">
+        <thead>
+          <tr><th>Tool</th><th>Purpose</th><th>Who uses it</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Freshdesk</strong></td>
+            <td>Helpdesk &amp; ticketing — NL markets</td>
+            <td>BPO agents (NL)</td>
+            <td class="t-conf">✓ Confirmed</td>
+          </tr>
+          <tr>
+            <td><strong>Zendesk</strong></td>
+            <td>Helpdesk &amp; ticketing — UK market</td>
+            <td>BPO agents (UK)</td>
+            <td class="t-conf">✓ Confirmed</td>
+          </tr>
+          <tr>
+            <td><strong>Zowie</strong></td>
+            <td>AI automation &amp; deflection layer</td>
+            <td>Customers (self-service) + agents</td>
+            <td class="t-conf">✓ Confirmed</td>
+          </tr>
+          <tr>
+            <td><strong>Shopify</strong></td>
+            <td>Ecommerce + customer database (de facto CRM)</td>
+            <td>CX team + all agents</td>
+            <td class="t-conf">✓ Confirmed</td>
+          </tr>
+          <tr>
+            <td><strong>Email tool</strong></td>
+            <td>Subscription &amp; retention emails</td>
+            <td>CX / email team</td>
+            <td class="t-tbc">To confirm</td>
+          </tr>
+          <tr>
+            <td><strong>Dedicated CRM</strong></td>
+            <td>Customer relationship mgmt beyond orders</td>
+            <td>CX management</td>
+            <td class="t-tbc">To confirm</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="scope-kpis">
-        <span class="scope-kpi">Freshdesk · Zendesk</span>
-        <span class="scope-kpi">Zowie AI</span>
-        <span class="scope-kpi">Shopify</span>
+        <span class="scope-kpi">CX budget</span>
+        <span class="scope-kpi">Stack consolidation</span>
+        <span class="scope-kpi">Build-vs-buy</span>
       </div>
     </div>
     <div class="scope-card">
@@ -510,6 +560,88 @@
     </table>
   </div>
   <div class="src-note">Sources: Beerwulf public role specification · <a href="https://www.trustpilot.com/review/beerwulf.com" target="_blank" rel="noopener">Trustpilot — beerwulf.com</a> · <a href="https://onramp.us/blog/customer-experience-statistics" target="_blank" rel="noopener">Onramp CX Statistics 2026</a></div>
+
+
+  <!-- 06: CUSTOMER VOICE -->
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Customer voice</div>
+      <div class="sec-title">What 51,000 reviewers say — complaint themes and signals</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+    <div style="background:#f9fafb;border:1px solid #e2dfd9;padding:14px 20px;flex:1;min-width:140px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#1a0e00;line-height:1;font-weight:500;">4.0</div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-top:4px;">Trustpilot score</div>
+      <div style="font-size:12px;color:#555;margin-top:3px;">51,000+ reviews · "Great"</div>
+    </div>
+    <div style="background:#f9fafb;border:1px solid #e2dfd9;padding:14px 20px;flex:1;min-width:140px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#16a34a;line-height:1;font-weight:500;">84%</div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-top:4px;">Would repurchase</div>
+      <div style="font-size:12px;color:#555;margin-top:3px;">Per BritainReviews survey</div>
+    </div>
+    <div style="background:#fff4e5;border:1px solid #f0c080;padding:14px 20px;flex:1;min-width:140px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#c8921a;line-height:1;font-weight:500;">0%</div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-top:4px;">Full resolution rate</div>
+      <div style="font-size:12px;color:#555;margin-top:3px;">PissedConsumer tracked calls</div>
+    </div>
+  </div>
+
+  <ul class="trend-list">
+    <li class="trend-item">
+      <div class="trend-n">1</div>
+      <div class="trend-body">
+        <h4>SUB discontinuation — the open wound</h4>
+        <p>The decision to discontinue SUB Classic &amp; Compact (May 2024) and then 2-litre kegs (December 2025) left customers with hardware they cannot use. The core complaint is not the discontinuation itself — it is the handling: poor advance communication, no refund offered, only a discount on a new machine. Customers who bought recently before the announcement feel deceived. This is the highest-volume complaint cluster and is still active.</p>
+        <span class="stat-tag">Highest complaint volume</span>
+        <span class="stat-tag">Still live at time of hire</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">2</div>
+      <div class="trend-body">
+        <h4>Delivery failures — courier reliability and resolution quality</h4>
+        <p>Orders marked as "delivered" when not received. Packages left in lift lobbies without signatures. Damaged packaging despite repeated reports. When raised, the resolution offered is typically a small store credit (£5 reported in one case) rather than a replacement or full refund. The courier (Chronopost cited for some markets) is the operational root cause but the CX team owns the resolution.</p>
+        <span class="stat-tag">Parcels returned to sender</span>
+        <span class="stat-tag">£5 credit as resolution flagged as inadequate</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">3</div>
+      <div class="trend-body">
+        <h4>Faulty product &amp; refund refusals</h4>
+        <p>Customers receiving BLADE kegs that produce "all foam and no beer" at premium price points. Faulty machines that stop cooling after 19 months. The complaint is not the fault itself — it is that Beerwulf refuses to take ownership: responses suggest the problem is with the customer's machine, refunds are declined, or customers must wait 10+ days to initiate a return manually. The gap between customer expectation and resolution response is the trigger for low-star reviews.</p>
+        <span class="stat-tag">Flat refusal on faulty product compensation reported</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">4</div>
+      <div class="trend-body">
+        <h4>Response speed and dismissiveness</h4>
+        <p>Slow replies, no follow-up after initial contact, and responses that shift blame to the customer are the recurring triggers for 1-2 star reviews. PissedConsumer tracked calls show 0% full resolution rate. The contrast is notable: when Beerwulf does respond well — particularly on BLADE hardware faults — customers leave 5-star reviews praising "fantastic" service. The problem is consistency, not capability.</p>
+        <span class="stat-tag">0% full resolution rate (tracked calls)</span>
+        <span class="stat-tag">Inconsistency is the core signal</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">5</div>
+      <div class="trend-body">
+        <h4>Post-purchase support gaps — returns and warranty</h4>
+        <p>Customers reporting broken machines after 4 months with no collection arranged for repair. Defective Beertender returned, no contact for 2 weeks, then told to manually initiate the refund process and wait another 10 days. The after-sales support infrastructure — returns logistics, repair coordination, warranty replacement — is the operational gap most visible in low-star reviews.</p>
+        <span class="stat-tag">2-week no-contact period reported</span>
+        <span class="stat-tag">Returns process requires customer to initiate manually</span>
+      </div>
+    </li>
+  </ul>
+
+  <div style="margin-top:16px;background:#f0faf4;border:1px solid #bbf7d0;padding:14px 18px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#16a34a;margin-bottom:6px;">What customers praise</div>
+    <div style="font-size:13.5px;color:#1f1f1f;line-height:1.6;">Fast delivery (2-day, consistently cited) · Easy ordering experience · Beer quality and variety · Responsive resolution when BLADE hardware faults are handled well · Long-term subscribers report loyalty to the product</div>
+  </div>
+
+  <div class="src-note" style="margin-top:12px;">Sources: <a href="https://www.trustpilot.com/review/beerwulf.com" target="_blank" rel="noopener">Trustpilot — beerwulf.com (51,000+ reviews)</a> · <a href="https://www.pissedconsumer.com/company/beerwulf-uk/customer-service.html" target="_blank" rel="noopener">PissedConsumer — Beerwulf UK</a> · <a href="https://britainreviews.co.uk/food-drinks/beerwulf-reviews" target="_blank" rel="noopener">BritainReviews — Beerwulf 2025</a></div>
 
 </main>
 
