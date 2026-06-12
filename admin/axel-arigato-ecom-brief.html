@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Axel Arigato — Head of E-commerce &amp; Marketplaces Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* AXEL ARIGATO: dark #0a0f1a · gold #b8976a */
+    .art-hero{background:#0a0f1a;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(184,151,106,.08) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;}
+    .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,46px);font-weight:400;line-height:1.08;margin-bottom:16px;letter-spacing:-0.5px;max-width:860px;}
+    .art-hero h1 em{color:#b8976a;font-style:italic;}
+    .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);max-width:760px;line-height:1.55;}
+    .art-hero .meta{margin-top:18px;font-size:12px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;}
+    @media(max-width:700px){.art-hero{padding:40px 16px 32px;}}
+
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* KPI STATS */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.stats{grid-template-columns:1fr;}}
+    .s-card{background:white;padding:18px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:500;line-height:1;color:#0a0f1a;letter-spacing:-0.5px;}
+    .s-src{font-size:11.5px;color:#1f1f1f;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#8b6a2f;}
+
+    /* TOP GRID */
+    .top-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
+    @media(max-width:700px){.top-grid{grid-template-columns:1fr;}}
+
+    /* SECTION HEADER */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:48px 0 18px;padding-bottom:10px;border-bottom:2px solid #0a0f1a;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8976a;margin-bottom:4px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.3vw,26px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+    @media(max-width:700px){.sec-num{font-size:40px;}}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:12px;color:#0a0f1a;padding:8px 12px;background:#f9fafb;border-left:3px solid #b8976a;margin-top:10px;line-height:1.6;}
+    .src-note a{color:#8b6a2f;}
+
+    /* MANDATE CARDS */
+    .mandate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0;}
+    @media(max-width:700px){.mandate-grid{grid-template-columns:1fr;}}
+    .m-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .m-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:500;line-height:1;color:#b8976a;margin-bottom:6px;}
+    .m-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;}
+    .m-desc{font-size:13.5px;color:#1f1f1f;line-height:1.6;margin-bottom:12px;}
+    .m-exp{padding:10px 14px;background:#0a0f1a;border-left:3px solid #b8976a;font-size:12.5px;color:rgba(255,255,255,.9);line-height:1.6;margin-top:10px;}
+    .m-exp strong{display:block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#b8976a;margin-bottom:5px;}
+
+    /* CONTEXT BOX */
+    .context-box{background:#0a0f1a;padding:36px 40px;margin:40px 0;}
+    @media(max-width:700px){.context-box{padding:24px 20px;}}
+    .context-box .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:10px;}
+    .context-box h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,2.5vw,28px);color:white;font-weight:400;line-height:1.1;margin-bottom:24px;}
+    .context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:700px){.context-grid{grid-template-columns:1fr;}}
+    .ctx-item{border:1px solid rgba(184,151,106,.3);padding:18px 16px;}
+    .ctx-label{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8976a;margin-bottom:6px;}
+    .ctx-text{font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;}
+
+    /* DATA TABLE */
+    .data-table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:13.5px;}
+    .data-table th{background:#0a0f1a;color:white;text-align:left;padding:9px 13px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+    .data-table td{padding:11px 13px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
+    .data-table tr:last-child td{border-bottom:none;}
+    .data-table tr:nth-child(even) td{background:#faf9f7;}
+    @media(max-width:700px){.data-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}}
+
+    /* OPP BOX */
+    .opp-box{background:rgba(22,163,74,.07);border-left:3px solid #16a34a;padding:14px 18px;margin-top:14px;font-size:12.5px;color:#166534;line-height:1.6;}
+    .opp-box strong{color:#14532d;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; <a href="https://axelarigato.com" target="_blank" rel="noopener">Axel Arigato</a></div>
+    <div class="eyebrow">E-commerce &amp; Marketplaces Leadership Brief · Axel Arigato / Eurazeo Brands</div>
+    <h1>Axel Arigato: <em>digital-first brand, €80M revenue, online 2× stores</em></h1>
+    <p>Swedish contemporary sneaker brand. 17 stores, 130 countries, marketplaces on Farfetch / MyTheresa / SSENSE. New CEO (ex Adidas APAC) from February 2026. Relocating core functions from London to Gothenburg — building the commercial leadership team now.</p>
+    <div class="meta">
+      <span>Sources: Axel Arigato AB 2024 annual report · Modern Retail · WWD · ehandel.com · Eurazeo press release · trendsonfire.com/brands/axel-arigato.html</span>
+      <span>Updated 12 June 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- KPI STATS -->
+<div class="stats">
+  <div class="s-card">
+    <div class="s-lbl">Revenue 2024</div>
+    <div class="s-num">~€80M</div>
+    <div class="s-src">SEK 921M per 2024 annual report (Axel Arigato AB). Operating profit SEK 17.4M. Source: <a href="https://ehandel.com/axel-arigato-returns-to-sweden-seeking-a-significant-number-of-new-employees/" target="_blank" rel="noopener">ehandel.com</a></div>
+  </div>
+  <div class="s-card">
+    <div class="s-lbl">Online vs Stores</div>
+    <div class="s-num">2×</div>
+    <div class="s-src">Online business is approximately double the physical store business. Ships to 130 countries. Source: <a href="https://www.modernretail.co/operations/with-a-new-store-swedish-sneaker-brand-axel-arigato-targets-u-s-growth/" target="_blank" rel="noopener">Modern Retail</a></div>
+  </div>
+  <div class="s-card">
+    <div class="s-lbl">Stores / Countries</div>
+    <div class="s-num">17 / 7</div>
+    <div class="s-src">11 standalone + 6 concessions across UK, SE, DE, FR, DK, USA, UAE. Source: <a href="https://www.chalhoubgroup.com/en/media/329/axel-arigato-continues-global-expansion-with-the-opening-of-its-first-united-arab-emirates-retail-space" target="_blank" rel="noopener">Chalhoub Group</a></div>
+  </div>
+  <div class="s-card">
+    <div class="s-lbl">Funding Raised</div>
+    <div class="s-num">$74M</div>
+    <div class="s-src">Vaultier7 (SEK 35M, 2018) + Eurazeo Brands majority stake €56M (2020). Source: <a href="https://www.prnewswire.com/news-releases/eurazeo-brands-announces-its-first-european-transaction-with-an-investment-in-swedish-brand-axel-arigato-alongside-its-founders-301168383.html" target="_blank" rel="noopener">PR Newswire</a></div>
+  </div>
+</div>
+
+<!-- TOP TWO-COL -->
+<div class="top-grid">
+  <div style="border-left:4px solid #b8976a;padding:20px 24px;background:white;border:1px solid #e2dfd9;border-left:4px solid #b8976a;">
+    <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:16px;">The business in brief</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b8976a;margin-bottom:4px;">Digital model</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Founded online-only 2014. Drop-of-the-week (52 releases/year, not seasonal). Own DTC + luxury marketplaces (Farfetch, MyTheresa, SSENSE) + prestige wholesale (Harrods, Saks, Nordstrom). Online ≈ 2× all physical stores combined.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b8976a;margin-bottom:4px;">Where the brand is now</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Returned to operating profit 2024. New CEO Frédéric Serrant (ex Adidas APAC, appointed Feb 2026). Core functions relocating London → Gothenburg. Actively building commercial leadership team.</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b8976a;margin-bottom:4px;">This role</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Head of E-commerce &amp; Marketplaces. Reports to CCO. Gothenburg, on-site. Start ASAP. Owns the P&amp;L for the largest commercial channel in the business.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#f9f5ef;border:1px solid #e8d5a8;padding:20px 24px;">
+    <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b8976a;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;">
+      <li style="font-size:13.5px;color:#1f1f1f;line-height:1.45;"><a href="#sec-01" style="color:#8b6a2f;text-decoration:none;font-weight:600;">E-commerce &amp; marketplace mandate</a> — five areas, role scope</li>
+      <li style="font-size:13.5px;color:#1f1f1f;line-height:1.45;"><a href="#sec-02" style="color:#8b6a2f;text-decoration:none;font-weight:600;">Channel structure</a> — DTC / marketplaces / wholesale split</li>
+      <li style="font-size:13.5px;color:#1f1f1f;line-height:1.45;"><a href="#sec-03" style="color:#8b6a2f;text-decoration:none;font-weight:600;">Strategic context</a> — new CEO, Gothenburg move, what changes</li>
+    </ol>
+    <div style="margin-top:20px;padding-top:14px;border-top:1px solid #e8d5a8;font-size:12px;color:#6b7280;">Full brand intelligence: <a href="../brands/axel-arigato.html" target="_blank" style="color:#8b6a2f;font-weight:600;">trendsonfire.com/brands/axel-arigato.html →</a></div>
+  </div>
+</div>
+
+<!-- SECTION 01: MANDATE -->
+<div id="sec-01" class="sec-header">
+  <div class="sec-num">01</div>
+  <div class="sec-label">
+    <div class="sec-eyebrow">Role mandate</div>
+    <div class="sec-title">Five accountability areas — and what each requires</div>
+  </div>
+</div>
+
+<div class="mandate-grid">
+
+  <div class="m-card">
+    <div class="m-num">01</div>
+    <div class="m-label">E-commerce &amp; Marketplace P&amp;L</div>
+    <div class="m-desc">Revenue forecasting, budget management, and P&amp;L accountability across own DTC and all marketplace channels. The online channel is approximately 2× the store business — this is the primary commercial lever in the company.</div>
+    <div class="m-exp">
+      <strong>Olga's experience</strong>
+      Multi-market e-commerce P&amp;L management at Richemont across 26 EU markets. Built the analytics function and omni-channel commercial cockpit from zero to ExCo-level insight infrastructure. Full digital and physical channel P&amp;L reporting.
+    </div>
+  </div>
+
+  <div class="m-card">
+    <div class="m-num">02</div>
+    <div class="m-label">Marketplace Partnerships</div>
+    <div class="m-desc">Managing and expanding presence on Farfetch, MyTheresa, and SSENSE — Axel Arigato's current luxury marketplace partners. Identifying new revenue opportunities. Each platform requires separate commercial terms, stock allocation, and sell-through management.</div>
+    <div class="m-exp">
+      <strong>Olga's experience</strong>
+      Luxury marketplace management at Richemont scale — operating across the same tier of platforms used by Axel Arigato. Multi-market channel mix including DTC, marketplace, and wholesale digital. Commercial negotiations and partner governance.
+    </div>
+  </div>
+
+  <div class="m-card">
+    <div class="m-num">03</div>
+    <div class="m-label">AI Roadmap — Personalisation &amp; Merchandising</div>
+    <div class="m-desc">Establish the AI strategy for on-site personalisation and digital merchandising. The JD explicitly calls this out as a priority — the new CEO (ex Adidas APAC) will expect a structured AI plan tied to commercial outcomes.</div>
+    <div class="m-exp">
+      <strong>Olga's experience</strong>
+      AI-driven anti-fraud implementation at Richemont in partnership with Adyen (payments + CX layer). In-house AI solution built for the Client Relations Centre at Richemont. Founded TrendsOnFire: end-to-end AI tool selection, prompt engineering, and data pipeline design. AI tool implementation from business case to production.
+    </div>
+    <div class="opp-box"><strong>Direct angle:</strong> The new CEO is institutionally minded and will expect an AI roadmap on day one — not a research project. Richemont AI implementation experience (live tools, partner integrations, in-house builds) covers all three build/buy/partner options the brand will face.</div>
+  </div>
+
+  <div class="m-card">
+    <div class="m-num">04</div>
+    <div class="m-label">Site Performance &amp; Conversion</div>
+    <div class="m-desc">Optimising axelarigato.com for conversion rate, customer journey, and average order value. The drop-of-the-week model means 52 site events per year — each requiring merchandising, CRM integration, and performance tracking.</div>
+    <div class="m-exp">
+      <strong>Olga's experience</strong>
+      Salesforce CRM, OMS, and BI &amp; Analytics deployments at Richemont across 26 markets. Platform migrations and tool selection across CX and digital layers. Built the digital performance reporting infrastructure (zero to ExCo-level) — the equivalent of axelarigato.com's conversion and CRM stack.
+    </div>
+  </div>
+
+  <div class="m-card" style="grid-column:1/-1;">
+    <div class="m-num">05</div>
+    <div class="m-label">Team Building &amp; Cross-functional Leadership</div>
+    <div class="m-desc">The role requires building and leading a high-performing e-commerce team in Gothenburg — a new hub, not an existing team. Cross-functional work with marketing (traffic &amp; performance), IT (platform &amp; integrations), finance (P&amp;L), and the CCO. The team is being assembled now as part of the London → Gothenburg transition.</div>
+    <div class="m-exp">
+      <strong>Olga's experience</strong>
+      Led multi-functional teams at Richemont across 26 EU markets. Cross-functional mandate across commercial, digital, operations, and CX. Change Management lead at Nike on SAP Retail implementation — building cross-market adoption in a new programme structure. Experience building from scratch: analytics function at Richemont built from zero.
+    </div>
+    <div class="opp-box"><strong>Key context for Gothenburg:</strong> The team is being built from the ground up — not inheriting a London structure. The hire needs someone who can both recruit and build operational rigour simultaneously. Programme and change management experience (Nike SAP, Richemont digital transformation) is directly relevant.</div>
+  </div>
+
+</div>
+
+<!-- SECTION 02: CHANNEL STRUCTURE -->
+<div id="sec-02" class="sec-header">
+  <div class="sec-num">02</div>
+  <div class="sec-label">
+    <div class="sec-eyebrow">Channel structure</div>
+    <div class="sec-title">Three digital channels — different margins, different KPIs, one P&amp;L</div>
+  </div>
+</div>
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+<table class="data-table">
+  <thead>
+    <tr><th>Channel</th><th>Current partners / platforms</th><th>Role</th><th>Key KPIs</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Own DTC — axelarigato.com</strong></td>
+      <td>Direct. Ships 130 countries.</td>
+      <td>Primary revenue. Full margin. Customer data ownership. Drop-of-week drives CRM.</td>
+      <td>CVR · AOV · Repeat purchase · CRM opt-in</td>
+    </tr>
+    <tr>
+      <td><strong>Luxury Marketplaces</strong></td>
+      <td>Farfetch · MyTheresa · SSENSE</td>
+      <td>Extended reach into premium global buyer. Brand positioning in the €200–430 tier. Platform commission reduces margin vs DTC.</td>
+      <td>Sell-through rate · Net revenue after fees · Stock allocation efficiency</td>
+    </tr>
+    <tr>
+      <td><strong>Prestige Wholesale (digital)</strong></td>
+      <td>Harrods · Saks · Nordstrom · Le Bon Marché · Bloomingdale's</td>
+      <td>Brand visibility in key doors. Lower direct margin. Online presence within retailer e-commerce.</td>
+      <td>Wholesale revenue · Brand placement · In-season stock</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="src-note">Source: <a href="../brands/axel-arigato.html" target="_blank" rel="noopener">TrendsOnFire — Axel Arigato Brand Intelligence</a> · <a href="https://www.modernretail.co/operations/with-a-new-store-swedish-sneaker-brand-axel-arigato-targets-u-s-growth/" target="_blank" rel="noopener">Modern Retail, Sept 2024</a> · <a href="https://www.prnewswire.com/news-releases/eurazeo-brands-announces-its-first-european-transaction-with-an-investment-in-swedish-brand-axel-arigato-alongside-its-founders-301168383.html" target="_blank" rel="noopener">Eurazeo press release, 2020</a></div>
+
+<!-- SECTION 03: CONTEXT -->
+<div id="sec-03" class="context-box">
+  <div class="eyebrow">Strategic context — what changes in 2026</div>
+  <h3>New CEO · Gothenburg build · Next growth phase</h3>
+  <div class="context-grid">
+    <div class="ctx-item">
+      <div class="ctx-label">New CEO — Frédéric Serrant</div>
+      <div class="ctx-text">Ex Adidas APAC Managing Director. 16 years at Adidas across APAC, Southeast Asia, Brazil, Chile. Appointed 3 February 2026. Thinks in channels, P&amp;L, and scale — not founder intuition. The Head of E-commerce reports into a CCO who answers to this CEO. Commercial clarity and data-backed decisions are non-negotiable from day one.</div>
+    </div>
+    <div class="ctx-item">
+      <div class="ctx-label">London → Gothenburg relocation</div>
+      <div class="ctx-text">Core departments moving from London to Gothenburg. The e-commerce team is being built in Gothenburg now. This is a build role, not a step-into role. The hire shapes the team structure, the tooling, and the operating model. Candidates who have built functions from scratch have a structural advantage over candidates who have only inherited them.</div>
+    </div>
+    <div class="ctx-item">
+      <div class="ctx-label">Next growth phase</div>
+      <div class="ctx-text">US entered Sept 2024 (NYC Soho). UAE entered Sept 2025 (Dubai, Chalhoub Group). Abu Dhabi and Jeddah planned. The e-commerce channel must serve markets ahead of store openings — digital demand validation precedes physical investment. This is how the brand has always operated. The Head of E-commerce owns the digital signal that tells the business where to open next.</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 TrendsOnFire &middot; Privacy Policy &middot; Disclaimer &middot; Terms &amp; Conditions &middot; Contact — Analysis based on publicly available information. Not investment advice.
+</footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#0a0f1a;color:#b8976a;border:1px solid rgba(184,151,106,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#1a2235;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+
+</body>
+</html>
