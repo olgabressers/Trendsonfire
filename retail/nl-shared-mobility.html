@@ -114,6 +114,15 @@
     .mk-list.challenge li::before { color:#fca5a5; }
     .mk-tof-url { font-size:13px; color:#b8976a; letter-spacing:3px; text-transform:uppercase; font-weight:700; margin-top:32px; }
 
+    /* brand hero image */
+    .hero-img-strip { width:100%; height:440px; overflow:hidden; position:relative; }
+    .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block; }
+    .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.65); color:rgba(255,255,255,.65); font-size:11px; padding:6px 14px; letter-spacing:0.3px; }
+    @media(max-width:480px){ .hero-img-strip { height:220px; } }
+
+    /* conclusion on top */
+    .concl-intro { font-size:16px; color:#1f1f1f; line-height:1.8; margin-bottom:20px; }
+
     /* chart boxes */
     .chart-box { background:white; border:1px solid #e2dfd9; padding:24px 24px 18px; margin-bottom:16px; }
     .chart-title { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#b8976a; margin-bottom:18px; }
@@ -168,10 +177,10 @@
   </a>
   <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
   <div class="nav-links" style="margin-left:auto">
-    <a href="../retail/index.html" class="active">Retail</a>
+    <a href="../retail/index.html">Retail</a>
     <a href="../brands/index.html">Brands</a>
     <a href="../people/index.html">People</a>
-    <a href="../technology/index.html">Technology</a>
+    <a href="../technology/index.html" class="active">Technology</a>
     <a href="../supply-chain/index.html">Supply Chain</a>
     <a href="../education-government/index.html">Education</a>
     <a href="../finance-compliance/index.html">Finance</a>
@@ -189,7 +198,7 @@
   <div class="inner">
     <div class="breadcrumb">
       <a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp;
-      <a href="index.html">Retail</a> &nbsp;/&nbsp;
+      <a href="../technology/index.html">Technology &amp; Media</a> &nbsp;/&nbsp;
       Netherlands Shared Mobility
     </div>
     <div class="eyebrow">Transport Intelligence &middot; Netherlands</div>
@@ -202,7 +211,39 @@
   </div>
 </div>
 
+<!-- CHECK BRAND IMAGE -->
+<div class="hero-img-strip">
+  <img src="img/check-brand.jpg" alt="Check e-mopeds on Amsterdam streets — NL shared mobility market leader" onerror="this.parentElement.style.background:'#0a2356';this.style.display:'none'"/>
+  <div class="img-caption">Check — NL shared mobility · ridecheck.app</div>
+</div>
+
 <main>
+
+  <!-- EXECUTIVE SUMMARY / CONCLUSION (top of page) -->
+  <div style="background:#f5f2ee;border-top:4px solid #0a0f1a;padding:36px 0 28px;margin:0 0 48px;">
+    <div class="sec-eyebrow" style="margin-bottom:12px;">Executive summary</div>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);font-weight:500;color:#0a0f1a;line-height:1.2;margin:0 0 18px;">NL urban transport is three separate businesses — e-mopeds, micro-mobility, and shared cars — each with its own operators, funding model, and city contract structure. No single company spans all three.</h2>
+    <p class="concl-intro">The Netherlands shared mobility sector covers app-based short-trip transport that lets users rent a vehicle by the minute, hour, or day. "Verticals" here means three distinct vehicle categories that run as entirely separate businesses: <strong>e-mopeds</strong> (electric scooter-style bikes rented by the minute for urban trips), <strong>municipal micro-mobility</strong> (e-bikes and e-scooters operated on city concession contracts), and <strong>shared cars</strong> (station-based or peer-to-peer cars booked by the hour or day). Each category has different economics, different city permit requirements, and different customer behaviour. No single operator has successfully combined all three at scale in the Netherlands.</p>
+
+    <div class="concl-grid">
+      <div style="background:white;border-left:4px solid #0a2356;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a2356;margin-bottom:8px;">E-mopeds — Check leads</div>
+        <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">Check holds 75% of NL e-moped market and reached profitability in 2024 (€18M revenue, 8% EBIT). Cooltra/felyx holds the remainder after the 2024 merger. This segment grew from zero in 2020 and is now effectively closed to new entrants.</div>
+      </div>
+      <div style="background:white;border-left:4px solid #8b1a1a;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8b1a1a;margin-bottom:8px;">Municipal micro-mobility — TIER-Dott</div>
+        <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">TIER-Dott operates e-bikes and e-scooters across 400+ cities on city contracts. NL is one market in a European-scale operation. The 2024 merger created a cost base smaller operators cannot match on municipal bids.</div>
+      </div>
+      <div style="background:white;border-left:4px solid #1e4d2b;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#1e4d2b;margin-bottom:8px;">Shared cars — Greenwheels &amp; MyWheels</div>
+        <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">Greenwheels (3,000 cars, Volkswagen-backed) and MyWheels (2,800+ cars, cooperative) serve different needs. Greenwheels covers 195 NS rail stations. MyWheels is 50% electric and running a Vehicle-to-Grid pilot in Utrecht. Both are expanding through 2026.</div>
+      </div>
+    </div>
+
+    <div class="heat-insight" style="margin-top:20px;">
+      <strong>Where this is heading:</strong> Dutch municipalities are moving toward MaaS (Mobility-as-a-Service) — integrated platforms where a single app covers public transport, e-mopeds, e-bikes, and shared cars. Operators that connect to NS rail and 9292 public transport data are positioned to win city contracts in this model. Check already reports 1 in 3 rides connecting to a public transport journey. Greenwheels is at 195 NS stations. The operator that builds the transit integration layer first shapes the next phase of NL urban mobility.
+    </div>
+  </div>
 
   <!-- KPI STRIP -->
   <div class="stats">
@@ -573,38 +614,6 @@
       </div>
     </div>
     <div class="mk-tof-url">trendsonfire.com</div>
-  </div>
-
-  <!-- SECTION 05: CONCLUSION -->
-  <div class="sec-header">
-    <div class="sec-num">05</div>
-    <div class="sec-label">
-      <div class="sec-eyebrow">Conclusion</div>
-      <div class="sec-title">A market built on verticals, not a unified platform</div>
-    </div>
-  </div>
-
-  <div style="font-size:16px;color:#1f1f1f;line-height:1.8;margin-bottom:20px;">
-    The Netherlands has one of the densest shared mobility ecosystems in Europe — yet no single operator covers all modes. The market runs on parallel verticals: e-mopeds (Check, Cooltra/felyx), municipal micro-mobility (TIER-Dott), and shared cars (MyWheels, Greenwheels). Each vertical has its own economics, concession structure, and customer base.
-  </div>
-
-  <div class="concl-grid">
-    <div style="background:#f5f2ee;border-left:4px solid #0a2356;padding:18px 20px;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a2356;margin-bottom:8px;">E-mopeds</div>
-      <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">Check is profitable and holds 75% of the NL moped market. The category grew from zero in 2020 to 6,500+ vehicles in 2024. Cooltra/felyx consolidated the rest. This segment is effectively closed to new entrants.</div>
-    </div>
-    <div style="background:#f5f2ee;border-left:4px solid #8b1a1a;padding:18px 20px;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8b1a1a;margin-bottom:8px;">E-bikes / micro-mobility</div>
-      <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">TIER-Dott operates at European scale through municipal tenders. NL is one market among 400+ cities. The merger created a cost structure that smaller operators cannot match on municipal bids.</div>
-    </div>
-    <div style="background:#f5f2ee;border-left:4px solid #1e4d2b;padding:18px 20px;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#1e4d2b;margin-bottom:8px;">Shared cars</div>
-      <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">Greenwheels (Volkswagen-backed, 3,500 cars) and MyWheels (cooperative, 2,500+ cars) serve different use cases. Greenwheels targets urban station users. MyWheels targets peer-to-peer and V2G-enabled EV fleets. Both are expanding fleet through 2026.</div>
-    </div>
-  </div>
-
-  <div class="heat-insight">
-    <strong>The strategic question for the next three years:</strong> as Dutch municipalities move toward integrated MaaS (Mobility-as-a-Service) frameworks, operators that can offer multi-modal coverage or integrate with public transport data will hold the stronger negotiating position. Check is already there — 1 in 3 rides connects to a public transport journey. Greenwheels covers 195 NS rail stations. The car-sharing and e-moped verticals are converging at the transit node — which operator builds the integration layer first will define the next phase of the market.
   </div>
 
   <!-- ABOUT THE AUTHOR -->
