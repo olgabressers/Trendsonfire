@@ -114,6 +114,27 @@
     .mk-list.challenge li::before { color:#fca5a5; }
     .mk-tof-url { font-size:13px; color:#b8976a; letter-spacing:3px; text-transform:uppercase; font-weight:700; margin-top:32px; }
 
+    /* chart boxes */
+    .chart-box { background:white; border:1px solid #e2dfd9; padding:24px 24px 18px; margin-bottom:16px; }
+    .chart-title { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#b8976a; margin-bottom:18px; }
+    .chart-src { font-size:11.5px; color:#9ca3af; margin-top:8px; line-height:1.55; }
+    .chart-src a { color:#8b6a2f; }
+    @media(max-width:600px){ .chart-box { padding:16px 14px 14px; } }
+
+    /* growth stat cards */
+    .growth-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0 24px; }
+    @media(max-width:900px){ .growth-stats { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .growth-stats { grid-template-columns:1fr; } }
+    .gs-card { background:#f5f2ee; border-left:4px solid #b8976a; padding:18px 16px; }
+    .gs-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:38px; font-weight:600; color:#0a0f1a; line-height:1; margin-bottom:8px; }
+    .gs-lbl { font-size:13px; font-weight:700; color:#1f1f1f; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; line-height:1.3; }
+    .gs-sub { font-size:12px; color:#4a4a4a; line-height:1.55; }
+    .gs-sub a { color:#8b6a2f; }
+
+    /* conclusion 3-col grid */
+    .concl-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:28px; }
+    @media(max-width:768px){ .concl-grid { grid-template-columns:1fr; } }
+
     @media(max-width:600px){
       .art-hero { padding:44px 20px 36px; }
       .art-hero p { font-size:15.5px; }
@@ -126,6 +147,8 @@
       .s-num { font-size:34px; }
       .mk-col { padding:22px 16px; }
       .mk-list li { font-size:14px; }
+      .gs-num { font-size:30px; }
+      .data-table th, .data-table td { padding:8px 10px; font-size:12px; min-width:90px; }
     }
   </style>
 </head>
@@ -294,73 +317,96 @@
     <div class="sec-num">02</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Demand &amp; fleet growth</div>
-      <div class="sec-title">NL shared mobility fleet by segment — 2024 snapshot and growth trajectory</div>
-      <div class="sec-sub">Fleet size is the most consistent publicly available proxy for demand in this sector. Car sharing and e-moped segments each exceed 6,000 vehicles in the Netherlands. User-demand data is available for car sharing: the CROW institute measured 515,000 NL car sharing users in 2019, rising to 730,000 in 2020 (+42%). Comparable data for e-mopeds and e-scooters is not published at segment level.</div>
+      <div class="sec-title">NL shared mobility fleet by segment — 2025</div>
+      <div class="sec-sub">Fleet size is the most consistent publicly available proxy for demand. Car sharing and e-moped segments each hold approximately 5,800–6,500 vehicles in the Netherlands. Car sharing population penetration rose from 4% to 7% in a single year (fresk.digital, 2023). MyWheels serves 250,000 registered users (2025). Greenwheels grew from 1,700 vehicles in 2010 to 3,000 in 2025. E-moped segment-level user data is not published publicly.</div>
     </div>
   </div>
 
-  <!-- Chart 1: Fleet by segment, 2024 -->
-  <div style="background:white;border:1px solid #e2dfd9;padding:28px 28px 20px;margin-bottom:16px;">
-    <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#b8976a;margin-bottom:18px;">NL shared vehicle fleet by segment — 2024</div>
-    <svg viewBox="0 0 780 220" width="100%" style="display:block;overflow:visible;" aria-label="Bar chart: NL shared vehicle fleet by segment 2024">
-      <!-- Y axis labels -->
-      <text x="158" y="45" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">Shared cars</text>
-      <text x="158" y="102" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-mopeds</text>
-      <text x="158" y="159" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-bikes / scooters</text>
-      <!-- Sub-labels -->
-      <text x="158" y="59" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Greenwheels + MyWheels</text>
-      <text x="158" y="116" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Check + Cooltra/felyx NL</text>
-      <text x="158" y="173" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Cooltra NL only · TIER-Dott undisclosed</text>
-      <!-- Bar: Shared cars ~6,000 → 463px at scale -->
-      <rect x="168" y="28" width="463" height="30" fill="#0a2356" rx="2"/>
-      <text x="638" y="48" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~6,000</text>
-      <!-- Bar: E-mopeds ~6,500 → 500px -->
-      <rect x="168" y="85" width="500" height="30" fill="#1a5c38" rx="2"/>
-      <text x="675" y="105" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~6,500</text>
-      <!-- Bar: E-bikes/scooters 800 → 61px -->
-      <rect x="168" y="142" width="62" height="30" fill="#b8976a" rx="2"/>
-      <text x="238" y="162" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">800+ (partial)</text>
+  <!-- Chart 1: Fleet by segment, 2025 -->
+  <div class="chart-box">
+    <div class="chart-title">NL shared vehicle fleet by segment — 2025</div>
+    <svg viewBox="0 0 700 230" width="100%" style="display:block;overflow:visible;" aria-label="Bar chart: NL shared vehicle fleet by segment 2025">
+      <!-- Y labels -->
+      <text x="145" y="45" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">Shared cars</text>
+      <text x="145" y="59" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Greenwheels 3,000 + MyWheels 2,800+</text>
+      <text x="145" y="103" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-mopeds</text>
+      <text x="145" y="117" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Check 5,000 + Cooltra/felyx NL ~1,500</text>
+      <text x="145" y="161" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-bikes / scooters</text>
+      <text x="145" y="175" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Cooltra NL (partial) · TIER-Dott undisclosed</text>
+      <!-- Bars — max = 6,500, scale to 480px → 1 vehicle = 0.0738px -->
+      <!-- Shared cars 5,800 → 428px -->
+      <rect x="155" y="28" width="428" height="28" fill="#0a2356" rx="2"/>
+      <text x="590" y="47" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~5,800</text>
+      <!-- E-mopeds 6,500 → 480px -->
+      <rect x="155" y="86" width="480" height="28" fill="#1a5c38" rx="2"/>
+      <text x="642" y="105" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~6,500</text>
+      <!-- E-bikes 800 → 59px -->
+      <rect x="155" y="144" width="59" height="28" fill="#b8976a" rx="2"/>
+      <text x="222" y="163" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">800+</text>
       <!-- X axis -->
-      <line x1="168" y1="195" x2="668" y2="195" stroke="#e8e5e0" stroke-width="1"/>
-      <text x="168" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">0</text>
-      <text x="293" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">1,000</text>
-      <text x="418" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">2,000</text>
-      <text x="543" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">3,000</text>
-      <text x="655" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">vehicles</text>
+      <line x1="155" y1="200" x2="640" y2="200" stroke="#e8e5e0" stroke-width="1"/>
+      <text x="155" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">0</text>
+      <text x="267" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">1,500</text>
+      <text x="379" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">3,000</text>
+      <text x="491" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">4,500</text>
+      <text x="596" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">vehicles</text>
     </svg>
-    <div style="font-size:11.5px;color:#9ca3af;margin-top:8px;">Sources: <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank" style="color:#8b6a2f;">Check Annual Report 2024</a> · <a href="https://cooltra.com/en/blog/cooltra-reaches-e60-million-in-revenue-in-2024-up-32-year-on-year-and-continues-its-european-expansion/" target="_blank" style="color:#8b6a2f;">Cooltra 2024 Results</a> · <a href="https://www.greenwheels.com/en/about-greenwheels" target="_blank" style="color:#8b6a2f;">Greenwheels</a> · <a href="https://press.thesharinggroup.com/212978-mywheels-market-leader-in-dutch-car-sharing-market/" target="_blank" style="color:#8b6a2f;">The Sharing Group</a></div>
+    <div class="chart-src">Sources: <a href="https://www.greenwheels.com/en/about-greenwheels/history" target="_blank">Greenwheels 30th anniversary 2025</a> · <a href="https://www.wheelmatch.app/guides/carsharing-in-the-netherlands" target="_blank">WheelMatch NL car sharing guide 2025</a> · <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank">Check Annual Report 2024</a> · <a href="https://cooltra.com/en/blog/cooltra-reaches-e60-million-in-revenue-in-2024-up-32-year-on-year-and-continues-its-european-expansion/" target="_blank">Cooltra 2024</a></div>
   </div>
 
-  <!-- Chart 2: Car sharing user growth -->
-  <div style="background:white;border:1px solid #e2dfd9;padding:28px 28px 20px;margin-bottom:16px;">
-    <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#b8976a;margin-bottom:18px;">NL car sharing users — CROW survey data</div>
-    <svg viewBox="0 0 780 200" width="100%" style="display:block;" aria-label="Bar chart: NL car sharing users 2019 vs 2020">
-      <!-- 2019 bar: 515,000 → 260px (515/730 * 368 = 260) -->
-      <rect x="168" y="30" width="260" height="48" fill="#0a2356" rx="2"/>
-      <text x="158" y="61" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2019</text>
-      <text x="436" y="61" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">515,000 users</text>
-      <!-- 2020 bar: 730,000 → 368px -->
-      <rect x="168" y="102" width="368" height="48" fill="#1a5c38" rx="2"/>
-      <text x="158" y="133" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2020</text>
-      <text x="544" y="133" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">730,000 users</text>
-      <!-- Growth badge -->
-      <rect x="620" y="38" width="100" height="28" fill="#f0fdf4" rx="4" stroke="#bbf7d0" stroke-width="1"/>
-      <text x="670" y="57" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#166534" font-weight="700">+42% YoY</text>
-      <!-- X axis -->
-      <line x1="168" y1="168" x2="540" y2="168" stroke="#e8e5e0" stroke-width="1"/>
-      <text x="168" y="183" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">0</text>
-      <text x="290" y="183" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">200,000</text>
-      <text x="413" y="183" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">400,000</text>
-      <text x="490" y="183" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">600,000</text>
+  <!-- Chart 2: Greenwheels fleet growth 2010–2025 + car sharing penetration -->
+  <div class="chart-box">
+    <div class="chart-title">NL car sharing fleet growth — Greenwheels milestones 2010 → 2025</div>
+    <svg viewBox="0 0 700 210" width="100%" style="display:block;" aria-label="Bar chart: Greenwheels fleet milestones 2010 to 2025">
+      <!-- Max = 3,000 → bar scale: 1 vehicle = 0.16px, max bar = 480px -->
+      <!-- 2010: 1,700 → 272px -->
+      <rect x="155" y="30" width="272" height="38" fill="#0a2356" rx="2"/>
+      <text x="145" y="55" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2010</text>
+      <text x="433" y="55" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">1,700 vehicles</text>
+      <!-- 2015: 2,000 → 320px -->
+      <rect x="155" y="90" width="320" height="38" fill="#1a5c38" rx="2"/>
+      <text x="145" y="115" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2015</text>
+      <text x="481" y="115" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">2,000 vehicles</text>
+      <!-- 2025: 3,000 → 480px -->
+      <rect x="155" y="150" width="480" height="38" fill="#b8976a" rx="2"/>
+      <text x="145" y="175" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2025</text>
+      <text x="641" y="175" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">3,000 vehicles</text>
+      <!-- +76% badge -->
+      <rect x="540" y="36" width="110" height="26" fill="#fffbeb" rx="4" stroke="#fde68a" stroke-width="1"/>
+      <text x="595" y="54" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#92400e" font-weight="700">+76% since 2010</text>
     </svg>
-    <div style="font-size:11.5px;color:#9ca3af;margin-top:8px;">Source: CROW research institute, via <a href="https://dutchreview.com/expat/car-sharing-netherlands/" target="_blank" style="color:#8b6a2f;">DutchReview</a>. 2021–2024 user data not published at segment level. ING projected the NL car sharing market to reach ~1 million potential users within the following five years of the 2020 survey.</div>
+    <div class="chart-src">Source: <a href="https://www.greenwheels.com/en/about-greenwheels/history" target="_blank">Greenwheels — History, 30th anniversary 2025</a></div>
   </div>
 
-  <!-- Check fleet growth callout -->
+  <!-- Market size stat cards (2025) -->
+  <div class="growth-stats">
+    <div class="gs-card">
+      <div class="gs-num">7%</div>
+      <div class="gs-lbl">NL population using car sharing</div>
+      <div class="gs-sub">Up from 4% — a single year increase. Higher in Amsterdam and Utrecht. Source: <a href="https://fresk.digital/nl/reports/shared-mobility-report-car" target="_blank">fresk.digital, 2023</a></div>
+    </div>
+    <div class="gs-card">
+      <div class="gs-num">7,920</div>
+      <div class="gs-lbl">NL shared cars total fleet</div>
+      <div class="gs-sub">+23% in 2023 alone. Approx. half are electric. Source: <a href="https://fresk.digital/nl/reports/shared-mobility-report-car" target="_blank">fresk.digital, 2023</a></div>
+    </div>
+    <div class="gs-card">
+      <div class="gs-num">250K</div>
+      <div class="gs-lbl">MyWheels registered users</div>
+      <div class="gs-sub">NL market leader by fleet. 50% of fleet now electric. Source: <a href="https://www.wheelmatch.app/guides/carsharing-in-the-netherlands" target="_blank">WheelMatch 2025</a></div>
+    </div>
+    <div class="gs-card">
+      <div class="gs-num">$3.8B</div>
+      <div class="gs-lbl">NL shared mobility market 2025</div>
+      <div class="gs-sub">Projected $8.99B by 2032 at 13.1% CAGR. Source: <a href="https://www.marknteladvisors.com/research-library/netherlands-shared-mobility-market.html" target="_blank">MarkNtel Advisors 2025</a></div>
+    </div>
+  </div>
+
+  <!-- E-moped category callout -->
   <div class="heat-insight">
-    <strong>E-moped demand: 2020 → 2024.</strong> Check launched with 160 e-mopeds in Rotterdam in February 2020. By end of 2024 the fleet reached 5,000 across 20+ NL cities — a 3,025% increase in four years. Revenue grew by 700% in 2021 alone. The e-moped segment did not exist at scale in the Netherlands before 2020; Check and felyx built the category from zero.
+    <strong>E-moped demand: built from zero in four years.</strong> Check launched with 160 e-mopeds in Rotterdam in February 2020. By end of 2024 the fleet reached 5,000 across 20+ NL cities — a 3,025% increase. Revenue grew by 700% in 2021 alone and reached €18M in 2024 with an 8% EBIT margin. The e-moped segment did not exist at scale in the Netherlands before 2020.
   </div>
-  <div class="src-note" style="margin-top:12px;"><strong>Sources:</strong> <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank">Check Annual Report 2024</a> · <a href="https://improvedcf.com/corporate-news/paul-van-merrienboer-co-founder-at-check/" target="_blank">ImprovedCF interview, Paul van Merrienboer</a></div>
+  <div class="src-note" style="margin-top:12px;"><strong>Sources:</strong> <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank">Check Annual Report 2024</a> · <a href="https://ridecheck.app/en/newsroom" target="_blank">Check newsroom (Feb 2025: "Check closes 2024 with a profit")</a></div>
 
   <!-- SECTION 03: OPERATOR PROFILES -->
   <div class="sec-header">
@@ -542,7 +588,7 @@
     The Netherlands has one of the densest shared mobility ecosystems in Europe — yet no single operator covers all modes. The market runs on parallel verticals: e-mopeds (Check, Cooltra/felyx), municipal micro-mobility (TIER-Dott), and shared cars (MyWheels, Greenwheels). Each vertical has its own economics, concession structure, and customer base.
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px;">
+  <div class="concl-grid">
     <div style="background:#f5f2ee;border-left:4px solid #0a2356;padding:18px 20px;">
       <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a2356;margin-bottom:8px;">E-mopeds</div>
       <div style="font-size:14px;color:#1f1f1f;line-height:1.6;">Check is profitable and holds 75% of the NL moped market. The category grew from zero in 2020 to 6,500+ vehicles in 2024. Cooltra/felyx consolidated the rest. This segment is effectively closed to new entrants.</div>
