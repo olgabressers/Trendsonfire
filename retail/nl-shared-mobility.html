@@ -125,10 +125,19 @@
 
     /* chart boxes */
     .chart-box { background:white; border:1px solid #e2dfd9; padding:24px 24px 18px; margin-bottom:16px; }
-    .chart-title { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#b8976a; margin-bottom:18px; }
+    .chart-title { font-size:17px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#0a0f1a; margin-bottom:18px; }
     .chart-src { font-size:11.5px; color:#9ca3af; margin-top:8px; line-height:1.55; }
     .chart-src a { color:#8b6a2f; }
     @media(max-width:600px){ .chart-box { padding:16px 14px 14px; } }
+
+    .ma-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0 48px; }
+    @media(max-width:768px){ .ma-grid { grid-template-columns:1fr; } }
+    .ma-card { border:1px solid #e2dfd9; background:white; padding:24px; }
+    .ma-num { font-size:13px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+    .ma-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:600; color:#0a0f1a; margin-bottom:12px; line-height:1.2; }
+    .ma-body { font-size:14px; color:#1f1f1f; line-height:1.7; }
+    .ma-unlock { font-size:13px; color:#1f1f1f; margin-top:12px; }
+    .ma-complex { font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#b8976a; margin-top:8px; }
 
     /* growth stat cards */
     .growth-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0 24px; }
@@ -366,55 +375,50 @@
   <!-- Chart 1: Fleet by segment, 2025 -->
   <div class="chart-box">
     <div class="chart-title">NL shared vehicle fleet by segment — 2025</div>
-    <svg viewBox="0 0 700 230" width="100%" style="display:block;overflow:visible;" aria-label="Bar chart: NL shared vehicle fleet by segment 2025">
-      <!-- Y labels -->
-      <text x="145" y="45" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">Shared cars</text>
-      <text x="145" y="59" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Greenwheels 3,000 + MyWheels 2,800+</text>
-      <text x="145" y="103" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-mopeds</text>
-      <text x="145" y="117" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Check 5,000 + Cooltra/felyx NL ~1,500</text>
-      <text x="145" y="161" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">E-bikes / scooters</text>
-      <text x="145" y="175" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">Cooltra NL (partial) · TIER-Dott undisclosed</text>
-      <!-- Bars — max = 6,500, scale to 480px → 1 vehicle = 0.0738px -->
-      <!-- Shared cars 5,800 → 428px -->
-      <rect x="155" y="28" width="428" height="28" fill="#0a2356" rx="2"/>
-      <text x="590" y="47" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~5,800</text>
-      <!-- E-mopeds 6,500 → 480px -->
-      <rect x="155" y="86" width="480" height="28" fill="#1a5c38" rx="2"/>
-      <text x="642" y="105" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">~6,500</text>
-      <!-- E-bikes 800 → 59px -->
-      <rect x="155" y="144" width="59" height="28" fill="#b8976a" rx="2"/>
-      <text x="222" y="163" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#0a0f1a" font-weight="700">800+</text>
+    <svg viewBox="0 0 590 240" width="100%" style="display:block;" aria-label="Bar chart: NL shared vehicle fleet by segment 2025">
+      <!-- Shared cars ~5,800 — max 6500 → 480px scale -->
+      <text x="80" y="44" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">Shared cars</text>
+      <rect x="90" y="22" width="427" height="36" fill="#0a2356" rx="2"/>
+      <text x="304" y="45" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="white" font-weight="700">~5,800</text>
+      <!-- E-mopeds ~6,500 -->
+      <text x="80" y="114" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">E-mopeds</text>
+      <rect x="90" y="92" width="480" height="36" fill="#1a5c38" rx="2"/>
+      <text x="330" y="115" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="white" font-weight="700">~6,500</text>
+      <!-- E-bikes / scooters 800+ -->
+      <text x="80" y="184" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">E-bikes</text>
+      <rect x="90" y="162" width="59" height="36" fill="#b8976a" rx="2"/>
+      <text x="160" y="185" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#0a0f1a" font-weight="700">800+</text>
       <!-- X axis -->
-      <line x1="155" y1="200" x2="640" y2="200" stroke="#e8e5e0" stroke-width="1"/>
-      <text x="155" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">0</text>
-      <text x="267" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">1,500</text>
-      <text x="379" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">3,000</text>
-      <text x="491" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">4,500</text>
-      <text x="596" y="216" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#9ca3af">vehicles</text>
+      <line x1="90" y1="210" x2="575" y2="210" stroke="#e8e5e0" stroke-width="1"/>
+      <text x="90" y="228" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f">0</text>
+      <text x="201" y="228" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f">1,500</text>
+      <text x="312" y="228" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f">3,000</text>
+      <text x="423" y="228" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f">4,500</text>
     </svg>
+    <div style="font-size:13px;color:#1f1f1f;line-height:1.8;margin-top:10px;"><strong>Shared cars:</strong> Greenwheels 3,000 · MyWheels 2,800+ &nbsp;&nbsp; <strong>E-mopeds:</strong> Check 5,000 · Cooltra/felyx NL ~1,500 &nbsp;&nbsp; <strong>E-bikes/scooters:</strong> TIER-Dott NL (fleet not disclosed) · Cooltra NL (partial)</div>
     <div class="chart-src">Sources: <a href="https://www.greenwheels.com/en/about-greenwheels/history" target="_blank">Greenwheels 30th anniversary 2025</a> · <a href="https://www.wheelmatch.app/guides/carsharing-in-the-netherlands" target="_blank">WheelMatch NL car sharing guide 2025</a> · <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank">Check Annual Report 2024</a> · <a href="https://cooltra.com/en/blog/cooltra-reaches-e60-million-in-revenue-in-2024-up-32-year-on-year-and-continues-its-european-expansion/" target="_blank">Cooltra 2024</a></div>
   </div>
 
   <!-- Chart 2: Greenwheels fleet growth 2010–2025 + car sharing penetration -->
   <div class="chart-box">
     <div class="chart-title">NL car sharing fleet growth — Greenwheels milestones 2010 → 2025</div>
-    <svg viewBox="0 0 700 210" width="100%" style="display:block;" aria-label="Bar chart: Greenwheels fleet milestones 2010 to 2025">
-      <!-- Max = 3,000 → bar scale: 1 vehicle = 0.16px, max bar = 480px -->
+    <svg viewBox="0 0 630 200" width="100%" style="display:block;" aria-label="Bar chart: Greenwheels fleet milestones 2010 to 2025">
+      <!-- Scale: 3,000 max → 480px. 1 car = 0.16px. Bars start x=65. Year labels left at x=50 centered. -->
       <!-- 2010: 1,700 → 272px -->
-      <rect x="155" y="30" width="272" height="38" fill="#0a2356" rx="2"/>
-      <text x="145" y="55" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2010</text>
-      <text x="433" y="55" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">1,700 vehicles</text>
+      <text x="50" y="52" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="16" fill="#0a0f1a" font-weight="700">2010</text>
+      <rect x="65" y="28" width="272" height="40" fill="#0a2356" rx="2"/>
+      <text x="201" y="53" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="white" font-weight="700">1,700 vehicles</text>
       <!-- 2015: 2,000 → 320px -->
-      <rect x="155" y="90" width="320" height="38" fill="#1a5c38" rx="2"/>
-      <text x="145" y="115" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2015</text>
-      <text x="481" y="115" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">2,000 vehicles</text>
+      <text x="50" y="112" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="16" fill="#0a0f1a" font-weight="700">2015</text>
+      <rect x="65" y="88" width="320" height="40" fill="#1a5c38" rx="2"/>
+      <text x="225" y="113" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="white" font-weight="700">2,000 vehicles</text>
       <!-- 2025: 3,000 → 480px -->
-      <rect x="155" y="150" width="480" height="38" fill="#b8976a" rx="2"/>
-      <text x="145" y="175" text-anchor="end" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1f1f1f" font-weight="700">2025</text>
-      <text x="641" y="175" font-family="'Helvetica Neue',Arial,sans-serif" font-size="15" fill="#0a0f1a" font-weight="700">3,000 vehicles</text>
-      <!-- +76% badge -->
-      <rect x="540" y="36" width="110" height="26" fill="#fffbeb" rx="4" stroke="#fde68a" stroke-width="1"/>
-      <text x="595" y="54" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#92400e" font-weight="700">+76% since 2010</text>
+      <text x="50" y="172" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="16" fill="#0a0f1a" font-weight="700">2025</text>
+      <rect x="65" y="148" width="480" height="40" fill="#b8976a" rx="2"/>
+      <text x="305" y="173" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="white" font-weight="700">3,000 vehicles</text>
+      <!-- +76% badge, just right of longest bar -->
+      <rect x="549" y="148" width="78" height="28" fill="#fffbeb" rx="4" stroke="#fde68a" stroke-width="1"/>
+      <text x="588" y="167" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#92400e" font-weight="700">+76% since 2010</text>
     </svg>
     <div class="chart-src">Source: <a href="https://www.greenwheels.com/en/about-greenwheels/history" target="_blank">Greenwheels — History, 30th anniversary 2025</a></div>
   </div>
@@ -615,6 +619,62 @@
     </div>
     <div class="mk-tof-url">trendsonfire.com</div>
   </div>
+
+  <!-- SECTION 05: M&A OPPORTUNITIES -->
+  <div class="sec-header" style="margin-top:64px;">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Strategic analysis</div>
+      <div class="sec-title">Five M&A scenarios for Check</div>
+      <div class="sec-sub">Check is the only NL operator that reached profitability at scale in the e-moped segment. The next phase — expanding city coverage, adding vehicle categories, and competing for MaaS platform position — is likely to require inorganic moves. Five scenarios are credible based on the current market structure. No deal activity is reported or implied.</div>
+    </div>
+  </div>
+
+  <div class="ma-grid">
+
+    <div class="ma-card">
+      <div class="ma-num" style="color:#0a2356;">01 — NL Market Consolidation</div>
+      <div class="ma-title">Cooltra/felyx NL e-moped operations</div>
+      <div class="ma-body">Check holds 75% of the NL moped market. Cooltra (Barcelona) operates felyx across 6 countries; NL is a minority piece of their portfolio. Acquiring felyx NL's fleet and city permits would push Check's moped share above 90% and remove its only direct Dutch competitor.</div>
+      <div class="ma-unlock"><strong>What it unlocks:</strong> full pricing power in the moped segment, lower customer acquisition cost, accelerated city expansion using felyx permits already in place.</div>
+      <div class="ma-complex">Complexity: Medium — requires Cooltra NL asset carve-out</div>
+    </div>
+
+    <div class="ma-card">
+      <div class="ma-num" style="color:#0a4a5a;">02 — Category Extension</div>
+      <div class="ma-title">A station-based or peer-to-peer car sharing operator</div>
+      <div class="ma-body">Check already operates 200+ shared cars in Amsterdam (Annual Report 2024). Acquiring an existing car sharing platform rather than building organic fleet accelerates multi-modal expansion. MyWheels used the same playbook — Juuve in 2021, ConnectCar in 2022 — to scale from ~1,500 to 2,500+ cars in two years.</div>
+      <div class="ma-unlock"><strong>What it unlocks:</strong> app consolidation, route optimisation across mopeds and cars, higher revenue per user through a single session.</div>
+      <div class="ma-complex">Complexity: Medium — fleet integration, permit and insurance transfer</div>
+    </div>
+
+    <div class="ma-card">
+      <div class="ma-num" style="color:#8b1a1a;">03 — Municipal Footprint</div>
+      <div class="ma-title">TIER-Dott Dutch city concessions</div>
+      <div class="ma-body">TIER-Dott merged in March 2024 and is rationalising a 400-city portfolio across 20 countries. If they reduce their NL municipal footprint, Check is a natural buyer for NL city contracts and e-bike assets. This would add the e-bike and e-scooter concession segment to Check's portfolio without tendering from scratch.</div>
+      <div class="ma-unlock"><strong>What it unlocks:</strong> city concession rights, e-bike fleet, established municipal relationships in cities where Check has not yet won a concession.</div>
+      <div class="ma-complex">Complexity: Low–Medium — depends on TIER-Dott portfolio decisions</div>
+    </div>
+
+    <div class="ma-card">
+      <div class="ma-num" style="color:#1e4d2b;">04 — MaaS Platform Position</div>
+      <div class="ma-title">A corporate mobility or MaaS aggregation platform</div>
+      <div class="ma-body">Check already integrates with Shuttel (B2B), ANWB, NS, and 9292. 1 in 3 Check rides connects to public transport. Acquiring a corporate mobility platform or MaaS aggregator would let Check become the integration layer across operators — rather than one operator inside a platform another company controls.</div>
+      <div class="ma-unlock"><strong>What it unlocks:</strong> platform revenue alongside operator revenue, deeper NS and municipality partnerships, B2B contract stickiness.</div>
+      <div class="ma-complex">Complexity: High — platform integration, multi-operator coordination</div>
+    </div>
+
+    <div class="ma-card" style="grid-column:1 / -1;">
+      <div class="ma-num" style="color:#b8976a;">05 — Vertical Integration</div>
+      <div class="ma-title">E-vehicle maintenance, battery servicing, or charging infrastructure</div>
+      <div class="ma-body">Check's 5,000 e-mopeds require continuous rebalancing, charging, and repair across 20+ cities. Fleet operational cost is the primary squeeze on unit economics at scale. An 8% EBIT margin is strong for the sector but thin enough that third-party servicing costs can erode it as the fleet grows. Acquiring an e-vehicle service operator or battery swap provider reduces dependency on external contracts and improves fleet uptime — the single biggest driver of revenue per vehicle per day.</div>
+      <div class="ma-unlock"><strong>What it unlocks:</strong> lower per-vehicle operational cost, faster vehicle turnaround, a proprietary charging network that raises the barrier for new entrants.</div>
+      <div class="ma-complex">Complexity: Medium — operational integration, depends on current fleet ownership and servicing model</div>
+    </div>
+
+  </div>
+
+  <div class="src-note"><strong>Sources for M&A analysis:</strong> <a href="https://ridecheck.app/en/newsroom/yearly-report-2024" target="_blank">Check Annual Report 2024</a> · <a href="https://ridedott.com/press-release/tier-dott-merger/" target="_blank">TIER-Dott Merger Press Release, March 2024</a> · <a href="https://press.thesharinggroup.com/212978-mywheels-market-leader-in-dutch-car-sharing-market/" target="_blank">The Sharing Group Newsroom</a> · <a href="https://cooltra.com/en/blog/cooltra-reaches-e60-million-in-revenue-in-2024-up-32-year-on-year-and-continues-its-european-expansion/" target="_blank">Cooltra 2024 Annual Results</a></div>
 
   <!-- ABOUT THE AUTHOR -->
   <section class="about-strip">
