@@ -111,6 +111,37 @@
 
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:24px 0; align-items:start; }
     @media(max-width:768px){ .two-col { grid-template-columns:1fr; } }
+
+    /* ── HERO IMAGE STRIP ── */
+    .hero-img-strip { width:100%; height:340px; overflow:hidden; position:relative; background:#0a0f1a; }
+    .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.72); color:rgba(255,255,255,.6); font-size:11px; padding:6px 14px; letter-spacing:0.3px; }
+
+    /* ── CHANNEL SPLIT BARS ── */
+    .ch-split-row { display:flex; gap:5px; height:44px; margin-bottom:6px; border-radius:2px; overflow:hidden; }
+    .ch-split-dtc { background:#0a0f1a; display:flex; align-items:center; padding-left:14px; font-size:12.5px; font-weight:700; color:white; overflow:hidden; white-space:nowrap; }
+    .ch-split-whl { background:#8b1a6a; display:flex; align-items:center; padding-left:14px; font-size:12.5px; font-weight:700; color:white; overflow:hidden; white-space:nowrap; }
+
+    /* ── OUTLET STORE TIMELINE ── */
+    .store-timeline { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin:20px 0 12px; }
+    .store-year-card { background:white; border:1px solid #e2dfd9; padding:18px 14px; text-align:center; }
+    .sy-year { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#b8976a; margin-bottom:8px; }
+    .sy-count { font-family:'Cormorant Garamond',Georgia,serif; font-size:52px; font-weight:500; color:#0a0f1a; line-height:1; }
+    .sy-label { font-size:12px; color:#1f1f1f; margin-top:6px; line-height:1.4; }
+
+    /* ── TIKTOK VISUAL BLOCK ── */
+    .tiktok-block { background:#010101; padding:36px 40px; margin:28px 0; display:flex; align-items:center; gap:40px; position:relative; overflow:hidden; }
+    .tiktok-block::before { content:''; position:absolute; top:-80px; left:-80px; width:240px; height:240px; border-radius:50%; background:rgba(105,201,208,.07); pointer-events:none; }
+    .tiktok-block::after { content:''; position:absolute; bottom:-80px; right:-80px; width:240px; height:240px; border-radius:50%; background:rgba(238,29,82,.07); pointer-events:none; }
+    .tiktok-wordmark { font-family:'Cormorant Garamond',Georgia,serif; font-size:52px; font-weight:400; color:white; letter-spacing:2px; line-height:1; flex-shrink:0; position:relative; z-index:1; text-align:center; }
+    .tiktok-wordmark .tk-sub { font-family:'Inter','Helvetica Neue',sans-serif; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:rgba(255,255,255,.4); margin-top:10px; display:block; }
+    .tiktok-badge { display:inline-block; background:#ee1d52; color:white; font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:1px; padding:3px 8px; margin-bottom:10px; }
+    .tiktok-divider { width:1px; height:100px; background:rgba(255,255,255,.1); flex-shrink:0; }
+    .tiktok-kpis { flex:1; display:grid; grid-template-columns:repeat(2,1fr); gap:22px 32px; position:relative; z-index:1; }
+    .tt-kpi-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:44px; font-weight:600; color:white; line-height:1; }
+    .tt-kpi-num.accent { color:#69c9d0; }
+    .tt-kpi-lbl { font-size:11.5px; color:rgba(255,255,255,.7); font-weight:600; letter-spacing:0.2px; margin-top:5px; line-height:1.45; }
+    @media(max-width:640px){ .tiktok-block { flex-direction:column; gap:24px; padding:28px 24px; } .tiktok-divider { width:100%; height:1px; } .tiktok-kpis { grid-template-columns:1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -160,6 +191,19 @@
       <span>Updated 17 June 2026</span>
     </div>
   </div>
+</div>
+
+<!-- HERO IMAGE STRIP -->
+<div class="hero-img-strip">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,#050a05 0%,#0d1a0e 40%,#0a1408 70%,#050a05 100%);"></div>
+  <div style="position:absolute;inset:0;background-image:radial-gradient(ellipse at 20% 50%,rgba(184,151,106,.07) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(139,26,106,.05) 0%,transparent 50%);"></div>
+  <div style="position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px);"></div>
+  <div style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:18px;">
+    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,10vw,116px);font-weight:300;color:rgba(255,255,255,.055);letter-spacing:clamp(16px,3vw,36px);text-transform:uppercase;user-select:none;text-indent:clamp(16px,3vw,36px);">HEYDUDE</div>
+    <div style="width:72px;height:1px;background:linear-gradient(to right,transparent,#b8976a,transparent);"></div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:rgba(184,151,106,.45);">Est. 2008 &nbsp;·&nbsp; Florence, Italy &nbsp;·&nbsp; Crocs Inc. 2022</div>
+  </div>
+  <div class="img-caption">HEYDUDE — casual footwear founded by Alessandro Rosano · acquired February 2022</div>
 </div>
 
 <main>
@@ -283,6 +327,36 @@
       <div class="rev-bar-val">$715M</div>
     </div>
   </div>
+
+  <!-- DTC vs WHOLESALE SPLIT -->
+  <div style="margin-top:36px;">
+    <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#b8976a;margin-bottom:20px;">Revenue by channel — DTC vs Wholesale</div>
+
+    <div style="margin-bottom:18px;">
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:8px;">2024 — $824M total (reported)</div>
+      <div class="ch-split-row">
+        <div class="ch-split-dtc" style="flex:368;">DTC $368M · 45%</div>
+        <div class="ch-split-whl" style="flex:456;">Wholesale $456M · 55%</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:6px;">
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:8px;">2025 — $715M total (est. channel split)</div>
+      <div class="ch-split-row">
+        <div class="ch-split-dtc" style="flex:379;">DTC ~$379M · 53%</div>
+        <div class="ch-split-whl" style="flex:336;">Wholesale ~$336M · 47%</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:24px;margin-top:14px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#1f1f1f;"><div style="width:14px;height:12px;background:#0a0f1a;flex-shrink:0;"></div> DTC (heydude.com + outlet stores)</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#1f1f1f;"><div style="width:14px;height:12px;background:#8b1a6a;flex-shrink:0;"></div> Wholesale</div>
+    </div>
+    <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;">
+      <strong>Note:</strong> 2024 DTC and Wholesale figures are reported directly in the Crocs Q4 2024 press release ($368M and $456M). 2025 channel split is estimated by applying reported YoY changes to 2024 actuals: DTC +3% ($368M × 1.03 ≈ $379M); Wholesale −27% ($456M × 0.73 ≈ $333M); sum $712M vs reported $715M (small rounding difference). 2025 split is labelled est. — <a href="https://investors.crocs.com/news-and-events/press-releases/press-release-details/2025/Crocs-Inc.-Reports-Record-2024-Results-with-Annual-Revenues-of-4.1-Billion-Growing-4-Over-2023/default.aspx" target="_blank" rel="noopener">Crocs IR Q4 2024</a> · <a href="https://www.fool.com/earnings/call-transcripts/2026/02/12/crocs-crox-q4-2025-earnings-call-transcript/" target="_blank" rel="noopener">Crocs Q4 2025 earnings call</a>
+    </div>
+  </div>
+
   <div class="src-note">
     <strong>Sources:</strong><br/>
     2021 — <a href="https://investors.crocs.com/news-and-events/press-releases/press-release-details/2022/Crocs-Inc.-Completes-Acquisition-of-Casual-Footwear-Brand-HEYDUDE/default.aspx" target="_blank" rel="noopener">Crocs IR acquisition announcement</a> ($580M stated at deal close)<br/>
@@ -355,6 +429,66 @@
       <div class="ch-body">After exiting 50%+ of wholesale accounts, the remaining wholesale partners are concentrated in higher-quality retail environments. Q4 2025 wholesale was down 42% year-on-year — the cleanup is still working through the P&amp;L. Management expects wholesale to stabilise in H2 2026.</div>
     </div>
   </div>
+
+  <!-- OUTLET STORE ROLLOUT -->
+  <div style="margin-top:36px;">
+    <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#b8976a;margin-bottom:18px;">Outlet store network growth</div>
+    <div class="store-timeline">
+      <div class="store-year-card">
+        <div class="sy-year">End 2024</div>
+        <div class="sy-count">52</div>
+        <div class="sy-label">Prior to 2025 openings</div>
+      </div>
+      <div class="store-year-card" style="border-color:#b8976a;background:#fdf9f4;">
+        <div class="sy-year">Opened 2025</div>
+        <div class="sy-count" style="color:#b8976a;">+23</div>
+        <div class="sy-label">New outlet stores in 2025</div>
+      </div>
+      <div class="store-year-card" style="border-color:#0a0f1a;background:#0a0f1a;">
+        <div class="sy-year" style="color:#b8976a;">End 2025</div>
+        <div class="sy-count" style="color:white;">75</div>
+        <div class="sy-label" style="color:rgba(255,255,255,.7);">Total outlet stores</div>
+      </div>
+      <div class="store-year-card" style="background:#faf9f7;">
+        <div class="sy-year">2026</div>
+        <div class="sy-count" style="font-size:28px;line-height:1.2;color:#b8976a;padding-top:8px;">Slowing</div>
+        <div class="sy-label">Fewer new openings as network matures — per management guidance</div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:20px;">
+      <div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Region</th><th>Stores</th><th>Format</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>United States</strong></td>
+              <td>75</td>
+              <td>Outlet — primarily in outlet mall centres</td>
+            </tr>
+            <tr>
+              <td><strong>International</strong></td>
+              <td>0</td>
+              <td>No owned retail outside the US. Distributor model for international markets.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:10px;">
+          <strong>Note:</strong> Store count derived from Q4 2025 earnings: 75 stores total, 23 opened in 2025 (end-2024 = 52 by arithmetic). All 75 are outlet format, US-only. Specific city/state locations available at <a href="https://www.heydude.com/pages/stores" target="_blank" rel="noopener">heydude.com/pages/stores</a>. Source: <a href="https://www.fool.com/earnings/call-transcripts/2026/02/12/crocs-crox-q4-2025-earnings-call-transcript/" target="_blank" rel="noopener">Crocs Q4 2025 earnings call</a>
+        </div>
+      </div>
+      <div>
+        <div class="channel-card">
+          <div class="ch-tag">Outlet model</div>
+          <div class="ch-title">Outlet stores as brand touchpoints, not flagship retail</div>
+          <div class="ch-body">The 75 stores are all outlet format — located in outlet mall centres rather than high-street or premium retail environments. This reflects the brand's current channel strategy: clearing remaining inventory at controlled price points while building physical consumer touchpoints outside wholesale dependency. Flagship-format retail is not part of the current strategy; management signalled fewer new outlet openings in 2026 as the network reaches its near-term target scale.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="src-note"><strong>Sources:</strong> <a href="https://www.fool.com/earnings/call-transcripts/2026/02/12/crocs-crox-q4-2025-earnings-call-transcript/" target="_blank" rel="noopener">Crocs Q4 2025 earnings call</a> · <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-crocs-q1-2026-beats-eps-estimates-stock-drops-93CH-4649966" target="_blank" rel="noopener">Crocs Q1 2026 earnings call</a> · <a href="https://sgbonline.com/exec-crocs-sets-plan-to-revive-heydudes-growth/" target="_blank" rel="noopener">SGB Media</a></div>
 
   <!-- SECTION 04: INTERNATIONAL DISTRIBUTION -->
@@ -416,6 +550,35 @@
   </div>
   <p class="sec-sub">HEYDUDE was named the number one gross seller of the year on TikTok Shop in the United States, with social commerce deployment across 7 global markets. This performance positions HEYDUDE alongside Crocs as among the footwear brands most advanced in social commerce channel development — a category where most competitors remain at an earlier stage of execution.</p>
   <p class="sec-sub">The TikTok Shop performance is significant beyond the direct revenue contribution. Social commerce on TikTok Shop provides a channel for reaching consumers who do not shop through traditional wholesale or owned digital, offering a complementary touchpoint to the DTC-and-remaining-wholesale model the brand is building. The 7-market deployment indicates that TikTok Shop is being used as part of the international market entry toolkit, not only in the US.</p>
+
+  <!-- TIKTOK VISUAL BLOCK -->
+  <div class="tiktok-block">
+    <div class="tiktok-wordmark">
+      <div class="tiktok-badge">Shop</div>
+      <div>TikTok</div>
+      <span class="tk-sub">Social Commerce · 2025</span>
+    </div>
+    <div class="tiktok-divider"></div>
+    <div class="tiktok-kpis">
+      <div>
+        <div class="tt-kpi-num accent">#1</div>
+        <div class="tt-kpi-lbl">Gross seller of the year<br>TikTok Shop US · footwear category 2025</div>
+      </div>
+      <div>
+        <div class="tt-kpi-num">7</div>
+        <div class="tt-kpi-lbl">Global markets with<br>active TikTok Shop presence · Q1 2026</div>
+      </div>
+      <div>
+        <div class="tt-kpi-num">+8%</div>
+        <div class="tt-kpi-lbl">DTC revenue growth<br>Q1 2026 driven by digital marketplaces</div>
+      </div>
+      <div>
+        <div class="tt-kpi-num" style="color:rgba(255,255,255,.3);font-size:22px;padding-top:10px;">International lever</div>
+        <div class="tt-kpi-lbl">TikTok Shop deployed across EMEA and SEA markets as part of the distributor-light international entry strategy</div>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:11.5px;color:#9ca3af;padding:8px 14px;margin-top:-12px;margin-bottom:20px;">Sources: <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-crocs-q1-2026-beats-eps-estimates-stock-drops-93CH-4649966" target="_blank" rel="noopener">Crocs Q1 2026 earnings call</a> · <a href="https://www.retaildive.com/news/tiktok-crocs-heydude-dtc-sales-growth-earnings/812197/" target="_blank" rel="noopener">Retail Dive</a></div>
 
   <table class="data-table">
     <thead>
