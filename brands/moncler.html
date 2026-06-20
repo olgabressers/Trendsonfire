@@ -63,11 +63,14 @@
     .heat-insight strong { color:#0a0f1a; font-weight:700; }
 
     /* Genius collaborators grid */
-    .collab-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:28px 0; }
+    .collab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
     @media(max-width:900px){ .collab-grid { grid-template-columns:repeat(2,1fr); } }
-    .collab-card { background:white; border:1px solid #e2dfd9; padding:18px 16px; }
-    .collab-name { font-size:14.5px; font-weight:700; color:#0a0f1a; margin-bottom:4px; }
-    .collab-role { font-size:12px; color:#6b5a3e; font-style:italic; }
+    @media(max-width:500px){ .collab-grid { grid-template-columns:1fr; } }
+    .collab-card { background:white; border:1px solid #e2dfd9; overflow:hidden; }
+    .collab-img { width:100%; height:260px; object-fit:cover; object-position:center top; display:block; }
+    .collab-body { padding:16px 16px 18px; }
+    .collab-name { font-size:15px; font-weight:700; color:#0a0f1a; margin-bottom:4px; }
+    .collab-role { font-size:12.5px; color:#6b5a3e; line-height:1.5; }
 
     /* How it works — 3 steps */
     .ops-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
@@ -174,31 +177,47 @@
   <div style="margin-top:36px; margin-bottom:12px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#0a0f1a;">Active collaborators — City of Genius 2025</div>
   <div class="collab-grid">
     <div class="collab-card">
-      <div class="collab-name">A$AP Rocky</div>
-      <div class="collab-role">AWGE — retro ski meets future sound</div>
+      <img class="collab-img" src="img/moncler-genius-asaprocky.webp" alt="A$AP Rocky x Moncler Genius"/>
+      <div class="collab-body">
+        <div class="collab-name">A$AP Rocky (AWGE)</div>
+        <div class="collab-role">Retro ski meets future sound. Bold colour-block puffers, trompe-l'oeil jacket, AWGE branding. Photographed by Charlotte Rutherford.</div>
+      </div>
     </div>
     <div class="collab-card">
-      <div class="collab-name">Edward Enninful</div>
-      <div class="collab-role">Former British Vogue editor — wearable luxury</div>
+      <img class="collab-img" src="img/moncler-genius-enninful.jpg" alt="Edward Enninful x Moncler Genius EE72"/>
+      <div class="collab-body">
+        <div class="collab-name">Edward Enninful (EE72)</div>
+        <div class="collab-role">Former British Vogue editor's first fashion design. Three looks for three extreme terrains — windstorm, sandstorm, snowstorm. Campaign shot by Tyler Mitchell.</div>
+      </div>
     </div>
     <div class="collab-card">
-      <div class="collab-name">Donald Glover</div>
-      <div class="collab-role">Music, film, creative direction</div>
+      <img class="collab-img" src="img/moncler-genius-donaldglover.jpg" alt="Donald Glover Gilga Farm x Moncler Genius"/>
+      <div class="collab-body">
+        <div class="collab-name">Donald Glover (Gilga Farm)</div>
+        <div class="collab-role">Inspired by his California farm in Ojai. Sun-washed palette, convertible duvet jacket that transforms into a sleeping bag. Animated short film campaign.</div>
+      </div>
     </div>
     <div class="collab-card">
-      <div class="collab-name">Willow Smith</div>
-      <div class="collab-role">Music &amp; cultural cross-over</div>
+      <img class="collab-img" src="img/moncler-genius-willowsmith.jpg" alt="Willow Smith x Moncler Genius"/>
+      <div class="collab-body">
+        <div class="collab-name">Willow Smith</div>
+        <div class="collab-role">Futuristic duality — sculptural pieces exploring contrasts and rebirth. Smith designed, modelled, and provided the soundtrack herself.</div>
+      </div>
     </div>
     <div class="collab-card">
-      <div class="collab-name">Jil Sander</div>
-      <div class="collab-role">Minimalist luxury heritage</div>
+      <img class="collab-img" src="img/moncler-genius-jilsander.jpg" alt="Jil Sander x Moncler Genius"/>
+      <div class="collab-body">
+        <div class="collab-name">Jil Sander</div>
+        <div class="collab-role">First-ever Jil Sander x Moncler collaboration. Minimalist quiet-luxury meets alpine function — voluminous silhouettes in a muted natural palette. November 2025.</div>
+      </div>
     </div>
-    <div class="collab-card">
-      <div class="collab-name">Rick Owens</div>
-      <div class="collab-role">Architecture &amp; darkness — from 2018 to present</div>
+    <div class="collab-card" style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:24px 20px; background:#0a0f1a; border-color:#0a0f1a; min-height:320px;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b8976a; margin-bottom:12px;">Since 2018</div>
+      <div class="collab-name" style="color:white; font-size:18px; margin-bottom:10px;">Rick Owens</div>
+      <div class="collab-role" style="color:rgba(255,255,255,.75);">The original Genius collaborator still active. His City of Genius pavilion: a brutalist off-grid mountain refuge in black, dust, and white. Signature oversized puffers, capes, robes.</div>
     </div>
   </div>
-  <div class="src-note"><strong>Source:</strong> <a href="https://www.showstudio.com/news/aap-rocky-edward-enninful-and-more-join-moncler-genius-new-creative-lineup" target="_blank" rel="noopener">SHOWstudio — A$AP Rocky, Edward Enninful and More Join Moncler Genius</a> · <a href="https://www.complex.com/style/a/aria-hughes/moncler-city-of-genius-shanghai-review" target="_blank" rel="noopener">Complex — City of Genius Shanghai Review</a></div>
+  <div class="src-note"><strong>Source:</strong> <a href="https://www.showstudio.com/news/aap-rocky-edward-enninful-and-more-join-moncler-genius-new-creative-lineup" target="_blank" rel="noopener">SHOWstudio</a> · <a href="https://www.complex.com/style/a/aria-hughes/moncler-city-of-genius-shanghai-review" target="_blank" rel="noopener">Complex — City of Genius Shanghai</a> · <a href="https://www.nssmag.com/en/fashion/42706/moncler-genius-new-collaboration-with-a-ap-rocky" target="_blank" rel="noopener">NSS Magazine</a> · <a href="https://www.dazeddigital.com/fashion/article/69091/1/jil-sander-gets-cosy-with-moncler" target="_blank" rel="noopener">Dazed — Jil Sander x Moncler</a></div>
 
   <!-- How it works operationally -->
   <div style="margin-top:44px; margin-bottom:12px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#0a0f1a;">How it works operationally</div>
