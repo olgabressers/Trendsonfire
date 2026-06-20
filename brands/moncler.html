@@ -86,6 +86,11 @@
     .res-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:72px; font-weight:600; color:#b8976a; line-height:0.9; margin-bottom:14px; }
     .res-lbl { font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:white; margin-bottom:8px; }
     .res-desc { font-size:13.5px; color:rgba(255,255,255,.8); line-height:1.6; }
+
+    /* Story divider */
+    .story-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#b8976a; font-weight:700; margin-bottom:28px; }
+    .story-divider { border-top:3px solid #0a0f1a; margin:72px 0 64px; display:flex; align-items:center; gap:20px; }
+    .story-divider-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#0a0f1a; font-weight:700; white-space:nowrap; background:white; padding-right:16px; margin-top:-2px; }
   </style>
 </head>
 <body>
@@ -139,6 +144,8 @@
 
 <main>
 
+  <div class="story-label">Story 1 — The Brand</div>
+
   <!-- 3 KEY STATS -->
   <div class="stats">
     <div class="s-card">
@@ -158,9 +165,29 @@
     </div>
   </div>
 
-  <!-- SECTION 01: MONCLER GENIUS -->
-  <div class="sec-header">
+  <!-- MY TAKE: THE BRAND -->
+  <div class="sec-header" style="margin-top:56px;">
     <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Editorial perspective</div>
+      <div class="sec-title">My take on the brand</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">€2.72B from 295 boutiques works out to roughly €9.2M in revenue per door. Most luxury brands consider €3–5M per door a strong-performing store. Moncler is running at nearly double that — which means the boutique network is functioning less as a volume engine and more as a brand-equity anchor. Each store carries significant revenue weight, which in turn means the brand can be selective about where and how it opens. That selectivity is itself a brand signal.</p>
+
+  <p class="sec-sub">The 52% Asia concentration is the most operationally interesting number on this page. Asia-Pacific, Japan, and Korea together drive more than half of Moncler brand revenues — and they grew +7% at constant FX in FY2025, while EMEA declined −3%. That is not a temporary imbalance. It reflects where the premium outerwear buyer with disposable income currently lives. Moncler's brand health is now significantly determined by what happens in Tokyo, Seoul, Shanghai, and Hong Kong — not Milan or Paris.</p>
+
+  <p class="sec-sub">The Americas at 14% of revenues (+5% cFX) is the growth story that receives least attention. The US market for performance-premium outerwear is underpenetrated relative to Asia. If Moncler continues expanding DOS in North America at the pace it has in Asia, the Americas could become the second growth engine within five years — which would also reduce the single-region concentration risk that 52% Asia currently represents.</p>
+
+  <!-- STORY DIVIDER -->
+  <div class="story-divider">
+    <span class="story-divider-label">Story 2 — The Drops Model</span>
+  </div>
+
+  <!-- SECTION 02: MONCLER GENIUS -->
+  <div class="sec-header">
+    <div class="sec-num">02</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Drops Strategy</div>
       <div class="sec-title">Moncler Genius — the model that replaced two seasons a year</div>
@@ -267,7 +294,7 @@
 
   <!-- OPINION SECTION -->
   <div class="sec-header" style="margin-top:72px;">
-    <div class="sec-num">02</div>
+    <div class="sec-num">03</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Editorial perspective</div>
       <div class="sec-title">My take on the drops model</div>
