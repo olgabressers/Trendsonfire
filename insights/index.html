@@ -42,7 +42,7 @@
     }
     .insights-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--rule);
       border: 1px solid var(--rule);
@@ -54,10 +54,15 @@
       transition: background .3s;
     }
     .insight-card:hover { background: var(--warm); }
+    .insight-card-thumb {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
     .insight-card-thumb img {
-      width: 100%; height: 200px;
+      width: 100%; height: 100%;
       object-fit: cover; object-position: top;
-      display: block; border-bottom: 1px solid var(--rule);
+      display: block;
+      border-bottom: 1px solid var(--rule);
     }
     .insight-card-body {
       padding: 24px 24px 20px;
@@ -99,6 +104,9 @@
 
     @media (max-width: 768px) {
       .insights-main { padding: 48px 20px 64px; }
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
       .insights-grid { grid-template-columns: 1fr; }
     }
   </style>
