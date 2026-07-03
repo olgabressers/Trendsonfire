@@ -881,11 +881,50 @@
 
 <script>
 function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('search-input').focus();},60);}
-function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';}
+function closeSearch(){document.getElementById('search-overlay').style.display='none';document.body.style.overflow='';document.getElementById('search-results').innerHTML='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
 document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});
+
+// Search logic
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var sr=document.getElementById('search-results');
+  if(!q){sr.innerHTML='';return;}
+  var cards=document.querySelectorAll('.insight-card');
+  var hits=[];
+  cards.forEach(function(c){
+    var title=c.querySelector('.insight-card-title');
+    var excerpt=c.querySelector('.insight-card-excerpt');
+    var tag=c.querySelector('.insight-card-tag');
+    var date=c.querySelector('.insight-card-date');
+    var text=[(title&&title.textContent)||'',(excerpt&&excerpt.textContent)||'',(tag&&tag.textContent)||'',(date&&date.textContent)||''].join(' ').toLowerCase();
+    if(text.indexOf(q)!==-1){
+      hits.push({
+        href:c.getAttribute('href'),
+        title:(title&&title.textContent)||'',
+        tag:(tag&&tag.textContent)||'',
+        date:(date&&date.textContent)||''
+      });
+    }
+  });
+  if(!hits.length){sr.innerHTML='<div class="search-empty">No results for "'+q.replace(/</g,'&lt;')+'"</div>';return;}
+  sr.innerHTML=hits.map(function(h){
+    return '<a class="search-result-item" href="'+h.href+'" target="_blank" rel="noopener" onclick="closeSearch()">'
+      +'<div class="sri-tag">'+h.tag+'</div>'
+      +'<div class="sri-title">'+h.title+'</div>'
+      +'<div class="sri-date">'+h.date+'</div>'
+      +'</a>';
+  }).join('');
+});
 </script>
+<style>
+.search-result-item{display:block;padding:14px 20px;border-bottom:1px solid #e2dfd9;text-decoration:none;color:inherit;transition:background .15s;}
+.search-result-item:hover{background:#f9f7f4;}
+.sri-tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8b6a2f;margin-bottom:4px;}
+.sri-title{font-size:15px;font-weight:600;color:#0a0f1a;line-height:1.35;margin-bottom:4px;}
+.sri-date{font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.3px;}
+</style>
 
 </body>
 </html>
