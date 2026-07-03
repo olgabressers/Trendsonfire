@@ -5,114 +5,136 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <meta name="robots" content="noindex, nofollow"/>
-  <title>Silva Method Torrevieja — Event Planning Research</title>
+  <title>Silva Method Utrecht — Event Planning Research</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --green:#059669; --amber:#d97706; --red:#dc2626; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-    .top-bar { background: var(--navy); color: rgba(255,255,255,.6); font-size: 12px; padding: 8px 20px; display: flex; align-items: center; gap: 12px; }
+    .top-bar { background: var(--navy); color: rgba(255,255,255,.6); font-size: 12px; padding: 8px 32px; display: flex; align-items: center; gap: 12px; }
     .top-bar a { color: rgba(255,255,255,.5); text-decoration: none; }
-    .badge { background: #dc2626; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: .5px; flex-shrink: 0; }
+    .top-bar a:hover { color: white; }
+    .badge { background: #dc2626; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: .5px; }
 
-    .hero { background: linear-gradient(135deg, #1e3a5f 0%, #8b1a6a 100%); color: white; padding: 48px 24px 40px; }
+    .hero { background: linear-gradient(135deg, #1e3a5f 0%, #5b21b6 100%); color: white; padding: 52px 32px 44px; }
     .hero-inner { max-width: 1100px; margin: auto; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #f9a8d4; font-weight: 700; margin-bottom: 10px; }
-    .hero h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
-    .hero p { font-size: 15px; color: rgba(255,255,255,.8); max-width: 640px; }
-    .hero-meta { display: flex; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
-    .hero-meta span { font-size: 12px; color: rgba(255,255,255,.6); }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c4b5fd; font-weight: 700; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 620px; }
+    .hero-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .hero-meta span { font-size: 12px; color: rgba(255,255,255,.55); display: flex; align-items: center; gap: 6px; }
 
-    main { max-width: 1100px; margin: 0 auto; padding: 40px 20px 80px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    .section-title { font-size: 17px; font-weight: 800; color: var(--navy); margin: 40px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
+    .section-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
 
-    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 36px; }
-    .kpi { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .kpi-value { font-size: 26px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .kpi { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .kpi-value { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; }
     .kpi-label { font-size: 12px; color: var(--sub); margin-top: 4px; line-height: 1.4; }
-    .kpi-note { font-size: 11px; color: var(--fuchsia); margin-top: 5px; font-weight: 600; }
+    .kpi-note { font-size: 11px; color: var(--fuchsia); margin-top: 6px; font-weight: 600; }
 
-    .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 20px; }
-    .data-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 12px; font-weight: 700; }
-    .data-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 40px; }
+    .data-table th { background: var(--navy); color: white; padding: 11px 14px; text-align: left; font-size: 12px; font-weight: 700; }
+    .data-table td { padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid var(--border); }
     .data-table tr:last-child td { border-bottom: none; font-weight: 700; background: #f0f4ff; }
-    .bar-wrap { background: #e5e7eb; border-radius: 4px; height: 7px; width: 90px; display: inline-block; vertical-align: middle; }
-    .bar { height: 7px; border-radius: 4px; background: var(--fuchsia); display: block; }
+    .data-table tr:hover td { background: #fafafa; }
+    .bar-wrap { background: #e5e7eb; border-radius: 4px; height: 8px; width: 120px; display: inline-block; vertical-align: middle; }
+    .bar { height: 8px; border-radius: 4px; background: var(--fuchsia); display: block; }
 
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 36px; }
-    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 40px; }
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
     .card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
     .card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .card p, .card li { font-size: 13px; color: var(--sub); line-height: 1.6; }
+    .card p, .card li { font-size: 13.5px; color: var(--sub); line-height: 1.65; }
     .card ul { padding-left: 16px; }
 
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 36px; }
-    .price-card { background: white; border-radius: 12px; border: 2px solid var(--border); padding: 22px; text-align: center; }
-    .price-tag { font-size: 38px; font-weight: 800; color: var(--navy); }
-    .price-per { font-size: 12px; color: var(--sub); margin-bottom: 10px; }
-    .price-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: var(--navy); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 40px; }
+    .price-card { background: white; border-radius: 12px; border: 2px solid var(--border); padding: 24px; text-align: center; }
+    .price-card.highlight { border-color: var(--fuchsia); }
+    .price-tag { font-size: 36px; font-weight: 800; color: var(--navy); }
+    .price-per { font-size: 12px; color: var(--sub); margin-bottom: 12px; }
+    .price-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--navy); }
     .price-list { list-style: none; text-align: left; font-size: 13px; color: var(--sub); }
     .price-list li { padding: 5px 0; border-bottom: 1px solid var(--border); }
     .price-list li:last-child { border-bottom: none; }
     .price-list li::before { content: "✓ "; color: var(--green); font-weight: 700; }
 
     .scenario-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 16px; }
-    .scenario-table th { background: var(--navy); color: white; padding: 10px 14px; font-size: 12px; font-weight: 700; text-align: left; }
-    .scenario-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    .scenario-table th { background: #5b21b6; color: white; padding: 11px 14px; font-size: 12px; font-weight: 700; text-align: left; }
+    .scenario-table td { padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid var(--border); }
     .scenario-table tr:last-child td { border-bottom: none; }
     .green { color: var(--green); font-weight: 700; }
     .amber { color: var(--amber); font-weight: 700; }
     .red { color: var(--red); font-weight: 700; }
 
-    .info-box { background: linear-gradient(135deg, #fdf4ff, #fce7f3); border: 1px solid #f0abfc; border-radius: 12px; padding: 22px; margin-bottom: 36px; }
-    .info-box h3 { font-size: 15px; font-weight: 800; color: #701a75; margin-bottom: 10px; }
-    .info-box p { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
-    .module-box { background: white; border-radius: 10px; padding: 16px 18px; border: 1px solid #f0abfc; margin-top: 14px; }
-    .module-box h4 { font-size: 13px; font-weight: 700; color: #701a75; margin-bottom: 6px; }
-    .module-box p { font-size: 12.5px; color: var(--sub); }
+    /* Scenario tabs */
+    .scenario-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 0; border-radius: 12px 12px 0 0; overflow: hidden; border: 2px solid #5b21b6; }
+    .scenario-nav-btn { padding: 14px 20px; background: #f5f3ff; border: none; cursor: pointer; font-size: 13px; font-weight: 700; color: #5b21b6; text-align: center; border-right: 1px solid #5b21b6; }
+    .scenario-nav-btn:last-child { border-right: none; }
+    .scenario-nav-btn.active { background: #5b21b6; color: white; }
+    .scenario-nav-btn .sub { font-size: 11px; font-weight: 400; display: block; margin-top: 2px; opacity: .8; }
 
-    .channel-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 20px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .ch-icon { font-size: 26px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .scenario-block { display: none; background: white; border: 2px solid #5b21b6; border-top: none; border-radius: 0 0 12px 12px; padding: 24px; margin-bottom: 32px; }
+    .scenario-block.active { display: block; }
+
+    .scenario-header { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .scenario-pill { display: inline-flex; align-items: center; gap: 6px; background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; color: #4c1d95; }
+
+    .model-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    .model-card { border-radius: 10px; padding: 16px 18px; border: 2px solid var(--border); }
+    .model-card.active-model { border-color: #5b21b6; background: #f5f3ff; }
+    .model-card h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .model-card p { font-size: 12px; color: var(--sub); line-height: 1.5; }
+    .model-card .fee { font-size: 20px; font-weight: 800; color: var(--fuchsia); margin-top: 6px; }
+
+    .channel-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px 22px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .ch-icon { font-size: 28px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
     .ch-body h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .ch-body p { font-size: 13px; color: var(--sub); line-height: 1.55; }
     .ch-body .examples { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
     .ch-body .ex-tag { font-size: 11px; background: #f3f4f6; border: 1px solid var(--border); padding: 2px 10px; border-radius: 10px; color: #374151; text-decoration: none; }
     .ch-body .ex-tag:hover { background: #e5e7eb; }
-    .effort { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .effort { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
     .effort.high { background: #d1fae5; color: #065f46; }
     .effort.med { background: #fef3c7; color: #92400e; }
 
-    footer-bar { display: block; margin-top: 40px; font-size: 12px; color: var(--sub); text-align: center; padding-top: 20px; border-top: 1px solid var(--border); }
-    footer-bar a { color: var(--sub); text-decoration: none; }
+    .info-box { background: linear-gradient(135deg, #f5f3ff, #ede9fe); border: 1px solid #c4b5fd; border-radius: 12px; padding: 24px; margin-bottom: 40px; }
+    .info-box h3 { font-size: 16px; font-weight: 800; color: #4c1d95; margin-bottom: 10px; }
+    .info-box p { font-size: 13.5px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
+    .module-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .module-box { background: white; border-radius: 10px; padding: 16px 18px; border: 1px solid #ddd6fe; }
+    .module-box h4 { font-size: 13px; font-weight: 700; color: #4c1d95; margin-bottom: 6px; }
+    .module-box p { font-size: 12.5px; color: var(--sub); }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .hero { padding: 32px 16px 28px; }
-      main { padding: 28px 14px 60px; }
-      .kpi-row { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .kpi-value { font-size: 22px; }
-      .card-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .data-table { font-size: 12px; }
-      .data-table th, .data-table td { padding: 8px 10px; }
-      .scenario-table { font-size: 12px; }
-      .scenario-table th, .scenario-table td { padding: 8px 10px; }
-      .channel-card { flex-direction: column; gap: 8px; }
-      .ch-icon { font-size: 22px; }
-      .section-title { font-size: 15px; }
-      /* overflow tables on mobile */
-      .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    }
-    @media (max-width: 480px) {
-      .kpi-row { grid-template-columns: 1fr 1fr; }
-      .kpi { padding: 14px; }
-      .kpi-value { font-size: 20px; }
-      .hero h1 { font-size: 20px; }
-      .hero p { font-size: 14px; }
-      .hero-meta { flex-direction: column; gap: 6px; }
-      .two-col { grid-template-columns: 1fr !important; }
-    }
+    .callout { background: var(--navy); color: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 40px; }
+    .callout h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #c4b5fd; }
+    .callout p { font-size: 13.5px; color: rgba(255,255,255,.8); line-height: 1.65; }
+
+    /* Venue cards */
+    .venue-tier { margin-bottom: 32px; }
+    .venue-tier-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 14px; }
+    .tier-budget { background: #d1fae5; color: #065f46; }
+    .tier-comfort { background: #dbeafe; color: #1e40af; }
+    .tier-luxury { background: #fef3c7; color: #92400e; }
+    .tier-home { background: #fce7f3; color: #9d174d; }
+    .venue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .venue-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .venue-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .venue-card h4 a { color: var(--navy); text-decoration: none; }
+    .venue-card h4 a:hover { color: var(--fuchsia); text-decoration: underline; }
+    .venue-card .venue-meta { font-size: 12px; color: var(--fuchsia); font-weight: 600; margin-bottom: 8px; }
+    .venue-card p { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
+    .venue-card .venue-price { font-size: 16px; font-weight: 800; color: var(--navy); margin-top: 10px; }
+    .venue-card .venue-price span { font-size: 12px; font-weight: 400; color: var(--sub); }
+    .venue-card .venue-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+    .venue-card .venue-tag { font-size: 10px; background: #f3f4f6; border: 1px solid var(--border); padding: 2px 7px; border-radius: 8px; color: #374151; }
+
+    footer-bar { display: block; margin-top: 40px; font-size: 12px; color: var(--sub); text-align: center; padding-top: 24px; border-top: 1px solid var(--border); }
+    footer-bar a { color: var(--sub); text-decoration: none; }
+    footer-bar a:hover { color: var(--navy); }
+
+    @media(max-width:768px){ .module-row { grid-template-columns: 1fr; } main { padding: 32px 16px 60px; } .hero { padding: 36px 16px 32px; } .scenario-nav { grid-template-columns: 1fr; } .model-compare { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -124,14 +146,14 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Event Planning · Personal Development · Costa Blanca, Spain</div>
-    <h1>Silva Method in Torrevieja — Russian-Speaking Community</h1>
-    <p>Market sizing, community analysis, pricing scenarios, venue options, and logistics for organising a Russian-language Silva Method training in the Torrevieja / Alicante area, Spain.</p>
+    <div class="eyebrow">Event Planning · Personal Development</div>
+    <h1>Silva Method in Utrecht — Russian-Speaking Market</h1>
+    <p>Market sizing, community analysis, pricing scenarios, venue options, and promotion channels for organising a Silva Method training in Russian in Utrecht, Netherlands.</p>
     <div class="hero-meta">
-      <span>📍 Torrevieja, Costa Blanca, Spain</span>
+      <span>📍 Utrecht, Netherlands</span>
       <span>🗣️ Russian-language training</span>
-      <span>🎓 Trainer: <a href="https://metodsilva.ru/about" target="_blank" style="color:#f9a8d4;">Ирина Хлимоненко</a></span>
-      <span>📅 October 2026</span>
+      <span>🎓 Trainer: <a href="https://metodsilva.ru/about" target="_blank" style="color:#c4b5fd;">Ирина Хлимоненко</a></span>
+      <span>📅 Research: March 2026</span>
     </div>
   </div>
 </div>
@@ -141,568 +163,727 @@
   <!-- KPIs -->
   <div class="kpi-row">
     <div class="kpi">
-      <div class="kpi-value">~70K</div>
-      <div class="kpi-label">Russian-speaking residents in Alicante province</div>
+      <div class="kpi-value">~175K</div>
+      <div class="kpi-label">Russian-speaking residents in the Netherlands</div>
       <div class="kpi-note">Russians + Ukrainians + post-Soviet</div>
     </div>
     <div class="kpi">
-      <div class="kpi-value">~20K</div>
-      <div class="kpi-label">In Torrevieja area (20 km radius)</div>
-      <div class="kpi-note">One of highest concentrations in Spain</div>
+      <div class="kpi-value">~50K</div>
+      <div class="kpi-label">Within 1 hour of Utrecht (Randstad)</div>
+      <div class="kpi-note">Amsterdam · Rotterdam · The Hague</div>
     </div>
     <div class="kpi">
-      <div class="kpi-value">3,000–5,000</div>
+      <div class="kpi-value">3,500–5,000</div>
       <div class="kpi-label">Estimated personal-dev interested segment</div>
-      <div class="kpi-note">~7–10% of local Russian-speaking community</div>
+      <div class="kpi-note">~7–10% of reachable population</div>
     </div>
     <div class="kpi">
-      <div class="kpi-value">10–18</div>
-      <div class="kpi-label">Realistic group size, first edition</div>
-      <div class="kpi-note">Promotable in 8–10 weeks</div>
+      <div class="kpi-value">20–35</div>
+      <div class="kpi-label">Realistic group size per event</div>
+      <div class="kpi-note">Well-promoted, first edition</div>
     </div>
     <div class="kpi">
-      <div class="kpi-value">€400–€450</div>
-      <div class="kpi-label">Early bird price (two scenarios)</div>
-      <div class="kpi-note">Scenario A €450 / Scenario B €400 · before 1 Sep</div>
+      <div class="kpi-value">€350–500</div>
+      <div class="kpi-label">Target price per module (2 days)</div>
+      <div class="kpi-note">Competitive for NL market</div>
     </div>
   </div>
 
-  <!-- Community -->
-  <div class="section-title">Russian-Speaking Community in Costa Blanca</div>
-  <div class="table-scroll">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Group</th>
-          <th>Estimated (Alicante Province, 2025)</th>
-          <th>Profile</th>
-          <th>Russian fluency</th>
-          <th>Visual</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Russians</strong></td>
-          <td>~30,000</td>
-          <td>Long-term residents, retirees, property owners; established since 1990s</td>
-          <td>Native</td>
-          <td><span class="bar-wrap"><span class="bar" style="width:100%"></span></span></td>
-        </tr>
-        <tr>
-          <td><strong>Ukrainians</strong></td>
-          <td>~25,000</td>
-          <td>Mix of long-term expats and post-2022 arrivals; employed or self-employed</td>
-          <td>Native / bilingual</td>
-          <td><span class="bar-wrap"><span class="bar" style="width:83%"></span></span></td>
-        </tr>
-        <tr>
-          <td><strong>Belarusians</strong></td>
-          <td>~4,000</td>
-          <td>Political refugees post-2020; educated, urban</td>
-          <td>Native</td>
-          <td><span class="bar-wrap"><span class="bar" style="width:13%"></span></span></td>
-        </tr>
-        <tr>
-          <td><strong>Kazakhstanis, Azerbaijanis, others</strong></td>
-          <td>~7,000</td>
-          <td>Business migrants, property owners, mixed profiles</td>
-          <td>High</td>
-          <td><span class="bar-wrap"><span class="bar" style="width:23%"></span></span></td>
-        </tr>
-        <tr>
-          <td><strong>Total Russian-speaking (est.)</strong></td>
-          <td><strong>~60,000–70,000</strong></td>
-          <td colspan="3">Sources: INE (Instituto Nacional de Estadística), ACNUR Spain 2024–2025</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Silva Method -->
+  <div class="section-title">About the Silva Method</div>
+  <div class="info-box">
+    <h3>What is the Silva Method?</h3>
+    <p>Developed by José Silva in the 1960s, the Silva Method is a self-help and personal development programme based on training the mind to function at the alpha brainwave level — a relaxed, meditative state in which learning, creativity, and intuition are said to be enhanced. It is one of the longest-running personal development programmes in the world, with millions of graduates in 110+ countries.</p>
+    <p>The programme is structured in two modules, each delivered over a 2-day live session. <strong><a href="https://metodsilva.ru/about" target="_blank" style="color:#4c1d95;">Ирина Хлимоненко</a></strong> is the lead certified Silva Method trainer for Russian-speaking markets, directing the Pozitum centre since 2009. She is one of very few certified Russian-language trainers in Europe and has trained students across Russia, Estonia, Germany and internationally.</p>
+    <div class="module-row">
+      <div class="module-box">
+        <h4>Module 1 — Silva Life System (2 days)</h4>
+        <p>Foundation: entering the alpha state, the glass of water technique, mental screen visualisation, stress and sleep management, goal-setting through mental rehearsal. Suitable for complete beginners.</p>
+      </div>
+      <div class="module-box">
+        <h4>Module 2 — Silva Intuition System (2 days)</h4>
+        <p>Advanced: developing intuition, psychometry, case working, remote sensing. Builds directly on Module 1 skills. Recommended to complete both in sequence.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card-grid">
+  <!-- Population -->
+  <div class="section-title">Russian-Speaking Population in the Netherlands</div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Origin Group</th>
+        <th>Estimated Population (2025)</th>
+        <th>Profile</th>
+        <th>Russian fluency</th>
+        <th>Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ukrainians</strong></td>
+        <td>~120,000</td>
+        <td>War refugees (2022+); 59% in paid employment; age 25–44 dominant</td>
+        <td>Native / bilingual</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:100%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Russians</strong></td>
+        <td>~25,000</td>
+        <td>Economic migrants, expat professionals, IT workers; higher income; long-term residents</td>
+        <td>Native</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:21%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Lithuanians</strong></td>
+        <td>~10,000</td>
+        <td>Labour migrants; many Russian-speaking, especially older generation</td>
+        <td>Partial (older cohort)</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:8%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Latvians</strong></td>
+        <td>~7,000</td>
+        <td>Labour migrants; significant Russian-speaking minority</td>
+        <td>Partial–high</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:6%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Belarusians</strong></td>
+        <td>~3,000</td>
+        <td>Political refugees (post-2020 protests); educated, urban</td>
+        <td>Native</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:2.5%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Armenians, Azerbaijanis, Georgians</strong></td>
+        <td>~6,000</td>
+        <td>Mixed; many Russian-fluent, especially pre-1990 birth cohort</td>
+        <td>High (older); partial (younger)</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:5%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Kazakhstanis, Uzbeks, others</strong></td>
+        <td>~4,000</td>
+        <td>Smaller groups; often highly educated migrants</td>
+        <td>High</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:3%"></span></span></td>
+      </tr>
+      <tr>
+        <td><strong>Total Russian-speaking (est.)</strong></td>
+        <td><strong>~175,000</strong></td>
+        <td colspan="2">Sources: CBS, UNHCR, IND 2022–2025</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card-grid" style="margin-top:-20px;">
     <div class="card">
-      <div class="card-tag">Geography</div>
+      <div class="card-tag">📍 Geography</div>
       <h3>Where they live</h3>
       <ul>
-        <li><strong>Torrevieja</strong> — largest concentration; established Russian quarter with Russian shops, pharmacies and restaurants</li>
-        <li><strong>Guardamar del Segura</strong> — many permanent Russian residents</li>
-        <li><strong>Orihuela Costa</strong> — mixed expat, large Russian presence</li>
-        <li><strong>Alicante city</strong> — urban professionals, younger generation</li>
-        <li><strong>Benidorm, Calpe, Altea</strong> — northern Costa Blanca</li>
+        <li><strong>Amsterdam</strong> — largest concentration, highly international</li>
+        <li><strong>The Hague</strong> — expat hub, international organisations</li>
+        <li><strong>Rotterdam</strong> — labour migrants, port economy</li>
+        <li><strong>Utrecht</strong> — growing expat community, university city</li>
+        <li><strong>Eindhoven</strong> — tech/ASML expat cluster</li>
       </ul>
-      <p style="margin-top:10px;font-size:12px;">Torrevieja is the natural hub for a Russian-language event. Accessible to all Costa Blanca without requiring a long drive.</p>
+      <p style="margin-top:10px; font-size:12px;">Utrecht is central — all Randstad cities within 30–45 min. Ideal location.</p>
     </div>
     <div class="card">
-      <div class="card-tag">Target participant</div>
+      <div class="card-tag">👤 Target participant</div>
       <h3>Who is the audience</h3>
       <ul>
-        <li>Age 35–60, homeowners or long-term residents</li>
-        <li>Women over-represented in personal development</li>
-        <li>Retirees and property owners with time and disposable income</li>
-        <li>Entrepreneurs and self-employed (flexible schedule)</li>
-        <li>Post-2022 Ukrainian arrivals now stabilised</li>
-        <li>Prior interest in meditation, NLP, coaching, holistic practices</li>
+        <li>Age 28–50, university educated</li>
+        <li>Russian-speaking expat professionals</li>
+        <li>Ukrainian refugees now stabilised (employed, income)</li>
+        <li>Belarusians (politically engaged, open-minded)</li>
+        <li>Prior interest in mindfulness, NLP, coaching, meditation</li>
+        <li>Women slightly over-represented in personal dev events</li>
       </ul>
     </div>
     <div class="card">
-      <div class="card-tag">Demand signal</div>
+      <div class="card-tag">💡 Demand signal</div>
       <h3>Why demand exists</h3>
       <ul>
-        <li>Torrevieja community is established — people seek growth, not just survival</li>
-        <li>Silva Method is internationally recognised — not an "alternative" niche</li>
-        <li>No Russian-language personal development training offered locally in Costa Blanca</li>
-        <li>October timing: 22–26°C, sunny, post-summer energy, community active</li>
-        <li>Ирина has European reputation — her name travels ahead of her</li>
+        <li>Dislocation and stress from migration drives personal development interest</li>
+        <li>Russian-speaking community groups are active — but Silva Method has never been offered in Russian in NL</li>
+        <li>Ирина already trains students across Europe → NL demand untapped</li>
+        <li>Community craves connection and growth in native language</li>
+        <li>Silva is internationally recognised — not "alternative" niche</li>
       </ul>
     </div>
   </div>
 
   <!-- Participant Pricing -->
-  <div class="section-title">Participant Pricing</div>
-  <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#78350f;">
-    <strong>Two pricing scenarios:</strong> &nbsp;
-    <strong>Scenario A</strong> — Early bird <strong>€450</strong> (before 1 Sep) · Normal <strong>€600</strong>. Conservative planning base: €450. &nbsp;|&nbsp;
-    <strong>Scenario B</strong> — Early bird <strong>€400</strong> (before 1 Sep) · Normal <strong>€550</strong>. Conservative planning base: €400. Both scenarios use the same costs. Revenue tables for both are below.
+  <div class="section-title">Participant Pricing Options</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:10px;">Two price points: normal and early bird. Early bird is the default promotional price to fill the event faster. Scenarios below use the blended average.</p>
+  <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:#78350f;">
+    <strong>Assumption used in all calculations:</strong> 80% of participants buy at early bird price · 20% at normal price. This is a planning estimate — actual split will depend on promotion timing. Blended average: <strong>1 module → €360/person</strong> &nbsp;·&nbsp; <strong>2 modules bundle → €660/person</strong>.
   </div>
-
-  <p style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:8px;">Scenario A — Standard pricing</p>
-  <div class="pricing-grid" style="margin-bottom:24px;">
+  <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
     <div class="price-card" style="border-color:#8b1a6a;background:linear-gradient(135deg,#fdf4ff,#fce7f3);">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8b1a6a;margin-bottom:6px;">Early Bird — Scenario A</div>
-      <h3 style="color:#701a75;">Register before 1 September</h3>
-      <div class="price-tag" style="color:#701a75;">€450</div>
-      <div class="price-per" style="color:#9d174d;">3 days · Module 1 complete</div>
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8b1a6a;margin-bottom:6px;">⭐ Early Bird Price</div>
+      <h3 style="color:#5b21b6;">Module 1 only</h3>
+      <div class="price-tag" style="font-size:36px;color:#5b21b6;">€350</div>
+      <div class="price-per" style="color:#7c3aed;">early bird · 2 days · limited availability</div>
+      <div style="font-size:12px;color:#9ca3af;margin-top:4px;margin-bottom:10px;">Normal price: €400</div>
       <ul class="price-list">
-        <li>Deadline: 1 September 2026</li>
-        <li>Full 3-day Silva Life System</li>
-        <li>€150 saving vs normal price</li>
+        <li>Silva Life System</li>
+        <li>First-timers, cautious buyers</li>
+        <li>Blended avg (80/20): €360/person</li>
       </ul>
     </div>
-    <div class="price-card" style="border-color:#0f2340;">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Normal Price — Scenario A</div>
-      <h3>After 1 September</h3>
-      <div class="price-tag">€600</div>
-      <div class="price-per">3 days · Module 1 complete</div>
+    <div class="price-card highlight" style="border-color:#5b21b6;background:linear-gradient(135deg,#f5f3ff,#ede9fe);">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8b1a6a;margin-bottom:6px;">⭐ Early Bird Price</div>
+      <h3 style="color:#5b21b6;">Both Modules ✦ Bundle</h3>
+      <div class="price-tag" style="font-size:36px;color:#5b21b6;">€650</div>
+      <div class="price-per" style="color:#7c3aed;">early bird · 4 days · best value</div>
+      <div style="font-size:12px;color:#9ca3af;margin-top:4px;margin-bottom:10px;">Normal price: €700 · saves €50</div>
       <ul class="price-list">
-        <li>Registration from 1 Sep 2026</li>
-        <li>Full 3-day Silva Life System</li>
-        <li>Same complete programme</li>
+        <li>Best revenue per seat</li>
+        <li>Blended avg (80/20): €660/person</li>
       </ul>
     </div>
-    <div class="price-card" style="background:#f0f4ff;border-color:#c7d2fe;">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Planning Base — Scenario A</div>
-      <h3 style="color:#3730a3;">Worst-case calculation</h3>
-      <div class="price-tag" style="color:#3730a3;">€450</div>
-      <div class="price-per" style="color:#4338ca;">All seats at early bird price</div>
+    <div class="price-card">
+      <h3>Module 2 only</h3>
+      <div class="price-tag" style="font-size:28px;">€350 <span style="font-size:16px;color:var(--sub);">/ €400</span></div>
+      <div class="price-per">early bird / normal · 2 days</div>
       <ul class="price-list">
-        <li>€600 = marketing anchor</li>
-        <li>Real revenue likely higher</li>
-        <li>Viable from 13 participants</li>
-      </ul>
-    </div>
-  </div>
-
-  <p style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:8px;">Scenario B — Lower entry price</p>
-  <div class="pricing-grid" style="margin-bottom:36px;">
-    <div class="price-card" style="border-color:#059669;background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:6px;">Early Bird — Scenario B</div>
-      <h3 style="color:#166534;">Register before 1 September</h3>
-      <div class="price-tag" style="color:#166534;">€400</div>
-      <div class="price-per" style="color:#166534;">3 days · Module 1 complete</div>
-      <ul class="price-list">
-        <li>Deadline: 1 September 2026</li>
-        <li>Lower barrier to entry</li>
-        <li>€150 saving vs normal price</li>
-      </ul>
-    </div>
-    <div class="price-card" style="border-color:#6366f1;">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;margin-bottom:6px;">Normal Price — Scenario B</div>
-      <h3>After 1 September</h3>
-      <div class="price-tag" style="color:#4338ca;">€550</div>
-      <div class="price-per">3 days · Module 1 complete</div>
-      <ul class="price-list">
-        <li>Registration from 1 Sep 2026</li>
-        <li>Full 3-day Silva Life System</li>
-        <li>Same complete programme</li>
-      </ul>
-    </div>
-    <div class="price-card" style="background:#f0fdf4;border-color:#86efac;">
-      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:6px;">Planning Base — Scenario B</div>
-      <h3 style="color:#166534;">Worst-case calculation</h3>
-      <div class="price-tag" style="color:#166534;">€400</div>
-      <div class="price-per" style="color:#166534;">All seats at early bird price</div>
-      <ul class="price-list">
-        <li>€550 = marketing anchor</li>
-        <li>Lower price, needs more participants</li>
-        <li>Viable from 15 participants</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Venue Options -->
-  <div class="section-title">Venue Options</div>
-  <p style="font-size:13px;color:var(--sub);margin-bottom:18px;">Three options for the 3-day training space. Requirements: space for 10–20 participants seated, suitable for meditation (quiet, controllable light), accessible in or near Torrevieja.</p>
-
-  <div class="card-grid">
-    <div class="card" style="border:2px solid #059669;">
-      <div class="card-tag" style="color:#059669;">Most Affordable</div>
-      <h3>Alena's Livingroom</h3>
-      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€300</div>
-      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
-      <p>Private home space — intimate atmosphere, flexible layout, no venue logistics to manage. Lowest cost option. Suitable for smaller groups. Home setting creates a warm, personal experience well-suited for meditation training.</p>
-      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
-        <li>Up to 10–15 participants</li>
-        <li>Warm, low-formality atmosphere</li>
-        <li>Kitchen access for coffee and snacks</li>
-        <li>No external AV needed for small groups</li>
-      </ul>
-    </div>
-    <div class="card" style="border:2px solid #d97706;">
-      <div class="card-tag" style="color:#d97706;">Mid Option</div>
-      <h3>SPACE</h3>
-      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€450</div>
-      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
-      <p>Dedicated studio or co-working space suitable for group training. More structured than a private home — better acoustics and layout for 15–20 participants. Professional feel without high hotel pricing.</p>
-      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
-        <li>Up to 15–18 participants</li>
-        <li>Professional training environment</li>
-        <li>Better acoustics for meditation</li>
-        <li>Basic AV available</li>
-      </ul>
-    </div>
-    <div class="card" style="border:2px solid #6366f1;">
-      <div class="card-tag" style="color:#4338ca;">Premium Option</div>
-      <h3>Studio</h3>
-      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€500</div>
-      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
-      <p>Fully equipped studio space. Best impression for participants, best capacity. Recommended if group size reaches 20+. Full sound and light control — ideal for meditation-based training.</p>
-      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
-        <li>Up to 15–20 participants</li>
-        <li>Full sound setup included</li>
-        <li>Best light control for meditation</li>
-        <li>Most professional participant experience</li>
+        <li>Silva Intuition System</li>
+        <li>Only for Module 1 graduates</li>
+        <li>Blended avg (80/20): €360/person</li>
       </ul>
     </div>
   </div>
 
   <!-- Cost Breakdown -->
-  <div class="section-title">Cost Breakdown — 3-Day Module</div>
-  <div class="table-scroll">
+  <div class="section-title">Cost Breakdown</div>
+
+  <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#78350f;">
+    <strong>⚠️ Venue note:</strong> Professional venue hire in Utrecht starts at <strong>€350/day</strong> and goes up to <strong>€1,500/day</strong> for larger conference-capable spaces. At these market rates the business case turns negative even at full capacity. The figures below use <strong>€250/day</strong> — a discounted rate I offer by providing my own location. This is a material advantage that makes the business case viable.
+  </div>
+
+  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:24px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+    <h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:16px;">Fixed &amp; Variable Costs — by Format</h3>
     <table class="scenario-table" style="margin-bottom:0;">
-      <thead><tr><th>Cost item</th><th>Studio — used in calculations (€500)</th><th>SPACE (€450)</th><th>Alena (€300)</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Cost item</th><th>1 Module (2 days) Low</th><th>1 Module High</th><th>2 Modules (4 days) Low</th><th>2 Modules High</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr style="background:#fffbeb;">
-          <td><strong>Venue (3 days total)</strong></td>
-          <td><strong>€500</strong></td>
-          <td><strong>€450</strong></td>
-          <td><strong>€300</strong></td>
-          <td>Fixed total for the event</td>
-        </tr>
-        <tr>
-          <td>Coffee, tea, water</td>
-          <td colspan="3"><strong>€10 per person</strong></td>
-          <td>Flat per person for 3-day event. Budget coffee/tea station.</td>
-        </tr>
-        <tr>
-          <td>Snacks</td>
-          <td colspan="3">€5 per person per day</td>
-          <td>3 days. €15/person total.</td>
-        </tr>
-        <tr>
-          <td>Trainer accommodation</td>
-          <td colspan="3"><strong>€550</strong></td>
-          <td>5 nights × €90/night = €450 + €100 cleaning fee = €550 total. Private apartment, Torrevieja area.</td>
-        </tr>
-        <tr>
-          <td>Flight (return + luggage)</td>
-          <td colspan="3"><strong>€300</strong></td>
-          <td>Tallinn → Alicante. Return with 23 kg checked luggage. See flight section.</td>
-        </tr>
-        <tr>
-          <td>Car rental / taxi/transport</td>
-          <td colspan="3"><strong>€150</strong></td>
-          <td>Local transport during training week. Covers trainer pickup + daily logistics.</td>
-        </tr>
-        <tr>
-          <td>Marketing &amp; ads</td>
-          <td colspan="3"><strong>€400</strong></td>
-          <td>Facebook/Instagram ads, Telegram posts, flyer printing</td>
-        </tr>
-        <tr>
-          <td>Registration platform + hosting</td>
-          <td colspan="3"><strong>€70</strong></td>
-          <td>Platform fee €50 (Eventbrite / Stripe) + landing page hosting €20 (Carrd / similar, 1–2 months)</td>
-        </tr>
-        <tr>
-          <td>Printing / materials</td>
-          <td colspan="3"><strong>€25 per person</strong></td>
-          <td>Workbook printing, colour pages, spiral binding (variable cost)</td>
-        </tr>
-        <tr>
-          <td>Miscellaneous buffer</td>
-          <td colspan="3">€100</td>
-          <td></td>
-        </tr>
-        <tr style="background:#f9fafb;">
-          <td><strong>Fixed costs subtotal</strong></td>
-          <td><strong>€2,070</strong></td>
-          <td><strong>€2,020</strong></td>
-          <td><strong>€1,870</strong></td>
-          <td>Venue + accommodation + flight + car + marketing + platform+hosting + misc</td>
-        </tr>
-        <tr style="background:#f9fafb;">
-          <td>Variable per person</td>
-          <td colspan="3">€50/person</td>
-          <td>Coffee €10 + snacks €15 (€5/day × 3) + printing €25</td>
-        </tr>
-        <tr style="font-weight:700;background:#f0f4ff;">
-          <td><strong>Total costs at 15 participants (incl. catering)</strong></td>
-          <td><strong>€2,820</strong></td>
-          <td><strong>€2,770</strong></td>
-          <td><strong>€2,620</strong></td>
-          <td>Fixed + (15 × €50 variable). For other group sizes, add/subtract €50 per participant.</td>
-        </tr>
+        <tr style="background:#fffbeb;"><td><strong>Venue</strong></td><td><strong>€500</strong></td><td><strong>€500</strong></td><td><strong>€1,000</strong></td><td><strong>€1,000</strong></td><td><strong>€250/day (my location — discounted rate).</strong> Market rate in Utrecht: €350–1,500/day. Fixed regardless of attendance.</td></tr>
+        <tr><td>Coffee, tea, water</td><td>€400</td><td>€600</td><td>€800</td><td>€1,200</td><td>€10–15/person/day × days × ~20 pax · minimum €10/person/day at any professional venue</td></tr>
+        <tr><td>Snacks (no lunch)</td><td>€150</td><td>€250</td><td>€300</td><td>€500</td><td>€5/person/day × participants × days</td></tr>
+        <tr><td>Hotel for trainer</td><td>€200</td><td>€300</td><td>€400</td><td>€600</td><td>2 nights (1 mod) / 4 nights (2 mod) · €100–150/night</td></tr>
+        <tr><td>Sound equipment</td><td>€200</td><td>€400</td><td>€400</td><td>€800</td><td>€100–200/day · PA + wireless mic · essential for meditation</td></tr>
+        <tr><td>Flight (return)</td><td>€400</td><td>€500</td><td>€400</td><td>€500</td><td>Return, booked in advance</td></tr>
+        <tr><td>Airport transfer (2 ways)</td><td>€180</td><td>€180</td><td>€180</td><td>€180</td><td>Taxi/shuttle to/from airport, both ways — fixed</td></tr>
+        <tr><td>Local transport</td><td>€50</td><td>€100</td><td>€50</td><td>€100</td><td>OV / taxi during event days</td></tr>
+        <tr><td>Marketing &amp; ads</td><td>€300</td><td>€300</td><td>€300</td><td>€300</td><td>Fixed budget — Facebook/Instagram, Canva, flyer printing</td></tr>
+        <tr><td>Registration platform</td><td>€100</td><td>€100</td><td>€100</td><td>€100</td><td>Fixed — Eventbrite or Stripe setup</td></tr>
+        <tr><td>Materials &amp; printing</td><td>€130</td><td>€220</td><td>€250</td><td>€420</td><td>30 color pages/person/module · ~€0.20/page + spiral binding · Utrecht print shops</td></tr>
+        <tr><td>Miscellaneous</td><td>€100</td><td>€200</td><td>€100</td><td>€200</td><td>Buffer</td></tr>
+        <tr style="font-weight:700;background:#f0f4ff;"><td><strong>Fixed costs (excl. trainer)</strong></td><td><strong>€2,610</strong></td><td><strong>€3,650</strong></td><td><strong>€4,080</strong></td><td><strong>€5,900</strong></td><td>Midpoints: ~€3,130 (1 mod) · ~€5,000 (2 mod) · scenarios use rounded midpoints</td></tr>
+        <tr style="background:#fafafa;"><td>Variable cost/person</td><td colspan="2">~€40/person</td><td colspan="2">~€80/person</td><td>Catering + materials per additional participant</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Revenue scenarios -->
-  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;margin-top:16px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-    <h3 style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:4px;">Scenario A — €450/person early bird · Studio (€500)</h3>
-    <p style="font-size:12px;color:var(--sub);margin-bottom:14px;">Fixed: €2,070 (Studio €500 + accommodation €550 + flight €300 + car €150 + marketing €400 + platform+hosting €70 + misc €100) · Variable: €50/person (coffee €10 + snacks €15 + printing €25)</p>
-    <div class="table-scroll">
-      <table class="scenario-table">
-        <thead>
-          <tr>
-            <th>Participants</th>
-            <th>Revenue</th>
-            <th>Total costs</th>
-            <th>Available</th>
-            <th>Trainer fee</th>
-            <th>Organiser 1</th>
-            <th>Organiser 2</th>
-            <th>Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>8</strong></td>
-            <td>€3,600</td>
-            <td>€2,470</td>
-            <td class="red">€1,130</td>
-            <td class="red">€565<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€71/pp</span></td>
-            <td class="red">€283<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€35/pp</span></td>
-            <td class="red">€283<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€35/pp</span></td>
-            <td>Below minimum</td>
-          </tr>
-          <tr>
-            <td><strong>10</strong></td>
-            <td>€4,500</td>
-            <td>€2,570</td>
-            <td class="red">€1,930</td>
-            <td class="red">€965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€97/pp — below floor</span></td>
-            <td class="amber">€483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
-            <td class="amber">€483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
-            <td>Trainer below €1,500</td>
-          </tr>
-          <tr style="background:#fffbeb;">
-            <td><strong>13</strong> ⭐</td>
-            <td>€5,850</td>
-            <td>€2,720</td>
-            <td class="amber">€3,130</td>
-            <td class="amber">€1,565<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€120/pp — floor met</span></td>
-            <td class="amber">€783<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€60/pp</span></td>
-            <td class="amber">€783<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€60/pp</span></td>
-            <td>Minimum viable ✓</td>
-          </tr>
-          <tr>
-            <td><strong>15</strong></td>
-            <td>€6,750</td>
-            <td>€2,820</td>
-            <td class="green">€3,930</td>
-            <td class="green">€1,965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€131/pp</span></td>
-            <td class="green">€983<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€66/pp</span></td>
-            <td class="green">€983<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€66/pp</span></td>
-            <td>Strong ✓✓✓</td>
-          </tr>
-          <tr>
-            <td><strong>20</strong></td>
-            <td>€9,000</td>
-            <td>€3,070</td>
-            <td class="green">€5,930</td>
-            <td class="green">€2,965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€148/pp</span></td>
-            <td class="green">€1,483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€74/pp</span></td>
-            <td class="green">€1,483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€74/pp</span></td>
-            <td>Excellent ✓✓✓</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 14px;margin-top:12px;font-size:13px;color:#78350f;">
-      <strong>Scenario A — target launch goal: 15 participants.</strong> At 15 pax: trainer €1,965 · Organiser 1 €983 · Organiser 2 €983. Event is viable from 13 participants.
+  <!-- Trainer Fee Models -->
+  <div class="section-title">Trainer Fee — Scenario Comparison</div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:20px;">Two fee models compared across both formats. Revenue uses the blended 80/20 early bird/normal assumption. Participants shown: 15, 17, 20, 22, 25 (max).</p>
+
+  <div style="background:#f0f4ff;border:1px solid #c7d2fe;border-radius:10px;padding:16px 20px;margin-bottom:24px;">
+    <div style="font-size:13px;font-weight:700;color:#3730a3;margin-bottom:8px;">Two fee structures being compared:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:white;border-radius:8px;padding:12px 16px;border:1px solid #c7d2fe;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6366f1;margin-bottom:4px;">Model A — Flat Fee</div>
+        <div style="font-size:13px;color:var(--text);">Trainer receives a fixed amount regardless of attendance. Organiser keeps all revenue above total costs.</div>
+        <div style="font-size:14px;font-weight:800;color:var(--navy);margin-top:6px;">1 module: €2,200 &nbsp;·&nbsp; 2 modules: €3,200</div>
+      </div>
+      <div style="background:white;border-radius:8px;padding:12px 16px;border:1px solid #c7d2fe;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6366f1;margin-bottom:4px;">Model B — Equal Guaranteed + 50/50 Net Split</div>
+        <div style="font-size:13px;color:var(--text);">Both parties receive the same guaranteed minimum. Net surplus above all costs + both guarantees is split 50/50 — equal outcome for both.</div>
+        <div style="font-size:14px;font-weight:800;color:var(--navy);margin-top:6px;">1 module: €1,500 each &nbsp;·&nbsp; 2 modules: €2,500 each</div>
+      </div>
     </div>
   </div>
 
-  <div style="background:white;border-radius:12px;border:1px solid #86efac;padding:22px;margin-bottom:36px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-    <h3 style="font-size:14px;font-weight:800;color:#166534;margin-bottom:4px;">Scenario B — €400/person early bird · Studio (€500)</h3>
-    <p style="font-size:12px;color:var(--sub);margin-bottom:14px;">Fixed: €2,070 (same as Scenario A) · Variable: €50/person · Normal price: €550</p>
-    <div class="table-scroll">
-      <table class="scenario-table">
-        <thead>
-          <tr>
-            <th>Participants</th>
-            <th>Revenue</th>
-            <th>Total costs</th>
-            <th>Available</th>
-            <th>Trainer fee</th>
-            <th>Organiser 1</th>
-            <th>Organiser 2</th>
-            <th>Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>8</strong></td>
-            <td>€3,200</td>
-            <td>€2,470</td>
-            <td class="red">€730</td>
-            <td class="red">€365<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€46/pp</span></td>
-            <td class="red">€183<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€23/pp</span></td>
-            <td class="red">€183<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€23/pp</span></td>
-            <td>Below minimum</td>
-          </tr>
-          <tr>
-            <td><strong>10</strong></td>
-            <td>€4,000</td>
-            <td>€2,570</td>
-            <td class="red">€1,430</td>
-            <td class="red">€715<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€72/pp — below floor</span></td>
-            <td class="red">€358<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€36/pp</span></td>
-            <td class="red">€358<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€36/pp</span></td>
-            <td>Trainer below €1,500</td>
-          </tr>
-          <tr>
-            <td><strong>13</strong></td>
-            <td>€5,200</td>
-            <td>€2,720</td>
-            <td class="red">€2,480</td>
-            <td class="red">€1,240<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€95/pp — below floor</span></td>
-            <td class="amber">€620<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
-            <td class="amber">€620<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
-            <td>Trainer below €1,500</td>
-          </tr>
-          <tr style="background:#f0fdf4;">
-            <td><strong>15</strong> ⭐</td>
-            <td>€6,000</td>
-            <td>€2,820</td>
-            <td class="amber">€3,180</td>
-            <td class="amber">€1,590<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€106/pp — floor met</span></td>
-            <td class="amber">€795<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€53/pp</span></td>
-            <td class="amber">€795<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€53/pp</span></td>
-            <td>Minimum viable ✓</td>
-          </tr>
-          <tr>
-            <td><strong>20</strong></td>
-            <td>€8,000</td>
-            <td>€3,070</td>
-            <td class="green">€4,930</td>
-            <td class="green">€2,465<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€123/pp</span></td>
-            <td class="green">€1,233<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€62/pp</span></td>
-            <td class="green">€1,233<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€62/pp</span></td>
-            <td>Excellent ✓✓✓</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Scenario tabs -->
+  <div class="scenario-nav" id="scenarioNav">
+    <button class="scenario-nav-btn active" onclick="showScenario('s1')">
+      1 Module (2 days)
+      <span class="sub">avg €360/person · 80% early bird €350 + 20% normal €400</span>
+    </button>
+    <button class="scenario-nav-btn" onclick="showScenario('s2')">
+      2 Modules — Bundle (4 days)
+      <span class="sub">avg €660/person · 80% early bird €650 + 20% normal €700</span>
+    </button>
+  </div>
+
+  <!-- SCENARIO 1: 1 module, blended price -->
+  <div class="scenario-block active" id="s1">
+    <div class="scenario-header">
+      <span class="scenario-pill">📅 1 Module (2 days)</span>
+      <span class="scenario-pill">💶 Avg €360/person (80% × €350 + 20% × €400)</span>
+      <span class="scenario-pill">📦 Fixed costs midpoint: ~€3,500</span>
+      <span class="scenario-pill">👤 Variable: €40/person</span>
     </div>
-    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:12px 14px;margin-top:12px;font-size:13px;color:#166534;">
-      <strong>Scenario B — target launch goal: 15 participants minimum, 20 pax ideal.</strong> At 15 pax: trainer €1,590 · Organiser 1 €795 · Organiser 2 €795. At 20 pax: trainer €2,465 · Organiser 1 €1,233 · Organiser 2 €1,233.
+    <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:6px;padding:8px 12px;margin-bottom:14px;font-size:12px;color:#78350f;"><strong>Assumption:</strong> 80% early bird (€350) + 20% normal (€400) = avg €360/person. Scenarios are estimates — actual outcome depends on attendance and pricing mix.</div>
+
+    <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;">Model A — Flat Fee €2,200</h4>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">Event costs = €3,500 + €40×N &nbsp;·&nbsp; Trainer fee €2,200 (flat) &nbsp;·&nbsp; <strong style="color:#dc2626;">Break-even ≈ 18 people</strong> (€360×N = €3,500 + €2,200)</p>
+    <table class="scenario-table">
+      <thead><tr><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€5,400</td><td>€4,100</td><td class="amber">€2,200</td><td class="red">−€900</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>17</strong></td><td>€6,120</td><td>€4,180</td><td class="amber">€2,200</td><td class="red">−€260</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>20</strong></td><td>€7,200</td><td>€4,300</td><td class="amber">€2,200</td><td class="amber">+€700</td><td>Marginal ✓</td></tr>
+        <tr><td><strong>22</strong></td><td>€7,920</td><td>€4,380</td><td class="amber">€2,200</td><td class="amber">+€1,340</td><td>Acceptable ✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€9,000</td><td>€4,500</td><td class="amber">€2,200</td><td class="green">+€2,300</td><td>Good ✓✓</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;margin-top:20px;">Model B — Equal Guaranteed €1,500 each + 50/50 Net Split</h4>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">Event costs = €3,500 + €40×N &nbsp;·&nbsp; Both guaranteed fees €3,000 (€1,500 each) excluded from Event costs. Net surplus = Revenue − Event costs − €3,000. Split 50/50. &nbsp;<strong style="color:#dc2626;">Break-even ≈ 21 people.</strong></p>
+    <table class="scenario-table" style="border:2px solid #7c3aed;">
+      <thead><tr style="background:#7c3aed;"><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Net surplus</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€5,400</td><td>€4,100</td><td class="red">−€1,700</td><td class="amber">€1,500</td><td class="red">−€200</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>17</strong></td><td>€6,120</td><td>€4,180</td><td class="red">−€1,060</td><td class="amber">€1,500</td><td class="amber">€440</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>20</strong></td><td>€7,200</td><td>€4,300</td><td class="red">−€100</td><td class="amber">€1,500</td><td class="amber">€1,400</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>22</strong></td><td>€7,920</td><td>€4,380</td><td>+€540</td><td class="amber">€1,770</td><td class="green">+€1,770</td><td>Equal — acceptable ✓✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€9,000</td><td>€4,500</td><td>+€1,500</td><td class="amber">€2,250</td><td class="green">+€2,250</td><td>Equal — good ✓✓</td></tr>
+      </tbody>
+    </table>
+    <div style="background:#f0f4ff;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:13px;color:#3730a3;">
+      <strong>Comparison at 25 people:</strong> Model A → organiser <strong>€2,300</strong>, trainer €2,200. Model B → both parties <strong>€2,250</strong> each. Outcomes nearly equal at full capacity. At 22 people: Model A organiser €1,340 vs Model B each €1,770 — Model B is better for the organiser at lower attendance. Model B aligns incentives to grow attendance.
+    </div>
+  </div>
+
+  <!-- SCENARIO 2: 2 modules bundle, blended price -->
+  <div class="scenario-block" id="s2">
+    <div class="scenario-header">
+      <span class="scenario-pill">📅 2 Modules — Bundle (4 days)</span>
+      <span class="scenario-pill">💶 Avg €660/person (80% × €650 + 20% × €700)</span>
+      <span class="scenario-pill">📦 Fixed costs midpoint: ~€5,800</span>
+      <span class="scenario-pill">👤 Variable: €80/person</span>
+    </div>
+    <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:6px;padding:8px 12px;margin-bottom:14px;font-size:12px;color:#78350f;"><strong>Assumption:</strong> 80% early bird (€650) + 20% normal (€700) = avg €660/person. All participants assumed to take the full bundle. Actual mix may vary.</div>
+
+    <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;">Model A — 100% participants join 2nd module — Flat Fee €3,200</h4>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">All N participants take the bundle (avg €660). Event costs = €5,800 + €80×N &nbsp;·&nbsp; Trainer fee €3,200 (flat) &nbsp;·&nbsp; <strong style="color:#dc2626;">Break-even ≈ 16 people</strong> (€660×N = €5,800 + €3,200)</p>
+    <table class="scenario-table">
+      <thead><tr><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€9,900</td><td>€7,000</td><td class="amber">€3,200</td><td class="red">−€300</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>17</strong></td><td>€11,220</td><td>€7,160</td><td class="amber">€3,200</td><td class="amber">+€860</td><td>Acceptable ✓</td></tr>
+        <tr><td><strong>20</strong></td><td>€13,200</td><td>€7,400</td><td class="amber">€3,200</td><td class="green">+€2,600</td><td>Good ✓✓</td></tr>
+        <tr><td><strong>22</strong></td><td>€14,520</td><td>€7,560</td><td class="amber">€3,200</td><td class="green">+€3,760</td><td>Strong ✓✓✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€16,500</td><td>€7,800</td><td class="amber">€3,200</td><td class="green">+€5,500</td><td>Excellent ✓✓✓</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size:14px;font-weight:700;color:#92400e;margin-bottom:6px;margin-top:20px;">Model A — 50% participants join 2nd module — Flat Fee €3,200</h4>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">50% take bundle (avg €660), 50% take M1 only (avg €360). Blended avg = €510/person. Catering lower on days 3–4, so variable cost ~€60/person. Event costs = €5,800 + €60×N &nbsp;·&nbsp; Trainer fee €3,200 (flat) &nbsp;·&nbsp; <strong style="color:#dc2626;">Break-even ≈ 20 people</strong> (€510×N = €5,800 + €3,200)</p>
+    <table class="scenario-table" style="border:2px solid #d97706;">
+      <thead><tr style="background:#92400e;"><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€7,650</td><td>€6,700</td><td class="amber">€3,200</td><td class="red">−€2,250</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>17</strong></td><td>€8,670</td><td>€6,820</td><td class="amber">€3,200</td><td class="red">−€1,350</td><td>Loss — do not run</td></tr>
+        <tr><td><strong>20</strong></td><td>€10,200</td><td>€7,000</td><td class="amber">€3,200</td><td>€0</td><td>Exact break-even</td></tr>
+        <tr><td><strong>22</strong></td><td>€11,220</td><td>€7,120</td><td class="amber">€3,200</td><td class="amber">+€900</td><td>Acceptable ✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€12,750</td><td>€7,300</td><td class="amber">€3,200</td><td class="green">+€2,250</td><td>Good ✓✓</td></tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;margin-top:24px;">Model B — 100% participants join 2nd module — Equal Guaranteed €2,500 each + 50/50 Net Split</h4>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">Event costs = €5,800 + €80×N &nbsp;·&nbsp; Both guaranteed fees €5,000 (€2,500 each) excluded from Event costs. Net surplus = Revenue − Event costs − €5,000. Split 50/50. &nbsp;<strong style="color:#dc2626;">Break-even ≈ 19 people.</strong></p>
+    <table class="scenario-table" style="border:2px solid #7c3aed;">
+      <thead><tr style="background:#7c3aed;"><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Net surplus</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€9,900</td><td>€7,000</td><td class="red">−€2,100</td><td class="amber">€2,500</td><td class="red">€400</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>17</strong></td><td>€11,220</td><td>€7,160</td><td class="red">−€940</td><td class="amber">€2,500</td><td class="amber">€1,560</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>20</strong></td><td>€13,200</td><td>€7,400</td><td>+€800</td><td class="amber">€2,900</td><td class="green">+€2,900</td><td>Equal — good ✓✓</td></tr>
+        <tr><td><strong>22</strong></td><td>€14,520</td><td>€7,560</td><td>+€1,960</td><td class="amber">€3,480</td><td class="green">+€3,480</td><td>Equal — strong ✓✓✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€16,500</td><td>€7,800</td><td>+€3,700</td><td class="amber">€4,350</td><td class="green">+€4,350</td><td>Equal — excellent ✓✓✓</td></tr>
+      </tbody>
+    </table>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-top:24px;margin-bottom:6px;">
+      <h4 style="font-size:14px;font-weight:700;color:#065f46;margin:0;">Model B — 50% participants join 2nd module — Equal Guaranteed €2,500 each + 50/50 Net Split</h4>
+      <span style="background:#059669;color:white;font-size:10px;font-weight:800;padding:3px 10px;border-radius:12px;letter-spacing:.8px;white-space:nowrap;">★ RECOMMENDED</span>
+    </div>
+    <p style="font-size:12px;color:#065f46;background:#d1fae5;border:1px solid #6ee7b7;border-radius:6px;padding:8px 12px;margin-bottom:8px;">Recommended option — realistic uptake assumption, equal and transparent deal for both parties. Aligns incentives: both sides benefit from promoting the bundle and growing attendance.</p>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">Blended avg €510/person · variable ~€60/person. Event costs = €3,340 + €60×N &nbsp;·&nbsp; Both guaranteed fees €5,000 (€2,500 each) excluded from Event costs. Net surplus = Revenue − Event costs − €5,000. Split 50/50. &nbsp;<strong style="color:#059669;">Break-even ≈ 19 people.</strong></p>
+    <table class="scenario-table" style="border:2px solid #d97706;">
+      <thead><tr style="background:#92400e;"><th>Participants</th><th>Revenue</th><th>Event costs</th><th>Net surplus</th><th>Trainer fee</th><th>Organiser fee</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><strong>15</strong></td><td>€7,650</td><td>€4,240</td><td class="red">−€1,590</td><td class="amber">€2,500</td><td class="amber">€910</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>17</strong></td><td>€8,670</td><td>€4,360</td><td class="red">−€690</td><td class="amber">€2,500</td><td class="amber">€1,810</td><td>Below guaranteed floor</td></tr>
+        <tr><td><strong>20</strong></td><td>€10,200</td><td>€4,600</td><td class="green">+€600</td><td class="green">€2,800</td><td class="green">€2,800</td><td>Equal — good ✓</td></tr>
+        <tr><td><strong>22</strong></td><td>€11,220</td><td>€4,660</td><td class="green">+€1,560</td><td class="green">€3,280</td><td class="green">€3,280</td><td>Equal — good ✓</td></tr>
+        <tr><td><strong>25</strong></td><td>€12,750</td><td>€4,840</td><td class="green">+€2,910</td><td class="green">€3,955</td><td class="green">€3,955</td><td>Equal — excellent ✓✓</td></tr>
+      </tbody>
+    </table>
+    <!-- Full cost breakdown at 20 people -->
+    <div style="background:white;border:2px solid #059669;border-radius:12px;padding:20px 24px;margin-top:16px;">
+      <div style="font-size:13px;font-weight:800;color:#065f46;margin-bottom:14px;">📊 Full Cost Calculation — 20 Participants, 50% join 2nd module</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <!-- Revenue -->
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#059669;margin-bottom:8px;">Revenue</div>
+          <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:4px 0;color:#374151;">10 × Bundle (avg €660)</td><td style="text-align:right;font-weight:600;">€6,600</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:4px 0;color:#374151;">10 × Module 1 only (avg €360)</td><td style="text-align:right;font-weight:600;">€3,600</td></tr>
+            <tr style="background:#f0fdf4;"><td style="padding:6px 0;font-weight:800;color:#065f46;">Total revenue</td><td style="text-align:right;font-weight:800;color:#065f46;">€10,200</td></tr>
+          </table>
+        </div>
+        <!-- Costs -->
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#dc2626;margin-bottom:8px;">Event Costs</div>
+          <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Venue (4 days × €250/day)</td><td style="text-align:right;">€1,000</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Coffee/tea M1 (20 pax) + M2 (10 pax)</td><td style="text-align:right;">€720</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Snacks M1 (20 pax) + M2 (10 pax)</td><td style="text-align:right;">€300</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Hotel trainer (4 nights)</td><td style="text-align:right;">€500</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Sound/AV equipment (4 days)</td><td style="text-align:right;">€600</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Flight (return)</td><td style="text-align:right;">€450</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Airport transfer (2 ways)</td><td style="text-align:right;">€180</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Local transport</td><td style="text-align:right;">€75</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Marketing & ads</td><td style="text-align:right;">€300</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Registration platform</td><td style="text-align:right;">€100</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Materials M1 (20×€8) + M2 (10×€8)</td><td style="text-align:right;">€240</td></tr>
+            <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:3px 0;color:#374151;">Miscellaneous buffer</td><td style="text-align:right;">€135</td></tr>
+            <tr style="background:#fef2f2;"><td style="padding:6px 0;font-weight:800;color:#dc2626;">Total event costs</td><td style="text-align:right;font-weight:800;color:#dc2626;">€4,600</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div style="border-top:2px solid #e5e7eb;padding-top:14px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#374151;margin-bottom:10px;">Result — Model B (Equal Guaranteed €2,500 each)</div>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <tr style="border-bottom:1px solid #e5e7eb;">
+            <td style="padding:5px 0;color:#374151;">Revenue</td>
+            <td style="text-align:right;font-weight:600;color:#059669;">+ €10,200</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e5e7eb;">
+            <td style="padding:5px 0;color:#374151;">Event costs</td>
+            <td style="text-align:right;font-weight:600;color:#dc2626;">− €4,600</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e5e7eb;">
+            <td style="padding:5px 0;color:#374151;">Both guaranteed (€2,500 each)</td>
+            <td style="text-align:right;font-weight:600;color:#dc2626;">− €5,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e5e7eb;">
+            <td style="padding:5px 0;color:#374151;">Net surplus — split 50/50</td>
+            <td style="text-align:right;font-weight:600;color:#059669;">+ €600 → €300 each</td>
+          </tr>
+          <tr style="border-bottom:2px solid #374151;">
+            <td style="padding:5px 0;font-weight:700;">Each party receives</td>
+            <td style="text-align:right;font-weight:800;color:#059669;">€2,800</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding:8px 0 0;font-size:12px;color:#6b7280;">Net surplus = €10,200 − €4,600 − €5,000 = <strong style="color:#059669;">+€600</strong>. Split 50/50: +€300 each. Both parties receive €2,500 + €300 = <strong style="color:#059669;">€2,800</strong> — above the guaranteed floor. At N=20 with own-location venue pricing this scenario works for both parties.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div style="background:#f0f4ff;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:13px;color:#3730a3;">
+      <strong>Key insight:</strong> With own-location venue pricing (€250/day vs €350–1,500 market rate), the 50% M2 uptake scenario becomes viable at just 19 participants. At N=20 both parties receive €2,800 — above the €2,500 guaranteed floor. At N=25 both receive ~€3,955. Promoting the bundle aggressively remains important, but the lower venue cost gives significant room even at moderate uptake.
     </div>
   </div>
 
   <!-- Best Dates -->
-  <div class="section-title">Best Dates for 2026 — Friday–Saturday–Sunday Format</div>
-  <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">3-day module: Friday afternoon start → Sunday evening close. Attendees need to arrange Friday off, or target self-employed, retirees, and people with flexible schedules. October in Torrevieja: 22–26°C, sunny, low humidity — outstanding conditions for a multi-day personal development programme.</p>
+  <div class="section-title">Best Dates for 2026 — Saturday–Sunday–Monday–Tuesday Format</div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:16px;">Module 1: Saturday–Sunday. Module 2: Monday–Tuesday. Attendees need to take 2 working days off — factor this into audience targeting (self-employed, flexible workers, people between jobs). Avoid Dutch school holidays and bank holidays.</p>
 
-  <div class="table-scroll">
-    <table class="scenario-table" style="margin-bottom:10px;">
-      <thead>
-        <tr><th>Option</th><th>Dates</th><th>Days</th><th>Assessment</th><th>Notes</th></tr>
-      </thead>
-      <tbody>
-        <tr style="background:#f0fdf4;">
-          <td><strong>Option 1 — Preferred</strong></td>
-          <td><strong>16–17–18 October 2026</strong></td>
-          <td>Fri · Sat · Sun</td>
-          <td class="green">✓✓ Recommended</td>
-          <td>Best window. 6+ weeks before year-end. Strong autumn energy. Audience fully settled after summer. 8-week promotion runway from early bird 1 Sep deadline.</td>
-        </tr>
-        <tr>
-          <td><strong>Option 2 — Backup</strong></td>
-          <td><strong>23–24–25 October 2026</strong></td>
-          <td>Fri · Sat · Sun</td>
-          <td class="amber">✓ Good</td>
-          <td>One week later. Still viable — no Spanish bank holidays on these days. Slightly closer to November. Use if trainer's schedule conflicts with Option 1.</td>
-        </tr>
-      </tbody>
-    </table>
+  <table class="scenario-table" style="margin-bottom:12px;">
+    <thead>
+      <tr><th>Window</th><th>Dates (Sat–Tue)</th><th>Assessment</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>April / May 2026</strong></td>
+        <td>—</td>
+        <td class="red">✗ Avoid</td>
+        <td>Easter, Koningsdag, Liberation Day, Ascension, school holidays — too many conflicts.</td>
+      </tr>
+      <tr>
+        <td><strong>June 2026</strong></td>
+        <td>Jun 6–9 · Jun 13–16 · Jun 20–23</td>
+        <td class="green">✓ Good</td>
+        <td>No holidays. Minimum 8 weeks lead time from now. Good energy before summer.</td>
+      </tr>
+      <tr>
+        <td><strong>July 4–7, 2026</strong></td>
+        <td>Jul 4 (Sat) – Jul 7 (Tue)</td>
+        <td class="green">✓ Good</td>
+        <td>No Dutch bank holidays. Summer school holiday starts Jul 18 — safely before it.</td>
+      </tr>
+      <tr>
+        <td><strong>Jul 18 – Aug 30 2026</strong></td>
+        <td>—</td>
+        <td class="red">✗ Avoid</td>
+        <td>Summer school holiday. Audience away, impossible to fill.</td>
+      </tr>
+      <tr style="background:#f0fdf4;">
+        <td><strong>September 2026 ★ BEST</strong></td>
+        <td>Sep 5–8 · Sep 12–15 · Sep 19–22</td>
+        <td class="green">✓✓✓ Ideal</td>
+        <td>Schools back, no holidays, people motivated after summer. 5+ months to promote.</td>
+      </tr>
+      <tr style="background:#f0fdf4;">
+        <td><strong>October 2026 ★ Good</strong></td>
+        <td>Oct 3–6 · Oct 10–13</td>
+        <td class="green">✓✓ Good</td>
+        <td>Autumn break starts Oct 17 — stay before it. Oct 10–13 is last safe weekend.</td>
+      </tr>
+      <tr>
+        <td><strong>November 2026</strong></td>
+        <td>Nov 7–10 · Nov 14–17 · Nov 21–24</td>
+        <td class="amber">✓ Acceptable</td>
+        <td>No holidays. Darker season — people more open to personal dev. Good backup.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:40px;">Bank holidays: Good Friday Apr 3 · Easter Mon Apr 6 · Koningsdag Apr 27 · Liberation Day May 5 · Ascension May 14 · Whit Monday May 25 · Christmas Dec 25–26. School holidays: Utrecht regio Midden calendar.</p>
+
+  <!-- VENUE SECTION -->
+  <div class="section-title">Venue Options in Utrecht</div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:24px;">Venues suitable for a Silva Method workshop of 20–35 people. Requirements: flexible seating (theatre or U-shape), good acoustics, private space, blackout capability preferred for meditation, AV available. All locations within Utrecht municipality.</p>
+
+  <div class="venue-tier">
+    <div class="venue-tier-label tier-luxury">📍 Location Options</div>
+    <div class="venue-grid">
+      <div class="venue-card">
+        <h4><a href="https://www.karelv.nl/en/meetings-events/" target="_blank">Grand Hotel Karel V ↗</a></h4>
+        <div class="venue-meta">📍 Geertekerkhof 1, Utrecht city centre</div>
+        <p>5-star hotel in a 14th-century monastery complex in the heart of Utrecht. 13 versatile meeting rooms, state-of-the-art AV, full catering. Extraordinary historic atmosphere — significantly elevates the event's perceived value and supports premium participant pricing. Trainer can stay in-house.</p>
+        <div class="venue-price">~€450–700<span>/day · catering separate</span></div>
+        <div style="background:#fef9c3;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:#78350f;"><strong>Coffee/tea/water:</strong> €18–25/person/day (full barista service). For 20 people × 2 days: €720–1,000.</div>
+        <div class="venue-tags" style="margin-top:8px;">
+          <span class="venue-tag">Up to 50 pax</span>
+          <span class="venue-tag">Historic building</span>
+          <span class="venue-tag">Full catering</span>
+          <span class="venue-tag">Accommodation on-site</span>
+          <span class="venue-tag">+31 30 233 75 55</span>
+        </div>
+      </div>
+      <div class="venue-card">
+        <h4><a href="https://maps.google.com/?q=WestCord+Hotel+Utrecht+City+Centre+Westplein" target="_blank">WestCord Hotel Utrecht City Centre — Google Maps ↗</a></h4>
+        <div class="venue-meta">📍 Westplein 50, Utrecht city — accessible by tram 22 and multiple bus lines</div>
+        <p>Modern 4-star hotel on the western side of Utrecht city, within walking distance of the Dom tower and the old canal centre. Premium meeting rooms with excellent blackout capability, AV, full catering service. Easily reachable by public transport from Utrecht Centraal (10 min tram). Quiet location away from the station bustle — well-suited to multi-day meditation events.</p>
+        <div class="venue-price">~€350–500<span>/day · catering separate</span></div>
+        <div style="background:#fef9c3;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:#78350f;"><strong>Coffee/tea/water:</strong> €18–25/person/day (full service). For 20 people × 2 days: €720–1,000.</div>
+        <div class="venue-tags" style="margin-top:8px;">
+          <span class="venue-tag">Up to 40 pax</span>
+          <span class="venue-tag">Utrecht city centre</span>
+          <span class="venue-tag">Tram access</span>
+          <span class="venue-tag">Blackout available</span>
+          <span class="venue-tag">Full catering</span>
+          <span class="venue-tag">Accommodation on-site</span>
+        </div>
+      </div>
+      <div class="venue-card">
+        <h4><a href="https://maps.google.com/?q=Kasteel+de+Haar+Haarzuilens+Utrecht" target="_blank">Kasteel De Haar — Google Maps ↗</a></h4>
+        <div class="venue-meta">📍 Kasteellaan 1, Haarzuilens (Utrecht municipality)</div>
+        <p>The largest castle in the Netherlands, set in a 135-hectare park. The estate hosts exclusive private events in its historic halls and orangery. An extraordinary setting that transforms a personal development event into a truly memorable experience — high perceived value, completely private when booked. Request exclusive-use event hire through the estate management directly. Limited availability; book well in advance.</p>
+        <div class="venue-price">Price on request<span> · exclusive hire</span></div>
+        <div style="background:#fef9c3;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:#78350f;"><strong>Note:</strong> Exclusive-use events only — full venue hire. Full catering by appointment. Request via castle management office.</div>
+        <div class="venue-tags" style="margin-top:8px;">
+          <span class="venue-tag">Castle setting</span>
+          <span class="venue-tag">Exclusive hire</span>
+          <span class="venue-tag">Historic estate</span>
+          <span class="venue-tag">Park grounds</span>
+          <span class="venue-tag">15 min from Utrecht city</span>
+        </div>
+      </div>
+      <div class="venue-card">
+        <h4><a href="https://maps.google.com/?q=Landgoed+De+Horst+Driebergen" target="_blank">Landgoed De Horst — Google Maps ↗</a></h4>
+        <div class="venue-meta">📍 Doornseweg 44, Driebergen-Rijsenburg (20 min from Utrecht)</div>
+        <p>A luxury conference and retreat estate set in a private forest and park near Driebergen — one of the most sought-after event locations in the Utrecht region. Purpose-built for multi-day immersive programmes: private breakout rooms, dedicated meditation and silence spaces, outdoor walking areas, and full residential accommodation for participants who prefer to stay on-site. Ideal for a 2-module programme where the venue experience is part of the offering.</p>
+        <div class="venue-price">~€500–900<span>/day · full-day arrangement</span></div>
+        <div style="background:#fef9c3;border-radius:6px;padding:8px 10px;margin-top:10px;font-size:12px;color:#78350f;"><strong>Coffee/tea/water:</strong> typically included in full-day residential packages. Full catering available. On-site rooms for 20–40 participants.</div>
+        <div class="venue-tags" style="margin-top:8px;">
+          <span class="venue-tag">Forest estate</span>
+          <span class="venue-tag">Residential capacity</span>
+          <span class="venue-tag">Meditation-suitable</span>
+          <span class="venue-tag">Full catering</span>
+          <span class="venue-tag">20 min from Utrecht</span>
+          <span class="venue-tag">Free parking</span>
+        </div>
+      </div>
+    </div>
   </div>
-  <p style="font-size:12px;color:var(--sub);margin-bottom:36px;">Note: 12 October is Spain's Fiesta Nacional (Monday) — does not conflict with either Fri–Sun option. No Valencian regional bank holidays fall on 16–18 or 23–25 October.</p>
 
-  <!-- Flight Section -->
-  <div class="section-title">Trainer Flight — Estonia to Alicante</div>
-  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;margin-bottom:36px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;" class="two-col">
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Route</div>
-        <div style="font-size:14px;font-weight:700;color:var(--navy);">Tallinn (TLL) → Alicante (ALC)</div>
-        <div style="font-size:13px;color:var(--sub);margin-top:4px;">No direct flight. Connection via Helsinki, Copenhagen, Riga, or Madrid. Total journey typically 4–7 hours. Plan to arrive the day before the training.</div>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Budget line for planning</div>
-        <div style="font-size:20px;font-weight:800;color:var(--navy);">€300</div>
-        <div style="font-size:13px;color:var(--sub);margin-top:4px;">Return with 23 kg checked luggage · planning budget for October 2026. Car rental on arrival: €30/day × 5 days = €150. <strong>Total trainer travel: ~€450.</strong></div>
+  <!-- Trainer Accommodation -->
+  <div class="section-title" style="margin-top:8px;">Trainer Accommodation — Comfort Options</div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:20px;">Three options for trainer accommodation in Utrecht and De Meern area. Comfort segment — professional, comfortable, suitable for 4–6 night stays during the event period.</p>
+  <div class="venue-grid">
+    <div class="venue-card">
+      <h4><a href="https://www.nh-hotels.com/hotel/nh-utrecht" target="_blank">NH Hotel Utrecht ↗</a></h4>
+      <div class="venue-meta">📍 Jaarbeursplein 24, Utrecht — also the venue option above</div>
+      <p>4-star hotel rooms next to the event space — eliminates all trainer travel during the event. Convenient, professional, straightforward. Often includes breakfast. Can negotiate group rate if booking venue + room together.</p>
+      <div class="venue-price">~€100–140<span>/night incl. breakfast</span></div>
+      <div class="venue-tags">
+        <span class="venue-tag">Room + venue bundle</span>
+        <span class="venue-tag">Central Utrecht</span>
+        <span class="venue-tag">5 min from Centraal</span>
       </div>
     </div>
-
-    <div class="table-scroll">
-      <table class="scenario-table" style="margin-bottom:14px;">
-        <thead><tr><th>Route</th><th>Airlines</th><th>Connection</th><th>Return + 23 kg luggage (est.)</th></tr></thead>
-        <tbody>
-          <tr style="background:#f0f9ff;">
-            <td><strong>Via Helsinki ★ Recommended</strong></td>
-            <td>Finnair</td>
-            <td>TLL → HEL → ALC</td>
-            <td><strong>€180–260</strong> — luggage typically included in fare</td>
-          </tr>
-          <tr>
-            <td>Via Copenhagen</td>
-            <td>SAS / Nordic</td>
-            <td>TLL → CPH → ALC</td>
-            <td>€200–290 — luggage often included</td>
-          </tr>
-          <tr>
-            <td>Via Riga (budget)</td>
-            <td>airBaltic + Ryanair</td>
-            <td>TLL → RIX → ALC</td>
-            <td>€160–220 — add €60–80 for checked bag</td>
-          </tr>
-          <tr>
-            <td>Via Madrid</td>
-            <td>Various</td>
-            <td>TLL → MAD → ALC</td>
-            <td>€200–320 — varies by carrier</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="venue-card">
+      <h4><a href="https://www.citizenm.com/hotels/netherlands/utrecht/utrecht-centraal-hotel/" target="_blank">citizenM Utrecht Centraal ↗</a></h4>
+      <div class="venue-meta">📍 Stationsplein 16, Utrecht — directly opposite Centraal Station</div>
+      <p>Modern design hotel at Utrecht Centraal — stylish, comfortable rooms with excellent beds, mood lighting, and smart controls. No frills, all comfort. Perfect for a trainer who values good sleep and easy logistics. 2-minute walk from the station and all city transport. Breakfast included, 24/7 bar and lobby.</p>
+      <div class="venue-price">~€90–140<span>/night</span></div>
+      <div class="venue-tags">
+        <span class="venue-tag">Design hotel</span>
+        <span class="venue-tag">Central Station</span>
+        <span class="venue-tag">Great beds</span>
+        <span class="venue-tag">24/7 service</span>
+      </div>
     </div>
+    <div class="venue-card">
+      <h4>Private apartment / Airbnb — De Meern or Vleuten</h4>
+      <div class="venue-meta">📍 De Meern / Vleuten, Utrecht municipality</div>
+      <p>Comfortable private apartment in the quiet western Utrecht suburbs near Hotel Mitland and Kasteel De Haar. Green, residential, good parking. Ideal if the event runs in the De Meern area. Search Airbnb for "De Meern Utrecht" or "Vleuten" — whole-apartment options for full privacy, kitchen access, home-like setting.</p>
+      <div class="venue-price">~€80–130<span>/night (whole apartment)</span></div>
+      <div class="venue-tags">
+        <span class="venue-tag">Private space</span>
+        <span class="venue-tag">De Meern / Vleuten</span>
+        <span class="venue-tag">Free parking</span>
+        <span class="venue-tag">Kitchen available</span>
+      </div>
+    </div>
+  </div>
 
+  <!-- Call prep -->
+  <div class="section-title">Checklist — Items to Confirm</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:24px;margin-bottom:40px;">
+    <p style="font-size:13.5px;font-weight:700;color:#166534;margin-bottom:12px;">Key items to align on:</p>
+    <ul style="font-size:13.5px;color:#374151;padding-left:18px;line-height:2;">
+      <li>Fee model — flat fee (€2,200 / €3,200) or guaranteed + 50/50 net split (€1,500 / €2,500)</li>
+      <li>Format — 1 module only or 2 modules back-to-back</li>
+      <li>Minimum group size to confirm/cancel the event</li>
+      <li>Promotion — which channels will the trainer activate (own community, Telegram, social media)?</li>
+      <li>Materials — workbooks and certificates: provided by trainer or printed by organiser?</li>
+      <li>Room requirements — size, layout, AV, blackout capability for meditation exercises</li>
+      <li>Dates — confirmed availability in 2026 (September/October preferred)</li>
+      <li>Licensing — any official Silva Method franchise agreement required to organise events?</li>
+    </ul>
+  </div>
+
+  <!-- Channels -->
+  <div class="section-title">Promotion Channels</div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🌐</div>
+    <div class="ch-body">
+      <h3>Landing Page by Organiser <span class="effort high">First step</span></h3>
+      <p>Create a dedicated event landing page before any promotion begins. The page should cover: event description, programme overview, trainer bio, dates, location, pricing (early bird + standard), and a registration button. This is the anchor for all other channels — every Telegram post, Facebook group message, and livestream announcement links here. </p>
+      <div class="examples">
+        <span class="ex-tag">Event title + one-line benefit</span>
+        <span class="ex-tag">Trainer bio + photo</span>
+        <span class="ex-tag">Programme overview (Module 1 / Module 2)</span>
+        <span class="ex-tag">Date, city, venue name</span>
+        <span class="ex-tag">Pricing table with early bird deadline</span>
+        <span class="ex-tag">Registration form or payment link</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">📣</div>
+    <div class="ch-body">
+      <h3>Ирина's Own Community <span class="effort high">Highest quality reach</span></h3>
+      <p>Ирина has an established Russian-speaking community across Telegram, YouTube, Instagram and Facebook — active followers already interested in the Silva Method specifically. Promotion to her own audience is the highest-conversion channel available: these people know the method, trust the trainer, and may have been waiting for a European date.</p>
+      <div class="examples">
+        <a href="https://t.me/metodsilvaru" target="_blank" class="ex-tag">Telegram: t.me/metodsilvaru</a>
+        <a href="https://www.youtube.com/user/MetodSilva" target="_blank" class="ex-tag">YouTube: MetodSilva</a>
+        <a href="https://www.facebook.com/metodsilva/" target="_blank" class="ex-tag">Facebook: metodsilva</a>
+        <a href="https://www.instagram.com/irina_hlimonenko/" target="_blank" class="ex-tag">Instagram: @irina_hlimonenko</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🎥</div>
+    <div class="ch-body">
+      <h3>2 Free Livestreams with Ирина <span class="effort high">High conversion</span></h3>
+      <p>Two open-access livestreams before the event — one ~4 weeks before registration closes, one ~2 weeks before. Ирина introduces the method, answers questions live, and participants can ask about the Utrecht training. This is the most effective trust-building channel for people who have never attended a Silva event. Livestreams broadcast via YouTube and/or Telegram. No cost, requires 60–90 min of trainer time per stream.</p>
+      <div class="examples">
+        <span class="ex-tag">Stream 1: What is the Silva Method? (~4 weeks before)</span>
+        <span class="ex-tag">Stream 2: Q&A + Utrecht event preview (~2 weeks before)</span>
+        <span class="ex-tag">Replay stays on YouTube as evergreen content</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">💬</div>
+    <div class="ch-body">
+      <h3>Telegram Groups — Russian NL Community <span class="effort high">Highest reach</span></h3>
+      <p>The primary communication channel for Russian-speaking communities in the Netherlands. Post event announcement here — single posts can reach 1,000–5,000 relevant people.</p>
+      <div class="examples">
+        <a href="https://t.me/russineholland" target="_blank" class="ex-tag">t.me/russineholland</a>
+        <a href="https://t.me/netherlands_ru" target="_blank" class="ex-tag">t.me/netherlands_ru</a>
+        <a href="https://t.me/ukrainians_netherlands" target="_blank" class="ex-tag">t.me/ukrainians_netherlands</a>
+        <a href="https://t.me/amsterdam_ru" target="_blank" class="ex-tag">t.me/amsterdam_ru</a>
+        <a href="https://t.me/belarusy_gollandiya" target="_blank" class="ex-tag">t.me/belarusy_gollandiya</a>
+        <span class="ex-tag">IT-эмигранты NL (search Telegram)</span>
+      </div>
+      <p style="margin-top:8px;font-size:12px;color:#9ca3af;">Note: verify links are active before posting — Telegram group URLs can change.</p>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">👥</div>
+    <div class="ch-body">
+      <h3>Facebook Groups <span class="effort high">High reach</span></h3>
+      <p>Older demographic (30–50), strong for personal development events. Good for longer posts with personal story from the Germany training.</p>
+      <div class="examples">
+        <a href="https://www.facebook.com/groups/russkie.v.niderlandah" target="_blank" class="ex-tag">Русские в Нидерландах</a>
+        <a href="https://www.facebook.com/groups/ukraincyvniderlandah" target="_blank" class="ex-tag">Украинцы в Нидерландах</a>
+        <a href="https://www.facebook.com/groups/russianexpatnetherlands" target="_blank" class="ex-tag">Russian Expats Netherlands</a>
+        <a href="https://www.facebook.com/groups/mamyvgollandii" target="_blank" class="ex-tag">Мамы в Голландии</a>
+        <span class="ex-tag">Search: "русские голландия" on Facebook</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">📸</div>
+    <div class="ch-body">
+      <h3>Instagram &amp; Word of Mouth <span class="effort med">Medium reach</span></h3>
+      <p>Personal development audience is highly active on Instagram. Authentic testimonials and personal story from the Germany training are the strongest assets. Ask Ирина to share the Utrecht date to her own Instagram followers.</p>
+      <div class="examples">
+        <a href="https://www.instagram.com/irina_hlimonenko/" target="_blank" class="ex-tag">@irina_hlimonenko</a>
+        <a href="https://www.instagram.com/metodsilva.ru/" target="_blank" class="ex-tag">@metodsilva.ru</a>
+        <span class="ex-tag">Russian-speaking coaches in NL</span>
+        <span class="ex-tag">Personal network</span>
+      </div>
+    </div>
   </div>
 
   <footer-bar>
-    June 2026 · <a href="/">TrendsOnFire</a>
+    March 2026 · <a href="/">TrendsOnFire</a>
   </footer-bar>
 
 </main>
+
+<script>
+function showScenario(id) {
+  document.querySelectorAll('.scenario-block').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.scenario-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['s1','s2'].indexOf(id);
+  document.querySelectorAll('.scenario-nav-btn')[idx].classList.add('active');
+}
+</script>
 
 </body>
 </html>
