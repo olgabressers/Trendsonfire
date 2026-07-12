@@ -56,7 +56,7 @@
     .src-note strong { color:#0a0f1a; }
 
     .data-table { width:100%; border-collapse:collapse; margin:24px 0 8px; font-size:15px; }
-    .data-table th { background:#0a0f1a; color:white; text-align:left; padding:12px 16px; font-size:13px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; }
+    .data-table th { background:#0a0f1a; color:white; text-align:left; padding:12px 16px; font-size:14px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; }
     .data-table td { padding:13px 16px; border-bottom:1px solid #e8e5e0; color:#1f1f1f; vertical-align:top; }
     .data-table tr:last-child td { border-bottom:none; }
     .data-table tr:nth-child(even) td { background:#faf9f7; }
@@ -66,12 +66,12 @@
     @media(max-width:900px){ .channel-grid { grid-template-columns:1fr 1fr; } }
     @media(max-width:600px){ .channel-grid { grid-template-columns:1fr; } }
     .channel-card { background:white; border:1px solid #e2dfd9; padding:24px 22px; }
-    .ch-tag { font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#b8976a; margin-bottom:10px; }
+    .ch-tag { font-size:14px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#b8976a; margin-bottom:10px; }
     .ch-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:600; color:#0a0f1a; margin-bottom:12px; line-height:1.2; }
     .ch-body { font-size:15px; color:#1f1f1f; line-height:1.7; }
     .ch-body a { color:#8b6a2f; }
 
-    .tag-pill { display:inline-block; background:#f1ede7; color:#6b5a3e; font-size:13px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:5px 12px; margin:3px 4px 3px 0; text-decoration:none; cursor:pointer; }
+    .tag-pill { display:inline-block; background:#f1ede7; color:#6b5a3e; font-size:14px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:5px 12px; margin:3px 4px 3px 0; text-decoration:none; cursor:pointer; }
     .tag-pill:hover { background:#e8e0d5; }
     .tag-pill.red { background:#fef2f2; color:#991b1b; }
     .tag-pill.green { background:#f0fdf4; color:#166534; }
@@ -80,15 +80,15 @@
 
     .hero-img-strip { width:100%; height:480px; overflow:hidden; position:relative; }
     .hero-img-strip img { width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; }
-    .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.7); color:rgba(255,255,255,.85); font-size:13px; padding:7px 14px; letter-spacing:0.3px; }
+    .hero-img-strip .img-caption { position:absolute; bottom:0; right:0; background:rgba(10,15,26,.7); color:rgba(255,255,255,.85); font-size:14px; padding:7px 14px; letter-spacing:0.3px; }
 
     .platform-photo-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:32px 0 6px; }
     @media(max-width:768px){ .platform-photo-grid { grid-template-columns:1fr; } }
     .platform-photo-grid .photo-wrap { position:relative; overflow:hidden; }
     .platform-photo-grid img { width:100%; height:300px; object-fit:cover; object-position:center top; display:block; }
-    .photo-label { position:absolute; bottom:0; left:0; background:rgba(10,15,26,.75); color:white; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:8px 14px; }
+    .photo-label { position:absolute; bottom:0; left:0; background:rgba(10,15,26,.75); color:white; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:8px 14px; }
 
-    .img-credit { font-size:13px; color:#6b7280; margin-top:6px; text-align:right; font-style:italic; }
+    .img-credit { font-size:14px; color:#6b7280; margin-top:6px; text-align:right; font-style:italic; }
 
     .crisis-block { background:#fdf2f2; border-left:4px solid #dc2626; padding:22px 24px; margin:16px 0; }
     .crisis-block .cr-brand { font-size:14px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:#991b1b; margin-bottom:8px; }
@@ -127,8 +127,34 @@
     .margin-bar.pos { background:#166534; }
     .margin-bar.neg { background:#991b1b; border-radius:0 0 2px 2px; }
     .margin-name { font-size:14px; font-weight:700; color:#0a0f1a; text-align:center; margin-top:10px; line-height:1.3; }
-    .margin-row-label { font-size:13px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#166534; margin:28px 0 14px; }
+    .margin-row-label { font-size:14px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#166534; margin:28px 0 14px; }
     .margin-row-label.neg-label { color:#991b1b; margin-top:36px; }
+
+    /* REVENUE SINCE LAUNCH — TREND CARDS */
+    .trend-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
+    @media(max-width:900px){ .trend-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:600px){ .trend-grid { grid-template-columns:1fr; } }
+    .tm-card { background:white; border:1px solid #e2dfd9; padding:20px 18px 18px; }
+    .tm-name { font-size:15px; font-weight:800; color:#0a0f1a; margin-bottom:14px; line-height:1.3; }
+    .tm-bars { display:flex; align-items:flex-end; gap:3px; height:88px; border-bottom:2px solid #0a0f1a; }
+    .tm-bar { flex:1; background:#8b6a2f; min-width:3px; border-radius:1px 1px 0 0; }
+    .tm-labels { display:flex; justify-content:space-between; align-items:baseline; margin-top:10px; flex-wrap:wrap; gap:6px; }
+    .tm-start, .tm-end { font-size:14px; font-weight:700; color:#0a0f1a; }
+    .tm-mult { font-size:14px; font-weight:800; color:#8b1a6a; }
+    .tm-note { font-size:14px; color:#4a4a4a; margin-top:8px; line-height:1.5; }
+
+    /* EMERGING MARKETPLACES */
+    .emerge-card { background:white; border:1px solid #e2dfd9; padding:26px 24px; margin:20px 0; }
+    .emerge-card .em-tag { font-size:14px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#8b1a6a; margin-bottom:10px; }
+    .emerge-card .em-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:600; color:#0a0f1a; margin-bottom:14px; }
+    .emerge-card .em-body { font-size:16px; color:#1f1f1f; line-height:1.75; }
+    .emerge-card .em-body strong { color:#0a0f1a; }
+    .fee-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0; }
+    @media(max-width:600px){ .fee-grid { grid-template-columns:1fr; } }
+    .fee-box { background:#faf9f7; border:1px solid #e2dfd9; padding:16px 18px; }
+    .fee-box .fb-tier { font-size:14px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:#8b6a2f; margin-bottom:6px; }
+    .fee-box .fb-num { font-family:'Cormorant Garamond',Georgia,serif; font-size:28px; font-weight:600; color:#0a0f1a; }
+    .fee-box .fb-sub { font-size:14px; color:#4a4a4a; margin-top:4px; }
 
     @media(max-width:600px){
       .art-hero { padding:44px 20px 36px; }
@@ -188,9 +214,9 @@
       <a href="index.html">Retail</a> &nbsp;/&nbsp;
       Marketplaces
     </div>
-    <div class="eyebrow">Retail Intelligence — 15 Marketplaces, 9 Industries</div>
+    <div class="eyebrow">Retail Intelligence — 16 Marketplaces, 10+ Industries</div>
     <h1>Rightmove runs a <em>70% margin.</em> Farfetch's equity fell to <em>zero.</em></h1>
-    <p>15 marketplaces across e-commerce, fashion, mobility, food delivery, travel, freelance work, resale and B2B — compared on growth and profitability, using verified 2024&ndash;2025 results.</p>
+    <p>16 marketplaces across e-commerce, fashion, mobility, food delivery, travel, freelance work, resale, B2B and community commerce — compared on growth, profitability and revenue since launch, using verified results. Plus a first look at the AI agent marketplaces now emerging.</p>
     <div class="meta">
       <span>Sources: company investor relations &middot; SEC filings &middot; GlobeNewswire &middot; company newsrooms</span>
       <span>Updated 12 July 2026</span>
@@ -200,7 +226,7 @@
 
 <!-- HERO IMAGE -->
 <div class="hero-img-strip">
-  <img src="img/luxury-shopper.jpg" alt="Marketplace shopper — retail intelligence"/>
+  <img src="img/marketplace-delivery-fresh.jpg" alt="Small business checkout — marketplace commerce intelligence"/>
   <div class="img-caption">Image: Unsplash</div>
 </div>
 
@@ -210,8 +236,8 @@
   <div class="stats">
     <div class="s-card">
       <div class="s-lbl">Marketplaces Compared</div>
-      <div class="s-num">15</div>
-      <div class="s-src">Across e-commerce, fashion, mobility, food delivery, travel, freelance, resale, B2B and real estate.</div>
+      <div class="s-num">16</div>
+      <div class="s-src">Across e-commerce, fashion, mobility, food delivery, travel, freelance, resale, B2B, real estate and community commerce.</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Highest Operating Margin</div>
@@ -410,7 +436,7 @@
         <td><span class="tag-pill red">Loss-Making</span></td>
       </tr>
       <tr>
-        <td><strong>Faire</strong> <span style="font-size:13px;color:#9ca3af;">(private)</span></td>
+        <td><strong>Faire</strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
         <td>B2B wholesale</td>
         <td>2025</td>
         <td>GMV ~$3B, revenue growth &gt;40% (Q3 2025)</td>
@@ -433,9 +459,17 @@
         <td>Net income $43.8M (4.3% margin) &mdash; profitable but shrinking</td>
         <td><span class="tag-pill amber">Profitable, Shrinking</span></td>
       </tr>
+      <tr>
+        <td><strong>Skool</strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
+        <td>Community &amp; creator commerce</td>
+        <td>2026</td>
+        <td>Not disclosed</td>
+        <td>Not disclosed. No company-confirmed revenue, funding or valuation figure exists &mdash; third-party estimates found in research were explicitly unverifiable and are not published here.</td>
+        <td><span class="tag-pill blue">Private, Undisclosed</span></td>
+      </tr>
     </tbody>
   </table>
-  <div class="src-note"><strong>Sources:</strong> <a href="https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf" target="_blank" rel="noopener">Amazon Q1 2026 earnings release</a> &middot; <a href="https://investors.etsy.com/news-events/press-releases/detail/218/etsy-inc-reports-fourth-quarter-and-full-year-2025-results" target="_blank" rel="noopener">Etsy FY2025 results</a> &middot; <a href="https://corporate.zalando.com/en/investor-relations/key-figures-2024" target="_blank" rel="noopener">Zalando FY2024 key figures</a> &middot; <a href="https://www.emerce.nl/nieuws/jaaromzet-bolcom-31-miljard-euro" target="_blank" rel="noopener">bol.com FY2024 (Emerce)</a> &middot; <a href="https://wwd.com/business-news/fashion-features/farfetch-reboots-under-coupang-focus-customer-marketplace-1237070888/" target="_blank" rel="noopener">Farfetch (WWD)</a> &middot; <a href="https://investors.luxexperience.com" target="_blank" rel="noopener">LuxExperience/Mytheresa IR</a> &middot; <a href="https://www.globenewswire.com/news-release/2025/02/20/3030092/0/en/The-RealReal-Announces-Fourth-Quarter-and-Full-Year-2024-Results.html" target="_blank" rel="noopener">The RealReal FY2024</a> &middot; <a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2025/default.aspx" target="_blank" rel="noopener">Uber FY2025 results</a> &middot; <a href="https://ir.doordash.com/news/news-details/2025/DoorDash-Releases-Fourth-Quarter-and-Full-Year-2024-Financial-Results/" target="_blank" rel="noopener">DoorDash FY2025/FY2024 results</a> &middot; <a href="https://newsroom.justeattakeaway.com/en-WW/247233-full-year-2024-results/" target="_blank" rel="noopener">Just Eat Takeaway FY2024</a> &middot; <a href="https://www.webwire.com/ViewPressRel.asp?aId=334157" target="_blank" rel="noopener">Airbnb FY2024 shareholder letter</a> &middot; <a href="https://www.globenewswire.com/news-release/2025/02/19/3028448/0/en/Fiverr-Announces-Fourth-Quarter-and-Full-Year-2024-Results.html" target="_blank" rel="noopener">Fiverr results</a> &middot; <a href="https://company.vinted.com/newsroom/financial-results-2025" target="_blank" rel="noopener">Vinted FY2025 results</a> &middot; <a href="https://www.stocktitan.net/news/TDUP/thred-up-announces-fourth-quarter-and-full-year-2025-w4s4r9qamvom.html" target="_blank" rel="noopener">ThredUp FY2025 results</a> &middot; <a href="https://www.faire.com/news/2025-11-17-a-milestone-for-faire" target="_blank" rel="noopener">Faire November 2025 announcement</a> &middot; <a href="https://www.investegate.co.uk/announcement/rns/rightmove--rmv/annual-financial-report/9449857" target="_blank" rel="noopener">Rightmove FY2025 annual results</a> &middot; <a href="https://www.stocktitan.net/financials/ANGI/" target="_blank" rel="noopener">Angi Inc financials</a></div>
+  <div class="src-note"><strong>Sources:</strong> <a href="https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf" target="_blank" rel="noopener">Amazon Q1 2026 earnings release</a> &middot; <a href="https://investors.etsy.com/news-events/press-releases/detail/218/etsy-inc-reports-fourth-quarter-and-full-year-2025-results" target="_blank" rel="noopener">Etsy FY2025 results</a> &middot; <a href="https://corporate.zalando.com/en/investor-relations/key-figures-2024" target="_blank" rel="noopener">Zalando FY2024 key figures</a> &middot; <a href="https://www.emerce.nl/nieuws/jaaromzet-bolcom-31-miljard-euro" target="_blank" rel="noopener">bol.com FY2024 (Emerce)</a> &middot; <a href="https://wwd.com/business-news/fashion-features/farfetch-reboots-under-coupang-focus-customer-marketplace-1237070888/" target="_blank" rel="noopener">Farfetch (WWD)</a> &middot; <a href="https://investors.luxexperience.com" target="_blank" rel="noopener">LuxExperience/Mytheresa IR</a> &middot; <a href="https://www.globenewswire.com/news-release/2025/02/20/3030092/0/en/The-RealReal-Announces-Fourth-Quarter-and-Full-Year-2024-Results.html" target="_blank" rel="noopener">The RealReal FY2024</a> &middot; <a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2025/default.aspx" target="_blank" rel="noopener">Uber FY2025 results</a> &middot; <a href="https://ir.doordash.com/news/news-details/2025/DoorDash-Releases-Fourth-Quarter-and-Full-Year-2024-Financial-Results/" target="_blank" rel="noopener">DoorDash FY2025/FY2024 results</a> &middot; <a href="https://newsroom.justeattakeaway.com/en-WW/247233-full-year-2024-results/" target="_blank" rel="noopener">Just Eat Takeaway FY2024</a> &middot; <a href="https://www.webwire.com/ViewPressRel.asp?aId=334157" target="_blank" rel="noopener">Airbnb FY2024 shareholder letter</a> &middot; <a href="https://www.globenewswire.com/news-release/2025/02/19/3028448/0/en/Fiverr-Announces-Fourth-Quarter-and-Full-Year-2024-Results.html" target="_blank" rel="noopener">Fiverr results</a> &middot; <a href="https://company.vinted.com/newsroom/financial-results-2025" target="_blank" rel="noopener">Vinted FY2025 results</a> &middot; <a href="https://www.stocktitan.net/news/TDUP/thred-up-announces-fourth-quarter-and-full-year-2025-w4s4r9qamvom.html" target="_blank" rel="noopener">ThredUp FY2025 results</a> &middot; <a href="https://www.faire.com/news/2025-11-17-a-milestone-for-faire" target="_blank" rel="noopener">Faire November 2025 announcement</a> &middot; <a href="https://www.investegate.co.uk/announcement/rns/rightmove--rmv/annual-financial-report/9449857" target="_blank" rel="noopener">Rightmove FY2025 annual results</a> &middot; <a href="https://www.stocktitan.net/financials/ANGI/" target="_blank" rel="noopener">Angi Inc financials</a> &middot; <a href="https://www.skool.com/pricing" target="_blank" rel="noopener">Skool pricing page</a></div>
 
   <!-- SECTION 02: MARGIN CHART -->
   <div class="sec-header">
@@ -555,7 +589,251 @@
 
   <div class="src-note"><strong>Sources:</strong> <a href="https://wwd.com/business-news/fashion-features/farfetch-reboots-under-coupang-focus-customer-marketplace-1237070888/" target="_blank" rel="noopener">Farfetch (WWD)</a> &middot; <a href="https://newsroom.justeattakeaway.com/en-WW/255533-final-results-of-prosus-offer-for-just-eat-takeaway-com/" target="_blank" rel="noopener">Just Eat Takeaway / Prosus offer (JET newsroom)</a> &middot; <a href="https://www.faire.com/news/2025-11-17-a-milestone-for-faire" target="_blank" rel="noopener">Faire November 2025 announcement</a> &middot; <a href="https://techcrunch.com/2023/11/03/faire-layoffs-20-staff/" target="_blank" rel="noopener">Faire layoffs (TechCrunch)</a> &middot; <a href="https://www.stocktitan.net/financials/ANGI/" target="_blank" rel="noopener">Angi Inc financials (StockTitan)</a></div>
 
+  <!-- SECTION 05: REVENUE SINCE LAUNCH -->
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Revenue Since Launch</div>
+      <div class="sec-title">Every marketplace's own trajectory, year by year</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">Annual revenue (or the closest company-disclosed equivalent) from each company's earliest publicly available year through its most recent fiscal year. Each chart is scaled to its own range, so it shows shape and multiple &mdash; not cross-company size. Three companies are excluded below because no reliable multi-year series exists in public records: <strong>Vestiaire Collective</strong> (only two data points found, 2023&ndash;2024, and no earlier figures), <strong>Faire</strong> (2022&ndash;2023 figures are third-party estimates, not company-disclosed), and <strong>bol.com</strong> (the disclosed metric changes from trade volume to net revenue partway through its history, making one continuous line misleading).</p>
+
+  <div class="trend-grid">
+<div class="tm-card">
+      <div class="tm-name">Amazon Marketplace (3P)</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:30px" title="2019: $53.8B"></div><div class="tm-bar" style="height:45px" title="2020: $80.5B"></div><div class="tm-bar" style="height:58px" title="2021: $103.4B"></div><div class="tm-bar" style="height:66px" title="2022: $117.7B"></div><div class="tm-bar" style="height:79px" title="2023: $140.1B"></div><div class="tm-bar" style="height:88px" title="2024: $156.1B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2019: $53.8B</span>
+        <span class="tm-mult">6.3x by 2024</span>
+        <span class="tm-end">2024: $156.1B</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Etsy</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:8px" title="2015: $274M"></div><div class="tm-bar" style="height:11px" title="2016: $365M"></div><div class="tm-bar" style="height:13px" title="2017: $441M"></div><div class="tm-bar" style="height:18px" title="2018: $604M"></div><div class="tm-bar" style="height:25px" title="2019: $818M"></div><div class="tm-bar" style="height:53px" title="2020: $1.73B"></div><div class="tm-bar" style="height:71px" title="2021: $2.33B"></div><div class="tm-bar" style="height:79px" title="2022: $2.57B"></div><div class="tm-bar" style="height:84px" title="2023: $2.75B"></div><div class="tm-bar" style="height:86px" title="2024: $2.81B"></div><div class="tm-bar" style="height:88px" title="2025: $2.88B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2015: $274M</span>
+        <span class="tm-mult">10.5x by 2025</span>
+        <span class="tm-end">2025: $2.88B</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Uber</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:7px" title="2016: $3.85B"></div><div class="tm-bar" style="height:13px" title="2017: $7.93B"></div><div class="tm-bar" style="height:18px" title="2018: $10.4B"></div><div class="tm-bar" style="height:22px" title="2019: $13.0B"></div><div class="tm-bar" style="height:19px" title="2020: $11.1B"></div><div class="tm-bar" style="height:30px" title="2021: $17.5B"></div><div class="tm-bar" style="height:54px" title="2022: $31.9B"></div><div class="tm-bar" style="height:63px" title="2023: $37.3B"></div><div class="tm-bar" style="height:74px" title="2024: $44.0B"></div><div class="tm-bar" style="height:88px" title="2025: $52.0B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2016: $3.85B</span>
+        <span class="tm-mult">13.5x by 2025</span>
+        <span class="tm-end">2025: $52.0B</span>
+      </div><div class="tm-note">2018-2019 figures restated in later filings.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">DoorDash</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2018: $291M"></div><div class="tm-bar" style="height:6px" title="2019: $885M"></div><div class="tm-bar" style="height:19px" title="2020: $2.89B"></div><div class="tm-bar" style="height:31px" title="2021: $4.89B"></div><div class="tm-bar" style="height:42px" title="2022: $6.58B"></div><div class="tm-bar" style="height:55px" title="2023: $8.63B"></div><div class="tm-bar" style="height:69px" title="2024: $10.7B"></div><div class="tm-bar" style="height:88px" title="2025: $13.7B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2018: $291M</span>
+        <span class="tm-mult">47x by 2025</span>
+        <span class="tm-end">2025: $13.7B</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Just Eat Takeaway</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2016: &euro;112M"></div><div class="tm-bar" style="height:5px" title="2017: &euro;166M"></div><div class="tm-bar" style="height:5px" title="2018: &euro;232M"></div><div class="tm-bar" style="height:7px" title="2019: &euro;416M"></div><div class="tm-bar" style="height:38px" title="2020: &euro;2.40B"></div><div class="tm-bar" style="height:83px" title="2021: &euro;5.30B"></div><div class="tm-bar" style="height:88px" title="2022: &euro;5.60B"></div><div class="tm-bar" style="height:81px" title="2023: &euro;5.15B"></div><div class="tm-bar" style="height:80px" title="2024: &euro;5.08B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2016: &euro;112M</span>
+        <span class="tm-mult">45.6x by 2024</span>
+        <span class="tm-end">2024: &euro;5.08B</span>
+      </div><div class="tm-note">2020-2021 spikes reflect the Just Eat and Grubhub mergers, not organic growth alone.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Airbnb</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:26px" title="2018: $3.65B"></div><div class="tm-bar" style="height:35px" title="2019: $4.80B"></div><div class="tm-bar" style="height:24px" title="2020: $3.38B"></div><div class="tm-bar" style="height:43px" title="2021: $5.99B"></div><div class="tm-bar" style="height:60px" title="2022: $8.40B"></div><div class="tm-bar" style="height:71px" title="2023: $9.92B"></div><div class="tm-bar" style="height:80px" title="2024: $11.1B"></div><div class="tm-bar" style="height:88px" title="2025: $12.2B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2018: $3.65B</span>
+        <span class="tm-mult">3.4x by 2025</span>
+        <span class="tm-end">2025: $12.2B</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Fiverr</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:11px" title="2017: $52M"></div><div class="tm-bar" style="height:15px" title="2018: $76M"></div><div class="tm-bar" style="height:22px" title="2019: $107M"></div><div class="tm-bar" style="height:39px" title="2020: $190M"></div><div class="tm-bar" style="height:61px" title="2021: $298M"></div><div class="tm-bar" style="height:69px" title="2022: $337M"></div><div class="tm-bar" style="height:74px" title="2023: $361M"></div><div class="tm-bar" style="height:80px" title="2024: $392M"></div><div class="tm-bar" style="height:88px" title="2025: $431M"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2017: $52M</span>
+        <span class="tm-mult">8.3x by 2025</span>
+        <span class="tm-end">2025: $431M</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Vinted</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:15px" title="2020: &euro;184M"></div><div class="tm-bar" style="height:20px" title="2021: &euro;245M"></div><div class="tm-bar" style="height:30px" title="2022: &euro;370M"></div><div class="tm-bar" style="height:48px" title="2023: &euro;596M"></div><div class="tm-bar" style="height:65px" title="2024: &euro;813M"></div><div class="tm-bar" style="height:88px" title="2025: &euro;1.10B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2020: &euro;184M</span>
+        <span class="tm-mult">6.0x by 2025</span>
+        <span class="tm-end">2025: &euro;1.10B</span>
+      </div><div class="tm-note">2020-2021 figures sourced via secondary press, not Vinted's own newsroom.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Rightmove</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:7px" title="2006: &pound;34M"></div><div class="tm-bar" style="height:12px" title="2007: &pound;57M"></div><div class="tm-bar" style="height:15px" title="2008: &pound;74M"></div><div class="tm-bar" style="height:13px" title="2009: &pound;64M"></div><div class="tm-bar" style="height:17px" title="2010: &pound;82M"></div><div class="tm-bar" style="height:20px" title="2011: &pound;97M"></div><div class="tm-bar" style="height:25px" title="2012: &pound;119M"></div><div class="tm-bar" style="height:29px" title="2013: &pound;140M"></div><div class="tm-bar" style="height:35px" title="2014: &pound;167M"></div><div class="tm-bar" style="height:40px" title="2015: &pound;192M"></div><div class="tm-bar" style="height:46px" title="2016: &pound;220M"></div><div class="tm-bar" style="height:50px" title="2017: &pound;243M"></div><div class="tm-bar" style="height:55px" title="2018: &pound;268M"></div><div class="tm-bar" style="height:60px" title="2019: &pound;289M"></div><div class="tm-bar" style="height:43px" title="2020: &pound;206M"></div><div class="tm-bar" style="height:64px" title="2021: &pound;307M"></div><div class="tm-bar" style="height:69px" title="2022: &pound;333M"></div><div class="tm-bar" style="height:75px" title="2023: &pound;364M"></div><div class="tm-bar" style="height:81px" title="2024: &pound;390M"></div><div class="tm-bar" style="height:88px" title="2025: &pound;425M"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2006: &pound;34M</span>
+        <span class="tm-mult">12.6x by 2025</span>
+        <span class="tm-end">2025: &pound;425M</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Zalando</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:13px" title="2013: &euro;1.76B"></div><div class="tm-bar" style="height:16px" title="2014: &euro;2.21B"></div><div class="tm-bar" style="height:21px" title="2015: &euro;2.96B"></div><div class="tm-bar" style="height:26px" title="2016: &euro;3.64B"></div><div class="tm-bar" style="height:32px" title="2017: &euro;4.49B"></div><div class="tm-bar" style="height:38px" title="2018: &euro;5.39B"></div><div class="tm-bar" style="height:46px" title="2019: &euro;6.48B"></div><div class="tm-bar" style="height:57px" title="2020: &euro;7.98B"></div><div class="tm-bar" style="height:74px" title="2021: &euro;10.3B"></div><div class="tm-bar" style="height:74px" title="2022: &euro;10.3B"></div><div class="tm-bar" style="height:72px" title="2023: &euro;10.1B"></div><div class="tm-bar" style="height:75px" title="2024: &euro;10.6B"></div><div class="tm-bar" style="height:88px" title="2025: &euro;12.3B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2013: &euro;1.76B</span>
+        <span class="tm-mult">7.0x by 2025</span>
+        <span class="tm-end">2025: &euro;12.3B</span>
+      </div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Farfetch</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2015: $142M"></div><div class="tm-bar" style="height:9px" title="2016: $242M"></div><div class="tm-bar" style="height:15px" title="2017: $386M"></div><div class="tm-bar" style="height:23px" title="2018: $602M"></div><div class="tm-bar" style="height:39px" title="2019: $1.02B"></div><div class="tm-bar" style="height:64px" title="2020: $1.67B"></div><div class="tm-bar" style="height:86px" title="2021: $2.26B"></div><div class="tm-bar" style="height:88px" title="2022: $2.32B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2015: $142M</span>
+        <span class="tm-mult">16.3x by 2022</span>
+        <span class="tm-end">2022: $2.32B</span>
+      </div><div class="tm-note">Stopped publishing standalone results after Coupang's 2024 acquisition.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">ThredUp</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:46px" title="2019: $164M"></div><div class="tm-bar" style="height:53px" title="2020: $186M"></div><div class="tm-bar" style="height:71px" title="2021: $252M"></div><div class="tm-bar" style="height:82px" title="2022: $288M"></div><div class="tm-bar" style="height:73px" title="2023: $258M"></div><div class="tm-bar" style="height:74px" title="2024: $260M"></div><div class="tm-bar" style="height:88px" title="2025: $311M"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2019: $164M</span>
+        <span class="tm-mult">1.9x by 2025</span>
+        <span class="tm-end">2025: $311M</span>
+      </div><div class="tm-note">2023 restated to continuing operations after a 2024 divestiture.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Angi</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:37px" title="2017: $736M"></div><div class="tm-bar" style="height:56px" title="2018: $1.13B"></div><div class="tm-bar" style="height:66px" title="2019: $1.33B"></div><div class="tm-bar" style="height:73px" title="2020: $1.47B"></div><div class="tm-bar" style="height:81px" title="2021: $1.62B"></div><div class="tm-bar" style="height:88px" title="2022: $1.76B"></div><div class="tm-bar" style="height:68px" title="2023: $1.36B"></div><div class="tm-bar" style="height:59px" title="2024: $1.19B"></div><div class="tm-bar" style="height:51px" title="2025: $1.03B"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2017: $736M</span>
+        <span class="tm-mult">1.4x by 2025</span>
+        <span class="tm-end">2025: $1.03B</span>
+      </div><div class="tm-note">Peaked 2022, then declined 3 straight years.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">Mytheresa / LuxExperience</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:66px" title="2022: &euro;690M"></div><div class="tm-bar" style="height:74px" title="2023: &euro;769M"></div><div class="tm-bar" style="height:81px" title="2024: &euro;841M"></div><div class="tm-bar" style="height:88px" title="2025: &euro;916M"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2022: &euro;690M</span>
+        <span class="tm-mult">1.3x by 2025</span>
+        <span class="tm-end">2025: &euro;916M</span>
+      </div><div class="tm-note">Net sales; public disclosure only starts at FY2022.</div>
+    </div>
+<div class="tm-card">
+      <div class="tm-name">The RealReal</div>
+      <div class="tm-bars"><div class="tm-bar" style="height:17px" title="2017: $138M"></div><div class="tm-bar" style="height:27px" title="2018: $214M"></div><div class="tm-bar" style="height:40px" title="2019: $316M"></div><div class="tm-bar" style="height:38px" title="2020: $300M"></div><div class="tm-bar" style="height:59px" title="2021: $468M"></div><div class="tm-bar" style="height:77px" title="2022: $604M"></div><div class="tm-bar" style="height:70px" title="2023: $549M"></div><div class="tm-bar" style="height:76px" title="2024: $600M"></div><div class="tm-bar" style="height:88px" title="2025: $693M"></div></div>
+      <div class="tm-labels">
+        <span class="tm-start">2017: $138M</span>
+        <span class="tm-mult">5.0x by 2025</span>
+        <span class="tm-end">2025: $693M</span>
+      </div>
+    </div>
+  </div>
+  <div class="src-note"><strong>Sources:</strong> revenue history compiled from each company's own SEC filings, IPO prospectuses, investor-relations releases and newsroom pages (Amazon, Etsy, Uber, DoorDash, Just Eat Takeaway, Airbnb, Fiverr, Vinted, Rightmove, Zalando, Farfetch, ThredUp, Angi, Mytheresa/LuxExperience, The RealReal — full links in Sections 01, 03 and 04 above), cross-checked against <a href="https://stockanalysis.com" target="_blank" rel="noopener">stockanalysis.com</a> where a company's own historical release was not directly reachable. Figures marked with a note above are lower-confidence or reflect a structural break (merger, restatement, divestiture) rather than organic growth alone.</div>
+
+  <!-- SECTION 06: EMERGING MARKETPLACES -->
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Emerging Categories</div>
+      <div class="sec-title">Community commerce and the first AI agent marketplaces</div>
+    </div>
+  </div>
+
+  <p class="sec-sub">Two categories are too new for the growth-and-profitability treatment above &mdash; one because its main player stays private and undisclosed, the other because almost nothing has been financially disclosed by anyone yet. Both are included on their own terms.</p>
+
+  <div class="emerge-card">
+    <div class="em-tag">Community &amp; Creator Commerce</div>
+    <div class="em-title">Is Skool a marketplace?</div>
+    <div class="em-body">Skool (founded 2019 by Sam Ovens and Daniel Kang) lets creators run paid communities &mdash; courses, discussion, gamified leaderboards &mdash; and charge members a subscription. Its own pricing page shows a hybrid structure, not a pure marketplace and not a pure SaaS tool:</div>
+    <div class="fee-grid">
+      <div class="fee-box">
+        <div class="fb-tier">Hobby Tier</div>
+        <div class="fb-num">$9/mo + 10%</div>
+        <div class="fb-sub">Flat fee plus a 10% cut of what the creator charges members</div>
+      </div>
+      <div class="fee-box">
+        <div class="fb-tier">Pro Tier</div>
+        <div class="fb-num">$99/mo + 2.9%</div>
+        <div class="fb-sub">Higher flat fee, lower transaction cut &mdash; close to payment-processing cost</div>
+      </div>
+    </div>
+    <div class="em-body">A genuine two-sided marketplace (Etsy, Upwork) typically takes a commission only, with no flat fee required just to participate. A pure SaaS tool typically charges a flat fee only. Skool charges both &mdash; a mandatory subscription <em>and</em> a real revenue cut on the Hobby tier well above payment-processing cost. That makes it a hybrid: closer to a marketplace than a plain course-hosting tool, but not the same mechanism as Etsy or Upwork. No verified revenue, funding or valuation figure exists for Skool in any source that could be independently confirmed &mdash; estimates circulating online (including a specific ARR figure from one data-estimate site) carry an explicit disclaimer that they are not company-confirmed, so none appear on this page.</div>
+    <div class="src-note"><strong>Sources:</strong> <a href="https://www.skool.com/pricing" target="_blank" rel="noopener">Skool pricing page</a> &middot; <a href="https://www.skool.com/about" target="_blank" rel="noopener">Skool about page</a></div>
+  </div>
+
+  <div class="emerge-card">
+    <div class="em-tag">Just Launching, 2024&ndash;2026</div>
+    <div class="em-title">AI agent marketplaces</div>
+    <div class="em-body">Every major platform below is real and operating, but none has disclosed marketplace-level revenue, GMV or a take rate that can be verified &mdash; this table is deliberately qualitative rather than forcing numbers that don't exist onto a chart.</div>
+    <table class="data-table" style="margin-top:16px;">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Launched</th>
+          <th>Monetization</th>
+          <th>Disclosed Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>OpenAI GPT Store</strong></td>
+          <td>January 2024</td>
+          <td>US builder revenue program announced Q1 2024; exact formula and payout thresholds not disclosed</td>
+          <td>3M+ custom GPTs created at launch (not all published publicly)</td>
+        </tr>
+        <tr>
+          <td><strong>Salesforce AgentExchange</strong></td>
+          <td>March 2025</td>
+          <td>Not disclosed in detail; Salesforce states it will create "new revenue streams" for partners</td>
+          <td>200+ launch partners (Google Cloud, DocuSign, Box, Workday, SAP, Oracle)</td>
+        </tr>
+        <tr>
+          <td><strong>Microsoft 365 Copilot Agent Store</strong></td>
+          <td>May 2025</td>
+          <td>Not disclosed</td>
+          <td>70+ agents at launch</td>
+        </tr>
+        <tr>
+          <td><strong>AWS Marketplace — AI Agents &amp; Tools</strong></td>
+          <td>July 2025</td>
+          <td>Standard AWS Marketplace fee schedule applies (~3% SaaS listings, 20% AMI/container listings) &mdash; not an agent-specific rate</td>
+          <td>Not disclosed</td>
+        </tr>
+        <tr>
+          <td><strong>Poe (Quora)</strong></td>
+          <td>Bot monetization Oct 2023; per-message pricing Apr 2024</td>
+          <td>Subscription revenue-share pool (up to $20/subscriber) plus creator-set per-message pricing</td>
+          <td>Not disclosed. US creators only at launch.</td>
+        </tr>
+        <tr>
+          <td><strong>Fetch.ai Agentverse</strong></td>
+          <td>Operating (launch date not stated on official page)</td>
+          <td>Described as enabling "monetization across the agentic web" &mdash; mechanism not specified</td>
+          <td>2.7M agents (self-reported, not independently audited)</td>
+        </tr>
+        <tr>
+          <td><strong>CrewAI Marketplace</strong></td>
+          <td>Enterprise-tier feature, current</td>
+          <td>Revenue-share for template creators reported as planned/early access; not confirmed live in official docs</td>
+          <td>Not disclosed</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="src-note"><strong>Sources:</strong> <a href="https://openai.com/index/introducing-the-gpt-store/" target="_blank" rel="noopener">OpenAI GPT Store</a> &middot; <a href="https://www.businesswire.com/news/home/20250304699641/en/Salesforce-Launches-AgentExchange-the-Trusted-Marketplace-for-Agentforce" target="_blank" rel="noopener">Salesforce AgentExchange (Businesswire)</a> &middot; <a href="https://devblogs.microsoft.com/microsoft365dev/introducing-the-agent-store-build-publish-and-discover-agents-in-microsoft-365-copilot/" target="_blank" rel="noopener">Microsoft 365 Agent Store</a> &middot; <a href="https://aws.amazon.com/about-aws/whats-new/2025/07/ai-agents-tools-aws-marketplace/" target="_blank" rel="noopener">AWS Marketplace for AI Agents</a> &middot; <a href="https://techcrunch.com/2024/04/09/poe-introduces-a-price-per-message-revenue-model-for-ai-bot-creators/" target="_blank" rel="noopener">Poe (TechCrunch)</a> &middot; <a href="https://www.fetch.ai/agentverse" target="_blank" rel="noopener">Fetch.ai Agentverse</a> &middot; <a href="https://docs.crewai.com/en/enterprise/features/marketplace" target="_blank" rel="noopener">CrewAI Marketplace docs</a></div>
+  </div>
+
   <div style="margin-top:28px;">
+    <a class="tag-pill" href="https://www.skool.com" target="_blank" rel="noopener">Skool</a>
+    <a class="tag-pill" href="https://openai.com/index/introducing-the-gpt-store/" target="_blank" rel="noopener">OpenAI GPT Store</a>
     <a class="tag-pill" href="https://www.investegate.co.uk/announcement/rns/rightmove--rmv/annual-financial-report/9449857" target="_blank" rel="noopener">Rightmove</a>
     <a class="tag-pill" href="https://investor.uber.com" target="_blank" rel="noopener">Uber</a>
     <a class="tag-pill" href="https://ir.doordash.com" target="_blank" rel="noopener">DoorDash</a>
