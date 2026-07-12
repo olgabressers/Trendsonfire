@@ -130,18 +130,19 @@
     .margin-row-label { font-size:14px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#166534; margin:28px 0 14px; }
     .margin-row-label.neg-label { color:#991b1b; margin-top:36px; }
 
-    /* REVENUE SINCE LAUNCH — TREND CARDS */
-    .trend-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
-    @media(max-width:900px){ .trend-grid { grid-template-columns:1fr 1fr; } }
-    @media(max-width:600px){ .trend-grid { grid-template-columns:1fr; } }
-    .tm-card { background:white; border:1px solid #e2dfd9; padding:20px 18px 18px; }
-    .tm-name { font-size:15px; font-weight:800; color:#0a0f1a; margin-bottom:14px; line-height:1.3; }
-    .tm-bars { display:flex; align-items:flex-end; gap:3px; height:88px; border-bottom:2px solid #0a0f1a; }
-    .tm-bar { flex:1; background:#8b6a2f; min-width:3px; border-radius:1px 1px 0 0; }
-    .tm-labels { display:flex; justify-content:space-between; align-items:baseline; margin-top:10px; flex-wrap:wrap; gap:6px; }
-    .tm-start, .tm-end { font-size:14px; font-weight:700; color:#0a0f1a; }
-    .tm-mult { font-size:14px; font-weight:800; color:#8b1a6a; }
-    .tm-note { font-size:14px; color:#4a4a4a; margin-top:8px; line-height:1.5; }
+    /* REVENUE SINCE LAUNCH — HORIZONTAL BAR CARDS */
+    .hb-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:28px 0; }
+    @media(max-width:900px){ .hb-grid { grid-template-columns:1fr; } }
+    .hb-card { background:white; border:1px solid #e2dfd9; padding:22px 22px 18px; }
+    .hb-title { font-size:16px; font-weight:800; color:#0a0f1a; margin-bottom:14px; line-height:1.3; }
+    .hb-founded { font-size:14px; font-weight:700; color:#8b6a2f; text-transform:none; letter-spacing:0; margin-left:8px; }
+    .hb-rows { display:flex; flex-direction:column; gap:7px; }
+    .hb-row { display:grid; grid-template-columns:52px 1fr 68px; align-items:center; gap:10px; }
+    .hb-year { font-size:14px; font-weight:700; color:#0a0f1a; }
+    .hb-track { background:#f1ede7; height:16px; position:relative; }
+    .hb-fill { background:#8b6a2f; height:100%; min-width:6px; }
+    .hb-val { font-size:14px; font-weight:700; color:#0a0f1a; text-align:right; white-space:nowrap; }
+    .hb-note { font-size:14px; color:#4a4a4a; margin-top:12px; line-height:1.5; }
 
     /* EMERGING MARKETPLACES */
     .emerge-card { background:white; border:1px solid #e2dfd9; padding:26px 24px; margin:20px 0; }
@@ -297,16 +298,18 @@
     <div class="sec-num">01</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Company Data — FY2024/2025</div>
-      <div class="sec-title">15 marketplaces, 9 industries, one table</div>
+      <div class="sec-title">16 marketplaces, 10+ industries, one table</div>
     </div>
   </div>
 
-  <p class="sec-sub">Every figure below is the company's own most recently reported result &mdash; verified against the primary investor-relations release or filing. Where a company does not disclose GMV, take rate or segment profit, that is stated explicitly rather than estimated.</p>
+  <p class="sec-sub">Every figure below is the company's own most recently reported result &mdash; verified against the primary investor-relations release or filing. Where a company does not disclose GMV, take rate or segment profit, that is stated explicitly rather than estimated. <strong>Founded</strong> is the year the company (or its predecessor entity) started operating. <strong>First Disclosed Revenue</strong> is the earliest year a verifiable public revenue figure exists &mdash; almost never the founding year itself, since most companies don't publish financials before an IPO or funding round requires it. Click any company name to visit its site.</p>
 
   <table class="data-table">
     <thead>
       <tr>
         <th>Marketplace</th>
+        <th>Founded</th>
+        <th>First Disclosed Revenue</th>
         <th>Industry</th>
         <th>Latest Period</th>
         <th>Growth</th>
@@ -316,7 +319,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><strong>Amazon Marketplace</strong></td>
+        <td><strong><a href="https://sell.amazon.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Amazon Marketplace</a></strong></td>
+        <td>2000</td>
+        <td>2019: $53.8B</td>
         <td>E-commerce (3rd-party)</td>
         <td>Q1 2026</td>
         <td>3P seller services revenue $41.6B, +14% YoY</td>
@@ -324,7 +329,9 @@
         <td><span class="tag-pill blue">Not Disclosed</span></td>
       </tr>
       <tr>
-        <td><strong>Etsy</strong></td>
+        <td><strong><a href="https://www.etsy.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Etsy</a></strong></td>
+        <td>2005</td>
+        <td>2012: $74.6M</td>
         <td>E-commerce (C2C craft)</td>
         <td>FY2025</td>
         <td>GMS &minus;5.3%, revenue +2.7%</td>
@@ -332,7 +339,9 @@
         <td><span class="tag-pill amber">Profitable, Shrinking GMS</span></td>
       </tr>
       <tr>
-        <td><strong>Zalando</strong></td>
+        <td><strong><a href="https://corporate.zalando.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Zalando</a></strong></td>
+        <td>2008</td>
+        <td>2013: &euro;1.76B</td>
         <td>Fashion (hybrid retail + marketplace)</td>
         <td>FY2024</td>
         <td>GMV +4.5%, revenue +4.2%</td>
@@ -340,7 +349,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>bol.com</strong></td>
+        <td><strong><a href="https://www.bol.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">bol.com</a></strong></td>
+        <td>1999</td>
+        <td>2019: &euro;2.8B (trade volume)</td>
         <td>E-commerce (NL/BE marketplace)</td>
         <td>FY2024</td>
         <td>Net revenue +8.7%, sales incl. 3rd-party +~4%</td>
@@ -348,7 +359,9 @@
         <td><span class="tag-pill blue">Partial Disclosure</span></td>
       </tr>
       <tr>
-        <td><strong>Farfetch</strong></td>
+        <td><strong><a href="https://www.farfetch.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Farfetch</a></strong></td>
+        <td>2007</td>
+        <td>2015: $142.3M</td>
         <td>Fashion (asset-light marketplace)</td>
         <td>FY2024</td>
         <td>Revenue $1.7B</td>
@@ -356,7 +369,9 @@
         <td><span class="tag-pill blue">Restructured (Coupang)</span></td>
       </tr>
       <tr>
-        <td><strong>Mytheresa / LuxExperience</strong></td>
+        <td><strong><a href="https://investors.luxexperience.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Mytheresa / LuxExperience</a></strong></td>
+        <td>2006</td>
+        <td>FY2022: &euro;689.8M</td>
         <td>Fashion (inventory-led)</td>
         <td>FY2025</td>
         <td>GMV &euro;988.5M, net sales +8.9%, Adj. EBITDA +73%</td>
@@ -364,7 +379,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>The RealReal</strong></td>
+        <td><strong><a href="https://www.therealreal.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">The RealReal</a></strong></td>
+        <td>2011</td>
+        <td>2017: $137.5M</td>
         <td>Fashion resale (consignment)</td>
         <td>FY2024</td>
         <td>GMV +6%, revenue +9%</td>
@@ -372,7 +389,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>Vestiaire Collective</strong></td>
+        <td><strong><a href="https://www.vestiairecollective.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Vestiaire Collective</a></strong></td>
+        <td>2009</td>
+        <td>2023: &euro;157M</td>
         <td>Fashion resale (peer-to-peer)</td>
         <td>2023/24 est.</td>
         <td>GMV &euro;824M (est.)</td>
@@ -380,7 +399,9 @@
         <td><span class="tag-pill blue">Private</span></td>
       </tr>
       <tr>
-        <td><strong>Uber</strong></td>
+        <td><strong><a href="https://investor.uber.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Uber</a></strong></td>
+        <td>2009</td>
+        <td>2016: $3.85B</td>
         <td>Mobility (ride-hailing)</td>
         <td>FY2025</td>
         <td>Gross bookings +19%, revenue +18%</td>
@@ -388,7 +409,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>DoorDash</strong></td>
+        <td><strong><a href="https://ir.doordash.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">DoorDash</a></strong></td>
+        <td>2013</td>
+        <td>2018: $291M</td>
         <td>Food delivery</td>
         <td>FY2025</td>
         <td>Marketplace GOV +27%, revenue +27.9%</td>
@@ -396,7 +419,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>Just Eat Takeaway</strong></td>
+        <td><strong><a href="https://newsroom.justeattakeaway.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Just Eat Takeaway</a></strong></td>
+        <td>2000</td>
+        <td>2016: &euro;111.6M</td>
         <td>Food delivery (Europe)</td>
         <td>FY2024 (last public year)</td>
         <td>GTV &minus;2%, revenue &minus;1%</td>
@@ -404,7 +429,9 @@
         <td><span class="tag-pill red">Loss-Making, Delisted</span></td>
       </tr>
       <tr>
-        <td><strong>Airbnb</strong></td>
+        <td><strong><a href="https://www.airbnb.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Airbnb</a></strong></td>
+        <td>2008</td>
+        <td>2018: $3.65B</td>
         <td>Travel (short-term rental)</td>
         <td>FY2024</td>
         <td>Revenue +12%, ~$82B gross booking value</td>
@@ -412,7 +439,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>Fiverr</strong></td>
+        <td><strong><a href="https://investors.fiverr.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Fiverr</a></strong></td>
+        <td>2010</td>
+        <td>2017: $52.1M</td>
         <td>Freelance / gig services</td>
         <td>FY2025</td>
         <td>Revenue +10.1%</td>
@@ -420,7 +449,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>Vinted</strong></td>
+        <td><strong><a href="https://company.vinted.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Vinted</a></strong></td>
+        <td>2008</td>
+        <td>2020: &euro;184M</td>
         <td>Resale (C2C fashion)</td>
         <td>FY2025</td>
         <td>GMV +47% to &euro;10.8B, revenue +38%</td>
@@ -428,7 +459,9 @@
         <td><span class="tag-pill amber">Profitable, Margin Falling</span></td>
       </tr>
       <tr>
-        <td><strong>ThredUp</strong></td>
+        <td><strong><a href="https://www.thredup.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">ThredUp</a></strong></td>
+        <td>2009</td>
+        <td>2019: $163.8M</td>
         <td>Resale (C2C fashion, US)</td>
         <td>FY2025</td>
         <td>Revenue +20%</td>
@@ -436,7 +469,9 @@
         <td><span class="tag-pill red">Loss-Making</span></td>
       </tr>
       <tr>
-        <td><strong>Faire</strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
+        <td><strong><a href="https://www.faire.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Faire</a></strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
+        <td>2017</td>
+        <td>Not disclosed</td>
         <td>B2B wholesale</td>
         <td>2025</td>
         <td>GMV ~$3B, revenue growth &gt;40% (Q3 2025)</td>
@@ -444,7 +479,9 @@
         <td><span class="tag-pill red">Valuation Cut</span></td>
       </tr>
       <tr>
-        <td><strong>Rightmove</strong></td>
+        <td><strong><a href="https://www.rightmove.co.uk" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Rightmove</a></strong></td>
+        <td>2000</td>
+        <td>2006: &pound;33.6M</td>
         <td>Real estate listings (subscription)</td>
         <td>FY2025</td>
         <td>Revenue +9%</td>
@@ -452,7 +489,9 @@
         <td><span class="tag-pill green">Profitable</span></td>
       </tr>
       <tr>
-        <td><strong>Angi</strong></td>
+        <td><strong><a href="https://www.angi.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Angi</a></strong></td>
+        <td>1995</td>
+        <td>2017: $736.4M</td>
         <td>Home services (lead-gen marketplace)</td>
         <td>FY2025</td>
         <td>Revenue &minus;13% &mdash; third straight annual decline</td>
@@ -460,7 +499,9 @@
         <td><span class="tag-pill amber">Profitable, Shrinking</span></td>
       </tr>
       <tr>
-        <td><strong>Skool</strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
+        <td><strong><a href="https://www.skool.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:underline;">Skool</a></strong> <span style="font-size:14px;color:#9ca3af;">(private)</span></td>
+        <td>2019</td>
+        <td>Not disclosed</td>
         <td>Community &amp; creator commerce</td>
         <td>2026</td>
         <td>Not disclosed</td>
@@ -598,144 +639,70 @@
     </div>
   </div>
 
-  <p class="sec-sub">Annual revenue (or the closest company-disclosed equivalent) from each company's earliest publicly available year through its most recent fiscal year. Each chart is scaled to its own range, so it shows shape and multiple &mdash; not cross-company size. Three companies are excluded below because no reliable multi-year series exists in public records: <strong>Vestiaire Collective</strong> (only two data points found, 2023&ndash;2024, and no earlier figures), <strong>Faire</strong> (2022&ndash;2023 figures are third-party estimates, not company-disclosed), and <strong>bol.com</strong> (the disclosed metric changes from trade volume to net revenue partway through its history, making one continuous line misleading).</p>
+  <p class="sec-sub">The exact figure for every disclosed year, from each company's earliest publicly available year through its most recent fiscal year. Each bar is scaled to that company's own highest year, so the chart shows shape and multiple &mdash; not cross-company size. Three companies are excluded below because no reliable multi-year series exists in public records: <strong>Vestiaire Collective</strong> (only two data points found, 2023&ndash;2024, and no earlier figures), <strong>Faire</strong> (2022&ndash;2023 figures are third-party estimates, not company-disclosed), and <strong>bol.com</strong> (the disclosed metric changes from trade volume to net revenue partway through its history, making one continuous line misleading).</p>
 
-  <div class="trend-grid">
-<div class="tm-card">
-      <div class="tm-name">Amazon Marketplace (3P)</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:30px" title="2019: $53.8B"></div><div class="tm-bar" style="height:45px" title="2020: $80.5B"></div><div class="tm-bar" style="height:58px" title="2021: $103.4B"></div><div class="tm-bar" style="height:66px" title="2022: $117.7B"></div><div class="tm-bar" style="height:79px" title="2023: $140.1B"></div><div class="tm-bar" style="height:88px" title="2024: $156.1B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2019: $53.8B</span>
-        <span class="tm-mult">6.3x by 2024</span>
-        <span class="tm-end">2024: $156.1B</span>
-      </div>
+  <div class="hb-grid">
+<div class="hb-card">
+      <div class="hb-title">Amazon Marketplace (3P) <span class="hb-founded">Founded 2000</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:34%"></div></div><div class="hb-val">$53.8B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:52%"></div></div><div class="hb-val">$80.5B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:66%"></div></div><div class="hb-val">$103.4B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:75%"></div></div><div class="hb-val">$117.7B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:90%"></div></div><div class="hb-val">$140.1B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$156.1B</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Etsy</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:8px" title="2015: $274M"></div><div class="tm-bar" style="height:11px" title="2016: $365M"></div><div class="tm-bar" style="height:13px" title="2017: $441M"></div><div class="tm-bar" style="height:18px" title="2018: $604M"></div><div class="tm-bar" style="height:25px" title="2019: $818M"></div><div class="tm-bar" style="height:53px" title="2020: $1.73B"></div><div class="tm-bar" style="height:71px" title="2021: $2.33B"></div><div class="tm-bar" style="height:79px" title="2022: $2.57B"></div><div class="tm-bar" style="height:84px" title="2023: $2.75B"></div><div class="tm-bar" style="height:86px" title="2024: $2.81B"></div><div class="tm-bar" style="height:88px" title="2025: $2.88B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2015: $274M</span>
-        <span class="tm-mult">10.5x by 2025</span>
-        <span class="tm-end">2025: $2.88B</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">Etsy <span class="hb-founded">Founded 2005</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2015</div><div class="hb-track"><div class="hb-fill" style="width:9%"></div></div><div class="hb-val">$274M</div></div><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:13%"></div></div><div class="hb-val">$365M</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:15%"></div></div><div class="hb-val">$441M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:21%"></div></div><div class="hb-val">$604M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:28%"></div></div><div class="hb-val">$818M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:60%"></div></div><div class="hb-val">$1.73B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:81%"></div></div><div class="hb-val">$2.33B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:89%"></div></div><div class="hb-val">$2.57B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:95%"></div></div><div class="hb-val">$2.75B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:98%"></div></div><div class="hb-val">$2.81B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$2.88B</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Uber</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:7px" title="2016: $3.85B"></div><div class="tm-bar" style="height:13px" title="2017: $7.93B"></div><div class="tm-bar" style="height:18px" title="2018: $10.4B"></div><div class="tm-bar" style="height:22px" title="2019: $13.0B"></div><div class="tm-bar" style="height:19px" title="2020: $11.1B"></div><div class="tm-bar" style="height:30px" title="2021: $17.5B"></div><div class="tm-bar" style="height:54px" title="2022: $31.9B"></div><div class="tm-bar" style="height:63px" title="2023: $37.3B"></div><div class="tm-bar" style="height:74px" title="2024: $44.0B"></div><div class="tm-bar" style="height:88px" title="2025: $52.0B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2016: $3.85B</span>
-        <span class="tm-mult">13.5x by 2025</span>
-        <span class="tm-end">2025: $52.0B</span>
-      </div><div class="tm-note">2018-2019 figures restated in later filings.</div>
+<div class="hb-card">
+      <div class="hb-title">Uber <span class="hb-founded">Founded 2009</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:7%"></div></div><div class="hb-val">$3.85B</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:15%"></div></div><div class="hb-val">$7.93B</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:20%"></div></div><div class="hb-val">$10.4B</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:25%"></div></div><div class="hb-val">$13.0B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:21%"></div></div><div class="hb-val">$11.1B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:34%"></div></div><div class="hb-val">$17.5B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:61%"></div></div><div class="hb-val">$31.9B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:72%"></div></div><div class="hb-val">$37.3B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:85%"></div></div><div class="hb-val">$44.0B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$52.0B</div></div></div><div class="hb-note">2018-2019 figures restated in later filings.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">DoorDash</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2018: $291M"></div><div class="tm-bar" style="height:6px" title="2019: $885M"></div><div class="tm-bar" style="height:19px" title="2020: $2.89B"></div><div class="tm-bar" style="height:31px" title="2021: $4.89B"></div><div class="tm-bar" style="height:42px" title="2022: $6.58B"></div><div class="tm-bar" style="height:55px" title="2023: $8.63B"></div><div class="tm-bar" style="height:69px" title="2024: $10.7B"></div><div class="tm-bar" style="height:88px" title="2025: $13.7B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2018: $291M</span>
-        <span class="tm-mult">47x by 2025</span>
-        <span class="tm-end">2025: $13.7B</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">DoorDash <span class="hb-founded">Founded 2013</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:3%"></div></div><div class="hb-val">$291M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:6%"></div></div><div class="hb-val">$885M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:21%"></div></div><div class="hb-val">$2.89B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:36%"></div></div><div class="hb-val">$4.89B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:48%"></div></div><div class="hb-val">$6.58B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:63%"></div></div><div class="hb-val">$8.63B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:78%"></div></div><div class="hb-val">$10.7B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$13.7B</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Just Eat Takeaway</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2016: &euro;112M"></div><div class="tm-bar" style="height:5px" title="2017: &euro;166M"></div><div class="tm-bar" style="height:5px" title="2018: &euro;232M"></div><div class="tm-bar" style="height:7px" title="2019: &euro;416M"></div><div class="tm-bar" style="height:38px" title="2020: &euro;2.40B"></div><div class="tm-bar" style="height:83px" title="2021: &euro;5.30B"></div><div class="tm-bar" style="height:88px" title="2022: &euro;5.60B"></div><div class="tm-bar" style="height:81px" title="2023: &euro;5.15B"></div><div class="tm-bar" style="height:80px" title="2024: &euro;5.08B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2016: &euro;112M</span>
-        <span class="tm-mult">45.6x by 2024</span>
-        <span class="tm-end">2024: &euro;5.08B</span>
-      </div><div class="tm-note">2020-2021 spikes reflect the Just Eat and Grubhub mergers, not organic growth alone.</div>
+<div class="hb-card">
+      <div class="hb-title">Just Eat Takeaway <span class="hb-founded">Founded 2000</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:3%"></div></div><div class="hb-val">€112M</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:3%"></div></div><div class="hb-val">€166M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:4%"></div></div><div class="hb-val">€232M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:7%"></div></div><div class="hb-val">€416M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:43%"></div></div><div class="hb-val">€2.40B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:95%"></div></div><div class="hb-val">€5.30B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">€5.60B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:92%"></div></div><div class="hb-val">€5.15B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:91%"></div></div><div class="hb-val">€5.08B</div></div></div><div class="hb-note">2020-2021 spikes reflect the Just Eat and Grubhub mergers, not organic growth alone.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Airbnb</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:26px" title="2018: $3.65B"></div><div class="tm-bar" style="height:35px" title="2019: $4.80B"></div><div class="tm-bar" style="height:24px" title="2020: $3.38B"></div><div class="tm-bar" style="height:43px" title="2021: $5.99B"></div><div class="tm-bar" style="height:60px" title="2022: $8.40B"></div><div class="tm-bar" style="height:71px" title="2023: $9.92B"></div><div class="tm-bar" style="height:80px" title="2024: $11.1B"></div><div class="tm-bar" style="height:88px" title="2025: $12.2B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2018: $3.65B</span>
-        <span class="tm-mult">3.4x by 2025</span>
-        <span class="tm-end">2025: $12.2B</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">Airbnb <span class="hb-founded">Founded 2008</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:30%"></div></div><div class="hb-val">$3.65B</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:39%"></div></div><div class="hb-val">$4.80B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:28%"></div></div><div class="hb-val">$3.38B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:49%"></div></div><div class="hb-val">$5.99B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:69%"></div></div><div class="hb-val">$8.40B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:81%"></div></div><div class="hb-val">$9.92B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:91%"></div></div><div class="hb-val">$11.1B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$12.2B</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Fiverr</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:11px" title="2017: $52M"></div><div class="tm-bar" style="height:15px" title="2018: $76M"></div><div class="tm-bar" style="height:22px" title="2019: $107M"></div><div class="tm-bar" style="height:39px" title="2020: $190M"></div><div class="tm-bar" style="height:61px" title="2021: $298M"></div><div class="tm-bar" style="height:69px" title="2022: $337M"></div><div class="tm-bar" style="height:74px" title="2023: $361M"></div><div class="tm-bar" style="height:80px" title="2024: $392M"></div><div class="tm-bar" style="height:88px" title="2025: $431M"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2017: $52M</span>
-        <span class="tm-mult">8.3x by 2025</span>
-        <span class="tm-end">2025: $431M</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">Fiverr <span class="hb-founded">Founded 2010</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:12%"></div></div><div class="hb-val">$52M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:18%"></div></div><div class="hb-val">$76M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:25%"></div></div><div class="hb-val">$107M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:44%"></div></div><div class="hb-val">$190M</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:69%"></div></div><div class="hb-val">$298M</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:78%"></div></div><div class="hb-val">$337M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:84%"></div></div><div class="hb-val">$361M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:91%"></div></div><div class="hb-val">$392M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$431M</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Vinted</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:15px" title="2020: &euro;184M"></div><div class="tm-bar" style="height:20px" title="2021: &euro;245M"></div><div class="tm-bar" style="height:30px" title="2022: &euro;370M"></div><div class="tm-bar" style="height:48px" title="2023: &euro;596M"></div><div class="tm-bar" style="height:65px" title="2024: &euro;813M"></div><div class="tm-bar" style="height:88px" title="2025: &euro;1.10B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2020: &euro;184M</span>
-        <span class="tm-mult">6.0x by 2025</span>
-        <span class="tm-end">2025: &euro;1.10B</span>
-      </div><div class="tm-note">2020-2021 figures sourced via secondary press, not Vinted's own newsroom.</div>
+<div class="hb-card">
+      <div class="hb-title">Vinted <span class="hb-founded">Founded 2008</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:17%"></div></div><div class="hb-val">€184M</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:22%"></div></div><div class="hb-val">€245M</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:34%"></div></div><div class="hb-val">€370M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:54%"></div></div><div class="hb-val">€596M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:74%"></div></div><div class="hb-val">€813M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">€1.10B</div></div></div><div class="hb-note">2020-2021 figures sourced via secondary press, not Vinted&#x27;s own newsroom.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Rightmove</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:7px" title="2006: &pound;34M"></div><div class="tm-bar" style="height:12px" title="2007: &pound;57M"></div><div class="tm-bar" style="height:15px" title="2008: &pound;74M"></div><div class="tm-bar" style="height:13px" title="2009: &pound;64M"></div><div class="tm-bar" style="height:17px" title="2010: &pound;82M"></div><div class="tm-bar" style="height:20px" title="2011: &pound;97M"></div><div class="tm-bar" style="height:25px" title="2012: &pound;119M"></div><div class="tm-bar" style="height:29px" title="2013: &pound;140M"></div><div class="tm-bar" style="height:35px" title="2014: &pound;167M"></div><div class="tm-bar" style="height:40px" title="2015: &pound;192M"></div><div class="tm-bar" style="height:46px" title="2016: &pound;220M"></div><div class="tm-bar" style="height:50px" title="2017: &pound;243M"></div><div class="tm-bar" style="height:55px" title="2018: &pound;268M"></div><div class="tm-bar" style="height:60px" title="2019: &pound;289M"></div><div class="tm-bar" style="height:43px" title="2020: &pound;206M"></div><div class="tm-bar" style="height:64px" title="2021: &pound;307M"></div><div class="tm-bar" style="height:69px" title="2022: &pound;333M"></div><div class="tm-bar" style="height:75px" title="2023: &pound;364M"></div><div class="tm-bar" style="height:81px" title="2024: &pound;390M"></div><div class="tm-bar" style="height:88px" title="2025: &pound;425M"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2006: &pound;34M</span>
-        <span class="tm-mult">12.6x by 2025</span>
-        <span class="tm-end">2025: &pound;425M</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">Rightmove <span class="hb-founded">Founded 2000</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2006</div><div class="hb-track"><div class="hb-fill" style="width:8%"></div></div><div class="hb-val">£34M</div></div><div class="hb-row"><div class="hb-year">2007</div><div class="hb-track"><div class="hb-fill" style="width:13%"></div></div><div class="hb-val">£57M</div></div><div class="hb-row"><div class="hb-year">2008</div><div class="hb-track"><div class="hb-fill" style="width:17%"></div></div><div class="hb-val">£74M</div></div><div class="hb-row"><div class="hb-year">2009</div><div class="hb-track"><div class="hb-fill" style="width:15%"></div></div><div class="hb-val">£64M</div></div><div class="hb-row"><div class="hb-year">2010</div><div class="hb-track"><div class="hb-fill" style="width:19%"></div></div><div class="hb-val">£82M</div></div><div class="hb-row"><div class="hb-year">2011</div><div class="hb-track"><div class="hb-fill" style="width:23%"></div></div><div class="hb-val">£97M</div></div><div class="hb-row"><div class="hb-year">2012</div><div class="hb-track"><div class="hb-fill" style="width:28%"></div></div><div class="hb-val">£119M</div></div><div class="hb-row"><div class="hb-year">2013</div><div class="hb-track"><div class="hb-fill" style="width:33%"></div></div><div class="hb-val">£140M</div></div><div class="hb-row"><div class="hb-year">2014</div><div class="hb-track"><div class="hb-fill" style="width:39%"></div></div><div class="hb-val">£167M</div></div><div class="hb-row"><div class="hb-year">2015</div><div class="hb-track"><div class="hb-fill" style="width:45%"></div></div><div class="hb-val">£192M</div></div><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:52%"></div></div><div class="hb-val">£220M</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:57%"></div></div><div class="hb-val">£243M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:63%"></div></div><div class="hb-val">£268M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:68%"></div></div><div class="hb-val">£289M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:48%"></div></div><div class="hb-val">£206M</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:72%"></div></div><div class="hb-val">£307M</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:78%"></div></div><div class="hb-val">£333M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:86%"></div></div><div class="hb-val">£364M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:92%"></div></div><div class="hb-val">£390M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">£425M</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Zalando</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:13px" title="2013: &euro;1.76B"></div><div class="tm-bar" style="height:16px" title="2014: &euro;2.21B"></div><div class="tm-bar" style="height:21px" title="2015: &euro;2.96B"></div><div class="tm-bar" style="height:26px" title="2016: &euro;3.64B"></div><div class="tm-bar" style="height:32px" title="2017: &euro;4.49B"></div><div class="tm-bar" style="height:38px" title="2018: &euro;5.39B"></div><div class="tm-bar" style="height:46px" title="2019: &euro;6.48B"></div><div class="tm-bar" style="height:57px" title="2020: &euro;7.98B"></div><div class="tm-bar" style="height:74px" title="2021: &euro;10.3B"></div><div class="tm-bar" style="height:74px" title="2022: &euro;10.3B"></div><div class="tm-bar" style="height:72px" title="2023: &euro;10.1B"></div><div class="tm-bar" style="height:75px" title="2024: &euro;10.6B"></div><div class="tm-bar" style="height:88px" title="2025: &euro;12.3B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2013: &euro;1.76B</span>
-        <span class="tm-mult">7.0x by 2025</span>
-        <span class="tm-end">2025: &euro;12.3B</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">Zalando <span class="hb-founded">Founded 2008</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2013</div><div class="hb-track"><div class="hb-fill" style="width:14%"></div></div><div class="hb-val">€1.76B</div></div><div class="hb-row"><div class="hb-year">2014</div><div class="hb-track"><div class="hb-fill" style="width:18%"></div></div><div class="hb-val">€2.21B</div></div><div class="hb-row"><div class="hb-year">2015</div><div class="hb-track"><div class="hb-fill" style="width:24%"></div></div><div class="hb-val">€2.96B</div></div><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:29%"></div></div><div class="hb-val">€3.64B</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:36%"></div></div><div class="hb-val">€4.49B</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:44%"></div></div><div class="hb-val">€5.39B</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:53%"></div></div><div class="hb-val">€6.48B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:65%"></div></div><div class="hb-val">€7.98B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:84%"></div></div><div class="hb-val">€10.3B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:84%"></div></div><div class="hb-val">€10.3B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:82%"></div></div><div class="hb-val">€10.1B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:86%"></div></div><div class="hb-val">€10.6B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">€12.3B</div></div></div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Farfetch</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:5px" title="2015: $142M"></div><div class="tm-bar" style="height:9px" title="2016: $242M"></div><div class="tm-bar" style="height:15px" title="2017: $386M"></div><div class="tm-bar" style="height:23px" title="2018: $602M"></div><div class="tm-bar" style="height:39px" title="2019: $1.02B"></div><div class="tm-bar" style="height:64px" title="2020: $1.67B"></div><div class="tm-bar" style="height:86px" title="2021: $2.26B"></div><div class="tm-bar" style="height:88px" title="2022: $2.32B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2015: $142M</span>
-        <span class="tm-mult">16.3x by 2022</span>
-        <span class="tm-end">2022: $2.32B</span>
-      </div><div class="tm-note">Stopped publishing standalone results after Coupang's 2024 acquisition.</div>
+<div class="hb-card">
+      <div class="hb-title">Farfetch <span class="hb-founded">Founded 2007</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2015</div><div class="hb-track"><div class="hb-fill" style="width:6%"></div></div><div class="hb-val">$142M</div></div><div class="hb-row"><div class="hb-year">2016</div><div class="hb-track"><div class="hb-fill" style="width:10%"></div></div><div class="hb-val">$242M</div></div><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:17%"></div></div><div class="hb-val">$386M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:26%"></div></div><div class="hb-val">$602M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:44%"></div></div><div class="hb-val">$1.02B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:72%"></div></div><div class="hb-val">$1.67B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:97%"></div></div><div class="hb-val">$2.26B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$2.32B</div></div></div><div class="hb-note">Stopped publishing standalone results after Coupang&#x27;s 2024 acquisition.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">ThredUp</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:46px" title="2019: $164M"></div><div class="tm-bar" style="height:53px" title="2020: $186M"></div><div class="tm-bar" style="height:71px" title="2021: $252M"></div><div class="tm-bar" style="height:82px" title="2022: $288M"></div><div class="tm-bar" style="height:73px" title="2023: $258M"></div><div class="tm-bar" style="height:74px" title="2024: $260M"></div><div class="tm-bar" style="height:88px" title="2025: $311M"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2019: $164M</span>
-        <span class="tm-mult">1.9x by 2025</span>
-        <span class="tm-end">2025: $311M</span>
-      </div><div class="tm-note">2023 restated to continuing operations after a 2024 divestiture.</div>
+<div class="hb-card">
+      <div class="hb-title">ThredUp <span class="hb-founded">Founded 2009</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:53%"></div></div><div class="hb-val">$164M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:60%"></div></div><div class="hb-val">$186M</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:81%"></div></div><div class="hb-val">$252M</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:93%"></div></div><div class="hb-val">$288M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:83%"></div></div><div class="hb-val">$258M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:84%"></div></div><div class="hb-val">$260M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$311M</div></div></div><div class="hb-note">2023 restated to continuing operations after a 2024 divestiture.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Angi</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:37px" title="2017: $736M"></div><div class="tm-bar" style="height:56px" title="2018: $1.13B"></div><div class="tm-bar" style="height:66px" title="2019: $1.33B"></div><div class="tm-bar" style="height:73px" title="2020: $1.47B"></div><div class="tm-bar" style="height:81px" title="2021: $1.62B"></div><div class="tm-bar" style="height:88px" title="2022: $1.76B"></div><div class="tm-bar" style="height:68px" title="2023: $1.36B"></div><div class="tm-bar" style="height:59px" title="2024: $1.19B"></div><div class="tm-bar" style="height:51px" title="2025: $1.03B"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2017: $736M</span>
-        <span class="tm-mult">1.4x by 2025</span>
-        <span class="tm-end">2025: $1.03B</span>
-      </div><div class="tm-note">Peaked 2022, then declined 3 straight years.</div>
+<div class="hb-card">
+      <div class="hb-title">Angi <span class="hb-founded">Founded 1995</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:42%"></div></div><div class="hb-val">$736M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:64%"></div></div><div class="hb-val">$1.13B</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:75%"></div></div><div class="hb-val">$1.33B</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:83%"></div></div><div class="hb-val">$1.47B</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:92%"></div></div><div class="hb-val">$1.62B</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$1.76B</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:77%"></div></div><div class="hb-val">$1.36B</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:67%"></div></div><div class="hb-val">$1.19B</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:58%"></div></div><div class="hb-val">$1.03B</div></div></div><div class="hb-note">Post-2017 merger figures (Angie&#x27;s List + HomeAdvisor); founded 1995 as Angie&#x27;s List.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">Mytheresa / LuxExperience</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:66px" title="2022: &euro;690M"></div><div class="tm-bar" style="height:74px" title="2023: &euro;769M"></div><div class="tm-bar" style="height:81px" title="2024: &euro;841M"></div><div class="tm-bar" style="height:88px" title="2025: &euro;916M"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2022: &euro;690M</span>
-        <span class="tm-mult">1.3x by 2025</span>
-        <span class="tm-end">2025: &euro;916M</span>
-      </div><div class="tm-note">Net sales; public disclosure only starts at FY2022.</div>
+<div class="hb-card">
+      <div class="hb-title">Mytheresa / LuxExperience <span class="hb-founded">Founded 2006</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:75%"></div></div><div class="hb-val">€690M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:84%"></div></div><div class="hb-val">€769M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:92%"></div></div><div class="hb-val">€841M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">€916M</div></div></div><div class="hb-note">Net sales; public disclosure only starts at FY2022.</div>
     </div>
-<div class="tm-card">
-      <div class="tm-name">The RealReal</div>
-      <div class="tm-bars"><div class="tm-bar" style="height:17px" title="2017: $138M"></div><div class="tm-bar" style="height:27px" title="2018: $214M"></div><div class="tm-bar" style="height:40px" title="2019: $316M"></div><div class="tm-bar" style="height:38px" title="2020: $300M"></div><div class="tm-bar" style="height:59px" title="2021: $468M"></div><div class="tm-bar" style="height:77px" title="2022: $604M"></div><div class="tm-bar" style="height:70px" title="2023: $549M"></div><div class="tm-bar" style="height:76px" title="2024: $600M"></div><div class="tm-bar" style="height:88px" title="2025: $693M"></div></div>
-      <div class="tm-labels">
-        <span class="tm-start">2017: $138M</span>
-        <span class="tm-mult">5.0x by 2025</span>
-        <span class="tm-end">2025: $693M</span>
-      </div>
+<div class="hb-card">
+      <div class="hb-title">The RealReal <span class="hb-founded">Founded 2011</span></div>
+      <div class="hb-rows"><div class="hb-row"><div class="hb-year">2017</div><div class="hb-track"><div class="hb-fill" style="width:20%"></div></div><div class="hb-val">$138M</div></div><div class="hb-row"><div class="hb-year">2018</div><div class="hb-track"><div class="hb-fill" style="width:31%"></div></div><div class="hb-val">$214M</div></div><div class="hb-row"><div class="hb-year">2019</div><div class="hb-track"><div class="hb-fill" style="width:46%"></div></div><div class="hb-val">$316M</div></div><div class="hb-row"><div class="hb-year">2020</div><div class="hb-track"><div class="hb-fill" style="width:43%"></div></div><div class="hb-val">$300M</div></div><div class="hb-row"><div class="hb-year">2021</div><div class="hb-track"><div class="hb-fill" style="width:67%"></div></div><div class="hb-val">$468M</div></div><div class="hb-row"><div class="hb-year">2022</div><div class="hb-track"><div class="hb-fill" style="width:87%"></div></div><div class="hb-val">$604M</div></div><div class="hb-row"><div class="hb-year">2023</div><div class="hb-track"><div class="hb-fill" style="width:79%"></div></div><div class="hb-val">$549M</div></div><div class="hb-row"><div class="hb-year">2024</div><div class="hb-track"><div class="hb-fill" style="width:87%"></div></div><div class="hb-val">$600M</div></div><div class="hb-row"><div class="hb-year">2025</div><div class="hb-track"><div class="hb-fill" style="width:100%"></div></div><div class="hb-val">$693M</div></div></div>
     </div>
+
   </div>
   <div class="src-note"><strong>Sources:</strong> revenue history compiled from each company's own SEC filings, IPO prospectuses, investor-relations releases and newsroom pages (Amazon, Etsy, Uber, DoorDash, Just Eat Takeaway, Airbnb, Fiverr, Vinted, Rightmove, Zalando, Farfetch, ThredUp, Angi, Mytheresa/LuxExperience, The RealReal — full links in Sections 01, 03 and 04 above), cross-checked against <a href="https://stockanalysis.com" target="_blank" rel="noopener">stockanalysis.com</a> where a company's own historical release was not directly reachable. Figures marked with a note above are lower-confidence or reflect a structural break (merger, restatement, divestiture) rather than organic growth alone.</div>
 
