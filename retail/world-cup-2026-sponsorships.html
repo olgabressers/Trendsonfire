@@ -17,7 +17,7 @@
   <meta name="description" content="Spain and Argentina meet in the $2.8B World Cup 2026 final — both sponsored by Adidas, which outfits 14 of the 48 competing teams."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a; --orange:#e05c00; }
+    :root { --navy:#0a0f1a; --fuchsia:#b8976a; --border:#e2dfd9; --bg:#faf9f7; --text:#111827; --sub:#7a7a7a; --orange:#aa151b; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--paper, #faf9f7); color: var(--text); line-height: 1.6; }
 
     nav { background: #0a0f1a; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; border-bottom: 1px solid rgba(184,151,106,.15); }
@@ -77,7 +77,7 @@
     /* HANDOVER STRIP */
     .handover { display: flex; align-items: stretch; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .handover-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 30px 20px; background: linear-gradient(135deg,#0a0f1a 0%,#1a2235 100%); position: relative; }
-    .handover-side.nike { background: linear-gradient(135deg,#e05c00 0%,#a34500 100%); }
+    .handover-side.nike { background: linear-gradient(135deg,#aa151b 0%,#7a0e12 100%); }
     .handover-crest { height: 54px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.3)); }
     .handover-logo { height: 30px; width: auto; filter: brightness(0) invert(1); }
     .handover-logo.nike-logo { height: 40px; }
@@ -97,6 +97,24 @@
     .kit-table .kt-badge { display: inline-block; background: #f1f5f9; color: var(--ink, #0a0f1a); font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px; }
     .kit-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+
+    /* LAST 5 FINALS */
+    .final-row { display: flex; align-items: center; gap: 14px; background: white; border: 1px solid var(--rule, #e2dfd9); padding: 16px 20px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .final-row.is-live { border-color: var(--orange); border-width: 2px; background: #fff8f7; }
+    .final-year { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); width: 64px; flex-shrink: 0; }
+    .final-team { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; justify-content: flex-end; }
+    .final-team.right { justify-content: flex-start; }
+    .final-flag { font-size: 22px; }
+    .final-country { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); }
+    .final-logo { height: 16px; width: auto; max-width: 50px; object-fit: contain; }
+    .final-champ .final-country { color: var(--orange); }
+    .final-mid { flex-shrink: 0; text-align: center; min-width: 90px; }
+    .final-score { font-size: 18px; font-weight: 800; color: var(--ink, #0a0f1a); }
+    .final-pens { font-size: 10px; color: var(--sub); font-weight: 600; }
+    .final-live-tag { display: inline-block; background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 4px 10px; border-radius: 20px; animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
+    .final-venue { font-size: 10.5px; color: var(--sub); width: 100%; text-align: center; margin-top: 6px; }
+    @media(max-width:640px){ .final-row{flex-wrap:wrap;} .final-year{width:auto;} .final-country{display:none;} }
 
     .methodology { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 22px 26px; margin-bottom: 36px; }
     .methodology h3 { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; }
@@ -249,6 +267,16 @@
     <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" style="color:#fff;text-decoration:underline;" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" style="color:#fff;text-decoration:underline;" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
   </div>
 
+  <div class="section">
+    <div class="section-title">The Last 5 World Cup Finals — Every Champion's Sponsor</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Every final since 2010, with the winner's kit brand. Adidas has been on the pitch in four of the last five — including both sides today.</div>
+    <div id="finals-list"></div>
+    <div class="src-note">
+      <strong>Source:</strong> Match results — <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" target="_blank">Wikipedia</a>, <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" target="_blank">ESPN</a>. Kit sponsors — Argentina and Germany on Adidas since 2001 and continuously through 2038 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" target="_blank">SoccerBible</a>). 2026 final live score — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" target="_blank">FIFA Match Centre</a>.
+    </div>
+  </div>
+
   <div class="stat-cards" id="stat-cards"></div>
 
   <div class="section">
@@ -367,7 +395,7 @@ const stats = [
 
 const kitData = [
   { brand:'Adidas', teams:14, color:'#0a0f1a' },
-  { brand:'Nike',   teams:12, color:'#e05c00' },
+  { brand:'Nike',   teams:12, color:'#aa151b' },
   { brand:'Puma',   teams:11, color:'#b8976a' },
   { brand:'Others', teams:11, color:'#9ca3af' }
 ];
@@ -387,11 +415,38 @@ const kitData = [
   el.innerHTML = html;
 })();
 
+// ---- LAST 5 FINALS ----
+const ADIDAS = 'https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg';
+const NIKE = 'https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg';
+const finals = [
+  { year:2026, live:true, a:{flag:'🇪🇸',country:'Spain',logo:ADIDAS}, b:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, venue:'MetLife Stadium, New Jersey — final in progress' },
+  { year:2022, winner:'a', a:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, b:{flag:'🇫🇷',country:'France',logo:NIKE}, score:'3–3', pens:'Argentina won 4–2 on penalties', venue:'Lusail Stadium, Qatar' },
+  { year:2018, winner:'a', a:{flag:'🇫🇷',country:'France',logo:NIKE}, b:{flag:'🇭🇷',country:'Croatia',logo:NIKE}, score:'4–2', venue:'Luzhniki Stadium, Moscow' },
+  { year:2014, winner:'a', a:{flag:'🇩🇪',country:'Germany',logo:ADIDAS}, b:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, score:'1–0', pens:'After extra time', venue:'Maracanã, Rio de Janeiro' },
+  { year:2010, winner:'a', a:{flag:'🇪🇸',country:'Spain',logo:ADIDAS}, b:{flag:'🇳🇱',country:'Netherlands',logo:NIKE}, score:'1–0', pens:'After extra time', venue:'Soccer City, Johannesburg' }
+];
+(function() {
+  var el = document.getElementById('finals-list');
+  var html = '';
+  finals.forEach(function(f) {
+    var aChamp = f.winner === 'a' ? ' final-champ' : '';
+    var bChamp = f.winner === 'b' ? ' final-champ' : '';
+    html += '<div class="final-row'+(f.live ? ' is-live' : '')+'">'+
+      '<div class="final-year">'+f.year+'</div>'+
+      '<div class="final-team'+aChamp+'"><span class="final-country">'+f.a.country+'</span><span class="final-flag">'+f.a.flag+'</span><img class="final-logo" src="'+f.a.logo+'" alt="'+f.a.country+' kit sponsor logo"/></div>'+
+      '<div class="final-mid">'+(f.live ? '<span class="final-live-tag">&#9679; LIVE</span>' : '<div class="final-score">'+f.score+'</div>'+(f.pens ? '<div class="final-pens">'+f.pens+'</div>' : ''))+'</div>'+
+      '<div class="final-team right'+bChamp+'"><img class="final-logo" src="'+f.b.logo+'" alt="'+f.b.country+' kit sponsor logo"/><span class="final-flag">'+f.b.flag+'</span><span class="final-country">'+f.b.country+'</span></div>'+
+      '<div class="final-venue">'+f.venue+'</div>'+
+      '</div>';
+  });
+  el.innerHTML = html;
+})();
+
 // ---- MONEY SPLIT CHART ----
 const moneyData = [
   { cat:'Broadcasting', amt:'$4.2B+', pct:100, color:'#0a0f1a' },
   { cat:'Sponsorship',  amt:'$2.8B',  pct:67,  color:'#b8976a' },
-  { cat:'Ticketing & Hospitality', amt:'up to $3B', pct:71, color:'#e05c00' }
+  { cat:'Ticketing & Hospitality', amt:'up to $3B', pct:71, color:'#aa151b' }
 ];
 (function() {
   var el = document.getElementById('money-chart');
