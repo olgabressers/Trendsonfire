@@ -31,37 +31,34 @@
     .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
     .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
-    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); font-weight: 700; margin-bottom: 10px; }
+    .sec-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; font-weight: 700; margin-bottom: 10px; }
     .sec-header h1 { font-family: var(--serif, "Cormorant Garamond", Georgia, serif); font-size: clamp(24px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; line-height: 1.15; }
     .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; margin-bottom: 16px; }
     .sec-meta { font-size: 12px; color: rgba(255,255,255,.5); display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 32px; }
 
-    /* VS BANNER — original size, flag image instead of solid color */
-    .vs-banner { display: flex; align-items: stretch; max-width: 1100px; margin: 0 auto; overflow: hidden; }
-    .vs-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px 16px; gap: 10px; position: relative; background-size: cover; background-position: center; }
-    .vs-side.spain { background-image: linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)), url(https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg); }
-    .vs-side.argentina { background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg); }
-    .vs-side img { height: 64px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
-    .vs-name { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: white; }
-    .vs-kit { font-size: 11px; color: rgba(255,255,255,.9); font-weight: 600; }
+    /* VS BANNER — real flags, nothing else */
+    .vs-banner { display: flex; align-items: stretch; max-width: 1100px; margin: 0 auto; overflow: hidden; height: 220px; }
+    .vs-side { flex: 1; background-size: cover; background-position: center; }
+    .vs-side.spain { background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1280px-Flag_of_Spain.svg.png); }
+    .vs-side.argentina { background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png); }
     .vs-mid { background: #0a0f1a; color: #b8976a; font-family: "Cormorant Garamond", serif; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center; padding: 0 22px; flex-shrink: 0; letter-spacing: 1px; }
-    .vs-tag { text-align: center; background: #060a12; color: rgba(255,255,255,.75); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 9px; max-width: 1100px; margin: 0 auto; }
 
     main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 64px; }
 
-    .insight-banner { background: linear-gradient(135deg, #060a12 0%, #0a0f1a 100%); border-left: 4px solid var(--gold, #b8976a); padding: 26px 30px; margin-bottom: 36px; color: white; font-size: 15px; line-height: 1.75; }
-    .insight-banner strong { color: #e2c0d8; }
+    .lead-text { font-size: 16px; color: #1f1f1f; line-height: 1.75; max-width: 860px; margin: 0 auto 40px; }
+    .lead-text strong { color: #0a0f1a; }
+    .lead-text a { color: #4338ca; text-decoration: underline; }
 
-    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 40px; }
-    .stat-card { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 22px 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-    .stat-card .sc-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
-    .stat-card .sc-value { font-size: 32px; font-weight: 800; color: var(--orange); line-height: 1; margin-bottom: 6px; }
-    .stat-card .sc-desc { font-size: 12px; color: var(--sub); line-height: 1.4; }
+    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 40px; }
+    .stat-card { background: white; border: 1px solid #e2dfd9; padding: 22px 20px; }
+    .stat-card .sc-label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #1f1f1f; margin-bottom: 12px; line-height: 1.35; }
+    .stat-card .sc-value { font-family: "Cormorant Garamond", Georgia, serif; font-size: 42px; font-weight: 500; color: #0a0f1a; line-height: 1; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .stat-card .sc-desc { font-size: 13px; color: #1f1f1f; line-height: 1.55; }
 
     .section { margin-bottom: 40px; }
     .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
     .section-sub { font-size: 13.5px; color: var(--sub); margin-bottom: 20px; line-height: 1.5; }
-    .section-divider { height: 3px; background: linear-gradient(90deg, var(--orange) 0%, transparent 100%); margin-bottom: 20px; }
+    .section-divider { height: 2px; background: #0a0f1a; margin-bottom: 20px; }
 
     .bar-chart { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 26px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
     .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
@@ -74,17 +71,13 @@
     .src-note a { color: #4338ca; text-decoration: underline; }
 
     /* HANDOVER STRIP */
-    .handover { display: flex; align-items: stretch; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-    .handover-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 30px 20px; background: linear-gradient(135deg,#0a0f1a 0%,#1a2235 100%); position: relative; }
-    .handover-side.nike { background: linear-gradient(135deg,#aa151b 0%,#7a0e12 100%); }
-    .handover-crest { height: 54px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.3)); }
-    .handover-logo { height: 30px; width: auto; filter: brightness(0) invert(1); }
-    .handover-logo.nike-logo { height: 40px; }
-    .handover-year-tag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: white; background: rgba(0,0,0,.25); padding: 5px 12px; border-radius: 20px; }
-    .handover-mid { flex-shrink: 0; width: 120px; background: #b8976a; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; text-align: center; }
-    .handover-years { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 800; color: white; line-height: 1; }
-    .handover-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.85); margin-top: 2px; }
-    .handover-arrow { font-size: 20px; color: white; margin-top: 8px; }
+    .handover { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 6vw, 56px); background: white; border: 1px solid #e2dfd9; padding: 40px 24px; }
+    .handover-side { flex-shrink: 0; }
+    .handover-logo { height: clamp(36px, 5vw, 56px); width: auto; }
+    .handover-mid { flex-shrink: 0; text-align: center; }
+    .handover-years { font-family: "Cormorant Garamond", Georgia, serif; font-size: 48px; font-weight: 500; color: #0a0f1a; line-height: 1; letter-spacing: -0.5px; }
+    .handover-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #1f1f1f; margin-top: 4px; }
+    .handover-year-tag { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #8b6a2f; margin-top: 8px; text-transform: uppercase; }
 
     /* KIT TABLE */
     .kit-table { width: 100%; border-collapse: collapse; background: white; min-width: 520px; font-size: 13px; }
@@ -99,7 +92,7 @@
 
     /* LAST 6 FINALS — 2×3 grid, big flags, central point of the page */
     .finals-wrap { max-width: 1100px; margin: 0 auto 8px; }
-    .finals-eyebrow { text-align: center; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 26px; }
+    .finals-eyebrow { text-align: center; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #b8976a; margin-bottom: 26px; }
     #finals-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 4px; }
     .final-card { display: flex; flex-direction: column; align-items: center; padding: 20px 8px; border: 1px solid var(--rule, #e2dfd9); }
     .final-card.is-live { border-color: var(--orange); border-width: 2px; background: #fff8f7; }
@@ -153,9 +146,7 @@
       .sec-header { padding:32px 16px 0; }
       .vs-banner { flex-direction: column; }
       .vs-mid { padding: 10px; }
-      .handover { flex-direction: column; }
-      .handover-mid { width: 100%; flex-direction: row; padding: 10px; }
-      .handover-arrow { margin-top: 0; margin-left: 10px; transform: rotate(90deg); }
+      .handover { flex-direction: column; padding: 28px 16px; }
       .stat-cards { grid-template-columns: 1fr 1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
       .bar-label { min-width: 90px; font-size: 11px; }
@@ -246,32 +237,23 @@
     </div>
   </div>
   <div class="vs-banner">
-    <div class="vs-side spain">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_Spanish_Football_Federation_logo.svg" alt="Spain national football team crest"/>
-      <div class="vs-name">Spain</div>
-      <div class="vs-kit">Kit: Adidas</div>
-    </div>
+    <div class="vs-side spain" role="img" aria-label="Flag of Spain"></div>
     <div class="vs-mid">VS</div>
-    <div class="vs-side argentina">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Argentine_Football_Association_logo.svg" alt="Argentina national football team crest"/>
-      <div class="vs-name">Argentina</div>
-      <div class="vs-kit">Kit: Adidas</div>
-    </div>
+    <div class="vs-side argentina" role="img" aria-label="Flag of Argentina"></div>
   </div>
-  <div class="vs-tag">Final &middot; MetLife Stadium, East Rutherford NJ &middot; Kickoff 3:00pm ET / 19:00 GMT</div>
 </div>
 
 <main>
+
+  <p class="lead-text">
+    <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
+  </p>
 
   <div class="stat-cards" id="stat-cards"></div>
 
   <div class="finals-wrap">
     <div class="finals-eyebrow">Last 6 World Cup Finals</div>
     <div id="finals-list"></div>
-  </div>
-
-  <div class="insight-banner">
-    <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" style="color:#fff;text-decoration:underline;" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" style="color:#fff;text-decoration:underline;" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
   </div>
 
   <div class="section">
@@ -289,20 +271,18 @@
     <div class="section-divider"></div>
     <div class="handover">
       <div class="handover-side">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/DFB-Logo_2025.svg" alt="German Football Association crest" class="handover-crest"/>
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/>
       </div>
       <div class="handover-mid">
         <div class="handover-years">72</div>
-        <div class="handover-label">years<br/>together</div>
-        <div class="handover-arrow">&rarr;</div>
+        <div class="handover-label">years together</div>
+        <div class="handover-year-tag">Nike from 2027</div>
       </div>
-      <div class="handover-side nike">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike logo" class="handover-logo nike-logo"/>
-        <div class="handover-year-tag">FROM 2027</div>
+      <div class="handover-side">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike logo" class="handover-logo"/>
       </div>
     </div>
-    <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-top:none;padding:22px 26px;font-size:14px;color:var(--text);line-height:1.75;">
+    <div style="background:white;border:1px solid #e2dfd9;border-top:none;padding:22px 26px;font-size:14px;color:var(--text);line-height:1.75;">
       <p>This tournament closes a 72-year chapter: Germany switches to Nike from 2027, in a deal reported at roughly &euro;100 million a year — about double Adidas' previous rate. Source: <a href="https://www.sportico.com/business/sponsorship/2026/germany-soccer-federation-adidas-nike-1234937241/" style="color:#4338ca;text-decoration:underline;" target="_blank">Sportico</a>, <a href="https://www.nss-sports.com/en/kits/36205/germany-adidas-nike-change" style="color:#4338ca;text-decoration:underline;" target="_blank">nss sports</a>. Even losing its founding federation, Adidas still outfits more 2026 World Cup teams than any other brand — including both finalists.</p>
     </div>
   </div>
