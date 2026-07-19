@@ -99,8 +99,8 @@
     .final-year { font-family: "Cormorant Garamond", serif; font-size: clamp(24px, 2.6vw, 30px); font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 14px; letter-spacing: 1px; }
     .final-card.is-live .final-year { color: var(--orange); }
     .final-row { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 2.5vw, 22px); width: 100%; }
-    .flag-badge { position: relative; width: clamp(88px, 10.5vw, 140px); height: clamp(88px, 10.5vw, 140px); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .flag-badge .flag-emoji { font-size: clamp(66px, 8.5vw, 108px); line-height: 1; }
+    .flag-badge { position: relative; width: clamp(88px, 10.5vw, 140px); height: clamp(88px, 10.5vw, 140px); flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+    .flag-badge .flag-img { width: 100%; height: 100%; object-fit: cover; }
     .flag-badge .logo-disc { position: absolute; bottom: -4px; right: -4px; width: 40%; height: 40%; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; padding: 6px; }
     .flag-badge .logo-disc img { width: 100%; height: 100%; object-fit: contain; }
     .final-score-big { font-family: "Cormorant Garamond", serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 50px; text-align: center; }
@@ -395,13 +395,20 @@ const kitData = [
 const ADIDAS = 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg';
 const NIKE = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg';
 const PUMA = 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Puma-logo-%28text%29.svg';
+const FLAG_ES = 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg';
+const FLAG_AR = 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg';
+const FLAG_FR = 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg';
+const FLAG_HR = 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg';
+const FLAG_DE = 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg';
+const FLAG_NL = 'https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg';
+const FLAG_IT = 'https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg';
 const finals = [
-  { year:2026, live:true, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS} },
-  { year:2022, a:{flag:'🇦🇷',logo:ADIDAS}, b:{flag:'🇫🇷',logo:NIKE}, score:'3–3' },
-  { year:2018, a:{flag:'🇫🇷',logo:NIKE}, b:{flag:'🇭🇷',logo:NIKE}, score:'4–2' },
-  { year:2014, a:{flag:'🇩🇪',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS}, score:'1–0' },
-  { year:2010, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇳🇱',logo:NIKE}, score:'1–0' },
-  { year:2006, a:{flag:'🇮🇹',logo:PUMA}, b:{flag:'🇫🇷',logo:ADIDAS}, score:'1–1' }
+  { year:2026, live:true, a:{flag:FLAG_ES,country:'Spain',logo:ADIDAS}, b:{flag:FLAG_AR,country:'Argentina',logo:ADIDAS} },
+  { year:2022, a:{flag:FLAG_AR,country:'Argentina',logo:ADIDAS}, b:{flag:FLAG_FR,country:'France',logo:NIKE}, score:'3–3' },
+  { year:2018, a:{flag:FLAG_FR,country:'France',logo:NIKE}, b:{flag:FLAG_HR,country:'Croatia',logo:NIKE}, score:'4–2' },
+  { year:2014, a:{flag:FLAG_DE,country:'Germany',logo:ADIDAS}, b:{flag:FLAG_AR,country:'Argentina',logo:ADIDAS}, score:'1–0' },
+  { year:2010, a:{flag:FLAG_ES,country:'Spain',logo:ADIDAS}, b:{flag:FLAG_NL,country:'Netherlands',logo:NIKE}, score:'1–0' },
+  { year:2006, a:{flag:FLAG_IT,country:'Italy',logo:PUMA}, b:{flag:FLAG_FR,country:'France',logo:ADIDAS}, score:'1–1' }
 ];
 (function() {
   var el = document.getElementById('finals-list');
@@ -410,9 +417,9 @@ const finals = [
     html += '<div class="final-card'+(f.live ? ' is-live' : '')+'">'+
       '<div class="final-year">'+f.year+'</div>'+
       '<div class="final-row">'+
-      '<div class="flag-badge"><span class="flag-emoji">'+f.a.flag+'</span><span class="logo-disc"><img src="'+f.a.logo+'" alt="sponsor logo"/></span></div>'+
+      '<div class="flag-badge"><img class="flag-img" src="'+f.a.flag+'" alt="Flag of '+f.a.country+'"/><span class="logo-disc"><img src="'+f.a.logo+'" alt="sponsor logo"/></span></div>'+
       (f.live ? '<span class="final-live-badge">&#9679; LIVE</span>' : '<div class="final-score-big">'+f.score+'</div>')+
-      '<div class="flag-badge"><span class="flag-emoji">'+f.b.flag+'</span><span class="logo-disc"><img src="'+f.b.logo+'" alt="sponsor logo"/></span></div>'+
+      '<div class="flag-badge"><img class="flag-img" src="'+f.b.flag+'" alt="Flag of '+f.b.country+'"/><span class="logo-disc"><img src="'+f.b.logo+'" alt="sponsor logo"/></span></div>'+
       '</div>'+
       '</div>';
   });
