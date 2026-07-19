@@ -125,8 +125,8 @@
     .li-cta { background: var(--ink, #0a0f1a); padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     .li-cta div p:last-child { color: rgba(255,255,255,.85); font-size: 15px; max-width: 560px; }
-    .li-cta a { background: var(--gold, #b8976a); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
-    .li-cta a:hover { background: #a07850; }
+    .li-cta a { background: var(--gold, #b8976a); color: #0a0f1a; font-size: 13px; font-weight: 800; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+    .li-cta a:hover { background: #a07850; color: white; }
 
     footer { background: #060a12; color: #64748b; padding: 28px 32px; text-align: center; font-size: 13px; }
     footer a { color: #94a3b8; text-decoration: none; }
@@ -260,8 +260,7 @@
 
 <main>
 
-  <p class="lead-text"><strong>The brand story is bigger than the scoreline.</strong> Spain, the Euro 2024 champions, and Argentina, winners of the 2022 World Cup and the 2024 Copa América, meet in today's final at <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" target="_blank">MetLife Stadium</a>. Both squads are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike's 12 or Puma's 11, according to <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>.</p>
-  <p class="lead-text">Whichever side lifts the trophy, Adidas wins — a dynamic that has repeated through much of the tournament's history, as the six-final comparison below shows.</p>
+  <div class="stat-cards" id="stat-cards"></div>
 
   <div class="finals-wrap">
     <div class="finals-eyebrow">Last 6 World Cup Finals</div>
@@ -271,10 +270,11 @@
     </div>
   </div>
 
-  <div class="stat-cards" id="stat-cards"></div>
+  <p class="lead-text"><strong>Adidas cannot lose today.</strong> Spain and Argentina — this year's two World Cup finalists — both play in the three stripes, one of 14 national teams Adidas dresses at the 2026 tournament, ahead of Nike's 12 and Puma's 11 (<a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>). Spain last lifted the trophy in Adidas colours in 2010. Argentina has worn nothing else since 2001, a partnership now locked in through 2038.</p>
+  <p class="lead-text">The pattern runs deeper than this final. Adidas was champion in three of the last five completed World Cups — 2022, 2014 and 2010 — and had a team on the pitch in four of five; only the Nike-versus-Nike final of 2018 shut it out entirely. The comparison above runs through every final since 2010, plus 2006 for scale.</p>
 
   <div class="section">
-    <div class="section-title">The Kit Battle — Who Dresses the 48-Team World Cup</div>
+    <div class="section-title">Adidas 14, Nike 12, Puma 11: The Kit Battle for 48 Teams</div>
     <div class="section-divider"></div>
     <div class="section-sub">Adidas, Nike and Puma outfit 77% of all national teams at the tournament. Ten smaller brands split the rest.</div>
     <div class="bar-chart" id="kit-chart"></div>
@@ -305,7 +305,7 @@
   </div>
 
   <div class="section">
-    <div class="section-title">Where the $13B Comes From</div>
+    <div class="section-title">$4.2B Broadcasting, $2.8B Sponsorship: FIFA's $13B World Cup</div>
     <div class="section-divider"></div>
     <div class="section-sub">FIFA's 2023–2026 commercial cycle revenue, by category — every figure a new record for the organisation.</div>
     <div class="bar-chart" id="money-chart"></div>
@@ -318,7 +318,7 @@
   </div>
 
   <div class="section">
-    <div class="section-title">All 48 Teams, Who Dresses Who</div>
+    <div class="section-title">48 Teams, 13 Kit Brands: Every Sponsor at the World Cup</div>
     <div class="section-divider"></div>
     <div class="section-sub">Every qualified nation and its kit sponsor, grouped by brand. Adidas, Nike and Puma dress 37 of 48 teams; ten smaller brands dress the rest.</div>
     <div class="kit-groups" id="kit-table"></div>
