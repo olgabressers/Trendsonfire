@@ -103,21 +103,21 @@
     .final-year { font-family: "Cormorant Garamond", serif; font-size: clamp(24px, 2.6vw, 30px); font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 14px; letter-spacing: 1px; }
     .final-card.is-live .final-year { color: var(--orange); }
     .final-row { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; }
-    .flag-badge { position: relative; width: 88px; height: 88px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
-    .flag-badge .flag-img { width: 100%; height: 100%; object-fit: cover; }
-    .flag-badge .logo-disc { position: absolute; bottom: -4px; right: -4px; width: 40%; height: 40%; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; padding: 6px; }
+    .flag-badge { position: relative; width: 110px; height: 76px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: white; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+    .flag-badge .flag-img { width: 100%; height: 100%; object-fit: contain; }
+    .flag-badge .logo-disc { position: absolute; bottom: -8px; right: -8px; width: 32px; height: 32px; background: white; border-radius: 50%; border: 1px solid #e2dfd9; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; padding: 5px; }
     .flag-badge .logo-disc img { width: 100%; height: 100%; object-fit: contain; }
     .final-score-big { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 44px; text-align: center; }
     .final-live-badge { background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 6px 10px; border-radius: 30px; animation: pulse 1.6s infinite; flex-shrink: 0; }
     @media(max-width:820px){
       #finals-list { grid-template-columns: repeat(2, 1fr); }
-      .flag-badge { width: 120px; height: 120px; }
+      .flag-badge { width: 150px; height: 104px; }
       .final-score-big { font-size: 34px; }
     }
     @media(max-width:520px){
       #finals-list { grid-template-columns: 1fr; }
       .final-card { padding: 22px 10px; }
-      .flag-badge { width: 130px; height: 130px; }
+      .flag-badge { width: 160px; height: 110px; }
       .final-score-big { font-size: 38px; }
     }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.55;} }
