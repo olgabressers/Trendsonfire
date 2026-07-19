@@ -45,15 +45,19 @@
 
     main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 64px; }
 
-    .lead-text { font-size: 16px; color: #1f1f1f; line-height: 1.75; max-width: 860px; margin: 0 auto 40px; }
+    .lead-text { font-size: 15.5px; color: #1f1f1f; line-height: 1.8; max-width: 880px; margin: 0 auto 40px; }
+    .lead-text + .lead-text { margin-top: -28px; }
     .lead-text strong { color: #0a0f1a; }
-    .lead-text a { color: #4338ca; text-decoration: underline; }
+    .lead-text a { color: #8b6a2f; }
 
-    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 40px; }
+    .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 40px; }
+    @media(max-width:900px){ .stat-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width:480px){ .stat-cards { grid-template-columns: 1fr; } }
     .stat-card { background: white; border: 1px solid #e2dfd9; padding: 22px 20px; }
     .stat-card .sc-label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #1f1f1f; margin-bottom: 12px; line-height: 1.35; }
     .stat-card .sc-value { font-family: "Cormorant Garamond", Georgia, serif; font-size: 42px; font-weight: 500; color: #0a0f1a; line-height: 1; letter-spacing: -0.5px; margin-bottom: 10px; }
     .stat-card .sc-desc { font-size: 13px; color: #1f1f1f; line-height: 1.55; }
+    .stat-card .sc-desc a { color: #8b6a2f; }
 
     .section { margin-bottom: 40px; }
     .section-title { font-size: 19px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 6px; }
@@ -80,15 +84,14 @@
     .handover-year-tag { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #8b6a2f; margin-top: 8px; text-transform: uppercase; }
 
     /* KIT TABLE */
-    .kit-table { width: 100%; border-collapse: collapse; background: white; min-width: 520px; font-size: 13px; }
-    .kit-table .kt-group-row td { background: #0a0f1a; color: #b8976a; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 9px 16px; }
-    .kit-table tbody td { padding: 9px 16px; border-bottom: 1px solid #f1f3f5; vertical-align: middle; }
-    .kit-table .kt-team { font-size: 14px; font-weight: 600; color: var(--ink, #0a0f1a); }
-    .kit-table .kt-brand-cell { text-align: right; }
-    .kit-table .kt-logo { height: 22px; width: auto; max-width: 90px; object-fit: contain; }
-    .kit-table .kt-badge { display: inline-block; background: #f1f5f9; color: var(--ink, #0a0f1a); font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px; }
-    .kit-table tbody tr:hover { background: rgba(0,0,0,.02); }
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+    .kit-groups { display: flex; flex-direction: column; gap: 22px; }
+    .kit-group-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #0a0f1a; }
+    .kit-group-logo { height: 24px; width: auto; max-width: 90px; object-fit: contain; }
+    .kit-group-badge { font-size: 14px; font-weight: 800; color: #0a0f1a; }
+    .kit-group-count { font-size: 12px; font-weight: 700; color: #1f1f1f; margin-left: auto; }
+    .kit-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .kit-chip { display: inline-flex; align-items: center; gap: 7px; background: white; border: 1px solid #e2dfd9; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; color: #0a0f1a; }
+    .kit-chip .kc-flag { font-size: 14px; }
 
     /* LAST 6 FINALS — 2×3 grid, big flags, central point of the page */
     .finals-wrap { max-width: 1100px; margin: 0 auto 8px; }
@@ -98,21 +101,26 @@
     .final-card.is-live { border-color: var(--orange); border-width: 2px; background: #fff8f7; }
     .final-year { font-family: "Cormorant Garamond", serif; font-size: clamp(24px, 2.6vw, 30px); font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 14px; letter-spacing: 1px; }
     .final-card.is-live .final-year { color: var(--orange); }
-    .final-row { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 2.5vw, 22px); width: 100%; }
-    .flag-badge { position: relative; width: clamp(88px, 10.5vw, 140px); height: clamp(88px, 10.5vw, 140px); flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+    .final-row { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; }
+    .flag-badge { position: relative; width: 88px; height: 88px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
     .flag-badge .flag-img { width: 100%; height: 100%; object-fit: cover; }
     .flag-badge .logo-disc { position: absolute; bottom: -4px; right: -4px; width: 40%; height: 40%; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; padding: 6px; }
     .flag-badge .logo-disc img { width: 100%; height: 100%; object-fit: contain; }
-    .final-score-big { font-family: "Cormorant Garamond", serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 50px; text-align: center; }
+    .final-score-big { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 44px; text-align: center; }
     .final-live-badge { background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 6px 10px; border-radius: 30px; animation: pulse 1.6s infinite; flex-shrink: 0; }
-    @media(max-width:820px){ #finals-list { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width:520px){ #finals-list { grid-template-columns: 1fr; } .final-card{padding:22px 10px;} }
+    @media(max-width:820px){
+      #finals-list { grid-template-columns: repeat(2, 1fr); }
+      .flag-badge { width: 120px; height: 120px; }
+      .final-score-big { font-size: 34px; }
+    }
+    @media(max-width:520px){
+      #finals-list { grid-template-columns: 1fr; }
+      .final-card { padding: 22px 10px; }
+      .flag-badge { width: 130px; height: 130px; }
+      .final-score-big { font-size: 38px; }
+    }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.55;} }
 
-    .methodology { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 22px 26px; margin-bottom: 36px; }
-    .methodology h3 { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; }
-    .methodology p, .methodology li { font-size: 12.5px; color: var(--sub); line-height: 1.65; }
-    .methodology ul { padding-left: 18px; }
 
     .li-cta { background: var(--ink, #0a0f1a); padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .li-cta div p:first-child { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
@@ -134,6 +142,13 @@
     .search-close { background: #f3f4f6; border: none; border-radius: 8px; width: 44px; height: 44px; cursor: pointer; font-size: 18px; color: #7a7a7a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
     .search-hint { font-size: 12px; color: rgba(255,255,255,.35); margin-bottom: 28px; padding-left: 4px; }
     .search-empty { color: rgba(255,255,255,.4); font-size: 15px; text-align: center; padding: 40px 0; }
+    .search-result { display: block; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; text-decoration: none; transition: background .15s; }
+    .search-result:hover { background: rgba(255,255,255,.12); }
+    .sr-section { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d4c4a8; margin-bottom: 4px; }
+    .sr-title { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; line-height: 1.3; }
+    .sr-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .sr-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .sr-tag { font-size: 10px; background: rgba(184,151,106,.25); color: #d4c4a8; padding: 2px 8px; border-radius: 10px; }
 
     @media(max-width:768px){
       nav { padding:0 16px; flex-wrap:wrap; }
@@ -245,16 +260,18 @@
 
 <main>
 
-  <p class="lead-text">
-    <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
-  </p>
-
-  <div class="stat-cards" id="stat-cards"></div>
+  <p class="lead-text"><strong>The brand story is bigger than the scoreline.</strong> Spain, the Euro 2024 champions, and Argentina, winners of the 2022 World Cup and the 2024 Copa América, meet in today's final at <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" target="_blank">MetLife Stadium</a>. Both squads are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike's 12 or Puma's 11, according to <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>.</p>
+  <p class="lead-text">Whichever side lifts the trophy, Adidas wins — a dynamic that has repeated through much of the tournament's history, as the six-final comparison below shows.</p>
 
   <div class="finals-wrap">
     <div class="finals-eyebrow">Last 6 World Cup Finals</div>
     <div id="finals-list"></div>
+    <div class="src-note" style="max-width:1100px;margin-left:auto;margin-right:auto;">
+      <strong>Source:</strong> match results — <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" target="_blank">Wikipedia</a> and <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" target="_blank">ESPN</a>. Kit sponsors — Argentina and Germany on Adidas since 2001 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" target="_blank">SoccerBible</a>); Italy on Puma, France on Adidas in 2006 (<a href="https://www.footyheadlines.com/2022/03/italy-puma-kit-history-return-to-adidas.html" target="_blank">Footy Headlines</a>). 2026 live status — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" target="_blank">FIFA Match Centre</a>.
+    </div>
   </div>
+
+  <div class="stat-cards" id="stat-cards"></div>
 
   <div class="section">
     <div class="section-title">The Kit Battle — Who Dresses the 48-Team World Cup</div>
@@ -301,27 +318,13 @@
   </div>
 
   <div class="section">
-    <div class="section-title">All 48 Teams, One Table — Who Dresses Who</div>
+    <div class="section-title">All 48 Teams, Who Dresses Who</div>
     <div class="section-divider"></div>
     <div class="section-sub">Every qualified nation and its kit sponsor, grouped by brand. Adidas, Nike and Puma dress 37 of 48 teams; ten smaller brands dress the rest.</div>
-    <div class="table-scroll">
-      <table class="kit-table" id="kit-table"></table>
-    </div>
+    <div class="kit-groups" id="kit-table"></div>
     <div class="src-note">
       <strong>Source:</strong> <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a> and <a href="https://www.nss-sports.com/en/kits/44855/2026-world-cup-brands-technical-sponsors" target="_blank">nss sports</a> for the Adidas/Nike/Puma field. Smaller-brand pairings individually confirmed: <a href="https://www.uzdaily.uz/en/uzbekistan-national-football-team-to-wear-7saber-kit-at-2026-fifa-world-cup/" target="_blank">Uzbekistan–7Saber (UzDaily)</a>, <a href="https://www.persianfootball.com/news/2026/05/13/iran-2026-world-cup-jersey-revealed/" target="_blank">Iran–Majid (PersianFootball)</a>, <a href="https://colombiaone.com/2026/04/08/saeta-haiti-world-cup-kit-2026/" target="_blank">Haiti–Saeta (Colombia One)</a>, <a href="https://houseofheat.co/ecuador-2026-world-cup-marathon-jerseys" target="_blank">Ecuador–Marathon (House of Heat)</a>.
     </div>
-  </div>
-
-  <div class="methodology">
-    <h3>Sources</h3>
-    <p style="margin-bottom:8px;">Every figure on this page links directly to its source at the point it appears.</p>
-    <ul>
-      <li>Sponsorship revenue ($2.8B) and total FIFA revenue target ($13B) — FIFA-confirmed figures reported by SportsPro and Ascendants.</li>
-      <li>Kit-brand team counts — Footy Headlines, September 2025, updated for the final 48-team field.</li>
-      <li>Germany's Adidas-to-Nike switch — Sportico and nss sports, both citing DFB and Nike statements.</li>
-      <li>Match date, venue and kickoff time — MetLife Stadium's own event listing.</li>
-      <li>Last 6 World Cup finals — results from <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" style="color:#4338ca;text-decoration:underline;" target="_blank">Wikipedia</a> and <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" style="color:#4338ca;text-decoration:underline;" target="_blank">ESPN</a>, including the <a href="https://en.wikipedia.org/wiki/2006_FIFA_World_Cup_final" style="color:#4338ca;text-decoration:underline;" target="_blank">2006 Italy–France final</a>. Kit sponsors: Argentina and Germany on Adidas continuously since 2001 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" style="color:#4338ca;text-decoration:underline;" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" style="color:#4338ca;text-decoration:underline;" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" style="color:#4338ca;text-decoration:underline;" target="_blank">SoccerBible</a>); Italy on Puma 2003–2022, France on Adidas 1972–2010 (<a href="https://www.footyheadlines.com/2022/03/italy-puma-kit-history-return-to-adidas.html" style="color:#4338ca;text-decoration:underline;" target="_blank">Footy Headlines</a>). 2026 final live status — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" style="color:#4338ca;text-decoration:underline;" target="_blank">FIFA Match Centre</a>.</li>
-    </ul>
   </div>
 
   <div class="li-cta">
@@ -355,12 +358,33 @@
 
 <script>
 document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('search-overlay').style.display='none';});
+document.getElementById('search-overlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
+var ARTICLES=[
+  {title:"Adidas Sponsors Both World Cup 2026 Finalists",url:"world-cup-2026-sponsorships.html",section:"Retail & E-Commerce",desc:"Spain and Argentina meet in the $2.8B World Cup 2026 final — both sponsored by Adidas, which outfits 14 of the 48 competing teams.",tags:["World Cup","Adidas","Nike","Puma","Sponsorship","Spain","Argentina"]},
+  {title:"The Circular Economy Tracker — Furniture, Fashion, Electronics, Buildings, Food",url:"/supply-chain/circular-economy-tracker.html",section:"Supply Chain",desc:"EU circular-economy regulation timeline with named European players across five sectors.",tags:["Circular Economy","ESPR","EU Regulation","Furniture","Fashion","Electronics","Building Materials","Food"]},
+  {title:"S&OP to IBP — The Evolution of Supply Chain Planning",url:"/supply-chain/sop-intelligence.html",section:"Supply Chain",desc:"From spreadsheet-based S&OP to AI-powered IBP — market data, maturity and strategic impact.",tags:["S&OP","IBP","Supply Chain Planning"]},
+  {title:"The Furniture Trap — What Fonq's Bankruptcy Reveals About Europe's Online Home Market",url:"furniture-market.html",section:"Retail & E-Commerce",desc:"Why pure-play online furniture retail in Europe keeps failing.",tags:["Online Retail","Furniture Market","Netherlands"]},
+  {title:"Sporting Goods Brands — European Market Analysis",url:"sporting-goods-brands.html",section:"Retail & E-Commerce",desc:"Competitive intelligence on major sporting goods brands with verified revenue data.",tags:["Sporting Goods","Nike","Adidas","Puma"]},
+  {title:"Luxury Marketplaces: Who Survived the 2023–2025 Crash",url:"luxury-marketplaces.html",section:"Retail & E-Commerce",desc:"Farfetch, MatchesFashion, YNAP, SSENSE — what happened, who survived.",tags:["Luxury","Marketplaces","Farfetch"]},
+  {title:"Marketplaces Compared: Rightmove, Uber, Vinted, Farfetch",url:"marketplaces.html",section:"Retail & E-Commerce",desc:"16 marketplaces across e-commerce, fashion, mobility, food delivery, travel.",tags:["Marketplaces","E-Commerce"]},
+  {title:"The Social Commerce Race — Platform Evolution 2015–2026",url:"social-commerce.html",section:"Retail & E-Commerce",desc:"TikTok Shop, Meta, Pinterest, YouTube — platform-by-platform data from 2015 to 2026.",tags:["Social Commerce","TikTok"]}
+];
+function openSearch(){var o=document.getElementById('search-overlay');o.style.display='block';document.getElementById('search-input').value='';document.getElementById('search-results').innerHTML='<div class="search-empty">Start typing to find articles…</div>';setTimeout(function(){document.getElementById('search-input').focus();},60);}
+document.getElementById('search-input').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();
+  var c=document.getElementById('search-results');
+  if(!q){c.innerHTML='<div class="search-empty">Start typing to find articles…</div>';return;}
+  var m=ARTICLES.filter(function(a){return(a.title+' '+a.section+' '+a.desc+' '+a.tags.join(' ')).toLowerCase().indexOf(q)!==-1;});
+  if(!m.length){c.innerHTML='<div class="search-empty">No results for "<strong style="color:rgba(255,255,255,.6)">'+q+'</strong>"</div>';return;}
+  c.innerHTML=m.map(function(a){var t=a.tags.slice(0,4).map(function(x){return'<span class="sr-tag">'+x+'</span>';}).join('');return'<a class="search-result" href="'+a.url+'" role="listitem"><div class="sr-section">'+a.section+'</div><div class="sr-title">'+a.title+'</div><div class="sr-desc">'+a.desc+'</div><div class="sr-tags">'+t+'</div></a>';}).join('');
+});
+document.getElementById('search-input').addEventListener('keydown',function(e){if(e.key==='Enter'){var f=document.querySelector('.search-result');if(f)window.location=f.href;}});
 
 const stats = [
-  { label: 'Sponsorship Revenue', value: '$2.8B', desc: 'vs $1.8B in 2022 — Source: FIFA / Ascendants' },
-  { label: 'Total FIFA Revenue', value: '$13B', desc: '2023–2026 cycle target — Source: SportsPro' },
-  { label: 'Adidas Kit Teams', value: '14 of 48', desc: 'Most of any brand — Source: Footy Headlines' },
-  { label: 'Prize Pool', value: '$871M', desc: '$12.5M minimum per team — Source: SportsPro' }
+  { label: 'Sponsorship Revenue', value: '$2.8B', desc: 'vs $1.8B in 2022 — <a href="https://ascendants.in/spotlight/fifa-2-8-billion-sponsorship-revenue-2026-world-cup/" target="_blank">FIFA / Ascendants</a>' },
+  { label: 'Total FIFA Revenue', value: '$13B', desc: '2023–2026 cycle target — <a href="https://www.sportspro.com/analysis/sponsorship-marketing/fifa-world-cup-2026-business-revenue-ticketing-broadcast-sponsorship/" target="_blank">SportsPro</a>' },
+  { label: 'Adidas Kit Teams', value: '14 of 48', desc: 'Most of any brand — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a>' },
+  { label: 'Prize Pool', value: '$871M', desc: '$12.5M minimum per team — <a href="https://www.sportspro.com/analysis/sponsorship-marketing/fifa-world-cup-2026-business-revenue-ticketing-broadcast-sponsorship/" target="_blank">SportsPro</a>' }
 ];
 (function() {
   var el = document.getElementById('stat-cards');
@@ -467,19 +491,19 @@ const kitOthers = [
 ];
 (function() {
   var el = document.getElementById('kit-table');
-  var html = '<thead><tr><th style="background:#0a0f1a;color:white;padding:11px 16px;text-align:left;font-size:11px;">Team</th><th style="background:#0a0f1a;color:white;padding:11px 16px;text-align:right;font-size:11px;">Kit Sponsor</th></tr></thead><tbody>';
+  var html = '';
   kitTeams.forEach(function(g) {
-    html += '<tr class="kt-group-row"><td colspan="2">'+g.group+'</td></tr>';
-    g.teams.forEach(function(t) {
-      html += '<tr><td class="kt-team">'+t+'</td><td class="kt-brand-cell"><img class="kt-logo" src="'+g.logo+'" alt="'+g.group.split(' ')[0]+' logo"/></td></tr>';
-    });
+    html += '<div class="kit-group">'+
+      '<div class="kit-group-head"><img class="kit-group-logo" src="'+g.logo+'" alt="'+g.group+' logo"/><span class="kit-group-count">'+g.group+'</span></div>'+
+      '<div class="kit-chips">'+
+      g.teams.map(function(t){return '<span class="kit-chip">'+t+'</span>';}).join('')+
+      '</div></div>';
   });
-  html += '<tr class="kt-group-row"><td colspan="2">10 Smaller Brands · 11 teams</td></tr>';
-  kitOthers.forEach(function(o) {
-    var brandCell = o.badge ? '<span class="kt-badge">'+o.brand+'</span>' : '<img class="kt-logo" src="'+o.logo+'" alt="'+o.brand+' logo"/>';
-    html += '<tr><td class="kt-team">'+o.flag+' '+o.team+'</td><td class="kt-brand-cell">'+brandCell+'</td></tr>';
-  });
-  html += '</tbody>';
+  html += '<div class="kit-group">'+
+    '<div class="kit-group-head"><span class="kit-group-badge">10 Smaller Brands</span><span class="kit-group-count">11 teams</span></div>'+
+    '<div class="kit-chips">'+
+    kitOthers.map(function(o){return '<span class="kit-chip"><span class="kc-flag">'+o.flag+'</span>'+o.team+' &middot; '+o.brand+'</span>';}).join('')+
+    '</div></div>';
   el.innerHTML = html;
 })();
 </script>
