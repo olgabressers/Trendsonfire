@@ -74,6 +74,30 @@
     .src-note { font-size: 11.5px; color: #9ca3af; padding: 10px 14px; background: #f9fafb; border-radius: 6px; border-left: 3px solid #e2dfd9; margin-top: 12px; line-height: 1.6; }
     .src-note a { color: #4338ca; text-decoration: underline; }
 
+    /* HANDOVER STRIP */
+    .handover { display: flex; align-items: stretch; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .handover-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 30px 20px; background: linear-gradient(135deg,#0a0f1a 0%,#1a2235 100%); position: relative; }
+    .handover-side.nike { background: linear-gradient(135deg,#e05c00 0%,#a34500 100%); }
+    .handover-crest { height: 54px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.3)); }
+    .handover-logo { height: 30px; width: auto; filter: brightness(0) invert(1); }
+    .handover-logo.nike-logo { height: 40px; }
+    .handover-year-tag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: white; background: rgba(0,0,0,.25); padding: 5px 12px; border-radius: 20px; }
+    .handover-mid { flex-shrink: 0; width: 120px; background: #b8976a; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; text-align: center; }
+    .handover-years { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 800; color: white; line-height: 1; }
+    .handover-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.85); margin-top: 2px; }
+    .handover-arrow { font-size: 20px; color: white; margin-top: 8px; }
+
+    /* KIT TABLE */
+    .kit-table { width: 100%; border-collapse: collapse; background: white; min-width: 520px; font-size: 13px; }
+    .kit-table .kt-group-row td { background: #0a0f1a; color: #b8976a; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 9px 16px; }
+    .kit-table tbody td { padding: 9px 16px; border-bottom: 1px solid #f1f3f5; vertical-align: middle; }
+    .kit-table .kt-team { font-size: 14px; font-weight: 600; color: var(--ink, #0a0f1a); }
+    .kit-table .kt-brand-cell { text-align: right; }
+    .kit-table .kt-logo { height: 22px; width: auto; max-width: 90px; object-fit: contain; }
+    .kit-table .kt-badge { display: inline-block; background: #f1f5f9; color: var(--ink, #0a0f1a); font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px; }
+    .kit-table tbody tr:hover { background: rgba(0,0,0,.02); }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+
     .methodology { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 22px 26px; margin-bottom: 36px; }
     .methodology h3 { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; }
     .methodology p, .methodology li { font-size: 12.5px; color: var(--sub); line-height: 1.65; }
@@ -111,6 +135,9 @@
       .sec-header { padding:32px 16px 0; }
       .vs-banner { flex-direction: column; }
       .vs-mid { padding: 10px; }
+      .handover { flex-direction: column; }
+      .handover-mid { width: 100%; flex-direction: row; padding: 10px; }
+      .handover-arrow { margin-top: 0; margin-left: 10px; transform: rotate(90deg); }
       .stat-cards { grid-template-columns: 1fr 1fr; }
       .li-cta { padding:24px 20px; flex-direction:column; align-items:flex-start; }
       .bar-label { min-width: 90px; font-size: 11px; }
@@ -237,8 +264,48 @@
   <div class="section">
     <div class="section-title">2026 Is Germany's Last World Cup in Adidas</div>
     <div class="section-divider"></div>
-    <div style="background:white;border:1px solid var(--rule, #e2dfd9);padding:22px 26px;font-size:14px;color:var(--text);line-height:1.75;">
+    <div class="handover">
+      <div class="handover-side">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DFB-Logo_2025.svg" alt="German Football Association crest" class="handover-crest"/>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/>
+      </div>
+      <div class="handover-mid">
+        <div class="handover-years">72</div>
+        <div class="handover-label">years<br/>together</div>
+        <div class="handover-arrow">&rarr;</div>
+      </div>
+      <div class="handover-side nike">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg" alt="Nike logo" class="handover-logo nike-logo"/>
+        <div class="handover-year-tag">FROM 2027</div>
+      </div>
+    </div>
+    <div style="background:white;border:1px solid var(--rule, #e2dfd9);border-top:none;padding:22px 26px;font-size:14px;color:var(--text);line-height:1.75;">
       <p>This tournament closes a 72-year chapter: Germany switches to Nike from 2027, in a deal reported at roughly &euro;100 million a year — about double Adidas' previous rate. Source: <a href="https://www.sportico.com/business/sponsorship/2026/germany-soccer-federation-adidas-nike-1234937241/" style="color:#4338ca;text-decoration:underline;" target="_blank">Sportico</a>, <a href="https://www.nss-sports.com/en/kits/36205/germany-adidas-nike-change" style="color:#4338ca;text-decoration:underline;" target="_blank">nss sports</a>. Even losing its founding federation, Adidas still outfits more 2026 World Cup teams than any other brand — including both finalists.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Where the $13B Comes From</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">FIFA's 2023–2026 commercial cycle revenue, by category — every figure a new record for the organisation.</div>
+    <div class="bar-chart" id="money-chart"></div>
+    <div class="src-note">
+      <strong>Source:</strong> Broadcasting and ticketing/hospitality figures — <a href="https://www.mappr.co/fifa-world-cup-2026-revenue/" target="_blank">Mappr, "How FIFA Turns the 2026 World Cup Into a $13 Billion Machine"</a>. Sponsorship — <a href="https://ascendants.in/spotlight/fifa-2-8-billion-sponsorship-revenue-2026-world-cup/" target="_blank">Ascendants, citing FIFA</a>. Ticketing &amp; hospitality is projected at up to $3B, a 216% jump from $950M at Qatar 2022, driven by the 48-team format's 104 matches.
+    </div>
+    <div class="src-note" style="margin-top:8px;">
+      <strong>Also confirmed:</strong> licensing &amp; merchandising revenue is separately estimated at &pound;530 million (reported in GBP by the source, not converted here) — <a href="https://www.mappr.co/fifa-world-cup-2026-revenue/" target="_blank">Mappr</a>.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">All 48 Teams, One Table — Who Dresses Who</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">Every qualified nation and its kit sponsor, grouped by brand. Adidas, Nike and Puma dress 37 of 48 teams; ten smaller brands dress the rest.</div>
+    <div class="table-scroll">
+      <table class="kit-table" id="kit-table"></table>
+    </div>
+    <div class="src-note">
+      <strong>Source:</strong> <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" target="_blank">Footy Headlines</a> and <a href="https://www.nss-sports.com/en/kits/44855/2026-world-cup-brands-technical-sponsors" target="_blank">nss sports</a> for the Adidas/Nike/Puma field. Smaller-brand pairings individually confirmed: <a href="https://www.uzdaily.uz/en/uzbekistan-national-football-team-to-wear-7saber-kit-at-2026-fifa-world-cup/" target="_blank">Uzbekistan–7Saber (UzDaily)</a>, <a href="https://www.persianfootball.com/news/2026/05/13/iran-2026-world-cup-jersey-revealed/" target="_blank">Iran–Majid (PersianFootball)</a>, <a href="https://colombiaone.com/2026/04/08/saeta-haiti-world-cup-kit-2026/" target="_blank">Haiti–Saeta (Colombia One)</a>, <a href="https://houseofheat.co/ecuador-2026-world-cup-marathon-jerseys" target="_blank">Ecuador–Marathon (House of Heat)</a>.
     </div>
   </div>
 
@@ -286,7 +353,6 @@
 document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('search-overlay').style.display='none';});
 
 const stats = [
-  { label: 'Final Kickoff', value: 'Jul 19, 3PM ET', desc: 'MetLife Stadium, East Rutherford NJ — Source: MetLife Stadium' },
   { label: 'Sponsorship Revenue', value: '$2.8B', desc: 'vs $1.8B in 2022 — Source: FIFA / Ascendants' },
   { label: 'Total FIFA Revenue', value: '$13B', desc: '2023–2026 cycle target — Source: SportsPro' },
   { label: 'Adidas Kit Teams', value: '14 of 48', desc: 'Most of any brand — Source: Footy Headlines' },
@@ -318,6 +384,63 @@ const kitData = [
       '<span class="bar-val">'+d.teams+' teams</span>'+
       '</div></div></div>';
   });
+  el.innerHTML = html;
+})();
+
+// ---- MONEY SPLIT CHART ----
+const moneyData = [
+  { cat:'Broadcasting', amt:'$4.2B+', pct:100, color:'#0a0f1a' },
+  { cat:'Sponsorship',  amt:'$2.8B',  pct:67,  color:'#b8976a' },
+  { cat:'Ticketing & Hospitality', amt:'up to $3B', pct:71, color:'#e05c00' }
+];
+(function() {
+  var el = document.getElementById('money-chart');
+  var html = '';
+  moneyData.forEach(function(d) {
+    html += '<div class="bar-row">'+
+      '<span class="bar-label">'+d.cat+'</span>'+
+      '<div class="bar-track">'+
+      '<div class="bar-fill" style="width:'+d.pct+'%;background:'+d.color+'">'+
+      '<span class="bar-val">'+d.amt+'</span>'+
+      '</div></div></div>';
+  });
+  el.innerHTML = html;
+})();
+
+// ---- 48-TEAM KIT TABLE ----
+const kitTeams = [
+  { group:'Adidas · 14 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg', teams:['🇩🇿 Algeria','🇸🇦 Saudi Arabia','🇦🇷 Argentina','🇧🇪 Belgium','🇨🇴 Colombia','🇨🇼 Curaçao','🇩🇪 Germany','🇯🇵 Japan','🇲🇽 Mexico','🇶🇦 Qatar','Scotland','🇪🇸 Spain','🇿🇦 South Africa','🇸🇪 Sweden'] },
+  { group:'Nike · 12 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg', teams:['🇦🇺 Australia','🇧🇷 Brazil','🇨🇦 Canada','🇰🇷 South Korea','🇭🇷 Croatia','🇫🇷 France','England','🇳🇴 Norway','🇳🇱 Netherlands','🇺🇸 United States','🇹🇷 Turkey','🇺🇾 Uruguay'] },
+  { group:'Puma · 11 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Puma-logo-(text).svg', teams:['🇦🇹 Austria','🇨🇮 Ivory Coast','🇪🇬 Egypt','🇬🇭 Ghana','🇲🇦 Morocco','🇳🇿 New Zealand','🇵🇾 Paraguay','🇵🇹 Portugal','🇨🇿 Czech Republic','🇸🇳 Senegal','🇨🇭 Switzerland'] }
+];
+const kitOthers = [
+  { flag:'🇧🇦', team:'Bosnia', brand:'Kelme', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kelme_new_logo.svg' },
+  { flag:'🇯🇴', team:'Jordan', brand:'Kelme', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kelme_new_logo.svg' },
+  { flag:'🇹🇳', team:'Tunisia', brand:'Kappa', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kappa_logo.svg' },
+  { flag:'🇵🇦', team:'Panama', brand:'Reebok', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Reebok_2019_logo.svg' },
+  { flag:'🇨🇩', team:'DR Congo', brand:'Umbro', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Umbro_logo_(current).svg' },
+  { flag:'🇺🇿', team:'Uzbekistan', brand:'7Saber', badge:true },
+  { flag:'🇮🇷', team:'Iran', brand:'Majid', badge:true },
+  { flag:'🇭🇹', team:'Haiti', brand:'Saeta', badge:true },
+  { flag:'🇨🇻', team:'Cape Verde', brand:'Capelli', badge:true },
+  { flag:'🇪🇨', team:'Ecuador', brand:'Marathon', badge:true },
+  { flag:'🇮🇶', team:'Iraq', brand:'Jako', badge:true }
+];
+(function() {
+  var el = document.getElementById('kit-table');
+  var html = '<thead><tr><th style="background:#0a0f1a;color:white;padding:11px 16px;text-align:left;font-size:11px;">Team</th><th style="background:#0a0f1a;color:white;padding:11px 16px;text-align:right;font-size:11px;">Kit Sponsor</th></tr></thead><tbody>';
+  kitTeams.forEach(function(g) {
+    html += '<tr class="kt-group-row"><td colspan="2">'+g.group+'</td></tr>';
+    g.teams.forEach(function(t) {
+      html += '<tr><td class="kt-team">'+t+'</td><td class="kt-brand-cell"><img class="kt-logo" src="'+g.logo+'" alt="'+g.group.split(' ')[0]+' logo"/></td></tr>';
+    });
+  });
+  html += '<tr class="kt-group-row"><td colspan="2">10 Smaller Brands · 11 teams</td></tr>';
+  kitOthers.forEach(function(o) {
+    var brandCell = o.badge ? '<span class="kt-badge">'+o.brand+'</span>' : '<img class="kt-logo" src="'+o.logo+'" alt="'+o.brand+' logo"/>';
+    html += '<tr><td class="kt-team">'+o.flag+' '+o.team+'</td><td class="kt-brand-cell">'+brandCell+'</td></tr>';
+  });
+  html += '</tbody>';
   el.innerHTML = html;
 })();
 </script>
