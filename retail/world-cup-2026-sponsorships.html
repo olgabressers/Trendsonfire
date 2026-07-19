@@ -36,12 +36,16 @@
     .sec-header p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 680px; margin-bottom: 16px; }
     .sec-meta { font-size: 12px; color: rgba(255,255,255,.5); display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 32px; }
 
-    /* VS BANNER — real square flags, brand logo on the right */
-    .vs-banner { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 6vw, 64px); max-width: 900px; margin: 0 auto 8px; padding: 8px 16px; }
-    .vs-side { display: flex; align-items: center; gap: 16px; }
-    .vs-flag-sq { width: clamp(70px, 12vw, 110px); height: clamp(70px, 12vw, 110px); object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,.35); border-radius: 6px; }
-    .vs-brand-logo { height: clamp(24px, 3.5vw, 34px); width: auto; }
-    .vs-mid { font-family: "Cormorant Garamond", serif; font-weight: 800; font-size: clamp(22px, 3vw, 30px); color: var(--orange); letter-spacing: 1px; flex-shrink: 0; }
+    /* VS BANNER — original size, flag image instead of solid color */
+    .vs-banner { display: flex; align-items: stretch; max-width: 1100px; margin: 0 auto; overflow: hidden; }
+    .vs-side { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px 16px; gap: 10px; position: relative; background-size: cover; background-position: center; }
+    .vs-side.spain { background-image: linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)), url(https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg); }
+    .vs-side.argentina { background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg); }
+    .vs-side img { height: 64px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+    .vs-name { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: white; }
+    .vs-kit { font-size: 11px; color: rgba(255,255,255,.9); font-weight: 600; }
+    .vs-mid { background: #0a0f1a; color: #b8976a; font-family: "Cormorant Garamond", serif; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center; padding: 0 22px; flex-shrink: 0; letter-spacing: 1px; }
+    .vs-tag { text-align: center; background: #060a12; color: rgba(255,255,255,.75); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 9px; max-width: 1100px; margin: 0 auto; }
 
     main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 64px; }
 
@@ -108,8 +112,6 @@
     .flag-badge .logo-disc img { width: 100%; height: 100%; object-fit: contain; }
     .final-score-big { font-family: "Cormorant Garamond", serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 50px; text-align: center; }
     .final-live-badge { background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 6px 10px; border-radius: 30px; animation: pulse 1.6s infinite; flex-shrink: 0; }
-    .final-amounts { display: flex; justify-content: center; gap: clamp(24px, 6vw, 52px); width: 100%; margin-top: 12px; }
-    .final-amount { font-size: 11px; font-weight: 700; color: var(--sub); text-align: center; width: clamp(88px, 10.5vw, 140px); }
     @media(max-width:820px){ #finals-list { grid-template-columns: repeat(2, 1fr); } }
     @media(max-width:520px){ #finals-list { grid-template-columns: 1fr; } .final-card{padding:22px 10px;} }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.55;} }
@@ -243,21 +245,25 @@
       <span>Updated 19 July 2026</span>
     </div>
   </div>
+  <div class="vs-banner">
+    <div class="vs-side spain">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_Spanish_Football_Federation_logo.svg" alt="Spain national football team crest"/>
+      <div class="vs-name">Spain</div>
+      <div class="vs-kit">Kit: Adidas</div>
+    </div>
+    <div class="vs-mid">VS</div>
+    <div class="vs-side argentina">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Argentine_Football_Association_logo.svg" alt="Argentina national football team crest"/>
+      <div class="vs-name">Argentina</div>
+      <div class="vs-kit">Kit: Adidas</div>
+    </div>
+  </div>
+  <div class="vs-tag">Final &middot; MetLife Stadium, East Rutherford NJ &middot; Kickoff 3:00pm ET / 19:00 GMT</div>
 </div>
 
 <main>
 
-  <div class="vs-banner">
-    <div class="vs-side">
-      <img class="vs-flag-sq" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"/>
-      <img class="vs-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo"/>
-    </div>
-    <div class="vs-mid">VS</div>
-    <div class="vs-side">
-      <img class="vs-flag-sq" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Flag of Argentina"/>
-      <img class="vs-brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo"/>
-    </div>
-  </div>
+  <div class="stat-cards" id="stat-cards"></div>
 
   <div class="finals-wrap">
     <div class="finals-eyebrow">Last 6 World Cup Finals</div>
@@ -267,8 +273,6 @@
   <div class="insight-banner">
     <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" style="color:#fff;text-decoration:underline;" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" style="color:#fff;text-decoration:underline;" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
   </div>
-
-  <div class="stat-cards" id="stat-cards"></div>
 
   <div class="section">
     <div class="section-title">The Kit Battle — Who Dresses the 48-Team World Cup</div>
@@ -337,7 +341,6 @@
       <li>Germany's Adidas-to-Nike switch — Sportico and nss sports, both citing DFB and Nike statements.</li>
       <li>Match date, venue and kickoff time — MetLife Stadium's own event listing.</li>
       <li>Last 6 World Cup finals — results from <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" style="color:#4338ca;text-decoration:underline;" target="_blank">Wikipedia</a> and <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" style="color:#4338ca;text-decoration:underline;" target="_blank">ESPN</a>, including the <a href="https://en.wikipedia.org/wiki/2006_FIFA_World_Cup_final" style="color:#4338ca;text-decoration:underline;" target="_blank">2006 Italy–France final</a>. Kit sponsors: Argentina and Germany on Adidas continuously since 2001 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" style="color:#4338ca;text-decoration:underline;" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" style="color:#4338ca;text-decoration:underline;" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" style="color:#4338ca;text-decoration:underline;" target="_blank">SoccerBible</a>); Italy on Puma 2003–2022, France on Adidas 1972–2010 (<a href="https://www.footyheadlines.com/2022/03/italy-puma-kit-history-return-to-adidas.html" style="color:#4338ca;text-decoration:underline;" target="_blank">Footy Headlines</a>). 2026 final live status — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" style="color:#4338ca;text-decoration:underline;" target="_blank">FIFA Match Centre</a>.</li>
-      <li>Annual kit-deal values shown under each final are the most recently reported figure for that federation–brand relationship, not necessarily the value in that specific year: Argentina–Adidas ~&euro;20M/yr (<a href="https://en.ilsole24ore.com/art/over-500-million-dollars-from-technical-sponsors-48-teams-worldwide-AId6VllD" style="color:#4338ca;text-decoration:underline;" target="_blank">Il Sole 24 Ore</a>); France–Nike &euro;50M/yr under the 2018&ndash;2026 deal (<a href="https://www.sportspro.com/news/france-nike-kit-supplier-fff-contract-extension-2034/" style="color:#4338ca;text-decoration:underline;" target="_blank">SportsPro</a>); Croatia–Nike &euro;1&ndash;2M/yr (<a href="https://www.croatiaweek.com/new-kit-sponsor-for-croatia-26-year-nike-deal-set-to-end/" style="color:#4338ca;text-decoration:underline;" target="_blank">Croatia Week</a>); Germany's prior Adidas rate ~&euro;50M/yr, implied by Nike's reported deal being "roughly double" (<a href="https://www.sportico.com/business/sponsorship/2026/germany-soccer-federation-adidas-nike-1234937241/" style="color:#4338ca;text-decoration:underline;" target="_blank">Sportico</a>); Italy–Puma &euro;20M/yr (<a href="https://www.sportspro.com/news/italy-adidas-puma-kit-supply-sponsorship-figc/" style="color:#4338ca;text-decoration:underline;" target="_blank">SportsPro</a>). Spain–Adidas, Netherlands–Nike and France's historical Adidas deal have no publicly disclosed annual value.</li>
     </ul>
   </div>
 
@@ -413,12 +416,12 @@ const ADIDAS = 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.
 const NIKE = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg';
 const PUMA = 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Puma-logo-%28text%29.svg';
 const finals = [
-  { year:2026, live:true, a:{flag:'🇪🇸',logo:ADIDAS,amt:'Not disclosed'}, b:{flag:'🇦🇷',logo:ADIDAS,amt:'~€20M/yr'} },
-  { year:2022, a:{flag:'🇦🇷',logo:ADIDAS,amt:'~€20M/yr'}, b:{flag:'🇫🇷',logo:NIKE,amt:'€50M/yr'}, score:'3–3' },
-  { year:2018, a:{flag:'🇫🇷',logo:NIKE,amt:'€50M/yr'}, b:{flag:'🇭🇷',logo:NIKE,amt:'€1–2M/yr'}, score:'4–2' },
-  { year:2014, a:{flag:'🇩🇪',logo:ADIDAS,amt:'~€50M/yr'}, b:{flag:'🇦🇷',logo:ADIDAS,amt:'~€20M/yr'}, score:'1–0' },
-  { year:2010, a:{flag:'🇪🇸',logo:ADIDAS,amt:'Not disclosed'}, b:{flag:'🇳🇱',logo:NIKE,amt:'Not disclosed'}, score:'1–0' },
-  { year:2006, a:{flag:'🇮🇹',logo:PUMA,amt:'€20M/yr'}, b:{flag:'🇫🇷',logo:ADIDAS,amt:'Not disclosed'}, score:'1–1' }
+  { year:2026, live:true, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS} },
+  { year:2022, a:{flag:'🇦🇷',logo:ADIDAS}, b:{flag:'🇫🇷',logo:NIKE}, score:'3–3' },
+  { year:2018, a:{flag:'🇫🇷',logo:NIKE}, b:{flag:'🇭🇷',logo:NIKE}, score:'4–2' },
+  { year:2014, a:{flag:'🇩🇪',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS}, score:'1–0' },
+  { year:2010, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇳🇱',logo:NIKE}, score:'1–0' },
+  { year:2006, a:{flag:'🇮🇹',logo:PUMA}, b:{flag:'🇫🇷',logo:ADIDAS}, score:'1–1' }
 ];
 (function() {
   var el = document.getElementById('finals-list');
@@ -431,7 +434,6 @@ const finals = [
       (f.live ? '<span class="final-live-badge">&#9679; LIVE</span>' : '<div class="final-score-big">'+f.score+'</div>')+
       '<div class="flag-badge"><span class="flag-emoji">'+f.b.flag+'</span><span class="logo-disc"><img src="'+f.b.logo+'" alt="sponsor logo"/></span></div>'+
       '</div>'+
-      '<div class="final-amounts"><span class="final-amount">'+f.a.amt+'</span><span class="final-amount">'+f.b.amt+'</span></div>'+
       '</div>';
   });
   el.innerHTML = html;
