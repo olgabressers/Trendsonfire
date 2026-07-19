@@ -98,23 +98,21 @@
     .kit-table tbody tr:hover { background: rgba(0,0,0,.02); }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
 
-    /* LAST 5 FINALS */
-    .final-row { display: flex; align-items: center; gap: 14px; background: white; border: 1px solid var(--rule, #e2dfd9); padding: 16px 20px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
-    .final-row.is-live { border-color: var(--orange); border-width: 2px; background: #fff8f7; }
-    .final-year { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 800; color: var(--ink, #0a0f1a); width: 64px; flex-shrink: 0; }
-    .final-team { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; justify-content: flex-end; }
-    .final-team.right { justify-content: flex-start; }
-    .final-flag { font-size: 22px; }
-    .final-country { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); }
-    .final-logo { height: 16px; width: auto; max-width: 50px; object-fit: contain; }
-    .final-champ .final-country { color: var(--orange); }
-    .final-mid { flex-shrink: 0; text-align: center; min-width: 90px; }
-    .final-score { font-size: 18px; font-weight: 800; color: var(--ink, #0a0f1a); }
-    .final-pens { font-size: 10px; color: var(--sub); font-weight: 600; }
-    .final-live-tag { display: inline-block; background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 4px 10px; border-radius: 20px; animation: pulse 1.6s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
-    .final-venue { font-size: 10.5px; color: var(--sub); width: 100%; text-align: center; margin-top: 6px; }
-    @media(max-width:640px){ .final-row{flex-wrap:wrap;} .final-year{width:auto;} .final-country{display:none;} }
+    /* LAST 5 FINALS — big, central, no clutter */
+    .finals-wrap { max-width: 900px; margin: 0 auto 48px; }
+    .finals-eyebrow { text-align: center; font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 22px; }
+    .final-card { display: flex; flex-direction: column; align-items: center; padding: 18px 10px 26px; border-bottom: 1px solid var(--rule, #e2dfd9); }
+    .final-card:last-child { border-bottom: none; }
+    .final-card.is-live .final-year { color: var(--orange); }
+    .final-year { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 800; color: var(--ink, #0a0f1a); margin-bottom: 12px; letter-spacing: 1px; }
+    .final-row { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 5vw, 48px); width: 100%; }
+    .flag-badge { position: relative; width: clamp(84px, 16vw, 132px); height: clamp(84px, 16vw, 132px); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .flag-badge .flag-emoji { font-size: clamp(64px, 13vw, 108px); line-height: 1; }
+    .flag-badge .logo-disc { position: absolute; bottom: -4px; right: -4px; width: 40%; height: 40%; background: white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; padding: 6px; }
+    .flag-badge .logo-disc img { width: 100%; height: 100%; object-fit: contain; }
+    .final-score-big { font-family: "Cormorant Garamond", serif; font-size: clamp(34px, 7vw, 56px); font-weight: 800; color: var(--ink, #0a0f1a); flex-shrink: 0; min-width: 90px; text-align: center; }
+    .final-live-badge { background: var(--orange); color: white; font-size: clamp(11px, 2vw, 14px); font-weight: 800; letter-spacing: 1.5px; padding: 8px 16px; border-radius: 30px; animation: pulse 1.6s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.55;} }
 
     .methodology { background: white; border: 1px solid var(--rule, #e2dfd9); padding: 22px 26px; margin-bottom: 36px; }
     .methodology h3 { font-size: 13px; font-weight: 700; color: var(--ink, #0a0f1a); margin-bottom: 8px; }
@@ -263,18 +261,13 @@
 
 <main>
 
-  <div class="insight-banner">
-    <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" style="color:#fff;text-decoration:underline;" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" style="color:#fff;text-decoration:underline;" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
+  <div class="finals-wrap">
+    <div class="finals-eyebrow">Last 5 World Cup Finals</div>
+    <div id="finals-list"></div>
   </div>
 
-  <div class="section">
-    <div class="section-title">The Last 5 World Cup Finals — Every Champion's Sponsor</div>
-    <div class="section-divider"></div>
-    <div class="section-sub">Every final since 2010, with the winner's kit brand. Adidas has been on the pitch in four of the last five — including both sides today.</div>
-    <div id="finals-list"></div>
-    <div class="src-note">
-      <strong>Source:</strong> Match results — <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" target="_blank">Wikipedia</a>, <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" target="_blank">ESPN</a>. Kit sponsors — Argentina and Germany on Adidas since 2001 and continuously through 2038 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" target="_blank">SoccerBible</a>). 2026 final live score — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" target="_blank">FIFA Match Centre</a>.
-    </div>
+  <div class="insight-banner">
+    <strong>The brand story is bigger than the scoreline.</strong> Spain (Euro 2024 champions) and Argentina (2022 world champions, 2024 Copa América winners) face off in the final at MetLife Stadium on 19 July 2026 — <a href="https://www.metlifestadium.com/events/detail/fifa-world-cup-2026-final" style="color:#fff;text-decoration:underline;" target="_blank">MetLife Stadium</a>. Both national teams are outfitted by Adidas, which supplies 14 of the 48 competing teams — more than Nike (12) or Puma (11) — <a href="https://www.footyheadlines.com/2025/09/2026-world-cup-kit-battle.html" style="color:#fff;text-decoration:underline;" target="_blank">Footy Headlines</a>. Whichever side lifts the trophy, Adidas wins.
   </div>
 
   <div class="stat-cards" id="stat-cards"></div>
@@ -294,8 +287,8 @@
     <div class="section-divider"></div>
     <div class="handover">
       <div class="handover-side">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DFB-Logo_2025.svg" alt="German Football Association crest" class="handover-crest"/>
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/DFB-Logo_2025.svg" alt="German Football Association crest" class="handover-crest"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/>
       </div>
       <div class="handover-mid">
         <div class="handover-years">72</div>
@@ -303,7 +296,7 @@
         <div class="handover-arrow">&rarr;</div>
       </div>
       <div class="handover-side nike">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg" alt="Nike logo" class="handover-logo nike-logo"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike logo" class="handover-logo nike-logo"/>
         <div class="handover-year-tag">FROM 2027</div>
       </div>
     </div>
@@ -345,6 +338,7 @@
       <li>Kit-brand team counts — Footy Headlines, September 2025, updated for the final 48-team field.</li>
       <li>Germany's Adidas-to-Nike switch — Sportico and nss sports, both citing DFB and Nike statements.</li>
       <li>Match date, venue and kickoff time — MetLife Stadium's own event listing.</li>
+      <li>Last 5 World Cup finals — results from <a href="https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final" style="color:#4338ca;text-decoration:underline;" target="_blank">Wikipedia</a> and <a href="https://www.espn.com/soccer/match/_/gameId/498139/croatia-france" style="color:#4338ca;text-decoration:underline;" target="_blank">ESPN</a>. Kit sponsors: Argentina and Germany on Adidas continuously since 2001 (<a href="https://news.sportslogos.net/2024/06/28/argentina-adidas-extend-kit-contract-until-2038/soccer/" style="color:#4338ca;text-decoration:underline;" target="_blank">SportsLogos.Net</a>); France and Croatia on Nike in 2018 (<a href="https://www.cnbc.com/2018/07/13/the-real-world-cup-final-isnt-france-vs-belgium-its-nike-vs-adidas.html" style="color:#4338ca;text-decoration:underline;" target="_blank">CNBC</a>); Netherlands on Nike in 2010 (<a href="https://www.soccerbible.com/performance/football-apparel/2010/04/netherlands-holland-home-2010-nike-football-shirt/" style="color:#4338ca;text-decoration:underline;" target="_blank">SoccerBible</a>). 2026 final live status — <a href="https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543" style="color:#4338ca;text-decoration:underline;" target="_blank">FIFA Match Centre</a>.</li>
     </ul>
   </div>
 
@@ -416,28 +410,26 @@ const kitData = [
 })();
 
 // ---- LAST 5 FINALS ----
-const ADIDAS = 'https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg';
-const NIKE = 'https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg';
+const ADIDAS = 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg';
+const NIKE = 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg';
 const finals = [
-  { year:2026, live:true, a:{flag:'🇪🇸',country:'Spain',logo:ADIDAS}, b:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, venue:'MetLife Stadium, New Jersey — final in progress' },
-  { year:2022, winner:'a', a:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, b:{flag:'🇫🇷',country:'France',logo:NIKE}, score:'3–3', pens:'Argentina won 4–2 on penalties', venue:'Lusail Stadium, Qatar' },
-  { year:2018, winner:'a', a:{flag:'🇫🇷',country:'France',logo:NIKE}, b:{flag:'🇭🇷',country:'Croatia',logo:NIKE}, score:'4–2', venue:'Luzhniki Stadium, Moscow' },
-  { year:2014, winner:'a', a:{flag:'🇩🇪',country:'Germany',logo:ADIDAS}, b:{flag:'🇦🇷',country:'Argentina',logo:ADIDAS}, score:'1–0', pens:'After extra time', venue:'Maracanã, Rio de Janeiro' },
-  { year:2010, winner:'a', a:{flag:'🇪🇸',country:'Spain',logo:ADIDAS}, b:{flag:'🇳🇱',country:'Netherlands',logo:NIKE}, score:'1–0', pens:'After extra time', venue:'Soccer City, Johannesburg' }
+  { year:2026, live:true, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS} },
+  { year:2022, a:{flag:'🇦🇷',logo:ADIDAS}, b:{flag:'🇫🇷',logo:NIKE}, score:'3–3' },
+  { year:2018, a:{flag:'🇫🇷',logo:NIKE}, b:{flag:'🇭🇷',logo:NIKE}, score:'4–2' },
+  { year:2014, a:{flag:'🇩🇪',logo:ADIDAS}, b:{flag:'🇦🇷',logo:ADIDAS}, score:'1–0' },
+  { year:2010, a:{flag:'🇪🇸',logo:ADIDAS}, b:{flag:'🇳🇱',logo:NIKE}, score:'1–0' }
 ];
 (function() {
   var el = document.getElementById('finals-list');
   var html = '';
   finals.forEach(function(f) {
-    var aChamp = f.winner === 'a' ? ' final-champ' : '';
-    var bChamp = f.winner === 'b' ? ' final-champ' : '';
-    html += '<div class="final-row'+(f.live ? ' is-live' : '')+'">'+
+    html += '<div class="final-card'+(f.live ? ' is-live' : '')+'">'+
       '<div class="final-year">'+f.year+'</div>'+
-      '<div class="final-team'+aChamp+'"><span class="final-country">'+f.a.country+'</span><span class="final-flag">'+f.a.flag+'</span><img class="final-logo" src="'+f.a.logo+'" alt="'+f.a.country+' kit sponsor logo"/></div>'+
-      '<div class="final-mid">'+(f.live ? '<span class="final-live-tag">&#9679; LIVE</span>' : '<div class="final-score">'+f.score+'</div>'+(f.pens ? '<div class="final-pens">'+f.pens+'</div>' : ''))+'</div>'+
-      '<div class="final-team right'+bChamp+'"><img class="final-logo" src="'+f.b.logo+'" alt="'+f.b.country+' kit sponsor logo"/><span class="final-flag">'+f.b.flag+'</span><span class="final-country">'+f.b.country+'</span></div>'+
-      '<div class="final-venue">'+f.venue+'</div>'+
-      '</div>';
+      '<div class="final-row">'+
+      '<div class="flag-badge"><span class="flag-emoji">'+f.a.flag+'</span><span class="logo-disc"><img src="'+f.a.logo+'" alt="sponsor logo"/></span></div>'+
+      (f.live ? '<span class="final-live-badge">&#9679; LIVE</span>' : '<div class="final-score-big">'+f.score+'</div>')+
+      '<div class="flag-badge"><span class="flag-emoji">'+f.b.flag+'</span><span class="logo-disc"><img src="'+f.b.logo+'" alt="sponsor logo"/></span></div>'+
+      '</div></div>';
   });
   el.innerHTML = html;
 })();
@@ -464,16 +456,16 @@ const moneyData = [
 
 // ---- 48-TEAM KIT TABLE ----
 const kitTeams = [
-  { group:'Adidas · 14 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Adidas_Logo.svg', teams:['🇩🇿 Algeria','🇸🇦 Saudi Arabia','🇦🇷 Argentina','🇧🇪 Belgium','🇨🇴 Colombia','🇨🇼 Curaçao','🇩🇪 Germany','🇯🇵 Japan','🇲🇽 Mexico','🇶🇦 Qatar','Scotland','🇪🇸 Spain','🇿🇦 South Africa','🇸🇪 Sweden'] },
-  { group:'Nike · 12 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Logo_NIKE.svg', teams:['🇦🇺 Australia','🇧🇷 Brazil','🇨🇦 Canada','🇰🇷 South Korea','🇭🇷 Croatia','🇫🇷 France','England','🇳🇴 Norway','🇳🇱 Netherlands','🇺🇸 United States','🇹🇷 Turkey','🇺🇾 Uruguay'] },
-  { group:'Puma · 11 teams', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Puma-logo-(text).svg', teams:['🇦🇹 Austria','🇨🇮 Ivory Coast','🇪🇬 Egypt','🇬🇭 Ghana','🇲🇦 Morocco','🇳🇿 New Zealand','🇵🇾 Paraguay','🇵🇹 Portugal','🇨🇿 Czech Republic','🇸🇳 Senegal','🇨🇭 Switzerland'] }
+  { group:'Adidas · 14 teams', logo:'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg', teams:['🇩🇿 Algeria','🇸🇦 Saudi Arabia','🇦🇷 Argentina','🇧🇪 Belgium','🇨🇴 Colombia','🇨🇼 Curaçao','🇩🇪 Germany','🇯🇵 Japan','🇲🇽 Mexico','🇶🇦 Qatar','Scotland','🇪🇸 Spain','🇿🇦 South Africa','🇸🇪 Sweden'] },
+  { group:'Nike · 12 teams', logo:'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', teams:['🇦🇺 Australia','🇧🇷 Brazil','🇨🇦 Canada','🇰🇷 South Korea','🇭🇷 Croatia','🇫🇷 France','England','🇳🇴 Norway','🇳🇱 Netherlands','🇺🇸 United States','🇹🇷 Turkey','🇺🇾 Uruguay'] },
+  { group:'Puma · 11 teams', logo:'https://upload.wikimedia.org/wikipedia/commons/a/ae/Puma-logo-%28text%29.svg', teams:['🇦🇹 Austria','🇨🇮 Ivory Coast','🇪🇬 Egypt','🇬🇭 Ghana','🇲🇦 Morocco','🇳🇿 New Zealand','🇵🇾 Paraguay','🇵🇹 Portugal','🇨🇿 Czech Republic','🇸🇳 Senegal','🇨🇭 Switzerland'] }
 ];
 const kitOthers = [
-  { flag:'🇧🇦', team:'Bosnia', brand:'Kelme', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kelme_new_logo.svg' },
-  { flag:'🇯🇴', team:'Jordan', brand:'Kelme', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kelme_new_logo.svg' },
-  { flag:'🇹🇳', team:'Tunisia', brand:'Kappa', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kappa_logo.svg' },
-  { flag:'🇵🇦', team:'Panama', brand:'Reebok', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Reebok_2019_logo.svg' },
-  { flag:'🇨🇩', team:'DR Congo', brand:'Umbro', logo:'https://commons.wikimedia.org/wiki/Special:FilePath/Umbro_logo_(current).svg' },
+  { flag:'🇧🇦', team:'Bosnia', brand:'Kelme', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4c/Kelme_new_logo.svg' },
+  { flag:'🇯🇴', team:'Jordan', brand:'Kelme', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4c/Kelme_new_logo.svg' },
+  { flag:'🇹🇳', team:'Tunisia', brand:'Kappa', logo:'https://upload.wikimedia.org/wikipedia/commons/3/32/Kappa_logo.svg' },
+  { flag:'🇵🇦', team:'Panama', brand:'Reebok', logo:'https://upload.wikimedia.org/wikipedia/commons/5/53/Reebok_2019_logo.svg' },
+  { flag:'🇨🇩', team:'DR Congo', brand:'Umbro', logo:'https://upload.wikimedia.org/wikipedia/commons/2/22/Umbro_logo_%28current%29.svg' },
   { flag:'🇺🇿', team:'Uzbekistan', brand:'7Saber', badge:true },
   { flag:'🇮🇷', team:'Iran', brand:'Majid', badge:true },
   { flag:'🇭🇹', team:'Haiti', brand:'Saeta', badge:true },
