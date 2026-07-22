@@ -76,13 +76,15 @@
     .src-note a { color: #4338ca; text-decoration: underline; }
 
     /* HANDOVER STRIP */
-    .handover { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 6vw, 56px); background: white; border: 1px solid #e2dfd9; padding: 40px 24px; }
-    .handover-side { flex-shrink: 0; }
-    .handover-logo { height: clamp(36px, 5vw, 56px); width: auto; }
-    .handover-mid { flex-shrink: 0; text-align: center; }
-    .handover-years { font-family: "Cormorant Garamond", Georgia, serif; font-size: 48px; font-weight: 500; color: #0a0f1a; line-height: 1; letter-spacing: -0.5px; }
-    .handover-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #1f1f1f; margin-top: 4px; }
-    .handover-year-tag { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #8b6a2f; margin-top: 8px; text-transform: uppercase; }
+    .handover { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 5vw, 48px); background: linear-gradient(135deg, #7a1015 0%, #4a0a0d 100%); padding: clamp(32px, 5vw, 52px) 24px; }
+    .handover-brand { flex-shrink: 0; text-align: center; }
+    .handover-badge { background: white; border-radius: 14px; padding: 16px 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.28); }
+    .handover-logo { height: clamp(30px, 4vw, 44px); width: auto; display: block; }
+    .handover-years { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: white; margin-top: 12px; }
+    .handover-crest { flex-shrink: 0; text-align: center; }
+    .handover-crest-badge { background: white; border-radius: 50%; width: clamp(72px, 8vw, 96px); height: clamp(72px, 8vw, 96px); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.28); margin: 0 auto; }
+    .handover-crest-img { width: 68%; height: 68%; object-fit: contain; }
+    .handover-crest-label { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: white; margin-top: 12px; }
 
     /* KIT TABLE */
     .kit-groups { display: flex; flex-direction: column; gap: 22px; }
@@ -292,23 +294,25 @@
     <div class="section-title">2026 Is Germany's Last World Cup in Adidas</div>
     <div class="section-divider"></div>
     <div class="handover">
-      <div class="handover-side">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/>
+      <div class="handover-brand">
+        <div class="handover-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas logo" class="handover-logo"/></div>
+        <div class="handover-years">70 Years &middot; To 2026</div>
       </div>
-      <div class="handover-mid">
-        <div class="handover-years">70</div>
-        <div class="handover-label">years together</div>
-        <div class="handover-year-tag">Nike from 2027</div>
+      <div class="handover-crest">
+        <div class="handover-crest-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/DFB-Logo_2025.svg" alt="German Football Association (DFB) crest" class="handover-crest-img"/></div>
+        <div class="handover-crest-label">Germany</div>
       </div>
-      <div class="handover-side">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike logo" class="handover-logo"/>
+      <div class="handover-brand">
+        <div class="handover-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike logo" class="handover-logo"/></div>
+        <div class="handover-years">From 2027</div>
       </div>
     </div>
     <div style="background:white;border:1px solid #e2dfd9;border-top:none;padding:22px 26px;font-size:14px;color:var(--text);line-height:1.75;">
-      <p>This tournament closes more than 70 years of Adidas kitting out Germany's national teams: the federation switches to Nike from 2027, in a deal reported at roughly &euro;100 million a year — about double Adidas' previous rate. Even losing its founding federation, Adidas still outfits more 2026 World Cup teams than any other brand — including both finalists.</p>
+      <p>Germany's national teams have worn Adidas since 1954, when West Germany lifted its first World Cup with Adidas founder Adi Dassler pitch-side — a partnership that has run more than 70 years. That chapter closes after the 2026 tournament: Nike takes over from 2027 in a deal reported at roughly &euro;100 million a year, about double Adidas' previous rate, running through 2034 and covering all German national representative teams, not only the senior men's side.</p>
+      <p style="margin-top:14px;">DFB leadership described Nike's offer as "by far the best economic offer," citing commitments to amateur sport and women's football development alongside the financial terms. The switch may close one of football's longest kit partnerships, but it does not change how Adidas shows up at the 2026 tournament itself — the brand still outfits more teams than any other kit supplier, including both World Cup finalists, Spain and Argentina.</p>
     </div>
     <div class="src-note">
-      <strong>Source:</strong> <a href="https://soccerscene.com.au/german-football-ends-70-years-with-adidas-for-nike-deal/" target="_blank">Soccerscene</a> &middot; <a href="https://www.sportico.com/business/sponsorship/2026/germany-soccer-federation-adidas-nike-1234937241/" target="_blank">Sportico</a> &middot; <a href="https://www.nss-sports.com/en/kits/36205/germany-adidas-nike-change" target="_blank">nss sports</a>
+      <strong>Source:</strong> <a href="https://soccerscene.com.au/german-football-ends-70-years-with-adidas-for-nike-deal/" target="_blank">Soccerscene</a> &middot; <a href="https://www.sportico.com/business/sponsorship/2026/germany-soccer-federation-adidas-nike-1234937241/" target="_blank">Sportico</a> &middot; <a href="https://www.nss-sports.com/en/kits/36205/germany-adidas-nike-change" target="_blank">nss sports</a> &middot; <a href="https://www.sportcal.com/features/deal-focus-nike-to-replace-adidas-as-germanys-kit-supplier-in-2027/" target="_blank">Sportcal</a>
     </div>
   </div>
 
