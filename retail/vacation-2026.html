@@ -304,8 +304,8 @@
     <div class="section-title">One in Three Dutch People Are Staying Home</div>
     <div class="section-divider"></div>
     <div class="section-sub">Higher prices are not just changing where the Dutch travel — for a growing share, they are cancelling the trip entirely.</div>
-    <div class="banner-photo" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png/500px-Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png');">
-      <div class="bp-cap">Staying in the Netherlands</div>
+    <div class="banner-photo" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%C3%88ze_und_Cap_Ferrat-Grande_Corniche.jpg/500px-%C3%88ze_und_Cap_Ferrat-Grande_Corniche.jpg');">
+      <div class="bp-cap">The Sea and Sun a Third of Dutch Households Are Giving Up</div>
     </div>
     <div class="stat-cards" style="grid-template-columns:repeat(3,1fr);margin-top:14px;margin-bottom:0;">
       <div class="stat-card">
@@ -328,19 +328,30 @@
       </div>
     </div>
     <div class="src-note">
-      <strong>Source:</strong> <a href="https://www.anwb.nl/vakantie/nieuws/2026/juli/vakantiemonitor-weer-minder-nederlanders-op-zomervakantie" target="_blank">ANWB Vakantiemonitor</a>, published 4 July 2026. <a href="https://pretwerk.nl/recreatie-actueel/een-op-vijf-nederlanders-slaat-vakantie-vaker-over-door-oplopende-prijzen/100336/" target="_blank">MarktEffect survey</a>, 509 Dutch respondents, fieldwork 16&ndash;27 March 2026, published 19 May 2026. Photo: aerial view of Amsterdam's canal ring — Wikimedia Commons.
+      <strong>Source:</strong> <a href="https://www.anwb.nl/vakantie/nieuws/2026/juli/vakantiemonitor-weer-minder-nederlanders-op-zomervakantie" target="_blank">ANWB Vakantiemonitor</a>, published 4 July 2026. <a href="https://pretwerk.nl/recreatie-actueel/een-op-vijf-nederlanders-slaat-vakantie-vaker-over-door-oplopende-prijzen/100336/" target="_blank">MarktEffect survey</a>, 509 Dutch respondents, fieldwork 16&ndash;27 March 2026, published 19 May 2026. Photo: Èze and Cap Ferrat, French Riviera — Wikimedia Commons.
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">Who's Cutting Back — and Who Isn't</div>
+    <div class="section-title">The Real Dutch Income Split</div>
     <div class="section-divider"></div>
-    <div class="section-sub">Deloitte's 2026 Summer Travel Survey finds rising prices are not falling evenly — higher earners are traveling more, and spending more, while other income groups pull back.</div>
+    <div class="section-sub">CBS's own income-quartile breakdown of summer 2025 vacation participation — the most recent official Dutch figures available, published 3 July 2026.</div>
+    <p class="lead-text" style="max-width:none;margin-bottom:20px;"><strong>The richest 25% of Dutch households take a summer holiday twice as often as the poorest 25%.</strong> CBS data shows 87.3% of people in the top income quartile went on summer holiday in 2025, against 41.4% in the bottom quartile — a 46-point gap. The third quartile sits at 74.3%, the second at 58.7%. Among those who do travel, low- and high-income households go equally often — an average of two trips each — so the gap is not about frequency once you can afford to go. It is about whether you go at all.</p>
+    <div class="bar-chart" id="nl-income-chart"></div>
+    <div class="src-note">
+      <strong>Source:</strong> <a href="https://www.cbs.nl/nl-nl/nieuws/2026/27/bijna-22-miljoen-zomervakanties-in-2025-frankrijk-populairste-bestemming" target="_blank">CBS, "Bijna 22 miljoen zomervakanties in 2025, Frankrijk populairste bestemming"</a>, published 3 July 2026. Overall, 72% of people aged 15+ in the Netherlands took a summer holiday in 2025 — a national average that hides the quartile-level gap above.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The American Split: Who's Cutting Back, Who Isn't</div>
+    <div class="section-divider"></div>
+    <div class="section-sub">This next dataset is US-specific — Deloitte's 2026 Summer Travel Survey covers American travelers only, in US dollars, and does not map onto Dutch or European income brackets. It's included to show the same rising-price story is bifurcating by income in the US too.</div>
     <div class="bar-chart">
       <div class="split-bars">
-        <div class="split-row"><span class="split-label">Under $100K income</span><div class="split-track"><div class="split-fill" style="width:100%;background:#aa151b;"><span class="sf-val">51% say travel is first cut when costs rise</span></div></div></div>
-        <div class="split-row"><span class="split-label">$100K&ndash;$199K income</span><div class="split-track"><div class="split-fill" style="width:65%;background:#b8976a;"><span class="sf-val">33% say the same</span></div></div></div>
-        <div class="split-row"><span class="split-label">$200K+ income</span><div class="split-track"><div class="split-fill" style="width:49%;background:var(--navy);"><span class="sf-val">25% say the same</span></div></div></div>
+        <div class="split-row"><span class="split-label">Under $100K (US)</span><div class="split-track"><div class="split-fill" style="width:100%;background:#aa151b;"><span class="sf-val">51% say travel is first cut when costs rise</span></div></div></div>
+        <div class="split-row"><span class="split-label">$100K&ndash;$199K (US)</span><div class="split-track"><div class="split-fill" style="width:65%;background:#b8976a;"><span class="sf-val">33% say the same</span></div></div></div>
+        <div class="split-row"><span class="split-label">$200K+ (US)</span><div class="split-track"><div class="split-fill" style="width:49%;background:var(--navy);"><span class="sf-val">25% say the same</span></div></div></div>
       </div>
     </div>
     <div class="src-note">
@@ -485,6 +496,28 @@ const euPriceData = [
   });
   el.innerHTML = html;
 })();
+
+const nlIncomeData = [
+  { label:'Top quartile', pct:87.3, color:'var(--navy)' },
+  { label:'3rd quartile', pct:74.3, color:'#8b6a2f' },
+  { label:'2nd quartile', pct:58.7, color:'#b8976a' },
+  { label:'Bottom quartile', pct:41.4, color:'#9ca3af' }
+];
+(function() {
+  var el = document.getElementById('nl-income-chart');
+  var max = 87.3;
+  var html = '';
+  nlIncomeData.forEach(function(d) {
+    var fw = (d.pct / max * 100).toFixed(1);
+    html += '<div class="bar-row">'+
+      '<span class="bar-label">'+d.label+'</span>'+
+      '<div class="bar-track">'+
+      '<div class="bar-fill" style="width:'+fw+'%;background:'+d.color+'">'+
+      '<span class="bar-val">'+d.pct+'% took a summer holiday</span>'+
+      '</div></div></div>';
+  });
+  el.innerHTML = html;
+})();
 </script>
 
 <!-- ARTICLE TAGS -->
@@ -496,6 +529,7 @@ const euPriceData = [
       <a href="/tags/#tag-airfares" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;">Airfares</a>
       <a href="/tags/#tag-package-holidays" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;">Package Holidays</a>
       <a href="/tags/#tag-consumer-spending" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;">Consumer Spending</a>
+      <a href="/tags/#tag-income-inequality" rel="tag" style="display:inline-block;background:#f7e8f3;color:#8b6a2f;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;text-decoration:none;border:1px solid #e8cfe1;">Income Inequality</a>
     </div>
   </div>
 </div>
