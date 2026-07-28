@@ -152,6 +152,28 @@
     .bar-fill{height:100%;display:flex;align-items:center;padding-left:10px;font-size:11.5px;font-weight:700;color:white;}
     .bar-val{width:80px;font-size:12.5px;font-weight:700;color:#0a0f1a;text-align:right;flex-shrink:0;}
 
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#0a1f5c;color:#E8A33D;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-name{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:12.5px;color:#0a0f1a;line-height:1.35;margin-top:2px;}
+    .org-entity{font-size:11px;color:#6b7280;margin-top:2px;line-height:1.3;}
+    .org-relation{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-bottom:8px;}
+    .org-relation.mgr{background:#fef3c7;color:#92400e;}
+    .org-relation.peer{background:#dbeafe;color:#1e3a8a;}
+    .org-relation.recruiter{background:#f3e8ff;color:#6b21a8;}
+    .org-relation.reports{background:#dcfce7;color:#166534;}
+    .org-relation.ref{background:#f3f4f6;color:#4b5563;}
+    .org-conf{font-size:11px;margin-top:auto;padding-top:10px;line-height:1.5;}
+    .org-conf a{color:#0a1f5c;font-weight:600;}
+    .org-conf .verified{color:#166534;font-weight:700;}
+    .org-conf .unverified{color:#8a5f16;font-weight:700;}
+
     /* MOBILE */
     @media(max-width:700px){
       #exec-summary{grid-template-columns:1fr !important;}
@@ -239,7 +261,8 @@
       <li style="margin-bottom:12px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 priorities this role is built around</a><br><span style="color:#555;font-size:12.5px;">Post-merger integration · technician shortage · connected-service growth.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-revenue" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Revenue &amp; competitor context</a><br><span style="color:#555;font-size:12.5px;">Carrier $21.7B vs. Trane $21.3B, Johnson Controls $23.6B; Europe HVAC set separately.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-voc" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Service reputation — Carrier vs. Viessmann</a><br><span style="color:#555;font-size:12.5px;">Viessmann BE 4.5 across 1,978 reviews vs. Carrier 3.2; reply time 1.7 vs. 76.8 days; complaint themes by %; Viessmann NL profile unclaimed.</span></li>
-      <li><a href="#sec-03" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:12.5px;">Six accountability areas mapped directly to Olga's experience.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-03" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:12.5px;">Six accountability areas mapped directly to Olga's experience.</span></li>
+      <li><a href="#sec-org" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Who's actually there — the org</a><br><span style="color:#555;font-size:12.5px;">Named people at Carrier &amp; Viessmann Benelux — likely hiring manager, peers, recruiter, reporting line to Europe.</span></li>
     </ol>
   </div>
 
@@ -850,6 +873,103 @@
       <div class="scope-olga"><strong>Olga's experience</strong>Led digital and organisational transformation at Richemont, Nike and adidas, including building and leading a 240+ person team across 26 European countries at Richemont — the same discipline of restructuring a service organisation without losing operational continuity.</div>
     </div>
   </div>
+
+  <!-- SECTION 05: ORG CHART -->
+  <div id="sec-org" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Org Intelligence</div>
+      <div class="sec-title">Who's actually there — Carrier &amp; Viessmann Benelux</div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;color:#4b5563;margin-bottom:16px;line-height:1.6;">Named individuals found through public web/trade-press research and LinkedIn public search — no name below is guessed or inferred. Photos are only shown where a legitimate public source exists (an official company page or press/trade coverage); everyone else is shown with an initials avatar and a link to their real, verified LinkedIn profile. Confidence is marked per person: <span class="verified" style="color:#166534;font-weight:700;">Verified</span> = confirmed by an independent source beyond a single data-broker listing. <span class="unverified" style="color:#8a5f16;font-weight:700;">Single-source</span> = only found on one aggregator (RocketReach-type site) — treat as a lead to confirm, not a fact.</div>
+
+  <div class="org-grid">
+
+    <div class="org-card">
+      <div class="org-relation reports">Reports up to (Europe)</div>
+      <div class="org-top">
+        <img class="org-photo" src="carrier-org-photos/thomas-donato.jpg" alt="Thomas Donato"/>
+        <div><div class="org-name">Thomas Donato</div><div class="org-title">President, Climate Solutions Europe</div><div class="org-entity">Carrier — the segment Benelux sits inside</div></div>
+      </div>
+      <div class="org-conf"><span class="verified">Verified</span> — official appointment. <a href="https://www.prnewswire.com/news-releases/carrier-announces-leadership-transition-for-its-climate-solutions-europe-segment-thomas-donato-appointed-302802456.html" target="_blank" rel="noopener">Carrier press release</a> · <a href="https://www.corporate.carrier.com/our-company/leadership-team/" target="_blank" rel="noopener">Carrier leadership page</a> (photo source)</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation mgr">Likely hiring manager</div>
+      <div class="org-top">
+        <div class="org-initials">MA</div>
+        <div><div class="org-name">Matthias van Ardenne</div><div class="org-title">Managing Director, Carrier &amp; Viessmann Benelux</div><div class="org-entity">Carrier — Benelux</div></div>
+      </div>
+      <div class="org-conf"><span class="verified">Verified</span> title (trade press quote) — <a href="https://www.installatie.nl/techniek/warmtepompen/nieuwe-viessmann-warmtepomp-mikt-op-snellere-installatie-en-energiemanagement/" target="_blank" rel="noopener">Installatie.nl</a>. LinkedIn shows Carrier as current employer, Benelux region (exact title not visible without login): <a href="https://www.linkedin.com/in/matthiasvanardenne/" target="_blank" rel="noopener">linkedin.com/in/matthiasvanardenne</a>. No public photo found anywhere.</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation peer">Direct scope overlap</div>
+      <div class="org-top">
+        <div class="org-initials">HL</div>
+        <div><div class="org-name">Harold Letteboer</div><div class="org-title">Director Service HVAC Benelux</div><div class="org-entity">Carrier Airconditioning Benelux B.V.</div></div>
+      </div>
+      <div class="org-conf"><span class="unverified">Single-source</span> — own LinkedIn headline. Title overlaps heavily with the open role — worth asking directly whether this is the predecessor, a peer, or a different scope. <a href="https://nl.linkedin.com/in/harold-letteboer-6205242a" target="_blank" rel="noopener">linkedin.com/in/harold-letteboer</a></div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation peer">Peer — Viessmann NL</div>
+      <div class="org-top">
+        <div class="org-initials">KH</div>
+        <div><div class="org-name">Kees de Haan</div><div class="org-title">Commercieel Directeur (Commercial Director)</div><div class="org-entity">Viessmann Nederland</div></div>
+      </div>
+      <div class="org-conf"><span class="unverified">Single-source</span> — data-broker listing citing his own profile data. <a href="https://nl.linkedin.com/in/kees-de-haan-057236114" target="_blank" rel="noopener">linkedin.com/in/kees-de-haan</a></div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation peer">Peer — CIAT service</div>
+      <div class="org-top">
+        <div class="org-initials">HG</div>
+        <div><div class="org-name">Heidi Grasmeijer-Luijer</div><div class="org-title">CIAT Service (Benelux) — title as listed: "LBPO"</div><div class="org-entity">Carrier CIAT Service</div></div>
+      </div>
+      <div class="org-conf"><span class="unverified">Single-source</span> — the only named CIAT-Benelux link found; not independently confirmed. Verify title before referencing.</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation recruiter">Posted this role</div>
+      <div class="org-top">
+        <div class="org-initials">HW</div>
+        <div><div class="org-name">Hans Westerman</div><div class="org-title">Talent Acquisition</div><div class="org-entity">Carrier</div></div>
+      </div>
+      <div class="org-conf"><span class="verified">Verified</span> — named as poster on the live job listing. <a href="https://www.linkedin.com/jobs/view/4435522330/" target="_blank" rel="noopener">LinkedIn job posting</a> · <a href="https://www.linkedin.com/in/hanswesterman/" target="_blank" rel="noopener">linkedin.com/in/hanswesterman</a></div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation ref">Adjacent — different entity</div>
+      <div class="org-top">
+        <div class="org-initials">EK</div>
+        <div><div class="org-name">Eric Karman</div><div class="org-title">CFO</div><div class="org-entity">Carrier Refrigeration Benelux B.V. — separate legal entity, not the HVAC service org</div></div>
+      </div>
+      <div class="org-conf"><span class="unverified">Single-source</span> — data-broker listing only. Included for completeness; not part of this role's org.</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation ref">Adjacent — NL sales</div>
+      <div class="org-top">
+        <div class="org-initials">ER</div>
+        <div><div class="org-name">Emil Root</div><div class="org-title">Sales Manager Netherlands</div><div class="org-entity">Carrier Airconditioning Benelux</div></div>
+      </div>
+      <div class="org-conf"><span class="unverified">Single-source</span> — data-broker listing only, not independently confirmed.</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation ref">Comparison — UK &amp; Ireland</div>
+      <div class="org-top">
+        <img class="org-photo" src="carrier-org-photos/pastor-casanova.jpg" alt="Pastor Casanova"/>
+        <div><div class="org-name">Pastor Casanova</div><div class="org-title">Managing Director, UK &amp; Ireland</div><div class="org-entity">Carrier / Toshiba / Viessmann — not Benelux</div></div>
+      </div>
+      <div class="org-conf"><span class="verified">Verified</span> — trade press photo/caption, cross-confirmed by Carrier's own UK news page. <a href="https://fmuk-online.co.uk/pastor-casanova-joins-carrier-as-new-md-for-uki/" target="_blank" rel="noopener">Facilities Management UK</a>. Shown only to illustrate the parallel country-MD structure Carrier runs elsewhere in Europe.</div>
+    </div>
+
+  </div>
+  <div class="src-note">This organisation chart is built for internal interview preparation only. Most names are sourced from a single public listing and should be treated as leads to verify, not confirmed facts — mark anything you can personally confirm before relying on it in the interview. No LinkedIn photos were scraped; the two photos shown come from an official Carrier corporate page and a UK trade-press article, both independently locatable at the links above.</div>
 
 </main>
 
