@@ -156,13 +156,19 @@
     .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
     @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-group-hdr{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0a1f5c;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #0a1f5c;}
+    .org-group-hdr:first-of-type{margin-top:0;}
     .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
-    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
     .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
     .org-initials{width:56px;height:56px;border-radius:50%;background:#0a1f5c;color:#E8A33D;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;}
+    .org-company.carrier{background:#0a1f5c;color:#E8A33D;}
+    .org-company.viessmann{background:#c8102e;color:#ffffff;}
+    .org-company.ciat{background:#4b5563;color:#ffffff;}
     .org-name{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
     .org-title{font-size:12.5px;color:#0a0f1a;line-height:1.35;margin-top:2px;}
-    .org-entity{font-size:11px;color:#6b7280;margin-top:2px;line-height:1.3;}
+    .org-entity{font-size:12.5px;color:#0a0f1a;font-weight:600;margin-top:3px;line-height:1.35;}
     .org-relation{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-bottom:8px;}
     .org-relation.mgr{background:#fef3c7;color:#92400e;}
     .org-relation.peer{background:#dbeafe;color:#1e3a8a;}
@@ -884,76 +890,55 @@
     </div>
   </div>
 
+  <div class="org-group-hdr">Benelux — Leadership (Carrier &amp; Viessmann combined)</div>
   <div class="org-grid">
-
-    <div class="org-card">
-      <div class="org-relation reports">Dotted-line manager — EMEA</div>
-      <div class="org-top">
-        <img class="org-photo" src="carrier-org-photos/alex-lampe.jpg" alt="Alex Lampe"/>
-        <div><div class="org-name">Alex Lampe</div><div class="org-title">Service Operations and Transformation Director EMEA</div><div class="org-entity">Carrier — UK-based, responsible for the smaller EMEA markets including Benelux</div></div>
-      </div>
-      <div class="org-conf"><a href="https://www.linkedin.com/in/alex-lampe-87496845" target="_blank" rel="noopener">linkedin.com/in/alex-lampe</a></div>
-    </div>
-
     <div class="org-card">
       <div class="org-relation mgr">Hiring manager</div>
       <div class="org-top">
         <img class="org-photo" src="carrier-org-photos/matthias-van-ardenne.jpg" alt="Matthias van Ardenne"/>
-        <div><div class="org-name">Matthias van Ardenne</div><div class="org-title">Service Director Benelux</div><div class="org-entity">Carrier &amp; Viessmann — Benelux</div></div>
+        <div>
+          <div class="org-company carrier">Carrier &amp; Viessmann</div>
+          <div class="org-name">Matthias van Ardenne</div><div class="org-title">Service Director Benelux</div><div class="org-entity">Benelux</div>
+        </div>
       </div>
       <div class="org-conf"><a href="https://www.linkedin.com/in/matthiasvanardenne/" target="_blank" rel="noopener">linkedin.com/in/matthiasvanardenne</a></div>
     </div>
+  </div>
 
+  <div class="org-group-hdr">Benelux — Carrier</div>
+  <div class="org-grid">
     <div class="org-card">
       <div class="org-relation interview">Next interview — tomorrow</div>
       <div class="org-top">
-        <div class="org-initials">FW</div>
-        <div><div class="org-name">Frank Winters</div><div class="org-title">Service Director</div><div class="org-entity">Carrier</div></div>
+        <img class="org-photo" src="carrier-org-photos/frank-winters.jpg" alt="Frank Winters"/>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Frank Winters</div><div class="org-title">Service Director</div><div class="org-entity">Benelux</div>
+        </div>
       </div>
-      <div class="org-conf"><a href="https://www.linkedin.com/in/frank-winters-a5ba763" target="_blank" rel="noopener">linkedin.com/in/frank-winters</a></div>
-    </div>
-
-    <div class="org-card">
-      <div class="org-relation ref">Segment context</div>
-      <div class="org-top">
-        <img class="org-photo" src="carrier-org-photos/thomas-donato.jpg" alt="Thomas Donato"/>
-        <div><div class="org-name">Thomas Donato</div><div class="org-title">President, Climate Solutions Europe</div><div class="org-entity">Carrier — the segment Benelux sits inside; not the direct reporting line, which runs through Alex Lampe above</div></div>
-      </div>
-      <div class="org-conf"><a href="https://www.corporate.carrier.com/our-company/leadership-team/" target="_blank" rel="noopener">Carrier leadership page</a></div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/frank-winters-a5ba763" target="_blank" rel="noopener">linkedin.com/in/frank-winters</a> · photo: press archive, verify at interview</div>
     </div>
 
     <div class="org-card">
       <div class="org-relation peer">Peer — Service HVAC</div>
       <div class="org-top">
         <div class="org-initials">HL</div>
-        <div><div class="org-name">Harold Letteboer</div><div class="org-title">Director Service HVAC Benelux</div><div class="org-entity">Carrier Airconditioning Benelux B.V.</div></div>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Harold Letteboer</div><div class="org-title">Director Service HVAC Benelux</div><div class="org-entity">Carrier Airconditioning Benelux B.V.</div>
+        </div>
       </div>
       <div class="org-conf"><a href="https://nl.linkedin.com/in/harold-letteboer-6205242a" target="_blank" rel="noopener">linkedin.com/in/harold-letteboer</a></div>
-    </div>
-
-    <div class="org-card">
-      <div class="org-relation peer">Peer — Viessmann NL</div>
-      <div class="org-top">
-        <div class="org-initials">KH</div>
-        <div><div class="org-name">Kees de Haan</div><div class="org-title">Commercieel Directeur (Commercial Director)</div><div class="org-entity">Viessmann Nederland</div></div>
-      </div>
-      <div class="org-conf"><a href="https://nl.linkedin.com/in/kees-de-haan-057236114" target="_blank" rel="noopener">linkedin.com/in/kees-de-haan</a></div>
-    </div>
-
-    <div class="org-card">
-      <div class="org-relation peer">Peer — CIAT service</div>
-      <div class="org-top">
-        <div class="org-initials">HG</div>
-        <div><div class="org-name">Heidi Grasmeijer-Luijer</div><div class="org-title">CIAT Service (Benelux) — title as listed: "LBPO"</div><div class="org-entity">Carrier CIAT Service</div></div>
-      </div>
-      <div class="org-conf">&nbsp;</div>
     </div>
 
     <div class="org-card">
       <div class="org-relation ref">Adjacent — different entity</div>
       <div class="org-top">
         <div class="org-initials">EK</div>
-        <div><div class="org-name">Eric Karman</div><div class="org-title">CFO</div><div class="org-entity">Carrier Refrigeration Benelux B.V. — separate legal entity, not the HVAC service org</div></div>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Eric Karman</div><div class="org-title">CFO</div><div class="org-entity">Carrier Refrigeration Benelux B.V.</div>
+        </div>
       </div>
       <div class="org-conf">&nbsp;</div>
     </div>
@@ -962,20 +947,82 @@
       <div class="org-relation ref">Adjacent — NL sales</div>
       <div class="org-top">
         <div class="org-initials">ER</div>
-        <div><div class="org-name">Emil Root</div><div class="org-title">Sales Manager Netherlands</div><div class="org-entity">Carrier Airconditioning Benelux</div></div>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Emil Root</div><div class="org-title">Sales Manager Netherlands</div><div class="org-entity">Carrier Airconditioning Benelux</div>
+        </div>
       </div>
       <div class="org-conf">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="org-group-hdr">Benelux — Viessmann</div>
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-relation peer">Peer — Viessmann NL</div>
+      <div class="org-top">
+        <div class="org-initials">KH</div>
+        <div>
+          <div class="org-company viessmann">Viessmann</div>
+          <div class="org-name">Kees de Haan</div><div class="org-title">Commercieel Directeur (Commercial Director)</div><div class="org-entity">Viessmann Nederland</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://nl.linkedin.com/in/kees-de-haan-057236114" target="_blank" rel="noopener">linkedin.com/in/kees-de-haan</a></div>
+    </div>
+  </div>
+
+  <div class="org-group-hdr">Benelux — CIAT</div>
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-relation peer">Peer — CIAT service</div>
+      <div class="org-top">
+        <div class="org-initials">HG</div>
+        <div>
+          <div class="org-company ciat">CIAT</div>
+          <div class="org-name">Heidi Grasmeijer-Luijer</div><div class="org-title">CIAT Service — title as listed: "LBPO"</div><div class="org-entity">Carrier CIAT Service</div>
+        </div>
+      </div>
+      <div class="org-conf">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="org-group-hdr">Outside Benelux — reporting line &amp; context</div>
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-relation reports">Dotted-line manager — EMEA</div>
+      <div class="org-top">
+        <img class="org-photo" src="carrier-org-photos/alex-lampe.jpg" alt="Alex Lampe"/>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Alex Lampe</div><div class="org-title">Service Operations and Transformation Director EMEA</div><div class="org-entity">UK-based</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/alex-lampe-87496845" target="_blank" rel="noopener">linkedin.com/in/alex-lampe</a></div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-relation ref">Segment context</div>
+      <div class="org-top">
+        <img class="org-photo" src="carrier-org-photos/thomas-donato.jpg" alt="Thomas Donato"/>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Thomas Donato</div><div class="org-title">President, Climate Solutions Europe</div><div class="org-entity">Europe segment</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.corporate.carrier.com/our-company/leadership-team/" target="_blank" rel="noopener">Carrier leadership page</a></div>
     </div>
 
     <div class="org-card">
       <div class="org-relation ref">Comparison — UK &amp; Ireland</div>
       <div class="org-top">
         <img class="org-photo" src="carrier-org-photos/pastor-casanova.jpg" alt="Pastor Casanova"/>
-        <div><div class="org-name">Pastor Casanova</div><div class="org-title">Managing Director, UK &amp; Ireland</div><div class="org-entity">Carrier / Toshiba / Viessmann — not Benelux</div></div>
+        <div>
+          <div class="org-company carrier">Carrier</div>
+          <div class="org-name">Pastor Casanova</div><div class="org-title">Managing Director, UK &amp; Ireland</div><div class="org-entity">UK &amp; Ireland</div>
+        </div>
       </div>
       <div class="org-conf"><a href="https://fmuk-online.co.uk/pastor-casanova-joins-carrier-as-new-md-for-uki/" target="_blank" rel="noopener">Facilities Management UK</a></div>
     </div>
-
   </div>
 
 </main>
