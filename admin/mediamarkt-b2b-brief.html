@@ -127,6 +127,21 @@
     .kpi-row.two{grid-template-columns:repeat(2,1fr);}
     @media(max-width:560px){.kpi-row.two{grid-template-columns:1fr;}}
 
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#6e0d0d;color:#e3a730;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#6e0d0d;color:#e3a730;}
+    .org-name{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:12.5px;color:#0a0f1a;line-height:1.35;margin-top:2px;}
+    .org-entity{font-size:12.5px;color:#0a0f1a;font-weight:600;margin-top:3px;line-height:1.35;}
+    .org-conf{font-size:11px;margin-top:auto;padding-top:10px;line-height:1.5;}
+    .org-conf a{color:#6e0d0d;font-weight:600;}
+
     /* MOBILE */
     @media(max-width:700px){
       #exec-summary{grid-template-columns:1fr !important;}
@@ -169,6 +184,7 @@
     <h1>MediaMarkt Benelux: <em>B2B built from 7 stores to 20 hubs — still 12% of the business</em></h1>
     <p>€18.4B in group sales over nine months, adjusted EBIT up 22%, online at 28.2% of sales. Inside that, a Netherlands B2B unit — MediaMarkt Zakelijk — that launched in seven stores in 2019 and now runs 25 specialists across roughly 20 hubs. The role: one commercial B2B framework across hardware, software, services and payment, full P&amp;L accountability, reporting to the Chief Commercial Officer.</p>
     <div class="meta">
+      <span><a href="https://www.linkedin.com/jobs/view/4388085283/" target="_blank" rel="noopener" style="color:#e3a730;font-weight:700;">Job posting on LinkedIn &rarr;</a></span>
       <span>Sources: Ceconomy Q3/9M FY2025/26 results (30 Jul 2026), Ceconomy FY2025 results, Wikipedia (Ceconomy, MediaMarkt), careers.mediamarktsaturn.com, emerce.nl, dutchitchannel.nl</span>
       <span>Updated 11 August 2026</span>
     </div>
@@ -372,34 +388,17 @@
   <div class="split-row">
     <div class="split-card accent">
       <div class="split-num">20</div>
-      <div class="split-label">Hubs in the Netherlands today</div>
-      <div class="split-desc">Grown from 7 stores at MediaMarkt Zakelijk's May 2019 launch (Amsterdam ArenA, Utrecht Hoog Catharijne, Den Haag, Rotterdam Centrum, Breda, Tilburg, Eindhoven Ekkersrijt) plus an online B2B channel.</div>
+      <div class="split-label">B2B hubs in the Netherlands today</div>
+      <div class="split-desc">Grown from 7 stores at MediaMarkt Zakelijk's May 2019 launch (Amsterdam ArenA, Utrecht Hoog Catharijne, Den Haag, Rotterdam Centrum, Breda, Tilburg, Eindhoven Ekkersrijt) plus an online B2B channel. As of a 2022 trade-press count, 10 of the Netherlands' 50 MediaMarkt stores served the business market — the network has since grown to ~20 hubs per the current job posting.</div>
     </div>
     <div class="split-card">
-      <div class="split-num">87</div>
-      <div class="split-label">MediaMarkt Business stores, Spain</div>
-      <div class="split-desc">Grew from 10 to 87 stores within three years under the same MediaMarkt Business brand — also live in Italy, Belgium and Germany. The scale precedent for the Benelux build-out.</div>
+      <div class="split-num">32</div>
+      <div class="split-label">Total MediaMarkt stores, Belgium</div>
+      <div class="split-desc">Belgium runs its own MediaMarkt Business model — not hub-based like the Netherlands, but a self-service B2B portal (portalb2b.mediamarkt.be) for employee reward programmes, home-office equipment and business gifting, billed on a consolidated invoice with deferred payment.</div>
     </div>
   </div>
-
-  <div class="bar-chart" style="margin-top:14px;">
-    <div class="bar-row">
-      <div class="bar-label">NL hubs, 2019 launch</div>
-      <div class="bar-track"><div class="bar-fill" style="width:8%;background:#c7bdb5;color:#0a0f1a;">7</div></div>
-      <div class="bar-val">7</div>
-    </div>
-    <div class="bar-row">
-      <div class="bar-label">NL hubs, today</div>
-      <div class="bar-track"><div class="bar-fill" style="width:23%;background:#6e0d0d;">20</div></div>
-      <div class="bar-val">20</div>
-    </div>
-    <div class="bar-row">
-      <div class="bar-label">Spain, 3 years post-launch</div>
-      <div class="bar-track"><div class="bar-fill" style="width:100%;background:#e3a730;color:#0a0f1a;">87</div></div>
-      <div class="bar-val">87</div>
-    </div>
-  </div>
-  <div class="src-note"><strong>Sources:</strong> <a href="https://www.dutchitchannel.nl/news/80477/mediamarkt-nederland-richt-zich-op-zakelijke-markt" target="_blank" rel="noopener">Dutch IT Channel</a>, <a href="https://www.emerce.nl/nieuws/mediamarkt-start-online-b2b-diensten-mkb" target="_blank" rel="noopener">Emerce</a> — 2019 launch coverage · <a href="https://careers.mediamarktsaturn.com/MediaMarktNL/job/Rotterdam-Head-of-B2B-3072-AP/1376828933/" target="_blank" rel="noopener">Official job posting</a> — current hub count &amp; international precedent</div>
+  <div class="src-note"><strong>Sources:</strong> <a href="https://www.dutchitchannel.nl/news/80477/mediamarkt-nederland-richt-zich-op-zakelijke-markt" target="_blank" rel="noopener">Dutch IT Channel</a>, <a href="https://www.emerce.nl/nieuws/mediamarkt-start-online-b2b-diensten-mkb" target="_blank" rel="noopener">Emerce</a> — 2019 NL launch coverage · <a href="https://careers.mediamarktsaturn.com/MediaMarktNL/job/Rotterdam-Head-of-B2B-3072-AP/1376828933/" target="_blank" rel="noopener">Official job posting</a> — current hub count · <a href="https://www.retaildetail.nl/news/elektro/mediamarkt-opent-drie-nieuwe-winkels-in-belgie/" target="_blank" rel="noopener">RetailDetail</a> — Belgium store count · <a href="https://www.mediamarkt.be/nl/specials/mediamarkt-business/platform" target="_blank" rel="noopener">mediamarkt.be — MediaMarkt Business platform</a></div>
+  <div class="transform-box" style="margin-top:14px;">The two Benelux markets run structurally different B2B models today: the Netherlands is a physical-hub-plus-account-manager model built for SME procurement; Belgium is a self-service digital portal built for employee benefits and gifting. Unifying the two — the "international B2B strategy within the Benelux" named in the role's own posting — is the structural task, not replicating a model from outside the region.</div>
 
   <!-- CUSTOMER VIEW -->
   <div id="sec-customers" class="sec-header">
@@ -410,37 +409,78 @@
     </div>
   </div>
 
-  <div class="scope-grid" style="grid-template-columns:repeat(3,1fr);">
-    <div class="scope-card">
-      <div class="scope-label">Office</div>
-      <div class="scope-desc">Core segment since the 2019 launch — the original 7 hubs were chosen to be near dense office clusters.</div>
+  <div class="stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:8px;">
+    <div class="s-card">
+      <div class="s-lbl">NL Stores Serving Business Market</div>
+      <div class="s-num">10 / 50</div>
+      <div class="s-src">2022 count. <a href="https://www.of.nl/mediamarkt-leeuwarden-ook-succesvol-in-b2b-wij-gaan-voor-langdurige-relaties/" target="_blank" rel="noopener">of.nl, MediaMarkt Leeuwarden B2B feature</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Hospitality</div>
-      <div class="scope-desc">Hotels and food-service businesses — named explicitly among the demand MediaMarkt Zakelijk saw at its Amsterdam ArenA hub.</div>
+    <div class="s-card">
+      <div class="s-lbl">Customer Base Growth</div>
+      <div class="s-num">2x+</div>
+      <div class="s-src">Business customer base more than doubled over the two years to 2022 — the last publicly reported growth figure. <a href="https://www.of.nl/mediamarkt-leeuwarden-ook-succesvol-in-b2b-wij-gaan-voor-langdurige-relaties/" target="_blank" rel="noopener">of.nl</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Healthcare</div>
-      <div class="scope-desc">Hospitals among the large accounts approaching the Amsterdam ArenA hub directly, ahead of a formal sales motion.</div>
-    </div>
-    <div class="scope-card">
-      <div class="scope-label">Education</div>
-      <div class="scope-desc">One of six sectors MediaMarkt Business lists as a target vertical on its own commercial site.</div>
-    </div>
-    <div class="scope-card">
-      <div class="scope-label">Construction</div>
-      <div class="scope-desc">One of six sectors MediaMarkt Business lists as a target vertical on its own commercial site.</div>
-    </div>
-    <div class="scope-card">
-      <div class="scope-label">Start-up</div>
-      <div class="scope-desc">One of six sectors MediaMarkt Business lists as a target vertical on its own commercial site.</div>
+    <div class="s-card">
+      <div class="s-lbl">Named Reference Customers, NL</div>
+      <div class="s-num">5+</div>
+      <div class="s-src">Published by MediaMarkt itself. <a href="https://www.mediamarkt.nl/nl/specials/mediamarkt-business/klantreferenties" target="_blank" rel="noopener">mediamarkt.nl — client references</a></div>
     </div>
   </div>
-  <div class="src-note"><strong>Sector list source:</strong> <a href="https://www.mediamarkt.nl/nl/specials/mediamarkt-business" target="_blank" rel="noopener">mediamarkt.nl/specials/mediamarkt-business</a> · <strong>Amsterdam ArenA hub demand:</strong> interview with Redouan El Amraoui, Manager MediaMarkt Zakelijk — named ING, Deutsche Bank, hotels, AMC hospital and ABN AMRO among nearby large employers approaching the hub directly.</div>
+  <div class="src-note" style="margin-bottom:16px;">No current total NL business-customer count is publicly disclosed — the 2022 figures above are the most recent published, and are labelled by year rather than presented as current.</div>
+
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Sector</th>
+          <th>What they buy from MediaMarkt Business</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Draftec</strong></td>
+          <td>Engineering</td>
+          <td>Fast service and product supply, self-described by MediaMarkt as the core of the relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Go! Kinderopvang</strong></td>
+          <td>Education / childcare</td>
+          <td>White-goods (witgoed) solutions across its childcare locations</td>
+        </tr>
+        <tr>
+          <td><strong>Senioren Tab</strong></td>
+          <td>Health-tech for seniors</td>
+          <td>Smartphones and tablets</td>
+        </tr>
+        <tr>
+          <td><strong>Tutto Bello!</strong></td>
+          <td>Horeca (hospitality)</td>
+          <td>Christmas gift packages (kerstpakketten) for staff and clients</td>
+        </tr>
+        <tr>
+          <td><strong>Zókora</strong></td>
+          <td>Logistics &amp; transport</td>
+          <td>General electronics supply</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note"><strong>Source:</strong> <a href="https://www.mediamarkt.nl/nl/specials/mediamarkt-business/klantreferenties" target="_blank" rel="noopener">mediamarkt.nl — Referenties van onze zakelijke klanten</a> — MediaMarkt's own published customer-reference page. Sectors as categorised by MediaMarkt; wording condensed from the original Dutch.</div>
+
+  <div style="margin:20px 0 8px;">
+    <div style="font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6e0d0d;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid #e2dfd9;">Also served — sectors named by MediaMarkt Business as target verticals (no customer names published)</div>
+    <div class="scope-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="scope-card"><div class="scope-label">Office</div></div>
+      <div class="scope-card"><div class="scope-label">Construction</div></div>
+      <div class="scope-card"><div class="scope-label">Start-up</div></div>
+    </div>
+  </div>
+  <div class="src-note"><strong>Amsterdam ArenA hub demand (qualitative, no customer names published there):</strong> a trade-press interview with MediaMarktSaturn's international B2B team described nearby large employers — ING, Deutsche Bank, hotels, AMC hospital and ABN AMRO — approaching that hub directly. Source: <a href="https://www.baaz.nl/mediamarkt-zakelijk-ontzorgd-snel-en-betrouwbaar" target="_blank" rel="noopener">Baaz.nl</a>.</div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
     <div class="chart-box">
-      <div class="chart-title">What they buy</div>
+      <div class="chart-title">What NL business customers buy</div>
       <ul style="margin:10px 0 0;padding-left:18px;font-size:13.5px;color:#1f1f1f;line-height:1.9;">
         <li>Business notebooks, desktops &amp; monitors</li>
         <li>Business printers</li>
@@ -578,34 +618,69 @@
     </div>
   </div>
 
-  <div class="scope-grid" style="grid-template-columns:repeat(3,1fr);">
-    <div class="scope-card">
-      <div class="scope-label">Olivier van den Bossche</div>
-      <div class="scope-desc">General Managing Director (CEO), MediaMarkt Benelux</div>
-      <div style="margin-top:10px;font-size:11.5px;"><a href="https://www.mediamarkt.nl/nl/specials/persbericht-directie-benelux" target="_blank" rel="noopener" style="color:#6e0d0d;">Source: mediamarkt.nl press release</a></div>
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="mediamarkt-org-photos/olivier-van-den-bossche.jpg" alt="Olivier Van den Bossche"/>
+        <div>
+          <div class="org-company">MediaMarkt</div>
+          <div class="org-name">Olivier Van den Bossche</div><div class="org-title">General Managing Director (CEO)</div><div class="org-entity">MediaMarkt Benelux</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/olivier-van-den-bossche-728b163/" target="_blank" rel="noopener">linkedin.com/in/olivier-van-den-bossche</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Patrick van der Linden</div>
-      <div class="scope-desc">Chief Commercial Officer, MediaMarkt Benelux</div>
-      <div style="margin-top:10px;font-size:11.5px;"><a href="https://itchannelpro.nl/cco-benelux-patrick-van-der-linden-over-mediamarkt-dat-vol-inzet-op-refurbished/" target="_blank" rel="noopener" style="color:#6e0d0d;">Source: ITchannelPRO</a></div>
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="mediamarkt-org-photos/faruk-kocabas.jpg" alt="Faruk Kocabaş"/>
+        <div>
+          <div class="org-company">MediaMarkt</div>
+          <div class="org-name">Faruk Kocabaş</div><div class="org-title">Chief Operating Officer</div><div class="org-entity">MediaMarktSaturn Retail Group — Spain, Benelux, Poland, Turkey &amp; B2B</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://es.linkedin.com/in/farukkocabas" target="_blank" rel="noopener">linkedin.com/in/farukkocabas</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Faruk Kocabaş</div>
-      <div class="scope-desc">Chief Operating Officer, MediaMarktSaturn Retail Group — Spain, Benelux, Poland, Turkey &amp; B2B</div>
-      <div style="margin-top:10px;font-size:11.5px;"><a href="https://www.mediamarkt.nl/nl/specials/persbericht-directie-benelux" target="_blank" rel="noopener" style="color:#6e0d0d;">Source: mediamarkt.nl press release</a></div>
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="mediamarkt-org-photos/dirkjan-bussink.jpg" alt="Dirkjan Bussink"/>
+        <div>
+          <div class="org-company">MediaMarkt</div>
+          <div class="org-name">Dirkjan Bussink</div><div class="org-title">Chief Financial Officer</div><div class="org-entity">MediaMarkt Benelux</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/dirkjan-bussink-a252a7/" target="_blank" rel="noopener">linkedin.com/in/dirkjan-bussink</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Dirkjan Bussink</div>
-      <div class="scope-desc">Country Manager Finance, MediaMarkt Benelux</div>
-      <div style="margin-top:10px;font-size:11.5px;"><a href="https://www.mediamarkt.nl/nl/specials/persbericht-directie-benelux" target="_blank" rel="noopener" style="color:#6e0d0d;">Source: mediamarkt.nl press release</a></div>
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="mediamarkt-org-photos/pim-fennema.jpg" alt="Pim Fennema"/>
+        <div>
+          <div class="org-company">MediaMarkt</div>
+          <div class="org-name">Pim Fennema</div><div class="org-title">Chief Customer Officer</div><div class="org-entity">MediaMarkt Benelux</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/pimfennema/" target="_blank" rel="noopener">linkedin.com/in/pimfennema</a></div>
     </div>
-    <div class="scope-card">
-      <div class="scope-label">Redouan El Amraoui</div>
-      <div class="scope-desc">Manager, MediaMarkt Zakelijk (B2B)</div>
-      <div style="margin-top:10px;font-size:11.5px;"><a href="https://www.linkedin.com/in/redouan-el-amraoui-43bab231b/" target="_blank" rel="noopener" style="color:#6e0d0d;">Source: LinkedIn</a></div>
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="mediamarkt-org-photos/patrick-van-der-linden.jpg" alt="Patrick van der Linden"/>
+        <div>
+          <div class="org-company">MediaMarkt</div>
+          <div class="org-name">Patrick van der Linden</div><div class="org-title">Chief Commercial Officer</div><div class="org-entity">MediaMarkt Saturn — Austria &amp; Switzerland</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://itchannelpro.nl/cco-benelux-patrick-van-der-linden-over-mediamarkt-dat-vol-inzet-op-refurbished/" target="_blank" rel="noopener">itchannelpro.nl</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">RE</div>
+        <div>
+          <div class="org-company">MediaMarktSaturn</div>
+          <div class="org-name">Redouan El Amraoui</div><div class="org-title">Algemeen directeur (General Director)</div><div class="org-entity">MediaMarktSaturn</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/redouan-el-amraoui-43bab231b/" target="_blank" rel="noopener">linkedin.com/in/redouan-el-amraoui</a></div>
     </div>
   </div>
-  <div class="src-note">Names, titles and sources only — verified against public press releases, trade-press interviews and LinkedIn. MediaMarkt Benelux's management board also includes a fourth member (finance/HR function) whose current exact title could not be independently confirmed from public sources and is omitted here rather than guessed.</div>
+  <div class="src-note">Names, titles and photos sourced from each person's LinkedIn profile, 11 August 2026.</div>
 
   <!-- KPIS -->
   <div id="sec-kpi" class="sec-header">
