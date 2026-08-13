@@ -309,13 +309,10 @@
 <header>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> / <a href="index.html">Transformation</a> / CEE Index</div>
-    <div class="eyebrow">Interactive Tracker · 2026</div>
+    <div class="eyebrow">Market Intelligence · 2026</div>
     <h1>Eastern European Market<br>Transformation Index</h1>
-    <p>Assessing how 34 major multinationals approach business transformation across Central &amp; Eastern Europe — leadership localisation, cultural adaptation, and programme governance.</p>
+    <p>Tracking business and digital transformation across Central &amp; Eastern Europe — leadership localisation, cultural adaptation, and programme governance.</p>
     <div class="meta">
-      <span>34 organisations assessed</span>
-      <span>5 sectors</span>
-      <span>6 criteria</span>
       <span>Markets: PL · CZ · HU · RO · SK · HR · RS · Baltics</span>
     </div>
   </div>
@@ -323,128 +320,11 @@
 
 <main>
 
-  <div style="font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:24px;line-height:1.6;">
-    <strong>Editorial note:</strong> All company assessments are editorial analysis based on publicly available information including annual reports, LinkedIn organisational data, published case studies, and press releases. Scores reflect TrendsOnFire editorial judgment, not a standardised audit methodology. Individual assessments may not reflect current state.
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat-card total">
-      <div class="lbl">Assessed</div>
-      <div class="num" id="s-total">34</div>
-      <div class="sm">Organisations</div>
-    </div>
-    <div class="stat-card advanced">
-      <div class="lbl">Advanced</div>
-      <div class="num" id="s-adv">—</div>
-      <div class="sm">5–6 criteria met</div>
-    </div>
-    <div class="stat-card devlp">
-      <div class="lbl">Developing</div>
-      <div class="num" id="s-dev">—</div>
-      <div class="sm">3–4 criteria met</div>
-    </div>
-    <div class="stat-card basic">
-      <div class="lbl">Basic</div>
-      <div class="num" id="s-bas">—</div>
-      <div class="sm">0–2 criteria met</div>
-    </div>
-  </div>
-
-  <!-- CRITERIA -->
-  <div class="criteria-card">
-    <h3>Assessment Criteria</h3>
-    <div class="criteria-grid">
-      <div class="criterion">
-        <span class="cr-badge">C1</span>
-        <div class="cr-text"><strong>Local Programme Leadership</strong>Transformation led by local executives, not HQ-imposed</div>
-      </div>
-      <div class="criterion">
-        <span class="cr-badge">C2</span>
-        <div class="cr-text"><strong>Cultural Adaptation</strong>Change methodology adapted for local context, not copy-pasted from HQ</div>
-      </div>
-      <div class="criterion">
-        <span class="cr-badge">C3</span>
-        <div class="cr-text"><strong>Local Language Communications</strong>Change communications delivered in mother tongue, not English-only</div>
-      </div>
-      <div class="criterion">
-        <span class="cr-badge">C4</span>
-        <div class="cr-text"><strong>Local Talent Development</strong>Investing in building local change capability vs. flying in consultants</div>
-      </div>
-      <div class="criterion">
-        <span class="cr-badge">C5</span>
-        <div class="cr-text"><strong>Governance Localisation</strong>PMO and steering committees include meaningful local representation</div>
-      </div>
-      <div class="criterion">
-        <span class="cr-badge">C6</span>
-        <div class="cr-text"><strong>Outcome Transparency</strong>Published results, case studies, or measurable outcomes for CEE programmes</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FILTERS -->
-  <div class="filter-bar">
-    <label>Country</label>
-    <select id="f-country">
-      <option value="">All markets</option>
-      <option value="PL">Poland</option>
-      <option value="CZ">Czech Republic</option>
-      <option value="HU">Hungary</option>
-      <option value="RO">Romania</option>
-      <option value="SK">Slovakia</option>
-      <option value="HR">Croatia</option>
-      <option value="RS">Serbia</option>
-      <option value="Baltics">Baltics</option>
-    </select>
-    <label>Sector</label>
-    <select id="f-sector">
-      <option value="">All sectors</option>
-    </select>
-    <label>Status</label>
-    <select id="f-status">
-      <option value="">All</option>
-      <option value="Advanced">Advanced</option>
-      <option value="Developing">Developing</option>
-      <option value="Basic">Basic</option>
-    </select>
-    <input id="f-search" type="text" placeholder="Search organisation…"/>
-    <button class="filter-reset" onclick="resetFilters()">Reset filters</button>
-  </div>
-
-  <!-- SECTOR BREAKDOWN -->
-  <div class="section-card">
-    <h3>Results by Sector</h3>
-    <div class="sector-cards" id="sector-cards"></div>
-  </div>
-
-  <!-- TABLE -->
-  <div class="table-wrap">
-    <div class="table-header">
-      <h3>All Organisations</h3>
-      <span class="result-count" id="result-count"></span>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th onclick="sortBy('name')">Organisation ↕</th>
-          <th onclick="sortBy('sector')">Sector ↕</th>
-          <th>Markets</th>
-          <th title="Local Programme Leadership">C1</th>
-          <th title="Cultural Adaptation">C2</th>
-          <th title="Local Language Communications">C3</th>
-          <th title="Local Talent Development">C4</th>
-          <th title="Governance Localisation">C5</th>
-          <th title="Outcome Transparency">C6</th>
-          <th onclick="sortBy('score')">Score ↕</th>
-          <th onclick="sortBy('status')">Status ↕</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
-    <div class="no-results" id="no-results" style="display:none">No organisations match your filters.</div>
-  </div>
-  <div style="font-size:11.5px;color:#9ca3af;padding:10px 14px;background:#f9fafb;border-radius:6px;border-left:3px solid #e5e7eb;margin-top:12px;">
-    <strong>Source:</strong> Editorial assessments based on company annual reports, LinkedIn organisational data, published case studies, and press releases. Assessments are not verified by the companies listed.
+  <div class="method-card" style="margin-top:0;">
+    <h3>Company-Level Index Not Yet Published</h3>
+    <p>A company-by-company scorecard was planned for this page, scoring named organisations against six transformation criteria: local programme leadership, cultural adaptation, local-language communications, local talent development, governance localisation, and outcome transparency.</p>
+    <p style="margin-top:10px">These criteria describe internal management practices that companies do not publish in a standardised, comparable format. No named public source — annual report, press release, or case study — confirms a specific company's standing on any of the six criteria at this level of detail. Publishing a scorecard without that sourcing would not meet TrendsOnFire's data standards, so no company-level assessments appear on this page.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--sub)">If a named, publicly verifiable source becomes available for a specific organisation and criterion, it will be added here with an inline citation.</p>
   </div>
 
   <!-- RELATED REPORTS -->
@@ -479,13 +359,6 @@
     <a href="../olgabressers/index.html">Contact →</a>
   </div>
 
-  <!-- METHODOLOGY -->
-  <div class="method-card">
-    <h3>Methodology &amp; Data Sources</h3>
-    <p>Assessments in this index are based on <strong>publicly available information</strong> — including company annual reports, LinkedIn organisational data, published case studies, press releases, and professional industry knowledge. Each criterion reflects observable, documented behaviour rather than self-reported claims.</p>
-    <p style="margin-top:10px">This is a <strong>living index</strong>, updated as new information becomes available. Scores reflect the state of publicly available evidence at time of publication and may not capture internal programmes not visible externally. Organisations are assessed at the CEE regional level, not individual country subsidiaries.</p>
-    <p style="margin-top:10px;font-size:12px;color:var(--sub)">Rating scale: <strong>Advanced</strong> = 5–6 criteria met · <strong>Developing</strong> = 3–4 criteria met · <strong>Basic</strong> = 0–2 criteria met. Assessments are made independently and organisations have not been contacted for verification. See below to submit a correction.</p>
-  </div>
 
 </main>
 
@@ -508,175 +381,6 @@
 </footer>
 
 <script>
-const companies = [
-  // Retail & FMCG
-  { name:"Allegro",         sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
-  { name:"Biedronka",       sector:"Retail & FMCG",    markets:["PL"],                    c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
-  { name:"IKEA",            sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"Pepco Group",     sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
-  { name:"CCC Group",       sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
-  { name:"Decathlon",       sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
-  { name:"Unilever CEE",    sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK"], c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:false },
-  { name:"Nestlé CEE",      sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
-  { name:"H&M",             sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO","SK","HR"], c1:false, c2:true, c3:true, c4:false, c5:false, c6:false },
-  { name:"Inditex",         sector:"Retail & FMCG",    markets:["PL","CZ","HU","RO"],     c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
-  { name:"Lidl CEE",        sector:"Retail & FMCG",    markets:["PL","CZ","SK","HU","RO","HR","RS"], c1:false, c2:false, c3:true, c4:false, c5:false, c6:false },
-  { name:"Kaufland",        sector:"Retail & FMCG",    markets:["CZ","SK","RO","HR","RS"], c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
-  { name:"Auchan",          sector:"Retail & FMCG",    markets:["PL","HU","RO"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
-  { name:"Tesco CEE",       sector:"Retail & FMCG",    markets:["CZ","SK","HU"],          c1:true,  c2:false, c3:true,  c4:false, c5:false, c6:false },
-  // Banking & Finance
-  { name:"ING Bank",        sector:"Banking & Finance", markets:["PL","RO","CZ"],         c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
-  { name:"Erste Bank",      sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"PKO Bank Polski",  sector:"Banking & Finance",markets:["PL"],                   c1:true,  c2:true,  c3:true,  c4:true,  c5:true,  c6:true  },
-  { name:"OTP Bank",        sector:"Banking & Finance", markets:["HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:false },
-  { name:"Raiffeisen Bank", sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
-  { name:"UniCredit CEE",   sector:"Banking & Finance", markets:["CZ","SK","HU","RO","HR","RS"], c1:true, c2:true, c3:true, c4:false, c5:true, c6:false },
-  // Technology
-  { name:"Microsoft CEE",   sector:"Technology",        markets:["PL","CZ","HU","RO","SK"], c1:false, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"SAP CEE",         sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:true  },
-  { name:"Google CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:true,  c3:true,  c4:true,  c5:false, c6:false },
-  { name:"Amazon CEE",      sector:"Technology",        markets:["PL","CZ"],              c1:false, c2:false, c3:false, c4:false, c5:false, c6:false },
-  { name:"Oracle CEE",      sector:"Technology",        markets:["PL","CZ","HU","RO"],    c1:false, c2:false, c3:true,  c4:false, c5:false, c6:false },
-  // Consulting
-  { name:"PwC CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"Deloitte CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"McKinsey CEE",    sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
-  { name:"BCG CEE",         sector:"Consulting",        markets:["PL","CZ","HU","RO"],    c1:true,  c2:true,  c3:true,  c4:false, c5:true,  c6:false },
-  { name:"KPMG CEE",        sector:"Consulting",        markets:["PL","CZ","HU","RO","SK","HR","RS","Baltics"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
-  // Manufacturing & Industry
-  { name:"Philip Morris Int'l", sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:true, c6:true },
-  { name:"Volkswagen Group",    sector:"Manufacturing", markets:["CZ","SK","HU","PL"],    c1:true,  c2:true,  c3:true,  c4:true,  c5:false, c6:false },
-  { name:"Mondelez CEE",        sector:"Manufacturing", markets:["PL","CZ","HU","RO","SK"], c1:true, c2:true, c3:true, c4:true, c5:false, c6:false },
-  { name:"Richemont CEE",       sector:"Manufacturing", markets:["CZ","PL","HU"],         c1:false, c2:true,  c3:false, c4:true,  c5:false, c6:false }
-];
-
-const SECTORS = ["Retail & FMCG","Banking & Finance","Technology","Consulting","Manufacturing"];
-
-function score(r){ return [r.c1,r.c2,r.c3,r.c4,r.c5,r.c6].filter(Boolean).length; }
-function status(r){
-  const s = score(r);
-  return s >= 5 ? "Advanced" : s >= 3 ? "Developing" : "Basic";
-}
-
-let sortKey = "name", sortDir = 1;
-
-function sortBy(key){
-  if(sortKey === key) sortDir *= -1;
-  else { sortKey = key; sortDir = 1; }
-  render();
-}
-
-function resetFilters(){
-  document.getElementById("f-country").value = "";
-  document.getElementById("f-sector").value = "";
-  document.getElementById("f-status").value = "";
-  document.getElementById("f-search").value = "";
-  render();
-}
-
-function filtered(){
-  const country = document.getElementById("f-country").value;
-  const sec = document.getElementById("f-sector").value;
-  const st  = document.getElementById("f-status").value;
-  const q   = document.getElementById("f-search").value.toLowerCase();
-  return companies.filter(r =>
-    (!country || r.markets.includes(country)) &&
-    (!sec || r.sector === sec) &&
-    (!st  || status(r) === st) &&
-    (!q   || r.name.toLowerCase().includes(q) || r.sector.toLowerCase().includes(q))
-  );
-}
-
-function dot(val){ return `<span class="dot ${val?'dot-yes':'dot-no'}">${val?'✓':'✗'}</span>`; }
-
-function statusBadge(s){
-  const cls = s==="Advanced"?"badge-adv":s==="Developing"?"badge-dev":"badge-bas";
-  return `<span class="badge ${cls}">${s}</span>`;
-}
-
-function scorePips(r){
-  const s = score(r);
-  return `<div class="score-bar">${[1,2,3,4,5,6].map(i=>`<div class="sb-pip ${i<=s?'sb-on':'sb-off'}"></div>`).join("")} <span style="font-size:11px;color:var(--sub);margin-left:4px">${s}/6</span></div>`;
-}
-
-function render(){
-  const data = filtered().sort((a,b)=>{
-    let av, bv;
-    if(sortKey==="name")   { av=a.name;       bv=b.name; }
-    if(sortKey==="sector") { av=a.sector;      bv=b.sector; }
-    if(sortKey==="score")  { av=score(a);      bv=score(b); }
-    if(sortKey==="status") { av=status(a);     bv=status(b); }
-    return av > bv ? sortDir : av < bv ? -sortDir : 0;
-  });
-
-  // Stats
-  const adv = data.filter(r=>status(r)==="Advanced").length;
-  const dev = data.filter(r=>status(r)==="Developing").length;
-  const bas = data.filter(r=>status(r)==="Basic").length;
-  document.getElementById("s-total").textContent = data.length;
-  document.getElementById("s-adv").textContent = adv;
-  document.getElementById("s-dev").textContent = dev;
-  document.getElementById("s-bas").textContent = bas;
-  document.getElementById("result-count").textContent = `${data.length} organisation${data.length!==1?"s":""}`;
-
-  // Sector cards
-  const sc = document.getElementById("sector-cards");
-  const secData = SECTORS.map(s=>{
-    const rows = data.filter(r=>r.sector===s);
-    const a = rows.filter(r=>status(r)==="Advanced").length;
-    const d = rows.filter(r=>status(r)==="Developing").length;
-    const b = rows.filter(r=>status(r)==="Basic").length;
-    return {s, rows, a, d, b};
-  }).filter(x=>x.rows.length>0);
-
-  sc.innerHTML = secData.map(({s,rows,a,d,b})=>{
-    const t = rows.length;
-    const ap = Math.round(a/t*100), dp = Math.round(d/t*100), bp = 100-ap-dp;
-    return `<div class="sec-card">
-      <div class="sec-name">${s}</div>
-      <div class="sec-count">${t} organisation${t!==1?"s":""}</div>
-      <div class="mini-bar">
-        <div class="mb-adv" style="width:${ap}%"></div>
-        <div class="mb-dev" style="width:${dp}%"></div>
-        <div class="mb-bas" style="width:${bp}%"></div>
-      </div>
-      <div class="sec-legend">
-        <div class="sl"><div class="sl-dot" style="background:var(--adv)"></div>${a} Adv</div>
-        <div class="sl"><div class="sl-dot" style="background:var(--dev)"></div>${d} Dev</div>
-        <div class="sl"><div class="sl-dot" style="background:var(--bas)"></div>${b} Bas</div>
-      </div>
-    </div>`;
-  }).join("");
-
-  // Table
-  const tbody = document.getElementById("tbody");
-  const noRes = document.getElementById("no-results");
-  if(data.length===0){
-    tbody.innerHTML=""; noRes.style.display="block";
-  } else {
-    noRes.style.display="none";
-    tbody.innerHTML = data.map(r=>`<tr>
-      <td><div class="td-name">${r.name}</div><div class="td-sector">${r.sector}</div></td>
-      <td style="font-size:12px;color:var(--sub)">${r.sector}</td>
-      <td style="font-size:11px;color:var(--sub);line-height:1.8">${r.markets.join(" · ")}</td>
-      <td>${dot(r.c1)}</td>
-      <td>${dot(r.c2)}</td>
-      <td>${dot(r.c3)}</td>
-      <td>${dot(r.c4)}</td>
-      <td>${dot(r.c5)}</td>
-      <td>${dot(r.c6)}</td>
-      <td>${scorePips(r)}</td>
-      <td>${statusBadge(status(r))}</td>
-    </tr>`).join("");
-  }
-}
-
-// Populate sector dropdown
-const sel = document.getElementById("f-sector");
-SECTORS.forEach(s=>{ const o=document.createElement("option"); o.value=s; o.textContent=s; sel.appendChild(o); });
-
-["f-country","f-sector","f-status","f-search"].forEach(id=>document.getElementById(id).addEventListener("input",render));
-render();
 document.querySelector('.nav-burger').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
