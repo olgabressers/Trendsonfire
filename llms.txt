@@ -43,6 +43,12 @@ TrendsOnFire publishes original, sourced market intelligence that is difficult t
 - Content: How balancing markets, virtual power plants, and demand response are reshaping the European energy landscape.
 - Sources: TenneT, Elia, RTE, REMIT regulation, company data.
 
+### EU AI Act — Deadlines, Penalties and Compliance Intelligence 2026
+- URL: https://trendsonfire.com/finance-compliance/eu-ai-act.html
+- Content: Article 50 transparency obligations became enforceable 2 August 2026. High-risk system rules for recruitment, credit scoring and biometric identification were postponed to 2 December 2027 by the Digital Omnibus (Regulation (EU) 2026/1744), which entered into force 27 July 2026 — six days before the original deadline. Full ten-point regulatory timeline (2024-2028), Article 99 three-tier penalty structure (€35M/7%, €15M/3%, €7.5M/1%, SME cap), the four AI Act risk tiers, all eight Annex III high-risk categories, and the General-Purpose AI Code of Practice signatory list (Amazon, Anthropic, Google, IBM, Microsoft, OpenAI, Aleph Alpha, Mistral AI signed; Meta, Alibaba, Baidu, DeepSeek did not).
+- Unique value: Consolidates the post-Digital-Omnibus timeline (July 2026) into one sourced reference, including the GPAI Code of Practice signatory/non-signatory split not covered on the counterfeiting or eurozone finance pages.
+- Sources: European Commission, artificialintelligenceact.eu (Articles 50, 56, 99, Annex III), Gibson Dunn, Hunton, The Register, Euronews, General-Purpose AI Code of Practice (EU AI Office).
+
 ### Global Counterfeiting Intelligence
 - URL: https://trendsonfire.com/finance-compliance/counterfeiting.html
 - Content: EU counterfeiting sector impact, enforcement trends, brand protection strategies.
