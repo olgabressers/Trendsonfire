@@ -156,6 +156,43 @@
     .scope-exp{margin-top:12px;padding:10px 14px;background:#08080f;border-left:3px solid rgba(255,211,0,.5);font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
     .scope-exp strong{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#FFD300;margin-bottom:6px;}
 
+    /* FOUNDER CARDS */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#0000aa;color:#FFD300;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:6px;background:#0000aa;color:#FFD300;}
+    .org-name{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13px;color:#0a0f1a;line-height:1.35;margin-top:2px;}
+    .org-entity{font-size:13px;color:#0a0f1a;font-weight:600;margin-top:3px;line-height:1.35;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:10px;line-height:1.5;}
+    .org-conf a{color:#0000aa;font-weight:600;}
+    .org-grid-2{grid-template-columns:repeat(2,1fr) !important;}
+    @media(max-width:640px){.org-grid-2{grid-template-columns:1fr !important;}}
+
+    /* SNAPSHOT BLOCKS */
+    .snap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 0 6px;}
+    @media(max-width:900px){.snap-grid{grid-template-columns:repeat(2,1fr);}}
+    .snap-card{border:1px solid #e2dfd9;background:#faf9f7;padding:16px 14px;}
+    .snap-label{font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#0a0f1a;margin-bottom:6px;}
+    .snap-hl{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;color:#0000aa;line-height:1;margin-bottom:8px;}
+    .snap-card ul{list-style:none;padding:0;margin:0;}
+    .snap-card ul li{font-size:12.5px;color:#0a0f1a;line-height:1.5;padding:4px 0 4px 12px;position:relative;}
+    .snap-card ul li::before{content:'—';position:absolute;left:0;color:#0000aa;font-weight:700;}
+
+    /* REFERENCE POINTS */
+    .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
+    @media(max-width:820px){.ref-grid{grid-template-columns:1fr;}}
+    .ref-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;}
+    .ref-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:600;margin-bottom:8px;}
+    .ref-name a{color:#0a0f1a;text-decoration:none;}
+    .ref-why{font-size:13px;color:#0a0f1a;line-height:1.55;margin-bottom:12px;}
+    .ref-links{display:flex;flex-direction:column;gap:5px;}
+    .ref-links a{font-size:12.5px;color:#0000aa;text-decoration:none;font-weight:600;}
+
     /* COMPARE COLUMNS */
     .cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
     @media(max-width:640px){.cmp-row{grid-template-columns:1fr;}}
@@ -254,7 +291,7 @@
     <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#0000aa;font-weight:700;margin-bottom:16px;">Contents</div>
     <ol style="margin:0;padding-left:18px;font-size:13.5px;line-height:1;">
       <li style="margin-bottom:12px;"><a href="#sec-01" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Company &amp; market context</a><br><span style="color:#555;font-size:12.5px;">Founders, venue, visitor growth to ~500K, Dutch attraction &amp; immersive-market sizing.</span></li>
-      <li style="margin-bottom:12px;"><a href="#sec-02" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competition</a><br><span style="color:#555;font-size:12.5px;">6 Dutch + 6 global immersive experiences — price, Instagram/TikTok/YouTube following, visitor mix, all compared to Remastered.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-02" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competition</a><br><span style="color:#555;font-size:12.5px;">6 Dutch + 6 global immersive experiences, visitor mix, and 3 best-in-class digital marketing reference points.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 priorities</a><br><span style="color:#555;font-size:12.5px;">Commercial model · leadership mandate · international readiness.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-03" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Website</a><br><span style="color:#555;font-size:12.5px;">Remastered vs. teamLab Planets, side by side.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-04" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Social Media</a><br><span style="color:#555;font-size:12.5px;">Instagram, TikTok, YouTube — Remastered vs. teamLab Planets.</span></li>
@@ -307,9 +344,75 @@
   <div class="chart-box" style="margin-bottom:24px;">
     <div class="chart-title">Company snapshot</div>
     <div class="chart-sub">Founders, venue and current commercial model</div>
-    <p style="font-size:13.5px;color:#0a0f1a;line-height:1.7;margin:0 0 12px;">Remastered was founded by <strong>Robin Groeneveld</strong> — 30 years in Dutch music and events, including Vrienden van Amstel Live and venues on Rotterdam's Lijnbaan — and <strong>Dick van Zuylen</strong>, former managing director of concert promoter Mojo Events. The venue sits in a 1,500 m² space beneath the Erasmusbrug: 60 projectors, 50 speakers, 15 km of cabling, and what the venue describes as Europe's largest indoor LED screen, reinterpreting Dutch Old Masters (Bosch, Vermeer, Rembrandt, Van Gogh, Mondrian) with an original score by DJ/producer Sam Feldt. Groups are capped at 80 visitors per timed slot. The attraction won "Game Changer of the Year" at the Live Entertainment Production Awards in 2024.</p>
-    <p style="font-size:13.5px;color:#0a0f1a;line-height:1.7;margin:0;">Ticketing is priced at €24.50 (adult, 13+) and €16.50 (child, 6–12), plus a €1.45 service fee, with a 25% discount for CJP/EYC cardholders. Beyond individual and group tickets, the venue already takes private corporate bookings — including a Lexus product launch — and offers company outings and a meetings/events venue hire product, but the job posting itself frames corporate events, sponsorship, partnerships and hospitality as revenue lines still to be built out, not an established second income stream.</p>
-    <div class="chart-src">Sources: <a href="https://brandpulse.nl/nieuws/remastered/" target="_blank" rel="noopener">Brandpulse</a> (founders, awards, corporate hire) · <a href="https://www.uitagendarotterdam.nl/alle-artikelen/remastered-de-digital-art-experience-in-rotterdam/" target="_blank" rel="noopener">Uitagenda Rotterdam</a> (venue technology) · <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a> (pricing, capacity) · <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a> (mandate)</div>
+
+    <div style="font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0000aa;margin:6px 0 10px;">Founders</div>
+    <div class="org-grid org-grid-2" style="margin-top:0;margin-bottom:20px;">
+      <div class="org-card">
+        <div class="org-top">
+          <div class="org-initials">RG</div>
+          <div>
+            <div class="org-company">Remastered</div>
+            <div class="org-name">Robin Groeneveld</div>
+            <div class="org-title">Founder &amp; Creative Director</div>
+            <div class="org-entity">30 years in Dutch music &amp; events — Vrienden van Amstel Live, venues on Rotterdam's Lijnbaan</div>
+          </div>
+        </div>
+        <div class="org-conf"><a href="https://www.linkedin.com/in/robingroenveld/" target="_blank" rel="noopener">linkedin.com/in/robingroenveld</a></div>
+      </div>
+      <div class="org-card">
+        <div class="org-top">
+          <div class="org-initials">DZ</div>
+          <div>
+            <div class="org-company">Remastered</div>
+            <div class="org-name">Dick van Zuylen</div>
+            <div class="org-title">Founder</div>
+            <div class="org-entity">Former Managing Director, Mojo Events</div>
+          </div>
+        </div>
+        <div class="org-conf"><a href="https://brandpulse.nl/nieuws/remastered/" target="_blank" rel="noopener">brandpulse.nl</a></div>
+      </div>
+    </div>
+
+    <div class="snap-grid">
+      <div class="snap-card">
+        <div class="snap-label">Venue</div>
+        <div class="snap-hl">1,500 m²</div>
+        <ul>
+          <li>Beneath the Erasmusbrug, Rotterdam</li>
+          <li>60 projectors · 50 speakers · 15 km cabling</li>
+          <li>Europe's largest indoor LED screen</li>
+        </ul>
+      </div>
+      <div class="snap-card">
+        <div class="snap-label">The Experience</div>
+        <div class="snap-hl">5 masters</div>
+        <ul>
+          <li>Bosch, Vermeer, Rembrandt, Van Gogh, Mondrian</li>
+          <li>Original score by DJ/producer Sam Feldt</li>
+          <li>Two fixed 60-min shows running today</li>
+        </ul>
+      </div>
+      <div class="snap-card">
+        <div class="snap-label">Tickets &amp; Capacity</div>
+        <div class="snap-hl">€24.50</div>
+        <ul>
+          <li>Adult (13+) · €16.50 child (6–12)</li>
+          <li>25% discount for CJP/EYC cardholders</li>
+          <li>Timed entry, 80 visitors per slot</li>
+        </ul>
+      </div>
+      <div class="snap-card">
+        <div class="snap-label">Corporate &amp; Recognition</div>
+        <div class="snap-hl">2024</div>
+        <ul>
+          <li>"Game Changer of the Year," Live Entertainment Production Awards</li>
+          <li>Private corporate bookings already running, incl. a Lexus product launch</li>
+          <li>Company outings &amp; venue hire product live today</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart-src">Sources: <a href="https://brandpulse.nl/nieuws/remastered/" target="_blank" rel="noopener">Brandpulse</a> (founders, awards, corporate hire) · <a href="https://www.linkedin.com/in/robingroenveld/" target="_blank" rel="noopener">LinkedIn</a> (Robin Groeneveld) · <a href="https://www.uitagendarotterdam.nl/alle-artikelen/remastered-de-digital-art-experience-in-rotterdam/" target="_blank" rel="noopener">Uitagenda Rotterdam</a> (venue technology) · <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a> (pricing, capacity)</div>
   </div>
 
   <!-- VISITOR GROWTH CHART -->
@@ -370,6 +473,11 @@
             <td style="text-align:right;font-weight:700;">1.9M</td>
             <td>#3 Dutch day attraction</td>
           </tr>
+          <tr>
+            <td>Diergaarde Blijdorp, Rotterdam</td>
+            <td style="text-align:right;font-weight:700;">1.39M</td>
+            <td>Rotterdam's own top-ranked day attraction</td>
+          </tr>
           <tr class="target">
             <td>Remastered — role target</td>
             <td style="text-align:right;">100,000–125,000</td>
@@ -378,7 +486,7 @@
         </tbody>
       </table>
     </div>
-    <div class="src-note">Sources: Efteling, Rijksmuseum, Van Gogh Museum — <a href="https://www.landelijkedataalliantie.nl/nl/home/nieuws/top-50-dagattracties-2025-bekend" target="_blank" rel="noopener">Landelijke Data Alliantie, Top 50 Dagattracties 2025</a> · Remastered target — <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a>. The Dutch Top 50 attracted ~40M visits in total in 2025 (46M+ across all ticketed day attractions); Remastered does not appear in the published Top 50.</div>
+    <div class="src-note">Sources: Efteling, Rijksmuseum, Van Gogh Museum — <a href="https://www.landelijkedataalliantie.nl/nl/home/nieuws/top-50-dagattracties-2025-bekend" target="_blank" rel="noopener">Landelijke Data Alliantie, Top 50 Dagattracties 2025</a> · Diergaarde Blijdorp — <a href="https://zooflits.nl/bezoekersaantal-van-diergaarde-blijdorp-opnieuw-gedaald-in-2025/" target="_blank" rel="noopener">ZooFlits</a> · Remastered target — <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a>. The Dutch Top 50 attracted ~40M visits in total in 2025 (46M+ across all ticketed day attractions); Remastered does not appear in the published Top 50.</div>
   </div>
 
   <!-- EUROPE MARKET + ROTTERDAM TOURISM -->
@@ -617,6 +725,44 @@
       </table>
     </div>
     <div class="src-note">Sources: Remastered — <a href="https://pretwerk.nl/recreatie-actueel/immisive-kunst-experience-remstered-rotterdam-ontvangt-200-000e-bezoeker/80632/" target="_blank" rel="noopener">Pretwerk</a> · teamLab — <a href="https://www.businesswire.com/news/home/20221117005639/en/teamLab-Planets-TOKYO-Tickets-purchased-from-overseas-have-increased-by-136-compared-to-the-same-month-in-2019-before-the-COVID-19-pandemic-with-one-in-three-visitors-coming-from-overseas" target="_blank" rel="noopener">Business Wire, Nov 2022</a> &amp; <a href="https://businesswire.com/news/home/20230830716639/en/As-teamLab-Planets-in-Tokyo-Welcomes-Around-1-Million-Visitors-From-Abroad-in-a-6-Month-Period-the-Immersive-Museum-Unveils-the-Renewal-of-Artwork-Spaces" target="_blank" rel="noopener">Business Wire, Aug 2023</a> · Bassins de Lumières — <a href="https://france3-regions.franceinfo.fr/nouvelle-aquitaine/gironde/bordeaux/pres-de-3-5-millions-de-visites-en-cinq-ans-le-succes-fulgurant-des-bassins-des-lumieres-plus-grand-centre-d-art-numerique-au-monde-3169197.html" target="_blank" rel="noopener">France 3 Nouvelle-Aquitaine</a> · Meow Wolf — <a href="https://www.pressreader.com/usa/santa-fe-new-mexican/20200121/281943134843402" target="_blank" rel="noopener">Santa Fe New Mexican</a> (local/tourist split) &amp; <a href="https://impactalpha.com/santa-fe-funhouse-meow-wolf-raises-17-5-million-to-expand-its-creative-economy/" target="_blank" rel="noopener">ImpactAlpha</a> (revenue)</div>
+  </div>
+
+  <!-- BEST-IN-CLASS REFERENCE POINTS -->
+  <div style="margin-top:28px;">
+    <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:10px;">Best-in-class digital marketing — 3 reference points from the table above</div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-name"><a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener">teamLab Planets</a></div>
+        <div class="ref-why">Cleanest site of the set — one real photo, one CTA, a closing date built into the hero as urgency. The benchmark used in Sections 03–04.</div>
+        <div class="ref-links">
+          <a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener">Website &rarr;</a>
+          <a href="https://www.instagram.com/teamlab/" target="_blank" rel="noopener">Instagram — 406K*</a>
+          <a href="https://www.tiktok.com/@teamlabplanets" target="_blank" rel="noopener">TikTok — 1,384</a>
+          <a href="https://www.youtube.com/@teamLabART" target="_blank" rel="noopener">YouTube — 49.1K*</a>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name"><a href="https://meowwolf.com/visit/santa-fe" target="_blank" rel="noopener">Meow Wolf</a></div>
+        <div class="ref-why">The strongest total social footprint of any name in this table — built as an independent immersive brand, not a museum wing.</div>
+        <div class="ref-links">
+          <a href="https://meowwolf.com/visit/santa-fe" target="_blank" rel="noopener">Website &rarr;</a>
+          <a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener">Instagram — 501K*</a>
+          <a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener">TikTok — 226,600</a>
+          <a href="https://www.youtube.com/meowwolf" target="_blank" rel="noopener">YouTube — 176K</a>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name"><a href="https://www.mocomuseum.com/exhibitions/amsterdam/digital-immersive-art-amsterdam/" target="_blank" rel="noopener">Moco Museum</a></div>
+        <div class="ref-why">The single biggest TikTok following of any name in this table — 303,500 — from one wing inside a broader museum.</div>
+        <div class="ref-links">
+          <a href="https://www.mocomuseum.com/exhibitions/amsterdam/digital-immersive-art-amsterdam/" target="_blank" rel="noopener">Website &rarr;</a>
+          <a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener">Instagram — 463K</a>
+          <a href="https://www.tiktok.com/@mocomuseum" target="_blank" rel="noopener">TikTok — 303,500</a>
+          <a href="https://www.youtube.com/channel/UCLc2wvxp8zwdqb_N6bXRYcA" target="_blank" rel="noopener">YouTube — 1,110</a>
+        </div>
+      </div>
+    </div>
+    <div class="src-note">Figures per Section 02 tables above, captured directly from each platform's public profile data, 17 Aug 2026. *teamLab and Meow Wolf Instagram/YouTube figures are studio/brand-wide accounts, not experience-specific.</div>
   </div>
 
   <!-- 3 STRUCTURAL CHALLENGES -->
