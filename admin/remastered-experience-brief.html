@@ -183,6 +183,25 @@
     .snap-card ul li{font-size:12.5px;color:#0a0f1a;line-height:1.5;padding:4px 0 4px 12px;position:relative;}
     .snap-card ul li::before{content:'—';position:absolute;left:0;color:#0000aa;font-weight:700;}
 
+    /* REVIEW THEME BARS */
+    .rv-split{background:#f9fafb;border:1px solid #e2dfd9;padding:18px 20px;margin:0 0 20px;}
+    .rv-brandhdr{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#0000aa;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
+    .rv-split-bar{display:flex;height:26px;border-radius:3px;overflow:hidden;margin-bottom:7px;}
+    .rv-pos-seg{background:#16a34a;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;}
+    .rv-neu-seg{background:#cbd5e1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#0a0f1a;}
+    .rv-neg-seg{background:#c8921a;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;}
+    .rv-split-sub{font-size:11.5px;color:#0a0f1a;margin-bottom:16px;}
+    .rv-theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:640px){.rv-theme-grid{grid-template-columns:1fr;}}
+    .rv-col-hdr{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid;}
+    .rv-col-hdr.neg{color:#92400e;border-color:#c8921a;}
+    .rv-col-hdr.pos{color:#15803d;border-color:#16a34a;}
+    .rv-theme-list{list-style:none;padding:0;margin:0;}
+    .rv-theme-list li{font-size:12.5px;color:#0a0f1a;line-height:1.5;padding:6px 0;border-bottom:1px solid #e8e5e0;}
+    .rv-theme-list li:last-child{border-bottom:none;}
+    .rv-theme-list .rv-freq{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#0000aa;}
+    .rv-est-note{font-size:11.5px;color:#0a0f1a;margin-top:12px;font-style:italic;line-height:1.55;}
+
     /* REFERENCE POINTS */
     .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
     @media(max-width:820px){.ref-grid{grid-template-columns:1fr;}}
@@ -853,6 +872,39 @@
   </div>
   <div class="src-note">Sources: <a href="https://www.getyourguide.com/remastered-rotterdam-l165504/rotterdam-remastered-digital-art-audiovisual-experience-t403908/" target="_blank" rel="noopener">GetYourGuide</a> · <a href="https://www.tripadvisor.com/Attraction_Review-g188632-d23561845-Reviews-Remastered-Rotterdam_South_Holland_Province.html" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.facebook.com/RemasteredExperience/" target="_blank" rel="noopener">Facebook</a>. Ratings captured 17 Aug 2026.</div>
 
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">TripAdvisor — star split &amp; review themes</div>
+  <div class="rv-split">
+    <div class="rv-brandhdr">Remastered — 3.5 / 5 across 89 TripAdvisor reviews</div>
+    <div class="rv-split-bar">
+      <div class="rv-pos-seg" style="width:61.8%;">Positive 61.8%</div>
+      <div class="rv-neu-seg" style="width:12.4%;"></div>
+      <div class="rv-neg-seg" style="width:25.8%;">25.8%</div>
+    </div>
+    <div class="rv-split-sub">Positive = 4★ and 5★ (55) · Neutral = 3★ (11) · Negative = 1★ and 2★ (23). Lifetime distribution, all 89 reviews.</div>
+    <div class="rv-theme-grid">
+      <div>
+        <div class="rv-col-hdr neg">Where reviewers report friction</div>
+        <ul class="rv-theme-list">
+          <li><span class="rv-freq">Recurring</span> — Overcrowding at busy time slots ("50 people... crowded," "wish it was less crowded")</li>
+          <li><span class="rv-freq">Recurring</span> — Pricing relative to the experience ("massively overpriced," "not worth the money")</li>
+          <li><span class="rv-freq">Mentioned</span> — Room-to-room narrative clarity (GetYourGuide: "a simple storyline would make the rooms easier to follow")</li>
+          <li><span class="rv-freq">Mentioned</span> — AI-generated content quality in one room</li>
+        </ul>
+      </div>
+      <div>
+        <div class="rv-col-hdr pos">What reviewers value</div>
+        <ul class="rv-theme-list">
+          <li><span class="rv-freq">Recurring</span> — Immersive visuals &amp; audio ("amazing effects great music," "wonderful audiovisual journey")</li>
+          <li><span class="rv-freq">Mentioned</span> — Interactive moments (drawing feature projected live, UFO-flying room)</li>
+          <li><span class="rv-freq">Mentioned</span> — Helpful on-site staff (GetYourGuide)</li>
+          <li><span class="rv-freq">Mentioned</span> — Family-friendly, suitable for all ages</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rv-est-note">Star split is counted across all 89 TripAdvisor reviews. Themes are drawn from individual review excerpts surfaced via search and the GetYourGuide review summary — TripAdvisor and GetYourGuide both block direct automated page reads (confirmed 17 Aug 2026), so this is a real but small, directional sample, not a themed count of the full base.</div>
+  </div>
+  <div class="src-note">Sources: <a href="https://www.tripadvisor.com/Attraction_Review-g188632-d23561845-Reviews-Remastered-Rotterdam_South_Holland_Province.html" target="_blank" rel="noopener">TripAdvisor</a> · <a href="https://www.getyourguide.com/remastered-rotterdam-l165504/rotterdam-remastered-digital-art-audiovisual-experience-t403908/" target="_blank" rel="noopener">GetYourGuide</a></div>
+
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">Website — help &amp; support</div>
   <div class="snap-grid">
     <div class="snap-card">
@@ -907,7 +959,22 @@
   </div>
   <div class="src-note">Source: <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a>, captured 17 Aug 2026.</div>
 
-  <div style="margin-top:16px;background:#08080f;padding:14px 16px;color:white;font-size:13px;line-height:1.65;">2,600+ reviews across GetYourGuide, TripAdvisor and Facebook lean toward a strong recommend rate, led by GetYourGuide's 2,419-review sample at 4.3/5. Support today runs on a single email channel, card-only payment, and a 5-language site with mobile-only check-in.</div>
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">Customer service channels — Remastered vs. teamLab Planets</div>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Channel</th><th>Remastered</th><th>teamLab Planets</th></tr></thead>
+      <tbody>
+        <tr><td>Email</td><td>info@remastered.nl (general) · groepen@remastered.nl (groups)</td><td>Contact form + emergency@teamlabplanetstickets.tokyo for urgent booking issues</td></tr>
+        <tr><td>Phone</td><td>Not offered</td><td>Not offered — replies by email only</td></tr>
+        <tr><td>Live chat</td><td>Not offered</td><td>Not offered</td></tr>
+        <tr><td>WhatsApp</td><td>Not offered</td><td>Not offered</td></tr>
+        <tr class="target"><td>Review response</td><td>Management responds directly to TripAdvisor reviews</td><td>n/d</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Email-only support with no phone line is the category norm at both sites — neither TripAdvisor nor GetYourGuide publish a reply-time metric the way Trustpilot does, so response speed itself isn't independently measurable for either. Sources: <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a> · <a href="https://teamlabplanets.dmm.com/en/help" target="_blank" rel="noopener">teamLab Planets Help</a> · <a href="https://www.tripadvisor.com/Attraction_Review-g188632-d23561845-Reviews-Remastered-Rotterdam_South_Holland_Province.html" target="_blank" rel="noopener">TripAdvisor</a> (management response confirmed).</div>
+
+  <div style="margin-top:16px;background:#08080f;padding:14px 16px;color:white;font-size:13px;line-height:1.65;">2,600+ reviews across GetYourGuide, TripAdvisor and Facebook lean toward a strong recommend rate, led by GetYourGuide's 2,419-review sample at 4.3/5; TripAdvisor's 89-review base splits 61.8% positive. Support runs on a single, actively-managed email channel — matching teamLab Planets' own email-only model — with card-only payment and a 5-language, mobile-check-in site.</div>
 
   <!-- SECTION 06: COMMERCIAL CHANNELS -->
   <div id="sec-06" class="sec-header">
