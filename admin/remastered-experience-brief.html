@@ -215,6 +215,9 @@
     /* COMPARE COLUMNS */
     .cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
     @media(max-width:640px){.cmp-row{grid-template-columns:1fr;}}
+    .cmp-row-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0;}
+    @media(max-width:900px){.cmp-row-4{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.cmp-row-4{grid-template-columns:1fr;}}
     .cmp-col{border:1px solid #e2dfd9;background:white;}
     .cmp-col-label{padding:10px 14px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:white;background:#0000aa;}
     .cmp-col.accent .cmp-col-label{background:#08080f;color:#FFD300;}
@@ -308,7 +311,7 @@
       <li style="margin-bottom:12px;"><a href="#sec-01" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Company &amp; market context</a><br><span style="color:#555;font-size:12.5px;">Founders, venue, visitor growth to ~500K, live-verified slot capacity, estimated revenue &amp; P&amp;L, Dutch attraction &amp; immersive-market sizing.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-02" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competition</a><br><span style="color:#555;font-size:12.5px;">6 Dutch + 6 global immersive experiences, visitor mix, and 3 best-in-class digital marketing reference points.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-03" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Website</a><br><span style="color:#555;font-size:12.5px;">Remastered vs. teamLab Planets, side by side.</span></li>
-      <li style="margin-bottom:12px;"><a href="#sec-04" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Social Media</a><br><span style="color:#555;font-size:12.5px;">Instagram, TikTok, YouTube — Remastered vs. teamLab Planets.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-04" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Social Media</a><br><span style="color:#555;font-size:12.5px;">Instagram, TikTok, YouTube — Remastered vs. teamLab, Meow Wolf and Moco Museum.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-05" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Customer Service</a><br><span style="color:#555;font-size:12.5px;">Review platforms (GetYourGuide, TripAdvisor, Facebook) and website help/support channels.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-06" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Commercial channels today</a><br><span style="color:#555;font-size:12.5px;">Ticketing, groups, corporate hire — what exists vs. what the mandate asks to build.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-07" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Corporate Clients</a><br><span style="color:#555;font-size:12.5px;">Pricing benchmarks (Remastered, Frameless) and revenue-potential scenarios.</span></li>
@@ -652,7 +655,7 @@
           <td>Rotterdam, beneath the Erasmusbrug</td>
           <td>Custom-built 1,500 m² venue, 60 projectors, two fixed 60-min shows (Dutch Masters, Spirit of Japan)</td>
           <td>€24.50 adult / €16.50 child</td>
-          <td><a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener" style="color:#0a0f1a;">@remastered_experience</a> (19K)</td>
+          <td><a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener" style="color:#0a0f1a;">@remastered_experience</a> (19.6K)</td>
           <td><a href="https://www.tiktok.com/@remastered_experience" target="_blank" rel="noopener" style="color:#0a0f1a;">@remastered_experience</a> (6,867)</td>
           <td>No official channel found</td>
           <td>Baseline</td>
@@ -702,7 +705,7 @@
           <td>Amsterdam</td>
           <td>Immersive digital rooms as one wing inside a broader modern-art museum (Banksy, Warhol, Basquiat, Kusama)</td>
           <td>from €19.95 (full museum ticket)</td>
-          <td><a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a> (463K)</td>
+          <td><a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a> (467K)</td>
           <td><a href="https://www.tiktok.com/@mocomuseum" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a> (303,500)</td>
           <td><a href="https://www.youtube.com/channel/UCLc2wvxp8zwdqb_N6bXRYcA" target="_blank" rel="noopener" style="color:#0000aa;">Moco Museum</a> (1,110)</td>
           <td>Cheaper, but the immersive content is a bonus inside a general museum ticket, not a standalone destination the way Remastered is. Instagram/YouTube reflect the whole museum brand, not the immersive wing alone — but its 303,500 TikTok followers make it the single biggest social presence in this table</td>
@@ -785,8 +788,8 @@
             <td>Santa Fe, New Mexico</td>
             <td>2016 (collective founded 2008)</td>
             <td>~$32–35 adult</td>
-            <td><a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener" style="color:#0a0f1a;">@meow__wolf</a> (501K*)</td>
-            <td><a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener" style="color:#0a0f1a;">@meowwolf</a> (226,600)</td>
+            <td><a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener" style="color:#0a0f1a;">@meow__wolf</a> (740K*)</td>
+            <td><a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener" style="color:#0a0f1a;">@meowwolf</a> (226.7K)</td>
             <td><a href="https://www.youtube.com/meowwolf" target="_blank" rel="noopener" style="color:#0a0f1a;">Meow Wolf</a> (176K)</td>
             <td>The most directly relevant precedent: an independent immersive-experience brand, not backed by an existing museum group, that raised $158M in outside investment to professionalize and expand from one city to Denver, Las Vegas and Grapevine, TX — the closest real-world model for what "prepare for international expansion" could look like for Remastered, and the single strongest social footprint of any name in this table. Follower counts are the corporate brand account; individual sites (e.g. @meowwolfsantafe) also run their own smaller accounts*</td>
           </tr>
@@ -865,8 +868,8 @@
         <div class="ref-why">The strongest total social footprint of any name in this table — built as an independent immersive brand, not a museum wing.</div>
         <div class="ref-links">
           <a href="https://meowwolf.com/visit/santa-fe" target="_blank" rel="noopener">Website &rarr;</a>
-          <a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener">Instagram — 501K*</a>
-          <a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener">TikTok — 226,600</a>
+          <a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener">Instagram — 740K*</a>
+          <a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener">TikTok — 226.7K</a>
           <a href="https://www.youtube.com/meowwolf" target="_blank" rel="noopener">YouTube — 176K</a>
         </div>
       </div>
@@ -875,7 +878,7 @@
         <div class="ref-why">The single biggest TikTok following of any name in this table — 303,500 — from one wing inside a broader museum.</div>
         <div class="ref-links">
           <a href="https://www.mocomuseum.com/exhibitions/amsterdam/digital-immersive-art-amsterdam/" target="_blank" rel="noopener">Website &rarr;</a>
-          <a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener">Instagram — 463K</a>
+          <a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener">Instagram — 467K</a>
           <a href="https://www.tiktok.com/@mocomuseum" target="_blank" rel="noopener">TikTok — 303,500</a>
           <a href="https://www.youtube.com/channel/UCLc2wvxp8zwdqb_N6bXRYcA" target="_blank" rel="noopener">YouTube — 1,110</a>
         </div>
@@ -918,39 +921,59 @@
     <div class="sec-num">04</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Digital Benchmark</div>
-      <div class="sec-title">Social Media — Remastered vs. teamLab Planets</div>
+      <div class="sec-title">Social Media — Remastered vs. teamLab, Meow Wolf &amp; Moco Museum</div>
     </div>
   </div>
 
-  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:20px 0 8px;">TikTok</div>
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:20px 0 8px;">Instagram</div>
+  <div class="cmp-row-4" style="margin-top:0;">
+    <div class="cmp-col"><div class="cmp-col-label">@remastered_experience</div><img src="img/remastered-instagram.png" alt="Remastered Instagram profile"/></div>
+    <div class="cmp-col accent"><div class="cmp-col-label">@teamlab (benchmark)</div><img src="img/teamlab-instagram.png" alt="teamLab Instagram profile"/></div>
+    <div class="cmp-col accent"><div class="cmp-col-label">@meow__wolf (benchmark)</div><img src="img/meowwolf-instagram.png" alt="Meow Wolf Instagram profile"/></div>
+    <div class="cmp-col accent"><div class="cmp-col-label">@mocomuseum (benchmark)</div><img src="img/moco-instagram.png" alt="Moco Museum Instagram profile"/></div>
+  </div>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Metric</th><th>Remastered</th><th>teamLab</th><th>Meow Wolf</th><th>Moco Museum</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>Followers</td><td>19.6K</td><td>406K*</td><td>740K*</td><td>467K</td></tr>
+        <tr><td>Posts</td><td>641</td><td>2,680</td><td>3,036</td><td>2,354</td></tr>
+        <tr><td>Bio</td><td>4-line: new show, tickets, tagline, hours</td><td>Studio bio, linked sister-site accounts</td><td>"Making Worlds" + linked city accounts</td><td>3-line: cities, artists, visitor count</td></tr>
+        <tr><td>Link in bio</td><td>linktr.ee/remasteredexperience + 4 more</td><td>teamlab.art</td><td>linktr.ee/meowwolf + 1 more</td><td>mocomuseum.com + 2 more</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sources: <a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener" style="color:#0000aa;">@remastered_experience</a> · <a href="https://www.instagram.com/teamlab/" target="_blank" rel="noopener" style="color:#0000aa;">@teamlab</a> · <a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener" style="color:#0000aa;">@meow__wolf</a> · <a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a>, screenshots captured directly from each public profile, 19 Aug 2026. *teamLab and Meow Wolf are studio/brand-wide accounts covering every site (7 teamLab locations, 4 Meow Wolf locations), not experience-specific.</div>
+
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">TikTok</div>
   <div class="cmp-row" style="margin-top:0;">
     <div class="cmp-col"><div class="cmp-col-label">@remastered_experience</div><img src="img/remastered-tiktok.png" alt="Remastered TikTok profile"/></div>
     <div class="cmp-col accent"><div class="cmp-col-label">@teamlabplanets (benchmark)</div><img src="img/teamlab-tiktok.png" alt="teamLab Planets TikTok profile"/></div>
   </div>
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Metric</th><th>Remastered</th><th>teamLab Planets</th></tr></thead>
+      <thead><tr><th>Metric</th><th>Remastered</th><th>teamLab Planets</th><th>Meow Wolf</th><th>Moco Museum</th></tr></thead>
       <tbody>
-        <tr class="target"><td>Followers</td><td>6,867</td><td>1,384</td></tr>
-        <tr><td>Likes</td><td>69.3K</td><td>3,639</td></tr>
-        <tr><td>Bio</td><td>4-line: new show, tickets, tagline, hours</td><td>1-line: exhibition dates + hashtags</td></tr>
-        <tr><td>Link in bio</td><td>remastered.nl</td><td>teamlab.art + app store</td></tr>
+        <tr class="target"><td>Followers</td><td>6,867</td><td>1,384</td><td>226.7K</td><td>303.5K</td></tr>
+        <tr><td>Likes</td><td>69.3K</td><td>3,639</td><td>1.9M</td><td>1.6M</td></tr>
+        <tr><td>Bio</td><td>4-line: new show, tickets, tagline, hours</td><td>1-line: exhibition dates + hashtags</td><td>1-line: mission statement</td><td>1-line: museum category</td></tr>
+        <tr><td>Link in bio</td><td>remastered.nl</td><td>teamlab.art + app store</td><td>meowwolf.com</td><td>mocomuseum.com</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Remastered's TikTok following and engagement already exceed teamLab Planets' dedicated account. Captured 17 Aug 2026 directly from each profile's public data.</div>
+  <div class="src-note">Remastered's TikTok following and engagement already exceed teamLab Planets' dedicated account, though trail the multi-city Meow Wolf and Moco Museum brand accounts. Sources: <a href="https://www.tiktok.com/@remastered_experience" target="_blank" rel="noopener" style="color:#0000aa;">@remastered_experience</a> · <a href="https://www.tiktok.com/@teamlabplanets" target="_blank" rel="noopener" style="color:#0000aa;">@teamlabplanets</a> · <a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener" style="color:#0000aa;">@meowwolf</a> · <a href="https://www.tiktok.com/@mocomuseum" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a>. Remastered and teamLab captured 17 Aug 2026, Meow Wolf and Moco Museum captured 19 Aug 2026, all directly from each profile's public data.</div>
 
-  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">Instagram &amp; YouTube</div>
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">YouTube</div>
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Platform</th><th>Remastered</th><th>teamLab (studio account)</th></tr></thead>
+      <thead><tr><th>Metric</th><th>Remastered</th><th>teamLab</th><th>Meow Wolf</th><th>Moco Museum</th></tr></thead>
       <tbody>
-        <tr><td>Instagram</td><td><a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener" style="color:#0000aa;">@remastered_experience</a> — 19K</td><td><a href="https://www.instagram.com/teamlab/" target="_blank" rel="noopener" style="color:#0000aa;">@teamlab</a> — 406K*</td></tr>
-        <tr><td>YouTube</td><td>No official channel</td><td><a href="https://www.youtube.com/@teamLabART" target="_blank" rel="noopener" style="color:#0000aa;">teamLab ART</a> — 49.1K subs*</td></tr>
+        <tr><td>Channel</td><td>No official channel</td><td><a href="https://www.youtube.com/@teamLabART" target="_blank" rel="noopener" style="color:#0000aa;">teamLab ART*</a></td><td><a href="https://www.youtube.com/meowwolf" target="_blank" rel="noopener" style="color:#0000aa;">Meow Wolf</a></td><td><a href="https://www.youtube.com/channel/UCLc2wvxp8zwdqb_N6bXRYcA" target="_blank" rel="noopener" style="color:#0000aa;">Moco Museum</a></td></tr>
+        <tr class="target"><td>Subscribers</td><td>—</td><td>49.1K</td><td>176K</td><td>1,110</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Instagram/YouTube screenshots are cookie-gated for anonymous visitors on both platforms — figures shown instead. *teamLab's studio-wide accounts, not Planets-specific.</div>
+  <div class="src-note">Instagram/YouTube profile pages are cookie-gated for anonymous visitors on some platforms — figures shown alongside screenshots where captured. Figures per Section 02 tables above, captured 17 Aug 2026 directly from each channel's public page. *teamLab's studio-wide channel, not Planets-specific.</div>
 
   <!-- SECTION 05: CUSTOMER SERVICE -->
   <div id="sec-05" class="sec-header">
