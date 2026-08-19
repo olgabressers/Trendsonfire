@@ -72,6 +72,8 @@
     .sec-label{flex:1;padding-top:5px;}
     .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:4px;}
     .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.3vw,26px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+    .sec-toggle{margin-left:auto;flex-shrink:0;width:30px;height:30px;border:1px solid #0000aa;background:white;color:#0000aa;border-radius:50%;font-size:16px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0;margin-top:5px;}
+    .sec-toggle:hover{background:#0000aa;color:white;}
 
     /* SOURCE NOTE */
     .src-note{font-size:12px;color:#0a0f1a;padding:8px 12px;background:#f9fafb;border-left:3px solid #0000aa;margin-top:10px;line-height:1.6;}
@@ -362,6 +364,7 @@
       <div class="sec-eyebrow">Company &amp; Market</div>
       <div class="sec-title">Company snapshot, visitor growth &amp; market context</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-01')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="chart-box" style="margin-bottom:24px;">
@@ -591,6 +594,7 @@
       <div class="sec-eyebrow">Competitive Landscape</div>
       <div class="sec-title">6 comparable immersive experiences in the Netherlands</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-02')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="mkt-wrap">
@@ -852,6 +856,7 @@
       <div class="sec-eyebrow">Digital Benchmark</div>
       <div class="sec-title">Website — Remastered vs. teamLab Planets</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-03')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="cmp-row">
@@ -881,6 +886,7 @@
       <div class="sec-eyebrow">Digital Benchmark</div>
       <div class="sec-title">Social Media — Remastered vs. teamLab, Meow Wolf &amp; Moco Museum</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-04')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:20px 0 8px;">Instagram</div>
@@ -950,6 +956,7 @@
       <div class="sec-eyebrow">Customer Intelligence</div>
       <div class="sec-title">Customer Service — reviews &amp; support channels</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-05')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:0 0 8px;">Review platforms</div>
@@ -1077,6 +1084,7 @@
       <div class="sec-eyebrow">Commercial Model</div>
       <div class="sec-title">Commercial channels today — what exists and what the mandate asks to build</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-06')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="channels-grid">
@@ -1126,6 +1134,7 @@
       <div class="sec-eyebrow">Commercial Model</div>
       <div class="sec-title">Corporate Clients — pricing benchmarks &amp; revenue potential</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-07')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:0 0 8px;">What Remastered already charges</div>
@@ -1173,6 +1182,7 @@
       <div class="sec-eyebrow">Synthesis</div>
       <div class="sec-title">Strengths &amp; Opportunities — by topic</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-08')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="kpi-groups" style="margin-top:0;">
@@ -1279,6 +1289,7 @@
       <div class="sec-eyebrow">Role scope</div>
       <div class="sec-title">Algemeen Directeur — six accountability areas &amp; Olga's experience</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-09')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="scope-grid">
@@ -1406,6 +1417,7 @@
       <div class="sec-eyebrow">KPIs</div>
       <div class="sec-title">Full KPI framework — four layers</div>
     </div>
+    <button class="sec-toggle" onclick="toggleSection('sec-10')" aria-label="Collapse section">&minus;</button>
   </div>
 
   <div class="kpi-groups">
@@ -1496,5 +1508,20 @@
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
 <style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#08080f;color:#FFD300;border:1px solid rgba(255,211,0,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000;}</style>
 <script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+<script>
+function toggleSection(headerId){
+  var header = document.getElementById(headerId);
+  if(!header) return;
+  var collapsed = header.classList.toggle('collapsed');
+  var btn = header.querySelector('.sec-toggle');
+  btn.innerHTML = collapsed ? '&#43;' : '&minus;';
+  btn.setAttribute('aria-label', collapsed ? 'Expand section' : 'Collapse section');
+  var el = header.nextElementSibling;
+  while(el && !el.classList.contains('sec-header')){
+    el.style.display = collapsed ? 'none' : '';
+    el = el.nextElementSibling;
+  }
+}
+</script>
 </body>
 </html>
