@@ -125,6 +125,8 @@
     .vbar-fill{width:70%;border-radius:3px 3px 0 0;background:#0000aa;}
     .vbar-fill.latest{background:#FFD300;}
     .vbar-yr{font-size:11.5px;color:#4b5563;margin-top:6px;text-align:center;line-height:1.4;}
+    .vbar-src{font-size:10.5px;margin-top:4px;text-align:center;}
+    .vbar-src a{color:#0000aa;}
 
     /* MARKET COMPARISON TABLE */
     .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
@@ -133,6 +135,9 @@
     .mkt-table td{padding:11px 13px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
     .mkt-table tr:last-child td{border-bottom:none;}
     .mkt-table tr.target td{background:#fffbea;font-weight:700;}
+    .mkt-exp-cell{display:flex;flex-direction:column;gap:6px;min-width:130px;}
+    .mkt-exp-cell img{width:130px;height:82px;object-fit:cover;border-radius:2px;display:block;}
+    .mkt-exp-cell .mkt-exp-name{font-weight:700;line-height:1.3;}
 
     /* PRIORITY TABLE */
     .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
@@ -442,25 +447,27 @@
         <span class="vbar-val">10,000+</span>
         <div class="vbar-fill" style="height:4%;"></div>
         <span class="vbar-yr">Official opening<br>Sep 2021</span>
+        <span class="vbar-src"><a href="https://www.events.nl/nieuws/digital-art-experience-remastered-rotterdam-officieel-geopend" target="_blank" rel="noopener">Events.nl</a></span>
       </div>
       <div class="vbar">
         <span class="vbar-val">200,000</span>
         <div class="vbar-fill" style="height:40%;"></div>
         <span class="vbar-yr">2-year mark<br>Jun 2023</span>
+        <span class="vbar-src"><a href="https://pretwerk.nl/recreatie-actueel/immisive-kunst-experience-remstered-rotterdam-ontvangt-200-000e-bezoeker/80632/" target="_blank" rel="noopener">Pretwerk</a></span>
       </div>
       <div class="vbar">
         <span class="vbar-val">450,000+</span>
         <div class="vbar-fill" style="height:90%;"></div>
         <span class="vbar-yr">Job posting figure<br>2026</span>
+        <span class="vbar-src"><a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a></span>
       </div>
       <div class="vbar">
         <span class="vbar-val">~500,000</span>
         <div class="vbar-fill latest" style="height:100%;"></div>
         <span class="vbar-yr">5-year anniversary<br>Jul 2026</span>
+        <span class="vbar-src"><a href="https://drimble.nl/regio/zuid-holland/hoeksche-waard/107356170/bijzondere-attractie-remastered-bestaat-vijf-jaar-half-miljoen-bezoekers-en-voor-het-eerst-een-nieuwe-show.html" target="_blank" rel="noopener">AD.nl via Drimble</a></span>
       </div>
     </div>
-    <div style="margin-top:16px;background:#08080f;padding:14px 16px;color:white;font-size:13px;line-height:1.65;">Roughly 200,000 visitors in the first two years, then another 250,000–300,000 across the following three — organic growth on word-of-mouth and press, already averaging close to the 100,000-a-year floor of the new target range.</div>
-    <div class="chart-src">Sources: <a href="https://www.events.nl/nieuws/digital-art-experience-remastered-rotterdam-officieel-geopend" target="_blank" rel="noopener">Events.nl</a> (opening) · <a href="https://pretwerk.nl/recreatie-actueel/immisive-kunst-experience-remstered-rotterdam-ontvangt-200-000e-bezoeker/80632/" target="_blank" rel="noopener">Pretwerk</a> (200,000th visitor) · <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a> · <a href="https://drimble.nl/regio/zuid-holland/hoeksche-waard/107356170/bijzondere-attractie-remastered-bestaat-vijf-jaar-half-miljoen-bezoekers-en-voor-het-eerst-een-nieuwe-show.html" target="_blank" rel="noopener">AD.nl via Drimble</a> (5-year mark)</div>
   </div>
 
   <!-- SLOT CAPACITY BY MONTH -->
@@ -640,7 +647,7 @@
       </thead>
       <tbody>
         <tr class="target">
-          <td><strong><a href="https://remastered.nl/en/" target="_blank" rel="noopener" style="color:#0a0f1a;">Remastered</a></strong></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/remastered.jpg" alt="Remastered venue"/><a href="https://remastered.nl/en/" target="_blank" rel="noopener" style="color:#0a0f1a;" class="mkt-exp-name">Remastered</a></div></td>
           <td>Rotterdam, beneath the Erasmusbrug</td>
           <td>Custom-built 1,500 m² venue, 60 projectors, two fixed 60-min shows (Dutch Masters, Spirit of Japan)</td>
           <td>€24.50 adult / €16.50 child</td>
@@ -650,7 +657,7 @@
           <td>Baseline</td>
         </tr>
         <tr>
-          <td><a href="https://www.fabrique-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;">Fabrique des Lumières</a></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/fabrique.jpg" alt="Fabrique des Lumières venue"/><a href="https://www.fabrique-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Fabrique des Lumières</a></div></td>
           <td>Amsterdam, Westergasfabriek</td>
           <td>100+ projectors, walls up to 17m, exhibitions rotate roughly every quarter (Klimt, Dalí, Monet, Coldplay, Dutch Masters)</td>
           <td>from €16–18 adult</td>
@@ -660,7 +667,7 @@
           <td>Cheaper, backed by an international chain (Culturespaces — Bordeaux, Paris, Seoul, Dubai) that rotates content quarterly. The closest and most direct competitor to Remastered's two-show format</td>
         </tr>
         <tr>
-          <td><a href="https://vangoghexpo.com/utrecht/en/" target="_blank" rel="noopener" style="color:#0000aa;">Van Gogh: The Immersive Experience</a></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/vangogh-utrecht.jpg" alt="Van Gogh: The Immersive Experience venue"/><a href="https://vangoghexpo.com/utrecht/en/" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Van Gogh: The Immersive Experience</a></div></td>
           <td>Utrecht, Jaarbeurs (Hall 5)</td>
           <td>1,000+ m², 200+ works, VIP tier with VR add-on</td>
           <td>pricing unpublished; site now lists the show as closed</td>
@@ -670,7 +677,7 @@
           <td>Larger footprint but a touring single-artist show that has already closed. Remastered's five-year run in a purpose-built venue has outlasted it — the huge follower count belongs to the global touring "Van Gogh Expo" brand, not the Utrecht site alone*</td>
         </tr>
         <tr>
-          <td><a href="https://vangoghinamsterdam.com/en" target="_blank" rel="noopener" style="color:#0000aa;">Van Gogh &amp; Rembrandt in Amsterdam</a></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/vangogh-rembrandt-ams.jpg" alt="Van Gogh &amp; Rembrandt in Amsterdam venue"/><a href="https://vangoghinamsterdam.com/en" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Van Gogh &amp; Rembrandt in Amsterdam</a></div></td>
           <td>Amsterdam, Noorderkerk (Jordaan)</td>
           <td>360° sound-and-light show in an active church, 40 min</td>
           <td>€20 adult</td>
@@ -680,7 +687,7 @@
           <td>Shorter and cheaper, staged in a borrowed church rather than a custom-built venue — lower production scale and a smaller Instagram following than Remastered</td>
         </tr>
         <tr>
-          <td><a href="https://rembrandtsamsterdam.com/" target="_blank" rel="noopener" style="color:#0000aa;">Rembrandt's Amsterdam Experience</a></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/rembrandts-ams.jpg" alt="Rembrandt's Amsterdam Experience venue"/><a href="https://rembrandtsamsterdam.com/" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Rembrandt's Amsterdam Experience</a></div></td>
           <td>Amsterdam, near Leidseplein</td>
           <td>"5D" show in a reconstructed studio, 25 min, single-artist (Rembrandt only)</td>
           <td>from €24.50 (VIP tier)</td>
@@ -690,7 +697,7 @@
           <td>Similar price point but less than half the running time and one artist, versus Remastered's five-artist, 60-minute format</td>
         </tr>
         <tr>
-          <td><a href="https://www.mocomuseum.com/exhibitions/amsterdam/digital-immersive-art-amsterdam/" target="_blank" rel="noopener" style="color:#0000aa;">Moco Museum — Digital &amp; Immersive Art</a></td>
+          <td><div class="mkt-exp-cell"><img src="img/thumbs/moco-immersive.jpg" alt="Moco Museum digital &amp; immersive art wing"/><a href="https://www.mocomuseum.com/exhibitions/amsterdam/digital-immersive-art-amsterdam/" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Moco Museum — Digital &amp; Immersive Art</a></div></td>
           <td>Amsterdam</td>
           <td>Immersive digital rooms as one wing inside a broader modern-art museum (Banksy, Warhol, Basquiat, Kusama)</td>
           <td>from €19.95 (full museum ticket)</td>
@@ -723,7 +730,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener" style="color:#0000aa;">teamLab Planets</a></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/teamlab-planets.jpg" alt="teamLab Planets venue"/><a href="https://www.teamlab.art/e/planets/" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">teamLab Planets</a></div></td>
             <td>Tokyo (Toyosu)</td>
             <td>2018</td>
             <td>¥3,800–4,200 adult (~€23–26)</td>
@@ -733,7 +740,7 @@
             <td>The category's global benchmark — currently Tokyo's most-visited museum, eight years after opening, still on a single flagship site rather than a multi-city chain. Proof that one strong site can sustain demand indefinitely without expansion; it is scheduled to close at the end of 2027. Instagram/YouTube are teamLab's overall studio accounts (huge); the Planets-specific TikTok account is tiny by comparison — the studio brand carries the following, not the single site*</td>
           </tr>
           <tr>
-            <td><a href="https://www.halldeslumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;">Hall des Lumières</a></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/hall-des-lumieres.jpg" alt="Hall des Lumières venue"/><a href="https://www.halldeslumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Hall des Lumières</a></div></td>
             <td>New York (Manhattan)</td>
             <td>2022</td>
             <td>$30 adult / $15 youth</td>
@@ -743,7 +750,7 @@
             <td>Same operator (Culturespaces) as Amsterdam's Fabrique des Lumières, staged in a landmarked historic bank building — direct proof that Remastered's closest domestic competitor already runs the same format on three continents</td>
           </tr>
           <tr>
-            <td><a href="https://frameless.com/" target="_blank" rel="noopener" style="color:#0000aa;">Frameless</a></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/frameless.jpg" alt="Frameless venue"/><a href="https://frameless.com/" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Frameless</a></div></td>
             <td>London</td>
             <td>2022</td>
             <td>£29.50 adult (from £20 evening "Lates")</td>
@@ -753,7 +760,7 @@
             <td>Higher price than Remastered in one of the world's most expensive tourism markets, reinterpreting 40+ masterpieces across four galleries — evidence of price headroom in a major capital</td>
           </tr>
           <tr>
-            <td><a href="https://www.atelier-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;">Atelier des Lumières</a></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/atelier-des-lumieres.jpg" alt="Atelier des Lumières venue"/><a href="https://www.atelier-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Atelier des Lumières</a></div></td>
             <td>Paris</td>
             <td>2018</td>
             <td>€16 adult / €11 child</td>
@@ -763,7 +770,7 @@
             <td>The original Culturespaces venue that Fabrique des Lumières and Hall des Lumières were built from — cheaper than Remastered, drew 1.2M visitors in its first year alone</td>
           </tr>
           <tr>
-            <td><a href="https://www.bassins-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;">Bassins de Lumières</a></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/bassins-de-lumieres.jpg" alt="Bassins de Lumières venue"/><a href="https://www.bassins-lumieres.com/en" target="_blank" rel="noopener" style="color:#0000aa;" class="mkt-exp-name">Bassins de Lumières</a></div></td>
             <td>Bordeaux</td>
             <td>2020</td>
             <td>€16 adult</td>
@@ -773,7 +780,7 @@
             <td>Culturespaces' third site, built in a former WWII submarine base and marketed as the world's largest digital art centre — a concrete precedent for turning one flagship (Paris) into a multi-city, multi-country brand within two years</td>
           </tr>
           <tr class="target">
-            <td><strong><a href="https://meowwolf.com/visit/santa-fe" target="_blank" rel="noopener" style="color:#0a0f1a;">Meow Wolf — House of Eternal Return</a></strong></td>
+            <td><div class="mkt-exp-cell"><img src="img/thumbs/meow-wolf-santafe.jpg" alt="Meow Wolf — House of Eternal Return venue"/><a href="https://meowwolf.com/visit/santa-fe" target="_blank" rel="noopener" style="color:#0a0f1a;" class="mkt-exp-name">Meow Wolf — House of Eternal Return</a></div></td>
             <td>Santa Fe, New Mexico</td>
             <td>2016 (collective founded 2008)</td>
             <td>~$32–35 adult</td>
@@ -933,7 +940,6 @@
       </tbody>
     </table>
   </div>
-  <div class="src-note">Sources: <a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener" style="color:#0000aa;">@remastered_experience</a> · <a href="https://www.instagram.com/teamlab/" target="_blank" rel="noopener" style="color:#0000aa;">@teamlab</a> · <a href="https://www.instagram.com/meow__wolf/" target="_blank" rel="noopener" style="color:#0000aa;">@meow__wolf</a> · <a href="https://www.instagram.com/mocomuseum/" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a>, screenshots captured directly from each public profile, 19 Aug 2026. *teamLab and Meow Wolf are studio/brand-wide accounts covering every site (7 teamLab locations, 4 Meow Wolf locations), not experience-specific.</div>
 
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">TikTok</div>
   <div class="cmp-row-4" style="margin-top:0;">
@@ -954,7 +960,6 @@
       </tbody>
     </table>
   </div>
-  <div class="src-note">Remastered's TikTok following and engagement already exceed teamLab Planets' dedicated account, though trail the multi-city Meow Wolf and Moco Museum brand accounts. Sources: <a href="https://www.tiktok.com/@remastered_experience" target="_blank" rel="noopener" style="color:#0000aa;">@remastered_experience</a> · <a href="https://www.tiktok.com/@teamlabplanets" target="_blank" rel="noopener" style="color:#0000aa;">@teamlabplanets</a> · <a href="https://www.tiktok.com/@meowwolf" target="_blank" rel="noopener" style="color:#0000aa;">@meowwolf</a> · <a href="https://www.tiktok.com/@mocomuseum" target="_blank" rel="noopener" style="color:#0000aa;">@mocomuseum</a>. Remastered and teamLab captured 17 Aug 2026, Meow Wolf and Moco Museum captured 19 Aug 2026, all directly from each profile's public data.</div>
 
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 8px;">YouTube</div>
   <div class="cmp-row-4" style="margin-top:0;">
@@ -1255,8 +1260,8 @@
       <div class="kpi-group-label">Visitor Experience &amp; Growth</div>
       <div class="kpi-row two">
         <div class="kpi-card">
-          <div class="kpi-name">Strength — half a million visitors on word-of-mouth alone</div>
-          <div class="kpi-desc">Five years of organic growth with no paid-acquisition spend disclosed anywhere publicly.</div>
+          <div class="kpi-name">Strength — half a million visitors reached</div>
+          <div class="kpi-desc">No paid-acquisition spend disclosed anywhere publicly across five years to ~500K visitors.</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-name">Opportunity — additional weekday timeslots</div>
@@ -1483,11 +1488,11 @@
         </div>
         <div class="kpi-card">
           <div class="kpi-name">Visitor satisfaction score</div>
-          <div class="kpi-desc">Review and rating performance across public platforms — the leading indicator behind five years of word-of-mouth growth</div>
+          <div class="kpi-desc">Review and rating performance across public platforms, the primary visible signal of visitor experience quality</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-name">Repeat-visit &amp; referral rate</div>
-          <div class="kpi-desc">The mechanism behind organic growth to date; protecting it while adding paid and corporate channels is a genuine trade-off to manage</div>
+          <div class="kpi-desc">A direct lever for visitor growth; balancing it with new paid and corporate channels is a genuine trade-off to manage</div>
         </div>
       </div>
     </div>
