@@ -155,6 +155,12 @@
     .pri-table tr:nth-child(even) td{background:#faf9f7;}
     .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:600;color:#0000aa;}
 
+    /* REACH FRAME */
+    .reach-frame{border:2px solid #0000aa;padding:28px 26px 18px;margin:32px 0 28px;background:#fff;}
+    @media(max-width:700px){.reach-frame{padding:20px 16px 14px;}}
+    .reach-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,3.2vw,32px);font-weight:600;color:#0a0f1a;margin-bottom:16px;}
+    .reach-title span{color:#0000aa;}
+
     /* SCOPE CARDS */
     .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
     @media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr);}}
@@ -167,6 +173,22 @@
     .scope-kpi{background:#f3f4f6;padding:4px 10px;font-size:11.5px;font-weight:600;color:#0a0f1a;border-radius:2px;}
     .scope-exp{margin-top:12px;padding:10px 14px;background:#08080f;border-left:3px solid rgba(255,211,0,.5);font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
     .scope-exp strong{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#FFD300;margin-bottom:6px;}
+
+    /* CAREER SNAPSHOT — CLOSE OF ROLE-SCOPE SECTION */
+    .bio-wrap{background:#08080f;padding:52px 48px;margin:44px -48px 0;display:flex;gap:48px;align-items:flex-start;}
+    @media(max-width:700px){.bio-wrap{padding:36px 16px;margin:36px -16px 0;flex-direction:column-reverse;gap:28px;}}
+    .bio-col-text{flex:1 1 auto;min-width:0;}
+    .bio-tag{font-size:15.5px;font-weight:700;color:white;line-height:1.5;margin-bottom:26px;}
+    .bio-motto{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,2.8vw,30px);font-weight:500;color:#FFD300;line-height:1.3;margin-bottom:34px;}
+    .bio-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:16px;}
+    .bio-timeline{display:flex;flex-direction:column;gap:15px;}
+    .bio-row{display:flex;gap:16px;}
+    .bio-year{flex:0 0 96px;font-size:12.5px;font-weight:800;color:#FFD300;padding-top:1px;}
+    .bio-role{font-size:13.5px;color:white;line-height:1.5;}
+    .bio-role span{display:block;color:rgba(255,255,255,.8);font-size:12.5px;margin-top:3px;}
+    .bio-col-photo{flex:0 0 220px;}
+    @media(max-width:700px){.bio-col-photo{flex:0 0 auto;width:190px;margin:0 auto;}}
+    .bio-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;display:block;}
 
     /* FOUNDER CARDS */
     .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0;}
@@ -1075,50 +1097,52 @@
   </div>
   <div class="src-note">Sources: <a href="https://www.linkedin.com/company/remastered-experience/" target="_blank" rel="noopener" style="color:#0000aa;">Remastered Experience</a> · <a href="https://www.linkedin.com/company/teamlab/" target="_blank" rel="noopener" style="color:#0000aa;">teamLab Inc.</a> · <a href="https://www.linkedin.com/company/meow-wolf/" target="_blank" rel="noopener" style="color:#0000aa;">Meow Wolf</a> · <a href="https://www.linkedin.com/company/moco-museum/" target="_blank" rel="noopener" style="color:#0000aa;">Moco Museum</a></div>
 
-  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:24px 0 10px;">How to increase reach</div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead>
-        <tr>
-          <th style="width:36px;">#</th>
-          <th>Suggestion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pri-num">1</span></td>
-          <td><strong>Upgrade the website to a modern experience</strong></td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">2</span></td>
-          <td><strong>AI recommendation</strong> — structured data (schema.org, llms.txt) so AI assistants can surface and recommend Remastered</td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">3</span></td>
-          <td><strong>SEO optimization</strong> across the website</td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">4</span></td>
-          <td><strong>Social media in English</strong> — all platforms, all posts</td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">5</span></td>
-          <td><strong>Standardize hashtags</strong> to what people actually search for</td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">6</span></td>
-          <td><strong>Open a YouTube channel</strong></td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">7</span></td>
-          <td><strong>Instagram &amp; TikTok</strong> — curate the following list to be relevant for the algorithm, not personal interest; build a defined social media strategy</td>
-        </tr>
-        <tr>
-          <td><span class="pri-num">8</span></td>
-          <td><strong>LinkedIn</strong> — publish articles 3x/week on topics that attract corporate attention, converting readers to the experience; goal is to grow followers first</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="reach-frame">
+    <div class="reach-title">How to increase <span>reach</span></div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead>
+          <tr>
+            <th style="width:36px;">#</th>
+            <th>Suggestion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pri-num">1</span></td>
+            <td><strong>Upgrade the website to a modern experience</strong></td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">2</span></td>
+            <td><strong>AI recommendation</strong> — structured data (schema.org, llms.txt) so AI assistants can surface and recommend Remastered</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">3</span></td>
+            <td><strong>SEO optimization</strong> across the website</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">4</span></td>
+            <td><strong>Social media in English</strong> — all platforms, all posts</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">5</span></td>
+            <td><strong>Standardize hashtags</strong> to what people actually search for</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">6</span></td>
+            <td><strong>Open a YouTube channel</strong></td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">7</span></td>
+            <td><strong>Instagram &amp; TikTok</strong> — curate the following list to be relevant for the algorithm, not personal interest; build a defined social media strategy</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">8</span></td>
+            <td><strong>LinkedIn</strong> — publish articles 3x/week on topics that attract corporate attention, converting readers to the experience; goal is to grow followers first</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- SECTION 05: CUSTOMER SERVICE -->
@@ -1320,7 +1344,6 @@
           <li>The mandate names corporate events, product launches, sponsorship, partnerships and hospitality as new revenue lines to build</li>
           <li>The opportunity: turn five years of proven ticketing traction into a multi-line commercial model</li>
         </ul>
-        <div class="bk-card-src">Source: <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a> · <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl</a></div>
       </div>
       <div class="bk-card">
         <div class="bk-num">02</div>
@@ -1330,7 +1353,6 @@
           <li>The founders have led commercial growth directly to roughly 500,000 visitors in five years — the role scales what they've built</li>
           <li>The opportunity: build a professional commercial layer on a founder-led attraction with proven organic demand</li>
         </ul>
-        <div class="bk-card-src">Source: <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a></div>
       </div>
       <div class="bk-card">
         <div class="bk-num">03</div>
@@ -1340,7 +1362,6 @@
           <li>Professionalizing organizational operations is listed alongside the growth and revenue mandate</li>
           <li>The opportunity: build the governance, reporting and commercial playbook that international expansion requires</li>
         </ul>
-        <div class="bk-card-src">Source: <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a></div>
       </div>
     </div>
   </div>
@@ -1411,6 +1432,27 @@
         <span class="scope-kpi">Market selection</span>
       </div>
       <div class="scope-exp"><strong>Olga's experience</strong>Richemont: directed digital strategy and operations across 26 European countries and 3 distribution centres. adidas: drove the EU omni-channel vision and designed the EU network of stock points across markets.</div>
+    </div>
+  </div>
+
+  <!-- CAREER SNAPSHOT -->
+  <div class="bio-wrap">
+    <div class="bio-col-text">
+      <div class="bio-tag">I combine entrepreneurial and managerial skills proven by my experience.</div>
+      <div class="bio-motto">&ldquo;I have a vision, I create the future and I make things happen.&rdquo;</div>
+      <div class="bio-eyebrow">Career at a Glance</div>
+      <div class="bio-timeline">
+        <div class="bio-row"><div class="bio-year">2026 &ndash; Present</div><div class="bio-role"><strong>US Fashion Tech Start-up</strong> &mdash; Advisor<span>Business model, go-to-market, AI-driven tech stack and investor pitch.</span></div></div>
+        <div class="bio-row"><div class="bio-year">2025 &ndash; Present</div><div class="bio-role"><strong>TrendsOnFire</strong> &mdash; Creator &amp; Founder<span>AI-powered strategic market-intelligence platform for senior leaders.</span></div></div>
+        <div class="bio-row"><div class="bio-year">2019 &ndash; 2025</div><div class="bio-role"><strong>Richemont Luxury Group</strong> &mdash; Director E-Commerce, Customer Service &amp; Operations, EMEA<span>&euro;150M+ P&amp;L, 240+ FTE, 12 Maisons across 26 markets &middot; 30% YoY &middot; CX, payment &amp; anti-fraud transformation.</span></div></div>
+        <div class="bio-row"><div class="bio-year">2016 &ndash; 2018</div><div class="bio-role"><strong>adidas</strong> &mdash; Director Omni-Channel &amp; Supply Chain &middot; Director Digital Commerce &amp; Sales<span>EU omni-channel vision &amp; strategy, stock-point network design, Digital Partner Commerce.</span></div></div>
+        <div class="bio-row"><div class="bio-year">2010 &ndash; 2016</div><div class="bio-role"><strong>Nike</strong> &mdash; Business Development Manager, Omni-Channel &amp; Digital Sales &middot; Senior Project Manager DTC &amp; Tech<span>Digital transformation of Europe's largest sporting-goods retailer; trade terms redesign, Olympic launches, DTC extension, SAP Retail.</span></div></div>
+        <div class="bio-row"><div class="bio-year">2006 &ndash; 2010</div><div class="bio-role"><strong>IBM</strong> &mdash; Senior Supply Chain Consultant<span>Demand planning, MRP, SAP APO process design, project &amp; change management for Numico, Avebe, InBev and others.</span></div></div>
+        <div class="bio-row"><div class="bio-year">Earlier</div><div class="bio-role"><span>PDEng Logistics Management Systems (TU Eindhoven) &middot; MSc Public Administration &middot; MSc Applied Mathematics.</span></div></div>
+      </div>
+    </div>
+    <div class="bio-col-photo">
+      <img src="img/olga-bressers-photo.jpg" alt="Olga Bressers" class="bio-photo"/>
     </div>
   </div>
 
