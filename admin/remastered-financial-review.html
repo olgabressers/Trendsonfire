@@ -35,7 +35,21 @@
     .assump-list li{font-size:13.5px;color:#0a0f1a;line-height:1.55;padding:6px 0 6px 16px;position:relative;border-bottom:1px solid #eeece7;}
     .assump-list li:last-child{border-bottom:none;}
     .assump-list li::before{content:'—';position:absolute;left:0;color:#0000aa;font-weight:700;}
-    h2.sec-h{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:0 0 12px;}
+    h2.sec-h{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:600;letter-spacing:0;text-transform:none;color:#0000aa;margin:0 0 16px;line-height:1.15;}
+    .model-group{background:#08080f;padding:22px 24px;margin:44px 0 24px;border-left:5px solid #FFD300;}
+    .model-group .tag{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#FFD300;font-weight:800;margin-bottom:6px;}
+    .model-group h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:32px;font-weight:600;color:white;margin:0;line-height:1.15;}
+    .model-group p{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.5;}
+    .toc-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin-bottom:32px;}
+    .toc-box h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:14px;}
+    .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+    @media(max-width:700px){.toc-grid{grid-template-columns:1fr;}}
+    .toc-grid .toc-tag{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;margin-bottom:8px;}
+    .toc-grid ol{list-style:none;counter-reset:toc;padding:0;margin:0;}
+    .toc-grid li{counter-increment:toc;font-size:14px;padding:5px 0;}
+    .toc-grid li a{color:#0a0f1a;text-decoration:none;}
+    .toc-grid li a:hover{color:#0000aa;text-decoration:underline;}
+    .toc-grid li::before{content:counter(toc) ". ";color:#0000aa;font-weight:700;}
     .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
     .mkt-table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
     .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 14px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
@@ -96,6 +110,33 @@
 
 <main>
 
+  <div class="toc-box">
+    <h2>Contents</h2>
+    <div class="toc-grid">
+      <div>
+        <div class="toc-tag">Model 1 — Industry-benchmark P&amp;L</div>
+        <ol>
+          <li><a href="#pnl-benchmark">P&amp;L, current pace to stated growth target</a></li>
+          <li><a href="#cost-structure-benchmark">Cost structure — modeled OPEX &amp; CAPEX</a></li>
+          <li><a href="#per-visitor-benchmark">Per visitor, at current pace</a></li>
+        </ol>
+      </div>
+      <div>
+        <div class="toc-tag">Model 2 — Bottom-up cost build</div>
+        <ol>
+          <li><a href="#revenue-bottomup">Revenue, current pace</a></li>
+          <li><a href="#people-bottomup">People</a></li>
+          <li><a href="#marketing-bottomup">Marketing</a></li>
+          <li><a href="#technology-bottomup">Technology</a></li>
+          <li><a href="#property-bottomup">Property &amp; occupancy</a></li>
+          <li><a href="#depreciation-bottomup">Depreciation &amp; admin</a></li>
+          <li><a href="#pnl-summary-bottomup">P&amp;L summary</a></li>
+          <li><a href="#per-visitor-bottomup">Per visitor</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
   <div class="assump-box">
     <h2>What's fact vs. what's modeled</h2>
     <div class="assump-grid">
@@ -123,7 +164,13 @@
     </div>
   </div>
 
-  <h2 class="sec-h">P&amp;L, current pace to stated growth target</h2>
+  <div class="model-group">
+    <div class="tag">Model 1</div>
+    <h2>Industry-benchmark P&amp;L</h2>
+    <p>Ticketing revenue applied to sector-average EBITDA and net margins for Hotels, Tourism &amp; Amusement.</p>
+  </div>
+
+  <h2 class="sec-h" id="pnl-benchmark">P&amp;L, current pace to stated growth target</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Basis</th><th style="text-align:right;">97,000/yr — current</th><th style="text-align:right;">100,000/yr</th><th style="text-align:right;">125,000/yr</th></tr></thead>
@@ -137,7 +184,7 @@
   </div>
   <div class="src-note">Sources: <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a> · <a href="https://csimarket.com/Industry/industry_Profitability_Ratios.php?ind=906" target="_blank" rel="noopener">CSIMarket</a> · <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">LinkedIn job posting</a> (100,000–125,000 target).</div>
 
-  <h2 class="sec-h">Cost structure — modeled OPEX &amp; CAPEX, current €2.17M total costs allocated by category</h2>
+  <h2 class="sec-h" id="cost-structure-benchmark">Cost structure — modeled OPEX &amp; CAPEX, current €2.17M total costs allocated by category</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Cost line</th><th>Type</th><th style="text-align:right;">97,000/yr</th><th style="text-align:right;">100,000/yr</th><th style="text-align:right;">125,000/yr</th></tr></thead>
@@ -157,7 +204,7 @@
   </div>
   <div class="src-note">Modeled category split of the €2.17M total costs above (not Remastered's disclosed figures) using standard attraction-venue cost ratios. Only ticketing/payment fees (4% of ticket revenue) scale with visitor volume — every other line is capacity-independent within the current venue and team.</div>
 
-  <h2 class="sec-h">Per visitor, at current pace</h2>
+  <h2 class="sec-h" id="per-visitor-benchmark">Per visitor, at current pace</h2>
   <div class="unit-row">
     <div class="unit-card">
       <div class="unit-lbl">Revenue / visitor</div>
@@ -173,7 +220,13 @@
     </div>
   </div>
 
-  <h2 class="sec-h">Revenue, current pace</h2>
+  <div class="model-group">
+    <div class="tag">Model 2</div>
+    <h2>Bottom-up cost build</h2>
+    <p>Costed role by role and line by line — People, Marketing, Technology, Property, Depreciation &amp; admin.</p>
+  </div>
+
+  <h2 class="sec-h" id="revenue-bottomup">Revenue, current pace</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Basis</th><th style="text-align:right;">€</th></tr></thead>
@@ -184,7 +237,7 @@
   </div>
   <div class="src-note">Source: <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">remastered.nl FAQ</a> (ticket price). Visitor pace and blended price per Section 01 of the main brief.</div>
 
-  <h2 class="sec-h">People — role-by-role, fully-loaded Dutch employer cost</h2>
+  <h2 class="sec-h" id="people-bottomup">People — role-by-role, fully-loaded Dutch employer cost</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Role</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
@@ -200,7 +253,7 @@
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. Fully-loaded = gross salary + ~27% Dutch employer on-costs (social security, pension, holiday allowance). Headcount calibrated to the 11–50 range Remastered's own LinkedIn page shows — <a href="https://www.linkedin.com/company/remastered-experience/" target="_blank" rel="noopener">LinkedIn</a> — most of that range is part-time hosts, hence FTE-equivalent below headcount. Excludes the new Algemeen Directeur role, not yet hired.</div>
 
-  <h2 class="sec-h">Marketing</h2>
+  <h2 class="sec-h" id="marketing-bottomup">Marketing</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
@@ -214,7 +267,7 @@
   </div>
   <div class="src-note">Assumption. OTA share estimated from GetYourGuide carrying by far the largest review count of any platform (2,419 vs. 89 TripAdvisor, 134 Facebook) — a proxy for booking volume, not a disclosed split. 18% is a typical OTA commission rate for this category.</div>
 
-  <h2 class="sec-h">Technology</h2>
+  <h2 class="sec-h" id="technology-bottomup">Technology</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
@@ -229,7 +282,7 @@
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. Ticketing platform confirmed as <a href="https://ticketcounter.nl" target="_blank" rel="noopener">ticketcounter.nl</a> (a third-party booking SaaS), per the post-visit confirmation email sender domain.</div>
 
-  <h2 class="sec-h">Property &amp; occupancy</h2>
+  <h2 class="sec-h" id="property-bottomup">Property &amp; occupancy</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
@@ -243,7 +296,7 @@
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. Venue is beneath the Erasmusbrug — likely a municipally-linked lease rather than open-market retail rent; €120/m² is a moderate placeholder pending Robin's actual figure.</div>
 
-  <h2 class="sec-h">Depreciation &amp; admin</h2>
+  <h2 class="sec-h" id="depreciation-bottomup">Depreciation &amp; admin</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
@@ -257,7 +310,7 @@
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. €3.5M original build cost is a placeholder for a venue of this scale (custom 1,500 m² fit-out, 60 projectors, "Europe's largest indoor LED screen") — the single largest unknown in this model and the one figure most worth checking directly with Robin.</div>
 
-  <h2 class="sec-h">P&amp;L summary — bottom-up model, current pace to stated growth target</h2>
+  <h2 class="sec-h" id="pnl-summary-bottomup">P&amp;L summary — bottom-up model, current pace to stated growth target</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead>
@@ -279,7 +332,7 @@
   </div>
   <div class="src-note">% columns are % of ticketing revenue in that scenario. Everything above "OTA commission + ticketing fees" is fixed within the current venue and team — it does not move with visitor volume. Only that one combined line (7.5% of revenue: 3% ticketing/payment fees + 4.5% OTA commission) scales, which is why net margin rises from 40.6% to 52.3% as volume grows toward the stated target.</div>
 
-  <h2 class="sec-h">Per visitor — bottom-up model, current pace</h2>
+  <h2 class="sec-h" id="per-visitor-bottomup">Per visitor — bottom-up model, current pace</h2>
   <div class="unit-row">
     <div class="unit-card">
       <div class="unit-lbl">Revenue / visitor</div>
