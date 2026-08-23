@@ -78,7 +78,9 @@
     .corp-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;color:#0000aa;line-height:1;margin-bottom:8px;}
     .corp-desc{font-size:12.5px;color:#0a0f1a;line-height:1.55;}
     .corp-cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:8px;}
-    @media(max-width:700px){.corp-cat-grid{grid-template-columns:1fr;}}
+    .corp-cat-grid.three{grid-template-columns:repeat(3,1fr);}
+    @media(max-width:980px){.corp-cat-grid.three{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:700px){.corp-cat-grid,.corp-cat-grid.three{grid-template-columns:1fr;}}
     .corp-cat-card{background:#08080f;padding:26px 22px;}
     .corp-cat-tag{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:white;margin-bottom:12px;line-height:1.15;}
     .corp-cat-num{font-family:"Cormorant Garamond",Georgia,serif;font-size:46px;font-weight:600;color:#FFD300;line-height:1;margin-bottom:4px;}
@@ -161,6 +163,8 @@
           <li><a href="#corp-market-size">Market opportunity — Netherlands</a></li>
           <li><a href="#corp-ceiling">Revenue ceiling</a></li>
           <li><a href="#corp-categories">Corporate client categories</a></li>
+          <li><a href="#corp-benchmark">What comparable venues sell</a></li>
+          <li><a href="#corp-plan">The build</a></li>
           <li><a href="#corp-offer">What Remastered already sells</a></li>
           <li><a href="#corp-revenue-potential">Revenue potential</a></li>
         </ol>
@@ -436,33 +440,77 @@
   <div class="subsection-divider"><span>Corporate &amp; venue-hire clients</span></div>
 
   <h2 class="sec-h" id="corp-categories">Corporate client categories</h2>
-  <div class="corp-cat-grid">
+  <div class="corp-cat-grid three">
     <div class="corp-cat-card">
-      <div class="corp-cat-tag">Corporate events &amp; conferences</div>
-      <div class="corp-cat-num">552,690</div>
-      <div class="corp-cat-sub">Companies within Zuid-Holland</div>
-      <div class="corp-cat-desc">Presentations, gala dinners, cocktail and drinks receptions — Remastered's Welcoming Area holds up to 300 people, 500 at full venue capacity.</div>
-    </div>
-    <div class="corp-cat-card">
-      <div class="corp-cat-tag">Product launches &amp; brand activations</div>
-      <div class="corp-cat-num">552,690</div>
-      <div class="corp-cat-sub">Companies within Zuid-Holland</div>
-      <div class="corp-cat-desc">Product launches and product presentations, with Remastered's own audiovisual show addable to the event.</div>
+      <div class="corp-cat-tag">School &amp; education groups</div>
+      <div class="corp-cat-num">17,000</div>
+      <div class="corp-cat-sub">Visits a year, live today</div>
+      <div class="corp-cat-desc">The largest group channel already running. €19.50/student under 100, €17.50/student for 100+. 1,677 schools sit within Zuid-Holland.</div>
     </div>
     <div class="corp-cat-card">
       <div class="corp-cat-tag">Team building &amp; company outings</div>
-      <div class="corp-cat-num">552,690</div>
-      <div class="corp-cat-sub">Companies within Zuid-Holland</div>
-      <div class="corp-cat-desc">Team days and department outings via the Exclusive Package, for groups up to 85.</div>
+      <div class="corp-cat-num">85</div>
+      <div class="corp-cat-sub">Guests, exclusive hire</div>
+      <div class="corp-cat-desc">Live today at €1,635 up to 50 guests, €2,500 for 51–85. Efteling sells the same format across 27 spaces for groups of 20 upward.</div>
     </div>
     <div class="corp-cat-card">
-      <div class="corp-cat-tag">School &amp; education groups</div>
-      <div class="corp-cat-num">1,677</div>
-      <div class="corp-cat-sub">Schools within Zuid-Holland</div>
-      <div class="corp-cat-desc">1,110 primary, 370 secondary and 197 special-education schools. Priced at €19.50/student (+€35 admin) under 100 students, €17.50/student (+€45 admin) for 100+.</div>
+      <div class="corp-cat-tag">Meetings, training &amp; workshops</div>
+      <div class="corp-cat-num">85</div>
+      <div class="corp-cat-sub">Guests, exclusive hire</div>
+      <div class="corp-cat-desc">Daytime use of the same exclusive slot. The Rijksmuseum runs this as breakfasts with a private tour and a dedicated hospitality room.</div>
+    </div>
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">Conferences &amp; congresses</div>
+      <div class="corp-cat-num">300</div>
+      <div class="corp-cat-sub">Seated, event layout</div>
+      <div class="corp-cat-desc">Plenary presentation plus reception in the Welcoming Area. Frameless London sells conferences as one of its six named event categories.</div>
+    </div>
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">Receptions, parties &amp; gala dinners</div>
+      <div class="corp-cat-num">500</div>
+      <div class="corp-cat-sub">Guests, full venue</div>
+      <div class="corp-cat-desc">Staff parties, company anniversaries, kick-offs and award nights — Efteling's highest-volume business formats. Frameless holds 800 reception-style.</div>
+    </div>
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">Product launches, brand activations &amp; filming</div>
+      <div class="corp-cat-num">500</div>
+      <div class="corp-cat-sub">Guests, full venue</div>
+      <div class="corp-cat-desc">The format the projection surfaces sell on their own — client content runs on the venue's own screens. Lexus has already launched here.</div>
     </div>
   </div>
-  <div class="src-note">Sources: <a href="https://allecijfers.nl/provincie/zuid-holland/" target="_blank" rel="noopener">AlleCijfers.nl</a> · <a href="https://remastered.nl/en/events-meetings/" target="_blank" rel="noopener">remastered.nl</a></div>
+  <div class="src-note">Sources: <a href="https://remastered.nl/en/events-meetings/" target="_blank" rel="noopener">remastered.nl</a> · <a href="https://frameless.com/venue-hire/" target="_blank" rel="noopener">Frameless</a> · <a href="https://www.meetings.nl/locaties/efteling-meetings-events" target="_blank" rel="noopener">Efteling Events</a> · <a href="https://allecijfers.nl/provincie/zuid-holland/" target="_blank" rel="noopener">AlleCijfers.nl</a>. School visits: Remastered.</div>
+
+  <h2 class="sec-h" id="corp-benchmark">What comparable venues sell</h2>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th>Spaces</th><th>Capacity</th><th>Event types sold</th><th>Exclusive hire</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>Remastered, Rotterdam</td><td>1 venue</td><td>300 seated · 500 full</td><td>Outings, school groups, corporate hire case by case</td><td>€1,635–€2,500 (up to 85)</td></tr>
+        <tr><td>Frameless, London</td><td>5 galleries + Blank Canvas</td><td>800 reception · 100 Blank Canvas</td><td>Conferences, brand activations, dinners, receptions, filming</td><td>£18,000–£23,000 per evening</td></tr>
+        <tr><td>Efteling Events</td><td>27 locations</td><td>20 to 20,000</td><td>Staff parties, anniversaries, meetings, congresses, kick-offs, awards, team building</td><td>On request</td></tr>
+        <tr><td>Stedelijk Museum, Amsterdam</td><td>Multiple spaces</td><td>15–500 · 1,400 full museum</td><td>Tours, presentations, artistic interventions, fundraisers, corporate events</td><td>On request</td></tr>
+        <tr><td>Rijksmuseum, Amsterdam</td><td>Café, hospitality room, auditorium, RIJKS</td><td>40 private dining · auditorium plus foyer</td><td>Breakfasts with private tour, meetings, presentations, receptions, private dining</td><td>On request</td></tr>
+        <tr><td>teamLab Planets, Tokyo</td><td>Full facility</td><td>Event space expanded 1.5× in Jan 2025</td><td>Full-facility lease for events and parties</td><td>On request</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sources: <a href="https://frameless.com/venue-hire/" target="_blank" rel="noopener">Frameless</a> · <a href="https://www.meetings.nl/locaties/efteling-meetings-events" target="_blank" rel="noopener">Efteling Events</a> · <a href="https://www.stedelijk.nl/en/museum/venue-hire" target="_blank" rel="noopener">Stedelijk</a> · <a href="https://vermaatevents.nl/en/venues/rijksmuseum/" target="_blank" rel="noopener">Rijksmuseum</a> · <a href="https://uniquevenues-en.metro.tokyo.lg.jp/venues/private/22013/" target="_blank" rel="noopener">Unique Venues Tokyo</a></div>
+
+  <h2 class="sec-h" id="corp-plan">The build — where each category sits</h2>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Category</th><th>Today</th><th>The move</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>School &amp; education groups</td><td>17,000 visits a year, priced and published</td><td>Hold the volume, lift yield with a curriculum-linked add-on and repeat-booking terms</td></tr>
+        <tr><td>Team building &amp; company outings</td><td>Priced and published, up to 85</td><td>Move from single bookings to framework agreements with recurring corporate accounts</td></tr>
+        <tr><td>Meetings, training &amp; workshops</td><td>Not sold separately</td><td>Sell the daytime slot as its own product — the cheapest capacity to fill</td></tr>
+        <tr><td>Conferences &amp; congresses</td><td>Quoted on request</td><td>Publish a per-head conference package and register with the Rotterdam congress pipeline</td></tr>
+        <tr><td>Receptions, parties &amp; gala dinners</td><td>Quoted on request</td><td>Publish seasonal packages — the year-end party window is the single largest booking peak</td></tr>
+        <tr><td>Product launches, brand activations &amp; filming</td><td>Case by case, Lexus precedent</td><td>The highest-margin line: sell the projection surfaces as branded media, not room hire</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Source: <a href="https://remastered.nl/en/events-meetings/" target="_blank" rel="noopener">remastered.nl</a></div>
 
   <h2 class="sec-h" id="corp-offer">What Remastered already sells</h2>
   <div class="mkt-wrap">
