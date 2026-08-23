@@ -74,6 +74,13 @@
     .corp-tag{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0a0f1a;margin-bottom:8px;}
     .corp-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;color:#0000aa;line-height:1;margin-bottom:8px;}
     .corp-desc{font-size:12.5px;color:#0a0f1a;line-height:1.55;}
+    .corp-cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;}
+    @media(max-width:820px){.corp-cat-grid{grid-template-columns:1fr;}}
+    .corp-cat-card{background:#08080f;padding:26px 22px;}
+    .corp-cat-tag{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:white;margin-bottom:12px;line-height:1.15;}
+    .corp-cat-num{font-family:"Cormorant Garamond",Georgia,serif;font-size:46px;font-weight:600;color:#FFD300;line-height:1;margin-bottom:4px;}
+    .corp-cat-sub{font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:14px;}
+    .corp-cat-desc{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55;}
   </style>
 </head>
 <body>
@@ -370,57 +377,61 @@
     <p>Market size, client categories and revenue potential for Remastered's corporate and private-hire business.</p>
   </div>
 
-  <h2 class="sec-h" id="corp-market-size">Market size — TAM, SAM, SOM</h2>
-  <div class="corp-grid">
-    <div class="corp-card funnel-tam">
-      <div class="corp-tag">TAM — Total Dutch events market</div>
-      <div class="corp-num">€12.7B</div>
-      <div class="corp-desc">All Dutch events combined — music, public/festivals, sport, culture, business, culinary and "experience" categories. 2026 figure.</div>
-    </div>
-    <div class="corp-card funnel-sam">
-      <div class="corp-tag">SAM — Dutch business events</div>
-      <div class="corp-num">€1.02B</div>
-      <div class="corp-desc">Business events are 8% of the total Dutch events market — corporate meetings, conferences and company events, the category Remastered's exclusive-hire product competes in.</div>
-    </div>
-    <div class="corp-card funnel-som">
-      <div class="corp-tag">SOM — Dutch "experience" events</div>
-      <div class="corp-num">€127M</div>
-      <div class="corp-desc">The "experience" category is 1% of the total Dutch events market — the narrowest, most directly comparable segment to an immersive digital-art exclusive hire.</div>
-    </div>
-  </div>
-  <div class="src-note">Source: <a href="https://www.multiscope.nl/persberichten/nederlandse-evenementenmarkt-goed-voor-12-7-miljard" target="_blank" rel="noopener">Multiscope — Nationaal Evenementen Onderzoek 2026</a> (€12.7B total, category shares). A separate, differently-scoped 2019 industry study puts direct turnover of the Dutch <em>business</em> events market alone at €5.2B and its total economic impact (including indirect and derived spending) at €9.1B — <a href="https://respons.nl/waarde-zakelijke-evenementen/" target="_blank" rel="noopener">Respons / EventPlatform</a>. The two studies use different methodologies and are not directly comparable to each other; both are shown as independent reference points.</div>
-
   <h2 class="sec-h" id="corp-categories">Corporate client categories</h2>
-  <div class="corp-grid">
-    <div class="corp-card">
-      <div class="corp-tag">Team building</div>
-      <div class="corp-desc">Team days combining the experience with a group activity — the primary use-case Remastered markets its corporate offer around.</div>
+  <div class="corp-cat-grid">
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">Corporate team days &amp; outings</div>
+      <div class="corp-cat-num">552,690</div>
+      <div class="corp-cat-sub">Companies within Zuid-Holland</div>
+      <div class="corp-cat-desc">Team building, department outings and company anniversaries — the occasions Remastered's own Exclusive Package already markets to.</div>
     </div>
-    <div class="corp-card">
-      <div class="corp-tag">Corporate outings</div>
-      <div class="corp-desc">Whole-company or department outings using the Exclusive Package to reserve the venue.</div>
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">School &amp; education groups</div>
+      <div class="corp-cat-num">1,677</div>
+      <div class="corp-cat-sub">Schools within Zuid-Holland</div>
+      <div class="corp-cat-desc">1,110 primary, 370 secondary and 197 special-education schools. Remastered already prices this: €19.50/student (+€35 admin) under 100 students, €17.50/student (+€45 admin) for 100+.</div>
     </div>
-    <div class="corp-card">
-      <div class="corp-tag">Company anniversaries</div>
-      <div class="corp-desc">Milestone celebrations for the hiring company itself, marketed as an "extra special" occasion.</div>
-    </div>
-    <div class="corp-card">
-      <div class="corp-tag">Private celebrations</div>
-      <div class="corp-desc">Birthdays and private group celebrations, booked through the same exclusive-hire product.</div>
+    <div class="corp-cat-card">
+      <div class="corp-cat-tag">Private celebrations</div>
+      <div class="corp-cat-num">3,882,708</div>
+      <div class="corp-cat-sub">Residents of Zuid-Holland</div>
+      <div class="corp-cat-desc">Birthdays and private group celebrations, booked through the same exclusive-hire product as corporate clients.</div>
     </div>
   </div>
-  <div class="src-note">Source: <a href="https://remastered.nl/en/company-outing/" target="_blank" rel="noopener">remastered.nl — Company Outing</a>. These are the categories Remastered's own site markets its corporate/private-hire product around; it does not disclose the booking mix or volume across them.</div>
+  <div class="src-note">Zuid-Holland is Rotterdam's home province and roughly matches an 80km / 1-hour-drive catchment. Companies: 552,690 business establishments, 2025 — <a href="https://allecijfers.nl/provincie/zuid-holland/" target="_blank" rel="noopener">AlleCijfers.nl, CBS data</a>. Schools: 1,677 total, 2026 — <a href="https://allecijfers.nl/provincie/zuid-holland/" target="_blank" rel="noopener">AlleCijfers.nl, DUO data</a>. Population: 3,882,708, 1 January 2026 — <a href="https://allecijfers.nl/ranglijst/aantal-inwoners-per-provincie-in-nederland/" target="_blank" rel="noopener">AlleCijfers.nl, CBS data</a>. School pricing — <a href="https://remastered.nl/studenten-scholieren" target="_blank" rel="noopener">remastered.nl — Studenten &amp; Scholieren</a>. Categories and occasions — <a href="https://remastered.nl/en/company-outing/" target="_blank" rel="noopener">remastered.nl — Company Outing</a>. Remastered does not disclose actual booking volume or mix across these categories.</div>
 
   <h2 class="sec-h" id="corp-offer">What Remastered already sells</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Package</th><th>Price</th><th>Capacity</th></tr></thead>
       <tbody>
-        <tr class="target"><td>Exclusive Package</td><td style="font-weight:700;">€1,635 (up to 50 guests) – €2,500 (51–85 guests)</td><td>Up to 85, venue exclusively reserved</td></tr>
+        <tr class="target"><td>Exclusive Package (corporate/private)</td><td style="font-weight:700;">€1,635 (up to 50 guests) – €2,500 (51–85 guests)</td><td>Up to 85, venue exclusively reserved</td></tr>
+        <tr><td>School groups</td><td style="font-weight:700;">€19.50/student + €35 admin (under 100) · €17.50/student + €45 admin (100+)</td><td>Groups of 25+</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Source: <a href="https://remastered.nl/en/company-outing/" target="_blank" rel="noopener">remastered.nl — Company Outing</a>. Positioned against comparable venue-hire products at Frameless London (£18,000–£23,000, up to 450), Rijksmuseum Amsterdam (price on request, up to 1,200), House of Bols Amsterdam (from €89.50pp) and Fabrique des Lumières Amsterdam — see the main interview brief for the full comparison table.</div>
+  <div class="src-note">Sources: <a href="https://remastered.nl/en/company-outing/" target="_blank" rel="noopener">remastered.nl — Company Outing</a> · <a href="https://remastered.nl/studenten-scholieren" target="_blank" rel="noopener">remastered.nl — Studenten &amp; Scholieren</a>. Exclusive Package positioned against comparable venue-hire products at Frameless London (£18,000–£23,000, up to 450), Rijksmuseum Amsterdam (price on request, up to 1,200), House of Bols Amsterdam (from €89.50pp) and Fabrique des Lumières Amsterdam — see the main interview brief for the full comparison table.</div>
+
+  <h2 class="sec-h" id="corp-market-size">Market size</h2>
+  <div style="font-size:13px;color:#0a0f1a;line-height:1.6;margin-bottom:16px;">Standard investor-pitch market sizing, in three narrowing tiers: the <strong>Total Addressable Market</strong> (the whole category), the <strong>Serviceable Addressable Market</strong> (the part of it Remastered's format can actually reach), and the <strong>Serviceable Obtainable Market</strong> (the specific segment Remastered directly competes in).</div>
+  <div class="corp-grid">
+    <div class="corp-card funnel-tam">
+      <div class="corp-tag">Total Addressable Market</div>
+      <div class="corp-num">$36.4B → $132.3B</div>
+      <div class="corp-desc">Europe Immersive Entertainment Market, 2025 → 2031, 23.98% compound annual growth rate (2026–2031) — the same figure used in the main interview brief.</div>
+    </div>
+    <div class="corp-card funnel-sam">
+      <div class="corp-tag">Serviceable Addressable Market</div>
+      <div class="corp-num">≈$25.9B</div>
+      <div class="corp-desc">Location-based venues (as opposed to at-home/personal-device experiences) are 71.10% of the Europe Immersive Entertainment Market — Remastered's exact format.</div>
+    </div>
+    <div class="corp-card funnel-som">
+      <div class="corp-tag">Serviceable Obtainable Market</div>
+      <div class="corp-num">27.15%/yr</div>
+      <div class="corp-desc">"Experiential art museums" — Remastered's exact application category — is the fastest-growing segment of the market. No separate absolute size is disclosed for this category alone.</div>
+    </div>
+  </div>
+  <div class="src-note">Source: <a href="https://www.mordorintelligence.com/industry-reports/europe-immersive-entertainment-market" target="_blank" rel="noopener">Mordor Intelligence, Europe Immersive Entertainment Market</a>. The Serviceable Addressable Market figure is calculated as 71.10% of the 2025 Total Addressable Market — Mordor Intelligence does not publish a Netherlands-specific breakdown.</div>
 
   <h2 class="sec-h" id="corp-revenue-potential">Revenue potential — modeled booking scenarios</h2>
   <div class="mkt-wrap">
