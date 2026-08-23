@@ -42,14 +42,12 @@
     .model-group p{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.5;}
     .toc-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin-bottom:32px;}
     .toc-box h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:14px;}
-    .toc-grid{display:grid;grid-template-columns:1fr 1fr 0.6fr;gap:28px;}
-    @media(max-width:900px){.toc-grid{grid-template-columns:1fr;}}
-    .toc-grid .toc-tag{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;margin-bottom:8px;}
-    .toc-grid ol{list-style:none;counter-reset:toc;padding:0;margin:0;}
-    .toc-grid li{counter-increment:toc;font-size:14px;padding:5px 0;}
-    .toc-grid li a{color:#0a0f1a;text-decoration:none;}
-    .toc-grid li a:hover{color:#0000aa;text-decoration:underline;}
-    .toc-grid li::before{content:counter(toc) ". ";color:#0000aa;font-weight:700;}
+    .toc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;}
+    @media(max-width:700px){.toc-grid{grid-template-columns:1fr;}}
+    .toc-grid ol{list-style:none;padding:0;margin:0;}
+    .toc-grid li{font-size:15px;padding:5px 0;}
+    .toc-grid li a{color:#0000aa;font-weight:700;text-decoration:none;}
+    .toc-grid li a:hover{text-decoration:underline;}
     .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
     .mkt-table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px;}
     .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 14px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
@@ -112,7 +110,7 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Remastered</div>
     <div class="eyebrow">Financial Review — Current State</div>
     <h1>Remastered: <em>current P&amp;L, modeled from public data</em></h1>
-    <p>Remastered does not publish a P&amp;L. This model builds a 3-year plan from the only public inputs that exist: confirmed visitor milestones and published ticket prices — combined with a bottom-up cost build by role and cost line, cross-checked against industry-benchmark margins for the Hotels, Tourism &amp; Amusement sector, plus a separate market-sizing view of the corporate &amp; venue-hire opportunity. Every figure below is marked as either sourced fact or a stated assumption.</p>
+    <p>Remastered does not publish a P&amp;L. This model builds one from the only public inputs that exist: confirmed visitor milestones and published ticket prices — combined with a bottom-up cost build by role and cost line, cross-checked against industry-benchmark margins for the Hotels, Tourism &amp; Amusement sector, plus a separate market-sizing view of the corporate &amp; venue-hire opportunity. Every figure below is marked as either sourced fact or a stated assumption.</p>
     <div class="meta">Updated 19 August 2026</div>
   </div>
 </div>
@@ -123,31 +121,18 @@
     <h2>Contents</h2>
     <div class="toc-grid">
       <div>
-        <div class="toc-tag">Model 1 — Industry-benchmark P&amp;L</div>
         <ol>
-          <li><a href="#pnl-benchmark">P&amp;L, current pace to stated growth target</a></li>
-          <li><a href="#cost-structure-benchmark">Cost structure — modeled OPEX &amp; CAPEX</a></li>
-          <li><a href="#per-visitor-benchmark">Per visitor, at current pace</a></li>
+          <li><a href="#model-1">Section 1 — Industry-benchmark P&amp;L</a></li>
         </ol>
       </div>
       <div>
-        <div class="toc-tag">Model 2 — Bottom-up cost build</div>
         <ol>
-          <li><a href="#revenue-bottomup">Revenue, current pace</a></li>
-          <li><a href="#people-bottomup">People</a></li>
-          <li><a href="#marketing-bottomup">Marketing</a></li>
-          <li><a href="#technology-bottomup">Technology</a></li>
-          <li><a href="#property-bottomup">Property &amp; occupancy</a></li>
-          <li><a href="#depreciation-bottomup">Depreciation &amp; admin</a></li>
-          <li><a href="#experience-upgrade">Experience upgrade</a></li>
-          <li><a href="#pnl-summary-bottomup">P&amp;L summary — 3-year plan</a></li>
-          <li><a href="#per-visitor-bottomup">Per visitor</a></li>
+          <li><a href="#model-2">Section 2 — Bottom-up cost build</a></li>
         </ol>
       </div>
       <div>
-        <div class="toc-tag">Corporate clients</div>
         <ol>
-          <li><a href="#corporate-clients">Corporate &amp; venue-hire opportunity</a></li>
+          <li><a href="#corporate-clients">Section 3 — Corporate clients</a></li>
         </ol>
       </div>
     </div>
@@ -171,9 +156,8 @@
       <div>
         <div class="assump-col-hdr modeled">Modeled assumption</div>
         <ul class="assump-list">
-          <li>Current annual visitor pace (Year 1): 97,000/yr — calculated as (500,000 − 200,000) ÷ 37 months × 12, the only interval with two dated milestones. No confirmed last-12-months figure is published.</li>
+          <li>Current annual visitor pace: 97,000/yr — calculated as (500,000 − 200,000) ÷ 37 months × 12, the only interval with two dated milestones. No confirmed last-12-months figure is published.</li>
           <li>Visitor mix: 85% adult / 15% child — back-solved to reproduce the €23.30 blended ticket price used below; not disclosed by Remastered.</li>
-          <li>Year 2 (110,000/yr) and Year 3 (125,000/yr, the top of the stated LinkedIn target range) are modeled growth steps toward the stated target, not disclosed forecasts from Remastered.</li>
           <li>Cost structure: two independent models below — a bottom-up build by role and cost line, and a cross-check using industry-benchmark margins. Neither is Remastered's own figures; Remastered publishes no P&amp;L or cost breakdown.</li>
           <li>Dutch employer on-cost multiplier: 32% on top of gross salary — 18% statutory social security (AWf, Aof, Zvw, Whk) + 8% statutory holiday allowance (both sourced below) + an assumed 6% employer pension contribution, since pension schemes vary by employer and are not uniformly mandated the way social security is.</li>
           <li>Excludes group bookings and sponsorship revenue — no disclosed volume or frequency exists to quantify these lines. Corporate/venue-hire revenue is modeled separately below as a distinct opportunity, not folded into the ticketing P&amp;L.</li>
@@ -182,8 +166,8 @@
     </div>
   </div>
 
-  <div class="model-group">
-    <div class="tag">Model 1</div>
+  <div class="model-group" id="model-1">
+    <div class="tag">Section 1 — Model 1</div>
     <h2>Industry-benchmark P&amp;L</h2>
     <p>Ticketing revenue applied to sector-average EBITDA and net margins for Hotels, Tourism &amp; Amusement.</p>
   </div>
@@ -238,10 +222,10 @@
     </div>
   </div>
 
-  <div class="model-group">
-    <div class="tag">Model 2</div>
-    <h2>Bottom-up cost build — 3-year plan</h2>
-    <p>Costed role by role and line by line — People, Marketing, Technology, Property, Depreciation &amp; admin, Experience upgrade — from Year 1 (current pace) to Year 3 (stated visitor target).</p>
+  <div class="model-group" id="model-2">
+    <div class="tag">Section 2 — Model 2</div>
+    <h2>Bottom-up cost build</h2>
+    <p>Costed role by role and line by line — People, Marketing, Technology, Property, Depreciation &amp; admin, Experience upgrade.</p>
   </div>
 
   <h2 class="sec-h" id="revenue-bottomup">Revenue, current pace</h2>
@@ -316,55 +300,55 @@
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. Venue is beneath the Erasmusbrug — likely a municipally-linked lease rather than open-market retail rent; €120/m² is a moderate placeholder pending Robin's actual figure.</div>
 
+  <h2 class="sec-h" id="experience-upgrade">Experience upgrade</h2>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>Experience upgrade investment</td><td>New room/show content and AV refresh, supporting the venue operating at the higher end of its 100,000–125,000/yr target range</td><td style="text-align:right;">€300K</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Assumption, not disclosed by Remastered. A venue running at its current visitor pace does not organically grow into a higher one — new content and refreshed AV capacity is the standard lever attractions in this category use to lift throughput and repeat-visit rate. Depreciated straight-line over 10 years, matching the original build-out convention below — the €30K/yr charge is included in Depreciation &amp; admin.</div>
+
   <h2 class="sec-h" id="depreciation-bottomup">Depreciation &amp; admin</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
       <tbody>
         <tr><td>Depreciation, original build-out</td><td>€3.5M fit-out (venue, projectors, screen, sound), straight-line over 10 years</td><td style="text-align:right;">€350K</td></tr>
+        <tr><td>Depreciation, experience upgrade</td><td>€300K investment above, straight-line over 10 years</td><td style="text-align:right;">€30K</td></tr>
         <tr><td>Accounting &amp; legal</td><td>External bookkeeping/legal support</td><td style="text-align:right;">€18K</td></tr>
         <tr><td>General admin</td><td>Office, banking, misc.</td><td style="text-align:right;">€12K</td></tr>
-        <tr class="target"><td>Total depreciation &amp; admin</td><td></td><td style="text-align:right;">€380K</td></tr>
+        <tr class="target"><td>Total depreciation &amp; admin</td><td></td><td style="text-align:right;">€410K</td></tr>
       </tbody>
     </table>
   </div>
   <div class="src-note">Assumption, not disclosed by Remastered. €3.5M original build cost is a placeholder for a venue of this scale (custom 1,500 m² fit-out, 60 projectors, "Europe's largest indoor LED screen") — the single largest unknown in this model and the one figure most worth checking directly with Robin.</div>
 
-  <h2 class="sec-h" id="experience-upgrade">Experience upgrade — growth CAPEX for Year 2</h2>
-  <div class="mkt-wrap">
-    <table class="mkt-table">
-      <thead><tr><th>Line</th><th>Assumption</th><th style="text-align:right;">€</th></tr></thead>
-      <tbody>
-        <tr class="target"><td>Experience upgrade investment</td><td>New room/show content and AV refresh, funding the step from 97,000/yr to the 110,000–125,000/yr range</td><td style="text-align:right;">€300K</td></tr>
-        <tr><td>Depreciation impact</td><td>Straight-line over 10 years, matching the original build-out convention above — added to Depreciation &amp; admin from Year 2 onward</td><td style="text-align:right;">€30K/yr</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="src-note">Assumption, not disclosed by Remastered. A venue running at its current visitor pace does not organically grow into a higher one — new content and refreshed AV capacity is the standard lever attractions in this category use to lift throughput and repeat-visit rate. Modeled as a one-time capital investment in Year 2, ahead of the Year 3 visitor increase.</div>
-
-  <h2 class="sec-h" id="pnl-summary-bottomup">P&amp;L summary — bottom-up model, 3-year plan</h2>
+  <h2 class="sec-h" id="pnl-summary-bottomup">P&amp;L summary — bottom-up model, current pace to stated growth target</h2>
   <div class="mkt-wrap">
     <table class="mkt-table">
       <thead>
-        <tr><th>Line</th><th colspan="2" style="text-align:right;">Year 1 — 97,000/yr</th><th colspan="2" style="text-align:right;">Year 2 — 110,000/yr</th><th colspan="2" style="text-align:right;">Year 3 — 125,000/yr</th></tr>
+        <tr><th>Line</th><th colspan="2" style="text-align:right;">97,000/yr — current</th><th colspan="2" style="text-align:right;">100,000/yr</th><th colspan="2" style="text-align:right;">125,000/yr</th></tr>
         <tr><th></th><th style="text-align:right;">€</th><th style="text-align:right;">%</th><th style="text-align:right;">€</th><th style="text-align:right;">%</th><th style="text-align:right;">€</th><th style="text-align:right;">%</th></tr>
       </thead>
       <tbody>
-        <tr class="target"><td>Ticketing revenue</td><td style="text-align:right;">€2.26M</td><td style="text-align:right;">100.0%</td><td style="text-align:right;">€2.56M</td><td style="text-align:right;">100.0%</td><td style="text-align:right;">€2.91M</td><td style="text-align:right;">100.0%</td></tr>
-        <tr><td>People</td><td style="text-align:right;">€831K</td><td style="text-align:right;">36.8%</td><td style="text-align:right;">€831K</td><td style="text-align:right;">32.4%</td><td style="text-align:right;">€831K</td><td style="text-align:right;">28.5%</td></tr>
-        <tr><td>Marketing (fixed part)</td><td style="text-align:right;">€235K</td><td style="text-align:right;">10.4%</td><td style="text-align:right;">€235K</td><td style="text-align:right;">9.2%</td><td style="text-align:right;">€235K</td><td style="text-align:right;">8.1%</td></tr>
-        <tr><td>Technology (fixed part)</td><td style="text-align:right;">€76K</td><td style="text-align:right;">3.4%</td><td style="text-align:right;">€76K</td><td style="text-align:right;">3.0%</td><td style="text-align:right;">€76K</td><td style="text-align:right;">2.6%</td></tr>
-        <tr><td>Property</td><td style="text-align:right;">€265K</td><td style="text-align:right;">11.7%</td><td style="text-align:right;">€265K</td><td style="text-align:right;">10.3%</td><td style="text-align:right;">€265K</td><td style="text-align:right;">9.1%</td></tr>
-        <tr><td>Depreciation &amp; admin</td><td style="text-align:right;">€380K</td><td style="text-align:right;">16.8%</td><td style="text-align:right;">€410K</td><td style="text-align:right;">16.0%</td><td style="text-align:right;">€410K</td><td style="text-align:right;">14.1%</td></tr>
-        <tr class="variable"><td>OTA commission + ticketing fees</td><td style="text-align:right;">€170K</td><td style="text-align:right;">7.5%</td><td style="text-align:right;">€192K</td><td style="text-align:right;">7.5%</td><td style="text-align:right;">€218K</td><td style="text-align:right;">7.5%</td></tr>
-        <tr class="target"><td>Total costs</td><td style="text-align:right;">€1.96M</td><td style="text-align:right;">86.6%</td><td style="text-align:right;">€2.01M</td><td style="text-align:right;">78.4%</td><td style="text-align:right;">€2.04M</td><td style="text-align:right;">69.9%</td></tr>
-        <tr class="target"><td>Net profit</td><td style="text-align:right;">€303K</td><td style="text-align:right;">13.4%</td><td style="text-align:right;">€554K</td><td style="text-align:right;">21.6%</td><td style="text-align:right;">€878K</td><td style="text-align:right;">30.1%</td></tr>
+        <tr class="target"><td>Ticketing revenue</td><td style="text-align:right;">€2.26M</td><td style="text-align:right;">100.0%</td><td style="text-align:right;">€2.33M</td><td style="text-align:right;">100.0%</td><td style="text-align:right;">€2.91M</td><td style="text-align:right;">100.0%</td></tr>
+        <tr><td>People</td><td style="text-align:right;">€831K</td><td style="text-align:right;">36.8%</td><td style="text-align:right;">€831K</td><td style="text-align:right;">35.7%</td><td style="text-align:right;">€831K</td><td style="text-align:right;">28.5%</td></tr>
+        <tr><td>Marketing (fixed part)</td><td style="text-align:right;">€235K</td><td style="text-align:right;">10.4%</td><td style="text-align:right;">€235K</td><td style="text-align:right;">10.1%</td><td style="text-align:right;">€235K</td><td style="text-align:right;">8.1%</td></tr>
+        <tr><td>Technology (fixed part)</td><td style="text-align:right;">€76K</td><td style="text-align:right;">3.4%</td><td style="text-align:right;">€76K</td><td style="text-align:right;">3.3%</td><td style="text-align:right;">€76K</td><td style="text-align:right;">2.6%</td></tr>
+        <tr><td>Property</td><td style="text-align:right;">€265K</td><td style="text-align:right;">11.7%</td><td style="text-align:right;">€265K</td><td style="text-align:right;">11.4%</td><td style="text-align:right;">€265K</td><td style="text-align:right;">9.1%</td></tr>
+        <tr><td>Depreciation &amp; admin</td><td style="text-align:right;">€410K</td><td style="text-align:right;">18.1%</td><td style="text-align:right;">€410K</td><td style="text-align:right;">17.6%</td><td style="text-align:right;">€410K</td><td style="text-align:right;">14.1%</td></tr>
+        <tr class="variable"><td>OTA commission + ticketing fees</td><td style="text-align:right;">€170K</td><td style="text-align:right;">7.5%</td><td style="text-align:right;">€175K</td><td style="text-align:right;">7.5%</td><td style="text-align:right;">€218K</td><td style="text-align:right;">7.5%</td></tr>
+        <tr class="target"><td>Total costs</td><td style="text-align:right;">€1.99M</td><td style="text-align:right;">87.9%</td><td style="text-align:right;">€1.99M</td><td style="text-align:right;">85.5%</td><td style="text-align:right;">€2.04M</td><td style="text-align:right;">69.9%</td></tr>
+        <tr class="target"><td>Net profit</td><td style="text-align:right;">€273K</td><td style="text-align:right;">12.1%</td><td style="text-align:right;">€338K</td><td style="text-align:right;">14.5%</td><td style="text-align:right;">€878K</td><td style="text-align:right;">30.1%</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">% columns are % of ticketing revenue in that year. People, Marketing (fixed), Technology (fixed) and Property are held flat across the 3 years — the venue and core team do not change size with visitor volume. Depreciation &amp; admin steps up €30K from Year 2 as the Experience Upgrade CAPEX above starts depreciating. Only OTA commission + ticketing fees (7.5% of revenue) scales directly with visitor volume, which is why net margin rises from 13.4% in Year 1 to 30.1% in Year 3 as fixed costs are spread over more visitors.</div>
+  <div class="src-note">% columns are % of ticketing revenue in that scenario. People, Marketing (fixed), Technology (fixed), Property and Depreciation &amp; admin (including the Experience Upgrade above) are fixed within the current venue and team — they do not move with visitor volume. Only OTA commission + ticketing fees (7.5% of revenue) scales, which is why net margin rises from 12.1% at the current pace to 30.1% at the top of the stated target.</div>
 
-  <h2 class="sec-h" id="per-visitor-bottomup">Per visitor — bottom-up model, Year 1 (current pace)</h2>
+  <h2 class="sec-h" id="per-visitor-bottomup">Per visitor — bottom-up model, current pace</h2>
   <div class="unit-row">
     <div class="unit-card">
       <div class="unit-lbl">Revenue / visitor</div>
@@ -372,18 +356,18 @@
     </div>
     <div class="unit-card">
       <div class="unit-lbl">Cost / visitor</div>
-      <div class="unit-num">€20.17</div>
+      <div class="unit-num">€20.48</div>
     </div>
     <div class="unit-card">
       <div class="unit-lbl">Net profit / visitor</div>
-      <div class="unit-num">€3.12</div>
+      <div class="unit-num">€2.82</div>
     </div>
   </div>
 
   <div class="model-group" id="corporate-clients">
-    <div class="tag">Corporate clients</div>
+    <div class="tag">Section 3</div>
     <h2>Corporate &amp; venue-hire opportunity</h2>
-    <p>Not included in the ticketing P&amp;L above — a distinct revenue channel Remastered already offers but does not disclose booking volume for.</p>
+    <p>Market size, client categories and revenue potential for Remastered's corporate and private-hire business.</p>
   </div>
 
   <h2 class="sec-h" id="corp-market-size">Market size — TAM, SAM, SOM</h2>
@@ -405,6 +389,27 @@
     </div>
   </div>
   <div class="src-note">Source: <a href="https://www.multiscope.nl/persberichten/nederlandse-evenementenmarkt-goed-voor-12-7-miljard" target="_blank" rel="noopener">Multiscope — Nationaal Evenementen Onderzoek 2026</a> (€12.7B total, category shares). A separate, differently-scoped 2019 industry study puts direct turnover of the Dutch <em>business</em> events market alone at €5.2B and its total economic impact (including indirect and derived spending) at €9.1B — <a href="https://respons.nl/waarde-zakelijke-evenementen/" target="_blank" rel="noopener">Respons / EventPlatform</a>. The two studies use different methodologies and are not directly comparable to each other; both are shown as independent reference points.</div>
+
+  <h2 class="sec-h" id="corp-categories">Corporate client categories</h2>
+  <div class="corp-grid">
+    <div class="corp-card">
+      <div class="corp-tag">Team building</div>
+      <div class="corp-desc">Team days combining the experience with a group activity — the primary use-case Remastered markets its corporate offer around.</div>
+    </div>
+    <div class="corp-card">
+      <div class="corp-tag">Corporate outings</div>
+      <div class="corp-desc">Whole-company or department outings using the Exclusive Package to reserve the venue.</div>
+    </div>
+    <div class="corp-card">
+      <div class="corp-tag">Company anniversaries</div>
+      <div class="corp-desc">Milestone celebrations for the hiring company itself, marketed as an "extra special" occasion.</div>
+    </div>
+    <div class="corp-card">
+      <div class="corp-tag">Private celebrations</div>
+      <div class="corp-desc">Birthdays and private group celebrations, booked through the same exclusive-hire product.</div>
+    </div>
+  </div>
+  <div class="src-note">Source: <a href="https://remastered.nl/en/company-outing/" target="_blank" rel="noopener">remastered.nl — Company Outing</a>. These are the categories Remastered's own site markets its corporate/private-hire product around; it does not disclose the booking mix or volume across them.</div>
 
   <h2 class="sec-h" id="corp-offer">What Remastered already sells</h2>
   <div class="mkt-wrap">
