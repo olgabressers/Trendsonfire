@@ -86,6 +86,21 @@
     .corp-cat-num{font-family:"Cormorant Garamond",Georgia,serif;font-size:46px;font-weight:600;color:#FFD300;line-height:1;margin-bottom:4px;}
     .corp-cat-sub{font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:14px;}
     .corp-cat-desc{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55;}
+    .keyframe{border:3px solid #0000aa;background:#f4f6ff;padding:26px 28px;margin-bottom:28px;}
+    .keyframe h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600;color:#0000aa;margin:0 0 14px;line-height:1.15;}
+    .keyframe .kf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:16px;}
+    @media(max-width:820px){.keyframe .kf-row{grid-template-columns:repeat(2,1fr);}}
+    .keyframe .kf-n{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;font-weight:600;color:#0000aa;line-height:1;}
+    .keyframe .kf-l{font-size:12px;font-weight:700;letter-spacing:0.5px;color:#0a0f1a;margin-top:6px;line-height:1.4;}
+    .keyframe p{font-size:14px;color:#0a0f1a;line-height:1.6;margin:0;}
+    .terms{border:1px solid #e2dfd9;background:#faf9f7;padding:20px 24px;margin-bottom:32px;}
+    .terms h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:12px;}
+    .terms dl{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;margin:0;}
+    @media(max-width:700px){.terms dl{grid-template-columns:1fr;}}
+    .terms div{font-size:13px;color:#0a0f1a;line-height:1.5;padding:5px 0;border-bottom:1px solid #eeece7;}
+    .terms b{color:#0000aa;}
+    .conc{border-left:5px solid #0000aa;background:#f4f6ff;padding:18px 22px;margin:0 0 24px;font-size:14px;color:#0a0f1a;line-height:1.65;}
+    .conc b{color:#0000aa;}
     .subsection-divider{display:flex;align-items:center;gap:14px;margin:40px 0 24px;}
     .subsection-divider::before,.subsection-divider::after{content:'';flex:1;height:2px;background:#0000aa;}
     .subsection-divider span{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;white-space:nowrap;}
@@ -131,6 +146,33 @@
 </div>
 
 <main>
+
+  <div class="keyframe">
+    <h2>The opportunity, and the ceiling in this one location</h2>
+    <div class="kf-row">
+      <div><div class="kf-n">€57K</div><div class="kf-l">Net profit today, at 97,000 visitors</div></div>
+      <div><div class="kf-n">€474K</div><div class="kf-l">Net profit at the 125,000 target</div></div>
+      <div><div class="kf-n">339,450</div><div class="kf-l">Visits this building can hold in a year</div></div>
+      <div><div class="kf-n">€7.3M</div><div class="kf-l">Revenue at that ceiling, net of tax</div></div>
+    </div>
+    <p>Remastered clears break-even by 3.7% today, so almost all of the current result is fragile. The 125,000 target is a three-year build and takes net profit to €474K — eight times today — because 89% of the cost base is fixed and every visitor above break-even adds €19.63 straight to the result. Corporate and venue-hire work adds a further €570K a year by year three without needing a single extra ticketed visitor. Beyond that, this building holds 339,450 visits a year at ten shows a day, three and a half times the current pace and €7.3M of revenue — the ceiling is set by opening hours, not by demand, and reaching it means either longer days or a second site.</p>
+  </div>
+
+  <div class="terms">
+    <h2>Profit and loss — the terms used on this page</h2>
+    <dl>
+      <div><b>Revenue net of value-added tax</b> — ticket sales after the 9% Dutch attraction rate is removed. The published €23.30 ticket is €21.38 of revenue.</div>
+      <div><b>Fixed costs</b> — people, marketing, technology, property, depreciation. €1.83M a year, unchanged whether 80,000 or 125,000 people visit.</div>
+      <div><b>Variable costs</b> — reseller commission and ticketing fees, 8.2% of revenue. They rise only when a ticket sells.</div>
+      <div><b>Contribution per visitor</b> — €19.63. What one extra visitor adds once variable cost is taken off.</div>
+      <div><b>Break-even</b> — fixed costs ÷ contribution per visitor = 93,388 visitors. Below it the year is a loss.</div>
+      <div><b>Result before tax</b> — revenue less all costs, before the tax authority takes its share.</div>
+      <div><b>Corporate income tax</b> — 19% to €200,000 of profit, 25.8% above, at Dutch 2026 rates.</div>
+      <div><b>Net profit after tax</b> — what is left for the owner and the investor.</div>
+      <div><b>Depreciation</b> — the build-out and the experience upgrade spread across the years they are used, rather than charged in one.</div>
+      <div><b>Capacity utilisation</b> — visitors as a share of seats the venue could sell. 28.6% today.</div>
+    </dl>
+  </div>
 
   <div class="toc-box">
     <h2>Contents</h2>
@@ -270,6 +312,8 @@
     <h2>Bottom-up cost build</h2>
     <p>Costed role by role and line by line — People, Marketing, Technology, Property, Depreciation &amp; admin, Experience upgrade.</p>
   </div>
+
+  <div class="conc"><b>What this model shows.</b> The cost base is almost entirely fixed: €1.83M of people, marketing, technology, property and depreciation stands whether 80,000 or 125,000 people come through the door, and only 8.2% of revenue moves with ticket sales. People alone take 41% of revenue. That combination cuts both ways — at today's 97,000 visitors the business clears break-even by 3.7% and nets €57K, but every visitor above 93,388 drops €19.63 straight to the result, so the same cost base turns 125,000 visitors into €474K. The business does not have a cost problem. It has a volume problem, and volume is the only lever that materially changes the answer.</div>
 
   <h2 class="sec-h" id="revenue-bottomup">Revenue, current pace</h2>
   <div class="mkt-wrap">
