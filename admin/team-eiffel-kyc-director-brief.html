@@ -18,6 +18,10 @@
     .art-hero h1 em{color:#f0c14b;font-style:italic;}
     .art-hero p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.55;max-width:none !important;}
     .art-hero .meta{margin-top:16px;font-size:13px;color:rgba(255,255,255,.45);display:flex;gap:18px;flex-wrap:wrap;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#f0c14b;text-decoration:none;border:1px solid rgba(240,193,75,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(240,193,75,.1);}
 
     main{max-width:1180px;margin:0 auto;padding:36px 48px 64px;}
     @media(max-width:700px){main{padding:22px 16px 48px;}}
@@ -89,7 +93,7 @@
     .kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
     @media(max-width:600px){.kpi-row{grid-template-columns:1fr;}}
     .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
-    .kpi-name{font-size:14.5px;font-weight:800;color:#a3161f;margin-bottom:6px;line-height:1.25;}
+    .kpi-name{font-size:14.5px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.25;}
     .kpi-desc{font-size:12.5px;color:#0a0f1a;line-height:1.5;}
   </style>
 </head>
@@ -122,13 +126,16 @@
 </nav>
 
 <div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.teameiffel.nl/nl/" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4452733723/" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Team EIFFEL</div>
     <div class="eyebrow">Interview Brief — Director KYC Center · Compliance Team, Legal Advisory</div>
     <h1>Team EIFFEL: <em>€323M group, but the segment this role sits in just took a €5.1M writedown</em></h1>
     <p>Founded 1992, 2,936 FTE, 800+ clients, majority-owned by TowerBrook Capital Partners and Gilde Equity Management. The Financial Services &amp; Compliance business line — home of the KYC Center — declined to €35.2M revenue in 2025 and absorbed a goodwill impairment, and is being folded into Legal Advisory from 2026.</p>
     <div class="meta">
-      <span><a href="https://www.linkedin.com/jobs/view/4452733723/" target="_blank" rel="noopener" style="color:#f0c14b;font-weight:700;">Job posting on LinkedIn &rarr;</a></span>
       <span>Sources: Team EIFFEL Annual Report 2025 (Equipe Holdings 3 B.V., Deloitte-audited), Q4 2025 &amp; Q1 2026 investor reports, teameiffel.nl, compliancecarriere.nl</span>
       <span>Updated 30 August 2026</span>
     </div>
@@ -313,6 +320,8 @@
       <div class="kpi-row">
         <div class="kpi-card"><div class="kpi-name">KYC Center revenue growth</div><div class="kpi-desc">Growth against the segment's 2025 base of &euro;35.2M, reversing the year-on-year decline.</div></div>
         <div class="kpi-card"><div class="kpi-name">New business &amp; framework-contract share</div><div class="kpi-desc">New client wins and utilisation of framework agreements &mdash; the group runs 50% of revenue through framework contracts.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Win rate on strategic pursuits</div><div class="kpi-desc">% of qualified client opportunities converted to signed engagements, tracked from the strategic-sales mandate in the posting.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Cross-sell into adjacent lines</div><div class="kpi-desc">Clients buying KYC/CDD alongside other Financial Services &amp; Compliance or Legal Advisory work, post-2026 restructuring.</div></div>
       </div>
     </div>
     <div class="kpi-group">
@@ -320,6 +329,8 @@
       <div class="kpi-row">
         <div class="kpi-card"><div class="kpi-name">KYC specialist headcount &amp; billability</div><div class="kpi-desc">Size and utilisation of the team built inside the Center &mdash; billability was the segment's stated 2025 weak point.</div></div>
         <div class="kpi-card"><div class="kpi-name">1st-year churn</div><div class="kpi-desc">Group-wide priority named in the 2025 Annual Report; total workforce turnover across Team EIFFEL ran at 41.6% in 2025.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Direct/indirect staffing ratio</div><div class="kpi-desc">Specialist-to-support-staff efficiency, benchmarked against the group's 2025 average of 6.0.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Specialist productivity</div><div class="kpi-desc">Cases closed and revenue generated per KYC specialist &mdash; the direct output of the team the posting asks this role to build.</div></div>
       </div>
     </div>
     <div class="kpi-group">
@@ -327,6 +338,8 @@
       <div class="kpi-row">
         <div class="kpi-card"><div class="kpi-name">AI/data tooling adoption</div><div class="kpi-desc">Rollout of AI-enabled applications inside KYC case work &mdash; the Group appointed a Head of AI and shipped its first applications in H2 2025.</div></div>
         <div class="kpi-card"><div class="kpi-name">Case cycle time</div><div class="kpi-desc">Time-to-close per KYC/CDD case as automation and data tooling are embedded into the workflow.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Automation coverage</div><div class="kpi-desc">% of case volume triaged or pre-populated by automated tooling before analyst review.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Rework rate</div><div class="kpi-desc">% of cases requiring rework from incomplete or inconsistent source data &mdash; a direct data-quality signal.</div></div>
       </div>
     </div>
     <div class="kpi-group">
@@ -334,6 +347,8 @@
       <div class="kpi-row">
         <div class="kpi-card"><div class="kpi-name">Segment EBITDA margin</div><div class="kpi-desc">Recovery from Financial Services &amp; Compliance's 2025 margin of 6.1% &mdash; the thinnest of the group's four segments.</div></div>
         <div class="kpi-card"><div class="kpi-name">Client satisfaction (NPS)</div><div class="kpi-desc">Measured annually group-wide; Team EIFFEL's 2025 customer satisfaction score was 7.9.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Goodwill impairment reversal signal</div><div class="kpi-desc">Whether FY2026 cash-flow performance closes the gap that triggered the 2025 &euro;5.1M writedown.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Audit / finding closure rate</div><div class="kpi-desc">Compliance findings and reviews closed within SLA &mdash; the standard governance KPI for a compliance-as-a-service unit.</div></div>
       </div>
     </div>
   </div>
