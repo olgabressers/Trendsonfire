@@ -95,6 +95,30 @@
     .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
     .kpi-name{font-size:14.5px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.25;}
     .kpi-desc{font-size:12.5px;color:#0a0f1a;line-height:1.5;}
+
+    .flow-wrap{margin:14px 0 6px;}
+    .flow-top{background:#0a0f1a;padding:18px 22px;text-align:center;}
+    .flow-top .flow-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:#f0c14b;margin-bottom:5px;}
+    .flow-top .flow-sub{font-size:13px;color:rgba(255,255,255,.85);line-height:1.55;max-width:640px;margin:0 auto;}
+    .flow-arrow{text-align:center;font-size:26px;color:#a3161f;line-height:1;margin:8px 0;}
+    .flow-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:700px){.flow-split{grid-template-columns:1fr;}}
+    .flow-col{border:1px solid #e2dfd9;background:white;}
+    .flow-col-head{padding:12px 16px;color:white;font-size:13.5px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;}
+    .flow-col-head.aml{background:#a3161f;}
+    .flow-col-head.fraud{background:#0a0f1a;}
+    .flow-col-sub{padding:10px 16px 0;font-size:12.5px;color:#4b5563;font-style:italic;}
+    .flow-col-body{padding:10px 16px 16px;}
+    .flow-col-body ul{margin:0;padding-left:18px;}
+    .flow-col-body li{font-size:13.5px;color:#0a0f1a;line-height:1.6;margin-bottom:9px;}
+    .flow-col-body li:last-child{margin-bottom:0;}
+    .flow-col-body .ref{display:block;color:#4b5563;font-size:12px;margin-top:2px;}
+    .flow-bottom{background:#0a0f1a;border:2px solid #f0c14b;padding:18px 22px;margin-top:8px;}
+    .flow-bottom .flow-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#f0c14b;margin-bottom:10px;text-align:center;}
+    .flow-bottom ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:7px 24px;}
+    @media(max-width:600px){.flow-bottom ul{grid-template-columns:1fr;}}
+    .flow-bottom li{font-size:13px;color:rgba(255,255,255,.92);line-height:1.55;padding-left:14px;position:relative;}
+    .flow-bottom li::before{content:'\2014';position:absolute;left:0;color:#f0c14b;}
   </style>
 </head>
 <body>
@@ -320,6 +344,72 @@
   <div class="sec-header">
     <div class="sec-num">05</div>
     <div class="sec-label">
+      <div class="sec-eyebrow">Domain Knowledge</div>
+      <div class="sec-title">The total picture — how KYC, AML/CTF, sanctions and fraud fit together</div>
+    </div>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow-top">
+      <div class="flow-title">Financial Crime Prevention</div>
+      <div class="flow-sub">The umbrella discipline: stopping an institution — or its clients — from being used to move, hide or benefit from the proceeds of crime, terrorist financing, sanctions evasion or fraud.</div>
+    </div>
+    <div class="flow-arrow">&darr;</div>
+    <div class="flow-split">
+      <div class="flow-col">
+        <div class="flow-col-head aml">AML / CTF &amp; sanctions</div>
+        <div class="flow-col-sub">Regulatory, after-the-fact: does this reasonably indicate financial crime that must be reported?</div>
+        <div class="flow-col-body">
+          <ul>
+            <li>Customer due diligence &amp; KYC — the identification and risk-tiering foundation.<span class="ref">Full 9-step lifecycle: Section 03</span></li>
+            <li>Sanctions &amp; PEP screening — checking customers and beneficial owners against sanctions and politically-exposed-person lists.<span class="ref">Section 03, step 6</span></li>
+            <li>Transaction monitoring — reviewing activity for patterns inconsistent with the customer's stated purpose.<span class="ref">Section 03, step 8</span></li>
+            <li>Unusual/suspicious transaction reporting — filing with FIU-Nederland when the law requires it.<span class="ref">Section 03, step 9</span></li>
+            <li>Institutional program — risk assessment, policies, compliance and audit functions, screening and training.<span class="ref">Full 6-pillar build: Section 04</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow-col">
+        <div class="flow-col-head fraud">Fraud prevention</div>
+        <div class="flow-col-sub">Operational, real-time: is this transaction causing harm right now?</div>
+        <div class="flow-col-body">
+          <ul>
+            <li>Identity verification &amp; authentication — confirming the person transacting is who they claim to be, at the point of transaction.</li>
+            <li>Real-time transaction screening — stopping unauthorized or deceptive activity before it settles.</li>
+            <li>Account takeover &amp; payment fraud prevention — protecting existing customers and accounts from compromise.</li>
+            <li>Chargeback &amp; dispute management — the operational loss-prevention side of the same customer relationship.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="flow-arrow">&darr;</div>
+    <div class="flow-bottom">
+      <div class="flow-title">Where AML and fraud converge</div>
+      <ul>
+        <li>Mule networks &amp; account farms</li>
+        <li>Synthetic identity schemes</li>
+        <li>Organized fraud rings</li>
+        <li>Structuring to avoid reporting thresholds</li>
+        <li>Sanctions violations linked to fraud proceeds</li>
+        <li>Terrorist financing disguised as ordinary loss</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src-note">Structural relationship between KYC and AML: <a href="https://legal.thomsonreuters.com/blog/overview-kyc-and-aml/" target="_blank" rel="noopener">Thomson Reuters Legal</a> ("KYC = who you're doing business with; AML = what they're doing with their money"). AML-vs-fraud distinction and named overlap typologies: <a href="https://www.unit21.ai/blog/aml-vs-fraud-the-difference-the-overlap-and-why-it-matters" target="_blank" rel="noopener">Unit21</a>.</div>
+
+  <div class="jd-cols" style="margin-top:20px;grid-template-columns:1fr;">
+    <div class="jd-col">
+      <div class="jd-col-title">Interview-ready talking points</div>
+      <ol>
+        <li>The KYC Center's product (Section 01) sits entirely inside the left-hand column above — client-facing due diligence, screening and reporting are exactly what Team EIFFEL sells today.</li>
+        <li>Richemont's Anti-Fraud &amp; Payment accountability sits inside the right-hand column and the convergence zone beneath it — the fastest-growing area of financial-crime prevention industry-wide.</li>
+        <li>A director who can speak to both columns — not just the KYC column the Center sells today — is speaking to where the whole industry is moving, which is exactly the "future-proof" and "AI, data and technological innovation" language in the posting itself.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
       <div class="sec-eyebrow">The Job Description</div>
       <div class="sec-title">Director, KYC Center — full posting, by section</div>
     </div>
@@ -351,7 +441,7 @@
   <div class="src-note">Source: <a href="https://www.linkedin.com/jobs/view/4452733723/" target="_blank" rel="noopener">official LinkedIn job posting</a>.</div>
 
   <div class="sec-header">
-    <div class="sec-num">06</div>
+    <div class="sec-num">07</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Fit</div>
       <div class="sec-title">Role scope &amp; Olga's experience</div>
@@ -385,7 +475,7 @@
   </div>
 
   <div class="sec-header">
-    <div class="sec-num">07</div>
+    <div class="sec-num">08</div>
     <div class="sec-label">
       <div class="sec-eyebrow">KPIs</div>
       <div class="sec-title">KPI framework &mdash; four layers</div>
