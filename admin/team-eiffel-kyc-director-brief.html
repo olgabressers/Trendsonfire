@@ -65,6 +65,32 @@
     .conc-box ul{margin:0;padding-left:18px;}
     .conc-box li{font-size:13.5px;color:#0a0f1a;line-height:1.65;margin-bottom:6px;}
     .conc-box li:last-child{margin-bottom:0;}
+
+    .jd-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:14px 0;}
+    @media(max-width:780px){.jd-cols{grid-template-columns:1fr;}}
+    .jd-col{border:1px solid #e2dfd9;background:white;padding:18px 20px;}
+    .jd-col-title{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a3161f;margin-bottom:12px;}
+    .jd-col ol{margin:0;padding-left:18px;}
+    .jd-col li{font-size:13.5px;color:#0a0f1a;line-height:1.6;margin-bottom:9px;}
+    .jd-col li:last-child{margin-bottom:0;}
+
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0;}
+    @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:20px 18px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;line-height:1;color:#a3161f;margin-bottom:6px;}
+    .scope-label{font-size:13.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:8px;}
+    .scope-desc{font-size:13px;color:#1f1f1f;line-height:1.6;}
+    .scope-exp{margin-top:12px;padding:10px 14px;background:#0a0f1a;border-left:3px solid rgba(240,193,75,.5);font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#f0c14b;margin-bottom:6px;}
+
+    .kpi-groups{margin-top:14px;}
+    .kpi-group{margin-bottom:20px;}
+    .kpi-group-label{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a3161f;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+    @media(max-width:600px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
+    .kpi-name{font-size:14.5px;font-weight:800;color:#a3161f;margin-bottom:6px;line-height:1.25;}
+    .kpi-desc{font-size:12.5px;color:#0a0f1a;line-height:1.5;}
   </style>
 </head>
 <body>
@@ -210,22 +236,108 @@
   <div class="sec-header">
     <div class="sec-num">03</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">The Role</div>
-      <div class="sec-title">Director, KYC Center — what's being asked</div>
+      <div class="sec-eyebrow">The Job Description</div>
+      <div class="sec-title">Director, KYC Center — full posting, by section</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Area</th><th>What the posting asks for</th></tr></thead>
-      <tbody>
-        <tr><td>Mandate</td><td>Own commercial, operational and financial results for the KYC Center; build it into a future-proof, tech-enabled service line</td></tr>
-        <tr><td>Team</td><td>Build a high-performing team of KYC specialists from the ground up</td></tr>
-        <tr><td>Commercial</td><td>Generate new business, manage strategic client relationships, translate market developments into scalable compliance solutions</td></tr>
-        <tr><td>Requirements</td><td>University degree (business/economics/law/finance); 10+ years in consulting, financial services, or commercial leadership; proven team- and business-unit-building experience; deep KYC/AML/compliance/financial-crime knowledge</td></tr>
-      </tbody>
-    </table>
+  <div class="src-note" style="margin:0 0 14px;">Job title: Director KYC Center &middot; Location: Hilversum &middot; Function area: Legal, Finance &amp; Business Development &middot; Employment: full-time.</div>
+  <div class="jd-cols">
+    <div class="jd-col">
+      <div class="jd-col-title">Responsibilities</div>
+      <ol>
+        <li>Develop and execute the KYC Center's growth strategy — own its commercial, operational and financial results.</li>
+        <li>Build a future-proof KYC Center by integrating AI, data and technological innovation into distinctive service offerings.</li>
+        <li>Build your own team of KYC specialists and foster a strong, high-performing culture.</li>
+        <li>Generate new business, lead strategic client engagements, and build durable client relationships.</li>
+        <li>Translate market developments, technological innovation, data and AI into scalable compliance solutions.</li>
+        <li>Steer performance management, workforce planning, client satisfaction and continuous improvement of the Center.</li>
+      </ol>
+    </div>
+    <div class="jd-col">
+      <div class="jd-col-title">Requirements</div>
+      <ol>
+        <li>University degree — e.g. Business Administration, Economics, Law or Finance.</li>
+        <li>Minimum 10 years' experience in consulting, financial services, business development or a comparable commercial leadership role.</li>
+        <li>Demonstrable experience building and scaling teams, propositions and business units.</li>
+        <li>Experience in strategic sales, complex stakeholder management and executive-level decision-making.</li>
+        <li>Deep knowledge of KYC, AML, compliance, risk or financial-crime-prevention topics.</li>
+      </ol>
+    </div>
   </div>
   <div class="src-note">Source: <a href="https://www.linkedin.com/jobs/view/4452733723/" target="_blank" rel="noopener">official LinkedIn job posting</a>.</div>
+
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Fit</div>
+      <div class="sec-title">Role scope &amp; Olga's experience</div>
+    </div>
+  </div>
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="scope-n">01</div>
+      <div class="scope-label">P&amp;L &amp; Growth Strategy Ownership</div>
+      <div class="scope-desc">Own the commercial, operational and financial results of the Center and drive its growth strategy.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: full P&amp;L ownership of a &euro;150M e-commerce business across 12 luxury brands and 26 European countries, delivering 30&ndash;250% annual revenue growth.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">02</div>
+      <div class="scope-label">Building a Team &amp; Culture From Scratch</div>
+      <div class="scope-desc">Build your own team of KYC specialists and establish a strong performance culture.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: built and led a 240+ FTE team spanning e-commerce operations, client relations, anti-fraud and payment. Adidas: built the Digital Partner Commerce function &mdash; strategy, process and execution framework &mdash; from zero.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">03</div>
+      <div class="scope-label">Risk &amp; Financial-Crime-Adjacent Operations</div>
+      <div class="scope-desc">Deep knowledge of KYC, AML, compliance, risk or financial-crime-prevention topics.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: her title carried direct Anti-Fraud &amp; Payment accountability alongside e-commerce operations and client relations &mdash; the closest direct precedent to a financial-crime/risk mandate in her background.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">04</div>
+      <div class="scope-label">AI, Data &amp; Tech-Enabled Service Build</div>
+      <div class="scope-desc">Integrate AI, data and technological innovation into a future-proof, scalable service offering.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>TrendsOnFire: founded and built an AI-powered market intelligence platform from the ground up. Adidas: led the EU omni-channel and OMS strategy. Nike: delivered the SAP retail implementation for Intersport's digital transformation.</div>
+    </div>
+  </div>
+
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">KPI framework &mdash; four layers</div>
+    </div>
+  </div>
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">Commercial &amp; growth</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">KYC Center revenue growth</div><div class="kpi-desc">Growth against the segment's 2025 base of &euro;35.2M, reversing the year-on-year decline.</div></div>
+        <div class="kpi-card"><div class="kpi-name">New business &amp; framework-contract share</div><div class="kpi-desc">New client wins and utilisation of framework agreements &mdash; the group runs 50% of revenue through framework contracts.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Team &amp; delivery</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">KYC specialist headcount &amp; billability</div><div class="kpi-desc">Size and utilisation of the team built inside the Center &mdash; billability was the segment's stated 2025 weak point.</div></div>
+        <div class="kpi-card"><div class="kpi-name">1st-year churn</div><div class="kpi-desc">Group-wide priority named in the 2025 Annual Report; total workforce turnover across Team EIFFEL ran at 41.6% in 2025.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Technology &amp; innovation</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">AI/data tooling adoption</div><div class="kpi-desc">Rollout of AI-enabled applications inside KYC case work &mdash; the Group appointed a Head of AI and shipped its first applications in H2 2025.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Case cycle time</div><div class="kpi-desc">Time-to-close per KYC/CDD case as automation and data tooling are embedded into the workflow.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Financial &amp; governance</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">Segment EBITDA margin</div><div class="kpi-desc">Recovery from Financial Services &amp; Compliance's 2025 margin of 6.1% &mdash; the thinnest of the group's four segments.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Client satisfaction (NPS)</div><div class="kpi-desc">Measured annually group-wide; Team EIFFEL's 2025 customer satisfaction score was 7.9.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="src-note">Sources: <a href="https://s206.q4cdn.com/682568858/files/doc_news/2026/Apr/Annual-report-2025-Equipe-Holdings-3-BV-final-v29042026.pdf" target="_blank" rel="noopener">Team EIFFEL Annual Report 2025</a> (segment EBITDA, churn, NPS, framework-agreement share, Head of AI); <a href="https://www.linkedin.com/jobs/view/4452733723/" target="_blank" rel="noopener">LinkedIn job posting</a> (role KPIs).</div>
 
 </main>
 
