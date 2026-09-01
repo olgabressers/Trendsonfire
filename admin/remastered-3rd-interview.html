@@ -8,43 +8,50 @@
   <title>Remastered — 3rd Interview — Olga Bressers</title>
   <link rel="stylesheet" href="../style.css"/>
   <style>
-    body{color:#0a0f1a;}
-    .art-hero{background:#08080f;color:white;padding:46px 44px 40px;position:relative;max-width:900px;margin:30px auto 10px;border-radius:14px;}
-    .art-hero .inner{max-width:100%;margin:auto;position:relative;z-index:1;}
+    .art-hero{background:#08080f;color:white;padding:56px 32px 40px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(0,0,170,.20) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1100px;margin:auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
     .art-hero .top-links{position:absolute;top:24px;right:32px;display:flex;gap:10px;z-index:2;}
-    .art-hero .top-links a{font-size:13px;color:#FFD300;text-decoration:none;border:1px solid rgba(255,211,0,.4);padding:7px 15px;border-radius:4px;}
-    .art-hero .top-links a:hover{background:rgba(255,211,0,.12);}
-    @media(max-width:700px){.art-hero .top-links{position:static;flex-wrap:wrap;margin-bottom:16px;}}
-    .art-hero .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:800;margin-bottom:14px;}
-    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(30px,4.4vw,46px);font-weight:500;line-height:1.08;margin-bottom:14px;letter-spacing:-0.5px;}
+    .art-hero .top-links a{font-size:12px;color:#FFD300;text-decoration:none;border:1px solid rgba(255,211,0,.4);padding:7px 16px;border-radius:4px;letter-spacing:0.3px;}
+    .art-hero .top-links a:hover{background:rgba(255,211,0,.1);}
+    @media(max-width:700px){.art-hero .top-links{position:static;flex-wrap:wrap;margin-bottom:14px;}}
+    .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,42px);font-weight:400;line-height:1.1;margin-bottom:14px;letter-spacing:-0.5px;max-width:820px;}
     .art-hero h1 em{color:#FFD300;font-style:italic;}
-    .art-hero .lead{font-size:18px;color:rgba(255,255,255,.92);line-height:1.5;font-weight:600;max-width:760px;}
-    .art-hero .meta{margin-top:16px;font-size:14px;color:rgba(255,255,255,.6);}
-    .art-hero .breadcrumb{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;}
-    .art-hero .breadcrumb a{color:rgba(255,255,255,.7);text-decoration:none;}
-    main{max-width:1280px;margin:0 auto;padding:0 32px 80px;}
-    @media(max-width:700px){main{padding:0 16px 56px;}.art-hero{padding:32px 20px 28px;margin:16px 12px 10px;}}
-    .kf{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#08080f;margin:0 auto 8px;max-width:1280px;}
-    @media(max-width:700px){.kf{grid-template-columns:1fr 1fr;}}
-    .kf div{padding:22px 18px;border-right:1px solid rgba(255,255,255,.1);border-top:4px solid #FFD300;}
-    .kf .n{font-size:26px;font-weight:800;color:#FFD300;line-height:1.05;}
-    .kf .l{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;line-height:1.4;}
-    h2.sec-h{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;color:#0000aa;margin:44px 0 16px;line-height:1.12;}
-    .wrap{overflow-x:auto;margin:0 0 8px;}
-    table.t{width:100%;border-collapse:collapse;font-size:15.5px;min-width:520px;}
-    table.t th{background:#0000aa;color:white;text-align:left;padding:11px 15px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-    table.t td{padding:13px 15px;border-bottom:1px solid #e6e3de;vertical-align:top;line-height:1.5;}
-    table.t tr.hi td{background:#f4f6ff;font-weight:700;}
-    table.t tr.warn td{background:#fff9e0;}
-    .box{border:2px solid #0000aa;background:#faf9f7;padding:22px 26px;margin:8px 0 0;}
-    ul.big{list-style:none;padding:0;margin:0;}
-    ul.big li{font-size:16px;line-height:1.55;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid #eeece7;}
-    ul.big li:last-child{border-bottom:none;}
-    ul.big li::before{content:'\25B8';position:absolute;left:0;color:#0000aa;font-weight:800;}
-    ul.big li b{color:#0000aa;}
-    .note{font-size:13.5px;color:#6b7280;margin:6px 0 0;}
-    .close-line{font-size:19px;line-height:1.5;font-weight:600;color:#0a0f1a;background:#FFF7CC;border-left:5px solid #FFD300;padding:20px 24px;margin-top:12px;}
-    #btt{position:fixed;bottom:26px;right:26px;width:44px;height:44px;background:#08080f;color:#FFD300;border:1px solid rgba(255,211,0,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;}
+    .art-hero p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.55;max-width:760px;}
+    .art-hero .meta{margin-top:16px;font-size:12px;color:rgba(255,255,255,.45);}
+    main{max-width:1100px;margin:0 auto;padding:40px 48px 72px;}
+    @media(max-width:700px){main{padding:24px 16px 48px;}}
+    .keyframe{border:3px solid #0000aa;background:#f4f6ff;padding:26px 28px;margin-bottom:28px;}
+    .keyframe h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600;color:#0000aa;margin:0 0 14px;line-height:1.15;}
+    .keyframe .kf-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:16px;}
+    @media(max-width:820px){.keyframe .kf-row{grid-template-columns:repeat(2,1fr);}}
+    .keyframe .kf-n{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;font-weight:600;color:#0000aa;line-height:1;}
+    .keyframe .kf-l{font-size:12px;font-weight:700;letter-spacing:0.5px;color:#0a0f1a;margin-top:6px;line-height:1.4;}
+    .kf-bul{list-style:none;padding:0;margin:0;}
+    .kf-bul li{font-size:14.5px;color:#0a0f1a;line-height:1.55;padding:8px 0 8px 24px;position:relative;border-bottom:1px solid #dcdaf2;}
+    .kf-bul li:last-child{border-bottom:none;}
+    .kf-bul li::before{content:'\25B8';position:absolute;left:4px;color:#0000aa;font-weight:700;}
+    .kf-bul b{color:#0000aa;}
+    h2.sec-h{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:600;color:#0000aa;margin:44px 0 16px;line-height:1.15;}
+    .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
+    .mkt-table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px;}
+    .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 14px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+    .mkt-table td{padding:12px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
+    .mkt-table tr.target td{background:#f4f6ff;font-weight:700;}
+    .mkt-table tr.warn td{background:#fff9e0;}
+    .assump-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin:0 0 8px;}
+    .assump-list{list-style:none;padding:0;margin:0;}
+    .assump-list li{font-size:15px;color:#0a0f1a;line-height:1.55;padding:9px 0 9px 22px;position:relative;border-bottom:1px solid #eeece7;}
+    .assump-list li:last-child{border-bottom:none;}
+    .assump-list li::before{content:'\25B8';position:absolute;left:2px;color:#0000aa;font-weight:800;}
+    .assump-list b{color:#0000aa;}
+    .conc{border-left:5px solid #FFD300;background:#fff7cc;padding:20px 24px;margin:8px 0 0;font-size:18px;font-weight:600;color:#0a0f1a;line-height:1.5;}
+    .src-note{font-size:12px;color:#0a0f1a;padding:8px 12px;background:#f9fafb;border-left:3px solid #0000aa;margin:8px 0 0;line-height:1.6;}
+    .src-note a{color:#0000aa;}
+    #btt{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#08080f;color:#FFD300;border:1px solid rgba(255,211,0,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;}
   </style>
 </head>
 <body>
@@ -77,121 +84,130 @@
 
 <div class="art-hero">
   <div class="top-links">
-    <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">Job description &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">Job Description &rarr;</a>
     <a href="remastered-experience-brief.html">Analysis &rarr;</a>
-    <a href="remastered-financial-review.html">Financial model &rarr;</a>
+    <a href="remastered-financial-review.html">Financial Model &rarr;</a>
   </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Remastered</div>
-    <div class="eyebrow">3rd Interview &middot; Prep</div>
+    <div class="eyebrow">3rd Interview — Prep</div>
     <h1>Remastered: <em>from the idea to the plan</em></h1>
-    <p class="lead">Round 2 with Robin and Frank was positioning and how you'd bring B2B customers. Round 3 goes deeper &mdash; the concrete plan, the numbers behind it, and, likely, the terms. Walk in to present, not to be interviewed.</p>
-    <div class="meta">Robin Groenveld (founder) &middot; Frank (investor) &nbsp;|&nbsp; Tomorrow, 2 September 2026</div>
+    <p>Round 2 with Robin and Frank was positioning and how you would bring B2B customers. Round 3 goes deeper — the concrete plan, the numbers behind it, and, likely, the terms. Walk in to present, not to be interviewed.</p>
+    <div class="meta">Robin Groenveld (founder) · Frank (investor) &nbsp;|&nbsp; Tomorrow, 2 September 2026</div>
   </div>
-</div>
-
-<div class="kf">
-  <div><div class="n">€57K &rarr; €474K</div><div class="l">Profit as visitors go 97K &rarr; 125K &mdash; volume is the lever</div></div>
-  <div><div class="n">€258K &rarr; €790K</div><div class="l">B2B / corporate revenue you build, Year 1 &rarr; Year 3</div></div>
-  <div><div class="n">€7.3M</div><div class="l">Single-site revenue ceiling &mdash; 29% used today</div></div>
-  <div><div class="n">€1.83M</div><div class="l">Fixed cost base &mdash; why volume + B2B, not cost-cutting, win</div></div>
 </div>
 
 <main>
 
+  <div class="keyframe">
+    <h2>The plan, in four numbers</h2>
+    <div class="kf-row">
+      <div><div class="kf-n">€474K</div><div class="kf-l">Modelled profit at the 125,000 target (from €57K today)</div></div>
+      <div><div class="kf-n">€790K</div><div class="kf-l">B2B / corporate revenue you build by year three</div></div>
+      <div><div class="kf-n">€7.3M</div><div class="kf-l">Single-site revenue ceiling — 29% used today</div></div>
+      <div><div class="kf-n">€1.83M</div><div class="kf-l">Fixed cost base — why volume + B2B win</div></div>
+    </div>
+    <ul class="kf-bul">
+      <li><b>89% of the cost base is fixed</b> — every visitor past break-even adds €19.63 straight to profit. Volume and B2B drive the result, not cost-cutting.</li>
+      <li><b>97,000 → 125,000 visitors</b> lifts modelled profit from €57K to €474K on the same cost base.</li>
+      <li><b>Corporate &amp; venue-hire adds up to €790K a year by year three</b>, on top of ticketing — the new margin engine.</li>
+      <li><b>The business is capacity-constrained, not market-constrained</b> — €7.3M ceiling at one site, then longer hours or a second site.</li>
+    </ul>
+  </div>
+
   <h2 class="sec-h">Read the room</h2>
-  <div class="wrap">
-    <table class="t">
+  <div class="mkt-wrap">
+    <table class="mkt-table">
       <thead><tr><th>Who</th><th>What they test</th><th>Your move</th></tr></thead>
       <tbody>
-        <tr><td><b>Robin</b> &mdash; founder, keeps creative direction</td><td>Can you run commercial + ops without stepping on the creative?</td><td>Own commercial + ops; leave the art to him.</td></tr>
-        <tr class="hi"><td><b>Frank</b> &mdash; investor, in round 2 on positioning &amp; B2B</td><td>Do your B2B ideas convert to euros, and what's the return?</td><td>Bring the concrete B2B plan and the numbers. Present, don't pitch.</td></tr>
+        <tr><td><b>Robin</b> — founder, keeps creative direction</td><td>Can you run commercial + ops without stepping on the creative?</td><td>Own commercial + ops; leave the art to him.</td></tr>
+        <tr class="target"><td><b>Frank</b> — investor, in round 2 on positioning &amp; B2B</td><td>Do your B2B ideas convert to euros, and what is the return?</td><td>Bring the concrete B2B plan and the numbers. Present, don't pitch.</td></tr>
       </tbody>
     </table>
   </div>
 
   <h2 class="sec-h">Likely topics, ranked</h2>
-  <div class="wrap">
-    <table class="t">
+  <div class="mkt-wrap">
+    <table class="mkt-table">
       <thead><tr><th>#</th><th>Topic</th><th>What they are really asking</th></tr></thead>
       <tbody>
-        <tr class="hi"><td>1</td><td><b>The B2B plan, in numbers</b></td><td>Do your positioning &amp; B2B ideas convert to euros, and how fast?</td></tr>
-        <tr class="hi"><td>2</td><td><b>The 30-60-90 day plan</b></td><td>What exactly do you do first, and when does it show?</td></tr>
+        <tr class="target"><td>1</td><td><b>The B2B plan, in numbers</b></td><td>Do your positioning &amp; B2B ideas convert to euros, and how fast?</td></tr>
+        <tr class="target"><td>2</td><td><b>The 30-60-90 day plan</b></td><td>What exactly do you do first, and when does it show?</td></tr>
         <tr><td>3</td><td>The deal / terms</td><td>What will you cost, and how is your upside tied to ours?</td></tr>
-        <tr><td>4</td><td>Working model &amp; ambition</td><td>Who decides what &mdash; and how big does this go past one site?</td></tr>
+        <tr><td>4</td><td>Working model &amp; ambition</td><td>Who decides what — and how big does this go past one site?</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h2 class="sec-h">Your growth plan &mdash; in numbers</h2>
-  <div class="wrap">
-    <table class="t">
+  <h2 class="sec-h">Your growth plan — in numbers</h2>
+  <div class="mkt-wrap">
+    <table class="mkt-table">
       <thead><tr><th>Lever</th><th>Now</th><th>Target</th><th>Why it works</th></tr></thead>
       <tbody>
-        <tr class="hi"><td><b>Visitors</b></td><td>97,000 / yr</td><td>125,000 (+29%)</td><td>Same cost base turns €57K profit into <b>€474K</b>.</td></tr>
-        <tr class="hi"><td><b>B2B / corporate</b></td><td>~nil disclosed</td><td><b>€790K</b> by Year 3</td><td>New high-margin engine on top of ticketing.</td></tr>
+        <tr class="target"><td><b>Visitors</b></td><td>97,000 / yr</td><td>125,000 (+29%)</td><td>Same cost base turns €57K profit into €474K.</td></tr>
+        <tr class="target"><td><b>B2B / corporate</b></td><td>~nil disclosed</td><td>€790K by year 3</td><td>New high-margin engine on top of ticketing.</td></tr>
         <tr><td><b>Spend per visit</b></td><td>€23.30 ticket</td><td>+ premium tiers &amp; bar/shop</td><td>Secondary spend is the cheapest margin in the building.</td></tr>
-        <tr><td><b>Capacity</b></td><td>29% of ceiling</td><td>up to 339,450 visits</td><td>Room to ~3&times; before a second site is needed.</td></tr>
+        <tr><td><b>Capacity</b></td><td>29% of ceiling</td><td>up to 339,450 visits</td><td>Room to ~3× before a second site is needed.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h2 class="sec-h">Unit economics &mdash; three lines to own</h2>
-  <div class="box">
-    <ul class="big">
-      <li><b>€1.83M of cost is fixed.</b> It does not move whether 80K or 125K come through the door &mdash; so volume and B2B drive the result, not cost-cutting.</li>
-      <li><b>Every visitor past break-even adds ~€19.63 straight to profit.</b> Filling the room is the fastest lever there is.</li>
-      <li><b>The business is capacity-constrained, not market-constrained.</b> Ceiling €7.3M at one site &mdash; growth = fill it, add B2B, then a second site.</li>
+  <h2 class="sec-h">Unit economics — three lines to own</h2>
+  <div class="assump-box">
+    <ul class="assump-list">
+      <li><b>€1.83M of cost is fixed</b> — it does not move whether 80K or 125K come through the door. So volume and B2B drive the result, not cost-cutting.</li>
+      <li><b>Every visitor past break-even adds ~€19.63 straight to profit</b> — filling the room is the fastest lever there is.</li>
+      <li><b>Capacity-constrained, not market-constrained</b> — €7.3M ceiling at one site. Growth = fill it, add B2B, then a second site.</li>
     </ul>
   </div>
 
   <h2 class="sec-h">The B2B engine</h2>
-  <div class="wrap">
-    <table class="t">
+  <div class="mkt-wrap">
+    <table class="mkt-table">
       <thead><tr><th>Corporate &amp; venue-hire</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr></thead>
       <tbody>
-        <tr class="hi"><td><b>Revenue built</b></td><td><b>€258K</b></td><td><b>€500K</b></td><td><b>€790K</b></td></tr>
-        <tr><td>How</td><td colspan="3">Tiered offer &mdash; hosted workshops, private events, exclusive venue hire &mdash; sold into the Rotterdam corporate community. Premium comes from a hosted, service-led layer, not the visuals alone.</td></tr>
+        <tr class="target"><td><b>Revenue built</b></td><td><b>€258K</b></td><td><b>€500K</b></td><td><b>€790K</b></td></tr>
+        <tr><td>How</td><td colspan="3">Tiered offer — hosted workshops, private events, exclusive venue hire — sold into the Rotterdam corporate community. Premium comes from a hosted, service-led layer, not the visuals alone.</td></tr>
       </tbody>
     </table>
   </div>
 
   <h2 class="sec-h">30-60-90 day plan</h2>
-  <div class="wrap">
-    <table class="t">
+  <div class="mkt-wrap">
+    <table class="mkt-table">
       <thead><tr><th>Phase</th><th>Focus</th><th>Key moves</th><th>Proof by the end</th></tr></thead>
       <tbody>
-        <tr><td><b>First 30</b><br>Learn &amp; anchor</td><td>Validate the numbers, meet the engine</td><td>Deep-dive the real P&amp;L, cost base &amp; booking data; meet team, partners &amp; ticketing; audit the current B2B pipeline and positioning.</td><td>A validated view of the P&amp;L and the current B2B baseline.</td></tr>
-        <tr><td><b>60</b><br>Position &amp; build</td><td>Sharpen positioning, build the B2B offer</td><td>Lock the premium, hosted positioning; design the tiered corporate offer (workshops, private events, venue hire) + pricing; set Year-1 targets &amp; KPI cadence.</td><td>A priced B2B product and a Year-1 plan on one page.</td></tr>
-        <tr class="hi"><td><b>90</b><br>Sell &amp; prove</td><td>Launch, close, measure</td><td>Launch the B2B offer into the Rotterdam corporate market; close the first corporate bookings; growth engine live to push visitors toward 125K; dashboard running.</td><td>First corporate revenue booked + first measurable visitor uplift.</td></tr>
+        <tr><td><b>First 30</b> — Learn &amp; anchor</td><td>Validate the numbers, meet the engine</td><td>Deep-dive the real P&amp;L, cost base &amp; booking data; meet team, partners &amp; ticketing; audit the current B2B pipeline and positioning.</td><td>A validated view of the P&amp;L and the current B2B baseline.</td></tr>
+        <tr><td><b>60</b> — Position &amp; build</td><td>Sharpen positioning, build the B2B offer</td><td>Lock the premium, hosted positioning; design the tiered corporate offer (workshops, private events, venue hire) + pricing; set year-1 targets &amp; KPI cadence.</td><td>A priced B2B product and a year-1 plan on one page.</td></tr>
+        <tr class="target"><td><b>90</b> — Sell &amp; prove</td><td>Launch, close, measure</td><td>Launch the B2B offer into the Rotterdam corporate market; close the first corporate bookings; growth engine live to push visitors toward 125K; dashboard running.</td><td>First corporate revenue booked + first measurable visitor uplift.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h2 class="sec-h">Your ask &mdash; if terms come up</h2>
-  <div class="box">
-    <ul class="big">
-      <li><b>4-day week at their full-time number (~€125K)</b> &mdash; effective ~€154K/yr, 5th day free. Framed as pay for the mandate, not pro-rata.</li>
-      <li><b>Growth bonus + milestones</b> &mdash; 10% of revenue above €2.3M, plus cash at €3M / €4M / €5M. Upside you trigger yourself.</li>
-      <li><b>Equity only as phantom equity with a guaranteed put</b> &mdash; never plain shares that pay only on a sale.</li>
+  <h2 class="sec-h">Your ask — if terms come up</h2>
+  <div class="assump-box">
+    <ul class="assump-list">
+      <li><b>4-day week at their full-time number (~€125K)</b> — effective ~€154K/yr, 5th day free. Framed as pay for the mandate, not pro-rata.</li>
+      <li><b>Growth bonus + milestones</b> — 10% of revenue above €2.3M, plus cash at €3M / €4M / €5M. Upside you trigger yourself.</li>
+      <li><b>Equity only as phantom equity with a guaranteed put</b> — never plain shares that pay only on a sale.</li>
     </ul>
-    <p class="note">Full scenarios &amp; four-year cash: see the <a href="remastered-financial-review.html">financial model</a>, Section 5.</p>
   </div>
+  <div class="src-note">Full scenarios &amp; four-year cash: see the <a href="remastered-financial-review.html#negotiation">financial model</a>, Section 5.</div>
 
   <h2 class="sec-h">Questions for Frank</h2>
-  <div class="box">
-    <ul class="big">
+  <div class="assump-box">
+    <ul class="assump-list">
       <li>What is your investment thesis and target return on Remastered?</li>
       <li>What is your time and exit horizon?</li>
-      <li>Is there capital for a second site or international expansion &mdash; and on what trigger?</li>
-      <li>Where does the MD's mandate end and yours and Robin's begin?</li>
-      <li>What does Year-1 success look like to you, in one number?</li>
+      <li>Is there capital for a second site or international expansion — and on what trigger?</li>
+      <li>Where does the MD's mandate end, and yours and Robin's begin?</li>
+      <li>What does year-1 success look like to you, in one number?</li>
     </ul>
   </div>
 
   <h2 class="sec-h">The one line to leave them with</h2>
-  <div class="close-line">
-    &ldquo;I don't bring ideas &mdash; I bring the plan and the numbers. Give me the mandate and the four-day rhythm, tie my upside to the growth, and I take this from €2.3M toward its ceiling with a B2B engine on top.&rdquo;
+  <div class="conc">
+    &ldquo;I don't bring ideas — I bring the plan and the numbers. Give me the mandate and the four-day rhythm, tie my upside to the growth, and I take this from €2.3M toward its ceiling with a B2B engine on top.&rdquo;
   </div>
 
 </main>
