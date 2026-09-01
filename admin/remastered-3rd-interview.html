@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="../style.css"/>
   <style>
     body{color:#0a0f1a;}
-    .art-hero{background:#08080f;color:white;padding:54px 32px 40px;position:relative;}
-    .art-hero .inner{max-width:1040px;margin:auto;position:relative;z-index:1;}
+    .art-hero{background:#08080f;color:white;padding:46px 44px 40px;position:relative;max-width:900px;margin:30px auto 10px;border-radius:14px;}
+    .art-hero .inner{max-width:100%;margin:auto;position:relative;z-index:1;}
     .art-hero .top-links{position:absolute;top:24px;right:32px;display:flex;gap:10px;z-index:2;}
     .art-hero .top-links a{font-size:13px;color:#FFD300;text-decoration:none;border:1px solid rgba(255,211,0,.4);padding:7px 15px;border-radius:4px;}
     .art-hero .top-links a:hover{background:rgba(255,211,0,.12);}
@@ -20,9 +20,9 @@
     .art-hero h1 em{color:#FFD300;font-style:italic;}
     .art-hero .lead{font-size:18px;color:rgba(255,255,255,.92);line-height:1.5;font-weight:600;max-width:760px;}
     .art-hero .meta{margin-top:16px;font-size:14px;color:rgba(255,255,255,.6);}
-    main{max-width:1040px;margin:0 auto;padding:0 32px 80px;}
-    @media(max-width:700px){main{padding:0 16px 56px;}.art-hero{padding:34px 16px 28px;}}
-    .kf{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#08080f;margin:0 0 8px;}
+    main{max-width:1280px;margin:0 auto;padding:0 32px 80px;}
+    @media(max-width:700px){main{padding:0 16px 56px;}.art-hero{padding:32px 20px 28px;margin:16px 12px 10px;}}
+    .kf{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#08080f;margin:0 auto 8px;max-width:1280px;}
     @media(max-width:700px){.kf{grid-template-columns:1fr 1fr;}}
     .kf div{padding:22px 18px;border-right:1px solid rgba(255,255,255,.1);border-top:4px solid #FFD300;}
     .kf .n{font-size:26px;font-weight:800;color:#FFD300;line-height:1.05;}
@@ -49,13 +49,14 @@
 
 <div class="art-hero">
   <div class="top-links">
+    <a href="https://www.linkedin.com/jobs/view/4442440483/" target="_blank" rel="noopener">Job description &rarr;</a>
     <a href="remastered-experience-brief.html">Analysis &rarr;</a>
     <a href="remastered-financial-review.html">Financial model &rarr;</a>
   </div>
   <div class="inner">
     <div class="eyebrow">3rd Interview &middot; Prep</div>
-    <h1>Remastered: <em>the money joins the room</em></h1>
-    <p class="lead">Rounds 1&ndash;2 were the analysis and the B2B ideas. Round 3 with the investor is the plan, the numbers, and the terms. Walk in to present &mdash; not to be interviewed.</p>
+    <h1>Remastered: <em>from the idea to the plan</em></h1>
+    <p class="lead">Round 2 with Robin and Frank was positioning and how you'd bring B2B customers. Round 3 goes deeper &mdash; the concrete plan, the numbers behind it, and, likely, the terms. Walk in to present, not to be interviewed.</p>
     <div class="meta">Robin Groenveld (founder) &middot; Frank (investor) &nbsp;|&nbsp; Tomorrow, 2 September 2026</div>
   </div>
 </div>
@@ -74,8 +75,8 @@
     <table class="t">
       <thead><tr><th>Who</th><th>What they test</th><th>Your move</th></tr></thead>
       <tbody>
-        <tr><td><b>Robin</b> &mdash; founder, keeps creative direction</td><td>Can you run the business without stepping on the creative?</td><td>Own commercial + ops; leave the art to him.</td></tr>
-        <tr class="hi"><td><b>Frank</b> &mdash; investor (new in the room)</td><td>Can you deliver a return, and what do you cost?</td><td>Lead with the plan and the euros. Present, don't pitch.</td></tr>
+        <tr><td><b>Robin</b> &mdash; founder, keeps creative direction</td><td>Can you run commercial + ops without stepping on the creative?</td><td>Own commercial + ops; leave the art to him.</td></tr>
+        <tr class="hi"><td><b>Frank</b> &mdash; investor, in round 2 on positioning &amp; B2B</td><td>Do your B2B ideas convert to euros, and what's the return?</td><td>Bring the concrete B2B plan and the numbers. Present, don't pitch.</td></tr>
       </tbody>
     </table>
   </div>
@@ -85,10 +86,10 @@
     <table class="t">
       <thead><tr><th>#</th><th>Topic</th><th>What they are really asking</th></tr></thead>
       <tbody>
-        <tr class="hi"><td>1</td><td><b>Your growth plan, in numbers</b></td><td>Do your ideas convert to euros, and how fast?</td></tr>
-        <tr class="hi"><td>2</td><td><b>The deal / terms</b></td><td>What will you cost, and how is your upside tied to ours?</td></tr>
-        <tr><td>3</td><td>The working model</td><td>Founder + investor + you &mdash; who decides what?</td></tr>
-        <tr><td>4</td><td>Ambition &amp; the ceiling</td><td>How big does this go, and how do you pass a single site?</td></tr>
+        <tr class="hi"><td>1</td><td><b>The B2B plan, in numbers</b></td><td>Do your positioning &amp; B2B ideas convert to euros, and how fast?</td></tr>
+        <tr class="hi"><td>2</td><td><b>The 30-60-90 day plan</b></td><td>What exactly do you do first, and when does it show?</td></tr>
+        <tr><td>3</td><td>The deal / terms</td><td>What will you cost, and how is your upside tied to ours?</td></tr>
+        <tr><td>4</td><td>Working model &amp; ambition</td><td>Who decides what &mdash; and how big does this go past one site?</td></tr>
       </tbody>
     </table>
   </div>
@@ -122,6 +123,18 @@
       <tbody>
         <tr class="hi"><td><b>Revenue built</b></td><td><b>€258K</b></td><td><b>€500K</b></td><td><b>€790K</b></td></tr>
         <tr><td>How</td><td colspan="3">Tiered offer &mdash; hosted workshops, private events, exclusive venue hire &mdash; sold into the Rotterdam corporate community. Premium comes from a hosted, service-led layer, not the visuals alone.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec-h">30-60-90 day plan</h2>
+  <div class="wrap">
+    <table class="t">
+      <thead><tr><th>Phase</th><th>Focus</th><th>Key moves</th><th>Proof by the end</th></tr></thead>
+      <tbody>
+        <tr><td><b>First 30</b><br>Learn &amp; anchor</td><td>Validate the numbers, meet the engine</td><td>Deep-dive the real P&amp;L, cost base &amp; booking data; meet team, partners &amp; ticketing; audit the current B2B pipeline and positioning.</td><td>A validated view of the P&amp;L and the current B2B baseline.</td></tr>
+        <tr><td><b>60</b><br>Position &amp; build</td><td>Sharpen positioning, build the B2B offer</td><td>Lock the premium, hosted positioning; design the tiered corporate offer (workshops, private events, venue hire) + pricing; set Year-1 targets &amp; KPI cadence.</td><td>A priced B2B product and a Year-1 plan on one page.</td></tr>
+        <tr class="hi"><td><b>90</b><br>Sell &amp; prove</td><td>Launch, close, measure</td><td>Launch the B2B offer into the Rotterdam corporate market; close the first corporate bookings; growth engine live to push visitors toward 125K; dashboard running.</td><td>First corporate revenue booked + first measurable visitor uplift.</td></tr>
       </tbody>
     </table>
   </div>
