@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>The Padellers — Chief Operating Officer Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* THE PADELLERS BRAND: navy #0E1F4C · pink #F1B4BA */
+
+    .art-hero{background:#0E1F4C;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(241,180,186,.10) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:12px;color:white;margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:white;text-decoration:none;}
+    .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#F1B4BA;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,46px);font-weight:400;line-height:1.08;margin-bottom:16px;letter-spacing:-0.5px;max-width:860px;}
+    .art-hero h1 em{color:#F1B4BA;font-style:italic;}
+    .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);max-width:760px;line-height:1.55;}
+    .art-hero .meta{margin-top:18px;font-size:12px;color:white;display:flex;gap:20px;flex-wrap:wrap;}
+
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#F1B4BA;text-decoration:none;border:1px solid rgba(241,180,186,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(241,180,186,.1);}
+
+    @media(max-width:700px){.art-hero{padding:40px 16px 32px;}}
+
+    .hero-img-strip{width:100%;height:380px;overflow:hidden;position:relative;}
+    .hero-img-strip img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;}
+    .hero-img-strip .img-caption{position:absolute;bottom:0;right:0;background:rgba(14,31,76,.72);color:rgba(255,255,255,.7);font-size:10.5px;padding:5px 12px;}
+    @media(max-width:640px){.hero-img-strip{height:220px;}}
+
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:18px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:500;line-height:1;color:#0E1F4C;letter-spacing:-0.5px;}
+    .s-delta{font-size:11.5px;color:#0E1F4C;font-weight:700;margin-top:4px;}
+    .s-src{font-size:11.5px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#b23a52;}
+
+    .bw-wrap{background:#0E1F4C;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bw-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bw-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#F1B4BA;font-weight:700;margin-bottom:10px;}
+    .bw-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.8vw,32px);color:white;font-weight:400;line-height:1.1;margin-bottom:32px;}
+    .bw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bw-grid{grid-template-columns:1fr;}}
+    .bw-card{border:1px solid rgba(241,180,186,.3);padding:22px 20px;background:rgba(255,255,255,.02);}
+    .bw-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:76px;color:#F1B4BA;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bw-card-title{font-size:17px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.2;}
+    .bw-card ul{list-style:none;padding:0;margin:0;}
+    .bw-card ul li{font-size:13.5px;color:#ffffff;padding:7px 0 7px 16px;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.6;position:relative;}
+    .bw-card ul li:last-child{border-bottom:none;}
+    .bw-card ul li::before{content:'—';color:#F1B4BA;position:absolute;left:0;font-weight:700;}
+    .bw-card-src{font-size:11px;color:rgba(255,255,255,.82);margin-top:12px;line-height:1.5;}
+    .bw-card-src a{color:#F1B4BA;text-decoration:underline;}
+
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:48px 0 18px;padding-bottom:10px;border-bottom:2px solid #0E1F4C;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b23a52;margin-bottom:4px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.3vw,26px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+
+    .src-note{font-size:12px;color:#0a0f1a;padding:8px 12px;background:#f9fafb;border-left:3px solid #F1B4BA;margin-top:10px;line-height:1.6;}
+    .src-note a{color:#b23a52;}
+
+    .mkt-table{width:100%;border-collapse:collapse;margin:14px 0;}
+    .mkt-table th{background:#0E1F4C;color:white;text-align:left;padding:9px 13px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+    .mkt-table td{padding:11px 13px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;font-size:13.5px;}
+    .mkt-table tr:last-child td{border-bottom:none;}
+    .mkt-table tr:nth-child(even) td{background:#faf9f7;}
+
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px;}
+    .pri-table th{background:#0E1F4C;color:white;text-align:left;padding:9px 13px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+    .pri-table td{padding:11px 13px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0;}
+    @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:20px 18px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;line-height:1;color:#b23a52;margin-bottom:6px;}
+    .scope-label{font-size:15px;font-weight:800;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .scope-desc{font-size:13.5px;color:#1f1f1f;line-height:1.6;}
+    .scope-exp{margin-top:12px;padding:10px 14px;background:#0E1F4C;border-left:3px solid #F1B4BA;font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#F1B4BA;margin-bottom:6px;}
+
+    .org-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#0E1F4C;color:#F1B4BA;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#0E1F4C;color:#F1B4BA;}
+    .org-name{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13px;color:#0a0f1a;line-height:1.35;margin-top:2px;}
+    .org-entity{font-size:13px;color:#0a0f1a;font-weight:600;margin-top:3px;line-height:1.35;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:10px;line-height:1.5;}
+    .org-conf a{color:#b23a52;font-weight:600;}
+
+    .trend-list{margin:0;padding:0;list-style:none;}
+    .trend-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid #e8e5e0;}
+    .trend-item:last-child{border-bottom:none;}
+    .trend-n{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#b23a52;line-height:1;flex-shrink:0;min-width:24px;margin-top:2px;}
+    .trend-body h4{font-size:14px;font-weight:700;color:#0a0f1a;margin-bottom:5px;}
+    .trend-body p{font-size:13.5px;color:#1f1f1f;line-height:1.65;margin:0;}
+    .stat-tag{display:inline-block;background:rgba(241,180,186,.25);color:#7a2438;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:2px;margin-top:6px;margin-right:4px;}
+    .opp-box{margin-top:8px;padding:8px 12px;background:rgba(14,31,76,.06);border-left:3px solid #0E1F4C;font-size:12.5px;color:#0E1F4C;line-height:1.5;}
+    .opp-box strong{display:block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px;}
+
+    .kpi-groups{margin-top:14px;}
+    .kpi-group{margin-bottom:26px;}
+    .kpi-group-label{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#b23a52;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{border:1px solid #e2dfd9;background:white;padding:14px 14px;}
+    .kpi-name{font-size:14px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.25;}
+    .kpi-desc{font-size:12.5px;color:#1f1f1f;line-height:1.5;}
+    .kpi-bench{font-size:12px;color:#0a0f1a;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;line-height:1.5;}
+    .kpi-bench strong{color:#b23a52;font-weight:800;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+      .sec-num{font-size:40px !important;}
+      .bw-num{font-size:52px !important;}
+      .s-num{font-size:26px !important;}
+      .back-to-top-btn{bottom:16px !important;right:16px !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.thepadellers.nl" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4460022367/" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; The Padellers</div>
+    <div class="eyebrow">Interview Brief — Chief Operating Officer · The Padellers</div>
+    <h1>The Padellers: <em>from 1 court to 33 clubs in five years — the next 17 need someone to run them</em></h1>
+    <p>Amsterdam-founded padel operator, one of the two largest commercial chains in the Netherlands. Founded April 2021, backed by DM Equity Partners since April 2022, now 33 club locations across the Netherlands and Germany with a stated ambition to reach 50+ and West European market leadership. The Chief Operating Officer role owns daily operations across every location, sitting directly alongside the founding team.</p>
+    <div class="meta">
+      <span>Sources: LinkedIn job posting, thepadellers.nl, LinkedIn company page, Adyen, dealmaker.nl, EY Netherlands, Basic-Fit FY2025 results</span>
+      <span>Updated 7 September 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="hero-img-strip">
+  <img src="https://cdn.prod.website-files.com/65eb0c9058d68117b8156479/68f765f128f749f7326666f5_THEPADELLERS_LINADRAKOSTAMATIS-119%20(1)-p-1080.webp" alt="The Padellers — indoor padel court"/>
+  <div class="img-caption"><a href="https://www.thepadellers.nl" target="_blank" rel="noopener" style="color:rgba(255,255,255,.7);text-decoration:none;">The Padellers · thepadellers.nl</a></div>
+</div>
+
+<main>
+
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #b23a52;padding:20px 24px;background:white;">
+    <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b23a52;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b23a52;margin-bottom:4px;">The company</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Founded April 2021 by four co-founders. 33 club locations (Netherlands + Germany), 124 employees. Second-largest commercial padel chain in the Netherlands after Peakz Padel. Minority growth investment from DM Equity Partners since April 2022.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b23a52;margin-bottom:4px;">Chief Operating Officer — mandate</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Six areas from the role posting: operational processes across multiple locations, translating strategy into execution, team leadership, quality &amp; customer satisfaction, expansion &amp; professionalisation, and bridging internal teams with external partners.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b23a52;margin-bottom:4px;">The scale-up gap</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">The stated target is 50+ locations — 17 more clubs than today, across two countries, while national court demand in the Netherlands is growing faster than court supply. Operational professionalisation, not new-market discovery, is the binding constraint.</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b23a52;margin-bottom:4px;">Competitive position</div>
+        <div style="font-size:14px;color:#0a0f1a;line-height:1.5;">Three commercial chains lead the Dutch market: Peakz Padel (first mover, largest), The Padellers (second, fastest-growing, only chain with a live German footprint), Plaza Padel (smaller, hospitality-led positioning).</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#fdf1f2;border:1px solid #f1c9d0;padding:20px 24px;">
+    <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#b23a52;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:13.5px;line-height:1;">
+      <li style="margin-bottom:12px;"><a href="#sec-01" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Locations &amp; growth trajectory</a><br><span style="color:#555;font-size:12.5px;">1 court (2021) to 33 locations (2026) — a dated timeline, plus the national capacity gap it's growing into.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-02" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competitive landscape</a><br><span style="color:#555;font-size:12.5px;">Peakz Padel, The Padellers, Plaza Padel — founding, footprint, model, backing.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-03" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Founders &amp; leadership</a><br><span style="color:#555;font-size:12.5px;">The four co-founders and the office leadership team.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-04" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:12.5px;">All six JD accountability areas mapped to verified experience.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-05" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Dutch padel market context</a><br><span style="color:#555;font-size:12.5px;">876,000 players, capacity strain, market consolidation — three trends and the operational opportunity each implies.</span></li>
+      <li><a href="#sec-06" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework</a><br><span style="color:#555;font-size:12.5px;">Five groups — court economics, revenue mix, retention, people, and multi-site scale — each with sourced benchmarks.</span></li>
+    </ol>
+  </div>
+
+</div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">Founded</div>
+      <div class="s-num">2021</div>
+      <div class="s-src">April 2021, Amsterdam. <a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Club locations</div>
+      <div class="s-num">33</div>
+      <div class="s-delta">Target 50+</div>
+      <div class="s-src">NL + Germany. <a href="https://www.linkedin.com/jobs/view/4460022367/" target="_blank" rel="noopener">LinkedIn job posting</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">NL padel players</div>
+      <div class="s-num">876K</div>
+      <div class="s-delta">+15% providers year-on-year</div>
+      <div class="s-src">2025. <a href="https://www.ey.com/nl_nl/newsroom/2026/03/padelspelers-in-nederland-groei-zet-door-nieuwe-fase-in-professionalisering" target="_blank" rel="noopener">EY Netherlands</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Team</div>
+      <div class="s-num">124</div>
+      <div class="s-src">Employees. <a href="https://nl.linkedin.com/company/the-padellers" target="_blank" rel="noopener">LinkedIn company page</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Growth capital</div>
+      <div class="s-num">&euro;5&ndash;25M</div>
+      <div class="s-src">DM Equity Partners, Apr 2022, minority stake. <a href="https://www.dealmaker.nl/company/dm-equity-partners" target="_blank" rel="noopener">dealmaker.nl</a></div>
+    </div>
+  </div>
+
+  <!-- DARK SECTION: BUSINESS MODEL -->
+  <div class="bw-wrap">
+    <div class="bw-eyebrow">Business model</div>
+    <div class="bw-headline">Court operations, corporate events, and brand partnerships — three revenue lines under one roof</div>
+    <div class="bw-grid">
+      <div class="bw-card">
+        <div class="bw-num">01</div>
+        <div class="bw-card-title">Club Operations &amp; Membership</div>
+        <ul>
+          <li>Court booking — pay-and-play plus the PINK loyalty programme</li>
+          <li>Padel lessons and training programmes at every club</li>
+          <li>Equipment rental and pro-shop retail — partners include Rituals, Padelshop</li>
+          <li>Bar and hospitality service at every location</li>
+        </ul>
+        <div class="bw-card-src">Sources: <a href="https://www.adyen.com/nl_NL/knowledge-hub/the-padellers-binnen-een-jaar-een-groot-succes" target="_blank" rel="noopener">Adyen case study</a> · <a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+      </div>
+      <div class="bw-card">
+        <div class="bw-num">02</div>
+        <div class="bw-card-title">Corporate &amp; Events</div>
+        <ul>
+          <li>Business events and corporate padel days at every club</li>
+          <li>Tournaments and leagues</li>
+          <li>Kids camps during school holidays</li>
+        </ul>
+        <div class="bw-card-src">Source: <a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+      </div>
+      <div class="bw-card">
+        <div class="bw-num">03</div>
+        <div class="bw-card-title">Brand Partnerships &amp; Sponsorship</div>
+        <ul>
+          <li>Ajax — Official Padel Partner since June 2023</li>
+          <li>PSV (Q3 2022), NAC Breda, Roda JC</li>
+          <li>AFC — 3-year sponsorship; two co-founders are AFC alumni</li>
+          <li>Brand partners: CUPRA, Rituals, Red Bull, Coca-Cola</li>
+        </ul>
+        <div class="bw-card-src">Sources: <a href="https://www.ajax.nl/artikelen/ajax-sluit-partnership-met-the-padellers" target="_blank" rel="noopener">Ajax</a> · <a href="https://www.thepadellers.nl/nieuws/the-padellers-heeft-zich-voor-drie-jaar-als-sponsor-verbonden-aan-afc" target="_blank" rel="noopener">AFC</a> · <a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01: LOCATIONS & GROWTH -->
+  <div id="sec-01" class="sec-header">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Growth trajectory</div>
+      <div class="sec-title">1 court to 33 clubs — a dated timeline</div>
+    </div>
+  </div>
+
+  <div class="pri-wrap">
+  <table class="mkt-table" style="min-width:560px;">
+    <thead>
+      <tr><th>Date</th><th>Milestone</th><th>Source</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Q2 2021</strong></td>
+        <td>First location opens — Padel Amstelpark, Amsterdam</td>
+        <td><a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener" style="color:#b23a52;">thepadellers.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>Q4 2021</strong></td>
+        <td>Veldhoven — first location outside Amsterdam</td>
+        <td><a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener" style="color:#b23a52;">thepadellers.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>April 2022</strong></td>
+        <td>DM Equity Partners takes a minority growth stake, &euro;5&ndash;25M deal bracket</td>
+        <td><a href="https://www.dealmaker.nl/company/dm-equity-partners" target="_blank" rel="noopener" style="color:#b23a52;">dealmaker.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>January 2024</strong></td>
+        <td>Frankfurt (9 indoor courts) — first German location</td>
+        <td><a href="https://www.thepadellers.nl/nieuws/the-padellers-zet-groeistrategie-voort-met-uitbreiding-naar-duitsland" target="_blank" rel="noopener" style="color:#b23a52;">thepadellers.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>October 2024</strong></td>
+        <td>25 Netherlands locations, 158 courts</td>
+        <td><a href="https://padelgids.nl/organisaties/the-padellers/" target="_blank" rel="noopener" style="color:#b23a52;">padelgids.nl</a></td>
+      </tr>
+      <tr style="background:#fdf1f2;">
+        <td><strong>September 2026</strong></td>
+        <td><strong>33 locations (NL + Germany) — target 50+, West European market leadership</strong></td>
+        <td><a href="https://www.linkedin.com/jobs/view/4460022367/" target="_blank" rel="noopener" style="color:#b23a52;">LinkedIn job posting</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="src-note">German pipeline named beyond Essen and Frankfurt/Dreieich: Leipzig, Mettmann, Giessen, Troisdorf, Nürnberg, Stuttgart. Source: <a href="https://www.thepadellers.de/en/locations" target="_blank" rel="noopener">thepadellers.de/locations</a>.</div>
+
+  <div class="pri-wrap" style="margin-top:24px;">
+    <table class="pri-table">
+      <thead><tr><th style="width:32%">Netherlands padel market, 2025&ndash;26</th><th>Figure</th></tr></thead>
+      <tbody>
+        <tr><td>Active padel players nationally</td><td><strong>876,000</strong> (2025)</td></tr>
+        <tr><td>Growth in providers/locations</td><td><strong>+15%</strong> year-on-year</td></tr>
+        <tr><td>Growth in sector jobs</td><td><strong>+25%</strong> year-on-year</td></tr>
+        <tr><td>Average courts per commercial location</td><td><strong>5.7</strong> (club associations: 4.5)</td></tr>
+        <tr><td>National court base</td><td><strong>3,600+</strong> courts across <strong>677+</strong> locations (2025)</td></tr>
+        <tr><td>New courts in the 2026 pipeline nationally</td><td><strong>426</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sources: <a href="https://www.ey.com/nl_nl/newsroom/2026/03/padelspelers-in-nederland-groei-zet-door-nieuwe-fase-in-professionalisering" target="_blank" rel="noopener">EY Netherlands, March 2026</a> · <a href="https://allespadel.com/nieuws/groei-trends/nieuwe-padelbanen-nederland-zomer-2026-groei-aanbod" target="_blank" rel="noopener">AllesPadel, 2026</a>. EY reports demand is rising faster than court supply, with North Holland — The Padellers' home market — showing the largest single-region court addition (114 new courts) and the tightest capacity.</div>
+
+  <!-- 02: COMPETITIVE LANDSCAPE -->
+  <div id="sec-02" class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Competitive landscape</div>
+      <div class="sec-title">Three commercial chains lead the Dutch padel market</div>
+    </div>
+  </div>
+
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead>
+        <tr><th style="width:18%">Dimension</th><th style="width:27%">Peakz Padel</th><th style="width:27%">The Padellers</th><th>Plaza Padel</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Founded</strong></td>
+          <td>June 2015, Amsterdam</td>
+          <td>April 2021, Amsterdam</td>
+          <td>June 2021</td>
+        </tr>
+        <tr>
+          <td><strong>Footprint</strong></td>
+          <td>About 60 courts across about 10 locations</td>
+          <td><strong>33 locations</strong> — Netherlands + Germany</td>
+          <td>About 10&ndash;11 locations, 7+ courts each</td>
+        </tr>
+        <tr>
+          <td><strong>Model</strong></td>
+          <td>Pay-and-play, no memberships (&euro;20&ndash;40/hour)</td>
+          <td>Membership (PINK loyalty) + pay-and-play</td>
+          <td>Padel + hospitality + business meeting rooms</td>
+        </tr>
+        <tr>
+          <td><strong>Backing</strong></td>
+          <td>Bas Rasker / Axicate + 2 minority investors</td>
+          <td>DM Equity Partners, minority stake, Apr 2022</td>
+          <td>John van Lottum, Marcel Bogaart, Barry Atsma</td>
+        </tr>
+        <tr>
+          <td><strong>Stated ambition</strong></td>
+          <td>"The Basic-Fit of padel" — 50&ndash;60 centres</td>
+          <td>Market leadership, Western Europe — NL + Germany</td>
+          <td>Padel-plus-workspace concept, slower rollout</td>
+        </tr>
+        <tr>
+          <td><strong>Market position</strong></td>
+          <td>First mover, largest by location count</td>
+          <td>Second-largest, fastest-growing, only chain live in Germany</td>
+          <td>Smaller scale, different positioning</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sources: <a href="https://allesoverpadel.nl/peakz-padel/" target="_blank" rel="noopener">allesoverpadel.nl — Peakz Padel</a> · <a href="https://www.haagsetopsport.nl/2021/06/marcel-bogaart-john-van-lottum-en-barry-atsma-lanceren-plaza-padel/" target="_blank" rel="noopener">Haagse Topsport — Plaza Padel launch</a> · <a href="https://padelgids.nl/organisaties/the-padellers/" target="_blank" rel="noopener">padelgids.nl</a> · <a href="https://www.linkedin.com/jobs/view/4460022367/" target="_blank" rel="noopener">LinkedIn job posting</a>.</div>
+
+  <!-- 03: LEADERSHIP -->
+  <div id="sec-03" class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Leadership</div>
+      <div class="sec-title">Founders &amp; office leadership team</div>
+    </div>
+  </div>
+
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-top">
+        <img class="org-photo" src="padellers-org-photos/philippe-hes.jpg" alt="Philippe Hes"/>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Philippe Hes</div><div class="org-title">Co-founder</div><div class="org-entity">Also Owner, 4PM Entertainment (since 2013)</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/philippe-hes-57431021/" target="_blank" rel="noopener">linkedin.com/in/philippe-hes</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">FD</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Floris Dokkum</div><div class="org-title">Co-founder, Managing Partner</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">MB</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Mitchel Bovenlander</div><div class="org-title">Co-founder</div><div class="org-entity">Also partner, 4PM Entertainment</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.quotenet.nl/zakelijk/a46930001/feestjes-en-padelbaas-philippe-hes-4pm-entertainment-the-padellers/" target="_blank" rel="noopener">quotenet.nl</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">BS</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Bas Smit</div><div class="org-title">Co-founder</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.quotenet.nl/zakelijk/a46930001/feestjes-en-padelbaas-philippe-hes-4pm-entertainment-the-padellers/" target="_blank" rel="noopener">quotenet.nl</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">VD</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Vincent Dekker</div><div class="org-title">Chief Commercial Officer</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://theorg.com/org/the-padellers" target="_blank" rel="noopener">theorg.com</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">ML</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Marjolein Leek</div><div class="org-title">HR &amp; Recruitment Manager</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">BR</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Bram van Roessel</div><div class="org-title">Head of Real Estate</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.thepadellers.nl/en/about-us" target="_blank" rel="noopener">thepadellers.nl/about-us</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">DD</div>
+        <div>
+          <div class="org-company">The Padellers</div>
+          <div class="org-name">Desley Douglas</div><div class="org-title">Head of Locations &amp; Events</div><div class="org-entity">The Padellers</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://theorg.com/org/the-padellers" target="_blank" rel="noopener">theorg.com</a></div>
+    </div>
+  </div>
+  <div class="src-note">Names, titles and photo sourced from theorg.com, thepadellers.nl/about-us and quotenet.nl, 7 September 2026.</div>
+
+  <!-- 04: ROLE SCOPE -->
+  <div id="sec-04" class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Role scope</div>
+      <div class="sec-title">Chief Operating Officer — six accountability areas &amp; Olga's experience</div>
+    </div>
+  </div>
+
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="scope-n">01</div>
+      <div class="scope-label">Operational Excellence Across Multiple Locations</div>
+      <div class="scope-desc">Direct and continuously enhance operational processes across the club network — the posting names multi-location operations as the core of the role, with a stated preference for leisure-sector experience managing multiple facility locations.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: end-to-end e-commerce operations across 26 European countries, 3 distribution centres and 3rd-party vendors, 240+ FTE. adidas: designed the EU network of stock points for stock optimisation and client satisfaction — the direct equivalent of managing operational consistency across many physical sites.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">02</div>
+      <div class="scope-label">Strategic Execution</div>
+      <div class="scope-desc">Translate strategic objectives — the growth from 33 to 50+ locations — into actionable execution plans across teams and countries.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: executed 100+ cross-functional projects spanning people, technology and process improvement, influencing all levels of a matrix organisation up to Executive level. adidas: built the Digital Partners Commerce strategy and its operational execution framework from the ground up.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">03</div>
+      <div class="scope-label">Team Leadership &amp; Development</div>
+      <div class="scope-desc">Lead, inspire and develop internal teams — across 33 locations and a 124-person organisation, this is a distributed leadership challenge, not a single-site one.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: led a 240+ FTE team, increased employee satisfaction and retention, and built a best-in-class organisation across a 26-market matrix structure. Certified in People &amp; Culture Leadership and Cross-Cultural Communication (Hofstede).</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">04</div>
+      <div class="scope-label">Quality, Efficiency &amp; Customer Satisfaction</div>
+      <div class="scope-desc">Maintain and elevate quality standards, operational efficiency, and customer satisfaction — the posting's explicit definition of what "good operations" means at The Padellers.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: COPC-certified in Global Customer Experience &amp; CRM. Owned NPS, OSAT, SLA and cost-to-sales ratio as direct KPIs on a &euro;150M P&amp;L. Built the omni-channel analytics cockpit used for operational and executive decision-making.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">05</div>
+      <div class="scope-label">Expansion, Innovation &amp; Professionalisation</div>
+      <div class="scope-desc">Identify expansion, innovation, and professionalisation opportunities — the posting's own language for what the next 17 locations require beyond just opening doors.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>adidas: drove the EU omni-channel vision and strategy, supporting an Omni-channel OMS implementation across the network. TrendsOnFire: founded and built an AI-based market intelligence platform end-to-end — tool selection, data pipeline design, and go-to-market, as founder and operator.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">06</div>
+      <div class="scope-label">Internal &amp; External Communication</div>
+      <div class="scope-desc">Bridge communication between internal departments and external partners — relevant to The Padellers' sponsorship relationships (Ajax, PSV, AFC) and its real estate/franchise partners as the network scales.</div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Nike: drove e-commerce and omni-channel business development with strategic key accounts, and led the digital transformation of Intersport, Europe's largest sporting goods retailer, across omni-channel strategy, in-store technology and content. IBM: change manager on CRM implementation for InBev, working across internal and external stakeholder groups.</div>
+    </div>
+  </div>
+  <div class="src-note">Role accountability areas from the <a href="https://www.linkedin.com/jobs/view/4460022367/" target="_blank" rel="noopener">LinkedIn job posting</a>. Experience verified against Olga Bressers' CV (Richemont 2019&ndash;2025, adidas 2016&ndash;2018, Nike 2012&ndash;2016, IBM 2006&ndash;2010).</div>
+
+  <!-- 05: MARKET CONTEXT -->
+  <div id="sec-05" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Market context</div>
+      <div class="sec-title">Three trends shaping Dutch padel in 2026 — and the operational opportunity each implies</div>
+    </div>
+  </div>
+
+  <ul class="trend-list">
+    <li class="trend-item">
+      <div class="trend-n">1</div>
+      <div class="trend-body">
+        <h4>Capacity, not demand, is the binding constraint</h4>
+        <p>876,000 people played padel in the Netherlands in 2025. Providers and locations grew 15% year-on-year, sector jobs grew 25% — but EY's own framing is that player growth is outpacing court growth, with the sharpest strain in wealthier, denser provinces like North Holland, The Padellers' home market.</p>
+        <span class="stat-tag">876,000 players, 2025</span>
+        <span class="stat-tag">+15% providers vs +25% sector jobs</span>
+        <div class="opp-box"><strong>Operational implication</strong>Capacity planning and utilisation management across 33 existing locations is the direct lever on a national supply gap that new construction alone won't close fast enough.</div>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">2</div>
+      <div class="trend-body">
+        <h4>The market is consolidating around three commercial chains</h4>
+        <p>Peakz Padel, The Padellers and Plaza Padel have separated from a long tail of single-site and club-association operators. Being the fastest-growing of the three, and the only one already operating in a second country, gives The Padellers the widest gap to close between "collection of clubs" and "professionalised network."</p>
+        <span class="stat-tag">3 commercial chains lead the market</span>
+        <div class="opp-box"><strong>Operational implication</strong>The posting's own word — "professionalisation" — is the gap between where The Padellers is today and where Peakz's stated Basic-Fit-style ambition already sits operationally.</div>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">3</div>
+      <div class="trend-body">
+        <h4>New builds are getting bigger, not just more numerous</h4>
+        <p>Nationally, courts grew 25% against a 15% rise in locations in 2025 — new sites are averaging more courts than existing ones. Commercial operators already run 5.7 courts per location on average versus 4.5 for club associations. The Padellers' own German entry (Frankfurt, 9 courts) fits this bigger-build pattern.</p>
+        <span class="stat-tag">Courts +25% vs locations +15%, 2025</span>
+        <span class="stat-tag">5.7 courts/commercial location average</span>
+        <div class="opp-box"><strong>Operational implication</strong>The next 17 locations toward the 50+ target are likely to be larger, higher-capex builds than the network's early sites — a different real estate and ramp-up profile for the COO to manage than the 2021&ndash;22 rollout.</div>
+      </div>
+    </li>
+  </ul>
+  <div class="src-note">Sources: <a href="https://www.ey.com/nl_nl/newsroom/2026/03/padelspelers-in-nederland-groei-zet-door-nieuwe-fase-in-professionalisering" target="_blank" rel="noopener">EY Netherlands, March 2026</a> · <a href="https://allespadel.com/nieuws/groei-trends/nieuwe-padelbanen-nederland-zomer-2026-groei-aanbod" target="_blank" rel="noopener">AllesPadel, 2026</a> · <a href="https://allesoverpadel.nl/peakz-padel/" target="_blank" rel="noopener">allesoverpadel.nl</a>.</div>
+
+  <!-- 06: KPI FRAMEWORK -->
+  <div id="sec-06" class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">KPI framework &mdash; by function</div>
+    </div>
+  </div>
+
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">Court economics &amp; new-site ramp</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">Court utilisation rate</div><div class="kpi-desc">Booked hours &divide; available hours per court &mdash; the core throughput metric across 33 locations.</div><div class="kpi-bench"><strong>Benchmark</strong> 50%+ in Year 1, climbing to 60&ndash;70% by Year 3 for a well-run padel centre.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Investment payback period</div><div class="kpi-desc">Time to recover capex on a new club build.</div><div class="kpi-bench"><strong>Benchmark</strong> 2&ndash;4 years typical, faster when reusing existing buildings and utilisation exceeds 60%.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Break-even court count</div><div class="kpi-desc">Minimum court count for a new site to cover fixed costs.</div><div class="kpi-bench"><strong>Benchmark</strong> Approximately 6 courts per site in a medium-sized city at 55&ndash;65% utilisation.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Net margin</div><div class="kpi-desc">Bottom-line margin per club once operating at a mature run-rate.</div><div class="kpi-bench"><strong>Benchmark</strong> 10&ndash;25% net margin when well run.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Revenue mix &amp; cost control</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">Ancillary revenue share</div><div class="kpi-desc">Non-court revenue as a share of total &mdash; coaching, events, retail, food &amp; beverage, sponsorship.</div><div class="kpi-bench"><strong>Benchmark</strong> 20&ndash;35% of total revenue in a diversified padel centre.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Break-even occupancy rate</div><div class="kpi-desc">Minimum utilisation needed to cover fixed and variable costs.</div><div class="kpi-bench"><strong>Benchmark</strong> Target below 40% of available court hours.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Staff cost-to-revenue ratio</div><div class="kpi-desc">Total wage cost &divide; total revenue &mdash; the standard labour-efficiency check for a service-led operator.</div><div class="kpi-bench"><strong>Benchmark</strong> Target below 40%.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Monthly operating cost per site</div><div class="kpi-desc">Staff, maintenance, utilities, marketing and admin combined for one medium-sized club.</div><div class="kpi-bench"><strong>Benchmark</strong> Approximately &#36;29,000/month for a medium facility.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Membership &amp; customer retention</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">Membership retention rate</div><div class="kpi-desc">PINK loyalty and recurring-play members retained year-on-year.</div><div class="kpi-bench"><strong>Benchmark</strong> Padel-operator target 80%+ annually.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Fitness-industry average retention</div><div class="kpi-desc">Broader leisure/fitness comparator &mdash; a lower bar padel's social, group format should beat.</div><div class="kpi-bench"><strong>Benchmark</strong> 66.4% annual retention industry-wide, per the Health &amp; Fitness Association's 2025 Benchmarking Report.</div></div>
+        <div class="kpi-card"><div class="kpi-name">New-member churn window</div><div class="kpi-desc">Share of new members lost in their first months &mdash; the highest-leverage retention period.</div><div class="kpi-bench"><strong>Benchmark</strong> Close to half of new fitness/leisure members quit within six months industry-wide.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Group-format retention advantage</div><div class="kpi-desc">Padel is inherently a doubles/group sport &mdash; directly relevant to this comparator.</div><div class="kpi-bench"><strong>Benchmark</strong> Group or community-led formats show 56% lower cancellation than gym-only, solo memberships.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Team &amp; people operations</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">Annual staff turnover (NL horeca/leisure)</div><div class="kpi-desc">Sector-wide comparator for a 124-person, multi-site hospitality-adjacent operator.</div><div class="kpi-bench"><strong>Benchmark</strong> Approximately 40% per year in Dutch horeca, more than double healthcare's 15.7%.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Cost of staff turnover</div><div class="kpi-desc">Recruitment, onboarding and lost-productivity cost of replacing staff.</div><div class="kpi-bench"><strong>Benchmark</strong> An estimated &euro;1.4 billion per year sector-wide in Dutch horeca &mdash; about 6% of total sector revenue.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Staff cost-to-revenue ratio</div><div class="kpi-desc">Same efficiency metric as above, tracked at the people-management level.</div><div class="kpi-bench"><strong>Benchmark</strong> Target below 40% for a padel-centre operator.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Rent + staff share of operating costs</div><div class="kpi-desc">The two largest fixed-cost lines for any multi-site leisure facility business.</div><div class="kpi-bench"><strong>Benchmark</strong> Roughly 70% of total operating costs combined, across fitness facility operators.</div></div>
+      </div>
+    </div>
+    <div class="kpi-group">
+      <div class="kpi-group-label">Multi-site scale &mdash; external comparator</div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-name">The Padellers' own footprint</div><div class="kpi-desc">Current network size against the role's own stated target.</div><div class="kpi-bench"><strong>Benchmark</strong> 33 locations today, targeting 50+ &mdash; roughly 17 more sites to open.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Net site growth at scale (comparator)</div><div class="kpi-desc">Basic-Fit FY2025 &mdash; a much larger fitness chain, cited only as an external multi-site expansion comparator, not a Padellers figure.</div><div class="kpi-bench"><strong>Benchmark</strong> 141 net owned-club openings plus 56 acquired clubs in FY2025, reaching 2,151 total clubs.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Members per site (comparator)</div><div class="kpi-desc">Basic-Fit owned-club average, cited for scale reference only.</div><div class="kpi-bench"><strong>Benchmark</strong> 2,902 memberships per club in 2025, up from 2,701 in 2024.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Revenue per member/month (comparator)</div><div class="kpi-desc">Basic-Fit ARPM, cited for scale reference only &mdash; The Padellers does not publish an equivalent figure.</div><div class="kpi-bench"><strong>Benchmark</strong> &euro;24.91/month in 2025, up from &euro;24.24 in 2024.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="src-note">Court economics &amp; revenue mix: <a href="https://dojobusiness.com/blogs/news/padel-center-complete-guide" target="_blank" rel="noopener">dojobusiness.com</a> · <a href="https://financialmodelslab.com/blogs/kpi-metrics/padel-center" target="_blank" rel="noopener">financialmodelslab.com</a>. Membership &amp; retention: <a href="https://abcfitness.com/abc-articles/fitness-industry-statistics/" target="_blank" rel="noopener">ABC Fitness, citing the Health &amp; Fitness Association 2025 Benchmarking Report</a>. Team &amp; people: <a href="https://www.abnamro.nl/nl/zakelijk/insights/sectoren-en-trends/leisure/verloop-personeel-kost-horeca-jaarlijks-1-4-miljard.html" target="_blank" rel="noopener">ABN AMRO, 2019 horeca staff-turnover report</a>. Multi-site comparator: <a href="https://www.marketscreener.com/news/basic-fit-n-reports-full-year-2025-results-ce7e5fdcd889f724" target="_blank" rel="noopener">Basic-Fit FY2025 results</a>.</div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#0E1F4C;color:#F1B4BA;border:1px solid rgba(241,180,186,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#152a63;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+</body>
+</html>
