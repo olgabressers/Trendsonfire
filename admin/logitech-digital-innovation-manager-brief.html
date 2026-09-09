@@ -94,6 +94,23 @@
     .scope-exp{margin-top:12px;padding:10px 14px;background:#0a0f1a;border-left:3px solid rgba(61,169,252,.5);font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
     .scope-exp strong{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#3da9fc;margin-bottom:6px;}
 
+    .tool-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0;}
+    @media(max-width:700px){.tool-grid{grid-template-columns:1fr;}}
+    .tool-card{border:1px solid #e2dfd9;background:white;padding:16px 18px;}
+    .tool-name{font-size:17px;font-weight:800;color:#0a0f1a;margin-bottom:6px;}
+    .tool-desc{font-size:14px;color:#1f1f1f;line-height:1.55;}
+    .tool-tag{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#0058a3;background:#eef5fc;padding:3px 9px;}
+
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:700px){.mini-stats{grid-template-columns:1fr;}}
+    .mini-stats.two{grid-template-columns:repeat(2,1fr);}
+    @media(max-width:700px){.mini-stats.two{grid-template-columns:1fr;}}
+
+    .vendor-list{border:1px solid #e2dfd9;background:white;padding:4px 22px;margin:14px 0;}
+    .vendor-list li{font-size:14.5px;color:#0a0f1a;line-height:1.7;padding:12px 0;border-bottom:1px solid #f0efec;}
+    .vendor-list li:last-child{border-bottom:none;}
+    .vendor-list strong{color:#0058a3;}
+
     .kpi-groups{margin-top:14px;}
     .kpi-group{margin-bottom:20px;}
     .kpi-group-label{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0058a3;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
@@ -265,149 +282,236 @@
   <div class="sec-header">
     <div class="sec-num">02</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Market Context</div>
-      <div class="sec-title">A growing peripherals market, and a channel mix this role is meant to shift</div>
+      <div class="sec-eyebrow">Channels</div>
+      <div class="sec-title">DTC &amp; eTail — the channel mix this role is meant to shift</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Signal</th><th>Detail</th></tr></thead>
-      <tbody>
-        <tr><td>Gaming peripherals market</td><td>Valued at $5.94B globally in 2025, projected to reach $15.82B by 2035 (10.30% CAGR) — the category behind Logitech's largest single revenue line</td></tr>
-        <tr><td>Retail channel concentration</td><td>Amazon (18%), Ingram Micro (14%) and TD Synnex (12%) together move 44% of Logitech's gross sales</td></tr>
-        <tr><td>Direct channel today</td><td>Logitech's own online store is estimated at $310&ndash;313M in 2025, a 3.0&ndash;3.5% conversion rate, and the United States as its largest single market at 40% of online-store revenue</td></tr>
-      </tbody>
-    </table>
+  <div class="mini-stats">
+    <div class="s-card">
+      <div class="s-lbl">Logitech's Own Store (DTC)</div>
+      <div class="s-num">$310&ndash;313M</div>
+      <div class="s-src">Estimated 2025 revenue, 3.0&ndash;3.5% conversion (ecommerceDB estimate)</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Amazon, Ingram Micro, TD Synnex (eTail)</div>
+      <div class="s-num">44%</div>
+      <div class="s-src">of gross sales &mdash; Amazon 18%, Ingram Micro 14%, TD Synnex 12%</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">DTC Share of Total Net Sales</div>
+      <div class="s-num">&lt;7%</div>
+      <div class="s-src">$310&ndash;313M DTC vs $4.84B total FY2026 net sales</div>
+    </div>
   </div>
-  <div class="src-note">Market size: <a href="https://www.expertmarketresearch.com/blogs/top-gaming-peripherals-companies" target="_blank" rel="noopener">Expert Market Research</a>. Retail concentration: <a href="https://www.sec.gov/Archives/edgar/data/0001032975/000103297526000021/logi-20260331.htm" target="_blank" rel="noopener">Logitech FY2026 Form 10-K</a>. Direct-channel estimate: <a href="https://ecdb.com/resources/sample-data/retailer/logitech" target="_blank" rel="noopener">ecommerceDB</a> (third-party modelled estimate, not a Logitech-disclosed figure).</div>
+  <div class="src-note">DTC estimate: <a href="https://ecdb.com/resources/sample-data/retailer/logitech" target="_blank" rel="noopener">ecommerceDB</a> (third-party modelled estimate, not Logitech-disclosed). eTail concentration: <a href="https://www.sec.gov/Archives/edgar/data/0001032975/000103297526000021/logi-20260331.htm" target="_blank" rel="noopener">Logitech FY2026 Form 10-K</a>.</div>
 
   <div class="bk-wrap">
     <div class="bk-eyebrow">Competitive Landscape</div>
     <div class="bk-headline">Who else sells into the categories this role touches</div>
-    <div class="bk-sub">Three distinct competitor groups, spanning Gaming, Video Collaboration and productivity peripherals</div>
     <table class="bk-table">
       <thead><tr><th>Category</th><th>Players</th></tr></thead>
       <tbody>
-        <tr><td>Gaming peripherals</td><td>Razer, Corsair, SteelSeries, HyperX (owned by HP Inc. since 2021), Turtle Beach, BenQ ZOWIE</td></tr>
-        <tr><td>Video collaboration hardware</td><td>Poly (acquired by HP Inc. in 2022), Cisco, Yealink, Jabra (GN Group)</td></tr>
+        <tr><td>Gaming peripherals</td><td>Razer, Corsair, SteelSeries, HyperX (HP, since 2021), Turtle Beach, BenQ ZOWIE</td></tr>
+        <tr><td>Video collaboration hardware</td><td>Poly (HP, since 2022), Cisco, Yealink, Jabra (GN Group)</td></tr>
         <tr><td>Productivity peripherals</td><td>Microsoft, Apple, Kensington, Anker</td></tr>
       </tbody>
     </table>
-    <div class="bk-src">Sources: <a href="https://www.hp.com/us-en/newsroom/press-releases/2021/hp-inc-completes-acquisition-of-hyperx.html" target="_blank" rel="noopener">HP Inc. — HyperX acquisition</a>, <a href="https://investor.hp.com/news-events/news/news-details/2022/HP-Inc.-Completes-Acquisition-of-Poly/default.aspx" target="_blank" rel="noopener">HP Inc. — Poly acquisition</a>. GN Group, Jabra's parent, separately acquired SteelSeries for $1.2 billion — <a href="https://www.techspot.com/news/91663-gn-group-acquires-steelseries-12-billion-deal.html" target="_blank" rel="noopener">TechSpot</a>.</div>
+    <div class="bk-src">Sources: <a href="https://www.hp.com/us-en/newsroom/press-releases/2021/hp-inc-completes-acquisition-of-hyperx.html" target="_blank" rel="noopener">HP — HyperX</a>, <a href="https://investor.hp.com/news-events/news/news-details/2022/HP-Inc.-Completes-Acquisition-of-Poly/default.aspx" target="_blank" rel="noopener">HP — Poly</a>, <a href="https://www.techspot.com/news/91663-gn-group-acquires-steelseries-12-billion-deal.html" target="_blank" rel="noopener">TechSpot — GN Group/SteelSeries</a>.</div>
   </div>
 
   <div class="sec-header">
     <div class="sec-num">03</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Domain Knowledge</div>
-      <div class="sec-title">Logitech already runs this stack — the role scales what exists</div>
+      <div class="sec-title">What Logitech already runs</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Tool</th><th>What it already does</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Logitech Configurator</strong></td><td>Live tool at logitech.com and logitechg.com that asks a shopper a few questions and recommends a matching mouse, keyboard or full desk setup — the guided-selling and configurator territory named directly in the job description.</td></tr>
-        <tr><td><strong>G HUB &amp; Logi Options+</strong></td><td>Device-customisation software across mice, keyboards, webcams and headsets — an existing base of customer usage data the AI-enabled-experience roadmap can build on.</td></tr>
-        <tr><td><strong>"Where to Buy" (ChannelSight)</strong></td><td>Links every marketing campaign to the nearest retailer — Amazon, Best Buy, Walmart — while capturing performance data Logitech could not see when it could only track its own store.</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="src-note">Configurator tools: logitech.com and logitechg.com (live product pages). "Where to Buy": <a href="https://www.channelsight.com/case-studies/logitech" target="_blank" rel="noopener">ChannelSight customer case study</a>, quoting Michael Knott, Director of Digital Media at Logitech.</div>
-
-  <div class="jd-cols" style="margin-top:20px;grid-template-columns:1fr;">
-    <div class="jd-col">
-      <div class="jd-col-title">Interview-ready talking points</div>
-      <ol>
-        <li>The posting doesn't ask this role to invent guided selling and configuration from a blank page — Logitech already has a live Configurator and G HUB device-personalisation software in market. The mandate is to scale, connect and measure what already exists across more product lines and more markets.</li>
-        <li>"Where to Buy" shows Logitech has already solved the data-visibility half of the direct-versus-retail tension named in Section 02 — the next step, and this role's remit, is closing the loop from campaign click to guided selling, ratings and reviews, and AI-enabled experience on its own product pages.</li>
-      </ol>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name">Logitech Configurator</div>
+      <div class="tool-desc">Live at logitech.com and logitechg.com. Asks a shopper a few questions, recommends a mouse, keyboard or full desk setup.</div>
+      <div class="tool-tag">Already in market</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">G HUB &amp; Logi Options+</div>
+      <div class="tool-desc">Device-customisation software across mice, keyboards, webcams and headsets &mdash; an existing usage-data base.</div>
+      <div class="tool-tag">Already in market</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">"Where to Buy" (ChannelSight)</div>
+      <div class="tool-desc">Routes every marketing campaign to the nearest retailer (Amazon, Best Buy, Walmart) and tracks the result.</div>
+      <div class="tool-tag">Already in market</div>
     </div>
   </div>
+  <div class="src-note">logitech.com, logitechg.com (live pages). <a href="https://www.channelsight.com/case-studies/logitech" target="_blank" rel="noopener">ChannelSight customer case study</a>, quoting Michael Knott, Director of Digital Media at Logitech.</div>
 
   <div class="sec-header">
     <div class="sec-num">04</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Domain Knowledge</div>
-      <div class="sec-title">What the three initiatives in this role are measured against</div>
+      <div class="sec-eyebrow">Ratings &amp; Reviews / UGC</div>
+      <div class="sec-title">The common tools, and what they do</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Initiative</th><th>Measured lift</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Ratings &amp; Reviews / UGC</strong></td><td>Shoppers who engage with reviews convert at a 144% higher rate, generate 162% more revenue per visitor, and spend 13% more per order</td></tr>
-        <tr><td><strong>Guided selling / configurator</strong></td><td>Brands using guided-selling assistants see conversion rise by more than 25%; one household-appliance brand recorded a 6x increase in average order value from a visual configurator</td></tr>
-        <tr><td><strong>AI-enabled experience</strong></td><td>Personalisation leaders see a 5&ndash;15% revenue lift and 10&ndash;30% marketing-efficiency gain; retailers running their own AI shopping agents grew sales 59% faster than those without</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="src-note">Ratings &amp; Reviews: <a href="https://www.bazaarvoice.com/blog/why-ratings-and-reviews-are-important-for-your-business/" target="_blank" rel="noopener">Bazaarvoice, 2023 Shopper Experience Index</a> — the ratings-and-reviews/UGC vendor named directly in the job description. Guided selling: <a href="https://zoovu.com/guided-selling-product-configurator" target="_blank" rel="noopener">Zoovu</a>. AI-enabled experience: <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-personalization-and-how-to-get-ready-for-it" target="_blank" rel="noopener">McKinsey</a>, <a href="https://www.salesforce.com/news/stories/agentforce-commerce-announcement/" target="_blank" rel="noopener">Salesforce holiday shopping data</a>.</div>
-
-  <div class="jd-cols" style="margin-top:20px;grid-template-columns:1fr;">
-    <div class="jd-col">
-      <div class="jd-col-title">Interview-ready talking points</div>
-      <ol>
-        <li>All three of the posting's named initiatives — Ratings &amp; Reviews/UGC, guided selling/configurator, AI-enabled experience — have independently measured, double-digit conversion or revenue lift. The business case for the role is not speculative; it is the best-documented lever in e-commerce today.</li>
-        <li>The role's fourth accountability, Local eCommerce Excellence, is what turns a single global build into 26+ markets of realised lift — without it, the gains in the table above stay theoretical in every market except the one they were built for.</li>
-      </ol>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name">Bazaarvoice</div>
+      <div class="tool-desc">Collects verified-buyer reviews, syndicates them across 12,000+ brands and 2,300+ retailers, reaching 1.3B+ shoppers a month.</div>
+      <div class="tool-tag">Named in the JD</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Yotpo</div>
+      <div class="tool-desc">Reviews plus visual UGC galleries, Q&amp;A and AI summaries &mdash; bundled with loyalty and SMS marketing.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">PowerReviews</div>
+      <div class="tool-desc">Collects, displays and syndicates ratings and reviews across its own retailer network.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Trustpilot</div>
+      <div class="tool-desc">Open, public review platform built for overall brand reputation, not per-product syndication.</div>
     </div>
   </div>
+  <div class="mini-stats">
+    <div class="s-card">
+      <div class="s-lbl">Conversion Lift</div>
+      <div class="s-num">+144%</div>
+      <div class="s-src">Shoppers who engage with reviews</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Revenue Per Visitor</div>
+      <div class="s-num">+162%</div>
+      <div class="s-src">Same reviews-engaged shoppers</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">ROBO Multiplier</div>
+      <div class="s-num">3.91x</div>
+      <div class="s-src">Online UGC influence on in-store sales</div>
+    </div>
+  </div>
+  <div class="src-note">Tools: <a href="https://www.bazaarvoice.com/products/ratings-and-reviews/" target="_blank" rel="noopener">Bazaarvoice</a>, <a href="https://www.yotpo.com/reviews/" target="_blank" rel="noopener">Yotpo</a>, <a href="https://www.powerreviews.com/" target="_blank" rel="noopener">PowerReviews</a>. Stats: <a href="https://www.bazaarvoice.com/blog/why-ratings-and-reviews-are-important-for-your-business/" target="_blank" rel="noopener">Bazaarvoice, 2023 Shopper Experience Index</a>.</div>
 
   <div class="sec-header">
     <div class="sec-num">05</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Domain Knowledge</div>
-      <div class="sec-title">The customer journey this role owns, end to end</div>
+      <div class="sec-eyebrow">Guided Selling &amp; Configurator</div>
+      <div class="sec-title">The common tools, and what they do</div>
     </div>
   </div>
-  <div class="flow-wrap">
-    <div class="flow-top">
-      <div class="flow-title">Omnichannel Digital Commerce</div>
-      <div class="flow-sub">One shopper, one journey — whether it plays out on logitech.com, on Amazon, or in a physical store, the same discovery, decision and experience layers apply.</div>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name">Zoovu</div>
+      <div class="tool-desc">AI product-discovery and guided-selling engine &mdash; narrows a catalogue to the right product through a short Q&amp;A.</div>
     </div>
-    <div class="flow-arrow">&darr;</div>
-    <div class="flow-split">
-      <div class="flow-col">
-        <div class="flow-col-head discover">Discovery &amp; decision</div>
-        <div class="flow-col-sub">Before the cart: helping a shopper find and choose the right product</div>
-        <div class="flow-col-body">
-          <ul>
-            <li>Guided selling &amp; configurators — narrowing a catalogue to the right mouse, keyboard or setup.<span class="ref">Sections 03&ndash;04</span></li>
-            <li>Ratings &amp; Reviews / UGC — social proof at the point of decision.<span class="ref">Sections 03&ndash;04</span></li>
-            <li>"Where to Buy" routing — sending demand to the retailer closest to the shopper.<span class="ref">Section 03</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="flow-col">
-        <div class="flow-col-head decide">Purchase &amp; experience</div>
-        <div class="flow-col-sub">After the click: converting, then keeping the relationship</div>
-        <div class="flow-col-body">
-          <ul>
-            <li>Local eCommerce execution — the same journey, correctly localised across DTC and eTail in every market.</li>
-            <li>AI-enabled experience — personalised recommendations and support that carry into product ownership (G HUB, Logi Options+).</li>
-            <li>Vendor &amp; team management — the operating layer of budget, negotiation and people that makes the other four run at scale.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="flow-arrow">&darr;</div>
-    <div class="flow-bottom">
-      <div class="flow-title">The five accountabilities named in the job description</div>
-      <ul>
-        <li>Innovation projects &amp; roadmap</li>
-        <li>Ratings &amp; Reviews / UGC enablement</li>
-        <li>Guided selling &amp; configurator initiatives</li>
-        <li>AI-enabled experience roadmap</li>
-        <li>Local eCommerce excellence execution</li>
-        <li>Team &amp; vendor management</li>
-      </ul>
+    <div class="tool-card">
+      <div class="tool-name">Threekit</div>
+      <div class="tool-desc">Enterprise guided-selling and 3D configuration platform, built for complex or made-to-order products.</div>
     </div>
   </div>
-  <div class="src-note">Journey structure derived from the responsibilities listed in the <a href="https://www.linkedin.com/jobs/view/4445713441/" target="_blank" rel="noopener">official job posting</a>, cross-referenced against Logitech's own live Configurator, G HUB and "Where to Buy" tools (Section 03).</div>
+  <div class="mini-stats two">
+    <div class="s-card">
+      <div class="s-lbl">Conversion Lift</div>
+      <div class="s-num">+25%</div>
+      <div class="s-src">Brands using a guided-selling assistant</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Average Order Value</div>
+      <div class="s-num">6x</div>
+      <div class="s-src">Household-appliance brand, visual configurator</div>
+    </div>
+  </div>
+  <div class="src-note">Tools and stats: <a href="https://zoovu.com/guided-selling-product-configurator" target="_blank" rel="noopener">Zoovu</a>, <a href="https://www.threekit.com/" target="_blank" rel="noopener">Threekit</a>.</div>
 
   <div class="sec-header">
     <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">AI-Enabled Experiences</div>
+      <div class="sec-title">What it means in practice, and the proven lift</div>
+    </div>
+  </div>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name">Alexa for Shopping (formerly Amazon Rufus)</div>
+      <div class="tool-desc">Conversational AI assistant on Amazon &mdash; answers product questions, compares options, auto-adds to cart. Renamed May 2026.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Salesforce Agentforce for Commerce</div>
+      <div class="tool-desc">AI shopping agents retailers deploy on their own sites &mdash; personalised recommendations and conversational search.</div>
+    </div>
+  </div>
+  <div class="mini-stats">
+    <div class="s-card">
+      <div class="s-lbl">Revenue Lift</div>
+      <div class="s-num">5&ndash;15%</div>
+      <div class="s-src">Personalisation leaders (McKinsey)</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Marketing Efficiency</div>
+      <div class="s-num">10&ndash;30%</div>
+      <div class="s-src">Personalisation leaders (McKinsey)</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Sales Growth</div>
+      <div class="s-num">+59%</div>
+      <div class="s-src">Retailers running their own AI agents (Salesforce)</div>
+    </div>
+  </div>
+  <div class="src-note"><a href="https://www.aboutamazon.com/news/retail/amazon-rufus-ai-assistant-personalized-shopping-features" target="_blank" rel="noopener">About Amazon</a>. <a href="https://www.salesforce.com/news/stories/agentforce-commerce-announcement/" target="_blank" rel="noopener">Salesforce</a>. <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-personalization-and-how-to-get-ready-for-it" target="_blank" rel="noopener">McKinsey</a>.</div>
+
+  <div class="sec-header">
+    <div class="sec-num">07</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Team Capabilities</div>
+      <div class="sec-title">Managing ongoing vendor relationships</div>
+    </div>
+  </div>
+  <ul class="vendor-list">
+    <li><strong>R&amp;R / UGC vendor</strong> (e.g. Bazaarvoice) &mdash; contract, pricing, quarterly business reviews, sampling-program coordination with Business Groups.</li>
+    <li><strong>Guided selling / configurator vendor</strong> (e.g. Zoovu) &mdash; contract, quarterly business reviews, sharing conversion insights back across the organisation.</li>
+    <li><strong>Onboarding, budget &amp; negotiation</strong> &mdash; vendor onboarding, reviews, budget allocation and negotiations across all three vendor relationships above.</li>
+  </ul>
+  <div class="src-note">Source: <a href="https://www.linkedin.com/jobs/view/4445713441/" target="_blank" rel="noopener">official job posting</a> &mdash; "manage the ongoing relationship and quarterly business reviews" (R&amp;R/UGC), "manage ongoing vendor relationships and quarterly business reviews" (Guided Selling), "oversee vendor management processes, including onboarding, reviews, budget allocation, and vendor negotiations" (Team Capabilities).</div>
+
+  <div class="sec-header">
+    <div class="sec-num">08</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Key Qualification</div>
+      <div class="sec-title">eCommerce trends, platforms &amp; CX optimisation &mdash; the cheat sheet</div>
+    </div>
+  </div>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name">Agentic / AI commerce</div>
+      <div class="tool-desc">AI agents now handle discovery through checkout on a shopper's behalf &mdash; the single biggest 2026 platform shift.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Social commerce</div>
+      <div class="tool-desc">TikTok Shop reached $15.82B in sales, +108% year-on-year &mdash; still only 7% of total eCommerce, growing fast.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Live commerce</div>
+      <div class="tool-desc">Global live-commerce market estimated at $172.86B in 2025; 76% of TikTok Shop live viewers went on to buy.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">Composable / headless commerce</div>
+      <div class="tool-desc">Enterprise brands decouple front-end experience from back-end platform for faster, independent feature launches.</div>
+    </div>
+  </div>
+  <div class="mini-stats two">
+    <div class="s-card">
+      <div class="s-lbl">Omnichannel Shoppers</div>
+      <div class="s-num">91%</div>
+      <div class="s-src">of retail consumers shop across channels, not one</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Logitech's Own Platform</div>
+      <div class="s-num">Salesforce Commerce Cloud</div>
+      <div class="s-src">Per Logitech's own Commerce Cloud hiring postings</div>
+    </div>
+  </div>
+  <div class="src-note"><a href="https://searchengineland.com/guide/top-ecommerce-trends-2026" target="_blank" rel="noopener">Search Engine Land, 2026 eCommerce Trends Guide</a>. Platform signal: <a href="https://huntr.co/job/62d7b08579210300609abd03" target="_blank" rel="noopener">Logitech Salesforce Commerce Cloud role posting</a> (inferred from hiring activity, not a company-disclosed fact).</div>
+
+  <div class="sec-header">
+    <div class="sec-num">09</div>
     <div class="sec-label">
       <div class="sec-eyebrow">The Job Description</div>
       <div class="sec-title">Global Digital Innovation Manager — full posting, by section</div>
@@ -445,7 +549,7 @@
   <div class="src-note">Source: <a href="https://www.linkedin.com/jobs/view/4445713441/" target="_blank" rel="noopener">official LinkedIn job posting</a>, cross-checked verbatim against Logitech's own careers system (requisition 147529).</div>
 
   <div class="sec-header">
-    <div class="sec-num">07</div>
+    <div class="sec-num">10</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Fit</div>
       <div class="sec-title">Role scope &amp; Olga's experience</div>
@@ -479,69 +583,32 @@
   </div>
 
   <div class="sec-header">
-    <div class="sec-num">08</div>
+    <div class="sec-num">11</div>
     <div class="sec-label">
       <div class="sec-eyebrow">KPIs</div>
-      <div class="sec-title">KPI framework &mdash; by function</div>
+      <div class="sec-title">KPI framework &mdash; the numbers not already shown above</div>
     </div>
   </div>
   <div class="kpi-groups">
     <div class="kpi-group">
       <div class="kpi-group-label">eCommerce &amp; direct-to-consumer performance</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Site conversion rate</div><div class="kpi-desc">Share of logitech.com visitors who complete a purchase &mdash; the core health metric for the direct channel.</div><div class="kpi-bench"><strong>Benchmark</strong> logitech.com converted at an estimated 3.0&ndash;3.5% in 2025.</div></div>
-        <div class="kpi-card"><div class="kpi-name">DTC revenue share</div><div class="kpi-desc">Logitech's own online store as a share of total net sales &mdash; the direct measure of the channel-mix shift this role is meant to drive.</div><div class="kpi-bench"><strong>Benchmark</strong> An estimated $310&ndash;313M direct-store revenue against $4.84B total FY2026 net sales, roughly 6&ndash;7%.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Retail-partner concentration</div><div class="kpi-desc">Share of gross sales moving through the three largest partners &mdash; the channel-risk counterweight to DTC growth.</div><div class="kpi-bench"><strong>Benchmark</strong> Amazon, Ingram Micro and TD Synnex together moved 44% of FY2026 gross sales.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Average order value</div><div class="kpi-desc">Average spend per completed order on owned digital channels.</div><div class="kpi-bench"><strong>Benchmark</strong> Reviews-engaged shoppers spend 13% more per order (Bazaarvoice); configurator-assisted purchases have shown up to 6x AOV in a household-appliance case (Zoovu).</div></div>
-      </div>
-    </div>
-    <div class="kpi-group">
-      <div class="kpi-group-label">Guided selling &amp; configurator</div>
-      <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Configurator engagement rate</div><div class="kpi-desc">Share of product-page visitors who start and complete a guided-selling or configurator flow.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against Logitech's own Configurator and G HUB usage &mdash; no published external engagement-rate standard exists across brands.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Conversion lift from guided selling</div><div class="kpi-desc">Conversion-rate difference between shoppers who use a configurator/guided-selling tool and those who do not.</div><div class="kpi-bench"><strong>Benchmark</strong> Brands using guided-selling assistants see conversion rise by more than 25% (Zoovu).</div></div>
-        <div class="kpi-card"><div class="kpi-name">Vendor SLA performance</div><div class="kpi-desc">Delivery and uptime performance of the guided-selling/configurator technology vendor against contracted service levels.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined per vendor contract &mdash; no single external standard applies across configurator vendors.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Cross-market rollout coverage</div><div class="kpi-desc">Number of markets and product lines live on the same guided-selling/configurator build, tracking the Local eCommerce Excellence mandate.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; specific to Logitech's own market footprint, with no external comparator.</div></div>
-      </div>
-    </div>
-    <div class="kpi-group">
-      <div class="kpi-group-label">Ratings &amp; Reviews / UGC</div>
-      <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Review engagement conversion lift</div><div class="kpi-desc">Conversion-rate difference between shoppers who interact with ratings and reviews and those who do not.</div><div class="kpi-bench"><strong>Benchmark</strong> 144% higher conversion rate among reviews-engaged shoppers (Bazaarvoice 2023 Shopper Experience Index).</div></div>
-        <div class="kpi-card"><div class="kpi-name">Revenue per visitor lift</div><div class="kpi-desc">Revenue generated per site visitor, comparing reviews-engaged versus non-engaged sessions.</div><div class="kpi-bench"><strong>Benchmark</strong> 162% higher revenue per visitor among reviews-engaged shoppers (Bazaarvoice 2023 Shopper Experience Index).</div></div>
-        <div class="kpi-card"><div class="kpi-name">Review coverage &amp; volume</div><div class="kpi-desc">Share of active SKUs carrying a meaningful volume of ratings and reviews across DTC channels.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against Logitech's own catalogue &mdash; no external per-brand coverage standard exists.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Research-online-buy-offline multiplier</div><div class="kpi-desc">In-store revenue influenced by online user-generated content, relevant given Logitech's retail-partner-heavy channel mix.</div><div class="kpi-bench"><strong>Benchmark</strong> 3.91x average ROBO multiplier across the Bazaarvoice Network &mdash; every $1 of online-influenced revenue corresponds to $3.91 in-store.</div></div>
-      </div>
-    </div>
-    <div class="kpi-group">
-      <div class="kpi-group-label">AI-enabled experience</div>
-      <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Personalisation revenue lift</div><div class="kpi-desc">Incremental revenue attributable to AI-driven personalised recommendations and experiences.</div><div class="kpi-bench"><strong>Benchmark</strong> 5&ndash;15% revenue lift for personalisation leaders (McKinsey).</div></div>
-        <div class="kpi-card"><div class="kpi-name">Marketing-spend efficiency</div><div class="kpi-desc">Marketing return-on-spend improvement attributable to AI-enabled targeting and personalisation.</div><div class="kpi-bench"><strong>Benchmark</strong> 10&ndash;30% marketing-spend efficiency gain for personalisation leaders (McKinsey).</div></div>
-        <div class="kpi-card"><div class="kpi-name">AI-agent-influenced sales growth</div><div class="kpi-desc">Sales growth differential for retailers deploying their own AI shopping agents versus those that do not.</div><div class="kpi-bench"><strong>Benchmark</strong> Retailers running their own AI shopper agents grew sales 59% faster over the 2025 holiday period (Salesforce).</div></div>
-        <div class="kpi-card"><div class="kpi-name">AI feature adoption rate</div><div class="kpi-desc">Share of digital-innovation-specialist team output shipped as AI-enabled features, tracking the roadmap accountability named in the job description.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; specific to the team's own roadmap, with no external comparator.</div></div>
-      </div>
-    </div>
-    <div class="kpi-group">
-      <div class="kpi-group-label">Team &amp; vendor management</div>
-      <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Team headcount &amp; span of control</div><div class="kpi-desc">Size and structure of the digital innovation specialist team built and mentored under this role.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; set by Logitech's own team-building mandate, with no external comparator.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Vendor negotiation outcomes</div><div class="kpi-desc">Cost and contract-term improvements secured across guided-selling, configurator and ratings-and-reviews vendor relationships.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined per vendor and category &mdash; no published external negotiation-outcome standard exists.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Training &amp; knowledge-sharing cadence</div><div class="kpi-desc">Frequency of tailored training programmes, knowledge-sharing initiatives and speaker engagements delivered to the team, as named directly in the job description.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; set by the team's own learning calendar, with no external comparator.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Cross-functional stakeholder satisfaction</div><div class="kpi-desc">Satisfaction of business-group and regional stakeholders with the shared learnings and best practices this role is accountable for distributing globally.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; no external comparator applies to an internal shared-services relationship.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Site conversion rate</div><div class="kpi-desc">Share of logitech.com visitors who complete a purchase.</div><div class="kpi-bench"><strong>Benchmark</strong> Estimated 3.0&ndash;3.5% in 2025.</div></div>
+        <div class="kpi-card"><div class="kpi-name">DTC revenue share</div><div class="kpi-desc">Logitech's own store as a share of total net sales.</div><div class="kpi-bench"><strong>Benchmark</strong> Roughly 6&ndash;7% ($310&ndash;313M of $4.84B).</div></div>
+        <div class="kpi-card"><div class="kpi-name">Retail-partner concentration</div><div class="kpi-desc">Share of gross sales through the three largest partners.</div><div class="kpi-bench"><strong>Benchmark</strong> 44% (Amazon, Ingram Micro, TD Synnex).</div></div>
+        <div class="kpi-card"><div class="kpi-name">Average order value</div><div class="kpi-desc">Average spend per completed order.</div><div class="kpi-bench"><strong>Benchmark</strong> +13% with reviews engaged; up to 6x with a configurator.</div></div>
       </div>
     </div>
     <div class="kpi-group">
       <div class="kpi-group-label">Commercial &amp; growth</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Total company net sales growth</div><div class="kpi-desc">Group-wide net sales growth, the top-line context every digital-commerce initiative ultimately rolls up into.</div><div class="kpi-bench"><strong>Benchmark</strong> FY2026 net sales grew 6% year-on-year in US dollars, 4% in constant currency.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Fastest-growing category momentum</div><div class="kpi-desc">Growth rate of Video Collaboration and Tablet Accessories, the two categories already outpacing the group average.</div><div class="kpi-bench"><strong>Benchmark</strong> Video Collaboration +10% and Tablet Accessories +12% in FY2026, both ahead of the 6% group average.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Category market growth</div><div class="kpi-desc">Growth of the underlying gaming peripherals market Logitech's largest category competes in.</div><div class="kpi-bench"><strong>Benchmark</strong> Global gaming peripherals market projected at 10.30% CAGR, 2025&ndash;2035 (Expert Market Research).</div></div>
-        <div class="kpi-card"><div class="kpi-name">Cross-category digital-tool reuse</div><div class="kpi-desc">Number of product categories and brands (Logitech, Logitech G, Blue, Astro, Streamlabs) sharing a common guided-selling, UGC or AI-enabled build.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; specific to Logitech's own multi-brand portfolio, with no external comparator.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Total company net sales growth</div><div class="kpi-desc">Group-wide net sales growth.</div><div class="kpi-bench"><strong>Benchmark</strong> +6% YoY (USD), +4% constant currency.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Fastest-growing categories</div><div class="kpi-desc">The two categories already outpacing the group average.</div><div class="kpi-bench"><strong>Benchmark</strong> Video Collaboration +10%, Tablet Accessories +12%.</div></div>
+        <div class="kpi-card"><div class="kpi-name">Category market growth</div><div class="kpi-desc">Growth of the gaming peripherals market Logitech's largest category competes in.</div><div class="kpi-bench"><strong>Benchmark</strong> 10.30% CAGR, 2025&ndash;2035.</div></div>
       </div>
     </div>
   </div>
-  <div class="src-note">Financial and category figures: <a href="https://www.sec.gov/Archives/edgar/data/1032975/000103297526000014/exhibit991q4fy26.htm" target="_blank" rel="noopener">Logitech Q4 &amp; Full Fiscal Year 2026 Results (SEC)</a>, <a href="https://www.sec.gov/Archives/edgar/data/0001032975/000103297526000021/logi-20260331.htm" target="_blank" rel="noopener">Logitech FY2026 Form 10-K</a>. Direct-channel estimate: <a href="https://ecdb.com/resources/sample-data/retailer/logitech" target="_blank" rel="noopener">ecommerceDB</a>. Ratings &amp; Reviews benchmarks: <a href="https://www.bazaarvoice.com/blog/why-ratings-and-reviews-are-important-for-your-business/" target="_blank" rel="noopener">Bazaarvoice, 2023 Shopper Experience Index</a>. Guided-selling benchmarks: <a href="https://zoovu.com/guided-selling-product-configurator" target="_blank" rel="noopener">Zoovu</a>. AI-enabled experience benchmarks: <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-personalization-and-how-to-get-ready-for-it" target="_blank" rel="noopener">McKinsey</a>, <a href="https://www.salesforce.com/news/stories/agentforce-commerce-announcement/" target="_blank" rel="noopener">Salesforce</a>. Market growth: <a href="https://www.expertmarketresearch.com/blogs/top-gaming-peripherals-companies" target="_blank" rel="noopener">Expert Market Research</a>.</div>
+  <div class="src-note">Financial figures: <a href="https://www.sec.gov/Archives/edgar/data/1032975/000103297526000014/exhibit991q4fy26.htm" target="_blank" rel="noopener">Logitech Q4 &amp; FY2026 Results (SEC)</a>, <a href="https://www.sec.gov/Archives/edgar/data/0001032975/000103297526000021/logi-20260331.htm" target="_blank" rel="noopener">Logitech FY2026 Form 10-K</a>. Direct-channel estimate: <a href="https://ecdb.com/resources/sample-data/retailer/logitech" target="_blank" rel="noopener">ecommerceDB</a>. Market growth: <a href="https://www.expertmarketresearch.com/blogs/top-gaming-peripherals-companies" target="_blank" rel="noopener">Expert Market Research</a>. Ratings &amp; Reviews and AI-enabled-experience benchmarks appear in Sections 04 and 06 above.</div>
 
 </main>
 
