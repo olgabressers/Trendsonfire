@@ -19,6 +19,10 @@
     .art-hero h1 em{color:#9cb08a;font-style:italic;}
     .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:none !important;}
     .art-hero .meta{margin-top:18px;font-size:12px;color:rgba(255,255,255,.45);display:flex;gap:20px;flex-wrap:wrap;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#9cb08a;text-decoration:none;border:1px solid rgba(156,176,138,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(156,176,138,.1);}
 
     /* MAIN */
     main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
@@ -171,6 +175,10 @@
 
 <!-- HERO -->
 <div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.vivobarefoot.com" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4442682482/" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Vivobarefoot</div>
     <div class="eyebrow">Interview Brief — Chief Digital Officer · Executive Team</div>
@@ -218,7 +226,7 @@
       <li style="margin-bottom:12px;"><a href="#sec-revenue" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Revenue, profitability &amp; geography</a><br><span style="color:#555;font-size:12.5px;">£91.4M turnover, declining margins, 4-region breakdown.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:12.5px;">Eroding margins · North America decline · fragmented tech/data ownership.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-ownership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Ownership &amp; governance</a><br><span style="color:#555;font-size:12.5px;">Clark family control, Sofina's 14.35% stake, the 6-person board.</span></li>
-      <li style="margin-bottom:12px;"><a href="#sec-competitors" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competitive landscape</a><br><span style="color:#555;font-size:12.5px;">8 named barefoot footwear brands, positioning &amp; price bands.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-competitors" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competitive landscape</a><br><span style="color:#555;font-size:12.5px;">8 named brands ranked by revenue, plus Nike, adidas &amp; On vs. Vivobarefoot.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-channels" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Channel mix</a><br><span style="color:#555;font-size:12.5px;">DTC, Distribution &amp; Wholesale, Owned Retail, Marketplace, Revivo.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:12.5px;">Six accountability areas mapped to Olga's experience — plus 5-step priority stack.</span></li>
       <li><a href="#sec-kpis" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework</a><br><span style="color:#555;font-size:12.5px;">7 layers, 28 KPIs mapped directly to the job posting's 5 accountability areas.</span></li>
@@ -476,49 +484,95 @@
     </div>
   </div>
 
+  <div style="font-size:12px;color:#4b5563;margin-bottom:14px;">Sorted by disclosed brand revenue, highest to lowest. Where no figure is publicly disclosed, that is stated directly rather than estimated.</div>
+
   <div class="channels-grid">
+    <div class="ch-card">
+      <span class="ch-type watch">Mainstream reach</span>
+      <div class="ch-name"><a href="https://www.merrell.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Merrell</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/merrell/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @merrell</a></div>
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:6px;">$598.4M brand revenue — FY2024</div>
+      <div class="ch-reach">$90–120. Widest retail distribution of any brand in the category, stocked at REI and Dick's Sporting Goods; two models independently rated "best for trail" and "best lightweight."</div>
+    </div>
+    <div class="ch-card">
+      <span class="ch-type watch">Category pioneer</span>
+      <div class="ch-name"><a href="https://www.vibram.com/us/shop/fivefingers" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Vibram FiveFingers</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/vibramfivefingers/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @vibramfivefingers</a></div>
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:6px;">€204.9M — parent Vibram S.p.A. group revenue, FY2024</div>
+      <div class="ch-reach">Developed by Vibram and launched in 2005–06 with a toe-pocket design; the historic category creator. Figure covers all Vibram Group products (soles across sport, industrial and orthopedic uses), not FiveFingers alone — no FiveFingers-specific figure is disclosed.</div>
+    </div>
     <div class="ch-card" style="border-color:#171712;box-shadow:0 0 0 1px #171712;">
       <span class="ch-type watch">Premium leader</span>
-      <div class="ch-name">Vivobarefoot</div>
+      <div class="ch-name"><a href="https://www.vivobarefoot.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Vivobarefoot</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/vivobarefoot/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @vivobarefoot</a></div>
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:6px;">£91.4M brand revenue — FY24/25</div>
       <div class="ch-reach">$120–180. Thinnest sole in the category (2.5mm) and widest toe box. Independently tested as category-leading on durability (83/100, 5-star abrasion rating) but flagged as priced above the segment average for a barefoot shoe.</div>
     </div>
     <div class="ch-card">
       <span class="ch-type grow">Budget leader</span>
-      <div class="ch-name">Xero Shoes</div>
-      <div class="ch-reach">$70–110. Independently rated "best overall" in the category; wider fit, lower price point, positioned for newcomers to barefoot footwear.</div>
-    </div>
-    <div class="ch-card">
-      <span class="ch-type watch">Category pioneer</span>
-      <div class="ch-name">Vibram FiveFingers</div>
-      <div class="ch-reach">Developed by Vibram and launched in 2005–06 with a toe-pocket design; the historic category creator, now one of several established players rather than the clear leader.</div>
-    </div>
-    <div class="ch-card">
-      <span class="ch-type watch">Mainstream reach</span>
-      <div class="ch-name">Merrell</div>
-      <div class="ch-reach">$90–120. Widest retail distribution of any brand in the category, stocked at REI and Dick's Sporting Goods; two models independently rated "best for trail" and "best lightweight."</div>
+      <div class="ch-name"><a href="https://xeroshoes.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Xero Shoes</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/xeroshoes/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @xeroshoes</a></div>
+      <div style="font-size:13px;font-weight:800;color:#0a0f1a;margin-bottom:6px;">$33.6M — 2021, most recent disclosed figure</div>
+      <div class="ch-reach">$70–110. Independently rated "best overall" in the category; wider fit, lower price point, positioned for newcomers to barefoot footwear. Privately held; no more recent revenue figure is publicly disclosed.</div>
     </div>
     <div class="ch-card">
       <span class="ch-type watch">Transition brand</span>
-      <div class="ch-name">Altra</div>
+      <div class="ch-name"><a href="https://www.altrarunning.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Altra</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/altrarunning/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @altrarunning</a></div>
+      <div style="font-size:13px;font-weight:700;color:#4b5563;margin-bottom:6px;">Revenue not separately disclosed by parent VF Corporation</div>
       <div class="ch-reach">$110–170. Higher stack height (22–33mm) than true barefoot shoes; positioned as an entry point for ultramarathoners and runners easing into minimalist footwear.</div>
     </div>
     <div class="ch-card">
-      <span class="ch-type watch">Lifestyle focus</span>
-      <div class="ch-name">Lems</div>
-      <div class="ch-reach">$110–150. Conventional, non-"barefoot-looking" styling aimed at all-day casual comfort rather than performance.</div>
+      <span class="ch-type watch">Performance niche</span>
+      <div class="ch-name"><a href="https://www.inov8.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Inov8</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/inov_8/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @inov_8</a></div>
+      <div style="font-size:13px;font-weight:700;color:#4b5563;margin-bottom:6px;">Revenue not publicly disclosed</div>
+      <div class="ch-reach">Highest independently tested score of any brand reviewed (84/100), positioned specifically for cross-training rather than everyday or trail use.</div>
     </div>
     <div class="ch-card">
       <span class="ch-type watch">Fit specialist</span>
-      <div class="ch-name">Topo Athletic</div>
+      <div class="ch-name"><a href="https://www.topoathletic.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Topo Athletic</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/topoathletic/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @topoathletic</a></div>
+      <div style="font-size:13px;font-weight:700;color:#4b5563;margin-bottom:6px;">Revenue not separately disclosed by parent Designer Brands (NYSE: DBI)</div>
       <div class="ch-reach">Independently rated "best with wide toe box"; positioned on fit rather than price or lifestyle styling.</div>
     </div>
     <div class="ch-card">
-      <span class="ch-type watch">Performance niche</span>
-      <div class="ch-name">Inov8</div>
-      <div class="ch-reach">Highest independently tested score of any brand reviewed (84/100), positioned specifically for cross-training rather than everyday or trail use.</div>
+      <span class="ch-type watch">Lifestyle focus</span>
+      <div class="ch-name"><a href="https://www.lemsshoes.com" target="_blank" rel="noopener" style="color:#0a0f1a;text-decoration:none;border-bottom:1px solid #171712;">Lems</a></div>
+      <div style="font-size:11.5px;margin:2px 0 8px;"><a href="https://www.instagram.com/lemsshoes/" target="_blank" rel="noopener" style="color:#4d6b3f;text-decoration:none;">Instagram: @lemsshoes</a></div>
+      <div style="font-size:13px;font-weight:700;color:#4b5563;margin-bottom:6px;">Revenue not publicly disclosed</div>
+      <div class="ch-reach">$110–150. Conventional, non-"barefoot-looking" styling aimed at all-day casual comfort rather than performance.</div>
     </div>
   </div>
-  <div class="src-note"><strong>Sources:</strong> <a href="https://barefootranked.com/best-barefoot-shoe-brands-in-2026-the-complete-market-overview/" target="_blank" rel="noopener">Barefoot Ranked — Best Barefoot Shoe Brands 2026 market overview</a> (pricing and positioning) · <a href="https://runrepeat.com/guides/best-barefoot-walking-shoes" target="_blank" rel="noopener">RunRepeat — Best Barefoot Walking Shoes guide</a> (independent product testing scores). Both are independent, third-party review sites, not Vivobarefoot or competitor-published data.</div>
+  <div class="src-note"><strong>Sources:</strong> <a href="https://barefootranked.com/best-barefoot-shoe-brands-in-2026-the-complete-market-overview/" target="_blank" rel="noopener">Barefoot Ranked — Best Barefoot Shoe Brands 2026 market overview</a> (pricing and positioning) · <a href="https://runrepeat.com/guides/best-barefoot-walking-shoes" target="_blank" rel="noopener">RunRepeat — Best Barefoot Walking Shoes guide</a> (independent product testing scores) · Merrell figure from Wolverine World Wide's own SEC 8-K earnings exhibit · Vibram S.p.A. figure from its filed Italian company accounts · Xero Shoes figure from a Denver Business Journal report cited on Wikipedia. Instagram follower counts and handles verified directly against each brand's own account, September 2026.</div>
+
+  <!-- VS MAINSTREAM GIANTS -->
+  <div style="margin-top:26px;">
+    <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4d6b3f;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid #e2dfd9;">Vivobarefoot vs. the mainstream giants — the competitive advantage in one line</div>
+    <div class="split-row">
+      <div class="split-card">
+        <div class="split-num">$46.3B</div>
+        <div class="split-label">Nike — FY2025</div>
+        <div class="split-desc">Built on maximum cushioning and stack-height technology (Air, ZoomX) — the direct opposite of barefoot's zero-drop, thin-sole philosophy.</div>
+      </div>
+      <div class="split-card">
+        <div class="split-num">€24.8B</div>
+        <div class="split-label">adidas — FY2025</div>
+        <div class="split-desc">Same cushioned-technology arms race as Nike (Boost, Lightstrike); no credible barefoot or minimalist line in its current core range.</div>
+      </div>
+      <div class="split-card">
+        <div class="split-num">CHF 3.0B</div>
+        <div class="split-label">On — FY2025, +30%</div>
+        <div class="split-desc">The fastest-growing premium running brand, built entirely on CloudTec cushioning — more stack height, not less. On competes for the premium running wallet, not the barefoot one.</div>
+      </div>
+      <div class="split-card accent">
+        <div class="split-num">£91.4M</div>
+        <div class="split-label">Vivobarefoot — FY24/25</div>
+        <div class="split-desc">The competitive advantage: none of the three giants above can credibly move into true barefoot positioning without cannibalising the cushioning technology their entire business is built on. Vivobarefoot owns the opposite end of the spectrum outright.</div>
+      </div>
+    </div>
+    <div class="src-note">Sources: <a href="https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2025/NIKE-Inc--Reports-Fiscal-2025-Fourth-Quarter-and-Full-Year-Results/default.aspx" target="_blank" rel="noopener">Nike, Inc. FY2025 full-year results</a> · <a href="https://www.adidas-group.com/en/media/press-releases/adidas-reports-record-revenues-in-2025-and-launches-share-buyback" target="_blank" rel="noopener">adidas 2025 full-year results</a> · <a href="https://press.on-running.com/on-announces-fourth-quarter-and-full-year-results-and-the-filing-of-its-annual-report-on-form-20-f-for-2025" target="_blank" rel="noopener">On Holding 2025 full-year results</a>.</div>
+  </div>
 
   <!-- CHANNEL MIX -->
   <div id="sec-channels" class="sec-header">
