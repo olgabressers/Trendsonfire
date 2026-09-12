@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Silva Method Torrevieja — Event Planning Research</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f2340; --fuchsia:#8b1a6a; --border:#e5e7eb; --bg:#f8fafc; --text:#111827; --sub:#6b7280; --green:#059669; --amber:#d97706; --red:#dc2626; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    .top-bar { background: var(--navy); color: rgba(255,255,255,.6); font-size: 12px; padding: 8px 20px; display: flex; align-items: center; gap: 12px; }
+    .top-bar a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .badge { background: #dc2626; color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: .5px; flex-shrink: 0; }
+
+    .hero { background: linear-gradient(135deg, #1e3a5f 0%, #8b1a6a 100%); color: white; padding: 48px 24px 40px; }
+    .hero-inner { max-width: 1100px; margin: auto; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #f9a8d4; font-weight: 700; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,.8); max-width: 640px; }
+    .hero-meta { display: flex; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
+    .hero-meta span { font-size: 12px; color: rgba(255,255,255,.6); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    .section-title { font-size: 17px; font-weight: 800; color: var(--navy); margin: 40px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--fuchsia); }
+
+    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 36px; }
+    .kpi { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .kpi-value { font-size: 26px; font-weight: 800; color: var(--navy); line-height: 1; }
+    .kpi-label { font-size: 12px; color: var(--sub); margin-top: 4px; line-height: 1.4; }
+    .kpi-note { font-size: 11px; color: var(--fuchsia); margin-top: 5px; font-weight: 600; }
+
+    .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 20px; }
+    .data-table th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 12px; font-weight: 700; }
+    .data-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    .data-table tr:last-child td { border-bottom: none; font-weight: 700; background: #f0f4ff; }
+    .bar-wrap { background: #e5e7eb; border-radius: 4px; height: 7px; width: 90px; display: inline-block; vertical-align: middle; }
+    .bar { height: 7px; border-radius: 4px; background: var(--fuchsia); display: block; }
+
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 36px; }
+    .card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--fuchsia); margin-bottom: 8px; }
+    .card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .card p, .card li { font-size: 13px; color: var(--sub); line-height: 1.6; }
+    .card ul { padding-left: 16px; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 36px; }
+    .price-card { background: white; border-radius: 12px; border: 2px solid var(--border); padding: 22px; text-align: center; }
+    .price-tag { font-size: 38px; font-weight: 800; color: var(--navy); }
+    .price-per { font-size: 12px; color: var(--sub); margin-bottom: 10px; }
+    .price-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: var(--navy); }
+    .price-list { list-style: none; text-align: left; font-size: 13px; color: var(--sub); }
+    .price-list li { padding: 5px 0; border-bottom: 1px solid var(--border); }
+    .price-list li:last-child { border-bottom: none; }
+    .price-list li::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+    .scenario-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 16px; }
+    .scenario-table th { background: var(--navy); color: white; padding: 10px 14px; font-size: 12px; font-weight: 700; text-align: left; }
+    .scenario-table td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    .scenario-table tr:last-child td { border-bottom: none; }
+    .green { color: var(--green); font-weight: 700; }
+    .amber { color: var(--amber); font-weight: 700; }
+    .red { color: var(--red); font-weight: 700; }
+
+    .info-box { background: linear-gradient(135deg, #fdf4ff, #fce7f3); border: 1px solid #f0abfc; border-radius: 12px; padding: 22px; margin-bottom: 36px; }
+    .info-box h3 { font-size: 15px; font-weight: 800; color: #701a75; margin-bottom: 10px; }
+    .info-box p { font-size: 13px; color: #374151; line-height: 1.65; margin-bottom: 8px; }
+    .module-box { background: white; border-radius: 10px; padding: 16px 18px; border: 1px solid #f0abfc; margin-top: 14px; }
+    .module-box h4 { font-size: 13px; font-weight: 700; color: #701a75; margin-bottom: 6px; }
+    .module-box p { font-size: 12.5px; color: var(--sub); }
+
+    .channel-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 20px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .ch-icon { font-size: 26px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .ch-body h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .ch-body p { font-size: 13px; color: var(--sub); line-height: 1.55; }
+    .ch-body .examples { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .ch-body .ex-tag { font-size: 11px; background: #f3f4f6; border: 1px solid var(--border); padding: 2px 10px; border-radius: 10px; color: #374151; text-decoration: none; }
+    .ch-body .ex-tag:hover { background: #e5e7eb; }
+    .effort { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .effort.high { background: #d1fae5; color: #065f46; }
+    .effort.med { background: #fef3c7; color: #92400e; }
+
+    footer-bar { display: block; margin-top: 40px; font-size: 12px; color: var(--sub); text-align: center; padding-top: 20px; border-top: 1px solid var(--border); }
+    footer-bar a { color: var(--sub); text-decoration: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 32px 16px 28px; }
+      main { padding: 28px 14px 60px; }
+      .kpi-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .kpi-value { font-size: 22px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .scenario-table { font-size: 12px; }
+      .scenario-table th, .scenario-table td { padding: 8px 10px; }
+      .channel-card { flex-direction: column; gap: 8px; }
+      .ch-icon { font-size: 22px; }
+      .section-title { font-size: 15px; }
+      /* overflow tables on mobile */
+      .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
+    @media (max-width: 480px) {
+      .kpi-row { grid-template-columns: 1fr 1fr; }
+      .kpi { padding: 14px; }
+      .kpi-value { font-size: 20px; }
+      .hero h1 { font-size: 20px; }
+      .hero p { font-size: 14px; }
+      .hero-meta { flex-direction: column; gap: 6px; }
+      .two-col { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="badge">NOINDEX</span>
+  <span style="margin-left:auto">TrendsOnFire · Shared planning document</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Event Planning · Personal Development · Costa Blanca, Spain</div>
+    <h1>Silva Method in Torrevieja — Russian-Speaking Community</h1>
+    <p>Market sizing, community analysis, pricing scenarios, venue options, and logistics for organising a Russian-language Silva Method training in the Torrevieja / Alicante area, Spain.</p>
+    <div class="hero-meta">
+      <span>📍 Torrevieja, Costa Blanca, Spain</span>
+      <span>🗣️ Russian-language training</span>
+      <span>🎓 Trainer: <a href="https://metodsilva.ru/about" target="_blank" style="color:#f9a8d4;">Ирина Хлимоненко</a></span>
+      <span>📅 October 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-value">~70K</div>
+      <div class="kpi-label">Russian-speaking residents in Alicante province</div>
+      <div class="kpi-note">Russians + Ukrainians + post-Soviet</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">~20K</div>
+      <div class="kpi-label">In Torrevieja area (20 km radius)</div>
+      <div class="kpi-note">One of highest concentrations in Spain</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">3,000–5,000</div>
+      <div class="kpi-label">Estimated personal-dev interested segment</div>
+      <div class="kpi-note">~7–10% of local Russian-speaking community</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">10–20</div>
+      <div class="kpi-label">Realistic group size, first edition</div>
+      <div class="kpi-note">Promotable in 8–10 weeks</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">€400–€450</div>
+      <div class="kpi-label">Early bird price (two scenarios)</div>
+      <div class="kpi-note">Scenario A €450 / Scenario B €400 · before 1 Sep</div>
+    </div>
+  </div>
+
+  <!-- About Silva Method -->
+  <div class="section-title">About the Silva Method</div>
+  <div class="info-box">
+    <h3>What is the Silva Method?</h3>
+    <p>Developed by José Silva in the 1960s, the Silva Method is a self-help and personal development programme based on training the mind to function at the alpha brainwave level — a relaxed, meditative state in which learning, creativity, and intuition are said to be enhanced. It is one of the longest-running personal development programmes in the world, with millions of graduates in 110+ countries.</p>
+    <p><strong><a href="https://metodsilva.ru/about" target="_blank" style="color:#701a75;">Ирина Хлимоненко</a></strong> is the lead certified Silva Method trainer for Russian-speaking markets, directing the Pozitum centre since 2009. She has trained students across Russia, Estonia, Germany and internationally — one of very few certified Russian-language trainers in Europe.</p>
+    <div class="module-box">
+      <h4>Module 1 — Silva Life System (3 days)</h4>
+      <p>Foundation: entering the alpha state, the glass of water technique, mental screen visualisation, stress and sleep management, goal-setting through mental rehearsal. Suitable for complete beginners. The extended 3-day format allows deeper practice and longer meditation sessions than the standard 2-day version.</p>
+    </div>
+  </div>
+
+  <!-- Community -->
+  <div class="section-title">Russian-Speaking Community in Costa Blanca</div>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Group</th>
+          <th>Estimated (Alicante Province, 2025)</th>
+          <th>Profile</th>
+          <th>Russian fluency</th>
+          <th>Visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Russians</strong></td>
+          <td>~30,000</td>
+          <td>Long-term residents, retirees, property owners; established since 1990s</td>
+          <td>Native</td>
+          <td><span class="bar-wrap"><span class="bar" style="width:100%"></span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Ukrainians</strong></td>
+          <td>~25,000</td>
+          <td>Mix of long-term expats and post-2022 arrivals; employed or self-employed</td>
+          <td>Native / bilingual</td>
+          <td><span class="bar-wrap"><span class="bar" style="width:83%"></span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Belarusians</strong></td>
+          <td>~4,000</td>
+          <td>Political refugees post-2020; educated, urban</td>
+          <td>Native</td>
+          <td><span class="bar-wrap"><span class="bar" style="width:13%"></span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Kazakhstanis, Azerbaijanis, others</strong></td>
+          <td>~7,000</td>
+          <td>Business migrants, property owners, mixed profiles</td>
+          <td>High</td>
+          <td><span class="bar-wrap"><span class="bar" style="width:23%"></span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Total Russian-speaking (est.)</strong></td>
+          <td><strong>~60,000–70,000</strong></td>
+          <td colspan="3">Sources: INE (Instituto Nacional de Estadística), ACNUR Spain 2024–2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">Geography</div>
+      <h3>Where they live</h3>
+      <ul>
+        <li><strong>Torrevieja</strong> — largest concentration; established Russian quarter with Russian shops, pharmacies and restaurants</li>
+        <li><strong>Guardamar del Segura</strong> — many permanent Russian residents</li>
+        <li><strong>Orihuela Costa</strong> — mixed expat, large Russian presence</li>
+        <li><strong>Alicante city</strong> — urban professionals, younger generation</li>
+        <li><strong>Benidorm, Calpe, Altea</strong> — northern Costa Blanca</li>
+      </ul>
+      <p style="margin-top:10px;font-size:12px;">Torrevieja is the natural hub for a Russian-language event. Accessible to all Costa Blanca without requiring a long drive.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Target participant</div>
+      <h3>Who is the audience</h3>
+      <ul>
+        <li>Age 35–60, homeowners or long-term residents</li>
+        <li>Women over-represented in personal development</li>
+        <li>Retirees and property owners with time and disposable income</li>
+        <li>Entrepreneurs and self-employed (flexible schedule)</li>
+        <li>Post-2022 Ukrainian arrivals now stabilised</li>
+        <li>Prior interest in meditation, NLP, coaching, holistic practices</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-tag">Demand signal</div>
+      <h3>Why demand exists</h3>
+      <ul>
+        <li>Torrevieja community is established — people seek growth, not just survival</li>
+        <li>Silva Method is internationally recognised — not an "alternative" niche</li>
+        <li>No Russian-language personal development training offered locally in Costa Blanca</li>
+        <li>October timing: 22–26°C, sunny, post-summer energy, community active</li>
+        <li>Ирина has European reputation — her name travels ahead of her</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Participant Pricing -->
+  <div class="section-title">Participant Pricing</div>
+  <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#78350f;">
+    <strong>Two pricing scenarios:</strong> &nbsp;
+    <strong>Scenario A</strong> — Early bird <strong>€450</strong> (before 1 Sep) · Normal <strong>€600</strong>. Conservative planning base: €450. &nbsp;|&nbsp;
+    <strong>Scenario B</strong> — Early bird <strong>€400</strong> (before 1 Sep) · Normal <strong>€550</strong>. Conservative planning base: €400. Both scenarios use the same costs. Revenue tables for both are below.
+  </div>
+
+  <p style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:8px;">Scenario A — Standard pricing</p>
+  <div class="pricing-grid" style="margin-bottom:24px;">
+    <div class="price-card" style="border-color:#8b1a6a;background:linear-gradient(135deg,#fdf4ff,#fce7f3);">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8b1a6a;margin-bottom:6px;">Early Bird — Scenario A</div>
+      <h3 style="color:#701a75;">Register before 1 September</h3>
+      <div class="price-tag" style="color:#701a75;">€450</div>
+      <div class="price-per" style="color:#9d174d;">3 days · Module 1 complete</div>
+      <ul class="price-list">
+        <li>Deadline: 1 September 2026</li>
+        <li>Full 3-day Silva Life System</li>
+        <li>€150 saving vs normal price</li>
+      </ul>
+    </div>
+    <div class="price-card" style="border-color:#0f2340;">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6b7280;margin-bottom:6px;">Normal Price — Scenario A</div>
+      <h3>After 1 September</h3>
+      <div class="price-tag">€600</div>
+      <div class="price-per">3 days · Module 1 complete</div>
+      <ul class="price-list">
+        <li>Registration from 1 Sep 2026</li>
+        <li>Full 3-day Silva Life System</li>
+        <li>Same complete programme</li>
+      </ul>
+    </div>
+    <div class="price-card" style="background:#f0f4ff;border-color:#c7d2fe;">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Planning Base — Scenario A</div>
+      <h3 style="color:#3730a3;">Worst-case calculation</h3>
+      <div class="price-tag" style="color:#3730a3;">€450</div>
+      <div class="price-per" style="color:#4338ca;">All seats at early bird price</div>
+      <ul class="price-list">
+        <li>€600 = marketing anchor</li>
+        <li>Real revenue likely higher</li>
+        <li>Viable from 13 participants</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:8px;">Scenario B — Lower entry price</p>
+  <div class="pricing-grid" style="margin-bottom:36px;">
+    <div class="price-card" style="border-color:#059669;background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:6px;">Early Bird — Scenario B</div>
+      <h3 style="color:#166534;">Register before 1 September</h3>
+      <div class="price-tag" style="color:#166534;">€400</div>
+      <div class="price-per" style="color:#166534;">3 days · Module 1 complete</div>
+      <ul class="price-list">
+        <li>Deadline: 1 September 2026</li>
+        <li>Lower barrier to entry</li>
+        <li>€150 saving vs normal price</li>
+      </ul>
+    </div>
+    <div class="price-card" style="border-color:#6366f1;">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;margin-bottom:6px;">Normal Price — Scenario B</div>
+      <h3>After 1 September</h3>
+      <div class="price-tag" style="color:#4338ca;">€550</div>
+      <div class="price-per">3 days · Module 1 complete</div>
+      <ul class="price-list">
+        <li>Registration from 1 Sep 2026</li>
+        <li>Full 3-day Silva Life System</li>
+        <li>Same complete programme</li>
+      </ul>
+    </div>
+    <div class="price-card" style="background:#f0fdf4;border-color:#86efac;">
+      <div style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#059669;margin-bottom:6px;">Planning Base — Scenario B</div>
+      <h3 style="color:#166534;">Worst-case calculation</h3>
+      <div class="price-tag" style="color:#166534;">€400</div>
+      <div class="price-per" style="color:#166534;">All seats at early bird price</div>
+      <ul class="price-list">
+        <li>€550 = marketing anchor</li>
+        <li>Lower price, needs more participants</li>
+        <li>Viable from 15 participants</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Venue Options -->
+  <div class="section-title">Venue Options</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:18px;">Three options for the 3-day training space. Requirements: space for 10–20 participants seated, suitable for meditation (quiet, controllable light), accessible in or near Torrevieja.</p>
+
+  <div class="card-grid">
+    <div class="card" style="border:2px solid #059669;">
+      <div class="card-tag" style="color:#059669;">Most Affordable</div>
+      <h3>Alena's Livingroom</h3>
+      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€400</div>
+      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
+      <p>Private home space — intimate atmosphere, flexible layout, no venue logistics to manage. Lowest cost option. Suitable for smaller groups. Home setting creates a warm, personal experience well-suited for meditation training.</p>
+      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
+        <li>Up to 12–15 participants</li>
+        <li>Warm, low-formality atmosphere</li>
+        <li>Kitchen access for coffee and snacks</li>
+        <li>No external AV needed for small groups</li>
+      </ul>
+    </div>
+    <div class="card" style="border:2px solid #d97706;">
+      <div class="card-tag" style="color:#d97706;">Mid Option</div>
+      <h3>SPACE</h3>
+      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€450</div>
+      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
+      <p>Dedicated studio or co-working space suitable for group training. More structured than a private home — better acoustics and layout for 15–20 participants. Professional feel without high hotel pricing.</p>
+      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
+        <li>Up to 15–20 participants</li>
+        <li>Professional training environment</li>
+        <li>Better acoustics for meditation</li>
+        <li>Basic AV available</li>
+      </ul>
+    </div>
+    <div class="card" style="border:2px solid #6366f1;">
+      <div class="card-tag" style="color:#4338ca;">Premium Option</div>
+      <h3>Studio</h3>
+      <div style="font-size:28px;font-weight:800;color:var(--navy);margin:8px 0;">€500</div>
+      <div style="font-size:12px;color:var(--sub);margin-bottom:10px;">Total venue cost · 3 days</div>
+      <p>Fully equipped studio space. Best impression for participants, best capacity. Recommended if group size reaches 20+. Full sound and light control — ideal for meditation-based training.</p>
+      <ul style="margin-top:10px;font-size:12.5px;color:var(--sub);padding-left:16px;line-height:1.8;">
+        <li>Up to 20–25 participants</li>
+        <li>Full sound setup included</li>
+        <li>Best light control for meditation</li>
+        <li>Most professional participant experience</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cost Breakdown -->
+  <div class="section-title">Cost Breakdown — 3-Day Module</div>
+  <div class="table-scroll">
+    <table class="scenario-table" style="margin-bottom:0;">
+      <thead><tr><th>Cost item</th><th>Studio — used in calculations (€500)</th><th>SPACE (€450)</th><th>Alena (€400)</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffbeb;">
+          <td><strong>Venue (3 days total)</strong></td>
+          <td><strong>€500</strong></td>
+          <td><strong>€450</strong></td>
+          <td><strong>€400</strong></td>
+          <td>Fixed total for the event</td>
+        </tr>
+        <tr>
+          <td>Coffee, tea, water</td>
+          <td colspan="3"><strong>€10 per person</strong></td>
+          <td>Flat per person for 3-day event. Budget coffee/tea station.</td>
+        </tr>
+        <tr>
+          <td>Snacks</td>
+          <td colspan="3">€5 per person per day</td>
+          <td>3 days. €15/person total.</td>
+        </tr>
+        <tr>
+          <td>Trainer accommodation</td>
+          <td colspan="3"><strong>€550</strong></td>
+          <td>5 nights × €90/night = €450 + €100 cleaning fee = €550 total. Private apartment, Torrevieja area.</td>
+        </tr>
+        <tr>
+          <td>Sound equipment (if needed)</td>
+          <td>€0 (included)</td>
+          <td>€100–200</td>
+          <td>€0–150</td>
+          <td>Studio: sound fully included. SPACE: rent mic + speaker. Alena: small groups may not need PA.</td>
+        </tr>
+        <tr>
+          <td>Flight (return + luggage)</td>
+          <td colspan="3"><strong>€300</strong></td>
+          <td>Tallinn → Alicante. Return with 23 kg checked luggage. See flight section.</td>
+        </tr>
+        <tr>
+          <td>Car rental (5 days × €30)</td>
+          <td colspan="3"><strong>€150</strong></td>
+          <td>Local transport during training week. Covers trainer pickup + daily logistics.</td>
+        </tr>
+        <tr>
+          <td>Marketing &amp; ads</td>
+          <td colspan="3"><strong>€400</strong></td>
+          <td>Facebook/Instagram ads, Telegram posts, flyer printing</td>
+        </tr>
+        <tr>
+          <td>Registration platform + hosting</td>
+          <td colspan="3"><strong>€70</strong></td>
+          <td>Platform fee €50 (Eventbrite / Stripe) + landing page hosting €20 (Carrd / similar, 1–2 months)</td>
+        </tr>
+        <tr>
+          <td>Printing / materials</td>
+          <td colspan="3"><strong>€25 per person</strong></td>
+          <td>Workbook printing, colour pages, spiral binding (variable cost)</td>
+        </tr>
+        <tr>
+          <td>Miscellaneous buffer</td>
+          <td colspan="3">€100</td>
+          <td></td>
+        </tr>
+        <tr style="background:#f9fafb;">
+          <td><strong>Fixed costs subtotal</strong></td>
+          <td><strong>€2,070</strong></td>
+          <td><strong>€2,020</strong></td>
+          <td><strong>€1,970</strong></td>
+          <td>Venue + accommodation + flight + car + marketing + platform+hosting + misc</td>
+        </tr>
+        <tr style="background:#f9fafb;">
+          <td>Variable per person</td>
+          <td colspan="3">€50/person</td>
+          <td>Coffee €10 + snacks €15 (€5/day × 3) + printing €25</td>
+        </tr>
+        <tr style="font-weight:700;background:#f0f4ff;">
+          <td><strong>Total costs at 15 participants (incl. catering)</strong></td>
+          <td><strong>€2,820</strong></td>
+          <td><strong>€2,770</strong></td>
+          <td><strong>€2,720</strong></td>
+          <td>Fixed + (15 × €50 variable). For other group sizes, add/subtract €50 per participant.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Revenue scenarios -->
+  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;margin-top:16px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+    <h3 style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:4px;">Scenario A — €450/person early bird · Studio (€500)</h3>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:14px;">Fixed: €2,070 (Studio €500 + accommodation €550 + flight €300 + car €150 + marketing €400 + platform+hosting €70 + misc €100) · Variable: €50/person (coffee €10 + snacks €15 + printing €25)</p>
+    <div class="table-scroll">
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Participants</th>
+            <th>Revenue</th>
+            <th>Total costs</th>
+            <th>Available</th>
+            <th>Trainer fee</th>
+            <th>Organiser 1</th>
+            <th>Organiser 2</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>8</strong></td>
+            <td>€3,600</td>
+            <td>€2,470</td>
+            <td class="red">€1,130</td>
+            <td class="red">€565<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€71/pp</span></td>
+            <td class="red">€283<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€35/pp</span></td>
+            <td class="red">€283<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€35/pp</span></td>
+            <td>Below minimum</td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td>€4,500</td>
+            <td>€2,570</td>
+            <td class="red">€1,930</td>
+            <td class="red">€965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€97/pp — below floor</span></td>
+            <td class="amber">€483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
+            <td class="amber">€483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
+            <td>Trainer below €1,500</td>
+          </tr>
+          <tr style="background:#fffbeb;">
+            <td><strong>13</strong> ⭐</td>
+            <td>€5,850</td>
+            <td>€2,720</td>
+            <td class="amber">€3,130</td>
+            <td class="amber">€1,565<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€120/pp — floor met</span></td>
+            <td class="amber">€783<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€60/pp</span></td>
+            <td class="amber">€783<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€60/pp</span></td>
+            <td>Minimum viable ✓</td>
+          </tr>
+          <tr>
+            <td><strong>15</strong></td>
+            <td>€6,750</td>
+            <td>€2,820</td>
+            <td class="green">€3,930</td>
+            <td class="green">€1,965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€131/pp</span></td>
+            <td class="green">€983<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€66/pp</span></td>
+            <td class="green">€983<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€66/pp</span></td>
+            <td>Strong ✓✓✓</td>
+          </tr>
+          <tr>
+            <td><strong>20</strong></td>
+            <td>€9,000</td>
+            <td>€3,070</td>
+            <td class="green">€5,930</td>
+            <td class="green">€2,965<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€148/pp</span></td>
+            <td class="green">€1,483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€74/pp</span></td>
+            <td class="green">€1,483<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€74/pp</span></td>
+            <td>Excellent ✓✓✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:8px;padding:12px 14px;margin-top:12px;font-size:13px;color:#78350f;">
+      <strong>Scenario A — target launch goal: 15 participants.</strong> At 15 pax: trainer €1,965 · Organiser 1 €983 · Organiser 2 €983. Event is viable from 13 participants.
+    </div>
+  </div>
+
+  <div style="background:white;border-radius:12px;border:1px solid #86efac;padding:22px;margin-bottom:36px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+    <h3 style="font-size:14px;font-weight:800;color:#166534;margin-bottom:4px;">Scenario B — €400/person early bird · Studio (€500)</h3>
+    <p style="font-size:12px;color:var(--sub);margin-bottom:14px;">Fixed: €2,070 (same as Scenario A) · Variable: €50/person · Normal price: €550</p>
+    <div class="table-scroll">
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Participants</th>
+            <th>Revenue</th>
+            <th>Total costs</th>
+            <th>Available</th>
+            <th>Trainer fee</th>
+            <th>Organiser 1</th>
+            <th>Organiser 2</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>8</strong></td>
+            <td>€3,200</td>
+            <td>€2,470</td>
+            <td class="red">€730</td>
+            <td class="red">€365<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€46/pp</span></td>
+            <td class="red">€183<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€23/pp</span></td>
+            <td class="red">€183<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€23/pp</span></td>
+            <td>Below minimum</td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td>€4,000</td>
+            <td>€2,570</td>
+            <td class="red">€1,430</td>
+            <td class="red">€715<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€72/pp — below floor</span></td>
+            <td class="red">€358<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€36/pp</span></td>
+            <td class="red">€358<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€36/pp</span></td>
+            <td>Trainer below €1,500</td>
+          </tr>
+          <tr>
+            <td><strong>13</strong></td>
+            <td>€5,200</td>
+            <td>€2,720</td>
+            <td class="red">€2,480</td>
+            <td class="red">€1,240<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€95/pp — below floor</span></td>
+            <td class="amber">€620<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
+            <td class="amber">€620<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€48/pp</span></td>
+            <td>Trainer below €1,500</td>
+          </tr>
+          <tr style="background:#f0fdf4;">
+            <td><strong>15</strong> ⭐</td>
+            <td>€6,000</td>
+            <td>€2,820</td>
+            <td class="amber">€3,180</td>
+            <td class="amber">€1,590<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€106/pp — floor met</span></td>
+            <td class="amber">€795<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€53/pp</span></td>
+            <td class="amber">€795<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€53/pp</span></td>
+            <td>Minimum viable ✓</td>
+          </tr>
+          <tr>
+            <td><strong>20</strong></td>
+            <td>€8,000</td>
+            <td>€3,070</td>
+            <td class="green">€4,930</td>
+            <td class="green">€2,465<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€123/pp</span></td>
+            <td class="green">€1,233<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€62/pp</span></td>
+            <td class="green">€1,233<br><span style="font-size:11px;font-weight:400;color:var(--sub);">€62/pp</span></td>
+            <td>Excellent ✓✓✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:12px 14px;margin-top:12px;font-size:13px;color:#166534;">
+      <strong>Scenario B — target launch goal: 15 participants minimum, 20 pax ideal.</strong> At 15 pax: trainer €1,590 · Organiser 1 €795 · Organiser 2 €795. At 20 pax: trainer €2,465 · Organiser 1 €1,233 · Organiser 2 €1,233.
+    </div>
+  </div>
+
+  <!-- Best Dates -->
+  <div class="section-title">Best Dates for 2026 — Friday–Saturday–Sunday Format</div>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">3-day module: Friday afternoon start → Sunday evening close. Attendees need to arrange Friday off, or target self-employed, retirees, and people with flexible schedules. October in Torrevieja: 22–26°C, sunny, low humidity — outstanding conditions for a multi-day personal development programme.</p>
+
+  <div class="table-scroll">
+    <table class="scenario-table" style="margin-bottom:10px;">
+      <thead>
+        <tr><th>Option</th><th>Dates</th><th>Days</th><th>Assessment</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f0fdf4;">
+          <td><strong>Option 1 — Preferred</strong></td>
+          <td><strong>16–17–18 October 2026</strong></td>
+          <td>Fri · Sat · Sun</td>
+          <td class="green">✓✓ Recommended</td>
+          <td>Best window. 6+ weeks before year-end. Strong autumn energy. Audience fully settled after summer. 8-week promotion runway from early bird 1 Sep deadline.</td>
+        </tr>
+        <tr>
+          <td><strong>Option 2 — Backup</strong></td>
+          <td><strong>23–24–25 October 2026</strong></td>
+          <td>Fri · Sat · Sun</td>
+          <td class="amber">✓ Good</td>
+          <td>One week later. Still viable — no Spanish bank holidays on these days. Slightly closer to November. Use if trainer's schedule conflicts with Option 1.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px;color:var(--sub);margin-bottom:36px;">Note: 12 October is Spain's Fiesta Nacional (Monday) — does not conflict with either Fri–Sun option. No Valencian regional bank holidays fall on 16–18 or 23–25 October.</p>
+
+  <!-- Flight Section -->
+  <div class="section-title">Trainer Flight — Estonia to Alicante</div>
+  <div style="background:white;border-radius:12px;border:1px solid var(--border);padding:22px;margin-bottom:36px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;" class="two-col">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Route</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);">Tallinn (TLL) → Alicante (ALC)</div>
+        <div style="font-size:13px;color:var(--sub);margin-top:4px;">No direct flight. Connection via Helsinki, Copenhagen, Riga, or Madrid. Total journey typically 4–7 hours. Plan to arrive the day before the training.</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4338ca;margin-bottom:6px;">Budget line for planning</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy);">€300</div>
+        <div style="font-size:13px;color:var(--sub);margin-top:4px;">Return with 23 kg checked luggage · planning budget for October 2026. Car rental on arrival: €30/day × 5 days = €150. <strong>Total trainer travel: ~€450.</strong></div>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="scenario-table" style="margin-bottom:14px;">
+        <thead><tr><th>Route</th><th>Airlines</th><th>Connection</th><th>Return + 23 kg luggage (est.)</th></tr></thead>
+        <tbody>
+          <tr style="background:#f0f9ff;">
+            <td><strong>Via Helsinki ★ Recommended</strong></td>
+            <td>Finnair</td>
+            <td>TLL → HEL → ALC</td>
+            <td><strong>€180–260</strong> — luggage typically included in fare</td>
+          </tr>
+          <tr>
+            <td>Via Copenhagen</td>
+            <td>SAS / Nordic</td>
+            <td>TLL → CPH → ALC</td>
+            <td>€200–290 — luggage often included</td>
+          </tr>
+          <tr>
+            <td>Via Riga (budget)</td>
+            <td>airBaltic + Ryanair</td>
+            <td>TLL → RIX → ALC</td>
+            <td>€160–220 — add €60–80 for checked bag</td>
+          </tr>
+          <tr>
+            <td>Via Madrid</td>
+            <td>Various</td>
+            <td>TLL → MAD → ALC</td>
+            <td>€200–320 — varies by carrier</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Promotion Channels -->
+  <div class="section-title">Promotion Channels — Costa Blanca Russian Community</div>
+
+  <div class="channel-card">
+    <div class="ch-icon">📣</div>
+    <div class="ch-body">
+      <h3>Ирина's Own Community <span class="effort high">Highest conversion</span></h3>
+      <p>Ирина's established Telegram, YouTube, Instagram and Facebook community are the highest-quality leads — already familiar with the Method, already trust the trainer. An announcement for a Spain date will generate immediate interest from her European followers.</p>
+      <div class="examples">
+        <a href="https://t.me/metodsilvaru" target="_blank" class="ex-tag">Telegram: t.me/metodsilvaru</a>
+        <a href="https://www.youtube.com/user/MetodSilva" target="_blank" class="ex-tag">YouTube: MetodSilva</a>
+        <a href="https://www.facebook.com/metodsilva/" target="_blank" class="ex-tag">Facebook: metodsilva</a>
+        <a href="https://www.instagram.com/irina_hlimonenko/" target="_blank" class="ex-tag">Instagram: @irina_hlimonenko</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">💬</div>
+    <div class="ch-body">
+      <h3>Telegram Groups — Russian Costa Blanca <span class="effort high">Highest local reach</span></h3>
+      <p>Multiple large Telegram groups for Russian-speaking residents of Torrevieja and Costa Blanca. Single posts in the right groups can reach 2,000–8,000 relevant people locally.</p>
+      <div class="examples">
+        <span class="ex-tag">Русские в Торревьехе (search Telegram)</span>
+        <span class="ex-tag">Коста Бланка Russians (search)</span>
+        <span class="ex-tag">Украинцы Испания (search)</span>
+        <span class="ex-tag">Русскоязычные в Испании (search)</span>
+        <span class="ex-tag">Торревьеха · Наши (search)</span>
+      </div>
+      <p style="margin-top:8px;font-size:12px;color:#9ca3af;">Search Telegram for current active groups — group URLs change. Ask a local contact to post on your behalf for higher trust.</p>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">👥</div>
+    <div class="ch-body">
+      <h3>Facebook Groups <span class="effort high">Strong for 35–55 age bracket</span></h3>
+      <p>Facebook remains very active among 35–60 Russian-speaking women in Spain — the primary target audience. Personal testimonials from previous trainings (Germany, Estonia) convert well here.</p>
+      <div class="examples">
+        <span class="ex-tag">Русские в Испании (search Facebook)</span>
+        <span class="ex-tag">Русские в Торревьехе (search)</span>
+        <span class="ex-tag">Украинцы в Испании (search)</span>
+        <span class="ex-tag">Costa Blanca Russian community (search)</span>
+        <span class="ex-tag">Русскоязычные мамы Испания (search)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🎥</div>
+    <div class="ch-body">
+      <h3>2 Free Livestreams with Ирина <span class="effort high">High conversion</span></h3>
+      <p>Two open-access livestreams before the event. Stream 1 (~late August): introduction to the Silva Method. Stream 2 (~early October): Q&amp;A and Torrevieja training preview. Broadcast via YouTube and Telegram. No cost, 60–90 min each.</p>
+      <div class="examples">
+        <span class="ex-tag">Stream 1: What is the Silva Method? — late August</span>
+        <span class="ex-tag">Stream 2: Q&amp;A + Torrevieja event preview — early October</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="ch-icon">🌐</div>
+    <div class="ch-body">
+      <h3>Landing Page + Registration <span class="effort high">Essential first step</span></h3>
+      <p>Create a dedicated landing page before any promotion begins. Include: programme description, trainer bio, dates, pricing table (early bird / normal), early bird deadline countdown to 1 September. This is the anchor for all channels — every Telegram post links here.</p>
+      <div class="examples">
+        <span class="ex-tag">Event title + one benefit sentence</span>
+        <span class="ex-tag">Trainer bio + photo</span>
+        <span class="ex-tag">Pricing table (early bird / normal)</span>
+        <span class="ex-tag">1 Sep early bird countdown</span>
+        <span class="ex-tag">Registration form or payment link</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="section-title">Checklist — Items to Confirm</div>
+  <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:22px;margin-bottom:36px;">
+    <p style="font-size:13.5px;font-weight:700;color:#166534;margin-bottom:12px;">Key items to align on:</p>
+    <ul style="font-size:13.5px;color:#374151;padding-left:18px;line-height:2.1;">
+      <li>Confirmed dates — Option 1 (16–18 Oct) or Option 2 (23–25 Oct)</li>
+      <li>Venue choice — Alena's livingroom (€400), SPACE (€450), or Studio (€500)</li>
+      <li>Minimum group size to confirm / cancel the event</li>
+      <li>Trainer promotion — which channels will Ирина activate for her Spain following?</li>
+      <li>Trainer flight — book 8–10 weeks in advance; budget €300 return. Car rental €30/day × 5 days = €150.</li>
+      <li>Landing page and registration form — who creates and manages?</li>
+      <li>Materials — workbooks printed locally or supplied by trainer?</li>
+      <li>Sound equipment — microphone/speaker needed for the chosen venue?</li>
+      <li>Licensing — any official Silva Method franchise requirements for Spain events?</li>
+    </ul>
+  </div>
+
+  <footer-bar>
+    June 2026 · <a href="/">TrendsOnFire</a>
+  </footer-bar>
+
+</main>
+
+</body>
+</html>
