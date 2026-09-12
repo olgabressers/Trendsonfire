@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Immersive Venue Financial Analysis — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .art-hero{background:#08080f;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(0,0,170,.20) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:auto;position:relative;z-index:1;}
+    .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,46px);font-weight:400;line-height:1.08;margin-bottom:16px;letter-spacing:-0.5px;max-width:900px;}
+    .art-hero h1 em{color:#FFD300;font-style:italic;}
+    .art-hero p{font-size:15.5px;color:rgba(255,255,255,.85);line-height:1.55;max-width:820px;}
+    .art-hero .meta{margin-top:18px;font-size:12px;color:rgba(255,255,255,.45);display:flex;gap:20px;flex-wrap:wrap;}
+    @media(max-width:700px){.art-hero{padding:40px 16px 32px;}}
+    main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+    .intro-row{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;margin-bottom:36px;}
+    @media(max-width:900px){.intro-row{grid-template-columns:1fr;}}
+    .glossary{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;}
+    .glossary h2{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#0000aa;font-weight:700;margin-bottom:14px;}
+    .glossary dl{margin:0;}
+    .glossary dt{font-size:13.5px;font-weight:700;color:#0a0f1a;margin-top:10px;}
+    .glossary dt:first-child{margin-top:0;}
+    .glossary dd{margin:2px 0 0;font-size:13px;color:#4b5563;line-height:1.5;}
+    .toc{background:#eef0ff;border:1px solid #b8c2f5;padding:20px 24px;}
+    .toc .lbl{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#0000aa;font-weight:700;margin-bottom:16px;}
+    .toc .grp{font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0000aa;margin:14px 0 7px;padding-bottom:4px;border-bottom:1px solid #b8c2f5;}
+    .toc .grp:first-of-type{margin-top:0;}
+    .toc ol{margin:0;padding-left:18px;font-size:13.5px;line-height:1.3;}
+    .toc li{margin-bottom:9px;}
+    .toc li a{color:#0a0f1a;text-decoration:none;font-weight:700;}
+    .toc li a:hover{color:#0000aa;text-decoration:underline;}
+    .toc li span{display:block;color:#555;font-size:12.5px;font-weight:400;margin-top:1px;}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:18px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:500;line-height:1;color:#0000aa;letter-spacing:-0.5px;}
+    .s-src{font-size:11.5px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#0000aa;}
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:44px 0 14px;padding-bottom:8px;border-bottom:2px solid #0000aa;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0000aa;margin-bottom:6px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.3vw,26px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+    .findbox{border-left:5px solid #FFD300;background:#fffdf2;padding:16px 20px;margin:0 0 22px;}
+    .findbox ul{list-style:none;padding:0;margin:0;}
+    .findbox li{font-size:14px;line-height:1.6;padding:5px 0 5px 18px;position:relative;color:#0a0f1a;}
+    .findbox li::before{content:'\25B8';position:absolute;left:0;color:#0000aa;font-weight:700;}
+    .findbox li b{color:#0000aa;}
+    .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
+    .mkt-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;}
+    .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;vertical-align:bottom;}
+    .mkt-table td{padding:10px 12px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.45;}
+    .mkt-table tr.target td{background:#f4f6ff;font-weight:700;}
+    .mkt-table tr.tot td{background:#f2f1ee;font-weight:800;border-top:2px solid #0000aa;}
+    .mkt-table td.na{color:#9a9a9a;}
+    .mkt-table td.num{text-align:right;white-space:nowrap;}
+    .mkt-table a{color:#0000aa;}
+    .neg{color:#a61b2b;font-weight:700;}
+    .pos{color:#0a6b2f;font-weight:700;}
+    .src-note{font-size:12px;color:#0a0f1a;padding:9px 13px;background:#f9fafb;border-left:3px solid #0000aa;margin:0 0 30px;line-height:1.6;}
+    .src-note a{color:#0000aa;}
+    .bk-wrap{background:#08080f;padding:48px;margin:44px -48px;}
+    @media(max-width:700px){.bk-wrap{padding:32px 16px;margin:36px -16px;}}
+    .bk-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.8vw,32px);color:white;font-weight:400;line-height:1.15;margin-bottom:28px;max-width:900px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(255,211,0,.3);padding:22px 20px;background:rgba(255,255,255,.02);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;color:#FFD300;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:16px;font-weight:700;color:#ffffff;margin-bottom:10px;line-height:1.25;}
+    .bk-card p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.6;margin:0;}
+    .methodbox{border:2px solid #0000aa;background:#f4f6ff;padding:20px 24px;margin:0 0 24px;}
+    .methodbox h3{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:0 0 12px;}
+    .methodbox p{font-size:13.5px;line-height:1.6;color:#0a0f1a;margin:0 0 9px;}
+    .methodbox p:last-child{margin-bottom:0;}
+    .gap-box{border:2px solid #a61b2b;background:#fff6f6;padding:22px 24px;margin:0 0 30px;}
+    .gap-box h3{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a61b2b;margin:0 0 12px;}
+    .gap-box ul{margin:0;padding-left:18px;}
+    .gap-box li{font-size:13.5px;line-height:1.6;padding:3px 0;}
+    .srclist{font-size:12.5px;line-height:1.85;color:#3a3a3a;}
+    .srclist a{color:#0000aa;}
+    h2.sec-h{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:#0000aa;margin:26px 0 12px;line-height:1.2;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<div class="art-hero">
+  <div class="inner">
+    <div class="eyebrow">Immersive venue financial analysis · public data only</div>
+    <h1>The same ticket is worth a different amount in every country — and <em>nobody has priced that</em></h1>
+    <p>A financial model of eleven immersive art venues across seven countries, built the same way as the Remastered financial review: consumer prices stripped of value-added tax, one cost architecture applied consistently, adjusted for national labour cost, then break-even and a ten percent sensitivity. Every input is public. Every output is labelled as a model.</p>
+    <div class="meta"><span>12 September 2026</span><span>11 venues · 7 countries</span><span>Companion to the <a href="immersive-venue-benchmark.html" style="color:#FFD300;">venue benchmark</a></span></div>
+  </div>
+</div>
+
+<main>
+
+  <div class="intro-row">
+    <div class="glossary">
+      <h2>Profit and loss — the terms used on this page</h2>
+      <dl>
+        <dt>Shelf price</dt><dd>What the visitor pays. In most of Europe this legally includes value-added tax, so it is not revenue.</dd>
+        <dt>Value-added tax (VAT)</dt><dd>A consumption tax inside the consumer price. Divide the shelf price by one plus the rate to get revenue.</dd>
+        <dt>Net revenue</dt><dd>The shelf price after VAT is removed. This is what the business actually earns per ticket.</dd>
+        <dt>Fixed cost</dt><dd>Cost that does not move with visitor numbers — staff, rent, content, utilities.</dd>
+        <dt>Variable cost</dt><dd>Cost incurred per visitor — here, ticketing commission and payment fees.</dd>
+        <dt>Contribution per visitor</dt><dd>Net revenue per visitor minus variable cost per visitor. What each extra visitor contributes to fixed costs.</dd>
+        <dt>Break-even</dt><dd>Fixed costs divided by contribution per visitor. The number of visitors at which the result is zero.</dd>
+        <dt>Margin of safety</dt><dd>How far modelled volume sits above break-even, as a percentage. Negative means below it.</dd>
+        <dt>Operating leverage</dt><dd>In a high-fixed-cost business, a small change in volume produces a large change in result.</dd>
+        <dt>Corporate income tax</dt><dd>Tax on profit, charged after the result is struck. Different in every country in this set.</dd>
+      </dl>
+    </div>
+
+    <div class="toc">
+      <div class="lbl">Contents</div>
+      <div class="grp">What the price is worth</div>
+      <ol>
+        <li><a href="#tax">Value-added tax by country</a><span>All 11 venues — shelf price, VAT rate, net revenue, and what each venue keeps.</span></li>
+        <li><a href="#cit">Corporate income tax by country</a><span>Seven countries, 10% to 30.06%.</span></li>
+      </ol>
+      <div class="grp">The cost side</div>
+      <ol start="3">
+        <li><a href="#labour">National labour cost</a><span>Hourly labour cost, Eurostat 2025 — the single biggest driver of cost difference.</span></li>
+        <li><a href="#architecture">Cost architecture</a><span>Eight cost lines, fixed and variable, carried over from the Remastered model.</span></li>
+      </ol>
+      <div class="grp">The model</div>
+      <ol start="5">
+        <li><a href="#pnl">Modelled profit and loss</a><span>Revenue, costs and result for every venue with complete public inputs.</span></li>
+        <li><a href="#breakeven">Break-even and margin of safety</a><span>The number that decides whether the model works.</span></li>
+        <li><a href="#sensitivity">Ten percent sensitivity</a><span>What a small volume swing does to the result.</span></li>
+      </ol>
+      <div class="grp">Limits</div>
+      <ol start="8">
+        <li><a href="#limits">What the model cannot see</a><span>Everything outside it, stated rather than hidden.</span></li>
+        <li><a href="#sources">Sources</a><span>Every URL behind every figure.</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">VAT spread across the set</div>
+      <div class="s-num">3% – 20%</div>
+      <div class="s-src">Luxembourg charges 3% on cultural admission; Bulgaria has no reduced rate for it. <a href="https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/" target="_blank" rel="noopener">Tax Foundation</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Corporate tax spread</div>
+      <div class="s-num">10% – 30%</div>
+      <div class="s-src">Bulgaria 10%, Germany 30.06%. The same profit is taxed three times as hard in one member of this group as another.</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Hourly labour cost spread</div>
+      <div class="s-num">4.7×</div>
+      <div class="s-src">Luxembourg €56.80 against Bulgaria €12.00, 2025. <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260331-2" target="_blank" rel="noopener">Eurostat</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Days sold out, next 110</div>
+      <div class="s-num">1</div>
+      <div class="s-src">One sold-out day in 110 on Remastered's own booking calendar, 13 Sep – 31 Dec 2026. <a href="https://tickets.remastered.nl/en-US/tickets" target="_blank" rel="noopener">tickets.remastered.nl</a></div>
+    </div>
+  </div>
+
+  <!-- 1 TAX -->
+  <div class="sec-header" id="tax">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">What the price is worth</div>
+      <div class="sec-title">Value-added tax — the shelf price is not revenue</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>The headline price comparison is misleading and every venue in this set is affected differently.</b> A €24.50 ticket in Rotterdam carries €2.02 of VAT. A €16.00 ticket in Luxembourg carries €0.47.</li>
+      <li><b>Luxembourg keeps 97.1% of the shelf price. Rotterdam keeps 91.7%. Bucharest keeps 90.1%.</b> Bulgaria, with no reduced rate found for museum admission, would keep 83.3%.</li>
+      <li><b>Montreal keeps 100% — because it does not include the tax at all.</b> OASIS publishes prices excluding taxes and fees, so the shelf price and the net revenue are the same number and the visitor pays the tax on top.</li>
+      <li><b>On a net-revenue basis the gap between the two most expensive venues almost disappears.</b> On shelf price Remastered leads OASIS by 12%. Net of tax it leads by 3%.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th>Country</th><th class="num">Shelf price</th><th class="num">VAT on admission</th><th class="num">Net revenue / ticket</th><th class="num">Venue keeps</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td>Netherlands</td><td class="num">€24.50</td><td class="num">9.0%</td><td class="num">€22.48</td><td class="num">91.7%</td></tr>
+        <tr><td>OASIS immersion</td><td>Canada (Quebec)</td><td class="num">€21.82</td><td class="num">added on top: GST 5% + QST 9.975%</td><td class="num">€21.82</td><td class="num">100.0%</td></tr>
+        <tr><td>Kunstkraftwerk</td><td>Germany</td><td class="num">€18.00</td><td class="num">7.0%</td><td class="num">€16.82</td><td class="num">93.5%</td></tr>
+        <tr><td>Visiodrom</td><td>Germany</td><td class="num">€18.00</td><td class="num">7.0%</td><td class="num">€16.82</td><td class="num">93.5%</td></tr>
+        <tr><td>GIOLABS</td><td>Luxembourg</td><td class="num">€16.00</td><td class="num">3.0%</td><td class="num">€15.53</td><td class="num">97.1%</td></tr>
+        <tr><td>MINA Bucharest</td><td>Romania</td><td class="num">€9.52</td><td class="num">11.0%</td><td class="num">€8.58</td><td class="num">90.1%</td></tr>
+        <tr><td>MINA Cluj</td><td>Romania</td><td class="num">€9.52</td><td class="num">11.0%</td><td class="num">€8.58</td><td class="num">90.1%</td></tr>
+        <tr><td>MINA Iași</td><td>Romania</td><td class="num">€9.52</td><td class="num">11.0%</td><td class="num">€8.58</td><td class="num">90.1%</td></tr>
+        <tr><td>MINA Timișoara</td><td>Romania</td><td class="num">€9.52</td><td class="num">11.0%</td><td class="num">€8.58</td><td class="num">90.1%</td></tr>
+        <tr><td>MINA Sofia</td><td>Bulgaria</td><td class="num na">not published</td><td class="num">20.0% standard — no reduced rate found for museum admission</td><td class="num na">—</td><td class="num">83.3% if charged</td></tr>
+        <tr><td>Sensea México</td><td>Mexico</td><td class="num na">not published</td><td class="num">16.0% IVA</td><td class="num na">—</td><td class="num">86.2% if included</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Rates verified individually: Netherlands 9% reduced on admission to attractions and museums; Germany 7% reduced on admission to cultural events and amusement parks; Luxembourg 3% super-reduced on admission to cultural events; Romania 11% on access to museums, historical monuments and gardens following the August 2025 consolidation of the 5% and 9% brackets; Bulgaria 20% standard, with no reduced rate for museum admission located; Mexico 16% IVA standard; Quebec GST 5% plus QST 9.975%, and OASIS's own fees page states "Taxes and fees not included". The Bulgarian and Mexican lines are marked conditional because neither venue publishes a price.</div>
+
+  <!-- 2 CIT -->
+  <div class="sec-header" id="cit">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">What the price is worth</div>
+      <div class="sec-title">Corporate income tax — the same profit, taxed three ways</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>The spread across this set is three-fold.</b> Bulgaria 10%, Romania 16%, Luxembourg 23.87%, Netherlands 25.80%, Canada 26.50%, Mexico 30%, Germany 30.06%.</li>
+      <li><b>A group holding company changes where the profit lands, and that is worth more than most operating synergies.</b> It is also the part of a cross-border group structure that no benchmark on revenue and cost will ever surface.</li>
+      <li><b>The Netherlands charges 19% on the first €200,000 of profit</b> before the 25.80% rate applies — relevant at the profit levels this model produces.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Country</th><th>Venues in the set</th><th class="num">Corporate income tax 2026</th></tr></thead>
+      <tbody>
+        <tr><td>Bulgaria</td><td>MINA Sofia</td><td class="num">10.00%</td></tr>
+        <tr><td>Romania</td><td>MINA Bucharest, Cluj, Iași, Timișoara</td><td class="num">16.00%</td></tr>
+        <tr><td>Luxembourg</td><td>GIOLABS</td><td class="num">23.87%</td></tr>
+        <tr class="target"><td>Netherlands</td><td>REMASTERED</td><td class="num">25.80% · 19.00% on the first €200,000</td></tr>
+        <tr><td>Canada (Quebec)</td><td>OASIS immersion</td><td class="num">26.50% combined federal and provincial</td></tr>
+        <tr><td>Mexico</td><td>Sensea México</td><td class="num">30.00%</td></tr>
+        <tr><td>Germany</td><td>Kunstkraftwerk, Visiodrom</td><td class="num">30.06% combined statutory</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Source: <a href="https://taxfoundation.org/data/all/eu/corporate-income-tax-rates-europe/" target="_blank" rel="noopener">Tax Foundation, 2026 Corporate Income Tax Rates in Europe</a>; <a href="https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-rates" target="_blank" rel="noopener">PwC Worldwide Tax Summaries</a> for Mexico and Canada.</div>
+
+  <!-- 3 LABOUR -->
+  <div class="sec-header" id="labour">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The cost side</div>
+      <div class="sec-title">National labour cost — a 4.7× spread across the set</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>An hour of labour costs €56.80 in Luxembourg and €12.00 in Bulgaria.</b> Staff is the largest single cost line in this kind of venue, so this difference dominates everything else on the cost side.</li>
+      <li><b>Remastered sits near the top of the range at €47.90</b> — the second most expensive labour market in this set, behind Luxembourg.</li>
+      <li><b>MINA operates five venues in the two cheapest labour markets in the European Union.</b> Its cost base is structurally different, not just smaller.</li>
+      <li><b>This is why a benchmark that compares cost categories without normalising for country tells you almost nothing.</b> A Romanian venue will always look efficient and a Dutch one always look expensive, whatever either management does.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Country</th><th>Venues in the set</th><th class="num">Hourly labour cost 2025</th><th class="num">Index, EU = 100</th><th class="num">Index, Netherlands = 100</th></tr></thead>
+      <tbody>
+        <tr><td>Luxembourg</td><td>GIOLABS</td><td class="num">€56.80</td><td class="num">163</td><td class="num">119</td></tr>
+        <tr class="target"><td>Netherlands</td><td>REMASTERED</td><td class="num">€47.90</td><td class="num">137</td><td class="num">100</td></tr>
+        <tr><td>Germany</td><td>Kunstkraftwerk, Visiodrom</td><td class="num">€45.00</td><td class="num">129</td><td class="num">94</td></tr>
+        <tr><td>European Union average</td><td class="na">—</td><td class="num">€34.90</td><td class="num">100</td><td class="num">73</td></tr>
+        <tr><td>Romania</td><td>MINA Bucharest, Cluj, Iași, Timișoara</td><td class="num">€13.60</td><td class="num">39</td><td class="num">28</td></tr>
+        <tr><td>Bulgaria</td><td>MINA Sofia</td><td class="num">€12.00</td><td class="num">34</td><td class="num">25</td></tr>
+        <tr><td>Canada · Mexico</td><td>OASIS immersion, Sensea México</td><td class="num na">outside the Eurostat series</td><td class="num na">—</td><td class="num na">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Whole-economy hourly labour cost, 2025. Sources: <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260331-2" target="_blank" rel="noopener">Eurostat</a> for Luxembourg, Netherlands, Romania, Bulgaria and the EU average; <a href="https://www.destatis.de/Europa/EN/Topic/Population-Labour-Social-Issues/Labour-market/EU_LabourCostPerHourWorked.html" target="_blank" rel="noopener">Destatis</a> for Germany. Canada and Mexico are not in this series and are therefore excluded from the cost model rather than estimated.</div>
+
+  <!-- 4 ARCHITECTURE -->
+  <div class="sec-header" id="architecture">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The cost side</div>
+      <div class="sec-title">Cost architecture — one structure, applied consistently</div>
+    </div>
+  </div>
+
+  <div class="methodbox">
+    <h3>Method, stated in full</h3>
+    <p><b>The cost architecture</b> is carried over unchanged from the Remastered financial review: eight lines, seven fixed and one variable, totalling €2.17m at 97,000 visitors in a Dutch cost setting.</p>
+    <p><b>Only the staff line is adjusted by country</b>, scaled by that country's hourly labour cost relative to the Netherlands. Every other line is held at the Dutch level, because no verified country index exists for rent, content, utilities or general administration in this sector.</p>
+    <p><b>That choice is deliberately conservative and it understates the low-cost venues.</b> Rent in Wuppertal or Bucharest is not the same as rent beneath the Erasmusbrug. Holding it flat means the model flatters the Dutch venue and penalises the others — so where a low-cost venue still models poorly, the real position is better than shown.</p>
+    <p><b>Revenue uses net-of-VAT price</b> from section 1 and the modelled visitor volumes from the <a href="immersive-venue-benchmark.html">venue benchmark</a>, which are derived from published opening hours at one identical throughput assumption of 46 visitors per operating hour.</p>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Cost line</th><th>Type</th><th>Scales with country?</th><th class="num">Netherlands baseline</th><th class="num">Share of total</th></tr></thead>
+      <tbody>
+        <tr><td>Staff costs</td><td>Fixed</td><td class="pos">Yes — by hourly labour cost</td><td class="num">€914,000</td><td class="num">42.1%</td></tr>
+        <tr><td>Rent &amp; occupancy</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€395,000</td><td class="num">18.2%</td></tr>
+        <tr><td>Content &amp; audio-visual maintenance</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€208,000</td><td class="num">9.6%</td></tr>
+        <tr><td>Marketing &amp; partnerships</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€187,000</td><td class="num">8.6%</td></tr>
+        <tr><td>Insurance, admin &amp; general</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€187,000</td><td class="num">8.6%</td></tr>
+        <tr><td>Utilities</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€125,000</td><td class="num">5.8%</td></tr>
+        <tr><td>Maintenance capital expenditure, annualised</td><td>Fixed</td><td class="na">No — held flat</td><td class="num">€62,000</td><td class="num">2.9%</td></tr>
+        <tr><td>Ticketing &amp; payment fees</td><td>Variable</td><td class="na">No — €0.93 per visitor</td><td class="num">€90,000</td><td class="num">4.1%</td></tr>
+        <tr class="tot"><td>Total at 97,000 visitors</td><td></td><td></td><td class="num">€2,168,000</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Cost split is modelled, not disclosed by any venue. It is carried forward from the <a href="remastered-financial-review.html">Remastered financial review</a> so that the two pages reconcile line for line.</div>
+
+  <!-- 5 PNL -->
+  <div class="sec-header" id="pnl">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The model</div>
+      <div class="sec-title">Modelled profit and loss</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>On ticket revenue alone, only the highest-priced venue in the set covers a Western-European cost base.</b> The modelled result at Rotterdam prices and volumes is €10,000 before tax — effectively zero.</li>
+      <li><b>Every other modelled venue falls short on tickets alone</b>, by €426,000 to €654,000 at these volumes and this cost structure.</li>
+      <li><b>That is the real finding, and it is not about management.</b> A 60-to-90 minute immersive show, sold at €16 to €18, at roughly 90,000 to 110,000 visitors a year, does not carry a €2m Western-European cost base on tickets.</li>
+      <li><b>Which means the non-ticket lines are not upside — they are the business.</b> Corporate hire, food and drink, membership and combination tickets are what close a gap of this size, and the <a href="immersive-venue-benchmark.html#streams">benchmark page</a> shows exactly which venues run them and which do not.</li>
+      <li><b>Luxembourg models worst despite trading the longest week</b>, because it combines the highest labour cost in the set with the second-lowest price.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th>Country</th><th class="num">Modelled visitors</th><th class="num">Net price</th><th class="num">Net revenue</th><th class="num">Staff</th><th class="num">Other fixed</th><th class="num">Variable</th><th class="num">Total cost</th><th class="num">Result before tax</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td>Netherlands</td><td class="num">96,876</td><td class="num">€22.48</td><td class="num">€2.18m</td><td class="num">€914K</td><td class="num">€1,164K</td><td class="num">€90K</td><td class="num">€2,168K</td><td class="num pos">+€10K</td></tr>
+        <tr><td>Visiodrom</td><td>Germany</td><td class="num">100,464</td><td class="num">€16.82</td><td class="num">€1.69m</td><td class="num">€859K</td><td class="num">€1,164K</td><td class="num">€93K</td><td class="num">€2,116K</td><td class="num neg">−€426K</td></tr>
+        <tr><td>GIOLABS</td><td>Luxembourg</td><td class="num">112,424</td><td class="num">€15.53</td><td class="num">€1.75m</td><td class="num">€1,084K</td><td class="num">€1,164K</td><td class="num">€104K</td><td class="num">€2,352K</td><td class="num neg">−€606K</td></tr>
+        <tr><td>Kunstkraftwerk</td><td>Germany</td><td class="num">86,112</td><td class="num">€16.82</td><td class="num">€1.45m</td><td class="num">€859K</td><td class="num">€1,164K</td><td class="num">€80K</td><td class="num">€2,103K</td><td class="num neg">−€654K</td></tr>
+        <tr><td>OASIS immersion</td><td>Canada</td><td class="num">94,891</td><td class="num">€21.82</td><td class="num">€2.07m</td><td class="num na" colspan="4">not modelled — Canada is outside the Eurostat labour-cost series</td></tr>
+        <tr><td>Sensea México</td><td>Mexico</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — no published price and no published opening hours</td></tr>
+        <tr><td>MINA Bucharest</td><td>Romania</td><td class="num na">—</td><td class="num">€8.58</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — opening hours are published as weekly images, so no capacity input exists</td></tr>
+        <tr><td>MINA Cluj</td><td>Romania</td><td class="num na">—</td><td class="num">€8.58</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — same reason</td></tr>
+        <tr><td>MINA Iași</td><td>Romania</td><td class="num na">—</td><td class="num">€8.58</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — same reason</td></tr>
+        <tr><td>MINA Timișoara</td><td>Romania</td><td class="num na">—</td><td class="num">€8.58</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — same reason</td></tr>
+        <tr><td>MINA Sofia</td><td>Bulgaria</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na" colspan="4">not modelled — no published price and no published opening hours</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Results are model output, not reported figures. No venue in this set publishes revenue, costs or visitor numbers. The wording throughout is "the modelled result at these inputs" — it is not a statement about any company's actual trading. Six of the eleven venues cannot be modelled at all, which is itself the most important line in this table.</div>
+
+  <!-- 6 BREAKEVEN -->
+  <div class="sec-header" id="breakeven">
+    <div class="sec-num">06</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The model</div>
+      <div class="sec-title">Break-even and margin of safety</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>The modelled Rotterdam position sits 0.5% above break-even.</b> Break-even is 96,430 visitors; the modelled volume is 96,876. Four hundred and forty-six visitors of headroom on the year.</li>
+      <li><b>That is not a margin. It is a rounding error.</b> A high-fixed-cost venue operating half a percent above break-even has no absorption capacity for a bad quarter, a content delay or a projector failure.</li>
+      <li><b>Every other modelled venue needs 27% to 48% more visitors than the model gives it</b> to break even on tickets alone.</li>
+      <li><b>Luxembourg needs 153,896 visitors</b> — 37% above its modelled volume — because high labour cost and a low price compress contribution from both ends.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th class="num">Fixed costs</th><th class="num">Contribution / visitor</th><th class="num">Break-even visitors</th><th class="num">Modelled visitors</th><th class="num">Margin of safety</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td class="num">€2,078K</td><td class="num">€21.55</td><td class="num">96,430</td><td class="num">96,876</td><td class="num pos">+0.5%</td></tr>
+        <tr><td>Visiodrom</td><td class="num">€2,023K</td><td class="num">€15.89</td><td class="num">127,255</td><td class="num">100,464</td><td class="num neg">−26.7%</td></tr>
+        <tr><td>GIOLABS</td><td class="num">€2,248K</td><td class="num">€14.60</td><td class="num">153,896</td><td class="num">112,424</td><td class="num neg">−36.9%</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="num">€2,023K</td><td class="num">€15.89</td><td class="num">127,255</td><td class="num">86,112</td><td class="num neg">−47.8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Break-even = fixed costs ÷ contribution per visitor. Contribution per visitor = net revenue per visitor − €0.93 variable cost per visitor. Ticket revenue only; no venue's non-ticket income is included, because none of it is public.</div>
+
+  <!-- 7 SENSITIVITY -->
+  <div class="sec-header" id="sensitivity">
+    <div class="sec-num">07</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The model</div>
+      <div class="sec-title">Ten percent sensitivity</div>
+    </div>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>A ten percent swing in visitors moves the modelled Rotterdam result by €417,000</b> — from −€199,000 to +€218,000, on revenue of €2.18m.</li>
+      <li><b>That is operating leverage, and it cuts both ways with equal force.</b> Roughly 96% of modelled costs are fixed, so every visitor above break-even is almost pure margin and every visitor below it is almost pure loss.</li>
+      <li><b>It is also why a venue operating 0.5% above break-even is a fragile business rather than a profitable one.</b> Ten percent is an ordinary year-to-year movement in this category.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th class="num">Result at −10% visitors</th><th class="num">Result at modelled volume</th><th class="num">Result at +10% visitors</th><th class="num">Swing across the range</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td class="num neg">−€199K</td><td class="num pos">+€10K</td><td class="num pos">+€218K</td><td class="num">€417K</td></tr>
+        <tr><td>Visiodrom</td><td class="num neg">−€586K</td><td class="num neg">−€426K</td><td class="num neg">−€266K</td><td class="num">€320K</td></tr>
+        <tr><td>GIOLABS</td><td class="num neg">−€770K</td><td class="num neg">−€606K</td><td class="num neg">−€442K</td><td class="num">€328K</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="num neg">−€791K</td><td class="num neg">−€654K</td><td class="num neg">−€517K</td><td class="num">€274K</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sensitivity applied to visitor volume only. Price, cost architecture and labour index held constant.</div>
+
+  <div class="bk-wrap">
+    <div class="bk-eyebrow">What the model says</div>
+    <div class="bk-headline">Three conclusions that only appear once the tax, the labour cost and the fixed-cost base are put on the same page.</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">Price comparison without tax is meaningless</div>
+        <p>The venue with the highest shelf price does not have the highest net revenue by the margin it appears to. Strip the tax and a 12% lead becomes 3%. No benchmark that compares ticket prices across borders is telling the truth unless it does this first.</p>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">Tickets do not carry the cost base</div>
+        <p>At these prices and volumes, only the most expensive venue in the set reaches break-even on ticket revenue alone — and it reaches it by half a percent. Corporate hire, hospitality, membership and combination tickets are not upside in this category. They are the difference between a business and a hobby.</p>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">Country beats management</div>
+        <p>A 4.7× labour-cost spread and a 3× corporate-tax spread across this set mean a Romanian venue will always benchmark as efficient and a Dutch one as expensive, regardless of how either is run. Any comparison that skips this ranks countries and calls it performance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 LIMITS -->
+  <div class="sec-header" id="limits">
+    <div class="sec-num">08</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Limits</div>
+      <div class="sec-title">What the model cannot see</div>
+    </div>
+  </div>
+
+  <div class="gap-box">
+    <h3>Outside the model — stated rather than hidden</h3>
+    <ul>
+      <li><b>All non-ticket revenue.</b> Corporate hire, food and drink, retail, membership, combination tickets, licensing and touring. None of it is public for any venue, and section 5 shows it is the difference between loss and profit.</li>
+      <li><b>Real visitor numbers.</b> The model uses one throughput assumption for every venue because no venue publishes actual footfall.</li>
+      <li><b>Real cost levels.</b> Only staff is country-adjusted. Rent, content, utilities and administration are held at Dutch levels for every venue.</li>
+      <li><b>The blended ticket price.</b> Adult price is used throughout. Children, groups, schools, discount cards and reseller rates all pull the real average below it, for every venue equally.</li>
+      <li><b>Reseller commission.</b> Online travel agents typically charge 20–30%, and the share of tickets sold through them is not public for any venue.</li>
+      <li><b>Seasonality.</b> Annual figures are straight-line. Every venue in this category trades unevenly across the year.</li>
+      <li><b>Capital structure.</b> Debt, interest, shareholder loans and the original build-out financing.</li>
+      <li><b>Lease terms and remaining duration.</b> Whether a building is owned, leased, or occupied under a public-sector arrangement changes the cost base entirely.</li>
+      <li><b>Content ownership.</b> Whether a show is owned, co-produced or licensed, and on what revenue-share terms.</li>
+      <li><b>Grants and public funding.</b> At least one venue in the set is constituted as a gGmbH — a German non-profit form — which implies a different funding model the accounts would reveal and the website does not.</li>
+    </ul>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sec-header" id="sources">
+    <div class="sec-num">09</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Limits</div>
+      <div class="sec-title">Sources</div>
+    </div>
+  </div>
+
+  <p class="srclist">
+    All figures captured 12 September 2026.<br/>
+    <b>Value-added tax</b> — <a href="https://taxfoundation.org/data/all/eu/value-added-tax-vat-rates-europe/" target="_blank" rel="noopener">Tax Foundation, 2026 VAT Rates in Europe</a> (standard and reduced rates by country); <a href="https://www.vatupdate.com/2026/02/12/romania-comprehensive-vat-country-guide-2026/" target="_blank" rel="noopener">Romania VAT country guide 2026</a> (11% on access to museums and monuments); <a href="https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/basic-rules-for-applying-the-gsthst-and-qst/tables-of-gst-and-qst-rates/" target="_blank" rel="noopener">Revenu Québec</a> (GST 5% and QST 9.975%)<br/>
+    <b>Corporate income tax</b> — <a href="https://taxfoundation.org/data/all/eu/corporate-income-tax-rates-europe/" target="_blank" rel="noopener">Tax Foundation, 2026 Corporate Income Tax Rates in Europe</a>; <a href="https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-rates" target="_blank" rel="noopener">PwC Worldwide Tax Summaries</a><br/>
+    <b>Labour cost</b> — <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260331-2" target="_blank" rel="noopener">Eurostat, EU hourly labour costs 2025</a>; <a href="https://www.destatis.de/Europa/EN/Topic/Population-Labour-Social-Issues/Labour-market/EU_LabourCostPerHourWorked.html" target="_blank" rel="noopener">Destatis, labour cost per hour worked 2025</a><br/>
+    <b>Prices and opening hours</b> — <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">Remastered</a>, <a href="https://visiodrom.de/tickets/" target="_blank" rel="noopener">Visiodrom</a>, <a href="https://giolabs.lu/" target="_blank" rel="noopener">GIOLABS</a>, <a href="https://oasis.im/en/fees-schedule/" target="_blank" rel="noopener">OASIS immersion</a>, <a href="https://www.kunstkraftwerk-leipzig.com/en/" target="_blank" rel="noopener">Kunstkraftwerk</a>, <a href="https://www.minamuseum.com/en/tickets/" target="_blank" rel="noopener">MINA</a>, <a href="https://mexico.sensea.show/" target="_blank" rel="noopener">Sensea México</a> — full detail in the <a href="immersive-venue-benchmark.html">venue benchmark</a><br/>
+    <b>Booking availability</b> — <a href="https://tickets.remastered.nl/en-US/tickets" target="_blank" rel="noopener">tickets.remastered.nl</a> public calendar, 110 days queried<br/>
+    <b>Cost architecture</b> — carried forward from the <a href="remastered-financial-review.html">Remastered financial review</a><br/>
+    <b>Exchange rates, September 2026</b> — €1 = CAD 1.602, €1 = RON 5.25
+  </p>
+
+</main>
+
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#08080f;color:#FFD300;border:1px solid rgba(255,211,0,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+
+</body>
+</html>
