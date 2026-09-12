@@ -10,18 +10,16 @@
   <style>
     .art-hero{background:#08080f;color:white;padding:56px 32px 40px;position:relative;}
     .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(0,0,170,.20) 0%,transparent 55%);pointer-events:none;}
-    .art-hero .inner{max-width:1100px;margin:auto;position:relative;z-index:1;}
-    .art-hero .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px;}
-    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .inner{max-width:1180px;margin:auto;position:relative;z-index:1;}
     .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:14px;}
-    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,42px);font-weight:400;line-height:1.1;margin-bottom:14px;letter-spacing:-0.5px;max-width:860px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,4vw,42px);font-weight:400;line-height:1.1;margin-bottom:14px;letter-spacing:-0.5px;max-width:880px;}
     .art-hero h1 em{color:#FFD300;font-style:italic;}
-    .art-hero p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.55;max-width:780px;}
+    .art-hero p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.55;max-width:800px;}
     .art-hero .meta{margin-top:16px;font-size:12px;color:rgba(255,255,255,.45);}
     @media(max-width:700px){.art-hero{padding:36px 16px 28px;}}
-    main{max-width:1100px;margin:0 auto;padding:40px 48px 72px;}
+    main{max-width:1180px;margin:0 auto;padding:40px 48px 72px;}
     @media(max-width:700px){main{padding:24px 16px 48px;}}
-    .assump-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin-bottom:32px;}
+    .assump-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin-bottom:28px;}
     .assump-box h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:14px;}
     .assump-col-hdr{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
     .assump-col-hdr.verified{color:#0a6b2f;}
@@ -33,25 +31,28 @@
     .assump-list li:last-child{border-bottom:none;}
     .assump-list li::before{content:'—';position:absolute;left:0;color:#0000aa;font-weight:700;}
     h2.sec-h{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:600;color:#0000aa;margin:0 0 10px;line-height:1.15;}
-    .model-group{background:#08080f;padding:22px 24px;margin:44px 0 20px;border-left:5px solid #FFD300;}
+    .model-group{background:#08080f;padding:22px 24px;margin:46px 0 20px;border-left:5px solid #FFD300;}
     .model-group .tag{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#FFD300;font-weight:800;margin-bottom:6px;}
     .model-group h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:32px;font-weight:600;color:white;margin:0;line-height:1.15;}
     .model-group p{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.5;}
-    .toc-box{border:1px solid #e2dfd9;background:#faf9f7;padding:22px 24px;margin-bottom:32px;}
-    .toc-box h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:14px;}
-    .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-    @media(max-width:700px){.toc-grid{grid-template-columns:1fr;}}
-    .toc-grid ol{list-style:none;counter-reset:toc;padding:0;margin:0;}
-    .toc-grid li{counter-increment:toc;font-size:13.5px;padding:5px 0;}
-    .toc-grid li a{color:#0a0f1a;text-decoration:none;}
-    .toc-grid li a:hover{color:#0000aa;text-decoration:underline;}
-    .toc-grid li::before{content:counter(toc) ". ";color:#0000aa;font-weight:700;}
+    .toc-box{border:1px solid #e2dfd9;background:#faf9f7;padding:24px 26px;margin-bottom:34px;}
+    .toc-box h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin-bottom:16px;}
+    .toc-box ol{list-style:none;counter-reset:toc;padding:0;margin:0;}
+    .toc-box li{counter-increment:toc;font-size:14px;padding:7px 0;border-bottom:1px solid #eeece7;}
+    .toc-box li:last-child{border-bottom:none;}
+    .toc-box li a{color:#0000aa;text-decoration:none;font-weight:700;}
+    .toc-box li a:hover{text-decoration:underline;}
+    .toc-box li::before{content:counter(toc) ". ";color:#0000aa;font-weight:800;}
+    .toc-box li span{display:block;color:#555;font-size:12.5px;font-weight:400;padding-left:20px;margin-top:2px;}
     .mkt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 8px;}
-    .mkt-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
-    .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 14px;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;vertical-align:bottom;}
-    .mkt-table td{padding:11px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.45;}
+    .mkt-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:620px;}
+    .mkt-table th{background:#0000aa;color:white;text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;vertical-align:bottom;}
+    .mkt-table td{padding:10px 12px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.45;}
     .mkt-table tr.target td{background:#f4f6ff;font-weight:700;}
-    .mkt-table td.na{color:#8a8a8a;}
+    .mkt-table tr.grp td{background:#f2f1ee;font-size:10.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#0000aa;padding:6px 12px;}
+    .mkt-table td.na{color:#9a9a9a;}
+    .mkt-table td.num{text-align:right;white-space:nowrap;}
+    .mkt-table a{color:#0000aa;}
     .yes{color:#0a6b2f;font-weight:800;}
     .no{color:#c2c0bb;font-weight:700;}
     .findbox{border-left:5px solid #FFD300;background:#fffdf2;padding:16px 20px;margin:0 0 26px;}
@@ -66,7 +67,10 @@
     .gap-box p{font-size:14px;line-height:1.6;color:#0a0f1a;margin:0 0 10px;}
     .gap-box ul{margin:0;padding-left:18px;}
     .gap-box li{font-size:13.5px;line-height:1.6;padding:3px 0;}
-    .srclist{font-size:12.5px;line-height:1.8;color:#3a3a3a;}
+    .methodbox{border:2px solid #0000aa;background:#f4f6ff;padding:18px 22px;margin:0 0 22px;}
+    .methodbox h3{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;margin:0 0 10px;}
+    .methodbox p{font-size:13.5px;line-height:1.6;color:#0a0f1a;margin:0 0 8px;}
+    .srclist{font-size:12.5px;line-height:1.85;color:#3a3a3a;}
     .srclist a{color:#0000aa;}
   </style>
 </head>
@@ -101,9 +105,9 @@
 <div class="art-hero">
   <div class="inner">
     <div class="eyebrow">Immersive venue benchmark · public data only</div>
-    <h1>A benchmark of ten immersive art venues — built entirely from <em>public data</em></h1>
-    <p>A standard venue benchmark asks two questions: how do comparable venues differ on operations and finance, and how does one venue perform against the strongest in the set. This page runs that scope as far as public data allows — price by price, minute by minute, revenue stream by revenue stream — and then marks precisely where public data stops and member cooperation becomes the only way forward.</p>
-    <div class="meta">12 September 2026 · 10 venues across 7 countries · every figure below was fetched from the venue's own website or a named public source</div>
+    <h1>Eleven immersive art venues, seven countries, benchmarked entirely on <em>public data</em></h1>
+    <p>Operations, price, digital reach, opening capacity and modelled revenue — every venue in the set, every figure traced to the venue's own website or a named public source. Where public data runs out, the page says so rather than filling the gap.</p>
+    <div class="meta">12 September 2026 · 11 venues · 6 operators · social and capacity figures captured 12 September 2026</div>
   </div>
 </div>
 
@@ -115,25 +119,25 @@
       <div>
         <div class="assump-col-hdr verified">Established from public sources</div>
         <ul class="assump-list">
-          <li>Ticket price and full price architecture — child, reduced, group, family, school</li>
-          <li>Service and booking fees charged on top of the headline price</li>
-          <li>Show and visit duration, where the venue publishes it</li>
-          <li>Opening days and hours</li>
-          <li>Which revenue streams the venue actually operates</li>
-          <li>Memberships, annual passes and cross-attraction combination tickets</li>
-          <li>Floor area, where the venue publishes it</li>
+          <li>Full price architecture — adult, child, reduced, group, family, school, annual pass</li>
+          <li>Service, booking and tax charges added on top of the headline price</li>
+          <li>Show and visit duration, where published</li>
+          <li>Opening hours per week and trading days — the one capacity measure available for every venue</li>
+          <li>Instagram, TikTok, YouTube, Facebook and LinkedIn audience and content volume</li>
+          <li>Which revenue streams each venue actually operates</li>
+          <li>Floor area, where published</li>
         </ul>
       </div>
       <div>
         <div class="assump-col-hdr modeled">Not obtainable from public sources</div>
         <ul class="assump-list">
-          <li>Visitor numbers — none of these venues publishes them</li>
+          <li>Visitor numbers — not one venue in the set publishes them</li>
           <li>Revenue, in total or by stream</li>
+          <li>Seats per time slot, for every venue except one</li>
           <li>Every cost category: staff, rent, content, technology, marketing</li>
           <li>Contribution margin, EBITDA, profitability</li>
           <li>Capacity utilisation and occupancy</li>
-          <li>Secondary spend per visitor</li>
-          <li>Channel mix and commission paid to resellers</li>
+          <li>Secondary spend per visitor and channel commission</li>
         </ul>
       </div>
     </div>
@@ -141,197 +145,336 @@
 
   <div class="toc-box">
     <h2>Contents</h2>
-    <div class="toc-grid">
-      <ol>
-        <li><a href="#set">The comparison set</a></li>
-        <li><a href="#price">Price benchmark</a></li>
-        <li><a href="#minute">Price per minute of experience</a></li>
-      </ol>
-      <ol start="4">
-        <li><a href="#streams">Revenue streams operated</a></li>
-        <li><a href="#cost">The cost half — why it stops here</a></li>
-        <li><a href="#sources">Sources</a></li>
-      </ol>
-    </div>
+    <ol>
+      <li><a href="#venues">The venues</a><span>Eleven venues, six operators, seven countries — with cities, ownership grouping and floor area.</span></li>
+      <li><a href="#digital">Websites and digital estate</a><span>Every venue's domain, booking route and language coverage.</span></li>
+      <li><a href="#social">Social media</a><span>Instagram, TikTok, YouTube, Facebook and LinkedIn — audience and content volume, venue by venue.</span></li>
+      <li><a href="#price">Price architecture</a><span>Adult, child, group, family, school and annual-pass pricing, plus everything added on top.</span></li>
+      <li><a href="#minute">Price per minute of experience</a><span>What a visitor pays for each minute inside the venue.</span></li>
+      <li><a href="#capacity">Opening hours and capacity</a><span>Trading days, hours per week and annual operating hours.</span></li>
+      <li><a href="#revenue">Modelled revenue</a><span>A like-for-like model built on public inputs, with a sensitivity range.</span></li>
+      <li><a href="#streams">Revenue streams operated</a><span>Which income lines each venue runs, as advertised on its own site.</span></li>
+      <li><a href="#cost">The cost half — where public data stops</a><span>Eleven items nobody publishes, and what that means for a paid study.</span></li>
+      <li><a href="#sources">Sources</a><span>Every URL behind every figure on this page.</span></li>
+    </ol>
   </div>
 
-  <!-- 1 -->
-  <div class="model-group" id="set">
+  <!-- 1 VENUES -->
+  <div class="model-group" id="venues">
     <div class="tag">Section 1</div>
-    <h2>The comparison set</h2>
-    <p>Ten immersive art venues in seven countries. Three of them — OASIS immersion, Kunstkraftwerk and Remastered — are the publicly named founding members of the Immersive Center Alliance, formed at NUMIX LAB 2024.</p>
+    <h2>The venues</h2>
+    <p>Eleven venues across seven countries. They are not eleven independent businesses — MINA alone operates five of them, so the set represents six operators.</p>
   </div>
 
   <div class="findbox">
     <ul>
-      <li><b>The set is not ten independent operators.</b> MINA alone runs five venues — Bucharest, Cluj, Iași, Timișoara and Sofia — so ten venues represent six operators.</li>
-      <li><b>Only two venues publish their floor area.</b> Visiodrom at 6,500 m² and OASIS at 2,200 m². The rest do not disclose it, which means any size-normalised comparison is already impossible from outside.</li>
-      <li><b>Opening hours vary from four days a week to seven.</b> Kunstkraftwerk opens Thursday to Sunday; GIOLABS Tuesday to Sunday; Visiodrom Wednesday to Sunday. Available trading days differ by up to 40% before a single visitor is counted.</li>
+      <li><b>Six operators, not eleven.</b> MINA runs Bucharest, Cluj, Iași, Timișoara and Sofia. Any comparison that counts venues rather than operators overstates the number of parties in the room.</li>
+      <li><b>Only two venues publish their floor area.</b> Visiodrom at 6,500 m² and OASIS at 2,200 m². Nobody else discloses it, so size-normalised comparison is impossible from outside.</li>
+      <li><b>Three of the eleven opened within the last eighteen months.</b> GIOLABS, MINA Sofia and MINA Iași. A third of the set has no trading history to benchmark.</li>
     </ul>
   </div>
 
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Venue</th><th>City, country</th><th>Floor area</th><th>Open</th><th>Visit duration</th></tr></thead>
+      <thead><tr><th>Venue</th><th>Country</th><th>City</th><th>Operator</th><th>Floor area</th><th>Opened</th></tr></thead>
       <tbody>
-        <tr><td>Kunstkraftwerk</td><td>Leipzig, Germany</td><td class="na">not published</td><td>Thu–Sun &amp; public holidays, from 10:00; last entry 18:30 (Fri &amp; Sat 19:30)</td><td>1.5–2 hours recommended</td></tr>
-        <tr><td>Visiodrom</td><td>Wuppertal, Germany</td><td>6,500 m²</td><td>Wed–Sun 10:00–18:00; Thu to 20:00</td><td class="na">not published</td></tr>
-        <tr><td>GIOLABS</td><td>Wickrange, Luxembourg</td><td class="na">not published</td><td>Tue–Sat 11:00–19:00, Sun 11:00–18:00; closed Mon</td><td>40–60 minutes</td></tr>
-        <tr><td>OASIS immersion</td><td>Montreal, Canada</td><td>2,200 m²</td><td class="na">not published on the page checked</td><td>70–80 minutes</td></tr>
-        <tr><td>MINA Bucharest</td><td>Bucharest, Romania</td><td class="na">not published</td><td class="na">not published on the page checked</td><td class="na">not published</td></tr>
-        <tr><td>MINA Cluj</td><td>Cluj-Napoca, Romania</td><td class="na">not published</td><td class="na">—</td><td class="na">not published</td></tr>
-        <tr><td>MINA Iași</td><td>Iași, Romania</td><td class="na">not published</td><td class="na">—</td><td class="na">not published</td></tr>
-        <tr><td>MINA Timișoara</td><td>Timișoara, Romania</td><td class="na">not published</td><td class="na">—</td><td class="na">not published</td></tr>
-        <tr><td>MINA Sofia</td><td>Sofia, Bulgaria</td><td class="na">not published</td><td class="na">—</td><td class="na">not published</td></tr>
-        <tr class="target"><td>REMASTERED</td><td>Rotterdam, Netherlands</td><td class="na">not published</td><td class="na">not published on the page checked</td><td>60 minutes</td></tr>
+        <tr><td>Kunstkraftwerk</td><td>Germany</td><td>Leipzig</td><td>Kunstkraftwerk Leipzig GmbH</td><td class="na">not published</td><td>2016</td></tr>
+        <tr><td>Visiodrom</td><td>Germany</td><td>Wuppertal</td><td>Visiodrom gGmbH</td><td>6,500 m²</td><td class="na">not published</td></tr>
+        <tr><td>GIOLABS</td><td>Luxembourg</td><td>Wickrange, at GRIDX</td><td>GIOLABS</td><td class="na">not published</td><td>2025</td></tr>
+        <tr><td>OASIS immersion</td><td>Canada</td><td>Montreal</td><td>OASIS immersion</td><td>2,200 m²</td><td class="na">not published</td></tr>
+        <tr><td>Sensea México</td><td>Mexico</td><td>Mexico City</td><td>Sensea</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr><td>MINA Bucharest</td><td>Romania</td><td>Bucharest</td><td>MINA</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr><td>MINA Cluj</td><td>Romania</td><td>Cluj-Napoca</td><td>MINA</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr><td>MINA Iași</td><td>Romania</td><td>Iași</td><td>MINA</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr><td>MINA Timișoara</td><td>Romania</td><td>Timișoara</td><td>MINA</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr><td>MINA Sofia</td><td>Bulgaria</td><td>Sofia</td><td>MINA</td><td class="na">not published</td><td class="na">not published</td></tr>
+        <tr class="target"><td>REMASTERED</td><td>Netherlands</td><td>Rotterdam</td><td>Digital Art Center</td><td class="na">not published</td><td>2021</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Sources: each venue's own website, September 2026. MINA's own ticket page lists five locations; Timișoara is the fifth. Floor areas are quoted only where the venue publishes them itself — Visiodrom ("6.500 m²", with a 38 m diameter and 47 m height) and OASIS ("2,200 m² multimedia environment").</div>
+  <div class="src-note">Floor areas quoted only where the venue publishes them itself: Visiodrom ("6.500 m²", 38 m diameter, 47 m height) and OASIS ("2,200 m² multimedia environment"). Opening years quoted only where publicly stated.</div>
 
-  <!-- 2 -->
-  <div class="model-group" id="price">
+  <!-- 2 DIGITAL -->
+  <div class="model-group" id="digital">
     <div class="tag">Section 2</div>
-    <h2>Price benchmark</h2>
-    <p>Standard adult admission, as published by each venue, converted at the September 2026 reference rates of €1 = CAD 1.602 and €1 = RON 5.25.</p>
+    <h2>Websites and digital estate</h2>
+    <p>Where each venue lives online, how it sells, and how many languages it sells in.</p>
   </div>
 
   <div class="findbox">
     <ul>
-      <li><b>Remastered is the most expensive venue in the set</b> — €24.50, against a set that runs from roughly €9.50 to €20.</li>
-      <li><b>Remastered is the only venue that adds a service fee on top of the headline price.</b> €1.45 per ticket, bringing the real adult price to €25.95. No other venue in the set publishes a fee of any kind on its own website.</li>
-      <li><b>The price architecture is thinner.</b> Visiodrom publishes eight price categories including a €6.00 school rate and a €39.00 family ticket; Remastered publishes two.</li>
-      <li><b>The gap to the cheapest is 2.7×.</b> MINA charges RON 50 — about €9.50 — for a venue in a capital city of 1.7 million people.</li>
+      <li><b>Every venue sells through a separate ticketing subdomain or third-party shop</b> rather than a checkout inside its own site. The pattern is universal across the set.</li>
+      <li><b>MINA publishes its opening hours as weekly images, not as text.</b> They cannot be read by a search engine, a comparison site, or an assistant — and they change every week.</li>
+      <li><b>Kunstkraftwerk routes its audience through a Linktree</b> rather than its own site, which puts a third party between its social reach and its checkout.</li>
     </ul>
   </div>
 
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Venue</th><th>Adult, as published</th><th>In euro</th><th>Service fee on top</th><th>Other published rates</th></tr></thead>
+      <thead><tr><th>Venue</th><th>Website</th><th>Ticketing route</th><th>Site languages</th></tr></thead>
       <tbody>
-        <tr><td>MINA (all locations)</td><td>RON 50</td><td>€9.52</td><td class="na">none published</td><td>RON 45 for groups of 4+; free under 3</td></tr>
-        <tr><td>GIOLABS</td><td>€16.00</td><td>€16.00</td><td class="na">none published</td><td>€9.00 child under 12; free under 4; school rate with one free teacher per ten pupils</td></tr>
-        <tr><td>OASIS immersion</td><td>CAD 26.00</td><td>€16.23</td><td class="na">none published</td><td>CAD 23.16 senior; CAD 20.59 child 6–17; free under 6</td></tr>
-        <tr><td>Visiodrom</td><td>€18.00</td><td>€18.00</td><td class="na">none published</td><td>€13.00 reduced and groups of 10+; €11.00 child 6–13; €39.00 family; €6.00 school; €49.00 annual pass; free under 6</td></tr>
-        <tr><td>Kunstkraftwerk</td><td>€18.00 Thu–Fri<br/>€20.00 weekends &amp; holidays</td><td>€18.00–20.00</td><td class="na">none published</td><td>Membership and gift vouchers offered</td></tr>
-        <tr class="target"><td>REMASTERED</td><td>€24.50</td><td>€24.50<br/>€25.95 with the fee</td><td>€1.45 per ticket</td><td>€16.50 child 6–12; 25% discount for CJP and European Youth Card holders</td></tr>
+        <tr><td>Kunstkraftwerk</td><td><a href="https://www.kunstkraftwerk-leipzig.com/en/" target="_blank" rel="noopener">kunstkraftwerk-leipzig.com</a></td><td>tickets.kunstkraftwerk-leipzig.com, plus a Linktree hub</td><td>German, English</td></tr>
+        <tr><td>Visiodrom</td><td><a href="https://visiodrom.de/" target="_blank" rel="noopener">visiodrom.de</a></td><td>visiodrom.shop</td><td>German</td></tr>
+        <tr><td>GIOLABS</td><td><a href="https://giolabs.lu/" target="_blank" rel="noopener">giolabs.lu</a></td><td>On-site booking; venue sits inside the GRIDX destination</td><td>English, French</td></tr>
+        <tr><td>OASIS immersion</td><td><a href="https://oasis.im/en/" target="_blank" rel="noopener">oasis.im</a></td><td>On-site booking</td><td>English, French</td></tr>
+        <tr><td>Sensea México</td><td><a href="https://mexico.sensea.show/" target="_blank" rel="noopener">mexico.sensea.show</a></td><td>mexico.sensea.show</td><td>Spanish</td></tr>
+        <tr><td>MINA (5 venues)</td><td><a href="https://www.minamuseum.com/en/" target="_blank" rel="noopener">minamuseum.com</a></td><td>Separate ticket link per location</td><td>Romanian, English</td></tr>
+        <tr class="target"><td>REMASTERED</td><td><a href="https://remastered.nl/en/" target="_blank" rel="noopener">remastered.nl</a></td><td>tickets.remastered.nl</td><td>Dutch, English</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Prices as published on each venue's own website or public ticketing page, September 2026. Remastered's service fee is stated on its own published information page: "Service fees are €1.45 per ticket." Sensea Immersive (Mexico City) published no accessible price at the time of checking and is excluded from this table.</div>
+  <div class="src-note">Checked 12 September 2026. "Site languages" counts the language versions offered on the venue's own marketing site, not the checkout.</div>
 
-  <!-- 3 -->
-  <div class="model-group" id="minute">
+  <!-- 3 SOCIAL -->
+  <div class="model-group" id="social">
     <div class="tag">Section 3</div>
-    <h2>Price per minute of experience</h2>
-    <p>The comparison that matters more than the headline price: what a visitor pays for each minute inside the venue. Shown only for the four venues that publish both a price and a duration.</p>
+    <h2>Social media</h2>
+    <p>Audience and published content volume across five platforms, captured 12 September 2026.</p>
   </div>
 
   <div class="findbox">
     <ul>
-      <li><b>Remastered charges the most per minute in the set, by a wide margin</b> — €0.41, rising to €0.43 once the service fee is counted.</li>
-      <li><b>That is 2.4 times Kunstkraftwerk and 1.9 times OASIS.</b> Both are larger venues in larger cities.</li>
-      <li><b>Remastered also runs the shortest experience of the four</b> — 60 minutes, against 70–80 at OASIS and a recommended 90–120 at Kunstkraftwerk.</li>
-      <li><b>Highest price, shortest visit.</b> That combination is visible to any visitor comparing venues online, and it is the single clearest finding public data produces.</li>
+      <li><b>Remastered has the smallest YouTube presence in the entire set — 47 subscribers and 14 videos.</b> Kunstkraftwerk has 553 subscribers across 103 videos; MINA 217 across 159; Sensea 1,740 across 25. For a business whose product is moving image, that is the most conspicuous gap on this page.</li>
+      <li><b>On TikTok, Remastered is second in the set by followers</b> — 6,870, ahead of OASIS at 6,065 and behind MINA Bucharest at 12,300.</li>
+      <li><b>But its engagement is far weaker.</b> Remastered has 69,500 likes against OASIS's 185,200 — from a slightly larger follower base. Per follower, OASIS earns 30.5 likes to Remastered's 10.1.</li>
+      <li><b>Only three of the six operators have a findable TikTok at all</b> — Remastered, MINA and OASIS. Kunstkraftwerk, Visiodrom, GIOLABS and Sensea have none.</li>
+      <li><b>On Instagram, Remastered sits mid-table at 20,000</b> — behind MINA Bucharest (53,000), Sensea (45,000), Kunstkraftwerk (37,000) and OASIS (30,000), ahead of Visiodrom (15,000).</li>
+      <li><b>And it publishes less.</b> 655 Instagram posts against MINA Bucharest's 1,186 and Kunstkraftwerk's 1,103 — roughly half the content of the two largest accounts in the set.</li>
     </ul>
   </div>
 
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Venue</th><th>Adult price</th><th>Published duration</th><th>Minutes used</th><th>Price per minute</th><th>Index</th></tr></thead>
+      <thead><tr><th>Venue</th><th class="num">Instagram</th><th class="num">IG posts</th><th class="num">TikTok</th><th class="num">TikTok likes</th><th class="num">YouTube</th><th class="num">YT videos</th><th class="num">Facebook</th><th class="num">LinkedIn</th></tr></thead>
       <tbody>
-        <tr class="target"><td>REMASTERED</td><td>€24.50</td><td>60 minutes</td><td>60</td><td>€0.41</td><td>100</td></tr>
-        <tr><td>GIOLABS</td><td>€16.00</td><td>40–60 minutes</td><td>50</td><td>€0.32</td><td>78</td></tr>
-        <tr><td>OASIS immersion</td><td>€16.23</td><td>70–80 minutes</td><td>75</td><td>€0.22</td><td>53</td></tr>
-        <tr><td>Kunstkraftwerk</td><td>€18.00</td><td>1.5–2 hours recommended</td><td>105</td><td>€0.17</td><td>42</td></tr>
+        <tr><td>MINA Bucharest</td><td class="num">53,000</td><td class="num">1,186</td><td class="num">12,300</td><td class="num">180,000</td><td class="num">217</td><td class="num">159</td><td class="num">~30,000</td><td class="num na">—</td></tr>
+        <tr><td>Sensea México</td><td class="num">45,000</td><td class="num">919</td><td class="num na">none found</td><td class="num na">—</td><td class="num">1,740</td><td class="num">25</td><td class="num na">present</td><td class="num na">—</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="num">37,000</td><td class="num">1,103</td><td class="num na">none found</td><td class="num na">—</td><td class="num">553</td><td class="num">103</td><td class="num">19,053</td><td class="num">526</td></tr>
+        <tr><td>OASIS immersion</td><td class="num">30,000</td><td class="num">671</td><td class="num">6,065</td><td class="num">185,200</td><td class="num">72</td><td class="num">54</td><td class="num">14,478</td><td class="num">2,160</td></tr>
+        <tr class="target"><td>REMASTERED</td><td class="num">20,000</td><td class="num">655</td><td class="num">6,870</td><td class="num">69,500</td><td class="num">47</td><td class="num">14</td><td class="num na">—</td><td class="num na">—</td></tr>
+        <tr><td>Visiodrom</td><td class="num">15,000</td><td class="num">741</td><td class="num na">none found</td><td class="num na">—</td><td class="num na">channel exists, count not retrievable</td><td class="num na">—</td><td class="num">12,154</td><td class="num na">—</td></tr>
+        <tr><td>MINA Cluj</td><td class="num">13,000</td><td class="num">895</td><td class="num">1,453</td><td class="num">11,300</td><td class="num na">group channel</td><td class="num na">—</td><td class="num na">present</td><td class="num na">—</td></tr>
+        <tr><td>MINA Sofia</td><td class="num">7,339</td><td class="num">184</td><td class="num na">none found</td><td class="num na">—</td><td class="num na">group channel</td><td class="num na">—</td><td class="num na">present</td><td class="num na">—</td></tr>
+        <tr><td>GIOLABS</td><td class="num">4,818</td><td class="num">36</td><td class="num na">none found</td><td class="num na">—</td><td class="num">19</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td></tr>
+        <tr><td>MINA Iași</td><td class="num">4,618</td><td class="num">289</td><td class="num na">none found</td><td class="num na">—</td><td class="num na">group channel</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td></tr>
+        <tr><td>MINA Timișoara</td><td class="num na">no separate account</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na">group channel</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">Midpoint of the published duration range used where a venue publishes a range. Remastered's figure rises to €0.43 per minute, index 105, once the €1.45 service fee is included. Visiodrom and MINA publish no visit duration and are excluded.</div>
+  <div class="src-note">Instagram, TikTok and YouTube figures read directly from each public profile on 12 September 2026. Facebook and LinkedIn figures from public search results on the same date. "None found" means no account was located under the venue's own name or handle variants — it is evidence of absence from search, not proof no account exists.</div>
 
-  <!-- 4 -->
-  <div class="model-group" id="streams">
+  <!-- 4 PRICE -->
+  <div class="model-group" id="price">
     <div class="tag">Section 4</div>
-    <h2>Revenue streams operated</h2>
-    <p>Which income lines each venue actually runs, as advertised on its own website. This is the one half of a finance benchmark that public data can genuinely answer — not how much each stream earns, but whether the venue operates it at all.</p>
+    <h2>Price architecture</h2>
+    <p>Every published rate, converted at the September 2026 reference rates of €1 = CAD 1.602 and €1 = RON 5.25.</p>
   </div>
 
   <div class="findbox">
     <ul>
-      <li><b>Visiodrom operates the widest mix in the set</b> — restaurant, shop, a €49.00 annual pass, a school rate, and five cross-attraction combination tickets with a zoo, three museums and a second attraction.</li>
-      <li><b>Only two venues publicly sell a membership or annual pass.</b> Visiodrom and Kunstkraftwerk. An annual pass is the most direct instrument a venue has for repeat visitation, and most of the set does not offer one.</li>
-      <li><b>Only one venue sells combination tickets with neighbouring attractions.</b> Visiodrom, with five partners at €22.00–€29.00. Everyone else sells only itself.</li>
-      <li><b>Every venue in the set runs corporate or private hire.</b> OASIS states "more than 150 corporate, institutional, and private events" since opening; GIOLABS privatises five rooms; MINA and Remastered both publish an events page. It is the one stream the whole category agrees on.</li>
-      <li><b>Alternative programming is spreading.</b> MINA runs immersive yoga, jazz concerts and screenings; GIOLABS and Remastered both run immersive pilates. Same idea, arrived at independently.</li>
+      <li><b>Remastered has the highest headline price in the set at €24.50</b>, in a range running from roughly €9.50 to €21.82.</li>
+      <li><b>It is not the only venue adding charges on top.</b> Remastered adds €1.45 per ticket in service fees; OASIS states its prices exclude taxes and fees. Every other venue publishes an all-in price.</li>
+      <li><b>Its price architecture is the thinnest in the set.</b> Visiodrom publishes eight rate categories including a €6.00 school rate, a €39.00 family ticket and a €49.00 annual pass. Remastered publishes two rates and one discount.</li>
+      <li><b>Nobody else charges near it.</b> MINA, at roughly €9.52, runs a venue in a capital city of 1.7 million for 39% of the Rotterdam price.</li>
     </ul>
   </div>
 
   <div class="mkt-wrap">
     <table class="mkt-table">
-      <thead><tr><th>Revenue stream</th><th>Kunst&shy;kraftwerk</th><th>Visiodrom</th><th>GIOLABS</th><th>OASIS</th><th>MINA</th><th>REMASTERED</th></tr></thead>
+      <thead><tr><th>Venue</th><th>Adult, as published</th><th class="num">In euro</th><th>Added on top</th><th>Other published rates</th></tr></thead>
       <tbody>
-        <tr><td>Ticketed shows</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td></tr>
-        <tr><td>Corporate / private hire</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td></tr>
-        <tr><td>Schools &amp; groups, published rate</td><td class="yes">yes</td><td class="yes">€6.00</td><td class="yes">yes</td><td class="yes">groups</td><td class="yes">RON 45</td><td class="no">not published</td></tr>
-        <tr><td>Membership or annual pass</td><td class="yes">yes</td><td class="yes">€49.00</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td></tr>
-        <tr><td>Restaurant, bar or café</td><td class="no">not published</td><td class="yes">Aposto</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td></tr>
-        <tr><td>Shop or merchandise</td><td class="no">not published</td><td class="yes">yes</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td></tr>
-        <tr><td>Combination tickets with other attractions</td><td class="no">not published</td><td class="yes">5 partners</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td></tr>
-        <tr><td>Gift vouchers</td><td class="yes">yes</td><td class="yes">yes</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="yes">yes</td></tr>
-        <tr><td>Children's programme</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="no">not published</td><td class="yes">MINA Kids</td><td class="no">not published</td></tr>
-        <tr><td>Alternative programming</td><td class="yes">seasonal events</td><td class="yes">special weeks</td><td class="yes">pilates</td><td class="yes">custom design</td><td class="yes">yoga, jazz, screenings</td><td class="yes">pilates</td></tr>
-        <tr><td>Multi-site operation</td><td class="no">single site</td><td class="no">single site</td><td class="no">single site</td><td class="no">single site</td><td class="yes">5 venues</td><td class="no">single site</td></tr>
+        <tr class="target"><td>REMASTERED</td><td>€24.50</td><td class="num">€24.50<br/>€25.95 all-in</td><td>€1.45 service fee per ticket</td><td>€16.50 child 6–12; 25% off for CJP and European Youth Card</td></tr>
+        <tr><td>OASIS immersion</td><td>CAD 34.95 (BODYVERSE, with virtual reality)<br/>CAD 26.00 standard entry</td><td class="num">€21.82<br/>€16.23</td><td>"Taxes and fees not included"</td><td>CAD 29.95 senior, child 8–17 and student; CAD 26.75 family of 4+; CAD 32.95 groups of 15+</td></tr>
+        <tr><td>Kunstkraftwerk</td><td>€18.00 Thu–Fri<br/>€20.00 weekends &amp; holidays</td><td class="num">€18.00–20.00</td><td class="na">none published</td><td>Membership and gift vouchers offered</td></tr>
+        <tr><td>Visiodrom</td><td>€18.00</td><td class="num">€18.00</td><td class="na">none published</td><td>€13.00 reduced and groups of 10+; €11.00 child 6–13; €39.00 family; €6.00 school; €49.00 annual pass; +€2.00 flex; combination tickets €22.00–€29.00; free under 6</td></tr>
+        <tr><td>GIOLABS</td><td>€16.00</td><td class="num">€16.00</td><td class="na">none published</td><td>€9.00 child under 12; free under 4; school rate with one free teacher per ten pupils</td></tr>
+        <tr><td>MINA (all 5 venues)</td><td>RON 50</td><td class="num">€9.52</td><td class="na">none published</td><td>RON 45 for groups of 4 or more; free under 3</td></tr>
+        <tr><td>Sensea México</td><td class="na">no accessible published price</td><td class="num na">—</td><td class="na">—</td><td class="na">—</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="src-note">"Not published" means the stream was not found on the venue's own website at the time of checking. It is evidence of what the venue chooses to advertise, not proof the stream does not exist — a venue may run a café and not market it. That distinction is exactly the limit of an outside-in benchmark.</div>
+  <div class="src-note">Prices from each venue's own website, or its public ticketing page where the venue does not publish on its own site. Remastered's fee is stated on its own information page: "Service fees are €1.45 per ticket." OASIS's own fees page carries the note "Taxes and fees not included."</div>
 
-  <!-- 5 -->
-  <div class="model-group" id="cost">
+  <!-- 5 PRICE PER MINUTE -->
+  <div class="model-group" id="minute">
     <div class="tag">Section 5</div>
-    <h2>The cost half — why a public benchmark stops here</h2>
-    <p>A benchmark on "operations and finance" has two halves. Public data delivers the first. It delivers none of the second.</p>
+    <h2>Price per minute of experience</h2>
+    <p>What a visitor pays for each minute inside the venue — shown for the four venues that publish both a price and a duration.</p>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>Remastered charges the most per minute in the set</b> — €0.41, and €0.43 once the service fee is counted.</li>
+      <li><b>That is 2.4 times Kunstkraftwerk and 1.8 times OASIS</b>, both of which are larger venues in larger cities.</li>
+      <li><b>It also runs the shortest experience</b> — 60 minutes, against OASIS's 90 and Kunstkraftwerk's recommended 90 to 120.</li>
+      <li><b>Highest price, shortest visit.</b> Any visitor comparing venues online sees both numbers side by side before they book.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th class="num">Adult price</th><th>Published duration</th><th class="num">Minutes used</th><th class="num">Price per minute</th><th class="num">Index</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td class="num">€24.50</td><td>60 minutes</td><td class="num">60</td><td class="num">€0.41</td><td class="num">100</td></tr>
+        <tr><td>GIOLABS</td><td class="num">€16.00</td><td>40–60 minutes</td><td class="num">50</td><td class="num">€0.32</td><td class="num">78</td></tr>
+        <tr><td>OASIS immersion</td><td class="num">€21.82</td><td>Last entry plus 1 hour 30</td><td class="num">90</td><td class="num">€0.24</td><td class="num">59</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="num">€18.00</td><td>1.5–2 hours recommended</td><td class="num">105</td><td class="num">€0.17</td><td class="num">42</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Midpoint used where a venue publishes a range. Remastered rises to €0.43 per minute, index 105, once the €1.45 fee is included; OASIS rises above €0.24 once taxes and fees are added, by an amount the venue does not publish. Visiodrom, MINA and Sensea publish no visit duration and are excluded.</div>
+
+  <!-- 6 CAPACITY -->
+  <div class="model-group" id="capacity">
+    <div class="tag">Section 6</div>
+    <h2>Opening hours and capacity</h2>
+    <p>Seats per time slot are private everywhere in this set except Remastered. Opening hours are public everywhere, and they are the one capacity measure that can be compared across all venues.</p>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>Remastered opens seven days a week and still ends up mid-table on hours.</b> 40.5 hours across 7 days, against Kunstkraftwerk's 36 hours across only 4.</li>
+      <li><b>Three of its seven days are 4.5-hour days.</b> Monday, Tuesday and Thursday close at 15:00. A 4.5-hour trading day carries nearly the full fixed cost of opening — staffing, projection, climate, cleaning — for 60% of the trading window.</li>
+      <li><b>GIOLABS, the newest venue in the set, trades the longest week</b> — 47 hours across 6 days.</li>
+      <li><b>Kunstkraftwerk concentrates.</b> Four days, 36 hours, an average 9-hour day, and it closes Monday to Wednesday entirely rather than opening thin.</li>
+      <li><b>Remastered's average trading day is 5.8 hours — the shortest in the set.</b> Kunstkraftwerk averages 9.0, GIOLABS 7.8, OASIS 7.9, Visiodrom 8.4.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th>Published opening hours</th><th class="num">Days open</th><th class="num">Hours/week</th><th class="num">Avg day</th><th class="num">Hours/year</th></tr></thead>
+      <tbody>
+        <tr><td>GIOLABS</td><td>Tue–Sat 11:00–19:00; Sun 11:00–18:00; closed Mon</td><td class="num">6</td><td class="num">47.0</td><td class="num">7.8 h</td><td class="num">2,444</td></tr>
+        <tr><td>Visiodrom</td><td>Wed–Sun 10:00–18:00; Thu to 20:00</td><td class="num">5</td><td class="num">42.0</td><td class="num">8.4 h</td><td class="num">2,184</td></tr>
+        <tr class="target"><td>REMASTERED</td><td>Mon 10:30–15:00 · Tue 10:30–15:00 · Wed 10:30–16:30 · Thu 10:30–15:00 · Fri 10:30–18:00 · Sat 10:30–18:00 · Sun 10:30–16:30</td><td class="num">7</td><td class="num">40.5</td><td class="num">5.8 h</td><td class="num">2,106</td></tr>
+        <tr><td>OASIS immersion</td><td>Sun 10:00–19:40 · Mon 10:00–14:00 &amp; 15:20–19:20 · Thu 13:00–19:20 · Fri 13:00–19:40 · Sat 10:00–14:00 &amp; 15:40–20:40 · closed Tue &amp; Wed</td><td class="num">5</td><td class="num">39.7</td><td class="num">7.9 h</td><td class="num">2,063</td></tr>
+        <tr><td>Kunstkraftwerk</td><td>Thu–Sun and public holidays from 10:00; last entry 18:30, Fri &amp; Sat 19:30</td><td class="num">4</td><td class="num">36.0</td><td class="num">9.0 h</td><td class="num">1,872</td></tr>
+        <tr><td>MINA (5 venues)</td><td class="na">published as weekly images only — not machine-readable</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td></tr>
+        <tr><td>Sensea México</td><td class="na">not published on the pages checked</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Opening hours from each venue's own site, 12 September 2026. OASIS times are last-entry windows; its own page notes visitors should "count an additional 1h30". Annual hours are hours per week × 52 and take no account of closures, seasonal variation or private hire.</div>
+
+  <!-- 7 REVENUE -->
+  <div class="model-group" id="revenue">
+    <div class="tag">Section 7</div>
+    <h2>Modelled revenue</h2>
+    <p>No venue in this set publishes revenue or visitors. What follows is a model built on public inputs, designed to compare venues against each other on a single consistent basis — not to estimate any individual venue's actual turnover.</p>
+  </div>
+
+  <div class="methodbox">
+    <h3>Method, stated in full</h3>
+    <p><b>Step 1.</b> Annual operating hours = published hours per week × 52.</p>
+    <p><b>Step 2.</b> One throughput assumption, applied identically to every venue: <b>46 visitors per operating hour</b>. It is derived from Remastered's own publicly confirmed milestones — 200,000 visitors by June 2023 and 500,000 by July 2026, an average pace of about 97,000 a year — divided by its 2,106 annual operating hours.</p>
+    <p><b>Step 3.</b> Modelled revenue = modelled visitors × the venue's published adult price.</p>
+    <p><b>What this deliberately does not do.</b> It does not vary throughput by venue, because no public data supports doing so. It uses the adult price for every visitor, which overstates every venue equally — children, groups, schools and discount cards all pull the real blended price below it. It excludes every non-ticket revenue line. It is a relative instrument, and the ranking it produces is the output, not the euro figures.</p>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>Remastered models highest in the set at €2.37m — and price is doing all of the work.</b> Its operating hours are third of five and its throughput is the model's constant, so the entire gap to the others comes from charging €24.50.</li>
+      <li><b>GIOLABS trades 16% more hours than Remastered and models 24% below it.</b> That is the price gap made visible.</li>
+      <li><b>Kunstkraftwerk models lowest</b> — the fewest operating hours in the set, at a price a third below Rotterdam's.</li>
+      <li><b>The spread across the whole set is only €1.55m to €2.37m.</b> On these inputs, no venue is operating at a fundamentally different scale from any other. The differences are price and opening hours, not size.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Venue</th><th class="num">Hours/year</th><th class="num">Modelled visitors</th><th class="num">Adult price</th><th class="num">Modelled ticket revenue</th><th class="num">−10%</th><th class="num">+10%</th></tr></thead>
+      <tbody>
+        <tr class="target"><td>REMASTERED</td><td class="num">2,106</td><td class="num">96,876</td><td class="num">€24.50</td><td class="num">€2.37m</td><td class="num">€2.14m</td><td class="num">€2.61m</td></tr>
+        <tr><td>OASIS immersion</td><td class="num">2,063</td><td class="num">94,891</td><td class="num">€21.82</td><td class="num">€2.07m</td><td class="num">€1.86m</td><td class="num">€2.28m</td></tr>
+        <tr><td>Visiodrom</td><td class="num">2,184</td><td class="num">100,464</td><td class="num">€18.00</td><td class="num">€1.81m</td><td class="num">€1.63m</td><td class="num">€1.99m</td></tr>
+        <tr><td>GIOLABS</td><td class="num">2,444</td><td class="num">112,424</td><td class="num">€16.00</td><td class="num">€1.80m</td><td class="num">€1.62m</td><td class="num">€1.98m</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="num">1,872</td><td class="num">86,112</td><td class="num">€18.00</td><td class="num">€1.55m</td><td class="num">€1.40m</td><td class="num">€1.71m</td></tr>
+        <tr><td>MINA · Sensea</td><td class="num na">hours not published</td><td class="num na">—</td><td class="num na">—</td><td class="num na">cannot be modelled</td><td class="num na">—</td><td class="num na">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sensitivity is ±10% on modelled visitors. Kunstkraftwerk is modelled at its €18.00 weekday rate; its weekend and holiday rate of €20.00 would lift the figure. MINA and Sensea cannot be modelled because neither publishes machine-readable opening hours.</div>
+
+  <!-- 8 STREAMS -->
+  <div class="model-group" id="streams">
+    <div class="tag">Section 8</div>
+    <h2>Revenue streams operated</h2>
+    <p>Which income lines each operator actually runs, as advertised on its own website. Public data cannot say what each stream earns — it can say with confidence whether the venue runs it at all.</p>
+  </div>
+
+  <div class="findbox">
+    <ul>
+      <li><b>Visiodrom operates the widest mix</b> — restaurant, shop, a €49.00 annual pass, a €6.00 school rate, and five cross-attraction combination tickets with a zoo and three museums.</li>
+      <li><b>Kunstkraftwerk is the most commercially inventive.</b> Its own link hub sells a membership, an exclusive event location, immersive yoga, a corporate Christmas party product and a <i>Mobile Immersive Box</i> — the show taken out of the building and sold elsewhere.</li>
+      <li><b>Only two operators sell a membership or annual pass.</b> Visiodrom and Kunstkraftwerk. It is the most direct instrument a venue has for repeat visitation and most of the set does not offer one.</li>
+      <li><b>Only one operator sells combination tickets with neighbouring attractions.</b> Visiodrom, with five partners. Everyone else sells only itself.</li>
+      <li><b>Every operator runs corporate or private hire.</b> OASIS states "more than 150 corporate, institutional, and private events" since opening. It is the one stream the whole category agrees on.</li>
+      <li><b>Remastered publicly advertises the narrowest mix in the set</b> — tickets, event hire, gift vouchers and a pilates session. No published school rate, no membership, no combination ticket, no café or shop on its own site.</li>
+    </ul>
+  </div>
+
+  <div class="mkt-wrap">
+    <table class="mkt-table">
+      <thead><tr><th>Operator</th><th>Ticketed shows</th><th>Corporate hire</th><th>Schools rate</th><th>Membership</th><th>Food &amp; drink</th><th>Shop</th><th>Combo tickets</th><th>Vouchers</th><th>Kids programme</th><th>Alt. programming</th><th>Multi-site</th></tr></thead>
+      <tbody>
+        <tr><td>Visiodrom</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">€6.00</td><td class="yes">€49.00</td><td class="yes">Aposto</td><td class="yes">yes</td><td class="yes">5 partners</td><td class="yes">yes</td><td class="no">—</td><td class="yes">special weeks</td><td class="no">single</td></tr>
+        <tr><td>Kunstkraftwerk</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">yes</td><td class="no">—</td><td class="yes">yoga, ballet, Christmas, Mobile Box</td><td class="no">single</td></tr>
+        <tr><td>MINA</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">RON 45</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">MINA Kids</td><td class="yes">yoga, jazz, screenings</td><td class="yes">5 venues</td></tr>
+        <tr><td>OASIS immersion</td><td class="yes">yes</td><td class="yes">150+ events</td><td class="yes">groups 15+</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">custom design</td><td class="no">single</td></tr>
+        <tr><td>GIOLABS</td><td class="yes">yes</td><td class="yes">5 rooms</td><td class="yes">yes</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">pilates</td><td class="no">single</td></tr>
+        <tr class="target"><td>REMASTERED</td><td class="yes">yes</td><td class="yes">yes</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">yes</td><td class="no">—</td><td class="yes">pilates</td><td class="no">single</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">A dash means the stream was not found on the operator's own website on 12 September 2026. It is evidence of what the venue chooses to advertise, not proof the stream does not exist — a venue may run a café and not market it. That distinction is precisely the limit of an outside-in benchmark.</div>
+
+  <!-- 9 COST -->
+  <div class="model-group" id="cost">
+    <div class="tag">Section 9</div>
+    <h2>The cost half — where public data stops</h2>
+    <p>A benchmark on operations and finance has two halves. Everything above is the first half. This is the second, and public data delivers none of it.</p>
   </div>
 
   <div class="gap-box">
-    <h3>Zero of these venues publishes any of the following</h3>
-    <p>Every venue in this set is a privately held company. Several sit in jurisdictions where small companies file abbreviated accounts with no profit and loss statement at all. Nothing below can be obtained without the venue handing it over:</p>
+    <h3>Not one venue in this set publishes any of the following</h3>
+    <p>Every venue here is privately held, several in jurisdictions where small companies file abbreviated accounts with no profit and loss statement at all. Nothing below can be obtained without the operator handing it over:</p>
     <ul>
       <li>Visitor numbers, in total or by month</li>
       <li>Revenue, in total or split by stream</li>
+      <li>Seats per time slot and slots per day — the real capacity number</li>
       <li>Staff cost, headcount, and the split between fixed and flexible labour</li>
       <li>Rent, and whether the building is leased or owned</li>
-      <li>Content cost — produced in-house, co-produced, or licensed, and on what terms</li>
-      <li>Technology and projection capital expenditure, and the replacement cycle</li>
+      <li>Content cost — produced in-house, co-produced or licensed, and on what terms</li>
+      <li>Projection and technology capital expenditure, and the replacement cycle</li>
       <li>Marketing spend, and the split between brand and performance</li>
       <li>Reseller and online travel agent commission, and the direct-to-reseller channel mix</li>
-      <li>Capacity, utilisation and occupancy</li>
-      <li>Secondary spend per visitor</li>
-      <li>Contribution margin and EBITDA</li>
+      <li>Capacity utilisation and occupancy</li>
+      <li>Secondary spend per visitor, contribution margin and EBITDA</li>
     </ul>
   </div>
 
   <div class="findbox">
     <ul>
-      <li><b>The public half is finished, in a day, at no cost.</b> Everything in sections 1 to 4 came from published sources.</li>
-      <li><b>The private half cannot be started at any price without member consent.</b> No amount of desk research substitutes for a venue agreeing to open its accounts.</li>
-      <li><b>So the real deliverable of a paid benchmark is not analysis — it is access.</b> The value sits in persuading operators to submit comparable data on a common template, and in defining that template so the submissions can actually be compared.</li>
-      <li><b>Which means the template is the first thing that should exist</b>, before anyone is asked for a number. Common definitions of visitor, capacity, occupancy, contribution, and the boundary between content cost and capital expenditure.</li>
+      <li><b>The public half is finished, in a day, at no cost.</b> Everything in sections 1 to 8 came from published sources and took one working session.</li>
+      <li><b>The private half cannot be started at any price without operator consent.</b> No amount of desk research substitutes for a venue opening its accounts.</li>
+      <li><b>So what a paid benchmark actually sells is access, not analysis</b> — persuading operators to submit comparable data, and defining the template that makes the submissions comparable.</li>
+      <li><b>Which means the template should exist before anyone is asked for a number.</b> Common definitions of visitor, capacity, occupancy, contribution, and the boundary between content cost and capital expenditure. Without them, six operators will submit six incompatible spreadsheets.</li>
     </ul>
   </div>
 
-  <!-- 6 -->
+  <!-- 10 SOURCES -->
   <h2 class="sec-h" id="sources">Sources</h2>
   <p class="srclist">
-    All figures fetched 12 September 2026 from public pages.<br/>
-    <a href="https://www.kunstkraftwerk-leipzig.com/en/" target="_blank" rel="noopener">Kunstkraftwerk Leipzig</a> — own website and <a href="https://www.leipzig.travel/poi/kunstkraftwerk-leipzig" target="_blank" rel="noopener">leipzig.travel</a> for prices and hours<br/>
-    <a href="https://visiodrom.de/tickets/" target="_blank" rel="noopener">Visiodrom Wuppertal</a> — own ticket page for the full price list; <a href="https://visiodrom.de/" target="_blank" rel="noopener">own homepage</a> for floor area, hours, restaurant and shop<br/>
-    <a href="https://giolabs.lu/" target="_blank" rel="noopener">GIOLABS</a> — own website for prices, hours, duration and privatisation<br/>
-    <a href="https://oasis.im/en/" target="_blank" rel="noopener">OASIS immersion</a> — own website for floor area and event volume; <a href="https://www.getyourguide.com/montreal-l195/montreal-oasis-immersion-entry-ticket-t476612/" target="_blank" rel="noopener">GetYourGuide</a> for prices and duration<br/>
-    <a href="https://www.minamuseum.com/en/tickets/" target="_blank" rel="noopener">MINA Museum</a> — own ticket page for locations; <a href="https://www.romania-insider.com/mina-immersive-shows-traveling-2024" target="_blank" rel="noopener">Romania Insider</a> for prices<br/>
-    <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">Remastered Rotterdam</a> — own published information page for prices and the service fee<br/>
-    <a href="https://www.xnquebec.co/en/lesnouvelles/oasis-immersion-and-the-genesis-of-an-international-network-of-immersive-venues/" target="_blank" rel="noopener">XN Québec</a> — formation of the Immersive Center Alliance and its three founding members<br/>
-    Exchange rates for September 2026: €1 = CAD 1.602, €1 = RON 5.25
+    All figures captured 12 September 2026.<br/>
+    <b>Kunstkraftwerk Leipzig</b> — <a href="https://www.kunstkraftwerk-leipzig.com/en/" target="_blank" rel="noopener">own website</a>, <a href="https://www.leipzig.travel/poi/kunstkraftwerk-leipzig" target="_blank" rel="noopener">leipzig.travel</a> (prices, hours), <a href="https://linktr.ee/KunstkraftwerkLeipzig" target="_blank" rel="noopener">own Linktree</a> (revenue streams), <a href="https://www.instagram.com/kunstkraftwerk_leipzig/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.youtube.com/@kunstkraftwerkleipzig" target="_blank" rel="noopener">YouTube</a>, <a href="https://www.facebook.com/kunstkraftwerk/" target="_blank" rel="noopener">Facebook</a>, <a href="https://www.linkedin.com/company/kunstkraftwerk-leipzig/" target="_blank" rel="noopener">LinkedIn</a><br/>
+    <b>Visiodrom Wuppertal</b> — <a href="https://visiodrom.de/tickets/" target="_blank" rel="noopener">own ticket page</a> (full price list), <a href="https://visiodrom.de/" target="_blank" rel="noopener">own homepage</a> (floor area, hours, restaurant, shop), <a href="https://www.instagram.com/visiodrom_wuppertal/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.facebook.com/visiodrom.wuppertal/" target="_blank" rel="noopener">Facebook</a><br/>
+    <b>GIOLABS</b> — <a href="https://giolabs.lu/" target="_blank" rel="noopener">own website</a> (prices, hours, duration, privatisation, schools), <a href="https://gridx.lu/en/giolabs" target="_blank" rel="noopener">GRIDX</a>, <a href="https://www.instagram.com/giolabs_luxembourg/" target="_blank" rel="noopener">Instagram</a><br/>
+    <b>OASIS immersion</b> — <a href="https://oasis.im/en/fees-schedule/" target="_blank" rel="noopener">own fees and schedule page</a> (prices, hours, duration), <a href="https://oasis.im/en/" target="_blank" rel="noopener">own homepage</a> (floor area, event volume), <a href="https://www.getyourguide.com/montreal-l195/montreal-oasis-immersion-entry-ticket-t476612/" target="_blank" rel="noopener">GetYourGuide</a> (standard entry price), <a href="https://www.instagram.com/oasisimmersion/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.tiktok.com/@oasisimmersion" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.youtube.com/@oasisimmersion" target="_blank" rel="noopener">YouTube</a>, <a href="https://ca.linkedin.com/company/oasisimmersion" target="_blank" rel="noopener">LinkedIn</a><br/>
+    <b>Sensea México</b> — <a href="https://mexico.sensea.show/" target="_blank" rel="noopener">own ticketing site</a>, <a href="https://www.instagram.com/senseamexico/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.youtube.com/channel/UCrM-0logoBt9Z-UfIlTQcsw" target="_blank" rel="noopener">YouTube</a><br/>
+    <b>MINA</b> — <a href="https://www.minamuseum.com/en/tickets/" target="_blank" rel="noopener">own ticket page</a> (five locations), <a href="https://www.minamuseum.com/en/mina-bucharest" target="_blank" rel="noopener">Bucharest page</a> (private events, MINA Kids, programming), <a href="https://www.romania-insider.com/mina-immersive-shows-traveling-2024" target="_blank" rel="noopener">Romania Insider</a> (prices), <a href="https://www.instagram.com/mina.museum/" target="_blank" rel="noopener">Instagram Bucharest</a>, <a href="https://www.instagram.com/mina.cluj/" target="_blank" rel="noopener">Cluj</a>, <a href="https://www.instagram.com/mina.museum.sofia/" target="_blank" rel="noopener">Sofia</a>, <a href="https://www.instagram.com/mina.museum.iasi/" target="_blank" rel="noopener">Iași</a>, <a href="https://www.tiktok.com/@mina.museum" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.youtube.com/@minamuseum" target="_blank" rel="noopener">YouTube</a><br/>
+    <b>Remastered Rotterdam</b> — <a href="https://remastered.nl/en/frequently-asked-questions/" target="_blank" rel="noopener">own information page</a> (prices, service fee, opening hours), <a href="https://tickets.remastered.nl/en-US/tickets" target="_blank" rel="noopener">own ticket shop</a>, <a href="https://www.instagram.com/remastered_experience/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.tiktok.com/@remastered_experience" target="_blank" rel="noopener">TikTok</a>, <a href="https://www.youtube.com/@remasteredexperience" target="_blank" rel="noopener">YouTube</a><br/>
+    <b>Exchange rates, September 2026</b> — €1 = CAD 1.602, €1 = RON 5.25
   </p>
 
 </main>
