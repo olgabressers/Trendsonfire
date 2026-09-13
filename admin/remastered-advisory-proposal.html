@@ -54,15 +54,13 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 .want{background:#f4f6ff;border-left:4px solid #0000aa;padding:16px 18px;margin:0 0 16px;font-size:15px;line-height:1.6;}
 .want b{color:#0000aa;}
 @media print{.sec-b{display:block!important;}.chev,.foldbar{display:none!important;}}
-.toc{background:#f4f6ff;border:1px solid #d8dcf0;padding:22px 26px;margin-bottom:30px;}
-.toc .lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-bottom:14px;}
-.toc ol{margin:0;padding-left:0;list-style:none;counter-reset:c;}
-.toc li{counter-increment:c;padding:7px 0;border-bottom:1px solid #e2e6f5;font-size:14px;line-height:1.45;}
-.toc li:last-child{border-bottom:none;}
-.toc li::before{content:counter(c,decimal-leading-zero);color:#0000aa;font-weight:800;font-size:11px;margin-right:11px;}
-.toc a{color:#0a0f1a;text-decoration:none;font-weight:600;}
-.toc a:hover{color:#0000aa;text-decoration:underline;}
-.toc span{display:block;margin-left:33px;color:#555;font-size:12.5px;font-weight:400;margin-top:2px;}
+.toc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid #e8e5e0;}
+.toc .lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-right:6px;}
+.toc a{display:inline-flex;align-items:baseline;gap:5px;padding:5px 10px;border:1px solid #d8dcf0;background:#f4f6ff;color:#0a0f1a;text-decoration:none;font-size:12px;font-weight:600;line-height:1.2;white-space:nowrap;transition:background .15s,color .15s;}
+.toc a:hover{background:#0000aa;color:#fff;border-color:#0000aa;}
+.toc a i{font-style:normal;font-size:9.5px;font-weight:800;color:#0000aa;}
+.toc a:hover i{color:#FFD300;}
+@media(max-width:700px){.toc a{font-size:11.5px;padding:4px 8px;}}
 </style>
 </head>
 <body>
@@ -75,16 +73,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div></div>
 
 <main>
-<div class="toc"><div class="lbl">Contents</div><ol>
-<li><a href="#req">Robin&rsquo;s request</a><span>Three growth areas, three horizons, as sent on 13 September.</span></li>
-<li><a href="#diag">Business diagnosis</a><span>Nine findings against eleven benchmarked venues, from published sources.</span></li>
-<li><a href="#tech">Technology assessment</a><span>Ticketing, customer data, marketing stack and funnel &mdash; with hours.</span></li>
-<li><a href="#short">My proposal &mdash; short term</a><span>184 hours across four phases, seven weeks at three and a half days a week.</span></li>
-<li><a href="#long">My proposal &mdash; long term</a><span>Chief executive of the alliance.</span></li>
-<li><a href="#cost">Costs &mdash; short term</a><span>Fee by phase.</span></li>
-<li><a href="#travel">Travel</a><span>Kilometre allowance and parking per office day.</span></li>
-<li><a href="#need">Required from Remastered</a><span>What Phase 1 cannot start without.</span></li>
-</ol></div>
+<div class="toc"><span class="lbl">Contents</span><a href="#req"><i>01</i>Robin&rsquo;s request</a><a href="#diag"><i>02</i>Business diagnosis</a><a href="#tech"><i>03</i>Technology assessment</a><a href="#short"><i>04</i>Proposal &mdash; short term</a><a href="#long"><i>05</i>Proposal &mdash; long term</a><a href="#cost"><i>06</i>Costs</a><a href="#travel"><i>07</i>Travel</a><a href="#need"><i>08</i>Required</a></div>
 <div class="foldbar"><button id="tg" type="button">Expand all</button></div>
 <section class="sec">
 <div class="sec-h" id="req"><span class="n">01</span><h2>Robin&rsquo;s request</h2><span class="chev" aria-hidden="true"></span></div>
