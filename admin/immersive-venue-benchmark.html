@@ -75,6 +75,12 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 .verdict ul.vlist li b{color:#0000aa;}
 .verdict.topline{border-width:3px;background:#eef1ff;margin:28px 0 30px;}
 .verdict.topline .verdict-head{font-size:clamp(21px,2.7vw,30px);}
+.methodbox{border:1px solid #d8d4cc;background:#faf9f7;padding:15px 18px;margin:0 0 14px;}
+.methodbox .mb-hd{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#0000aa;margin-bottom:8px;}
+.methodbox ul{list-style:none;padding:0;margin:0;}
+.methodbox li{font-size:13.5px;line-height:1.55;color:#0a0f1a;padding:4px 0 4px 16px;position:relative;}
+.methodbox li::before{content:'\2013';position:absolute;left:0;color:#0000aa;}
+.methodbox li b{color:#0a0f1a;}
 .verdict p.caveat{font-size:12.5px;color:#4b5563;border-top:1px solid #b8c2f5;padding-top:10px;margin-top:14px;}
 .findbox{border-left:5px solid #FFD300;background:#fffdf2;padding:16px 20px;margin:0 0 22px;}
 .findbox ul{list-style:none;padding:0;margin:0;}
@@ -452,8 +458,6 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 
 <div class="sec-header" id="revenue"><div class="sec-num">09</div><div class="sec-label"><div class="sec-eyebrow">Commercial</div><div class="sec-title">Modelled revenue</div></div></div>
 <div class="findbox"><ul>
-<li><b>Method, stated in full.</b> Annual operating hours × 46 visitors per operating hour × the venue's published adult price, with a ±10% sensitivity. The throughput figure is derived from Remastered's own publicly confirmed milestones — 200,000 visitors by June 2023 and 500,000 by July 2026, an average pace of about 97,000 a year, divided by its 2,106 annual operating hours.</li>
-<li><b>It does not vary throughput by venue</b>, because no public data supports doing so, and it uses the adult price for every visitor, which overstates every venue equally. The ranking is the output, not the euro figures.</li>
 <li><b>Remastered models highest at €2.37m.</b> Its operating hours are third of five and throughput is the model's constant, so the difference arises from its €24.50 price.</li>
 <li><b>GIOLABS trades 16% more hours than Remastered and models 24% below it.</b></li>
 <li><b>The modelled range across the set is €1.55m to €2.37m.</b> Within this model the variation comes from price and opening hours.</li>
@@ -472,6 +476,7 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 <tr><td>MINA Timișoara</td><td>Romania</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na">cannot be modelled — no published opening hours</td><td class="num na">—</td><td class="num na">—</td></tr>
 <tr><td>MINA Sofia</td><td>Bulgaria</td><td class="num na">—</td><td class="num na">—</td><td class="num na">—</td><td class="num na">cannot be modelled — no published opening hours</td><td class="num na">—</td><td class="num na">—</td></tr>
 </tbody></table></div>
+<div class="methodbox"><div class="mb-hd">How this is modelled</div><ul><li><b>The sum.</b> Annual opening hours × 46 visitors per hour × the venue's published adult price. ±10% either side.</li><li><b>Where 46 comes from.</b> Remastered's own published milestones — 200,000 visitors by June 2023, 500,000 by July 2026 — are about 97,000 a year across its 2,106 annual opening hours.</li><li><b>The same 46 is applied to every venue,</b> because nothing public supports a different rate per venue. The adult price is used for every visitor, which overstates all of them equally. So the ranking is the result, not the euro amounts.</li><li><b>Why only five venues.</b> The model needs opening hours. Sensea and MINA Sofia publish none; MINA's four Romanian venues publish theirs as weekly images, which cannot be read as data. That is six of eleven out.</li></ul></div>
 <div class="src-note">Kunstkraftwerk is modelled at its €18.00 weekday rate; its €20.00 weekend and holiday rate would lift the figure. Full profit and loss, tax and break-even treatment is in the <a href="immersive-venue-financials.html">financial analysis</a>.</div>
 <div class="sec-header" id="streams"><div class="sec-num">10</div><div class="sec-label"><div class="sec-eyebrow">Commercial</div><div class="sec-title">Revenue streams operated</div></div></div>
 <div class="findbox"><ul>
