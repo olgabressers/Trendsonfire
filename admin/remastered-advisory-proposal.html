@@ -54,13 +54,15 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 .want{background:#f4f6ff;border-left:4px solid #0000aa;padding:16px 18px;margin:0 0 16px;font-size:15px;line-height:1.6;}
 .want b{color:#0000aa;}
 @media print{.sec-b{display:block!important;}.chev,.foldbar{display:none!important;}}
-.toc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid #e8e5e0;}
-.toc .lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-right:6px;}
-.toc a{display:inline-flex;align-items:baseline;gap:5px;padding:5px 10px;border:1px solid #d8dcf0;background:#f4f6ff;color:#0a0f1a;text-decoration:none;font-size:12px;font-weight:600;line-height:1.2;white-space:nowrap;transition:background .15s,color .15s;}
-.toc a:hover{background:#0000aa;color:#fff;border-color:#0000aa;}
-.toc a i{font-style:normal;font-size:9.5px;font-weight:800;color:#0000aa;}
-.toc a:hover i{color:#FFD300;}
-@media(max-width:700px){.toc a{font-size:11.5px;padding:4px 8px;}}
+.toc{background:#f4f6ff;border:1px solid #d8dcf0;padding:18px 22px;margin-bottom:28px;}
+.toc .lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-bottom:12px;}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:3px 28px;}
+.toc li{font-size:13px;line-height:1.4;padding:5px 0;}
+.toc a{color:#0a0f1a;text-decoration:none;font-weight:600;}
+.toc a:hover{color:#0000aa;text-decoration:underline;}
+.toc i{font-style:normal;font-size:9.5px;font-weight:800;color:#0000aa;margin-right:7px;}
+@media(max-width:760px){.toc ol{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:460px){.toc ol{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -73,7 +75,16 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div></div>
 
 <main>
-<div class="toc"><span class="lbl">Contents</span><a href="#req"><i>01</i>Robin&rsquo;s request</a><a href="#diag"><i>02</i>Business diagnosis</a><a href="#tech"><i>03</i>Technology assessment</a><a href="#short"><i>04</i>Proposal &mdash; short term</a><a href="#long"><i>05</i>Proposal &mdash; long term</a><a href="#cost"><i>06</i>Costs</a><a href="#travel"><i>07</i>Travel</a><a href="#need"><i>08</i>Required</a></div>
+<div class="toc"><div class="lbl">Contents</div><ol>
+<li><i>01</i><a href="#req">Robin&rsquo;s request</a></li>
+<li><i>02</i><a href="#diag">Business diagnosis</a></li>
+<li><i>03</i><a href="#tech">Technology assessment</a></li>
+<li><i>04</i><a href="#short">My proposal &mdash; short term</a></li>
+<li><i>05</i><a href="#long">My proposal &mdash; long term</a></li>
+<li><i>06</i><a href="#cost">Costs &mdash; short term</a></li>
+<li><i>07</i><a href="#travel">Travel</a></li>
+<li><i>08</i><a href="#need">Required from Remastered</a></li>
+</ol></div>
 <div class="foldbar"><button id="tg" type="button">Expand all</button></div>
 <section class="sec">
 <div class="sec-h" id="req"><span class="n">01</span><h2>Robin&rsquo;s request</h2><span class="chev" aria-hidden="true"></span></div>
