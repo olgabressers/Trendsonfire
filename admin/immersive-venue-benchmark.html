@@ -219,13 +219,15 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 <li><a href="#web">Website traffic and national reach</a><span>Annual visits as a share of national population, engagement and country split.</span></li>
 <li><a href="#social">Consolidated social table</a><span>Five platforms, all eleven venues, every account linked.</span></li>
 <li><a href="#reviews">Review platforms</a><span>Google, GetYourGuide and Facebook ratings and review volumes for all eleven venues.</span></li><li><a href="#shots">The social estate</a><span>Website, Instagram, TikTok and YouTube for every operator — audience, publishing language and the year each account was opened.</span></li></ol>
-<div class="grp">Commercial</div><ol start="5">
+<div class="grp">Commercial</div><ol start="7">
 <li><a href="#price">Price architecture</a><span>Every published rate and everything added on top.</span></li>
 <li><a href="#minute">Price per minute</a><span>What a visitor pays for each minute inside the venue.</span></li>
 <li><a href="#capacity">Opening hours and capacity</a><span>Trading days, hours per week, hours per year.</span></li>
 <li><a href="#revenue">Modelled revenue</a><span>A like-for-like model with a stated method and a sensitivity range.</span></li>
 <li><a href="#streams">Revenue streams operated</a><span>Eleven income lines, checked venue by venue.</span></li></ol>
-<div class="grp">Limits</div><ol start="10">
+<div class="grp">Operations</div><ol start="12">
+<li><a href="#stack">Technology stack</a><span>Ticketing platform, email marketing, analytics, consent and customer data, venue by venue.</span></li></ol>
+<div class="grp">Limits</div><ol start="13">
 <li><a href="#cost">Where public data stops</a><span>What no amount of research reaches.</span></li>
 <li><a href="#sources">Sources</a><span>Every URL behind every figure.</span></li></ol>
 </div></div>
@@ -532,7 +534,31 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 <div class="bk-card"><div class="bk-num">03</div><div class="bk-card-title">Four published revenue streams of eleven</div>
 <p>No membership, school rate, combination ticket, food and drink or retail appears on the Remastered site. Visiodrom publishes all five of those, and the widest mix in the set.</p></div>
 </div></div>
-<div class="sec-header" id="cost"><div class="sec-num">12</div><div class="sec-label"><div class="sec-eyebrow">Limits</div><div class="sec-title">Where public data stops</div></div></div>
+<div class="sec-header" id="stack"><div class="sec-num">12</div><div class="sec-label"><div class="sec-eyebrow">Operations</div><div class="sec-title">Technology stack — ticketing, marketing and customer data</div></div></div>
+<div class="findbox"><ul>
+<li><b>No customer relationship management system is visible at any venue in the set.</b> A sales CRM sits behind the counter and leaves no public trace, so the column stands empty — except Remastered, which has none.</li>
+<li><b>Six different ticketing platforms across eleven venues.</b> Ticketcounter, Entertix, AudienceView, bookingkit, Welkom and a custom build — outside MINA’s five venues, no two venues share a platform.</li>
+<li><b>The ticketing platform is the customer database.</b> At this size the booking system holds the email address, the visit history and the marketing consent — there is nothing else holding them.</li>
+<li><b>Pooling customer data across an alliance therefore means migrating six ticketing platforms, not connecting six CRMs.</b> That is a far larger piece of work than joint procurement.</li>
+<li><b>Email marketing runs at two venues of eleven</b> — Kunstkraftwerk on MailerLite, Visiodrom on Brevo and Mailchimp. No email platform is detectable anywhere else.</li>
+<li><b>Remastered runs three tracking pixels and no email platform</b> — Google Analytics, Meta and TikTok, with Adyen taking payment.</li>
+<li><b>Kunstkraftwerk’s ticket shop is the one platform that could not be read</b> — it sits behind a bot challenge that blocks any automated request.</li>
+</ul></div>
+<div class="mkt-wrap"><table class="mkt-table"><thead><tr><th>Venue</th><th>Country</th><th>Ticketing platform</th><th>Email marketing</th><th>Analytics and pixels</th><th>Consent tool</th><th>Website platform</th><th>CRM</th></tr></thead><tbody>
+<tr><td>Kunstkraftwerk</td><td>Germany</td><td>Own subdomain — platform not readable</td><td>MailerLite</td><td>Google Analytics, Google Ads, Plausible</td><td>Cookiebot</td><td>WordPress</td><td class="na">—</td></tr>
+<tr><td>Visiodrom</td><td>Germany</td><td>bookingkit, sold through a Wix shop</td><td>Brevo, Mailchimp</td><td>Google Analytics, Google Ads, Matomo</td><td>Borlabs</td><td>WordPress</td><td class="na">—</td></tr>
+<tr><td>GIOLABS</td><td>Luxembourg</td><td>Welkom</td><td class="na">—</td><td>Google Analytics, Meta Pixel, Microsoft Clarity</td><td>Cookiebot</td><td>Framer</td><td class="na">—</td></tr>
+<tr><td>OASIS immersion</td><td>Canada</td><td>AudienceView</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>WordPress</td><td class="na">—</td></tr>
+<tr><td>Sensea México</td><td>Mexico</td><td>Custom checkout on a hosted API</td><td class="na">—</td><td class="na">—</td><td class="na">—</td><td>Wix</td><td class="na">—</td></tr>
+<tr><td>MINA Bucharest</td><td>Romania</td><td>Entertix on its own subdomains, plus iaBilet</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>Custom build by adsolutions.ro</td><td class="na">—</td></tr>
+<tr><td>MINA Cluj</td><td>Romania</td><td>Entertix on its own subdomains, plus iaBilet</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>Custom build by adsolutions.ro</td><td class="na">—</td></tr>
+<tr><td>MINA Iași</td><td>Romania</td><td>Entertix on its own subdomains, plus iaBilet</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>Custom build by adsolutions.ro</td><td class="na">—</td></tr>
+<tr><td>MINA Timișoara</td><td>Romania</td><td>Entertix on its own subdomains, plus iaBilet</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>Custom build by adsolutions.ro</td><td class="na">—</td></tr>
+<tr><td>MINA Sofia</td><td>Bulgaria</td><td>Entertix on its own subdomains, plus iaBilet</td><td class="na">—</td><td>Google Analytics</td><td class="na">—</td><td>Custom build by adsolutions.ro</td><td class="na">—</td></tr>
+<tr class="target"><td>REMASTERED</td><td>Netherlands</td><td>Ticketcounter</td><td class="na">—</td><td>Google Analytics, Meta Pixel, TikTok Pixel</td><td class="na">—</td><td>WordPress</td><td class="na">none</td></tr>
+</tbody></table></div>
+
+<div class="sec-header" id="cost"><div class="sec-num">13</div><div class="sec-label"><div class="sec-eyebrow">Limits</div><div class="sec-title">Where public data stops</div></div></div>
 <div class="gap-box"><h3>Not one venue in this set publishes any of the following</h3><ul>
 <li>Visitor numbers, in total or by month</li>
 <li>Revenue, in total or split by stream</li>
@@ -551,7 +577,7 @@ main{max-width:1280px;margin:0 auto;padding:40px 48px 72px;}
 <li><b>The private half cannot be started at any price without operator consent.</b> No amount of desk research substitutes for a venue opening its accounts.</li>
 <li><b>A paid study's deliverable is therefore access and a common template</b> — obtaining comparable data from operators, and defining the definitions that make six submissions comparable.</li>
 <li><b>That template covers</b> common definitions of visitor, capacity, occupancy, contribution, and the boundary between content cost and capital expenditure.</li>
-</ul></div><div class="sec-header" id="sources"><div class="sec-num">13</div><div class="sec-label"><div class="sec-eyebrow">Limits</div><div class="sec-title">Sources</div></div></div>
+</ul></div><div class="sec-header" id="sources"><div class="sec-num">14</div><div class="sec-label"><div class="sec-eyebrow">Limits</div><div class="sec-title">Sources</div></div></div>
 <p class="srclist">
 Every venue name, account and platform above links to the live source.<br/>
 <b>Kunstkraftwerk Leipzig</b> — <a href="https://www.kunstkraftwerk-leipzig.com/en/" target="_blank" rel="noopener">own website</a> · <a href="https://www.leipzig.travel/poi/kunstkraftwerk-leipzig" target="_blank" rel="noopener">leipzig.travel</a> (prices, hours) · <a href="https://linktr.ee/KunstkraftwerkLeipzig" target="_blank" rel="noopener">own Linktree</a> (revenue streams) · <a href="https://www.instagram.com/kunstkraftwerk_leipzig/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.youtube.com/@kunstkraftwerkleipzig" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.facebook.com/kunstkraftwerk/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.linkedin.com/company/kunstkraftwerk-leipzig/" target="_blank" rel="noopener">LinkedIn</a><br/>
