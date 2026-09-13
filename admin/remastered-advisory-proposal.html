@@ -39,6 +39,20 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 #back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#08080f;color:#FFD300;border:1px solid rgba(255,211,0,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;}
 #back-to-top:hover{background:#000;}
 @media(max-width:700px){#back-to-top{width:38px;height:38px;bottom:18px;right:18px;font-size:17px;}}
+.sec-h{cursor:pointer;-webkit-user-select:none;user-select:none;}
+.sec-h:hover h2{color:#0000aa;}
+.sec-h:focus-visible{outline:2px solid #0000aa;outline-offset:4px;}
+.chev{margin-left:auto;width:20px;height:20px;position:relative;color:#0000aa;flex-shrink:0;transition:transform .18s ease;}
+.chev::before{content:'';position:absolute;left:4px;top:5px;width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);}
+.sec-h.open .chev{transform:rotate(180deg);}
+.sec-b{display:none;}
+.sec-b.open{display:block;}
+.foldbar{display:flex;justify-content:flex-end;margin-bottom:22px;}
+.foldbar button{font-family:inherit;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#0000aa;background:transparent;border:1px solid #0000aa;padding:7px 14px;cursor:pointer;}
+.foldbar button:hover{background:#0000aa;color:#fff;}
+.want{background:#f4f6ff;border-left:4px solid #0000aa;padding:16px 18px;margin:0 0 16px;font-size:15px;line-height:1.6;}
+.want b{color:#0000aa;}
+@media print{.sec-b{display:block!important;}.chev,.foldbar{display:none!important;}}
 </style>
 </head>
 <body>
@@ -50,9 +64,23 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div></div>
 
 <main>
-
+<div class="foldbar"><button id="tg" type="button">Expand all</button></div>
 <section class="sec">
-<div class="sec-h"><span class="n">01</span><h2>Diagnosis</h2></div>
+<div class="sec-h"><span class="n">01</span><h2>The request</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<p class="note" style="margin-top:0">Robin Groenveld, 13 September 2026. Three growth areas, three horizons. For each: what will be done, what it needs in budget and people, what is done personally, and the target.</p>
+<table>
+<tr><th>Growth area</th><th>Within 6 months</th><th>Within 18 months</th><th>Within 24 months</th></tr>
+<tr><td><b>More visitors</b><br/>consumers, schools, businesses</td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td></tr>
+<tr><td><b>Additional revenue</b><br/>B2C and B2B events, food and drink, shop</td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td></tr>
+<tr><td><b>Experience and dwell time</b></td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td><td>Plan, budget, people, target</td></tr>
+</table>
+<div class="note">Answering these nine cells with numbers requires the transaction and cost data. The work below produces them.</div>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="n">02</span><h2>Business diagnosis</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
 <ul class="fx">
 <li><b>Highest price per minute of the eleven venues benchmarked.</b> &euro;0.41 per minute against Kunstkraftwerk at &euro;0.17. Index 100 against 42.</li>
 <li><b>Shortest experience in the set.</b> 60 minutes published. The others run 45 to 120.</li>
@@ -61,22 +89,101 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 <li><b>Food and drink and retail exist on site, but nowhere in the funnel.</b> A coffee and water corner and a small shop &mdash; not a restaurant, not a bar. Neither appears on the website, in the ticket flow, or in any pre-visit message, so no visitor arrives intending to spend beyond the ticket.</li>
 <li><b>Nothing in the published offer gives a reason to return.</b> No membership, no annual pass, no repeat-visit product of any kind.</li>
 <li><b>Highest web reach in the set, and falling.</b> 206,000 annual visits, 1.12% of the Dutch population &mdash; the highest of the eleven. Down 10.79% month on month. 98.39% domestic.</li>
+<li><b>Publishes in Dutch only, with an English bio.</b> The only venue in the set with material foreign traffic publishes bilingually in every post.</li>
+<li><b>Smallest video presence in the set.</b> 47 YouTube subscribers across 14 videos, against 159 videos at MINA and 103 at Kunstkraftwerk.</li>
 </ul>
+<div class="note">Every figure above comes from published sources &mdash; each venue&rsquo;s own site, its own ticket shop and its own public accounts. None of it required access to Remastered&rsquo;s internal data.</div>
+</div>
 </section>
-
 <section class="sec">
-<div class="sec-h"><span class="n">02</span><h2>What the commercial plan requires</h2></div>
+<div class="sec-h"><span class="n">03</span><h2>Technology assessment</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<ul class="fx">
+<li><b>No customer relationship management system.</b> None is visible, and none is operated. Across the eleven venues benchmarked, not one runs a CRM.</li>
+<li><b>The ticketing platform is the customer database.</b> Ticketcounter holds the email address, the visit history and the marketing consent. Nothing else holds them, and nothing reads them back.</li>
+<li><b>No email marketing platform.</b> Two venues in the set run one. Remastered is not among them, so there is no owned channel to a past visitor.</li>
+<li><b>Three tracking pixels and no destination.</b> Google Analytics, Meta and TikTok all fire; none of them feeds a customer record that can be marketed to.</li>
+<li><b>Six different ticketing platforms across the eleven venues.</b> No two operators share one, so nothing aggregates today.</li>
+</ul>
+<table>
+<tr><th>Assessment</th><th>Work</th><th class="num">Hours</th></tr>
+<tr><td>Ticketing platform and contract</td><td>Data model, export capability, channel and tier structure, service charge, contract terms and exit.</td><td class="num">6</td></tr>
+<tr><td>Customer data and CRM</td><td>What is captured today, what is consented, what a customer record would need, build or buy.</td><td class="num">6</td></tr>
+<tr><td>Marketing stack and analytics</td><td>Pixels, attribution, spend by channel, what can be measured against revenue.</td><td class="num">6</td></tr>
+<tr><td>Website and booking funnel</td><td>Conversion path, secondary spend prompts, upsell points, language.</td><td class="num">6</td></tr>
+<tr class="tot"><td colspan="2">Total</td><td class="num">24</td></tr>
+</table>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="n">04</span><h2>Proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
 <table>
 <tr><th>Phase</th><th>Work</th><th class="num">Hours</th></tr>
 <tr><td><b>1</b><br/>Data foundation<br/>and diagnosis</td><td>Ticketing and transaction data by channel, tier and period. Visitor cohorts. Capacity and utilisation against published hours. Cost base per stream.</td><td class="num">40</td></tr>
-<tr><td><b>2</b><br/>Commercial plan</td><td>Pricing architecture. The five streams not operated, each costed. Business-to-business and events, net of displaced public capacity. Opening hours and throughput model. Financial model with break-even and &plusmn;10% sensitivity.</td><td class="num">80</td></tr>
-<tr><td><b>3</b><br/>Twenty-four-month<br/>implementation plan</td><td>Milestones at 6, 18 and 24 months for each of the three goals. Budget, resourcing and named owner per action. Measurement per milestone.</td><td class="num">40</td></tr>
-<tr class="tot"><td colspan="2">Total</td><td class="num">160</td></tr>
+<tr><td><b>2</b><br/>Technology<br/>assessment</td><td>The four assessments in section 03.</td><td class="num">24</td></tr>
+<tr><td><b>3</b><br/>Commercial plan</td><td>Pricing architecture. Food and drink, retail and repeat-visit products, each costed. Business-to-business and events, net of displaced public capacity. Opening hours and throughput model. Financial model with break-even and &plusmn;10% sensitivity.</td><td class="num">80</td></tr>
+<tr><td><b>4</b><br/>Twenty-four-month<br/>implementation plan</td><td>Milestones at 6, 18 and 24 months for each of the three goals. Budget, resourcing and named owner per action. Measurement per milestone.</td><td class="num">40</td></tr>
+<tr class="tot"><td colspan="2">Total</td><td class="num">184</td></tr>
 </table>
+<table style="margin-top:22px">
+<tr><th>Phase</th><th class="num">Duration</th><th class="num">Cumulative</th></tr>
+<tr><td>1 &mdash; Data foundation and diagnosis</td><td class="num">1.5 weeks</td><td class="num">week 1.5</td></tr>
+<tr><td>2 &mdash; Technology assessment</td><td class="num">1 week</td><td class="num">week 2.5</td></tr>
+<tr><td>3 &mdash; Commercial plan</td><td class="num">3 weeks</td><td class="num">week 5.5</td></tr>
+<tr><td>4 &mdash; Implementation plan</td><td class="num">1.5 weeks</td><td class="num">week 7</td></tr>
+<tr class="tot"><td>At 3.5 days a week</td><td class="num">7 weeks</td><td class="num"></td></tr>
+</table>
+<div class="note">Three and a half days a week, varying by week. Two of those days on site, the remainder remote. Phase 1 cannot start before the ticketing export and the management accounts are delivered; every week of delay moves the end date by a week.</div>
+</div>
 </section>
-
 <section class="sec">
-<div class="sec-h"><span class="n">03</span><h2>Required from Remastered</h2></div>
+<div class="sec-h"><span class="n">05</span><h2>Proposal &mdash; long term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<div class="want"><b>The position I want is chief executive of the alliance, not manager of the site.</b></div>
+<ul class="fx">
+<li><b>A single venue is capacity-constrained, not market-constrained.</b> Growth at one site ends at the ceiling of its own opening hours. Growth across a group does not.</li>
+<li><b>These operators do not compete.</b> Eleven venues, seven countries, 98&ndash;100% domestic traffic each. There is no cannibalisation to manage, which is the rare condition that makes a group workable.</li>
+<li><b>Two things aggregate, and both need an operator to realise them.</b> Ticketing is the one cost that scales &mdash; every venue sells through a third party and no two share a platform. Content is the one asset that can be reused &mdash; the same production, seven countries, no shared audience.</li>
+<li><b>Marketing does not aggregate.</b> The strongest reach in the set touches 1.12% of its own national population. Anyone proposing joint marketing has not looked at the numbers.</li>
+<li><b>There is nothing to benchmark until the definitions exist.</b> No venue publishes seats per slot; six publish no duration; six have no readable hours; nine publish no floor area. A group has to agree what a visitor, a slot and an occupancy rate mean before any comparison is worth anything.</li>
+<li><b>That job is multi-market operations, not deal-making.</b> Twenty-six countries, a &euro;150M+ profit and loss, 240+ people, one operating model &mdash; run for six years at Richemont. It is the same job at a different scale.</li>
+</ul>
+<div class="note">The short-term work below is the proving ground, not the destination. A commercial plan that works at Willemsplein is the template that travels.</div>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="n">06</span><h2>Cost &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<table>
+<tr><th>Phase</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Fee</th></tr>
+<tr><td>1 &mdash; Data foundation and diagnosis</td><td class="num">40</td><td class="num">&euro;140</td><td class="num">&euro;5,600</td></tr>
+<tr><td>2 &mdash; Technology assessment</td><td class="num">24</td><td class="num">&euro;140</td><td class="num">&euro;3,360</td></tr>
+<tr><td>3 &mdash; Commercial plan</td><td class="num">80</td><td class="num">&euro;140</td><td class="num">&euro;11,200</td></tr>
+<tr><td>4 &mdash; Implementation plan</td><td class="num">40</td><td class="num">&euro;140</td><td class="num">&euro;5,600</td></tr>
+<tr class="tot"><td>Total</td><td class="num">184</td><td class="num"></td><td class="num">&euro;25,760</td></tr>
+</table>
+<div class="note">Excluding value-added tax. Phase 1 can be commissioned on its own, with the remainder decided on its findings.</div>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="n">07</span><h2>Travel</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<table>
+<tr><th>Item</th><th class="num">Basis</th><th class="num">Amount</th></tr>
+<tr><td>Return journey, De Meern to Willemsplein</td><td class="num">105.5 km</td><td class="num"></td></tr>
+<tr><td>Kilometre allowance</td><td class="num">&euro;0.23 / km</td><td class="num">&euro;24.27</td></tr>
+<tr><td>Parking, full working day</td><td class="num">9 hours</td><td class="num">&euro;41.00</td></tr>
+<tr><td><b>Per office day</b></td><td class="num"></td><td class="num"><b>&euro;65.27</b></td></tr>
+<tr><td>Office days &mdash; two per week across seven weeks</td><td class="num">14</td><td class="num"></td></tr>
+<tr class="tot"><td>Total travel</td><td class="num"></td><td class="num">&euro;913.78</td></tr>
+</table>
+<div class="note">Charged at cost, excluding value-added tax.</div>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h"><span class="n">08</span><h2>Required from Remastered</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
 <ul class="need">
 <li>Ticketcounter transaction export, three years</li>
 <li>Management accounts and cost base by category</li>
@@ -87,50 +194,26 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 <li>Capacity per zone and floor plan</li>
 <li>One named contact per item, available one day a week</li>
 </ul>
-<div class="note">Phase 1 cannot start before the ticketing export and the management accounts are delivered. Every week of delay moves the end date by a week.</div>
+<div class="note">Several of these already exist in the material shared on 8 September. Where they do, Phase 1 shortens and the fee falls with it.</div>
+</div>
 </section>
-
-<section class="sec">
-<div class="sec-h"><span class="n">04</span><h2>Timeline</h2></div>
-<table>
-<tr><th>Phase</th><th class="num">Duration</th><th class="num">Cumulative</th></tr>
-<tr><td>1 &mdash; Data foundation and diagnosis</td><td class="num">3 weeks</td><td class="num">week 3</td></tr>
-<tr><td>2 &mdash; Commercial plan</td><td class="num">5 weeks</td><td class="num">week 8</td></tr>
-<tr><td>3 &mdash; Twenty-four-month implementation plan</td><td class="num">3 weeks</td><td class="num">week 11</td></tr>
-<tr class="tot"><td>From complete data to delivered plan</td><td class="num">11 weeks</td><td class="num"></td></tr>
-</table>
-</section>
-
-<section class="sec">
-<div class="sec-h"><span class="n">05</span><h2>Cost</h2></div>
-<table>
-<tr><th>Phase</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Fee</th></tr>
-<tr><td>1 &mdash; Data foundation and diagnosis</td><td class="num">40</td><td class="num">&euro;140</td><td class="num">&euro;5,600</td></tr>
-<tr><td>2 &mdash; Commercial plan</td><td class="num">80</td><td class="num">&euro;140</td><td class="num">&euro;11,200</td></tr>
-<tr><td>3 &mdash; Twenty-four-month implementation plan</td><td class="num">40</td><td class="num">&euro;140</td><td class="num">&euro;5,600</td></tr>
-<tr class="tot"><td>Total</td><td class="num">160</td><td class="num"></td><td class="num">&euro;22,400</td></tr>
-</table>
-<div class="note">Excluding value-added tax. Phase 1 can be commissioned on its own, with Phases 2 and 3 decided on its findings.</div>
-</section>
-
-<section class="sec">
-<div class="sec-h"><span class="n">06</span><h2>Travel</h2></div>
-<table>
-<tr><th>Item</th><th class="num">Basis</th><th class="num">Amount</th></tr>
-<tr><td>Return journey, De Meern to Willemsplein</td><td class="num">105.5 km</td><td class="num"></td></tr>
-<tr><td>Kilometre allowance</td><td class="num">&euro;0.23 / km</td><td class="num">&euro;24.27</td></tr>
-<tr><td>Parking, full working day</td><td class="num">9 hours</td><td class="num">&euro;41.00</td></tr>
-<tr><td><b>Per office day</b></td><td class="num"></td><td class="num"><b>&euro;65.27</b></td></tr>
-<tr><td>Office days &mdash; two per week across eleven weeks</td><td class="num">22</td><td class="num"></td></tr>
-<tr class="tot"><td>Total travel</td><td class="num"></td><td class="num">&euro;1,435.94</td></tr>
-</table>
-<div class="note">Charged at cost, excluding value-added tax. On site two days a week; the remaining time is worked remotely.</div>
-</section>
-
 </main>
 
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
 <script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
 
+<script>
+(function(){
+ var hs=Array.prototype.slice.call(document.querySelectorAll('.sec-h')),b=document.getElementById('tg');
+ function bd(h){var n=h.nextElementSibling;return n&&n.classList.contains('sec-b')?n:null;}
+ function rf(){if(b)b.textContent=hs.every(function(h){return h.classList.contains('open');})?'Collapse all':'Expand all';}
+ function so(h,o){var x=bd(h);if(!x)return;h.classList.toggle('open',o);x.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false');rf();}
+ hs.forEach(function(h){h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
+  h.addEventListener('click',function(){so(h,!h.classList.contains('open'));});
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();so(h,!h.classList.contains('open'));}});});
+ if(b)b.addEventListener('click',function(){var o=!hs.every(function(h){return h.classList.contains('open');});hs.forEach(function(h){so(h,o);});});
+ rf();
+})();
+</script>
 </body>
 </html>
