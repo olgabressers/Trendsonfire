@@ -57,6 +57,16 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 .want b{color:#0000aa;}
 @media print{.sec-b{display:block!important;}.chev,.foldbar{display:none!important;}}
 .toc{background:#f4f6ff;border:1px solid #d8dcf0;padding:18px 22px;margin-bottom:28px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media(max-width:780px){.two{grid-template-columns:1fr;}}
+.card{border:1px solid #e2dfd9;background:#fff;display:flex;flex-direction:column;}
+.card img{width:100%;display:block;border-bottom:1px solid #e2dfd9;}
+.card .cbody{padding:16px 18px 18px;}
+.card h3{font-size:14.5px;font-weight:700;color:#0000aa;margin:0 0 9px;letter-spacing:-.2px;line-height:1.3;}
+.card ul{list-style:none;padding:0;margin:0 0 12px;}
+.card li{font-size:13px;line-height:1.5;padding:4px 0 4px 16px;position:relative;color:#1f1f1f;}
+.card li::before{content:'\25B8';position:absolute;left:0;color:#0000aa;font-weight:700;}
+.card a.go{display:inline-block;font-size:12px;font-weight:700;color:#0000aa;text-decoration:underline;word-break:break-all;}
 .toc .lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-bottom:12px;}
 .toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:3px 28px;}
 .toc li{font-size:13px;line-height:1.4;padding:5px 0;}
@@ -82,10 +92,11 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 <li><i>02</i><a href="#diag">Business diagnosis</a></li>
 <li><i>03</i><a href="#tech">Technology assessment</a></li>
 <li><i>04</i><a href="#mkt">Marketing assessment</a></li>
-<li><i>05</i><a href="#short">My proposal &mdash; short term</a></li>
-<li><i>06</i><a href="#cost">My service proposal &mdash; short term</a></li>
-<li><i>07</i><a href="#long">My proposal &mdash; long term</a></li>
-<li><i>08</i><a href="#need">Required from Remastered</a></li>
+<li><i>05</i><a href="#ica">ICA analysis and risks</a></li>
+<li><i>06</i><a href="#short">My proposal &mdash; short term</a></li>
+<li><i>07</i><a href="#cost">My service proposal &mdash; short term</a></li>
+<li><i>08</i><a href="#long">My proposal &mdash; long term</a></li>
+<li><i>09</i><a href="#need">Required from Remastered</a></li>
 </ol></div>
 <div class="foldbar"><button id="tg" type="button">Expand all</button></div>
 <section class="sec">
@@ -159,7 +170,45 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h" id="short"><span class="n">05</span><h2>My proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="ica"><span class="n">05</span><h2>ICA analysis and risks</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-b">
+<div class="two">
+
+<div class="card">
+<img src="img/benchmark-preview.png" alt="Immersive venue benchmark"/>
+<div class="cbody">
+<h3>Where Remastered sits among the eleven ICA venues</h3>
+<ul>
+<li>Price architecture, price per minute indexed, opening hours and capacity</li>
+<li>Modelled revenue with sensitivity, and the revenue streams each venue operates</li>
+<li>Website traffic and national reach, the social estate across five platforms</li>
+<li>Review platforms &mdash; Google, GetYourGuide and Facebook &mdash; venue by venue</li>
+<li>Built entirely from public sources, seven countries</li>
+</ul>
+<a class="go" href="https://trendsonfire.com/admin/immersive-venue-benchmark.html" target="_blank" rel="noopener">trendsonfire.com/admin/immersive-venue-benchmark.html</a>
+</div>
+</div>
+
+<div class="card">
+<img src="img/staffing-preview.png" alt="Staffing structure, cost and risk"/>
+<div class="cbody">
+<h3>Staffing structure &mdash; cost and risk of each route</h3>
+<ul>
+<li>What the wage line covers, by budget line and account code</li>
+<li>Cost of each route: payroll on fixed hours, call-up hours, payrolling, uitzend</li>
+<li>Exposure if the company is inspected, and the five ways it gets discovered</li>
+<li>The nine Deliveroo criteria applied, and what it has cost other companies</li>
+<li>The rechtsvermoeden threshold, now law and awaiting its commencement decree</li>
+</ul>
+<a class="go" href="https://trendsonfire.com/admin/remastered-staffing-options.html" target="_blank" rel="noopener">trendsonfire.com/admin/remastered-staffing-options.html</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="sec-h" id="short"><span class="n">06</span><h2>My proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>Phase</th><th>Work</th><th class="num">Hours</th></tr>
@@ -183,7 +232,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h" id="cost"><span class="n">06</span><h2>My service proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="cost"><span class="n">07</span><h2>My service proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>Phase</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Fee</th></tr>
@@ -211,7 +260,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h" id="long"><span class="n">07</span><h2>My proposal &mdash; long term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="long"><span class="n">08</span><h2>My proposal &mdash; long term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <div class="want"><b>The position I want is chief executive of the alliance, not manager of the site.</b></div>
 <ul class="fx">
@@ -226,7 +275,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h" id="need"><span class="n">08</span><h2>Required from Remastered</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="need"><span class="n">09</span><h2>Required from Remastered</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>What the work needs</th><th>Status</th><th>Still required</th></tr>
