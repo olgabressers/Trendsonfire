@@ -13,6 +13,7 @@
 .art-hero .inner{max-width:1080px;margin:auto;position:relative;z-index:1;}
 .art-hero .eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#FFD300;font-weight:700;margin-bottom:14px;}
 .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4vw,46px);font-weight:400;line-height:1.08;margin:0 0 14px;letter-spacing:-0.5px;}
+.art-hero .lead{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);max-width:680px;margin:0;}
 .art-hero .meta{margin-top:16px;font-size:12px;color:rgba(255,255,255,.5);}
 @media(max-width:700px){.art-hero{padding:36px 16px 28px;}}
 main{max-width:1080px;margin:0 auto;padding:38px 48px 80px;}
@@ -53,6 +54,15 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 .want{background:#f4f6ff;border-left:4px solid #0000aa;padding:16px 18px;margin:0 0 16px;font-size:15px;line-height:1.6;}
 .want b{color:#0000aa;}
 @media print{.sec-b{display:block!important;}.chev,.foldbar{display:none!important;}}
+.toc{background:#f4f6ff;border:1px solid #d8dcf0;padding:22px 26px;margin-bottom:30px;}
+.toc .lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#0000aa;font-weight:800;margin-bottom:14px;}
+.toc ol{margin:0;padding-left:0;list-style:none;counter-reset:c;}
+.toc li{counter-increment:c;padding:7px 0;border-bottom:1px solid #e2e6f5;font-size:14px;line-height:1.45;}
+.toc li:last-child{border-bottom:none;}
+.toc li::before{content:counter(c,decimal-leading-zero);color:#0000aa;font-weight:800;font-size:11px;margin-right:11px;}
+.toc a{color:#0a0f1a;text-decoration:none;font-weight:600;}
+.toc a:hover{color:#0000aa;text-decoration:underline;}
+.toc span{display:block;margin-left:33px;color:#555;font-size:12.5px;font-weight:400;margin-top:2px;}
 </style>
 </head>
 <body>
@@ -60,13 +70,24 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 <div class="art-hero"><div class="inner">
 <div class="eyebrow">Advisory proposal</div>
 <h1>Remastered</h1>
-<div class="meta">Olga Bressers &middot; 14 September 2026</div>
+<p class="lead">More visitors, more revenue per visitor, a longer visit &mdash; what the plan is, what it needs, and what it costs to build.</p>
+<div class="meta">Olga Bressers &middot; 14 September 2026 &middot; 184 hours &middot; seven weeks at three and a half days</div>
 </div></div>
 
 <main>
+<div class="toc"><div class="lbl">Contents</div><ol>
+<li><a href="#req">Robin&rsquo;s request</a><span>Three growth areas, three horizons, as sent on 13 September.</span></li>
+<li><a href="#diag">Business diagnosis</a><span>Nine findings against eleven benchmarked venues, from published sources.</span></li>
+<li><a href="#tech">Technology assessment</a><span>Ticketing, customer data, marketing stack and funnel &mdash; with hours.</span></li>
+<li><a href="#short">My proposal &mdash; short term</a><span>184 hours across four phases, seven weeks at three and a half days a week.</span></li>
+<li><a href="#long">My proposal &mdash; long term</a><span>Chief executive of the alliance.</span></li>
+<li><a href="#cost">Costs &mdash; short term</a><span>Fee by phase.</span></li>
+<li><a href="#travel">Travel</a><span>Kilometre allowance and parking per office day.</span></li>
+<li><a href="#need">Required from Remastered</a><span>What Phase 1 cannot start without.</span></li>
+</ol></div>
 <div class="foldbar"><button id="tg" type="button">Expand all</button></div>
 <section class="sec">
-<div class="sec-h"><span class="n">01</span><h2>The request</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="req"><span class="n">01</span><h2>Robin&rsquo;s request</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <p class="note" style="margin-top:0">Robin Groenveld, 13 September 2026. Three growth areas, three horizons. For each: what will be done, what it needs in budget and people, what is done personally, and the target.</p>
 <table>
@@ -79,7 +100,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">02</span><h2>Business diagnosis</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="diag"><span class="n">02</span><h2>Business diagnosis</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <ul class="fx">
 <li><b>Highest price per minute of the eleven venues benchmarked.</b> &euro;0.41 per minute against Kunstkraftwerk at &euro;0.17. Index 100 against 42.</li>
@@ -96,7 +117,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">03</span><h2>Technology assessment</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="tech"><span class="n">03</span><h2>Technology assessment</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <ul class="fx">
 <li><b>No customer relationship management system.</b> None is visible, and none is operated. Across the eleven venues benchmarked, not one runs a CRM.</li>
@@ -116,7 +137,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">04</span><h2>Proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="short"><span class="n">04</span><h2>My proposal &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>Phase</th><th>Work</th><th class="num">Hours</th></tr>
@@ -138,7 +159,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">05</span><h2>Proposal &mdash; long term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="long"><span class="n">05</span><h2>My proposal &mdash; long term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <div class="want"><b>The position I want is chief executive of the alliance, not manager of the site.</b></div>
 <ul class="fx">
@@ -153,7 +174,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">06</span><h2>Cost &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="cost"><span class="n">06</span><h2>Costs &mdash; short term</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>Phase</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Fee</th></tr>
@@ -167,7 +188,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">07</span><h2>Travel</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="travel"><span class="n">07</span><h2>Travel</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <table>
 <tr><th>Item</th><th class="num">Basis</th><th class="num">Amount</th></tr>
@@ -182,7 +203,7 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
 </div>
 </section>
 <section class="sec">
-<div class="sec-h"><span class="n">08</span><h2>Required from Remastered</h2><span class="chev" aria-hidden="true"></span></div>
+<div class="sec-h" id="need"><span class="n">08</span><h2>Required from Remastered</h2><span class="chev" aria-hidden="true"></span></div>
 <div class="sec-b">
 <ul class="need">
 <li>Ticketcounter transaction export, three years</li>
@@ -212,6 +233,10 @@ tr.tot td{font-weight:800;color:#0000aa;border-top:2px solid #0000aa;border-bott
   h.addEventListener('click',function(){so(h,!h.classList.contains('open'));});
   h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();so(h,!h.classList.contains('open'));}});});
  if(b)b.addEventListener('click',function(){var o=!hs.every(function(h){return h.classList.contains('open');});hs.forEach(function(h){so(h,o);});});
+ function op(id){var el=document.getElementById(id);if(el&&el.classList.contains('sec-h')){so(el,true);el.scrollIntoView();}}
+ document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(a){op(a.getAttribute('href').slice(1));}});
+ window.addEventListener('hashchange',function(){op(location.hash.slice(1));});
+ if(location.hash)op(location.hash.slice(1));
  rf();
 })();
 </script>
