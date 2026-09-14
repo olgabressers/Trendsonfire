@@ -8,110 +8,135 @@
   <title>Philips — SPS Supply Chain Design, Analytics and AI Leader Brief — Olga Bressers</title>
   <link rel="stylesheet" href="../style.css"/>
   <style>
-    .art-hero{background:#00299e;color:white;padding:60px 32px 44px;position:relative;}
-    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.05) 0%,transparent 55%);pointer-events:none;}
-    .art-hero .inner{max-width:none !important;margin:auto;position:relative;z-index:1;}
+    /* HERO */
+    .art-hero{background:#00299e;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
     .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
     .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
     .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ffc845;font-weight:700;margin-bottom:14px;}
-    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(24px,3.6vw,42px);font-weight:400;line-height:1.1;margin-bottom:14px;letter-spacing:-0.5px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4.2vw,48px);font-weight:400;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px;}
     .art-hero h1 em{color:#ffc845;font-style:italic;}
-    .art-hero p{font-size:15px;color:rgba(255,255,255,.85);line-height:1.55;max-width:none !important;}
-    .art-hero .meta{margin-top:16px;font-size:13px;color:rgba(255,255,255,.45);display:flex;gap:18px;flex-wrap:wrap;}
+    .art-hero p{font-size:16px;color:rgba(255,255,255,.87);line-height:1.6;max-width:820px;}
+    .art-hero .meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
     .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
     @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
     .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#ffc845;text-decoration:none;border:1px solid rgba(255,200,69,.4);padding:7px 14px;white-space:nowrap;}
     .hero-links a:hover{background:rgba(255,200,69,.1);}
 
-    main{max-width:1180px;margin:0 auto;padding:36px 48px 64px;}
-    @media(max-width:700px){main{padding:22px 16px 48px;}}
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
 
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:32px;}
-    @media(max-width:1000px){.stats{grid-template-columns:repeat(3,1fr);}}
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
     @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
-    .s-card{background:white;padding:16px 14px;border:1px solid #e2dfd9;}
-    .s-lbl{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#0a0f1a;margin-bottom:7px;line-height:1.3;}
-    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:500;line-height:1;color:#00299e;letter-spacing:-0.5px;}
-    .s-delta{font-size:12.5px;color:#a17a00;font-weight:700;margin-top:4px;}
-    .s-src{font-size:12px;color:#4b5563;margin-top:6px;line-height:1.4;}
-    .s-src a{color:#00299e;}
+    .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;line-height:1;color:#00299e;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#a17a00;font-weight:600;}
 
-    .sec-header{display:flex;align-items:flex-start;gap:12px;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid #00299e;}
-    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
-    .sec-label{flex:1;padding-top:3px;}
-    .sec-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00299e;margin-bottom:3px;}
-    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(17px,2.1vw,23px);font-weight:500;color:#0a0f1a;line-height:1.2;}
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:24px 22px 20px;margin-bottom:24px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#a17a00;}
 
-    .src-note{font-size:12.5px;color:#0a0f1a;padding:8px 12px;background:#f9fafb;border-left:3px solid #00299e;margin-top:10px;line-height:1.6;}
-    .src-note a{color:#00299e;}
-
-    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0;}
-    .pri-table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px;}
-    .pri-table th{background:#00299e;color:white;text-align:left;padding:9px 12px;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-    .pri-table td{padding:10px 12px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.5;}
-    .pri-table tr:last-child td{border-bottom:none;}
-    .pri-table tr:nth-child(even) td{background:#faf9f7;}
-
-    .bk-wrap{background:#0a0f1a;padding:40px 40px;margin:0 -48px 30px;}
-    @media(max-width:700px){.bk-wrap{padding:28px 16px;margin:0 -16px 26px;}}
-    .bk-eyebrow{font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:#ffc845;font-weight:700;margin-bottom:10px;}
-    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(18px,2.4vw,26px);color:white;font-weight:400;line-height:1.15;margin-bottom:8px;}
-    .bk-sub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
-    .bk-table{width:100%;border-collapse:collapse;font-size:13px;}
-    .bk-table th{text-align:left;padding:8px 10px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ffc845;border-bottom:1px solid rgba(255,255,255,.2);}
+    /* DARK SECTION */
+    .bk-wrap{background:#0a0f1a;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ffc845;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(255,200,69,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#ffc845;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:14px;color:#ffffff;padding:8px 0 8px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#ffc845;position:absolute;left:0;font-weight:700;}
+    .bk-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px;}
+    .bk-table th{text-align:left;padding:8px 10px;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ffc845;border-bottom:1px solid rgba(255,255,255,.2);}
     .bk-table td{padding:9px 10px;color:rgba(255,255,255,.92);border-bottom:1px solid rgba(255,255,255,.1);line-height:1.5;vertical-align:top;}
     .bk-table tr:last-child td{border-bottom:none;}
-    .bk-src{font-size:12px;color:rgba(255,255,255,.55);margin-top:14px;line-height:1.6;}
+    .bk-src{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:14px;line-height:1.6;}
     .bk-src a{color:#ffc845;}
 
-    .conc-box{border:1px solid #e2dfd9;border-left:4px solid #ffc845;padding:16px 20px;background:white;margin-bottom:26px;}
-    .conc-box .lbl{font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:#8B6914;font-weight:700;margin-bottom:10px;}
-    .conc-box ul{margin:0;padding-left:18px;}
-    .conc-box li{font-size:13.5px;color:#0a0f1a;line-height:1.65;margin-bottom:6px;}
-    .conc-box li:last-child{margin-bottom:0;}
+    /* SECTION HEADER — bumped per chapter-title rule */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid #00299e;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a17a00;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.8vw,32px);font-weight:600;color:#0a0f1a;line-height:1.2;}
 
-    .gloss-box{border:1px solid #e2dfd9;border-left:4px solid #00299e;padding:16px 20px;background:white;margin-bottom:26px;}
-    .gloss-box .lbl{font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:#00299e;font-weight:700;margin-bottom:12px;}
-    .gloss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 28px;}
-    @media(max-width:700px){.gloss-grid{grid-template-columns:1fr;}}
-    .gloss-item{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
-    .gloss-item strong{color:#00299e;font-weight:800;}
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #00299e;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#a17a00;}
 
-    #page-toc{background:#eef2ff;border:1px solid #c3d0f5;padding:20px 24px;margin-bottom:26px;}
-    #page-toc .lbl{font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:#00299e;font-weight:700;margin-bottom:14px;}
-    #page-toc ol{margin:0;padding-left:18px;}
-    #page-toc li{margin-bottom:10px;font-size:13.5px;}
-    #page-toc li:last-child{margin-bottom:0;}
-    #page-toc a{color:#0a0f1a;text-decoration:none;font-weight:700;}
-    #page-toc .toc-sub{color:#555;font-size:12.5px;display:block;margin-top:1px;}
+    /* PRIORITY / DATA TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+    .pri-table th{background:#00299e;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#a17a00;}
 
-    .jd-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:14px 0;}
-    @media(max-width:780px){.jd-cols{grid-template-columns:1fr;}}
-    .jd-col{border:1px solid #e2dfd9;background:white;padding:18px 20px;}
-    .jd-col-title{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#00299e;margin-bottom:12px;}
-    .jd-col ol{margin:0;padding-left:18px;}
-    .jd-col li{font-size:13.5px;color:#0a0f1a;line-height:1.6;margin-bottom:9px;}
-    .jd-col li:last-child{margin-bottom:0;}
-
-    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0;}
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
     @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
-    .scope-card{border:1px solid #e2dfd9;background:white;padding:20px 18px;}
-    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;line-height:1;color:#00299e;margin-bottom:6px;}
-    .scope-label{font-size:13.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:8px;}
-    .scope-desc{font-size:13px;color:#1f1f1f;line-height:1.6;}
-    .scope-exp{margin-top:12px;padding:10px 14px;background:#0a0f1a;border-left:3px solid rgba(255,200,69,.5);font-size:12.5px;color:rgba(255,255,255,.95);line-height:1.6;}
-    .scope-exp strong{display:block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ffc845;margin-bottom:6px;}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:600;line-height:1;color:#a17a00;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:9px;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#0a0f1a;border-left:3px solid #ffc845;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ffc845;margin-bottom:6px;}
 
-    .kpi-groups{margin-top:14px;}
-    .kpi-group{margin-bottom:20px;}
-    .kpi-group-label{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#00299e;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
-    .kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-    @media(max-width:600px){.kpi-row{grid-template-columns:1fr;}}
-    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
-    .kpi-name{font-size:14.5px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.25;}
-    .kpi-desc{font-size:12.5px;color:#0a0f1a;line-height:1.5;}
-    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px dashed #d8d4cd;font-size:12.5px;color:#0a0f1a;line-height:1.5;}
-    .kpi-bench strong{color:#00299e;font-weight:800;text-transform:uppercase;font-size:11.5px;letter-spacing:.5px;}
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a17a00;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
+    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px solid #e2dfd9;font-size:13px;color:#0a0f1a;line-height:1.5;}
+    .kpi-bench strong{color:#a17a00;font-weight:800;}
+
+    /* BRAND / COMPETITOR CARDS */
+    .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:700px){.brands-grid{grid-template-columns:1fr;}}
+    .brand-card{padding:18px 18px;border:1px solid #e2dfd9;background:white;}
+    .brand-name{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:6px;}
+    .brand-desc{font-size:13.5px;color:#1f1f1f;line-height:1.55;}
+
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#00299e;color:#ffc845;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#00299e;color:#ffc845;}
+    .org-name{font-size:15.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13.5px;color:#0a0f1a;line-height:1.4;margin-top:2px;}
+    .org-entity{font-size:13px;color:#4b5563;font-weight:600;margin-top:3px;line-height:1.4;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
+    .org-conf a{color:#a17a00;font-weight:600;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
   </style>
 </head>
 <body>
@@ -142,6 +167,7 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="art-hero">
   <div class="hero-links">
     <a href="https://www.philips.com" target="_blank" rel="noopener">Company site &rarr;</a>
@@ -149,11 +175,11 @@
   </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Philips</div>
-    <div class="eyebrow">Interview Brief — SPS Supply Chain Design, Analytics and AI Leader · Service Parts Supply Chain</div>
-    <h1>Philips: <em>a global organization that doesn't exist yet, inside a &euro;1.5B productivity program</em></h1>
-    <p>&euro;17.8B FY2025 group sales, 64,800 employees, Adjusted EBITA margin 12.3% and climbing. The role: build and lead a brand-new global function — Service Parts Supply Chain design, analytics and AI — from scratch, while Philips runs a &euro;1.5B cost-productivity program through 2028 and the segment this parts network serves carries the group's thinnest margin.</p>
+    <div class="eyebrow">Interview Brief — SPS (Service Parts Supply Chain) Supply Chain Design, Analytics and AI (Artificial Intelligence) Leader</div>
+    <h1>Philips: <em>a global organization that doesn't exist yet, inside a &euro;1.5 billion cost-productivity program</em></h1>
+    <p>&euro;17.8 billion in 2025 group sales, 64,800 employees, Adjusted EBITA (Earnings Before Interest, Tax and Amortisation) margin of 12.3% and climbing. The role: build and lead a brand-new global function — Service Parts Supply Chain design, analytics and artificial-intelligence adoption — from scratch, based in Best, Netherlands, while Philips runs a &euro;1.5 billion productivity program through 2028 and the segment this parts network serves carries the group's thinnest margin.</p>
     <div class="meta">
-      <span>Sources: Philips FY2025 &amp; Q2 2026 results (philips.com, SEC 6-K filings), official Workday job posting, philips.com executive committee</span>
+      <span>Sources: Philips 2025 &amp; second-quarter 2026 results (philips.com, SEC 6-K filings), official Workday job posting, philips.com executive committee</span>
       <span>Updated 14 September 2026</span>
     </div>
   </div>
@@ -161,329 +187,517 @@
 
 <main>
 
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #ffc845;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a17a00;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Royal Philips, global health-technology company, headquartered in Amsterdam. 2025 group sales &euro;17.8 billion (+2% comparable sales growth), Adjusted EBITA margin 12.3%, up 80 basis points. 64,800 employees worldwide. Second-quarter 2026: &euro;4.4 billion in sales, +4% comparable sales growth.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">SPS (Service Parts Supply Chain) Supply Chain Design, Analytics and AI (Artificial Intelligence) Leader — based in Best, Netherlands. Own SPS process and data architecture design principles; build and integrate a newly formed global organization across locations and multiple management layers; shape and scale the artificial-intelligence agenda for the function; drive parts-sales growth alongside delivery performance.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Company context</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">&euro;2.5 billion in productivity savings delivered 2023&ndash;2025; a further &euro;1.5 billion program runs 2026&ndash;2028, with &euro;258 million already delivered in the first half of 2026. Chief Operations Officer Willem Appelo, in the role since 2022, owns end-to-end operations, supply chain and manufacturing group-wide.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Key opportunity</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Connected Care — the segment this parts network serves — carries the thinnest Adjusted EBITA margin of Philips' three segments, 10.7% against 18.0% for Personal Health. A newly built, data-driven, artificial-intelligence-enabled service-parts function is being stood up inside exactly that segment.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#eef2ff;border:1px solid #c3d0f5;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#00299e;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Philips, the market &amp; the competition</a><br><span style="color:#555;font-size:13px;">2025 &amp; 2026 financials, segment margins, GE HealthCare, Siemens Healthineers, Medtronic, and artificial-intelligence positioning.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">No inherited team · the group's thinnest segment margin · scaling artificial intelligence inside a cost program.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-network" style="color:#0a0f1a;text-decoration:none;font-weight:700;">What SPS (Service Parts Supply Chain) owns</a><br><span style="color:#555;font-size:13px;">Scope per the posting, who the role partners with, and the full job description by section.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Four accountability areas mapped to Olga's experience — plus a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Chief Executive Officer and Chief Operations Officer — verified names &amp; sources.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (Key Performance Indicator) framework</a><br><span style="color:#555;font-size:13px;">Five groups: fulfillment, forecasting &amp; inventory, artificial-intelligence adoption, commercial, team &amp; organization build.</span></li>
+    </ol>
+  </div>
+
+</div>
+
+  <!-- STATS -->
   <div class="stats">
     <div class="s-card">
-      <div class="s-lbl">Group Sales FY2025</div>
+      <div class="s-lbl">2025 Group Sales</div>
       <div class="s-num">&euro;17.8B</div>
-      <div class="s-delta">+2% comparable sales</div>
-      <div class="s-src">Philips FY2025 results</div>
+      <div class="s-delta">+2% comparable sales growth</div>
+      <div class="s-src">Philips 2025 results</div>
     </div>
     <div class="s-card">
-      <div class="s-lbl">Adjusted EBITA Margin FY2025</div>
+      <div class="s-lbl">Adjusted EBITA Margin, 2025</div>
       <div class="s-num">12.3%</div>
-      <div class="s-delta">+80 bps YoY</div>
-      <div class="s-src">Philips FY2025 results</div>
+      <div class="s-delta">+80 basis points year over year</div>
+      <div class="s-src">Philips 2025 results</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Employees Worldwide</div>
       <div class="s-num">64,800</div>
-      <div class="s-src">31 Dec 2025 &middot; Philips FY2025 results</div>
+      <div class="s-src">31 December 2025. Philips 2025 results</div>
     </div>
     <div class="s-card">
-      <div class="s-lbl">Productivity Program 2026&ndash;28</div>
+      <div class="s-lbl">Second-Quarter 2026 Sales Growth</div>
+      <div class="s-num">+4%</div>
+      <div class="s-src">Comparable sales growth, all segments. Philips second-quarter 2026 results</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Productivity Program, 2026&ndash;2028</div>
       <div class="s-num">&euro;1.5B</div>
-      <div class="s-src">Target, on top of &euro;2.5B delivered 2023&ndash;25</div>
+      <div class="s-src">Target, on top of &euro;2.5B delivered 2023&ndash;2025</div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Base Salary Range</div>
       <div class="s-num">&euro;93K&ndash;155K</div>
-      <div class="s-src">Plus annual incentive tied to KPIs/company results. Official job posting.</div>
+      <div class="s-src">Plus annual incentive tied to KPIs (Key Performance Indicators) and company results. Official job posting.</div>
     </div>
   </div>
 
-  <div class="conc-box">
-    <div class="lbl">Essential facts</div>
-    <ul>
-      <li>Royal Philips: global health-technology company, HQ Amsterdam. FY2025 group sales &euro;17.8B (+2% comparable), Adjusted EBITA margin 12.3% (+80bps). Q2 2026: group sales &euro;4.4B (+4% comparable sales growth).</li>
-      <li>Chief Operations Officer Willem Appelo (since 2022) owns end-to-end operations, supply chain and manufacturing group-wide. Previously Vice President Supply Chain Strategy, Innovation &amp; Deployment at Johnson &amp; Johnson, and President of the Global Delivery and Technology Group at Xerox.</li>
-      <li>Productivity: &euro;2.5B delivered 2023&ndash;2025 (&euro;850M in 2025 alone). A new &euro;1.5B program runs 2026&ndash;2028 &mdash; &euro;258M delivered in the first half of 2026.</li>
-      <li>The role sits in Service Parts Supply Chain (SPS) within Service Parts Supply Chain for Philips Healthcare &mdash; the function that plans, resources and equips the parts network supporting every Philips Healthcare modality already installed in hospitals and clinics worldwide. Based in Best, Netherlands.</li>
-      <li>The posting explicitly names this "a newly formed global organization" &mdash; the mandate is to build the function, not run an existing one. Office-based teams work in-person at least 3 days a week.</li>
-    </ul>
-  </div>
-
-  <div class="gloss-box">
-    <div class="lbl">Terms used on this page</div>
-    <div class="gloss-grid">
-      <div class="gloss-item"><strong>SPS</strong> &mdash; Service Parts Supply Chain: the global Philips function that plans, warehouses, distributes and repairs the service parts supporting every Philips Healthcare device already installed and in active use.</div>
-      <div class="gloss-item"><strong>ISC</strong> &mdash; Integrated Supply Chain: Philips' central group covering manufacturing, supply chain and procurement across the end-to-end "plan &ndash; source &ndash; make &ndash; deliver &ndash; install" value stream for new equipment. SPS is the parallel function for equipment already installed.</div>
-      <div class="gloss-item"><strong>Installed base</strong> &mdash; the total stock of Philips equipment already sold and running at hospitals and clinics; the base SPS exists to keep in service.</div>
-      <div class="gloss-item"><strong>EBITA</strong> &mdash; Earnings Before Interest, Tax and Amortisation: Philips' primary profitability metric.</div>
-      <div class="gloss-item"><strong>Comparable sales growth</strong> &mdash; Philips' adjusted revenue-growth metric, stripping out currency effects and portfolio changes (acquisitions/divestments) to isolate underlying performance.</div>
-      <div class="gloss-item"><strong>Center of Excellence (CoE)</strong> &mdash; a centralized team that sets standards and best practice for a function group-wide; the posting names both a Supply Chain CoE and a Service CoE as key partners.</div>
-      <div class="gloss-item"><strong>OTIF</strong> &mdash; On Time In Full: the share of parts delivered on the promised date and in the complete quantity requested.</div>
-      <div class="gloss-item"><strong>Fill rate</strong> &mdash; the share of part requests met immediately from stock on hand, without backorder or delay.</div>
-      <div class="gloss-item"><strong>FTE</strong> &mdash; Full-Time Equivalent: a standardised way of counting headcount.</div>
-    </div>
-  </div>
-
-  <div id="page-toc">
-    <div class="lbl">Contents</div>
-    <ol>
-      <li><a href="#sec-01">Philips at a glance</a><span class="toc-sub">FY2025 &amp; Q2 2026 group and segment financials.</span></li>
-      <li><a href="#sec-02">Competitive landscape</a><span class="toc-sub">GE HealthCare, Siemens Healthineers, Medtronic revenue &amp; AI positioning.</span></li>
-      <li><a href="#sec-03">What Service Parts Supply Chain owns</a><span class="toc-sub">Scope of the function this role is built to lead.</span></li>
-      <li><a href="#sec-04">The Job Description</a><span class="toc-sub">Full posting, by section &mdash; responsibilities, requirements, compensation.</span></li>
-      <li><a href="#sec-05">Role scope &amp; Olga's experience</a><span class="toc-sub">Four accountability areas mapped to CV.</span></li>
-      <li><a href="#sec-06">KPI framework</a><span class="toc-sub">Five groups spanning fulfillment, forecasting, AI adoption, commercial and team build.</span></li>
-    </ol>
-  </div>
-
-  <div id="sec-01" class="sec-header" style="margin-top:0;">
+  <!-- COMPANY, MARKET & COMPETITION -->
+  <div id="sec-company" class="sec-header" style="margin-top:0;">
     <div class="sec-num">01</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Financials</div>
-      <div class="sec-title">Philips at a glance &mdash; three segments, one margin gap</div>
+      <div class="sec-eyebrow">Financials &amp; Market</div>
+      <div class="sec-title">Philips, the market &amp; the competition</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Segment</th><th>What it includes</th><th>FY2025 comparable sales growth</th><th>FY2025 Adjusted EBITA margin</th></tr></thead>
+
+  <div class="chart-box">
+    <div class="chart-title">Three segments, one margin gap</div>
+    <div class="chart-sub">2025 comparable sales growth and Adjusted EBITA (Earnings Before Interest, Tax and Amortisation) margin, by segment</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Segment</th><th>What it includes</th><th>2025 comparable sales growth</th><th>2025 Adjusted EBITA margin</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Diagnosis &amp; Treatment</strong></td><td>Diagnostic imaging, image-guided therapy, ultrasound, enterprise informatics</td><td>0%</td><td>11.7%</td></tr>
+          <tr><td><strong>Connected Care</strong></td><td>Hospital patient monitoring, ambulatory monitoring &amp; diagnostics, sleep &amp; respiratory care — the segment SPS's parts network serves</td><td>+3%</td><td>10.7%</td></tr>
+          <tr><td><strong>Personal Health</strong></td><td>Personal care, oral healthcare, home care appliances</td><td>+8%</td><td>18.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips Fourth-Quarter and Annual Results 2025</a>.</div>
+  </div>
+
+  <div class="bk-wrap" style="background:#00299e;padding:20px 24px;margin:0 0 24px;">
+    <div style="font-size:14px;color:white;line-height:1.7;">Connected Care carries the thinnest Adjusted EBITA margin of Philips' three segments — 10.7%, against 11.7% for Diagnosis &amp; Treatment and 18.0% for Personal Health.</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Group financials — 2025 versus the latest quarter</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Metric</th><th>Full-year 2025</th><th>Second quarter 2026 (latest)</th></tr></thead>
+        <tbody>
+          <tr><td>Group sales</td><td>&euro;17.8B</td><td>&euro;4.4B</td></tr>
+          <tr><td>Comparable sales growth</td><td>+2%</td><td>+4%</td></tr>
+          <tr><td>Comparable order intake growth</td><td>+6%</td><td>&minus;1% (large Connected Care orders shifted to the third quarter)</td></tr>
+          <tr><td>Adjusted EBITA margin</td><td>12.3%</td><td>16.4% (includes a 4.2 percentage-point US tariff-refund benefit)</td></tr>
+          <tr><td>Productivity savings delivered</td><td>&euro;850M (part of &euro;2.5B delivered 2023&ndash;2025)</td><td>&euro;132M (&euro;258M in the first half of 2026, toward the &euro;1.5B 2026&ndash;2028 target)</td></tr>
+          <tr><td>Free cash flow</td><td>&euro;512M (includes a &euro;1,025M Respironics recall settlement outflow)</td><td>&euro;222M (includes the US tariff refund receipt)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Sources: <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips Fourth-Quarter and Annual Results 2025</a>; <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-second-quarter-results-2026.html" target="_blank" rel="noopener">Philips Second-Quarter Results 2026</a>.</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Where Philips sits against GE HealthCare, Siemens Healthineers and Medtronic</div>
+    <div class="chart-sub">Each company's own reported currency and fiscal-year period — not converted or combined</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Company</th><th>Latest full-year revenue</th><th>Growth</th><th>Fiscal year</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Medtronic</strong></td><td>$33.5B</td><td>+3.6% reported / +4.9% organic</td><td>2025, ended April 2025</td></tr>
+          <tr><td><strong>Siemens Healthineers</strong></td><td>&euro;23.4B</td><td>+5.9%</td><td>2025, ended September 2025</td></tr>
+          <tr><td><strong>GE HealthCare</strong></td><td>$20.6B</td><td>+4.8% reported / +3.5% organic</td><td>2025, ended December 2025</td></tr>
+          <tr><td><strong>Philips</strong></td><td>&euro;17.8B</td><td>+2% comparable</td><td>2025, ended December 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Sources: <a href="https://investorrelations.medtronic.com/image/Press_Release_FY25Q4_FINAL.pdf" target="_blank" rel="noopener">Medtronic 2025 fourth-quarter results</a>, <a href="https://www.siemens-healthineers.com/press/releases/2025q4" target="_blank" rel="noopener">Siemens Healthineers 2025 results</a>, <a href="https://www.gehealthcare.com/en-us/about/newsroom/press-releases/ge-healthcare-reports-fourth-quarter-and-full-year-2025-financial-results" target="_blank" rel="noopener">GE HealthCare 2025 results</a>, <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips 2025 results</a>.</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Artificial-intelligence positioning — the three imaging majors, October 2025</div>
+    <div class="chart-sub">Number of FDA (US Food and Drug Administration)-cleared AI (artificial-intelligence) devices — Philips trails both direct imaging competitors</div>
+    <table class="bk-table" style="color:#0a0f1a;">
+      <thead><tr><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">Company</th><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">FDA-cleared AI devices</th></tr></thead>
       <tbody>
-        <tr><td><strong>Diagnosis &amp; Treatment</strong></td><td>Diagnostic imaging, image-guided therapy, ultrasound, enterprise informatics</td><td>0%</td><td>11.7%</td></tr>
-        <tr><td><strong>Connected Care</strong></td><td>Hospital patient monitoring, ambulatory monitoring &amp; diagnostics, sleep &amp; respiratory care &mdash; the segment SPS's parts network serves</td><td>+3%</td><td>10.7%</td></tr>
-        <tr><td><strong>Personal Health</strong></td><td>Personal care, oral healthcare, home care appliances</td><td>+8%</td><td>18.0%</td></tr>
+        <tr><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">GE HealthCare</td><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">72</td></tr>
+        <tr><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">Siemens Healthineers</td><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">47</td></tr>
+        <tr><td style="color:#0a0f1a;">Philips Healthcare</td><td style="color:#0a0f1a;">38</td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="src-note">Source: <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips Fourth-Quarter and Annual Results 2025</a> press release.</div>
-
-  <div style="margin-top:16px;background:#00299e;padding:16px 18px;color:white;font-size:13.5px;line-height:1.7;">
-    Connected Care &mdash; the segment patient monitoring, sleep &amp; respiratory care and SPS's own parts network sit inside &mdash; carries the thinnest Adjusted EBITA margin of Philips' three segments: 10.7%, against 11.7% for Diagnosis &amp; Treatment and 18.0% for Personal Health.
+    <div class="chart-src">As of October 2025. Source: <a href="https://axis-intelligence.com/ai-medical-imaging-ge-vs-siemens-philips/" target="_blank" rel="noopener">Axis Intelligence, AI Medical Imaging Showdown 2025</a>. Philips' own artificial-intelligence activity in the same window: Philips Verida (Spectral CT fully powered by artificial intelligence) and helium-free 3.0T MR technology, both launched at the Radiological Society of North America's annual meeting, 2025; Philips named a Clarivate Top 100 Global Innovator for the 13th consecutive year.</div>
   </div>
 
-  <div class="pri-wrap" style="margin-top:22px;">
-    <table class="pri-table">
-      <thead><tr><th>Metric</th><th>FY2025 (full year)</th><th>Q2 2026 (latest quarter)</th></tr></thead>
-      <tbody>
-        <tr><td>Group sales</td><td>&euro;17.8B</td><td>&euro;4.4B</td></tr>
-        <tr><td>Comparable sales growth</td><td>+2%</td><td>+4%</td></tr>
-        <tr><td>Comparable order intake growth</td><td>+6%</td><td>&minus;1% (large Connected Care orders shifted to Q3)</td></tr>
-        <tr><td>Adjusted EBITA margin</td><td>12.3%</td><td>16.4% (incl. 4.2pp US tariff-refund benefit)</td></tr>
-        <tr><td>Productivity savings delivered</td><td>&euro;850M (part of &euro;2.5B 2023&ndash;25 total)</td><td>&euro;132M (&euro;258M H1 2026, toward &euro;1.5B 2026&ndash;28)</td></tr>
-        <tr><td>Free cash flow</td><td>&euro;512M (incl. &euro;1,025M Respironics recall settlement outflow)</td><td>&euro;222M (incl. US tariff refund receipt)</td></tr>
-      </tbody>
-    </table>
+  <!-- 3 STRUCTURAL CHALLENGES -->
+  <div id="sec-challenges" class="bk-wrap">
+    <div class="bk-eyebrow">Role Analysis</div>
+    <div class="bk-headline">3 structural challenges this role is built to solve</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">No organization to inherit</div>
+        <ul>
+          <li>The posting names this explicitly: "build and integrate a newly formed global organization across locations, functions and leadership layers"</li>
+          <li>Leading through multiple management layers, including managing managers, is required from day one — there is no existing team structure to step into</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">The group's thinnest segment margin</div>
+        <ul>
+          <li>Connected Care — the segment SPS's parts network serves — carries a 10.7% Adjusted EBITA margin, the lowest of Philips' three segments</li>
+          <li>Personal Health runs at 18.0% and Diagnosis &amp; Treatment at 11.7% — Connected Care sits well below both</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">Scaling artificial intelligence inside a cost program</div>
+        <ul>
+          <li>The mandate is to move artificial-intelligence use cases past proof-of-concept to scaled, adopted business value</li>
+          <li>That build runs alongside a &euro;1.5 billion group-wide productivity program through 2028 — &euro;258 million already delivered in the first half of 2026</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="src-note">Source: <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips Fourth-Quarter and Annual Results 2025</a>; <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-second-quarter-results-2026.html" target="_blank" rel="noopener">Philips Second-Quarter Results 2026</a>.</div>
 
-  <div id="sec-02" class="sec-header">
+  <!-- WHAT SPS OWNS -->
+  <div id="sec-network" class="sec-header">
     <div class="sec-num">02</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">Competitive Context</div>
-      <div class="sec-title">Where Philips sits against GE HealthCare, Siemens Healthineers and Medtronic</div>
+      <div class="sec-eyebrow">The Function</div>
+      <div class="sec-title">What SPS (Service Parts Supply Chain) owns</div>
     </div>
   </div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Company</th><th>Latest full-year revenue</th><th>Growth</th><th>Fiscal year</th></tr></thead>
+
+  <div class="chart-box">
+    <div class="chart-title">Scope, per the posting</div>
+    <table class="pri-table" style="min-width:0;">
       <tbody>
-        <tr><td><strong>Medtronic</strong></td><td>$33.5B</td><td>+3.6% reported / +4.9% organic</td><td>FY2025, ended April 2025</td></tr>
-        <tr><td><strong>Siemens Healthineers</strong></td><td>&euro;23.4B</td><td>+5.9%</td><td>FY2025, ended Sept 2025</td></tr>
-        <tr><td><strong>GE HealthCare</strong></td><td>$20.6B</td><td>+4.8% reported / +3.5% organic</td><td>FY2025, ended Dec 2025</td></tr>
-        <tr><td><strong>Philips</strong></td><td>&euro;17.8B</td><td>+2% comparable</td><td>FY2025, ended Dec 2025</td></tr>
+        <tr><td>1</td><td>Core processes, data architecture, analytics and digital capability for a high-performing service-parts supply chain.</td></tr>
+        <tr><td>2</td><td>Process and data architecture design principles and strategy for SPS overall.</td></tr>
+        <tr><td>3</td><td>End-to-end supply-chain concepts and scenarios aligned to business-unit and regional strategy.</td></tr>
+        <tr><td>4</td><td>The artificial-intelligence agenda for SPS: identifying high-value use cases, driving implementation, scaling adoption.</td></tr>
+        <tr><td>5</td><td>Parts-sales growth alongside parts-delivery performance.</td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="src-note">Figures kept in each company's own reported currency and fiscal-year period &mdash; not converted or combined. Sources: <a href="https://investorrelations.medtronic.com/image/Press_Release_FY25Q4_FINAL.pdf" target="_blank" rel="noopener">Medtronic FY2025 Q4 results</a>, <a href="https://www.siemens-healthineers.com/press/releases/2025q4" target="_blank" rel="noopener">Siemens Healthineers FY2025 results</a>, <a href="https://www.gehealthcare.com/en-us/about/newsroom/press-releases/ge-healthcare-reports-fourth-quarter-and-full-year-2025-financial-results" target="_blank" rel="noopener">GE HealthCare FY2025 results</a>, <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips FY2025 results</a>.</div>
-
-  <div class="bk-wrap" style="margin-top:24px;">
-    <div class="bk-eyebrow">AI Positioning</div>
-    <div class="bk-headline">FDA-cleared AI devices &mdash; the three imaging majors, October 2025</div>
-    <div class="bk-sub">Philips trails both direct imaging competitors on regulatory-cleared AI device count</div>
-    <table class="bk-table">
-      <thead><tr><th>Company</th><th>FDA-cleared AI devices</th></tr></thead>
-      <tbody>
-        <tr><td>GE HealthCare</td><td>72</td></tr>
-        <tr><td>Siemens Healthineers</td><td>47</td></tr>
-        <tr><td>Philips Healthcare</td><td>38</td></tr>
-      </tbody>
-    </table>
-    <div class="bk-src">As of October 2025. Source: <a href="https://axis-intelligence.com/ai-medical-imaging-ge-vs-siemens-philips/" target="_blank" rel="noopener">Axis Intelligence, AI Medical Imaging Showdown 2025</a>. Philips' own AI activity in the same window: Philips Verida (Spectral CT fully powered by AI) and helium-free 3.0T MR technology, both launched at RSNA 2025; Philips named a Clarivate Top 100 Global Innovator for the 13th consecutive year.</div>
+    <div class="src-note" style="margin-top:14px;">Who the role partners with: the Philips Supply Chain CoE (Center of Excellence), the Service CoE, Philips IT (Information Technology) — translating business requirements into scalable technology — and Chief Operations Officer Willem Appelo's organization, which holds end-to-end operations, supply chain and manufacturing group-wide.</div>
+    <div class="chart-src">Source: <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official Workday job posting</a>; <a href="https://www.philips.com/a-w/about/executive-committee/willem-appelo.html" target="_blank" rel="noopener">philips.com executive committee, Willem Appelo</a>.</div>
   </div>
 
-  <div id="sec-03" class="sec-header">
+  <div class="chart-box">
+    <div class="chart-title">SPS Supply Chain Design, Analytics and AI Leader — full posting, by section</div>
+    <div class="chart-sub">Job title as posted &middot; Location: Best, Netherlands &middot; Employment: full-time &middot; Posted 2 September 2026 &middot; Requisition 589106</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th style="width:36%;">Your role</th><th>You're the right fit if</th></tr></thead>
+        <tbody>
+          <tr><td>Own and evolve SPS process and data architecture design principles and strategy.</td><td>Master's degree in Business Administration, Operations, Supply Chain Management or equivalent.</td></tr>
+          <tr><td>Create and evaluate end-to-end supply-chain concepts and scenarios aligned with business-unit and regional strategies and needs.</td><td>10+ years of meaningful supply-chain experience in a global, large-company environment, including supply-chain design, data science or transformation.</td></tr>
+          <tr><td>Drive SPS innovation and transformation initiatives while safeguarding global process standards, data integrity and architecture principles.</td><td>Proven experience leading large global organizations through multiple management layers, including managing managers.</td></tr>
+          <tr><td>Partner with the Supply Chain CoE, Service CoE, and Philips IT to ensure resilient supply-chain IT performance.</td><td>Track record leading organizational transformation and integrating teams from different functions.</td></tr>
+          <tr><td>Lead experts and people managers who design processes, data structures and tools that create measurable business value.</td><td>Strong capability in supply-chain design, analytics, process architecture and data architecture.</td></tr>
+          <tr><td>Drive the annual IT investment-planning process.</td><td>Experience with IT and business-intelligence techniques, methods and tools.</td></tr>
+          <tr><td>Transform SPS into a data-insights-driven supply chain.</td><td>Ability to identify high-value AI use cases and drive adoption beyond proof-of-concept.</td></tr>
+          <tr><td>Shape and execute the SPS artificial-intelligence agenda — identify high-value use cases, drive implementation, accelerate adoption, scale business value.</td><td>Strong executive presence; able to influence senior SPS, ISC (Integrated Supply Chain), business and IT leaders in a matrixed global environment.</td></tr>
+          <tr><td>Drive parts-sales growth alongside excellent parts-delivery performance.</td><td>Collaborative leadership style, comfortable working across cultures, functions and geographies.</td></tr>
+          <tr><td>Build and integrate a newly formed global organization across locations, functions and leadership layers.</td><td>Willing to travel globally to support team leadership and stakeholder engagement.</td></tr>
+          <tr><td>Build trusted relationships and influence senior stakeholders across SPS, IT, business and transformation.</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">Compensation &amp; benefits: base salary range &euro;93,049&ndash;&euro;155,081, plus annual incentive linked to KPIs and company results; 25 days annual leave, with the option to purchase up to 20 extra days a year; company pension scheme, collective health insurance, and the option to buy Philips shares and products at a discount; personal development budget, training and coaching. Office-based teams work in person at least 3 days a week.</div>
+    <div class="chart-src">Source: <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official Workday job posting</a>.</div>
+  </div>
+
+  <!-- ROLE SCOPE -->
+  <div id="sec-scope" class="sec-header">
     <div class="sec-num">03</div>
     <div class="sec-label">
-      <div class="sec-eyebrow">The Function</div>
-      <div class="sec-title">What Service Parts Supply Chain owns</div>
+      <div class="sec-eyebrow">Role scope</div>
+      <div class="sec-title">SPS Leader — four accountability areas &amp; Olga's experience</div>
     </div>
   </div>
-  <div class="jd-cols">
-    <div class="jd-col">
-      <div class="jd-col-title">Scope, per the posting</div>
-      <ol>
-        <li>Core processes, data architecture, analytics and digital capability for a high-performing service-parts supply chain.</li>
-        <li>Process and data architecture design principles and strategy for SPS overall.</li>
-        <li>End-to-end supply-chain concepts and scenarios aligned to business-unit and regional strategy.</li>
-        <li>The AI agenda for SPS: identifying high-value use cases, driving implementation, scaling adoption.</li>
-        <li>Parts-sales growth alongside parts-delivery performance.</li>
-      </ol>
-    </div>
-    <div class="jd-col">
-      <div class="jd-col-title">Who the role partners with</div>
-      <ol>
-        <li>Philips Supply Chain Center of Excellence &mdash; group-wide standards and best practice.</li>
-        <li>Service Center of Excellence.</li>
-        <li>Philips IT &mdash; translating business requirements into scalable technology.</li>
-        <li>Chief Operations Officer Willem Appelo's organization &mdash; end-to-end operations, supply chain and manufacturing sit under his remit group-wide.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="src-note">Source: <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official Workday job posting</a>; <a href="https://www.philips.com/a-w/about/executive-committee/willem-appelo.html" target="_blank" rel="noopener">philips.com executive committee, Willem Appelo</a>.</div>
 
-  <div id="sec-04" class="sec-header">
-    <div class="sec-num">04</div>
-    <div class="sec-label">
-      <div class="sec-eyebrow">The Job Description</div>
-      <div class="sec-title">SPS Supply Chain Design, Analytics and AI Leader &mdash; full posting, by section</div>
-    </div>
-  </div>
-  <div class="src-note" style="margin:0 0 14px;">Job title: SPS Supply Chain Design, Analytics and AI Leader (all genders) &middot; Location: Best, Netherlands &middot; Employment: full-time &middot; Posted: 2 September 2026 &middot; Requisition 589106.</div>
-  <div class="jd-cols">
-    <div class="jd-col">
-      <div class="jd-col-title">Your role</div>
-      <ol>
-        <li>Own and evolve SPS process and data architecture design principles and strategy.</li>
-        <li>Create and evaluate end-to-end supply-chain concepts and scenarios aligned with business-unit and regional strategies and needs.</li>
-        <li>Drive SPS innovation and transformation initiatives while safeguarding global process standards, data integrity and architecture principles.</li>
-        <li>Partner with the Supply Chain Center of Excellence, Service Center of Excellence, and IT to ensure resilient supply-chain IT performance.</li>
-        <li>Lead experts and people managers who design processes, data structures and tools that create measurable business value.</li>
-        <li>Drive the annual IT investment-planning process.</li>
-        <li>Transform SPS into a data-insights-driven supply chain.</li>
-        <li>Shape and execute the SPS AI agenda &mdash; identify high-value use cases, drive implementation, accelerate adoption, scale business value.</li>
-        <li>Drive parts-sales growth alongside excellent parts-delivery performance.</li>
-        <li>Build and integrate a newly formed global organization across locations, functions and leadership layers.</li>
-        <li>Build trusted relationships and influence senior stakeholders across SPS, IT, business and transformation.</li>
-      </ol>
-    </div>
-    <div class="jd-col">
-      <div class="jd-col-title">You're the right fit if</div>
-      <ol>
-        <li>Master's degree in Business Administration, Operations, Supply Chain Management or equivalent.</li>
-        <li>10+ years of meaningful supply-chain experience in a global, large-company environment, including supply-chain design, data science or transformation.</li>
-        <li>Proven experience leading large global organizations through multiple management layers, including managing managers.</li>
-        <li>Track record leading organizational transformation and integrating teams from different functions.</li>
-        <li>Strong capability in supply-chain design, analytics, process architecture and data architecture.</li>
-        <li>Experience with IT and business-intelligence techniques, methods and tools.</li>
-        <li>Ability to identify high-value AI use cases and drive adoption beyond proof-of-concept.</li>
-        <li>Strong executive presence; able to influence senior SPS, ISC, business and IT leaders in a matrixed global environment.</li>
-        <li>Collaborative leadership style, comfortable working across cultures, functions and geographies.</li>
-        <li>Willing to travel globally to support team leadership and stakeholder engagement.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="jd-cols" style="margin-top:20px;grid-template-columns:1fr;">
-    <div class="jd-col">
-      <div class="jd-col-title">Compensation &amp; benefits</div>
-      <ol>
-        <li>Base salary range &euro;93,049&ndash;&euro;155,081; annual incentive linked to KPIs/company results.</li>
-        <li>25 days annual leave, with the option to purchase up to 20 extra days per year.</li>
-        <li>Company pension scheme, collective health insurance, and the option to buy Philips shares and products at a discount.</li>
-        <li>Personal development budget, training and coaching.</li>
-        <li>Office-based teams work in-person at least 3 days per week.</li>
-      </ol>
-    </div>
-  </div>
-  <div class="src-note">Source: <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official Workday job posting</a>.</div>
+  <div class="src-note" style="margin-bottom:4px;">The posting asks for 10+ years of supply-chain experience in a global, large-company environment. Olga's supply chain career runs IBM (2006&ndash;2010), Nike (2010&ndash;2016), adidas (2016&ndash;2018) and Richemont (2019&ndash;2025) — 19 years — built on a postgraduate qualification specifically in logistics and supply chain management.</div>
 
-  <div id="sec-05" class="sec-header">
-    <div class="sec-num">05</div>
-    <div class="sec-label">
-      <div class="sec-eyebrow">Fit</div>
-      <div class="sec-title">Role scope &amp; Olga's experience</div>
-    </div>
-  </div>
   <div class="scope-grid">
     <div class="scope-card">
       <div class="scope-n">01</div>
       <div class="scope-label">Supply Chain Design &amp; Data Architecture</div>
       <div class="scope-desc">Own SPS process and data architecture design principles and strategy; create end-to-end supply-chain concepts and scenarios.</div>
-      <div class="scope-exp"><strong>Olga's experience</strong>PDEng, Logistics Management &amp; Supply Chain, TU Eindhoven. IBM: Senior Supply Chain Consultant delivering supply-chain process design, MRP and demand planning for Numico, Avebe, SGV Group and Stiho. adidas: designed the EU network of stock points for stock optimisation and client satisfaction, part of the EU Supply Chain Management leadership team.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Process design</span>
+        <span class="scope-kpi">Data architecture</span>
+        <span class="scope-kpi">Strategy</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>PDEng (Professional Doctorate in Engineering) in Logistics Management &amp; Supply Chain, TU Eindhoven. IBM: supply-chain process design, material requirements planning and demand planning for four manufacturers — Numico, Avebe, SGV Group and Stiho. adidas: designed the European Union network of stock points for stock optimisation and client satisfaction, as part of the European Union Supply Chain Management leadership team.</div>
     </div>
     <div class="scope-card">
       <div class="scope-n">02</div>
       <div class="scope-label">Building a New Global Organization</div>
       <div class="scope-desc">Build and integrate a newly formed global organization across locations, functions and leadership layers, including managing managers.</div>
-      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: built and led a 240+ FTE team spanning e-commerce operations, client relations, anti-fraud and payment across 26 European countries, reporting to the EU CEO and Global CDO. adidas: built the Digital Partner Commerce function &mdash; strategy, process and operational execution framework &mdash; from zero.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Organization build</span>
+        <span class="scope-kpi">Management layers</span>
+        <span class="scope-kpi">Culture</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: built and led a 240+ full-time-equivalent team spanning e-commerce operations, client relations, anti-fraud and payment across 26 European countries, reporting to the European Union chief executive officer and the global chief digital officer. adidas: built the Digital Partner Commerce function — strategy, process and operational execution framework — from zero.</div>
     </div>
     <div class="scope-card">
       <div class="scope-n">03</div>
       <div class="scope-label">Data-Insights-Driven Transformation</div>
-      <div class="scope-desc">Transform the function into a data-insights-driven supply chain; drive IT investment planning and translate business requirements into scalable technology.</div>
-      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: established the reporting &amp; analytics team and built the omni-channel analytics cockpit used by operational and executive stakeholders. Nike: delivered the SAP Retail implementation for Intersport's digital transformation. IBM: PMO and process-transformation expert on SAP APO implementations for the Dutch Ministry of Transport.</div>
+      <div class="scope-desc">Transform SPS into a data-insights-driven supply chain; drive IT investment planning and translate business requirements into scalable technology.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Analytics</span>
+        <span class="scope-kpi">IT investment planning</span>
+        <span class="scope-kpi">Technology delivery</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: established the reporting &amp; analytics team and built the omni-channel analytics cockpit used by operational and executive stakeholders. Nike: delivered the SAP Retail implementation for Intersport's digital transformation. IBM: project management office and process-transformation expert on SAP APO implementations for the Dutch Ministry of Transport.</div>
     </div>
     <div class="scope-card">
       <div class="scope-n">04</div>
-      <div class="scope-label">The AI Agenda &mdash; Beyond Proof-of-Concept</div>
-      <div class="scope-desc">Identify high-value AI use cases, drive implementation, and scale adoption to measurable business value across SPS.</div>
-      <div class="scope-exp"><strong>Olga's experience</strong>TrendsOnFire: founded and built an AI-powered market intelligence platform from the ground up &mdash; the same "idea to scaled, adopted tool" arc this role asks for, applied to data and AI rather than physical parts.</div>
+      <div class="scope-label">The Artificial-Intelligence Agenda</div>
+      <div class="scope-desc">Identify high-value artificial-intelligence use cases, drive implementation, and scale adoption to measurable business value across SPS — beyond proof-of-concept.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Use-case identification</span>
+        <span class="scope-kpi">Adoption</span>
+        <span class="scope-kpi">Scaled value</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>TrendsOnFire: founded and built an artificial-intelligence-powered market intelligence platform from the ground up — the same idea-to-scaled-and-adopted-tool arc this role asks for, applied to data and artificial intelligence rather than physical parts.</div>
     </div>
   </div>
 
-  <div id="sec-06" class="sec-header">
-    <div class="sec-num">06</div>
-    <div class="sec-label">
-      <div class="sec-eyebrow">KPIs</div>
-      <div class="sec-title">KPI framework &mdash; by function</div>
+  <!-- PRIORITY STACK -->
+  <div style="margin-top:22px;">
+    <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a17a00;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Priority stack — 5-step approach</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead>
+          <tr><th style="width:36px;">#</th><th>Action</th><th>Why first</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pri-num">1</span></td>
+            <td><strong>Map current state</strong> — audit today's process maturity, data architecture and CoE touchpoints across regions</td>
+            <td>A newly formed organization needs a real baseline before it can be designed, not assumed</td>
+            <td>Current-state baseline</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">2</span></td>
+            <td><strong>Design the target operating model</strong> — process and data architecture design principles, governance between the Supply Chain CoE, the Service CoE and IT</td>
+            <td>The posting's own mandate is to own design principles and strategy, not inherit an existing model</td>
+            <td>Target operating model</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">3</span></td>
+            <td><strong>Pilot the artificial-intelligence agenda on 1&ndash;2 high-value use cases</strong> — proof beyond proof-of-concept</td>
+            <td>The posting's own bar is adoption past proof-of-concept, not another pilot that stalls</td>
+            <td>Pilot results with measured business value</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">4</span></td>
+            <td><strong>Build and staff the organization</strong> — structure managers of managers across locations and functions</td>
+            <td>Leading through multiple management layers is a named requirement, not an afterthought</td>
+            <td>Staffed global organization</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">5</span></td>
+            <td><strong>Scale and embed</strong> — annual IT investment-planning cycle, parts-sales growth tracking, sustained productivity contribution</td>
+            <td>Keeps the function compounding value as the group's 2026&ndash;2028 productivity program continues</td>
+            <td>Standing planning &amp; growth cadence</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
+  <!-- LEADERSHIP -->
+  <div id="sec-leadership" class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Stakeholders</div>
+      <div class="sec-title">Leadership</div>
+    </div>
+  </div>
+
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">RJ</div>
+        <div>
+          <div class="org-company">Philips</div>
+          <div class="org-name">Roy Jakobs</div><div class="org-title">President &amp; Chief Executive Officer</div><div class="org-entity">Appointed 15 October 2022; re-appointed at the 8 May 2026 Annual General Meeting</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://nl.linkedin.com/in/royjakobs" target="_blank" rel="noopener">linkedin.com/in/royjakobs</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">WA</div>
+        <div>
+          <div class="org-company">Philips</div>
+          <div class="org-name">Willem Appelo</div><div class="org-title">Chief Operations Officer</div><div class="org-entity">In the role since 2022; prior: Vice President Supply Chain Strategy, Innovation &amp; Deployment, Johnson &amp; Johnson; President, Global Delivery and Technology Group, Xerox</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.philips.com/a-w/about/executive-committee/willem-appelo.html" target="_blank" rel="noopener">philips.com executive committee</a></div>
+    </div>
+  </div>
+  <div class="src-note">Sources: <a href="https://www.philips.com/a-w/about/executive-committee/roy-jakobs.html" target="_blank" rel="noopener">philips.com executive committee, Roy Jakobs</a>; <a href="https://www.philips.com/a-w/about/executive-committee/willem-appelo.html" target="_blank" rel="noopener">philips.com executive committee, Willem Appelo</a>. End-to-end operations, supply chain and manufacturing sit under Willem Appelo's remit group-wide; the posting does not name a direct reporting line for this specific role.</div>
+
+  <!-- KPIS -->
+  <div id="sec-kpi" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">KPI (Key Performance Indicator) framework — five groups</div>
+    </div>
+  </div>
+
   <div class="kpi-groups">
     <div class="kpi-group">
       <div class="kpi-group-label">Parts availability &amp; fulfillment</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Fill rate</div><div class="kpi-desc">Share of part requests met immediately from stock on hand, without backorder or delay.</div><div class="kpi-bench"><strong>Benchmark</strong> A fill rate above 95% is the standard target for consistent field-service fulfillment.</div></div>
-        <div class="kpi-card"><div class="kpi-name">OTIF (on time, in full)</div><div class="kpi-desc">Parts delivered on the promised date and in the complete quantity requested.</div><div class="kpi-bench"><strong>Benchmark</strong> Core fulfillment KPI across supply-chain functions; tracked alongside fill rate since one can always be bought at the expense of the other by holding more stock.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Emergency / expedited shipment rate</div><div class="kpi-desc">Share of part requests resolved through emergency procurement or expedited transfer rather than planned stock.</div><div class="kpi-bench"><strong>Benchmark</strong> One of the core inventory-risk indicators service-parts teams are advised to track first.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Field-service downtime linked to parts</div><div class="kpi-desc">Equipment downtime at hospitals/clinics attributable to parts unavailability rather than the repair itself.</div><div class="kpi-bench"><strong>Benchmark</strong> A standard field-service KPI wherever parts availability directly gates equipment uptime.</div></div>
+        <div class="kpi-card">
+          <div class="kpi-name">Fill rate</div>
+          <div class="kpi-desc">Share of part requests met immediately from stock on hand, without backorder or delay.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> a fill rate above 95% is the standard target for consistent field-service fulfillment.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">On time, in full</div>
+          <div class="kpi-desc">Parts delivered on the promised date and in the complete quantity requested.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> a core fulfillment measure tracked alongside fill rate, since one can be bought at the expense of the other by holding more stock.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Emergency shipment rate</div>
+          <div class="kpi-desc">Share of part requests resolved through emergency procurement or expedited transfer rather than planned stock.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> one of the core inventory-risk indicators service-parts teams are advised to track first.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Equipment downtime linked to parts</div>
+          <div class="kpi-desc">Downtime at hospitals and clinics attributable to parts unavailability rather than the repair itself.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> a standard field-service measure wherever parts availability directly gates equipment uptime.</div>
+        </div>
       </div>
+      <div class="src-note">Benchmarks are general field-service industry standards, not figures disclosed by Philips. Sources: <a href="https://smartserviceops.com/parts-fill-rate-kpi/" target="_blank" rel="noopener">SmartServiceOps</a>, <a href="https://www.getmaintainx.com/blog/spare-parts-inventory-kpis" target="_blank" rel="noopener">GetMaintainX</a>.</div>
     </div>
+
     <div class="kpi-group">
       <div class="kpi-group-label">Forecasting &amp; inventory</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Forecast accuracy</div><div class="kpi-desc">How closely demand planning for service parts matches actual consumption.</div><div class="kpi-bench"><strong>Benchmark</strong> 85&ndash;90% accuracy is a common target range for demand forecasting.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Inventory turnover</div><div class="kpi-desc">How many times service-parts inventory is sold/used and replaced over a period &mdash; the standard counterweight to fill rate.</div><div class="kpi-bench"><strong>Benchmark</strong> One of the five core inventory KPIs every supply-chain planner is advised to track.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Days of inventory outstanding</div><div class="kpi-desc">Average number of days parts sit in stock before use.</div><div class="kpi-bench"><strong>Benchmark</strong> Tracked alongside turnover as the standard inventory-efficiency pair.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Stock-out rate</div><div class="kpi-desc">Share of part requests that hit zero available stock at the point of need.</div><div class="kpi-bench"><strong>Benchmark</strong> A direct downstream signal of forecast-accuracy and inventory-turnover performance.</div></div>
+        <div class="kpi-card">
+          <div class="kpi-name">Forecast accuracy</div>
+          <div class="kpi-desc">How closely demand planning for service parts matches actual consumption.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> 85&ndash;90% accuracy is a common target range for demand forecasting.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Inventory turnover</div>
+          <div class="kpi-desc">How many times service-parts inventory is used and replaced over a period — the standard counterweight to fill rate.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> one of the five core inventory measures every supply-chain planner is advised to track.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Days of inventory outstanding</div>
+          <div class="kpi-desc">Average number of days parts sit in stock before use.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> tracked alongside turnover as the standard inventory-efficiency pair.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Stock-out rate</div>
+          <div class="kpi-desc">Share of part requests that hit zero available stock at the point of need.</div>
+          <div class="kpi-bench"><strong>Industry benchmark:</strong> a direct downstream signal of forecast-accuracy and inventory-turnover performance.</div>
+        </div>
       </div>
+      <div class="src-note">Benchmarks are general supply-chain industry standards, not figures disclosed by Philips. Sources: <a href="https://www.netstock.com/blog/the-most-important-kpis-to-assess-your-supply-chains-inventory/" target="_blank" rel="noopener">Netstock</a>, <a href="https://www.getmaintainx.com/blog/spare-parts-inventory-kpis" target="_blank" rel="noopener">GetMaintainX</a>.</div>
     </div>
+
     <div class="kpi-group">
-      <div class="kpi-group-label">AI &amp; data adoption</div>
+      <div class="kpi-group-label">Artificial-intelligence &amp; data adoption</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">AI use cases in production</div><div class="kpi-desc">Number of identified AI use cases that have moved from pilot to adopted, in-production tooling &mdash; the posting's own "beyond proof-of-concept" bar.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against SPS's own use-case pipeline &mdash; no external adoption-rate standard applies across companies.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Data architecture coverage</div><div class="kpi-desc">Share of SPS processes running on the target data architecture versus legacy/manual structures.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; tied to the specific architecture design principles this role owns.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Time-to-decision on IT investment requests</div><div class="kpi-desc">Speed of the annual IT investment-planning process this role drives, from request to funded project.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against Philips' own planning cycle.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Analytics/BI tool adoption by planners</div><div class="kpi-desc">Share of SPS planning and analytics staff actively using the tools this role builds, versus legacy spreadsheet-based work.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; no external comparator for this specific tool rollout.</div></div>
+        <div class="kpi-card">
+          <div class="kpi-name">AI (artificial-intelligence) use cases in production</div>
+          <div class="kpi-desc">Number of identified use cases that have moved from pilot to adopted, in-production tooling — the posting's own "beyond proof-of-concept" bar.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Data architecture coverage</div>
+          <div class="kpi-desc">Share of SPS processes running on the target data architecture versus legacy or manual structures.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Time-to-decision on IT investment requests</div>
+          <div class="kpi-desc">Speed of the annual IT investment-planning process this role drives, from request to funded project.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Analytics tool adoption by planners</div>
+          <div class="kpi-desc">Share of SPS planning and analytics staff actively using the tools this role builds, versus legacy spreadsheet-based work.</div>
+        </div>
       </div>
+      <div class="src-note">Internally defined against SPS's own use-case pipeline and architecture design principles — no external adoption-rate standard applies across companies.</div>
     </div>
+
     <div class="kpi-group">
       <div class="kpi-group-label">Commercial &amp; financial</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Parts-sales growth</div><div class="kpi-desc">Revenue growth from service parts, the explicit commercial mandate named in the posting alongside delivery performance.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against SPS's own base &mdash; no external, function-specific figure is published.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Connected Care segment margin</div><div class="kpi-desc">Progress on the segment's Adjusted EBITA margin, the thinnest of Philips' three segments at 10.7% in FY2025.</div><div class="kpi-bench"><strong>Benchmark</strong> Diagnosis &amp; Treatment (11.7%) and Personal Health (18.0%) are the group's own internal reference points.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Productivity contribution</div><div class="kpi-desc">SPS's share of the group's &euro;1.5B 2026&ndash;2028 productivity program.</div><div class="kpi-bench"><strong>Benchmark</strong> Group delivered &euro;258M toward the &euro;1.5B target in H1 2026 &mdash; the pace this role's function is expected to sustain its share of.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Cost per part delivered</div><div class="kpi-desc">Total logistics, warehousing and handling cost divided by parts shipped &mdash; the standard efficiency metric for a service-parts network.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against SPS's own historical cost base.</div></div>
+        <div class="kpi-card">
+          <div class="kpi-name">Parts-sales growth</div>
+          <div class="kpi-desc">Revenue growth from service parts — the explicit commercial mandate named in the posting alongside delivery performance.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Connected Care segment margin</div>
+          <div class="kpi-desc">Progress on the segment's Adjusted EBITA margin, the thinnest of Philips' three segments at 10.7% in 2025.</div>
+          <div class="kpi-bench"><strong>Internal reference:</strong> Diagnosis &amp; Treatment (11.7%) and Personal Health (18.0%) are the group's own comparison points.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Productivity contribution</div>
+          <div class="kpi-desc">SPS's share of the group's &euro;1.5 billion 2026&ndash;2028 productivity program.</div>
+          <div class="kpi-bench"><strong>Internal reference:</strong> the group delivered &euro;258 million toward the target in the first half of 2026.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Cost per part delivered</div>
+          <div class="kpi-desc">Total logistics, warehousing and handling cost divided by parts shipped — the standard efficiency measure for a service-parts network.</div>
+        </div>
       </div>
     </div>
+
     <div class="kpi-group">
       <div class="kpi-group-label">Team &amp; organization build</div>
       <div class="kpi-row">
-        <div class="kpi-card"><div class="kpi-name">Organization stand-up milestones</div><div class="kpi-desc">Progress building the newly formed global organization across locations, functions and leadership layers &mdash; the posting's core people mandate.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; specific to this organization's 2026 build-out.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Management-layer depth</div><div class="kpi-desc">Managers-of-managers in place, reflecting the posting's requirement to lead through multiple management layers.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined against SPS's target organization design.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Stakeholder trust &amp; influence</div><div class="kpi-desc">Effectiveness building trusted relationships across SPS, IT, business and transformation organizations in a matrixed environment.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; a qualitative executive-presence mandate named directly in the posting.</div></div>
-        <div class="kpi-card"><div class="kpi-name">Employee retention in the new organization</div><div class="kpi-desc">Retention of experts and people managers through the organization's first year, while it is still being built and integrated.</div><div class="kpi-bench"><strong>Benchmark</strong> Internally defined &mdash; specific to this newly formed function.</div></div>
+        <div class="kpi-card">
+          <div class="kpi-name">Organization stand-up milestones</div>
+          <div class="kpi-desc">Progress building the newly formed global organization across locations, functions and leadership layers — the posting's core people mandate.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Management-layer depth</div>
+          <div class="kpi-desc">Managers of managers in place, reflecting the posting's requirement to lead through multiple management layers.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Stakeholder trust &amp; influence</div>
+          <div class="kpi-desc">Effectiveness building trusted relationships across SPS, IT, business and transformation organizations in a matrixed environment.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Team retention in the new organization</div>
+          <div class="kpi-desc">Retention of experts and people managers through the organization's first year, while it is still being built and integrated.</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="src-note">Fulfillment &amp; inventory benchmarks: <a href="https://smartserviceops.com/parts-fill-rate-kpi/" target="_blank" rel="noopener">SmartServiceOps</a>, <a href="https://www.netstock.com/blog/the-most-important-kpis-to-assess-your-supply-chains-inventory/" target="_blank" rel="noopener">Netstock</a>, <a href="https://www.getmaintainx.com/blog/spare-parts-inventory-kpis" target="_blank" rel="noopener">GetMaintainX</a>. Role, financial and organizational figures from the <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official job posting</a> and <a href="https://www.philips.com/a-w/about/news/archive/corpcomms/news/press/2026/philips-fourth-quarter-results-2025.html" target="_blank" rel="noopener">Philips FY2025 results</a>.</div>
 
 </main>
 
+<!-- ABOUT STRIP -->
 <section class="about-strip">
   <div class="inner">
     <div>
       <div class="label">About the Author</div>
-      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
       <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
     </div>
     <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
