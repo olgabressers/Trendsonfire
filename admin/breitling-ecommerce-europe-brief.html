@@ -113,6 +113,33 @@
     .brand-name{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:6px;}
     .brand-desc{font-size:13.5px;color:#1f1f1f;line-height:1.55;}
 
+    /* REVIEW THEMES */
+    .rv-split{background:#f9fafb;border:1px solid #e2dfd9;padding:18px 20px;margin:0 0 24px;}
+    .rv-split-sub{font-size:13.5px;color:#1f1f1f;margin-bottom:16px;line-height:1.6;}
+    .rv-theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:640px){.rv-theme-grid{grid-template-columns:1fr;}}
+    .rv-col-hdr{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid;}
+    .rv-col-hdr.neg{color:#b91c1c;border-color:#dc2626;}
+    .rv-col-hdr.pos{color:#15803d;border-color:#16a34a;}
+    .rv-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
+    .rv-bar-label{font-size:13px;color:#1f1f1f;flex:1;line-height:1.3;}
+    .rv-bar-track{width:90px;height:7px;background:#e8e5e0;border-radius:2px;flex-shrink:0;}
+    .rv-bar-fill{height:100%;border-radius:2px;}
+    .rv-bar-fill.neg{background:#dc2626;}
+    .rv-bar-fill.pos{background:#16a34a;}
+    .rv-bar-pct{font-size:13px;font-weight:700;color:#0a0f1a;flex-shrink:0;min-width:30px;text-align:right;}
+    .rv-est-note{font-size:12px;color:#888;margin-top:12px;font-style:italic;}
+    .pct-neg{display:inline-block;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;font-size:13px;font-weight:700;padding:2px 8px;border-radius:2px;margin-right:6px;}
+    .pct-pos{display:inline-block;background:#f0faf4;color:#15803d;border:1px solid #bbf7d0;font-size:13px;font-weight:700;padding:2px 8px;border-radius:2px;margin-right:6px;}
+    .trend-pos-hdr{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#15803d;margin:26px 0 10px;padding-top:20px;border-top:2px solid #16a34a;}
+    .trend-list{margin:0;padding:0;list-style:none;}
+    .trend-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid #e8e5e0;}
+    .trend-item:last-child{border-bottom:none;}
+    .trend-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:600;color:#8a6d3f;line-height:1;flex-shrink:0;min-width:22px;margin-top:2px;}
+    .trend-body h4{font-size:14.5px;font-weight:700;color:#0a0f1a;margin-bottom:5px;}
+    .trend-body p{font-size:13.5px;color:#1f1f1f;line-height:1.6;margin:0;}
+    .fb-stat-tag{display:inline-block;background:#f3f4f6;color:#0a0f1a;font-size:13px;font-weight:700;padding:2px 9px;border-radius:2px;margin-top:6px;margin-right:4px;}
+
     /* WATCH GRID */
     .watch-sub{font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#111111;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
     .watch-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 6px;}
@@ -404,10 +431,11 @@
       <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Ownership, turnover &amp; the Swiss watch trade</a><br><span style="color:#555;font-size:13px;">Ownership timeline, five-year turnover, and where Breitling ranks against Omega, Longines, Tissot.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">A two-region budget · two customer service hubs · declining core markets under owner scrutiny.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-ops" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Breitling Europe (BEU) &amp; the operating footprint</a><br><span style="color:#555;font-size:13px;">The Lijnden entity, the job posting's own responsibilities, and UK market filings.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-org" style="color:#0a0f1a;text-decoration:none;font-weight:700;">How Breitling organizes e-commerce, client relations &amp; anti-fraud</a><br><span style="color:#555;font-size:13px;">Digital &amp; IT structure, the Client Relations Squad, and how fraud screening is handled.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Four accountability areas mapped to Olga's experience — plus a 5-step priority stack.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership &amp; owners</a><br><span style="color:#555;font-size:13px;">Most likely direct report, regional presidents in scope, CEO, Chief Customer Officer, Chief Commercial Officer, Chief Marketing Officer, board chair.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (key performance indicator) framework</a><br><span style="color:#555;font-size:13px;">Four layers: commercial, digital operations, customer experience, governance.</span></li>
-      <li><a href="#sec-feedback" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Consumer feedback &amp; satisfaction</a><br><span style="color:#555;font-size:13px;">Trustpilot and Yelp ratings — no published NPS or CSAT found.</span></li>
+      <li><a href="#sec-feedback" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Consumer feedback &amp; satisfaction</a><br><span style="color:#555;font-size:13px;">Trustpilot, PissedConsumer, Yelp, Google boutique ratings — plus/minus themes from 49 reviews read.</span></li>
     </ol>
   </div>
 
@@ -658,9 +686,36 @@
     <div class="chart-src">Sources: <a href="https://oracleoftime.com/watch-industry-insider-interview-georges-kern-breitling/" target="_blank" rel="noopener">Oracle Time, Georges Kern interview</a> · <a href="https://www.watchpro.com/breitling-officially-becomes-house-of-brands/" target="_blank" rel="noopener">WatchPro, House of Brands</a></div>
   </div>
 
+  <!-- HOW BREITLING IS ORGANIZED -->
+  <div id="sec-org" class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Internal Structure</div>
+      <div class="sec-title">How Breitling organizes e-commerce, client relations &amp; anti-fraud</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">E-commerce operations</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.7;margin:0;">Run out of a Digital &amp; IT department, led by Michele Lo Forte, Global Head of Ecommerce and Digital Customer Engagement (see Leadership, below), with a dedicated Senior Data Analyst for Digital Engagement &amp; Ecommerce. Order management runs on Fluent Commerce, deployed from December 2021 to give one shared view of stock across boutiques and online stores — a 6-week Switzerland pilot first, then phased into the United States, Europe and China. On-site behaviour is tracked with Contentsquare.</p>
+    <div class="chart-src">Sources: <a href="https://www.supplychainbrain.com/articles/38467-fluent-commerces-centralized-inventory-management-increased-breitling-online-sales-by-20" target="_blank" rel="noopener">SupplyChainBrain, Fluent Commerce at Breitling</a> · <a href="https://contentsquare.com/customers/breitling/" target="_blank" rel="noopener">Contentsquare, Breitling case study</a> · <a href="https://powercommerce.com/blogs/ecommerce-hub/the-future-of-luxury-retail-insights-from-breitling-s-michele-lo-forte" target="_blank" rel="noopener">PowerCommerce, Michele Lo Forte</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Client relations / customer service</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.7;margin:0;">Branded internally as the "Client Relations Squad." Per this job posting, multilingual customer service runs as both internal and external (outsourced) teams, from two hubs — Amsterdam and Hong Kong. No single published service-level standard covers both hubs.</p>
+    <div class="chart-src">Source: <a href="https://careers.breitling.com/job/Lead-e-Commerce-Europe-&-Managing-Director-BEU-temporary-%28fmx%29/1476-en_GB/" target="_blank" rel="noopener">careers.breitling.com, job posting</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Anti-fraud &amp; payment security</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.7;margin:0;">Breitling's own terms and conditions state that "Breitling or its third-party providers may collect additional information for security and anti-fraud purposes" — fraud screening runs at least partly through external payment/security providers, not a named in-house anti-fraud team. No dedicated anti-fraud function or tool could be independently identified beyond this clause and a general secure-payments page.</p>
+    <div class="chart-src">Source: <a href="https://www.breitling.com/us-en/terms-and-conditions/additional-services/" target="_blank" rel="noopener">breitling.com, terms &amp; conditions</a></div>
+  </div>
+
   <!-- ROLE SCOPE -->
   <div id="sec-scope" class="sec-header">
-    <div class="sec-num">03</div>
+    <div class="sec-num">04</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Role scope</div>
       <div class="sec-title">Lead e-Commerce Europe &amp; Managing Director BEU — four accountability areas &amp; Olga's experience</div>
@@ -668,34 +723,6 @@
   </div>
 
   <div class="src-note" style="margin-bottom:24px;">The posting asks for 5+ years in senior e-commerce, digital commerce or business development, a proven track record leading teams and cross-functional organizations, and experience with e-commerce platforms, CMS (content management system) and UX/UI (user experience and user interface). Olga's e-commerce career runs Richemont (2019–2025), adidas (2016–2018), Nike (2010–2016) and IBM (2006–2010) — 19 years, including a Richemont role based in Amsterdam with full P&amp;L ownership of a €150 million e-commerce business across 26 European markets.</div>
-
-  <div class="chart-box">
-    <div class="chart-title">How Breitling organizes e-commerce operations, client relations &amp; anti-fraud</div>
-    <div class="chart-sub">What is publicly known about Breitling's own structure, set against Olga's matching Richemont accountability</div>
-    <div class="pri-wrap">
-      <table class="pri-table">
-        <thead><tr><th style="width:22%;">Function</th><th>What's known about Breitling</th><th>Olga's matching Richemont accountability</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>E-commerce operations</strong></td>
-            <td>Run out of a Digital &amp; IT department under Michele Lo Forte, Global Head of Ecommerce and Digital Customer Engagement (see Leadership, below), with a dedicated data analytics role (Senior Data Analyst, Digital Engagement &amp; Ecommerce). Order management runs on Fluent Commerce, deployed from December 2021 to unify inventory visibility across boutiques and online stores — a 6-week Switzerland pilot, then a phased U.S., Europe and China rollout. Contentsquare is used for on-site behaviour analytics.</td>
-            <td>Richemont: business owner of Salesforce CRM deployments across 26 countries; built the omni-channel analytics cockpit from scratch, with North Star KPIs (key performance indicators) reported at Executive Committee level.</td>
-          </tr>
-          <tr>
-            <td><strong>Client relations / customer service</strong></td>
-            <td>Branded internally as the "Client Relations Squad." Per this posting, multilingual customer service runs as both internal and external (outsourced) teams from two hubs — Amsterdam and Hong Kong — with no single published service-level standard across them.</td>
-            <td>Richemont: transformed the Client Relations Centre from a cost centre into a revenue-generating e-boutique channel, leading a 240+ FTE (full-time equivalent) team spanning e-commerce, digital sales, anti-fraud and client relations across 26 countries.</td>
-          </tr>
-          <tr>
-            <td><strong>Anti-fraud &amp; payment security</strong></td>
-            <td>Breitling's own terms and conditions state that "Breitling or its third-party providers may collect additional information for security and anti-fraud purposes" — indicating fraud screening is handled at least partly through external payment/security providers rather than a named in-house anti-fraud function. No dedicated anti-fraud team or tool could be independently identified beyond this and a general secure-payments page.</td>
-            <td>Richemont: led anti-fraud and payment transformation directly, as part of the same Director-level e-commerce, customer service and operations remit this Breitling role now combines.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="src-note">Sources: <a href="https://www.supplychainbrain.com/articles/38467-fluent-commerces-centralized-inventory-management-increased-breitling-online-sales-by-20" target="_blank" rel="noopener">SupplyChainBrain, Fluent Commerce at Breitling</a> · <a href="https://contentsquare.com/customers/breitling/" target="_blank" rel="noopener">Contentsquare, Breitling case study</a> · <a href="https://powercommerce.com/blogs/ecommerce-hub/the-future-of-luxury-retail-insights-from-breitling-s-michele-lo-forte" target="_blank" rel="noopener">PowerCommerce, Michele Lo Forte</a> · <a href="https://www.breitling.com/us-en/terms-and-conditions/additional-services/" target="_blank" rel="noopener">breitling.com, terms &amp; conditions</a> · <a href="https://careers.breitling.com/job/Lead-e-Commerce-Europe-&-Managing-Director-BEU-temporary-%28fmx%29/1476-en_GB/" target="_blank" rel="noopener">careers.breitling.com, job posting</a>.</div>
-  </div>
 
   <div class="scope-grid">
     <div class="scope-card">
@@ -790,7 +817,7 @@
 
   <!-- LEADERSHIP -->
   <div id="sec-leadership" class="sec-header">
-    <div class="sec-num">04</div>
+    <div class="sec-num">05</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Stakeholders</div>
       <div class="sec-title">Leadership &amp; owners</div>
@@ -894,7 +921,7 @@
 
   <!-- KPIS -->
   <div id="sec-kpi" class="sec-header">
-    <div class="sec-num">05</div>
+    <div class="sec-num">06</div>
     <div class="sec-label">
       <div class="sec-eyebrow">KPIs</div>
       <div class="sec-title">KPI (Key Performance Indicator) framework — four layers</div>
@@ -993,29 +1020,38 @@
 
   <!-- CONSUMER FEEDBACK -->
   <div id="sec-feedback" class="sec-header">
-    <div class="sec-num">06</div>
+    <div class="sec-num">07</div>
     <div class="sec-label">
       <div class="sec-eyebrow">Customer Voice</div>
       <div class="sec-title">Consumer feedback &amp; satisfaction</div>
     </div>
   </div>
 
-  <div class="stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px;">
+  <p style="font-size:14.5px;color:#0a0f1a;line-height:1.7;margin:0 0 20px;">No Net Promoter Score (NPS) or Customer Satisfaction Score (CSAT) is published by Breitling. Four third-party sources give a read on customer sentiment instead: Trustpilot and PissedConsumer (both skew heavily to post-purchase service and repair complaints), Yelp (mixed), and Google — which has no single brand-wide score, because Breitling boutiques are listed individually, market by market. This role owns customer loyalty and retention initiatives and the Amsterdam/Hong Kong service teams directly, per the posting's own responsibilities table in Section 03.</p>
+
+  <div class="stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px;">
     <div class="s-card">
       <div class="s-lbl">Trustpilot TrustScore</div>
-      <div class="s-num">2.2<span style="font-size:20px;">/5</span></div>
+      <div class="s-num">2.2<span style="font-size:18px;">/5</span></div>
       <div class="s-delta">377 reviews</div>
       <div class="s-src"><a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot, breitling.com</a></div>
     </div>
     <div class="s-card">
-      <div class="s-lbl">1-Star Reviews</div>
-      <div class="s-num">68%</div>
-      <div class="s-src">Vs. 25% five-star — a polarized distribution. <a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot</a></div>
+      <div class="s-lbl">PissedConsumer</div>
+      <div class="s-num">1.7<span style="font-size:18px;">/5</span></div>
+      <div class="s-delta">11% full resolution</div>
+      <div class="s-src"><a href="https://breitling.pissedconsumer.com/customer-service.html" target="_blank" rel="noopener">PissedConsumer</a></div>
     </div>
     <div class="s-card">
       <div class="s-lbl">Yelp Rating</div>
-      <div class="s-num">3.8<span style="font-size:20px;">/5</span></div>
+      <div class="s-num">3.8<span style="font-size:18px;">/5</span></div>
       <div class="s-src">85 reviews. <a href="https://www.yelp.com/brands/breitling" target="_blank" rel="noopener">Yelp</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Google — sampled boutiques</div>
+      <div class="s-num">4.6<span style="font-size:18px;">/5</span></div>
+      <div class="s-delta pos">Los Angeles, San Antonio, Toronto</div>
+      <div class="s-src">Individually listed, no single brand score</div>
     </div>
   </div>
 
@@ -1033,11 +1069,160 @@
         </tbody>
       </table>
     </div>
-    <div class="src-note">No published Net Promoter Score (NPS) or Customer Satisfaction Score (CSAT) could be found for Breitling — the company does not appear to disclose one publicly. Trustpilot and Yelp, both third-party review platforms, are the only quantified customer-sentiment sources located. Recurring themes in the written reviews: product-quality complaints (chronograph and water-resistance faults, components detaching), repair cost and turnaround time, and split opinions on customer service — some reviewers cite knowledgeable, helpful staff, others cite long repair waits and unresponsive service. These themes are a summary of recurring review content, not a formal survey.</div>
-    <div class="chart-src">Sources: <a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot, breitling.com</a> · <a href="https://www.yelp.com/brands/breitling" target="_blank" rel="noopener">Yelp, Breitling</a>. Checked 16 September 2026.</div>
+    <div class="chart-src">Source: <a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot, breitling.com</a>. Checked 16 September 2026.</div>
   </div>
 
-  <div class="src-note" style="margin-top:-8px;">This role owns customer loyalty and retention initiatives and the Amsterdam/Hong Kong service teams directly, per the posting's own responsibilities table in Section 02.</div>
+  <div class="chart-box">
+    <div class="chart-title">Google — no single brand score, boutiques listed individually</div>
+    <div class="chart-sub">Three flagship boutiques sampled, via each boutique's own Google Business listing</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Boutique</th><th>Google rating</th></tr></thead>
+        <tbody>
+          <tr><td>Los Angeles</td><td>4.6 / 5</td></tr>
+          <tr><td>San Antonio</td><td>4.7 / 5</td></tr>
+          <tr><td>Toronto</td><td>4.6 / 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">Breitling has no company-wide Google review score — each boutique (directly-run or franchise-partner) carries its own Google Business listing and rating. The three sampled here run well above Breitling's Trustpilot and PissedConsumer scores, both of which measure the .com and after-sales/repair channel rather than the in-boutique experience.</div>
+    <div class="chart-src">Source: TrustAnalytica boutique listings (aggregating Google reviews), checked 16 September 2026.</div>
+  </div>
+
+  <!-- REVIEW SPLIT OVERVIEW -->
+  <div class="rv-split">
+    <div class="rv-split-sub">Trustpilot doesn't publish a themed breakdown, so the split below is a qualitative reading of a real sample: 40 Trustpilot reviews (breitling.com, most recent) and 9 PissedConsumer reviews, individually read. Bar widths are relative frequency within that sample — not a count of all 377 Trustpilot reviews.</div>
+    <div class="rv-theme-grid">
+      <div>
+        <div class="rv-col-hdr neg">Negative themes — sampled reviews</div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Repair cost, quality &amp; turnaround</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:45%"></div></div>
+          <div class="rv-bar-pct">45%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Boutique/staff service inconsistency</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:20%"></div></div>
+          <div class="rv-bar-pct">20%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Product durability faults</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:15%"></div></div>
+          <div class="rv-bar-pct">15%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Delivery &amp; logistics delays</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:10%"></div></div>
+          <div class="rv-bar-pct">10%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Other (buyback offers, subscriptions)</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:10%"></div></div>
+          <div class="rv-bar-pct">10%</div>
+        </div>
+      </div>
+      <div>
+        <div class="rv-col-hdr pos">Positive themes — sampled reviews</div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Knowledgeable, attentive boutique staff</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:45%"></div></div>
+          <div class="rv-bar-pct">45%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Fast, professional individual support</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:25%"></div></div>
+          <div class="rv-bar-pct">25%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Service/repair completed as quoted</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:20%"></div></div>
+          <div class="rv-bar-pct">20%</div>
+        </div>
+        <div class="rv-bar-row">
+          <div class="rv-bar-label">Registration &amp; warranty assistance</div>
+          <div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:10%"></div></div>
+          <div class="rv-bar-pct">10%</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv-est-note">Theme shares estimated from reading the 40 Trustpilot and 9 PissedConsumer reviews individually — not a counted sample of the full review base.</div>
+  </div>
+
+  <ul class="trend-list">
+    <li class="trend-item">
+      <div class="trend-n">1</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">45%</span>Repair cost, quality &amp; turnaround</h4>
+        <p>The dominant complaint, on both Trustpilot and PissedConsumer: repair quotes seen as disproportionate to watch value (a £700 and later £840 repair bill on a £6,000 watch; a $1,000 service charge on a $10,000 watch after water damage), multi-week to multi-month turnaround (one PissedConsumer case: 6 months, resulting in total watch failure), and Breitling's policy of not selling spare parts (crowns, rubber straps) independently, which several reviewers describe as forcing a full paid service.</p>
+        <span class="fb-stat-tag">Highest complaint volume in both samples</span>
+        <span class="fb-stat-tag">PissedConsumer: 11% full resolution rate</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">2</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">20%</span>Boutique/staff service inconsistency</h4>
+        <p>The same brand produces both extremes in this sample: a Plymouth boutique praised as "superior to other watch retailers" sits beside a Rome boutique described as "rude and dismissive," and a Bond Street visit where staff reportedly showed no interest in a repeat customer. This mirrors the boutique network's own structure (Section 01) — a mix of directly-run and independently-operated franchise boutiques, each setting its own service bar.</p>
+        <span class="fb-stat-tag">Consistency, not capability, is the gap</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">3</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">15%</span>Product durability faults</h4>
+        <p>Recurring reports of a crown detaching within months on a gold Superocean, water ingress despite a 300m rating, and general timekeeping complaints. A small share of the sample, but the kind of fault that triggers the repair-cost complaints above.</p>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">4</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">10%</span>Delivery &amp; logistics delays</h4>
+        <p>A watch promised for 1–2 day pickup arriving after 9 days; a birthday-gift order delayed by what a reviewer described as a quality-control hold. A minority theme, but a direct-fit issue for this role's own stock-planning and logistics responsibilities.</p>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">5</div>
+      <div class="trend-body">
+        <h4><span class="pct-neg">10%</span>Buyback offers &amp; subscription handling</h4>
+        <p>A trade-in/buyback offer described as significantly below market value, and a subscription-model case (PissedConsumer) where payments continued for three months after a watch was reported stolen, with no pause or credit offered.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="trend-pos-hdr">Positive themes — sampled reviews</div>
+  <ul class="trend-list">
+    <li class="trend-item">
+      <div class="trend-n">1</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">45%</span>Knowledgeable, attentive boutique staff</h4>
+        <p>The single most-cited positive across both Trustpilot and the sampled Google boutique reviews: named staff members praised for product knowledge, patience and going beyond a standard sale. This is the same boutique network flagged as inconsistent above — when it works, it is the brand's clearest strength.</p>
+        <span class="fb-stat-tag">Also the top driver of 4.6–4.7/5 Google boutique ratings</span>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">2</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">25%</span>Fast, professional individual support</h4>
+        <p>Reviewers naming a specific customer-service representative by name for a quick, professional resolution — evidence the underlying service capability is there when a case is handled well.</p>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">3</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">20%</span>Service/repair completed as quoted</h4>
+        <p>When a full service is delivered within the quoted time and price, reviewers respond with five-star ratings — direct evidence that the service operation can meet its own stated standard, when it does.</p>
+      </div>
+    </li>
+    <li class="trend-item">
+      <div class="trend-n">4</div>
+      <div class="trend-body">
+        <h4><span class="pct-pos">10%</span>Registration &amp; warranty assistance</h4>
+        <p>Straightforward, well-handled warranty registration is repeatedly called out as a positive first-touch experience.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="src-note" style="margin-top:12px;">Sources: <a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot — breitling.com, 40 reviews individually read across two pages</a> · <a href="https://breitling.pissedconsumer.com/review.html" target="_blank" rel="noopener">PissedConsumer — breitling.com, 9 reviews individually read</a> · <a href="https://www.yelp.com/brands/breitling" target="_blank" rel="noopener">Yelp</a> · Google ratings via TrustAnalytica boutique listings (Los Angeles, San Antonio, Toronto). Theme shares: qualitative analysis of the reviews read, not a count of the full review base. Checked 16 September 2026.</div>
 
 </main>
 
