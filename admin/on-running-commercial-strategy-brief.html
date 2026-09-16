@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>On Holding — Head of Commercial Strategy Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#0a0a0a;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#2f7efe;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4.2vw,48px);font-weight:400;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px;}
+    .art-hero h1 em{color:#2f7efe;font-style:italic;}
+    .art-hero p{font-size:16px;color:rgba(255,255,255,.87);line-height:1.6;max-width:900px;}
+    .art-hero .meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:13px;font-weight:700;letter-spacing:.5px;color:#2f7efe;text-decoration:none;border:1px solid rgba(47,126,254,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(47,126,254,.1);}
+
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;line-height:1;color:#0a0a0a;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-delta.neg{color:#dc2626;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#1d5fd6;font-weight:600;}
+
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:24px 22px 20px;margin-bottom:24px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#1d5fd6;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#0a0a0a;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#2f7efe;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(47,126,254,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#2f7efe;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:14px;color:#ffffff;padding:8px 0 8px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#2f7efe;position:absolute;left:0;font-weight:700;}
+    .bk-card-src{font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.5;}
+    .bk-card-src a{color:#2f7efe;}
+
+    /* SECTION HEADER */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid #0a0a0a;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1d5fd6;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.8vw,32px);font-weight:600;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #0a0a0a;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#1d5fd6;}
+
+    /* PRIORITY / DATA TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+    .pri-table th{background:#0a0a0a;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#1d5fd6;}
+
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.scope-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:600;line-height:1;color:#1d5fd6;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0a0f1a;margin-bottom:9px;line-height:1.3;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#0a0a0a;border-left:3px solid #2f7efe;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#2f7efe;margin-bottom:6px;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1d5fd6;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#0a0a0a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
+
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#0a0a0a;color:#2f7efe;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#0a0a0a;color:#2f7efe;}
+    .org-name{font-size:15.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13.5px;color:#0a0f1a;line-height:1.4;margin-top:2px;}
+    .org-entity{font-size:13px;color:#4b5563;font-weight:600;margin-top:3px;line-height:1.4;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
+    .org-conf a{color:#1d5fd6;font-weight:600;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.on.com" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; On Holding</div>
+    <div class="eyebrow">Interview Brief — Head of Commercial Strategy · Global Commercial</div>
+    <h1>On Holding: <em>CHF 3 billion, new Co-CEOs, and a Global Commercial portfolio to architect</em></h1>
+    <p>On Holding AG (NYSE: ONON) crossed CHF 3.0 billion in net sales for the first time in 2025 — up 30.0% reported, 35.6% at constant currency — then grew 13.5% reported (21.6% constant currency) in the second quarter of 2026, a deceleration the market read sharply: shares fell after the release, with net sales landing below analyst estimates of roughly CHF 878 million. The same period, co-founders David Allemann and Caspar Coppetti returned as Co-CEOs, Frank Sluis joined as Chief Financial Officer, and Scott Maguire's mandate expanded to President and Chief Operating Officer — a reset landing in the final year of the three-year strategy set at On's October 2023 Investor Day, six days before the next one, on 22 September 2026. The role: architect the omnichannel commercial strategy across On's Direct-to-Consumer ("DTC"), wholesale and own-retail channels, own the Global Commercial project portfolio, and lead change management for new commercial capabilities — including "New Sports," the priority named directly in the posting.</p>
+    <div class="meta">
+      <span>Sources: press.on-running.com, SEC Form 20-F &amp; 6-K filings, culture.on.com job posting, Deckers Brands, adidas AG, Amer Sports, Nike, Berkshire Hathaway, swissinfo.ch, sgbonline.com</span>
+      <span>Updated 16 September 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #2f7efe;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#1d5fd6;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Swiss premium sportswear brand founded in Zurich in 2010. Crossed CHF 3.0 billion in net sales for the first time in 2025 (+30.0% reported, +35.6% constant currency). Direct-to-Consumer ("DTC") sales grew faster than wholesale, and Asia-Pacific ("APAC") grew 96.4%. Roger Federer became an investor and product partner ahead of the September 2021 IPO on the NYSE.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Head of Commercial Strategy, based in Zurich, leading the Commercial Programs &amp; Project Management team inside Global Strategy. Architect On's omnichannel commercial strategy across DTC, wholesale and own-retail channels; own the Global Commercial project portfolio; lead commercial programs spanning sales elevation, market expansion and omnichannel development; and act as the central point of contact across Operations, Technology and Finance stakeholders.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">Company context</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Growth decelerated to 13.5% reported (21.6% constant currency) in the second quarter of 2026, missing analyst estimates and sending shares down sharply on the day of the release. The same period brought a full leadership reset: co-founders David Allemann and Caspar Coppetti became Co-CEOs, Frank Sluis joined as Chief Financial Officer, and Scott Maguire's mandate expanded to President and Chief Operating Officer — landing in the final year of the three-year strategy set at On's October 2023 Investor Day, with the next Investor Day six days after this brief's last update.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">Key opportunity</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">The posting names "New Sports" as a strategic priority for this role. On has expanded into tennis (Iga Świątek, Ben Shelton, João Fonseca, and "THE ROGER" shoe line with Federer) and, since January 2026, padel (World No.1 Arturo Coello) — the opening is to build the omnichannel commercial framework for these categories before they scale, at the same moment On's own leadership and three-year strategy are both being reset.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#eaf1ff;border:1px solid #b9d3fb;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#0a0a0a;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-financials" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Financials, growth &amp; the three-year strategy</a><br><span style="color:#555;font-size:13px;">FY2025 results, the Q2 2026 deceleration, "New Sports," and the competitive set.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">Decelerating growth · a founder-led reset · a wholesale-majority base scaling DTC.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-ops" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Responsibilities &amp; the team, as On describes them</a><br><span style="color:#555;font-size:13px;">The posting's own mission and requirements, verbatim.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Six accountability areas mapped to Olga's experience — plus a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership — the 2026 reset</a><br><span style="color:#555;font-size:13px;">Founders, the new Co-CEOs, the new Chief Financial Officer, and the outgoing CEO.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (Key Performance Indicator) framework</a><br><span style="color:#555;font-size:13px;">Four layers: commercial impact, project portfolio, change management, stakeholder governance.</span></li>
+    </ol>
+  </div>
+
+</div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">FY2025 Net Sales</div>
+      <div class="s-num">CHF 3.01B</div>
+      <div class="s-delta">+30.0% reported</div>
+      <div class="s-src"><a href="https://press.on-running.com/on-announces-fourth-quarter-and-full-year-results-and-the-filing-of-its-annual-report-on-form-20-f-for-2025" target="_blank" rel="noopener">press.on-running.com, FY2025 results</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Q2 2026 Net Sales</div>
+      <div class="s-num">CHF 850.3M</div>
+      <div class="s-delta">+13.5% reported</div>
+      <div class="s-src">+21.6% constant currency. <a href="https://press.on-running.com/on-reports-results-for-the-second-quarter-and-six-month-period-ended-june-30-2026" target="_blank" rel="noopener">Q2 2026 results</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">DTC Share, Q2 2026</div>
+      <div class="s-num">45.7%</div>
+      <div class="s-src">Record for a second quarter. <a href="https://press.on-running.com/on-reports-results-for-the-second-quarter-and-six-month-period-ended-june-30-2026" target="_blank" rel="noopener">Q2 2026 results</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Employees, Dec 2025</div>
+      <div class="s-num">3,963</div>
+      <div class="s-delta">+21.8% YoY</div>
+      <div class="s-src"><a href="https://stockanalysis.com/stocks/onon/employees/" target="_blank" rel="noopener">stockanalysis.com</a>, compiling Form 20-F</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Founded</div>
+      <div class="s-num">2010</div>
+      <div class="s-src">Zurich, Switzerland. <a href="https://en.wikipedia.org/wiki/On_(company)" target="_blank" rel="noopener">Wikipedia / On</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">IPO</div>
+      <div class="s-num">2021</div>
+      <div class="s-src">15 Sep 2021, NYSE: ONON, $746M raised. <a href="https://caplaw.ch/2021/ipo-of-on-holding-on-nyse/" target="_blank" rel="noopener">CapLaw</a></div>
+    </div>
+  </div>
+
+  <!-- FINANCIALS & STRATEGY -->
+  <div id="sec-financials" class="sec-header" style="margin-top:0;">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Financials &amp; Market</div>
+      <div class="sec-title">Financials, growth &amp; the three-year strategy</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">FY2025 — the first CHF 3 billion year</div>
+    <div class="chart-sub">Year ended 31 December 2025, reported and constant currency growth versus FY2024</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Figure</th><th>FY2025</th><th>Growth (reported / constant currency)</th></tr></thead>
+        <tbody>
+          <tr><td>Net sales</td><td>CHF 3,014.0 million</td><td>+30.0% / +35.6%</td></tr>
+          <tr><td>DTC sales channel</td><td>CHF 1,260.5 million (41.8% of sales)</td><td>+33.7% / +39.9%</td></tr>
+          <tr><td>Wholesale sales channel</td><td>CHF 1,753.4 million (58.2% of sales)</td><td>+27.5% / +32.6%</td></tr>
+          <tr><td>EMEA (Europe, Middle East and Africa)</td><td>CHF 762.7 million (25.3% of sales)</td><td>+32.0% / +34.7%</td></tr>
+          <tr><td>Americas</td><td>CHF 1,740.1 million (57.7% of sales)</td><td>+17.6% / +23.4%</td></tr>
+          <tr><td>Asia-Pacific ("APAC")</td><td>CHF 511.1 million (17.0% of sales)</td><td>+96.4% / +106.7%</td></tr>
+          <tr><td>Shoes</td><td>CHF 2,804.4 million</td><td>+27.5%</td></tr>
+          <tr><td>Apparel</td><td>CHF 169.9 million</td><td>+68.2%</td></tr>
+          <tr><td>Accessories</td><td>CHF 39.6 million</td><td>+124.1%</td></tr>
+          <tr style="background:#faf9f7;"><td><strong>Gross profit margin</strong></td><td><strong>62.8%</strong></td><td>Up from 60.6% FY2024</td></tr>
+          <tr><td>Adjusted EBITDA margin</td><td>18.8%</td><td>Up from 16.7% FY2024</td></tr>
+          <tr><td>SG&amp;A (Selling, General &amp; Administrative expenses)</td><td>CHF 1,516.6 million (50.3% of sales)</td><td>FY2024: 51.5% of sales</td></tr>
+          <tr><td>Net income</td><td>CHF 203.7 million (6.8% margin)</td><td>-15.9% (margin down from 10.4%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">Apparel and accessories combined reached 7.0% of net sales, up 190 basis points year-over-year. On expanded its network of own retail locations to nearly 70 in 2025. Global brand awareness is described by On as "approaching 30%."</div>
+    <div class="chart-src">Source: <a href="https://press.on-running.com/on-announces-fourth-quarter-and-full-year-results-and-the-filing-of-its-annual-report-on-form-20-f-for-2025" target="_blank" rel="noopener">On, FY2025 results release</a>, 3 March 2026 · Form 20-F filed the same day with the U.S. Securities and Exchange Commission (On files a 20-F as a foreign private issuer, not a 10-K).</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Q2 &amp; H1 2026 — growth decelerates, guidance narrows</div>
+    <div class="chart-sub">Second quarter and six months ended 30 June 2026, reported 11 August 2026</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Figure</th><th>Q2 2026</th><th>H1 2026</th></tr></thead>
+        <tbody>
+          <tr><td>Net sales</td><td>CHF 850.3 million (+13.5% / +21.6%)</td><td>CHF 1,682.2 million (+14.0% / +24.0%)</td></tr>
+          <tr><td>DTC sales channel</td><td>CHF 388.4 million, 45.7% of sales (+26.0% / +34.3%)</td><td>CHF 710.7 million (+21.4% / +31.6%)</td></tr>
+          <tr><td>Wholesale sales channel</td><td>CHF 461.9 million (+4.8% / +12.7%)</td><td>CHF 971.5 million (+9.1% / +19.0%)</td></tr>
+          <tr><td>EMEA</td><td>CHF 228.2 million (+15.4% / +20.5%)</td><td>—</td></tr>
+          <tr><td>Americas</td><td>CHF 451.6 million (+4.5% / +13.0%)</td><td>—</td></tr>
+          <tr><td>Asia-Pacific</td><td>CHF 170.5 million (+43.1% / +54.7%)</td><td>—</td></tr>
+          <tr style="background:#faf9f7;"><td><strong>Gross profit margin</strong></td><td><strong>65.4% (+3.9pp)</strong></td><td><strong>64.8% (+4.1pp)</strong></td></tr>
+          <tr><td>Adjusted EBITDA</td><td>CHF 168.1 million, 19.8% margin</td><td>CHF 342.3 million, 20.3% margin (up from 17.4%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">Net sales missed analyst estimates of roughly CHF 878 million; shares fell sharply on the day of the release. Full-year 2026 guidance was narrowed to low-20s% constant currency net sales growth (CHF 3.47–3.56 billion at current exchange rates, the lower end of the prior range set in March 2026), gross profit margin of at least 65.0%, and adjusted EBITDA margin of 19.5–20.0%. The March 2026 guidance had called for net sales growth of at least 23% constant currency (implying at least CHF 3.44 billion), gross margin of at least 63.0%, and adjusted EBITDA margin of 18.5–19.0%. David Allemann, Founder and Co-CEO: "We are proving that a brand can achieve global scale without compromising its premium brand positioning." Frank Sluis, Chief Financial Officer: "Delivering 21.6% constant currency growth alongside an industry-leading 65.4% gross margin shows the structural benefits of leading with innovation."</div>
+    <div class="chart-src">Source: <a href="https://press.on-running.com/on-reports-results-for-the-second-quarter-and-six-month-period-ended-june-30-2026" target="_blank" rel="noopener">On, Q2 2026 results release</a>, 11 August 2026 · SEC Form 6-K · share-price reaction reported by Yahoo Finance and SGB Media.</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The three-year strategy &amp; "New Sports"</div>
+    <div class="chart-sub">What "New Sports" — named directly in this posting — builds on</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Date</th><th>Event</th></tr></thead>
+        <tbody>
+          <tr><td>4 Oct 2023</td><td>Investor Day: three strategic pillars — "Elevate" (core business and communities), "Expand" (China, own retail), "Establish new building blocks" (naming Tennis and Training as new verticals) — with a target to double FY2023 net sales by 2026 and lift adjusted EBITDA margin to 18%+</td></tr>
+          <tr><td>Mar 2020 onward</td><td>Roger Federer becomes an investor and product partner; "THE ROGER" shoe collection developed with On Labs</td></tr>
+          <tr><td>2023</td><td>Iga Świątek and Ben Shelton signed as tennis ambassadors; On launches an on-court apparel collection and "THE ROGER Pro" tennis shoe; João Fonseca later joins the tennis roster</td></tr>
+          <tr><td>8 Jan 2026</td><td>Arturo Coello, World No.1 padel player, signed as On's first padel athlete partner; padel-specific footwear co-developed with Coello expected Summer 2027</td></tr>
+          <tr style="background:#faf9f7;"><td><strong>22 Sep 2026</strong></td><td><strong>On's next Investor Day, at On Labs, Zurich — six days after this brief's last update, and On's own March 2026 release describes 2026 as "the final year" of the 2023 three-year strategy</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">The posting names "New Sports" as one of the "global priorities" this role advises on. On has not yet published "New Sports" as a defined public term; the closest verified precedent is the 2023 Investor Day's "new building blocks" pillar, which named Tennis and Training, since extended into padel.</div>
+    <div class="chart-src">Sources: On 2023 Investor Day press release (SEC 6-K) · <a href="https://press.on-running.com/swiss-sportswear-brand-on-welcomes-padel-star-arturo-coello" target="_blank" rel="noopener">On, Arturo Coello press release</a>, 8 Jan 2026 · <a href="https://press.on-running.com/advantage-on-world-no1-and-3-time-grand-slam-champion-iga-swiatek-and-rising-star-ben-shelton-join-on-as-it-expands-its-presence-in-professional-tennis" target="_blank" rel="noopener">On, tennis roster press release</a> · <a href="https://www.stocktitan.net/news/ONON/on-to-host-investor-day-on-tuesday-september-22-zhl8ttiujspl.html" target="_blank" rel="noopener">StockTitan, 2026 Investor Day announcement</a>.</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The competitive set — premium &amp; performance footwear</div>
+    <div class="chart-sub">Each company's own most recent reported fiscal period; periods differ by company and are stated per row</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Company</th><th>Period</th><th>Revenue</th><th>Growth</th></tr></thead>
+        <tbody>
+          <tr style="background:#faf9f7;"><td><strong>On Holding</strong></td><td>FY2025 (year to Dec 2025)</td><td><strong>CHF 3,014.0 million</strong></td><td>+30.0% reported / +35.6% constant currency</td></tr>
+          <tr><td>HOKA (Deckers Brands)</td><td>FY2026 (year to March 2026)</td><td>$2.587 billion</td><td>+15.9%</td></tr>
+          <tr><td>Deckers Brands (total)</td><td>FY2026 (year to March 2026)</td><td>$5.472 billion</td><td>+9.8% — 4th consecutive record year</td></tr>
+          <tr><td>Nike (total)</td><td>FY2026 (year to 31 May 2026)</td><td>$46.4 billion</td><td>Flat reported / -2% currency-neutral</td></tr>
+          <tr><td>adidas (total)</td><td>FY2025 (year to Dec 2025)</td><td>&euro;24,811 million</td><td>Record revenue; Performance segment (incl. Running) +15% constant currency</td></tr>
+          <tr><td>Amer Sports (total, incl. Salomon)</td><td>FY2025 (year to Dec 2025)</td><td>$6.6 billion</td><td>+27%</td></tr>
+          <tr><td>Salomon footwear (Amer Sports)</td><td>FY2025 (year to Dec 2025)</td><td>Crossed $2 billion</td><td>+35%</td></tr>
+          <tr><td>Brooks Running (Berkshire Hathaway)</td><td>H1 2025</td><td>Not disclosed as a standalone figure</td><td>+16.8% (H1); +18.4% (Q2)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">adidas does not disclose a euro figure for Running as a standalone category; Running's own growth rate within the Performance segment accelerated to more than 30% during FY2025. Berkshire Hathaway does not break out Brooks' revenue in its own filings — Brooks sits inside the "Manufacturing, service and retailing" segment, and only growth rates are disclosed; Bloomberg separately reported (October 2025) that Brooks was tracking toward approximately $2 billion in annual revenue, a press estimate rather than a company disclosure.</div>
+    <div class="chart-src">Sources: On, FY2025 results (above) · <a href="https://ir.deckers.com/news-events/press-releases/detail/656/deckers-brands-reports-fourth-quarter-and-full-fiscal-year-2026-financial-results" target="_blank" rel="noopener">Deckers Brands, FY2026 results</a> · <a href="https://www.businesswire.com/news/home/20260630156660/en/NIKE-Inc.-Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results" target="_blank" rel="noopener">Nike, FY2026 results</a> · <a href="https://www.adidas-group.com/en/media/press-releases/adidas-reports-record-revenues-for-2025-and-expects-strong-sales-and-profit-growth-to-continue-over-the-next-years" target="_blank" rel="noopener">adidas, FY2025 results</a> · <a href="https://www.amersports.com/newsroom/a-breakout-year-of-growth-and-brand-momentum/" target="_blank" rel="noopener">Amer Sports newsroom</a>, FY2025 · <a href="https://www.sec.gov/Archives/edgar/data/1067983/000095017025101578/brka-20250630.htm" target="_blank" rel="noopener">Berkshire Hathaway, Form 10-Q</a> · Bloomberg, 31 Oct 2025.</div>
+  </div>
+
+  <!-- 3 STRUCTURAL CHALLENGES -->
+  <div id="sec-challenges" class="bk-wrap">
+    <div class="bk-eyebrow">Role Analysis</div>
+    <div class="bk-headline">3 structural challenges this role is built to solve</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">Growth decelerating after a record year</div>
+        <ul>
+          <li>FY2025 net sales grew 30.0% reported (35.6% constant currency) to CHF 3,014.0 million — On's first year above CHF 3 billion</li>
+          <li>Q2 2026 net sales grew 13.5% reported (21.6% constant currency) to CHF 850.3 million — below analyst estimates of roughly CHF 878 million, and shares fell sharply on the day of the release</li>
+          <li>Full-year 2026 guidance was narrowed at the Q2 release to the lower end of the range set in March 2026</li>
+        </ul>
+        <div class="bk-card-src">Source: On, FY2025 and Q2 2026 results releases; Yahoo Finance and SGB Media on the share-price reaction</div>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">A founder-led reset landing in the final year of the strategy</div>
+        <ul>
+          <li>Co-founders David Allemann and Caspar Coppetti became Co-CEOs on 1 May 2026, succeeding Martin Hoffmann — CEO for 5 years and CFO for 13 years before that</li>
+          <li>Frank Sluis joined as Chief Financial Officer the same day, from Ahold Delhaize; Scott Maguire's mandate expanded to President and Chief Operating Officer</li>
+          <li>The change lands inside the final year of the three-year strategy set at On's October 2023 Investor Day, six days before the next Investor Day on 22 September 2026</li>
+        </ul>
+        <div class="bk-card-src">Source: swissinfo.ch · sgbonline.com · On, Investor Day announcement</div>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">A wholesale-majority business scaling a DTC ambition</div>
+        <ul>
+          <li>Wholesale still carried 58.2% of FY2025 net sales (CHF 1,753.4 million) even as DTC grew faster (+33.7% reported vs. +27.5% for wholesale)</li>
+          <li>DTC reached a record 45.7% of net sales in Q2 2026 — the channel this role is asked to architect alongside wholesale and nearly 70 owned retail locations</li>
+          <li>The posting names deep understanding of "digital, wholesale, and own-retail channels" as a required qualification</li>
+        </ul>
+        <div class="bk-card-src">Source: On, FY2025 and Q2 2026 results releases; culture.on.com job posting</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESPONSIBILITIES & TEAM -->
+  <div id="sec-ops" class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">The Role, As Written</div>
+      <div class="sec-title">Responsibilities &amp; the team, as On describes them</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Mission, as written in the posting</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>#</th><th>Responsibility (verbatim from the posting)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Omni-Channel Commercial Guidance — architect On's future consumer connection, acting as a strategic advisor on global priorities like New Sports, translating insights into actionable frameworks to ensure a seamless, premium customer journey</td></tr>
+          <tr><td>2</td><td>Oversee and own the Global Commercial project portfolio, including managing dedicated project managers for strategic initiatives and ensuring alignment with Operations, Technology and Finance Project Management Offices ("PMOs")</td></tr>
+          <tr><td>3</td><td>Directly lead critical commercial programs, with a specific focus on sales elevation, market expansion and omnichannel development, to ensure cross-channel execution aligns with Go-to-Market milestones</td></tr>
+          <tr><td>4</td><td>Lead change management efforts related to new commercial capabilities, ensuring smooth adoption and integration within the markets to maximize impact and sustainability of strategic initiatives</td></tr>
+          <tr><td>5</td><td>Establish and champion best practices for project management, balancing effective implementation with sustainable capability build-out that delivers long-term business benefits</td></tr>
+          <tr><td>6</td><td>Cultivate strong, collaborative relationships with cross-functional and regional stakeholders, acting as the central point of contact to facilitate communication, align objectives and resolve interdependencies</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">The team, as On describes it: "You will lead the Commercial Programs &amp; Project Management team, a central function within the Global Strategy team... You will oversee project managers and collaborate closely with functional and channel-specific stakeholders across all markets and regions to ensure our strategy lands globally, delivering one unified brand experience." The posting's own top-level field names the department "Global Commercial"; its narrative describes the function as sitting inside "Global Strategy." Location: Zurich. Requisition JR26091211, last updated by On on 4 September 2026.</div>
+    <div class="chart-src">Source: <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">culture.on.com, job posting</a> (Greenhouse requisition 8176597).</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Requirements, as written in the posting</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Requirement</th><th>As written</th></tr></thead>
+        <tbody>
+          <tr><td>Experience</td><td>8-10 years building and executing complex omni-channel strategies, translating strategic vision into actionable plans with measurable business impact</td></tr>
+          <tr><td>Omni-channel expertise</td><td>Deep understanding of the modern retail landscape — digital, wholesale and own-retail channels — and how to define channel roles that complement each other</td></tr>
+          <tr><td>Leadership</td><td>Extensive experience managing teams and influencing stakeholders across a matrixed organization</td></tr>
+          <tr><td>Analytical approach</td><td>Data-driven insights combined with strategic intuition for business-priority decisions</td></tr>
+          <tr><td>Global mindset</td><td>Managed strategies and teams spanning multiple regions and cultures</td></tr>
+          <tr><td>Background</td><td>Open to candidates from Business Transformation, Consulting (Strategy, Operations or Project Management Office), or a similar strategic leadership background</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">culture.on.com, job posting</a>.</div>
+  </div>
+
+  <!-- ROLE SCOPE -->
+  <div id="sec-scope" class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Role scope</div>
+      <div class="sec-title">Head of Commercial Strategy — six accountability areas &amp; Olga's experience</div>
+    </div>
+  </div>
+
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="scope-n">01</div>
+      <div class="scope-label">Omni-Channel Commercial Guidance</div>
+      <div class="scope-desc">Architect the future consumer connection strategy; act as strategic advisor on global priorities including New Sports; translate insights into actionable frameworks for a seamless, premium customer journey.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Omnichannel strategy</span>
+        <span class="scope-kpi">New-category frameworks</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>adidas: drove the EU omni-channel vision and strategy as Director, Omni-Channel Models Development &amp; Supply Chain; built the Digital Partner Commerce function from zero, with a vision of the integrated marketplace across own channels, retailers, pure players and partners. Nike: led omni-channel business development with strategic key accounts and the digital transformation of Intersport, the largest European sporting goods retailer.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">02</div>
+      <div class="scope-label">Global Commercial Project Portfolio</div>
+      <div class="scope-desc">Oversee and own the Global Commercial project portfolio, managing dedicated project managers and ensuring alignment with Operations, Technology and Finance Project Management Offices.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Portfolio ownership</span>
+        <span class="scope-kpi">PMO alignment</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: executed 100+ projects across people, technology and process improvement, influencing all levels of a matrix organisation up to Executive Committee level; established the reporting &amp; analytics team and built the omni-channel analytics cockpit from scratch.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">03</div>
+      <div class="scope-label">Commercial Programs &amp; Go-to-Market Execution</div>
+      <div class="scope-desc">Directly lead critical commercial programs — sales elevation, market expansion and omnichannel development — ensuring cross-channel execution aligns with Go-to-Market milestones.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Revenue growth</span>
+        <span class="scope-kpi">Go-to-market delivery</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: held full P&amp;L responsibility for a €150 million e-commerce business across 12 luxury Maisons and 26 European countries, delivering 30–250% revenue growth per year. Nike: led strategic, cross-functional and technology projects for DTC, Sales and Operations — SAP Retail implementation, the London Olympics Fuelband launch, retail localisation in Greece and Turkey — delivered on budget, on schedule and to targeted performance.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">04</div>
+      <div class="scope-label">Change Management for New Commercial Capabilities</div>
+      <div class="scope-desc">Lead change management for new commercial capabilities, ensuring smooth adoption and integration across markets to maximise impact and sustainability of strategic initiatives.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Adoption</span>
+        <span class="scope-kpi">Change management</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Nike: change management ensuring successful transition and adoption across the organisation as Senior Project Manager, DTC &amp; B2B. IBM: Change Manager on a CRM implementation for InBev and process transformation expert on SAP APO (Advanced Planner and Optimizer) implementations for the Dutch Ministry of Transport.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">05</div>
+      <div class="scope-label">Project Management Best Practices</div>
+      <div class="scope-desc">Establish and champion best practices for project management, balancing effective implementation with sustainable, long-term capability build-out.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Governance</span>
+        <span class="scope-kpi">Capability build-out</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: established best practices from scratch — service-level agreement compliance, quality control and process standardisation across local teams, owned at Executive Committee level across 26 countries. Certified in project management (CADENCE, Nike).</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">06</div>
+      <div class="scope-label">Cross-Functional &amp; Regional Stakeholder Management</div>
+      <div class="scope-desc">Cultivate collaborative relationships with cross-functional and regional stakeholders, acting as the central point of contact to align objectives and resolve interdependencies.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Stakeholder alignment</span>
+        <span class="scope-kpi">Matrix leadership</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: Director-level stakeholder management across IT, marketing, operations, retail, brands and country managers — influence without direct authority across 100+ cross-functional projects in a large matrix organisation, reporting to the EU CEO and Global Chief Digital Officer.</div>
+    </div>
+  </div>
+
+  <!-- PRIORITY STACK -->
+  <div style="margin-top:22px;">
+    <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#1d5fd6;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Priority stack — 5-step approach</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead>
+          <tr><th style="width:36px;">#</th><th>Action</th><th>Why first</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pri-num">1</span></td>
+            <td><strong>Map the current Global Commercial project portfolio</strong> — every active initiative, owner and Project Management Office dependency across Operations, Technology and Finance</td>
+            <td>A new Co-CEO and Chief Financial Officer structure, plus an Investor Day six days out, both need one shared view of what is already in flight before anything new is prioritised</td>
+            <td>Portfolio inventory; Project Management Office dependency map</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">2</span></td>
+            <td><strong>Align the portfolio to the strategy that follows the 22 September Investor Day</strong> — reset priorities against whatever succeeds the 2023–2026 three-year plan</td>
+            <td>The role sits in the final year of a three-year strategy; the next multi-year framework is very likely set at that event</td>
+            <td>Portfolio re-prioritisation against the new strategic framework</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">3</span></td>
+            <td><strong>Build the omnichannel commercial framework for New Sports</strong> — piloted in one region across DTC and wholesale together</td>
+            <td>New Sports is named directly in the posting as a global priority; a working pilot gives stakeholders evidence before a global rollout</td>
+            <td>Pilot omnichannel framework; stakeholder case for scaling</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">4</span></td>
+            <td><strong>Establish project management best practices and governance</strong> — across the Operations, Technology and Finance Project Management Offices named in the posting</td>
+            <td>The posting explicitly asks for a strategic balance between effective implementation and sustainable capability building — governance has to be defined before scale, not after</td>
+            <td>Project management operating framework; Project Management Office alignment model</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">5</span></td>
+            <td><strong>Embed the change management and reporting cadence</strong> — with the new Co-CEOs, Chief Financial Officer and regional stakeholders</td>
+            <td>A newly formed leadership team needs a standing rhythm to keep commercial programmes accountable through the transition</td>
+            <td>Standing review cadence; change-adoption tracking</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div id="sec-leadership" class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Stakeholders</div>
+      <div class="sec-title">Leadership — the 2026 reset</div>
+    </div>
+  </div>
+
+  <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#1d5fd6;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Co-CEOs, effective 1 May 2026</div>
+  <div class="org-grid" style="grid-template-columns:repeat(2,1fr);margin-bottom:8px;">
+    <div class="org-card" style="border-color:#0a0a0a;border-width:2px;">
+      <div class="org-top">
+        <div class="org-initials">DA</div>
+        <div>
+          <div class="org-company">On</div>
+          <div class="org-name">David Allemann</div><div class="org-title">Founder &amp; Co-CEO</div><div class="org-entity">Co-founded On in 2010; previously Executive Co-Chairman</div>
+        </div>
+      </div>
+      <div class="org-conf">Quoted in On's own Q2 2026 results release.</div>
+    </div>
+    <div class="org-card" style="border-color:#0a0a0a;border-width:2px;">
+      <div class="org-top">
+        <div class="org-initials">CC</div>
+        <div>
+          <div class="org-company">On</div>
+          <div class="org-name">Caspar Coppetti</div><div class="org-title">Founder &amp; Co-CEO</div><div class="org-entity">Co-founded On in 2010; previously Executive Co-Chairman</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://press.on-running.com/on-co-founders-to-lead-next-chapter-of-growth-as-co-ceos" target="_blank" rel="noopener">On, Co-CEO announcement</a></div>
+    </div>
+  </div>
+  <div class="src-note" style="margin-bottom:24px;">Olivier Bernhard, the third co-founder, originated On's CloudTec technology in 2010 and remains associated with the brand; he does not hold a current executive-committee title in the sources reviewed for this brief.</div>
+
+  <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#1d5fd6;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Executive committee &amp; the outgoing CEO</div>
+  <div class="org-grid" style="margin-bottom:8px;">
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">FS</div>
+        <div>
+          <div class="org-company">On</div>
+          <div class="org-name">Frank Sluis</div><div class="org-title">Chief Financial Officer</div><div class="org-entity">Effective 1 May 2026. Previously Chief Financial Officer, Europe &amp; Indonesia, Ahold Delhaize; earlier Reckitt Benckiser and Unilever</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://press.on-running.com/on-announces-appointment-of-new-chief-financial-officer-selw4f" target="_blank" rel="noopener">On, CFO appointment release</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">SM</div>
+        <div>
+          <div class="org-company">On</div>
+          <div class="org-name">Scott Maguire</div><div class="org-title">President &amp; Chief Operating Officer</div><div class="org-entity">Mandate expanded as part of the May 2026 leadership reset</div>
+        </div>
+      </div>
+      <div class="org-conf">Named in On's leadership-change coverage.</div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">MH</div>
+        <div>
+          <div class="org-company">On</div>
+          <div class="org-name">Martin Hoffmann</div><div class="org-title">Outgoing Chief Executive Officer</div><div class="org-entity">Chief Executive Officer for 5 years, Chief Financial Officer for 13 years before that. Steps down 1 May 2026; remains an advisor to On until March 2027</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://sgbonline.com/exec-on-holding-ceo-cfo-martin-hoffman-to-exit-as-allemann-and-coppetti-take-the-reins/" target="_blank" rel="noopener">SGB Media, leadership transition</a></div>
+    </div>
+  </div>
+  <div class="src-note">Titles and dates: <a href="https://www.swissinfo.ch/eng/federer-backed-on-to-be-led-by-founders-as-ceo-steps-down/91157030" target="_blank" rel="noopener">swissinfo.ch</a>, <a href="https://sgbonline.com/exec-on-holding-ceo-cfo-martin-hoffman-to-exit-as-allemann-and-coppetti-take-the-reins/" target="_blank" rel="noopener">SGB Media</a>, and On's own press releases on the Co-CEO and Chief Financial Officer appointments, checked 16 September 2026.</div>
+
+  <!-- KPIS -->
+  <div id="sec-kpi" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">KPI (Key Performance Indicator) framework — four layers</div>
+    </div>
+  </div>
+
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">Commercial impact</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Net sales growth vs. guidance</div>
+          <div class="kpi-desc">Reported and constant currency growth against the range On gives the market each quarter — the metric the market reacted to sharply at Q2 2026.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">DTC vs. wholesale mix shift</div>
+          <div class="kpi-desc">Tracking the move toward Direct-to-Consumer (a record 45.7% of sales in Q2 2026) against the wholesale base (58.2% of FY2025 sales).</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Regional growth by market</div>
+          <div class="kpi-desc">EMEA, Americas and Asia-Pacific each growing at a different rate — Asia-Pacific alone grew 96.4% in FY2025.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">New Sports revenue contribution</div>
+          <div class="kpi-desc">Tennis and padel as a share of net sales — the outcome measure for the "New Sports" advisory mandate named in the posting.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Global Commercial project portfolio</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Portfolio delivery on time &amp; on budget</div>
+          <div class="kpi-desc">Performance of the dedicated project managers this role owns and manages, named directly in the posting.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Cross-functional Project Management Office alignment</div>
+          <div class="kpi-desc">Alignment with Operations, Technology and Finance Project Management Offices — a named responsibility.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Go-to-Market milestone adherence</div>
+          <div class="kpi-desc">Cross-channel execution against Go-to-Market dates, named directly in the posting.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Active programme throughput</div>
+          <div class="kpi-desc">Volume and pace of sales elevation, market expansion and omnichannel development programmes running concurrently.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Change management &amp; capability building</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Capability adoption rate</div>
+          <div class="kpi-desc">Uptake of new commercial capabilities across markets after rollout — named directly in the posting.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Change adoption timeline</div>
+          <div class="kpi-desc">Speed of smooth transition and integration within the markets the posting names as the standard.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Capability sustainability</div>
+          <div class="kpi-desc">Whether built capabilities are still in active use — not just launched — at 90 and 180 days.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Best-practice framework compliance</div>
+          <div class="kpi-desc">Consistency of project management standards applied across the portfolio, named directly in the posting.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Stakeholder &amp; governance</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Cross-functional decision velocity</div>
+          <div class="kpi-desc">Speed of decisions across a matrixed organisation spanning regions and functions.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Regional stakeholder alignment</div>
+          <div class="kpi-desc">A named accountability in the posting's own mission statement.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Reporting cadence to the Co-CEOs &amp; Chief Financial Officer</div>
+          <div class="kpi-desc">Standing rhythm through a newly formed leadership team.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Central point-of-contact effectiveness</div>
+          <div class="kpi-desc">Resolving interdependencies across teams — named directly in the posting.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#0a0a0a;color:#2f7efe;border:1px solid rgba(47,126,254,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+</body>
+</html>
