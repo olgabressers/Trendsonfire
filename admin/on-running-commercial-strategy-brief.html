@@ -95,11 +95,18 @@
     .mini-stat-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:#0a0a0a;line-height:1;}
     .mini-stat-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:3px;}
 
-    /* SPLIT TABLES — two compact tables side by side */
+    /* SPLIT TABLES — compact tables side by side */
     .split-tables{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
-    @media(max-width:640px){.split-tables{grid-template-columns:1fr;}}
+    .split-tables.cols-3{grid-template-columns:1fr 1fr 1fr;}
+    @media(max-width:640px){.split-tables,.split-tables.cols-3{grid-template-columns:1fr;}}
     .split-tables .pri-wrap{margin:0;}
     .split-table-label{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1d5fd6;margin-bottom:6px;}
+
+    /* EXEC QUOTES */
+    .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+    @media(max-width:640px){.quote-grid{grid-template-columns:1fr;}}
+    .exec-quote{border-left:3px solid #1d5fd6;background:#f9fafb;padding:12px 15px;font-size:13.5px;font-style:italic;color:#0a0f1a;line-height:1.55;}
+    .exec-quote cite{display:block;margin-top:8px;font-style:normal;font-weight:800;font-size:13px;color:#1d5fd6;}
 
     /* MINI BAR CHART — per-brand revenue evolution */
     .mini-chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
@@ -139,6 +146,18 @@
     .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;margin-bottom:10px;}
     .kpi-bench{font-size:13px;color:#0a0f1a;padding:9px 11px;background:#eaf1ff;border-left:3px solid #1d5fd6;line-height:1.55;}
     .kpi-bench strong{display:block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1d5fd6;margin-bottom:3px;}
+
+    /* SHOE COMPARISON GRID */
+    .shoe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:900px){.shoe-grid{grid-template-columns:repeat(2,1fr);}}
+    .shoe-card{border:1px solid #e2dfd9;background:#fff;padding:12px;text-align:center;display:flex;flex-direction:column;}
+    .shoe-card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f9fafb;margin-bottom:8px;}
+    .shoe-brand{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:7px;align-self:center;}
+    .shoe-brand.on{background:#0a0a0a;color:#2f7efe;}
+    .shoe-brand.nike{background:#111;color:#fff;}
+    .shoe-brand.adidas{background:#000;color:#fff;}
+    .shoe-name{font-size:13.5px;font-weight:700;color:#0a0f1a;line-height:1.3;margin-bottom:4px;min-height:35px;}
+    .shoe-price{font-size:16px;font-weight:800;color:#1d5fd6;margin-top:auto;}
 
     /* ORG CHART */
     .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
@@ -198,7 +217,7 @@
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; On Holding</div>
     <div class="eyebrow">Interview Brief — Head of Commercial Strategy · Global Commercial</div>
     <h1>On Holding: <em>CHF 3 billion, new Co-CEOs, and a Global Commercial portfolio to architect</em></h1>
-    <p>On Holding AG (NYSE: ONON) crossed CHF 3.0 billion in net sales for the first time in 2025 — up 30.0% reported, 35.6% at constant currency — then grew 13.5% reported (21.6% constant currency) in the second quarter of 2026, a deceleration the market read sharply: shares fell after the release, with net sales landing below analyst estimates of roughly CHF 878 million. The same period, co-founders David Allemann and Caspar Coppetti returned as Co-CEOs, Frank Sluis joined as Chief Financial Officer, and Scott Maguire's mandate expanded to President and Chief Operating Officer — a reset landing in the final year of the three-year strategy set at On's October 2023 Investor Day, six days before the next one, on 22 September 2026. The role: architect the omnichannel commercial strategy across On's Direct-to-Consumer ("DTC"), wholesale and own-retail channels, own the Global Commercial project portfolio, and lead change management for new commercial capabilities — including "New Sports," the priority named directly in the posting.</p>
+    <p>On Holding crossed CHF 3.0 billion in net sales in 2025 (+30.0%), then decelerated to +13.5% in Q2 2026 the same quarter founders David Allemann and Caspar Coppetti returned as Co-CEOs alongside a new Chief Financial Officer and Chief Operating Officer. The role: architect On's omnichannel commercial strategy across DTC, wholesale and own-retail channels, and own the Global Commercial project portfolio — including "New Sports," the priority named directly in the posting.</p>
     <div class="meta">
       <span>Sources: press.on-running.com, SEC Form 20-F &amp; 6-K filings, culture.on.com job posting, Deckers Brands, adidas AG, Amer Sports, Nike, Berkshire Hathaway, swissinfo.ch, sgbonline.com</span>
       <span>Updated 16 September 2026</span>
@@ -208,6 +227,58 @@
 
 <main>
 
+<!-- BEST-SELLERS PRICE COMPARISON -->
+<div class="chart-box">
+  <div class="chart-title">Best sellers, head to head — On vs. Nike vs. adidas</div>
+  <div class="chart-sub">Current men's road-running models, official list prices, USD</div>
+  <div class="shoe-grid">
+    <div class="shoe-card">
+      <img src="on-shoes/on-cloudmonster2.png" alt="On Cloudmonster 2"/>
+      <span class="shoe-brand on">On</span>
+      <div class="shoe-name">Cloudmonster 2</div>
+      <div class="shoe-price">$140</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/on-cloudsurfer2.png" alt="On Cloudsurfer 2"/>
+      <span class="shoe-brand on">On</span>
+      <div class="shoe-name">Cloudsurfer 2</div>
+      <div class="shoe-price">$125</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/on-cloudrunner3.png" alt="On Cloudrunner 3"/>
+      <span class="shoe-brand on">On</span>
+      <div class="shoe-name">Cloudrunner 3</div>
+      <div class="shoe-price">$160</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/nike-pegasus42.png" alt="Nike Pegasus 42"/>
+      <span class="shoe-brand nike">Nike</span>
+      <div class="shoe-name">Pegasus 42</div>
+      <div class="shoe-price">$145</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/nike-vomero18.png" alt="Nike Vomero 18"/>
+      <span class="shoe-brand nike">Nike</span>
+      <div class="shoe-name">Vomero 18</div>
+      <div class="shoe-price">$155</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/adidas-boston13.jpg" alt="adidas Adizero Boston 13"/>
+      <span class="shoe-brand adidas">adidas</span>
+      <div class="shoe-name">Adizero Boston 13</div>
+      <div class="shoe-price">$160</div>
+    </div>
+    <div class="shoe-card">
+      <img src="on-shoes/adidas-ultraboost5x.jpg" alt="adidas Ultraboost 5X"/>
+      <span class="shoe-brand adidas">adidas</span>
+      <div class="shoe-name">Ultraboost 5X</div>
+      <div class="shoe-price">$125.93</div>
+    </div>
+  </div>
+  <div class="src-note">On prices at or below Nike/adidas comparable trainers at every tier: $125–160 vs. Nike's $145–155 and adidas's $126–160.</div>
+  <div class="chart-src">Sources: <a href="https://www.on.com/en-us" target="_blank" rel="noopener">on.com</a> · <a href="https://www.nike.com" target="_blank" rel="noopener">nike.com</a> · adidas prices/images via <a href="https://www.zappos.com" target="_blank" rel="noopener">zappos.com</a> listing (adidas.com blocked automated access). Checked 17 September 2026.</div>
+</div>
+
 <!-- EXEC SUMMARY + TOC -->
 <div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
 
@@ -216,19 +287,19 @@
     <div style="display:flex;flex-direction:column;gap:14px;">
       <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
         <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">The company</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Swiss premium sportswear brand founded in Zurich in 2010. Crossed CHF 3.0 billion in net sales for the first time in 2025 (+30.0% reported, +35.6% constant currency). Direct-to-Consumer ("DTC") sales grew faster than wholesale, and Asia-Pacific ("APAC") grew 96.4%. Roger Federer became an investor and product partner ahead of the September 2021 IPO on the NYSE.</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Zurich, founded 2010. First CHF 3.0 billion year in 2025 (+30.0%). Federer is an investor since 2019, ahead of the 2021 NYSE IPO.</div>
       </div>
       <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
         <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">The role</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Head of Commercial Strategy, based in Zurich, leading the Commercial Programs &amp; Project Management team inside Global Strategy. Architect On's omnichannel commercial strategy across DTC, wholesale and own-retail channels; own the Global Commercial project portfolio; lead commercial programs spanning sales elevation, market expansion and omnichannel development; and act as the central point of contact across Operations, Technology and Finance stakeholders.</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Zurich. Owns the Global Commercial project portfolio and On's omnichannel strategy across DTC, wholesale and own-retail.</div>
       </div>
       <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
         <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">Company context</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Growth decelerated to 13.5% reported (21.6% constant currency) in the second quarter of 2026, missing analyst estimates and sending shares down sharply on the day of the release. The same period brought a full leadership reset: co-founders David Allemann and Caspar Coppetti became Co-CEOs, Frank Sluis joined as Chief Financial Officer, and Scott Maguire's mandate expanded to President and Chief Operating Officer — landing in the final year of the three-year strategy set at On's October 2023 Investor Day, with the next Investor Day six days after this brief's last update.</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Q2 2026 growth fell to +13.5%, missing estimates; shares fell. Same quarter: founders returned as Co-CEOs, new CFO. Investor Day: 22 Sep 2026.</div>
       </div>
       <div>
         <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#1d5fd6;margin-bottom:4px;">Key opportunity</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">The posting names "New Sports" as a strategic priority for this role. On has expanded into tennis (Iga Świątek, Ben Shelton, João Fonseca, and "THE ROGER" shoe line with Federer) and, since January 2026, padel (World No.1 Arturo Coello) — the opening is to build the omnichannel commercial framework for these categories before they scale, at the same moment On's own leadership and three-year strategy are both being reset.</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">"New Sports" (tennis + padel, Jan 2026) is named directly in the posting — the omnichannel framework for it doesn't exist yet.</div>
       </div>
     </div>
   </div>
@@ -360,7 +431,7 @@
       </table>
     </div>
 
-    <div class="src-note">EMEA = Europe, Middle East and Africa. Apparel and accessories combined reached 7.0% of net sales, up 190 basis points year-over-year. SG&amp;A (Selling, General &amp; Administrative expenses): CHF 1,516.6 million, 50.3% of sales (FY2024: 51.5%). On expanded its network of own retail locations to nearly 70 in 2025. Global brand awareness is described by On as "approaching 30%."</div>
+    <div class="src-note">Apparel + accessories = 7.0% of net sales (+190bps YoY). SG&amp;A: 50.3% of sales. Own retail locations: nearly 70. Brand awareness: "approaching 30%."</div>
     <div class="chart-src">Source: <a href="https://press.on-running.com/on-announces-fourth-quarter-and-full-year-results-and-the-filing-of-its-annual-report-on-form-20-f-for-2025" target="_blank" rel="noopener">On, FY2025 results release</a>, 3 March 2026 · Form 20-F filed the same day with the U.S. Securities and Exchange Commission (On files a 20-F as a foreign private issuer, not a 10-K).</div>
   </div>
 
@@ -391,7 +462,7 @@
       </div>
     </div>
 
-    <div class="split-tables">
+    <div class="split-tables cols-3">
       <div>
         <div class="split-table-label">By channel — Q2 / H1 2026</div>
         <div class="pri-wrap">
@@ -417,10 +488,52 @@
           </table>
         </div>
       </div>
+      <div>
+        <div class="split-table-label">Margins — Q2 / H1 2026</div>
+        <div class="pri-wrap">
+          <table class="pri-table compact">
+            <thead><tr><th>Metric</th><th>Q2</th><th>H1</th></tr></thead>
+            <tbody>
+              <tr><td>Gross margin</td><td>65.4%</td><td>64.8%</td></tr>
+              <tr><td>Adj. EBITDA margin</td><td>19.8%</td><td>20.3%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
-    <div class="src-note">H1 2026 gross margin: 64.8% (+4.1pp). H1 2026 adjusted EBITDA: CHF 342.3 million, 20.3% margin (up from 17.4%). Net sales missed analyst estimates of roughly CHF 878 million; shares fell sharply on the day of the release. Full-year 2026 guidance was narrowed to low-20s% constant currency net sales growth (CHF 3.47–3.56 billion at current exchange rates, the lower end of the prior range set in March 2026), gross profit margin of at least 65.0%, and adjusted EBITDA margin of 19.5–20.0%. The March 2026 guidance had called for net sales growth of at least 23% constant currency (implying at least CHF 3.44 billion), gross margin of at least 63.0%, and adjusted EBITDA margin of 18.5–19.0%. David Allemann, Founder and Co-CEO: "We are proving that a brand can achieve global scale without compromising its premium brand positioning." Frank Sluis, Chief Financial Officer: "Delivering 21.6% constant currency growth alongside an industry-leading 65.4% gross margin shows the structural benefits of leading with innovation."</div>
-    <div class="chart-src">Source: <a href="https://press.on-running.com/on-reports-results-for-the-second-quarter-and-six-month-period-ended-june-30-2026" target="_blank" rel="noopener">On, Q2 2026 results release</a>, 11 August 2026 · SEC Form 6-K · share-price reaction reported by Yahoo Finance and SGB Media.</div>
+    <div class="mini-stats" style="grid-template-columns:1fr 1fr;">
+      <div class="mini-stat">
+        <div class="mini-stat-lbl">Vs. Analyst Estimate</div>
+        <div class="mini-stat-num">Missed</div>
+        <div class="mini-stat-delta" style="color:#dc2626;">CHF 850.3M vs. CHF 878M expected</div>
+      </div>
+      <div class="mini-stat">
+        <div class="mini-stat-lbl">Share Price</div>
+        <div class="mini-stat-num">Fell sharply</div>
+        <div class="mini-stat-delta" style="color:#dc2626;">On day of release. Yahoo Finance, SGB Media</div>
+      </div>
+    </div>
+
+    <div class="split-table-label">FY2026 guidance, narrowed at Q2</div>
+    <div class="pri-wrap">
+      <table class="pri-table compact">
+        <thead><tr><th>Metric</th><th>March 2026 guidance</th><th>August 2026 guidance</th></tr></thead>
+        <tbody>
+          <tr><td>Net sales growth (CC)</td><td>At least +23%</td><td style="background:#eaf1ff;">Low-20s%</td></tr>
+          <tr><td>Implied net sales</td><td>At least CHF 3.44B</td><td style="background:#eaf1ff;">CHF 3.47–3.56B</td></tr>
+          <tr><td>Gross margin</td><td>At least 63.0%</td><td style="background:#eaf1ff;">At least 65.0%</td></tr>
+          <tr><td>Adj. EBITDA margin</td><td>18.5–19.0%</td><td style="background:#eaf1ff;">19.5–20.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quote-grid">
+      <div class="exec-quote">"We are proving that a brand can achieve global scale without compromising its premium brand positioning."<cite>David Allemann, Founder &amp; Co-CEO</cite></div>
+      <div class="exec-quote">"Delivering 21.6% constant currency growth alongside an industry-leading 65.4% gross margin shows the structural benefits of leading with innovation."<cite>Frank Sluis, Chief Financial Officer</cite></div>
+    </div>
+
+    <div class="chart-src">Source: <a href="https://press.on-running.com/on-reports-results-for-the-second-quarter-and-six-month-period-ended-june-30-2026" target="_blank" rel="noopener">On, Q2 2026 results release</a>, 11 August 2026 · SEC Form 6-K.</div>
   </div>
 
   <div class="chart-box">
@@ -437,7 +550,7 @@
         </tbody>
       </table>
     </div>
-    <div class="src-note">The posting names "New Sports" as one of the "global priorities" this role advises on. On has not yet published "New Sports" as a defined public term; the closest verified precedent is the 2023 Investor Day's "new building blocks" pillar, which named Tennis and Training, since extended into padel.</div>
+    <div class="src-note">"New Sports" is named in the posting but not yet a defined public On term. Closest precedent: the 2023 "new building blocks" pillar (Tennis, Training), since extended into padel.</div>
     <div class="chart-src">Sources: On 2023 Investor Day press release (SEC 6-K) · <a href="https://press.on-running.com/swiss-sportswear-brand-on-welcomes-padel-star-arturo-coello" target="_blank" rel="noopener">On, Arturo Coello press release</a>, 8 Jan 2026 · <a href="https://press.on-running.com/advantage-on-world-no1-and-3-time-grand-slam-champion-iga-swiatek-and-rising-star-ben-shelton-join-on-as-it-expands-its-presence-in-professional-tennis" target="_blank" rel="noopener">On, tennis roster press release</a> · <a href="https://www.stocktitan.net/news/ONON/on-to-host-investor-day-on-tuesday-september-22-zhl8ttiujspl.html" target="_blank" rel="noopener">StockTitan, 2026 Investor Day announcement</a>.</div>
   </div>
 
@@ -459,7 +572,7 @@
         </tbody>
       </table>
     </div>
-    <div class="src-note">Fiscal years: On, adidas and Amer Sports = calendar year to 31 December; HOKA and Deckers = year to late March; Nike = year to 31 May. CC = constant currency. Deckers' FY2026 was its 4th consecutive record year. adidas does not disclose a euro figure for Running as a standalone category; Running's growth within the Performance segment accelerated past 30% during FY2025. Berkshire Hathaway does not break out Brooks' revenue — Brooks sits inside its "Manufacturing, service and retailing" segment, with only growth rates disclosed (+16.8% H1 2025, +18.4% Q2 2025); Bloomberg separately reported (October 2025) Brooks was tracking toward approximately $2 billion in annual revenue, a press estimate, not a company disclosure.</div>
+    <div class="src-note">Fiscal years: On/adidas/Amer Sports = calendar year; HOKA/Deckers = year to late March; Nike = year to 31 May. adidas Running is not broken out in euros (Performance segment +15% CC). Brooks' revenue isn't disclosed by Berkshire Hathaway; Bloomberg estimated $2B (Oct 2025, press estimate, not a company figure).</div>
     <div class="chart-src">Sources: On, FY2025 results (above) · <a href="https://ir.deckers.com/news-events/press-releases/detail/656/deckers-brands-reports-fourth-quarter-and-full-fiscal-year-2026-financial-results" target="_blank" rel="noopener">Deckers Brands, FY2026 results</a> · <a href="https://www.businesswire.com/news/home/20260630156660/en/NIKE-Inc.-Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results" target="_blank" rel="noopener">Nike, FY2026 results</a> · <a href="https://www.adidas-group.com/en/media/press-releases/adidas-reports-record-revenues-for-2025-and-expects-strong-sales-and-profit-growth-to-continue-over-the-next-years" target="_blank" rel="noopener">adidas, FY2025 results</a> · <a href="https://www.amersports.com/newsroom/a-breakout-year-of-growth-and-brand-momentum/" target="_blank" rel="noopener">Amer Sports newsroom</a>, FY2025 · <a href="https://www.sec.gov/Archives/edgar/data/1067983/000095017025101578/brka-20250630.htm" target="_blank" rel="noopener">Berkshire Hathaway, Form 10-Q</a> · Bloomberg, 31 Oct 2025.</div>
   </div>
 
@@ -472,11 +585,11 @@
         <div class="mini-chart-title">On Holding</div>
         <div class="mini-chart-sub">Net sales, CHF, calendar year</div>
         <div class="mini-bars">
-          <div class="mini-bar-col"><div class="mini-bar-val">725M</div><div class="mini-bar-fill" style="height:24%;"></div><div class="mini-bar-yr">'21</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">1,222M</div><div class="mini-bar-fill" style="height:41%;"></div><div class="mini-bar-yr">'22</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">1,792M</div><div class="mini-bar-fill" style="height:59%;"></div><div class="mini-bar-yr">'23</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">2,318M</div><div class="mini-bar-fill" style="height:77%;"></div><div class="mini-bar-yr">'24</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">3,014M</div><div class="mini-bar-fill latest" style="height:100%;"></div><div class="mini-bar-yr">'25</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">725M</div><div class="mini-bar-fill" style="height:22px;"></div><div class="mini-bar-yr">'21</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">1,222M</div><div class="mini-bar-fill" style="height:37px;"></div><div class="mini-bar-yr">'22</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">1,792M</div><div class="mini-bar-fill" style="height:54px;"></div><div class="mini-bar-yr">'23</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">2,318M</div><div class="mini-bar-fill" style="height:69px;"></div><div class="mini-bar-yr">'24</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">3,014M</div><div class="mini-bar-fill latest" style="height:90px;"></div><div class="mini-bar-yr">'25</div></div>
         </div>
       </div>
 
@@ -484,11 +597,11 @@
         <div class="mini-chart-title">HOKA (Deckers Brands segment)</div>
         <div class="mini-chart-sub">Brand net sales, USD, Deckers fiscal year</div>
         <div class="mini-bars">
-          <div class="mini-bar-col"><div class="mini-bar-val">$0.89B</div><div class="mini-bar-fill" style="height:34%;"></div><div class="mini-bar-yr">FY22</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$1.41B</div><div class="mini-bar-fill" style="height:55%;"></div><div class="mini-bar-yr">FY23</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$1.81B</div><div class="mini-bar-fill" style="height:70%;"></div><div class="mini-bar-yr">FY24</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$2.23B</div><div class="mini-bar-fill" style="height:86%;"></div><div class="mini-bar-yr">FY25</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$2.59B</div><div class="mini-bar-fill latest" style="height:100%;"></div><div class="mini-bar-yr">FY26</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$0.89B</div><div class="mini-bar-fill" style="height:31px;"></div><div class="mini-bar-yr">FY22</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$1.41B</div><div class="mini-bar-fill" style="height:49px;"></div><div class="mini-bar-yr">FY23</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$1.81B</div><div class="mini-bar-fill" style="height:63px;"></div><div class="mini-bar-yr">FY24</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$2.23B</div><div class="mini-bar-fill" style="height:78px;"></div><div class="mini-bar-yr">FY25</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$2.59B</div><div class="mini-bar-fill latest" style="height:90px;"></div><div class="mini-bar-yr">FY26</div></div>
         </div>
       </div>
 
@@ -496,11 +609,11 @@
         <div class="mini-chart-title">Nike</div>
         <div class="mini-chart-sub">Total company revenue, USD, fiscal year (ends 31 May)</div>
         <div class="mini-bars">
-          <div class="mini-bar-col"><div class="mini-bar-val">$46.7B</div><div class="mini-bar-fill" style="height:91%;"></div><div class="mini-bar-yr">FY22</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$51.2B</div><div class="mini-bar-fill" style="height:100%;"></div><div class="mini-bar-yr">FY23</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$51.4B</div><div class="mini-bar-fill" style="height:100%;"></div><div class="mini-bar-yr">FY24</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$46.3B</div><div class="mini-bar-fill" style="height:90%;"></div><div class="mini-bar-yr">FY25</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$46.4B</div><div class="mini-bar-fill latest" style="height:90%;"></div><div class="mini-bar-yr">FY26</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$46.7B</div><div class="mini-bar-fill" style="height:82px;"></div><div class="mini-bar-yr">FY22</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$51.2B</div><div class="mini-bar-fill" style="height:90px;"></div><div class="mini-bar-yr">FY23</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$51.4B</div><div class="mini-bar-fill" style="height:90px;"></div><div class="mini-bar-yr">FY24</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$46.3B</div><div class="mini-bar-fill" style="height:81px;"></div><div class="mini-bar-yr">FY25</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$46.4B</div><div class="mini-bar-fill latest" style="height:81px;"></div><div class="mini-bar-yr">FY26</div></div>
         </div>
       </div>
 
@@ -508,11 +621,11 @@
         <div class="mini-chart-title">adidas</div>
         <div class="mini-chart-sub">Total group revenue, EUR, calendar year</div>
         <div class="mini-bars">
-          <div class="mini-bar-col"><div class="mini-bar-val">&euro;21.2B</div><div class="mini-bar-fill" style="height:86%;"></div><div class="mini-bar-yr">'21</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">&euro;22.5B</div><div class="mini-bar-fill" style="height:91%;"></div><div class="mini-bar-yr">'22</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">&euro;21.4B</div><div class="mini-bar-fill" style="height:86%;"></div><div class="mini-bar-yr">'23</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">&euro;23.7B</div><div class="mini-bar-fill" style="height:95%;"></div><div class="mini-bar-yr">'24</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">&euro;24.8B</div><div class="mini-bar-fill latest" style="height:100%;"></div><div class="mini-bar-yr">'25</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">&euro;21.2B</div><div class="mini-bar-fill" style="height:77px;"></div><div class="mini-bar-yr">'21</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">&euro;22.5B</div><div class="mini-bar-fill" style="height:82px;"></div><div class="mini-bar-yr">'22</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">&euro;21.4B</div><div class="mini-bar-fill" style="height:78px;"></div><div class="mini-bar-yr">'23</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">&euro;23.7B</div><div class="mini-bar-fill" style="height:86px;"></div><div class="mini-bar-yr">'24</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">&euro;24.8B</div><div class="mini-bar-fill latest" style="height:90px;"></div><div class="mini-bar-yr">'25</div></div>
         </div>
       </div>
 
@@ -520,17 +633,17 @@
         <div class="mini-chart-title">Amer Sports (Salomon's parent)</div>
         <div class="mini-chart-sub">Total company revenue, USD, calendar year</div>
         <div class="mini-bars">
-          <div class="mini-bar-col"><div class="mini-bar-val">$3.1B</div><div class="mini-bar-fill" style="height:46%;"></div><div class="mini-bar-yr">'21</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$3.6B</div><div class="mini-bar-fill" style="height:54%;"></div><div class="mini-bar-yr">'22</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$4.4B</div><div class="mini-bar-fill" style="height:66%;"></div><div class="mini-bar-yr">'23</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$5.2B</div><div class="mini-bar-fill" style="height:79%;"></div><div class="mini-bar-yr">'24</div></div>
-          <div class="mini-bar-col"><div class="mini-bar-val">$6.6B</div><div class="mini-bar-fill latest" style="height:100%;"></div><div class="mini-bar-yr">'25</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$3.1B</div><div class="mini-bar-fill" style="height:42px;"></div><div class="mini-bar-yr">'21</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$3.6B</div><div class="mini-bar-fill" style="height:49px;"></div><div class="mini-bar-yr">'22</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$4.4B</div><div class="mini-bar-fill" style="height:60px;"></div><div class="mini-bar-yr">'23</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$5.2B</div><div class="mini-bar-fill" style="height:71px;"></div><div class="mini-bar-yr">'24</div></div>
+          <div class="mini-bar-col"><div class="mini-bar-val">$6.6B</div><div class="mini-bar-fill latest" style="height:90px;"></div><div class="mini-bar-yr">'25</div></div>
         </div>
       </div>
 
     </div>
-    <div class="src-note">On, HOKA, Nike, adidas and Amer Sports are the companies in the competitive-set table above with a real, disclosed 5-year revenue series; Deckers Brands total, Salomon footwear alone and Brooks Running do not have a comparable multi-year series disclosed at that level of detail. Nike's dip after FY2024 and On's steep 2021–2025 climb are both real, disclosed trends, not chart artefacts.</div>
-    <div class="chart-src">Sources: On — FY2021 results (BusinessWire, 18 Mar 2022), FY2022–FY2025 results (press.on-running.com and SEC filings) · HOKA — Deckers Brands FY2022–FY2026 results releases (SEC Exhibit 99.1 filings and ir.deckers.com) · Nike — FY2022–FY2026 results releases (investors.nike.com) · adidas — Annual Reports 2022 and 2023 (report.adidas-group.com) and FY2024/FY2025 results · Amer Sports — FY2023–FY2025 results releases (investors.amersports.com) and SEC F-1/424B4 registration statement for 2021–2022, cross-checked against <a href="https://stockanalysis.com/stocks/as/financials/" target="_blank" rel="noopener">stockanalysis.com</a>.</div>
+    <div class="src-note">Deckers total, Salomon alone and Brooks have no comparable 5-year series disclosed. Nike's dip after FY2024 is a real, disclosed trend.</div>
+    <div class="chart-src">Sources: On, HOKA/Deckers, Nike, adidas — each company's own annual results releases and SEC filings, FY2021–FY2026 · Amer Sports — results releases and SEC F-1/424B4, cross-checked against <a href="https://stockanalysis.com/stocks/as/financials/" target="_blank" rel="noopener">stockanalysis.com</a>.</div>
   </div>
 
   <!-- 3 STRUCTURAL CHALLENGES -->
@@ -581,41 +694,56 @@
   </div>
 
   <div class="chart-box">
-    <div class="chart-title">Mission, as written in the posting</div>
+    <div class="chart-title">The team &amp; the posting, at a glance</div>
     <div class="pri-wrap">
-      <table class="pri-table">
-        <thead><tr><th>#</th><th>Responsibility (verbatim from the posting)</th></tr></thead>
+      <table class="pri-table compact">
         <tbody>
-          <tr><td>1</td><td>Omni-Channel Commercial Guidance — architect On's future consumer connection, acting as a strategic advisor on global priorities like New Sports, translating insights into actionable frameworks to ensure a seamless, premium customer journey</td></tr>
-          <tr><td>2</td><td>Oversee and own the Global Commercial project portfolio, including managing dedicated project managers for strategic initiatives and ensuring alignment with Operations, Technology and Finance Project Management Offices ("PMOs")</td></tr>
-          <tr><td>3</td><td>Directly lead critical commercial programs, with a specific focus on sales elevation, market expansion and omnichannel development, to ensure cross-channel execution aligns with Go-to-Market milestones</td></tr>
-          <tr><td>4</td><td>Lead change management efforts related to new commercial capabilities, ensuring smooth adoption and integration within the markets to maximize impact and sustainability of strategic initiatives</td></tr>
-          <tr><td>5</td><td>Establish and champion best practices for project management, balancing effective implementation with sustainable capability build-out that delivers long-term business benefits</td></tr>
-          <tr><td>6</td><td>Cultivate strong, collaborative relationships with cross-functional and regional stakeholders, acting as the central point of contact to facilitate communication, align objectives and resolve interdependencies</td></tr>
+          <tr><td style="width:160px;"><strong>Team</strong></td><td>Commercial Programs &amp; Project Management (posting's own department field: "Global Commercial"; narrative places it inside "Global Strategy")</td></tr>
+          <tr><td><strong>Location</strong></td><td>Zurich, Switzerland</td></tr>
+          <tr><td><strong>Requisition</strong></td><td>JR26091211</td></tr>
+          <tr><td><strong>Last updated by On</strong></td><td>4 September 2026</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="src-note">The team, as On describes it: "You will lead the Commercial Programs &amp; Project Management team, a central function within the Global Strategy team... You will oversee project managers and collaborate closely with functional and channel-specific stakeholders across all markets and regions to ensure our strategy lands globally, delivering one unified brand experience." The posting's own top-level field names the department "Global Commercial"; its narrative describes the function as sitting inside "Global Strategy." Location: Zurich. Requisition JR26091211, last updated by On on 4 September 2026.</div>
+    <div class="exec-quote">"You will lead the Commercial Programs &amp; Project Management team... to ensure our strategy lands globally, delivering one unified brand experience."<cite>On, job posting — "meet the team"</cite></div>
     <div class="chart-src">Source: <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">culture.on.com, job posting</a> (Greenhouse requisition 8176597).</div>
   </div>
 
-  <div class="chart-box">
-    <div class="chart-title">Requirements, as written in the posting</div>
-    <div class="pri-wrap">
-      <table class="pri-table">
-        <thead><tr><th>Requirement</th><th>As written</th></tr></thead>
-        <tbody>
-          <tr><td>Experience</td><td>8-10 years building and executing complex omni-channel strategies, translating strategic vision into actionable plans with measurable business impact</td></tr>
-          <tr><td>Omni-channel expertise</td><td>Deep understanding of the modern retail landscape — digital, wholesale and own-retail channels — and how to define channel roles that complement each other</td></tr>
-          <tr><td>Leadership</td><td>Extensive experience managing teams and influencing stakeholders across a matrixed organization</td></tr>
-          <tr><td>Analytical approach</td><td>Data-driven insights combined with strategic intuition for business-priority decisions</td></tr>
-          <tr><td>Global mindset</td><td>Managed strategies and teams spanning multiple regions and cultures</td></tr>
-          <tr><td>Background</td><td>Open to candidates from Business Transformation, Consulting (Strategy, Operations or Project Management Office), or a similar strategic leadership background</td></tr>
-        </tbody>
-      </table>
+  <div class="split-tables">
+    <div>
+      <div class="split-table-label">Mission, condensed from the posting</div>
+      <div class="pri-wrap">
+        <table class="pri-table compact">
+          <thead><tr><th style="width:26px;">#</th><th>Mission area</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Omni-channel guidance</strong> — strategic advisor on global priorities incl. New Sports</td></tr>
+            <tr><td>2</td><td><strong>Global Commercial portfolio</strong> — own it; align Operations, Technology &amp; Finance PMOs</td></tr>
+            <tr><td>3</td><td><strong>Commercial programs</strong> — sales elevation, market expansion, omnichannel vs. Go-to-Market dates</td></tr>
+            <tr><td>4</td><td><strong>Change management</strong> — adoption &amp; integration of new commercial capabilities</td></tr>
+            <tr><td>5</td><td><strong>Best-practice frameworks</strong> — implementation balanced with long-term capability build</td></tr>
+            <tr><td>6</td><td><strong>Stakeholder management</strong> — central point of contact, cross-functional &amp; regional</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="chart-src">Source: <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">culture.on.com, job posting</a>.</div>
+    <div>
+      <div class="split-table-label">Requirements, condensed from the posting</div>
+      <div class="pri-wrap">
+        <table class="pri-table compact">
+          <thead><tr><th>Requirement</th><th>As written</th></tr></thead>
+          <tbody>
+            <tr><td>Experience</td><td>8-10 years, omni-channel strategy, measurable impact</td></tr>
+            <tr><td>Omni-channel</td><td>Digital, wholesale &amp; own-retail channel design</td></tr>
+            <tr><td>Leadership</td><td>Teams &amp; stakeholders in a matrixed organization</td></tr>
+            <tr><td>Analytical</td><td>Data-driven insight + strategic intuition</td></tr>
+            <tr><td>Global mindset</td><td>Multi-region, multicultural strategy experience</td></tr>
+            <tr><td>Background</td><td>Transformation, Consulting (Strategy/Ops/PMO), or similar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+  <div class="chart-src">Source: <a href="https://culture.on.com/jobs/8176597/" target="_blank" rel="noopener">culture.on.com, job posting</a>.</div>
 
   <!-- ROLE SCOPE -->
   <div id="sec-scope" class="sec-header">
