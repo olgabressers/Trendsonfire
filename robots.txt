@@ -4,6 +4,7 @@ Disallow: /v1/
 Disallow: /v2/
 Disallow: /admin/
 Disallow: /book/
+Disallow: /ladyspace/
 Disallow: /logo-preview.html
 Disallow: /logo-preview-red.html
 
