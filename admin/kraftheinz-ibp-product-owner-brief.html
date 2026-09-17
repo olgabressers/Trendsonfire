@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Kraft Heinz — Digital Transformation Product Owner Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#17151a;color:white;padding:56px 32px 40px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ff5a5f;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,3.8vw,44px);font-weight:400;line-height:1.15;margin-bottom:14px;letter-spacing:-0.5px;}
+    .art-hero h1 em{color:#ff5a5f;font-style:italic;}
+    .art-hero p{font-size:15.5px;color:rgba(255,255,255,.87);line-height:1.6;max-width:800px;}
+    .art-hero .meta{margin-top:16px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#ff5a5f;text-decoration:none;border:1px solid rgba(255,90,95,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(255,90,95,.1);}
+
+    /* MAIN */
+    main{max-width:1180px;margin:0 auto;padding:40px 48px 72px;}
+    @media(max-width:700px){main{padding:24px 16px 48px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:30px;}
+    @media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:18px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;line-height:1;color:#17151a;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#a3142b;font-weight:600;}
+
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:22px 22px 18px;margin-bottom:22px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#a3142b;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#17151a;padding:48px 48px;margin:0 -48px 40px;}
+    @media(max-width:700px){.bk-wrap{padding:32px 16px;margin:0 -16px 32px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ff5a5f;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,2.8vw,32px);color:white;font-weight:400;line-height:1.15;margin-bottom:28px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(255,90,95,.35);padding:22px 18px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;color:#ff5a5f;line-height:0.85;margin-bottom:10px;font-weight:600;}
+    .bk-card-title{font-size:17px;font-weight:700;color:#ffffff;margin-bottom:11px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:13.5px;color:#ffffff;padding:7px 0 7px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.55;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#ff5a5f;position:absolute;left:0;font-weight:700;}
+
+    /* SECTION HEADER */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:32px 0 14px;padding-bottom:10px;border-bottom:2px solid #17151a;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a3142b;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(23px,2.6vw,30px);font-weight:600;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #17151a;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#a3142b;}
+
+    /* TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px;}
+    .pri-table th{background:#17151a;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#a3142b;}
+
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:20px 18px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:600;line-height:1;color:#a3142b;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:9px;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#17151a;border-left:3px solid #ff5a5f;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ff5a5f;margin-bottom:6px;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:14px;}
+    .kpi-group{margin-bottom:20px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a3142b;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#17151a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
+    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px solid #e2dfd9;font-size:13px;color:#17151a;line-height:1.5;}
+    .kpi-bench strong{color:#a3142b;font-weight:800;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.kraftheinzcompany.com" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://jobs.kraftheinz.com/careers/job/1970324837512131" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Kraft Heinz</div>
+    <div class="eyebrow">Interview Brief — Digital Transformation Product Owner · IBP (Integrated Business Planning) &amp; Demand Planning</div>
+    <h1>Kraft Heinz: <em>building the self-driving forecast for Western Europe</em></h1>
+    <p>Kraft Heinz's demand forecasts already move through the monthly IBP financial call untouched in nearly half of cases in North America — the result of a five-year build with o9 Solutions that took autonomous forecast adoption from close to zero in 2022 to 48.2% by March 2025. Western Europe Operations, run out of Amsterdam, has followed its own, more adaptive path. This role owns turning that into a shared regional roadmap: leading the change agenda for volume and commercial forecasting, scaling autonomous forecasting across European Business Units, and building the value capture model and business cases that justify what comes next.</p>
+    <div class="meta">
+      <span>Sources: Kraft Heinz careers portal, Kraft Heinz FY2025 results, o9 Solutions case studies, OMP case study, Oliver Wight, Gartner, McKinsey</span>
+      <span>Updated 17 September 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:34px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #ff5a5f;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a3142b;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a3142b;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">$24.9 billion in FY2025 net sales, roughly 35,000 employees across 40 countries, co-headquartered in Pittsburgh and Chicago. Western Europe Operations runs from Amsterdam's Zuidas hub — Kraft Heinz's largest office outside North America and its Benelux headquarters.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a3142b;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Digital Transformation Product Owner, Amsterdam (Job ID R-106362), inside Western Europe Operations. Owns the change agenda for demand planning and IBP (Integrated Business Planning) forecasting across European Business Units, the roadmap for the demand planning system, and the value capture model behind it.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a3142b;margin-bottom:4px;">Why now</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">North America's forecasting has run through a five-year, four-phase build with o9 Solutions, reaching 48.2% autonomous adoption by March 2025. Kraft Heinz's own demand planning lead has said Europe "required a more adaptive approach" — this role is the first dedicated owner of turning that approach into a shared regional roadmap.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#f6ece7;border:1px solid #e3c4bc;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#17151a;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-ibp" style="color:#0a0f1a;text-decoration:none;font-weight:700;">IBP — the five-step process</a><br><span style="color:#555;font-size:13px;">What Integrated Business Planning is and the five monthly reviews that make it up.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-tools" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Tools behind the forecast</a><br><span style="color:#555;font-size:13px;">The four platforms named in the posting, and Kraft Heinz's own real stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-inputs" style="color:#0a0f1a;text-decoration:none;font-weight:700;">What feeds the forecast</a><br><span style="color:#555;font-size:13px;">The demand signals a volume and commercial forecast has to account for.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">Why this role exists now, grounded in Kraft Heinz's own published transformation.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Four accountability areas mapped to Olga's supply chain and IBP background.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework &amp; benchmarks</a><br><span style="color:#555;font-size:13px;">Forecasting and value-capture measures, benchmarked against Kraft Heinz's own results and external research.</span></li>
+    </ol>
+  </div>
+
+</div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">FY2025 Net Sales</div>
+      <div class="s-num">$24.9B</div>
+      <div class="s-delta">Down 3.5% year-over-year</div>
+      <div class="s-src"><a href="https://news.kraftheinzcompany.com/press-releases-details/2026/Kraft-Heinz-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx" target="_blank" rel="noopener">Kraft Heinz Q4 &amp; FY2025 results</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Employees</div>
+      <div class="s-num">35,000</div>
+      <div class="s-src">Across roughly 40 countries. Kraft Heinz Company, most recent Form 10-K.</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Amsterdam Hub</div>
+      <div class="s-num">450+</div>
+      <div class="s-src">Largest EMEA office; Benelux headquarters &amp; global supply-chain hub, opened 30 May 2018. <a href="https://investinholland.com/news/kraft-heinz-opens-global-center-of-excellence-in-holland/" target="_blank" rel="noopener">Invest in Holland</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Autonomous Forecast Adoption</div>
+      <div class="s-num">48.2%</div>
+      <div class="s-delta">Up from near-zero in 2022</div>
+      <div class="s-src">Reached March 2025. <a href="https://o9solutions.com/articles/how-is-kraft-heinz-using-ai-to-transform-demand-planning" target="_blank" rel="noopener">o9 Solutions case study</a></div>
+    </div>
+  </div>
+
+  <!-- TRANSFORMATION TIMELINE -->
+  <div class="chart-box">
+    <div class="chart-title">Five years, four phases: how Kraft Heinz got to 48.2%</div>
+    <div class="chart-sub">Kraft Heinz's own published account of its demand planning transformation with o9 Solutions, North America</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Phase</th><th>Years</th><th>What changed</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Proof of concept</strong></td><td>2019–2020</td><td>o9's machine-learning platform tested; the entire implementation was run remotely during the pandemic.</td></tr>
+          <tr><td><strong>2. Centralization &amp; capability building</strong></td><td>2021–2022</td><td>Demand planning moved from a decentralized structure to a centralized model, with a Center of Excellence and cross-functional "agile pods".</td></tr>
+          <tr><td><strong>3. Human-in-the-loop optimization</strong></td><td>2022–2024</td><td>Planner expertise fed into the machine-learning models — described internally as "translating tribal knowledge into machine learning".</td></tr>
+          <tr><td><strong>4. Autonomous forecasting</strong></td><td>2024–2025</td><td>48.2% of forecasts reached full autonomy, moving straight through the IBP financial call without manual adjustment.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: Adis Sulejmanovic, Head of Digital Supply Chain Transformation and Strategy, Kraft Heinz, speaking at the Gartner Supply Chain Symposium. <a href="https://o9solutions.com/articles/how-is-kraft-heinz-using-ai-to-transform-demand-planning" target="_blank" rel="noopener">o9 Solutions, "How Is Kraft Heinz Using AI to Transform Demand Planning?"</a>, published 7 May 2025.</div>
+  </div>
+
+  <div class="scope-exp" style="margin:0 0 22px;">
+    <strong>Why this role sits in Amsterdam</strong>
+    "Change must align with market maturity. Not every region is ready for AI at the same pace. North America underwent a comprehensive rollout, while EMEA required a more adaptive approach." — Marcelo Iuki, Customer Excellence and Demand Planning Lead, Kraft Heinz. <a href="https://o9solutions.com/articles/kraft-heinzs-demand-forecast-accuracy" target="_blank" rel="noopener" style="color:#ff5a5f;">o9 Solutions, "Why Kraft Heinz's Demand Forecast Accuracy Is at an All-Time High"</a>, 24 March 2025.
+  </div>
+
+  <!-- SECTION 01: IBP PROCESS -->
+  <div id="sec-ibp" class="sec-header" style="margin-top:0;">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Process</div>
+      <div class="sec-title">IBP (Integrated Business Planning) — the five-step process this role runs</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">What IBP is</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.65;margin:0 0 14px;">Integrated Business Planning is a decision-making process that aligns strategy, product portfolio, demand, supply and finance through a focused, exception-driven monthly re-planning cycle. It is managed through five diarized review meetings each month, building to a single reconciled plan. Kraft Heinz's own published materials confirm it runs this cycle in practice — Adis Sulejmanovic, Head of Digital Supply Chain Transformation and Strategy, describes autonomous forecasts moving "straight through the IBP financial call," the monthly decision point this process builds toward.</p>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Step</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Portfolio Review</strong></td><td>Connects business strategy to the products and services that will be brought to market — what will be available to sell, and what resources that requires.</td></tr>
+          <tr><td><strong>2. Demand Review</strong></td><td>Captures changes to the demand plan since the previous month and what supply needs to do in response — building inventory, reserving capacity.</td></tr>
+          <tr><td><strong>3. Supply Review</strong></td><td>Turns the demand plan into an operational supply response across the network's key capacity and cost parameters.</td></tr>
+          <tr><td><strong>4. Integrated Reconciliation</strong></td><td>Reconciles portfolio, demand, supply and financial views into one plan; gaps against financial and strategic targets are quantified and scenario-tested.</td></tr>
+          <tr><td><strong>5. Management Business Review</strong></td><td>The senior executive team decides on the issues and gap-closing scenarios surfaced by the Integrated Reconciliation step.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">This five-step cycle is the Oliver Wight standard IBP model used across consumer goods and manufacturing. Kraft Heinz's own materials confirm it runs a monthly "IBP financial call" as the culmination of this cycle; its internal names for each review step are not publicly disclosed.</div>
+    <div class="chart-src">Source: <a href="https://www.oliverwight-americas.com/services/integrated-business-planning-advanced-sales-operations-planning/" target="_blank" rel="noopener">Oliver Wight Americas, Integrated Business Planning</a> · <a href="https://www.oliverwight-americas.com/whitepapers/the-demand-review-deploying-strategy-with-integrated-business-planning/" target="_blank" rel="noopener">The Demand Review</a> · <a href="https://www.oliverwight-americas.com/whitepapers/the-supply-review-deploying-strategy-with-integrated-business-planning/" target="_blank" rel="noopener">The Supply Review</a> · <a href="https://www.oliverwight-americas.com/whitepapers/the-integrated-reconciliation-review-deploying-strategy-with-integrated-business-planning/" target="_blank" rel="noopener">The Integrated Reconciliation Review</a> · <a href="https://www.oliverwight-americas.com/whitepapers/the-management-business-review-deploying-strategy-with-integrated-business-planning/" target="_blank" rel="noopener">The Management Business Review</a>.</div>
+  </div>
+
+  <!-- SECTION 02: TOOLS -->
+  <div id="sec-tools" class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Technology</div>
+      <div class="sec-title">Tools behind the forecast</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The four platforms named in the posting</div>
+    <div class="chart-sub">Any of these — or a similar demand planning / IBP platform — is named as acceptable Product Owner background</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Platform</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>o9 Solutions</strong></td><td>AI-powered "Digital Brain" planning platform spanning demand forecasting, supply planning and IBP — the platform Kraft Heinz itself has run since 2019.</td></tr>
+          <tr><td><strong>Blue Yonder</strong></td><td>Long-established supply chain suite with strong retail roots; its Luminate platform covers machine-learning demand forecasting and control towers.</td></tr>
+          <tr><td><strong>SAP Integrated Business Planning</strong></td><td>Cloud-based IBP module inside the SAP ecosystem, built to connect forecasting and planning directly to execution.</td></tr>
+          <tr><td><strong>FuturMaster</strong></td><td>French planning suite spanning demand planning, supply planning, S&amp;OP and trade promotion — rebranded Sunstice in 2026.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">Kraft Heinz's own real planning stack: <strong>o9 Solutions</strong> for demand forecasting and IBP since 2019, and separately <strong>OMP Unison Planning</strong> for end-to-end material and supply planning across 8,000+ SKUs and 300+ facilities. The surrounding data stack runs on Snowflake, Power BI and Alteryx.</div>
+    <div class="chart-src">Sources: <a href="https://o9solutions.com/articles/how-is-kraft-heinz-using-ai-to-transform-demand-planning" target="_blank" rel="noopener">o9 Solutions case study</a> · <a href="https://omp.com/resource-center/case-studies/how-kraft-heinz-is-building-an-intelligent-and-sustainable-value-chain" target="_blank" rel="noopener">OMP case study</a> · <a href="https://www.rfp.wiki/specialty-industries/fmcg/kraft-heinz" target="_blank" rel="noopener">RFP.wiki, Kraft Heinz technology stack</a> · <a href="https://www.futurmaster.com/" target="_blank" rel="noopener">FuturMaster / Sunstice</a>.</div>
+  </div>
+
+  <!-- SECTION 03: DEMAND PLANNING INPUTS -->
+  <div id="sec-inputs" class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Inputs</div>
+      <div class="sec-title">What feeds the forecast — the elements demand planning has to account for</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The demand signals behind a volume &amp; commercial forecast</div>
+    <div class="chart-sub">The standard input set any demand planning or IBP process reconciles before a number reaches the Demand Review</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Input</th><th>Why it moves the forecast</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Historical demand / point-of-sale data</strong></td><td>The statistical baseline — actual consumption and shipment history, not just orders received.</td></tr>
+          <tr><td><strong>Seasonality &amp; retail calendar</strong></td><td>Recurring cyclical patterns tied to the calendar — holidays, back-to-school, grilling season — that a naive average misses.</td></tr>
+          <tr><td><strong>Promotions &amp; trade activity</strong></td><td>Price cuts, features and displays temporarily lift volume well above the baseline, then pull it back down after.</td></tr>
+          <tr><td><strong>New product introductions &amp; phase-outs</strong></td><td>No demand history exists yet — forecasts have to be built from analogous items and launch plans instead.</td></tr>
+          <tr><td><strong>Pricing &amp; commercial actions</strong></td><td>List price changes and mix shifts between pack sizes change volume independently of the underlying trend.</td></tr>
+          <tr><td><strong>Distribution changes</strong></td><td>New retailer listings or delistings shift the addressable shelf before consumer demand itself has changed.</td></tr>
+          <tr><td><strong>Supply &amp; capacity constraints</strong></td><td>What the network can actually produce and ship feeds back into what the forecast should ask for.</td></tr>
+          <tr><td><strong>External &amp; macro signals</strong></td><td>Weather, category trends, competitor activity and broader consumer sentiment. Kraft Heinz's own transformation drew on 5 million+ external data sets to rebuild its baseline after traditional models broke down.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">The eight-input structure follows the standard demand-planning framework referenced in Oliver Wight's Demand Review and the Institute of Business Forecasting's glossary. The external-data example is Kraft Heinz's own, not a generic illustration.</div>
+    <div class="chart-src">Sources: <a href="https://www.oliverwight-americas.com/whitepapers/the-demand-review-deploying-strategy-with-integrated-business-planning/" target="_blank" rel="noopener">Oliver Wight, The Demand Review</a> · <a href="https://ibf.org/knowledge/glossary" target="_blank" rel="noopener">Institute of Business Forecasting, Glossary</a> · <a href="https://www.board.com/events-webinars/how-kraft-heinz-transformed-planning-with-ai-5-m-data-sets-on-demand" target="_blank" rel="noopener">Board, "How Kraft Heinz Transformed Planning with AI &amp; 5M+ Data Sets"</a>.</div>
+  </div>
+
+  <!-- SECTION 04: CHALLENGES -->
+  <div id="sec-challenges" class="bk-wrap">
+    <div class="bk-eyebrow">Role Analysis</div>
+    <div class="bk-headline">3 structural challenges this role is built to solve</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">Autonomous forecasting stops at the regional border</div>
+        <ul>
+          <li>North America reached 48.2% autonomous adoption by March 2025 through a five-year, four-phase build</li>
+          <li>Kraft Heinz's own demand planning lead has said Europe "required a more adaptive approach" — no equivalent regional build exists yet</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">A global roadmap without a European voice yet</div>
+        <ul>
+          <li>The role's own brief asks to "align European priorities with the global demand planning and IBP agenda" — meaning that alignment does not exist today</li>
+          <li>This is a newly posted role, with no prior Digital Transformation Product Owner for Western Europe Operations</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">The value capture model still has to be built</div>
+        <ul>
+          <li>The role's own brief asks the incoming owner to define the KPIs and value capture model from scratch, then build the business cases on top of it</li>
+          <li>North America's programme shows what is achievable — $50 million-plus in working capital released — but that model has not been shown to exist for Europe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 04: ROLE SCOPE -->
+  <div id="sec-scope" class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Role scope</div>
+      <div class="sec-title">Digital Transformation Product Owner — four accountability areas &amp; Olga's experience</div>
+    </div>
+  </div>
+
+  <div class="src-note" style="margin-bottom:4px;">The posting asks for 5+ years in demand planning, IBP, supply chain or a related digital transformation role, plus a Bachelor's degree in Business, Supply Chain, Engineering, Data or a related field. Olga holds a postgraduate PDEng (Professional Doctorate in Engineering) in Logistics Management &amp; Supply Chain from TU Eindhoven and an MSc in Applied Mathematics, built on 19 years across IBM, Nike, adidas and Richemont.</div>
+
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="scope-n">01</div>
+      <div class="scope-label">Change Management Across Distributed Markets</div>
+      <div class="scope-desc">Lead adoption of new forecasting ways of working across European Business Units, embedding change that is sustained and measurable.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Adoption rate</span>
+        <span class="scope-kpi">Rollout cadence</span>
+        <span class="scope-kpi">Stakeholder buy-in</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Change Manager on a customer relationship management system rollout for InBev at IBM. At Richemont, drove change management and adoption across 100+ people, technology and process projects, influencing a matrix organisation up to executive level across 26 European countries.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">02</div>
+      <div class="scope-label">Demand Planning &amp; Forecasting Process Ownership</div>
+      <div class="scope-desc">Own the process redesign behind volume and commercial forecasting, and the roadmap for the demand planning and IBP forecasting engine.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Process design</span>
+        <span class="scope-kpi">Forecast accuracy</span>
+        <span class="scope-kpi">Roadmap ownership</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>At IBM, delivered supply chain process design, material requirements planning and demand planning for four manufacturers — Numico, Avebe, SGV Group and Stiho. Process transformation expert on SAP APO (Advanced Planning &amp; Optimization, SAP's planning suite ahead of SAP IBP) for the Dutch Ministry of Transport.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">03</div>
+      <div class="scope-label">Cross-Regional Roadmap Alignment</div>
+      <div class="scope-desc">Align European priorities with the global demand planning and IBP agenda, building joint roadmaps with cross-regional teams.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Global alignment</span>
+        <span class="scope-kpi">Shared standards</span>
+        <span class="scope-kpi">Roadmap delivery</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>At adidas, part of the European Union Supply Chain Management leadership team, driving the EU omni-channel and supply chain vision. At Richemont, directed strategy across 12 luxury Maisons and 26 European countries, reporting to the EU CEO and Global Chief Digital Officer.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">04</div>
+      <div class="scope-label">Value Capture, KPIs &amp; Business Cases</div>
+      <div class="scope-desc">Define the value capture model for demand planning and IBP investment, tracking realised benefits and building business cases for future enhancements.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">P&amp;L ownership</span>
+        <span class="scope-kpi">KPI design</span>
+        <span class="scope-kpi">Business case development</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>At Richemont, held P&amp;L responsibility for a €150 million e-commerce business, owning key performance indicators including cost-to-sales ratio, operational performance and service-level agreements, and driving year-on-year revenue growth of 30 to 250 percent.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 05: KPIs -->
+  <div id="sec-kpi" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">KPI (Key Performance Indicator) framework &amp; benchmarks</div>
+    </div>
+  </div>
+
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">Forecasting &amp; autonomous planning</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Weekly forecast accuracy</div>
+          <div class="kpi-desc">Accuracy at SKU-location-customer level — named directly in Kraft Heinz's own published results as critical for service execution.</div>
+          <div class="kpi-bench"><strong>Kraft Heinz's own trajectory:</strong> +10.4 percentage points improvement since 2022, reached by March 2025.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Autonomous ("touchless") forecast adoption</div>
+          <div class="kpi-desc">Share of forecasts moving through the IBP financial call without manual adjustment — the role's own ask to "scale autonomous forecasting."</div>
+          <div class="kpi-bench"><strong>Kraft Heinz:</strong> 48.2% by March 2025, up from near-zero in 2022. <strong>Gartner:</strong> 70% of large organisations expected to adopt AI-based supply chain forecasting by 2030.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Production forecast accuracy</div>
+          <div class="kpi-desc">Accuracy two months out, supporting labor and production scheduling — the second named accuracy measure in Kraft Heinz's own results.</div>
+          <div class="kpi-bench"><strong>Kraft Heinz's own trajectory:</strong> +11% improvement, supporting labor and production scheduling.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Forecast Value Added (FVA)</div>
+          <div class="kpi-desc">Measures which forecasting inputs and participants improve the forecast against a naive baseline — the standard IBP discipline for deciding where planner effort belongs.</div>
+          <div class="kpi-bench"><strong>Kraft Heinz's own shift:</strong> moving from measuring forecast value-add alone toward model-adoption KPIs — ensuring inputs are right and outputs are trusted.</div>
+        </div>
+      </div>
+      <div class="src-note">Sources: <a href="https://o9solutions.com/articles/how-is-kraft-heinz-using-ai-to-transform-demand-planning" target="_blank" rel="noopener">o9 Solutions, Kraft Heinz case study</a> · <a href="https://www.gartner.com/en/newsroom/press-releases/2025-09-16-gartner-predicts-70-percent-of-large-orgs-will-adopt-ai-based-supply-chain-forecasting-to-predict-future-demand-by-2030" target="_blank" rel="noopener">Gartner, 16 Sep 2025 press release</a> · <a href="https://ibf.org/knowledge/glossary/forecast-value-added-fva-131" target="_blank" rel="noopener">Institute of Business Forecasting, Forecast Value Added</a>.</div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Value capture &amp; inventory</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Working capital released</div>
+          <div class="kpi-desc">Direct output of the value capture model this role is accountable for building.</div>
+          <div class="kpi-bench"><strong>Kraft Heinz's demand-forecasting programme:</strong> $50 million-plus released.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Inventory reduction</div>
+          <div class="kpi-desc">Realised benefit from a parallel Kraft Heinz supply-planning programme, run separately from the demand-forecasting work above.</div>
+          <div class="kpi-bench"><strong>Kraft Heinz's OMP Unison Planning programme:</strong> approximately $90 million year-over-year reduction, with over 80% of inventory held within target limits.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Waste reduction</div>
+          <div class="kpi-desc">Tracked separately across Kraft Heinz's two planning programmes.</div>
+          <div class="kpi-bench"><strong>Demand-forecasting programme:</strong> 45% reduction (new product development, bias, C-SKU). <strong>Supply-planning programme:</strong> approximately 5% reduction.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">CPG autonomous-planning value range</div>
+          <div class="kpi-desc">The external ceiling consumer goods companies are benchmarked against once autonomous planning is fully scaled.</div>
+          <div class="kpi-bench"><strong>McKinsey:</strong> up to +4% revenue, up to -20% inventory, up to -10% supply chain cost for consumer goods companies.</div>
+        </div>
+      </div>
+      <div class="src-note">Sources: <a href="https://o9solutions.com/articles/how-is-kraft-heinz-using-ai-to-transform-demand-planning" target="_blank" rel="noopener">o9 Solutions, Kraft Heinz case study</a> · <a href="https://omp.com/resource-center/case-studies/how-kraft-heinz-is-building-an-intelligent-and-sustainable-value-chain" target="_blank" rel="noopener">OMP, Kraft Heinz case study</a> · <a href="https://www.mckinsey.com/capabilities/operations/our-insights/autonomous-supply-chain-planning-for-consumer-goods-companies" target="_blank" rel="noopener">McKinsey, Autonomous supply chain planning for consumer goods companies</a>.</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#17151a;color:#ff5a5f;border:1px solid rgba(255,90,95,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+</body>
+</html>
