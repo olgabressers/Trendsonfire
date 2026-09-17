@@ -37,7 +37,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
   margin:0;background:var(--cream);color:var(--ink);
   font-family:var(--f-sans);font-weight:300;font-size:var(--t-body);line-height:1.75;
@@ -70,14 +70,14 @@ header{
 }
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{
-  font-family:var(--f-sans);font-weight:400;font-size:.82rem;
-  letter-spacing:.42em;text-transform:uppercase;color:var(--cream);
+  font-family:var(--f-sans);font-weight:500;font-size:.84rem;
+  letter-spacing:.38em;text-transform:uppercase;color:var(--cream);
   text-decoration:none;transition:color .5s ease;white-space:nowrap;
 }
 nav{display:flex;gap:clamp(1rem,2.6vw,2.6rem);flex-wrap:wrap;justify-content:flex-end}
 nav a{
-  font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;
-  color:rgba(247,242,234,.85);text-decoration:none;padding-bottom:.25rem;
+  font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+  color:rgba(247,242,234,.94);text-decoration:none;padding-bottom:.3rem;
   border-bottom:1px solid transparent;transition:color .4s ease,border-color .4s ease;
 }
 nav a:hover{color:var(--gold-2);border-bottom-color:var(--gold-2)}
@@ -85,19 +85,19 @@ nav a:hover{color:var(--gold-2);border-bottom-color:var(--gold-2)}
 .lang{display:flex;align-items:center;gap:.45rem;margin-left:clamp(.8rem,2vw,2rem)}
 .lang button{
   background:none;border:0;padding:.2rem 0;cursor:pointer;font-family:var(--f-sans);
-  font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(247,242,234,.6);transition:color .4s ease;
+  font-size:.74rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(247,242,234,.7);transition:color .4s ease;
 }
 .lang button.on{color:var(--gold-2)}
 .lang button:hover{color:var(--cream)}
-.lang i{font-style:normal;color:rgba(247,242,234,.4);font-size:.68rem}
-header.scrolled .lang button{color:rgba(74,66,59,.6)}
+.lang i{font-style:normal;color:rgba(247,242,234,.45);font-size:.74rem}
+header.scrolled .lang button{color:rgba(74,66,59,.75)}
 header.scrolled .lang button.on{color:var(--gold)}
 header.scrolled .lang button:hover{color:var(--ink)}
 header.scrolled .lang i{color:rgba(74,66,59,.4)}
 header.scrolled{background:rgba(247,242,234,.95);backdrop-filter:blur(10px);padding:.95rem 0;border-bottom-color:var(--line)}
 header.scrolled .brand{color:var(--ink)}
-header.scrolled nav a{color:var(--ink-3)}
+header.scrolled nav a{color:var(--ink-2)}
 header.scrolled nav a:hover{color:var(--gold)}
 
 /* ---------- hero ---------- */
@@ -271,18 +271,33 @@ footer small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
   .framed::after{inset:10px -10px -10px 10px}
 }
 @media (max-width:640px){
-  header{padding:1.1rem 0}
-  header .wrap{flex-direction:column;gap:.75rem}
-  nav{justify-content:center;gap:1.1rem}
-  nav a{font-size:.58rem;letter-spacing:.14em}
-  .navwrap{flex-direction:column;gap:.6rem}
-  .lang{margin-left:0}
-  header.scrolled{padding:.8rem 0}
+  :root{--pad:4.75rem}
+  header{padding:.95rem 0}
+  header.scrolled{padding:.7rem 0}
+  header .wrap{flex-wrap:wrap;row-gap:.55rem}
+  .navwrap{display:contents}
+  .brand{order:1;font-size:.78rem;letter-spacing:.3em}
+  .lang{order:2;margin-left:auto}
+  .lang button{font-size:.72rem;letter-spacing:.14em}
+  nav{order:3;flex-basis:100%;width:100%;justify-content:space-between;gap:.5rem}
+  nav a{font-size:.7rem;letter-spacing:.08em;font-weight:500;padding-bottom:.25rem}
+  html{scroll-padding-top:6.5rem}
 }
 @media (max-width:520px){
-  .back-to-top{width:42px;height:42px;right:1rem;bottom:1rem}
-  .card{padding:2rem 1.5rem}
-  .mosaic{gap:.8rem}
+  .back-to-top{width:44px;height:44px;right:1rem;bottom:1rem}
+  .card{padding:1.9rem 1.4rem}
+  .mosaic{gap:.7rem}
+  .hero-inner{padding:7rem 0 5.5rem}
+  .hero h1{letter-spacing:.04em}
+  .rule{margin:1.9rem auto}
+  .band{height:clamp(240px,42vh,360px)}
+  .group-head{gap:1rem;margin-bottom:2rem}
+  .section-head{margin-bottom:2.5rem}
+  .framed::after{inset:8px -8px -8px 8px}
+  .portrait{max-width:none}
+  .portrait::after{inset:9px -9px -9px 9px}
+  .contact-link{padding:1.05rem 1.6rem;font-size:.7rem;letter-spacing:.2em}
+  footer .wrap{justify-content:center;text-align:center;row-gap:.8rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -333,7 +348,7 @@ footer small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
       <div class="reveal">
         <span class="label" data-ru="Пространство">The Space</span>
         <h2 class="title" data-ru="Преображение">The transformation</h2>
-        <p class="lead" style="margin-top:2rem" data-ru="Lady Space — пространство, где женщина становится леди. Восемь дисциплин: этикет, осанка, речь, сервировка и подача стола, флористика, деловые правила, устройство дома и китайская астрология.">Lady Space is where a woman becomes a lady. Eight disciplines: etiquette, carriage, communication, the setting and service of a table, floristry, business conduct, the ordering of a home and Chinese astrology.</p>
+        <p class="lead" style="margin-top:2rem" data-ru="Lady Space — пространство, где женщина становится леди. Семь дисциплин: этикет, осанка, сервировка и подача стола, флористика, деловой этикет, устройство дома и китайская астрология.">Lady Space is where a woman becomes a lady. Seven disciplines: etiquette, carriage, the setting and service of a table, floristry, business etiquette, the ordering of a home and Chinese astrology.</p>
         <p class="lead" data-ru="Каждая дисциплина самостоятельна и нужна для применения: за столом, в комнате, на встрече.">Each discipline stands on its own, and each is learned to be used: at a table, in a room, in a meeting.</p>
         <p class="lead" data-ru="Lady Space основали Natalia Hendrix и Alena Bressers.">Lady Space was founded by Natalia Hendrix and Alena Bressers.</p>
         <div class="ornament"><span></span><i></i><span></span></div>
@@ -346,7 +361,7 @@ footer small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
     <div class="wrap">
       <div class="section-head reveal">
         <span class="label" data-ru="Программа">Programme</span>
-        <h2 class="title" data-ru="Восемь дисциплин">Eight disciplines</h2>
+        <h2 class="title" data-ru="Семь дисциплин">Seven disciplines</h2>
       </div>
     </div>
 
@@ -377,17 +392,6 @@ footer small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
             </svg>
             <h4 data-ru="Осанка и каблук">Carriage and heels</h4>
             <p data-ru="Осанка и линия спины, походка на каблуках, как сесть и как встать.">Posture and the line of the back, walking in heels, sitting down and standing up.</p>
-          </article>
-
-          <article class="card">
-            <svg viewBox="0 0 48 48" aria-hidden="true">
-              <circle cx="24" cy="24" r="3.5"/>
-              <path d="M24 13v-2M24 37v-2M13 24h-2M37 24h-2"/>
-              <path d="M31.8 16.2a11 11 0 0 1 0 15.6M16.2 31.8a11 11 0 0 1 0-15.6"/>
-              <path d="M36.5 11.5a17.5 17.5 0 0 1 0 25M11.5 36.5a17.5 17.5 0 0 1 0-25"/>
-            </svg>
-            <h4 data-ru="Речь">Communication</h4>
-            <p data-ru="Как обращаются к женщине и как обращается она, тон и ведение разговора.">How a woman is addressed and how she addresses others, tone, and the conduct of a conversation.</p>
           </article>
 
         </div>
@@ -442,7 +446,7 @@ footer small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
               <path d="M24 20v13"/>
               <circle cx="24" cy="26" r="2.2"/>
             </svg>
-            <h4 data-ru="Деловые правила">Business conduct</h4>
+            <h4 data-ru="Деловой этикет">Business etiquette</h4>
             <p data-ru="Представление и рассадка, деловой обед, переписка и одежда.">Introductions and seating, the business meal, written correspondence and dress.</p>
           </article>
 
