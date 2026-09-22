@@ -95,12 +95,16 @@
     .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#c9a961;margin-bottom:6px;}
 
     /* KPIs */
-    .resp-table th:first-child,.resp-table td:first-child{width:33%;}
-    .resp-table td:first-child{font-weight:700;color:#0a0f1a;}
-    .resp-kpi{margin-bottom:12px;}
+    .resp-list{display:flex;flex-direction:column;margin-top:12px;}
+    .resp-item{display:grid;grid-template-columns:34% 1fr;gap:20px;padding:16px 0;border-bottom:1px solid #e8e5e0;}
+    .resp-item:first-child{padding-top:0;}
+    .resp-item:last-child{border-bottom:none;padding-bottom:0;}
+    @media(max-width:780px){.resp-item{grid-template-columns:1fr;gap:8px;}}
+    .resp-q{font-size:14.5px;font-weight:700;color:#0a0f1a;line-height:1.5;}
+    .resp-kpi{margin-bottom:10px;}
     .resp-kpi:last-child{margin-bottom:0;}
-    .resp-kpi-name{font-size:14px;font-weight:800;color:#0a0f1a;margin-bottom:4px;}
-    .resp-kpi-bench{font-size:14px;color:#3f3f3f;line-height:1.55;}
+    .resp-kpi-name{display:block;font-size:14px;font-weight:800;color:#0a0f1a;margin-bottom:3px;}
+    .resp-kpi-bench{display:block;font-size:14px;color:#3f3f3f;line-height:1.55;}
 
     /* BRAND / PARTNER CARDS */
     .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
@@ -756,73 +760,72 @@
 
   <div class="chart-box">
     <div class="chart-title" style="font-size:20px;">Every responsibility, its KPI &amp; industry benchmark</div>
-    <div class="pri-wrap">
-      <table class="pri-table resp-table">
-        <thead><tr><th>Responsibility (verbatim from the posting)</th><th>KPI &amp; industry benchmark</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>Lead the local organization, setting strategic priorities and objectives, developing teams</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Reporting cadence with Switzerland</div><div class="resp-kpi-bench">Standard executive operating rhythm: a weekly tactical review (30–45 minutes), a monthly performance review and a quarterly strategy reset.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Team development</div><div class="resp-kpi-bench">The average employee received 16.7 hours of formal learning in 2025, at an average direct spend of $846 per employee a year.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Cross-functional project delivery</div><div class="resp-kpi-bench">Only 34% of organizations mostly or always deliver projects on time and on budget; high-process-maturity organizations reach 64–67%.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Mandate handover readiness</div><div class="resp-kpi-bench">Interim-management practice treats handover as a process designed from day one, with methods and systems documented and transferred to a named successor.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Own the e-commerce business budget/targets across EMEA and SEA, identifying opportunities</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">E-commerce revenue vs. budget</div><div class="resp-kpi-bench">Bain &amp; Altagamma project the personal luxury goods sector entering 2026 with a 3–5% growth outlook, following a flat 2025.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Market-level revenue growth</div><div class="resp-kpi-bench">Online is on track to become the single largest luxury sales channel, at 28–30% of the global personal luxury goods market in 2025.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Develop and implement new sales plans while continuously improving existing e-commerce</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Conversion &amp; average order value</div><div class="resp-kpi-bench">Luxury and jewelry e-commerce converts at 0.8–1.5%, well below the 2.5–3.0% cross-industry average, reflecting longer, research-heavy purchase cycles.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Lead e-commerce logistics and operational excellence, ensuring seamless end-to-end delivery</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Order-to-fulfilment cycle time</div><div class="resp-kpi-bench">24–48 hours is the standard order-processing target, with total cycle time of 1–3 days for competitive e-commerce operations.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Platform &amp; CMS reliability</div><div class="resp-kpi-bench">99.9% uptime is the general industry SLA standard, about 43 minutes of downtime a month.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Develop and drive customer loyalty and retention initiatives, strengthening online brand presence</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Customer retention rate</div><div class="resp-kpi-bench">Luxury goods repeat-purchase rates run 9.9%–15%, the lowest of any retail category, against a 28.2% e-commerce average across all verticals.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Online brand strength</div><div class="resp-kpi-bench">Luxury brands typically score 60–75 on Net Promoter Score, well above the broader retail industry average of around 45.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Develop plans to expand the online presence into new markets, identifying opportunities</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">New-market online revenue</div><div class="resp-kpi-bench">E-commerce reached 20.5% of total global retail sales in 2025, up from 19.9% in 2024.</div></div>
-              <div class="resp-kpi"><div class="resp-kpi-name">Cross-border experience consistency</div><div class="resp-kpi-bench">Retail customer satisfaction (CSAT) averages 76–85%, with above 85% considered strong.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Steer e-commerce stock planning and management across the responsible markets</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Stock availability by market</div><div class="resp-kpi-bench">A 95%+ in-stock rate is the standard target; retailers treat availability below 90% as a forecasting failure.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Maintain and strengthen relationships with key business partners across payments, logistics</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Payment &amp; logistics partner performance</div><div class="resp-kpi-bench">Card authorization rates average 85–92%, with well-optimized merchants reaching 90–95%; cross-border transactions run 5–15 points lower.</div></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Oversee internal and external multilingual customer service teams (Amsterdam and Hong Kong)</td>
-            <td>
-              <div class="resp-kpi"><div class="resp-kpi-name">Amsterdam + Hong Kong service standard</div><div class="resp-kpi-bench">Email first-response time averages 7–12 hours industry-wide; live chat averages 1 minute 35 seconds.</div></div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="resp-item" style="border-bottom:2px solid #111111;padding-top:0;">
+      <div style="font-size:12.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#8a6d3f;">Responsibility (verbatim from the posting)</div>
+      <div style="font-size:12.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#8a6d3f;">KPI &amp; industry benchmark</div>
+    </div>
+    <div class="resp-list">
+      <div class="resp-item">
+        <div class="resp-q">Lead the local organization, setting strategic priorities and objectives, developing teams</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Reporting cadence with Switzerland</span><span class="resp-kpi-bench">Standard executive operating rhythm: a weekly tactical review (30–45 minutes), a monthly performance review and a quarterly strategy reset.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Team development</span><span class="resp-kpi-bench">The average employee received 16.7 hours of formal learning in 2025, at an average direct spend of $846 per employee a year.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Cross-functional project delivery</span><span class="resp-kpi-bench">Only 34% of organizations mostly or always deliver projects on time and on budget; high-process-maturity organizations reach 64–67%.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Mandate handover readiness</span><span class="resp-kpi-bench">Interim-management practice treats handover as a process designed from day one, with methods and systems documented and transferred to a named successor.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Own the e-commerce business budget/targets across EMEA and SEA, identifying opportunities</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">E-commerce revenue vs. budget</span><span class="resp-kpi-bench">Bain &amp; Altagamma project the personal luxury goods sector entering 2026 with a 3–5% growth outlook, following a flat 2025.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Market-level revenue growth</span><span class="resp-kpi-bench">Online is on track to become the single largest luxury sales channel, at 28–30% of the global personal luxury goods market in 2025.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Develop and implement new sales plans while continuously improving existing e-commerce</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Conversion &amp; average order value</span><span class="resp-kpi-bench">Luxury and jewelry e-commerce converts at 0.8–1.5%, well below the 2.5–3.0% cross-industry average, reflecting longer, research-heavy purchase cycles.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Lead e-commerce logistics and operational excellence, ensuring seamless end-to-end delivery</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Order-to-fulfilment cycle time</span><span class="resp-kpi-bench">24–48 hours is the standard order-processing target, with total cycle time of 1–3 days for competitive e-commerce operations.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Platform &amp; CMS reliability</span><span class="resp-kpi-bench">99.9% uptime is the general industry SLA standard, about 43 minutes of downtime a month.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Develop and drive customer loyalty and retention initiatives, strengthening online brand presence</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Customer retention rate</span><span class="resp-kpi-bench">Luxury goods repeat-purchase rates run 9.9%–15%, the lowest of any retail category, against a 28.2% e-commerce average across all verticals.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Online brand strength</span><span class="resp-kpi-bench">Luxury brands typically score 60–75 on Net Promoter Score, well above the broader retail industry average of around 45.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Develop plans to expand the online presence into new markets, identifying opportunities</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">New-market online revenue</span><span class="resp-kpi-bench">E-commerce reached 20.5% of total global retail sales in 2025, up from 19.9% in 2024.</span></div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Cross-border experience consistency</span><span class="resp-kpi-bench">Retail customer satisfaction (CSAT) averages 76–85%, with above 85% considered strong.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Steer e-commerce stock planning and management across the responsible markets</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Stock availability by market</span><span class="resp-kpi-bench">A 95%+ in-stock rate is the standard target; retailers treat availability below 90% as a forecasting failure.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Maintain and strengthen relationships with key business partners across payments, logistics</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Payment &amp; logistics partner performance</span><span class="resp-kpi-bench">Card authorization rates average 85–92%, with well-optimized merchants reaching 90–95%; cross-border transactions run 5–15 points lower.</span></div>
+        </div>
+      </div>
+      <div class="resp-item">
+        <div class="resp-q">Oversee internal and external multilingual customer service teams (Amsterdam and Hong Kong)</div>
+        <div>
+          <div class="resp-kpi"><span class="resp-kpi-name">Amsterdam + Hong Kong service standard</span><span class="resp-kpi-bench">Email first-response time averages 7–12 hours industry-wide; live chat averages 1 minute 35 seconds.</span></div>
+        </div>
+      </div>
     </div>
     <div class="src-note">Responsibilities: <a href="https://careers.breitling.com/job/Lead-e-Commerce-Europe-&-Managing-Director-BEU-temporary-%28fmx%29/1476-en_GB/" target="_blank" rel="noopener">careers.breitling.com, job posting</a>. Benchmarks are general industry standards, not figures disclosed by Breitling. Commercial &amp; operations: <a href="https://www.bain.com/insights/luxury-is-ready-for-a-new-era-after-stabilizing-in-2025-snap-chart/" target="_blank" rel="noopener">Bain, luxury outlook 2026</a> · <a href="https://www.bain.com/insights/online-luxury-sales-approach-a-milestone-snap-chart/" target="_blank" rel="noopener">Bain, online luxury sales</a> · <a href="https://bestforecommerce.com/ecommerce-statistics/market-size-growth/ecommerce-share-of-retail/" target="_blank" rel="noopener">e-commerce share of global retail</a> · <a href="https://redstagfulfillment.com/average-conversion-rate-for-ecommerce/" target="_blank" rel="noopener">Red Stag, conversion benchmarks</a> · <a href="https://www.toolio.com/post/in-stock-rate-in-retail-what-it-is-why-it-matters-benchmarks-and-how-to-improve-it" target="_blank" rel="noopener">Toolio, in-stock rate</a> · <a href="https://dclcorp.com/blog/fulfillment/ecommerce-fulfillment-metrics/" target="_blank" rel="noopener">DCL Logistics, fulfilment metrics</a> · <a href="https://gr4vy.com/posts/payment-performance-benchmarks-for-2026/" target="_blank" rel="noopener">GR4VY, payment benchmarks</a> · <a href="https://uptime.com/blog/what-is-an-uptime-sla-guarantee" target="_blank" rel="noopener">Uptime.com, SLA standards</a>. Customer experience: <a href="https://www.stylograph.ai/blog/luxury-retail-clienteling-crisis-repeat-purchase-rate" target="_blank" rel="noopener">Stylograph, repeat-purchase benchmarks</a> · <a href="https://www.lorikeetcx.ai/articles/first-response-time-benchmark-customer-service" target="_blank" rel="noopener">Lorikeet, first-response time</a> · <a href="https://customergauge.com/benchmarks/blog/consumer-nps-benchmarks" target="_blank" rel="noopener">CustomerGauge, NPS benchmarks</a> · <a href="https://surveysparrow.com/blog/csat-benchmarks/" target="_blank" rel="noopener">SurveySparrow, CSAT benchmarks</a>. Governance: <a href="https://umbrex.com/resources/retail-industry-playbooks/retail-kpi-dashboard-weekly-business-review-playbook/weekly-business-review-cadence-and-governance/" target="_blank" rel="noopener">Umbrex, review cadence</a> · <a href="https://www.td.org/content/atd-blog/2026-state-of-the-industry-report-indicates-latest-td-trends" target="_blank" rel="noopener">ATD, 2026 State of the Industry</a> · <a href="https://pmstudycircle.com/project-management-statistics/" target="_blank" rel="noopener">PM Study Circle, project statistics</a> · <a href="https://www.bridgespan.org/insights/interim-management-seven-benefits" target="_blank" rel="noopener">Bridgespan, interim management</a></div>
   </div>
