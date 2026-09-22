@@ -128,6 +128,15 @@
     .rv-bar-fill{height:100%;border-radius:2px;}
     .rv-bar-fill.neg{background:#dc2626;}
     .rv-bar-fill.pos{background:#16a34a;}
+    .th-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0;}
+    @media(max-width:780px){.th-grid{grid-template-columns:1fr;}}
+    .th-card{border:1px solid #e2dfd9;background:white;padding:12px 14px;border-left:3px solid #FF7A00;}
+    .th-card.pos{border-left-color:#16a34a;}
+    .th-hd{display:flex;align-items:baseline;gap:8px;margin-bottom:5px;}
+    .th-pct{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:600;color:#FF7A00;line-height:1;}
+    .th-card.pos .th-pct{color:#16a34a;}
+    .th-name{font-size:14px;font-weight:800;color:#0a0f1a;}
+    .th-ev{font-size:13.5px;color:#1f1f1f;line-height:1.55;}
     .rv-bar-pct{font-size:13px;font-weight:700;color:#0a0f1a;flex-shrink:0;min-width:30px;text-align:right;}
 
     /* WATCH GRID */
@@ -240,10 +249,10 @@
     <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
       <li style="margin-bottom:13px;"><a href="#sec-brands" style="color:#0a0f1a;text-decoration:none;font-weight:700;">House of Brands — the watch portfolio</a><br><span style="color:#555;font-size:13px;">Breitling, Universal Genève and Gallet, with the current catalog and prices for each.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Ownership, turnover &amp; the Swiss watch trade</a><br><span style="color:#555;font-size:13px;">Ownership timeline, five-year turnover, and where Breitling ranks against Omega, Longines, Tissot.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-ops" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Breitling Europe (BEU) &amp; the operating footprint</a><br><span style="color:#555;font-size:13px;">The Lijnden entity and the job posting's own responsibilities and requirements.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-ops" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Breitling Europe (BEU) &amp; the operating footprint</a><br><span style="color:#555;font-size:13px;">The three structural challenges this role is built to solve.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">A two-region budget · two customer service hubs · declining core markets under owner scrutiny.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-org" style="color:#0a0f1a;text-decoration:none;font-weight:700;">How Breitling organizes e-commerce, client relations &amp; anti-fraud</a><br><span style="color:#555;font-size:13px;">Digital &amp; IT structure, the Client Relations Squad, and how fraud screening is handled.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Four accountability areas mapped to Olga's experience — plus a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">The posting's own responsibilities and requirements, four accountability areas mapped to Olga's experience, and a 5-step priority stack.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership &amp; owners</a><br><span style="color:#555;font-size:13px;">Most likely direct report, regional presidents in scope, CEO, Chief Customer Officer, Chief Commercial Officer, Chief Marketing Officer, board chair.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (key performance indicator) framework</a><br><span style="color:#555;font-size:13px;">Four layers: commercial, digital operations, customer experience, governance.</span></li>
       <li><a href="#sec-feedback" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Consumer feedback &amp; satisfaction</a><br><span style="color:#555;font-size:13px;">Trustpilot, PissedConsumer, Yelp, Google boutique ratings — plus/minus themes from 49 reviews read.</span></li>
@@ -598,27 +607,6 @@
     </div>
   </div>
 
-  <div class="chart-box">
-    <div class="chart-title">Responsibilities, as written in the posting</div>
-    <div class="pri-wrap">
-      <table class="pri-table">
-        <thead><tr><th>Key Responsibilities (verbatim from the posting)</th><th>Requirements (verbatim from the posting)</th></tr></thead>
-        <tbody>
-          <tr><td>Lead the local organization, setting strategic priorities and objectives, developing teams</td><td>At least 5 years of experience in a senior e-commerce, digital commerce, business development or commercial leadership role</td></tr>
-          <tr><td>Own the e-commerce business budget/targets across EMEA and SEA, identifying opportunities</td><td>Proven track record of successfully managing teams and leading cross-functional organizations</td></tr>
-          <tr><td>Develop and implement new sales plans while continuously improving existing e-commerce</td><td>Strong experience in e-commerce management, digital operations and business development</td></tr>
-          <tr><td>Lead e-commerce logistics and operational excellence, ensuring seamless end-to-end delivery</td><td>Strong commercial and strategic mindset, with demonstrated experience in driving revenue growth</td></tr>
-          <tr><td>Develop and drive customer loyalty and retention initiatives, strengthening online brand presence</td><td>Strong analytical and structured approach, with the ability to interpret data and monitor KPIs (key performance indicators)</td></tr>
-          <tr><td>Develop plans to expand the online presence into new markets, identifying opportunities</td><td>Proven experience leading complex digital projects across internal and external teams</td></tr>
-          <tr><td>Steer e-commerce stock planning and management across the responsible markets</td><td>Experienced in e-commerce platforms, CMS (content management system) and UX/UI (user experience and user interface) best practices</td></tr>
-          <tr><td>Maintain and strengthen relationships with key business partners across payments, logistics</td><td>Comfortable working with digital and business tools, including Microsoft Office, Jira, Confluence, GA4 (Google Analytics 4), SAP and Power BI</td></tr>
-          <tr><td>Oversee internal and external multilingual customer service teams (Amsterdam and Hong Kong)</td><td>Fluent in English</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="chart-src">Source: <a href="https://www.linkedin.com/jobs/view/4463348230/" target="_blank" rel="noopener">LinkedIn, job posting</a> — reports to the Global Head of eCommerce &amp; Digital Engagement, based in Switzerland.</div>
-  </div>
-
   <!-- 3 STRUCTURAL CHALLENGES -->
   <div id="sec-challenges" class="bk-wrap">
     <div class="bk-eyebrow">Role Analysis</div>
@@ -691,6 +679,17 @@
     <div class="scope-kpis">
       <span class="scope-kpi">Brunei</span><span class="scope-kpi">Cambodia</span><span class="scope-kpi">Indonesia</span><span class="scope-kpi">Laos</span><span class="scope-kpi">Malaysia</span><span class="scope-kpi">Myanmar</span><span class="scope-kpi">Philippines</span><span class="scope-kpi">Singapore</span><span class="scope-kpi">Thailand</span><span class="scope-kpi">Vietnam</span>
     </div>
+        <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Who sells the watch</th><th>Markets confirmed in the terms of sale</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Breitling Europe B.V.</strong><br>Breitling's own Dutch entity &mdash; the entity this role sits in</td><td>Austria, Belgium, Denmark, Finland, France, Germany, Italy, Netherlands, Spain, Sweden</td></tr>
+          <tr><td><strong>Global-e NL B.V.</strong><br>Cross-border vendor acting as the seller; Breitling handles after-sales</td><td>Bulgaria, Croatia, Czechia, Greece, Hungary, Luxembourg, Norway, Poland, Portugal, Romania, Slovakia, Slovenia &middot; Malaysia, Singapore, Thailand</td></tr>
+          <tr><td><strong>Breitling</strong><br>Contract stated as between the customer and Breitling directly</td><td>Switzerland, United Kingdom</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="src-note">The seller is named in each market's own terms of sale on breitling.com. Where Global-e NL B.V. is the seller, the terms state they "do not create any responsibilities or liabilities for BREITLING Europe BV" &mdash; the order contract sits with Global-e, while Breitling keeps the brand, the site and after-sales. Sources: <a href="https://www.breitling.com/sg-en/terms-and-conditions/" target="_blank" rel="noopener">Singapore terms (Global-e)</a> &middot; <a href="https://www.breitling.com/de-de/terms-and-conditions/" target="_blank" rel="noopener">Germany terms (Breitling Europe B.V.)</a> &middot; <a href="https://www.breitling.com/gb-en/terms-and-conditions/" target="_blank" rel="noopener">United Kingdom terms</a></div>
     <div class="chart-src">Source: <a href="https://www.breitling.com/us-en/" target="_blank" rel="noopener">breitling.com, country/currency selector</a> — 138 countries and territories total across all regions (Africa, Europe, Asia, Americas, Middle East, Oceania); figures above are the Europe and South East Asia subsets only.</div>
   </div>
 
@@ -713,6 +712,27 @@
       <div class="sec-eyebrow">Role scope</div>
       <div class="sec-title">Lead e-Commerce Europe &amp; Managing Director BEU — four accountability areas &amp; Olga's experience</div>
     </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Responsibilities, as written in the posting</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Key Responsibilities (verbatim from the posting)</th><th>Requirements (verbatim from the posting)</th></tr></thead>
+        <tbody>
+          <tr><td>Lead the local organization, setting strategic priorities and objectives, developing teams</td><td>At least 5 years of experience in a senior e-commerce, digital commerce, business development or commercial leadership role</td></tr>
+          <tr><td>Own the e-commerce business budget/targets across EMEA and SEA, identifying opportunities</td><td>Proven track record of successfully managing teams and leading cross-functional organizations</td></tr>
+          <tr><td>Develop and implement new sales plans while continuously improving existing e-commerce</td><td>Strong experience in e-commerce management, digital operations and business development</td></tr>
+          <tr><td>Lead e-commerce logistics and operational excellence, ensuring seamless end-to-end delivery</td><td>Strong commercial and strategic mindset, with demonstrated experience in driving revenue growth</td></tr>
+          <tr><td>Develop and drive customer loyalty and retention initiatives, strengthening online brand presence</td><td>Strong analytical and structured approach, with the ability to interpret data and monitor KPIs (key performance indicators)</td></tr>
+          <tr><td>Develop plans to expand the online presence into new markets, identifying opportunities</td><td>Proven experience leading complex digital projects across internal and external teams</td></tr>
+          <tr><td>Steer e-commerce stock planning and management across the responsible markets</td><td>Experienced in e-commerce platforms, CMS (content management system) and UX/UI (user experience and user interface) best practices</td></tr>
+          <tr><td>Maintain and strengthen relationships with key business partners across payments, logistics</td><td>Comfortable working with digital and business tools, including Microsoft Office, Jira, Confluence, GA4 (Google Analytics 4), SAP and Power BI</td></tr>
+          <tr><td>Oversee internal and external multilingual customer service teams (Amsterdam and Hong Kong)</td><td>Fluent in English</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: <a href="https://www.linkedin.com/jobs/view/4463348230/" target="_blank" rel="noopener">LinkedIn, job posting</a> — reports to the Global Head of eCommerce &amp; Digital Engagement, based in Switzerland.</div>
   </div>
 
   <div class="src-note" style="margin-bottom:24px;">The posting asks for 5+ years in senior e-commerce, digital commerce or business development, a proven track record leading teams and cross-functional organizations, and experience with e-commerce platforms, CMS (content management system) and UX/UI (user experience and user interface). Named tools: Microsoft Office, Jira, Confluence, GA4 (Google Analytics 4), SAP and Power BI. Olga's e-commerce career runs Richemont (2019–2025), adidas (2016–2018), Nike (2010–2016) and IBM (2006–2010) — 19 years, including a Richemont role based in Amsterdam with full P&amp;L ownership of a €150 million e-commerce business across 26 European markets.</div>
@@ -1060,9 +1080,7 @@
     </div>
   </div>
 
-  <p style="font-size:14.5px;color:#0a0f1a;line-height:1.7;margin:0 0 20px;">No Net Promoter Score (NPS) or Customer Satisfaction Score (CSAT) is published by Breitling. Four third-party sources give a read on customer sentiment instead: Trustpilot and PissedConsumer (both skew heavily to post-purchase service and repair complaints), Yelp (mixed), and Google — which has no single brand-wide score, because Breitling boutiques are listed individually, market by market. This role owns customer loyalty and retention initiatives and the Amsterdam/Hong Kong service teams directly, per the posting's own responsibilities table in Section 03.</p>
-
-  <div class="stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px;">
+  <div class="stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px;">
     <div class="s-card">
       <div class="s-lbl">Trustpilot TrustScore</div>
       <div class="s-num">2.2<span style="font-size:18px;">/5</span></div>
@@ -1081,10 +1099,16 @@
       <div class="s-src">85 reviews. <a href="https://www.yelp.com/brands/breitling" target="_blank" rel="noopener">Yelp</a></div>
     </div>
     <div class="s-card">
-      <div class="s-lbl">Google — sampled boutiques</div>
-      <div class="s-num">4.6<span style="font-size:18px;">/5</span></div>
-      <div class="s-delta pos">Los Angeles, San Antonio, Toronto</div>
-      <div class="s-src">Individually listed, no single brand score</div>
+      <div class="s-lbl">Net Promoter Score</div>
+      <div class="s-num">60&ndash;75</div>
+      <div class="s-delta">Luxury-brand benchmark. Breitling publishes no score of its own</div>
+      <div class="s-src"><a href="https://customergauge.com/benchmarks/blog/consumer-nps-benchmarks" target="_blank" rel="noopener">CustomerGauge</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Customer satisfaction (CSAT)</div>
+      <div class="s-num">76&ndash;85<span style="font-size:18px;">%</span></div>
+      <div class="s-delta">Retail benchmark, above 85% is strong. Breitling publishes no score of its own</div>
+      <div class="s-src"><a href="https://surveysparrow.com/blog/csat-benchmarks/" target="_blank" rel="noopener">SurveySparrow</a></div>
     </div>
   </div>
 
@@ -1103,23 +1127,6 @@
       </table>
     </div>
     <div class="chart-src">Source: <a href="https://www.trustpilot.com/review/www.breitling.com" target="_blank" rel="noopener">Trustpilot, breitling.com</a>.</div>
-  </div>
-
-  <div class="chart-box">
-    <div class="chart-title">Google — no single brand score, boutiques listed individually</div>
-    <div class="chart-sub">Three flagship boutiques sampled, via each boutique's own Google Business listing</div>
-    <div class="pri-wrap">
-      <table class="pri-table">
-        <thead><tr><th>Boutique</th><th>Google rating</th></tr></thead>
-        <tbody>
-          <tr><td>Los Angeles</td><td>4.6 / 5</td></tr>
-          <tr><td>San Antonio</td><td>4.7 / 5</td></tr>
-          <tr><td>Toronto</td><td>4.6 / 5</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="src-note">Breitling has no company-wide Google review score — each boutique (directly-run or franchise-partner) carries its own Google Business listing and rating. The three sampled here run well above Breitling's Trustpilot and PissedConsumer scores, both of which measure the .com and after-sales/repair channel rather than the in-boutique experience.</div>
-    <div class="chart-src">Source: TrustAnalytica boutique listings (aggregating Google reviews).</div>
   </div>
 
   <!-- REVIEW SPLIT OVERVIEW -->
@@ -1176,6 +1183,46 @@
           <div class="rv-bar-pct">10%</div>
         </div>
       </div>
+    </div>
+  </div>
+
+
+  <div class="th-grid">
+    <div class="th-card">
+      <div class="th-hd"><span class="th-pct">45%</span><span class="th-name">Repair cost, quality &amp; turnaround</span></div>
+      <div class="th-ev">A &pound;700, later &pound;840, repair bill on a &pound;6,000 watch; a $1,000 service charge on a $10,000 watch after water damage; one case running 6 months and ending in total watch failure. Crowns and rubber straps are not sold separately, which reviewers describe as forcing a full paid service. PissedConsumer records an 11% full-resolution rate.</div>
+    </div>
+    <div class="th-card">
+      <div class="th-hd"><span class="th-pct">20%</span><span class="th-name">Boutique &amp; staff service inconsistency</span></div>
+      <div class="th-ev">Plymouth called "superior to other watch retailers"; Rome called "rude and dismissive"; a Bond Street visit where staff showed no interest in a repeat customer. The network mixes directly-run and franchise boutiques, each setting its own service bar.</div>
+    </div>
+    <div class="th-card">
+      <div class="th-hd"><span class="th-pct">15%</span><span class="th-name">Product durability faults</span></div>
+      <div class="th-ev">A crown detaching within months on a gold Superocean, water ingress despite a 300m rating, and timekeeping complaints &mdash; the faults that trigger the repair-cost cases above.</div>
+    </div>
+    <div class="th-card">
+      <div class="th-hd"><span class="th-pct">10%</span><span class="th-name">Delivery &amp; logistics delays</span></div>
+      <div class="th-ev">A watch promised for 1&ndash;2 day pickup arriving after 9 days; a birthday-gift order held back by a quality-control hold.</div>
+    </div>
+    <div class="th-card">
+      <div class="th-hd"><span class="th-pct">10%</span><span class="th-name">Buyback offers &amp; subscription handling</span></div>
+      <div class="th-ev">A trade-in offer described as well below market value; a subscription where payments continued for three months after the watch was reported stolen, with no pause or credit.</div>
+    </div>
+    <div class="th-card pos">
+      <div class="th-hd"><span class="th-pct">45%</span><span class="th-name">Knowledgeable, attentive boutique staff</span></div>
+      <div class="th-ev">The most-cited positive across Trustpilot and the sampled Google boutique reviews: named staff praised for product knowledge and patience. The same network flagged as inconsistent above.</div>
+    </div>
+    <div class="th-card pos">
+      <div class="th-hd"><span class="th-pct">25%</span><span class="th-name">Fast, professional individual support</span></div>
+      <div class="th-ev">Reviewers naming a specific customer-service representative for a quick, professional resolution.</div>
+    </div>
+    <div class="th-card pos">
+      <div class="th-hd"><span class="th-pct">20%</span><span class="th-name">Service or repair completed as quoted</span></div>
+      <div class="th-ev">Where a full service lands within the quoted time and price, reviewers give five stars.</div>
+    </div>
+    <div class="th-card pos">
+      <div class="th-hd"><span class="th-pct">10%</span><span class="th-name">Registration &amp; warranty assistance</span></div>
+      <div class="th-ev">Warranty registration is repeatedly called out as a smooth first-touch experience.</div>
     </div>
   </div>
 
