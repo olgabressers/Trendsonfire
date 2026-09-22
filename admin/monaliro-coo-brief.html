@@ -28,10 +28,6 @@
     main{max-width:1240px;margin:0 auto;padding:40px 48px 72px;}
     @media(max-width:700px){main{padding:24px 16px 56px;}}
 
-    /* CRITICAL FLAG */
-    .critical-box{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #b91c1c;padding:16px 20px;margin-bottom:32px;font-size:14px;color:#0a0f1a;line-height:1.6;}
-    .critical-box strong{color:#b91c1c;text-transform:uppercase;font-size:11.5px;letter-spacing:1px;}
-
     /* STATS */
     .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:36px;}
     @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
@@ -47,6 +43,31 @@
     @media(max-width:700px){.bk-wrap{padding:34px 16px;margin:0 -16px 36px;}}
     .bk-eyebrow{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#d9a441;font-weight:700;margin-bottom:10px;}
     .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.6vw,30px);color:white;font-weight:400;line-height:1.1;margin-bottom:28px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(217,164,65,.3);padding:22px 20px;background:rgba(255,255,255,.02);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:64px;color:#d9a441;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:16px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:13px;color:#ffffff;padding:7px 0 7px 16px;border-bottom:1px solid rgba(255,255,255,.1);line-height:1.55;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#d9a441;position:absolute;left:0;font-weight:700;}
+    .bk-card-src{font-size:11px;color:rgba(255,255,255,.82);margin-top:12px;line-height:1.5;}
+    .bk-card-src a{color:#d9a441;text-decoration:underline;}
+
+    /* KPI FRAMEWORK */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8a5a12;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:12px 12px;}
+    .kpi-name{font-size:13.5px;font-weight:700;color:#0a0f1a;margin-bottom:4px;line-height:1.3;}
+    .kpi-desc{font-size:12.5px;color:#0a0f1a;line-height:1.5;}
+    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px dashed #d8d5cf;font-size:12px;line-height:1.5;}
+    .kpi-bench strong{color:#8a5a12;font-weight:800;text-transform:uppercase;font-size:10.5px;letter-spacing:0.5px;display:block;margin-bottom:3px;}
+    .kpi-bench span{color:#374151;}
 
     /* SECTION HEADER */
     .sec-header{display:flex;align-items:flex-start;gap:14px;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid #201d28;}
@@ -92,6 +113,8 @@
     @media(max-width:900px){.channels-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:480px){.channels-grid{grid-template-columns:1fr;}}
     .ch-card{padding:16px 14px;border:1px solid #e2dfd9;background:white;}
+    .ch-logo-box{height:52px;display:flex;align-items:center;margin-bottom:12px;}
+    .ch-logo-box img{max-height:44px;max-width:130px;object-fit:contain;}
     .ch-type{font-size:9.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;padding:2px 7px;display:inline-block;border-radius:2px;background:#f3e8d3;color:#7a4e0a;}
     .ch-name{font-size:14.5px;font-weight:700;color:#0a0f1a;margin-bottom:5px;line-height:1.2;}
     .ch-name a{color:#0a0f1a;text-decoration:none;border-bottom:1px solid #201d28;}
@@ -149,8 +172,8 @@
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Monaliro</div>
     <div class="eyebrow">Company &amp; Role Brief — Chief Operating Officer</div>
-    <h1>Monaliro: <em>&euro;8,000&ndash;&euro;12,000/month, application window closed 15 September</em></h1>
-    <p>Monaliro B.V. is an Amsterdam-based technology company (&sim;50 employees) building content-protection, content-screening and fan-engagement infrastructure. Its flagship product, F2F.com, is a creator subscription platform in the adult content space, generating 2.46M monthly visits with 79% of traffic from the Netherlands and Belgium. The Chief Operating Officer role was posted via recruiter TwoBirds Company, paying &euro;8,000&ndash;&euro;12,000 gross per month, with a founder-led scale-up mandate to build out leadership structure ahead of planned acquisitions.</p>
+    <h1>Monaliro: <em>50 people built F2F.com into the Netherlands and Belgium's market leader</em></h1>
+    <p>Monaliro B.V. is an Amsterdam-based technology company (&sim;50 employees) building content-protection, content-screening and fan-engagement infrastructure. Its flagship product, F2F.com, is a creator subscription platform in the adult content category, generating 2.46M monthly visits with 79% of traffic from the Netherlands and Belgium, and described by its own recruiter as having grown "from challenger to market leader" in both countries within years. The Chief Operating Officer role, posted via recruiter TwoBirds Company, sits alongside the three co-founders with a mandate to build formal leadership structure ahead of planned acquisitions.</p>
     <div class="meta">
       <span>Sources: LinkedIn job posting, monaliro.com, f2f.com, theorg.com, KVK Chamber of Commerce register, Semrush, Trustpilot, twobirdscompany.com</span>
       <span>Updated 22 September 2026</span>
@@ -159,9 +182,6 @@
 </div>
 
 <main>
-
-<!-- CRITICAL FLAG -->
-<div class="critical-box"><strong>Critical:</strong> the job posting's stated application deadline was 15 September 2026 &mdash; seven days before this brief was built. Applications required a CV emailed directly to monaliro@twobirdscompany.com; the posting states LinkedIn's own "Easy Apply" is not accepted as a valid application route.</div>
 
 <!-- EXEC SUMMARY -->
 <div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;">
@@ -190,10 +210,11 @@
   <div id="page-toc" style="background:#f6f0e4;border:1px solid #e3d3ab;padding:20px 24px;">
     <div style="font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:#201d28;font-weight:700;margin-bottom:16px;">Contents</div>
     <ol style="margin:0;padding-left:18px;font-size:13.5px;line-height:1;">
-      <li style="margin-bottom:12px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The company</a><br><span style="color:#555;font-size:12.5px;">What monaliro and F2F.com do, registration, traffic, scale.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The company</a><br><span style="color:#555;font-size:12.5px;">Product, revenue model, registration, traffic, scale.</span></li>
       <li style="margin-bottom:12px;"><a href="#sec-owners" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Owners &amp; leadership</a><br><span style="color:#555;font-size:12.5px;">The three co-founders and the current ownership structure.</span></li>
-      <li style="margin-bottom:12px;"><a href="#sec-role" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The role</a><br><span style="color:#555;font-size:12.5px;">Responsibilities, requirements, recruiter process, deadline.</span></li>
-      <li><a href="#sec-competition" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competitive landscape</a><br><span style="color:#555;font-size:12.5px;">F2F.com against 5 named creator-platform competitors.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-role" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The role</a><br><span style="color:#555;font-size:12.5px;">3 operational challenges, responsibilities, recruiter process.</span></li>
+      <li style="margin-bottom:12px;"><a href="#sec-kpis" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework</a><br><span style="color:#555;font-size:12.5px;">12 KPIs across leadership, compliance and commercial, each benchmarked.</span></li>
+      <li><a href="#sec-competition" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Competitive landscape</a><br><span style="color:#555;font-size:12.5px;">F2F.com against 5 named creator-platform competitors, with logos.</span></li>
     </ol>
   </div>
 </div>
@@ -236,22 +257,44 @@
   </div>
 </div>
 
+<div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a5a12;margin-bottom:10px;">Product description</div>
+<div style="font-size:14px;color:#0a0f1a;line-height:1.65;margin-bottom:16px;">Monaliro presents itself as a Platform-as-a-Service (software infrastructure sold to other businesses) company: APIs for content protection, content screening and fan-engagement, built to meet payment platforms' compliance requirements. Its only named product is F2F.com (Friends2Follow), a subscription platform where creators sell exclusive photos, videos and direct messages to fans behind a paywall, plus tipping and pay-per-view content &mdash; the same mechanics OnlyFans popularised. Monaliro's own site does not name any external business customers for its underlying infrastructure beyond F2F.com itself.</div>
+
 <div class="scope-grid" style="margin-bottom:6px;">
   <div class="scope-card">
-    <div class="scope-label">What monaliro builds</div>
-    <div class="scope-desc">A Platform-as-a-Service company: APIs and infrastructure for content protection, content screening and fan-engagement, built to satisfy the compliance requirements of payment platforms. Stated mission: "to harness technology for a safer, open, and transparent internet."</div>
+    <div class="scope-label">Core product features</div>
+    <div class="scope-desc">Creator subscriptions, direct messaging, tipping and pay-per-view content, run on infrastructure Monaliro describes as built for "high-availability" and AI-assisted content screening. Stated mission: "to harness technology for a safer, open, and transparent internet."</div>
   </div>
   <div class="scope-card">
-    <div class="scope-label">What F2F.com is</div>
-    <div class="scope-desc">Friends2Follow (F2F.com), monaliro's own flagship product, built on that infrastructure: a subscription-based platform where creators sell exclusive content directly to fans, operating in the adult content category. Described internally as a "fast-growing tech scale-up," now in its third year.</div>
+    <div class="scope-label">Payment &amp; tax ecosystem</div>
+    <div class="scope-desc">F2F.com's own Creator Awards sponsor list names Paxum, a payment processor serving the adult-content industry specifically, and TaxMate, a creator tax-filing service &mdash; the specialist payment infrastructure this category typically needs rather than mainstream processors.</div>
   </div>
   <div class="scope-card">
     <div class="scope-label">Registration</div>
     <div class="scope-desc">monaliro B.V. &mdash; KVK 84060050, Keizersgracht, Amsterdam. Parent: monaliro holding B.V. &mdash; KVK 84057521, Nieuwe Herengracht 123A, Amsterdam, registered as director since incorporation on 28 September 2021.</div>
   </div>
 </div>
+<div class="src-note">Sources: <a href="https://www.monaliro.com" target="_blank" rel="noopener">monaliro.com</a>, <a href="https://f2f.com" target="_blank" rel="noopener">f2f.com</a>, <a href="https://www.f2fawards.com" target="_blank" rel="noopener">f2fawards.com sponsor list</a>.</div>
 
-<div style="margin:20px 0 6px;">
+<div style="margin:24px 0 6px;">
+  <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a5a12;margin-bottom:10px;">Revenue model</div>
+  <div style="font-size:14px;color:#0a0f1a;line-height:1.6;margin-bottom:12px;">F2F.com runs the commission model standard to the category: a fan pays a creator, the platform keeps a cut, the creator keeps the rest. F2F.com's own commission rate is not publicly disclosed. Its three named competitors that do disclose a rate:</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Platform</th><th>Platform commission</th><th>Creator keeps</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:700;">OnlyFans</td><td>20% flat</td><td>80%</td></tr>
+        <tr><td style="font-weight:700;">Fansly</td><td>20% flat, all transaction types</td><td>80%</td></tr>
+        <tr><td style="font-weight:700;">Fanvue</td><td>15% for a creator's first 3 months, then 20%</td><td>85%, then 80%</td></tr>
+        <tr><td style="font-weight:700;">F2F.com</td><td colspan="2">Not publicly disclosed</td></tr>
+        <tr><td style="font-weight:700;">FanCentro, MYM</td><td colspan="2">Not publicly disclosed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Sources: OnlyFans, Fansly and Fanvue's own published creator terms, as reported by <a href="https://arunatalent.com/blog/fansly-vs-fanvue" target="_blank" rel="noopener">Aruna Talent</a> and <a href="https://onlymonster.ai/blog/what-is-fanvue/" target="_blank" rel="noopener">OnlyMonster</a>.</div>
+</div>
+
+<div style="margin:24px 0 6px;">
   <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a5a12;margin-bottom:10px;">F2F.com traffic by country — August 2026</div>
   <div class="bar-chart">
     <div class="bar-row">
@@ -315,21 +358,47 @@
 <div class="src-note" style="margin-top:2px;">No further named leadership or a capitalisation table is publicly disclosed. The company's registered director is its own holding entity, monaliro holding B.V. &mdash; individual shareholders behind that holding are not published.</div>
 
 <!-- 03 THE ROLE -->
-<div id="sec-role" class="bk-wrap">
-  <div class="bk-eyebrow">Role Analysis</div>
-  <div class="bk-headline">What the Chief Operating Officer is being hired to do</div>
-  <div class="scope-grid" style="margin:0;">
-    <div class="scope-card" style="background:rgba(255,255,255,.04);border-color:rgba(217,164,65,.3);">
-      <div class="scope-label" style="color:#d9a441;">Core mandate</div>
-      <div class="scope-desc" style="color:rgba(255,255,255,.92);">Build a leadership team where disagreement is voiced and decisions collectively owned; improve connectivity between leadership, team leads and staff; clarify responsibilities and accountability; develop leadership and organisational structure; prepare the company for growth and future acquisitions, including integrating new businesses.</div>
+<div id="sec-role" class="sec-header">
+  <div class="sec-num">03</div>
+  <div class="sec-label">
+    <div class="sec-eyebrow">Role Analysis</div>
+    <div class="sec-title">What the Chief Operating Officer is being hired to fix</div>
+  </div>
+</div>
+
+<div class="bk-wrap">
+  <div class="bk-eyebrow">Operational Challenges</div>
+  <div class="bk-headline">3 structural challenges this role is built to solve</div>
+  <div class="bk-grid">
+    <div class="bk-card">
+      <div class="bk-num">01</div>
+      <div class="bk-card-title">No formal leadership structure yet, at &sim;50 people</div>
+      <ul>
+        <li>The posting's own core mandate: build a team "where differences are voiced and decisions collectively owned," and improve connectivity between leadership, team leads and staff</li>
+        <li>No named executives beyond the three co-founders appear in any public source found</li>
+        <li>Required background is explicit: "improve structure and decision-making without adding bureaucracy"</li>
+      </ul>
+      <div class="bk-card-src">Source: <a href="https://www.linkedin.com/jobs/view/4463268065/" target="_blank" rel="noopener">LinkedIn job posting</a></div>
     </div>
-    <div class="scope-card" style="background:rgba(255,255,255,.04);border-color:rgba(217,164,65,.3);">
-      <div class="scope-label" style="color:#d9a441;">Required background</div>
-      <div class="scope-desc" style="color:rgba(255,255,255,.92);">Extensive experience in founder-led scale-ups; organisational development, hiring and talent development; a track record of improving structure and decision-making without adding bureaucracy; technology affinity; experience with compliance and reputation issues. M&amp;A and post-merger integration experience preferred.</div>
+    <div class="bk-card">
+      <div class="bk-num">02</div>
+      <div class="bk-card-title">Operating in a payment category card networks actively police</div>
+      <ul>
+        <li>In 2021, Mastercard's rules forced OnlyFans to announce, then reverse, a full ban on the adult content central to its business &mdash; the category's clearest precedent for payment-processor risk</li>
+        <li>Visa's own dispute-monitoring programme flags a merchant as "Excessive" at a 1.50% dispute ratio (tightened from 2.2%, effective April 2026); Mastercard's Excessive Chargeback Programme starts at 1.5%</li>
+        <li>F2F.com already routes payments through an adult-industry-specialist processor (Paxum) rather than a mainstream one, per its own sponsor list</li>
+      </ul>
+      <div class="bk-card-src">Source: <a href="https://edition.cnn.com/2021/08/20/tech/onlyfans-explicit-content-ban-payment" target="_blank" rel="noopener">CNN, 2021</a>, <a href="https://cside.com/blog/vamp-2026-merchant-playbook" target="_blank" rel="noopener">Visa VAMP 2026 thresholds</a></div>
     </div>
-    <div class="scope-card" style="background:rgba(255,255,255,.04);border-color:rgba(217,164,65,.3);">
-      <div class="scope-label" style="color:#d9a441;">Candidate profile named</div>
-      <div class="scope-desc" style="color:rgba(255,255,255,.92);">The posting asks for someone "solid without ego" who can "connect while remaining authentic," stays composed under pressure, and is comfortable working in the adult industry sector.</div>
+    <div class="bk-card">
+      <div class="bk-num">03</div>
+      <div class="bk-card-title">A stated acquisition mandate, with no deal yet announced</div>
+      <ul>
+        <li>The posting names preparing the company "for growth and future acquisitions, including integrating new businesses" as a core deliverable</li>
+        <li>No acquisition by Monaliro or F2F.com has been publicly announced as of this brief</li>
+        <li>Even experienced acquirers take 12&ndash;18 months to fully integrate a deal, per McKinsey/PwC research across 200+ transactions &mdash; the posting is recruiting the person who would build that capability from zero</li>
+      </ul>
+      <div class="bk-card-src">Source: <a href="https://www.linkedin.com/jobs/view/4463268065/" target="_blank" rel="noopener">LinkedIn job posting</a>, <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/smoothing-postmerger-integration" target="_blank" rel="noopener">McKinsey</a></div>
     </div>
   </div>
 </div>
@@ -339,7 +408,8 @@
   <div class="pri-wrap">
     <table class="pri-table">
       <tbody>
-        <tr><td style="font-weight:700;width:220px;">Recruiter</td><td>TwoBirds Company, Amsterdam-Duivendrecht (&sim;13 employees). Positions itself as placing "professional COOs" alongside founders &mdash; "a new kind of entrepreneurship" where the founder keeps strategy and the COO runs operations.</td></tr>
+        <tr><td style="font-weight:700;width:220px;">Salary</td><td>&euro;8,000&ndash;&euro;12,000 gross per month, depending on experience</td></tr>
+        <tr><td style="font-weight:700;">Recruiter</td><td>TwoBirds Company, Amsterdam-Duivendrecht (&sim;13 employees). Positions itself as placing "professional COOs" alongside founders &mdash; "a new kind of entrepreneurship" where the founder keeps strategy and the COO runs operations.</td></tr>
         <tr><td style="font-weight:700;">Process</td><td>Four steps per TwoBirds' own site: introduction call, a half-day "Quickscan" to define the ideal COO profile, meetings with three shortlisted candidates within 10 business days, then onboarding.</td></tr>
         <tr><td style="font-weight:700;">Application route</td><td>CV by email to monaliro@twobirdscompany.com. LinkedIn's own Easy Apply is explicitly stated as not accepted.</td></tr>
         <tr><td style="font-weight:700;">Deadline</td><td style="color:#b91c1c;font-weight:700;">15 September 2026 &mdash; already passed.</td></tr>
@@ -351,9 +421,98 @@
   <div class="src-note">Sources: <a href="https://www.linkedin.com/jobs/view/4463268065/" target="_blank" rel="noopener">LinkedIn job posting</a>, <a href="https://twobirdscompany.com/recruitment-support/" target="_blank" rel="noopener">twobirdscompany.com/recruitment-support</a>.</div>
 </div>
 
-<!-- 04 COMPETITION -->
+<!-- 04 KPI FRAMEWORK -->
+<div id="sec-kpis" class="sec-header">
+  <div class="sec-num">04</div>
+  <div class="sec-label">
+    <div class="sec-eyebrow">Operating Framework</div>
+    <div class="sec-title">KPI framework — 12 metrics, each benchmarked</div>
+  </div>
+</div>
+
+<div class="kpi-groups">
+  <div class="kpi-group">
+    <div class="kpi-group-label">Leadership &amp; organisation</div>
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-name">Employee retention</div>
+        <div class="kpi-desc">Annual staff turnover across the &sim;50-person team &mdash; the direct read on whether a new leadership structure is landing</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>UK all-sector average annual turnover is 34% (CIPD)</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Span of control</div>
+        <div class="kpi-desc">Direct reports per manager once a formal structure exists, tracked from a currently undisclosed baseline</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>7&ndash;10 direct reports for middle managers; 3&ndash;5 for senior executives in complex roles (Gallup, Lattice)</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Decision-making clarity</div>
+        <div class="kpi-desc">Whether responsibilities and accountability are formally documented &mdash; the posting names this gap directly</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>No independently published external benchmark exists for this metric; the posting itself sets the bar: "clarify responsibilities and ensure accountability"</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">M&amp;A integration readiness</div>
+        <div class="kpi-desc">Time from a future deal's close to full operational integration, once the company's first acquisition happens</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>First functions integrated within 3 months; full integration within 12&ndash;18 months, across 200+ deals (McKinsey/PwC)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-group">
+    <div class="kpi-group-label">Trust, safety &amp; compliance</div>
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-name">Chargeback ratio</div>
+        <div class="kpi-desc">Disputed transactions as a share of total payment volume &mdash; breach risks the platform's ability to process payments at all</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>Visa flags "Excessive" at a 1.50% ratio (from April 2026); Mastercard's Excessive Chargeback Programme starts at 1.5%</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Age &amp; identity verification pass rate</div>
+        <div class="kpi-desc">Share of creators and viewers cleared under the platform's own age-assurance checks</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>UK Online Safety Act requires "highly effective age assurance" before adult content is shown, enforced by Ofcom with fines up to &pound;18M or 10% of global revenue</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Content moderation team stability</div>
+        <div class="kpi-desc">Attrition among the staff reviewing and screening content &mdash; a direct driver of screening quality and consistency</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>Industry-cited moderator attrition benchmark is 6&ndash;8% (Trust &amp; Safety Professional Association)</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Payment processor relationship risk</div>
+        <div class="kpi-desc">Number and severity of banking/processor relationship reviews the company is subject to in a given year</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>No public disclosure exists for any single company; the 2021 OnlyFans episode is the category's reference case for how fast this risk can move</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-group">
+    <div class="kpi-group-label">Commercial &amp; platform</div>
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-name">Platform take rate</div>
+        <div class="kpi-desc">F2F.com's own commission is not publicly disclosed</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>Category standard is a flat 20% (OnlyFans, Fansly); Fanvue runs 15% for a creator's first 3 months, then 20%</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Creator payout speed</div>
+        <div class="kpi-desc">Time from a creator's earning to funds landing in their account</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>OnlyFans' own published terms: 7-day rolling hold (up to 21 days in higher-risk countries), $20 minimum, 1&ndash;5 business days to process</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Platform uptime</div>
+        <div class="kpi-desc">F2F.com's own availability is not publicly disclosed</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>99.9% ("three nines") is the commonly cited baseline availability SLA for a consumer platform</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-name">Traffic growth</div>
+        <div class="kpi-desc">F2F.com's own recent pace: +24.8% month-on-month, August 2026</div>
+        <div class="kpi-bench"><strong>Benchmark</strong><span>No independently published growth-rate benchmark exists for a single-market creator platform; the company's own recent trend is the comparator (Semrush)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 COMPETITION -->
 <div id="sec-competition" class="sec-header">
-  <div class="sec-num">03</div>
+  <div class="sec-num">05</div>
   <div class="sec-label">
     <div class="sec-eyebrow">Market Context</div>
     <div class="sec-title">Competitive landscape — creator subscription platforms</div>
@@ -363,36 +522,42 @@
 
 <div class="channels-grid">
   <div class="ch-card" style="border-color:#201d28;box-shadow:0 0 0 1px #201d28;">
+    <div class="ch-logo-box"><img src="monaliro-coo-brief-photos/f2f-logo.svg" alt="F2F.com"/></div>
     <span class="ch-type">Subject of this brief</span>
     <div class="ch-name"><a href="https://f2f.com" target="_blank" rel="noopener">F2F.com</a></div>
     <div class="ch-fact">2.46M visits/month</div>
     <div class="ch-reach">Netherlands/Belgium-led. +24.8% month-on-month traffic growth, Aug 2026. Revenue not publicly disclosed.</div>
   </div>
   <div class="ch-card">
+    <div class="ch-logo-box"><img src="monaliro-coo-brief-photos/onlyfans-logo.png" alt="OnlyFans"/></div>
     <span class="ch-type">Global leader</span>
     <div class="ch-name"><a href="https://onlyfans.com" target="_blank" rel="noopener">OnlyFans</a></div>
     <div class="ch-fact">$7.85B gross revenue — FY2025</div>
     <div class="ch-reach">+9% YoY. $1.55B net platform revenue, $709M operating profit. UK-based (Fenix International Limited). The dominant global platform in the category.</div>
   </div>
   <div class="ch-card">
+    <div class="ch-logo-box"><img src="monaliro-coo-brief-photos/fancentro-logo.svg" alt="FanCentro"/></div>
     <span class="ch-type">Closest traffic match</span>
     <div class="ch-name"><a href="https://fancentro.com" target="_blank" rel="noopener">FanCentro</a></div>
     <div class="ch-fact">4.35M visits/month</div>
     <div class="ch-reach">Named by Semrush as F2F.com's closest traffic-matched competitor. Revenue not publicly disclosed.</div>
   </div>
   <div class="ch-card">
+    <div class="ch-logo-box"><img src="monaliro-coo-brief-photos/fanvue-logo.png" alt="Fanvue"/></div>
     <span class="ch-type">Fastest-funded rival</span>
     <div class="ch-name"><a href="https://www.fanvue.com" target="_blank" rel="noopener">Fanvue</a></div>
     <div class="ch-fact">$200M ARR — May 2026</div>
     <div class="ch-reach">Up from $100M at end of 2025. $22M Series A, Jan 2026, led by Inner Circle. UK-based, AI-tooling focus; 17M monthly active users, 250K&ndash;325K creators (sources vary).</div>
   </div>
   <div class="ch-card">
+    <div class="ch-logo-box"><img src="monaliro-coo-brief-photos/fansly-logo.svg" alt="Fansly"/></div>
     <span class="ch-type">Adult-content alternative</span>
     <div class="ch-name"><a href="https://fansly.com" target="_blank" rel="noopener">Fansly</a></div>
     <div class="ch-fact">Revenue not publicly disclosed</div>
     <div class="ch-reach">Positioned on native discovery/search by category and tag, and faster creator payouts than OnlyFans.</div>
   </div>
   <div class="ch-card">
+    <div class="ch-logo-box" style="background:#000;border-radius:4px;padding:4px 8px;width:fit-content;"><img src="monaliro-coo-brief-photos/mym-logo.jpg" alt="MYM" style="max-height:36px;"/></div>
     <span class="ch-type">France-led</span>
     <div class="ch-name"><a href="https://www.mym.fans" target="_blank" rel="noopener">MYM</a></div>
     <div class="ch-fact">Revenue not publicly disclosed</div>
