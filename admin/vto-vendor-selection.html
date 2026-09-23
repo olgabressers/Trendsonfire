@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" href="../style.css"/>
+<title>Virtual Try-On — Vendor Selection</title>
+<style>
+  body { margin:0; font-family:"Helvetica Neue",Arial,sans-serif; background:#f5f2ee; color:#0a0f1a; }
+  .tof-bar { background:#0a0f1a; padding:20px 32px; }
+  .tof-bar .inner { max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .prep-line { font-size:12.5px; color:rgba(255,255,255,.65); }
+
+  .art-hero { background:#0a0f1a; color:white; padding:40px 32px 40px; }
+  .art-hero .inner { max-width:1180px; margin:auto; }
+  .art-hero .eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#b8976a; font-weight:700; margin-bottom:14px; }
+  .art-hero h1 { font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(30px,4.5vw,44px); font-weight:400; line-height:1.1; margin:0 0 16px; letter-spacing:-0.5px; }
+  .art-hero h1 em { color:#b8976a; font-style:italic; font-weight:500; }
+  .art-hero p.purpose { font-size:16px; color:rgba(255,255,255,.88); max-width:860px; line-height:1.6; margin:0 0 12px; }
+  .art-hero p.scope { font-size:14px; color:rgba(255,255,255,.72); max-width:860px; line-height:1.6; margin:0; }
+  .art-hero p.scope a { color:#b8976a; }
+
+  main { max-width:1180px; margin:0 auto; padding:44px 32px 20px; }
+
+  .sec-header { display:flex; align-items:flex-start; gap:16px; margin:0 0 12px; padding-bottom:14px; border-bottom:2px solid #0a0f1a; }
+  .sec-header:not(:first-child) { margin-top:48px; }
+  .sec-title { font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(20px,2.6vw,28px); font-weight:500; color:#0a0f1a; }
+  .sec-sub { font-size:14px; color:#4b5563; margin:0 0 20px; line-height:1.6; }
+
+  .co-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:8px; }
+  @media(max-width:1000px){ .co-grid { grid-template-columns:1fr 1fr; } }
+  @media(max-width:640px){ .co-grid { grid-template-columns:1fr; } }
+  .co-card { background:white; border:1px solid #e2dfd9; padding:22px 20px; }
+  .v-head { display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+  .v-logo { width:28px; height:28px; border-radius:4px; flex-shrink:0; }
+  .co-name { font-family:"Cormorant Garamond",Georgia,serif; font-size:18px; font-weight:600; color:#0a0f1a; line-height:1.25; }
+  .co-type { font-size:12px; color:#6b6b6b; margin-bottom:14px; }
+  table.vmini { width:100%; border-collapse:collapse; font-size:13px; }
+  table.vmini td { padding:6px 0; border-bottom:1px solid #f1ede7; vertical-align:top; line-height:1.5; }
+  table.vmini td:first-child { font-weight:700; color:#6b6b6b; width:80px; text-transform:uppercase; font-size:10.5px; letter-spacing:0.6px; padding-top:8px; }
+  .co-body { font-size:13.5px; color:#1f1f1f; line-height:1.6; }
+  .co-src { font-size:12px; color:#1f1f1f; margin-top:12px; padding-top:12px; border-top:1px solid #f0ece6; }
+  .co-src a { color:#8b6a2f; }
+
+  .matrix-wrap { overflow-x:auto; margin-bottom:8px; }
+  .matrix { width:100%; border-collapse:collapse; font-size:13.5px; }
+  .matrix th { background:#0a0f1a; color:white; padding:11px 12px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; white-space:nowrap; }
+  .matrix td { padding:11px 12px; border-bottom:1px solid #e2dfd9; vertical-align:top; color:#1f1f1f; line-height:1.5; }
+  .matrix tr:nth-child(even) td { background:#faf9f7; }
+  .matrix .co-n { font-weight:700; color:#0a0f1a; }
+
+  .note { font-size:13.5px; color:#1f1f1f; padding:12px 16px; background:#faf9f7; border-left:3px solid #b8976a; margin-top:14px; line-height:1.6; }
+  .note strong { color:#0a0f1a; }
+
+  .about-strip { background:#0a0f1a; padding:48px 32px; margin-top:56px; }
+  .about-strip .inner { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap; }
+  .about-strip .label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b8976a; margin-bottom:10px; }
+  .about-strip p { font-size:14px; color:rgba(255,255,255,.85); line-height:1.6; max-width:640px; margin:0; }
+  .about-strip .btn { background:#b8976a; color:#0a0f1a; padding:12px 22px; font-size:13.5px; font-weight:700; text-decoration:none; white-space:nowrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<section class="art-hero">
+  <div class="inner">
+    <div class="eyebrow">Technology &mdash; Vendor Selection</div>
+    <p class="scope" style="margin-bottom:10px;">Prepared by TrendsOnFire for Commerce Partners &mdash; illustration of deliverable.</p>
+    <h1>Virtual Try-On <em>&mdash; Vendor Selection</em></h1>
+    <p class="purpose">Purpose: help an emerging brand or marketplace select a virtual try-on vendor for their own site, comparing published technology, integration method, target client base, trial terms and pricing across the active market.</p>
+    <p class="scope">Scope: visual try-on vendors only &mdash; direct API/SDK integrations and Shopify App Store apps a brand can run on its own site, plus platform-hosted options shown for market completeness. Non-visual size-recommendation technology (True Fit, Bold Metrics, Fit Analytics and others) is a separate category, covered at <a href="https://trendsonfire.com/technology/fashion-sizing-tech.html" target="_blank" rel="noopener">trendsonfire.com/technology/fashion-sizing-tech.html</a>.</p>
+  </div>
+</section>
+
+<main>
+
+  <div class="sec-header"><div class="sec-title">Vendors &mdash; Direct API / SDK</div></div>
+  <p class="sec-sub">Integrate on your own site or app via a direct API or SDK. WANNA and DRESSX are enterprise, quote-only engagements &mdash; not realistically reachable at emerging-brand volume.</p>
+  <div class="co-grid">
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,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" alt="FASHN.AI"/><div class="co-name">FASHN.AI</div></div>
+      <div class="co-type">fashn.ai</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI image-to-image</td></tr>
+        <tr><td>Integration</td><td>REST API</td></tr>
+        <tr><td>Runs on</td><td>Your own site or app &mdash; called via API</td></tr>
+        <tr><td>Target</td><td>Self-serve &mdash; any retailer</td></tr>
+        <tr><td>Trial</td><td>No lock-in (stated)</td></tr>
+        <tr><td>Pricing</td><td>$0.075/try &middot; plans $19&ndash;99/mo</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">5&ndash;17 second render, no 3D models required</div>
+      <div class="co-src">Source: <a href="https://fashn.ai/pricing" target="_blank" rel="noopener">fashn.ai/pricing</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAJ1BMVEVHcEwD0GYC0mYC0WYDz2UBz2QE3GwDymME2GoD0WYDx2IDzWUE1Gjm6z7vAAAABnRSTlMAtUV73SE6EARHAAAERklEQVR4nO2bjZKbMAyEAzYEEt7/eRuSHDVeSZZsmZvpVOm007uE/bSWf3Dw7fY/WmJ8xy+Jh2E+YghXq0+J+pfhSiOmmMvvEaer9CH7w4VL5AMnv0f/WhgXSX+el76lgLV3bSmI7vcvBaX8Hj1Kge56XGzupaBo/J7tMFnl9/BsB3P+n/BrB1P7J+HWJY0OLPMxXDmVQlzSSAVOosmvP//uP3cpheHnsn9feSS/Ob3p9ZdDKUTQl14Z0Ly0lwLhgKCf48w1XfLMHAnP2ZiJ/1oJ9kk3/cigl6eRjACfbp+YEMsihbAU4s+sl3ym0YFlMQwH49GzHQEM+smknwC0NYGlANIx180BQ/6nMd8LwJD/edGVNsFWH7l+COy4OM4cwLBtS90L2j/O/DphFgAq9SH/7X1pTQPkDthjef2h8mdXCfkM71ADjD5tASz7Wx3A/Lfj2lTP2NwBeH3KAlx5twJI+jN2RbzxaqwBUZ9oA1z4tjkg6xP9AJf+TQAF/TkCQC6/tACsJX2iCnESSQFWWxD6+Z0EAZCvbusBQJ+YIxEAVtfVAKhPrN07OkDljwSUAz41QOevaAKnIsT6o9dJvQByfVq9H0C+1mH1OwGo868AeCpe+vztAGV1yH+S9DcjwLMcef6TPF34A4C+vFwuAmwGgNWcP+EAvsXkgFWfAACXLABmfQWAxQG7vqIJDA5U6Ls6APqriwNqgJr8zQB3PnJ95bThBPDM9W/aedPLgVxfa4AXAO51aGduHwBqr0VJUAZYywD0Xo+OwMMBbq9JReDgAL//rFm/tDsg7X+XCRAATUoBHhDy/nt5/m4FyMe/nKdI0AiQ6Y3rmu84lAjaAFDfTNAEkG1xjZ/32whaAKj8zQRlgCcHQOdvJah3gNcnCLhJ7H6vdkDStxDUOiDrGwgQAIZLCoDQz4ZYLQHhgHCzPXD6xDCvJKAcKNYAk3/yGb0HALDfYZ4CHUB9soPpCBAAIgEIlD7fx4EA5rLHAwCiBPC6RP4URADLbAQAgKOWOOML+e9kBYL7A78vCCYAfLfRAwTAlITvfIv6RQIiO7gE/6V3eN5bCYirYhE05F8iwG9sDG2gyr9AQNYXdkRWv5IgSC1AWUBVgTp/yQOmg+GQiY3w0jcEQ0BVwDvw4vD4g0V+D5KA079NeIFzK0hbNaQDSBDiIDzaNhJXOB75mMJefWYE1m8dwTuJIYQwRLP4N2wE04O6xmv2IH/eg8BeZ8Xgq54xIWafv5zgNqaa7fp3avovhHM7CF2fDWuXlwFqHi+eIrGUrAxrDXxjdJIX97PkCOWrl6Pt0WpqSW+K5ofL20ohejzh31AKXmccKkvB8YjFVFEK0rRfEaO1FPxPXJnaoc+ZM3U7dDt1p+uSXc8dKrpk75OXhVK44vCpUArXHLlkS+G6Q6d0KVx7/hhK4fKTx68bpaMlYvit09fTfvL7upb/N+MPPM8dG+mo4UEAAAAASUVORK5CYII=" alt="Kivisense"/><div class="co-name">Kivisense</div></div>
+      <div class="co-type">tryon.kivisense.com</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AR + AI overlay</td></tr>
+        <tr><td>Integration</td><td>Web &amp; app SDK &mdash; also listed on the Shopify App Store at the same price</td></tr>
+        <tr><td>Runs on</td><td>Your own site or app &mdash; embedded SDK</td></tr>
+        <tr><td>Target</td><td>Self-serve &mdash; any retailer</td></tr>
+        <tr><td>Trial</td><td>7-day free trial (Shopify listing)</td></tr>
+        <tr><td>Pricing</td><td>$888/mo flat &middot; $10,000/yr</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Unlimited tries at fixed monthly cost</div>
+      <div class="co-src">Source: <a href="https://tryon.kivisense.com/blog/subscription-plans/" target="_blank" rel="noopener">tryon.kivisense.com/blog/subscription-plans</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAGsElEQVR4nOVbO28TSxg9u3ZCJBNDCA6OI+K3DQaEkK4uSFxRgaDghoaCmgZRRfwFbkVJge5PoKGjoEdKcSVDSBzbeRhvvHEkFMcuiPKw1+vcItnIj3ntrolNcqSV7J1vv/nmeObMNzNrCWT8CWAKwB8APAAkAPsU236FEXMJQBLARwD/8R4KAfhw+OBJvD4ctpGIvwD86IMgf/X147CtLYgDKPdBcMd1lQ/bDOBgrHzug6CO+/p82HY87oNgenU9dgD4B8A1nE44JADfwVDGE47vMoDRXkfRQ4zKABq9jqKHaMi9jqDXcAobOp2QJAn7+/vE8v39fei6zvUjSRKcTifVT71eF4pnYGCA6MOIUdSPMAEvXrzA9PQ00bEkSdA0DU+ePIGiKEw/79+/x61bt4hkybKMV69e4dOnT0wfr1+/xrNnz4ixOJ1OvH37Fu/eveO06NBeyApAuVxGNBpl2iQSCSYB58+fx6NHj3Du3Dmqze3bt7kEPHjwgBlLuVxmPt8MYQ2YnZ2FpmlMm6tXrzLLJycnmY0HgHg8ziw/e/YsAoEAtVzTNMzOzjJ9NEOYgHw+j7W1NabN9evXmeVXrlzh1hOPxyFJErU8GAxibGyMWr62toZ8Ps+tx4AwAZqmIZ1OM214vx6vhwBAIBDA6Cg9NYnFYpBletjpdJrbU5thahqcm5tjlodCIWYX5/UQABgZGYHf77fsgxdjO0wR8OXLF2a5x+Ohjk9ZlhGLxYTqYQkcjwBejB1xmTHOZDLM7iVJErWRLHLakUgkTPsHDoZpJpMRqsOAKQIURYGqqkybGzduEO+HQiG43W6heq5dIy9OvV4vgsEg9TlVVbl5SDtMESDCME3oRGYAA+FwmCh04XAYw8PD1Od4PZQE02sB3hijTWO0X5WEYDBInAl4s4jZ8Q9YIODr16/Mcr/fj0uXLnXcF5kCDbjdbkQikY77N2/etBUbCaYJ4HUzt9uNUKh1f2VwcJCo7NVqFdVqleiHJHYsEq0IIGCBABGhaR/vPp8Pk5OTHXYzMzOYmZkh+mifCYaGhoi9woCIQJNgmgCRjLB9vEejUZw5c6bDLplMIplMEn20Z5WBQADj4+PUOs1mgAYsbYh8+/aNWd7+69FmgPn5eczPzxPL4vE4HA7H0fdYLIaBgQHLMdEgvBw2U1k0GsXg4CBqtRoAeva2srJC9XH58mV4vV6sr68DoCdHojHRYKkHpNPpo8aRMDExgYmJiaPvpB5Qq9WgqipUVSX6crlcLUkPKwWu1WrcYUmDJQJUVUWhUKCWDw0NIRwOAzhoCGkGKBaLKJVKKJVKKBaLRD/Nz7F6QKFQsCSAgEUCNE1DKpVi2hi/mN/vJ67fc7kcdF2HruvI5XJEH0ZaffHiReYKMZVKWRJAwCIBAD/rMubsSCTSImYGFhcXiZ+bYQydQCCACxcuWI6FBcsE8LadDAJoY7c5aaElMMa8z9toMbMF1g7LBGQyGezt7VHLg8EgHA4HdW2fzWaJn5vh8/ngcrmYBOzt7VnKAA1YJqBYLDIzwvHxcYTD4Y60GAC2t7dbxn0ul8P29naHncvlQiKRYO4BKIpCFVERWCZA13Xm1ONwOHDv3j34fL6OMlVVsbGxcfR9Y2ODquJ37txhCmA6nRY6kKHB1tEYb/X19OlTeDyejvsrKysthxr1ep2aFE1NTTF3kqysAJthiwBe9vXw4UPiJimp59B60/379+H1ei3HwIMtArLZLHZ3d00/RxItK0K2u7tLFVBR2CKgWCwyM0IalpaWhO7xUCgUbAkgYJOAer1ueh++UqkQZw9FUVCpVEz5mpubEz4FpsH2+wFmk5DV1VVsbm523N/c3MTq6uovrZsE2wSYVWFa2ssr60bdJNgmYHFxETs7O8L2LLEzI4Q7OzumCSPBNgHr6+umDiO6RYCiKEebJXZgm4BGo8FdGhvQdR3Ly8vU8uXlZeGsLpVKodGw/35XV16SEhUjVsoLdKbI3aiTh2MlIJ/PY2tri1q+tbUl/HJDXxEgKoQioiVi0y0BBLpEgKgQioiciE23BBDoEgGNRgMLCwtcu24RsLCw0BUBBA7el68AGLHrKBKJMI+ugIOjMJYGAMDw8DDu3r3LtMnlctSNVJOodI2A3xSVU/+usIwu6cBvClkGQD6gPx2oygC6M6H+nliScfCPytOKjxKAMQBZAPSzp5OJCoCjd26eo/d/YTvu63k7I2/6IKjjut60N97ANICffRDgr7p+HrbxCKQX82MAXgL4GydHFyo4EPt/AbTsyPwP0oKOjkpv0BUAAAAASUVORK5CYII=" alt="WANNA &mdash; Enterprise, quote only"/><div class="co-name">WANNA &mdash; Enterprise, quote only</div></div>
+      <div class="co-type">wanna.fashion</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>3D / AR</td></tr>
+        <tr><td>Integration</td><td>B2B platform</td></tr>
+        <tr><td>Runs on</td><td>Your own site &mdash; deployed by the retailer</td></tr>
+        <tr><td>Target</td><td>Luxury &mdash; Farfetch, Dolce &amp; Gabbana, Valentino, Balenciaga, IWC, Diesel, Tod's</td></tr>
+        <tr><td>Trial</td><td>Not disclosed</td></tr>
+        <tr><td>Pricing</td><td>Not published</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Dolce &amp; Gabbana: 6&times; conversion increase (vendor-reported)</div>
+      <div class="co-src">Source: <a href="https://wanna.fashion/" target="_blank" rel="noopener">wanna.fashion</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEBklEQVRYhcWXf0icdRzHX9/z8fE2R+of3nYTT8W1VsryhpB1ZIzliDBKWBQj2R+FTMbCMVlFSAMXzFUYUmy41hBHEcgE2cA1m/XHkYOVYokeIvjr5jwpT867pZ5+++P08XnO57Zp7fzAh+/z/X4+38/7/f08n+/D5xGllSe41jqRzUz/eWHNKZLCksrjlvtD7aQ8XVlaZh8W7HgjW8zRHRdgnQi55JdJOBNYTPoe5Yl8WCK+Kq0ER/YI0l6T8TnzWhEk+BXkwmbhI1lItUSewqwZzdb0Yyz/WHNTBmGURwZ4mI8Z0COQUEQsdusUKRQ2EssCIGUYubxZbiCIlOEHgpvFXFlT9Mb/SmK9dhmpAeMtuPRXvWkAVcwydGeEe4OTXD17C99YEABbZjLnrr1MsmMXqvTT8ulNmr8YXd0oEhFC4XL3QbIc8wB8e6ZP87E87GSqmEUVswDkFmZx4PBuvu49SvlJBwC+sSCnSjtQpR+AQx+XsLfYrjvmAlVnd5DlmEcVAdouDhgICpL3GT5El/7+CoCx3/q4eua6gcwLbxVy4PBubV77+nf0/hIJtvclB5+1vQjAxMgcp0o78I36Ka/O5WhNhGyPe5pjr/YYYiag2k/rF978sJgEMc/03Rl+qP2JyZEZTe9c78fz6yglb2eSwD/szNlGxxUPAJMjM4hwiMLiFFJTFsl7VjA+rnL6Qg4AU94Q1WW3CQaNSbewtIBB9RJtW1qgt3OIgdsTABQ8vw2bI1WzNZ8boO3iAKoIUOBK43xbrgZesd+Nb0KuibemBqzCj1X42bJ4N9qkyb0/+rFaAgBs337fYKs/2UePe9qwVnOkJwJuIhZBGL3qJdqm91FlAFUG1vjZ7IKM7CRDnF3PbIkZy/QWrFQ0AHI+orr5rrytET8RMOxLtyfS2OkiPSNin/KGAKhucJL/XKoxzkoGNIBlXQMeRSS/yEaBKw1VBJjyhvizy6fZPrlcqIFfqB2l5shqxdc2FZC+M5loPMUsAyvvN7/IZkhjdr6NQxUZ2lpTnUd7fueDfRS40gBoafRype53AD5/v5vqBifpGVtp7HRRtudnw8EEaqahOm6EqiLplavpjU71lDdEU52H1m8GASj/qEi761PeEGVP/YhcWgU58aVLI97jnuZYyc3YBDqD75oCT3lDeIfn6LoV4EazB994pNLL3nuS6gan5lOx363ZNBCLSqvnoPZ6Whq91Fe5lwkk2jetJQOWa0CGQSjmo5nobXr/lVjr8BMo6Zucgf+pI9o4ARY3lcCD+4H1ZCe6k47VGUeNAqFMI9S4/pbpRcGa18Xc4Ctm3+nHLta8dgFKNoJuIN5Z8CNxWkorjw8jcWLNa48bsDWvHYmztPL48L+BoDPyGYa9DQAAAABJRU5ErkJggg==" alt="DRESSX &mdash; AI Suite &mdash; Enterprise, quote only"/><div class="co-name">DRESSX &mdash; AI Suite &mdash; Enterprise, quote only</div></div>
+      <div class="co-type">dressx.com</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI / AR</td></tr>
+        <tr><td>Integration</td><td>B2B partnership</td></tr>
+        <tr><td>Runs on</td><td>Your own site &mdash; integrated into retailer operations</td></tr>
+        <tr><td>Target</td><td>4,000+ luxury retailers and brands</td></tr>
+        <tr><td>Trial</td><td>Not disclosed</td></tr>
+        <tr><td>Pricing</td><td>Not published</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">100M+ virtual fashion items &middot; $15M raised, 2023</div>
+      <div class="co-src">Source: <a href="https://en.wikipedia.org/wiki/DRESSX" target="_blank" rel="noopener">Wikipedia &mdash; DRESSX</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,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" alt="Amazon Virtual Try-On API"/><div class="co-name">Amazon Virtual Try-On API</div></div>
+      <div class="co-type">AWS Bedrock (Nova Canvas)</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>Generative AI (photorealistic composite)</td></tr>
+        <tr><td>Integration</td><td>API &mdash; Amazon Bedrock</td></tr>
+        <tr><td>Runs on</td><td>Your own site or app &mdash; general AWS API</td></tr>
+        <tr><td>Target</td><td>Third-party retailers &amp; developers</td></tr>
+        <tr><td>Trial</td><td>Not disclosed</td></tr>
+        <tr><td>Pricing</td><td>Usage-based &mdash; no published per-image rate</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Launched US, Tokyo, Ireland regions &middot; 2 July 2025</div>
+      <div class="co-src">Source: <a href="https://aws.amazon.com/blogs/aws/amazon-nova-canvas-update-virtual-try-on-and-style-options-now-available/" target="_blank" rel="noopener">AWS Blog, July 2025</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,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" alt="FittingBox"/><div class="co-name">FittingBox</div></div>
+      <div class="co-type">fittingbox.com &middot; also on Shopify App Store</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>3D rendering + AR &mdash; “FBX CoreAI”</td></tr>
+        <tr><td>Integration</td><td>B2B &mdash; web, ecommerce &amp; in-store; Shopify app available</td></tr>
+        <tr><td>Runs on</td><td>Your own site &mdash; eyewear category specialist</td></tr>
+        <tr><td>Target</td><td>Eyewear &mdash; De Rigo, JINS, Fielmann, Afflelou, Pair Eyewear, Salvatore Ferragamo, Lacoste, Specsavers, Zenni</td></tr>
+        <tr><td>Trial</td><td>Free trial (Shopify listing)</td></tr>
+        <tr><td>Pricing</td><td>Shopify app: $59&ndash;199/mo &middot; direct enterprise: not published</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">195k+ 3D glasses database, 1,200+ brands, 59 patents &middot; 2&ndash;3&times; conversion lift (vendor-reported)</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/glasses-virtual-try-on-by-fittingbox" target="_blank" rel="noopener">apps.shopify.com/glasses-virtual-try-on-by-fittingbox</a></div>
+    </div>
+  </div>
+
+  <div class="sec-header"><div class="sec-title">Vendors &mdash; Shopify App Store</div></div>
+  <p class="sec-sub">Install directly on a Shopify store &mdash; the integration route most emerging brands and marketplaces actually use.</p>
+  <div class="co-grid">
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAYFBMVEV4yEL///91xz1wxTRnwiCHzlhrxCvg8tRqwyZyxjhtxC7w+enJ6Lex3peY1HGBzE+44Z/5/fbk9NqT0mrC5a2P0WSc1njV7cfS7MJ+y0m74qXp9t+i2IGt3JGn2of0+u+lDmufAAAE2ElEQVR4nMVbaXuDIAxGUAS8rfXs8f//5UC02krrNqHJt7k+5pXcIUHeloowTtIMWaUsTeKwMDBDrw/uVUAp4dguf4QwJ5QG1X0HQJkyYp33CgVhafkBQHRiDrlPGNgpegcg952zHyH4uRFAEYhvsFckgmILIBJf+XxNWESvAEr/e+wV+eUzgOjL/CWCaA2g+Jr4FxLFCkDwRfnPhIMFQA5wAPII8hnA9xVA06gGCsAJQACK8EkDKBkMf4RYOQJIgQ5AHkGqANzBDkAewV0CqAgcAFJJABA+YCbpC1BB4fgjRAsUwgIIUQyoAlIJYpRwSAA8QXBeQBFO0cH8nxyMY0fLDxGHIJF0Jpx5Xg0pQ957Xgx5BKLxvAHSkdABJp980JhYQjoSorK6DhDAmNKe4cxAZ9aAdjhmld7VvRLwN4UrvigAvRkAFtbiLL+GtTFx5IkCYPZE9Bz2thDQUObu3PCdMqWT1BgAYNHKgseWi8K14nPa8lFcPM+QU5FMOQh7qQYbi/lkIwZ1NPJDt89r2yU/HwvZ+PWNLDLW9qwff55ZNE9+0m0U+vxOoXsML67QHwXj3awmm+I6vvSO1mJV2YCip6wOi2F8WFkOkizWzNaqiG/62drceKYbH6H1kn/uKl0XldNG8GQGWv1Minmc6NTmbR/dVDY3fh+n4lf6QYEdxAc8d/TuU0dTFdfTqWgZkG6YHripNydTUAomCEbYfzQbC2UdZOnAXhxVW5MpjBAC0a3a3pH8M3+0X20bwEKs9X5BLpuu/ua+wUAuq92pufiRaqf5iaj2+DeOW05iD4Bb9nMO8p5a13XSnha4T5F3ZNC5BoC7zwBc952xX34GEDF3VoixYGn0mb+MCxcm7N67Yow5EZSJ7Nb+xhF6RXsLBKWCcH4sKmMu5FtQcLokVRvufvqLKMI2zm9pgIhg4n+3wSLom8F03/1HKoamD/7hHUh8nPdC4d8jlAhtAoj+0ccRdVtakICSQXv5l4PGUgd5d66vfdyE0V+xRGUT99f6nClVPmIM0gi5UFaI0v6XUimrulN2KI7a4SsUQsV1/yBy7nIIg9Adf1Bgx/cPu+HYecNoLxy75o92wrHz+w/SfwbgvHfu75mBYx0g+Q5/L3able5ogCKnrWN/2AdQOKxM6G5dpMhdbcTrB5O27tYjYfe6S5f8IXFkCUtG3iAqM0W2GATmMnbyB4STG1MQM8Opc80vM8Nc+396nn/hpDyZFbAk8/c9jmB+gFkzicSBEObuSLX0P+Y23WoKhiXTI+tdEjq54HVyxadG5XoIREydrNayKRBtAEWwjvZzaH6qiHl3d2AKE6sI/6JZjYUuH1ObpkBHdQtfJ06n5unrt/raHi3y18pdbRRrurDYhB+tioM1NdC3c7dtmNNmUBr+MXZxb7aEoO7Io8yQbOryzXRpxdFg8V6d91FiHDjmY3ZgToLYbbA3oEOo+TC1I3hzccmp+wEh3bD/wtXtWwDQl9fg1/d6gMHyJsKfCHyEg4EPsUCP8ahCrYU8AXyWKQroOB4ND08pHDQicXicD3ygEXykE3yoFXysF3ywGXy0G364HXy8H3zBAX7FA3zJBX7NB3zRCX7VC37ZDXzdD37hEX7lE37p1QNf+/XgF5898NVvRcDL71odv7n+/wNHtDMw7UY+2wAAAABJRU5ErkJggg==" alt="GenLook"/><div class="co-name">GenLook</div></div>
+      <div class="co-type">genlook.app</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI image generation</td></tr>
+        <tr><td>Integration</td><td>Shopify theme block</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store</td></tr>
+        <tr><td>Target</td><td>Shopify merchants</td></tr>
+        <tr><td>Trial</td><td>Free plan (10/mo)</td></tr>
+        <tr><td>Pricing</td><td>Free (10/mo) &middot; $19.99&ndash;99/mo</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Pro plan: 1,000 tries/mo, $0.10/try overage</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/genlook-virtual-try-on" target="_blank" rel="noopener">apps.shopify.com/genlook-virtual-try-on</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAMFBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAARERH///8BAQG0tLRPT092dnbW1taXl5czMzOpxcF2AAAAB3RSTlMAdkMFmZia+xIvGAAAArxJREFUeJztm1FzgyAMgLW2U0Tx///bidpVJSwRDNnukoc+9DjyGQIkAapqk0ddVB7VQZov0xYW82w++h/F1S8IP1aoJdR7gnr7fiH9syw2aETsv4rxfvCS09+2rxlA0ACzCUQ9wMtDbApsUiuAAiiAAigAFcAcpDiAMcNB7iOgAozdQdxtBDQA03cnsXcRKIACKIACKIACKIAC3AKQEypmA3i9dnCzDMOUAJEJMCvv9+Hi6KaLCFkAc6x8/n9mGC4h5ABA6he5gpAOYM6h+t4KLZkgHWCKqn9biBfgd/1+GJgBEP1kglQAgtAIGAG6iULACdCJA1ByaFYAyiDwAozSAAQTZAOMztrJukiDnhugX+MQ/+PABswAewubFtqc0ImQBXDadaHtEXXDHIBgzzUJY5ABEK71BtiisB0hHQAyLtAOmwfpAFDIAUQpmBMkA8AdA37IBQDPL2A1QBbDZIBIw3AMEC9MBoh0G85EZClKBYg5d+gETACxbumoXACBFyLzMBUg5lphusYEEMt8FKAYQNQHSjkhfRYwTcPoQlRqHYgZtthKKL4XRHZZIChDaiX88QDSdXpIBgMQ290BAK0EwAiwxYRwVByGhFhqlJEXhF1DlUusXpeTGZ37BkuHrLnhkQDUj+bnedmx+6SnYOGaUKvLrA/40vgqFq4c81dIurF3ro/VrfE6GXONSLpIhZeImAGkC5WUcjUnAKFMyQsgXa6nnRvxnZiQTgtyEpN79Occ28VP7bz/sZ+aGSj+e8uF235EgECXt7CZYCP09GNL+oXGkwnWSMAfXYdff0U9/U6pOcnn72G3FY7OXj2/z79Vu/BM1k5t0h2Gm671pt+0/T/3ihVAARRAARSAD0D8uZ/4g8fqKQnw+guPXhs5L9iePjdiE6F+vzyXfvpdNc2zOIJ//L57/i73/P8bg0jFvEdIM+sAAAAASUVORK5CYII=" alt="bitStudio"/><div class="co-name">bitStudio</div></div>
+      <div class="co-type">bitstudio.ai</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI (“purpose-built”, 15-second render)</td></tr>
+        <tr><td>Integration</td><td>Shopify app or JavaScript</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store or site</td></tr>
+        <tr><td>Target</td><td>Shopify merchants &amp; ecommerce stores</td></tr>
+        <tr><td>Trial</td><td>Free plan (50/day, Shopify only)</td></tr>
+        <tr><td>Pricing</td><td>Free (50/day, Shopify only) &middot; $299/mo &middot; custom tier above that</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Medium plan: 3,000 tries/mo, $0.10/try overage. A higher-volume “Large” tier exists at custom/contact pricing.</div>
+      <div class="co-src">Source: <a href="https://bitstudio.ai/virtual-fitting-rooms" target="_blank" rel="noopener">bitstudio.ai/virtual-fitting-rooms</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADr0lEQVRYha2XX0gsVRzHP5tmoi7+Sb2Ra0u3m13uFeoihQQqQrToHQgfkqwHEwpCMHYrivuQED54X4IDgUL64suKPepROLelh7gt0mqvXjSilfaKcEVWWR3N5faw4zIzO24zq18YZs7vMOf3me/vzMw5vlBYw4uUkO8C48AbwCPgcyARCmv/ehrI0DMek0eAGeB74E2gCfgNSCshv1NC+rwClHtIfheIAG8DOvA7MA3cBX4CRoAnwA9eAFw5oISsBH4EPg6FtX8AAfwcCmv3gRjQAnwG3FNC3lFCvnilAMCn5Or8ixLyOrmn/sro2wHeAj4Angf+ALqVkPfdDOy2BF8Ag8b1ELAMvKOEfM+AaQR6bfd8o4SsAFaANPAoFNYOPQMoIW8CT4FtJeQn5Gr9CvCRC/CIcQDcAwpcKQqghGwDvgauAY/x+NbY9KpTsABACVkLfAm8D9y8REK72lwBAB8C3xYbqaKigsrKSg4ODrwAODrgZKnjUzc0NDAxMcHGxgaZTIZ0Os3W1hbBYNAtwDUlZJ096OTAdXugs7OTxcVFmpqaLPHW1lZ2d3fdAkDOhYQ54OTAy+ZGIBBgZWWlIDlAIpFA13UvAAXzwMkBi6fj4+PU19cDcHJyQiwWI5VKEQwGicfjXpKDwzywACghm4Ga87bP52NgYCDfPzIywvz8vNekZhU4YC+Bxf7a2loaGxvz7Uwmc5nk4OBAUQBd18lms/n23NwcQ0NDlwF4zTPA6upqvl1XV0c0GmVhYQG/318KgF8J+YJrAIBIJMLR0ZElNjg4yNLSEuXlrpcTZlnmgR2g4BuQSCTo7u4mmUxa4j09PQwPD5cCYJkH/+sAwPr6Oh0dHaytrVnifX19VweghCwDWs2d1dXV+eu9vT0mJyctIzU3N5cCYCmBuYgB4Flz58zMDKenp0xNTbG5uUlvr3XNsbOzc6UABfZ3dXURCAQurPXy8nIpADeUkGWhsJYF6xywAPj9fmpqarhI8XicaDRaCsBzwEvnjQsBDg8PaW9vZ3p6mv39/Xxc13VmZ2fp7+/n7OysFAAwTcSiJUilUoyOjjI2NkZLSwtVVVUkk0mOj49LTXyuNuCBHaDgG3CubDbL9vb2ZZOa5eiABtwGbpnOr5Pbfl218m9CHiAU1vaBh8aRl7HLMUPdBu4AVSUk/hP4FVgqALhIobD2mNySPGaCKiO3cDFDdZD725WZbv+L3Ob1IfAgFNb+to/v87o9LyZjD3kL2AWeGvBF9R+ZnhO/LvN+/AAAAABJRU5ErkJggg==" alt="A&amp;A Virtual Try-On"/><div class="co-name">A&amp;A Virtual Try-On</div></div>
+      <div class="co-type">Shopify App Store</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI image generation, no 3D modelling</td></tr>
+        <tr><td>Integration</td><td>Shopify app</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store</td></tr>
+        <tr><td>Target</td><td>Shopify merchants</td></tr>
+        <tr><td>Trial</td><td>7-day free trial</td></tr>
+        <tr><td>Pricing</td><td>$49.99&ndash;249.99/mo</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Premium plan: 3,750 tries/mo, $0.06/try overage</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/aa-virtual-tryon" target="_blank" rel="noopener">apps.shopify.com/aa-virtual-tryon</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADr0lEQVRYha2XX0gsVRzHP5tmoi7+Sb2Ra0u3m13uFeoihQQqQrToHQgfkqwHEwpCMHYrivuQED54X4IDgUL64suKPepROLelh7gt0mqvXjSilfaKcEVWWR3N5faw4zIzO24zq18YZs7vMOf3me/vzMw5vlBYw4uUkO8C48AbwCPgcyARCmv/ehrI0DMek0eAGeB74E2gCfgNSCshv1NC+rwClHtIfheIAG8DOvA7MA3cBX4CRoAnwA9eAFw5oISsBH4EPg6FtX8AAfwcCmv3gRjQAnwG3FNC3lFCvnilAMCn5Or8ixLyOrmn/sro2wHeAj4Angf+ALqVkPfdDOy2BF8Ag8b1ELAMvKOEfM+AaQR6bfd8o4SsAFaANPAoFNYOPQMoIW8CT4FtJeQn5Gr9CvCRC/CIcQDcAwpcKQqghGwDvgauAY/x+NbY9KpTsABACVkLfAm8D9y8REK72lwBAB8C3xYbqaKigsrKSg4ODrwAODrgZKnjUzc0NDAxMcHGxgaZTIZ0Os3W1hbBYNAtwDUlZJ096OTAdXugs7OTxcVFmpqaLPHW1lZ2d3fdAkDOhYQ54OTAy+ZGIBBgZWWlIDlAIpFA13UvAAXzwMkBi6fj4+PU19cDcHJyQiwWI5VKEQwGicfjXpKDwzywACghm4Ga87bP52NgYCDfPzIywvz8vNekZhU4YC+Bxf7a2loaGxvz7Uwmc5nk4OBAUQBd18lms/n23NwcQ0NDlwF4zTPA6upqvl1XV0c0GmVhYQG/318KgF8J+YJrAIBIJMLR0ZElNjg4yNLSEuXlrpcTZlnmgR2g4BuQSCTo7u4mmUxa4j09PQwPD5cCYJkH/+sAwPr6Oh0dHaytrVnifX19VweghCwDWs2d1dXV+eu9vT0mJyctIzU3N5cCYCmBuYgB4Flz58zMDKenp0xNTbG5uUlvr3XNsbOzc6UABfZ3dXURCAQurPXy8nIpADeUkGWhsJYF6xywAPj9fmpqarhI8XicaDRaCsBzwEvnjQsBDg8PaW9vZ3p6mv39/Xxc13VmZ2fp7+/n7OysFAAwTcSiJUilUoyOjjI2NkZLSwtVVVUkk0mOj49LTXyuNuCBHaDgG3CubDbL9vb2ZZOa5eiABtwGbpnOr5Pbfl218m9CHiAU1vaBh8aRl7HLMUPdBu4AVSUk/hP4FVgqALhIobD2mNySPGaCKiO3cDFDdZD725WZbv+L3Ob1IfAgFNb+to/v87o9LyZjD3kL2AWeGvBF9R+ZnhO/LvN+/AAAAABJRU5ErkJggg==" alt="Nivera AI Virtual Try On"/><div class="co-name">Nivera AI Virtual Try On</div></div>
+      <div class="co-type">Shopify App Store</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI-powered visualization</td></tr>
+        <tr><td>Integration</td><td>Shopify app, one-click install</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store</td></tr>
+        <tr><td>Target</td><td>Shopify merchants</td></tr>
+        <tr><td>Trial</td><td>Free</td></tr>
+        <tr><td>Pricing</td><td>Free &mdash; no cap disclosed</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Analytics dashboard, custom model image uploads</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/virtual-try-on-1" target="_blank" rel="noopener">apps.shopify.com/virtual-try-on-1</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADr0lEQVRYha2XX0gsVRzHP5tmoi7+Sb2Ra0u3m13uFeoihQQqQrToHQgfkqwHEwpCMHYrivuQED54X4IDgUL64suKPepROLelh7gt0mqvXjSilfaKcEVWWR3N5faw4zIzO24zq18YZs7vMOf3me/vzMw5vlBYw4uUkO8C48AbwCPgcyARCmv/ehrI0DMek0eAGeB74E2gCfgNSCshv1NC+rwClHtIfheIAG8DOvA7MA3cBX4CRoAnwA9eAFw5oISsBH4EPg6FtX8AAfwcCmv3gRjQAnwG3FNC3lFCvnilAMCn5Or8ixLyOrmn/sro2wHeAj4Angf+ALqVkPfdDOy2BF8Ag8b1ELAMvKOEfM+AaQR6bfd8o4SsAFaANPAoFNYOPQMoIW8CT4FtJeQn5Gr9CvCRC/CIcQDcAwpcKQqghGwDvgauAY/x+NbY9KpTsABACVkLfAm8D9y8REK72lwBAB8C3xYbqaKigsrKSg4ODrwAODrgZKnjUzc0NDAxMcHGxgaZTIZ0Os3W1hbBYNAtwDUlZJ096OTAdXugs7OTxcVFmpqaLPHW1lZ2d3fdAkDOhYQ54OTAy+ZGIBBgZWWlIDlAIpFA13UvAAXzwMkBi6fj4+PU19cDcHJyQiwWI5VKEQwGicfjXpKDwzywACghm4Ga87bP52NgYCDfPzIywvz8vNekZhU4YC+Bxf7a2loaGxvz7Uwmc5nk4OBAUQBd18lms/n23NwcQ0NDlwF4zTPA6upqvl1XV0c0GmVhYQG/318KgF8J+YJrAIBIJMLR0ZElNjg4yNLSEuXlrpcTZlnmgR2g4BuQSCTo7u4mmUxa4j09PQwPD5cCYJkH/+sAwPr6Oh0dHaytrVnifX19VweghCwDWs2d1dXV+eu9vT0mJyctIzU3N5cCYCmBuYgB4Flz58zMDKenp0xNTbG5uUlvr3XNsbOzc6UABfZ3dXURCAQurPXy8nIpADeUkGWhsJYF6xywAPj9fmpqarhI8XicaDRaCsBzwEvnjQsBDg8PaW9vZ3p6mv39/Xxc13VmZ2fp7+/n7OysFAAwTcSiJUilUoyOjjI2NkZLSwtVVVUkk0mOj49LTXyuNuCBHaDgG3CubDbL9vb2ZZOa5eiABtwGbpnOr5Pbfl218m9CHiAU1vaBh8aRl7HLMUPdBu4AVSUk/hP4FVgqALhIobD2mNySPGaCKiO3cDFDdZD725WZbv+L3Ob1IfAgFNb+to/v87o9LyZjD3kL2AWeGvBF9R+ZnhO/LvN+/AAAAABJRU5ErkJggg==" alt="Try It On &mdash; AI Outfit"/><div class="co-name">Try It On &mdash; AI Outfit</div></div>
+      <div class="co-type">Shopify App Store</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI visualization, no server storage</td></tr>
+        <tr><td>Integration</td><td>Shopify app</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store</td></tr>
+        <tr><td>Target</td><td>Shopify merchants</td></tr>
+        <tr><td>Trial</td><td>Free plan (5 credits)</td></tr>
+        <tr><td>Pricing</td><td>Free (5 credits) &middot; $25&ndash;50/mo</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Max plan: 400 tries/mo, $0.06/try overage &middot; credits never expire on paid plans</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/virtual-try-it-on" target="_blank" rel="noopener">apps.shopify.com/virtual-try-it-on</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADr0lEQVRYha2XX0gsVRzHP5tmoi7+Sb2Ra0u3m13uFeoihQQqQrToHQgfkqwHEwpCMHYrivuQED54X4IDgUL64suKPepROLelh7gt0mqvXjSilfaKcEVWWR3N5faw4zIzO24zq18YZs7vMOf3me/vzMw5vlBYw4uUkO8C48AbwCPgcyARCmv/ehrI0DMek0eAGeB74E2gCfgNSCshv1NC+rwClHtIfheIAG8DOvA7MA3cBX4CRoAnwA9eAFw5oISsBH4EPg6FtX8AAfwcCmv3gRjQAnwG3FNC3lFCvnilAMCn5Or8ixLyOrmn/sro2wHeAj4Angf+ALqVkPfdDOy2BF8Ag8b1ELAMvKOEfM+AaQR6bfd8o4SsAFaANPAoFNYOPQMoIW8CT4FtJeQn5Gr9CvCRC/CIcQDcAwpcKQqghGwDvgauAY/x+NbY9KpTsABACVkLfAm8D9y8REK72lwBAB8C3xYbqaKigsrKSg4ODrwAODrgZKnjUzc0NDAxMcHGxgaZTIZ0Os3W1hbBYNAtwDUlZJ096OTAdXugs7OTxcVFmpqaLPHW1lZ2d3fdAkDOhYQ54OTAy+ZGIBBgZWWlIDlAIpFA13UvAAXzwMkBi6fj4+PU19cDcHJyQiwWI5VKEQwGicfjXpKDwzywACghm4Ga87bP52NgYCDfPzIywvz8vNekZhU4YC+Bxf7a2loaGxvz7Uwmc5nk4OBAUQBd18lms/n23NwcQ0NDlwF4zTPA6upqvl1XV0c0GmVhYQG/318KgF8J+YJrAIBIJMLR0ZElNjg4yNLSEuXlrpcTZlnmgR2g4BuQSCTo7u4mmUxa4j09PQwPD5cCYJkH/+sAwPr6Oh0dHaytrVnifX19VweghCwDWs2d1dXV+eu9vT0mJyctIzU3N5cCYCmBuYgB4Flz58zMDKenp0xNTbG5uUlvr3XNsbOzc6UABfZ3dXURCAQurPXy8nIpADeUkGWhsJYF6xywAPj9fmpqarhI8XicaDRaCsBzwEvnjQsBDg8PaW9vZ3p6mv39/Xxc13VmZ2fp7+/n7OysFAAwTcSiJUilUoyOjjI2NkZLSwtVVVUkk0mOj49LTXyuNuCBHaDgG3CubDbL9vb2ZZOa5eiABtwGbpnOr5Pbfl218m9CHiAU1vaBh8aRl7HLMUPdBu4AVSUk/hP4FVgqALhIobD2mNySPGaCKiO3cDFDdZD725WZbv+L3Ob1IfAgFNb+to/v87o9LyZjD3kL2AWeGvBF9R+ZnhO/LvN+/AAAAABJRU5ErkJggg==" alt="TryPoint"/><div class="co-name">TryPoint</div></div>
+      <div class="co-type">Shopify App Store</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI virtual try-on, powered by Google</td></tr>
+        <tr><td>Integration</td><td>Shopify app, API access on top plan</td></tr>
+        <tr><td>Runs on</td><td>Your own Shopify store</td></tr>
+        <tr><td>Target</td><td>Shopify merchants</td></tr>
+        <tr><td>Trial</td><td>7-day free trial (Basic &amp; Grow)</td></tr>
+        <tr><td>Pricing</td><td>Pay-as-you-go $0.29/try &middot; Free (20/mo) &middot; $19.99&ndash;99.99/mo</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Grow plan: 1,000 tries/mo, $0.10/try overage, API access. Pay-as-you-go has no monthly fee.</div>
+      <div class="co-src">Source: <a href="https://apps.shopify.com/trypoint" target="_blank" rel="noopener">apps.shopify.com/trypoint</a></div>
+    </div>
+  </div>
+
+  <div class="sec-header"><div class="sec-title">Platform-Hosted Options &mdash; Not on Your Own Site</div></div>
+  <p class="sec-sub">Run inside the platform's own app or search surface. Shown for market completeness &mdash; excluded from the comparisons below.</p>
+  <div class="co-grid">
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAt1BMVEVHcEz9/v7w8PHz8/T29/f29vf19fb8+/vr7O38/f329/f19fX29vf6+vr+/v755uX////x8vI5iBT///85qldGiPX7wBQ8rFpJivTrUELrTUDsUUTrSz7rT0I+hPTu8vIvqFBMjPWUtvj8vgbN3fz5y8fuZFXT69lVtGrrQzTzmpG84MVzwYaUzqPxfXD2rqn83IN+qff+7L38zkZpnfb2nCY9npTMuyqWtD4zgPRCkc5/tdRHcEwgFdBcAAAAPXRSTlMA8C0eiU6g/g3jdcBiO9H9qdH///////////////////////////////////////////////////////8AWkw1vQAAB9FJREFUeJztW+l2okgYHVkscOeoEAWExKiIolk6nXTP+7/XVAFGKL5aQJIfc3LTSTrniPf67VUU//zzg2YwVGU4HOop8H8U1fhG7qE+6HX7I7PTQVMM1OmYo363N9CH36BCGWiTUWcKojOaaAPlK9nVHpO8IKKnfhG9PjEF7LkGc6J/Ab1mIhn2DMjstctu9Gqw5xp67UWk0pMyPY1OS8GgDkZN6AlGgxYk6JOm9AQ3h6OqmbfwT6emdpMRhv3b6An6w+b8gxs/fgZz0JDe6NbOPQa0RhmptmD+C/oNAkFpnHwQRrV71LAV919h1lSgt8yPFdSqCO3zYy/UUDCU8H+w2ZzPcYrzebMJJBRIFwRh/KFNfNput+7C87y95/ku/uN03oiyti8ZB6L828SEekng+376Gwvxlu423vCvnEhlo8HtPkHs7j1MvCDwLwJyEfu9e+aaoStTkXrs69E49vYZ94X/KiDX4J/HHA0Sg9KQffn4vPUW7oItIJOwPY+Zb9ERBqLBTEB0PmE/u0IBGCd2PJoiJzADYBy7hL7Azxawd2OmEbp8/gFL+uaErQ8IWEIClt7+xEwIbj0yWBUAe991KQGAAXIBaSSwFIx4TtAYF8WuX+HnC8AKGF5AGpuf0QJQnJtf0gNZGDB9YDIzgVGCgvhifnkDcPg55Qg2ACrwywpgR0BqAkYcGl3w5eelNP9Sip9pAngI2rgLiJ8ISPn2ad7V4mdEgQGmwHjLMADOdW97OuFx4LTFXcgrlCERP2NMVqEVKDrBAYBZ4s14HKQYjzcn0iOXsvzTDtSXB9Arzy7A7xMSVKyZCM8o231mAF78fwJYq4BFcLz1K/z+cnECawyu1rL8UDlUgJeheAnwM8s8Om+5+V9EdTqDcnDzGYGf5l/67EZHjCDJDzRFIASvJejK7/FnLunVZEfGAy/2iTShYvJ5Z1kGEWgfQJPg03r95vpF/n1r/JXpEBjFg1fbtt9c7ypgH7e1YMeLBGEIoJc1FmCvt97FCB6cfs1ABYFe/WjoNRVAjJApWEqUOHmgcksE+kBgX/C2JQsR3+cnQF2UByNgFHlZFxQs/HYdgDEpCajWYfR0FWDjbFgu4lb5p6MivwqMAnYRWEGrETCllijALILWJQX2G8MAzw9iPEO7B6WpZFDNwhdKgP0EC/gzn6+yLxh/yPcjcGGn2JKB3fgnWsALLGB1n+OugPndPEP2GxZQrIWaWMArzP8p4O6urCD/kQpYPQAJXFqgAGXgtZ4Amn6ea8gEgEFQFAAMA5SANSMEcgF3FQOkCuY8AV2+ACoCagmYfzohF/BLJAAohLUE3FUsUDTAfA4KmPAFUCGwZiRBKqDKXzIAwwICATUsQPNTISgjAApCaQFV/osMvgsEQSidBRL84jQEChEt4JUh4E9TAUggoFKKGdMIU8C8IACshMVSXL01iirNiJEGLAFzkYBSM9Jv6IZQC5yXBcDNqDgUKsJ5YP1xhH3wCOF5XsIKElC6iQMsjVEpCtcfTnSATQAgeF6VBNxDAsoLZKv6gmsUru115DhhIi3g8b5sAbAMWEV+qBAUguDdmTlODRM8lA0AxiC1PgaWhsjOVka2/eGkmB0lbgwR0B4AYxCVF4cKsDLKffD+MXNySJrgofz54RBA1PIYmMtTH6zfo09+J9rJ8Ae/KA/AQ3GZHwqC4DU1/5XfcWScgKgIwCEAvYzeIoH2yJ7W7x9OCSGjGBT5yymAx/VfkAcqtw0M4J1f3iOHwkyogE5B7AHoElTZJoN26ZIZLQDHAd8Lj1QA4ioEesCi+UEf7I6QAl4u0P4n0xBos+pOpQFtkx2q/LPZLNnBfkC7f2l6lgE6wGYxtFEYQCZwwugASAh2iRP+Lo0B+B/DANC9M2CXZjoFTECMEEZJWUOwOyRRiK3z+2/ZAGAVpPdnMqhAQ8JxGEISnFnoHJPkcNhhHA6H5BiFhL6oYJWlAPSmUwu8iw3fMzzCCogZZk6UYXZhzyRc3bC6B3MGwQd7FNAEQQSFQaaBRGQalmUQBausCIEOmFqMgwTwmb1dCCuo8Bbw91KEwXdErHvosAlwIAIKePSZghWLn2kAlgmmh4oXBPQ4PogbwC7IMQD78AalQEifKvjL4OceqwLG84oCGXosIEwY/B3u7XP43iXpCiEU7w34BQcIgAVChiAJxbRX/tmB1bZNwUka5gkG3JikJYQRo10xa5CEE0hnCqUkcMwvPMFBABeDFLujMAxC3CQ4o2t1DqmCe5DvcMSFn0cf8eglD/UBG8dFCcnRgV1BPnzCHdw7cqdLDcFB6iDrvkUV5K/omBz482Ige9rbADZMSkBk/jgeIydlxmPiEZPvRGsGJH+2VZU5TxsEu08EgfgCJHWS7WID6RO18vex+vXO9rZ4pjcTSt+oFKK1U80Zv0QBoqE1eqgARsA5PcVGr7WjtU0f+NCtVtyArMYPGShtBALq3vDokdGT3BZi00uXP5YR+jdJCGTPEnOMMOCdkhV8/PGgjWd9DE2i0EL0QbMHGwAo3TqPWeX05i3BV5WgjVANDQiNtBuebQEx1PqyZkBmv3V6AlXXLHE0oMDS9K964M9QdK3P6f0oCPqarnzpc5eGquhda1xRgbkDq6t/07OnhqHqvW7fstITjWPL6nd7ump843OvP/jBD/5P+A/yWoK0uPJ8MwAAAABJRU5ErkJggg==" alt="Google Shopping Virtual Try-On"/><div class="co-name">Google Shopping Virtual Try-On</div></div>
+      <div class="co-type">Google Shopping Graph</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI image generation</td></tr>
+        <tr><td>Integration</td><td>Platform feature</td></tr>
+        <tr><td>Runs on</td><td>Inside Google Search / Google Shopping only.</td></tr>
+        <tr><td>Target</td><td>Retailers with products in the Shopping Graph &mdash; described by Google as ranging from global retailers to small businesses; no specific retailers named</td></tr>
+        <tr><td>Trial</td><td>&mdash;</td></tr>
+        <tr><td>Pricing</td><td>$0 &mdash; platform feature</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Billions of items available at launch, May 2025</div>
+      <div class="co-src">Source: <a href="https://blog.google/products-and-platforms/products/shopping/google-shopping-ai-mode-virtual-try-on-update/" target="_blank" rel="noopener">Google Blog, May 2025</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,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" alt="Snap / Snapchat Shopping Lenses"/><div class="co-name">Snap / Snapchat Shopping Lenses</div></div>
+      <div class="co-type">forbusiness.snapchat.com</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AR camera</td></tr>
+        <tr><td>Integration</td><td>Catalog-powered Shopping Lenses</td></tr>
+        <tr><td>Runs on</td><td>Inside the Snapchat app camera only.</td></tr>
+        <tr><td>Target</td><td>Any brand with a product catalog on Snapchat</td></tr>
+        <tr><td>Trial</td><td>&mdash;</td></tr>
+        <tr><td>Pricing</td><td>Not published &mdash; ad-platform model</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">250M+ users engaged &middot; Eyewa: 8&times; ROAS (vendor-reported)</div>
+      <div class="co-src">Source: <a href="https://forbusiness.snapchat.com/blog/catalog-powered-shopping-lenses" target="_blank" rel="noopener">Snap for Business</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,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" alt="Zero10"/><div class="co-name">Zero10</div></div>
+      <div class="co-type">zero10.ar</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AR (phone camera)</td></tr>
+        <tr><td>Integration</td><td>Consumer app + B2B partnerships</td></tr>
+        <tr><td>Runs on</td><td>Primarily Zero10's own app.</td></tr>
+        <tr><td>Target</td><td>Coach, Ugg, Macy's, Disney</td></tr>
+        <tr><td>Trial</td><td>&mdash;</td></tr>
+        <tr><td>Pricing</td><td>Not published</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">In-store AR mirror installs with independent designers</div>
+      <div class="co-src">Source: <a href="https://zero10.ar/" target="_blank" rel="noopener">zero10.ar</a></div>
+    </div>
+    <div class="co-card">
+      <div class="v-head"><img class="v-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAANlBMVEX///9/zOciIyMAAAB3yebY7/et3e/o6OgKDAzJ6PSc1uyS0+r4/P4eHx8yMjLd8fhsxuTl9PoBlyxAAAAA4ElEQVR4nO3byw7CIBBG4UpB67Xt+7+sG2pMGMgwQoLJOVvNP9/KRdVpIiL6FPwpm2Uvv+YDAAAAygCfZgEIM0rANc0CEGaUAMs1XQAAAAAAAAAAAIMD1ntMeO1iSJg5LqzV9NlQ9ZEiwFUHAACAxgCpr2PdPwfEluP+0v8WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIwJmJ+xVk9lHzHt+90r5tpcCNsPP5vSFQ9sg35vCAAAAAAAAAAAMA7glma5JswoAUIWQH4NAID/A1j/Y1IJ2M/5LIDC3G7ZIyKiTr0BLrQbI0QIH9QAAAAASUVORK5CYII=" alt="TryStyle"/><div class="co-name">TryStyle</div></div>
+      <div class="co-type">trystyle.fashion</div>
+      <table class="vmini">
+        <tr><td>Technology</td><td>AI image generation</td></tr>
+        <tr><td>Integration</td><td>Consumer app (Android)</td></tr>
+        <tr><td>Runs on</td><td>TryStyle's own app only.</td></tr>
+        <tr><td>Target</td><td>Individual shoppers</td></tr>
+        <tr><td>Trial</td><td>&mdash;</td></tr>
+        <tr><td>Pricing</td><td>Not published</td></tr>
+      </table>
+      <div class="co-body" style="margin-top:12px;">Style exploration without physical fitting</div>
+      <div class="co-src">Source: <a href="https://trystyle.fashion" target="_blank" rel="noopener">trystyle.fashion</a></div>
+    </div>
+  </div>
+
+  <div class="sec-header"><div class="sec-title">Functionality Comparison</div></div>
+  <p class="sec-sub">All 12 own-site vendors &mdash; the set a brand or marketplace can actually select and integrate.</p>
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <tr><th>Vendor</th><th>Technology</th><th>Integration</th><th>Pricing</th><th>Target Client</th></tr>
+      
+      <tr>
+        <td class="co-n">FASHN.AI</td>
+        <td>AI image-to-image</td>
+        <td>REST API</td>
+        <td>$0.075/try &middot; plans $19&ndash;99/mo</td>
+        <td>Self-serve &mdash; any retailer</td>
+      </tr>
+      <tr>
+        <td class="co-n">Kivisense</td>
+        <td>AR + AI overlay</td>
+        <td>Web &amp; app SDK &mdash; also listed on the Shopify App Store at the same price</td>
+        <td>$888/mo flat &middot; $10,000/yr</td>
+        <td>Self-serve &mdash; any retailer</td>
+      </tr>
+      <tr>
+        <td class="co-n">WANNA &mdash; Enterprise, quote only</td>
+        <td>3D / AR</td>
+        <td>B2B platform</td>
+        <td>Not published</td>
+        <td>Luxury &mdash; Farfetch, Dolce &amp; Gabbana, Valentino, Balenciaga, IWC, Diesel, Tod's</td>
+      </tr>
+      <tr>
+        <td class="co-n">DRESSX &mdash; AI Suite &mdash; Enterprise, quote only</td>
+        <td>AI / AR</td>
+        <td>B2B partnership</td>
+        <td>Not published</td>
+        <td>4,000+ luxury retailers and brands</td>
+      </tr>
+      <tr>
+        <td class="co-n">Amazon Virtual Try-On API</td>
+        <td>Generative AI (photorealistic composite)</td>
+        <td>API &mdash; Amazon Bedrock</td>
+        <td>Usage-based &mdash; no published per-image rate</td>
+        <td>Third-party retailers &amp; developers</td>
+      </tr>
+      <tr>
+        <td class="co-n">FittingBox</td>
+        <td>3D rendering + AR &mdash; “FBX CoreAI”</td>
+        <td>B2B &mdash; web, ecommerce &amp; in-store; Shopify app available</td>
+        <td>Shopify app: $59&ndash;199/mo &middot; direct enterprise: not published</td>
+        <td>Eyewear &mdash; De Rigo, JINS, Fielmann, Afflelou, Pair Eyewear, Salvatore Ferragamo, Lacoste, Specsavers, Zenni</td>
+      </tr>
+      <tr>
+        <td class="co-n">GenLook</td>
+        <td>AI image generation</td>
+        <td>Shopify theme block</td>
+        <td>Free (10/mo) &middot; $19.99&ndash;99/mo</td>
+        <td>Shopify merchants</td>
+      </tr>
+      <tr>
+        <td class="co-n">bitStudio</td>
+        <td>AI (“purpose-built”, 15-second render)</td>
+        <td>Shopify app or JavaScript</td>
+        <td>Free (50/day, Shopify only) &middot; $299/mo &middot; custom tier above that</td>
+        <td>Shopify merchants &amp; ecommerce stores</td>
+      </tr>
+      <tr>
+        <td class="co-n">A&amp;A Virtual Try-On</td>
+        <td>AI image generation, no 3D modelling</td>
+        <td>Shopify app</td>
+        <td>$49.99&ndash;249.99/mo</td>
+        <td>Shopify merchants</td>
+      </tr>
+      <tr>
+        <td class="co-n">Nivera AI Virtual Try On</td>
+        <td>AI-powered visualization</td>
+        <td>Shopify app, one-click install</td>
+        <td>Free &mdash; no cap disclosed</td>
+        <td>Shopify merchants</td>
+      </tr>
+      <tr>
+        <td class="co-n">Try It On &mdash; AI Outfit</td>
+        <td>AI visualization, no server storage</td>
+        <td>Shopify app</td>
+        <td>Free (5 credits) &middot; $25&ndash;50/mo</td>
+        <td>Shopify merchants</td>
+      </tr>
+      <tr>
+        <td class="co-n">TryPoint</td>
+        <td>AI virtual try-on, powered by Google</td>
+        <td>Shopify app, API access on top plan</td>
+        <td>Pay-as-you-go $0.29/try &middot; Free (20/mo) &middot; $19.99&ndash;99.99/mo</td>
+        <td>Shopify merchants</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="sec-header"><div class="sec-title">Pricing Comparison &amp; Recommendation</div></div>
+  <div class="note"><strong>9 of the 12 own-site vendors publish numeric pricing.</strong> WANNA, DRESSX and Amazon's Bedrock API do not &mdash; each requires a direct quote.</div>
+
+  <div class="matrix-wrap" style="margin-top:18px;">
+    <table class="matrix">
+      <tr><th>Vendor</th><th>Entry-level plan</th><th>Highest published plan</th><th>Effective cost per try at scale</th></tr>
+      
+      <tr>
+        <td class="co-n">FASHN.AI</td>
+        <td>$19/mo (200 tries)</td>
+        <td>$99/mo (1,500) + $0.075/try over</td>
+        <td>$0.075/try</td>
+      </tr>
+      <tr>
+        <td class="co-n">Kivisense</td>
+        <td>$888/mo (flat, unlimited)</td>
+        <td>$888/mo (flat, unlimited)</td>
+        <td>approaches $0 at volume</td>
+      </tr>
+      <tr>
+        <td class="co-n">WANNA</td>
+        <td>Quote required</td>
+        <td>Quote required</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="co-n">DRESSX</td>
+        <td>Quote required</td>
+        <td>Quote required</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="co-n">Amazon Bedrock</td>
+        <td>Quote required (usage-based)</td>
+        <td>Quote required (usage-based)</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="co-n">FittingBox</td>
+        <td>$59/mo (10 products, 500 users)</td>
+        <td>$199/mo (Gold)</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="co-n">GenLook</td>
+        <td>$19.99/mo (100 tries)</td>
+        <td>$99/mo (1,000) + $0.10/try over</td>
+        <td>$0.10/try</td>
+      </tr>
+      <tr>
+        <td class="co-n">bitStudio</td>
+        <td>Free (50/day, Shopify)</td>
+        <td>$299/mo (3,000) + $0.10/try over</td>
+        <td>$0.10/try</td>
+      </tr>
+      <tr>
+        <td class="co-n">A&amp;A Virtual Try-On</td>
+        <td>$49.99/mo (250 tries)</td>
+        <td>$249.99/mo (3,750) + $0.06/try over</td>
+        <td>$0.06/try</td>
+      </tr>
+      <tr>
+        <td class="co-n">Nivera</td>
+        <td>Free</td>
+        <td>Free (no paid tier published)</td>
+        <td>&mdash;</td>
+      </tr>
+      <tr>
+        <td class="co-n">Try It On</td>
+        <td>$25/mo (150 tries)</td>
+        <td>$50/mo (400) + $0.06/try over</td>
+        <td>$0.06/try</td>
+      </tr>
+      <tr>
+        <td class="co-n">TryPoint</td>
+        <td>$0.29/try, no monthly fee</td>
+        <td>$99.99/mo (1,000) + $0.10/try over</td>
+        <td>$0.10/try</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Lowest cost to start:</strong> TryPoint's pay-as-you-go tier has no monthly fee at all ($0.29/try) &mdash; the only vendor with a genuinely zero-commitment entry point. For a guaranteed free monthly allowance, bitStudio's Shopify-only free plan covers up to 1,500 tries/month (50/day) at $0 &mdash; the largest explicitly published free allowance of any vendor.
+  </div>
+  <div class="note">
+    <strong>Lowest cost at scale (12,000+ tries/month):</strong> A&amp;A Virtual Try-On's Premium plan ($249.99/mo, 3,750 tries, $0.06/try overage) costs $746.19 at 12,020 tries/month &mdash; cheaper than FASHN.AI and Kivisense ($888.00 each at that volume). Calculation: $249.99&nbsp;+&nbsp;(12,020&nbsp;&minus;&nbsp;3,750)&nbsp;&times;&nbsp;$0.06&nbsp;=&nbsp;$746.19.
+  </div>
+
+</main>
+
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="https://trendsonfire.com/olgabressers/" class="btn" target="_blank" rel="noopener">Contact &rarr;</a>
+  </div>
+</section>
+
+</body>
+</html>
