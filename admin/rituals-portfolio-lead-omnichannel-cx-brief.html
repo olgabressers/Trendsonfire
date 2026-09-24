@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Rituals — Portfolio Lead, Omnichannel Customer Experience Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#1a1919;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#b58c6e;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4.2vw,48px);font-weight:400;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px;}
+    .art-hero h1 em{color:#b58c6e;font-style:italic;}
+    .art-hero p{font-size:16px;color:rgba(255,255,255,.87);line-height:1.6;max-width:820px;}
+    .art-hero .meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#b58c6e;text-decoration:none;border:1px solid rgba(181,140,110,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(181,140,110,.1);}
+
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:600;line-height:1;color:#1a1919;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#8a6a50;font-weight:600;}
+
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:24px 22px 20px;margin-bottom:24px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#8a6a50;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#1a1919;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#b58c6e;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(181,140,110,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#b58c6e;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:14px;color:#ffffff;padding:8px 0 8px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#b58c6e;position:absolute;left:0;font-weight:700;}
+
+    /* SECTION HEADER — bumped per chapter-title rule */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid #1a1919;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8a6a50;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.8vw,32px);font-weight:600;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #1a1919;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#8a6a50;}
+
+    /* PRIORITY / DATA TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+    .pri-table th{background:#1a1919;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#8a6a50;}
+
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:600;line-height:1;color:#8a6a50;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:9px;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#1a1919;border-left:3px solid #b58c6e;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#b58c6e;margin-bottom:6px;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8a6a50;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#17151a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
+    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px solid #e2dfd9;font-size:13px;color:#17151a;line-height:1.5;}
+    .kpi-bench strong{color:#8a6a50;font-weight:800;}
+
+    /* BRAND / COMPETITOR CARDS */
+    .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:700px){.brands-grid{grid-template-columns:1fr;}}
+    .brand-card{padding:18px 18px;border:1px solid #e2dfd9;background:white;}
+    .brand-card.in-scope{border-color:#1a1919;border-width:2px;background:#faf9f7;}
+    .brand-name{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:6px;}
+    .brand-desc{font-size:13.5px;color:#1f1f1f;line-height:1.55;}
+
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#1a1919;color:#b58c6e;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-company{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#1a1919;color:#b58c6e;}
+    .org-name{font-size:15.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13.5px;color:#0a0f1a;line-height:1.4;margin-top:2px;}
+    .org-entity{font-size:13px;color:#4b5563;font-weight:600;margin-top:3px;line-height:1.4;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
+    .org-conf a{color:#8a6a50;font-weight:600;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.rituals.com" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4456198455/" target="_blank" rel="noopener">Job posting &rarr;</a>
+  </div>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Rituals</div>
+    <div class="eyebrow">Interview Brief — Portfolio Lead, Omnichannel Customer Experience (CX) · Digital</div>
+    <h1>Rituals: <em>&euro;2.43 billion in revenue, 1,500 boutiques mid-refit, one Digital organization asking for a shared view</em></h1>
+    <p>Founded on Amsterdam's Kalverstraat in 2000 by Raymond Cloosterman, Rituals passed &euro;2.43 billion in net revenue in 2025, up 16% year-on-year, across nearly 1,500 boutiques and more than 4,500 department-store and perfumery points of sale in 33 countries. It became a certified B Corporation in 2023 and, in June 2026, was named among the first nine companies worldwide certified under B Lab's tightened new standards. The Digital organization spans web, app, point of sale, loyalty, customer service, content, customer relationship management, data, platforms, architecture and delivery — and is mid-way through a &euro;40 million, 30-working-day refit of all 1,500 boutiques. This role is the one asked to give that organization one shared view of its priorities.</p>
+    <div class="meta">
+      <span>Sources: rituals.com newsroom, careers.rituals.com, Companies House (UK), B Lab / Pioneers Post, TheIndustry.beauty</span>
+      <span>Updated 24 September 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #b58c6e;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#8a6a50;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6a50;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Founded in Amsterdam in 2000 by Raymond Cloosterman, a former Unilever executive. Privately held and founder-controlled. Passed &euro;2.43 billion in net revenue in 2025 (+16% year-on-year), with an EBITDA margin of roughly 22.5%, across nearly 1,500 boutiques and 4,500+ wholesale points of sale in 33 countries, with 12,000+ employees worldwide. Certified B Corporation since 2023; recertified in June 2026 as one of the first nine companies globally under B Lab's stricter new standards.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6a50;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Portfolio Lead, Omnichannel Customer Experience (CX) — based at the Central Head Office (CHO) on Herengracht, Amsterdam, 32&ndash;40 hours a week, inside the Digital organization. Owns portfolio governance, decision rhythm and intake standards across a Digital function spanning web, app, point of sale, loyalty, customer service, content, customer relationship management, data, platforms, architecture and delivery, working in a matrix with Trading, Marketing &amp; Customer Relationship Management, Content &amp; Design, Product, Architecture, Customer Relations, Insights, Marketplaces, Data and the separate Enterprise Portfolio function.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6a50;margin-bottom:4px;">Company context</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Rituals is mid-way through a &euro;40 million refit of all roughly 1,500 boutiques across 30 countries, completed in 30 working days between 3 August and 25 September 2026, at a pace of more than 40 boutiques a day using around 100 teams — with a matching Asia and Middle East refit planned for the first quarter of 2027. Online sales already exceed 20% of revenue.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6a50;margin-bottom:4px;">Key opportunity</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">A Digital organization built from ten-plus disciplines and a growing list of open product and portfolio roles is being asked, in its own words, to bring "structure without creating bureaucracy." This role is the one built to answer that, at the exact moment the company's largest physical operation in years is running through the same organization.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#f6f1e6;border:1px solid #e3d5b8;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#1a1919;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Company, ownership &amp; market</a><br><span style="color:#555;font-size:13px;">Founding story, ownership, the growth timeline, B Corporation certification, and how Rituals compares to L'Occitane, Douglas and Lush.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">One Digital organization without a single portfolio view &middot; a live company-wide operational stress test &middot; a growing team with no named portfolio owner.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-digital" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The Digital organization at Rituals</a><br><span style="color:#555;font-size:13px;">What Digital covers, its matrix stakeholders, today's open roles inside it, and the boutique refit running through it right now.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Four accountability areas mapped to Olga's experience — plus a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Founder, Chief Operating Officer, Chief Financial Officer and Chief Human Resources Officer — verified names &amp; sources.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Key Performance Indicator (KPI) framework</a><br><span style="color:#555;font-size:13px;">Four layers: portfolio governance &amp; predictability, Digital ecosystem coordination, omnichannel customer experience &amp; business alignment, team &amp; structural readiness.</span></li>
+    </ol>
+  </div>
+
+</div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="s-card">
+      <div class="s-lbl">Net Revenue (2025)</div>
+      <div class="s-num">&euro;2.43B</div>
+      <div class="s-delta">+16% year-on-year</div>
+      <div class="s-src"><a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">EBITDA Margin (2025)</div>
+      <div class="s-num">22.5%</div>
+      <div class="s-src">&euro;545 million EBITDA. <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Boutiques Worldwide</div>
+      <div class="s-num">1,500</div>
+      <div class="s-src">Across 33 countries. <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Employees</div>
+      <div class="s-num">12,000+</div>
+      <div class="s-src">Worldwide, 2025. <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Online Share of Revenue</div>
+      <div class="s-num">20%+</div>
+      <div class="s-src">Of 2025 net revenue. <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">Founded</div>
+      <div class="s-num">2000</div>
+      <div class="s-src">Kalverstraat, Amsterdam. <a href="https://careers.rituals.com/en-NL/work-with-heart-and-soul/timeline/" target="_blank" rel="noopener">careers.rituals.com</a></div>
+    </div>
+  </div>
+
+  <!-- COMPANY, OWNERSHIP & MARKET -->
+  <div id="sec-company" class="sec-header" style="margin-top:0;">
+    <div class="sec-num">01</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Financials &amp; Market</div>
+      <div class="sec-title">Company, ownership &amp; the beauty and wellbeing retail market</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Founding story</div>
+    <div class="chart-sub">Thirteen years at Unilever, then a basement on an Amsterdam canal</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.65;margin:0;">Raymond Cloosterman spent thirteen years at Unilever before taking time off to travel and study customs and daily rituals across Asia. In 2000, at 36, he opened the first Rituals store on Amsterdam's Kalverstraat, working with a small team that included an anthropologist and perfumers from Paris to turn everyday products — shower gels, shaving foams, home fragrance — into a wellbeing experience rather than a commodity purchase.</p>
+    <div class="chart-src">Sources: <a href="https://harpersbazaar.my/beauty/interview-with-raymond-cloosterman-founder-of-rituals/" target="_blank" rel="noopener">Harper's Bazaar Malaysia, founder interview</a> &middot; <a href="https://careers.rituals.com/en-NL/work-with-heart-and-soul/timeline/" target="_blank" rel="noopener">careers.rituals.com, company timeline</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Ownership &amp; structure</div>
+    <div class="chart-sub">Privately held, founder-controlled</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.65;margin:0;">Raymond Cloosterman is named as the person with significant influence or control of Rituals Cosmetics UK Limited, one of the group's registered entities — first notified 6 April 2016 and reverified 12 January 2026. No public record of an institutional or private-equity investor taking a stake in the wider Rituals group was found in the sources checked for this brief; Rituals is not listed on any stock exchange.</p>
+    <div class="chart-src">Source: <a href="https://find-and-update.company-information.service.gov.uk/company/06439107/persons-with-significant-control" target="_blank" rel="noopener">Companies House (UK), persons with significant control</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Growth timeline</div>
+    <div class="chart-sub">From one Amsterdam store to 33 countries in 25 years</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Year</th><th>Milestone</th></tr></thead>
+        <tbody>
+          <tr><td>2000</td><td>First store opens on Kalverstraat, Amsterdam</td></tr>
+          <tr><td>2005</td><td>Expands into Belgium, Spain, Portugal, the United Kingdom and Germany; enters travel retail</td></tr>
+          <tr><td>2009</td><td>First Rituals Body Spa opens in the Netherlands</td></tr>
+          <tr><td>2015</td><td>First Paris shop opens; passes 500 stores across 20+ countries</td></tr>
+          <tr><td>2016</td><td>First store opens in Dubai's Mall of the Emirates</td></tr>
+          <tr><td>2020</td><td>House of Rituals flagship (1,700 square metres, four floors) opens in Amsterdam</td></tr>
+          <tr><td>2021</td><td>Expands into Poland and Finland; opens its 1,000th store, in Milan</td></tr>
+          <tr><td>2022</td><td>Opens stores in Hainan, China</td></tr>
+          <tr><td>2023</td><td>Passes 10,000 employees across 33 countries and 1,100+ stores; certified B Corporation for the first time</td></tr>
+          <tr><td>2024</td><td>First store opens in Japan; 130 store openings and 60 relocations completed</td></tr>
+          <tr><td>2025</td><td>25th anniversary: &euro;2.43 billion net revenue, 12,000+ employees, 1,400+ stores</td></tr>
+          <tr><td>2026</td><td>Recertified as B Corporation under B Lab's stricter new standards; &euro;40 million refit of all boutiques (3 August &ndash; 25 September)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: <a href="https://careers.rituals.com/en-NL/work-with-heart-and-soul/timeline/" target="_blank" rel="noopener">careers.rituals.com, company timeline</a> &middot; <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">B Corporation certification</div>
+    <div class="chart-sub">Certified twice — once under the original standard, once under B Lab's tightened 2026 standard</div>
+    <p style="font-size:14.5px;color:#0a0f1a;line-height:1.65;margin:0;">Rituals first achieved B Corporation certification in 2023. In June 2026 it was named among the first nine companies worldwide — alongside Ricola, Lumene, Bolsius and five others — certified under B Lab's new standards, introduced in April 2025, which require minimum performance across seven social and environmental criteria (including climate action, human rights and fair work) rather than the previous points-based system that allowed strong performance in one area to offset weak performance in another.</p>
+    <div class="chart-src">Source: <a href="https://www.pioneerspost.com/news-views/20260617/ricola-and-rituals-among-first-b-corps-certified-under-new-standards" target="_blank" rel="noopener">Pioneers Post, 17 June 2026</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Competitive landscape</div>
+    <div class="chart-sub">Three different companies, three different accounting bases — shown separately, not combined</div>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <div class="brand-name">L'Occitane Group</div>
+        <div class="brand-desc">&euro;2.8 billion net sales, financial year ended March 2025 (+11.7% at constant rates). 4,910 points of sale in 90 countries. Taken private in 2024; roughly 95% owned by chairman and chief executive Reinold Geiger and concert shareholders.</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">Douglas Group</div>
+        <div class="brand-desc">&euro;4.6 billion revenue, financial year 2024/25 (+2.8%), &euro;756.5 million EBITDA. Roughly 1,850 stores. Listed on the Frankfurt Stock Exchange since its March 2024 initial public offering.</div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-name">Lush</div>
+        <div class="brand-desc">&pound;736.2 million group turnover, year ended June 2025 (+9.4%; +8% like-for-like, with digital growing 13%). Privately held, founder-controlled by Mark Constantine.</div>
+      </div>
+    </div>
+    <div class="src-note">These three figures use different accounting periods, currencies and scopes (L'Occitane's own net sales, Douglas's group revenue, Lush's group turnover) and are not directly comparable to each other or to Rituals' own &euro;2.43 billion net revenue figure above — they are shown separately to size the competitive set, not to rank it.</div>
+    <div class="chart-src">Sources: <a href="https://group.loccitane.com/sites/default/files/2025-07/Group%20LOCCITANE%20-%20Financial%20Fact%20Sheet%20FY%202025%20Annual%20Results_1.pdf" target="_blank" rel="noopener">L'OCCITANE Group, Financial Fact Sheet FY2025</a> &middot; <a href="https://douglas.group/en/investors/publications" target="_blank" rel="noopener">Douglas Group, investor publications</a> &middot; <a href="https://weare.lush.com/lush-life/lush-audited-accounts-year-ending-june-2025/" target="_blank" rel="noopener">Lush, audited accounts to June 2025</a></div>
+  </div>
+
+  <!-- 3 STRUCTURAL CHALLENGES -->
+  <div id="sec-challenges" class="bk-wrap">
+    <div class="bk-eyebrow">Role Analysis</div>
+    <div class="bk-headline">3 structural challenges this role is built to solve</div>
+    <div class="bk-grid">
+      <div class="bk-card">
+        <div class="bk-num">01</div>
+        <div class="bk-card-title">One Digital organization, no single portfolio view</div>
+        <ul>
+          <li>Digital spans web, app, point of sale, loyalty, customer service, content, customer relationship management, data, platforms, architecture and delivery, in a matrix with nine further business functions</li>
+          <li>The role's own brief asks for "structure without creating bureaucracy" — meaning that shared structure doesn't exist in one form yet</li>
+          <li>Intake, prioritization and roadmap decisions today sit with individual teams rather than one governance rhythm</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">02</div>
+        <div class="bk-card-title">A live, company-wide operational stress test</div>
+        <ul>
+          <li>&euro;40 million, 1,500 boutiques, 30 countries, refitted in 30 working days between 3 August and 25 September 2026 — more than 40 boutiques a day, around 100 teams</li>
+          <li>A matching Asia and Middle East refit is scheduled for the first quarter of 2027, with a new "Beauty World" store concept running through both</li>
+        </ul>
+      </div>
+      <div class="bk-card">
+        <div class="bk-num">03</div>
+        <div class="bk-card-title">A growing Digital team with no confirmed portfolio owner</div>
+        <ul>
+          <li>Multiple live openings sit inside Digital today — Director Digital Product, Head of Product &ndash; Omnichannel, Senior Product Owner &ndash; Omnichannel Technology, Digital New Business &amp; Growth Lead — alongside this role</li>
+          <li>The most recently identified Chief Digital Officer has since moved to another company; no current named successor could be independently verified in public sources at the time of writing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE DIGITAL ORGANIZATION -->
+  <div id="sec-digital" class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Organization</div>
+      <div class="sec-title">The Digital organization at Rituals</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">What Digital covers</div>
+    <div class="chart-sub">Ten disciplines under one function, as described in the role's own posting</div>
+    <div class="brands-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Web</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">App</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Point of sale</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Loyalty</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Customer service</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Content</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Customer relationship management</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Data</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Platforms &amp; architecture</div></div>
+      <div class="brand-card"><div class="brand-name" style="font-size:14px;">Delivery</div></div>
+    </div>
+    <div class="chart-src">Source: Rituals job posting, LinkedIn &amp; <a href="https://www.simplyhired.nl/job/UCJ7BlZtyVoZSGdBtCdx7DQNrqdS207hdYM7Kh_vbA7-QEoMKifcEw" target="_blank" rel="noopener">SimplyHired</a> (matching listing).</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The matrix this role sits inside</div>
+    <div class="chart-sub">Nine business functions, plus the separate Enterprise Portfolio function this role aligns with directly</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Function</th><th>Where it connects to this role</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Trading</strong></td><td>Commercial priorities feeding into the shared portfolio</td></tr>
+          <tr><td><strong>Marketing &amp; Customer Relationship Management</strong></td><td>Campaign and loyalty initiatives competing for the same Digital capacity</td></tr>
+          <tr><td><strong>Content &amp; Design</strong></td><td>Creative delivery dependencies across web, app and in-store digital</td></tr>
+          <tr><td><strong>Product</strong></td><td>Roadmap ownership for individual Digital products and platforms</td></tr>
+          <tr><td><strong>Architecture</strong></td><td>Technical dependencies and sequencing across initiatives</td></tr>
+          <tr><td><strong>Customer Relations</strong></td><td>Service-experience priorities and escalations</td></tr>
+          <tr><td><strong>Insights</strong></td><td>Data and analytics demand competing with delivery capacity</td></tr>
+          <tr><td><strong>Marketplaces</strong></td><td>Third-party channel priorities inside the same portfolio</td></tr>
+          <tr><td><strong>Data</strong></td><td>Platform and data-infrastructure dependencies across initiatives</td></tr>
+          <tr><td><strong>Enterprise Portfolio function</strong></td><td>The enterprise-level priorities this role must keep Digital aligned to</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: Rituals job posting, LinkedIn &amp; <a href="https://www.simplyhired.nl/job/UCJ7BlZtyVoZSGdBtCdx7DQNrqdS207hdYM7Kh_vbA7-QEoMKifcEw" target="_blank" rel="noopener">SimplyHired</a> (matching listing).</div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Open roles inside Digital today</div>
+    <div class="chart-sub">The scale and shape of the organization this role would coordinate — not an org chart</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Role</th><th>Scope</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Director Digital Product</strong></td><td>Defines the global digital product strategy for rituals.com and the Rituals app</td></tr>
+          <tr><td><strong>Head of Product &ndash; Omnichannel</strong></td><td>Leads a team of 6 employees; owns order management and in-store logistics, point of sale and checkout, payment and compliance, and carrier and delivery management, based at the Central Head Office (CHO), Amsterdam</td></tr>
+          <tr><td><strong>Senior Product Owner &ndash; Omnichannel Technology</strong></td><td>Product ownership within the omnichannel technology stack</td></tr>
+          <tr><td><strong>Digital New Business &amp; Growth Lead</strong></td><td>New digital revenue channels and growth initiatives</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Sources: <a href="https://jobs.smartrecruiters.com/Rituals1/744000081253895-head-of-product-omnichannel" target="_blank" rel="noopener">Head of Product &ndash; Omnichannel, SmartRecruiters</a> &middot; <a href="https://careers.rituals.com/en-NL/jobs/director-digital-product/R25585/" target="_blank" rel="noopener">Director Digital Product, careers.rituals.com</a> &middot; <a href="https://careers.rituals.com/en-NL/jobs/senior-product-owner-omnichannel-technology/5932f42a-b403-4f4c-aaf1-f4c786200d21/" target="_blank" rel="noopener">Senior Product Owner &ndash; Omnichannel Technology, careers.rituals.com</a> &middot; <a href="https://careers.rituals.com/en-NL/jobs/digital-new-business-and-growth-lead/R25588/" target="_blank" rel="noopener">Digital New Business &amp; Growth Lead, careers.rituals.com</a></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">The company-wide moment this role starts inside</div>
+    <div class="chart-sub">A &euro;40 million boutique refit, running now</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead><tr><th>Measure</th><th>Figure</th></tr></thead>
+        <tbody>
+          <tr><td>Investment</td><td>&euro;40 million</td></tr>
+          <tr><td>Boutiques refitted</td><td>Nearly 1,500, across 30 countries</td></tr>
+          <tr><td>Timeframe</td><td>30 working days (3 August &ndash; 25 September 2026)</td></tr>
+          <tr><td>Pace</td><td>40+ boutiques a day, around 100 teams</td></tr>
+          <tr><td>Concept</td><td>New "Beauty World" central area combining skincare, make-up, hair care and fragrance; expanded Private Home Collection, Homme range, Hair Care line and Luxury Travel Collection</td></tr>
+          <tr><td>Next phase</td><td>Matching refit across Asia and the Middle East, first quarter of 2027</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chart-src">Source: <a href="https://theindustry.beauty/rituals-invests-store-refit-2026/" target="_blank" rel="noopener">TheIndustry.beauty, 13 July 2026</a>, citing Gregory Bruyer, Chief Operating Officer.</div>
+  </div>
+
+  <!-- ROLE SCOPE -->
+  <div id="sec-scope" class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Role scope</div>
+      <div class="sec-title">Portfolio Lead, Omnichannel Customer Experience &mdash; four accountability areas &amp; Olga's experience</div>
+    </div>
+  </div>
+
+  <div class="src-note" style="margin-bottom:4px;">The posting asks for strong experience in portfolio management, product operations, lean portfolio management or program management inside a digital, retail or e-commerce environment, plus a working understanding of Product Operating Models, agile ways of working, portfolio governance, Program Increment (PI) Planning, roadmap management and value-based prioritization. Olga's operations and digital-transformation career runs Richemont (2019&ndash;2025), adidas (2016&ndash;2018), Nike (2010&ndash;2016) and International Business Machines (2006&ndash;2010) &mdash; 20+ years &mdash; built on a postgraduate qualification in logistics and supply chain management.</div>
+
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="scope-n">01</div>
+      <div class="scope-label">Portfolio Governance &amp; Decision Rhythm</div>
+      <div class="scope-desc">Own the governance process and decision rhythm across Digital &mdash; the sync, refinement, Program Increment (PI) Planning and roadmap discussions the role's own brief names directly.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Governance cadence</span>
+        <span class="scope-kpi">Decision rhythm</span>
+        <span class="scope-kpi">Executive alignment</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: executed 100+ projects across people, technology and process improvement, influencing every level of a matrix organisation up to executive level, reporting to the Europe Chief Executive Officer and the Group's Global Chief Digital Officer.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">02</div>
+      <div class="scope-label">Intake, Prioritization &amp; Roadmap Transparency</div>
+      <div class="scope-desc">Set standards for intake and prioritization, and build transparency on the roadmap, dependencies, risks and capacity constraints across every Digital discipline.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Intake standards</span>
+        <span class="scope-kpi">Roadmap transparency</span>
+        <span class="scope-kpi">Capacity visibility</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>Richemont: built the reporting &amp; analytics team and the omnichannel analytics cockpit used by operational and executive stakeholders. International Business Machines: program management office and process-transformation work on SAP Advanced Planner and Optimizer implementations for the Dutch Ministry of Transport.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">03</div>
+      <div class="scope-label">Cross-Functional Alignment Across Digital, Technology &amp; Data</div>
+      <div class="scope-desc">Facilitate alignment between Digital, Technology &amp; Data, and business and product teams &mdash; the connective work the role's own brief describes as its core purpose.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Cross-functional alignment</span>
+        <span class="scope-kpi">Stakeholder trust</span>
+        <span class="scope-kpi">Constructive challenge</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>adidas: developed the Digital Partners Commerce strategy and operational execution framework across owned channels, retailers, pure players and partners. Led the digital transformation of Intersport, Europe's largest sporting-goods retailer &mdash; omnichannel strategy, digital tools, in-store technology and content.</div>
+    </div>
+    <div class="scope-card">
+      <div class="scope-n">04</div>
+      <div class="scope-label">Translating Strategy Into Executable Priorities</div>
+      <div class="scope-desc">Turn Objectives, Goals, Strategies and Measures (OGSM) and Objectives and Key Results (OKRs) into executable priorities &mdash; the specific translation named as essential in the posting.</div>
+      <div class="scope-kpis">
+        <span class="scope-kpi">Strategy translation</span>
+        <span class="scope-kpi">Value-based prioritization</span>
+        <span class="scope-kpi">Outcome focus</span>
+      </div>
+      <div class="scope-exp"><strong>Olga's experience</strong>adidas: drove the Europe omnichannel vision and strategy as part of the Europe Supply Chain Management leadership team. Nike: certified in the CADENCE project-management methodology; delivered the SAP Retail implementation, the London Olympics Fuelband launch and retail localization in Greece and Turkey, on budget and on schedule.</div>
+    </div>
+  </div>
+
+  <!-- PRIORITY STACK -->
+  <div style="margin-top:22px;">
+    <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a6a50;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Priority stack — 5-step approach</div>
+    <div class="pri-wrap">
+      <table class="pri-table">
+        <thead>
+          <tr><th style="width:36px;">#</th><th>Action</th><th>Why first</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pri-num">1</span></td>
+            <td><strong>Map current state</strong> &mdash; audit today's intake-to-roadmap flow, Program Increment (PI) Planning cadence and portfolio visibility gaps across every Digital discipline</td>
+            <td>No shared standard can be designed before knowing where each part of Digital stands today</td>
+            <td>Portfolio baseline</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">2</span></td>
+            <td><strong>Design one shared governance framework</strong> &mdash; common intake, prioritization and roadmap standards, aligned to the Enterprise Portfolio function</td>
+            <td>The role's own brief asks for structure "without creating bureaucracy" &mdash; that has to be designed once, deliberately, not assembled piecemeal</td>
+            <td>Unified governance framework</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">3</span></td>
+            <td><strong>Pilot inside one Digital discipline</strong> &mdash; prove the framework against real work before it spans all ten disciplines</td>
+            <td>Evidence beats a framework handed down without a test</td>
+            <td>Pilot results vs. baseline</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">4</span></td>
+            <td><strong>Roll out across the full Digital organization</strong> &mdash; web, app, point of sale, loyalty, customer service, content, customer relationship management, data, platforms, architecture and delivery, aligned with the nine matrix functions</td>
+            <td>Turns a proven pilot into one enterprise-aligned operating model</td>
+            <td>Full Digital rollout</td>
+          </tr>
+          <tr>
+            <td><span class="pri-num">5</span></td>
+            <td><strong>Embed the cadence through the live moment</strong> &mdash; carry the new governance rhythm through the 1,500-boutique refit already running and its Asia and Middle East follow-up in the first quarter of 2027</td>
+            <td>A governance model proves itself under real operational load, not in a quiet quarter</td>
+            <td>Standing decision rhythm</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div id="sec-leadership" class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">Stakeholders</div>
+      <div class="sec-title">Leadership</div>
+    </div>
+  </div>
+
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">RC</div>
+        <div>
+          <div class="org-company">Rituals</div>
+          <div class="org-name">Raymond Cloosterman</div><div class="org-title">Founder &amp; Chief Executive Officer</div><div class="org-entity">Person with significant control, notified 6 April 2016</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://nl.linkedin.com/in/raymond-cloosterman-b7bb99150" target="_blank" rel="noopener">linkedin.com/in/raymond-cloosterman</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">GB</div>
+        <div>
+          <div class="org-company">Rituals</div>
+          <div class="org-name">Gregory Bruyer</div><div class="org-title">Global Chief Operating Officer</div><div class="org-entity">Since September 2022; prior Sephora, Alshaya Group, Chalhoub Group</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/gregory-bruyer-b006684/" target="_blank" rel="noopener">linkedin.com/in/gregory-bruyer</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">JV</div>
+        <div>
+          <div class="org-company">Rituals</div>
+          <div class="org-name">Jenny de Vries</div><div class="org-title">Chief Financial Officer</div><div class="org-entity">Since January 2018; prior Basic-Fit, Royal Imtech, Stork, ABN AMRO</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://cfo.nl/artikel/jenny-de-vries-nieuwe-cfo-rituals" target="_blank" rel="noopener">cfo.nl</a></div>
+    </div>
+    <div class="org-card">
+      <div class="org-top">
+        <div class="org-initials">AJ</div>
+        <div>
+          <div class="org-company">Rituals</div>
+          <div class="org-name">Anne Jaakke</div><div class="org-title">Chief Human Resources Officer &amp; Board Member</div><div class="org-entity">&nbsp;</div>
+        </div>
+      </div>
+      <div class="org-conf"><a href="https://www.linkedin.com/in/annejaakke/" target="_blank" rel="noopener">linkedin.com/in/annejaakke</a></div>
+    </div>
+  </div>
+  <div class="src-note">Titles and tenure: each person's own LinkedIn profile or the cited source, checked 24 September 2026. The most recently identified Chief Digital Officer, Martijn van der Zee, has since moved to MULTIFIX Group; no current named successor for that leadership layer could be independently verified in public sources at the time of writing.</div>
+
+  <!-- KPIS -->
+  <div id="sec-kpi" class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-label">
+      <div class="sec-eyebrow">KPIs</div>
+      <div class="sec-title">Key Performance Indicator (KPI) framework &mdash; four layers</div>
+    </div>
+  </div>
+
+  <div class="kpi-groups">
+    <div class="kpi-group">
+      <div class="kpi-group-label">Portfolio governance &amp; predictability</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Program Increment (PI) objective achievement rate</div>
+          <div class="kpi-desc">Share of committed Program Increment objectives Digital actually delivers, once one shared portfolio cadence exists.</div>
+          <div class="kpi-bench"><strong>Benchmark:</strong> the Scaled Agile Framework (SAFe) community treats 80%+ predictability as the mature target; newly formed Agile Release Trains typically start in the 40&ndash;60% range and improve to 80%+ within three to four Program Increments.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">On-time, on-budget delivery rate</div>
+          <div class="kpi-desc">Share of portfolio initiatives landing inside their committed schedule and budget.</div>
+          <div class="kpi-bench"><strong>Benchmark:</strong> Project Management Institute Pulse of the Profession research found only 34% of organizations deliver on time and within budget; mature portfolio management offices benchmark 80%+ on-time delivery.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Delivery commitment reliability</div>
+          <div class="kpi-desc">Consistency of what Digital commits to each cycle against what it actually delivers.</div>
+          <div class="kpi-bench"><strong>Benchmark:</strong> mature, stabilized teams sustain 80&ndash;90% commitment reliability, with a coefficient of variation in delivered output of 0.20&ndash;0.35 or lower.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Portfolio dependency &amp; risk transparency</div>
+          <div class="kpi-desc">How much of the active portfolio's dependencies, risks and capacity constraints are visible in one place rather than scattered by team.</div>
+          <div class="kpi-bench"><strong>Benchmark:</strong> no independently verified external figure exists for this measure; it depends on the governance tool and cadence this role is asked to design.</div>
+        </div>
+      </div>
+      <div class="src-note">Sources: <a href="https://agility-at-scale.com/safe/pi-planning/pi-planning-roi/" target="_blank" rel="noopener">Scaled Agile Framework community, Program Increment Planning return on investment</a> &middot; <a href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pmo-frameworks.pdf" target="_blank" rel="noopener">Project Management Institute, portfolio management office frameworks (Pulse of the Profession)</a> &middot; <a href="https://umbrex.com/resources/company-analysis/information-technology/agile-sprint-velocity/" target="_blank" rel="noopener">Umbrex, agile sprint velocity benchmarks</a></div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Digital ecosystem coordination</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Intake-to-decision cycle time</div>
+          <div class="kpi-desc">How long a new piece of work takes from being raised to a prioritization decision, across ten Digital disciplines.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Active-initiative-to-capacity ratio</div>
+          <div class="kpi-desc">How many initiatives are in flight against Digital's actual delivery capacity &mdash; the overcommitment signal the role's own brief names directly.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Cross-functional alignment cadence</div>
+          <div class="kpi-desc">How consistently the nine matrix functions take part in the shared portfolio synchronization.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Roadmap re-planning rate</div>
+          <div class="kpi-desc">How often committed roadmap items get re-sequenced mid-cycle &mdash; a high rate signals the portfolio process isn't yet holding.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Omnichannel customer experience &amp; business alignment</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Online share of revenue</div>
+          <div class="kpi-desc">The digital channel's share of total net revenue.</div>
+          <div class="kpi-bench"><strong>Rituals actual:</strong> 20%+ of &euro;2.43 billion net revenue, 2025. <strong>Benchmark:</strong> no independently verified external comparator at a matching methodology was found; shown as Rituals' own disclosed figure.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Boutique refit execution pace</div>
+          <div class="kpi-desc">The physical-network delivery pace a shared portfolio view has to keep visible in real time.</div>
+          <div class="kpi-bench"><strong>Rituals actual:</strong> 40+ boutiques refitted a day, around 100 teams, 1,500 boutiques in 30 working days.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Enterprise Portfolio alignment</div>
+          <div class="kpi-desc">How consistently Digital's own priorities match the enterprise-level priorities set by the separate Enterprise Portfolio function named in the role.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Stakeholder trust in the process</div>
+          <div class="kpi-desc">Whether business and technology stakeholders experience the portfolio process as helping them move faster &mdash; the outcome the role's own brief names directly.</div>
+        </div>
+      </div>
+      <div class="src-note">Rituals actuals: <a href="https://www.rituals.com/newsroom/en-WW/264980-rituals-cosmetics-marks-25-years-with-over-2-4bn-in-revenue-driving-global-expansion-and-positive-impact/" target="_blank" rel="noopener">rituals.com newsroom</a> &middot; <a href="https://theindustry.beauty/rituals-invests-store-refit-2026/" target="_blank" rel="noopener">TheIndustry.beauty, 13 July 2026</a></div>
+    </div>
+
+    <div class="kpi-group">
+      <div class="kpi-group-label">Team, leadership &amp; structural readiness</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-name">Structured intake standard adoption</div>
+          <div class="kpi-desc">Whether every Digital discipline works from the same published intake standard, rather than its own local process.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Coaching leadership adoption</div>
+          <div class="kpi-desc">Extent to which teams operate with genuine ownership rather than top-down task assignment &mdash; named directly as the required leadership style.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Governance resilience through the live refit</div>
+          <div class="kpi-desc">Whether the new portfolio governance model holds, unmodified, through the current company-wide 1,500-boutique refit.</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-name">Readiness for the next Enterprise Portfolio cycle</div>
+          <div class="kpi-desc">Whether Digital enters the next enterprise-level planning cycle with one shared roadmap rather than several disconnected ones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#1a1919;color:#b58c6e;border:1px solid rgba(181,140,110,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+</body>
+</html>
