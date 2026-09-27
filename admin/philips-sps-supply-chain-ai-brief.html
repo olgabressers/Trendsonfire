@@ -29,8 +29,8 @@
     @media(max-width:700px){main{padding:24px 16px 56px;}}
 
     /* STATS */
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:36px;}
-    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
     .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
     .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
@@ -85,6 +85,8 @@
     .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
     .pri-table tr:last-child td{border-bottom:none;}
     .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-compact th{padding:8px 12px;font-size:13px;}
+    .pri-compact td{padding:8px 12px;font-size:13px;line-height:1.4;}
     .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#a17a00;}
 
     /* SCOPE CARDS */
@@ -188,10 +190,56 @@
 
 <main>
 
+<!-- EXEC SUMMARY + TOC -->
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #ffc845;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a17a00;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Royal Philips, global health-technology company, headquartered in Amsterdam. 2025 group sales &euro;17.8 billion (+2% comparable sales growth). 64,800 employees worldwide. Second-quarter 2026: &euro;4.4 billion in sales, +4% comparable sales growth.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">SPS (Service Parts Supply Chain) Supply Chain Design, Analytics and AI (Artificial Intelligence) Leader — based in Best, Netherlands. Own SPS process and data architecture design principles; build and integrate a newly formed global organization across locations and multiple management layers; shape and scale the artificial-intelligence agenda for the function; drive parts-sales growth alongside delivery performance.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Company context</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">&euro;2.5 billion in productivity savings delivered 2023&ndash;2025; a further &euro;1.5 billion program runs 2026&ndash;2028, with &euro;258 million already delivered in the first half of 2026. Chief Operations Officer Willem Appelo, in the role since 2022, owns end-to-end operations, supply chain and manufacturing group-wide.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Key opportunity</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">The posting names this a newly formed organization with no existing structure to inherit — the two success measures stated directly in the posting are moving artificial-intelligence use cases past proof-of-concept to scaled business value, and growing parts sales alongside delivery performance.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#eef2ff;border:1px solid #c3d0f5;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#00299e;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-top-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Key Philips spare-parts &amp; supply-chain challenges</a><br><span style="color:#555;font-size:13px;">Ageing installed base, growth vs. delivery performance, the artificial-intelligence gap, and a parallel cost program.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Philips, the market &amp; the competition</a><br><span style="color:#555;font-size:13px;">2025 &amp; 2026 sales, segments, GE HealthCare, Siemens Healthineers, Medtronic, and artificial-intelligence positioning.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">No inherited team · matrixed influence with no direct authority · scaling artificial intelligence inside a cost program.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-network" style="color:#0a0f1a;text-decoration:none;font-weight:700;">What SPS (Service Parts Supply Chain) owns</a><br><span style="color:#555;font-size:13px;">Scope per the posting, who the role partners with, and the full job description by section.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Five accountability areas mapped to Olga's experience — plus parts-sales growth levers and a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Chief Executive Officer, Chief Operations Officer and Head of Service Parts Supply Chain — verified names &amp; sources.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (Key Performance Indicator) framework</a><br><span style="color:#555;font-size:13px;">Five groups: fulfillment, forecasting &amp; inventory, artificial-intelligence adoption, commercial, team &amp; organization build.</span></li>
+    </ol>
+  </div>
+
+</div>
+
 <!-- KEY SPARE-PARTS & SUPPLY-CHAIN CHALLENGES -->
-<div class="bk-wrap">
-  <div class="bk-eyebrow">Market &amp; Role Context</div>
-  <div class="bk-headline">Key Philips spare-parts &amp; supply-chain challenges</div>
+<div id="sec-top-challenges" class="sec-header" style="margin-top:0;">
+  <div class="sec-num">00</div>
+  <div class="sec-label">
+    <div class="sec-eyebrow">Market &amp; Role Context</div>
+    <div class="sec-title">Key Philips spare-parts &amp; supply-chain challenges</div>
+  </div>
+</div>
+
+<div class="bk-wrap" style="margin-top:0;">
   <div class="bk-grid">
     <div class="bk-card">
       <div class="bk-num">01</div>
@@ -229,45 +277,6 @@
   <div class="src-note" style="background:transparent;border-left:none;padding:16px 0 0;margin-top:20px;color:rgba(255,255,255,.7);">Sources: <a href="https://www.oncologysystems.com/blog/medical-equipment-continues-to-age-in-the-united-states/" target="_blank" rel="noopener" style="color:#ffc845;">Oncology Systems, Medical Equipment Continues to Age in the United States</a>; official Workday job posting; <a href="https://axis-intelligence.com/ai-medical-imaging-ge-vs-siemens-philips/" target="_blank" rel="noopener" style="color:#ffc845;">Axis Intelligence, AI Medical Imaging Showdown 2025</a>; Philips Fourth-Quarter and Annual Results 2025.</div>
 </div>
 
-<!-- EXEC SUMMARY + TOC -->
-<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
-
-  <div style="border:1px solid #e2dfd9;border-left:4px solid #ffc845;padding:20px 24px;background:white;">
-    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a17a00;font-weight:700;margin-bottom:16px;">Key conclusions</div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
-        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The company</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Royal Philips, global health-technology company, headquartered in Amsterdam. 2025 group sales &euro;17.8 billion (+2% comparable sales growth). 64,800 employees worldwide. Second-quarter 2026: &euro;4.4 billion in sales, +4% comparable sales growth.</div>
-      </div>
-      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
-        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">The role</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">SPS (Service Parts Supply Chain) Supply Chain Design, Analytics and AI (Artificial Intelligence) Leader — based in Best, Netherlands. Own SPS process and data architecture design principles; build and integrate a newly formed global organization across locations and multiple management layers; shape and scale the artificial-intelligence agenda for the function; drive parts-sales growth alongside delivery performance.</div>
-      </div>
-      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
-        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Company context</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">&euro;2.5 billion in productivity savings delivered 2023&ndash;2025; a further &euro;1.5 billion program runs 2026&ndash;2028, with &euro;258 million already delivered in the first half of 2026. Chief Operations Officer Willem Appelo, in the role since 2022, owns end-to-end operations, supply chain and manufacturing group-wide.</div>
-      </div>
-      <div>
-        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#a17a00;margin-bottom:4px;">Key opportunity</div>
-        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">The posting names this a newly formed organization with no existing structure to inherit — the two success measures stated directly in the posting are moving artificial-intelligence use cases past proof-of-concept to scaled business value, and growing parts sales alongside delivery performance.</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="page-toc" style="background:#eef2ff;border:1px solid #c3d0f5;padding:20px 24px;">
-    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#00299e;font-weight:700;margin-bottom:16px;">Contents</div>
-    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
-      <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Philips, the market &amp; the competition</a><br><span style="color:#555;font-size:13px;">2025 &amp; 2026 sales, segments, GE HealthCare, Siemens Healthineers, Medtronic, and artificial-intelligence positioning.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">No inherited team · matrixed influence with no direct authority · scaling artificial intelligence inside a cost program.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-network" style="color:#0a0f1a;text-decoration:none;font-weight:700;">What SPS (Service Parts Supply Chain) owns</a><br><span style="color:#555;font-size:13px;">Scope per the posting, who the role partners with, and the full job description by section.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Five accountability areas mapped to Olga's experience — plus parts-sales growth levers and a 5-step priority stack.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Chief Executive Officer, Chief Operations Officer and Head of Service Parts Supply Chain — verified names &amp; sources.</span></li>
-      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (Key Performance Indicator) framework</a><br><span style="color:#555;font-size:13px;">Five groups: fulfillment, forecasting &amp; inventory, artificial-intelligence adoption, commercial, team &amp; organization build.</span></li>
-    </ol>
-  </div>
-
-</div>
-
   <!-- STATS -->
   <div class="stats">
     <div class="s-card">
@@ -290,11 +299,6 @@
       <div class="s-lbl">Productivity Program, 2026&ndash;2028</div>
       <div class="s-num">&euro;1.5B</div>
       <div class="s-src">Target, on top of &euro;2.5B delivered 2023&ndash;2025</div>
-    </div>
-    <div class="s-card">
-      <div class="s-lbl">Base Salary Range</div>
-      <div class="s-num">&euro;93K&ndash;155K</div>
-      <div class="s-src">Plus annual incentive tied to KPIs (Key Performance Indicators) and company results. Official job posting.</div>
     </div>
   </div>
 
@@ -430,7 +434,7 @@
     <div class="chart-title">SPS Supply Chain Design, Analytics and AI Leader — full posting, by section</div>
     <div class="chart-sub">Job title as posted &middot; Location: Best, Netherlands &middot; Employment: full-time &middot; Posted 2 September 2026 &middot; Requisition 589106</div>
     <div class="pri-wrap">
-      <table class="pri-table">
+      <table class="pri-table pri-compact">
         <thead><tr><th style="width:36%;">Your role</th><th>You're the right fit if</th></tr></thead>
         <tbody>
           <tr><td>Own and evolve SPS process and data architecture design principles and strategy.</td><td>Master's degree in Business Administration, Operations, Supply Chain Management or equivalent.</td></tr>
@@ -447,7 +451,6 @@
         </tbody>
       </table>
     </div>
-    <div class="src-note">Compensation &amp; benefits: base salary range &euro;93,049&ndash;&euro;155,081, plus annual incentive linked to KPIs and company results; 25 days annual leave, with the option to purchase up to 20 extra days a year; company pension scheme, collective health insurance, and the option to buy Philips shares and products at a discount; personal development budget, training and coaching. Office-based teams work in person at least 3 days a week.</div>
     <div class="chart-src">Source: <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">official Workday job posting</a>.</div>
   </div>
 
