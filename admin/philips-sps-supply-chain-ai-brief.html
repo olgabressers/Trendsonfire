@@ -149,6 +149,35 @@
     .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
     .org-conf a{color:#a17a00;font-weight:600;}
 
+    /* MINI BAR CHART — revenue evolution */
+    .mini-chart-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:900px){.mini-chart-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.mini-chart-grid{grid-template-columns:1fr;}}
+    .mini-chart-card{border:1px solid #e2dfd9;background:#fff;padding:16px 14px 10px;min-width:0;}
+    .mini-chart-title{font-size:15px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .mini-chart-sub{font-size:13px;color:#0a0f1a;margin-bottom:12px;}
+    .mini-bars{display:flex;align-items:flex-end;gap:6px;height:110px;border-bottom:2px solid #e2dfd9;}
+    .mini-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0;}
+    .mini-bar-val{font-size:12px;font-weight:700;color:#0a0f1a;margin-bottom:2px;white-space:nowrap;}
+    .mini-bar-fill{width:74%;border-radius:2px 2px 0 0;background:#c3d0f5;}
+    .mini-bar-fill.latest{background:#00299e;}
+    .mini-bar-yr{font-size:12px;color:#0a0f1a;margin-top:4px;}
+
+    /* PROBLEM FRAME */
+    .problem-frame{background:#00299e;border:2px solid #ffc845;padding:22px 26px;margin-bottom:28px;}
+    .problem-frame .lbl{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ffc845;font-weight:800;margin-bottom:10px;}
+    .problem-frame p{font-size:15.5px;color:#ffffff;line-height:1.6;margin:0;}
+    .problem-frame strong{color:#ffc845;}
+
+    /* COMPACT DIMENSION TABLE */
+    .dim-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .dim-table th{background:#00299e;color:white;text-align:left;padding:9px 10px;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+    .dim-table td{padding:10px 10px;border-bottom:1px solid #e8e5e0;color:#0a0f1a;vertical-align:top;line-height:1.45;}
+    .dim-table tr:last-child td{border-bottom:none;}
+    .dim-table tr.is-philips td{background:#eef2ff;font-weight:600;}
+    .dim-table ul{margin:0;padding-left:16px;}
+    .dim-table li{margin-bottom:3px;}
+
     /* MOBILE */
     @media(max-width:700px){
       #exec-summary{grid-template-columns:1fr !important;}
@@ -204,6 +233,11 @@
 </div>
 
 <main>
+
+<div class="problem-frame">
+  <div class="lbl">The problem Philips is solving</div>
+  <p>Philips's installed base of imaging and monitoring equipment is ageing and growing, which grows the demand for spare parts — but Philips has no named, branded predictive-service product, and trails GE HealthCare and Siemens Healthineers on artificial-intelligence-cleared devices. Both roles exist to fix this: build a data- and artificial-intelligence-driven service-parts supply chain <strong>from scratch</strong>, and grow parts-sales revenue without hurting delivery performance — inside a company running a parallel &euro;1.5 billion cost-cutting program.</p>
+</div>
 
 <!-- EXEC SUMMARY + TOC -->
 <div id="exec-summary" style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;margin-bottom:40px;">
@@ -304,9 +338,21 @@
 </div>
 
 <div class="chart-box">
-  <div class="chart-title">Five real Philips products, across all three segments</div>
-  <div class="chart-sub">Current market prices — the same three segments as the sales table in the next section</div>
+  <div class="chart-title">Five real Philips products — the installed base SPS supports</div>
+  <div class="chart-sub">Hospital imaging &amp; monitoring equipment, the DXR / CT / MR fleet this role's spare parts serve — used-market prices, real listings</div>
   <div class="product-grid">
+    <div class="product-card">
+      <img src="philips-products/mri.jpg" alt="Philips Ingenia 3.0T MRI scanner"/>
+      <div class="product-name">Ingenia 3.0T MRI Scanner</div>
+      <div class="product-price">$595,000</div>
+      <div class="product-segment">MR</div>
+    </div>
+    <div class="product-card">
+      <img src="philips-products/ct.jpg" alt="Philips Brilliance 64-slice CT scanner"/>
+      <div class="product-name">Brilliance 64-Slice CT Scanner</div>
+      <div class="product-price">$69,000</div>
+      <div class="product-segment">CT</div>
+    </div>
     <div class="product-card">
       <img src="philips-products/lumify.jpg" alt="Philips Lumify handheld ultrasound"/>
       <div class="product-name">Lumify Handheld Ultrasound</div>
@@ -320,25 +366,13 @@
       <div class="product-segment">Connected Care</div>
     </div>
     <div class="product-card">
-      <img src="philips-products/dreamstation.jpg" alt="Philips Respironics DreamStation 2 Auto Continuous Positive Airway Pressure machine"/>
-      <div class="product-name">DreamStation 2 Auto Continuous Positive Airway Pressure Machine</div>
-      <div class="product-price">$689</div>
+      <img src="philips-products/intellivue.jpg" alt="Philips IntelliVue MX700 patient monitor"/>
+      <div class="product-name">IntelliVue MX700 Patient Monitor</div>
+      <div class="product-price">$495</div>
       <div class="product-segment">Connected Care</div>
     </div>
-    <div class="product-card">
-      <img src="philips-products/sonicare.png" alt="Philips One by Sonicare battery toothbrush"/>
-      <div class="product-name">One by Sonicare Battery Toothbrush</div>
-      <div class="product-price">$29.96</div>
-      <div class="product-segment">Personal Health</div>
-    </div>
-    <div class="product-card">
-      <img src="philips-products/oneblade.png" alt="Philips Norelco OneBlade 360 Face shaver"/>
-      <div class="product-name">Norelco OneBlade 360 Face</div>
-      <div class="product-price">$29.96</div>
-      <div class="product-segment">Personal Health</div>
-    </div>
   </div>
-  <div class="chart-src">Sources: <a href="https://philipslumify.com/" target="_blank" rel="noopener">Philips Lumify official store</a>; <a href="https://aedshop.philips.com/us/861282-heartstartonsite.html" target="_blank" rel="noopener">Philips HeartStart Shop</a>; <a href="https://directhomemedical.com/products/respironics-dreamstation-2-auto-cpap-advanced" target="_blank" rel="noopener">Direct Home Medical, authorized Philips Respironics retailer</a>; <a href="https://www.usa.philips.com/c-p/HY1100_01/philips-one-by-sonicare-battery-toothbrush" target="_blank" rel="noopener">usa.philips.com</a>; <a href="https://www.usa.philips.com/c-p/QP2724_70/oneblade-360-face" target="_blank" rel="noopener">usa.philips.com</a>. Prices as listed, September 2026.</div>
+  <div class="chart-src">Sources: <a href="https://www.dotmed.com/listing/mri-scanner/philips/ingenia-30t/5452154" target="_blank" rel="noopener">DOTmed, Philips Ingenia 3.0T listing</a>; <a href="https://www.dotmed.com/listing/ct-scanner/philips/brilliance-64-slice/3057137" target="_blank" rel="noopener">DOTmed, Philips Brilliance 64-slice listing</a>; <a href="https://philipslumify.com/" target="_blank" rel="noopener">Philips Lumify official store</a>; <a href="https://aedshop.philips.com/us/861282-heartstartonsite.html" target="_blank" rel="noopener">Philips HeartStart Shop</a>; <a href="https://www.dotmed.com/listing/monitor/philips/intellivue-mx700-patient-monitor/5085269" target="_blank" rel="noopener">DOTmed, Philips IntelliVue MX700 listing</a>. Used/refurbished-market asking prices, September 2026 — capital equipment has no public list price; these are real, verifiable market listings, not manufacturer prices.</div>
 </div>
 
   <!-- STATS -->
@@ -1022,7 +1056,9 @@
     h.appendChild(t);
     h.setAttribute('role','button');
     h.setAttribute('tabindex','0');
-    h.setAttribute('aria-expanded','false');
+    body.classList.add('open');
+    h.classList.add('open');
+    h.setAttribute('aria-expanded','true');
     h.sectionBody=body;
     function toggle(){
       var open=!body.classList.contains('open');
