@@ -51,8 +51,10 @@
     @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
     .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ffc845;font-weight:700;margin-bottom:10px;}
     .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
-    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
     @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-grid-4col{grid-template-columns:repeat(4,minmax(0,1fr));}
+    @media(max-width:980px){.bk-grid-4col{grid-template-columns:repeat(2,minmax(0,1fr));}}
     .bk-card{border:1px solid rgba(255,200,69,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
     .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#ffc845;line-height:0.85;margin-bottom:12px;font-weight:600;}
     .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
@@ -177,15 +179,14 @@
 <div class="art-hero">
   <div class="hero-links">
     <a href="https://www.philips.com" target="_blank" rel="noopener">Company site &rarr;</a>
-    <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">Role 1 (SPS Leader) — Job posting &rarr;</a>
-    <a href="https://www.linkedin.com/jobs/view/sps-supply-chain-design-analytics-and-ai-leader-at-philips-4460979163/" target="_blank" rel="noopener">Role 1 (SPS Leader) — LinkedIn JD &rarr;</a>
-    <a href="https://www.linkedin.com/jobs/view/4460967957/" target="_blank" rel="noopener">Role 2 (DI Operations Leader) — LinkedIn JD &rarr;</a>
+    <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">Role 1 (Design, Analytics &amp; AI) — Job posting &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/sps-supply-chain-design-analytics-and-ai-leader-at-philips-4460979163/" target="_blank" rel="noopener">Role 1 (Design, Analytics &amp; AI) — LinkedIn JD &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4460967957/" target="_blank" rel="noopener">Role 2 (DI Operations) — LinkedIn JD &rarr;</a>
   </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Philips</div>
     <div class="eyebrow">Interview Brief — Two Roles: SPS Supply Chain Design, Analytics and AI (Artificial Intelligence) Leader &amp; SPS Diagnostic Imaging (DI) Operations Leader</div>
     <h1>Philips: <em>a global organization that doesn't exist yet, inside a &euro;1.5 billion cost-productivity program</em></h1>
-    <p>&euro;17.8 billion in 2025 group sales, 64,800 employees. The role: build and lead a brand-new global function — Service Parts Supply Chain design, analytics and artificial-intelligence adoption — from scratch, based in Best, Netherlands, while Philips runs a &euro;1.5 billion productivity program through 2028.</p>
     <div class="meta">
       <span>Sources: Philips 2025 &amp; second-quarter 2026 results (philips.com, SEC 6-K filings), official Workday job posting, philips.com executive committee</span>
       <span>Updated 14 September 2026</span>
@@ -239,7 +240,7 @@
       <li style="margin-bottom:13px;"><a href="#sec-network" style="color:#0a0f1a;text-decoration:none;font-weight:700;">What SPS (Service Parts Supply Chain) owns</a><br><span style="color:#555;font-size:13px;">Scope per the posting, who the role partners with, and the full job description by section.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Nine accountability areas across two roles, mapped to Olga's experience — plus parts-sales growth levers and a 5-step priority stack.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Chief Executive Officer, Chief Operations Officer and Head of Service Parts Supply Chain — verified names &amp; sources.</span></li>
-      <li style="margin-bottom:13px;"><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework — SPS Leader role</a><br><span style="color:#555;font-size:13px;">Six groups: fulfillment, forecasting &amp; inventory, data architecture, artificial-intelligence adoption, commercial, team &amp; organization build.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework — Design, Analytics &amp; AI role</a><br><span style="color:#555;font-size:13px;">Six groups: fulfillment, forecasting &amp; inventory, data architecture, artificial-intelligence adoption, commercial, team &amp; organization build.</span></li>
       <li><a href="#sec-kpi2" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI framework — DI Operations Leader role</a><br><span style="color:#555;font-size:13px;">Three groups: parts availability &amp; fulfillment, planning &amp; inventory discipline, portfolio lifecycle &amp; growth.</span></li>
     </ol>
   </div>
@@ -256,7 +257,7 @@
 </div>
 
 <div class="bk-wrap" style="margin-top:0;">
-  <div class="bk-grid">
+  <div class="bk-grid bk-grid-4col">
     <div class="bk-card">
       <div class="bk-num">01</div>
       <div class="bk-card-title">An ageing installed base to keep supplied</div>
@@ -727,7 +728,7 @@
     <div class="sec-num">05</div>
     <div class="sec-label">
       <div class="sec-eyebrow">KPIs</div>
-      <div class="sec-title">KPI (Key Performance Indicator) framework — SPS Leader role, six groups</div>
+      <div class="sec-title">KPI (Key Performance Indicator) framework — Design, Analytics &amp; AI role, six groups</div>
     </div>
   </div>
 
@@ -956,7 +957,7 @@
         </div>
         <div class="kpi-card">
           <div class="kpi-name">Parts-sales growth</div>
-          <div class="kpi-desc">Revenue growth from DI service parts, alongside delivery performance — the same commercial mandate named in the SPS Leader role.</div>
+          <div class="kpi-desc">Revenue growth from DI service parts, alongside delivery performance — the same commercial mandate named in the Design, Analytics &amp; AI role.</div>
           <div class="kpi-bench"><strong>Industry benchmark:</strong> service-agreement attach carries a 98% uptime guarantee under Philips's own RightFit Protection tier.</div>
         </div>
         <div class="kpi-card">
