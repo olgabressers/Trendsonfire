@@ -90,11 +90,11 @@
     .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#a17a00;}
 
     /* SCOPE CARDS */
-    .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
-    @media(max-width:980px){.scope-grid{grid-template-columns:repeat(2,1fr);}}
+    .scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0;}
+    @media(max-width:980px){.scope-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
     @media(max-width:600px){.scope-grid{grid-template-columns:1fr;}}
     .scope-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a17a00;margin:22px 0 4px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
-    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;min-width:0;}
     .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:600;line-height:1;color:#a17a00;margin-bottom:8px;}
     .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:9px;}
     .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
@@ -177,9 +177,9 @@
 <div class="art-hero">
   <div class="hero-links">
     <a href="https://www.philips.com" target="_blank" rel="noopener">Company site &rarr;</a>
-    <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">Job posting &rarr;</a>
-    <a href="https://www.linkedin.com/jobs/view/sps-supply-chain-design-analytics-and-ai-leader-at-philips-4460979163/" target="_blank" rel="noopener">LinkedIn JD &rarr;</a>
-    <a href="https://www.linkedin.com/jobs/view/4460967957/" target="_blank" rel="noopener">DI Operations Leader — Job posting &rarr;</a>
+    <a href="https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Best/SPS-Supply-Chain-Design--Analytics-and-AI-Leader--all-genders-_589106-2" target="_blank" rel="noopener">Role 1 (SPS Leader) — Job posting &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/sps-supply-chain-design-analytics-and-ai-leader-at-philips-4460979163/" target="_blank" rel="noopener">Role 1 (SPS Leader) — LinkedIn JD &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4460967957/" target="_blank" rel="noopener">Role 2 (DI Operations Leader) — LinkedIn JD &rarr;</a>
   </div>
   <div class="inner">
     <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Philips</div>
@@ -196,7 +196,7 @@
 <main>
 
 <!-- EXEC SUMMARY + TOC -->
-<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+<div id="exec-summary" style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;margin-bottom:40px;">
 
   <div style="border:1px solid #e2dfd9;border-left:4px solid #ffc845;padding:20px 24px;background:white;">
     <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a17a00;font-weight:700;margin-bottom:16px;">Key conclusions</div>
