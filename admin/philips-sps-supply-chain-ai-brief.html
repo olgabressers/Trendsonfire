@@ -55,6 +55,15 @@
     @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
     .bk-grid-4col{grid-template-columns:repeat(4,minmax(0,1fr));}
     @media(max-width:980px){.bk-grid-4col{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+    /* PRODUCT GRID */
+    .product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;}
+    @media(max-width:900px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    .product-card{border:1px solid #e2dfd9;padding:14px 12px 16px;text-align:center;background:white;}
+    .product-card img{width:100%;height:110px;object-fit:contain;margin-bottom:10px;}
+    .product-name{font-size:13px;font-weight:700;color:#0a0f1a;line-height:1.3;margin-bottom:4px;min-height:34px;}
+    .product-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:#00299e;}
+    .product-segment{font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#a17a00;margin-top:4px;}
     .bk-card{border:1px solid rgba(255,200,69,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
     .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#ffc845;line-height:0.85;margin-bottom:12px;font-weight:600;}
     .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
@@ -278,7 +287,7 @@
       <div class="bk-num">03</div>
       <div class="bk-card-title">An artificial-intelligence gap versus imaging peers</div>
       <ul>
-        <li>Philips has 38 FDA-cleared artificial-intelligence devices, against 47 at Siemens Healthineers and 72 at GE HealthCare, as of October 2025</li>
+        <li>Philips has 38 US Food and Drug Administration-cleared artificial-intelligence devices, against 47 at Siemens Healthineers and 72 at GE HealthCare, as of October 2025</li>
         <li>The SPS artificial-intelligence agenda has to close ground, not just keep pace, while proving adoption beyond proof-of-concept</li>
       </ul>
     </div>
@@ -292,6 +301,44 @@
     </div>
   </div>
   <div class="src-note" style="background:transparent;border-left:none;padding:16px 0 0;margin-top:20px;color:rgba(255,255,255,.7);">Sources: <a href="https://www.oncologysystems.com/blog/medical-equipment-continues-to-age-in-the-united-states/" target="_blank" rel="noopener" style="color:#ffc845;">Oncology Systems, Medical Equipment Continues to Age in the United States</a>; official Workday job posting; <a href="https://axis-intelligence.com/ai-medical-imaging-ge-vs-siemens-philips/" target="_blank" rel="noopener" style="color:#ffc845;">Axis Intelligence, AI Medical Imaging Showdown 2025</a>; Philips Fourth-Quarter and Annual Results 2025.</div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">Five real Philips products, across all three segments</div>
+  <div class="chart-sub">Current market prices — the same three segments as the sales table in the next section</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="philips-products/lumify.jpg" alt="Philips Lumify handheld ultrasound"/>
+      <div class="product-name">Lumify Handheld Ultrasound</div>
+      <div class="product-price">$6,000</div>
+      <div class="product-segment">Diagnosis &amp; Treatment</div>
+    </div>
+    <div class="product-card">
+      <img src="philips-products/heartstart.jpg" alt="Philips HeartStart OnSite automated external defibrillator"/>
+      <div class="product-name">HeartStart OnSite Defibrillator</div>
+      <div class="product-price">$1,687</div>
+      <div class="product-segment">Connected Care</div>
+    </div>
+    <div class="product-card">
+      <img src="philips-products/dreamstation.jpg" alt="Philips Respironics DreamStation 2 Auto Continuous Positive Airway Pressure machine"/>
+      <div class="product-name">DreamStation 2 Auto Continuous Positive Airway Pressure Machine</div>
+      <div class="product-price">$689</div>
+      <div class="product-segment">Connected Care</div>
+    </div>
+    <div class="product-card">
+      <img src="philips-products/sonicare.png" alt="Philips One by Sonicare battery toothbrush"/>
+      <div class="product-name">One by Sonicare Battery Toothbrush</div>
+      <div class="product-price">$29.96</div>
+      <div class="product-segment">Personal Health</div>
+    </div>
+    <div class="product-card">
+      <img src="philips-products/oneblade.png" alt="Philips Norelco OneBlade 360 Face shaver"/>
+      <div class="product-name">Norelco OneBlade 360 Face</div>
+      <div class="product-price">$29.96</div>
+      <div class="product-segment">Personal Health</div>
+    </div>
+  </div>
+  <div class="chart-src">Sources: <a href="https://philipslumify.com/" target="_blank" rel="noopener">Philips Lumify official store</a>; <a href="https://aedshop.philips.com/us/861282-heartstartonsite.html" target="_blank" rel="noopener">Philips HeartStart Shop</a>; <a href="https://directhomemedical.com/products/respironics-dreamstation-2-auto-cpap-advanced" target="_blank" rel="noopener">Direct Home Medical, authorized Philips Respironics retailer</a>; <a href="https://www.usa.philips.com/c-p/HY1100_01/philips-one-by-sonicare-battery-toothbrush" target="_blank" rel="noopener">usa.philips.com</a>; <a href="https://www.usa.philips.com/c-p/QP2724_70/oneblade-360-face" target="_blank" rel="noopener">usa.philips.com</a>. Prices as listed, September 2026.</div>
 </div>
 
   <!-- STATS -->
@@ -379,9 +426,9 @@
 
   <div class="chart-box">
     <div class="chart-title">Artificial-intelligence positioning — the three imaging majors, October 2025</div>
-    <div class="chart-sub">Number of FDA (US Food and Drug Administration)-cleared AI (artificial-intelligence) devices — Philips trails both direct imaging competitors</div>
+    <div class="chart-sub">Number of US Food and Drug Administration-cleared artificial-intelligence devices — Philips trails both direct imaging competitors</div>
     <table class="bk-table" style="color:#0a0f1a;">
-      <thead><tr><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">Company</th><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">FDA-cleared AI devices</th></tr></thead>
+      <thead><tr><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">Company</th><th style="color:#a17a00;border-bottom:1px solid #e2dfd9;">US Food and Drug Administration-cleared artificial-intelligence devices</th></tr></thead>
       <tbody>
         <tr><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">GE HealthCare</td><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">72</td></tr>
         <tr><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">Siemens Healthineers</td><td style="color:#0a0f1a;border-bottom:1px solid #e2dfd9;">47</td></tr>
@@ -417,7 +464,7 @@
           <tr><td><strong>Named predictive-maintenance program</strong></td><td>Not publicly named as a distinct product; artificial intelligence referenced as an SPS agenda item, not a branded service</td><td>OnWatch Predict — artificial intelligence and digital twin technology estimating remaining component life on MR, CT, image-guiding and mammography systems</td><td>Guardian Program — artificial intelligence-supported monitoring, with TubeGuard (X-ray tubes) and ImageGuard (detectors) predicting component failure</td></tr>
           <tr><td><strong>Service agreement tiers</strong></td><td>RightFit — multi-tier agreements (Assist, Protection, Value) with full parts coverage and a 98% uptime guarantee on the Protection tier</td><td>Multi-vendor repair training and probe/parts programs; no single public uptime-guarantee figure found</td><td>Performance Service Plans plus Guardian; no single public uptime-guarantee figure found</td></tr>
           <tr><td><strong>Multi-vendor / cross-brand service</strong></td><td>Philips Managed Services — vendor-neutral, covers non-Philips equipment on a hospital's fleet</td><td>Multi-vendor ultrasound-probe and repair training programs</td><td>Block Imaging (Siemens-owned) — 40,000+ vendor-agnostic parts, 500+ on-demand service engineers</td></tr>
-          <tr><td><strong>FDA-cleared artificial-intelligence devices</strong></td><td>38</td><td>72</td><td>47</td></tr>
+          <tr><td><strong>US Food and Drug Administration-cleared artificial-intelligence devices</strong></td><td>38</td><td>72</td><td>47</td></tr>
         </tbody>
       </table>
     </div>
@@ -432,7 +479,7 @@
         <tbody>
           <tr><td><strong>Name the predictive-maintenance product.</strong> GE and Siemens both market a branded, component-level predictive service (OnWatch Predict, Guardian/TubeGuard/ImageGuard). SPS's own artificial-intelligence agenda is the mandate to build Philips's equivalent.</td></tr>
           <tr><td><strong>Publish scale numbers.</strong> Siemens discloses 40,000+ parts and 500+ engineers for its multi-vendor service. Philips's RightFit and Managed Services pages describe coverage tiers but no comparable public scale figures.</td></tr>
-          <tr><td><strong>Close the artificial-intelligence device gap.</strong> 38 FDA-cleared devices against 47 and 72 is a credibility gap in every sales conversation about a predictive-service offering.</td></tr>
+          <tr><td><strong>Close the artificial-intelligence device gap.</strong> 38 US Food and Drug Administration-cleared devices against 47 and 72 is a credibility gap in every sales conversation about a predictive-service offering.</td></tr>
           <tr><td><strong>Defend the multi-vendor position already held.</strong> Managed Services already covers non-Philips equipment, matching Siemens's Block Imaging move — the opportunity is scaling and publicizing it, not building it from zero.</td></tr>
         </tbody>
       </table>
