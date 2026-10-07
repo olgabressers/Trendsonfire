@@ -133,6 +133,7 @@ b,strong{font-weight:700;color:var(--dk)}
 .nav button{width:46px;height:46px;border-radius:50%;border:0;background:var(--brand);color:#fff;font-size:22px;cursor:pointer}
 /* round 8: header band with question card, two-half body */
 .sl.std{padding-top:3.2cqw}
+.live{display:flex;width:max-content;align-items:center;gap:.5cqw;margin-top:.4cqw;padding:.25cqw .9cqw;border-radius:99px;background:#dcfce7;color:#14532d;font-size:calc(var(--fb) * 1.05);font-weight:800;letter-spacing:.02em;line-height:1.4}.live i{width:.75cqw;height:.75cqw;border-radius:50%;background:#16a34a;animation:lp 1.6s infinite}@keyframes lp{0%{box-shadow:0 0 0 0 rgba(22,163,74,.6)}100%{box-shadow:0 0 0 .9cqw rgba(22,163,74,0)}}
 .hd{display:grid;grid-template-columns:1fr 47%;gap:2.2cqw;align-items:start}
 .hd h2{margin:0}
 .hd.solo{grid-template-columns:1fr}
@@ -543,7 +544,7 @@ b,strong{font-weight:700;color:var(--dk)}
         <div class="hl"><b>Automation</b><br>36% → 42%</div><div class="ht"><div class="hb" style="left:83.33%;width:8.33%;background:var(--grey)"><span class="lf">−15</span></div></div>
         <div class="hl"><b>FTE month 12</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
       </div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Model:</b> To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%. <b>Test it live on slide 12, button “The plan”.</b></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> Peak windows are evenings, weekends, bad weather, big events and holidays. Own staff are rostered to the peaks that repeat every week (evenings, weekends); the outsourcing partner, on a flexible agreement paid per contact, takes the unplanned ones (bad weather, events).</div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Model:</b> To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%. <b>Test it live on slide 12, button “The plan”.</b></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> Own staff are rostered to the weekly peaks (evenings, weekends); the outsourcing partner, on a flexible agreement paid per contact, takes the unplanned ones (bad weather, big events, holidays).</div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
   </div>
   <div class="key">With 20% more orders and no changes, we need 30 more people. Fewer customer problems per order and more automation remove that need.</div>
   <div class="n">11</div>
@@ -551,7 +552,7 @@ b,strong{font-weight:700;color:var(--dk)}
 
 <!-- 9 Simulator -->
 <section class="page" data-part="c3"><div class="sl std simsl"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
-  <div class="hd"><h2>01 Capacity Planning: Simulator</h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li><b>Do nothing</b> (opens here): +20% orders = 180 FTE</li><li><b>The plan</b> = slide 11: propensity 2.2%, automation 42% = 150 FTE</li><li>Move any slider to test a risk</li></ol></div></div>
+  <div class="hd"><h2>01 Capacity Planning: Simulator <span class="live"><i></i>Live</span></h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li><b>Do nothing</b> (opens here): +20% orders = 180 FTE</li><li><b>The plan</b> = slide 11: propensity 2.2%, automation 42% = 150 FTE</li><li>Move any slider to test a risk</li></ol></div></div>
   <div class="body2">
     <div class="card sim1">
       <div class="sg"><div class="st"><span>Order growth <span class="def">· default 20%: the case growth target</span></span><span class="val" id="v-g"></span></div>
@@ -582,7 +583,7 @@ b,strong{font-weight:700;color:var(--dk)}
   <div class="n">12</div>
 </div></section>
 <section class="page" data-part="c3"><div class="sl std simsl"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
-  <div class="hd"><h2>01 Peak Season Simulator</h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li>Set peak size and length</li><li><b>Outsourcing only</b>: partner covers all extra volume</li><li><b>Mix</b>: internal hires refill seats left by leavers</li></ol></div></div>
+  <div class="hd"><h2>01 Peak Season Simulator <span class="live"><i></i>Live</span></h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li>Set peak size and length</li><li><b>Outsourcing only</b>: partner covers all extra volume</li><li><b>Mix</b>: internal hires refill seats left by leavers</li></ol></div></div>
   <div class="body2">
     <div class="card sim1">
       <div class="sg"><div class="st"><span>FTE in a normal month <span class="def">· default 150: the plan</span></span><span class="val" id="v-kb"></span></div>
