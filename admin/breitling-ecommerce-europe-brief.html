@@ -303,6 +303,29 @@
     </div>
   </div>
 
+<!-- VALUES -->
+  <div class="chart-box" style="margin-top:26px;">
+    <div class="chart-title" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;">At Breitling we are&hellip;EPIC!</div>
+    <div class="scope-grid" style="margin-top:14px;">
+      <div class="scope-card">
+        <div class="scope-label">Entrepreneurship</div>
+        <div class="scope-desc">We take ownership, act with agility, and dare to challenge the status quo.</div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-label">Performance</div>
+        <div class="scope-desc">We strive for excellence and deliver with impact, precision, and passion.</div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-label">Innovation</div>
+        <div class="scope-desc">We embrace creativity and continuously push boundaries to shape the future.</div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-label">Care</div>
+        <div class="scope-desc">We look after our people, our clients, and our planet, with respect and responsibility.</div>
+      </div>
+    </div>
+  </div>
+
 <!-- HOUSE OF BRANDS -->
   <div id="sec-brands" class="sec-header" style="margin-top:0;">
     <div class="sec-num">01</div>
@@ -1423,7 +1446,9 @@
     h.appendChild(t);
     h.setAttribute('role','button');
     h.setAttribute('tabindex','0');
-    h.setAttribute('aria-expanded','false');
+    body.classList.add('open');
+    h.classList.add('open');
+    h.setAttribute('aria-expanded','true');
     h.sectionBody=body;
     function toggle(){
       var open=!body.classList.contains('open');
