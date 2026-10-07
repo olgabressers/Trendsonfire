@@ -134,6 +134,40 @@ b,strong{font-weight:700;color:var(--dk)}
 /* round 8: header band with question card, two-half body */
 .sl.std{padding-top:3.2cqw}
 .live{display:flex;width:max-content;align-items:center;gap:.5cqw;margin-top:.4cqw;padding:.25cqw .9cqw;border-radius:99px;background:#dcfce7;color:#14532d;font-size:calc(var(--fb) * 1.05);font-weight:800;letter-spacing:.02em;line-height:1.4}.live i{width:.75cqw;height:.75cqw;border-radius:50%;background:#16a34a;animation:lp 1.6s infinite}@keyframes lp{0%{box-shadow:0 0 0 0 rgba(22,163,74,.6)}100%{box-shadow:0 0 0 .9cqw rgba(22,163,74,0)}}
+.amnote{font-size:calc(var(--fb) * 1.05);color:var(--dk);margin:1.2cqw 0 .8cqw;font-weight:600}
+.amc{padding:1cqw 1.4cqw}
+.amt{width:100%;border-collapse:separate;border-spacing:.35cqw;font-size:calc(var(--fb) * 1)}
+.amt thead th{font-weight:800;color:var(--dk);text-align:center;padding:.2cqw}
+.amt thead tr:first-child th{color:var(--o);font-size:1.15em}
+.amt thead tr:last-child th:first-child{text-align:left}
+.amt tbody th{text-align:left;font-weight:400;color:var(--dk);width:34%;padding:.35cqw 0;line-height:1.25}
+.amt tbody th b{display:block}.amt tbody th span{color:#4b5563}
+.amt td{border:var(--bw) solid var(--line);border-radius:.4cqw;width:11%}
+.amd{background:#f36d21}.aml2{background:#fcd3b6}.amw{background:#fff}
+.amt td.amd{background:#f36d21;border-color:#f36d21}.amt td.aml{background:#fcd3b6;border-color:#fcd3b6}.amt td.amw{background:#fff}
+.amt td.amx{background:#f3f4f6;color:#6b7280;text-align:center;font-size:.85em}
+.amleg{display:flex;gap:2.4cqw;margin-top:.6cqw;font-size:calc(var(--fb) * .95);color:var(--dk)}
+.amleg span{display:flex;align-items:center;gap:.6cqw}.amleg i{width:1.6cqw;height:1cqw;border-radius:.2cqw;border:var(--bw) solid var(--line)}
+.amt tr.amg th{color:var(--o);font-weight:800;padding:.5cqw 0 0;font-size:1.05em}
+.amt tbody th b{display:inline}
+.amt td{width:18%}
+.ans.msq{min-height:auto}.ans.msq .ab{padding-top:.3cqw;padding-bottom:.3cqw}
+.ab ul.abl2{columns:2;column-gap:2cqw}.ab ul.abl2 li{break-inside:avoid}
+.wac{padding:1cqw 1.4cqw;margin-top:1.4cqw}
+.wat{width:100%;border-collapse:separate;border-spacing:.35cqw;font-size:calc(var(--fb) * 1.05);table-layout:fixed}
+.wat th,.wat td{padding:.45cqw .7cqw;line-height:1.2}
+.wat thead tr:first-child th{color:#fff;font-weight:800;text-align:center;border-radius:.4cqw;padding:.3cqw}
+.wat .wai{background:var(--o)}.wat .wao{background:#6b7280}
+.wat thead tr:first-child th:first-child{background:none}
+.wat .wsn{background:#242e30;color:#fff;font-weight:800;text-align:center;border-radius:.4cqw}
+.wat .wsn span{display:block;font-weight:400;font-size:.9em}.wat .wsb{background:#4b5563}
+.wat thead tr:last-child th:first-child{text-align:left;color:var(--dk)}
+.wat tbody th{text-align:left;font-weight:800;color:var(--dk);width:16%}
+.wat td{background:var(--soft);text-align:center;color:var(--dk);border-radius:.4cqw}
+.wat td:last-child{background:#f3f4f6}.wat td.waall{background:var(--soft);font-weight:700}
+.wcb{display:grid;grid-template-columns:1fr 1fr;gap:1cqw}.wcb .arr{margin:.4cqw 0}.steps2 .wcb .stp{padding:1.1cqw;font-size:1.15em}.stp.wcr{background:#fff;border-color:var(--o);color:var(--o)}
+.wcb .arr.wcl{font-size:2em}
+.wloop{position:absolute;z-index:2;border:.25cqw solid var(--o);border-left:none;border-radius:0 .5cqw .5cqw 0;width:1.4cqw;pointer-events:none}.wloop::before{content:"";position:absolute;left:0;top:-.125cqw;transform:translateY(-50%);border:.55cqw solid transparent;border-right:.75cqw solid var(--o);border-left:none}
 .hd{display:grid;grid-template-columns:1fr 47%;gap:2.2cqw;align-items:start}
 .hd h2{margin:0}
 .hd.solo{grid-template-columns:1fr}
@@ -345,11 +379,11 @@ b,strong{font-weight:700;color:var(--dk)}
 .ph3{font-weight:800;color:var(--o);margin-bottom:.6cqw}
 .pc ul.b{padding-left:0}.pc ul.b li{padding-left:1.6cqw;margin-bottom:.3cqw;line-height:1.18}
 .toc2{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:2.2cqw;min-height:0}
-.tpart{background:#fff;border:var(--bw) solid var(--line);border-top:.42cqw solid var(--o);border-radius:var(--r);padding:1.2cqw 1.6cqw;display:flex;flex-direction:column;min-height:0}
-.tph{display:flex;justify-content:space-between;align-items:center;gap:1cqw;margin-bottom:.8cqw}
+.tpart{background:#fff;border:var(--bw) solid var(--line);border-top:.42cqw solid var(--o);border-radius:var(--r);padding:1.2cqw 1.6cqw .7cqw;display:flex;flex-direction:column;min-height:0}
+.tph{display:flex;justify-content:space-between;align-items:center;gap:1cqw;margin-bottom:.5cqw}
 .tph .ch{margin:0}.tph .ch:hover{text-decoration:underline}
 .tph button{font:inherit;font-weight:700;color:var(--o);background:var(--soft);border:var(--bw) solid var(--o);border-radius:.5cqw;padding:.3cqw .9cqw;cursor:pointer;white-space:nowrap}
-.tpart a{display:grid;grid-template-columns:2.4em 1fr;padding:.25cqw 0;color:var(--dk);text-decoration:none;border-bottom:var(--bw) solid #f3f4f6}
+.tpart a{display:grid;grid-template-columns:2.4em 1fr;padding:.05cqw 0;line-height:1.2;color:var(--dk);text-decoration:none;border-bottom:var(--bw) solid #f3f4f6}
 .tpart a:hover{color:var(--o)}.tpart a span{color:var(--tx)}
 .tpart.fold a{opacity:.45}
 .page.hid{display:none}
@@ -536,7 +570,7 @@ b,strong{font-weight:700;color:var(--dk)}
 <!-- 8 Capacity Planning -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>01 Capacity Planning</h2><div class="card tb qk"><div class="ch">01 Capacity Planning</div><ul class="b"><li>How would you model capacity for 20% growth?</li><li>Optimal insource/BPO/shared-service mix?</li><li>How would you handle peak scaling?</li><li>Seasonal and weekend coverage?</li></ul></div></div>
-  <div class="body2" style="grid-template-columns:.78fr 1.22fr">
+  <div class="body2" style="grid-template-columns:.78fr 1.22fr;min-height:auto">
     <div class="card vbig"><div class="hw2">
         <div class="hl"><b>FTE today</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
         <div class="hl"><b>+20% orders</b></div><div class="ht"><div class="hb" style="left:83.33%;width:16.67%;background:var(--o)"><span class="lf">+30</span></div></div>
@@ -544,7 +578,7 @@ b,strong{font-weight:700;color:var(--dk)}
         <div class="hl"><b>Automation</b><br>36% → 42%</div><div class="ht"><div class="hb" style="left:83.33%;width:8.33%;background:var(--grey)"><span class="lf">−15</span></div></div>
         <div class="hl"><b>FTE month 12</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
       </div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Model:</b> To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%. <b>Test it live on slide 12, button “The plan”.</b></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> <ul class="b abl"><li>Peak windows: evenings, weekends, bad weather, events, holidays</li><li>Weekly peaks (evenings, weekends): own staff rostered to those hours</li><li>Unplanned peaks (bad weather, events): outsourcing partner on a flexible agreement, paid per contact</li></ul></div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
+    <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Model:</b><ul class="b abl"><li>To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%</li><li><b>Test it live on slide 12, button “The plan”</b></li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> <ul class="b abl"><li>Peak windows: evenings, weekends, bad weather, events, holidays</li><li>Weekly peaks (evenings, weekends): own staff rostered to those hours</li><li>Unplanned peaks (bad weather, events): outsourcing partner on a flexible agreement, paid per contact</li></ul></div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
   </div>
   <div class="key">With 20% more orders and no changes, we need 30 more people. Fewer customer problems per order and more automation remove that need.</div>
   <div class="n">11</div>
@@ -615,23 +649,32 @@ b,strong{font-weight:700;color:var(--dk)}
 <!-- 10 Automation Roadmap -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>02 Automation Roadmap</h2><div class="card tb qk"><div class="ch">02 Automation Roadmap</div><ul class="b"><li>Which contacts to automate next?</li><li>How to increase automation beyond 36%?</li><li>AI for proactive partner outreach?</li><li>Balancing automation with quality?</li></ul></div></div>
-  <div class="body2">
+  <div class="body2" style="min-height:auto">
     <div class="card vbig"><div class="ch">Propensity (read as contacts per 100 orders)</div><div class="grow">
       <svg viewBox="0 0 540 280" fill="#4b5563">
         <text x="0" y="58">Marketplace</text><rect x="190" y="25" width="76" height="50" fill="#242e30"/><text x="276" y="59" font-weight="700" fill="#111827">1.4%</text>
         <text x="0" y="148">Scoober</text><rect x="190" y="115" width="248" height="50" fill="#f36d21"/><text x="448" y="149" font-weight="700" fill="#111827">4.6%</text>
         <text x="0" y="238">Grocery</text><rect x="190" y="205" width="286" height="50" fill="#f36d21"/><text x="486" y="239" font-weight="700" fill="#111827">5.3%</text>
       </svg></div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Next:</b> Simple, frequent questions first, ranked by volume and by whether a fixed rule can answer them.</div></div><div class="ab"><span class="no">2</span><div><b>Beyond 36%:</b> Target 42% within 12 months. Prevent contacts at the source with Scoober and grocery (3 to 4 times Marketplace contacts per order): each 0.1 fewer per 100 orders saves 7.5 FTE.</div></div><div class="ab"><span class="no">3</span><div><b>Proactive:</b> Automatic messages to partners and customers on incidents or delays, before they need to contact us.</div></div><div class="ab"><span class="no">4</span><div><b>Quality:</b> Each automated type measured on satisfaction and repeat contacts; worse than before → back to people. Freed time booked against the 30 FTE gap (the last 20 FTE freed by chatbots was absorbed by growth).</div></div></div>
+    <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Next (priority matrix on slide 15):</b> Simple, frequent questions first, ranked by volume and by whether a fixed rule can answer them.</div></div><div class="ab"><span class="no">2</span><div><b>Beyond 36%:</b><ul class="b abl"><li>Target 42% within 12 months</li><li>Prevent contacts at the source with Scoober and grocery (3 to 4 times Marketplace contacts per order): each 0.1 fewer per 100 orders saves 7.5 FTE</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Proactive:</b> Automatic messages to partners and customers on incidents or delays, before they need to contact us.</div></div><div class="ab"><span class="no">4</span><div><b>Quality:</b><ul class="b abl"><li>Each automated type measured on satisfaction and repeat contacts; worse than before → back to people</li><li>Freed time booked against the 30 FTE gap (the last 20 FTE freed by chatbots was absorbed by growth)</li></ul></div></div></div>
   </div>
   <div class="key"><b style="color:#ff8000">NEW:</b> Preventing contacts beats automating them: removing 0.1 contacts per 100 orders saves 7.5 FTE, and prevented contacts never come back.<br><b style="color:#888">OLD:</b> Automate simple questions, prevent problems before customers contact us, and hand customers back to a person when the bot cannot solve it.</div>
   <div class="n">14</div>
+</div></section>
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>02 Automation Priority</h2><div class="card tb qk"><div class="ch">02 Automation Roadmap</div><ul class="b"><li>Which contacts to automate next?</li></ul></div></div>
+  <div class="amnote">The case does not say which contacts are automated today. Contact propensity: Marketplace 1.4%, Scoober 4.6%, Grocery 5.3%.</div>
+  <div class="card amc"><table class="amt"><thead><tr><th>Contact type**</th><th>Marketplace</th><th>Scoober</th><th>Grocery</th></tr></thead><tbody><tr class="amg"><th colspan="4">Consumers</th></tr><tr><th><b>Order status</b> <span>where is my order</span></th><td class="aml"></td><td class="amd"></td><td class="aml"></td></tr><tr><th><b>Change by a fixed rule</b> <span>cancel before the partner accepts</span></th><td class="amd"></td><td class="amd"></td><td class="amd"></td></tr><tr><th><b>Compensation by a fixed rule</b> <span>late delivery, missing item below a set value</span></th><td class="aml"></td><td class="amd"></td><td class="aml"></td></tr><tr><th><b>Judgement</b> <span>food quality, claims above the set value</span></th><td class="amw"></td><td class="amw"></td><td class="amw"></td></tr><tr class="amg"><th colspan="4">Partners</th></tr><tr><th><b>Admin and payout</b> <span>CS admin, invoices</span></th><td class="amd"></td><td class="amd"></td><td class="amd"></td></tr><tr><th><b>Courier status</b> <span>where is the courier</span></th><td class="amx">Own delivery</td><td class="amd"></td><td class="aml"></td></tr><tr><th><b>Technical faults</b> <span>connections, tablet, outages</span></th><td class="aml"></td><td class="aml"></td><td class="aml"></td></tr><tr><th><b>Judgement</b> <span>reviews, Ravelin refund declines</span></th><td class="amw"></td><td class="amw"></td><td class="amw"></td></tr><tr class="amg"><th colspan="4">Consumers and partners</th></tr><tr><th><b>Misrouted requests</b> <span>irrelevant requests: send to the right place</span></th><td class="amd"></td><td class="amd"></td><td class="amd"></td></tr></tbody></table>
+  <div class="amleg"><span><i class="amd"></i>Automate first</span><span><i class="aml2"></i>Bot starts, person finishes</span><span><i class="amw"></i>Stays with people</span></div></div>
+  <div class="key">The same contact can be automated in one channel and not in another: in Scoober JET delivers and holds the data, so status and late-delivery questions can be answered automatically; in Marketplace the restaurant holds it.</div>
+  <div class="srcb">** Contact types and priorities are own assumptions: the case gives no contact types per channel and does not say who delivers grocery orders.</div>
+  <div class="n">15</div>
 </div></section>
 
 <!-- 11 Multi-Site Operating Model -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>03 Multi-Site Operating Model</h2><div class="card tb qk"><div class="ch">03 Multi-Site Operating Model</div><ul class="b"><li>Governance across 4 sites?</li><li>Work allocation: in-sourced vs outsourced?</li><li>Quality standards and calibration?</li><li>Managing cultural &amp; language differences?</li></ul></div></div>
-  <div class="body2">
+  <div class="body2" style="grid-template-columns:.68fr 1.32fr;margin-top:.6cqw;min-height:auto">
     <div class="card vbig"><div class="sites3">
         <svg class="links" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#9ca3af" stroke-width="2"><line x1="50" y1="50" x2="16" y2="16" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="84" y2="16" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="16" y2="84" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="84" y2="84" vector-effect="non-scaling-stroke"/></g></svg>
         <div class="s3" style="grid-area:a"><b>Enschede</b>Netherlands</div>
@@ -640,73 +683,81 @@ b,strong{font-weight:700;color:var(--dk)}
         <div class="s3" style="grid-area:c"><b>Wroclaw</b>Poland</div>
         <div class="s3" style="grid-area:d"><b>Outsourcing partner</b>Flexible volume</div>
       </div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Governance:</b> One scorecard and one weekly review for all four sites, outsourcing partner included.</div></div><div class="ab"><span class="no">2</span><div><b>Allocation by specialisation:</b> Language (Dutch, French, English) · hours (e.g. English-only evening and weekend support) · complexity (standard vs complex cases and escalations) · customer group (consumers, restaurant partners, couriers, Gold partners) · channel (chat, phone, e-mail) · volume (own teams for steady work, outsourcing partner for peaks).</div></div><div class="ab"><span class="no">3</span><div><b>Quality:</b> One quality standard for every site. Monthly, all four sites score the same customer contacts and compare results.</div></div><div class="ab"><span class="no">4</span><div><b>Language and culture:</b> One shared knowledge base, one leadership routine. Milestone: AI translation (agent writes in their own language, customer reads theirs) removes language as a constraint and turns four site queues into one.</div></div></div>
+    <div class="ans msq" style="gap:.45cqw"><div class="ab"><span class="no">1</span><div><b>Governance:</b> One scorecard and one weekly review for all four sites, outsourcing partner included.</div></div><div class="ab"><span class="no">2</span><div><b>Allocation by specialisation (example on slide 17):</b><ul class="b abl"><li>Language: Dutch, French, English</li><li>Hours: e.g. English-only evening and weekend support</li><li>Complexity: standard vs complex cases and escalations</li><li>Customer group: consumers, restaurant partners, couriers, Gold partners</li><li>Channel: chat, phone, e-mail</li><li>Volume: own teams for steady work, outsourcing partner for peaks</li><li>Cost per contact: work goes to the site where it is lowest at the same quality</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Quality and calibration:</b><ul class="b abl"><li>One quality standard for every site</li><li>Monthly calibration: quality leads of all sites review a sample of each other's contacts, and the best site's practice becomes the standard</li></ul></div></div><div class="ab"><span class="no">4</span><div><b>Language and culture:</b><ul class="b abl"><li>One shared knowledge base, one leadership routine</li><li>Milestone: AI translation lets agents write and speak in their own language, so four site queues become one</li></ul></div></div></div>
   </div>
-  <div class="key"><b style="color:#ff8000">NEW:</b> One scorecard lets work move to the site with spare capacity, so peaks are absorbed in our own sites before we pay the outsourcing partner. AI translation can later turn four queues into one.<br><b style="color:#888">OLD:</b> Each site specialises by language, hours, complexity and customer group, and all four are measured the same way every week. AI translation will turn four queues into one.</div>
-  <div class="n">15</div>
+  <div class="key">One operating and quality standard across all sites. Work is allocated by each site's specialisation, capacity and cost per contact.</div>
+  <div class="n">16</div>
+</div></section>
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>03 Work Allocation: Example</h2><div class="card tb qk"><div class="ch">03 Multi-Site Operating Model</div><ul class="b"><li>Work allocation: in-sourced vs outsourced?</li></ul></div></div>
+  <div class="card wac"><table class="wat"><thead><tr><th></th><th colspan="3" class="wai">In-sourced</th><th class="wao">Outsourced</th></tr><tr><th>Criteria**</th><th class="wsn">Enschede<span>Netherlands</span></th><th class="wsn">Brussels<span>Belgium</span></th><th class="wsn">Wroclaw<span>Poland</span></th><th class="wsn wsb">Outsourcing partner<span>Flexible volume</span></th></tr></thead><tbody><tr><th>Language today</th><td>Dutch, English</td><td>French, Dutch, English</td><td>English, Polish</td><td>Dutch, English</td></tr><tr><th>Hours</th><td>All opening hours</td><td>All opening hours</td><td>All opening hours</td><td>Peaks: evenings, weekends, bad weather</td></tr><tr><th>Complexity</th><td>All, escalations</td><td>All, escalations</td><td>All</td><td>Simple</td></tr><tr><th>Customer group</th><td>Netherlands partners and consumers</td><td>Belgium and Luxembourg partners and consumers</td><td>Consumers, all markets</td><td>Consumers</td></tr><tr><th>Channel</th><td>Phone, chat, e-mail</td><td>Phone, chat, e-mail</td><td>Chat, e-mail</td><td>Chat</td></tr><tr><th>Volume</th><td>Steady</td><td>Steady</td><td>Steady</td><td>Flexible, paid per contact</td></tr><tr><th>Cost per contact</th><td>€€€</td><td>€€€</td><td>€€</td><td>€€€€, only when used</td></tr><tr><th>With AI translation</th><td colspan="4" class="waall">Every site can take every language: language stops deciding where work goes</td></tr></tbody></table></div>
+  <div class="key">Own sites keep partners and complex work; the outsourcing partner costs more per contact, so it takes only simple consumer chat at peaks.</div>
+  <div class="srcb">** Example: allocations and relative costs are own assumptions.</div>
+  <div class="n">17</div>
 </div></section>
 
 <!-- 12 Leadership &amp; People -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>04 Leadership &amp; People</h2><div class="card tb qk"><div class="ch">04 Leadership &amp; People</div><ul class="b"><li>Developing leaders across 4 sites?</li><li>Works council engagement in NL and BE?</li><li>Maintaining engagement during rapid scale-up?</li></ul></div></div>
-  <div class="body2">
-    <div class="card vbig"><div class="steps2">
-        <div class="stp">List the change</div><div class="arr">↓</div><div class="stp o">Consult the works council</div><div class="arr">↓</div><div class="stp">Decide and implement</div>
+  <div class="body2" style="min-height:auto">
+    <div class="card vbig"><div class="steps2" style="position:relative"><div class="wloop"></div>
+        <div class="stp">List the change</div><div class="arr">↓</div><div class="stp o wcc">Consult the works council</div><div class="wcb"><div><div class="arr">↓ Agreed</div><div class="stp">Decide and implement</div></div><div><div class="arr">↓ Rejected</div><div class="stp wcr">Adjust the proposal</div></div></div>
       </div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Leaders:</b> One leadership routine and one development path across the four sites; a monthly meeting of all site leaders.</div></div><div class="ab"><span class="no">2</span><div><b>Works councils:</b> A 12-month calendar of every planned change. Works councils in the Netherlands and Belgium consulted before each decision; consultation time built into the plan.</div></div><div class="ab"><span class="no">3</span><div><b>Engagement:</b> Tell the team what automation frees their time for: complex cases, quality, development. Track engagement and absence per site every quarter.</div></div></div>
+    <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Leaders:</b><ul class="b abl"><li>One leadership routine and one development path across the four sites</li><li>A monthly meeting of all site leaders</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Works councils:</b><ul class="b abl"><li>A quarterly calendar of planned changes</li><li>Works councils in the Netherlands and Belgium consulted before each decision; consultation time built into the plan</li><li>For a smooth outcome, each proposal offers employees an improvement or compensation; if neither is possible, it states the business-critical need clearly</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Engagement:</b><ul class="b abl"><li>Involve the team in building the business case and in implementation</li><li>Manage the change through communication and training</li><li>Measure employee satisfaction and absenteeism, and track correlations between each change and these HR metrics</li></ul></div></div></div>
   </div>
-  <div class="key"><b style="color:#ff8000">NEW:</b> The plan counts on keeping today's 150 people, so every leaver is capacity we must hire back: works councils are consulted before each change, and every agent hears what freed time is used for.<br><b style="color:#888">OLD:</b> Consult the works councils before every change, and tell the team what automation frees their time for.</div>
-  <div class="n">16</div>
+  <div class="key">Leaders of the four sites run the change as one team: they build it with their people, agree it with the works councils, and are measured on employee satisfaction as well as on cost and quality.</div>
+  <div class="n">18</div>
 </div></section>
 
 <!-- 13 Cost &amp; Growth Balance -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>05 Cost &amp; Growth Balance</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>Managing cost-to-serve during scale-up?</li><li>How would you demonstrate CS ROI?</li><li>12-month milestones for growth readiness?</li></ul></div></div>
-  <div class="body2">
+  <div class="body2" style="min-height:auto">
     <div class="card vbig"><div class="rm3">
         <div></div><div class="q">Q1</div><div class="q">Q2</div><div class="q">Q3</div><div class="q">Q4</div>
-        <div class="lab">Contact causes</div><div class="b3 s" style="grid-column:2/3">Baseline</div><div class="b3 o" style="grid-column:3/6">Scoober and grocery fixes</div>
+        <div class="lab">Contact causes</div><div class="b3 s" style="grid-column:2/3">Baseline</div><div class="b3 o" style="grid-column:3/6">Fixes of top contact causes</div>
         <div class="lab">Automation</div><div class="b3 s" style="grid-column:2/3">Backlog</div><div class="b3 o" style="grid-column:3/4">Wave 1</div><div class="b3 o2" style="grid-column:4/6">Wave 2</div>
-        <div class="lab">Operating model</div><div class="b3 s" style="grid-column:2/4">Scorecard, ledger</div><div class="b3 o" style="grid-column:4/6">Reallocate, peak plan</div>
+        <div class="lab">Operating model</div><div class="b3 s" style="grid-column:2/4">One scorecard, cost per contact per site</div><div class="b3 o" style="grid-column:4/6">Work allocation by site, peak plan</div>
         <div class="lab">Works councils</div><div class="b3 g" style="grid-column:2/6">Change calendar, consultation before each step</div>
         <div></div><div class="gt">Plan signed</div><div class="gt">On trend</div><div class="gt">Peak passed</div><div class="gt">Flat FTE</div>
       </div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Cost:</b> Cost per order is the main number to manage; it must fall while orders grow 20%.</div></div><div class="ab"><span class="no">2</span><div><b>Return:</b> Show contacts avoided, staff time saved, customer satisfaction held. Contact reasons shared with the Commercial teams every month.</div></div><div class="ab"><span class="no">3</span><div><b>Milestones:</b> Q1 capacity model, baseline, scorecard. Q2 first automation step, Scoober and grocery fixes. Q3 second automation step, tested peak plan. Q4 automation at 42%, 2.2 contacts per 100 orders, same team size at 20% more orders.</div></div></div>
+    <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Cost-to-serve:</b><ul class="b abl"><li>Three levers: fewer contacts per order, more automated contacts, lower cost per contact through site allocation</li><li>Outsourcing partner only for peaks: assumed** more expensive per contact, lower in quality and harder to train and manage</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>ROI:</b><ul class="b abl"><li>Show contacts avoided, staff time saved, customer satisfaction held</li><li>Contact reasons shared with the Commercial teams every month</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Milestones:</b><ul class="b abl"><li>Q1 capacity model, baseline, scorecard</li><li>Q2 first automation step, fixes of top contact causes</li><li>Q3 second automation step, tested peak plan</li><li>Q4 automation at 42%, 2.2 contacts per 100 orders, same team size at 20% more orders</li></ul></div></div></div>
   </div>
   <div class="key"><b style="color:#ff8000">NEW:</b> Each quarter has one checkpoint; missing it triggers a choice: bring the next automation step forward or release hiring.<br><b style="color:#888">OLD:</b> The cost per order must fall while orders grow 20%; four quarterly checkpoints show whether we are on track.</div>
-  <div class="n">17</div>
+  <div class="srcb">** Own assumption.</div>
+  <div class="n">19</div>
 </div></section>
 
 <!-- 14 Cost &amp; Growth Balance: cost-to-serve and return -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>05 Cost to Serve and ROI</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>Managing cost-to-serve during scale-up?</li><li>How would you demonstrate CS ROI?</li><li>12-month milestones for growth readiness?</li></ul></div></div>
-  <div class="body2">
+  <div class="body2" style="min-height:auto">
     <div class="card vbig"><div class="ch">Staff cost per order (today = 100)</div><div class="hw2">
         <div class="hl"><b>Today</b><br>150 FTE, orders today</div><div class="ht"><div class="hb" style="left:0;width:100%;background:var(--slate)"><span class="in">100</span></div></div>
         <div class="hl"><b>+20% orders, no change</b><br>180 FTE</div><div class="ht"><div class="hb" style="left:0;width:100%;background:var(--grey)"><span class="in">100</span></div></div>
         <div class="hl"><b>+20% orders, the plan</b><br>150 FTE</div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--o)"><span class="in">83</span></div></div>
       </div><div style="margin-top:.8em;font-size:1.5em;font-weight:800;color:#f36d21">30 FTE not hired <span style="font-size:.6em;color:#111827">= the ROI</span></div></div>
-    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Cost-to-serve:</b> Staff cost per order, reported every month per site and per delivery model (Marketplace, Scoober). Growth is absorbed by fewer contacts per order and more automation, not by hiring.</div></div><div class="ab"><span class="no">2</span><div><b>ROI:</b> The 30 FTE not hired: 15 from fewer contacts per order (2.4% → 2.2%), 15 from automation (36% → 42%). Shown monthly with customer satisfaction, so savings never come from worse service.</div></div><div class="ab"><span class="no">3</span><div><b>Revenue side:</b> Scoober contacts are protected revenue; win-back and voucher contacts tracked as orders kept. Contact reasons shared with Commercial every month, so CS is measured as a growth enabler, not only a cost.</div></div></div>
+    <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Cost-to-serve:</b><ul class="b abl"><li>Staff cost per order, reported every month per site and per delivery model (Marketplace, Scoober)</li><li>Growth is absorbed by fewer contacts per order and more automation, not by hiring</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>ROI:</b><ul class="b abl"><li>The 30 FTE not hired: 15 from fewer contacts per order (2.4% → 2.2%), 15 from automation (36% → 42%)</li><li>Shown monthly with customer satisfaction, so savings never come from worse service</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Revenue side:</b><ul class="b abl"><li>Scoober contacts are protected revenue; win-back and voucher contacts tracked as orders kept</li><li>Contact reasons shared with Commercial every month, so CS is measured as a growth enabler, not only a cost</li></ul></div></div></div>
   </div>
   <div class="key"><b style="color:#ff8000">NEW:</b> Growth without hiring cuts staff cost per order by a sixth. The plan pays back only while automation and tooling cost less than the 30 FTE not hired: that comparison is the ROI test each quarter.<br><b style="color:#888">OLD:</b> 20% more orders with the same 150 people: staff cost per order falls by a sixth, and the 30 people we did not need to hire are the ROI.</div>
   <div class="srcb">Own estimate: derived from the case figures: staff cost per order = FTE ÷ orders, with the same cost per FTE.</div>
-  <div class="n">18</div>
+  <div class="n">20</div>
 </div></section>
 
 <!-- 15 12-month milestones -->
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>05 12-Month Milestones</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>12-month milestones for growth readiness?</li></ul></div></div>
-  <div class="ms"><div class="lab"></div><div class="q">Q1<span>Month 1–3</span></div><div class="q">Q2<span>Month 4–6</span></div><div class="q">Q3<span>Month 7–9</span></div><div class="q">Q4<span>Month 10–12</span></div><div class="lab">Capacity planning</div><div class="c">Capacity model per site, linked to the order forecast</div><div class="c">Flexible volume agreement with the outsourcing partner</div><div class="c">Peak, weekend and seasonal rosters tested</div><div class="c">Winter peak covered with no permanent hires</div><div class="lab">Contact causes</div><div class="c">Contact reasons per 100 orders: Marketplace, Scoober, grocery</div><div class="c">First Scoober fixes live with delivery and product</div><div class="c">Grocery fixes: missing items, substitutions, bad orders</div><div class="c">2.2 contacts per 100 orders</div><div class="lab">Automation</div><div class="c">Backlog ranked by volume and FTE value, co-owned with product</div><div class="c">Wave 1: simple frequent questions, proactive delay messages</div><div class="c">Wave 2: next contact types; quality check per type</div><div class="c">42% automation; worse types back to people</div><div class="lab">Multi-site model</div><div class="c">One scorecard, one weekly review for all 4 sites</div><div class="c">Work allocation by language, hours, complexity and customer group</div><div class="c">Monthly quality calibration across all sites</div><div class="c">Same quality score at all 4 sites; AI translation pilot</div><div class="lab">Leadership and works councils</div><div class="c">12-month change calendar; works councils NL and BE informed</div><div class="c">Consultation before wave 1 and reallocation</div><div class="c">Leader development path; monthly site-leader meeting</div><div class="c">Engagement and absence held per site</div><div class="lab">Cost and return</div><div class="c">Cost per order baseline; capacity ledger with finance</div><div class="c">First monthly return report to the leadership team</div><div class="c">ROI report shared with Commercial</div><div class="c">150 FTE at +20% orders; cost per order down a sixth</div><div class="lab">Milestone</div><div class="g"><b>M3: Plan signed</b>Model, baseline, scorecard agreed</div><div class="g"><b>M6: On trend</b>Wave 1 live, first fixes live</div><div class="g"><b>M9: Peak-ready</b>Peak plan tested, wave 2 live</div><div class="g"><b>M12: Growth absorbed</b>2.2% · 42% · 150 FTE</div></div>
+  <div class="ms"><div class="lab"></div><div class="q">Q1<span>Month 1–3</span></div><div class="q">Q2<span>Month 4–6</span></div><div class="q">Q3<span>Month 7–9</span></div><div class="q">Q4<span>Month 10–12</span></div><div class="lab">Capacity planning</div><div class="c">Capacity model per site, linked to the order forecast</div><div class="c">Flexible volume agreement with the outsourcing partner</div><div class="c">Peak, weekend and seasonal rosters tested</div><div class="c">Winter peak covered with no permanent hires</div><div class="lab">Contact causes</div><div class="c">Contact reasons per 100 orders: Marketplace, Scoober, grocery</div><div class="c">First Scoober fixes live with delivery and product</div><div class="c">Grocery fixes: missing items, substitutions, bad orders</div><div class="c">2.2 contacts per 100 orders</div><div class="lab">Automation</div><div class="c">Backlog ranked by volume and FTE value, co-owned with product</div><div class="c">Wave 1: simple frequent questions, proactive delay messages</div><div class="c">Wave 2: next contact types; quality check per type</div><div class="c">42% automation; worse types back to people</div><div class="lab">Multi-site model</div><div class="c">One scorecard, one weekly review for all 4 sites</div><div class="c">Work allocation by language, hours, complexity and customer group</div><div class="c">Monthly quality calibration across all sites</div><div class="c">Same quality score at all 4 sites; AI translation pilot</div><div class="lab">Leadership and works councils</div><div class="c">Quarterly change calendar; works councils NL and BE informed</div><div class="c">Consultation before wave 1 and reallocation</div><div class="c">Leader development path; monthly site-leader meeting</div><div class="c">Engagement and absence held per site</div><div class="lab">Cost and return</div><div class="c">Cost per order baseline; capacity ledger with finance</div><div class="c">First monthly return report to the leadership team</div><div class="c">ROI report shared with Commercial</div><div class="c">150 FTE at +20% orders; cost per order down a sixth</div><div class="lab">Milestone</div><div class="g"><b>M3: Plan signed</b>Model, baseline, scorecard agreed</div><div class="g"><b>M6: On trend</b>Wave 1 live, first fixes live</div><div class="g"><b>M9: Peak-ready</b>Peak plan tested, wave 2 live</div><div class="g"><b>M12: Growth absorbed</b>2.2% · 42% · 150 FTE</div></div>
   <div class="key"><b style="color:#ff8000">NEW:</b> Checkpoints come early enough to act: a miss at month 6 still leaves a quarter to hire or bring automation forward before the peak.<br><b style="color:#888">OLD:</b> Four milestones, one per quarter: plan signed by month 3, on trend by month 6, peak-ready by month 9, growth absorbed by month 12.</div>
-  <div class="cqs" style="margin:.8cqw 0 1.2cqw"><div class="cqq"><b>Q1</b>Model, baseline, scorecard agreed</div><div class="cqq"><b>Q2</b>First automation step, Scoober and grocery fixes</div><div class="cqq"><b>Q3</b>Peak plan tested, second automation step</div><div class="cqq"><b>Q4</b>42% automation, 150 FTE at +20% orders</div></div>
-  <div class="n">19</div>
+  <div class="cqs" style="margin:.8cqw 0 1.2cqw"><div class="cqq"><b>Q1</b>Model, baseline, scorecard agreed</div><div class="cqq"><b>Q2</b>First automation step, fixes of top contact causes</div><div class="cqq"><b>Q3</b>Peak plan tested, second automation step</div><div class="cqq"><b>Q4</b>42% automation, 150 FTE at +20% orders</div></div>
+  <div class="n">21</div>
 </div></section>
 <section class="page" data-part="c3"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd solo"><h2>Conclusions</h2></div>
   <div class="cband"><div class="cbig"><span>+20%</span>orders</div><div class="cbig"><span>150</span>people, flat</div><div class="cbig"><span>−⅙</span>staff cost per order**</div><div class="ctxt"><span style="color:var(--brand)">Key Mandate:</span> You need to develop a 12-month plan to scale CS operations to support 20% growth across all 4 sites.</div></div>
   <div class="cgrid c3g"><div class="cq"><b>01</b> Capacity Planning</div><div class="cr">Without change, 30 more people. Two levers close the gap: contacts 2.4% → 2.2% per order, automation 36% → 42%, about 15 FTE each. BPO takes peaks, weekends and seasons.</div><div class="cq"><b>02</b> Automation Roadmap</div><div class="cr">Simple, frequent questions first; contacts prevented at the source for Scoober and grocery. Each automated type stays only while satisfaction and repeat contacts hold.</div><div class="cq"><b>03</b> Multi-Site Operating Model</div><div class="cr">One scorecard and one weekly review for all four sites. Work allocated by language, hours, complexity and customer group; BPO for flexible volume.</div><div class="cq"><b>04</b> Leadership &amp; People</div><div class="cr">One leadership routine across four sites. Works councils in the Netherlands and Belgium consulted before each change; freed time goes to complex cases, quality and development.</div><div class="cq"><b>05</b> Cost &amp; Growth Balance</div><div class="cr">Cost per order falls while orders grow 20%. ROI is the 30 people not hired, shown monthly with customer satisfaction and shared with Commercial.</div></div>
   <div class="srcb">** Own estimate derived from the case figures: staff cost per order = FTE ÷ orders, with the same cost per FTE.</div>
-  <div class="n">20</div>
+  <div class="n">22</div>
 </div></section>
 
 
@@ -716,9 +767,9 @@ b,strong{font-weight:700;color:var(--dk)}
   <h2>Business Case 1<br>Reversing PSAT Decline in NL</h2>
   <div class="tag">Head of Customer Services Benelux · Second round</div>
   <div class="sub">A 90-day plan to restore partner satisfaction</div>
-  <div class="n">21</div>
-</div><div class="sl img"><img src="just-eat-case-3/case1_p4.png" alt="Business Case 1: Reversing PSAT Decline in NL"><div class="n">22</div></div></section>
-<section class="page pair" data-part="c1"><div class="sl img"><img src="just-eat-case-3/case1_p5.png" alt="Business Case 1: The Challenge"><div class="n">23</div></div><div class="sl img"><img src="just-eat-case-3/case1_p6.png" alt="Business Case 1: Discussion Topics"><div class="n">24</div></div></section>
+  <div class="n">23</div>
+</div><div class="sl img"><img src="just-eat-case-3/case1_p4.png" alt="Business Case 1: Reversing PSAT Decline in NL"><div class="n">24</div></div></section>
+<section class="page pair" data-part="c1"><div class="sl img"><img src="just-eat-case-3/case1_p5.png" alt="Business Case 1: The Challenge"><div class="n">25</div></div><div class="sl img"><img src="just-eat-case-3/case1_p6.png" alt="Business Case 1: Discussion Topics"><div class="n">26</div></div></section>
 
 <!-- C1 Root Cause Analysis -->
 <section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
@@ -731,7 +782,7 @@ b,strong{font-weight:700;color:var(--dk)}
     <div class="ans"><div class="ab dg"><span class="no">1</span><div><b>Diagnose:</b> Split the drop by topic, tier, site, week, joining date and problem exposure. AI reads and summarises all partner comments behind low scores.<div class="mt"><div class="mth">Why might New score 60.4%, Gold 51.0%?</div><div class="mth">How to check (compare PSAT)</div><div>New partners get onboarding help</div><div>New partners with vs without an onboarding call</div><div>They have had fewer problems so far</div><div>With vs without a refund decline, review dispute or incident in 90 days</div><div>They have no memory of service before June</div><div>Joined after June: does PSAT fall the longer they stay?</div><div>They ask simpler questions</div><div>Same topic, compared across tiers</div><div>New partners signed up under today's terms; older partners were promised more</div><div>Ask Gold partners what they were promised and miss now</div></div></div></div><div class="ab"><span class="no">2</span><div><b>Prioritise:</b><ul class="b abl"><li>First the critical path: root causes such as IT bugs that trigger other incidents</li><li>Then, across all tiers, the incidents that create the most repeat contacts: each is avoidable cost</li><li>Low topics join the same list: irrelevant requests are routed to the right team before they reach an agent; connection issues go to IT</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Tech incidents:</b> Per August incident, compare PSAT of partners it hit with those it did not: the gap is the incident effect.</div></div></div>
   </div>
   <div class="key">The fix sits mostly outside Customer Service: CS must turn its contact data into one prioritised fix list for IT, product and fraud. More agents would only answer the same failures again.</div>
-  <div class="n">25</div>
+  <div class="n">27</div>
 </div></section>
 
 <!-- C1 Partner Segmentation -->
@@ -742,7 +793,7 @@ b,strong{font-weight:700;color:var(--dk)}
     <div class="ans"><div class="ab"><span class="no">1</span><div><b>Gold partners:</b><ul class="b abl"><li>Critical-path issues are fixed for all partners first</li><li>Gold comes first in rollout: each fix goes live for Gold partners first</li><li>Gold contacts go first in the queue, to trained agents from today’s team who settle a refund or review case in one contact</li><li>Gold PSAT reviewed weekly on its own</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Service by tier, set by partner value:</b><ul class="b abl"><li>Gold: first in the queue, settled in one contact</li><li>Silver and Chain: priority queue</li><li>Bronze: standard queue and self-service</li><li>New: onboarding support</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Proactive outreach:</b><ul class="b abl"><li>Tell every affected partner about incidents, refund declines and review changes before they contact us</li><li>Automated and triggered by the event, so it works at any volume: cause, fix date, one click to an agent</li><li>Measured by fewer inbound contacts and higher PSAT for partners who were told</li></ul></div></div></div>
   </div>
   <div class="key">Partner tiers are labels, not service levels: the most valuable partners get no better experience. Service must follow partner value, the same way contact management follows customer value.</div>
-  <div class="n">26</div>
+  <div class="n">28</div>
 </div></section>
 
 <!-- C1 Multi-Site Consistency -->
@@ -758,7 +809,7 @@ b,strong{font-weight:700;color:var(--dk)}
   </div>
   <div class="key">Without PSAT per site we cannot tell a site problem from a company problem: one scorecard across the three sites comes before any other fix.</div>
   <div class="srcb">** Own assumption: the case does not say which site serves which market.</div>
-  <div class="n">27</div>
+  <div class="n">29</div>
 </div></section>
 
 <!-- C1 AI and Automation Impact -->
@@ -774,7 +825,7 @@ b,strong{font-weight:700;color:var(--dk)}
     <div class="ans"><div class="ab"><span class="no">1</span><div><b>AI deflection:</b><ul class="b abl"><li>Bot takes simple contacts; agents get the complex, longer ones</li><li>PSAT effect: compare solved by the bot, bot to agent, agent only</li><li>A partner the bot cannot help goes straight to a skilled agent</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Ravelin:</b><ul class="b abl"><li>Protection stays; declines get a manual check until rules are fixed</li><li>A wrong decline risks a chargeback: it costs more and ties the same people up in chargeback defence</li><li>With the fraud team: find the false declines, tune the rules, stop the manual check once the rules work</li><li>Manual check cost sized from decline volume and AHT, set against chargeback cost</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Balance:</b><ul class="b abl"><li>Automate simple topics partners already rate well, such as CS admin</li><li>Reviews, refunds, disputes stay with people until their automation works</li></ul></div></div></div>
   </div>
   <div class="key">Bots and fraud rules are tuned for cost and protection, not for partner outcomes: each needs a PSAT and a CSAT target, or savings turn into lost partner trust.</div>
-  <div class="n">28</div>
+  <div class="n">30</div>
 </div></section>
 
 <!-- C1 Implementation and Measurement -->
@@ -789,12 +840,12 @@ b,strong{font-weight:700;color:var(--dk)}
     <div class="ans"><div class="ab"><span class="no">1</span><div><b>Measure:</b><ul class="b abl"><li>PSAT weekly by tier, topic and site; day-90 target: back to June’s 50.2%, Gold no longer the lowest tier</li><li>Fix dates agreed with each owner by day 30; a slip shows on the weekly scorecard</li><li>Leading indicators: repeat contacts, false declines, open incidents, partners told before they call</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Accountability:</b><ul class="b abl"><li>One owner per root cause, reviewed weekly: IT for incidents, product for reviews, fraud for Ravelin, CS for partner communication</li><li>Shared targets agreed with the Director of Customer Service, set in each owner’s objectives</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Growth:</b><ul class="b abl"><li>Growth comes from all partners: fixing the same failures for every tier removes repeat contacts and frees agent time</li><li>PSAT tracked against partner retention and orders per tier, so CS shows its share of the 20%</li></ul></div></div></div>
   </div>
   <div class="key">PSAT and CSAT become company targets, not CS scores: CS, IT, product and fraud are measured on them together, so every root cause has an owner.</div>
-  <div class="n">29</div>
+  <div class="n">31</div>
 </div></section>
 <section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd solo"><h2>Conclusions</h2></div>
   <div class="cgrid"><div class="ch2">Objective</div><div class="ch2">Response</div><div class="cq"><b>01</b> Diagnose root causes and prioritise</div><div class="cr">The decline sits mostly outside CS: IT incidents, fraud rules, review automation. Critical path first, then incidents ranked by the repeat contacts they cause, across all tiers.</div><div class="cq"><b>02</b> Plan to improve PSAT, particularly for Gold</div><div class="cr">Gold scores no higher than Bronze. Burning issues are fixed for all partners first; Gold contacts go first in the queue, to trained agents who can settle a case in one contact.</div><div class="cq"><b>03</b> PSAT consistency across Enschede, Wroclaw, BPO</div><div class="cr">One weekly scorecard and one quality form for all three sites, the same % of contacts reviewed, monthly calibration across all sites.</div><div class="cq"><b>04</b> Balance AI automation with partner experience</div><div class="cr">Automation stays where partners rate it well. Reviews, refunds and disputes stay with people, and declines get a manual check, until the automation and fraud rules work.</div><div class="cq"><b>05</b> Align PSAT with the 20% growth goal</div><div class="cr">Growth comes from all partners: fixing the same failures for every tier removes repeat contacts and frees agent time for growth.</div><div class="cq"><b>06</b> Measurement and accountability</div><div class="cr">PSAT and CSAT become company targets: CS, IT, product and fraud are measured on them together, one owner per root cause, reviewed every week.</div></div>
-  <div class="n">30</div>
+  <div class="n">32</div>
 </div></section>
 
 
@@ -888,5 +939,10 @@ parts.forEach(function(p){var d=document.createElement('div');d.className='tpart
 apply();
 document.getElementById('tc').onclick=function(){document.querySelector('.page[data-part="toc"]').scrollIntoView({behavior:'smooth'})};
 })();
+</script>
+<script>
+function wloop(){document.querySelectorAll('.wloop').forEach(function(l){var p=l.parentNode,pr=p.getBoundingClientRect(),c=p.querySelector('.wcc').getBoundingClientRect(),r=p.querySelector('.wcr').getBoundingClientRect();
+ var t=c.top+c.height/2-pr.top,b=r.top+r.height/2-pr.top;l.style.top=t+'px';l.style.height=(b-t)+'px';l.style.left=(Math.max(c.right,r.right)-pr.left)+'px';});}
+window.addEventListener('load',function(){setTimeout(wloop,50)});window.addEventListener('resize',function(){setTimeout(wloop,50)});document.addEventListener('fullscreenchange',function(){setTimeout(wloop,300)});
 </script>
 </body>
