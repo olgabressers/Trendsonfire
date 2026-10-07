@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Just Eat Takeaway.com — Case 3 Scaling</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+/* Template spec, measured from the case PDF (720 x 405 pt page, 1pt = 0.1389cqw):
+   title Inter Black 24pt #242e30 · card heading Inter ExtraBold 13pt #f36d21 · body Inter 10pt #4b5563, lead-ins Inter Bold #111827
+   card #fff, 1.13pt #e5e7eb border, 7.5pt radius · key box #fff8f4, 1.13pt #f36d21 border · page #fcfcfc · icon 33pt square, 24pt from right, 15pt from top */
+:root{--o:#f36d21;--brand:#ff8000;--slate:#242e30;--dk:#111827;--tx:#4b5563;--line:#e5e7eb;--grey:#9ca3af;--soft:#fff8f4;--pg:#fcfcfc;--bw:max(1px,.156cqw);--r:1.04cqw}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:#e9e9e9;color:var(--tx);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.25}
+.page{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:4vh 4vw}
+.sl{position:relative;width:min(84vw,140vh);aspect-ratio:16/9;background:var(--pg);box-shadow:0 2px 14px rgba(0,0,0,.12);container-type:inline-size;padding:4.17cqw 4.17cqw 4.72cqw;display:flex;flex-direction:column;overflow:hidden;--fb:calc(1.39cqw * var(--k,1));color:var(--tx)}
+.sl>*{font-size:var(--fb)}
+.sl.img{padding:0;background:#fff}
+.sl.img img{width:100%;height:100%;object-fit:contain;display:block}
+.logo{position:absolute;top:2.08cqw;right:3.33cqw;width:4.58cqw;height:4.58cqw;display:block}
+.n{position:absolute;right:3.33cqw;bottom:1.6cqw;font-weight:400;color:var(--tx)}
+h2{font-size:calc(var(--fb) * 2.4)!important;font-weight:900;color:var(--slate);line-height:1.875;height:1.875em;margin:-.9cqw 0 1.46cqw;white-space:nowrap;letter-spacing:-.005em}
+.card{background:#fff;border:var(--bw) solid var(--line);border-radius:var(--r);padding:1.53cqw 1.94cqw;min-width:0}
+.ch{font-size:1.3em;font-weight:800;color:var(--o);margin:0 0 1.1cqw;line-height:1.2}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3.06cqw;flex:1;min-height:0}
+.grow{flex:1;min-height:0;display:flex;flex-direction:column}
+.grow svg{flex:1;min-height:0;width:100%;height:100%}
+.card svg{display:block;width:100%}
+ul.b,ol.b{list-style:none;margin:0;padding:0 0 0 1.67cqw}
+ul.b li,ol.b li{position:relative;padding-left:3.33cqw;margin:0 0 .76cqw}
+ul.b li::before{content:"\25CF";position:absolute;left:0;top:.05em;font-family:Arial,sans-serif;font-size:.92em;color:var(--tx)}
+ol.b{counter-reset:d}
+ol.b li{counter-increment:d}
+ol.b li::before{content:counter(d);position:absolute;left:0;top:0;font-weight:800;color:var(--o)}
+b,strong{font-weight:700;color:var(--dk)}
+.note{color:var(--tx);margin-top:.9cqw}
+.key{margin-top:auto;background:var(--soft);border:var(--bw) solid var(--o);border-radius:var(--r);padding:1.6cqw 2.08cqw;color:var(--dk);font-size:calc(var(--fb) * 1.3);font-weight:400;text-align:center;line-height:1.25}
+.key b{color:var(--o);font-weight:800;margin-right:.5em}
+.note+.key,.two+.key,.grow+.key,.qa+.key{margin-top:1.4cqw}
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw;margin:0 0 1.2cqw}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;margin:0 0 1.6cqw}
+.tiles .card{padding:1.53cqw 1.4cqw}
+.tile .v,.rt .v{font-size:2.4em;letter-spacing:-.01em;font-weight:900;color:var(--o);line-height:1.15;white-space:nowrap}
+.tile .l{margin-top:.4cqw;font-weight:700;color:var(--dk)}
+.stats .tile{padding:0}
+/* simulator */
+.simsl h2{margin-bottom:.3cqw}
+.sim{display:grid;grid-template-columns:1fr 1fr;column-gap:3.06cqw;row-gap:.25cqw;padding-top:1.1cqw;padding-bottom:.9cqw}
+.sg{margin:0}
+.st{display:flex;justify-content:space-between;font-weight:700;color:var(--dk)}
+.st .val{color:var(--o)}
+.def{color:var(--tx);font-weight:400}
+.sg input{width:100%;accent-color:#f36d21;margin:.15cqw 0 0}
+.res{display:grid;grid-template-columns:1fr 1fr 2fr;gap:1.6cqw;margin-top:1.2cqw}
+.rt{background:#fff;border:var(--bw) solid var(--line);border-radius:var(--r);padding:.8cqw 1.4cqw}
+.rt.big .v{color:var(--slate)}
+.concl{background:#fff;border:var(--bw) solid var(--line);border-radius:var(--r);padding:.8cqw 1.4cqw;margin:0;display:flex;align-items:center;color:var(--dk)}
+.pre{display:flex;gap:.6cqw;margin-top:.3cqw}
+.pre button{flex:1;border:var(--bw) solid var(--o);border-radius:.6cqw;background:#fff;color:var(--o);font:inherit;font-weight:700;padding:.45cqw .4cqw;cursor:pointer}
+.pre button:hover,.pre button.on{background:var(--o);color:#fff}
+.simsl .key{margin-top:1.2cqw}
+/* cover */
+.sl.cover{background:var(--brand);align-items:center;justify-content:center;text-align:center;color:#fff;padding:4.17cqw}
+.cover .house{width:16cqw;display:block;margin:0 auto 3.4cqw}
+.cover h2{color:#fff;height:auto;line-height:1.2;margin:0 0 2.6cqw}
+.cover .tag,.cover .sub{font-size:calc(var(--fb) * 1.3);font-weight:700;color:#fff;margin:0}
+.cover .tag{margin-bottom:.8cqw}
+.cover .n{color:#fff}
+/* html charts */
+.wf{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:2.4cqw;padding:2.6cqw 2cqw 0}
+.wc{display:flex;flex-direction:column;min-height:0}
+.plot{flex:1;position:relative;border-bottom:var(--bw) solid var(--grey)}
+.bar{position:absolute;left:12%;right:12%}
+.bar span{position:absolute;left:0;right:0;text-align:center;font-weight:800;font-size:1.3em;color:var(--dk);line-height:1}
+.bar .in{top:45%;color:#fff}.bar .up{bottom:100%;margin-bottom:.5cqw}.bar .dn{top:100%;margin-top:.5cqw}
+.dash{position:absolute;left:-30%;width:42%;border-top:var(--bw) dashed var(--grey)}
+.xl{text-align:center;padding-top:.8cqw;min-height:4.4cqw}
+.mx{display:grid;grid-template-columns:2.4cqw 1fr;grid-template-rows:1fr auto;column-gap:.6cqw;height:100%}
+.yl{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center}
+.cells{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:.8cqw}
+.cl{border-radius:var(--r);padding:1.2cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.3cqw;min-height:8cqw}
+.cl.soft{background:var(--soft);border:var(--bw) solid var(--o)}.cl.hot{background:var(--o);color:#fff}.cl.hot b{color:#fff}.cl.grey{background:#f3f4f6;border:var(--bw) solid var(--line)}
+.xlab{text-align:center;padding-top:.6cqw;white-space:pre}
+.sites{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;grid-template-areas:"a h b" "c h d";gap:2cqw 4cqw}
+.sites .links{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.site{position:relative;z-index:1;background:var(--slate);color:#fff;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.2cqw;gap:.3cqw}
+.site b{color:#fff;font-size:1.3em;font-weight:800}
+.site.hub{background:var(--o);align-self:center;min-height:11cqw}
+.rm{display:grid;grid-template-columns:15cqw repeat(4,1fr);row-gap:1.8cqw;align-items:center;padding-top:.4cqw}
+.rm .q{text-align:center;font-weight:800;color:var(--dk);border-bottom:var(--bw) solid var(--line);padding-bottom:.5cqw}
+.rm .lab{font-weight:700;color:var(--dk)}
+.bar2{color:#fff;padding:1.15cqw 1cqw;margin-right:.25cqw;white-space:nowrap;overflow:hidden}
+.bar2.s{background:var(--slate)}.bar2.o{background:var(--o)}.bar2.o2{background:#f5915a}.bar2.g{background:#6b7280}
+.rm .ms{text-align:right;position:relative;padding-top:1.8cqw}
+.rm .ms::before{content:"";position:absolute;right:0;top:.2cqw;width:1.1cqw;height:1.1cqw;background:var(--o);transform:translateX(50%) rotate(45deg)}
+.rm .ms{padding-right:.2cqw}
+/* discussion-area slides */
+.qa{display:grid;grid-template-columns:34fr 66fr;gap:2.2cqw;flex:1;min-height:0}
+.lc{display:flex;flex-direction:column;gap:1.1cqw;min-height:0}
+.card.tb{border-top:.42cqw solid var(--o)}
+.card.tb.dk{border-top-color:var(--slate)}
+.card.tb.dk .ch{color:var(--dk)}
+.qc ul.b{padding-left:.8cqw}.qc ul.b li{padding-left:2.4cqw;margin-bottom:.45cqw}.qc{padding-bottom:1cqw}
+.ac ol.b{padding-left:.4cqw}.ac ol.b li{padding-left:2.2cqw;margin-bottom:1.5cqw}
+.vis{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;padding:.9cqw 1.4cqw}
+.vis .ch{margin-bottom:.6cqw}
+.hw{display:grid;grid-template-columns:auto 1fr;column-gap:1cqw;row-gap:.3cqw;align-items:center}
+.hl{line-height:1.12}
+.ht{position:relative;height:1.9cqw;border-left:var(--bw) solid var(--grey)}
+.hb{position:absolute;top:0;bottom:0}
+.hb span{position:absolute;top:50%;transform:translateY(-50%);font-weight:800;color:var(--dk);white-space:nowrap}
+.hb .in{right:.6cqw;color:#fff}.hb .lf{right:calc(100% + .5cqw)}
+.sites2{position:relative;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-areas:"a . b" ". h ." "c . d";gap:.6cqw .4cqw}
+.sites2 .links{position:absolute;inset:0;width:100%;height:100%}
+.s2{position:relative;background:var(--slate);color:#fff;font-weight:700;border-radius:.6cqw;padding:.6cqw .4cqw;text-align:center;min-height:3.8cqw;display:flex;align-items:center;justify-content:center;line-height:1.15}
+.s2.hub{background:var(--o)}
+.steps{display:flex;flex-direction:column;align-items:stretch;gap:.2cqw}
+.stp{background:#f3f4f6;border:var(--bw) solid var(--line);border-radius:.6cqw;padding:.7cqw;text-align:center;font-weight:700;color:var(--dk)}
+.stp.o{background:var(--o);border-color:var(--o);color:#fff}
+.arr{text-align:center;color:var(--o);font-weight:800;line-height:1}
+.rm2{display:grid;grid-template-columns:auto repeat(4,1fr);row-gap:.7cqw;column-gap:0;align-items:center}
+.rm2 .q{text-align:center;font-weight:800;color:var(--dk);border-bottom:var(--bw) solid var(--line);padding-bottom:.3cqw}
+.rm2 .lab{font-weight:700;color:var(--dk);padding-right:.8cqw;line-height:1.15}
+.b2{height:1.9cqw;margin-right:.2cqw}.b2.s{background:var(--slate)}.b2.o{background:var(--o)}.b2.o2{background:#f5915a}.b2.g{background:#6b7280}
+.rm2 .gt{height:1.4cqw;position:relative}.rm2 .gt::after{content:"";position:absolute;right:0;top:.1cqw;width:1cqw;height:1cqw;background:var(--o);transform:translateX(50%) rotate(45deg)}
+/* svg charts: base size = slide body size, set by svgfs() */
+.sl svg text{font-family:Inter,Arial,sans-serif}
+.nav{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:50}
+.nav button{width:46px;height:46px;border-radius:50%;border:0;background:var(--brand);color:#fff;font-size:22px;cursor:pointer}
+/* round 8: header band with question card, two-half body */
+.sl.std{padding-top:3.2cqw}
+.hd{display:grid;grid-template-columns:1fr 47%;gap:2.2cqw;align-items:start}
+.hd h2{margin:0}
+.hd.solo{grid-template-columns:1fr}
+.qk{padding:.8cqw 1.4cqw .7cqw}
+.qk .ch{margin-bottom:.45cqw}
+.qk ul.b{padding-left:.6cqw}.qk ul.b li{padding-left:2.2cqw;margin:0 0 .2cqw}
+.body2{display:grid;grid-template-columns:1fr 1fr;gap:2.2cqw;flex:1;min-height:0;margin-top:1.4cqw}
+.body2+.key,.body2+.note{margin-top:1.4cqw}
+.vbig{display:flex;flex-direction:column;min-height:0;padding:1.4cqw 1.8cqw}
+.vbig>.ch{margin-bottom:.8cqw}
+.ans{display:flex;flex-direction:column;gap:.8cqw;min-height:0}
+.ab{flex:1;display:grid;grid-template-columns:2.2cqw 1fr;align-items:center;background:#fff;border:var(--bw) solid var(--line);border-radius:var(--r);padding:.5cqw 1.4cqw .5cqw 1.2cqw;line-height:1.25}
+.ab .no{font-weight:800;color:var(--o);font-size:1.3em}
+.ab b{color:var(--dk)}
+/* waterfall big (horizontal) */
+.hw2{flex:1;display:grid;grid-template-columns:auto 1fr;column-gap:1.4cqw;align-content:space-evenly;align-items:center}
+.hw2 .ht{height:3cqw;border-left:var(--bw) solid var(--grey);position:relative}
+.hw2 .hl{line-height:1.2}
+/* sites big */
+.sites3{position:relative;flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;grid-template-areas:"a . b" ". h ." "c . d";gap:.8cqw .8cqw}
+.sites3 .links{position:absolute;inset:0;width:100%;height:100%}
+.s3{position:relative;background:var(--slate);color:#fff;border-radius:.8cqw;padding:.6cqw .5cqw;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2;gap:.2cqw}
+.s3 b{color:#fff}
+.s3.hub{background:var(--o)}
+/* steps big */
+.steps2{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.5cqw}
+.steps2 .stp{padding:1.6cqw;font-size:1.3em}
+.steps2 .arr{font-size:1.3em}
+/* gantt big */
+.rm3{flex:1;display:grid;grid-template-columns:auto repeat(4,1fr);row-gap:.9cqw;align-items:center;align-content:space-evenly}
+.rm3 .q{text-align:center;font-weight:800;color:var(--dk);border-bottom:var(--bw) solid var(--line);padding-bottom:.4cqw}
+.rm3 .lab{font-weight:700;color:var(--dk);padding-right:1cqw;line-height:1.15}
+.b3{color:#fff;padding:.55cqw .6cqw;margin-right:.2cqw;line-height:1.2;min-height:3.2cqw;display:flex;align-items:center}
+.b3.s{background:var(--slate)}.b3.o{background:var(--o)}.b3.o2{background:#f5915a}.b3.g{background:#6b7280}
+.rm3 .gt{position:relative;text-align:right;padding:1.5cqw .2cqw 0 0;line-height:1.15}
+.rm3 .gt::before{content:"";position:absolute;right:0;top:0;width:1.1cqw;height:1.1cqw;background:var(--o);transform:translateX(50%) rotate(45deg)}
+/* simulator two halves */
+.sim1{display:flex;flex-direction:column;gap:.1cqw;padding:.8cqw 1.6cqw;justify-content:space-between}
+.sim1 .sg input{margin:.1cqw 0 0}
+.res2{display:flex;flex-direction:column;gap:.8cqw}
+.res2 .rt{flex:none;padding:1cqw 1.6cqw}
+.res2 .concl{flex:1;padding:1cqw 1.6cqw}
+/* scenarios card */
+.scn{padding:1cqw 1.6cqw}
+.scn .pre button{padding:.7cqw .4cqw}
+/* decisions */
+.tiles2{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1.2cqw;min-height:0}
+.tiles2 .card{display:flex;flex-direction:column;justify-content:center;padding:1.2cqw 1.6cqw}
+/* current performance */
+.sbx{display:grid;grid-template-columns:repeat(2,1fr);gap:.8cqw;margin-bottom:1cqw}
+.sb{background:#f9fafb;border:var(--bw) solid #e2dfd9;padding:.9cqw 1.1cqw}
+.sb .v{font-size:2.4em;font-weight:900;line-height:1;white-space:nowrap}
+.sb .v.red{color:#dc2626}.sb .v.grn{color:#16a34a}
+.sb .lb{font-weight:700;color:var(--dk);margin-top:.4cqw;line-height:1.2}
+.sb .sbsub{color:#555;margin-top:.2cqw}
+.rv-split{background:#f9fafb;border:var(--bw) solid #e2dfd9;padding:1.6cqw 1.8cqw}
+.rv-col-hdr{font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1cqw;padding-bottom:.6cqw;border-bottom:.2cqw solid;line-height:1.3}
+.rv-col-hdr.neg{color:#b45309;border-color:#FF7A00}
+.rv-col-hdr.pos{color:#15803d;border-color:#16a34a}
+.rv-bar-row{display:flex;align-items:center;gap:.8cqw;margin-bottom:.75cqw}
+.rv-bar-label{color:#1f1f1f;flex:1;line-height:1.3}
+.rv-bar-track{width:9cqw;height:.7cqw;background:#e8e5e0;border-radius:.2cqw;flex-shrink:0}
+.rv-bar-fill{height:100%;border-radius:.2cqw}
+.rv-bar-fill.neg{background:#FF7A00}.rv-bar-fill.pos{background:#16a34a}
+.rv-bar-pct{font-weight:700;color:#0a0f1a;flex-shrink:0;min-width:3.2cqw;text-align:right}
+.rvg{display:grid;grid-template-columns:1fr 1fr;gap:2.2cqw;flex:1;min-height:0;margin-top:1.4cqw;align-items:stretch}
+.rvg .rv-split{display:flex;flex-direction:column}
+.rvg .rv-bar-row{flex:1;margin:0}
+.rvg + .key{margin-top:1.4cqw}
+/* big picture */
+.bpw{flex:1;min-height:0;display:flex;flex-direction:column;gap:.8cqw;margin-top:.6cqw}
+.mrow{display:grid;grid-template-columns:1fr 1fr .8fr;gap:1.2cqw}
+.mrow .md{padding:.7cqw 1.3cqw;gap:.2cqw;justify-content:flex-start}
+.mrow .md .ch{margin:0}
+.oc{color:var(--o)!important}
+.card.tb.gry{border-top-color:var(--grey);background:#f9fafb}
+.ch.dkh{color:var(--dk)}
+.brow{flex:1;min-height:0;display:grid;grid-template-columns:60fr 40fr;gap:1.2cqw}
+.brow .bpt{grid-template-columns:17cqw 1fr 1fr 1fr;row-gap:.3cqw;padding:.7cqw 1.4cqw;align-content:space-between}
+.brow .bpt .tn{grid-column:1/5}
+.brow .bpt .sbar{height:2.1cqw}
+.brow .bpt .vh{font-size:1em;padding-top:.25cqw}
+.brow .bpt .rl{line-height:1.15}
+.brow .bpr{gap:.8cqw}
+.brow .ccl{padding:.7cqw 1.3cqw}
+.brow .prof{flex:1;padding:.7cqw 1.3cqw}
+.brow .prof .intro{margin-bottom:.35cqw}
+.brow .drv{gap:.3cqw;justify-content:space-between}
+.chip{display:flex;align-items:center;white-space:nowrap;background:#fff;border:var(--bw) solid var(--line);border-radius:.6cqw;padding:.25cqw .8cqw;line-height:1.25}
+.chip .no{font-weight:800;color:var(--o);margin-right:.6cqw}
+.chip b{color:var(--dk)}
+
+.body2.bp1{grid-template-columns:36fr 64fr}
+.bp1 .bpt{grid-template-columns:17cqw 1fr 1fr;row-gap:.35cqw;padding:1cqw 1.6cqw}
+.bp1 .bpt .rl{line-height:1.2}
+.mods{display:flex;flex-direction:column;gap:1cqw;min-height:0}
+.md{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.4cqw;padding:1cqw 1.6cqw}
+.md .ch{margin:0}.md .cm{color:var(--tx)}.md .cm b{color:var(--o)}
+.md.gr{flex:.6;background:#f9fafb}
+.bpt .vh{text-align:center;font-weight:800;font-size:1.3em;color:var(--dk);border-top:.42cqw solid var(--slate);padding-top:.4cqw}
+.bpt .vh.sc{border-top-color:var(--o)}
+.ccl2{display:flex;flex-direction:column;padding:1.6cqw 2cqw}
+.ccl2 .big{flex:1;display:flex;align-items:center;font-size:1.3em;font-weight:700;color:var(--dk);line-height:1.35}
+
+.bp{display:grid;grid-template-columns:52fr 48fr;gap:2cqw;flex:1;min-height:0;margin-top:1.2cqw}
+.bpt{display:grid;grid-template-columns:14cqw 1fr 1fr;column-gap:.8cqw;row-gap:.6cqw;align-content:space-evenly;align-items:center;padding:1.2cqw 1.6cqw}
+.bpt .mh{align-self:stretch;border-top:.42cqw solid var(--slate);background:#f9fafb;border-radius:.4cqw;padding:.5cqw .7cqw;line-height:1.22}
+.bpt .mh.sc{border-top-color:var(--o)}
+.bpt .mh b{display:block;font-size:1.3em;font-weight:800}
+.bpt .rl{font-weight:700;color:var(--dk);line-height:1.15}
+.bpt .sbar{grid-column:2/4;display:flex;height:2.4cqw;color:#fff;font-weight:800}
+.bpt .sbar div{display:flex;align-items:center;justify-content:center}
+.bpt .vc{text-align:center;font-weight:700;color:var(--dk);line-height:1.2}
+.bpt .vc.np{font-weight:400;color:var(--tx)}
+.bpt .tn{grid-column:1/4;color:var(--tx);line-height:1.25;margin-top:.2cqw}
+.bpr{display:flex;flex-direction:column;gap:1cqw;min-height:0}
+.ccl{padding:1cqw 1.4cqw;color:var(--dk);font-weight:700;line-height:1.25}
+.prof{display:flex;flex-direction:column;padding:1.4cqw 1.8cqw;min-height:0}
+.prof .ch{margin-bottom:.2cqw}
+.prof .intro{margin-bottom:.6cqw}
+.drv{flex:1;display:flex;flex-direction:column;gap:.45cqw}
+.drv .ab{padding:.5cqw 1.2cqw;flex:1}
+.sl.dense{padding-bottom:3.6cqw}
+.sl.dense .key{padding:1cqw 2cqw}
+.sl.dense .note{margin-top:.6cqw}
+.sl.dense .body2+.note,.sl.dense .bp+.note{margin-top:.6cqw}
+.note+.key{margin-top:1cqw}
+.ms{flex:1;display:grid;grid-template-columns:13% repeat(4,1fr);gap:.5cqw .6cqw;align-content:stretch;font-size:calc(var(--fb) * .95)}
+.ms .q{background:var(--slate);color:#fff;font-weight:800;text-align:center;border-radius:.6cqw;padding:.45cqw;line-height:1.15}
+.ms .q span{display:block;font-weight:400;font-size:.85em}
+.ms .lab{font-weight:800;color:var(--dk);display:flex;align-items:center;line-height:1.15}
+.ms .c{background:#fff;border:var(--bw) solid var(--line);border-left:.35cqw solid var(--o);border-radius:.5cqw;padding:.4cqw .6cqw;color:var(--tx);line-height:1.2;display:flex;align-items:center}
+.ms .g{background:var(--soft);border:var(--bw) solid var(--o);border-radius:.6cqw;padding:.45cqw .6cqw;color:var(--dk);line-height:1.2;text-align:center}
+.ms .g b{color:var(--o);display:block}
+.page.pair{gap:2vw;padding:4vh 2vw}
+.page.pair .sl{width:min(47vw,78vh)}
+.cv{flex:1;min-height:0;display:grid;grid-template-columns:29% 1fr;gap:3cqw}
+.cv .ph{border-radius:var(--r);overflow:hidden;background:#ddd}
+.cv .ph img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.cv .rt2{display:flex;flex-direction:column;min-height:0}
+.cv h2{margin:-.6cqw 0 .3cqw}
+.cv .hl1{color:var(--o);font-weight:800;font-size:1.15em;line-height:1.25;margin-bottom:.5cqw}
+.cv .st{display:grid;grid-template-columns:repeat(4,1fr);gap:1cqw;margin:1.3cqw 0}
+.cv .st .card{padding:.9cqw 1cqw}
+.cv .st .v{font-size:2em;font-weight:900;color:var(--o);line-height:1.1}
+.cv .st .l{font-weight:700;color:var(--dk);line-height:1.2}
+.cv .jobs{display:grid;grid-template-columns:auto auto 1fr;gap:.55cqw 1.4cqw;align-items:baseline}
+.cv .jobs .y{color:var(--tx);white-space:nowrap}.cv .jobs .co{font-weight:800;color:var(--dk);white-space:nowrap}
+.hd:not(.solo){margin:-3.13cqw -3.13cqw 1.2cqw 0;align-items:center;grid-template-columns:1fr 46%}
+.hd .qk{padding:.6cqw 1.1cqw .4cqw}
+.hd .qk .ch{margin-bottom:.25cqw}
+.hd .qk ul.b li{margin:0 0 .1cqw;line-height:1.2}
+.cv2{flex:1;min-height:0;display:grid;grid-template-columns:1fr 24%;gap:3cqw}
+.cv2 .ph{border-radius:var(--r);overflow:hidden}
+.cv2 .ph img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.cv2 .rt3{display:flex;flex-direction:column;min-height:0}
+.cv2 .eb{font-weight:800;color:var(--o);letter-spacing:.12em;font-size:.9em}
+.cv2 h2{margin:.3cqw 0 0;height:auto;line-height:1.15}
+.cv2 .hl1{font-weight:800;color:var(--o);font-size:1.75em;line-height:1.25;margin:.6cqw 0 1.6cqw}
+.cv2 .st{display:grid;grid-template-columns:repeat(6,1fr);gap:.8cqw}
+.cv2 .st .card{padding:.7cqw .8cqw;border-top:.3cqw solid var(--o)}
+.cv2 .st .v{font-size:1.75em;font-weight:900;color:var(--slate);line-height:1.1}
+.cv2 .st .l{color:var(--tx);line-height:1.2;font-size:.92em}
+.cv2 .tl{flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:1.3cqw;position:relative;padding-left:0}
+.cv2 .tr{display:grid;grid-template-columns:7.6em 1.6em 1fr;align-items:start}
+.cv2 .tr .y{font-weight:700;color:var(--dk);white-space:nowrap}
+.cv2 .tr .dot{width:.75em;height:.75em;border-radius:50%;background:var(--o);margin-top:.25em}
+.cv2 .tr .t{line-height:1.25}.cv2 .tr .t b{color:var(--dk)}.cv2 .tr .t i{font-style:normal;color:var(--o);font-weight:700}
+.mrow{grid-template-columns:1fr 1fr!important}
+.srcb{position:absolute;left:4.17cqw;right:7cqw;bottom:1.3cqw;line-height:1.25;font-size:calc(var(--fb) * .75)!important;color:var(--tx)}
+.logo{top:1.04cqw!important;right:1.04cqw!important;width:3.1cqw!important;height:3.1cqw!important;border-radius:.5cqw}
+.hd:not(.solo){margin-right:.67cqw!important}
+.srcb a{color:var(--tx)}
+.acc{flex:1;min-height:0;display:grid;grid-template-columns:64% 1fr;grid-template-rows:minmax(0,1fr);gap:1.8cqw;margin-bottom:1.2cqw}
+.shots{display:grid;grid-template-columns:minmax(0,.5fr) minmax(0,.8fr) minmax(0,.86fr);grid-template-rows:minmax(0,1fr);gap:1.4cqw;min-height:0}
+.shot{display:flex;flex-direction:column;min-height:0;gap:.5cqw}
+.shot .im{flex:1;min-height:0;border:var(--bw) solid var(--line);border-radius:.9cqw;overflow:hidden;background:#fff;padding:0;box-shadow:0 .3cqw .9cqw rgba(0,0,0,.08)}
+.shot .im img{width:100%;height:100%;object-fit:contain;object-position:center top;display:block;border-radius:.4cqw}
+.shot .cap .sn{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--o);color:#fff;font-size:.8em;margin-right:.45em;vertical-align:.1em}
+.accr{justify-content:center}
+.shot .cap{min-height:3.6em}
+.shot .cap{line-height:1.2}.shot .cap b{color:var(--dk);display:block}
+.accr{display:flex;flex-direction:column;gap:1cqw;min-height:0}
+.accr .card{padding:1cqw 1.3cqw}
+.accr .ch{margin-bottom:.5cqw}
+.rgw{position:relative;padding-bottom:.95em}
+.sim1 input[type=range]{height:1.05em;margin:0!important;display:block}
+.sim1 .st{line-height:1.15}
+.rgw .dm{position:absolute;top:calc(100% - .9em);transform:translateX(-50%);font-size:.8em;font-weight:700;color:var(--slate);line-height:1;white-space:nowrap}
+.rgw .dm::before{content:"";position:absolute;left:50%;top:-.45em;width:1px;height:.35em;background:var(--slate)}
+.pbars{flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+.pgh{font-weight:800;color:var(--dk);margin-top:.3cqw}
+.pbr{display:grid;grid-template-columns:42% 1fr 3.2em;align-items:center;gap:.8cqw}
+.pl{color:var(--dk)}.ptr{height:1.7cqw;background:#f0f0f0;border-radius:.3cqw}.pfl{height:100%;border-radius:.3cqw}.pv{font-weight:800;color:var(--dk);text-align:right}
+.pbars.tier .pbr{grid-template-columns:20% 1fr 3.6em}.pbars.tier .ptr{height:2.6cqw}
+.pnote{margin-top:.8cqw;color:var(--tx)}
+.msc{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.6cqw}
+.msr{display:grid;grid-template-columns:repeat(3,1fr);gap:1cqw}.msr.two{grid-template-columns:1fr 1fr}
+.msc .s3{min-height:4.4cqw}.msc .hub{background:var(--o)}.msc .arr{text-align:center;color:var(--o);font-weight:800;font-size:1.3em;line-height:1}
+.msc .stp{display:flex;align-items:center;justify-content:center;min-height:4.4cqw}
+.msc[style*="--sm"] .s3,.msc[style*="--sm"] .stp{min-height:3.4cqw}
+.p369{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:1cqw;min-height:0}
+.p2t{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto 1fr auto 1fr;gap:.45cqw .8cqw;min-height:0;align-items:stretch}
+.p2t .ph3{margin:0;text-align:center}
+.p2t .tk{grid-column:1/-1;font-weight:800;color:var(--dk);margin-top:.3cqw}
+.p2t .pc{display:flex;align-items:center;line-height:1.2}
+.pc{border:var(--bw) solid var(--line);border-radius:.6cqw;padding:.9cqw 1cqw;background:#fff}
+.pc.o{border-color:var(--o);background:var(--soft)}
+.ph3{font-weight:800;color:var(--o);margin-bottom:.6cqw}
+.pc ul.b{padding-left:0}.pc ul.b li{padding-left:1.6cqw;margin-bottom:.3cqw;line-height:1.18}
+.toc2{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:2.2cqw;min-height:0}
+.tpart{background:#fff;border:var(--bw) solid var(--line);border-top:.42cqw solid var(--o);border-radius:var(--r);padding:1.2cqw 1.6cqw;display:flex;flex-direction:column;min-height:0}
+.tph{display:flex;justify-content:space-between;align-items:center;gap:1cqw;margin-bottom:.8cqw}
+.tph .ch{margin:0}.tph .ch:hover{text-decoration:underline}
+.tph button{font:inherit;font-weight:700;color:var(--o);background:var(--soft);border:var(--bw) solid var(--o);border-radius:.5cqw;padding:.3cqw .9cqw;cursor:pointer;white-space:nowrap}
+.tpart a{display:grid;grid-template-columns:2.4em 1fr;padding:.25cqw 0;color:var(--dk);text-decoration:none;border-bottom:var(--bw) solid #f3f4f6}
+.tpart a:hover{color:var(--o)}.tpart a span{color:var(--tx)}
+.tpart.fold a{opacity:.45}
+.page.hid{display:none}
+.pres body{background:#000}
+.pres .page{padding:0;min-height:100vh}
+.pres .sl,.pres .page.pair .sl{width:min(100vw,177.78vh);box-shadow:none}
+.pres .page.pair{flex-direction:column;gap:0;padding:0}
+.pres .page.pair .sl{margin:max(0px,calc(50vh - min(100vw,177.78vh) * .28125)) 0;scroll-snap-align:center}
+.pres .nav{opacity:0;transition:opacity .2s}.pres .nav:hover{opacity:1}
+
+.n::before{content:"Prepared by Olga Bressers \00a0·\00a0 ";font-size:.85em}
+.srcb{right:22cqw!important}
+.sl.img .n::before{content:none}
+.pbars.tier.sm .ptr{height:1.6cqw}
+.whyn{margin-top:.6cqw;border-top:var(--bw) solid var(--line);padding-top:.6cqw;line-height:1.2}
+.whyn .wh{font-weight:800;color:var(--o);margin-bottom:.3cqw}
+.whyn ol{margin:0;padding-left:1.4em}.whyn li{margin:0 0 .15cqw}.whyn b{color:var(--dk)}
+.hyp{flex:1;min-height:0;display:grid;grid-template-columns:2.4cqw 1fr 1fr;gap:.55cqw 1cqw;grid-template-rows:auto repeat(5,1fr);margin:.4cqw 0 1.4cqw}
+.hyp .hr,.hyp .ht2{display:flex;flex-direction:column;justify-content:center}
+.hyp .hh{font-weight:800;color:var(--o);padding-bottom:.3cqw;border-bottom:var(--bw) solid var(--line)}
+.hyp .hn{font-weight:900;color:var(--o);font-size:1.4em;display:flex;align-items:center}
+.hyp .hr,.hyp .ht2{background:#fff;border:var(--bw) solid var(--line);border-radius:.6cqw;padding:.55cqw 1cqw;line-height:1.25}
+.hyp .hr b{color:var(--dk)}.hyp .ht2{border-left:.35cqw solid var(--o)}
+.ab.dg{flex:2.6}
+.ans:has(.dg){gap:.35cqw}
+.ans:has(.dg) .ab{padding-top:.35cqw;padding-bottom:.35cqw}
+.cgrid{flex:1;display:grid;grid-template-columns:34% 1fr;grid-template-rows:auto repeat(6,1fr);gap:.6cqw .9cqw;min-height:0;margin-bottom:2.2cqw}
+.cgrid .ch2{font-weight:800;color:var(--o);text-transform:uppercase;letter-spacing:.05em}
+.cgrid .cq{background:#fff;border:var(--bw) solid var(--line);border-left:.35cqw solid var(--o);border-radius:.6cqw;padding:.7cqw 1cqw;color:var(--dk);font-weight:700;display:flex;align-items:center;gap:.5em}
+.cgrid .cq b{color:var(--o)}
+.cgrid .cr{background:var(--soft);border-radius:.6cqw;padding:.7cqw 1cqw;color:var(--dk);display:flex;align-items:center;line-height:1.25}
+.rv{color:#d40000}
+.ab ul.abl{margin:.1cqw 0 0;padding-left:0}.ab ul.abl li{padding-left:1.1cqw;margin:0;line-height:1.18}.ab ul.abl li::before{font-size:.55em;top:.4em}
+.cband{display:grid;grid-template-columns:auto auto auto 1fr;gap:1.2cqw;align-items:center;background:var(--slate);color:#fff;border-radius:var(--r);padding:1cqw 1.6cqw;margin-bottom:1cqw}
+.cband .cbig{font-weight:700;line-height:1.1;color:#fff;padding-right:1.2cqw;border-right:var(--bw) solid rgba(255,255,255,.35)}
+.cband .cbig span{display:block;font-size:2.2em;font-weight:900;color:var(--brand)}
+.cband .ctxt{font-size:1.1em;font-weight:600;line-height:1.3;color:#fff}
+.c3g{grid-template-rows:repeat(5,1fr);flex:1;margin-bottom:1.8cqw}
+.cqs{display:grid;grid-template-columns:repeat(4,1fr);gap:.8cqw;margin-bottom:1.6cqw}
+.cqq{border-top:.35cqw solid var(--o);background:#fff;border-radius:.4cqw;padding:.5cqw .8cqw;color:var(--dk);line-height:1.2}
+.cqq b{display:block;color:var(--o)}
+.howto{color:var(--dk);line-height:1.2}.howto ol{margin:.3cqw 0 0;padding-left:1.3em}.howto li{margin:0 0 .15cqw}
+.mt{display:grid;grid-template-columns:44% 1fr;gap:0 .9cqw;margin-top:.3cqw;font-size:.9em;line-height:1.15}
+.mt>div{border-bottom:var(--bw) solid #f0f0f0;padding:.05cqw 0}
+.mt .mth{font-weight:800;color:var(--o)}
+</style>
+</head>
+<body>
+
+<!-- CV -->
+<section class="page"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="cv2">
+    <div class="rt3">
+      <div class="eb">CUSTOMER OPERATIONS · SERVICE · E-COMMERCE</div>
+      <h2>Olga Bressers</h2>
+      <div class="hl1">I turn complex, multi-market customer operations into commercial growth engines</div>
+      <div class="st"><div class="card"><div class="v">€150M+</div><div class="l">E-commerce channel P&amp;L owned</div></div><div class="card"><div class="v">26</div><div class="l">European markets run</div></div><div class="card"><div class="v">240+</div><div class="l">FTE client-operations org led</div></div><div class="card"><div class="v">12</div><div class="l">Luxury Maisons served</div></div><div class="card"><div class="v">30%</div><div class="l">Year-on-year revenue growth</div></div><div class="card"><div class="v">+20%</div><div class="l">NPS and OSAT improvement</div></div></div>
+      <div class="tl"><div class="tr"><div class="y">2025 – now</div><div class="dot"></div><div class="t"><b>TrendsOnFire</b> &nbsp;<i>Creator &amp; Founder</i><br>AI-powered strategic market-intelligence platform for senior leaders.</div></div><div class="tr"><div class="y">2019 – 2025</div><div class="dot"></div><div class="t"><b>Richemont Luxury Group</b> &nbsp;<i>Director E-Commerce, Customer Service &amp; Operations, EMEA</i><br>€150M+ P&amp;L, 240+ FTE, 12 Maisons across 26 markets · 30% YoY · CX, payment and anti-fraud transformation.</div></div><div class="tr"><div class="y">2016 – 2018</div><div class="dot"></div><div class="t"><b>adidas</b> &nbsp;<i>Director Omni-Channel &amp; Supply Chain · Director Digital Commerce &amp; Sales</i><br>EU omni-channel vision and strategy, stock-point network design, Digital Partner Commerce.</div></div><div class="tr"><div class="y">2010 – 2016</div><div class="dot"></div><div class="t"><b>Nike</b> &nbsp;<i>Business Development Manager, Omni-Channel &amp; Digital Sales · Senior Project Manager DTC &amp; Tech</i><br>Digital transformation of Europe's largest sporting-goods retailer; trade terms redesign, Olympic launches, SAP Retail.</div></div><div class="tr"><div class="y">2006 – 2010</div><div class="dot"></div><div class="t"><b>IBM</b> &nbsp;<i>Senior Supply Chain Consultant</i><br>Demand planning, MRP, SAP APO process design, project and change management for Numico, Avebe, InBev.</div></div></div>
+    </div>
+    <div class="ph"><img src="just-eat-case-3/olga.jpg" alt="Olga Bressers"></div>
+  </div>
+  <div class="n">1</div>
+</div></section>
+
+<!-- Contents -->
+<section class="page" data-part="toc"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Contents</h2></div>
+  <div class="toc2" id="toc"></div>
+  <div class="n">2</div>
+</div></section>
+
+<!-- 1 -->
+<section class="page pair" data-part="c3"><div class="sl cover">
+  <img class="house" src="just-eat-case-3/jet-house-white.png" alt="Just Eat Takeaway.com">
+  <h2>Business Case 3<br>Scaling Customer Services for 20% growth</h2>
+  <div class="tag">Head of Customer Services Benelux · Second round</div>
+  <div class="sub">Growth without proportional cost: a 12-month plan for four sites</div>
+  <div class="n">3</div>
+</div><div class="sl img"><img src="just-eat-case-3/case3_p10.png" alt="Business Case 3: Scaling CS for 20% Growth"><div class="n">4</div></div></section>
+
+<!-- 2-4 original -->
+
+<section class="page pair" data-part="c3"><div class="sl img"><img src="just-eat-case-3/case3_p11.png" alt="Business Case 3: The Challenge"><div class="n">5</div></div><div class="sl img"><img src="just-eat-case-3/case3_p12.png" alt="Business Case 3: Key Discussion Areas"><div class="n">6</div></div></section>
+
+<!-- 5 Business Big Picture -->
+<section class="page" data-part="c3"><div class="sl std dense"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Business Big Picture</h2></div>
+  <div class="bpw">
+    <div class="mrow">
+      <div class="card tb dk md"><div class="ch">Marketplace</div><div>Platform only, the restaurant delivers. <b class="oc">Commission 13%*</b> of order value.</div></div>
+      <div class="card tb md"><div class="ch">Scoober</div><div>JET takes the order and delivers with its own couriers. <b class="oc">Commission 30%*</b> of order value.</div></div>
+      <div class="card tb md"><div class="ch">Grocery</div><div>Highest contact rate of the three. Commission not published.</div></div>
+    </div>
+    <div class="brow">
+      <div class="card bpt">
+        <div></div><div class="vh">Marketplace</div><div class="vh sc">Scoober</div><div class="vh sc">Grocery</div>
+        <div class="rl">Share of orders</div><div class="sbar"><div style="width:69%;background:var(--slate)">69%**</div><div style="width:31%;background:var(--o)">31%**</div></div><div class="vc np">not published</div>
+        <div class="rl">Share of commission revenue</div><div class="sbar"><div style="width:49%;background:var(--slate)">49%**</div><div style="width:51%;background:var(--o)">51%**</div></div><div class="vc np">not published</div>
+        <div class="rl">Share of customer contacts</div><div class="sbar"><div style="width:40%;background:var(--slate)">40%**</div><div style="width:60%;background:var(--o)">60%**</div></div><div class="vc np">not published</div>
+        <div class="rl">Propensity <span style="font-weight:400">(read as contacts per 100 orders)</span></div><div class="vc">1.4%</div><div class="vc">4.6%</div><div class="vc">5.3%</div>
+        <div class="rl">Commission per €100 order</div><div class="vc">€13*</div><div class="vc">€30*</div><div class="vc np">not published</div>
+        <div class="rl">Margin after courier cost</div><div class="vc">—</div><div class="vc np">not published (JET pays the couriers)</div><div class="vc np">not published</div>
+        <div class="tn"><b>Derived, Marketplace and Scoober only:</b> blended 2.4 = Marketplace 1.4 and Scoober 4.6 → Scoober ≈ 31% of orders; assumes equal order value. Grocery order volume is not in the case, so it carries no share here.</div>
+      </div>
+      <div class="bpr">
+        <div class="card tb dk ccl">Same contact ≠ same value: a Scoober order earns 2.3x** the commission, and JET owns the whole delivery.</div>
+        <div class="card tb prof"><div class="ch">A contact can turn into sales</div><div class="intro">When it generates sales now or later.</div>
+          <div class="drv">
+            <div class="chip"><span class="no">1</span><b>Win-back:</b>&nbsp;solved fast, customer orders again</div>
+            <div class="chip"><span class="no">2</span><b>Voucher:</b>&nbsp;next-order incentive, not only refund</div>
+            <div class="chip"><span class="no">3</span><b>Partner contacts:</b>&nbsp;offer Scoober delivery</div>
+            <div class="chip"><span class="no">4</span><b>Advertising:</b>&nbsp;offer partners paid visibility in the app</div>
+            <div class="chip"><span class="no">5</span><b>New categories:</b>&nbsp;onboard grocery and pharmacy</div>
+            <div class="chip"><span class="no">6</span><b>Product feedback:</b>&nbsp;fixes that cut contacts, lift repeat orders</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="key" style="font-size:.85em;margin-top:auto;padding-top:.7cqw;padding-bottom:.7cqw">Contacts come from consumers and partners, and both can bring sales. Analyse them by reason and source, link them to value (order frequency, order value, customer lifetime value, revenue per partner) and manage each group as a cost to reduce or an investment in sales.</div>
+  <div class="srcb">* Source: <a href="https://www.derestaurantkrant.nl/wat-kost-bezorgen-via-thuisbezorgd" target="_blank" rel="noopener">De RestaurantKrant, 22 October 2020, “Wat kost bezorgen via Thuisbezorgd”</a> &nbsp;·&nbsp; ** Own estimate: derived from the case contact rates (2.4 blended, 1.4 Marketplace, 4.6 Scoober) and the commission rates above, assuming equal order value</div>
+  <div class="n">7</div>
+</div></section>
+
+<!-- 6 Current Performance 1/2 -->
+<section class="page" data-part="c3"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Current Performance (1/2)</h2></div>
+  <div class="body2">
+    <div class="card vbig"><div class="ch">Trustpilot score (TrustScore), thuisbezorgd.nl</div><div class="grow"><svg viewBox="0 0 480 256" fill="#4b5563">
+        <line x1="40" y1="210" x2="470" y2="210" stroke="#9ca3af" stroke-width="1.5"/>
+        <line x1="158" y1="20" x2="158" y2="210" stroke="#f36d21" stroke-width="2.5" stroke-dasharray="7 6"/>
+        <text x="166" y="36" fill="#f36d21" font-weight="700">AI restructuring, Sept 2025</text>
+        <polyline points="70,60 181,100 232,120 440,180" fill="none" stroke="#242e30" stroke-width="3.5"/>
+        <g fill="#242e30"><circle cx="70" cy="60" r="7"/><circle cx="181" cy="100" r="7"/><circle cx="232" cy="120" r="7"/><circle cx="440" cy="180" r="7" fill="#f36d21"/></g>
+        <g text-anchor="middle" font-weight="700" fill="#111827"><text x="70" y="44">2.5</text><text x="181" y="84">2.3</text><text x="252" y="150">2.2</text><text x="440" y="162" fill="#f36d21">1.9</text></g>
+        <g text-anchor="middle"><text x="70" y="232">Jun 2025</text><text x="181" y="232">Oct 2025</text><text x="262" y="252">Jan 2026</text><text x="440" y="232">Oct 2026</text></g>
+      </svg></div></div>
+    <div class="card vbig">
+      <div class="ch">Customer voice, 7 Jul–31 Aug 2026</div>
+      <div class="sbx">
+        <div class="sb"><div class="v red">152</div><div class="lb">Trustpilot reviews in the period</div></div>
+        <div class="sb"><div class="v red">84%</div><div class="lb">Trustpilot reviews at 1 star</div></div>
+        
+      </div>
+      <ul class="b">
+        <li>“Je wordt weggestuurd met een nutteloze AI-bot die je niet helpt.” · 1★, 30 Aug 2026</li>
+        <li>“Daar kun je tenminste met een mens praten” (on switching to Uber Eats) · 1★, 20 Aug 2026</li>
+      </ul>
+    </div>
+  </div>
+  <div class="key">Customers rate the service lower since the AI change in September 2025, and their main complaint is that they cannot reach a person.</div>
+  <div class="srcb">Public sources, not from the case: <a href="https://nl.trustpilot.com/review/thuisbezorgd.nl" target="_blank" rel="noopener">Trustpilot, thuisbezorgd.nl</a> (score history via Wayback Machine snapshots; reviews 7 Jul–31 Aug 2026 read and counted) · <a href="https://www.retaildetail.eu/news/food/just-eat-takeaway-replaces-employees-with-ai/" target="_blank" rel="noopener">RetailDetail, 25 September 2025</a> (AI restructuring)</div>
+  <div class="n">8</div>
+</div></section>
+
+<!-- 7 Current Performance 2/2 -->
+<section class="page" data-part="c3"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Current Performance (2/2)</h2></div>
+  <div class="rvg"><div class="rv-split"><div class="rv-col-hdr neg">Where customers report friction — 131 Trustpilot reviews, 1–2★, 7 Jul–31 Aug 2026</div><div class="rv-bar-row"><span class="rv-bar-label">No person to talk to, chatbot only</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:100%"></div></div><span class="rv-bar-pct">34%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Late or cold food</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:65%"></div></div><span class="rv-bar-pct">22%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Not delivered, or marked delivered</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:59%"></div></div><span class="rv-bar-pct">20%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Refund refused or too low</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:53%"></div></div><span class="rv-bar-pct">18%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Wrong, incomplete or spoiled order</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:32%"></div></div><span class="rv-bar-pct">11%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Vouchers and codes fail</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:21%"></div></div><span class="rv-bar-pct">7%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Restaurant reviews removed</span><div class="rv-bar-track"><div class="rv-bar-fill neg" style="width:15%"></div></div><span class="rv-bar-pct">5%</span></div></div><div class="rv-split"><div class="rv-col-hdr pos">What customers value — 33 Trustpilot reviews, 4–5★, Jun–Aug 2026</div><div class="rv-bar-row"><span class="rv-bar-label">Fast, on-time delivery</span><div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:100%"></div></div><span class="rv-bar-pct">33%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Tasty food</span><div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:73%"></div></div><span class="rv-bar-pct">24%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Easy to order</span><div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:64%"></div></div><span class="rv-bar-pct">21%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Problems solved by customer service</span><div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:45%"></div></div><span class="rv-bar-pct">15%</span></div><div class="rv-bar-row"><span class="rv-bar-label">Friendly couriers</span><div class="rv-bar-track"><div class="rv-bar-fill pos" style="width:27%"></div></div><span class="rv-bar-pct">9%</span></div></div></div>
+  <div class="key">Customer Service is the top complaint but rarely the reason for praise, while delivery drives both. An easy route to a person, and delivery fixes with Operations, address the top three complaints.</div>
+  <div class="srcb">Source: <a href="https://nl.trustpilot.com/review/thuisbezorgd.nl" target="_blank" rel="noopener">Trustpilot, thuisbezorgd.nl</a>, reviews read and tagged by theme; a review can carry more than one theme</div>
+  <div class="n">9</div>
+</div></section>
+
+<!-- Customer access test -->
+<section class="page" data-part="c3"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Current Performance: Reaching Customer Service</h2></div>
+  <div class="acc">
+    <div class="shots">
+      <div class="shot"><div class="im"><img src="just-eat-case-3/access-app-form.png" alt="In-app contact form"></div><div class="cap"><b><span class="sn">1</span>App form</b>Order number required</div></div>
+      <div class="shot"><div class="im"><img src="just-eat-case-3/access-giftcard.png" alt="Gift card contact form"></div><div class="cap"><b><span class="sn">2</span>Web form</b>Gift cards only</div></div>
+      <div class="shot"><div class="im"><img src="just-eat-case-3/access-x-2017.png" alt="Thuisbezorgd on X, 2017"></div><div class="cap"><b><span class="sn">3</span>Phone 053-4805860</b>Shared on X in 2017; well hidden on the website, findable only via Google; today for partners</div></div>
+    </div>
+    <div class="accr">
+      <div class="card tb"><div class="ch">Thuisbezorgd.nl, tested October 2026</div><ul class="b"><li>No route to customer service without an order, for example for a question about prices.</li></ul></div>
+      <div class="card tb"><div class="ch">What it shows</div><div>No phone number for customers. A number may exist only behind the partner login, and every route ends with a bot.</div></div>
+    </div>
+  </div>
+  <div class="key">A customer who asks a question before ordering is a potential sale. Giving every customer a clear route to service, and the highest-value customers and partners the fastest one, supports sales growth.</div>
+  <div class="srcb">Sources: Thuisbezorgd.nl app and website, own test October 2026 · <a href="https://x.com/thuisbezorgd/status/829424466828603392" target="_blank" rel="noopener">Thuisbezorgd.nl on X, 8 February 2017</a></div>
+  <div class="n">10</div>
+</div></section>
+
+<!-- 8 Capacity Planning -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>01 Capacity Planning</h2><div class="card tb qk"><div class="ch">01 Capacity Planning</div><ul class="b"><li>How would you model capacity for 20% growth?</li><li>Optimal insource/BPO/shared-service mix?</li><li>How would you handle peak scaling?</li><li>Seasonal and weekend coverage?</li></ul></div></div>
+  <div class="body2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="card vbig"><div class="hw2">
+        <div class="hl"><b>FTE today</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
+        <div class="hl"><b>+20% orders</b></div><div class="ht"><div class="hb" style="left:83.33%;width:16.67%;background:var(--o)"><span class="lf">+30</span></div></div>
+        <div class="hl"><b>Contacts per order</b><br>2.4% → 2.2%</div><div class="ht"><div class="hb" style="left:91.67%;width:8.33%;background:var(--grey)"><span class="lf">−15</span></div></div>
+        <div class="hl"><b>Automation</b><br>36% → 42%</div><div class="ht"><div class="hb" style="left:83.33%;width:8.33%;background:var(--grey)"><span class="lf">−15</span></div></div>
+        <div class="hl"><b>FTE month 12</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
+      </div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Model:</b> To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%. <b>Test it live on slide 12, button “The plan”.</b></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> Peak windows are evenings, weekends, bad weather, big events and holidays. Own staff are rostered to the peaks that repeat every week (evenings, weekends); the outsourcing partner, on a flexible agreement paid per contact, takes the unplanned ones (bad weather, events).</div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
+  </div>
+  <div class="key">With 20% more orders and no changes, we need 30 more people. Fewer customer problems per order and more automation remove that need.</div>
+  <div class="n">11</div>
+</div></section>
+
+<!-- 9 Simulator -->
+<section class="page" data-part="c3"><div class="sl std simsl"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>01 Capacity Planning: Simulator</h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li><b>Do nothing</b> (opens here): +20% orders = 180 FTE</li><li><b>The plan</b> = slide 11: propensity 2.2%, automation 42% = 150 FTE</li><li>Move any slider to test a risk</li></ol></div></div>
+  <div class="body2">
+    <div class="card sim1">
+      <div class="sg"><div class="st"><span>Order growth <span class="def">· default 20%: the case growth target</span></span><span class="val" id="v-g"></span></div>
+        <input type="range" id="g" min="0" max="40" step="1" value="20" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>FTE today <span class="def">· default 150: the case team size</span></span><span class="val" id="v-f"></span></div>
+        <input type="range" id="f" min="100" max="250" step="5" value="150" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>Contacts per 100 orders <span class="def">· default 2.4: today, per the case</span></span><span class="val" id="v-p"></span></div>
+        <input type="range" id="p" min="1.5" max="3.5" step="0.05" value="2.4" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>Orders moving to Scoober <span class="def">· default 0: today's mix, no shift</span></span><span class="val" id="v-m"></span></div>
+        <input type="range" id="m" min="-10" max="10" step="1" value="0" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>Automation rate <span class="def">· default 36%: top of today's 31–36%</span></span><span class="val" id="v-a"></span></div>
+        <input type="range" id="a" min="20" max="70" step="1" value="36" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>Bot contacts back to an agent <span class="def">· default 0%: all solved by the bot</span></span><span class="val" id="v-r"></span></div>
+        <input type="range" id="r" min="0" max="50" step="1" value="0" oninput="sim()"></div>
+      <div class="sg"><div class="st"><span>Handle time change <span class="def">· default 0%: today's handle time</span></span><span class="val" id="v-h"></span></div>
+        <input type="range" id="h" min="-20" max="20" step="1" value="0" oninput="sim()"></div>
+  </div>
+    <div class="res2" title="FTE = today × (1 + growth) × (contacts ÷ 2.4) × (handled by people ÷ 64%) × (1 + handle time). Today people handle 64%.">
+      <div class="card scn"><div class="sg"><div class="st"><span>Scenarios</span></div>
+        <div class="pre"><button onclick="preset(20,150,2.4,0,36,0,0)">Do nothing</button><button onclick="preset(20,150,2.2,0,42,0,0)">The plan</button><button onclick="preset(20,150,2.2,0,42,20,0)">Plan, 1 in 5 bot contacts back</button></div></div>
+  </div>
+      <div class="rt"><div class="v" id="o-f"></div>FTE needed at month 12</div>
+      <div class="rt big"><div class="v" id="o-n"></div><span id="o-t"></span></div>
+      <div class="concl" id="o-x"></div>
+    </div>
+  </div>
+  <div class="key">The plan assumes bot-solved contacts stay solved. If 1 in 5 comes back to a person, we need 21 more people: repeat contacts per type are the number to watch.</div>
+  <div class="n">12</div>
+</div></section>
+<section class="page" data-part="c3"><div class="sl std simsl"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>01 Peak Season Simulator</h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li>Set peak size and length</li><li><b>Outsourcing only</b>: partner covers all extra volume</li><li><b>Mix</b>: internal hires refill seats left by leavers</li></ol></div></div>
+  <div class="body2">
+    <div class="card sim1">
+      <div class="sg"><div class="st"><span>FTE in a normal month <span class="def">· default 150: the plan</span></span><span class="val" id="v-kb"></span></div>
+        <input type="range" id="kb" min="100" max="250" step="5" value="150" oninput="peak()"></div>
+      <div class="sg"><div class="st"><span>Peak order uplift <span class="def">· example 25%: the case gives no peak size</span></span><span class="val" id="v-ku"></span></div>
+        <input type="range" id="ku" min="0" max="60" step="1" value="25" oninput="peak()"></div>
+      <div class="sg"><div class="st"><span>Peak length <span class="def">· example 6 weeks</span></span><span class="val" id="v-kw"></span></div>
+        <input type="range" id="kw" min="1" max="12" step="1" value="6" oninput="peak()"></div>
+      <div class="sg"><div class="st"><span>Own staff attrition per month <span class="def">· default 0%: the case gives none</span></span><span class="val" id="v-ka"></span></div>
+        <input type="range" id="ka" min="0" max="5" step="0.5" value="0" oninput="peak()"></div>
+      <div class="sg"><div class="st"><span>Peak covered by internal temporary hires <span class="def">· default 0%: all to the outsourcing partner</span></span><span class="val" id="v-ki"></span></div>
+        <input type="range" id="ki" min="0" max="100" step="5" value="0" oninput="peak()"></div>
+      </div>
+    <div class="res2">
+      <div class="card scn"><div class="sg"><div class="st"><span>Scenarios</span></div>
+        <div class="pre" id="kpre"><button onclick="kpre(0)">Outsourcing only</button><button onclick="kpre(-1)">Mix: refill leavers internally</button></div></div>
+  </div>
+      <div class="rt"><div class="v" id="k-p"></div>FTE needed during the peak</div>
+      <div class="rt big"><div class="v" id="k-x"></div>Extra FTE: <span id="k-s"></span></div>
+      <div class="concl" id="k-t"></div>
+    </div>
+  </div>
+  <div class="key">Peaks are bought, not hired: the outsourcing partner flexes with the peak, and internal hiring covers only seats that leavers open anyway.</div>
+  <div class="srcb">Peak size and length are example inputs: the case gives no peak figures. Attrition default 0% for the same reason.</div>
+  <div class="n">13</div>
+</div></section>
+
+
+<!-- 10 Automation Roadmap -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>02 Automation Roadmap</h2><div class="card tb qk"><div class="ch">02 Automation Roadmap</div><ul class="b"><li>Which contacts to automate next?</li><li>How to increase automation beyond 36%?</li><li>AI for proactive partner outreach?</li><li>Balancing automation with quality?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="ch">Propensity (read as contacts per 100 orders)</div><div class="grow">
+      <svg viewBox="0 0 540 280" fill="#4b5563">
+        <text x="0" y="58">Marketplace</text><rect x="190" y="25" width="76" height="50" fill="#242e30"/><text x="276" y="59" font-weight="700" fill="#111827">1.4%</text>
+        <text x="0" y="148">Scoober</text><rect x="190" y="115" width="248" height="50" fill="#f36d21"/><text x="448" y="149" font-weight="700" fill="#111827">4.6%</text>
+        <text x="0" y="238">Grocery</text><rect x="190" y="205" width="286" height="50" fill="#f36d21"/><text x="486" y="239" font-weight="700" fill="#111827">5.3%</text>
+      </svg></div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Next:</b> Simple, frequent questions first, ranked by volume and by whether a fixed rule can answer them.</div></div><div class="ab"><span class="no">2</span><div><b>Beyond 36%:</b> Target 42% within 12 months. Prevent contacts at the source with Scoober and grocery (3 to 4 times Marketplace contacts per order): each 0.1 fewer per 100 orders saves 7.5 FTE.</div></div><div class="ab"><span class="no">3</span><div><b>Proactive:</b> Automatic messages to partners and customers on incidents or delays, before they need to contact us.</div></div><div class="ab"><span class="no">4</span><div><b>Quality:</b> Each automated type measured on satisfaction and repeat contacts; worse than before → back to people. Freed time booked against the 30 FTE gap (the last 20 FTE freed by chatbots was absorbed by growth).</div></div></div>
+  </div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> Preventing contacts beats automating them: removing 0.1 contacts per 100 orders saves 7.5 FTE, and prevented contacts never come back.<br><b style="color:#888">OLD:</b> Automate simple questions, prevent problems before customers contact us, and hand customers back to a person when the bot cannot solve it.</div>
+  <div class="n">14</div>
+</div></section>
+
+<!-- 11 Multi-Site Operating Model -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>03 Multi-Site Operating Model</h2><div class="card tb qk"><div class="ch">03 Multi-Site Operating Model</div><ul class="b"><li>Governance across 4 sites?</li><li>Work allocation: in-sourced vs outsourced?</li><li>Quality standards and calibration?</li><li>Managing cultural &amp; language differences?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="sites3">
+        <svg class="links" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#9ca3af" stroke-width="2"><line x1="50" y1="50" x2="16" y2="16" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="84" y2="16" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="16" y2="84" vector-effect="non-scaling-stroke"/><line x1="50" y1="50" x2="84" y2="84" vector-effect="non-scaling-stroke"/></g></svg>
+        <div class="s3" style="grid-area:a"><b>Enschede</b>Netherlands</div>
+        <div class="s3" style="grid-area:b"><b>Brussels</b>Belgium</div>
+        <div class="s3 hub" style="grid-area:h"><b>One scorecard</b>Weekly review<br>Monthly calibration</div>
+        <div class="s3" style="grid-area:c"><b>Wroclaw</b>Poland</div>
+        <div class="s3" style="grid-area:d"><b>Outsourcing partner</b>Flexible volume</div>
+      </div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Governance:</b> One scorecard and one weekly review for all four sites, outsourcing partner included.</div></div><div class="ab"><span class="no">2</span><div><b>Allocation by specialisation:</b> Language (Dutch, French, English) · hours (e.g. English-only evening and weekend support) · complexity (standard vs complex cases and escalations) · customer group (consumers, restaurant partners, couriers, Gold partners) · channel (chat, phone, e-mail) · volume (own teams for steady work, outsourcing partner for peaks).</div></div><div class="ab"><span class="no">3</span><div><b>Quality:</b> One quality standard for every site. Monthly, all four sites score the same customer contacts and compare results.</div></div><div class="ab"><span class="no">4</span><div><b>Language and culture:</b> One shared knowledge base, one leadership routine. Milestone: AI translation (agent writes in their own language, customer reads theirs) removes language as a constraint and turns four site queues into one.</div></div></div>
+  </div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> One scorecard lets work move to the site with spare capacity, so peaks are absorbed in our own sites before we pay the outsourcing partner. AI translation can later turn four queues into one.<br><b style="color:#888">OLD:</b> Each site specialises by language, hours, complexity and customer group, and all four are measured the same way every week. AI translation will turn four queues into one.</div>
+  <div class="n">15</div>
+</div></section>
+
+<!-- 12 Leadership &amp; People -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>04 Leadership &amp; People</h2><div class="card tb qk"><div class="ch">04 Leadership &amp; People</div><ul class="b"><li>Developing leaders across 4 sites?</li><li>Works council engagement in NL and BE?</li><li>Maintaining engagement during rapid scale-up?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="steps2">
+        <div class="stp">List the change</div><div class="arr">↓</div><div class="stp o">Consult the works council</div><div class="arr">↓</div><div class="stp">Decide and implement</div>
+      </div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Leaders:</b> One leadership routine and one development path across the four sites; a monthly meeting of all site leaders.</div></div><div class="ab"><span class="no">2</span><div><b>Works councils:</b> A 12-month calendar of every planned change. Works councils in the Netherlands and Belgium consulted before each decision; consultation time built into the plan.</div></div><div class="ab"><span class="no">3</span><div><b>Engagement:</b> Tell the team what automation frees their time for: complex cases, quality, development. Track engagement and absence per site every quarter.</div></div></div>
+  </div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> The plan counts on keeping today's 150 people, so every leaver is capacity we must hire back: works councils are consulted before each change, and every agent hears what freed time is used for.<br><b style="color:#888">OLD:</b> Consult the works councils before every change, and tell the team what automation frees their time for.</div>
+  <div class="n">16</div>
+</div></section>
+
+<!-- 13 Cost &amp; Growth Balance -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>05 Cost &amp; Growth Balance</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>Managing cost-to-serve during scale-up?</li><li>How would you demonstrate CS ROI?</li><li>12-month milestones for growth readiness?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="rm3">
+        <div></div><div class="q">Q1</div><div class="q">Q2</div><div class="q">Q3</div><div class="q">Q4</div>
+        <div class="lab">Contact causes</div><div class="b3 s" style="grid-column:2/3">Baseline</div><div class="b3 o" style="grid-column:3/6">Scoober and grocery fixes</div>
+        <div class="lab">Automation</div><div class="b3 s" style="grid-column:2/3">Backlog</div><div class="b3 o" style="grid-column:3/4">Wave 1</div><div class="b3 o2" style="grid-column:4/6">Wave 2</div>
+        <div class="lab">Operating model</div><div class="b3 s" style="grid-column:2/4">Scorecard, ledger</div><div class="b3 o" style="grid-column:4/6">Reallocate, peak plan</div>
+        <div class="lab">Works councils</div><div class="b3 g" style="grid-column:2/6">Change calendar, consultation before each step</div>
+        <div></div><div class="gt">Plan signed</div><div class="gt">On trend</div><div class="gt">Peak passed</div><div class="gt">Flat FTE</div>
+      </div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Cost:</b> Cost per order is the main number to manage; it must fall while orders grow 20%.</div></div><div class="ab"><span class="no">2</span><div><b>Return:</b> Show contacts avoided, staff time saved, customer satisfaction held. Contact reasons shared with the Commercial teams every month.</div></div><div class="ab"><span class="no">3</span><div><b>Milestones:</b> Q1 capacity model, baseline, scorecard. Q2 first automation step, Scoober and grocery fixes. Q3 second automation step, tested peak plan. Q4 automation at 42%, 2.2 contacts per 100 orders, same team size at 20% more orders.</div></div></div>
+  </div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> Each quarter has one checkpoint; missing it triggers a choice: bring the next automation step forward or release hiring.<br><b style="color:#888">OLD:</b> The cost per order must fall while orders grow 20%; four quarterly checkpoints show whether we are on track.</div>
+  <div class="n">17</div>
+</div></section>
+
+<!-- 14 Cost &amp; Growth Balance: cost-to-serve and return -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>05 Cost to Serve and ROI</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>Managing cost-to-serve during scale-up?</li><li>How would you demonstrate CS ROI?</li><li>12-month milestones for growth readiness?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="ch">Staff cost per order (today = 100)</div><div class="hw2">
+        <div class="hl"><b>Today</b><br>150 FTE, orders today</div><div class="ht"><div class="hb" style="left:0;width:100%;background:var(--slate)"><span class="in">100</span></div></div>
+        <div class="hl"><b>+20% orders, no change</b><br>180 FTE</div><div class="ht"><div class="hb" style="left:0;width:100%;background:var(--grey)"><span class="in">100</span></div></div>
+        <div class="hl"><b>+20% orders, the plan</b><br>150 FTE</div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--o)"><span class="in">83</span></div></div>
+      </div><div style="margin-top:.8em;font-size:1.5em;font-weight:800;color:#f36d21">30 FTE not hired <span style="font-size:.6em;color:#111827">= the ROI</span></div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Cost-to-serve:</b> Staff cost per order, reported every month per site and per delivery model (Marketplace, Scoober). Growth is absorbed by fewer contacts per order and more automation, not by hiring.</div></div><div class="ab"><span class="no">2</span><div><b>ROI:</b> The 30 FTE not hired: 15 from fewer contacts per order (2.4% → 2.2%), 15 from automation (36% → 42%). Shown monthly with customer satisfaction, so savings never come from worse service.</div></div><div class="ab"><span class="no">3</span><div><b>Revenue side:</b> Scoober contacts are protected revenue; win-back and voucher contacts tracked as orders kept. Contact reasons shared with Commercial every month, so CS is measured as a growth enabler, not only a cost.</div></div></div>
+  </div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> Growth without hiring cuts staff cost per order by a sixth. The plan pays back only while automation and tooling cost less than the 30 FTE not hired: that comparison is the ROI test each quarter.<br><b style="color:#888">OLD:</b> 20% more orders with the same 150 people: staff cost per order falls by a sixth, and the 30 people we did not need to hire are the ROI.</div>
+  <div class="srcb">Own estimate: derived from the case figures: staff cost per order = FTE ÷ orders, with the same cost per FTE.</div>
+  <div class="n">18</div>
+</div></section>
+
+<!-- 15 12-month milestones -->
+<section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>05 12-Month Milestones</h2><div class="card tb qk"><div class="ch">05 Cost &amp; Growth Balance</div><ul class="b"><li>12-month milestones for growth readiness?</li></ul></div></div>
+  <div class="ms"><div class="lab"></div><div class="q">Q1<span>Month 1–3</span></div><div class="q">Q2<span>Month 4–6</span></div><div class="q">Q3<span>Month 7–9</span></div><div class="q">Q4<span>Month 10–12</span></div><div class="lab">Capacity planning</div><div class="c">Capacity model per site, linked to the order forecast</div><div class="c">Flexible volume agreement with the outsourcing partner</div><div class="c">Peak, weekend and seasonal rosters tested</div><div class="c">Winter peak covered with no permanent hires</div><div class="lab">Contact causes</div><div class="c">Contact reasons per 100 orders: Marketplace, Scoober, grocery</div><div class="c">First Scoober fixes live with delivery and product</div><div class="c">Grocery fixes: missing items, substitutions, bad orders</div><div class="c">2.2 contacts per 100 orders</div><div class="lab">Automation</div><div class="c">Backlog ranked by volume and FTE value, co-owned with product</div><div class="c">Wave 1: simple frequent questions, proactive delay messages</div><div class="c">Wave 2: next contact types; quality check per type</div><div class="c">42% automation; worse types back to people</div><div class="lab">Multi-site model</div><div class="c">One scorecard, one weekly review for all 4 sites</div><div class="c">Work allocation by language, hours, complexity and customer group</div><div class="c">Monthly quality calibration across all sites</div><div class="c">Same quality score at all 4 sites; AI translation pilot</div><div class="lab">Leadership and works councils</div><div class="c">12-month change calendar; works councils NL and BE informed</div><div class="c">Consultation before wave 1 and reallocation</div><div class="c">Leader development path; monthly site-leader meeting</div><div class="c">Engagement and absence held per site</div><div class="lab">Cost and return</div><div class="c">Cost per order baseline; capacity ledger with finance</div><div class="c">First monthly return report to the leadership team</div><div class="c">ROI report shared with Commercial</div><div class="c">150 FTE at +20% orders; cost per order down a sixth</div><div class="lab">Milestone</div><div class="g"><b>M3: Plan signed</b>Model, baseline, scorecard agreed</div><div class="g"><b>M6: On trend</b>Wave 1 live, first fixes live</div><div class="g"><b>M9: Peak-ready</b>Peak plan tested, wave 2 live</div><div class="g"><b>M12: Growth absorbed</b>2.2% · 42% · 150 FTE</div></div>
+  <div class="key"><b style="color:#ff8000">NEW:</b> Checkpoints come early enough to act: a miss at month 6 still leaves a quarter to hire or bring automation forward before the peak.<br><b style="color:#888">OLD:</b> Four milestones, one per quarter: plan signed by month 3, on trend by month 6, peak-ready by month 9, growth absorbed by month 12.</div>
+  <div class="cqs" style="margin:.8cqw 0 1.2cqw"><div class="cqq"><b>Q1</b>Model, baseline, scorecard agreed</div><div class="cqq"><b>Q2</b>First automation step, Scoober and grocery fixes</div><div class="cqq"><b>Q3</b>Peak plan tested, second automation step</div><div class="cqq"><b>Q4</b>42% automation, 150 FTE at +20% orders</div></div>
+  <div class="n">19</div>
+</div></section>
+<section class="page" data-part="c3"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Conclusions</h2></div>
+  <div class="cband"><div class="cbig"><span>+20%</span>orders</div><div class="cbig"><span>150</span>people, flat</div><div class="cbig"><span>−⅙</span>staff cost per order**</div><div class="ctxt"><span style="color:var(--brand)">Key Mandate:</span> You need to develop a 12-month plan to scale CS operations to support 20% growth across all 4 sites.</div></div>
+  <div class="cgrid c3g"><div class="cq"><b>01</b> Capacity Planning</div><div class="cr">Without change, 30 more people. Two levers close the gap: contacts 2.4% → 2.2% per order, automation 36% → 42%, about 15 FTE each. BPO takes peaks, weekends and seasons.</div><div class="cq"><b>02</b> Automation Roadmap</div><div class="cr">Simple, frequent questions first; contacts prevented at the source for Scoober and grocery. Each automated type stays only while satisfaction and repeat contacts hold.</div><div class="cq"><b>03</b> Multi-Site Operating Model</div><div class="cr">One scorecard and one weekly review for all four sites. Work allocated by language, hours, complexity and customer group; BPO for flexible volume.</div><div class="cq"><b>04</b> Leadership &amp; People</div><div class="cr">One leadership routine across four sites. Works councils in the Netherlands and Belgium consulted before each change; freed time goes to complex cases, quality and development.</div><div class="cq"><b>05</b> Cost &amp; Growth Balance</div><div class="cr">Cost per order falls while orders grow 20%. ROI is the 30 people not hired, shown monthly with customer satisfaction and shared with Commercial.</div></div>
+  <div class="srcb">** Own estimate derived from the case figures: staff cost per order = FTE ÷ orders, with the same cost per FTE.</div>
+  <div class="n">20</div>
+</div></section>
+
+
+<!-- Case 1 -->
+<section class="page pair" data-part="c1"><div class="sl cover">
+  <img class="house" src="just-eat-case-3/jet-house-white.png" alt="Just Eat Takeaway.com">
+  <h2>Business Case 1<br>Reversing PSAT Decline in NL</h2>
+  <div class="tag">Head of Customer Services Benelux · Second round</div>
+  <div class="sub">A 90-day plan to restore partner satisfaction</div>
+  <div class="n">21</div>
+</div><div class="sl img"><img src="just-eat-case-3/case1_p4.png" alt="Business Case 1: Reversing PSAT Decline in NL"><div class="n">22</div></div></section>
+<section class="page pair" data-part="c1"><div class="sl img"><img src="just-eat-case-3/case1_p5.png" alt="Business Case 1: The Challenge"><div class="n">23</div></div><div class="sl img"><img src="just-eat-case-3/case1_p6.png" alt="Business Case 1: Discussion Topics"><div class="n">24</div></div></section>
+
+<!-- C1 Root Cause Analysis -->
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>01 Root Cause Analysis</h2><div class="card tb qk"><div class="ch">01 Root Cause Analysis</div><ul class="b"><li>How would you diagnose the PSAT decline?</li><li>Which topics and segments would you prioritise?</li><li>How would you assess tech incident impact?</li></ul></div></div>
+  <div class="body2" style="grid-template-columns:.64fr 1.36fr">
+    <div class="card vbig"><div class="ch">PSAT by contact topic</div><div class="pbars">
+<div class="pgh">Lowest</div><div class="pbr"><span class="pl">Review automation</span><div class="ptr"><div class="pfl" style="width:0%;background:var(--o)"></div></div><span class="pv">0%</span></div><div class="pbr"><span class="pl">Irrelevant requests</span><div class="ptr"><div class="pfl" style="width:28%;background:var(--o)"></div></div><span class="pv">28%</span></div><div class="pbr"><span class="pl">Reviews &amp; improvements</span><div class="ptr"><div class="pfl" style="width:41%;background:var(--o)"></div></div><span class="pv">41%</span></div><div class="pbr"><span class="pl">Connections</span><div class="ptr"><div class="pfl" style="width:45%;background:var(--o)"></div></div><span class="pv">45%</span></div>
+<div class="pgh">Highest</div><div class="pbr"><span class="pl">CS admin</span><div class="ptr"><div class="pfl" style="width:73%;background:var(--slate)"></div></div><span class="pv">73%</span></div><div class="pbr"><span class="pl">Post delivery</span><div class="ptr"><div class="pfl" style="width:77%;background:var(--slate)"></div></div><span class="pv">77%</span></div><div class="pbr"><span class="pl">Order cancellation</span><div class="ptr"><div class="pfl" style="width:79%;background:var(--slate)"></div></div><span class="pv">79%</span></div><div class="pbr"><span class="pl">Food quality</span><div class="ptr"><div class="pfl" style="width:80%;background:var(--slate)"></div></div><span class="pv">80%</span></div>
+</div><div class="pnote">PSAT 50.2% June → 42.4% August so far (−7.8 points) · CSAT stable at 65%</div></div>
+    <div class="ans"><div class="ab dg"><span class="no">1</span><div><b>Diagnose:</b> Split the drop by topic, tier, site, week, joining date and problem exposure. AI reads and summarises all partner comments behind low scores.<div class="mt"><div class="mth">Why might New score 60.4%, Gold 51.0%?</div><div class="mth">How to check (compare PSAT)</div><div>New partners get onboarding help</div><div>New partners with vs without an onboarding call</div><div>They have had fewer problems so far</div><div>With vs without a refund decline, review dispute or incident in 90 days</div><div>They have no memory of service before June</div><div>Joined after June: does PSAT fall the longer they stay?</div><div>They ask simpler questions</div><div>Same topic, compared across tiers</div><div>New partners signed up under today's terms; older partners were promised more</div><div>Ask Gold partners what they were promised and miss now</div></div></div></div><div class="ab"><span class="no">2</span><div><b>Prioritise:</b><ul class="b abl"><li>First the critical path: root causes such as IT bugs that trigger other incidents</li><li>Then, across all tiers, the incidents that create the most repeat contacts: each is avoidable cost</li><li>Low topics join the same list: irrelevant requests are routed to the right team before they reach an agent; connection issues go to IT</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Tech incidents:</b> Per August incident, compare PSAT of partners it hit with those it did not: the gap is the incident effect.</div></div></div>
+  </div>
+  <div class="key">The fix sits mostly outside Customer Service: CS must turn its contact data into one prioritised fix list for IT, product and fraud. More agents would only answer the same failures again.</div>
+  <div class="n">25</div>
+</div></section>
+
+<!-- C1 Partner Segmentation -->
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>02 Partner Segmentation</h2><div class="card tb qk"><div class="ch">02 Partner Segmentation</div><ul class="b"><li>How would you address Gold partners' low PSAT?</li><li>Differentiated service by partner tier?</li><li>Proactive outreach strategy?</li></ul></div></div>
+  <div class="body2" style="grid-template-columns:.78fr 1.22fr">
+    <div class="card vbig"><div class="ch">PSAT by partner tier</div><div class="pbars tier"><div class="pbr"><span class="pl">New</span><div class="ptr"><div class="pfl" style="width:60.4%;background:var(--slate)"></div></div><span class="pv">60.4%</span></div><div class="pbr"><span class="pl">Silver</span><div class="ptr"><div class="pfl" style="width:54.2%;background:var(--slate)"></div></div><span class="pv">54.2%</span></div><div class="pbr"><span class="pl">Chain</span><div class="ptr"><div class="pfl" style="width:51.7%;background:var(--slate)"></div></div><span class="pv">51.7%</span></div><div class="pbr"><span class="pl">Bronze</span><div class="ptr"><div class="pfl" style="width:51.5%;background:var(--slate)"></div></div><span class="pv">51.5%</span></div><div class="pbr"><span class="pl">Gold</span><div class="ptr"><div class="pfl" style="width:51.0%;background:var(--o)"></div></div><span class="pv">51.0%</span></div></div><div class="pnote">Gold: the highest-value partners, the lowest score. New: the highest score.</div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Gold partners:</b><ul class="b abl"><li>Critical-path issues are fixed for all partners first</li><li>Gold comes first in rollout: each fix goes live for Gold partners first</li><li>Gold contacts go first in the queue, to trained agents from today’s team who settle a refund or review case in one contact</li><li>Gold PSAT reviewed weekly on its own</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Service by tier, set by partner value:</b><ul class="b abl"><li>Gold: first in the queue, settled in one contact</li><li>Silver and Chain: priority queue</li><li>Bronze: standard queue and self-service</li><li>New: onboarding support</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Proactive outreach:</b><ul class="b abl"><li>Tell every affected partner about incidents, refund declines and review changes before they contact us</li><li>Automated and triggered by the event, so it works at any volume: cause, fix date, one click to an agent</li><li>Measured by fewer inbound contacts and higher PSAT for partners who were told</li></ul></div></div></div>
+  </div>
+  <div class="key">Partner tiers are labels, not service levels: the most valuable partners get no better experience. Service must follow partner value, the same way contact management follows customer value.</div>
+  <div class="n">26</div>
+</div></section>
+
+<!-- C1 Multi-Site Consistency -->
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>03 Multi-Site Consistency</h2><div class="card tb qk"><div class="ch">03 Multi-Site Consistency</div><ul class="b"><li>Ensuring PSAT across Enschede, Wroclaw, BPO?</li><li>Quality assurance across sites?</li><li>Knowledge sharing and calibration?</li></ul></div></div>
+  <div class="body2">
+    <div class="card vbig"><div class="ch">One partner standard across three sites</div><div class="pnote" style="margin:-.6cqw 0 .3cqw">Case 1 names 3 sites: Enschede, Wroclaw, BPO. Case 3 names 4, adding Brussels. Assumption**: partners are mostly served from their own market, Brussels for Belgium and Luxembourg; Wroclaw takes consumer and English-language contacts, helped by AI translation in chat.</div><div class="msc" style="gap:.3cqw;--sm:1">
+<div class="msr"><div class="s3"><b>Enschede</b></div><div class="s3"><b>Wroclaw</b></div><div class="s3"><b>BPO</b></div></div>
+<div class="arr">↓</div><div class="s3 hub"><b>One weekly scorecard</b>PSAT, first-contact resolution, response time per site and topic</div>
+<div class="arr">↓</div><div class="msr two"><div class="stp">Shared knowledge base for partner topics</div><div class="stp o">Monthly calibration across all sites</div></div>
+</div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>PSAT per site:</b><ul class="b abl"><li>One weekly scorecard for all three sites, BPO included</li><li>The gap between the best and the weakest site is a target in itself</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Quality assurance:</b> One quality form for partner contacts, the same % of contacts reviewed at every site.</div></div><div class="ab"><span class="no">3</span><div><b>Knowledge and calibration:</b><ul class="b abl"><li>One knowledge base for partner topics: reviews, refunds, Ravelin declines</li><li>Every month quality leads of all sites review a sample of each other's contacts, and the best site's practice becomes the standard</li></ul></div></div></div>
+  </div>
+  <div class="key">Without PSAT per site we cannot tell a site problem from a company problem: one scorecard across the three sites comes before any other fix.</div>
+  <div class="srcb">** Own assumption: the case does not say which site serves which market.</div>
+  <div class="n">27</div>
+</div></section>
+
+<!-- C1 AI and Automation Impact -->
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd"><h2>04 AI &amp; Automation Impact</h2><div class="card tb qk"><div class="ch">04 AI &amp; Automation Impact</div><ul class="b"><li>How does AI deflection affect PSAT?</li><li>Ravelin fraud rules — partner friction vs. protection?</li><li>Balancing automation with partner experience?</li></ul></div></div>
+  <div class="body2" style="grid-template-columns:.95fr 1.05fr">
+    <div class="tiles2">
+<div class="tile card"><div class="v">440s→482s</div><div class="l">AHT messaging</div></div>
+<div class="tile card"><div class="v">4.7%→9.3%</div><div class="l">Refund declines since Ravelin (30 June)</div></div>
+<div class="tile card"><div class="v">9</div><div class="l">Tech incidents in August</div></div>
+<div class="tile card"><div class="v">0%</div><div class="l">PSAT on review automation</div></div>
+</div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>AI deflection:</b><ul class="b abl"><li>Bot takes simple contacts; agents get the complex, longer ones</li><li>PSAT effect: compare solved by the bot, bot to agent, agent only</li><li>A partner the bot cannot help goes straight to a skilled agent</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Ravelin:</b><ul class="b abl"><li>Protection stays; declines get a manual check until rules are fixed</li><li>A wrong decline risks a chargeback: it costs more and ties the same people up in chargeback defence</li><li>With the fraud team: find the false declines, tune the rules, stop the manual check once the rules work</li><li>Manual check cost sized from decline volume and AHT, set against chargeback cost</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Balance:</b><ul class="b abl"><li>Automate simple topics partners already rate well, such as CS admin</li><li>Reviews, refunds, disputes stay with people until their automation works</li></ul></div></div></div>
+  </div>
+  <div class="key">Bots and fraud rules are tuned for cost and protection, not for partner outcomes: each needs a PSAT and a CSAT target, or savings turn into lost partner trust.</div>
+  <div class="n">28</div>
+</div></section>
+
+<!-- C1 Implementation and Measurement -->
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd" style="grid-template-columns:1fr 39%"><h2>05 Implementation &amp; Measurement</h2><div class="card tb qk"><div class="ch">05 Implementation &amp; Measurement</div><ul class="b"><li>30-60-90 day plan for PSAT improvement?</li><li>How would you measure progress?</li><li>How would you align with growth goals?</li></ul></div></div>
+  <div class="body2" style="grid-template-columns:1fr 1.1fr">
+    <div class="card vbig"><div class="ch">30-60-90 day plan: root causes first</div><div class="p2t">
+<div class="ph3">Day 30 · Diagnose</div><div class="ph3">Day 60 · Fix</div><div class="ph3">Day 90 · Stabilise</div>
+<div class="tk">Root-cause fixes</div><div class="pc">Root causes ranked; critical path agreed with IT, fraud, product</div><div class="pc">Critical-path fixes live: incidents, fraud rules, review automation</div><div class="pc o">Automation back where it works; workarounds stopped</div>
+<div class="tk">Partner communication</div><div class="pc">Proactive alerts on incidents and declines</div><div class="pc">Clear reasons and a direct route to an agent; Gold first in the queue</div><div class="pc o">Proactive by default: partners informed before they contact us</div>
+</div></div>
+    <div class="ans"><div class="ab"><span class="no">1</span><div><b>Measure:</b><ul class="b abl"><li>PSAT weekly by tier, topic and site; day-90 target: back to June’s 50.2%, Gold no longer the lowest tier</li><li>Fix dates agreed with each owner by day 30; a slip shows on the weekly scorecard</li><li>Leading indicators: repeat contacts, false declines, open incidents, partners told before they call</li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Accountability:</b><ul class="b abl"><li>One owner per root cause, reviewed weekly: IT for incidents, product for reviews, fraud for Ravelin, CS for partner communication</li><li>Shared targets agreed with the Director of Customer Service, set in each owner’s objectives</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Growth:</b><ul class="b abl"><li>Growth comes from all partners: fixing the same failures for every tier removes repeat contacts and frees agent time</li><li>PSAT tracked against partner retention and orders per tier, so CS shows its share of the 20%</li></ul></div></div></div>
+  </div>
+  <div class="key">PSAT and CSAT become company targets, not CS scores: CS, IT, product and fraud are measured on them together, so every root cause has an owner.</div>
+  <div class="n">29</div>
+</div></section>
+<section class="page" data-part="c1"><div class="sl std"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
+  <div class="hd solo"><h2>Conclusions</h2></div>
+  <div class="cgrid"><div class="ch2">Objective</div><div class="ch2">Response</div><div class="cq"><b>01</b> Diagnose root causes and prioritise</div><div class="cr">The decline sits mostly outside CS: IT incidents, fraud rules, review automation. Critical path first, then incidents ranked by the repeat contacts they cause, across all tiers.</div><div class="cq"><b>02</b> Plan to improve PSAT, particularly for Gold</div><div class="cr">Gold scores no higher than Bronze. Burning issues are fixed for all partners first; Gold contacts go first in the queue, to trained agents who can settle a case in one contact.</div><div class="cq"><b>03</b> PSAT consistency across Enschede, Wroclaw, BPO</div><div class="cr">One weekly scorecard and one quality form for all three sites, the same % of contacts reviewed, monthly calibration across all sites.</div><div class="cq"><b>04</b> Balance AI automation with partner experience</div><div class="cr">Automation stays where partners rate it well. Reviews, refunds and disputes stay with people, and declines get a manual check, until the automation and fraud rules work.</div><div class="cq"><b>05</b> Align PSAT with the 20% growth goal</div><div class="cr">Growth comes from all partners: fixing the same failures for every tier removes repeat contacts and frees agent time for growth.</div><div class="cq"><b>06</b> Measurement and accountability</div><div class="cr">PSAT and CSAT become company targets: CS, IT, product and fraud are measured on them together, one owner per root cause, reviewed every week.</div></div>
+  <div class="n">30</div>
+</div></section>
+
+
+<div class="nav"><button id="tc" aria-label="Contents" title="Contents">&#9776;</button><button id="up" aria-label="Previous">&uarr;</button><button id="dn" aria-label="Next">&darr;</button><button id="end" aria-label="Last slide" title="Last slide">&#8615;</button><button id="fs" aria-label="Present full screen" title="Present full screen">&#9974;</button></div>
+<script>
+(function(){
+function V(){var p=[].slice.call(document.querySelectorAll('.page')).filter(function(e){return !e.classList.contains('hid')});if(!document.documentElement.classList.contains('pres'))return p;var r=[];p.forEach(function(e){[].slice.call(e.querySelectorAll('.sl')).forEach(function(x){r.push(x)})});return r}var s=V();
+function cur(){s=V();var y=window.scrollY+window.innerHeight/3,i=0;s.forEach(function(e,k){if(e.offsetTop<=y)i=k});return i}
+function go(d){s=V();var i=Math.max(0,Math.min(s.length-1,cur()+d));s[i].scrollIntoView({behavior:'smooth',block:'center'})}
+document.getElementById('up').onclick=function(){go(-1)};
+document.getElementById('dn').onclick=function(){go(1)};
+document.getElementById('end').onclick=function(){var p=[].slice.call(document.querySelectorAll('.page')).filter(function(e){return !e.classList.contains('hid')});p[p.length-1].scrollIntoView({behavior:'smooth'})};
+document.addEventListener('keydown',function(e){
+if(e.key==='ArrowDown'||e.key==='PageDown'||e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}
+if(e.key==='ArrowUp'||e.key==='PageUp'||e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+var R=document.documentElement;
+var keep=null;function back(){if(keep){var t=keep.classList.contains('page')?keep:keep;setTimeout(function(){t.scrollIntoView({behavior:'instant',block:'center'})},120)}}
+document.getElementById('fs').onclick=function(){if(document.fullscreenElement){document.exitFullscreen()}else{keep=V()[cur()].querySelector('.sl')||V()[cur()];R.classList.add('pres');window.dispatchEvent(new Event('resize'));if(R.requestFullscreen){R.requestFullscreen().catch(function(){})}back()}};
+document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){keep=V()[cur()];keep=keep.closest?keep.closest('.page'):keep;R.classList.remove('pres')}window.dispatchEvent(new Event('resize'));back()});
+})();
+</script>
+<script>
+(function(){var fmt={g:function(v){return v+'%'},f:function(v){return v},p:function(v){return (+v).toFixed(1)},m:function(v){return v+' pts'},a:function(v){return v+'%'},r:function(v){return v+'%'},h:function(v){return v+'%'}};
+document.querySelectorAll('.sim1 input[type=range]').forEach(function(i){var w=document.createElement('div');w.className='rgw';i.parentNode.insertBefore(w,i);w.appendChild(i);
+ var mn=+i.min,mx=+i.max,v=+i.defaultValue,p=(v-mn)/(mx-mn);var d=document.createElement('span');d.className='dm';d.style.left='calc('+p+' * (100% - 16px) + 8px)';d.textContent=(fmt[i.id]||String)(i.defaultValue);w.appendChild(d);});})();
+</script>
+<script>
+function sim(){
+ var g=+document.getElementById('g').value,f=+document.getElementById('f').value,p=+document.getElementById('p').value,
+ m=+document.getElementById('m').value,a=+document.getElementById('a').value,r=+document.getElementById('r').value,h=+document.getElementById('h').value;
+ var pe=p+m*0.032, c=(1+g/100)*pe/2.4, hs=1-(a/100)*(1-r/100), hu=c*hs/0.64, fte=f*hu*(1+h/100), net=fte-f;
+ function pc(x){var v=Math.round((x-1)*100);return (v>0?'+':'')+v+'%'}
+ document.getElementById('v-g').textContent=g+'%';document.getElementById('v-f').textContent=f;
+ document.getElementById('v-p').textContent=p.toFixed(2);document.getElementById('v-m').textContent=(m>0?'+':'')+m+' pts';
+ document.getElementById('v-a').textContent=a+'%';document.getElementById('v-r').textContent=r+'%';document.getElementById('v-h').textContent=(h>0?'+':'')+h+'%';
+ document.getElementById('o-f').textContent=Math.round(fte);
+ var n=Math.round(net);document.getElementById('o-n').textContent=(n>0?'+':'')+n+' FTE';
+ document.getElementById('o-t').textContent=n>0?'Hires needed':(n<0?'Capacity freed':'Zero net hires');
+ var w=n>0?'needs '+n+' more people':(n<0?'frees '+(-n)+' people':'needs no extra people');
+ document.getElementById('o-x').textContent='With '+g+'% more orders, '+p.toFixed(2)+' contacts per 100 orders and '+a+'% automation'+(r>0?' of which '+r+'% comes back to an agent':'')+', the team '+w+' ('+Math.round(fte)+' FTE).';
+}
+
+function peak(){var g=function(k){return +document.getElementById(k).value};var b=g('kb'),u=g('ku'),w=g('kw'),a=g('ka'),ii=g('ki');
+ var x=b*u/100,ihf=x*ii/100,bpo=x-ihf,lv=b*a/100*w/4.33;
+ document.getElementById('v-kb').textContent=b;document.getElementById('v-ku').textContent='+'+u+'%';document.getElementById('v-kw').textContent=w+' weeks';
+ document.getElementById('v-ka').textContent=a+'%';document.getElementById('v-ki').textContent=ii+'%';
+ document.getElementById('k-p').textContent=Math.round(b+x);document.getElementById('k-x').textContent='+'+Math.round(x);
+ document.getElementById('k-s').textContent=Math.round(bpo)+' outsourcing partner, '+Math.round(ihf)+' internal';
+ document.getElementById('k-t').textContent='A '+u+'% peak over '+w+' weeks needs '+Math.round(x)+' extra FTE. '+(lv>=0.5?'About '+Math.round(lv)+' FTE leave during the peak; refilling them with peak hires covers part of it internally.':'With no leavers, internal hires would stay on after the peak: the outsourcing partner is the cheaper flex.');
+ markK()}
+function kpre(m){var b=+document.getElementById('kb').value,u=+document.getElementById('ku').value,w=+document.getElementById('kw').value,a=+document.getElementById('ka').value;
+ var v=0;if(m<0){var x=b*u/100,lv=b*a/100*w/4.33;v=x>0?Math.min(100,Math.round(lv/x*100/5)*5):0}
+ document.getElementById('ki').value=v;peak();}
+function markK(){var bs=document.querySelectorAll('#kpre button');if(!bs.length)return;var b=+document.getElementById('kb').value,u=+document.getElementById('ku').value,w=+document.getElementById('kw').value,a=+document.getElementById('ka').value,ii=+document.getElementById('ki').value;var x=b*u/100,lv=b*a/100*w/4.33,mix=x>0?Math.min(100,Math.round(lv/x*100/5)*5):0;bs[0].classList.toggle('on',ii===0);bs[1].classList.toggle('on',ii===mix&&mix>0)}
+window.addEventListener('load',peak);
+function preset(g,f,p,m,a,r,h){var v={g:g,f:f,p:p,m:m,a:a,r:r,h:h};for(var k in v)document.getElementById(k).value=v[k];sim();}
+function markPre(){var ids=['g','f','p','m','a','r','h'],cur=ids.map(function(k){return parseFloat(document.getElementById(k).value)});
+ document.querySelectorAll('.pre button').forEach(function(bt){var m=bt.getAttribute('onclick').match(/preset\(([^)]*)\)/);if(!m)return;var v=m[1].split(',').map(parseFloat);
+  bt.classList.toggle('on',v.every(function(x,i){return Math.abs(x-cur[i])<1e-6}))})}
+document.addEventListener('input',function(e){if(e.target&&e.target.type==='range')markPre()});
+document.addEventListener('click',function(e){if(e.target&&e.target.closest&&e.target.closest('.pre'))setTimeout(markPre,0)});
+window.addEventListener('load',markPre);
+sim();
+</script>
+<script>
+function fit(){document.querySelectorAll('.sl:not(.img)').forEach(function(sl){var k=1;sl.style.setProperty('--k',1);
+ while(sl.scrollHeight>sl.clientHeight+1&&k>0.5){k-=0.02;sl.style.setProperty('--k',k);}});}
+window.addEventListener('load',fit);window.addEventListener('resize',fit);
+</script>
+<script>
+function svgfs(){document.querySelectorAll('.sl svg[viewBox]:not(.links)').forEach(function(v){var b=v.viewBox.baseVal,r=v.getBoundingClientRect();if(!r.width)return;
+ var sc=Math.min(r.width/b.width,r.height/b.height),fs=parseFloat(getComputedStyle(v.parentNode).fontSize);v.setAttribute('font-size',(fs/sc).toFixed(2));});}
+window.addEventListener('load',function(){fit();svgfs()});window.addEventListener('resize',function(){fit();svgfs()});
+</script>
+<script>
+(function(){
+var parts=[['c3','Part 1 · Business Case 3: Scaling CS for 20% Growth'],['c1','Part 2 · Business Case 1: Reversing PSAT Decline in NL']];
+var st={};try{localStorage.removeItem('jetFold')}catch(e){}
+var box=document.getElementById('toc');
+function apply(){parts.forEach(function(p){var f=!!st[p[0]];document.querySelectorAll('.page[data-part="'+p[0]+'"]').forEach(function(e){e.classList.toggle('hid',f)});
+ var el=document.getElementById('tp-'+p[0]);if(el){el.classList.toggle('fold',f);el.querySelector('button').textContent=f?'Unfold':'Fold'}});
+}
+parts.forEach(function(p){var d=document.createElement('div');d.className='tpart';d.id='tp-'+p[0];
+ d.innerHTML='<div class="tph"><div class="ch">'+p[1]+'</div><button type="button">Fold</button></div>';
+ document.querySelectorAll('.page[data-part="'+p[0]+'"] .sl').forEach(function(sl){var h=sl.querySelector('h2'),im=sl.querySelector('img:not(.logo):not(.house)');
+  var t=h?h.innerHTML.replace(/<br\s*\/?>/i,': ').replace(/&amp;/g,'&'):(im&&sl.classList.contains('img')?im.alt.replace(/^Business Case \d: /,'Case: '):'');if(!t)return;
+  var n=sl.querySelector('.n');var a=document.createElement('a');a.href='#';a.innerHTML='<span>'+(n?n.textContent:'')+'</span>'+t;
+  a.onclick=function(e){e.preventDefault();if(st[p[0]]){st[p[0]]=false;apply()}sl.closest('.page').scrollIntoView({behavior:'smooth'})};d.appendChild(a)});
+ d.querySelector('button').onclick=function(){st[p[0]]=!st[p[0]];apply()};
+ var hc=d.querySelector('.tph .ch');hc.style.cursor='pointer';hc.onclick=function(){if(st[p[0]]){st[p[0]]=false;apply()}document.querySelector('.page[data-part="'+p[0]+'"]').scrollIntoView({behavior:'smooth'})};box.appendChild(d)});
+apply();
+document.getElementById('tc').onclick=function(){document.querySelector('.page[data-part="toc"]').scrollIntoView({behavior:'smooth'})};
+})();
+</script>
+</body>
