@@ -880,7 +880,7 @@ function apply(){parts.forEach(function(p){var f=!!st[p[0]];document.querySelect
 parts.forEach(function(p){var d=document.createElement('div');d.className='tpart';d.id='tp-'+p[0];
  d.innerHTML='<div class="tph"><div class="ch">'+p[1]+'</div><button type="button">Fold</button></div>';
  document.querySelectorAll('.page[data-part="'+p[0]+'"] .sl').forEach(function(sl){var h=sl.querySelector('h2'),im=sl.querySelector('img:not(.logo):not(.house)');
-  var t=h?h.innerHTML.replace(/<br\s*\/?>/i,': ').replace(/&amp;/g,'&'):(im&&sl.classList.contains('img')?im.alt.replace(/^Business Case \d: /,'Case: '):'');if(!t)return;
+  var t=h?h.innerHTML.replace(/\s*<span class="live">.*?<\/span>/,'').replace(/<br\s*\/?>/i,': ').replace(/&amp;/g,'&'):(im&&sl.classList.contains('img')?im.alt.replace(/^Business Case \d: /,'Case: '):'');if(!t)return;
   var n=sl.querySelector('.n');var a=document.createElement('a');a.href='#';a.innerHTML='<span>'+(n?n.textContent:'')+'</span>'+t;
   a.onclick=function(e){e.preventDefault();if(st[p[0]]){st[p[0]]=false;apply()}sl.closest('.page').scrollIntoView({behavior:'smooth'})};d.appendChild(a)});
  d.querySelector('button').onclick=function(){st[p[0]]=!st[p[0]];apply()};
