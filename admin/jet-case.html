@@ -467,37 +467,6 @@ b,strong{font-weight:700;color:var(--dk)}
 </style>
 </head>
 <body>
-<style>
-#tof-gate{position:fixed;inset:0;background:#ff8000;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-#tof-gate .box{background:#fff;border-radius:14px;padding:40px 36px;max-width:380px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.25)}
-#tof-gate h2{font-size:20px;color:#242e30;margin:0 0 12px}
-#tof-gate p{font-size:15px;color:#242e30;margin:0 0 18px;line-height:1.5}
-#tof-gate input{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d6d6d6;border-radius:8px;font-size:15px;font-family:inherit;outline:none;margin-bottom:12px}
-#tof-gate input:focus{border-color:#ff8000}
-#tof-gate button{width:100%;background:#ff8000;color:#fff;border:none;border-radius:8px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
-#tof-gate .err{color:#dc2626;font-size:14px;margin-top:8px;min-height:16px}
-</style>
-<div id="tof-gate" style="display:none">
-  <div class="box">
-    <h2>Private Page</h2>
-    <p>Enter the access key to continue.</p>
-    <input id="tof-pwd" type="password" placeholder="Access key">
-    <button onclick="tofUnlock()">Unlock</button>
-    <div class="err" id="tof-err"></div>
-  </div>
-</div>
-<script>
-(function(){
-  var EXPECTED="JET2026",K="tof_unlock_jetcase",g=document.getElementById('tof-gate');
-  var ok=false;try{ok=sessionStorage.getItem(K)==='1'}catch(e){}
-  if(location.protocol!=='file:'&&!ok){g.style.display='flex';setTimeout(function(){document.getElementById('tof-pwd').focus()},50)}
-  window.tofUnlock=function(){
-    if(document.getElementById('tof-pwd').value===EXPECTED){try{sessionStorage.setItem(K,'1')}catch(e){}g.style.display='none'}
-    else document.getElementById('tof-err').textContent='Wrong access key.';
-  };
-  document.getElementById('tof-pwd').addEventListener('keydown',function(e){if(e.key==='Enter')tofUnlock()});
-})();
-</script>
 
 <!-- Case cover -->
 <section class="page"><div class="sl img cvr"><img src="just-eat-case-3/case_cover.png" alt="Head of Customer Service BENELUX: Second Round Interview, Business Cases"><div class="by">by Olga Bressers</div><div class="n">1</div></div></section>
@@ -647,7 +616,7 @@ b,strong{font-weight:700;color:var(--dk)}
 <section class="page" data-part="c3"><div class="sl std "><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>01 Capacity Planning</h2><div class="card tb qk"><div class="ch">01 Capacity Planning</div><ul class="b"><li>How would you model capacity for 20% growth?</li><li>Optimal insource/BPO/shared-service mix?</li><li>How would you handle peak scaling?</li><li>Seasonal and weekend coverage?</li></ul></div></div>
   <div class="body2" style="grid-template-columns:.78fr 1.22fr;min-height:auto">
-    <div class="card vbig"><div class="hw2">
+    <div class="card vbig"><div class="asm" style="font-size:calc(var(--fb)*.95);font-weight:600;margin-bottom:.6cqw">Assumption**: 150+ colleagues = 150 FTE</div><div class="hw2">
         <div class="hl"><b>FTE today</b></div><div class="ht"><div class="hb" style="left:0;width:83.33%;background:var(--slate)"><span class="in">150</span></div></div>
         <div class="hl"><b>+20% orders</b></div><div class="ht"><div class="hb" style="left:83.33%;width:16.67%;background:var(--o)"><span class="lf">+30</span></div></div>
         <div class="hl"><b>Contacts per order</b><br>2.4% → 2.2%</div><div class="ht"><div class="hb" style="left:91.67%;width:8.33%;background:var(--grey)"><span class="lf">−15</span></div></div>
@@ -657,6 +626,7 @@ b,strong{font-weight:700;color:var(--dk)}
     <div class="ans msq"><div class="ab"><span class="no">1</span><div><b>Model:</b><ul class="b abl"><li>To keep FTE flat at 20% more orders: automation from 36% to 42% and contact propensity from 2.4% to 2.2%</li><li><b>Test it live on slide 14, button “The plan”</b></li></ul></div></div><div class="ab"><span class="no">2</span><div><b>Mix:</b> <ul class="b abl"><li>Each site specialises by language, hours, complexity and customer group</li><li>The outsourcing partner adds flexible volume</li><li><b>Once AI translation lets agents work in their own language,</b> any site can take any contact: one shared queue</li></ul></div></div><div class="ab"><span class="no">3</span><div><b>Peaks:</b> <ul class="b abl"><li>Peak windows: evenings, weekends, bad weather, events, holidays</li><li>Weekly peaks (evenings, weekends): own staff rostered to those hours</li><li>Unplanned peaks (bad weather, events): outsourcing partner on a flexible agreement, paid per contact</li></ul></div></div><div class="ab"><span class="no">4</span><div><b>Seasonal and weekend:</b> Rosters from the order forecast; weekend and seasonal overflow to the outsourcing partner.</div></div></div>
   </div>
   <div class="key">With 20% more orders and no changes, we need 30 more people.<br>Fewer customer problems per order and more automation remove that need.</div>
+  <div class="srcb">** Own assumption.</div>
   <div class="n">13</div>
 </div></section>
 
