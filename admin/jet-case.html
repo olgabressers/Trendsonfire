@@ -633,11 +633,11 @@ b,strong{font-weight:700;color:var(--dk)}
 <!-- 9 Simulator -->
 <section class="page" data-part="c3"><div class="sl std simsl"><img class="logo" src="just-eat-case-3/jet-icon.png" alt="Just Eat Takeaway.com">
   <div class="hd"><h2>01 Capacity Planning: Simulator <span class="live"><i></i>Live</span></h2><div class="card tb qk howto"><div class="ch">How to use</div><ol><li><b>Do nothing</b> (opens here): +20% orders = 180 FTE</li><li><b>The plan</b> = slide 13: propensity 2.2%, automation 42% = 150 FTE</li><li>Move any slider to test a risk</li></ol></div></div>
-  <div class="body2">
+  <div class="body2" style="min-height:auto">
     <div class="card sim1">
       <div class="sg"><div class="st"><span>Order growth <span class="def">· default 20%: the case growth target</span></span><span class="val" id="v-g"></span></div>
         <input type="range" id="g" min="0" max="40" step="1" value="20" oninput="sim()"></div>
-      <div class="sg"><div class="st"><span>FTE today <span class="def">· default 150: the case team size</span></span><span class="val" id="v-f"></span></div>
+      <div class="sg"><div class="st"><span>FTE today <span class="def">· default 150: 150+ colleagues = 150 FTE**</span></span><span class="val" id="v-f"></span></div>
         <input type="range" id="f" min="100" max="250" step="5" value="150" oninput="sim()"></div>
       <div class="sg"><div class="st"><span>Contacts per 100 orders <span class="def">· default 2.4: today, per the case</span></span><span class="val" id="v-p"></span></div>
         <input type="range" id="p" min="1.5" max="3.5" step="0.05" value="2.4" oninput="sim()"></div>
@@ -660,6 +660,7 @@ b,strong{font-weight:700;color:var(--dk)}
     </div>
   </div>
   <div class="key">The plan assumes bot-solved contacts stay solved.<br>If 1 in 5 comes back to a person, we need 21 more people: repeat contacts per type are the number to watch.</div>
+  <div class="srcb"><b>Model:</b> FTE needed = FTE today × (1 + order growth) × (contacts per 100 orders ÷ 2.4) × (share handled by people ÷ 64%) × (1 + handle time change) · Share handled by people = 1 − automation × (1 − bot contacts back) · Contacts per 100 orders rise 0.032 for each point of orders moving to Scoober (4.6 − 1.4 = 3.2 per 100 orders) · Today people handle 64% (100% − 36%)<br>Sources: Business Case 3 (150+ colleagues, propensity 2.4%, automation 31–36%, Scoober 4.6% vs Marketplace 1.4%) · ** Own assumption: 150+ colleagues = 150 FTE</div>
   <div class="n">14</div>
 </div></section>
 
