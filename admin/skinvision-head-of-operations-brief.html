@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>SkinVision — Head of Operations Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#17151a;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#cdb27a;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4.2vw,48px);font-weight:400;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px;}
+    .art-hero h1 em{color:#cdb27a;font-style:italic;}
+    .art-hero p{font-size:16px;color:rgba(255,255,255,.87);line-height:1.6;max-width:820px;}
+    .art-hero .meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:12.5px;font-weight:700;letter-spacing:.5px;color:#cdb27a;text-decoration:none;border:1px solid rgba(205,178,122,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(205,178,122,.1);}
+
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:600;line-height:1;color:#17151a;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#8a6d3f;font-weight:600;}
+
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:24px 22px 20px;margin-bottom:24px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#8a6d3f;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#17151a;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#cdb27a;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(205,178,122,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#cdb27a;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:14px;color:#ffffff;padding:8px 0 8px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#cdb27a;position:absolute;left:0;font-weight:700;}
+
+    /* SECTION HEADER — bumped per chapter-title rule */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid #17151a;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8a6d3f;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.8vw,32px);font-weight:600;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #17151a;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#8a6d3f;}
+
+    /* PRIORITY / DATA TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+    .pri-table th{background:#17151a;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#8a6d3f;}
+
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:780px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:600;line-height:1;color:#8a6d3f;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#0a0f1a;margin-bottom:9px;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#17151a;border-left:3px solid #cdb27a;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#cdb27a;margin-bottom:6px;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8a6d3f;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#17151a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;}
+    .kpi-bench{margin-top:8px;padding-top:8px;border-top:1px solid #e2dfd9;font-size:13px;color:#17151a;line-height:1.5;}
+    .kpi-bench strong{color:#8a6d3f;font-weight:800;}
+
+    /* BRAND / COMPETITOR CARDS */
+    .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+    @media(max-width:700px){.brands-grid{grid-template-columns:1fr;}}
+    .brand-card{padding:18px 18px;border:1px solid #e2dfd9;background:white;}
+    .brand-card.in-scope{border-color:#17151a;border-width:2px;background:#faf9f7;}
+    .brand-name{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:6px;}
+    .brand-desc{font-size:13.5px;color:#1f1f1f;line-height:1.55;}
+
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#17151a;color:#cdb27a;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #e2dfd9;}
+    .org-company{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#17151a;color:#cdb27a;}
+    .org-name{font-size:15.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13.5px;color:#0a0f1a;line-height:1.4;margin-top:2px;}
+    .org-entity{font-size:13px;color:#4b5563;font-weight:600;margin-top:3px;line-height:1.4;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
+    .org-conf a{color:#8a6d3f;font-weight:600;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="hero-links">
+    <a href="https://www.skinvision.com/" target="_blank" rel="noopener">Company site &rarr;</a>
+    <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description &rarr;</a>
+  </div>
+  <div class="inner">
+    <div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; SkinVision</div>
+    <div class="eyebrow">Interview Brief — Head of Operations · Leadership team</div>
+    <h1>SkinVision: <em>a Class IIa skin-cancer device with six operational areas to run as one</em></h1>
+    <p>Founded in Amsterdam in 2012, SkinVision runs an artificial intelligence skin-cancer risk assessment certified as a Class IIa medical device, with more than 90% sensitivity and 89% specificity. Nearly 3 million people have used it, the image database holds more than 6 million skin images, and insurer partnerships can reach 20 million people. High-risk results are reviewed by dermatologists. Operations sits on that clinical pathway: support, clinical review, care access, billing, tooling and service analytics. The Head of Operations reports to the chief executive officer and owns all six.</p>
+    <div class="meta">
+      <span>Sources: SkinVision pricing page, SkinVision LinkedIn job description, SkinVision Head of Operations Candidate Briefing, skinvision.com, Halldale (28 January 2019)</span>
+      <span>Updated 18 October 2026</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+  <div style="border:1px solid #e2dfd9;border-left:4px solid #cdb27a;padding:20px 24px;background:white;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#8a6d3f;font-weight:700;margin-bottom:16px;">Key conclusions</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6d3f;margin-bottom:4px;">The company</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Amsterdam-based, founded 2012. Class IIa medical device under European Union regulation. Nearly 3 million people helped, more than 6 million skin images, and a team of dermatologists who review high-risk cases.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6d3f;margin-bottom:4px;">The role</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Head of Operations, reporting to the chief executive officer, member of the leadership team, Amsterdam (hybrid). Owns six areas: customer service, clinical review, care access and follow-up, billing and revenue operations, business systems, and service performance analytics.</div>
+      </div>
+      <div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;">
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6d3f;margin-bottom:4px;">The mandate</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">A growth role. Success at 12 months includes measurable specificity improvement at unchanged sensitivity, a stratified view of service performance, and at least one opportunity found by Operations taken forward.</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#8a6d3f;margin-bottom:4px;">Key opportunity</div>
+        <div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Six small teams already produce one dataset. Joined and stratified by device, skin type, market and age, it becomes the evidence Regulatory needs and the direction Product needs.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-toc" style="background:#f6f1e6;border:1px solid #e3d5b8;padding:20px 24px;">
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#17151a;font-weight:700;margin-bottom:16px;">Contents</div>
+    <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Company &amp; service</a><br><span style="color:#555;font-size:13px;">What SkinVision does, how the pathway works, funding history.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">One dataset across six areas · a sensitivity floor · strata too small to measure.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Six areas mapped to Olga's experience, boundaries, and a 5-step priority stack.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-success" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Success at 3, 6 and 12 months</a><br><span style="color:#555;font-size:13px;">The milestones the role is measured against.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-first" style="color:#0a0f1a;text-decoration:none;font-weight:700;">First conversation</a><br><span style="color:#555;font-size:13px;">Four examples the first round asks for, with the matching evidence.</span></li>
+      <li style="margin-bottom:13px;"><a href="#sec-revenue" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Revenue levers within the mandate</a><br><span style="color:#555;font-size:13px;">Eight levers from SkinVision's pricing and the six areas, each with its metric.</span></li>
+      <li><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (key performance indicator) framework</a><br><span style="color:#555;font-size:13px;">Four layers with SkinVision reference points.</span></li>
+    </ol>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="s-card"><div class="s-lbl">Medical Device Class</div><div class="s-num">IIa</div><div class="s-src">Certified under European Union regulation. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
+  <div class="s-card"><div class="s-lbl">People Helped</div><div class="s-num">3M</div><div class="s-src">Nearly 3 million worldwide. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
+  <div class="s-card"><div class="s-lbl">Skin Images</div><div class="s-num">6M+</div><div class="s-src">Database size. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
+  <div class="s-card"><div class="s-lbl">Insurer Reach</div><div class="s-num">20M</div><div class="s-src">People reachable through insurer partnerships. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
+  <div class="s-card"><div class="s-lbl">Sensitivity / Specificity</div><div class="s-num">90% / 89%</div><div class="s-src">Sensitivity over 90%. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
+  <div class="s-card"><div class="s-lbl">Founded</div><div class="s-num">2012</div><div class="s-src">Amsterdam. <a href="https://www.halldale.com/safety-critical-industries/13798-skin-cancer-app-skinvision-raises-7-6m" target="_blank" rel="noopener">Halldale</a></div></div>
+</div>
+
+<div id="sec-company" class="sec-header" style="margin-top:0;">
+  <div class="sec-num">01</div>
+  <div class="sec-label"><div class="sec-eyebrow">Company</div><div class="sec-title">Company &amp; service</div></div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">How the service works</div>
+  <div class="chart-sub">Four steps, as SkinVision describes them</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Step</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Scan</strong></td><td>The user takes a photo of a skin spot with the app's camera and receives an instant assessment.</td></tr>
+        <tr><td><strong>2. Dermatologist review</strong></td><td>When extra certainty is needed, the photo may be reviewed by a panel of dermatologists.</td></tr>
+        <tr><td><strong>3. Next-step recommendation</strong></td><td>From urgent care to a specialist referral — support for the user's decision, not a replacement for the doctor.</td></tr>
+        <tr><td><strong>4. Tracking</strong></td><td>A body map lets users monitor spots over time and share results with their general practitioner.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Source: <a href="https://www.skinvision.com/" target="_blank" rel="noopener">skinvision.com</a>. The homepage also states more than 3 million users and more than 5 million checks performed.</div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">Funding history</div>
+  <div class="chart-sub">The most recent round found in a source that could be read</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Date</th><th>Amount</th><th>Participants</th></tr></thead>
+      <tbody>
+        <tr><td>January 2019 (announcement)</td><td>$7.6 million</td><td>Existing shareholders LEO Pharma and PHS Capital, plus new high net worth impact investors</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Source: <a href="https://www.halldale.com/safety-critical-industries/13798-skin-cancer-app-skinvision-raises-7-6m" target="_blank" rel="noopener">Halldale, 28 January 2019</a>. The same article quotes Erik de Heus as chief executive officer.</div>
+</div>
+
+<div id="sec-challenges" class="bk-wrap">
+  <div class="bk-eyebrow">Role Analysis</div>
+  <div class="bk-headline">3 structural challenges this role is built to solve</div>
+  <div class="bk-grid">
+    <div class="bk-card">
+      <div class="bk-num">01</div>
+      <div class="bk-card-title">Six areas, one dataset</div>
+      <ul>
+        <li>Support, clinical review, care access, billing, tooling and analytics run semi-independently, each small in headcount and wide in subject matter</li>
+        <li>Each team sees its own slice below the noise threshold; the pooled, stratified view is where real problems show</li>
+      </ul>
+    </div>
+    <div class="bk-card">
+      <div class="bk-num">02</div>
+      <div class="bk-card-title">Specificity gains with a sensitivity floor</div>
+      <ul>
+        <li>The algorithm is tuned for high sensitivity, so human review recovers specificity by reducing false positives</li>
+        <li>Sensitivity is a floor and is only reported alongside specificity held constant; any movement is an immediate escalation to Clinical and Regulatory</li>
+      </ul>
+    </div>
+    <div class="bk-card">
+      <div class="bk-num">03</div>
+      <div class="bk-card-title">You cannot stratify what you do not collect</div>
+      <ul>
+        <li>Device model, operating system, age band, market, language and self-reported skin type need consistent, joinable capture before any analysis</li>
+        <li>Smaller strata, such as darker skin types in a majority-European user base, are the hardest to measure; "we cannot yet tell" is reported as a status</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="sec-scope" class="sec-header">
+  <div class="sec-num">02</div>
+  <div class="sec-label"><div class="sec-eyebrow">Role scope</div><div class="sec-title">Head of Operations — six areas &amp; Olga's experience</div></div>
+</div>
+
+<div class="src-note" style="margin-bottom:4px;">The posting asks for 8+ years of operations experience including managing team leads directly. Olga's operations career at Richemont (2019–2025), adidas (2016–2018), Nike (2010–2016) and IBM (2006–2010) covers 19 years. Area descriptions and metrics: SkinVision Head of Operations Candidate Briefing.</div>
+
+<div class="scope-grid">
+  <div class="scope-card">
+    <div class="scope-n">01</div>
+    <div class="scope-label">Customer Service</div>
+    <div class="scope-desc">All user-facing support across markets and channels, plus partner support for insurers, employers and health systems. Every contact is classified at intake because the classification decides what reaches Regulatory and when.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Intake classification</span><span class="scope-kpi">Escalation handoff</span><span class="scope-kpi">Resolution time</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: ran the 240+ full-time-equivalent Client Relations Centre across 26 European markets and turned it from a cost centre into a commercial sales channel. Ensured General Data Protection Regulation compliance with a training programme for the whole customer service workforce and a quality framework that classified customer-data handling errors as critical compliance incidents. Certified in Global Customer Experience and customer relationship management by COPC.</div>
+  </div>
+  <div class="scope-card">
+    <div class="scope-n">02</div>
+    <div class="scope-label">Clinical Review Operations</div>
+    <div class="scope-desc">The workflow in which trained human assessors examine algorithm output. Runs to a measured specificity target with calibration, inter-rater agreement monitoring and quality sampling. Does not own regulatory compliance.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Specificity uplift</span><span class="scope-kpi">Turnaround</span><span class="scope-kpi">Cost per review</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: ran anti-fraud operations with machine-learning fraud models alongside manual review, with minimised losses and a strong consumer experience. Held service-level agreement, operational performance and cost-to-serve key performance indicators across a €150M+ business.</div>
+  </div>
+  <div class="scope-card">
+    <div class="scope-n">03</div>
+    <div class="scope-label">Care Access &amp; Follow-up</div>
+    <div class="scope-desc">Referral guidance, care navigation, partner clinic handoffs and structured follow-up after a high-risk result, with market-specific pathways and consent-based outcome capture.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Result to consultation</span><span class="scope-kpi">Follow-up response</span><span class="scope-kpi">Outcome capture</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: led the digital customer journey for 12 luxury Maisons across 26 countries, with Net Promoter Score and overall satisfaction improvement of up to 20%. Cross-regional collaboration with the United States and Middle East regions on shared best practice.</div>
+  </div>
+  <div class="scope-card">
+    <div class="scope-n">04</div>
+    <div class="scope-label">Billing &amp; Revenue Operations</div>
+    <div class="scope-desc">The full billing lifecycle across direct payment and app-store purchase, plus partner invoicing: payout reconciliation, multi-currency and VAT, refunds, chargebacks, dunning and entitlement integrity.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Reconciliation</span><span class="scope-kpi">Involuntary churn</span><span class="scope-kpi">Billing-driven contacts</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: profit-and-loss responsibility for a €150M+ e-commerce business across 26 markets, plus payment operations and anti-fraud with minimised losses. Cost-to-sales and return-on-investment key performance indicators.</div>
+  </div>
+  <div class="scope-card">
+    <div class="scope-n">05</div>
+    <div class="scope-label">Business Systems &amp; Operations Technology</div>
+    <div class="scope-desc">The tool stack the other areas run on — helpdesk and customer relationship management, billing platform, review tooling, business intelligence — plus integrations, automation, data hygiene and vendor management. Tooling substitutes for headcount.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Automation rate</span><span class="scope-kpi">Data quality</span><span class="scope-kpi">Tooling cost per user</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: productivity up 3 times through automation and process standardisation, lead time down 20%, AI agents replacing manual work. Salesforce customer relationship management, order management systems, Google Looker. IBM: change manager on a customer relationship management implementation and process transformation on SAP APO (Advanced Planner and Optimizer). Built the TrendsOnFire platform hands-on with Claude Code.</div>
+  </div>
+  <div class="scope-card">
+    <div class="scope-n">06</div>
+    <div class="scope-label">Service Performance &amp; Segment Analytics</div>
+    <div class="scope-desc">Measures the service as delivered, stratified by device, skin type, geography, age group and lesion presentation, with a pre-registered stratification plan and statistical power stated per stratum.</div>
+    <div class="scope-kpis"><span class="scope-kpi">Segment coverage</span><span class="scope-kpi">Power per stratum</span><span class="scope-kpi">Time to escalation</span></div>
+    <div class="scope-exp"><strong>Olga's experience</strong>Richemont: established the analytics function and built an omni-channel cockpit across 26 markets for data-informed decisions. Master's degree in Applied Mathematics and a Professional Doctorate in Engineering in logistics management systems.</div>
+  </div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">Boundaries</div>
+  <div class="chart-sub">Operations generates the data, runs the process and escalates; it does not make the regulatory or clinical call</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Area</th><th>Owner</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td>Reportability, vigilance reporting to competent authorities, field safety corrective action decisions</td><td>Regulatory</td><td>Permanent</td></tr>
+        <tr><td>Medical Device Regulation compliance, periodic safety update reports, corrective and preventive action system, audits</td><td>Regulatory / Quality Assurance</td><td>Permanent</td></tr>
+        <tr><td>Risk management file and usability engineering file</td><td>Regulatory / Clinical</td><td>Permanent</td></tr>
+        <tr><td>Clinical protocols, reviewer clinical criteria, sensitivity thresholds</td><td>Clinical / Data Science</td><td>Permanent</td></tr>
+        <tr><td>Clinical significance of a segment-level finding</td><td>Clinical / Regulatory</td><td>Permanent</td></tr>
+        <tr><td>Model development, retraining, threshold setting; model performance input to output</td><td>Data Science</td><td>Provisional</td></tr>
+        <tr><td>Product roadmap decisions</td><td>Product</td><td>Provisional</td></tr>
+        <tr><td>Commercial ownership of partner relationships and pricing</td><td>Commercial</td><td>Provisional</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Source: SkinVision Head of Operations Candidate Briefing, Boundaries section. Provisional boundaries are subjects for the annual mandate review. One hard limit: outcome data is used in aggregated form only and never commercialised as user health data; any use beyond the original purpose goes through Legal, Regulatory and the consent basis first.</div>
+</div>
+
+<div style="margin-top:22px;">
+  <div style="font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a6d3f;margin-bottom:11px;padding-bottom:8px;border-bottom:1px solid #e2dfd9;">Priority stack — 5-step approach</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th style="width:36px;">#</th><th>Action</th><th>Why first</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pri-num">1</span></td><td><strong>Map the six areas</strong> — processes, tools, data flows, dependencies and gaps, with a build, automate or outsource position for each</td><td>The briefing names this as the first 3-month deliverable; every later decision depends on it</td><td>Prioritised plan</td></tr>
+        <tr><td><span class="pri-num">2</span></td><td><strong>Agree the intake classification standard</strong> with Regulatory — general enquiry, complaint, suspected incident, clinically urgent — with handoff service-level agreements</td><td>Classification at capture decides what reaches Regulatory and when</td><td>Documented standard and handoff times</td></tr>
+        <tr><td><span class="pri-num">3</span></td><td><strong>Baseline the segmentation attributes</strong> — device and operating system, age band, market, language, skin type — and agree the data protection position on skin type with Legal and Regulatory</td><td>You cannot stratify by what you do not collect</td><td>Attribute coverage baseline</td></tr>
+        <tr><td><span class="pri-num">4</span></td><td><strong>Build the unified reporting layer</strong> and write the sensitivity floor into the review standard operating procedure</td><td>One joinable view makes the stratified cuts possible; a written floor makes the constraint structural</td><td>Live reporting layer, pre-registered stratification plan</td></tr>
+        <tr><td><span class="pri-num">5</span></td><td><strong>Open the evidence channel into Product</strong> and prepare the first annual mandate review</td><td>Turns operational findings into shipped changes and a case for extending the remit</td><td>Standing input channel, first cycle of changes</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="sec-success" class="sec-header">
+  <div class="sec-num">03</div>
+  <div class="sec-label"><div class="sec-eyebrow">Milestones</div><div class="sec-title">Success at 3, 6 and 12 months</div></div>
+</div>
+
+<div class="chart-box">
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Horizon</th><th>What the briefing expects</th></tr></thead>
+      <tbody>
+        <tr><td><strong>3 months</strong></td><td>A complete map of processes, tools, data flows and gaps across the six areas with a prioritised plan · an intake classification standard agreed with Regulatory, with handoff service-level agreements · a baseline of segmentation attribute coverage, including the data protection position on skin type</td></tr>
+        <tr><td><strong>6 months</strong></td><td>A unified reporting layer live across all six areas with cuts by device and operating system, geography and age band · a pre-registered stratification plan agreed with Clinical and Regulatory · review operations running to a measured specificity target with sensitivity reported alongside · a standing evidence channel into Product with the first changes shipped or scheduled</td></tr>
+        <tr><td><strong>12 months</strong></td><td>Measurable specificity improvement at unchanged sensitivity · improved conversion from high-risk result to consultation · stratified performance reported routinely, with underpowered strata flagged and at least one segment-level gap addressed · no gaps reported by Regulatory in operational evidence · monthly billing close without manual firefighting · lower cost-to-serve per active user with no safety metric degraded · at least one opportunity quantified and taken forward · the first annual mandate review delivered</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Source: SkinVision Head of Operations Candidate Briefing, What success looks like.</div>
+</div>
+
+<div id="sec-first" class="sec-header">
+  <div class="sec-num">04</div>
+  <div class="sec-label"><div class="sec-eyebrow">First conversation</div><div class="sec-title">Four examples the first round asks for</div></div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-sub">The first round focuses on how technology and data are used in operations and on the record of expanding a function.</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Example requested</th><th>Evidence from Olga's record</th></tr></thead>
+      <tbody>
+        <tr><td><strong>An automation led</strong> — before, change, effect in volumes, cycle times and cost</td><td>Richemont: productivity up 3 times through automation and process standardisation; lead time down 20%; machine-learning fraud models and AI agents replacing manual work across customer service, anti-fraud and payment operations in 26 markets.</td></tr>
+        <tr><td><strong>A number challenged</strong> — a metric that looked wrong and the data dig behind it</td><td>Richemont: established the analytics function and built the omni-channel cockpit that replaced reporting from separate teams with one commercial and operational view. Master's degree in Applied Mathematics.</td></tr>
+        <tr><td><strong>A remit expanded</strong> — identified, case built, who was convinced, outcome</td><td>Richemont: turned the Client Relations Centre from a cost centre into a commercial e-boutique channel driving direct sales, while e-commerce grew 30% a year; directed 100+ strategic projects with stakeholders up to executive committee level.</td></tr>
+        <tr><td><strong>A trade-off made explicit</strong> — service, cost and safety pulling apart</td><td>Richemont: a General Data Protection Regulation quality framework that classified customer-data handling errors as critical compliance incidents, run alongside service-level agreement and cost-to-serve targets across the 240+ full-time-equivalent centre.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Examples requested: SkinVision Head of Operations Candidate Briefing, Preparing for the first conversation. Evidence: Olga's CV.</div>
+</div>
+
+<div id="sec-revenue" class="sec-header">
+  <div class="sec-num">05</div>
+  <div class="sec-label"><div class="sec-eyebrow">Revenue</div><div class="sec-title">How to maximise revenue in this role, within the mandate</div></div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">What SkinVision charges today</div>
+  <div class="chart-sub">Three consumer offers on the public pricing page</div>
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th>Offer</th><th>Price</th><th>What it includes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Single check</strong></td><td>€6.99</td><td>One skin spot check with an instant risk assessment and advice on whether to visit a doctor and when</td></tr>
+        <tr><td><strong>3 months plan</strong></td><td>€24.99 for 3 months</td><td>Unlimited skin spot checks, Body Map and Reminders, personalised advice, health journey guidance</td></tr>
+        <tr><td><strong>12 months</strong> (marked Most Popular)</td><td>€49.99 for 1 year</td><td>The same features as the 3 months plan for a full year</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src-note">Four consecutive 3 months plans cost €99.96 (4 × €24.99), against €49.99 for the 12 months plan (derived arithmetic). The page describes SkinVision as a premium, paid-for medical service, and lists Business, Press and Partners pages alongside the consumer plans.</div>
+  <div class="chart-src">Source: <a href="https://www.skinvision.com/getting-started#pricing-and-plans" target="_blank" rel="noopener">skinvision.com, Getting Started, Pricing and Plans</a>.</div>
+</div>
+
+<div class="src-note" style="margin-bottom:4px;">Pricing, packaging and partner terms belong to Commercial and Product. Within the mandate, Operations produces the evidence from billing, support, review and follow-up data, argues the case, and builds what belongs in Operations. Each lever below names the area that owns the data and the metric that shows the result.</div>
+
+<div class="chart-box">
+  <div class="pri-wrap">
+    <table class="pri-table">
+      <thead><tr><th style="width:34px;">#</th><th>Lever</th><th>Starting point on the pricing page or in the briefing</th><th>What Operations does</th><th>Metric</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pri-num">1</span></td><td><strong>Protect renewals from payment failure</strong></td><td>Subscriptions at €24.99 for 3 months and €49.99 for 1 year renew automatically across direct payment and app-store purchase</td><td>Billing and Revenue Operations runs dunning, payment-provider settlement and renewal handling so that a failed payment does not remove access from a paying user</td><td>Involuntary churn from payment failure</td></tr>
+        <tr><td><span class="pri-num">2</span></td><td><strong>Remove entitlement friction</strong></td><td>Entitlement integrity, meaning paying users have access and non-paying users do not, is the queue that most directly generates support contacts</td><td>Business Systems fixes the integration between billing platform and app; Customer Service tags every billing-driven contact so the cause is counted</td><td>Billing-driven support volume, cost to serve per active user</td></tr>
+        <tr><td><span class="pri-num">3</span></td><td><strong>Turn single-check buyers into plan holders with evidence</strong></td><td>The Single check at €6.99 is the lowest price point; the 12 months plan is marked Most Popular</td><td>Support and billing data show where single-check buyers dispute, abandon or ask pricing questions; Operations brings those findings to Product and Commercial as prioritised input</td><td>Packaging and pricing contacts per active user, refund and chargeback rates</td></tr>
+        <tr><td><span class="pri-num">4</span></td><td><strong>Reconcile every revenue stream</strong></td><td>App-store payouts, payment-provider settlement, multi-currency, VAT, refunds and chargebacks run in parallel</td><td>Monthly reconciliation of each stream to its source, so revenue is recognised in the correct amount and period without manual firefighting</td><td>Reconciliation accuracy, monthly close timeliness</td></tr>
+        <tr><td><span class="pri-num">5</span></td><td><strong>Bill partner contracts to their terms</strong></td><td>Insurer partnerships can reach 20 million people; the website lists a partners page and a recent post on an insurance partner giving members access to AI-powered skin cancer checks</td><td>Usage-based and seat-based partner invoicing reconciled against contract terms, with partner support as a defined channel</td><td>Days to resolve partner invoicing disputes</td></tr>
+        <tr><td><span class="pri-num">6</span></td><td><strong>Build real-world evidence as a sellable asset</strong></td><td>A year-long study with CZ Health Insurance covered over 18,000 users, and users were 32% more likely to have a skin cancer or precancer diagnosed. Care Access outcome data is described in the briefing as the evidence reimbursement dossiers, health-economic cases and partner business cases are built on</td><td>Care Access captures result-to-consultation-to-diagnosis outcomes with consent and hands aggregated evidence to Commercial and Regulatory. Any use beyond the original purpose goes through Legal, Regulatory and the consent basis first</td><td>Outcome capture completeness, high-risk-result-to-consultation conversion</td></tr>
+        <tr><td><span class="pri-num">7</span></td><td><strong>Use segment findings to choose markets and handsets</strong></td><td>Service performance by geography, device estate and population is described in the briefing as a direct input to which markets to enter and which handsets to support</td><td>Service Performance and Segment Analytics reports stratified results with statistical power per stratum, and Operations argues the market decision on that evidence</td><td>Stratified capture success, segment coverage</td></tr>
+        <tr><td><span class="pri-num">8</span></td><td><strong>Offer the care pathway as a service line</strong></td><td>Referral networks, care navigation and partner clinic relationships are built in Operations as a duty of care and may also become a product, a partnership asset or an enterprise differentiator</td><td>Quantify the pathway, then bring a case to extend the remit at the first annual mandate review</td><td>Result to consultation time, partner clinic coverage by market</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-src">Sources: <a href="https://www.skinvision.com/getting-started#pricing-and-plans" target="_blank" rel="noopener">skinvision.com, Getting Started</a> for prices, plan structure and the CZ Health Insurance study · SkinVision Head of Operations Candidate Briefing for the areas, metrics, the opportunities list and the limit on commercialising user health data · SkinVision LinkedIn job description for insurer reach.</div>
+</div>
+
+<div id="sec-kpi" class="sec-header">
+  <div class="sec-num">06</div>
+  <div class="sec-label"><div class="sec-eyebrow">KPIs</div><div class="sec-title">KPI (key performance indicator) framework — four layers</div></div>
+</div>
+
+<div class="kpi-groups">
+  <div class="kpi-group">
+    <div class="kpi-group-label">Customer service &amp; intake</div>
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="kpi-name">Classification accuracy at intake</div><div class="kpi-desc">Share of contacts classified correctly as enquiry, complaint, suspected incident or clinically urgent.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Time to handoff for escalations</div><div class="kpi-desc">Time from a contact classified as a suspected incident to its arrival at Regulatory.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> to be documented in the first 3 months.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">First response and resolution time</div><div class="kpi-desc">Speed of reply and closure across in-app, email and app-store channels.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Olga's reference:</strong> customer service service-level agreement and delivery performance held across 26 markets at Richemont.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Customer satisfaction and contacts per active user</div><div class="kpi-desc">Satisfaction score together with support demand per active user.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Olga's reference:</strong> Net Promoter Score and overall satisfaction improved by up to 20% at Richemont.</div></div>
+    </div>
+  </div>
+
+  <div class="kpi-group">
+    <div class="kpi-group-label">Clinical review &amp; care access</div>
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="kpi-name">Specificity uplift at fixed sensitivity</div><div class="kpi-desc">Improvement over the algorithm-alone baseline, reported only with sensitivity held constant.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> specificity 89% and sensitivity over 90% for the algorithm.<br><strong>Benchmark:</strong> the algorithm-alone figures are the baseline to beat.</div></div>
+      <div class="kpi-card"><div class="kpi-name">False-positive rate</div><div class="kpi-desc">Users flagged high risk who are not, driving anxiety and avoidable consultations.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> 11% implied by 89% specificity (derived: 100% minus 89%).<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Turnaround against service level</div><div class="kpi-desc">Time for a human to confirm an assessment, against the committed window.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> in January 2019 high-risk photos received personal advice from doctors within 48 hours (Halldale).<br><strong>Benchmark:</strong> current commitment not published.</div></div>
+      <div class="kpi-card"><div class="kpi-name">High-risk result to consultation</div><div class="kpi-desc">Share of users with a high-risk result who reach a consultation, and the time it takes.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published; the briefing names improvement at 12 months as a goal.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+    </div>
+  </div>
+
+  <div class="kpi-group">
+    <div class="kpi-group-label">Billing &amp; business systems</div>
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="kpi-name">Reconciliation accuracy and monthly close</div><div class="kpi-desc">App-store payout, payment-provider settlement and partner invoicing matched to contract terms.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published; the briefing sets a monthly close without manual firefighting.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Involuntary churn from payment failure</div><div class="kpi-desc">Paying users who lose access because a renewal fails, the queue that most directly generates support contacts.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Automation and deflection rate</div><div class="kpi-desc">Share of contacts and tasks resolved by tooling, templates and self-service instead of headcount.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Olga's reference:</strong> productivity up 3 times through automation at Richemont.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Instrumentation coverage and joinability</div><div class="kpi-desc">Share of records that carry the segmentation attributes and join across the six areas.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> baseline due in the first 3 months.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+    </div>
+  </div>
+
+  <div class="kpi-group">
+    <div class="kpi-group-label">Service performance &amp; segment analytics</div>
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="kpi-name">Segment coverage and attribute completeness</div><div class="kpi-desc">Which cuts the data supports today: device and operating system, skin type, market, age band, language.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> baseline due in the first 3 months.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Stratified capture success and image quality</div><div class="kpi-desc">Whether a usable image can be captured and passes quality checks, by handset, operating system and age band.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Statistical power per stratum</div><div class="kpi-desc">Minimum detectable effect per stratum against the pre-registered plan, with underpowered strata reported as such.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> plan due by month 6.<br><strong>Benchmark:</strong> set by the pre-registered plan agreed with Clinical and Regulatory.</div></div>
+      <div class="kpi-card"><div class="kpi-name">Time from signal to escalation</div><div class="kpi-desc">Days between a segment-level signal and its escalation to Clinical and Regulatory.</div><div class="kpi-bench"><strong>SkinVision actual:</strong> not published.<br><strong>Benchmark:</strong> no independently published external figure.</div></div>
+    </div>
+  </div>
+  <div class="src-note">Metric definitions: SkinVision Head of Operations Candidate Briefing, the six areas. Sensitivity and specificity: SkinVision LinkedIn job description. Olga's references: her CV.</div>
+</div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing editorial analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#17151a;color:#cdb27a;border:1px solid rgba(205,178,122,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+</body>
+</html>
