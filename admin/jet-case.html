@@ -490,10 +490,9 @@ b,strong{font-weight:700;color:var(--dk)}
 <script>
 (function(){
   var EXPECTED="JET2026",K="tof_unlock_jetcase",g=document.getElementById('tof-gate');
-  var ok=false;try{ok=sessionStorage.getItem(K)==='1'}catch(e){}
-  if(location.protocol!=='file:'&&!ok){g.style.display='flex';setTimeout(function(){document.getElementById('tof-pwd').focus()},50)}
+  if(location.protocol!=='file:'){g.style.display='flex';setTimeout(function(){document.getElementById('tof-pwd').focus()},50)}
   window.tofUnlock=function(){
-    if(document.getElementById('tof-pwd').value===EXPECTED){try{sessionStorage.setItem(K,'1')}catch(e){}g.style.display='none'}
+    if(document.getElementById('tof-pwd').value===EXPECTED){g.querySelector('.box').innerHTML='<h2>Access expired</h2><p>The access to this page expired. Contact <a href="mailto:Olga.bressers@gmail.com" style="color:#ff8000">Olga.bressers@gmail.com</a></p>'}
     else document.getElementById('tof-err').textContent='Wrong access key.';
   };
   document.getElementById('tof-pwd').addEventListener('keydown',function(e){if(e.key==='Enter')tofUnlock()});
