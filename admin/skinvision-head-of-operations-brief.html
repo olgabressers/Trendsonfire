@@ -159,6 +159,13 @@
     .reg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0 8px;}
     @media(max-width:1000px){.reg-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:560px){.reg-grid{grid-template-columns:1fr;}}
+    .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 40px;}
+    @media(max-width:1000px){.pillar-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.pillar-grid{grid-template-columns:1fr;}}
+    .pillar{background:#17151a;color:white;padding:22px 20px;border-top:4px solid #cdb27a;}
+    .pillar-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:56px;font-weight:600;line-height:.9;color:#cdb27a;}
+    .pillar-t{font-size:18px;font-weight:800;margin:10px 0 8px;line-height:1.25;color:white;}
+    .pillar-d{font-size:14.5px;line-height:1.55;color:white;}
   </style>
 </head>
 <body>
@@ -209,6 +216,15 @@
 </div>
 
 <main>
+
+<div class="bk-eyebrow" style="color:#8a6d3f;margin-bottom:6px;">Key objective</div>
+<div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.2;color:#0a0f1a;margin-bottom:18px;">Turn six small operational teams into one measurable system that improves clinical performance and finds new growth</div>
+<div class="pillar-grid">
+  <div class="pillar"><div class="pillar-n">1</div><div class="pillar-t">One system</div><div class="pillar-d">Customer service, clinical review, care access, billing, systems and analytics run as one process on one dataset, with shared standards and interfaces.</div></div>
+  <div class="pillar"><div class="pillar-n">2</div><div class="pillar-t">Clinical performance</div><div class="pillar-d">Higher specificity at unchanged sensitivity, and more high-risk users reaching a doctor, measured across device, skin type, market and age.</div></div>
+  <div class="pillar"><div class="pillar-n">3</div><div class="pillar-t">Growth</div><div class="pillar-d">Find at least one opportunity in the operational data within 12 months and take it forward: an evidence asset, a market decision, a new service or a commercial change.</div></div>
+  <div class="pillar"><div class="pillar-n">4</div><div class="pillar-t">Hard limits</div><div class="pillar-d">Sensitivity is a floor, never traded. Regulatory and clinical calls stay with their owners. User health data is never commercialised.</div></div>
+</div>
 
 <div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
   <div style="border:1px solid #e2dfd9;border-left:4px solid #cdb27a;padding:20px 24px;background:white;">
