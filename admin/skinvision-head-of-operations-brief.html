@@ -133,6 +133,32 @@
     @media(max-width:700px){
       #exec-summary{grid-template-columns:1fr !important;}
     }
+
+    /* SIX AREAS + CARD GRIDS */
+    .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 40px;}
+    @media(max-width:900px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.area-grid{grid-template-columns:1fr;}}
+    .area-box{display:block;text-decoration:none;background:white;border:1px solid #e2dfd9;border-top:4px solid #cdb27a;padding:20px 20px 16px;color:#0a0f1a;}
+    .area-box:hover{background:#faf9f7;border-top-color:#17151a;}
+    .area-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:600;line-height:1;color:#8a6d3f;}
+    .area-t{font-size:18px;font-weight:800;line-height:1.25;margin:6px 0 8px;}
+    .area-d{font-size:14.5px;line-height:1.5;color:#1f1f1f;}
+    .area-go{margin-top:12px;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#8a6d3f;}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+    @media(max-width:780px){.mini-grid{grid-template-columns:1fr;}}
+    .mini-grid.three{grid-template-columns:repeat(3,1fr);}
+    @media(max-width:900px){.mini-grid.three{grid-template-columns:1fr;}}
+    .mini{background:white;border:1px solid #e2dfd9;border-left:4px solid #cdb27a;padding:18px 18px 16px;}
+    .mini-h{display:flex;gap:12px;align-items:baseline;margin-bottom:8px;}
+    .mini-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;color:#8a6d3f;line-height:1;}
+    .mini-t{font-size:16px;font-weight:800;line-height:1.3;color:#0a0f1a;}
+    .mini-b{font-size:14.5px;line-height:1.55;color:#0a0f1a;}
+    .mini-s{font-size:13.5px;line-height:1.5;color:#4b5563;margin-top:8px;}
+    .mini ul{margin:6px 0 0;padding-left:18px;font-size:14.5px;line-height:1.6;}
+    .mini-tag{display:inline-block;margin-top:10px;background:#17151a;color:#cdb27a;padding:5px 11px;font-size:13px;font-weight:700;}
+    .reg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0 8px;}
+    @media(max-width:1000px){.reg-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.reg-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -210,6 +236,7 @@
   <div id="page-toc" style="background:#f6f1e6;border:1px solid #e3d5b8;padding:20px 24px;">
     <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#17151a;font-weight:700;margin-bottom:16px;">Contents</div>
     <ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;">
+      <li style="margin-bottom:13px;"><a href="#area-1" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The six areas</a><br><span style="color:#555;font-size:13px;">Click a box to jump to its scope and Olga's experience.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-company" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Company &amp; service</a><br><span style="color:#555;font-size:13px;">What SkinVision does, how the pathway works, funding history.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">One dataset across six areas · a sensitivity floor · strata too small to measure.</span></li>
       <li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Six areas mapped to Olga's experience, boundaries, and a 5-step priority stack.</span></li>
@@ -230,6 +257,16 @@
   <div class="s-card"><div class="s-lbl">Insurer Reach</div><div class="s-num">20M</div><div class="s-src">People reachable through insurer partnerships. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
   <div class="s-card"><div class="s-lbl">Sensitivity / Specificity</div><div class="s-num">90% / 89%</div><div class="s-src">Sensitivity over 90%. <a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></div></div>
   <div class="s-card"><div class="s-lbl">Founded</div><div class="s-num">2012</div><div class="s-src">Amsterdam. <a href="https://www.halldale.com/safety-critical-industries/13798-skin-cancer-app-skinvision-raises-7-6m" target="_blank" rel="noopener">Halldale</a></div></div>
+</div>
+
+<div class="sec-eyebrow" style="margin-bottom:12px;">The six areas the role owns</div>
+<div class="area-grid">
+<a class="area-box" href="#area-1"><div class="area-n">1</div><div class="area-t">Customer Service</div><div class="area-d">Support, intake classification at capture, partner support</div><div class="area-go">Scope and experience &darr;</div></a>
+<a class="area-box" href="#area-2"><div class="area-n">2</div><div class="area-t">Clinical Review Operations</div><div class="area-d">Human review that raises specificity at fixed sensitivity</div><div class="area-go">Scope and experience &darr;</div></a>
+<a class="area-box" href="#area-3"><div class="area-n">3</div><div class="area-t">Care Access &amp; Follow-up</div><div class="area-d">Referral, navigation and follow-up after a high-risk result</div><div class="area-go">Scope and experience &darr;</div></a>
+<a class="area-box" href="#area-4"><div class="area-n">4</div><div class="area-t">Billing &amp; Revenue Operations</div><div class="area-d">Subscriptions, payouts, partner invoicing, entitlements</div><div class="area-go">Scope and experience &darr;</div></a>
+<a class="area-box" href="#area-5"><div class="area-n">5</div><div class="area-t">Business Systems &amp; Operations Technology</div><div class="area-d">Tooling, integrations, data model, automation</div><div class="area-go">Scope and experience &darr;</div></a>
+<a class="area-box" href="#area-6"><div class="area-n">6</div><div class="area-t">Service Performance &amp; Segment Analytics</div><div class="area-d">End-to-end performance by device, skin type, market and age</div><div class="area-go">Scope and experience &darr;</div></a>
 </div>
 
 <div id="sec-company" class="sec-header" style="margin-top:0;">
@@ -307,42 +344,42 @@
 <div class="src-note" style="margin-bottom:4px;">The posting asks for 8+ years of operations experience including managing team leads directly. Olga's operations career at Richemont (2019–2025), adidas (2016–2018), Nike (2010–2016) and IBM (2006–2010) covers 19 years. Area descriptions and metrics: SkinVision Head of Operations Candidate Briefing.</div>
 
 <div class="scope-grid">
-  <div class="scope-card">
+  <div class="scope-card" id="area-1">
     <div class="scope-n">01</div>
     <div class="scope-label">Customer Service</div>
     <div class="scope-desc">All user-facing support across markets and channels, plus partner support for insurers, employers and health systems. Every contact is classified at intake because the classification decides what reaches Regulatory and when.</div>
     <div class="scope-kpis"><span class="scope-kpi">Intake classification</span><span class="scope-kpi">Escalation handoff</span><span class="scope-kpi">Resolution time</span></div>
     <div class="scope-exp"><strong>Olga's experience</strong>Richemont: ran the 240+ full-time-equivalent Client Relations Centre across 26 European markets and turned it from a cost centre into a commercial sales channel. Ensured General Data Protection Regulation compliance with a training programme for the whole customer service workforce and a quality framework that classified customer-data handling errors as critical compliance incidents. Certified in Global Customer Experience and customer relationship management by COPC.</div>
   </div>
-  <div class="scope-card">
+  <div class="scope-card" id="area-2">
     <div class="scope-n">02</div>
     <div class="scope-label">Clinical Review Operations</div>
     <div class="scope-desc">The workflow in which trained human assessors examine algorithm output. Runs to a measured specificity target with calibration, inter-rater agreement monitoring and quality sampling. Does not own regulatory compliance.</div>
     <div class="scope-kpis"><span class="scope-kpi">Specificity uplift</span><span class="scope-kpi">Turnaround</span><span class="scope-kpi">Cost per review</span></div>
     <div class="scope-exp"><strong>Olga's experience</strong>Richemont: ran anti-fraud operations with machine-learning fraud models alongside manual review, with minimised losses and a strong consumer experience. Held service-level agreement, operational performance and cost-to-serve key performance indicators across a €150M+ business.</div>
   </div>
-  <div class="scope-card">
+  <div class="scope-card" id="area-3">
     <div class="scope-n">03</div>
     <div class="scope-label">Care Access &amp; Follow-up</div>
     <div class="scope-desc">Referral guidance, care navigation, partner clinic handoffs and structured follow-up after a high-risk result, with market-specific pathways and consent-based outcome capture.</div>
     <div class="scope-kpis"><span class="scope-kpi">Result to consultation</span><span class="scope-kpi">Follow-up response</span><span class="scope-kpi">Outcome capture</span></div>
     <div class="scope-exp"><strong>Olga's experience</strong>Richemont: led the digital customer journey for 12 luxury Maisons across 26 countries, with Net Promoter Score and overall satisfaction improvement of up to 20%. Cross-regional collaboration with the United States and Middle East regions on shared best practice.</div>
   </div>
-  <div class="scope-card">
+  <div class="scope-card" id="area-4">
     <div class="scope-n">04</div>
     <div class="scope-label">Billing &amp; Revenue Operations</div>
     <div class="scope-desc">The full billing lifecycle across direct payment and app-store purchase, plus partner invoicing: payout reconciliation, multi-currency and VAT, refunds, chargebacks, dunning and entitlement integrity.</div>
     <div class="scope-kpis"><span class="scope-kpi">Reconciliation</span><span class="scope-kpi">Involuntary churn</span><span class="scope-kpi">Billing-driven contacts</span></div>
     <div class="scope-exp"><strong>Olga's experience</strong>Richemont: profit-and-loss responsibility for a €150M+ e-commerce business across 26 markets, plus payment operations and anti-fraud with minimised losses. Cost-to-sales and return-on-investment key performance indicators.</div>
   </div>
-  <div class="scope-card">
+  <div class="scope-card" id="area-5">
     <div class="scope-n">05</div>
     <div class="scope-label">Business Systems &amp; Operations Technology</div>
     <div class="scope-desc">The tool stack the other areas run on — helpdesk and customer relationship management, billing platform, review tooling, business intelligence — plus integrations, automation, data hygiene and vendor management. Tooling substitutes for headcount.</div>
     <div class="scope-kpis"><span class="scope-kpi">Automation rate</span><span class="scope-kpi">Data quality</span><span class="scope-kpi">Tooling cost per user</span></div>
     <div class="scope-exp"><strong>Olga's experience</strong>Richemont: productivity up 3 times through automation and process standardisation, lead time down 20%, AI agents replacing manual work. Salesforce customer relationship management, order management systems, Google Looker. IBM: change manager on a customer relationship management implementation and process transformation on SAP APO (Advanced Planner and Optimizer). Built the TrendsOnFire platform hands-on with Claude Code.</div>
   </div>
-  <div class="scope-card">
+  <div class="scope-card" id="area-6">
     <div class="scope-n">06</div>
     <div class="scope-label">Service Performance &amp; Segment Analytics</div>
     <div class="scope-desc">Measures the service as delivered, stratified by device, skin type, geography, age group and lesion presentation, with a pre-registered stratification plan and statistical power stated per stratum.</div>
@@ -393,19 +430,12 @@
   <div class="sec-label"><div class="sec-eyebrow">Milestones</div><div class="sec-title">Success at 3, 6 and 12 months</div></div>
 </div>
 
-<div class="chart-box">
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Horizon</th><th>What the briefing expects</th></tr></thead>
-      <tbody>
-        <tr><td><strong>3 months</strong></td><td>A complete map of processes, tools, data flows and gaps across the six areas with a prioritised plan · an intake classification standard agreed with Regulatory, with handoff service-level agreements · a baseline of segmentation attribute coverage, including the data protection position on skin type</td></tr>
-        <tr><td><strong>6 months</strong></td><td>A unified reporting layer live across all six areas with cuts by device and operating system, geography and age band · a pre-registered stratification plan agreed with Clinical and Regulatory · review operations running to a measured specificity target with sensitivity reported alongside · a standing evidence channel into Product with the first changes shipped or scheduled</td></tr>
-        <tr><td><strong>12 months</strong></td><td>Measurable specificity improvement at unchanged sensitivity · improved conversion from high-risk result to consultation · stratified performance reported routinely, with underpowered strata flagged and at least one segment-level gap addressed · no gaps reported by Regulatory in operational evidence · monthly billing close without manual firefighting · lower cost-to-serve per active user with no safety metric degraded · at least one opportunity quantified and taken forward · the first annual mandate review delivered</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="chart-src">Source: SkinVision Head of Operations Candidate Briefing, What success looks like.</div>
+<div class="mini-grid three">
+<div class="mini"><div class="mini-h"><div class="mini-t" style="font-size:20px;">3 months</div></div><ul><li>A complete map of processes, tools, data flows and gaps across the six areas with a prioritised plan</li><li>an intake classification standard agreed with Regulatory, with handoff service-level agreements</li><li>a baseline of segmentation attribute coverage, including the data protection position on skin type</li></ul></div>
+<div class="mini"><div class="mini-h"><div class="mini-t" style="font-size:20px;">6 months</div></div><ul><li>A unified reporting layer live across all six areas with cuts by device and operating system, geography and age band</li><li>a pre-registered stratification plan agreed with Clinical and Regulatory</li><li>review operations running to a measured specificity target with sensitivity reported alongside</li><li>a standing evidence channel into Product with the first changes shipped or scheduled</li></ul></div>
+<div class="mini"><div class="mini-h"><div class="mini-t" style="font-size:20px;">12 months</div></div><ul><li>Measurable specificity improvement at unchanged sensitivity</li><li>improved conversion from high-risk result to consultation</li><li>stratified performance reported routinely, with underpowered strata flagged and at least one segment-level gap addressed</li><li>no gaps reported by Regulatory in operational evidence</li><li>monthly billing close without manual firefighting</li><li>lower cost-to-serve per active user with no safety metric degraded</li><li>at least one opportunity quantified and taken forward</li><li>the first annual mandate review delivered</li></ul></div>
 </div>
+<div class="chart-src">Source: SkinVision Head of Operations Candidate Briefing, What success looks like.</div>
 
 <div id="sec-first" class="sec-header">
   <div class="sec-num">04</div>
@@ -452,22 +482,17 @@
 
 <div class="src-note" style="margin-bottom:4px;">Pricing, packaging and partner terms belong to Commercial and Product. Within the mandate, Operations produces the evidence from billing, support, review and follow-up data, argues the case, and builds what belongs in Operations. Each lever below names the area that owns the data and the metric that shows the result.</div>
 
-<div class="chart-box">
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th style="width:34px;">#</th><th>Lever</th><th>Starting point on the pricing page or in the briefing</th><th>What Operations does</th><th>Metric</th></tr></thead>
-      <tbody>
-        <tr><td><span class="pri-num">1</span></td><td><strong>Protect renewals from payment failure</strong></td><td>Subscriptions at €24.99 for 3 months and €49.99 for 1 year renew automatically across direct payment and app-store purchase</td><td>Billing and Revenue Operations runs dunning, payment-provider settlement and renewal handling so that a failed payment does not remove access from a paying user</td><td>Involuntary churn from payment failure</td></tr>
-        <tr><td><span class="pri-num">2</span></td><td><strong>Remove entitlement friction</strong></td><td>Entitlement integrity, meaning paying users have access and non-paying users do not, is the queue that most directly generates support contacts</td><td>Business Systems fixes the integration between billing platform and app; Customer Service tags every billing-driven contact so the cause is counted</td><td>Billing-driven support volume, cost to serve per active user</td></tr>
-        <tr><td><span class="pri-num">3</span></td><td><strong>Turn single-check buyers into plan holders with evidence</strong></td><td>The Single check at €6.99 is the lowest price point; the 12 months plan is marked Most Popular</td><td>Support and billing data show where single-check buyers dispute, abandon or ask pricing questions; Operations brings those findings to Product and Commercial as prioritised input</td><td>Packaging and pricing contacts per active user, refund and chargeback rates</td></tr>
-        <tr><td><span class="pri-num">4</span></td><td><strong>Reconcile every revenue stream</strong></td><td>App-store payouts, payment-provider settlement, multi-currency, VAT, refunds and chargebacks run in parallel</td><td>Monthly reconciliation of each stream to its source, so revenue is recognised in the correct amount and period without manual firefighting</td><td>Reconciliation accuracy, monthly close timeliness</td></tr>
-        <tr><td><span class="pri-num">5</span></td><td><strong>Bill partner contracts to their terms</strong></td><td>Insurer partnerships can reach 20 million people; the website lists a partners page and a recent post on an insurance partner giving members access to AI-powered skin cancer checks</td><td>Usage-based and seat-based partner invoicing reconciled against contract terms, with partner support as a defined channel</td><td>Days to resolve partner invoicing disputes</td></tr>
-        <tr><td><span class="pri-num">6</span></td><td><strong>Build real-world evidence as a sellable asset</strong></td><td>A year-long study with CZ Health Insurance covered over 18,000 users, and users were 32% more likely to have a skin cancer or precancer diagnosed. Care Access outcome data is described in the briefing as the evidence reimbursement dossiers, health-economic cases and partner business cases are built on</td><td>Care Access captures result-to-consultation-to-diagnosis outcomes with consent and hands aggregated evidence to Commercial and Regulatory. Any use beyond the original purpose goes through Legal, Regulatory and the consent basis first</td><td>Outcome capture completeness, high-risk-result-to-consultation conversion</td></tr>
-        <tr><td><span class="pri-num">7</span></td><td><strong>Use segment findings to choose markets and handsets</strong></td><td>Service performance by geography, device estate and population is described in the briefing as a direct input to which markets to enter and which handsets to support</td><td>Service Performance and Segment Analytics reports stratified results with statistical power per stratum, and Operations argues the market decision on that evidence</td><td>Stratified capture success, segment coverage</td></tr>
-        <tr><td><span class="pri-num">8</span></td><td><strong>Offer the care pathway as a service line</strong></td><td>Referral networks, care navigation and partner clinic relationships are built in Operations as a duty of care and may also become a product, a partnership asset or an enterprise differentiator</td><td>Quantify the pathway, then bring a case to extend the remit at the first annual mandate review</td><td>Result to consultation time, partner clinic coverage by market</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="mini-grid">
+<div class="mini"><div class="mini-h"><div class="mini-n">1</div><div class="mini-t">Protect renewals from payment failure</div></div><div class="mini-b"><strong>What Operations does:</strong> Billing and Revenue Operations runs dunning, payment-provider settlement and renewal handling so that a failed payment does not remove access from a paying user</div><div class="mini-s"><strong>Starting point:</strong> Subscriptions at €24.99 for 3 months and €49.99 for 1 year renew automatically across direct payment and app-store purchase</div><span class="mini-tag">Involuntary churn from payment failure</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">2</div><div class="mini-t">Remove entitlement friction</div></div><div class="mini-b"><strong>What Operations does:</strong> Business Systems fixes the integration between billing platform and app; Customer Service tags every billing-driven contact so the cause is counted</div><div class="mini-s"><strong>Starting point:</strong> Entitlement integrity, meaning paying users have access and non-paying users do not, is the queue that most directly generates support contacts</div><span class="mini-tag">Billing-driven support volume, cost to serve per active user</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">3</div><div class="mini-t">Turn single-check buyers into plan holders with evidence</div></div><div class="mini-b"><strong>What Operations does:</strong> Support and billing data show where single-check buyers dispute, abandon or ask pricing questions; Operations brings those findings to Product and Commercial as prioritised input</div><div class="mini-s"><strong>Starting point:</strong> The Single check at €6.99 is the lowest price point; the 12 months plan is marked Most Popular</div><span class="mini-tag">Packaging and pricing contacts per active user, refund and chargeback rates</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">4</div><div class="mini-t">Reconcile every revenue stream</div></div><div class="mini-b"><strong>What Operations does:</strong> Monthly reconciliation of each stream to its source, so revenue is recognised in the correct amount and period without manual firefighting</div><div class="mini-s"><strong>Starting point:</strong> App-store payouts, payment-provider settlement, multi-currency, VAT, refunds and chargebacks run in parallel</div><span class="mini-tag">Reconciliation accuracy, monthly close timeliness</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">5</div><div class="mini-t">Bill partner contracts to their terms</div></div><div class="mini-b"><strong>What Operations does:</strong> Usage-based and seat-based partner invoicing reconciled against contract terms, with partner support as a defined channel</div><div class="mini-s"><strong>Starting point:</strong> Insurer partnerships can reach 20 million people; the website lists a partners page and a recent post on an insurance partner giving members access to AI-powered skin cancer checks</div><span class="mini-tag">Days to resolve partner invoicing disputes</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">6</div><div class="mini-t">Build real-world evidence as a sellable asset</div></div><div class="mini-b"><strong>What Operations does:</strong> Care Access captures result-to-consultation-to-diagnosis outcomes with consent and hands aggregated evidence to Commercial and Regulatory. Any use beyond the original purpose goes through Legal, Regulatory and the consent basis first</div><div class="mini-s"><strong>Starting point:</strong> A year-long study with CZ Health Insurance covered over 18,000 users, and users were 32% more likely to have a skin cancer or precancer diagnosed. Care Access outcome data is described in the briefing as the evidence reimbursement dossiers, health-economic cases and partner business cases are built on</div><span class="mini-tag">Outcome capture completeness, high-risk-result-to-consultation conversion</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">7</div><div class="mini-t">Use segment findings to choose markets and handsets</div></div><div class="mini-b"><strong>What Operations does:</strong> Service Performance and Segment Analytics reports stratified results with statistical power per stratum, and Operations argues the market decision on that evidence</div><div class="mini-s"><strong>Starting point:</strong> Service performance by geography, device estate and population is described in the briefing as a direct input to which markets to enter and which handsets to support</div><span class="mini-tag">Stratified capture success, segment coverage</span></div>
+<div class="mini"><div class="mini-h"><div class="mini-n">8</div><div class="mini-t">Offer the care pathway as a service line</div></div><div class="mini-b"><strong>What Operations does:</strong> Quantify the pathway, then bring a case to extend the remit at the first annual mandate review</div><div class="mini-s"><strong>Starting point:</strong> Referral networks, care navigation and partner clinic relationships are built in Operations as a duty of care and may also become a product, a partnership asset or an enterprise differentiator</div><span class="mini-tag">Result to consultation time, partner clinic coverage by market</span></div>
+</div>
+<div class="chart-box" style="padding-top:12px;">
   <div class="chart-src">Sources: <a href="https://www.skinvision.com/getting-started#pricing-and-plans" target="_blank" rel="noopener">skinvision.com, Getting Started</a> for prices, plan structure and the CZ Health Insurance study · SkinVision Head of Operations Candidate Briefing for the areas, metrics, the opportunities list and the limit on commercialising user health data · SkinVision LinkedIn job description for insurer reach.</div>
 </div>
 
@@ -613,7 +638,14 @@
 
 <div class="src-note" style="margin-bottom:4px;">The briefing states that Operations does not own regulatory or clinical work and needs enough depth to work credibly alongside both. Reportability, vigilance reporting and Medical Device Regulation compliance sit with Regulatory; Operations supplies the intake classification, the records and the timestamps they work from.</div>
 
-<div class="chart-box">
+<div class="reg-grid">
+  <a class="area-box" href="#reg-mdr"><div class="area-t">Medical Device Regulation</div><div class="area-d">Incidents, 2 / 10 / 15 day reporting, trend reporting. Operations classifies and hands over; Regulatory decides.</div><div class="area-go">Details &darr;</div></a>
+  <a class="area-box" href="#reg-iso"><div class="area-t">ISO 13485</div><div class="area-d">Complaint handling procedure and records. Operations keeps the audit trail.</div><div class="area-go">Details &darr;</div></a>
+  <a class="area-box" href="#reg-iec"><div class="area-t">IEC 62366</div><div class="area-d">Usability engineering. Operations supplies real-world use-error findings.</div><div class="area-go">Details &darr;</div></a>
+  <a class="area-box" href="#reg-gdpr"><div class="area-t">GDPR for health data</div><div class="area-d">Explicit consent, purpose limitation, aggregated outcome evidence only.</div><div class="area-go">Details &darr;</div></a>
+</div>
+
+<div class="chart-box" id="reg-mdr">
   <div class="chart-title">EU Medical Device Regulation 2017/745: complaint handling and vigilance</div>
   <div class="pri-wrap">
     <table class="pri-table">
@@ -631,7 +663,7 @@
   <div class="chart-src">Sources: <a href="https://advisera.com/13485academy/mdr/reporting-of-serious-incidents-and-field-safety-corrective-actions/" target="_blank" rel="noopener">Article 87</a> · <a href="https://advisera.com/13485academy/mdr/trend-reporting/" target="_blank" rel="noopener">Article 88</a> · <a href="https://advisera.com/13485academy/mdr/post-market-surveillance-system-of-the-manufacturer/" target="_blank" rel="noopener">Article 83</a> · <a href="https://advisera.com/13485academy/mdr/definitions/" target="_blank" rel="noopener">Article 2 definitions</a>, Advisera reproduction of Regulation (EU) 2017/745.</div>
 </div>
 
-<div class="chart-box">
+<div class="chart-box" id="reg-iso">
   <div class="chart-title">ISO 13485:2016 — quality management system for medical devices</div>
   <div class="pri-wrap">
     <table class="pri-table">
@@ -647,7 +679,7 @@
   <div class="chart-src">Sources: <a href="https://advisera.com/13485academy/blog/2018/09/20/how-to-comply-with-section-8-2-monitoring-and-measurement-in-iso-134852018/" target="_blank" rel="noopener">Advisera, ISO 13485 section 8.2</a> · <a href="https://advisera.com/13485academy/blog/2017/03/21/how-to-comply-with-iso-134852016-requirements-for-handling-complaints/" target="_blank" rel="noopener">Advisera, ISO 13485:2016 complaint handling</a>. The standard itself is a paid publication; these pages summarise it.</div>
 </div>
 
-<div class="chart-box">
+<div class="chart-box" id="reg-iec">
   <div class="chart-title">IEC 62366 — usability engineering for medical devices</div>
   <div class="pri-wrap">
     <table class="pri-table">
@@ -662,7 +694,7 @@
   <div class="chart-src">Sources: <a href="https://en.wikipedia.org/wiki/IEC_62366" target="_blank" rel="noopener">Wikipedia, IEC 62366</a> · <a href="https://advisera.com/13485academy/mdr/definitions/" target="_blank" rel="noopener">Regulation (EU) 2017/745, Article 2</a>. The briefing places the usability engineering file with Regulatory and Clinical.</div>
 </div>
 
-<div class="chart-box">
+<div class="chart-box" id="reg-gdpr">
   <div class="chart-title">General Data Protection Regulation: special-category health data, consent and reuse of outcome data</div>
   <div class="pri-wrap">
     <table class="pri-table">
