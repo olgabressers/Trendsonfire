@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Monks — Business Director Brief — Olga Bressers</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* HERO */
+    .art-hero{background:#0a0a0a;color:white;padding:64px 32px 48px;position:relative;}
+    .art-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,rgba(255,255,255,.06) 0%,transparent 55%);pointer-events:none;}
+    .art-hero .inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+    .art-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .art-hero .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
+    .art-hero .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ff5c35;font-weight:700;margin-bottom:14px;}
+    .art-hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(28px,4.2vw,48px);font-weight:400;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px;}
+    .art-hero h1 em{color:#ff5c35;font-style:italic;}
+    .art-hero p{font-size:16px;color:rgba(255,255,255,.87);line-height:1.6;max-width:900px;}
+    .art-hero .meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.5);display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .hero-links{position:absolute;top:22px;right:32px;display:flex;gap:10px;z-index:2;}
+    @media(max-width:700px){.hero-links{position:static;margin-bottom:14px;flex-wrap:wrap;}}
+    .hero-links a{font-size:13px;font-weight:700;letter-spacing:.5px;color:#ff5c35;text-decoration:none;border:1px solid rgba(255,92,53,.4);padding:7px 14px;white-space:nowrap;}
+    .hero-links a:hover{background:rgba(255,92,53,.1);}
+
+    /* MAIN */
+    main{max-width:1280px;margin:0 auto;padding:44px 48px 80px;}
+    @media(max-width:700px){main{padding:24px 16px 56px;}}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:36px;}
+    @media(max-width:1100px){.stats{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr);}}
+    .s-card{background:white;padding:20px 16px;border:1px solid #e2dfd9;}
+    .s-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0a0f1a;margin-bottom:8px;line-height:1.3;}
+    .s-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;line-height:1;color:#0a0a0a;letter-spacing:-0.5px;}
+    .s-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:4px;}
+    .s-delta.neg{color:#dc2626;}
+    .s-src{font-size:13px;color:#0a0f1a;margin-top:6px;line-height:1.45;}
+    .s-src a{color:#d9381a;font-weight:600;}
+
+    /* CHARTS / TABLES */
+    .chart-box{background:white;border:1px solid #e2dfd9;padding:24px 22px 20px;margin-bottom:24px;}
+    .chart-title{font-size:16px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .chart-sub{font-size:13.5px;color:#4b5563;margin-bottom:14px;}
+    .chart-src{font-size:13px;color:#4b5563;margin-top:10px;line-height:1.5;}
+    .chart-src a{color:#d9381a;}
+
+    /* DARK SECTION */
+    .bk-wrap{background:#0a0a0a;padding:52px 48px;margin:0 -48px 44px;}
+    @media(max-width:700px){.bk-wrap{padding:36px 16px;margin:0 -16px 36px;}}
+    .bk-eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#ff5c35;font-weight:700;margin-bottom:10px;}
+    .bk-headline{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,34px);color:white;font-weight:400;line-height:1.15;margin-bottom:32px;}
+    .bk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:780px){.bk-grid{grid-template-columns:1fr;}}
+    .bk-card{border:1px solid rgba(255,92,53,.35);padding:24px 20px;background:rgba(255,255,255,.03);}
+    .bk-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:70px;color:#ff5c35;line-height:0.85;margin-bottom:12px;font-weight:600;}
+    .bk-card-title{font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;line-height:1.25;}
+    .bk-card ul{list-style:none;padding:0;margin:0;}
+    .bk-card ul li{font-size:14px;color:#ffffff;padding:8px 0 8px 16px;border-bottom:1px solid rgba(255,255,255,.12);line-height:1.6;position:relative;}
+    .bk-card ul li:last-child{border-bottom:none;}
+    .bk-card ul li::before{content:'—';color:#ff5c35;position:absolute;left:0;font-weight:700;}
+    .bk-card-src{font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.5;}
+    .bk-card-src a{color:#ff5c35;}
+
+    /* SECTION HEADER */
+    .sec-header{display:flex;align-items:flex-start;gap:14px;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid #0a0a0a;cursor:pointer;user-select:none;}
+    .sec-toggle{margin-left:auto;flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid #d9381a;color:#d9381a;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+    .sec-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:60px;font-weight:600;color:#e8e5e0;line-height:0.9;flex-shrink:0;}
+    .sec-label{flex:1;padding-top:5px;}
+    .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d9381a;margin-bottom:5px;}
+    .sec-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.8vw,32px);font-weight:600;color:#0a0f1a;line-height:1.2;}
+
+    /* SOURCE NOTE */
+    .src-note{font-size:13px;color:#0a0f1a;padding:10px 14px;background:#f9fafb;border-left:3px solid #0a0a0a;margin-top:12px;line-height:1.65;}
+    .src-note a{color:#d9381a;}
+
+    /* PRIORITY / DATA TABLE */
+    .pri-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;}
+    .pri-table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;}
+    .pri-table th{background:#0a0a0a;color:white;text-align:left;padding:11px 14px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;}
+    .pri-table td{padding:13px 14px;border-bottom:1px solid #e8e5e0;color:#1f1f1f;vertical-align:top;line-height:1.55;}
+    .pri-table tr:last-child td{border-bottom:none;}
+    .pri-table tr:nth-child(even) td{background:#faf9f7;}
+    .pri-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:600;color:#d9381a;}
+    .pri-table.compact th{padding:7px 12px;font-size:13px;}
+    .pri-table.compact td{padding:7px 12px;font-size:13.5px;line-height:1.4;}
+    .pri-table.compact{min-width:0;}
+
+    /* MINI STAT ROW — compact headline numbers inside a chart-box */
+    .mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0;}
+    @media(max-width:700px){.mini-stats{grid-template-columns:repeat(2,1fr);}}
+    .mini-stat{background:#f9fafb;border:1px solid #e2dfd9;padding:10px 12px;}
+    .mini-stat-lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#0a0f1a;margin-bottom:5px;line-height:1.25;}
+    .mini-stat-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;color:#0a0a0a;line-height:1;}
+    .mini-stat-delta{font-size:13px;color:#16a34a;font-weight:700;margin-top:3px;}
+
+    /* SPLIT TABLES — compact tables side by side */
+    .split-tables{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+    .split-tables.cols-3{grid-template-columns:1fr 1fr 1fr;}
+    @media(max-width:640px){.split-tables,.split-tables.cols-3{grid-template-columns:1fr;}}
+    .split-tables .pri-wrap{margin:0;}
+    .split-table-label{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d9381a;margin-bottom:6px;}
+
+    /* EXEC QUOTES */
+    .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+    @media(max-width:640px){.quote-grid{grid-template-columns:1fr;}}
+    .exec-quote{border-left:3px solid #d9381a;background:#f9fafb;padding:12px 15px;font-size:13.5px;font-style:italic;color:#0a0f1a;line-height:1.55;}
+    .exec-quote cite{display:block;margin-top:8px;font-style:normal;font-weight:800;font-size:13px;color:#d9381a;}
+
+    /* MINI BAR CHART — per-brand revenue evolution */
+    .mini-chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+    @media(max-width:700px){.mini-chart-grid{grid-template-columns:1fr;}}
+    .mini-chart-card{border:1px solid #e2dfd9;background:#fff;padding:16px 16px 10px;}
+    .mini-chart-title{font-size:15px;font-weight:800;color:#0a0f1a;margin-bottom:2px;}
+    .mini-chart-sub{font-size:13px;color:#4b5563;margin-bottom:12px;}
+    .mini-bars{display:flex;align-items:flex-end;gap:8px;height:110px;border-bottom:2px solid #e2dfd9;}
+    .mini-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0;}
+    .mini-bar-val{font-size:13px;font-weight:700;color:#0a0f1a;margin-bottom:2px;white-space:nowrap;}
+    .mini-bar-fill{width:74%;border-radius:2px 2px 0 0;background:#d9381a;}
+    .mini-bar-fill.latest{background:#0a0a0a;}
+    .mini-bar-yr{font-size:13px;color:#4b5563;margin-top:4px;}
+
+    /* SCOPE CARDS */
+    .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.scope-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.scope-grid{grid-template-columns:1fr;}}
+    .scope-card{border:1px solid #e2dfd9;background:white;padding:22px 20px;}
+    .scope-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:600;line-height:1;color:#d9381a;margin-bottom:8px;}
+    .scope-label{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0a0f1a;margin-bottom:9px;line-height:1.3;}
+    .scope-desc{font-size:14px;color:#1f1f1f;line-height:1.6;}
+    .scope-kpis{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;}
+    .scope-kpi{background:#f3f4f6;padding:5px 11px;font-size:13px;font-weight:600;color:#0a0f1a;border-radius:2px;}
+    .scope-exp{margin-top:13px;padding:12px 15px;background:#0a0a0a;border-left:3px solid #ff5c35;font-size:13.5px;color:rgba(255,255,255,.96);line-height:1.6;}
+    .scope-exp strong{display:block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ff5c35;margin-bottom:6px;}
+
+    /* KPIs */
+    .kpi-groups{margin-top:16px;}
+    .kpi-group{margin-bottom:22px;}
+    .kpi-group-label{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#d9381a;margin-bottom:11px;padding-bottom:6px;border-bottom:1px solid #e2dfd9;}
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+    @media(max-width:900px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.kpi-row{grid-template-columns:1fr;}}
+    .kpi-card{background:#f9fafb;border:1px solid #e2dfd9;padding:14px 14px;}
+    .kpi-name{font-size:15px;font-weight:800;color:#0a0f1a;margin-bottom:6px;line-height:1.3;}
+    .kpi-desc{font-size:13.5px;color:#0a0f1a;line-height:1.55;margin-bottom:10px;}
+    .kpi-bench{font-size:13px;color:#0a0f1a;padding:9px 11px;background:#fff1ec;border-left:3px solid #d9381a;line-height:1.55;}
+    .kpi-bench strong{display:block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d9381a;margin-bottom:3px;}
+
+    /* SHOE COMPARISON GRID */
+    .shoe-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:14px 0;}
+    @media(max-width:900px){.shoe-grid{grid-template-columns:repeat(4,1fr);}}
+    @media(max-width:560px){.shoe-grid{grid-template-columns:repeat(2,1fr);}}
+    .shoe-card{border:1px solid #e2dfd9;background:#fff;padding:8px;text-align:center;display:flex;flex-direction:column;}
+    .shoe-card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f9fafb;margin-bottom:6px;}
+    .shoe-brand{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:6px;align-self:center;}
+    .shoe-brand.on{background:#0a0a0a;color:#ff5c35;}
+    .shoe-brand.nike{background:#111;color:#fff;}
+    .shoe-brand.adidas{background:#000;color:#fff;}
+    .shoe-name{font-size:13px;font-weight:700;color:#0a0f1a;line-height:1.3;margin-bottom:4px;min-height:34px;}
+    .shoe-price{font-size:14px;font-weight:800;color:#d9381a;margin-top:auto;}
+    .shoe-tech{font-size:13px;color:#4b5563;margin-top:3px;}
+
+    /* ORG CHART */
+    .org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+    @media(max-width:900px){.org-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.org-grid{grid-template-columns:1fr;}}
+    .org-card{border:1px solid #e2dfd9;background:white;padding:18px 16px;display:flex;flex-direction:column;}
+    .org-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
+    .org-initials{width:56px;height:56px;border-radius:50%;background:#0a0a0a;color:#ff5c35;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;font-family:'Cormorant Garamond',Georgia,serif;}
+    .org-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e2dfd9;}
+    .org-company{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:8px;background:#0a0a0a;color:#ff5c35;}
+    .org-name{font-size:15.5px;font-weight:700;color:#0a0f1a;line-height:1.3;}
+    .org-title{font-size:13.5px;color:#0a0f1a;line-height:1.4;margin-top:2px;}
+    .org-entity{font-size:13px;color:#4b5563;font-weight:600;margin-top:3px;line-height:1.4;}
+    .org-conf{font-size:13px;margin-top:auto;padding-top:11px;line-height:1.5;}
+    .org-conf a{color:#d9381a;font-weight:600;}
+
+    /* MOBILE */
+    @media(max-width:700px){
+      #exec-summary{grid-template-columns:1fr !important;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305 76" width="220" height="55">
+      <rect x="4" y="46" width="12" height="26" rx="2.5" fill="white" opacity="0.25"/>
+      <rect x="20" y="32" width="12" height="40" rx="2.5" fill="white" opacity="0.5"/>
+      <rect x="36" y="18" width="12" height="54" rx="2.5" fill="white" opacity="0.85"/>
+      <polygon points="42,3 35,15 49,15" fill="#b8976a"/>
+      <text y="54" font-family="'Helvetica Neue','Arial Black',Arial,sans-serif" font-size="34" letter-spacing="-0.8">
+        <tspan x="60" font-weight="800" fill="white">Trends</tspan><tspan font-weight="300" fill="white" letter-spacing="-0.5">On</tspan><tspan font-weight="800" fill="#b8976a">Fire</tspan>
+      </text>
+    </svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="../retail/index.html">Retail</a>
+    <a href="../brands/index.html">Brands</a>
+    <a href="../people/index.html">People</a>
+    <a href="../technology/index.html">Technology</a>
+    <a href="../supply-chain/index.html">Supply Chain</a>
+    <a href="../education-government/index.html">Education</a>
+    <a href="../finance-compliance/index.html">Finance</a>
+    <a href="../insights/index.html">Insights</a>
+    <a href="../olgabressers/index.html">About</a>
+  </div>
+</nav>
+<div class="art-hero"><div class="hero-links"><a href="https://www.monks.com" target="_blank" rel="noopener">Company site &rarr;</a><a href="https://www.monks.com/careers" target="_blank" rel="noopener">Careers &rarr;</a><a href="https://www.linkedin.com/jobs/view/4475521524/" target="_blank" rel="noopener">LinkedIn posting &rarr;</a></div>
+<div class="inner"><div class="breadcrumb"><a href="../index.html">TrendsOnFire</a> &nbsp;/&nbsp; Admin &nbsp;/&nbsp; Monks</div>
+<div class="eyebrow">Interview Brief — Business Director · Client Portfolio</div>
+<h1>Monks: <em>EMEA net revenue down 20.3%, group margin up 600 basis points, and a client portfolio to grow</em></h1>
+<p>Monks, the operating brand of S4Capital plc, reported H1 2026 net revenue of £308.0 million (4.7% down like-for-like) with operational EBITDA up 82.7% to £38.0 million. EMEA fell 20.3% like-for-like while the group positions AI tools at the centre of new business. The role: executive growth driver and strategic lead for one of its highest-profile client portfolios in the Dutch-language market.</p>
+<div class="meta"><span>Sources: S4Capital interim results 2026 and audited results 2025, MediaNews4U, monks.com, LinkedIn job posting</span><span>Updated 19 October 2026</span></div></div></div>
+<main>
+<div class="stats"><div class="s-card"><div class="s-lbl">H1 2026 net revenue</div><div class="s-num">£308.0M</div><div class="s-delta neg">4.7% down like-for-like</div><div class="s-src"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="s-card"><div class="s-lbl">EMEA net revenue, H1 2026</div><div class="s-num">£42.0M</div><div class="s-delta neg">20.3% down like-for-like</div><div class="s-src"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="s-card"><div class="s-lbl">Operational EBITDA</div><div class="s-num">£38.0M</div><div class="s-delta">Margin 12.3%, up 600 basis points</div><div class="s-src"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="s-card"><div class="s-lbl">Number of Monks</div><div class="s-num">6,156</div><div class="s-delta neg">10.5% below 30 June 2025</div><div class="s-src"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="s-card"><div class="s-lbl">Net debt</div><div class="s-num">£66.3M</div><div class="s-delta">0.7x operational EBITDA</div><div class="s-src"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="s-card"><div class="s-lbl">FY2025 net revenue</div><div class="s-num">£673.0M</div><div class="s-delta neg">8.4% down like-for-like</div><div class="s-src"><a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a></div></div></div>
+<div id="exec-summary" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;">
+<div style="border:1px solid #e2dfd9;border-left:4px solid #ff5c35;padding:20px 24px;background:white;"><div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#d9381a;font-weight:700;margin-bottom:16px;">Key conclusions</div><div style="display:flex;flex-direction:column;gap:14px;">
+<div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;"><div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#d9381a;margin-bottom:4px;">The company</div><div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Monks is the unitary operating brand of S4Capital plc. FY2025 net revenue £673.0 million; 6,156 Monks at 30 June 2026.</div></div>
+<div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;"><div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#d9381a;margin-bottom:4px;">The role</div><div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">Business Director for a high-profile client portfolio in the Dutch-language market: account strategy, profit and loss, new scopes, multi-market delivery and an account leadership team.</div></div>
+<div style="padding-bottom:14px;border-bottom:1px solid #e8e5e0;"><div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#d9381a;margin-bottom:4px;">Company context</div><div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">EMEA net revenue fell 20.3% like-for-like in H1 2026 while group operational EBITDA rose 82.7% to £38.0 million. A new EMEA Marketing Services CEO starts 1 October 2026.</div></div>
+<div><div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#d9381a;margin-bottom:4px;">Key opportunity</div><div style="font-size:14.5px;color:#0a0f1a;line-height:1.55;">The group states AI tools and capability drive significant new business; the posting asks the Business Director to bring them into existing accounts.</div></div>
+</div></div>
+<div id="page-toc" style="background:#fff1ec;border:1px solid #ffd0c2;padding:20px 24px;"><div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#0a0a0a;font-weight:700;margin-bottom:16px;">Contents</div><ol style="margin:0;padding-left:18px;font-size:14px;line-height:1;"><li style="margin-bottom:13px;"><a href="#sec-financials" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Financials of the parent group</a><br><span style="color:#555;font-size:13px;">FY2025 and H1 2026 results, regions and practices.</span></li><li style="margin-bottom:13px;"><a href="#sec-challenges" style="color:#0a0f1a;text-decoration:none;font-weight:700;">3 structural challenges</a><br><span style="color:#555;font-size:13px;">EMEA decline · AI-driven client spend · new leadership layer.</span></li><li style="margin-bottom:13px;"><a href="#sec-role" style="color:#0a0f1a;text-decoration:none;font-weight:700;">The role as written</a><br><span style="color:#555;font-size:13px;">Title, mandate, essentials and the plus list.</span></li><li style="margin-bottom:13px;"><a href="#sec-scope" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Role scope &amp; Olga's experience</a><br><span style="color:#555;font-size:13px;">Six accountability areas and a 5-step priority stack.</span></li><li style="margin-bottom:13px;"><a href="#sec-leadership" style="color:#0a0f1a;text-decoration:none;font-weight:700;">Leadership</a><br><span style="color:#555;font-size:13px;">Executive Chairman, Marketing Services CEO and EMEA leadership.</span></li><li style="margin-bottom:13px;"><a href="#sec-kpi" style="color:#0a0f1a;text-decoration:none;font-weight:700;">KPI (Key Performance Indicator) framework</a><br><span style="color:#555;font-size:13px;">Four groups with Monks actuals and benchmarks.</span></li></ol></div></div>
+<div id="sec-financials" class="sec-header"><div class="sec-num">01</div><div class="sec-label"><div class="sec-eyebrow">Financials &amp; Market</div><div class="sec-title">Financials of the parent group</div></div></div>
+<div class="chart-box"><div class="chart-title">FY2025 and H1 2026 headline results</div><div class="chart-sub">S4Capital plc, parent of Monks</div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>Measure (£ million)</th><th>FY2025</th><th>FY2024</th><th>Change</th></tr></thead><tbody><tr><td>Net revenue</td><td>673.0</td><td>754.6</td><td>10.8% down; 8.4% down like-for-like</td></tr><tr><td>Operational EBITDA (earnings before interest, tax, depreciation and amortisation)</td><td>81.2</td><td>87.8</td><td>7.5% down; 3.2% down like-for-like</td></tr><tr><td>Operational EBITDA margin</td><td>12.1%</td><td>11.6%</td><td>Up 50 basis points</td></tr><tr><td>Net debt, excluding leases</td><td>86.9</td><td>142.9</td><td>1.1x operational EBITDA</td></tr><tr><td>Number of Monks at year end</td><td>6,345</td><td>7,166</td><td>11.5% down</td></tr></tbody></table></div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>Measure (£ million)</th><th>H1 2026</th><th>H1 2025</th><th>Change</th></tr></thead><tbody><tr><td>Net revenue</td><td>308.0</td><td>328.2</td><td>6.2% down; 4.7% down like-for-like</td></tr><tr><td>Operational EBITDA</td><td>38.0</td><td>20.8</td><td>82.7% up</td></tr><tr><td>Operational EBITDA margin</td><td>12.3%</td><td>6.3%</td><td>Up 600 basis points</td></tr><tr><td>Net debt, excluding leases</td><td>66.3</td><td>145.9</td><td>Down £79.6 million</td></tr><tr><td>Number of Monks at 30 June</td><td>6,156</td><td>6,879</td><td>10.5% down</td></tr></tbody></table></div><div class="chart-src">Sources: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a>. Net revenue and operational EBITDA are the group's own reporting measures; S4Capital is the parent of the Monks brand and reports Monks as one group.</div></div>
+<div class="chart-box"><div class="chart-title">Net revenue by region</div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>Net revenue (£ million)</th><th>FY2025</th><th>Like-for-like change</th><th>H1 2026</th><th>Like-for-like change</th></tr></thead><tbody><tr><td>Americas</td><td>537.4 (about 80%)</td><td>5.6% down</td><td>249.9 (81%)</td><td>0.8% down</td></tr><tr><td><strong>EMEA (Europe, Middle East and Africa)</strong></td><td><strong>99.9 (about 15%)</strong></td><td><strong>19.6% down</strong></td><td><strong>42.0 (14%)</strong></td><td><strong>20.3% down</strong></td></tr><tr><td>Asia-Pacific</td><td>35.7 (about 5%)</td><td>13.8% down</td><td>16.1 (5%)</td><td>12.5% down</td></tr></tbody></table></div><div class="chart-src">Sources: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a>. The Americas are reported as one region.</div></div>
+<div class="chart-box"><div class="chart-title">Net revenue by practice</div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>Practice, net revenue (£ million)</th><th>FY2025</th><th>Like-for-like change</th><th>H1 2026</th><th>Like-for-like change</th></tr></thead><tbody><tr><td>Marketing Services</td><td>614.0</td><td>5.6% down</td><td>281.9</td><td>4.4% down</td></tr><tr><td>Technology Services</td><td>59.0</td><td>29.9% down</td><td>26.1</td><td>7.4% down</td></tr></tbody></table></div><div class="chart-src">Sources: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a>. Group reporting uses two practices, Marketing Services and Technology Services.</div></div>
+<div id="sec-challenges" class="bk-wrap"><div class="bk-eyebrow">Role Analysis</div><div class="bk-headline">3 structural challenges this role is built to solve</div><div class="bk-grid"><div class="bk-card"><div class="bk-num">01</div><div class="bk-card-title">Europe, Middle East and Africa is the fastest-shrinking region</div><ul><li>FY2025 EMEA net revenue fell 19.0% to £99.9 million (19.6% like-for-like); H1 2026 fell a further 18.9% to £42.0 million (20.3% like-for-like)</li><li>The Americas, 81% of H1 2026 net revenue, fell 0.8% like-for-like in the same period</li><li>The group attributes the EMEA decline to a scope reduction at BMW, primarily in EMEA</li></ul><div class="bk-card-src">Source: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="bk-card"><div class="bk-num">02</div><div class="bk-card-title">Technology clients are redirecting spend to AI infrastructure</div><ul><li>The group attributes its FY2025 decline to client caution, especially among technology clients allocating spend to building AI infrastructure, and to client losses in Technology Services</li><li>Technology clients were 41% of FY2025 revenue (2024: 45%); Technology Services net revenue fell 29.9% like-for-like</li><li>Monks.Flow won AI-based Marketing Solution of the Year at the AI Breakthrough awards, and the group states its proprietary AI solutions are at the heart of all new business efforts; commercial production is moving from time-based to output-based pricing, including subscription models</li></ul><div class="bk-card-src">Source: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div></div><div class="bk-card"><div class="bk-num">03</div><div class="bk-card-title">A smaller team and a new EMEA leadership layer</div><ul><li>Headcount fell from 6,879 to 6,156 Monks in twelve months (10.5% down); H1 2026 margin gain is attributed to cost actions, fewer non-billable roles and back-office efficiencies</li><li>Nirvik Singh becomes CEO of EMEA Marketing Services on 1 October 2026, overseeing brand strategy, creative craft, content orchestration and data-driven media</li><li>Group guidance for 2026: like-for-like net revenue down mid-single digits, operational EBITDA of £85 million, margin target of around 20% over the longer term</li></ul><div class="bk-card-src">Source: <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a> · <a href="https://www.medianews4u.com/monks-names-nirvik-singh-to-lead-emea-marketing-services/" target="_blank" rel="noopener">MediaNews4U, 22 September 2026</a></div></div></div></div>
+<div id="sec-role" class="sec-header"><div class="sec-num">02</div><div class="sec-label"><div class="sec-eyebrow">The Role, As Written</div><div class="sec-title">The role as written</div></div></div>
+<div class="chart-box"><div class="chart-title">Business Director — the posting at a glance</div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>Field</th><th>Posting</th></tr></thead><tbody><tr><td><strong>Role</strong></td><td>Business Director, seniority level Director, full-time</td></tr><tr><td><strong>Company</strong></td><td>Monks, the unitary operating brand of S4Capital plc</td></tr><tr><td><strong>Location</strong></td><td>Amsterdam Area, per the LinkedIn listing</td></tr><tr><td><strong>Mandate</strong></td><td>Executive growth driver and senior strategic lead for one of Monks' highest-profile client portfolios in the Dutch-language regional market</td></tr><tr><td><strong>Essentials</strong></td><td>Dutch and English fluency; executive client leadership at Business Director or Senior Account Director level; substantial profit and loss responsibility and contract negotiation; scoping, budgeting and delivering integrated digital, production and technology programmes across multi-market setups; AI and data fluency; team leadership; communication and negotiation at C-suite level</td></tr><tr><td><strong>A plus</strong></td><td>Benelux agency, marketing services or client success experience; AI-driven workflow tools; multi-brand or global account ecosystems across content, media and digital product</td></tr></tbody></table></div><div class="chart-src">Source: <a href="https://www.linkedin.com/jobs/view/4475521524/" target="_blank" rel="noopener">LinkedIn job posting 4475521524</a>. Applications are made through monks.com/careers.</div></div>
+<div id="sec-scope" class="sec-header"><div class="sec-num">03</div><div class="sec-label"><div class="sec-eyebrow">Scope</div><div class="sec-title">Business Director — six accountability areas &amp; Olga's experience</div></div></div>
+<div class="scope-grid"><div class="scope-card"><div class="scope-n">01</div><div class="scope-label">Executive client portfolio</div><div class="scope-desc">Own and expand the executive relationships of a high-profile client portfolio as senior strategic advisor.</div><div class="scope-kpis"><span class="scope-kpi">Retention</span><span class="scope-kpi">Account growth</span><span class="scope-kpi">Executive access</span></div><div class="scope-exp"><strong>Olga's experience</strong>Nike: led omni-channel business development with strategic key accounts and the digital transformation of Intersport, the largest European sporting goods retailer. Richemont: Director-level stakeholder management reporting to the EU CEO and the Global Chief Digital Officer.</div></div><div class="scope-card"><div class="scope-n">02</div><div class="scope-label">Account strategy &amp; financial roadmaps</div><div class="scope-desc">Build account strategies, financial forecasts and commercial roadmaps that secure retention, net revenue and profitability.</div><div class="scope-kpis"><span class="scope-kpi">Forecasts</span><span class="scope-kpi">Net revenue</span><span class="scope-kpi">Profitability</span></div><div class="scope-exp"><strong>Olga's experience</strong>Richemont: held full profit and loss responsibility for a €150 million e-commerce business across 12 luxury Maisons and 26 European countries, delivering 30–250% revenue growth per year.</div></div><div class="scope-card"><div class="scope-n">03</div><div class="scope-label">New business inside existing accounts</div><div class="scope-desc">Pursue and pitch new scopes within existing accounts and frame complex offerings for business transformation.</div><div class="scope-kpis"><span class="scope-kpi">Pitching</span><span class="scope-kpi">Scoping</span><span class="scope-kpi">Cross-sell</span></div><div class="scope-exp"><strong>Olga's experience</strong>adidas: built the Digital Partner Commerce function from zero, with a vision of the integrated marketplace across own channels, retailers, pure players and partners.</div></div><div class="scope-card"><div class="scope-n">04</div><div class="scope-label">Multi-market programme delivery</div><div class="scope-desc">Oversee end-to-end delivery of large-scale, multi-market programmes on time, on budget and to quality standard.</div><div class="scope-kpis"><span class="scope-kpi">On time</span><span class="scope-kpi">On budget</span><span class="scope-kpi">Quality</span></div><div class="scope-exp"><strong>Olga's experience</strong>Richemont: executed 100+ projects across people, technology and process improvement. Nike: led SAP Retail implementation, the London Olympics Fuelband launch and retail localisation in Greece and Turkey, delivered on budget, on schedule and to targeted performance.</div></div><div class="scope-card"><div class="scope-n">05</div><div class="scope-label">AI-enabled delivery &amp; change</div><div class="scope-desc">Partner with creative, operational, data and finance leadership to streamline delivery and bring emerging AI tools into daily workflows.</div><div class="scope-kpis"><span class="scope-kpi">Delivery model</span><span class="scope-kpi">AI tools</span><span class="scope-kpi">Adoption</span></div><div class="scope-exp"><strong>Olga's experience</strong>Nike: change management ensuring successful transition and adoption across the organisation as Senior Project Manager, DTC and B2B. IBM: Change Manager on a customer relationship management implementation for InBev and process transformation expert on SAP APO (Advanced Planner and Optimizer) implementations for the Dutch Ministry of Transport.</div></div><div class="scope-card"><div class="scope-n">06</div><div class="scope-label">Team leadership &amp; executive diplomacy</div><div class="scope-desc">Lead, mentor and scale a team of account leaders; resolve high-stakes escalations with C-suite clients.</div><div class="scope-kpis"><span class="scope-kpi">Team</span><span class="scope-kpi">Escalations</span><span class="scope-kpi">Trust</span></div><div class="scope-exp"><strong>Olga's experience</strong>Richemont: established best practices from scratch across local teams in 26 countries, owned at Executive Committee level, and influenced all levels of a matrix organisation up to Executive Committee level.</div></div></div>
+<div class="chart-box"><div class="chart-title">Priority stack — 5-step approach</div><div class="pri-wrap"><table class="pri-table compact"><thead><tr><th>#</th><th>Action</th><th>Why first</th><th>Output</th></tr></thead><tbody><tr><td><span class="pri-num">1</span></td><td>Read the portfolio's net revenue, operational margin and billings by client</td><td>Every later decision rests on the account profit and loss</td><td>Account-level baseline</td></tr><tr><td><span class="pri-num">2</span></td><td>Map expansion scopes inside each account to the Monks.Flow and production offering</td><td>The group states AI solutions lead all new business efforts</td><td>Ranked expansion pipeline</td></tr><tr><td><span class="pri-num">3</span></td><td>Set delivery governance for multi-market programmes</td><td>On time and on budget are named in the posting</td><td>Single delivery cadence</td></tr><tr><td><span class="pri-num">4</span></td><td>Install a weekly commercial rhythm with the account leaders</td><td>The posting asks for a commercially focused team</td><td>Forecast and escalation review</td></tr><tr><td><span class="pri-num">5</span></td><td>Align the portfolio plan with the EMEA Marketing Services leadership</td><td>A new EMEA CEO starts on 1 October 2026</td><td>Joint regional plan</td></tr></tbody></table></div></div>
+<div id="sec-leadership" class="sec-header"><div class="sec-num">04</div><div class="sec-label"><div class="sec-eyebrow">Leadership</div><div class="sec-title">Leadership</div></div></div>
+<div class="org-grid"><div class="org-card"><div class="org-top"><div class="org-initials">MS</div><div><div class="org-company">Monks</div><div class="org-name">Sir Martin Sorrell</div><div class="org-title">Executive Chairman, S4Capital plc</div><div class="org-entity">Named as Executive Chairman in the 2026 interim results</div></div></div><div class="org-conf"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital interim results</a></div></div><div class="org-card"><div class="org-top"><div class="org-initials">BL</div><div><div class="org-company">Monks</div><div class="org-name">Bruno Lambertini</div><div class="org-title">CEO, Marketing Services, Monks</div><div class="org-entity">Named as Monks CEO, Marketing Services in the 22 September 2026 report</div></div></div><div class="org-conf"><a href="https://www.medianews4u.com/monks-names-nirvik-singh-to-lead-emea-marketing-services/" target="_blank" rel="noopener">MediaNews4U</a></div></div><div class="org-card"><div class="org-top"><div class="org-initials">NS</div><div><div class="org-company">Monks</div><div class="org-name">Nirvik Singh</div><div class="org-title">CEO, EMEA Marketing Services, Monks</div><div class="org-entity">Effective 1 October 2026; previously Global Chief Operating Officer and President International at Grey Group; independent non-executive director of S4Capital since May 2025</div></div></div><div class="org-conf"><a href="https://www.medianews4u.com/monks-names-nirvik-singh-to-lead-emea-marketing-services/" target="_blank" rel="noopener">MediaNews4U</a></div></div><div class="org-card"><div class="org-top"><div class="org-initials">AO</div><div><div class="org-company">Monks</div><div class="org-name">Alex Oberberg</div><div class="org-title">Chief Revenue Officer, EMEA</div><div class="org-entity">Named in the 22 September 2026 report on the EMEA appointment</div></div></div><div class="org-conf"><a href="https://www.medianews4u.com/monks-names-nirvik-singh-to-lead-emea-marketing-services/" target="_blank" rel="noopener">MediaNews4U</a></div></div><div class="org-card"><div class="org-top"><div class="org-initials">RR</div><div><div class="org-company">Monks</div><div class="org-name">Radhika Radhakrishnan</div><div class="org-title">Chief Financial Officer and Company Secretary</div><div class="org-entity">S4Capital plc</div></div></div><div class="org-conf"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital interim results</a></div></div><div class="org-card"><div class="org-top"><div class="org-initials">SS</div><div><div class="org-company">Monks</div><div class="org-name">Scott Spirit</div><div class="org-title">Chief Growth Officer</div><div class="org-entity">S4Capital plc</div></div></div><div class="org-conf"><a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital interim results</a></div></div></div>
+<div class="src-note">Sources: <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a> · <a href="https://www.medianews4u.com/monks-names-nirvik-singh-to-lead-emea-marketing-services/" target="_blank" rel="noopener">MediaNews4U, 22 September 2026</a></div>
+<div id="sec-kpi" class="sec-header"><div class="sec-num">05</div><div class="sec-label"><div class="sec-eyebrow">KPIs</div><div class="sec-title">KPI (Key Performance Indicator) framework — four groups</div></div></div>
+<div class="kpi-groups"><div class="kpi-group"><div class="kpi-group-label">Client growth and retention</div><div class="kpi-row"><div class="kpi-card"><div class="kpi-name">Net revenue growth of the portfolio</div><div class="kpi-desc">Like-for-like net revenue change of the client portfolio against the prior year.</div><div class="kpi-bench"><strong>Monks actual</strong>EMEA H1 2026: 20.3% down like-for-like; group: 4.7% down.<br><br><strong>Benchmark</strong>Group 2026 guidance: like-for-like net revenue down mid-single digits.</div></div><div class="kpi-card"><div class="kpi-name">Account retention</div><div class="kpi-desc">Share of portfolio clients retained year on year.</div><div class="kpi-bench"><strong>Monks actual</strong>The group cites client losses, particularly in Technology Services, as a driver of FY2025 decline.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">Expansion inside existing accounts</div><div class="kpi-desc">New scopes won within current clients.</div><div class="kpi-bench"><strong>Monks actual</strong>Group billings: 1.6% down like-for-like in H1 2026 against net revenue 4.7% down; FY2025 billings 0.4% up like-for-like.<br><br><strong>Benchmark</strong>The group states AI tools and capability drive significant new business opportunities.</div></div><div class="kpi-card"><div class="kpi-name">Executive relationship coverage</div><div class="kpi-desc">C-suite contacts held per major client.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div></div></div><div class="kpi-group"><div class="kpi-group-label">Commercial and financial</div><div class="kpi-row"><div class="kpi-card"><div class="kpi-name">Operational EBITDA margin</div><div class="kpi-desc">Operational profit as a share of net revenue.</div><div class="kpi-bench"><strong>Monks actual</strong>H1 2026: 12.3%; FY2025: 12.1%.<br><br><strong>Benchmark</strong>Group longer-term target: around 20%, the historic level.</div></div><div class="kpi-card"><div class="kpi-name">Net revenue per Monk</div><div class="kpi-desc">Derived: net revenue divided by number of Monks, half year.</div><div class="kpi-bench"><strong>Monks actual</strong>H1 2026: £50.0 thousand (£308.0 million over 6,156); H1 2025: £47.7 thousand (£328.2 million over 6,879).<br><br><strong>Benchmark</strong>Prior-year half as the reference point; derived on this page from the two reported figures.</div></div><div class="kpi-card"><div class="kpi-name">Forecast accuracy against plan</div><div class="kpi-desc">Variance of account forecast to actual net revenue.</div><div class="kpi-bench"><strong>Monks actual</strong>After the interim stage the group revised FY2025 like-for-like guidance twice, to just under 10% down and then to circa 8.5% down; the final figure was 8.4% down.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">Contract terms and pricing model</div><div class="kpi-desc">Share of scope sold on output-based or subscription terms.</div><div class="kpi-bench"><strong>Monks actual</strong>The group describes a shift from time-based to output-based and subscription models.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div></div></div><div class="kpi-group"><div class="kpi-group-label">Delivery</div><div class="kpi-row"><div class="kpi-card"><div class="kpi-name">On-time delivery</div><div class="kpi-desc">Programme milestones delivered on schedule across markets.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">On-budget delivery</div><div class="kpi-desc">Programme cost against agreed scope budget.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">Escalations resolved</div><div class="kpi-desc">High-stakes client issues closed with the client relationship intact.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">Cross-market programme throughput</div><div class="kpi-desc">Active multi-market programmes in the portfolio.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div></div></div><div class="kpi-group"><div class="kpi-group-label">Team and AI adoption</div><div class="kpi-row"><div class="kpi-card"><div class="kpi-name">Headcount of the account team</div><div class="kpi-desc">Number of account leaders and delivery staff.</div><div class="kpi-bench"><strong>Monks actual</strong>Group: 6,156 Monks at 30 June 2026, 10.5% down on the prior year.<br><br><strong>Benchmark</strong>FY2025 year end: 6,345 Monks.</div></div><div class="kpi-card"><div class="kpi-name">Non-billable share</div><div class="kpi-desc">Roles not billed to clients.</div><div class="kpi-bench"><strong>Monks actual</strong>The group credits reducing non-billable roles for its H1 2026 margin gain.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">AI tools in daily workflows</div><div class="kpi-desc">Workflows running on Monks.Flow or other AI tools.</div><div class="kpi-bench"><strong>Monks actual</strong>Monks.Flow won AI-based Marketing Solution of the Year at the AI Breakthrough awards.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div><div class="kpi-card"><div class="kpi-name">Team development</div><div class="kpi-desc">Promotions and internal moves among account leaders.</div><div class="kpi-bench"><strong>Monks actual</strong>Not published by the group.<br><br><strong>Benchmark</strong>No independently verified external figure for this measure.</div></div></div></div></div>
+<div class="src-note">Sources: <a href="https://www.ticker.app/lse/SFOR/rns/2026-03-24/Audited-2025-Results/7779X" target="_blank" rel="noopener">S4Capital, Audited 2025 Results (24 March 2026)</a> · <a href="https://www.investegate.co.uk/announcement/rns/s4-capital--sfor/interim-results-for-2026/9704850" target="_blank" rel="noopener">S4Capital, Interim Results for 2026 (5 August 2026)</a></div>
+
+</main>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="inner">
+    <div>
+      <div class="label">About the Author</div>
+      <p>TrendsOnFire is a AI based market intelligence platform publishing analysis on retail, technology, supply chain, people and transformation trends across Europe.</p>
+      <p style="margin-top:10px;">Created by Olga Bressers, a senior executive with experience in commercial &amp; digital operations, ecommerce, omni-channel strategy, operations, programs and business transformation.</p>
+    </div>
+    <a href="../olgabressers/index.html" class="btn">Contact &rarr;</a>
+  </div>
+</section>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8593;</button>
+<style>#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:#0a0a0a;color:#ff5c35;border:1px solid rgba(255,92,53,.4);border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:900;transition:background .2s,opacity .2s;}#back-to-top:hover{background:#000000;}</style>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.style.display=window.scrollY>400?'flex':'none';});</script>
+<script>
+(function(){
+  var headers = Array.prototype.slice.call(document.querySelectorAll('main .sec-header'));
+  var sections = headers.map(function(h){
+    var body = [];
+    var el = h.nextElementSibling;
+    while (el && !el.classList.contains('sec-header')) { body.push(el); el = el.nextElementSibling; }
+    var toggle = document.createElement('span');
+    toggle.className = 'sec-toggle';
+    toggle.textContent = '+';
+    h.appendChild(toggle);
+    return {header: h, body: body, toggle: toggle};
+  });
+
+  function setCollapsed(sec, collapsed){
+    sec.body.forEach(function(el){ el.style.display = collapsed ? 'none' : ''; });
+    sec.toggle.textContent = collapsed ? '+' : '−';
+  }
+
+  sections.forEach(function(sec){
+    setCollapsed(sec, true);
+    sec.header.addEventListener('click', function(){
+      setCollapsed(sec, sec.toggle.textContent === '−');
+    });
+  });
+
+  function expandForHash(){
+    var id = location.hash.replace('#','');
+    if(!id) return;
+    var sec = sections.filter(function(s){ return s.header.id === id; })[0];
+    if(sec) setCollapsed(sec, false);
+  }
+  window.addEventListener('hashchange', expandForHash);
+  expandForHash();
+})();
+</script>
+</body>
+</html>
