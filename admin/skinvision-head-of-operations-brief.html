@@ -188,6 +188,17 @@
     .flow-core .t{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;color:#cdb27a;line-height:1.1;margin-bottom:8px;}
     .flow-core .d{font-size:14.5px;line-height:1.5;color:#fff;}
     .flow-arrow{display:flex;align-items:center;justify-content:center;font-size:34px;color:#8a6d3f;font-weight:800;}
+    .glance{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 28px;}
+    @media(max-width:1000px){.glance{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.glance{grid-template-columns:1fr;}}
+    .g-tile{background:#17151a;color:#fff;padding:20px 18px;border-top:4px solid #cdb27a;display:flex;flex-direction:column;}
+    .g-tile.light{background:white;color:#0a0f1a;border:1px solid #e2dfd9;border-top:4px solid #cdb27a;}
+    .g-l{font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#cdb27a;margin-bottom:8px;}
+    .g-tile.light .g-l{color:#8a6d3f;}
+    .g-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:600;line-height:1;margin-bottom:8px;}
+    .g-d{font-size:15.5px;line-height:1.45;font-weight:600;}
+    .g-s{font-size:13px;margin-top:auto;padding-top:12px;}
+    .g-s a{color:#cdb27a;} .g-tile.light .g-s a{color:#8a6d3f;}
   </style>
 </head>
 <body>
@@ -362,19 +373,12 @@
   <div class="s-card"><div class="s-lbl">Second estimate, global 2025</div><div class="s-num">$1.8B</div><div class="s-delta">$6.2B by 2034</div><div class="s-src">14.5% yearly growth forecast. <a href="https://www.igtps.com/report/ai-skin-diagnostics-market" target="_blank" rel="noopener">IGTPS</a></div></div>
 </div>
 
-<div class="chart-box">
-  <div class="chart-title">Market size by region</div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Region</th><th>Figure</th><th>Source</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Netherlands</strong></td><td>66,823 new skin cancer patients in incidence year 2017: 48,022 basal cell carcinoma, 12,318 squamous cell carcinoma, 6,197 melanoma. 398,187 patients diagnosed between 2007 and 2017. Skin cancer is the most common cancer in the Netherlands and has the fastest rising incidence of all cancers. Melanoma deaths have been stable at around 800 a year since 2010. A value for the Dutch AI skin check market is not published</td><td><a href="https://iknl.nl/getmedia/4f682e10-d01d-41eb-8583-ffb6e6c24038/iknl_huidkanker-in-nl_rapport_nkr.pdf" target="_blank" rel="noopener">IKNL, Huidkanker in Nederland: cijfers uit 30 jaar</a></td></tr>
-        <tr><td><strong>Europe</strong></td><td>The report quotes a global value and a North America share only; a European value is not stated. Germany runs a national scheme of whole-body skin checks every two years for adults over 35, which a market report names as a driver of European demand</td><td><a href="https://www.nextmsc.com/report/ai-skin-analysis-market-hc5146" target="_blank" rel="noopener">Next Move Strategy Consulting</a> · <a href="https://straitsresearch.com/report/skin-cancer-diagnostics-and-therapeutics-market" target="_blank" rel="noopener">Straits Research</a></td></tr>
-        <tr><td><strong>United States</strong></td><td>North America holds about 36% of the 2025 global AI skin analysis market, around $660 million, and the United States leads the region. Dermatology access is limited by workforce shortages and insurance barriers</td><td><a href="https://www.nextmsc.com/report/ai-skin-analysis-market-hc5146" target="_blank" rel="noopener">Next Move Strategy Consulting</a> · <a href="https://healthtechdigital.com/skinvision-collaborates-on-pivotal-trial-to-improve-access-to-dermatology-care-in-the-united-states/" target="_blank" rel="noopener">SkinVision press release, March 2026</a></td></tr>
-        <tr><td><strong>Global</strong></td><td>$1.82 billion in 2025 rising to $9.08 billion by 2035 (Next Move Strategy Consulting); $1.8 billion in 2025 rising to $6.2 billion by 2034 (IGTPS). Both cover AI skin analysis and diagnostics in general, including aesthetic uses, so they are wider than skin cancer screening alone</td><td><a href="https://www.nextmsc.com/report/ai-skin-analysis-market-hc5146" target="_blank" rel="noopener">Next Move Strategy Consulting</a> · <a href="https://www.igtps.com/report/ai-skin-diagnostics-market" target="_blank" rel="noopener">IGTPS</a></td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="chart-title" style="font-size:20px;margin:6px 0 10px;">Market size at a glance</div>
+<div class="glance">
+<div class="g-tile"><div class="g-l">Netherlands</div><div class="g-n">75,000</div><div class="g-d">new skin cancer patients a year; fastest rising cancer</div><div class="g-s"><a href="https://iknl.nl/nieuws/2025/nieuwe-cijfers-huidkanker" target="_blank" rel="noopener">IKNL</a></div></div>
+<div class="g-tile"><div class="g-l">Europe</div><div class="g-n">No value published</div><div class="g-d">Germany checks adults over 35 every 2 years, a driver of demand</div><div class="g-s"><a href="https://straitsresearch.com/report/skin-cancer-diagnostics-and-therapeutics-market" target="_blank" rel="noopener">Straits Research</a></div></div>
+<div class="g-tile"><div class="g-l">United States</div><div class="g-n">$660M</div><div class="g-d">about 36% of the world market; FDA trial under way</div><div class="g-s"><a href="https://www.nextmsc.com/report/ai-skin-analysis-market-hc5146" target="_blank" rel="noopener">Next Move Strategy Consulting</a></div></div>
+<div class="g-tile"><div class="g-l">World</div><div class="g-n">$1.82B &rarr; $9.08B</div><div class="g-d">AI skin analysis, 2025 to 2035, 16.5% growth a year</div><div class="g-s"><a href="https://www.nextmsc.com/report/ai-skin-analysis-market-hc5146" target="_blank" rel="noopener">Next Move Strategy Consulting</a></div></div>
 </div>
 
 <div class="chart-title" style="font-size:20px;margin:18px 0 0;">How big the problem is, how fast it is growing, and what the service delivers</div>
@@ -412,27 +416,19 @@
 <div class="chart-src">Source: <a href="https://www.skinvision.com/getting-started#pricing-and-plans" target="_blank" rel="noopener">skinvision.com, How Accurate is the SkinVision App</a>. The study was run with Erasmus Medical Centre; the 2024 figures are SkinVision internal quality checks.</div></div>
 </div>
 
-<div class="chart-box">
-  <div class="chart-title">Countries SkinVision serves and where it is expanding</div>
-  <div class="pri-wrap">
-    <table class="pri-table">
-      <thead><tr><th>Status</th><th>Countries and partners</th><th>Source</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Available</strong></td><td>Commercially available worldwide on iOS and Android except the United States and Canada</td><td><a href="https://www.skinvision.com/press-release/skinvision-achieves-milestone-with-three-certifications" target="_blank" rel="noopener">SkinVision press release</a></td></tr>
-        <tr><td><strong>Partnerships with insurers, clinics and universities</strong></td><td>United Kingdom, Australia, Germany, the Netherlands and New Zealand</td><td><a href="https://apps.apple.com/mt/app/skinvision-find-skin-cancer/id545293136" target="_blank" rel="noopener">App Store listing</a></td></tr>
-        <tr><td><strong>Netherlands</strong></td><td>Dutch health insurers CZ, Just and Nationale-Nederlanden. A year-long study with CZ covered over 18,000 users, who were 32% more likely to have a skin cancer or precancer diagnosed</td><td><a href="https://www.skinvision.com/press-release/skinvision-achieves-milestone-with-three-certifications" target="_blank" rel="noopener">SkinVision press release</a> · <a href="https://www.skinvision.com/getting-started#pricing-and-plans" target="_blank" rel="noopener">skinvision.com</a></td></tr>
-        <tr><td><strong>Expansion: United States</strong></td><td>Research collaboration with Mayo Clinic on a pivotal trial required by the Food and Drug Administration (FDA) for the United States regulatory pathway, announced March 2026</td><td><a href="https://healthtechdigital.com/skinvision-collaborates-on-pivotal-trial-to-improve-access-to-dermatology-care-in-the-united-states/" target="_blank" rel="noopener">Digital Health Technology News</a></td></tr>
-        <tr><td><strong>Reach</strong></td><td>Insurer partnerships can reach 20 million people; nearly 3 million people helped worldwide</td><td><a href="https://www.linkedin.com/jobs/view/4476324031/" target="_blank" rel="noopener">LinkedIn job description</a></td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="chart-title" style="font-size:20px;margin:6px 0 10px;">Countries served at a glance</div>
+<div class="glance">
+<div class="g-tile light"><div class="g-l">Available in</div><div class="g-n">Worldwide</div><div class="g-d">except the United States and Canada</div><div class="g-s"><a href="https://www.skinvision.com/press-release/skinvision-achieves-milestone-with-three-certifications" target="_blank" rel="noopener">SkinVision</a></div></div>
+<div class="g-tile light"><div class="g-l">Partners in</div><div class="g-n">5 countries</div><div class="g-d">United Kingdom, Australia, Germany, Netherlands, New Zealand</div><div class="g-s"><a href="https://apps.apple.com/mt/app/skinvision-find-skin-cancer/id545293136" target="_blank" rel="noopener">App Store</a></div></div>
+<div class="g-tile light"><div class="g-l">Dutch insurers</div><div class="g-n">CZ, Just, Nationale-Nederlanden</div><div class="g-d">CZ study: 18,000+ users, 32% more diagnoses</div><div class="g-s"><a href="https://www.skinvision.com/press-release/skinvision-achieves-milestone-with-three-certifications" target="_blank" rel="noopener">SkinVision</a></div></div>
+<div class="g-tile light"><div class="g-l">Expanding to</div><div class="g-n">United States</div><div class="g-d">Mayo Clinic trial for FDA clearance, March 2026</div><div class="g-s"><a href="https://healthtechdigital.com/skinvision-collaborates-on-pivotal-trial-to-improve-access-to-dermatology-care-in-the-united-states/" target="_blank" rel="noopener">Press release</a></div></div>
 </div>
 
 <div class="chart-box">
   <div class="chart-title">Competitors</div>
   <div class="brands-grid" style="grid-template-columns:repeat(2,1fr);">
-    <div class="brand-card"><div class="brand-name">Skin Analytics (DERM)</div><div class="brand-desc">United Kingdom company. DERM analyses lesion images sent after a suspected skin cancer referral and can discharge patients it judges benign. Class IIa in the United Kingdom since 2022 and, per the company, the first and only AI certified for autonomous use under a Class III CE mark. Live in 25 NHS trusts, going live in all 18 NHS England South East trusts from autumn 2026 over three years. The company reports more than 250,000 patients assessed and a 99.5% rule-out rate. Works through a smartphone with a dermoscope lens, in a clinical pathway, where SkinVision is a consumer and insurer service.</div></div>
-    <div class="brand-card"><div class="brand-name">MetaOptima</div><div class="brand-desc">Positions itself as "Intelligent Dermatology" on its company site, serving dermatology practices rather than consumers.</div></div>
+    <div class="brand-card"><div class="brand-name">Skin Analytics (DERM)</div><div class="brand-desc"><ul style="margin:6px 0 0;padding-left:18px;line-height:1.7;"><li>United Kingdom, clinical pathway: lesion image sent after a GP referral</li><li>Can discharge patients it judges benign</li><li>Live in 25 NHS trusts; all 18 South East trusts from autumn 2026</li><li>Class III CE mark, per the company</li></ul></div></div>
+    <div class="brand-card"><div class="brand-name">MetaOptima</div><div class="brand-desc"><ul style="margin:6px 0 0;padding-left:18px;line-height:1.7;"><li>"Intelligent Dermatology"</li><li>Serves dermatology practices, not consumers</li></ul></div></div>
   </div>
   <div class="chart-src">Sources: <a href="https://thenextweb.com/news/skin-cancer-ai-nhs-south-east-skin-analytics-derm" target="_blank" rel="noopener">The Next Web, 8 October 2026</a> · <a href="https://pharmaphorum.com/news/skin-analytics-dermatology-ai-backed-nhs-use" target="_blank" rel="noopener">pharmaphorum</a> · <a href="https://www.metaoptima.com/" target="_blank" rel="noopener">metaoptima.com</a>. Skin Analytics figures are company-reported.</div>
 </div>
