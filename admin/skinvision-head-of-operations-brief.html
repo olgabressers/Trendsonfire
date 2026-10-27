@@ -199,6 +199,18 @@
     .g-d{font-size:15.5px;line-height:1.45;font-weight:600;}
     .g-s{font-size:13px;margin-top:auto;padding-top:12px;}
     .g-s a{color:#cdb27a;} .g-tile.light .g-s a{color:#8a6d3f;}
+    .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 28px;}
+    @media(max-width:1000px){.comp-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.comp-grid{grid-template-columns:1fr;}}
+    .comp{background:white;border:1px solid #e2dfd9;border-top:4px solid #17151a;padding:18px 18px 14px;}
+    .comp.me{border-top-color:#cdb27a;background:#faf9f7;}
+    .comp-n{font-size:21px;font-weight:800;color:#0a0f1a;line-height:1.2;}
+    .comp-t{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8a6d3f;margin:4px 0 12px;}
+    .comp-r{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid #e8e5e0;font-size:15px;line-height:1.4;color:#0a0f1a;}
+    .comp-r span:first-child{color:#4b5563;font-weight:600;}
+    .comp-r span:last-child{font-weight:800;text-align:right;}
+    .comp-s{font-size:13px;margin-top:8px;color:#4b5563;}
+    .comp-s a{color:#8a6d3f;}
   </style>
 </head>
 <body>
@@ -432,11 +444,11 @@
 </div>
 
 <div class="chart-title" style="font-size:24px;margin:30px 0 4px;font-family:'Cormorant Garamond',Georgia,serif;">Competitors at a glance</div>
-<div class="glance">
-<div class="g-tile"><div class="g-n" style="font-size:40px;">SkinVision</div><div class="g-l" style="margin-bottom:12px;">Consumer and insurer service</div><div class="g-d">76 employees</div><div class="g-d" style="margin-top:8px;">Estimated annual revenue $1M&ndash;$10M</div><div class="g-s"><a href="https://leadiq.com/c/skinvision/5a1d843b24000024005eb1a5" target="_blank" rel="noopener">LeadIQ</a> · <a href="https://www.linkedin.com/company/skinvision/" target="_blank" rel="noopener">LinkedIn</a></div></div>
-<div class="g-tile"><div class="g-n" style="font-size:40px;">Skin Analytics</div><div class="g-l" style="margin-bottom:12px;">United Kingdom, NHS clinics</div><div class="g-d">£15M raised, April 2025</div><div class="g-d" style="margin-top:8px;">Revenue: no public figure</div><div class="g-s"><a href="https://vestbee.com/insights/articles/skin-analytics-raises-15-m" target="_blank" rel="noopener">Vestbee</a> · <a href="https://thenextweb.com/news/skin-cancer-ai-nhs-south-east-skin-analytics-derm" target="_blank" rel="noopener">The Next Web</a></div></div>
-<div class="g-tile"><div class="g-n" style="font-size:40px;">DermaSensor</div><div class="g-l" style="margin-bottom:12px;">United States, primary care doctors</div><div class="g-d">$16M raised, October 2025</div><div class="g-d" style="margin-top:8px;">Revenue: no public figure</div><div class="g-s"><a href="https://refreshmiami.com/news/dermasensor-raises-16m-to-get-its-ai-powered-skin-cancer-detection-device-to-more-primary-care-doctors/" target="_blank" rel="noopener">Refresh Miami</a></div></div>
-<div class="g-tile"><div class="g-n" style="font-size:40px;">MetaOptima</div><div class="g-l" style="margin-bottom:12px;">Dermatology practices</div><div class="g-d">&ldquo;Intelligent Dermatology&rdquo;</div><div class="g-d" style="margin-top:8px;">Revenue: no public figure</div><div class="g-s"><a href="https://www.metaoptima.com/" target="_blank" rel="noopener">metaoptima.com</a></div></div>
+<div class="comp-grid">
+<div class="comp me"><div class="comp-n">SkinVision</div><div class="comp-t">Consumer and insurer service</div><div class="comp-r"><span>Employees</span><span>76</span></div><div class="comp-r"><span>Revenue (estimate)</span><span>$1M&ndash;$10M</span></div><div class="comp-r"><span>Markets</span><span>Worldwide except US, Canada</span></div><div class="comp-s"><a href="https://leadiq.com/c/skinvision/5a1d843b24000024005eb1a5" target="_blank" rel="noopener">LeadIQ</a> · <a href="https://www.linkedin.com/company/skinvision/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+<div class="comp"><div class="comp-n">Skin Analytics</div><div class="comp-t">United Kingdom · NHS clinics</div><div class="comp-r"><span>Latest funding</span><span>£15M, April 2025</span></div><div class="comp-r"><span>Revenue</span><span>No public figure</span></div><div class="comp-r"><span>Reach</span><span>25 NHS trusts</span></div><div class="comp-s"><a href="https://vestbee.com/insights/articles/skin-analytics-raises-15-m" target="_blank" rel="noopener">Vestbee</a> · <a href="https://thenextweb.com/news/skin-cancer-ai-nhs-south-east-skin-analytics-derm" target="_blank" rel="noopener">The Next Web</a></div></div>
+<div class="comp"><div class="comp-n">DermaSensor</div><div class="comp-t">United States · primary care</div><div class="comp-r"><span>Latest funding</span><span>$16M, October 2025</span></div><div class="comp-r"><span>Revenue</span><span>No public figure</span></div><div class="comp-r"><span>Employees</span><span>About 18</span></div><div class="comp-s"><a href="https://refreshmiami.com/news/dermasensor-raises-16m-to-get-its-ai-powered-skin-cancer-detection-device-to-more-primary-care-doctors/" target="_blank" rel="noopener">Refresh Miami</a></div></div>
+<div class="comp"><div class="comp-n">MetaOptima</div><div class="comp-t">Dermatology practices</div><div class="comp-r"><span>Positioning</span><span>Intelligent Dermatology</span></div><div class="comp-r"><span>Revenue</span><span>No public figure</span></div><div class="comp-r"><span>Customers</span><span>Practices, not consumers</span></div><div class="comp-s"><a href="https://www.metaoptima.com/" target="_blank" rel="noopener">metaoptima.com</a></div></div>
 </div>
 
 <div id="sec-challenges" class="bk-wrap">
