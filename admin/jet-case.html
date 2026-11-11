@@ -468,36 +468,6 @@ b,strong{font-weight:700;color:var(--dk)}
 </style>
 </head>
 <body>
-<style>
-#tof-gate{position:fixed;inset:0;background:#ff8000;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-#tof-gate .box{background:#fff;border-radius:14px;padding:40px 36px;max-width:380px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.25)}
-#tof-gate h2{font-size:20px;color:#242e30;margin:0 0 12px}
-#tof-gate p{font-size:15px;color:#242e30;margin:0 0 18px;line-height:1.5}
-#tof-gate input{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d6d6d6;border-radius:8px;font-size:15px;font-family:inherit;outline:none;margin-bottom:12px}
-#tof-gate input:focus{border-color:#ff8000}
-#tof-gate button{width:100%;background:#ff8000;color:#fff;border:none;border-radius:8px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
-#tof-gate .err{color:#dc2626;font-size:14px;margin-top:8px;min-height:16px}
-</style>
-<div id="tof-gate" style="display:none">
-  <div class="box">
-    <h2>Private Page</h2>
-    <p>Enter the access key to continue.</p>
-    <input id="tof-pwd" type="password" placeholder="Access key">
-    <button onclick="tofUnlock()">Unlock</button>
-    <div class="err" id="tof-err"></div>
-  </div>
-</div>
-<script>
-(function(){
-  var EXPECTED="JET2026",K="tof_unlock_jetcase",g=document.getElementById('tof-gate');
-  if(location.protocol!=='file:'){g.style.display='flex';setTimeout(function(){document.getElementById('tof-pwd').focus()},50)}
-  window.tofUnlock=function(){
-    if(document.getElementById('tof-pwd').value===EXPECTED){g.querySelector('.box').innerHTML='<h2>Access expired</h2><p>The access to this page expired. Contact <a href="mailto:Olga.bressers@gmail.com" style="color:#ff8000">Olga.bressers@gmail.com</a></p>'}
-    else document.getElementById('tof-err').textContent='Wrong access key.';
-  };
-  document.getElementById('tof-pwd').addEventListener('keydown',function(e){if(e.key==='Enter')tofUnlock()});
-})();
-</script>
 
 <!-- Case cover -->
 <section class="page"><div class="sl img cvr"><img src="just-eat-case-3/case_cover.png" alt="Head of Customer Service BENELUX: Second Round Interview, Business Cases"><div class="by">by Olga Bressers</div><div class="n">1</div></div></section>
